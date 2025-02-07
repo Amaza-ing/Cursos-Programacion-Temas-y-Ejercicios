@@ -95,5 +95,26 @@ my-project/
 
 ---
 
+## **7. Extensión Angular Language Service**
+Añade la extensión Angular Language Service en Visual Studio Code para desarrollar aplicaciones en Angular con más facilidad.
+
+---
+
+## Comandos importantes
+
+Instalar Angular
+```sh
+npm install -g @angular/cli
+```
+Creación de nuevo proyecto
+```sh
+ng new my-project
+```
+Levantar el proyecto
+```sh
+ng serve
+```
+
+---
 
 En el próximo tema, exploraremos en profundidad los **componentes en Angular** y cómo estructurar nuestra aplicación correctamente.
