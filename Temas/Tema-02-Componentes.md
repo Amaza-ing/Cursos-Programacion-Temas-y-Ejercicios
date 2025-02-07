@@ -125,3 +125,5 @@ export class MenuComponent {
 Aquí, el valor de `src` en la imagen se obtiene desde la variable `image` del componente.
 
 ---
+
+En el siguiente tema veremos cómo trabajar con eventos y con data binding bidireccional usando ngModel.
