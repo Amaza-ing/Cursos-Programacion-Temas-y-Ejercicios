@@ -43,7 +43,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./eventos.component.css']
 })
 export class EventosComponent {
-  mostrarMensaje() {
+  showMessage() {
     alert('¡Botón clicado!');
   }
 }
@@ -52,10 +52,10 @@ export class EventosComponent {
 **Ejemplo en `eventos.component.html`**:
 
 ```html
-<button (click)="mostrarMensaje()">Haz clic aquí</button>
+<button (click)="showMessage()">Haz clic aquí</button>
 ```
 
-En este caso, al hacer clic en el botón, se ejecuta `mostrarMensaje()`, mostrando una alerta.
+En este caso, al hacer clic en el botón, se ejecuta `showMessage()`, mostrando una alerta.
 
 ---
 
@@ -65,20 +65,20 @@ Podemos pasar valores a la función dentro del componente.
 Ejemplo en `eventos.component.html`:
 
 ```html
-<button (click)="saludar('Sara')">Saludar</button>
+<button (click)="sayHello('Sara')">Saludar</button>
 ```
 
 Ejemplo en `eventos.component.ts`:
 
 ```ts
 export class EventosComponent {
-  saludar(nombre: string) {
+  sayHello(nombre: string) {
     alert('¡Hola, ' + nombre + '!');
   }
 }
 ```
 
-Cuando el usuario haga clic en el botón, se ejecutará la función `saludar('Sara')`, mostrando `"¡Hola, Sara!"`.
+Cuando el usuario haga clic en el botón, se ejecutará la función `sayHello('Sara')`, mostrando `"¡Hola, Sara!"`.
 
 ---
 
@@ -88,7 +88,7 @@ También podemos capturar información del evento utilizando `$event`.
 Ejemplo en `eventos.component.html`:
 
 ```html
-<input (input)="actualizarTexto($event)">
+<input (input)="updateText($event)">
 <p>{{ mensaje }}</p>
 ```
 
@@ -98,14 +98,14 @@ Ejemplo en `eventos.component.ts`:
 export class EventosComponent {
   mensaje: string = '';
 
-  actualizarTexto(evento: Event) {
+  updateText(evento: Event) {
     this.mensaje = (evento.target as HTMLInputElement).value;
   }
 }
 ```
 
 Aquí:
-1. Cada vez que el usuario escribe en el campo de entrada, se ejecuta `actualizarTexto()`.
+1. Cada vez que el usuario escribe en el campo de entrada, se ejecuta `updateText()`.
 2. La variable `mensaje` se actualiza con el texto introducido.
 3. La interpolación `{{ mensaje }}` muestra el contenido actualizado en la pantalla.
 
@@ -127,26 +127,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./ngmodel.component.css']
 })
 export class NgModelComponent {
-  nombreUsuario: string = '';
+  userName: string = '';
 }
 ```
 
 **Ejemplo en `ngmodel.component.html`**:
 
 ```html
-<input [(ngModel)]="nombreUsuario" placeholder="Escribe tu nombre">
-<p>Hola, {{ nombreUsuario }}</p>
+<input [(ngModel)]="userName" placeholder="Escribe tu nombre">
+<p>Hola, {{ userName }}</p>
 ```
 
 En este caso:
-- `[(ngModel)]="nombreUsuario"` hace que el valor del input y la variable `nombreUsuario` estén sincronizados.
-- Al escribir en el input, `nombreUsuario` se actualiza automáticamente.
+- `[(ngModel)]="userName"` hace que el valor del input y la variable `userName` estén sincronizados.
+- Al escribir en el input, `userName` se actualiza automáticamente.
 - El mensaje `"Hola, [nombre]"` se actualiza en tiempo real.
 
 ---
 
 ### **3.1. Importar `FormsModule`**
-Para que `ngModel` funcione, necesitamos importar `FormsModule` en `app.module.ts`.
+Para que `ngModel` funcione, necesitamos importar `FormsModule` en el componente donde se utilice.
 
 Ejemplo en `app.module.ts`:
 
