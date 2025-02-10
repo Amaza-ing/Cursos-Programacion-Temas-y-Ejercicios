@@ -35,7 +35,7 @@ Los documentos HTML están compuestos por elementos como:
 Un documento HTML sigue una estructura básica que siempre debe incluir ciertas etiquetas obligatorias.
 
 ### **Estructura básica de HTML:**
-***
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +46,7 @@ Un documento HTML sigue una estructura básica que siempre debe incluir ciertas 
     <p>Este es mi primer documento HTML.</p>
 </body>
 </html>
-***
+```
 
 ### **Explicación de las etiquetas:**
 - `<!DOCTYPE html>`: Indica la versión de HTML utilizada (HTML5).
