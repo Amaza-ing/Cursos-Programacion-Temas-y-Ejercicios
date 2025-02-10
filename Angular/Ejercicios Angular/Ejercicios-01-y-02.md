@@ -3,12 +3,12 @@
 ## **Ejercicios del Tema 1: Introducción a Angular y Configuración del Entorno**
 
 ### **Ejercicio 1: Instalación de Angular CLI**
-Instala Angular CLI en tu sistema y verifica la instalación con los comandos adecuados. Muestra una captura de pantalla de la versión instalada.
+Instala Angular CLI en tu sistema y verifica la instalación con los comandos adecuados.
 
 ---
 
 ### **Ejercicio 2: Creación de un nuevo proyecto Angular**
-Crea un nuevo proyecto en Angular llamado `mi-proyecto-angular` utilizando Angular CLI. Explica qué opciones seleccionaste al ejecutarlo.
+Crea un nuevo proyecto en Angular llamado `mi-proyecto-angular` utilizando Angular CLI.
 
 ---
 
@@ -58,6 +58,3 @@ Crea un componente `footer` y úsalo en el componente raíz.
 El componente `footer` debe contener a su vez otros 3 componentes.
 Aplica el HTML y estilos que consideres.
 
----
-
-Estos ejercicios te ayudarán a reforzar los conceptos fundamentales de Angular sobre la instalación, la estructura del proyecto y el uso de componentes. 🚀
