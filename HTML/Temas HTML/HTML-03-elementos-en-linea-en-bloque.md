@@ -27,7 +27,7 @@ Los elementos en bloque generan un nuevo bloque de contenido en la página. Por 
 ### **Ejemplo práctico:**
 Imagina que estás estructurando un artículo en un blog. Usarás elementos en bloque para separar las secciones.
 
-```
+```HTML
 <article>
     <h1>Cómo mejorar tu código HTML</h1>
     <p>Es importante seguir buenas prácticas al escribir HTML para mejorar la accesibilidad y el SEO.</p>
@@ -58,7 +58,7 @@ Los elementos en línea no generan un nuevo bloque de contenido, sino que se man
 ### **Ejemplo práctico:**
 Supongamos que en un artículo de un blog queremos resaltar una palabra en negrita y enlazar un término importante.
 
-```
+```HTML
 <p>Para aprender más sobre HTML, visita <a href="https://developer.mozilla.org/">Mozilla Developer Network</a> y revisa los elementos <strong>semánticos</strong>.</p>
 ```
 
@@ -81,7 +81,7 @@ En este caso:
 ## **5. Combinación de elementos en bloque e inline**
 Es posible combinar ambos tipos de elementos en un diseño web. Por ejemplo, dentro de un `div` (bloque), se pueden incluir `span` (inline) para resaltar ciertas palabras.
 
-```
+```HTML
 <div>
     <p>En este artículo explicamos la diferencia entre <span style="color:blue;">elementos en línea</span> y <span style="color:red;">elementos en bloque</span>.</p>
 </div>
@@ -101,5 +101,5 @@ En este caso:
 
 ---
 
-En el próximo tema, aprenderemos sobre **las etiquetas semánticas en HTML** y su impacto en la estructura de una página web.
+En el próximo tema, aprenderemos sobre **las etiquetas de texto en HTML** y su impacto en la estructura de una página web.
 

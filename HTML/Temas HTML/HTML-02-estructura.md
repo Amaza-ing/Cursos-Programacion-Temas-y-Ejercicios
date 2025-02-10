@@ -19,7 +19,7 @@ Todo documento HTML está compuesto por las siguientes secciones:
 4. **Sección `<body>`** (Contenido visible en la página)
 
 ### **Ejemplo de estructura básica:**
-```
+```HTML
 <!DOCTYPE html>
 <html>
 <head>
