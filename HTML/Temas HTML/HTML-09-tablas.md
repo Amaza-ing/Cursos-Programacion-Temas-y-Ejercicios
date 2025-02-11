@@ -72,7 +72,7 @@ En algunas ocasiones, es necesario fusionar celdas en una tabla. Para ello, util
 Las tablas pueden personalizarse con CSS para mejorar su apariencia.
 
 ### **Ejemplo de estilos básicos con CSS:**
-```css
+```html
 <style>
     table {
         width: 100%;
