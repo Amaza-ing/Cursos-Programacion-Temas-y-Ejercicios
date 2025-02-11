@@ -143,13 +143,14 @@ Los formularios permiten seleccionar opciones predefinidas mediante listas despl
 
 ```html
 <form>
-  <label
-    ><input type="checkbox" name="interests" value="deporte" /> Deportes</label
-  >
-  <label
-    ><input type="checkbox" name="interests" value="musica" /> Música</label
-  >
-  <label><input type="checkbox" name="interests" value="cine" /> Cine</label>
+  <label>
+    <input type="checkbox" name="interests" value="deporte" /> Deportes
+  </label>
+  <label>
+    <input type="checkbox" name="interests" value="musica" /> Música
+  </label>
+  <label><input type="checkbox" name="interests" value="cine" /> Cine </label>
+
   <button type="submit">Enviar</button>
 </form>
 ```
@@ -176,9 +177,9 @@ HTML ofrece validaciones automáticas mediante atributos como `required`, `patte
   <label for="user">Usuario (mín. 5 caracteres):</label>
   <input type="text" id="user" name="user" minlength="5" required />
 
-  <label for="password"
-    >Contraseña (mín. 8 caracteres, solo letras y números):</label
-  >
+  <label for="password">
+    Contraseña (mín. 8 caracteres, solo letras y números):
+  </label>
   <input
     type="password"
     id="password"
