@@ -1,7 +1,9 @@
 # **Ejercicios - Tema 9: Tablas en HTML**
 
 ## **Instrucciones:**
-A continuación, encontrarás 5 ejercicios prácticos sobre tablas en HTML. Intenta resolverlos antes de consultar la solución.
+A continuación, encontrarás 5 ejercicios prácticos sobre tablas en HTML.
+
+Intenta resolverlos antes de consultar la solución.
 
 ---
 

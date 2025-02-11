@@ -3,6 +3,8 @@
 ## **Instrucciones:**
 A continuación, encontrarás 10 ejercicios prácticos sobre el uso de encabezados, párrafos y listas en HTML. Realiza cada uno de ellos en un editor de código y visualiza los resultados en tu navegador.
 
+Intenta resolverlos antes de consultar la solución.
+
 ---
 
 ## **Ejercicios sobre encabezados y párrafos**

@@ -1,7 +1,9 @@
 # **Ejercicios - Tema 8: Imágenes en HTML y optimización para la web**
 
 ## **Instrucciones:**
-A continuación, encontrarás 5 ejercicios prácticos sobre imágenes en HTML. Intenta resolverlos antes de consultar la solución.
+A continuación, encontrarás 5 ejercicios prácticos sobre imágenes en HTML.
+
+Intenta resolverlos antes de consultar la solución.
 
 ---
 

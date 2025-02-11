@@ -2,7 +2,9 @@
 
 ## **Instrucciones:**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre formularios en HTML. Intenta resolverlos antes de consultar la solución.
+A continuación, encontrarás 8 ejercicios prácticos sobre formularios en HTML.
+
+Intenta resolverlos antes de consultar la solución.
 
 ---
 

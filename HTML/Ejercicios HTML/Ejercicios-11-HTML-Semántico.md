@@ -1,7 +1,9 @@
 # **Ejercicios - Tema 11: HTML Semántico**
 
 ## **Instrucciones:**
-A continuación, encontrarás 5 ejercicios prácticos sobre HTML semántico. Intenta resolverlos antes de consultar la solución.
+A continuación, encontrarás 5 ejercicios prácticos sobre HTML semántico.
+
+Intenta resolverlos antes de consultar la solución.
 
 ---
 

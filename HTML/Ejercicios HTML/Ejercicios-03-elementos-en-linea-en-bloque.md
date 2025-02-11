@@ -3,6 +3,8 @@
 ## **Instrucciones:**
 A continuación, encontrarás 7 ejercicios prácticos sobre elementos en línea y en bloque en HTML. Realiza cada uno de ellos en un editor de código y visualiza los resultados en tu navegador.
 
+Intenta resolverlos antes de consultar la solución.
+
 ---
 
 ## **Ejercicio 1: Identificar elementos en bloque e inline**

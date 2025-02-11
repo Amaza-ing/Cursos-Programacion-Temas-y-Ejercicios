@@ -3,6 +3,8 @@
 ## **Instrucciones:**
 A continuación, encontrarás 5 ejercicios prácticos sobre enlaces en HTML. Realiza cada uno en un editor de código y visualiza los resultados en tu navegador.
 
+Intenta resolverlos antes de consultar la solución.
+
 ---
 
 ### **Ejercicio 1: Enlace básico**
