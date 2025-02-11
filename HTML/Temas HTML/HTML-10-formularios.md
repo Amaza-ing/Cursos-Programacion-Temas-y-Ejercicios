@@ -199,4 +199,4 @@ HTML ofrece validaciones automáticas mediante atributos como `required`, `patte
 - Usar etiquetas `<label>` para mejorar la accesibilidad.
 - Aplicar validaciones HTML antes de depender de validaciones en JavaScript.
 - Utilizar `placeholder` solo como complemento, no como reemplazo de etiquetas `<label>`.
-- Emplear `fieldset` y `legend` para agrupar campos relacionados.
+- Emplear `fieldset` para agrupar campos relacionados.
