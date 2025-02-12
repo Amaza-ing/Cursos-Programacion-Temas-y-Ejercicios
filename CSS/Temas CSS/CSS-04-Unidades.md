@@ -63,9 +63,11 @@ Las unidades relativas dependen del tamaño de otros elementos o de la pantalla.
 html {
     font-size: 16px;
 }
+
 p {
     font-size: 2em; /* 32px si el tamaño base es 16px */
 }
+
 div {
     font-size: 2rem; /* Siempre 32px, sin importar el padre */
 }
