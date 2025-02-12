@@ -7,7 +7,7 @@ Intenta resolverlos antes de consultar la solución.
 
 ---
 
-### **Ejercicio 1: Usar un selector de tipo**
+### **Ejercicio 1: Usar un selector de etiqueta**
 
 Aplica un color de fondo amarillo a todos los párrafos (`<p>`) de una página web.
 
