@@ -195,7 +195,7 @@ p {
 
 ## **Enlaces de Interés.**
 
-- Juego para practicas con los selectores CSS: [flukeout](https://flukeout.github.io/).
+- Juego para practicar con los selectores CSS: [flukeout](https://flukeout.github.io/).
 
 ---
 

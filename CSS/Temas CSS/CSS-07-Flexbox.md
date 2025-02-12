@@ -178,4 +178,11 @@ Por defecto, todos los elementos tienen `order: 0`. Un número menor se posicion
 
 ---
 
+## **Enlaces de Interés.**
+
+- Juego para practicar con Flexbox: [froggy](https://flexboxfroggy.com/#es).
+- Guía para usar Flexbox: [css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+---
+
 En el próximo tema, exploraremos **CSS Grid**, un sistema de diseño más avanzado para organizar elementos en dos dimensiones.
