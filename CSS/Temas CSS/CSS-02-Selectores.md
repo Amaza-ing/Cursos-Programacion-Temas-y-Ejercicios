@@ -138,9 +138,11 @@ La especificidad determina qué regla CSS se aplica cuando hay múltiples reglas
 p {
   color: blue; /* Baja especificidad (0, 0, 1) */
 }
+
 .highlighted {
   color: green; /* Más específica que una etiqueta (0, 1, 0) */
 }
+
 #some-id {
   color: red; /* ID tiene mayor especificidad (1, 0, 0) */
 }
