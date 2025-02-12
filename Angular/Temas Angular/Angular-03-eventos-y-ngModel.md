@@ -1,7 +1,7 @@
-# **Tema 3: Eventos y Binding Bidireccional (`ngModel`) en Angular**
+# **Tema 3: Eventos y Binding Bidireccional `[(ngModel)]` en Angular**
 
 ## **1. Introducción**
-En Angular, los eventos y el binding bidireccional (`ngModel`) son herramientas esenciales para la interacción del usuario con la aplicación.  
+En Angular, los eventos y el binding bidireccional `[(ngModel)]` son herramientas esenciales para la interacción del usuario con la aplicación.  
 Este tema cubrirá:
 - Cómo manejar eventos en Angular con `(event)`.
 - El binding bidireccional con `[(ngModel)]` para sincronizar datos entre la vista y el modelo.
@@ -12,7 +12,7 @@ Este tema cubrirá:
 Un evento en Angular ocurre cuando el usuario interactúa con la aplicación, por ejemplo:
 - Hacer clic en un botón.
 - Escribir en un campo de entrada.
-- Mover el mouse sobre un elemento.
+- Mover el ratón sobre un elemento.
 
 Angular proporciona un mecanismo para manejar estos eventos con el binding de eventos, utilizando la sintaxis `(evento)="función()"`.
 
@@ -22,10 +22,10 @@ Angular proporciona un mecanismo para manejar estos eventos con el binding de ev
 La sintaxis básica es:
 
 ```html
-<button (click)="miFuncion()">Haz clic</button>
+<button (click)="myFunction()">Haz clic</button>
 ```
 
-Cuando el usuario haga clic en el botón, se ejecutará la función `miFuncion()` en el componente.
+Cuando el usuario haga clic en el botón, se ejecutará la función `myFunction()` en el componente.
 
 ---
 
@@ -152,7 +152,6 @@ Ejemplo en `app.module.ts`:
 
 ```ts
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';  // Importar FormsModule
 
 import { AppComponent } from './app.component';
@@ -160,8 +159,7 @@ import { NgModelComponent } from './ngmodel/ngmodel.component';
 
 @NgModule({
   declarations: [AppComponent, NgModelComponent],
-  imports: [BrowserModule, FormsModule],  // Agregar FormsModule aquí
-  providers: [],
+  imports: [FormsModule],  // Agregar FormsModule aquí
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -174,8 +172,8 @@ Sin esta importación, `ngModel` no funcionará.
 ## **4. Comparación entre binding de eventos y `ngModel`**
 | **Tipo de Binding**      | **Descripción** | **Ejemplo** |
 |-------------------------|----------------|-------------|
-| **Binding de eventos (`(event)`)** | Captura eventos del usuario y ejecuta funciones en el componente. | `(click)="miFuncion()"` |
-| **Binding bidireccional (`[(ngModel)]`)** | Sincroniza el valor de una variable con el input en tiempo real. | `[(ngModel)]="variable"` |
+| **Binding de eventos `(event)`** | Captura eventos del usuario y ejecuta funciones en el componente. | `(click)="myFunction()"` |
+| **Binding bidireccional `[(ngModel)]`** | Sincroniza el valor de una variable con el input en tiempo real. | `[(ngModel)]="variable"` |
 
 ---
 

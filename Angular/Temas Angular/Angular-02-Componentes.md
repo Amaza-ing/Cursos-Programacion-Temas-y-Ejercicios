@@ -24,7 +24,7 @@ O en su versión abreviada:
 ng g c components/menu
 ```
 
-Este comando generará una nueva carpeta dentro de `src/app/components` con los siguientes archivos:
+Este comando generará una nueva carpeta dentro de `src/app/components` con los siguientes archivos (y otros que no son importantes para empezar):
 
 ```
 menu/
