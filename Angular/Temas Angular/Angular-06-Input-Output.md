@@ -202,4 +202,4 @@ export class ParentComponent {
 
 ---
 
-En el próximo tema, exploraremos el **enrutamiento en Angular** y cómo gestionar la navegación entre componentes.
+En el próximo tema, exploraremos el **constructor y el ngOnInit** y cómo influyen en el ciclo de vida del componente
