@@ -52,8 +52,8 @@ ng new my-project
 
 - `my-project`: Nombre del proyecto (puedes cambiarlo por el que prefieras).
 - Durante la creación, se te preguntará:
-  - Si deseas incluir **Angular Routing** (elige `Yes` si deseas enrutamiento en tu proyecto).
   - El tipo de estilos a usar (**CSS, SCSS, SASS, LESS**), puedes seleccionar `CSS` para comenzar.
+  - Si deseas incluir **SSR** (elige `No` a no ser que quieras Server Side Rendering).
 
 Este comando generará la estructura base de un proyecto Angular en la carpeta `my-project`.
 
@@ -89,14 +89,16 @@ Un proyecto Angular generado con `ng new` tiene la siguiente estructura de archi
 ```
 my-project/
 │── node_modules/        # Dependencias del proyecto
+│── public/              # Assets del proyecto
 │── src/                 # Código fuente del proyecto
 │   ├── app/             # Componentes y módulos principales
+│   ├── index.html       # Archivo HTML principal
 │   ├── main.ts          # Punto de entrada de la aplicación
 │   ├── styles.css       # Archivo global de estilos
-│   ├── index.html       # Archivo HTML principal
 │── angular.json         # Configuración global de Angular
 │── package.json         # Dependencias y scripts del proyecto
 │── tsconfig.json        # Configuración de TypeScript
+│── Otros ficheros       # Otros ficheros de configuración
 ```
 
 ### **Explicación breve de los archivos clave:**
