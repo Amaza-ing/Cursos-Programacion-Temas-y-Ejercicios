@@ -47,6 +47,10 @@ export class ExampleComponent {
 
 ---
 
+[![Constructor](https://img.youtube.com/vi/2YPur9wymh0/0.jpg)](https://www.youtube.com/watch?v=2YPur9wymh0&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+
+---
+
 ## **3. ¿Qué es `ngOnInit` y para qué se usa?**
 
 `ngOnInit` es un método del ciclo de vida de Angular que se ejecuta después de que el constructor ha finalizado y cuando Angular ha inicializado el componente.
@@ -88,6 +92,10 @@ export class ExampleComponent implements OnInit {
   - Asignar valores obtenidos de servicios.
   - Suscribirse a observables.
 - Se define implementando la interfaz `OnInit` y el método `ngOnInit()`.
+
+---
+
+[![ngOnInit](https://img.youtube.com/vi/FSZoekTcJn4/0.jpg)](https://www.youtube.com/watch?v=FSZoekTcJn4&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
