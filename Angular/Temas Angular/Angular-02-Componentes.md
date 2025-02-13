@@ -77,7 +77,7 @@ En Angular, podemos definir variables dentro de la clase del componente para alm
 
 Como en Angular trabajamos con TypeScript, todas las variables tienen que estar correctamente tipadas.
 
-[![Extensión Angular Language Service](https://img.youtube.com/vi/r7HrKb2-nDk/0.jpg)](https://www.youtube.com/watch?v=r7HrKb2-nDk&list=PLzA2VyZwsq__tcg5_rW6Ozp4hLYzrtXGX)
+[![Tipado de Datos en TypeScript](https://img.youtube.com/vi/r7HrKb2-nDk/0.jpg)](https://www.youtube.com/watch?v=r7HrKb2-nDk&list=PLzA2VyZwsq__tcg5_rW6Ozp4hLYzrtXGX)
 
 Ejemplo de definición de variables en el archivo `menu.component.ts`:
 
@@ -140,7 +140,7 @@ Aquí, el valor de `src` en la imagen se obtiene desde la variable `image` del c
 
 ---
 
-[![Extensión Angular Language Service](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+[![Variables en Angular](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 

@@ -59,6 +59,10 @@ En este caso, al hacer clic en el botón, se ejecuta `showMessage()`, mostrando 
 
 ---
 
+[![Eventos](https://img.youtube.com/vi/efvtZZDpixc/0.jpg)](https://www.youtube.com/watch?v=efvtZZDpixc&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+
+---
+
 ### **2.3. Pasar parámetros en eventos**
 Podemos pasar valores a la función dentro del componente.
 
@@ -166,6 +170,10 @@ export class AppModule { }
 ```
 
 Sin esta importación, `ngModel` no funcionará.
+
+---
+
+[![ngModel](https://img.youtube.com/vi/2NWc1x-VLcM/0.jpg)](https://www.youtube.com/watch?v=2NWc1x-VLcM&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
