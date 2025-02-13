@@ -47,6 +47,10 @@ En este caso:
 
 ---
 
+[![@if](https://img.youtube.com/vi/DeCvp-KUOcY/0.jpg)](https://www.youtube.com/watch?v=DeCvp-KUOcY&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+
+---
+
 ## **3. La Directiva `@for`**
 
 La directiva `@for` permite iterar sobre una lista y generar dinámicamente elementos en la vista, reemplaza a `*ngFor`, mejorando la estructura y claridad del código.
@@ -81,6 +85,10 @@ export class ControlFlujoComponent {
 En este caso:
 - Se genera dinámicamente una lista `ul` con los elementos de `items`.
 - Se usa `track` para optimizar la actualización del DOM haciendo que Angular identifique claramente a cada elemento de la lista.
+
+---
+
+[![@for](https://img.youtube.com/vi/xlM4U-cjMXA/0.jpg)](https://www.youtube.com/watch?v=xlM4U-cjMXA&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
