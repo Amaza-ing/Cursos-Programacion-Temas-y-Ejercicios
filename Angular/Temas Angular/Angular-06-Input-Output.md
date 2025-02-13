@@ -58,6 +58,10 @@ Por supuesto, se pueden pasar cualquier tipo de datos, no solamente strings. Se 
 
 ---
 
+[![@Input](https://img.youtube.com/vi/UgrlXyxxfUc/0.jpg)](https://www.youtube.com/watch?v=UgrlXyxxfUc&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+
+---
+
 ## **3. Comunicación con `@Output()`**
 
 La directiva `@Output()` permite que un componente hijo envíe datos al componente padre mediante eventos.
@@ -111,6 +115,10 @@ export class ChildComponent {
 
 ---
 
+[![@Output](https://img.youtube.com/vi/8dQ_Kt7V6Dg/0.jpg)](https://www.youtube.com/watch?v=8dQ_Kt7V6Dg&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+
+---
+
 ## **4. Comunicación con Signals `input` y `output`**
 
 En Angular 16, se introdujeron `input()` y `output()`, una alternativa más optimizada a `@Input()` y `@Output()`.
@@ -139,6 +147,8 @@ export class ChildComponent {
 ```html
 <p>{{ message() }}</p>
 ```
+
+[![input signal](https://img.youtube.com/vi/3Jg9OYIqdSA/0.jpg)](https://www.youtube.com/watch?v=3Jg9OYIqdSA&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ### **Ejemplo de `output()`**
 
@@ -180,6 +190,8 @@ export class ParentComponent {
   }
 }
 ```
+
+[![output signal](https://img.youtube.com/vi/y5qUAE3ruP8/0.jpg)](https://www.youtube.com/watch?v=y5qUAE3ruP8&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
