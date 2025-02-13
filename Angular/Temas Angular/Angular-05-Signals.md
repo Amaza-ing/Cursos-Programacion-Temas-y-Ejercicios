@@ -34,10 +34,15 @@ export class CounterComponent {
 }
 ```
 
+```html
+<p>{{ count() }}</p>
+```
+
 En este ejemplo:
 - `signal(0)` crea un valor reactivo con un estado inicial de `0`.
 - `.set()` actualiza el valor de la Signal.
 - `this.count()` permite acceder al valor actual de la Signal.
+- `{{ count() }}` muestra el valor en el documento HTML
 
 ---
 
@@ -108,34 +113,7 @@ Cada vez que `message` cambia, el efecto se ejecuta automáticamente.
 
 ---
 
-## **5. Uso de Signals en Componentes Angular**
-
-Las Signals pueden integrarse fácilmente dentro de los componentes, eliminando la necesidad de `@Input` y `@Output` en muchos casos.
-
-Ejemplo:
-
-```ts
-import { Component, signal } from '@angular/core';
-
-@Component({
-  selector: 'app-contador',
-  template: `
-    <p>Contador: {{ count() }}</p>
-    <button (click)="increment()">Incrementar</button>
-  `
-})
-export class ContadorComponent {
-  count = signal(0);
-
-  increment() {
-    this.count.update(c => c + 1);
-  }
-}
-```
-
----
-
-## **6. Buenas prácticas y recomendaciones**
+## **5. Buenas prácticas y recomendaciones**
 
 1. **Usar Signals para datos que cambian frecuentemente** en la UI (por ejemplo, contadores, formularios dinámicos).
 2. **No mezclar Signals y RxJS sin necesidad**. Usa uno u otro dependiendo del caso de uso.
@@ -144,7 +122,7 @@ export class ContadorComponent {
 
 ---
 
-## **7. Conclusión**
+## **6. Conclusión**
 
 - Las **Signals** en Angular 19 ofrecen un modelo de reactividad más eficiente y claro.
 - Son una alternativa ligera a `RxJS` para gestionar el estado.
@@ -153,4 +131,4 @@ export class ContadorComponent {
 
 ---
 
-En el próximo tema, exploraremos **el enrutamiento en Angular 19 y cómo gestionar la navegación entre páginas.**
+En el próximo tema, exploraremos **la comunicación entre componentes padre-hijo con input y output**.

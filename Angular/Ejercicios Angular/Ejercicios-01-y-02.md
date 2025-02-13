@@ -2,59 +2,167 @@
 
 ## **Ejercicios del Tema 1: Introducción a Angular y Configuración del Entorno**
 
+A continuación, encontrarás 10 ejercicios prácticos sobre los aspectos básicos de Angular.
+
+Intenta resolverlos antes de consultar la solución.
+
 ### **Ejercicio 1: Instalación de Angular CLI**
 Instala Angular CLI en tu sistema y verifica la instalación con los comandos adecuados.
+
+<details><summary>Mostrar solución</summary>
+
+```sh
+npm install -g @angular/cli
+ng version
+```
+
+</details>
 
 ---
 
 ### **Ejercicio 2: Creación de un nuevo proyecto Angular**
 Crea un nuevo proyecto en Angular llamado `mi-proyecto-angular` utilizando Angular CLI.
 
+<details><summary>Mostrar solución</summary>
+
+```sh
+ng new mi-proyecto-angular
+```
+
+</details>
+
 ---
 
 ### **Ejercicio 3: Estructura del proyecto**
-Una vez creado el proyecto, navega por su estructura de archivos y explica brevemente la función de cada uno de los siguientes archivos:
+Explica brevemente la función de los siguientes archivos:
+
 - `src/app/app.component.ts`
 - `src/main.ts`
 - `angular.json`
 - `package.json`
+<details><summary>Mostrar solución</summary>
+
+- `src/app/app.component.ts`: Define la lógica del componente principal de la aplicación.
+- `src/main.ts`: Punto de entrada de la aplicación.
+- `angular.json`: Configuración del proyecto Angular.
+- `package.json`: Lista de dependencias y scripts del proyecto.
+
+</details>
 
 ---
 
 ### **Ejercicio 4: Servidor de desarrollo**
-Inicia el servidor de desarrollo con el comando adecuado y accede a la aplicación en el navegador. Explica qué ocurre cuando haces un cambio en el archivo `app.component.html`.
+Inicia el servidor de desarrollo y explica qué ocurre cuando cambias `app.component.html`.
+
+<details><summary>Mostrar solución</summary>
+
+```sh
+ng serve
+```
+
+Cualquier cambio en `app.component.html` se reflejará automáticamente en el navegador sin necesidad de recargar la página.
+
+</details>
 
 ---
 
 ### **Ejercicio 5: Modificación del template inicial**
-Modifica el contenido del archivo `app.component.html` para que muestre un mensaje de bienvenida personalizado. Guarda los cambios y verifica que se reflejan en el navegador.
+Modifica `app.component.html` para mostrar un mensaje personalizado.
+
+<details><summary>Mostrar solución</summary>
+
+```html
+<h1>Bienvenido a mi aplicación en Angular</h1>
+```
+
+</details>
 
 ---
 
 ## **Ejercicios del Tema 2: Componentes en Angular**
 
 ### **Ejercicio 6: Creación de un componente**
-Crea un nuevo componente llamado `header` dentro de la carpeta `components`. Explica qué archivos se generan automáticamente y qué función tiene cada uno.
+Crea un componente `header` dentro de la carpeta `components`.
+
+<details><summary>Mostrar solución</summary>
+
+```sh
+ng generate component components/header
+```
+
+Este comando genera los archivos necesarios: `.ts`, `.html`, `.css` y `.spec.ts`.
+
+</details>
 
 ---
 
 ### **Ejercicio 7: Uso de un componente**
-Añade el componente `header` dentro del archivo `app.component.html` para que se muestre en la aplicación. ¿Qué etiqueta debes usar para incluirlo en la plantilla?
+Añade el componente `header` dentro de `app.component.html`.
+
+<details><summary>Mostrar solución</summary>
+
+```html
+<app-header></app-header>
+```
+
+</details>
 
 ---
 
 ### **Ejercicio 8: Interpolación**
-Dentro del componente `header`, define una variable llamada `title` con el valor `"Bienvenido a mi aplicación"`. Muestra el valor de esta variable en el `header.component.html` usando interpolación.
+Define una variable `title` en el componente `header` y muéstrala en su plantilla.
+
+<details><summary>Mostrar solución</summary>
+
+```ts
+export class HeaderComponent {
+  title = 'Bienvenido a mi aplicación';
+}
+```
+
+```html
+<h1>{{ title }}</h1>
+```
+
+</details>
 
 ---
 
 ### **Ejercicio 9: Binding de propiedades**
-Crea un elemento input HTML y haz que su atributo `placeholder` obtenga su valor de una variable.
+Crea un input con `placeholder` dinámico basado en una variable.
+
+<details><summary>Mostrar solución</summary>
+
+```ts
+export class HeaderComponent {
+  placeholderText = 'Introduce tu nombre';
+}
+```
+
+```html
+<input [placeholder]="placeholderText">
+```
+
+</details>
 
 ---
 
 ### **Ejercicio 10: Componentes dentro de componentes**
-Crea un componente `footer` y úsalo en el componente raíz.
-El componente `footer` debe contener a su vez otros 3 componentes.
-Aplica el HTML y estilos que consideres.
+Crea un componente `footer` que contenga otros tres componentes internos.
 
+<details><summary>Mostrar solución</summary>
+
+```sh
+ng generate component components/footer
+ng generate component components/footer/info
+ng generate component components/footer/social
+ng generate component components/footer/contact
+```
+
+```html
+<app-info></app-info>
+<app-social></app-social>
+<app-contact></app-contact>
+```
+
+</details>
