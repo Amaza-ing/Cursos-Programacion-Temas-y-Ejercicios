@@ -55,8 +55,18 @@ import { MenuComponent } from "./components/menu/menu.component";
 })
 ```
 
-Recuerda que el selector del componente está definido en el archivo `.ts` dentro de `@Component({ selector: 'app-menu' })`.
+El selector del componente está definido en el archivo `menu.component.ts`
 
+```ts
+@Component({
+  selector: 'app-menu',
+  ...
+})
+```
+
+---
+
+[![Componentes](https://img.youtube.com/vi/K_6ixeC7GbM/0.jpg)](https://www.youtube.com/watch?v=K_6ixeC7GbM&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
@@ -64,6 +74,10 @@ Recuerda que el selector del componente está definido en el archivo `.ts` dentr
 
 ### **Variables en un componente**
 En Angular, podemos definir variables dentro de la clase del componente para almacenar y manipular datos. Estas variables pueden ser utilizadas en la plantilla para mostrar información o reaccionar a eventos.
+
+Como en Angular trabajamos con TypeScript, todas las variables tienen que estar correctamente tipadas.
+
+[![Extensión Angular Language Service](https://img.youtube.com/vi/r7HrKb2-nDk/0.jpg)](https://www.youtube.com/watch?v=r7HrKb2-nDk&list=PLzA2VyZwsq__tcg5_rW6Ozp4hLYzrtXGX)
 
 Ejemplo de definición de variables en el archivo `menu.component.ts`:
 
@@ -126,4 +140,8 @@ Aquí, el valor de `src` en la imagen se obtiene desde la variable `image` del c
 
 ---
 
-En el siguiente tema veremos cómo trabajar con eventos y con data binding bidireccional usando ngModel.
+[![Extensión Angular Language Service](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+
+---
+
+En el siguiente tema veremos cómo trabajar con eventos y con data binding bidireccional usando `ngModel`.
