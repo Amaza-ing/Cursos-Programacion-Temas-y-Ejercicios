@@ -50,8 +50,6 @@ Un flujo de trabajo típico en Git sigue estos pasos:
 
 Si quieres subir tus cambios a un repositorio remoto como github, necesitas crearte una cuenta y vincularla con tu ordenador.
 
-
-
 ### **1. Crear y modificar archivos**
 
 - Crea una carpeta. Ej: `mi_proyecto`.
@@ -77,6 +75,16 @@ git push -u origin master
 ---
 
 [![github & git push](https://img.youtube.com/vi/pp0aC7GvnB0/0.jpg)](https://www.youtube.com/watch?v=pp0aC7GvnB0&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+
+---
+
+### **Clave SSH**
+
+Otra manera de vincular tu equipo local con Github es mediante la creación de una clave SSH. [En la documentación oficial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) puedes ver cómo hacerlo facilmente.
+
+---
+
+[![Clave SSH](https://img.youtube.com/vi/_vlrPpxs2Go/0.jpg)](https://www.youtube.com/watch?v=_vlrPpxs2Go&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
 ---
 
