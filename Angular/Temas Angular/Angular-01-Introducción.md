@@ -26,7 +26,7 @@ Para instalar Angular CLI globalmente en tu sistema, ejecuta el siguiente comand
 npm install -g @angular/cli
 ```
 
-Nota: Se requiere tener instalado Node.js y npm. Puedes descargarlo desde [nodejs.org](https://nodejs.org/).
+> Nota: Se requiere tener instalado Node.js y npm. Puedes descargarlo desde [nodejs.org](https://nodejs.org/).
 
 ## **3. Verificación de la instalación**
 

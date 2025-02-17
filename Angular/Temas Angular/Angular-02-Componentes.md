@@ -138,6 +138,8 @@ export class MenuComponent {
 
 Aquí, el valor de `src` en la imagen se obtiene desde la variable `image` del componente.
 
+> Nota: Las imágenes y otros assets se suelen guardar en la carpeta `public` así que las rutas empiezan desde esta carpeta. No es correcto escribir la ruta como `public/assets/imagen.png` hay que escribirla como `assets/imagen.png`.
+
 ---
 
 [![Variables en Angular](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)

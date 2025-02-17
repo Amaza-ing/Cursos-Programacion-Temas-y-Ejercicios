@@ -68,7 +68,7 @@ Para eliminar todos los stashes almacenados:
 ```bash
 git stash clear
 ```
-**Nota:** Esta operación no se puede deshacer.
+> **Nota:** Esta operación no se puede deshacer.
 
 ---
 
