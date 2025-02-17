@@ -118,7 +118,10 @@ Aquí:
 ## **3. Binding bidireccional con `ngModel`**
 El **binding bidireccional** permite que una variable en el componente y un campo en la vista se mantengan sincronizados automáticamente.
 
-Para lograrlo, usamos la directiva `[(ngModel)]`, que combina el binding de propiedad y el binding de eventos.
+Para lograrlo, usamos la directiva `[(ngModel)]`, que combina el binding de propiedad y el binding de eventos. Por eso usa tanto los corchetes [binding de propiedad] como los paréntesis (binding de eventos).
+
+> Nota: Esta sintaxis es conocida como: Banana in a box.
+
 
 **Ejemplo básico en `ngmodel.component.ts`**:
 
