@@ -102,8 +102,8 @@ Ejemplo en `eventos.component.ts`:
 export class EventosComponent {
   mensaje: string = '';
 
-  updateText(evento: Event) {
-    this.mensaje = (evento.target as HTMLInputElement).value;
+  updateText(e: Event) {
+    this.mensaje = (e.target as HTMLInputElement).value;
   }
 }
 ```
