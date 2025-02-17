@@ -1,4 +1,4 @@
-# **Tema 11: Uso de accesibilidad en HTML**
+# **Tema 12: Uso de accesibilidad en HTML**
 
 ## **1. Introducción**
 

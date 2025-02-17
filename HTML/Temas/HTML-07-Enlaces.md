@@ -1,4 +1,4 @@
-# **Tema 6: Enlaces en HTML y navegación entre páginas**
+# **Tema 7: Enlaces en HTML y navegación entre páginas**
 
 ## **1. Introducción**
 Los enlaces en HTML permiten conectar páginas web entre sí, facilitando la navegación dentro de un sitio web o hacia otros sitios externos. Se crean con la etiqueta `<a>` y pueden contener distintos atributos para definir su comportamiento.
