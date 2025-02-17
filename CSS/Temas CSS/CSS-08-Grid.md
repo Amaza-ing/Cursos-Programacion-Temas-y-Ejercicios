@@ -146,11 +146,11 @@ Permite definir áreas dentro de la cuadrícula y asignar elementos a ellas.
 
 ## **8. Buenas prácticas con CSS Grid**
 
-✔ Usar `fr` para crear diseños flexibles sin necesidad de píxeles fijos.
-✔ Evitar el uso excesivo de `grid-template-areas` para estructuras sencillas.
-✔ Aplicar `gap` en lugar de márgenes para espaciar elementos.
-✔ Usar `repeat()` cuando se requieran múltiples columnas o filas de igual tamaño.
-✔ Combinar CSS Grid con Flexbox según la necesidad del diseño.
+- Usar `fr` para crear diseños flexibles sin necesidad de píxeles fijos.
+- Evitar el uso excesivo de `grid-template-areas` para estructuras sencillas.
+- Aplicar `gap` en lugar de márgenes para espaciar elementos.
+- Usar `repeat()` cuando se requieran múltiples columnas o filas de igual tamaño.
+- Combinar CSS Grid con Flexbox según la necesidad del diseño.
 
 ---
 
