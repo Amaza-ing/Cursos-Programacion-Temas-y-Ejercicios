@@ -191,7 +191,7 @@ Sin esta importación, `ngModel` no funcionará.
 ## **5. A Resaltar**
 - **Los Eventos en Angular** permiten ejecutar funciones en respuesta a acciones del usuario.
 - Podemos usar `$event` para capturar información del evento.
-- **Binding bidireccional con `ngModel`** mantiene sincronizados los valores de variables y los inputs.
+- Usar **binding bidireccional con `ngModel`** mantiene sincronizados los valores de variables y los inputs.
 - Para usar `ngModel`, es necesario importar `FormsModule` en el componente que lo utilice.
 
 ---
