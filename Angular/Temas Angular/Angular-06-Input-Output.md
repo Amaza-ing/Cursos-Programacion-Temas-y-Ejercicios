@@ -17,41 +17,45 @@ La directiva `@Input()` permite que un componente hijo reciba datos desde su com
 
 ### **Ejemplo de `@Input()`**
 
-#### **Archivo: `parent.component.ts`**
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-parent',
-  templateUrl: './parent.component.html'
-})
-export class ParentComponent {
-  parentMsg: string = 'Hola desde el componente padre';
-}
-```
-
-#### **Archivo: `parent.component.html`**
-```html
-<app-child [message]="parentMsg"></app-child>
-```
-
 #### **Archivo: `child.component.ts`**
+
 ```ts
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html'
+  selector: "app-child",
+  templateUrl: "./child.component.html",
 })
 export class ChildComponent {
   @Input()
-  message: string = '';
+  message: string = "";
 }
 ```
 
 #### **Archivo: `child.component.html`**
+
 ```html
 <p>Mensaje recibido: {{ message }}</p>
+```
+
+#### **Archivo: `parent.component.ts`**
+
+```ts
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-parent",
+  templateUrl: "./parent.component.html",
+})
+export class ParentComponent {
+  parentMsg: string = "Hola desde el componente padre";
+}
+```
+
+#### **Archivo: `parent.component.html`**
+
+```html
+<app-child [message]="parentMsg"></app-child>
 ```
 
 Por supuesto, se pueden pasar cualquier tipo de datos, no solamente strings. Se pueden pasar tambien objetos y cualquier otro tipo de dato.
@@ -68,17 +72,42 @@ La directiva `@Output()` permite que un componente hijo envíe datos al componen
 
 ### **Ejemplo de `@Output()`**
 
-#### **Archivo: `parent.component.ts`**
+#### **Archivo: `child.component.ts`**
+
 ```ts
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-parent',
-  templateUrl: './parent.component.html'
+  selector: "app-child",
+  templateUrl: "./child.component.html",
+})
+export class ChildComponent {
+  @Output() emittedMsg = new EventEmitter<string>();
+
+  sendMsg() {
+    this.emittedMsg.emit("Mensaje desde el hijo");
+  }
+}
+```
+
+#### **Archivo: `child.component.html`**
+
+```html
+<button (click)="sendMsg()">Enviar mensaje al padre</button>
+```
+
+#### **Archivo: `parent.component.ts`**
+
+```ts
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-parent",
+  templateUrl: "./parent.component.html",
 })
 export class ParentComponent {
-  receivedMsg: string = '';
-  
+  receivedMsg: string = "";
+
   updateMsg(newMsg: string) {
     this.receivedMsg = newMsg;
   }
@@ -86,31 +115,10 @@ export class ParentComponent {
 ```
 
 #### **Archivo: `parent.component.html`**
+
 ```html
 <app-child (emittedMsg)="updateMsg($event)"></app-child>
 <p>Mensaje recibido del hijo: {{ receivedMsg }}</p>
-```
-
-#### **Archivo: `child.component.ts`**
-```ts
-import { Component, EventEmitter, Output } from '@angular/core';
-
-@Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html'
-})
-export class ChildComponent {
-  @Output() emittedMsg = new EventEmitter<string>();
-
-  sendMsg() {
-    this.emittedMsg.emit('Mensaje desde el hijo');
-  }
-}
-```
-
-#### **Archivo: `child.component.html`**
-```html
-<button (click)="sendMsg()">Enviar mensaje al padre</button>
 ```
 
 ---
@@ -126,24 +134,27 @@ En Angular 16, se introdujeron `input()` y `output()`, una alternativa más opti
 ### **Ejemplo de `input()`**
 
 #### **Archivo: `parent.component.html`**
+
 ```html
-<app-child [message]="'Hola desde el padre con Signals'" ></app-child>
+<app-child [message]="'Hola desde el padre con Signals'"></app-child>
 ```
 
 #### **Archivo: `child.component.ts`**
+
 ```ts
-import { Component, input } from '@angular/core';
+import { Component, input } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html'
+  selector: "app-child",
+  templateUrl: "./child.component.html",
 })
 export class ChildComponent {
-  message = input('');
+  message = input("");
 }
 ```
 
 #### **Archivo: `child.component.html`**
+
 ```html
 <p>{{ message() }}</p>
 ```
@@ -153,38 +164,41 @@ export class ChildComponent {
 ### **Ejemplo de `output()`**
 
 #### **Archivo: `child.component.ts`**
+
 ```ts
-import { Component, output } from '@angular/core';
+import { Component, output } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html'
+  selector: "app-child",
+  templateUrl: "./child.component.html",
 })
 export class ChildComponent {
   emittedMsg = output<string>();
 
   sendMsg() {
-    this.emittedMsg.emit('Mensaje desde el hijo con Signals');
+    this.emittedMsg.emit("Mensaje desde el hijo con Signals");
   }
 }
 ```
 
 #### **Archivo: `parent.component.html`**
+
 ```html
 <app-child (emittedMsg)="updateMsg($event)"></app-child>
 ```
 
 #### **Archivo: `parent.component.ts`**
+
 ```ts
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-parent',
-  templateUrl: './parent.component.html'
+  selector: "app-parent",
+  templateUrl: "./parent.component.html",
 })
 export class ParentComponent {
-  receivedMsg: string = '';
-  
+  receivedMsg: string = "";
+
   updateMsg(newMsg: string) {
     this.receivedMsg = newMsg;
   }
@@ -197,12 +211,12 @@ export class ParentComponent {
 
 ## **5. Comparación entre `@Input/@Output` y `input()/output()`**
 
-| **Característica** | **@Input/@Output** | **input()/output()** |
-|-------------------|------------------|------------------|
-| Forma de declarar | Decoradores en la clase | Variables dentro de la clase |
-| Reactividad | No reactivo por defecto | Reactivo automáticamente |
-| Facilidad de uso | Más conocido y compatible | Más eficiente en rendimiento |
-| Requiere `EventEmitter` | Sí | No |
+| **Característica**      | **@Input/@Output**        | **input()/output()**         |
+| ----------------------- | ------------------------- | ---------------------------- |
+| Forma de declarar       | Decoradores en la clase   | Variables dentro de la clase |
+| Reactividad             | No reactivo por defecto   | Reactivo automáticamente     |
+| Facilidad de uso        | Más conocido y compatible | Más eficiente en rendimiento |
+| Requiere `EventEmitter` | Sí                        | No                           |
 
 ---
 
