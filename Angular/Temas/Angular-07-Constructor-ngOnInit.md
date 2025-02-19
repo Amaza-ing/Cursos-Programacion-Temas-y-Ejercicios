@@ -117,6 +117,8 @@ Debes usar `ngOnInit` en lugar del constructor cuando:
 - Debes hacer llamadas a servicios o peticiones HTTP.
 - Requieres lógica que dependa de la inyección de dependencias.
 
+Esto se suele utilizar muy a menudo en conjunto con los servicios. Hablaremos de los servicios más adelante en el tema 13.
+
 Ejemplo con servicio:
 
 #### **Archivo: `example.component.ts`**
