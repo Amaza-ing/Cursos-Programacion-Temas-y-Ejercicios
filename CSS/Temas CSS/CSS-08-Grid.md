@@ -156,4 +156,10 @@ Permite definir áreas dentro de la cuadrícula y asignar elementos a ellas.
 
 ---
 
+## **Enlaces de Interés.**
+
+- Juego para practicar con CSS Grid: [Grid Garden](https://cssgridgarden.com/#es).
+
+---
+
 En el próximo tema, exploraremos **animaciones y transiciones en CSS**, para agregar dinamismo a los elementos de una página web.
