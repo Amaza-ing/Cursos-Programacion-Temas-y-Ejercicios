@@ -48,7 +48,9 @@ Ejemplo con fracciones:
 
 ---
 
-## **4. Espaciado entre elementos (`gap`)**
+## **4. Repeat y espaciado entre elementos (`gap`)**
+
+También se pueden describir el número de filas y columnas usando `repeat(número, tamaño)`.
 
 La propiedad `gap` define el espacio entre filas y columnas.
 
@@ -91,7 +93,7 @@ Atajos:
 
 ## **6. Alineación en CSS Grid**
 
-CSS Grid permite alinear elementos dentro de sus celdas con las propiedades:
+CSS Grid permite alinear elementos dentro de sus celdas con las propiedades (Los elementos deben tener algún tamaño para poder observar el posicionamiento):
 
 - `justify-items`: Alinea los elementos en el eje horizontal
 - `align-items`: Alinea los elementos en el eje vertical
