@@ -24,6 +24,8 @@ La directiva `ngClass` se utiliza en plantillas HTML para aplicar clases CSS de 
 
 ## **3. Diferentes Formas de Usar `ngClass`**
 
+Para usar ngClass debemos añadirlo a los imports: `imports: [NgClass]`
+
 ### **3.1. Uso de `ngClass` con una cadena de texto**
 
 Se puede asignar una clase CSS directamente desde el componente.
@@ -32,9 +34,11 @@ Se puede asignar una clase CSS directamente desde el componente.
 
 ```ts
 import { Component } from "@angular/core";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: "app-example",
+  imports: [NgClass],
   templateUrl: "./example.component.html",
   styleUrls: ["./example.component.css"],
 })
