@@ -68,6 +68,20 @@ export class FormComponent {
 </form>
 ```
 
+### **3.1. Limpiar los campos al enviar el formulario**
+
+Para reestablecer los campos podemos usar el método `reset()` de los formularios reactivos. De este modo, cuando se envíe el formulario desaparecerá lo que el usuario haya escrito.
+
+> Nota: Si reseteas el formulario hazlo en último lugar, después de aplicar el resto de la lógica o perderás los datos.
+
+```ts
+  submitForm() {
+    console.log("Datos del formulario:", this.userForm.value);
+    
+    this.userForm.reset();
+  }
+```
+
 ---
 
 [![Formularios Reactivos](https://img.youtube.com/vi/YhmdLiX1RE8/0.jpg)](https://www.youtube.com/watch?v=YhmdLiX1RE8&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
@@ -113,6 +127,7 @@ export class FormComponent {
 ```
 
 #### **Archivo: `form.component.css`**
+
 ```css
 .field-error {
   color: red;
