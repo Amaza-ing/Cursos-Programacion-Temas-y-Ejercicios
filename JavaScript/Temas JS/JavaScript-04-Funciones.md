@@ -171,7 +171,12 @@ Permiten pasar un número indefinido de argumentos a una función:
 
 ```js
 function sumAll(...numbers) {
-  return numbers.reduce((acc, num) => acc + num, 0); // Suma todos los números
+  let result = 0;
+
+  for (number of numbers) {
+    result += number;
+  }
+  return result;
 }
 
 console.log(sumAll(1, 2, 3, 4)); // Salida: 10
