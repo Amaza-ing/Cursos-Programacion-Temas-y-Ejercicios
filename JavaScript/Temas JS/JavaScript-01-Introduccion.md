@@ -135,7 +135,187 @@ const user = {
 };
 ```
 
-### **5.3. Operadores básicos**
+### **5.3 Strings en JavaScript**
+
+Un **string** en JavaScript es una secuencia de caracteres utilizada para representar texto. Los strings son uno de los tipos de datos primitivos más utilizados y existen diversas maneras de crearlos.
+
+---
+
+### **Formas de crear Strings**
+
+#### **1. Uso de comillas simples (`'`)**
+
+Permite crear un string simple encerrando el texto entre comillas simples.
+
+```js
+const singleQuoteString = "Hola, mundo";
+console.log(singleQuoteString); // Salida: Hola, mundo
+```
+
+**Ventajas:**
+
+- Sencillo y directo.
+
+**Desventajas:**
+
+- Si el texto contiene apóstrofes, es necesario escaparlos con `\`.
+
+```js
+const escapedString = 'No es posible' hacerlo así';
+```
+
+```js
+const escapedString = "Hay que hacerlo' así";
+console.log(escapedString); // Salida: Hay que hacerlo' así
+```
+
+---
+
+#### **2. Uso de comillas dobles (`"`)**
+
+Similar a las comillas simples, pero usando comillas dobles.
+
+```js
+const doubleQuoteString = "Hola, mundo";
+console.log(doubleQuoteString); // Salida: Hola, mundo
+```
+
+**Ventajas:**
+
+- Útil cuando el texto contiene comillas simples.
+
+**Desventajas:**
+
+- Si el texto contiene comillas dobles, se deben escapar con `\`.
+
+```js
+const escapedDouble = 'Ella dijo: "Hola"';
+console.log(escapedDouble); // Salida: Ella dijo: "Hola"
+```
+
+---
+
+#### **3. Uso de backticks (Template Literals) `` ` ``**
+
+Introducidos en ES6, los **Template Literals** permiten crear strings avanzados.
+
+```js
+const templateLiteral = `Hola, mundo`;
+console.log(templateLiteral); // Salida: Hola, mundo
+```
+
+**Ventajas:**
+
+- Permite interpolación de variables usando `${}`.
+- Soporta múltiples líneas sin necesidad de caracteres especiales.
+
+#### **Interpolación de variables:**
+
+```js
+const name = "Ana";
+const greeting = `Hola, ${name}`;
+console.log(greeting); // Salida: Hola, Ana
+```
+
+#### **Multilínea:**
+
+```js
+const multilineString = `Esto es una línea.
+Y esta es otra línea.`;
+
+console.log(multilineString);
+/* Salida:
+Esto es una línea.
+Y esta es otra línea.
+*/
+```
+
+---
+
+#### **Comparativa entre las formas de crear Strings**
+
+| Método                 | Interpolación | Multilínea | Necesita escape |
+| ---------------------- | ------------- | ---------- | --------------- |
+| Comillas simples (`'`) | ❌            | ❌         | Sí              |
+| Comillas dobles (`"`)  | ❌            | ❌         | Sí              |
+| Backticks (`` ` ``)    | ✅            | ✅         | No              |
+
+**Recomendación:**
+
+- Usa **Template Literals** para casos que requieran interpolación o multilínea.
+- Usa comillas simples o dobles para strings simples según el contenido.
+
+---
+
+### **Concatenación**
+
+- Se pueden concatenar varios strings **Usando `+`**:
+
+```js
+const firstName = "Laura";
+const lastName = "García";
+const fullName = firstName + " " + lastName;
+console.log(fullName); // Salida: Laura García
+```
+
+- **Usando Template Literals**:
+
+```js
+const fullNameTemplate = `${firstName} ${lastName}`;
+console.log(fullNameTemplate); // Salida: Laura García
+```
+
+---
+
+#### **Métodos útiles para Strings**
+
+Hablaremos de las funciones más adelante, pero debemos conocer algunos métodos útiles y fáciles de utilizar con strings.
+
+Cualquier variable de tipo string que creemos puede utilizar estos métodos usando la sintaxis del punto "." `variableName.method()`.
+
+---
+
+#### **Métodos comunes**
+
+- `length`: Retorna la longitud del string.
+
+  ```js
+  const text = "Hola";
+  console.log(text.length); // Salida: 4
+  ```
+
+- `toUpperCase() / toLowerCase()`: Convierte a mayúsculas o minúsculas.
+
+  ```js
+  console.log(text.toUpperCase()); // Salida: HOLA
+  console.log(text.toLowerCase()); // Salida: hola
+  ```
+
+- `includes()`: Verifica si un texto contiene una subcadena.
+
+  ```js
+  console.log(text.includes("la")); // Salida: true
+  ```
+
+- `replace()`: Reemplaza una subcadena por otra.
+
+  ```js
+  console.log(text.replace("Hola", "Adiós")); // Salida: Adiós
+  ```
+
+- `trim()`: Elimina espacios al inicio y al final.
+  ```js
+  const spaced = "  Hola  ";
+  console.log(spaced.trim()); // Salida: Hola
+  ```
+
+---
+
+JavaScript ofrece múltiples maneras de crear y manipular strings. Elegir el método adecuado depende del contexto y la necesidad de interpolación o formato. Con los **Template Literals**, la creación de strings dinámicos y multilínea es más sencilla y clara.
+
+---
+
+### **5.4. Operadores básicos**
 
 Se pueden realizar operaciones básicas matemáticas y lógicas fácilmente usando operadores.
 
@@ -169,7 +349,7 @@ let num2 = 2;
 const result = num1 % num2; // result = 1
 ```
 
-### **5.4. Estructuras de control**
+### **5.5. Estructuras de control**
 
 En los siguientes temas profundizaremos en estos conceptos. Pero en esencia, cuando escribimos nuestro código podemos decidir si se ejecuta una linea u otra, o ninguna en absoluto mediante una estructura de control de flujo condicional. También podemos decidir repetir bloques de código tantas veces como queramos mediante el uso de bucles.
 
