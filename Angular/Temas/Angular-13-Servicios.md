@@ -131,7 +131,7 @@ Aquí se inyecta el servicio directamente en el constructor.
 
 ---
 
-## **5. Mostrar Datos en la Plantilla con `@for`**
+## **5. Mostrar Datos en el template (código HTML) con `@for`**
 
 #### **Archivo: `user.component.html`**
 
@@ -178,7 +178,7 @@ Aquí se usa:
 - **Los servicios** permiten compartir datos y lógica entre componentes.
 - **Los signals** en Angular facilitan la reactividad sin depender de `RxJS`.
 - **La inyección de dependencias** simplifica el acceso a los servicios en toda la aplicación.
-- **El uso de `@for` y `@if`** en las plantillas hace que el código sea más limpio y eficiente.
+- **El uso de `@for` y `@if`** en el template hace que el código sea más limpio y eficiente.
 
 ---
 
