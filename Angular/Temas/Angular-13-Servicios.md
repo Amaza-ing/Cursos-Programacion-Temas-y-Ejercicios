@@ -23,6 +23,20 @@ Los servicios en Angular se pueden definir como **standalone** (`providedIn: 'ro
 
 ## **3. Creación de un Servicio en Angular**
 
+Para generar un servicio en nuestro proyecto de Angular tenemos que ejecutar el siguiente comando:
+
+```sh
+ng generate service services/user
+```
+
+O en su versión resumida:
+
+```sh
+ng g s services/user
+```
+
+Esto creará un fichero `user.service.ts` dentro de la carpeta `services`, si la carpeta `services` no existe la creará también.
+
 ### **3.1. Definir un Servicio**
 
 #### **Archivo: `user.service.ts`**
@@ -66,22 +80,30 @@ En este servicio:
 También se puede trabajar con signals dentro de los servicios si queremos jugar con la reactividad.
 
 #### **Archivo: `user.service.ts`**
-```ts
-import { Injectable, signal } from '@angular/core';
 
-@Injectable({ providedIn: 'root' })
+```ts
+import { Injectable, signal } from "@angular/core";
+
+@Injectable({ providedIn: "root" })
 export class UserService {
   users = signal([
-    { id: 1, name: 'Juan', active: true },
-    { id: 2, name: 'Ana', active: false }
+    { id: 1, name: "Juan", active: true },
+    { id: 2, name: "Ana", active: false },
   ]);
 
   addUser(name: string) {
-    this.users.update(users => [...users, { id: users.length + 1, name, active: true }]);
+    this.users.update((users) => [
+      ...users,
+      { id: users.length + 1, name, active: true },
+    ]);
   }
 
   toggleActive(id: number) {
-    this.users.update(users => users.map(user => user.id === id ? { ...user, active: !user.active } : user));
+    this.users.update((users) =>
+      users.map((user) =>
+        user.id === id ? { ...user, active: !user.active } : user
+      )
+    );
   }
 }
 ```
