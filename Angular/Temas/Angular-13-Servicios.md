@@ -35,7 +35,7 @@ O en su versión resumida:
 ng g s services/user
 ```
 
-Esto creará un fichero `user.service.ts` dentro de la carpeta `services`, si la carpeta `services` no existe la creará también.
+Esto creará un fichero `user.service.ts` dentro de la carpeta `services`. Si la carpeta `services` no existe la creará también.
 
 ### **3.1. Definir un Servicio**
 
