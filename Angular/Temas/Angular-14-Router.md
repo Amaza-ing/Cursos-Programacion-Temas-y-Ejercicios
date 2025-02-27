@@ -67,9 +67,18 @@ import { Component } from "@angular/core";
 export class AboutComponent {}
 ```
 
-Para que estas páginas se rendericen necesitamos usar el componente `<router-outlet>`.
+Para que estas páginas se rendericen necesitamos usar el componente `<router-outlet>` y añadir `RouterOutlet` a los imports.
 
 Este se encontrará habitualmente en el componente raíz `app.component.html`. Y normalmente es lo único que hay en el html del componente raíz.
+
+#### **Archivo: `app.component.ts`**
+
+```ts
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+})
+```
 
 #### **Archivo: `app.component.html`**
 
@@ -94,6 +103,7 @@ Angular proporciona `RouterLink` para crear estos enlaces y navegar entre págin
 Para usar `RouterLink` tenemos que importarlo en el componente donde queramos usarlo.
 
 #### **Archivo: `header.component.ts`**
+
 ```ts
 import { RouterLink } from '@angular/router';
 
