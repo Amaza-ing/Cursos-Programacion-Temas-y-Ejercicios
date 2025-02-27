@@ -22,21 +22,21 @@ Este curso está estructurado en **módulos prácticos**, cada uno con ejemplos 
 
 Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes navegar por los temas en el directorio del curso:
 
-| 📚 Tema | Descripción |
-|--------|------------|
-| 🏗️ [Tema 1: Introducción a HTML](Temas/HTML-01-Introduccion.md) | Conceptos básicos y estructura de un documento HTML. |
-| 📑 [Tema 2: Estructura básica](Temas/HTML-02-Estructura.md) | Cómo organizar correctamente el código en HTML. |
-| 🔲 [Tema 3: Elementos en línea y en bloque](Temas/HTML-03-Elementos.md) | Diferencias entre elementos inline y block. |
-| 📝 [Tema 4: Texto en HTML](Temas/HTML-04-Texto.md) | Encabezados, párrafos y otros elementos de texto. |
-| 📋 [Tema 5: Listas en HTML](Temas/HTML-05-Listas.md) | Uso de listas ordenadas, desordenadas y de descripción. |
-| 🔗 [Tema 6: Elementos y Atributos](Temas/HTML-06-Atributos.md) | Atributos en los elementos HTML. |
-| 🔗 [Tema 7: Enlaces en HTML](Temas/HTML-07-Enlaces.md) | Creación de enlaces internos y externos. |
-| 🖼️ [Tema 8: Imágenes en HTML](Temas/HTML-08-Imagenes.md) | Cómo insertar imágenes y optimizarlas para la web. |
-| 📊 [Tema 9: Tablas en HTML](Temas/HTML-09-Tablas.md) | Organización de datos en tablas. |
-| 📝 [Tema 10: Formularios en HTML](Temas/HTML-10-Formularios.md) | Creación de formularios e interacción con el usuario. |
-| 🔍 [Tema 11: HTML Semántico](Temas/HTML-11-Semantico.md) | Uso de etiquetas semánticas para estructurar el contenido. |
-| ♿ [Tema 12: Accesibilidad en HTML](Temas/HTML-12-Accesibilidad.md) | Mejores prácticas para una web accesible. |
-| 🌐 [Tema 13: Metadatos y SEO básico](Temas/HTML-13-SEO.md) | Cómo optimizar tu sitio para buscadores. |
+| 📚 Tema                                                                 | Descripción                                                |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 🏗️ [Tema 1: Introducción a HTML](Temas/HTML-01-Introduccion.md)         | Conceptos básicos y estructura de un documento HTML.       |
+| 📑 [Tema 2: Estructura básica](Temas/HTML-02-Estructura.md)             | Cómo organizar correctamente el código en HTML.            |
+| 🔲 [Tema 3: Elementos en línea y en bloque](Temas/HTML-03-Elementos.md) | Diferencias entre elementos inline y block.                |
+| 📝 [Tema 4: Texto en HTML](Temas/HTML-04-Texto.md)                      | Encabezados, párrafos y otros elementos de texto.          |
+| 📋 [Tema 5: Listas en HTML](Temas/HTML-05-Listas.md)                    | Uso de listas ordenadas, desordenadas y de descripción.    |
+| 🔗 [Tema 6: Elementos y Atributos](Temas/HTML-06-Atributos.md)          | Atributos en los elementos HTML.                           |
+| 🔗 [Tema 7: Enlaces en HTML](Temas/HTML-07-Enlaces.md)                  | Creación de enlaces internos y externos.                   |
+| 🖼️ [Tema 8: Imágenes en HTML](Temas/HTML-08-Imagenes.md)                | Cómo insertar imágenes y optimizarlas para la web.         |
+| 📊 [Tema 9: Tablas en HTML](Temas/HTML-09-Tablas.md)                    | Organización de datos en tablas.                           |
+| 📝 [Tema 10: Formularios en HTML](Temas/HTML-10-Formularios.md)         | Creación de formularios e interacción con el usuario.      |
+| 🔍 [Tema 11: HTML Semántico](Temas/HTML-11-Semantico.md)                | Uso de etiquetas semánticas para estructurar el contenido. |
+| ♿ [Tema 12: Accesibilidad en HTML](Temas/HTML-12-Accesibilidad.md)     | Mejores prácticas para una web accesible.                  |
+| 🌐 [Tema 13: Metadatos y SEO básico](Temas/HTML-13-SEO.md)              | Cómo optimizar tu sitio para buscadores.                   |
 
 📌 **Para ver todos los temas disponibles, revisa este repositorio.**
 
@@ -100,5 +100,3 @@ Espero que sea lo que buscas.
     </a>
   </h5>
 </div>
-
-
