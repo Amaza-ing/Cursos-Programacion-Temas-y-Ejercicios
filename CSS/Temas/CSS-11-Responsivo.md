@@ -1,4 +1,4 @@
-# **Tema 10: Media Queries y Diseño Responsivo en CSS**
+# **Tema 11: Media Queries y Diseño Responsivo en CSS**
 
 ## **1. Introducción al diseño responsivo**
 El diseño responsivo permite que una página web se adapte a diferentes tamaños de pantalla y dispositivos, mejorando la experiencia del usuario en móviles, tabletas y escritorios. Para lograrlo, CSS ofrece las **media queries**, que aplican estilos condicionales según las características del dispositivo.

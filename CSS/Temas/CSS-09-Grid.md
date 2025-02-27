@@ -1,4 +1,4 @@
-# **Tema 8: Diseño con CSS Grid**
+# **Tema 9: Diseño con CSS Grid**
 
 ## **1. Introducción a CSS Grid**
 

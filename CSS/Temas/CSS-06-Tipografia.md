@@ -142,4 +142,4 @@ body {
 
 ---
 
-En el próximo tema, exploraremos **el diseño con flexbox en CSS**, una técnica poderosa para la disposición de elementos en una página.
+En el próximo tema, exploraremos **el posicionamiento con CSS**, incluyendo las diferencias entre posicionamiento relativo y absoluto así como otras utilidades.

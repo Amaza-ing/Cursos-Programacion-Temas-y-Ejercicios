@@ -1,4 +1,4 @@
-# **Tema 9: Animaciones y Transiciones en CSS**
+# **Tema 10: Animaciones y Transiciones en CSS**
 
 ## **1. Introducción a las animaciones y transiciones en CSS**
 Las animaciones y transiciones permiten agregar dinamismo y mejorar la experiencia de usuario en una página web. CSS ofrece propiedades específicas para crear efectos visuales sin necesidad de JavaScript.
