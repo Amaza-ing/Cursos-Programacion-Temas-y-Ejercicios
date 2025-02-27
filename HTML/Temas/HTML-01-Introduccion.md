@@ -96,6 +96,8 @@ Para crear un archivo HTML en tu computadora:
 3. Escribe la estructura básica de HTML.
 4. Abre el archivo en un navegador web.
 
+> Nota: Si estás utilizando Visual Studio Vode es muy recomendable instalar la extensión `Live Server` desde el menú de extensiones. Una vez instalda podrás abrir cualquier documento HTML haciendo click en el botón *Go Live* que encontrarás abajo a la derecha.
+
 ---
 
 En el próximo tema, aprenderemos sobre la **estructura básica de un documento HTML** y su importancia en la creación de sitios web.
