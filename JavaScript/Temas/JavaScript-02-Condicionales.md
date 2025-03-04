@@ -300,20 +300,18 @@ console.log(Boolean(null)); // false
 
 ### **Ejemplo con operador `!` (NOT):**
 
+El operador not (`!`) devolverá true cuando se aplique sobre un valor falsy y devolverá false cuando se evalúe sobre un valor truthy.
+
 ```js
-let value = "";
-
-if (!value) {
-  console.log("El valor es falsy.");
-} else {
-  console.log("El valor es truthy.");
-}
+console.log(!"hola"); // false
+console.log(!0); // true
 ```
 
-**Salida:**
+Se pueden aplicar dos operadores negación (`!!`) para volver obtener true de un valor truthy y false de un valor falsy.
 
-```
-El valor es falsy.
+```js
+console.log(!!"hola"); // true
+console.log(!!0); // false
 ```
 
 ---
