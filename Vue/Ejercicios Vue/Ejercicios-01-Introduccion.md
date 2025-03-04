@@ -1,5 +1,9 @@
 # **Ejercicios - Tema 1: Introducción a Vue.js y Configuración del Entorno**
 
+A continuación, encontrarás 5 ejercicios prácticos sobre los aspectos básicos de Vue.
+
+Intenta resolverlos antes de consultar la solución.
+
 ## **Ejercicio 1: Instalación de Node.js**
 
 Instala Node.js en tu sistema y verifica que esté correctamente instalado.
