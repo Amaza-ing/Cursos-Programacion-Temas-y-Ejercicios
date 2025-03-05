@@ -275,7 +275,7 @@ Existen otros métodos de los array como `map` o `filter` que se explicarán en 
 
 - Elige el bucle adecuado según la estructura de datos.
 - Evita bucles infinitos verificando bien las condiciones.
-- Usa métodos funcionales (`forEach`, `map`, `filter`) para código más limpio.
+- Usa métodos funcionales (`forEach`) para código más limpio.
 - Evita usar `for...in` en arrays, ya que puede incluir propiedades heredadas.
 
 ---
