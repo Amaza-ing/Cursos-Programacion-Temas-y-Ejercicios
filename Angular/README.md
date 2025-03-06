@@ -63,7 +63,7 @@ Este curso está diseñado para principiantes, por lo que no se requiere experie
 
 - HTML
 - CSS
-- JavaScript (funciones, objetos, arrays y promesas)
+- JavaScript y TypeScript
 
 **Antes de empezar, asegúrate de tener:**
 
