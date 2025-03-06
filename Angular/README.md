@@ -57,6 +57,12 @@ Si prefieres aprender visualmente, aquí tienes el curso completo en video con e
 
 ---
 
+## 🐱‍👤 **Repositorio con Código y Ejemplos**
+
+También puedes acceder a [este repositorio con el código y ejemplos de cada sección separado por ramas](https://github.com/Amaza-ing/AMazaing-curso-Angular-desde-0).
+
+---
+
 ## 🛠️ **Requisitos previos**
 
 Este curso está diseñado para principiantes, por lo que no se requiere experiencia previa con Angular, pero sí es recomendable tener nociones básicas de:
