@@ -10,9 +10,10 @@ Actualmente, este repositorio contiene los siguientes cursos:
 - [**CSS**](./CSS/): Domina el diseño y la apariencia de las páginas web.
 - [**JavaScript**](./JavaScript/): Introducción a la programación con JavaScript para crear interactividad en sitios web.
 - [**Git y GitHub**](./Git/): Control de versiones y trabajo colaborativo en proyectos de desarrollo.
-- [**Angular**](./Angular/): Desarrollo de aplicaciones web con el framework Angular.
+- [**Angular**](./Angular/): Desarrollo de aplicaciones web con el framework Angular y TypeScript.
+- [**Vue**](./Vue/): Desarrollo de aplicaciones web con el framework Vue y JavaScript.
 
-📌 *En el futuro, se agregarán más cursos.*
+📌 _En el futuro, se agregarán más cursos._
 
 ---
 
@@ -64,7 +65,6 @@ Este repositorio está bajo una licencia **Creative Commons Atribución 4.0 Inte
 
 📜 **Más información sobre la licencia:** [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-
 ---
 
 ## **Hecho por Adrián Maza**
@@ -94,4 +94,3 @@ Este repositorio está bajo una licencia **Creative Commons Atribución 4.0 Inte
     </a>
   </h5>
 </div>
-
