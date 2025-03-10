@@ -67,6 +67,8 @@ import { Component } from "@angular/core";
 export class AboutComponent {}
 ```
 
+## **4. Router Outlet**
+
 Para que estas páginas se rendericen necesitamos usar el componente `<router-outlet>` y añadir `RouterOutlet` a los imports.
 
 Este se encontrará habitualmente en el componente raíz `app.component.html`. Y normalmente es lo único que hay en el html del componente raíz.
@@ -94,7 +96,7 @@ Podemos pensar en el `<router-outlet>` como en una especie de televisión, que m
 
 ---
 
-## **4. Navegación con `RouterLink`**
+## **5. Navegación con `RouterLink`**
 
 Como nuestra web puede tener varias páginas, necesitamos enlaces internos para navegar entre ellas y no depender de escribir la ruta en la barra de direcciones del navegador.
 
@@ -134,13 +136,13 @@ Aquí `routerLink` define enlaces internos sin recargar la página.
 
 ---
 
-## **5. Rutas con Parámetros Dinámicos**
+## **6. Rutas con Parámetros Dinámicos**
 
 Es posible definir rutas con parámetros para mostrar información dinámica. Así se puede reutilizar un componente con distinta información muchas veces.
 
 Imagina que quieres crear una galería de imágenes o una red social, no querrías crear un componente para cada imagen individual ni tampoco un componente para cada usuario. Lo ideal es crear un sólo componente y a partir de un parámetro (id de una foto, o el nombre de usuario) obtener toda la información necesaria para mostrarla en la página.
 
-### **5.1. Definir una Ruta con Parámetros**
+### **6.1. Definir una Ruta con Parámetros**
 
 Para definir una ruta paramétrica debemos hacer lo mismo que antes, añadir una ruta en el fichero `app.routes.ts` y especificar un parámetro en esa ruta.
 
@@ -152,7 +154,7 @@ const routes = [{ path: "profile/:id", component: ProfileComponent }];
 
 Aquí `:id` representa a una variable `id` que puede obtener cualquier valor en la ruta. Se deben poner los dos puntos (:) para especificar el parámetro de ruta.
 
-### **5.2. Capturar Parámetros en un Componente**
+### **6.2. Capturar Parámetros en un Componente**
 
 Una vez tenemos una ruta paramétrica podemos obtener el parámetro de ruta para después utilizarlo para buscar la información que queremos (por ejemplo obtener la información de un usuario a partir de su nombre de usuario haciendo una consulta en una base de datos o una API).
 
@@ -181,7 +183,7 @@ export class ProfileComponent {
 
 ---
 
-### **5.3. Enlazar a una Ruta con Parámetros**
+### **6.3. Enlazar a una Ruta con Parámetros**
 
 #### **Archivo: `app.component.html`**
 
@@ -196,7 +198,7 @@ Aquí:
 
 ---
 
-## **6. Redirecciones y Rutas 404**
+## **7. Redirecciones y Rutas 404**
 
 Podemos definir rutas por defecto y manejar rutas inexistentes.
 
@@ -217,7 +219,7 @@ Aquí:
 
 ---
 
-## **7. Rutas y servicios**
+## **8. Rutas y servicios**
 
 Si mezclamos las rutas con los servicios podemos compartir información entre páginas (componentes) de una manera sencilla.
 
@@ -227,7 +229,7 @@ Si mezclamos las rutas con los servicios podemos compartir información entre p�
 
 ---
 
-## **8. Conclusión**
+## **9. Conclusión**
 
 - **El Router de Angular** permite gestionar la navegación en una SPA sin recargar la página.
 - **`RouterLink`** facilita la navegación interna sin necesidad de `href`.
