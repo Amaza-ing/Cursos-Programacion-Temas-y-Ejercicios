@@ -171,9 +171,11 @@ import { ActivatedRoute } from "@angular/router";
   template: "<h1>Perfil de usuario: {{ userId }}</h1>",
 })
 export class ProfileComponent {
-  userId = this.route.snapshot.paramMap.get("id");
+  userId;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+    this.userId = this.route.snapshot.paramMap.get("id");
+  }
 }
 ```
 
@@ -191,7 +193,25 @@ export class ProfileComponent {
 <a routerLink="/profile/1">Ver Perfil de Usuario 1</a>
 ```
 
-Aquí:
+**O usando variables:**
+
+```html
+<a [routerLink]="routePath">Ver Perfil de Usuario 1</a>
+```
+
+**O sin usar '/' desde una ruta específica:**
+
+Si añadimos un enlace desde un componente que se está renderizando en una ruta concreta, al añadir `[routerLink]` con cualquier valor sin usar "/" iremos a la ruta en la que estuviéramos / el valor que añadamos.
+
+Por ejemplo, desde un componente que se renderiza en la ruta `/profile`.
+
+```html
+<a [routerLink]="user.id">Ver Perfil de Usuario 1</a>
+```
+
+Si `user.id` es igual a 1, esto nos llevaría a `/profile/1`.
+
+**Aquí:**
 
 - `:id` es un parámetro dinámico que se captura en `ProfileComponent`.
 - `routerLink="/profile/1"` crea un enlace dinámico a `/profile/1`.
