@@ -219,7 +219,7 @@ console.log(years); // Salida: 30
 
 ---
 
-## **9. Conclusión**
+## **8. Conclusión**
 
 Los objetos en JavaScript son una herramienta poderosa para estructurar y manipular datos complejos. Con la capacidad de agregar métodos, heredar propiedades y utilizar clases, los objetos forman la base de muchas aplicaciones modernas.
 
