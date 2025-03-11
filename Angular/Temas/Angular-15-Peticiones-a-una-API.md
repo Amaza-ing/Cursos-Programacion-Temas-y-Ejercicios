@@ -44,7 +44,7 @@ import { Observable } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class CommentService {
-  private readonly API_URL = "https://jsonplaceholder.typicode.com/posts";
+  private readonly API_URL = "https://jsonplaceholder.typicode.com/comments";
 
   comments: any[];
 
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
 <h1>Lista de Publicaciones</h1>
 <ul>
   @for (comment of CommentService.comments; track comment.id) {
-  <li>{{ comment.title }}</li>
+  <li>{{ comment.name }}</li>
   }
 </ul>
 ```
@@ -150,7 +150,7 @@ addNewComment() {
 
 ```html
 <h2>Añadir Nueva Publicación</h2>
-<input [(ngModel)]="newComment.title" placeholder="Título" />
+<input [(ngModel)]="newComment.name" placeholder="Título" />
 <input [(ngModel)]="newComment.body" placeholder="Contenido" />
 <button (click)="addNewComment()">Agregar</button>
 ```
@@ -226,7 +226,7 @@ deleteComment(id: number) {
 <ul>
   @for (comment of comments; track comment.id) {
   <li>
-    {{ comment.title }}
+    {{ comment.name }}
     <button (click)="deleteComment(comment.id)">Eliminar</button>
   </li>
   }
