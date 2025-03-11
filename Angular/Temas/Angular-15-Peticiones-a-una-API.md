@@ -44,7 +44,7 @@ import { Observable } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class CommentService {
-  private readonly apiUrl = "https://jsonplaceholder.typicode.com/posts";
+  private readonly API_URL = "https://jsonplaceholder.typicode.com/posts";
 
   comments: any[];
 
@@ -53,7 +53,7 @@ export class CommentService {
   }
 
   getComments(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(this.API_URL);
   }
 }
 ```
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
 </ul>
 ```
 
-Cuando hacemos una petición `GET` usando `httpClient` mediante `this.http.get<any[]>(this.apiUrl)` estamos obteniendo un `Observable`, y para utilizar los observables debemos suscribirnos a ellos mediante el método `subscribe` para ejecutar la petición, que es lo que hemos hecho en el ejemplo en el fichero `app.component.ts`.
+Cuando hacemos una petición `GET` usando `httpClient` mediante `this.http.get<any[]>(this.API_URL)` estamos obteniendo un `Observable`, y para utilizar los observables debemos suscribirnos a ellos mediante el método `subscribe` para ejecutar la petición, que es lo que hemos hecho en el ejemplo en el fichero `app.component.ts`.
 
 Las peticiones a las APIs pueden fallar, por eso es necesario tener esto en cuenta cuando usamos un `subscribe`.
 
@@ -125,7 +125,7 @@ La petición POST se utiliza para enviar nuevos datos a la API.
 
 ```ts
 addComment(comment: { title: string, body: string }): Observable<any> {
-  return this.http.post(this.apiUrl, comment);
+  return this.http.post(this.API_URL, comment);
 }
 ```
 
@@ -165,7 +165,7 @@ La petición PUT se usa para actualizar un recurso existente.
 
 ```ts
 updateComment(id: number, comment: { title: string, body: string }): Observable<any> {
-  return this.http.put(`${this.apiUrl}/${id}`, comment);
+  return this.http.put(`${this.API_URL}/${id}`, comment);
 }
 ```
 
@@ -201,7 +201,7 @@ La petición DELETE elimina un recurso de la API.
 
 ```ts
 deleteComment(id: number): Observable<any> {
-  return this.http.delete(`${this.apiUrl}/${id}`);
+  return this.http.delete(`${this.API_URL}/${id}`);
 }
 ```
 
@@ -249,7 +249,7 @@ También se pueden manejar errores usando el operador `catchError` de RxJS.
 import { catchError, throwError } from 'rxjs';
 
 getComments(): Observable<any[]> {
-  return this.http.get<any[]>(this.apiUrl).pipe(
+  return this.http.get<any[]>(this.API_URL).pipe(
     catchError(error => {
       console.error('Error al obtener los comments:', error);
       return throwError(() => new Error('Error en la petición GET'));
