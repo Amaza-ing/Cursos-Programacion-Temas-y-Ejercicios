@@ -78,7 +78,6 @@ import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-profile",
-  standalone: true,
   template: "<h1>Perfil de usuario: {{ userId }}</h1>",
 })
 export class ProfileComponent {

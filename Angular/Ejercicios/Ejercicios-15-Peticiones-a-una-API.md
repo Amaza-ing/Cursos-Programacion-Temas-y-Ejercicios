@@ -38,7 +38,6 @@ import { UserService } from './user.service';
 
 @Component({
   selector: 'app-user',
-  standalone: true,
   templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
