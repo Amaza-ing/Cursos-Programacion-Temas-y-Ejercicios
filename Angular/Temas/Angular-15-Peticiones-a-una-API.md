@@ -124,7 +124,7 @@ La petición POST se utiliza para enviar nuevos datos a la API.
 #### **Archivo: `comment.service.ts`**
 
 ```ts
-addComment(comment: { title: string, body: string }): Observable<any> {
+addComment(comment: { name: string, body: string }): Observable<any> {
   return this.http.post(this.API_URL, comment);
 }
 ```
@@ -132,7 +132,7 @@ addComment(comment: { title: string, body: string }): Observable<any> {
 #### **Archivo: `app.component.ts`**
 
 ```ts
-newComment = { title: '', body: '' };
+newComment = { name: '', body: '' };
 
 addNewComment() {
   this.CommentService.addComment(this.newComment).subscribe({
@@ -164,7 +164,7 @@ La petición PUT se usa para actualizar un recurso existente.
 #### **Archivo: `comment.service.ts`**
 
 ```ts
-updateComment(id: number, comment: { title: string, body: string }): Observable<any> {
+updateComment(id: number, comment: { name: string, body: string }): Observable<any> {
   return this.http.put(`${this.API_URL}/${id}`, comment);
 }
 ```
@@ -173,7 +173,7 @@ updateComment(id: number, comment: { title: string, body: string }): Observable<
 
 ```ts
 updateExistingComment() {
-  const updatedComment = { title: 'Título Actualizado', body: 'Contenido Actualizado' };
+  const updatedComment = { name: 'Título Actualizado', body: 'Contenido Actualizado' };
   this.CommentService.updateComment(1, updatedComment).subscribe({
     next: (data) => {
       console.log("Comentario Actualizado: " + data);
