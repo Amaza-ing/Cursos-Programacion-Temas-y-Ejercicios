@@ -139,7 +139,7 @@ const newNumbers = [...numbers];
 ### **5.3. Copia superficial con `map()`**
 
 ```js
-const newNumbers = numbers.map(number => number);
+const newNumbers = numbers.map((number) => number);
 ```
 
 ### **5.4. Copia profunda con `JSON.parse(JSON.stringify())`**
@@ -153,6 +153,21 @@ const deepArrayCopy = JSON.parse(JSON.stringify(nestedArray));
 deepArrayCopy[0][0] = 99;
 
 console.log(nestedArray[0][0]); // Salida: 1 (no se modifica)
+```
+
+### **5.5. Copia profunda con `structuredClone()` (ES2021)**
+
+```js
+const originalArray = [
+  [1, 2],
+  [3, 4],
+];
+
+const deepCopyArray = structuredClone(originalArray);
+deepCopyArray[0][0] = 99;
+
+console.log(originalArray[0][0]); // 1 (no se modifica)
+console.log(deepCopyArray[0][0]); // 99 (copia independiente)
 ```
 
 ---
