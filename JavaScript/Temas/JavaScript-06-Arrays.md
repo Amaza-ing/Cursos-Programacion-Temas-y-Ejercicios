@@ -165,7 +165,7 @@ console.log(sum); // 6
 
 ### **5.5. `find()` y `findIndex()`**
 
-- `find()` devuelve el primer elemento que cumple una condición.
+- `find()` devuelve el primer elemento que cumple una condición. Si no se encuentra ningún elemento que cumpla la condición devolverá `undefined`.
 - `findIndex()` devuelve el índice del primer elemento que cumple una condición.
 
 ```js
