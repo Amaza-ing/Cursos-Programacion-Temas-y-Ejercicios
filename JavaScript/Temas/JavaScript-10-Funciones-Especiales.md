@@ -240,7 +240,33 @@ const logThrottle = throttle(
   1000
 );
 
-logThrottle();
+logThrottle(); // Se ejecuta inmediatamente
+logThrottle(); // Se ignora si se llama antes de 1 segundo
+setTimeout(logThrottle, 1100); // Se ejecuta después de 1.1 segundos
+
+// Ejemplos comunes:
+
+window.addEventListener(
+  "scroll",
+  throttle(() => {
+    console.log("Scrolling...");
+  }, 500)
+); // Sólo se ejecutará como máximo cada 500 ms
+
+window.addEventListener(
+  "resize",
+  throttle(() => {
+    console.log("Ventana redimensionada");
+  }, 1000)
+); // Sólo se ejecutará cada segundo
+
+const button = document.querySelector("#btn");
+button.addEventListener(
+  "click",
+  throttle(() => {
+    console.log("Botón clickeado");
+  }, 2000)
+); // Sólo permite un clic cada 2 segundos
 ```
 
 ---
