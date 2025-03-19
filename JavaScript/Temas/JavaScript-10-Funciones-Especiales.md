@@ -114,6 +114,81 @@ requestAnimationFrame(animate); // Llama a la animación continuamente
 
 > **Nota:** A diferencia de `setInterval()`, este método se sincroniza con la velocidad de actualización del monitor, evitando renderizados innecesarios.
 
+### **Ejemplo de "videojuego"**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./a.js"></script>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+  <body>
+    <div id="box"></div>
+  </body>
+</html>
+```
+
+```js
+const box = document.getElementById("box"); // Elemento a animar
+let positionX = 0; // Posición en X
+let positionY = 0; // Posición en Y
+const speed = 5; // Velocidad del movimiento
+
+const keys = {
+  ArrowUp: false,
+  ArrowDown: false,
+  ArrowLeft: false,
+  ArrowRight: false,
+};
+
+// Detectar cuándo una tecla es presionada
+document.addEventListener("keydown", (event) => {
+  if (keys.hasOwnProperty(event.key)) {
+    keys[event.key] = true;
+  }
+});
+
+// Detectar cuándo una tecla es soltada
+document.addEventListener("keyup", (event) => {
+  if (keys.hasOwnProperty(event.key)) {
+    keys[event.key] = false;
+  }
+});
+
+// Función de animación
+function animate() {
+  if (keys.ArrowUp) positionY -= speed;
+  if (keys.ArrowDown) positionY += speed;
+  if (keys.ArrowLeft) positionX -= speed;
+  if (keys.ArrowRight) positionX += speed;
+
+  // Restringimos los límites para que no se salga de la pantalla
+  positionX = Math.max(0, Math.min(window.innerWidth - 100, positionX));
+  positionY = Math.max(0, Math.min(window.innerHeight - 100, positionY));
+
+  box.style.transform = `translate(${positionX}px, ${positionY}px)`;
+
+  requestAnimationFrame(animate); // Continuar la animación
+}
+
+// Iniciar la animación
+requestAnimationFrame(animate);
+```
+
 ---
 
 ## **6. `debounce()` y `throttle()` - Controlar la ejecución de funciones**
