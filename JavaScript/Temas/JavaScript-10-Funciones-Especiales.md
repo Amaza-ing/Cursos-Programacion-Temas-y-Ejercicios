@@ -213,7 +213,8 @@ const logMessage = debounce(
   500
 );
 
-logMessage(); // Se ejecutará después de 500ms si no hay más llamadas
+// Detectar cuándo una tecla es presionada
+document.addEventListener("keydown", logMessage);
 ```
 
 ### **6.2. `throttle()` - Limitar la ejecución de una función en intervalos de tiempo**
