@@ -54,7 +54,7 @@ Si prefieres aprender visualmente, aquí tienes el curso completo en video con e
 
 📺 **Curso Completo de Vue**
 
-[![Curso de Vue](https://img.youtube.com/vi/PqJeA7p2R-Y/0.jpg)](https://www.youtube.com/watch?v=PqJeA7p2R-Y&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Curso de Vue](https://img.youtube.com/vi/KdfrY2GYuTo/0.jpg)](https://www.youtube.com/watch?v=KdfrY2GYuTo&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
