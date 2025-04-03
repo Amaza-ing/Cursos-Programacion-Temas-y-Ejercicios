@@ -11,6 +11,10 @@ Con JavaScript podemos:
 - Crear, eliminar y mover elementos.
 - Responder a eventos del usuario.
 
+> Nota: Antes de empezar a probar el código de manipulación del DOM debemos decirle al navegador que espere a que el HTML esté cargado antes de cargar el JavaScript. Esto lo podemos hacer añadiendo el atributo `defer` a la etiqueta `<script>` en el fichero .html:
+
+> `<script defer></script>`
+
 ---
 
 ## **2. Seleccionar Elementos del DOM**
