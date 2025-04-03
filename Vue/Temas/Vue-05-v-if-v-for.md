@@ -75,40 +75,7 @@ Cuando usamos `v-for` es importante dar un valor adecuado a la propiedad `key`, 
 
 ---
 
-## **4. Combinando v-if y v-for**
-
-Podemos combinar `v-if` y `v-for` para filtrar y mostrar elementos dinámicamente.
-
-### Ejemplo
-
-```vue
-<script setup>
-const users = [
-  { id: 1, name: "Ana", active: true },
-  { id: 2, name: "Luis", active: false },
-  { id: 3, name: "María", active: true },
-];
-</script>
-
-<template>
-  <ul>
-    <li v-for="(user, index) in users" :key="user.id" v-if="user.active">
-      {{ user.name }} (Activo)
-    </li>
-  </ul>
-</template>
-
-<style scoped>
-li {
-  color: green;
-}
-</style>
-```
-
-
----
-
-## **5. Listas de objetos y visualización compleja**
+## **4. Listas de objetos y visualización compleja**
 
 Las listas pueden contener objetos con múltiples propiedades, y podemos mostrar esas propiedades fácilmente.
 
@@ -160,7 +127,7 @@ Cuando utilizamos `v-for` con objetos es muy común utilizar el campo `id` u otr
 
 ---
 
-## **6. v-for con objetos (propiedades dinámicas)**
+## **5. v-for con objetos (propiedades dinámicas)**
 
 También se puede usar `v-for` para recorrer las propiedades de un objeto.
 
