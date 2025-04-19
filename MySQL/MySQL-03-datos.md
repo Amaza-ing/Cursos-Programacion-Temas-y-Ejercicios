@@ -146,4 +146,4 @@ SELECT * FROM customers WHERE customer_id = 5;
 
 ---
 
-En el siguiente tema aprenderemos a **Normalizar tablas antes de trabajar con ellas**.
+En el siguiente tema aprenderemos a **crear relaciones entre tablas y aplicar restricciones de integridad con claves primarias y foráneas.**

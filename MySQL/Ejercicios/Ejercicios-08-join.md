@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 7: Consultas con JOIN en MySQL**
+# **Ejercicios - Tema 8: Consultas con JOIN en MySQL**
 
 A continuación, encontrarás 6 ejercicios prácticos para aplicar distintos tipos de `JOIN` y consultar datos relacionados entre varias tablas.
 

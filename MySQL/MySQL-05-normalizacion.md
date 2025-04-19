@@ -1,4 +1,4 @@
-# **Tema 4: Normalización de Tablas en MySQL**
+# **Tema 5: Normalización de Tablas en MySQL**
 
 En este tema aprenderemos:
 

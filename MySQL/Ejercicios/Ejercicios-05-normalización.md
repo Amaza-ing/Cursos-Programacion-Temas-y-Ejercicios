@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 4: Normalización de Tablas en MySQL**
+# **Ejercicios - Tema 5: Normalización de Tablas en MySQL**
 
 A continuación, encontrarás 4 ejercicios prácticos sobre normalización de bases de datos. Intenta resolverlos antes de consultar la solución.
 
