@@ -4,7 +4,7 @@ Bienvenido a este repositorio de **Cursos de Programación**, donde encontrarás
 
 ## 📌 **Cursos disponibles**
 
-Actualmente, este repositorio contiene los siguientes cursos:
+En este momento este repositorio contiene los siguientes cursos:
 
 - [**HTML**](./HTML/): Aprende a estructurar documentos web correctamente.
 - [**CSS**](./CSS/): Domina el diseño y la apariencia de las páginas web.
