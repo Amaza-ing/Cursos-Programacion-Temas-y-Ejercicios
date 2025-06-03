@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 8: Paso por Valor y Paso por Referencia**
+# **Ejercicios - Tema 7: Paso por Valor y Paso por Referencia**
 
 A continuación, encontrarás 5 ejercicios prácticos sobre el paso por valor y paso por referencia en JavaScript.
 

@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 7: Funciones Avanzadas en JavaScript**
+# **Ejercicios - Tema 8: Funciones Avanzadas en JavaScript**
 
 A continuación, encontrarás 5 ejercicios prácticos sobre funciones avanzadas en JavaScript.
 
