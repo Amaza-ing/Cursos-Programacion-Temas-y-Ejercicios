@@ -1,4 +1,4 @@
-# **Tema 8: Funciones Avanzadas y Código Modular en JavaScript**
+# **Tema 9: Funciones Avanzadas y Código Modular en JavaScript**
 
 ## **1. Introducción**
 
@@ -162,4 +162,4 @@ console.log(factorial(5)); // Salida: 120
 
 Dominar funciones avanzadas en JavaScript permite escribir código más limpio, modular y eficiente. Aplicando estas técnicas, puedes mejorar la reutilización y escalabilidad de tus programas.
 
-En el siguiente tema veremos algunos operadores menos conocidos, como spread operator, optional chaining y otros.
+En el próximo tema veremos algunas funciones especiales que pueden resultar de utilidad, como `setTimeout()`, `setInterval()` y otras.

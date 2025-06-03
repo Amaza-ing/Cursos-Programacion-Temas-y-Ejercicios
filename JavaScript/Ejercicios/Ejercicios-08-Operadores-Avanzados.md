@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 9: Operadores Avanzados en JavaScript**
+# **Ejercicios - Tema 8: Operadores Avanzados en JavaScript**
 
 A continuación, encontrarás 5 ejercicios prácticos sobre los operadores avanzados en JavaScript.
 

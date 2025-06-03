@@ -1,8 +1,9 @@
-# **Tema 9: Operadores Avanzados en JavaScript**
+# **Tema 8: Operadores Avanzados en JavaScript**
 
 ## **1. Introducción**
 
 JavaScript incluye una serie de operadores menos conocidos pero muy útiles para escribir código más limpio y eficiente. En este tema, exploraremos algunos de los más importantes:
+
 - Spread Operator (`...`)
 - Rest Operator (`...`)
 - Optional Chaining (`?.`)
@@ -58,7 +59,7 @@ También se usa para extraer elementos de un array u objeto.
 ```js
 const [first, ...rest] = [10, 20, 30, 40];
 console.log(first); // 10
-console.log(rest);  // [20, 30, 40]
+console.log(rest); // [20, 30, 40]
 ```
 
 ---
@@ -84,7 +85,7 @@ También funciona con llamadas a métodos:
 
 ```js
 const user = {
-  getName: () => "Pedro"
+  getName: () => "Pedro",
 };
 console.log(user.getName?.()); // Salida: "Pedro"
 console.log(user.getAge?.()); // Salida: undefined
@@ -138,4 +139,4 @@ console.log(grade); // Salida: "B"
 
 Estos operadores avanzados permiten escribir código más conciso y eficiente en JavaScript. Usarlos correctamente puede mejorar la legibilidad y reducir la necesidad de estructuras más largas y complejas.
 
-En el próximo tema veremos algunas funciones especiales que pueden resultar de utilidad, como `setTimeout()`, `setInterval()` y otras.
+En el próximo tema, profundizaremos en el manejo de **funciones avanzadas** y técnicas para escribir código más limpio y modular.
