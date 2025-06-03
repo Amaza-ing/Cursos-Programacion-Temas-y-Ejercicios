@@ -1,4 +1,4 @@
-# **Tema 8: Paso por Valor y Paso por Referencia en JavaScript**
+# **Tema 7: Paso por Valor y Paso por Referencia en JavaScript**
 
 ## **1. Introducción**
 

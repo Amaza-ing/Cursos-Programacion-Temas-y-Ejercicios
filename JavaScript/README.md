@@ -31,8 +31,8 @@ Cada tema está en un archivo **Markdown (`.md`)** dentro de este repositorio. P
 | 🛠️ [Tema 4: Funciones](Temas/JavaScript-04-Funciones.md)                            | Definición, tipos de funciones y modularización del código. |
 | 🎭 [Tema 5: Objetos](Temas/JavaScript-05-Objetos.md)                                | Creación, manipulación y uso de objetos en JavaScript.      |
 | 📦 [Tema 6: Arrays](Temas/JavaScript-06-Arrays.md)                                  | Métodos y operaciones con listas de datos.                  |
-| 🎯 [Tema 7: Funciones Avanzadas](Temas/JavaScript-07-Funciones-Avanzadas.md)        | Closures, funciones de orden superior y más.                |
-| 🏗️ [Tema 8: Paso por Valor y Referencia](Temas/JavaScript-08-Valor-y-Referencia.md) | Diferencias y efectos en variables, objetos y arrays.       |
+| 🏗️ [Tema 7: Paso por Valor y Referencia](Temas/JavaScript-07-Valor-y-Referencia.md) | Diferencias y efectos en variables, objetos y arrays.       |
+| 🎯 [Tema 8: Funciones Avanzadas](Temas/JavaScript-08-Funciones-Avanzadas.md)        | Closures, funciones de orden superior y más.                |
 | ✨ [Tema 9: Operadores Avanzados](Temas/JavaScript-09-Operadores-Avanzados.md)      | `spread`, `rest`, `optional chaining` y otros.              |
 | ⏳ [Tema 10: Funciones Especiales](Temas/JavaScript-10-Funciones-Especiales.md)     | `setTimeout`, `setInterval`, `debounce`, `throttle`, etc.   |
 | ⚡ [Tema 11: Asincronía y Promesas](Temas/JavaScript-11-Promesas.md)                | Promesas, `async/await` y `fetch()`.                        |
@@ -104,5 +104,3 @@ Espero que sea lo que buscas.
     </a>
   </h5>
 </div>
-
-

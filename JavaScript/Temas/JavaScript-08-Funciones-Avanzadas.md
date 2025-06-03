@@ -1,4 +1,4 @@
-# **Tema 7: Funciones Avanzadas y Código Modular en JavaScript**
+# **Tema 8: Funciones Avanzadas y Código Modular en JavaScript**
 
 ## **1. Introducción**
 
