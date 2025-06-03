@@ -23,49 +23,7 @@ npm install vue-router@4
 
 ---
 
-## **3. Configuración básica de rutas**
-
-### Crear el archivo de rutas
-
-Dentro de la carpeta `src`, crea un archivo llamado `router.js` o `router/index.js`.
-
-```javascript
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
-
-const routes = [
-  { path: "/", component: HomeView },
-  { path: "/about", component: AboutView },
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
-
-export default router;
-```
-
----
-
-## **4. Integrar el router en la aplicación**
-
-En `main.js`, importa el router y añádelo a la app.
-
-```javascript
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-
-const app = createApp(App);
-app.use(router);
-app.mount("#app");
-```
-
----
-
-## **5. Crear vistas (views)**
+## **3. Crear vistas (views)**
 
 Crea una carpeta `views` dentro de `src` y añade un par de componentes que representarán páginas completas:
 
@@ -99,6 +57,48 @@ h1 {
   color: blue;
 }
 </style>
+```
+
+---
+
+## **4. Configuración básica de rutas**
+
+### Crear el archivo de rutas
+
+Dentro de la carpeta `src`, crea un archivo llamado `router.js` o `router/index.js`.
+
+```javascript
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
+
+const routes = [
+  { path: "/", component: HomeView },
+  { path: "/about", component: AboutView },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+```
+
+---
+
+## **5. Integrar el router en la aplicación**
+
+En `main.js`, importa el router y añádelo a la app.
+
+```javascript
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+
+const app = createApp(App);
+app.use(router);
+app.mount("#app");
 ```
 
 ---
