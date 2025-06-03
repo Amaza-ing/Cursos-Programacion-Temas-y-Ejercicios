@@ -162,4 +162,4 @@ console.log(factorial(5)); // Salida: 120
 
 Dominar funciones avanzadas en JavaScript permite escribir código más limpio, modular y eficiente. Aplicando estas técnicas, puedes mejorar la reutilización y escalabilidad de tus programas.
 
-En el próximo tema veremos la diferencia entre paso por valor y paso por referencia y cómo afecta eso a cosas como copiar y trabajar con arrays y objetos.
+En el siguiente tema veremos algunos operadores menos conocidos, como spread operator, optional chaining y otros.

@@ -133,7 +133,7 @@ Ejecuta una función por cada elemento del array.
 
 ```js
 const numbers = [1, 2, 3];
-numbers.forEach(num => console.log(num));
+numbers.forEach((num) => console.log(num));
 ```
 
 ### **5.2. `map()`**
@@ -141,7 +141,7 @@ numbers.forEach(num => console.log(num));
 Crea un nuevo array con los resultados de la función aplicada a cada elemento.
 
 ```js
-const doubled = numbers.map(num => num * 2);
+const doubled = numbers.map((num) => num * 2);
 console.log(doubled); // [2, 4, 6]
 ```
 
@@ -150,7 +150,7 @@ console.log(doubled); // [2, 4, 6]
 Crea un nuevo array con los elementos que cumplen una condición.
 
 ```js
-const even = numbers.filter(num => num % 2 === 0);
+const even = numbers.filter((num) => num % 2 === 0);
 console.log(even); // [2]
 ```
 
@@ -169,10 +169,10 @@ console.log(sum); // 6
 - `findIndex()` devuelve el índice del primer elemento que cumple una condición.
 
 ```js
-const found = numbers.find(num => num > 2);
+const found = numbers.find((num) => num > 2);
 console.log(found); // 3
 
-const foundIndex = numbers.findIndex(num => num > 2);
+const foundIndex = numbers.findIndex((num) => num > 2);
 console.log(foundIndex); // 2
 ```
 
@@ -214,7 +214,7 @@ Se pueden tener arrays de cualquier tipo de datos, incluído otros arrays. Si te
 const matrix = [
   [1, 2, 3],
   [4, 5, 6],
-  [7, 8, 9]
+  [7, 8, 9],
 ];
 
 console.log(matrix[1][2]); // Salida: 6
@@ -224,5 +224,6 @@ console.log(matrix[1][2]); // Salida: 6
 
 ## **7. Conclusión**
 
-Los arrays son una herramienta fundamental en JavaScript para manejar colecciones de datos. Con la amplia gama de métodos y operaciones disponibles, es posible realizar tareas complejas de manera eficiente y sencilla. En el próximo tema, profundizaremos en el manejo de **funciones avanzadas** y técnicas para escribir código más limpio y modular.
+Los arrays son una herramienta fundamental en JavaScript para manejar colecciones de datos. Con la amplia gama de métodos y operaciones disponibles, es posible realizar tareas complejas de manera eficiente y sencilla.
 
+En el próximo tema veremos la diferencia entre paso por valor y paso por referencia y cómo afecta eso a cosas como copiar y trabajar con arrays y objetos.

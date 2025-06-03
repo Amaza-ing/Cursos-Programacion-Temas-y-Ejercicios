@@ -185,4 +185,4 @@ console.log(deepCopyArray[0][0]); // 99 (copia independiente)
 
 Comprender la diferencia entre **paso por valor** y **paso por referencia** ayuda a escribir código más predecible y a evitar errores inesperados al modificar objetos y arrays en JavaScript.
 
-En el siguiente tema veremos algunos operadores menos conocidos, como spread operator, optional chaining y otros.
+En el próximo tema, profundizaremos en el manejo de **funciones avanzadas** y técnicas para escribir código más limpio y modular.
