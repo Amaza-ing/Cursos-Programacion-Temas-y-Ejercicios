@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 4: Claves Primarias y Foráneas**
+# **Ejercicios - Tema 3: Claves Primarias y Foráneas**
 
 A continuación, encontrarás 6 ejercicios prácticos para crear relaciones entre tablas y aplicar restricciones de integridad con claves primarias y foráneas en MySQL.
 

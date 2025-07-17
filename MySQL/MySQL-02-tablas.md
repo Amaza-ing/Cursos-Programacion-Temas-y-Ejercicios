@@ -152,4 +152,4 @@ DROP TABLE users;
 
 ---
 
-En el próximo tema aprenderemos a **insertar, actualizar y eliminar datos** usando sentencias SQL como `INSERT`, `UPDATE` y `DELETE`.
+En el siguiente tema aprenderemos a **crear relaciones entre tablas y aplicar restricciones de integridad con claves primarias y foráneas.**

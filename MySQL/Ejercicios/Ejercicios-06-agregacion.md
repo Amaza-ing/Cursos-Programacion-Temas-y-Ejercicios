@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 7: Funciones de Agregación y Agrupaciones**
+# **Ejercicios - Tema 6: Funciones de Agregación y Agrupaciones**
 
 A continuación, encontrarás 10 ejercicios prácticos para practicar funciones de agregación (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`), agrupaciones con `GROUP BY` y filtros con `HAVING` en MySQL.
 

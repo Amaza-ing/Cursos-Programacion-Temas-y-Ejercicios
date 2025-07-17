@@ -1,4 +1,4 @@
-# **Tema 4: Claves Primarias y Foráneas en MySQL**
+# **Tema 3: Claves Primarias y Foráneas en MySQL**
 
 En este tema aprenderemos a:
 

@@ -1,4 +1,4 @@
-# **Tema 7: Funciones de Agregación y Agrupaciones en MySQL**
+# **Tema 6: Funciones de Agregación y Agrupaciones en MySQL**
 
 En este tema aprenderemos a:
 

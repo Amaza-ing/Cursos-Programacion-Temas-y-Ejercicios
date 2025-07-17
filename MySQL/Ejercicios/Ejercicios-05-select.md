@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 6: Consultas Avanzadas con SELECT y Condiciones**
+# **Ejercicios - Tema 5: Consultas Avanzadas con SELECT y Condiciones**
 
 A continuación, encontrarás 10 ejercicios prácticos para practicar el uso de `SELECT`, `WHERE`, `ORDER BY`, `LIMIT` y operadores lógicos en MySQL.
 
