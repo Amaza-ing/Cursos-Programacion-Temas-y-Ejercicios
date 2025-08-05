@@ -15,6 +15,10 @@ const myObject {
 
 ---
 
+[![Objetos](https://img.youtube.com/vi/6jMtvnjITdw/0.jpg)](https://www.youtube.com/watch?v=6jMtvnjITdw&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **2. Creación de objetos**
 
 ### **2.1. Usando la sintaxis de objeto literal**
@@ -196,6 +200,10 @@ Verifica si el objeto tiene una propiedad específica.
 ```js
 console.log(person.hasOwnProperty("age")); // Salida: true
 ```
+
+---
+
+[![Métodos de los objetos y funciones constructoras](https://img.youtube.com/vi/8G3gSkERg0o/0.jpg)](https://www.youtube.com/watch?v=8G3gSkERg0o&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
