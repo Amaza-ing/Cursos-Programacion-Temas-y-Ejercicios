@@ -58,6 +58,10 @@ console.log(animals[5]); // Salida: undefined
 
 ---
 
+[![Arrays](https://img.youtube.com/vi/Y3QAWQ93f2s/0.jpg)](https://www.youtube.com/watch?v=Y3QAWQ93f2s&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **4. Métodos básicos de Arrays**
 
 ### **4.1. `push()` y `pop()`**
@@ -125,6 +129,10 @@ console.log(words.toString()); // Salida: Hola,mundo
 
 ---
 
+[![Métodos básicos de los Arrays](https://img.youtube.com/vi/FEMeEuBJmsM/0.jpg)](https://www.youtube.com/watch?v=FEMeEuBJmsM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **5. Métodos de iteración**
 
 ### **5.1. `forEach()`**
@@ -136,6 +144,12 @@ const numbers = [1, 2, 3];
 numbers.forEach((num) => console.log(num));
 ```
 
+---
+
+[![Arrays: forEach](https://img.youtube.com/vi/Xmt7FTN4u5Y/0.jpg)](https://www.youtube.com/watch?v=Xmt7FTN4u5Y&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **5.2. `map()`**
 
 Crea un nuevo array con los resultados de la función aplicada a cada elemento.
@@ -144,6 +158,12 @@ Crea un nuevo array con los resultados de la función aplicada a cada elemento.
 const doubled = numbers.map((num) => num * 2);
 console.log(doubled); // [2, 4, 6]
 ```
+
+---
+
+[![Arrays: map](https://img.youtube.com/vi/Z8UYbJ_e_Do/0.jpg)](https://www.youtube.com/watch?v=Z8UYbJ_e_Do&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
 
 ### **5.3. `filter()`**
 
@@ -154,6 +174,12 @@ const even = numbers.filter((num) => num % 2 === 0);
 console.log(even); // [2]
 ```
 
+---
+
+[![Arrays: filter](https://img.youtube.com/vi/FDPcPjHL6W4/0.jpg)](https://www.youtube.com/watch?v=FDPcPjHL6W4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **5.4. `reduce()`**
 
 Reduce el array a un único valor.
@@ -162,6 +188,12 @@ Reduce el array a un único valor.
 const sum = numbers.reduce((acc, num) => acc + num, 0);
 console.log(sum); // 6
 ```
+
+---
+
+[![Arrays: reduce](https://img.youtube.com/vi/U5kIj9P-IhU/0.jpg)](https://www.youtube.com/watch?v=U5kIj9P-IhU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
 
 ### **5.5. `find()` y `findIndex()`**
 
@@ -175,6 +207,10 @@ console.log(found); // 3
 const foundIndex = numbers.findIndex((num) => num > 2);
 console.log(foundIndex); // 2
 ```
+
+---
+
+[![Arrays: find & findIndex](https://img.youtube.com/vi/JE56a775rrs/0.jpg)](https://www.youtube.com/watch?v=JE56a775rrs&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
