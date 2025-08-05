@@ -97,6 +97,10 @@ console.log(sum(3, 4)); // Salida: 7
 
 ---
 
+[![Funciones](https://img.youtube.com/vi/cRUhXVzwkEo/0.jpg)](https://www.youtube.com/watch?v=cRUhXVzwkEo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. Funciones Flecha (`arrow functions`)**
 
 Las funciones flecha ofrecen una sintaxis más concisa para escribir funciones.
@@ -146,6 +150,10 @@ greet("Carlos"); // Salida: ¡Hola, Carlos!
 ```
 
 > **Nota:** Las funciones flecha **no** tienen su propio `this`, lo que afecta su comportamiento en ciertos contextos. Esto se verá más tarde en el curso.
+
+---
+
+[![Arrow Functions](https://img.youtube.com/vi/8WIQMu0l9XA/0.jpg)](https://www.youtube.com/watch?v=8WIQMu0l9XA&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -231,6 +239,7 @@ greetUser("Ana", sayGoodbye);
 ```
 
 **Salida:**
+
 ```
 Hola, Ana!
 ¡Adiós!
@@ -255,6 +264,7 @@ console.log("Fin");
 ```
 
 **Salida:**
+
 ```
 Inicio
 Fin
@@ -268,6 +278,12 @@ Aquí, `setTimeout` acepta un callback que se ejecutará después de 2 segundos.
 ### **5.4. Conclusión**
 
 Los callbacks son fundamentales en JavaScript para controlar el flujo del programa y se pueden utilizar para manejar tareas asíncronas.
+
+---
+
+[![Callbacks](https://img.youtube.com/vi/xP8y4Zh5rIQ/0.jpg)](https://www.youtube.com/watch?v=xP8y4Zh5rIQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
 
 ### **5.5. ¿Qué es una función anónima?**
 
@@ -286,6 +302,10 @@ setTimeout(() => {
   console.log("Ejecutado tras 2 segundos");
 }, 2000);
 ```
+
+---
+
+[![Funciones Anónimas](https://img.youtube.com/vi/0iQgTKfHO7w/0.jpg)](https://www.youtube.com/watch?v=0iQgTKfHO7w&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
