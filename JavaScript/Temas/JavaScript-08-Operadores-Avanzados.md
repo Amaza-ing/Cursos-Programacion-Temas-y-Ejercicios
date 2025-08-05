@@ -42,6 +42,10 @@ console.log(letters); // Salida: ["H", "o", "l", "a"]
 
 ---
 
+[![Spread Operator](https://img.youtube.com/vi/p-r0ormnYtA/0.jpg)](https://www.youtube.com/watch?v=p-r0ormnYtA&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. Rest Operator (`...`)**
 
 El operador **rest** se usa en funciones para agrupar múltiples argumentos en un array.

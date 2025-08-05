@@ -66,6 +66,10 @@ console.log(person2.age); // Salida: 30
 
 ---
 
+[![Paso por Valor vs Referencia](https://img.youtube.com/vi/tPcA6iDA5yc/0.jpg)](https://www.youtube.com/watch?v=tPcA6iDA5yc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **4. Copiar Objetos y Arrays sin modificar el original**
 
 Para evitar modificaciones no deseadas en objetos y arrays, es necesario hacer **copias independientes**.
