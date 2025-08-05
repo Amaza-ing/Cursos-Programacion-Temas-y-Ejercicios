@@ -38,6 +38,10 @@ Iteración número 4
 
 ---
 
+[![Bucle for](https://img.youtube.com/vi/MvneErXddY4/0.jpg)](https://www.youtube.com/watch?v=MvneErXddY4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. Bucle `while`**
 
 El bucle `while` ejecuta el bloque de código mientras la condición sea verdadera.
@@ -105,6 +109,10 @@ Número: 2
 ```
 
 > **Nota:** `do...while` siempre ejecutará el bloque de código al menos una vez.
+
+---
+
+[![Bucles while & do while](https://img.youtube.com/vi/3LZHs0xtJEY/0.jpg)](https://www.youtube.com/watch?v=3LZHs0xtJEY&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -197,6 +205,10 @@ ciudad: Madrid
 
 ---
 
+[![Bucles for of & for in](https://img.youtube.com/vi/kB2vGOxs024/0.jpg)](https://www.youtube.com/watch?v=kB2vGOxs024&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **7. Controlando bucles: `break` y `continue`**
 
 - **`break`**: Termina el bucle por completo.
@@ -242,6 +254,10 @@ for (let i = 0; i < 5; i++) {
 3
 4
 ```
+
+---
+
+[![Break & Continue](https://img.youtube.com/vi/x4AXCSeVn-o/0.jpg)](https://www.youtube.com/watch?v=x4AXCSeVn-o&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
