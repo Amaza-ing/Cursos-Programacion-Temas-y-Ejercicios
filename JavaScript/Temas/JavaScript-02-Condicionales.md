@@ -73,6 +73,10 @@ if (score >= 90) {
 
 ---
 
+[![Condicionales: if else](https://img.youtube.com/vi/_o6rkkqpL20/0.jpg)](https://www.youtube.com/watch?v=_o6rkkqpL20&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **4. La sentencia `switch`**
 
 La sentencia `switch` es útil cuando se necesita evaluar una variable frente a múltiples valores posibles.
@@ -116,6 +120,10 @@ switch (day) {
 
 ---
 
+[![Condicionales: switch](https://img.youtube.com/vi/74jf2XDWFnU/0.jpg)](https://www.youtube.com/watch?v=74jf2XDWFnU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **5. Operador ternario `? :`**
 
 El operador ternario es una forma abreviada de escribir condicionales simples.
@@ -138,6 +146,10 @@ console.log(message);
 
 ---
 
+[![Operador ternario](https://img.youtube.com/vi/CAFZ1y4Dzvo/0.jpg)](https://www.youtube.com/watch?v=CAFZ1y4Dzvo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **6. Comparadores en JavaScript**
 
 Para realizar condiciones, se usan los siguientes operadores de comparación:
@@ -157,6 +169,14 @@ La igualdad estricta `===` en JavaScript es equivalente al doble igual `==` en l
 La igualdad débil compara sólo el valor, pero no el tipo de dato y la igualdad estricta compara tanto el valor como el tipo.
 
 > **Recomendación:** Usa `===` y `!==` para evitar problemas de conversión implícita de tipos.
+
+---
+
+[![Operadores Lógicos](https://img.youtube.com/vi/lNzYA0NA3Gw/0.jpg)](https://www.youtube.com/watch?v=lNzYA0NA3Gw&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
+[![Doble igual vs Triple igual](https://img.youtube.com/vi/GuCv3LrxA7A/0.jpg)](https://www.youtube.com/watch?v=GuCv3LrxA7A&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -188,6 +208,12 @@ if (age >= 18 && hasLicense) {
   console.log("No puedes conducir.");
 }
 ```
+
+---
+
+[![Qué devuelven los operadores booleanos](https://img.youtube.com/vi/L9qOnh9TK3M/0.jpg)](https://www.youtube.com/watch?v=L9qOnh9TK3M&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
 
 ## **8. Valores Truthy y Falsy en JavaScript**
 
@@ -281,6 +307,10 @@ Un objeto vacío es truthy.
 
 ---
 
+[![Truthy && Falsy](https://img.youtube.com/vi/tRPvHLtIb9U/0.jpg)](https://www.youtube.com/watch?v=tRPvHLtIb9U&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **8.4. Conversión implícita a booleano**
 
 JavaScript convierte automáticamente valores a booleanos en contextos donde se espera un `true` o `false`, como en:
@@ -316,6 +346,10 @@ console.log(!!0); // false
 
 ---
 
+[![Cómo convertir cualquier variable a booleano](https://img.youtube.com/vi/5lvql3mcmWk/0.jpg)](https://www.youtube.com/watch?v=5lvql3mcmWk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **8.5. Uso práctico: Valores por defecto**
 
 Un uso común de truthy y falsy es proporcionar valores por defecto utilizando el operador "o lógico", ya que aunque la primera expresión sea falsy seguirá evaluando el resto de expresiones hasta encontrar algo truthy y ese será el valor devuelto.
@@ -340,7 +374,7 @@ En este caso, como `username` es una cadena vacía (falsy), `displayName` toma e
 
 ---
 
-### **8.7. Conclusión**
+### **8.7. Importante**
 
 Comprender los conceptos de **truthy** y **falsy** en JavaScript es esencial para escribir código eficiente y libre de errores. Estos valores afectan la forma en que las condiciones y operaciones lógicas se evalúan en tu código.
 
