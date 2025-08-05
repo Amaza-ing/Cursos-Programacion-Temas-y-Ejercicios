@@ -47,6 +47,22 @@ También tienes ejercicios resueltos en la carpeta de [Ejercicios](Ejercicios).
 
 ---
 
+## 🎥 **Curso en Video**
+
+Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
+
+📺 **Curso Completo de JavaScript**
+
+[![Curso de JavaScript](https://img.youtube.com/vi/lD8C0NVmn7A/0.jpg)](https://www.youtube.com/watch?v=lD8C0NVmn7A&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
+## 🐱‍👤 **Repositorio con Código y Ejemplos**
+
+También puedes acceder a [este repositorio con el código y ejemplos de cada sección ordenados](https://github.com/Amaza-ing/AMazaing-JavaScript-Course).
+
+---
+
 ## 🛠️ **Requisitos previos**
 
 Este curso está diseñado para principiantes, por lo que no necesitas conocimientos previos en programación. Sin embargo, es recomendable tener:
