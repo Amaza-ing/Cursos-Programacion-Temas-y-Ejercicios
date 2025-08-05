@@ -46,6 +46,10 @@ npm -v
 
 ---
 
+[![Cómo empezar con JavaScript](https://img.youtube.com/vi/lD8C0NVmn7A/0.jpg)](https://www.youtube.com/watch?v=lD8C0NVmn7A&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **4. Escribiendo tu primer programa en JavaScript**
 
 Vamos a crear un programa simple que muestre un mensaje en la consola.
@@ -120,6 +124,12 @@ var oldVariable = "Usado antes de ES6";
 - **`const`**: Declara constantes que no pueden ser reasignadas.
 - **`var`**: Obsoleto, evita su uso.
 
+---
+
+[![Variables](https://img.youtube.com/vi/NtFNodPjfh0/0.jpg)](https://www.youtube.com/watch?v=NtFNodPjfh0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **5.2. Tipos de datos**
 
 - **String:** Cadenas de texto. Van entre comillas. Ejemplo: `"Hola"`.
@@ -134,6 +144,12 @@ const user = {
   age: 25,
 };
 ```
+
+---
+
+[![Tipado](https://img.youtube.com/vi/m8-g18kKjg8/0.jpg)](https://www.youtube.com/watch?v=m8-g18kKjg8&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
 
 ### **5.3 Strings en JavaScript**
 
@@ -315,6 +331,10 @@ JavaScript ofrece múltiples maneras de crear y manipular strings. Elegir el mé
 
 ---
 
+[![Strings](https://img.youtube.com/vi/Bi-DguuLtac/0.jpg)](https://www.youtube.com/watch?v=Bi-DguuLtac&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **5.4. Operadores básicos**
 
 Se pueden realizar operaciones básicas matemáticas y lógicas fácilmente usando operadores.
@@ -349,7 +369,13 @@ let num2 = 2;
 const result = num1 % num2; // result = 1
 ```
 
-### **5.5. Estructuras de control**
+---
+
+[![Operadores Básicos](https://img.youtube.com/vi/r1MW3omHpsU/0.jpg)](https://www.youtube.com/watch?v=r1MW3omHpsU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
+### **5.5. Estructuras de control de flujo**
 
 En los siguientes temas profundizaremos en estos conceptos. Pero en esencia, cuando escribimos nuestro código podemos decidir si se ejecuta una linea u otra, o ninguna en absoluto mediante una estructura de control de flujo condicional. También podemos decidir repetir bloques de código tantas veces como queramos mediante el uso de bucles.
 
@@ -399,6 +425,12 @@ console.table([
 ]);
 ```
 
+---
+
+[![Console.log y Más](https://img.youtube.com/vi/Onhv6yP-oY4/0.jpg)](https://www.youtube.com/watch?v=Onhv6yP-oY4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ### **6.2. Uso de Breakpoints**
 
 En las herramientas del desarrollador del navegador, puedes establecer **breakpoints** para pausar la ejecución y examinar el estado del programa.
@@ -407,6 +439,10 @@ En las herramientas del desarrollador del navegador, puedes establecer **breakpo
 2. Encuentra tu archivo JavaScript.
 3. Haz clic en el número de línea donde quieres pausar.
 4. Refresca la página y observa cómo se detiene en el breakpoint.
+
+---
+
+[![Breakpoints](https://img.youtube.com/vi/mHrCe3gQ3SE/0.jpg)](https://www.youtube.com/watch?v=mHrCe3gQ3SE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
