@@ -1,4 +1,4 @@
-# **Tema 10: Subconsultas y Consultas con WITH en MySQL**
+# **Tema 15: Subconsultas y Consultas con WITH en MySQL**
 
 En este tema aprenderemos a:
 
@@ -117,3 +117,5 @@ JOIN pedidos_totales pt ON ca.id = pt.customer_id;
 - `WITH` (CTE) ofrece una forma clara de definir consultas auxiliares reutilizables.
 
 ---
+
+En el siguiente tema aprenderemos a **utilizar PARTITION BY**.
