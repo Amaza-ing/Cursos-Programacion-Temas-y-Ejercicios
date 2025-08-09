@@ -114,4 +114,4 @@ Usa vistas cuando:
 
 ---
 
-En el siguiente tema aprenderemos a **crear subconsultas y consultas con `WITH`.**
+En el siguiente tema aprenderemos a **crear y utilizar índices.**
