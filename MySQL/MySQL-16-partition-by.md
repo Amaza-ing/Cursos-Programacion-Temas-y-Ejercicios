@@ -1,4 +1,4 @@
-# **Tema 15: Uso de PARTITION BY en MySQL**
+# **Tema 16: Uso de PARTITION BY en MySQL**
 
 En este tema aprenderemos a:
 
