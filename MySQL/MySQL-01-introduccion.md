@@ -55,6 +55,10 @@ Cada tabla contiene filas (registros) y columnas (campos).
 
 ---
 
+[![Qué es SQL](https://img.youtube.com/vi/8LQUlshIdqw/0.jpg)](https://www.youtube.com/watch?v=8LQUlshIdqw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **6. ¿Qué es una tabla?**
 
 Una tabla es como una hoja de cálculo con filas y columnas.
@@ -93,6 +97,10 @@ Para instalar DBeaver puedes acceder aquí: https://dbeaver.io/download/
 
 ---
 
+[![Cómo instalar MySQL](https://img.youtube.com/vi/yHWJ3nc6Vk4/0.jpg)](https://www.youtube.com/watch?v=yHWJ3nc6Vk4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ### Opción 2: Usar un servicio online
 
 Si no puedes instalar nada, puedes usar servicios como:
@@ -125,6 +133,17 @@ mysql>
 2. Crea una nueva conexión con el usuario `root`.
 3. Ingresa la contraseña que configuraste.
 4. Haz clic en "Test Connection" para verificar que todo funcione.
+
+### **Errores de Conexión**
+
+Es posible que a veces ocurran algunos errores que impidan la conexión a la base de datos, estos son algunos de los más comunes y son facilmente solucionables:
+
+- "Public Key Retrieval is not allowed"
+- "Connection refused: getsockopt"
+
+---
+
+[![Error de Conexión](https://img.youtube.com/vi/5IYm-B2ptkI/0.jpg)](https://www.youtube.com/watch?v=5IYm-B2ptkI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
