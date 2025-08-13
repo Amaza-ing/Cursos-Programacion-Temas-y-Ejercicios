@@ -1,4 +1,4 @@
-# **Tema 7: Consultas con JOIN en MySQL**
+# **Tema 8: Consultas con JOIN en MySQL**
 
 En este tema aprenderemos a:
 
@@ -114,4 +114,4 @@ JOIN products p ON d.product_id = p.id;
 
 ---
 
-En el próximo tema aprenderemos a **insertar, actualizar y eliminar datos** usando sentencias SQL como `INSERT`, `UPDATE` y `DELETE`.
+En el siguiente tema aprenderemos a **crear y gestionar vistas (`VIEW`) para simplificar y reutilizar consultas complejas.**

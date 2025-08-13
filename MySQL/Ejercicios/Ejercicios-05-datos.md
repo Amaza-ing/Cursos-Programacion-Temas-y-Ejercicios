@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 8: Insertar, Actualizar y Eliminar Datos en MySQL**
+# **Ejercicios - Tema 5: Insertar, Actualizar y Eliminar Datos en MySQL**
 
 A continuación, encontrarás 7 ejercicios prácticos para practicar la inserción, actualización y eliminación de datos con SQL.
 

@@ -173,4 +173,4 @@ Existen hasta una cuarta y quinta formas normales, pero no suelen ser necesarias
 
 ---
 
-En el próximo tema aprenderemos a realizar **consultas avanzadas con SELECT y condiciones usando WHERE, ORDER BY, LIMIT y operadores lógicos.**
+En el próximo tema aprenderemos a **insertar, actualizar y eliminar datos** usando sentencias SQL como `INSERT`, `UPDATE` y `DELETE`.

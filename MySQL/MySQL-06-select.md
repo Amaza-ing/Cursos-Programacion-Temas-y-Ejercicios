@@ -1,4 +1,4 @@
-# **Tema 5: Consultas Avanzadas con SELECT y Condiciones**
+# **Tema 6: Consultas Avanzadas con SELECT y Condiciones**
 
 En este tema aprenderemos a:
 

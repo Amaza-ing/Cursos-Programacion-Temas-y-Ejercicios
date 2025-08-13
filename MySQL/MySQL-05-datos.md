@@ -1,4 +1,4 @@
-# **Tema 8: Insertar, Actualizar y Eliminar Datos en MySQL**
+# **Tema 5: Insertar, Actualizar y Eliminar Datos en MySQL**
 
 En este tema aprenderemos a:
 
@@ -146,4 +146,4 @@ SELECT * FROM customers WHERE customer_id = 5;
 
 ---
 
-En el siguiente tema aprenderemos a **crear y gestionar vistas (`VIEW`) para simplificar y reutilizar consultas complejas.**
+En el próximo tema aprenderemos a realizar **consultas avanzadas con SELECT y condiciones usando WHERE, ORDER BY, LIMIT y operadores lógicos.**
