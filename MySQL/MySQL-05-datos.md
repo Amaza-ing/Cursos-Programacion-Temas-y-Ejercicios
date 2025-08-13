@@ -46,6 +46,10 @@ SELECT * FROM customers;
 
 ---
 
+[![Cómo Insertar Datos en una Tabla](https://img.youtube.com/vi/qJQqFKdLYyg/0.jpg)](https://www.youtube.com/watch?v=qJQqFKdLYyg&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **2. Actualizar datos con `UPDATE`**
 
 La sentencia `UPDATE` se utiliza para modificar uno o varios registros existentes.

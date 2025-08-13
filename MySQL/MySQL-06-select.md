@@ -142,4 +142,8 @@ Esta consulta muestra los 3 pedidos más recientes con total mayor a 50.
 
 ---
 
+[![Consultas básicas | SELECT | ORDER BY | WHERE](https://img.youtube.com/vi/AzHlT1fHuN8/0.jpg)](https://www.youtube.com/watch?v=AzHlT1fHuN8&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 En el siguiente tema aprenderemos a trabajar con **funciones de agregación (SUM, COUNT, AVG, MAX, MIN) y agrupaciones con `GROUP BY`.**
