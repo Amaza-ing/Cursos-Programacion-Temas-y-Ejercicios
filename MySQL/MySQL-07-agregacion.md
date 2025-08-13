@@ -110,6 +110,10 @@ GROUP BY customer_id, fecha;
 
 ---
 
+[![Consultas de Agregación | COUNT | SUM | AVG | MIN | MAX](https://img.youtube.com/vi/hMI1WZ-9LhQ/0.jpg)](https://www.youtube.com/watch?v=hMI1WZ-9LhQ&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **6. Conclusión**
 
 - Las funciones de agregación permiten resumir datos.
