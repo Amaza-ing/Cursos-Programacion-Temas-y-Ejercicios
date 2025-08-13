@@ -75,6 +75,10 @@ CREATE TABLE order_details (
 
 ---
 
+[![Claves primarias y foraneas](https://img.youtube.com/vi/2FF8n4hXcSs/0.jpg)](https://www.youtube.com/watch?v=2FF8n4hXcSs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **4. Restricciones adicionales**
 
 Puedes definir qué ocurre cuando se elimina o actualiza un valor referenciado.

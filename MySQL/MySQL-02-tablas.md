@@ -80,6 +80,10 @@ CREATE TABLE products (
 
 ---
 
+[![Cómo crear una base de datos y tablas](https://img.youtube.com/vi/kZ42WlV-Ufs/0.jpg)](https://www.youtube.com/watch?v=kZ42WlV-Ufs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **3. Claves primarias y foráneas**
 
 ### **Clave primaria**
@@ -105,6 +109,10 @@ CREATE TABLE products (
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 ```
+
+---
+
+[![Claves primarias y foraneas](https://img.youtube.com/vi/2FF8n4hXcSs/0.jpg)](https://www.youtube.com/watch?v=2FF8n4hXcSs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
