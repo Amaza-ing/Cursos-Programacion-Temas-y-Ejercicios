@@ -142,6 +142,10 @@ Esta tabla mezcla información de clientes, pedidos y productos.
 
 ---
 
+[![Normalización de Tablas](https://img.youtube.com/vi/w0olqd2CxJI/0.jpg)](https://www.youtube.com/watch?v=w0olqd2CxJI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **4. Ventajas de la normalización**
 
 - Evita la repetición innecesaria de datos.
