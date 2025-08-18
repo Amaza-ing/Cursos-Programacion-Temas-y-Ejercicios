@@ -68,7 +68,7 @@ Si prefieres aprender visualmente, aquí tienes el curso completo en video con e
 
 ---
 
-## 🐱‍👤 **Repositorio con Código y Ejemplos**
+## 🐱‍👤 **Recursos y Código**
 
 También puedes acceder a [esta carpeta con los recursos y el código utilizados en el curso](Recursos).
 
