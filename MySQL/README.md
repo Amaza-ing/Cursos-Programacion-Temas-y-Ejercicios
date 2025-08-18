@@ -58,6 +58,22 @@ También encontrarás ejercicios resueltos en la carpeta [Ejercicios](Ejercicios
 
 ---
 
+## 🎥 **Curso en Video**
+
+Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
+
+📺 **Curso Completo de JavaScript**
+
+[![Curso de MySQL](https://img.youtube.com/vi/8LQUlshIdqw/0.jpg)](https://www.youtube.com/watch?v=8LQUlshIdqw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
+## 🐱‍👤 **Repositorio con Código y Ejemplos**
+
+También puedes acceder a [esta carpeta con los recursos y el código utilizados en el curso](Recursos).
+
+---
+
 ## 🛠️ **Requisitos previos**
 
 Este curso está pensado para quienes parten desde cero, así que no necesitas conocimientos previos.
