@@ -42,6 +42,30 @@ INSERT INTO course VALUES
 ('History', 200, 'C1', '4 weeks', NULL);
 
 
+-- Modificación de Tablas
+/*
+SELECT * FROM course;
+
+ALTER TABLE course
+ADD mandatory BOOL;
+
+UPDATE course SET mandatory = TRUE WHERE hours > 100;
+
+SELECT * FROM course WHERE mandatory IS NULL;
+SELECT * FROM course WHERE mandatory IS NOT NULL;
+
+SELECT name, mandatory FROM course;
+SELECT name, COALESCE(mandatory, FALSE) AS is_mandatory FROM course;
+
+ALTER TABLE course
+DROP COLUMN mandatory;
+
+TRUNCATE TABLE course;
+DROP TABLE course;
+DELETE FROM course WHERE teacher_id = 1;
+*/
+
+
 -- SQL Queries
 /*
 SELECT 3 * 5;
@@ -142,7 +166,7 @@ DROP COLUMN mandatory;
 
 
 -- Vistas
-
+/*
 CREATE VIEW course_class_hours AS
 SELECT name, classroom, hours
 FROM course;
@@ -158,7 +182,68 @@ FROM course c
 JOIN teacher t ON c.teacher_id = t.id;
 
 SELECT * FROM teacher_per_course;
+*/
 
+
+-- Índices
+/*
+CREATE INDEX idx_classroom ON course(classroom);
+
+SELECT * FROM course WHERE classroom = 'B1';
+*/
+
+
+-- Procedimientos Almacenados
+/*
+DELIMITER $$
+
+CREATE PROCEDURE show_long_courses()
+BEGIN
+	SELECT name, hours
+	FROM course
+	WHERE hours >= 150;
+END$$
+
+
+DELIMITER ;
+
+CALL show_long_courses();
+
+
+DELIMITER $$
+
+CREATE PROCEDURE insert_new_teacher(IN name VARCHAR(255), surname VARCHAR(255))
+BEGIN
+	INSERT INTO teacher (name, surname) VALUES (name, surname);
+END$$
+
+DELIMITER ;
+
+CALL insert_new_teacher('David', 'Gutierrez');
+
+SELECT * FROM teacher;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE insert_new_course(IN
+	name VARCHAR(255),
+	hours INT,
+	classroom VARCHAR(255),
+	vacations VARCHAR(255),
+	teacher_id INT
+)
+BEGIN
+	INSERT INTO course (name, hours, classroom, vacations, teacher_id)
+	VALUES (name, hours, classroom, vacations, teacher_id);
+END$$
+
+DELIMITER ;
+
+CALL insert_new_course('Politics', 100, 'A3', '2 weeks', 3);
+
+SELECT * FROM course;
+*/
 
 
 
