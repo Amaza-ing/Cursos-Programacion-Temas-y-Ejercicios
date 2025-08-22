@@ -42,29 +42,6 @@ INSERT INTO course VALUES
 ('History', 200, 'C1', '4 weeks', NULL);
 
 
--- Modificación de Tablas
-/*
-SELECT * FROM course;
-
-ALTER TABLE course
-ADD mandatory BOOL;
-
-UPDATE course SET mandatory = TRUE WHERE hours > 100;
-
-SELECT * FROM course WHERE mandatory IS NULL;
-SELECT * FROM course WHERE mandatory IS NOT NULL;
-
-SELECT name, mandatory FROM course;
-SELECT name, COALESCE(mandatory, FALSE) AS is_mandatory FROM course;
-
-ALTER TABLE course
-DROP COLUMN mandatory;
-
-TRUNCATE TABLE course;
-DROP TABLE course;
-DELETE FROM course WHERE teacher_id = 1;
-*/
-
 
 -- SQL Queries
 /*
@@ -246,8 +223,31 @@ SELECT * FROM course;
 */
 
 
+-- Triggers
+/*
+CREATE TABLE log_hiring (
+	id INT AUTO_INCREMENT,
+	message VARCHAR(255),
+	hiring_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id)
+);
 
 
+DELIMITER $$
 
+CREATE TRIGGER log_new_teacher
+AFTER INSERT ON teacher
+FOR EACH ROW
+BEGIN
+	INSERT INTO log_hiring (message)
+	VALUES (CONCAT('Nuevo Profesor: ', NEW.name, ' ', NEW.surname));
+END$$
+
+
+DELIMITER ;
+
+
+SELECT * FROM log_hiring;
+*/
 
 
