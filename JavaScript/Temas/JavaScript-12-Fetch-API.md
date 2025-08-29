@@ -32,6 +32,10 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 
 ---
 
+[![fetch()](https://img.youtube.com/vi/u3-jOnxJTdY/0.jpg)](https://www.youtube.com/watch?v=u3-jOnxJTdY&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. Realizar una petición GET con `async/await`**
 
 También podemos usar `async/await` para hacer el código más limpio y estructurado.
