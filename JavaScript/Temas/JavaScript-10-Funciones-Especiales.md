@@ -38,6 +38,10 @@ Esto aparece después de 2 segundos
 
 ---
 
+[![setTimeout](https://img.youtube.com/vi/L_KqXlJ1Xic/0.jpg)](https://www.youtube.com/watch?v=L_KqXlJ1Xic&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. `setInterval()` - Ejecutar código repetidamente**
 
 `setInterval()` permite ejecutar una función de manera repetitiva en un intervalo de tiempo definido.
@@ -62,6 +66,10 @@ Contador: 4
 Contador: 5
 ...
 ```
+
+---
+
+[![setInterval](https://img.youtube.com/vi/tf22mwQKawQ/0.jpg)](https://www.youtube.com/watch?v=tf22mwQKawQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
