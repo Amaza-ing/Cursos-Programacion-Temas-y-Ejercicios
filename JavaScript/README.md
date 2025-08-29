@@ -19,6 +19,10 @@ Este curso está estructurado en **módulos prácticos**, con ejemplos y ejercic
 
 ---
 
+[![Introducción al Curso](https://img.youtube.com/vi/BwdLgrccs3g/0.jpg)](https://www.youtube.com/watch?v=BwdLgrccs3g&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## 📂 **Estructura del curso**
 
 Cada tema está en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes explorar los temas en la carpeta correspondiente:
