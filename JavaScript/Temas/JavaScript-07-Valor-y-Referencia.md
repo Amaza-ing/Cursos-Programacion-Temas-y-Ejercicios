@@ -121,6 +121,10 @@ console.log(nestedObject.details.age); // Salida: 30
 
 ---
 
+[![Copia de Objetos](https://img.youtube.com/vi/nxcXzZzdXKU/0.jpg)](https://www.youtube.com/watch?v=nxcXzZzdXKU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **5. Copiando Arrays**
 
 ### **5.1. Copia superficial con `slice()`**
@@ -173,6 +177,10 @@ deepCopyArray[0][0] = 99;
 console.log(originalArray[0][0]); // 1 (no se modifica)
 console.log(deepCopyArray[0][0]); // 99 (copia independiente)
 ```
+
+---
+
+[![Copia de Arrays](https://img.youtube.com/vi/V727GTGDvv0/0.jpg)](https://www.youtube.com/watch?v=V727GTGDvv0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 

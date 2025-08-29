@@ -97,6 +97,10 @@ console.log(user.getAge?.()); // Salida: undefined
 
 ---
 
+[![Optional Chaining](https://img.youtube.com/vi/0JNIXEZu3v0/0.jpg)](https://www.youtube.com/watch?v=0JNIXEZu3v0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **5. Nullish Coalescing (`??`)**
 
 El operador **Nullish Coalescing** (`??`) devuelve el primer operando si **no es `null` ni `undefined`**, de lo contrario devuelve el segundo.
@@ -114,6 +118,10 @@ const age = 0;
 console.log(age || 18); // Salida: 18 (porque 0 es falsy)
 console.log(age ?? 18); // Salida: 0 (porque no es null ni undefined)
 ```
+
+---
+
+[![Nullish Coalescing Operator](https://img.youtube.com/vi/zkdF0wyNI-w/0.jpg)](https://www.youtube.com/watch?v=zkdF0wyNI-w&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -136,6 +144,10 @@ console.log(grade); // Salida: "B"
 ```
 
 > **Nota:** Evita anidar ternarios para no perder legibilidad.
+
+---
+
+[![Operador Ternario](https://img.youtube.com/vi/CAFZ1y4Dzvo/0.jpg)](https://www.youtube.com/watch?v=CAFZ1y4Dzvo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
