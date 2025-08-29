@@ -81,6 +81,10 @@ console.log(allItems.length);
 
 ---
 
+[![Seleccionar Elementos del DOM](https://img.youtube.com/vi/nB6KHr9U6mE/0.jpg)](https://www.youtube.com/watch?v=nB6KHr9U6mE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. Modificar el Contenido y Atributos**
 
 Un elemento del DOM tiene muchos atributos diferentes a los que podemos acceder, vamos a ver algunos de los más utilizados.
@@ -123,6 +127,10 @@ const container = document.querySelector(".container") as HTMLElement;
 container.classList.add("big");
 container.classList.remove("red");
 ```
+
+---
+
+[![Manipulación de Elementos del DOM](https://img.youtube.com/vi/Qh3PDWMl1iM/0.jpg)](https://www.youtube.com/watch?v=Qh3PDWMl1iM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -170,6 +178,10 @@ container.innerHTML =
 
 ---
 
+[![Creación de Elementos del DOM](https://img.youtube.com/vi/fFF77mgl6_Q/0.jpg)](https://www.youtube.com/watch?v=fFF77mgl6_Q&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **5. Manejo de Eventos**
 
 Los eventos permiten que una página responda a las acciones del usuario. Existen multitud de eventos como `click` para cuando el usuario hace click con el ratón sobre un elemento o `input` para cuando se modifica un campo de un formulario.
@@ -202,6 +214,10 @@ document.querySelector("#form").addEventListener("submit", (event) => {
   alert("Formulario enviado");
 });
 ```
+
+---
+
+[![Eventos](https://img.youtube.com/vi/PRUiwhjkGbc/0.jpg)](https://www.youtube.com/watch?v=PRUiwhjkGbc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
