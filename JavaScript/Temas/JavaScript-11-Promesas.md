@@ -16,6 +16,10 @@ En JavaScript, podemos manejar la asincronía de varias maneras:
 
 ---
 
+[![Qué es la Asincronía](https://img.youtube.com/vi/LZhXXiccCXQ/0.jpg)](https://www.youtube.com/watch?v=LZhXXiccCXQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **3. Uso de Promesas**
 
 Las **promesas** son objetos que representan un valor que puede estar disponible ahora, en el futuro o nunca. Una promesa tiene tres estados posibles:
@@ -44,6 +48,12 @@ const myPromise = new Promise((resolve, reject) => {
 ```
 
 En este ejemplo se simula la asincronía con un `setTimeout()` haciendo que tarde 2 segundos en resolverse. En un caso real no tendría un tiempo estipulado, sino que se resolvería en cuanto terminase de ejecutar sus procesos, como alguna petición a una API o una consulta a una base de datos.
+
+---
+
+[![Qué es una Promesa](https://img.youtube.com/vi/VcO04YuoglM/0.jpg)](https://www.youtube.com/watch?v=VcO04YuoglM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
 
 ### **3.2. Consumir una Promesa con `.then()` y `.catch()`**
 
@@ -93,6 +103,10 @@ myPromise
 
 ---
 
+[![Consumir una Promesa con .then](https://img.youtube.com/vi/-Ax2L0YzT4I/0.jpg)](https://www.youtube.com/watch?v=-Ax2L0YzT4I&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **4. Uso de `async/await`**
 
 La sintaxis `async/await` permite manejar promesas de forma más clara y estructurada, como si fueran código síncrono.
@@ -129,6 +143,10 @@ getData();
 ```
 
 En este ejemplo no se ejecutará la linea `console.log(result);` hasta que la linea anterior no haya terminado de resolver su ejecución, ya que tiene un await.
+
+---
+
+[![Consumir una Promesa con .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
