@@ -198,6 +198,16 @@ weird(1, 2, 3); // Salida: 3 (el último valor sobrescribe los anteriores)
 
 ---
 
+[![Cómo crear un Reloj](https://img.youtube.com/vi/7cQ81kmMIpE/0.jpg)](https://www.youtube.com/watch?v=7cQ81kmMIpE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **12. Conclusión**
 
 JavaScript es un lenguaje poderoso, pero algunas de sus características pueden llevar a resultados inesperados. Comprender estas peculiaridades ayuda a escribir código más sólido y evitar errores difíciles de detectar.
+
+---
+
+[![Fin de Curso](https://img.youtube.com/vi/pP-bbDGJZZE/0.jpg)](https://www.youtube.com/watch?v=pP-bbDGJZZE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---

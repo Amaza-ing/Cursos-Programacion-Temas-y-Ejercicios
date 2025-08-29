@@ -92,6 +92,10 @@ console.log(storedUser.name); // "Ana"
 
 ---
 
+[![localStorage & sessionStorage](https://img.youtube.com/vi/vJ4Y6EvucF4/0.jpg)](https://www.youtube.com/watch?v=vJ4Y6EvucF4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+
+---
+
 ## **5. Aplicaciones Prácticas**
 
 ### **5.1. Recordar la preferencia de un usuario**
