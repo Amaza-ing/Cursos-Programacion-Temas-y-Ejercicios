@@ -201,5 +201,93 @@ CALL verify_availability(3);
 */
 
 
+-- WHILE
+/*
+DELIMITER $$
 
+CREATE PROCEDURE count_to_five()
+BEGIN
+	DECLARE i INT DEFAULT 1;
+
+	WHILE i <= 5 DO
+		SELECT CONCAT('Número: ', i);
+		SET i = i + 1;
+	END WHILE;
+END$$
+
+DELIMITER ;
+
+CALL count_to_five();
+
+
+DELIMITER $$
+
+	CREATE PROCEDURE insert_test_orders()
+	BEGIN
+		DECLARE i INT DEFAULT 1;
+	
+		WHILE i <= 5 DO
+			INSERT INTO orders (vendor, drink_id, quantity)
+			VALUES (CONCAT('Prueba_', i), 1, i * 10);
+		
+			SET i = i + 1;
+		END WHILE;
+	END$$
+	
+DELIMITER ;
+
+CALL insert_test_orders();
+
+SELECT * FROM orders;
+*/
+
+
+-- LOOP
+/*
+DELIMITER $$
+
+	CREATE PROCEDURE count_loop()
+	BEGIN
+		DECLARE i INT DEFAULT 1;
+	
+		my_loop: LOOP
+			SELECT CONCAT('Número : ', i);
+			SET i = i + 1;
+		
+			IF i > 5 THEN
+				LEAVE my_loop;
+			END IF;
+		END LOOP;		
+	END$$	
+
+DELIMITER ;
+
+CALL count_loop();
+
+
+
+DELIMITER $$
+
+	CREATE PROCEDURE insert_test_orders()
+	BEGIN
+		DECLARE i INT DEFAULT 1;
+	
+		my_loop: LOOP
+			INSERT INTO orders (vendor, drink_id, quantity)
+			VALUES (CONCAT('Prueba_loop_', i), 1, i * 10);
+		
+			SET i = i + 1;
+			
+			IF i > 5 THEN
+				LEAVE my_loop;
+			END IF;
+		END LOOP;
+	END $$
+
+DELIMITER ;
+
+CALL insert_test_orders();
+
+SELECT * FROM orders;
+*/
 
