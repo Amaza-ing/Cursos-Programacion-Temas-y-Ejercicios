@@ -14,7 +14,7 @@ Bienvenido al **Curso Completo de Git y GitHub**, un repositorio diseñado para 
 🔹 Creación y gestión de versiones con etiquetas (`tags`) y releases.<br>
 🔹 Personalización de Git y automatización.<br>
 
-Este curso está estructurado en **módulos prácticos**, cada uno con ejemplos y ejercicios que te ayudarán a reforzar lo aprendido. 
+Este curso está estructurado en **módulos prácticos**, cada uno con ejemplos y ejercicios que te ayudarán a reforzar lo aprendido.
 
 ---
 
@@ -22,21 +22,21 @@ Este curso está estructurado en **módulos prácticos**, cada uno con ejemplos 
 
 Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes navegar por los temas en el directorio del curso:
 
-| 📚 Tema | Descripción |
-|--------|------------|
-| 📝 [Tema 1: Introducción a Git y GitHub](Temas/Git-01-Introducción.md) | Conceptos básicos y primeros pasos. |
-| 🌱 [Tema 2: Flujo de trabajo en Git](Temas/Git-02-Flujo-de-Trabajo.md) | Cómo funciona Git y su ciclo de vida. |
-| 🌿 [Tema 3: Ramas en Git](Temas/Git-03-Ramas.md) | Creación, fusión y gestión de ramas. |
-| 🔄 [Tema 4: Repositorios remotos](Temas/Git-04-Repositorios-Remotos.md) | Uso de `git push`, `git pull` y colaboración en GitHub. |
-| 🏷️ [Tema 5: Etiquetas y versiones](Temas/Git-05-Tags.md) | Cómo gestionar versiones con `git tag`. |
-| 📌 [Tema 6: Guardar cambios temporales](Temas/Git-06-Stash.md) | Uso de `git stash` para cambios temporales. |
-| 🏗️ [Tema 7: Rebase y organización del historial](Temas/Git-07-Rebase.md) | Uso avanzado de `git rebase`. |
-| 🍒 [Tema 8: Aplicar commits específicos](Temas/Git-08-Cherry-Pick.md) | Uso de `git cherry-pick` para seleccionar cambios. |
-| ⏪ [Tema 9: Deshacer cambios](Temas/Git-09-Restore-Revert.md) | Uso de `git restore` y `git revert`. |
-| 🔐 [Tema 10: Repositorios públicos y privados](Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md) | Cómo administrar repositorios y borrar ramas. |
-| 📜 [Tema 11: Creación de README.md](Temas/Git-11-Readme.md) | Uso de Markdown para documentar proyectos. |
-| 🌳 [Tema 12: Trabajar en varias ramas a lavez](Temas/Git-12-Varias-Ramas.md) | Cómo trabajar con varias ramas a la vez. |
-| 💠 [Tema 13: Workflows en Git](Temas/Git-13-Workflows.md) | Estrategias de ramas y flujos de trabajo. |
+| 📚 Tema                                                                                               | Descripción                                             |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| 📝 [Tema 1: Introducción a Git y GitHub](Temas/Git-01-Introducción.md)                                | Conceptos básicos y primeros pasos.                     |
+| 🌱 [Tema 2: Flujo de trabajo en Git](Temas/Git-02-Flujo-de-Trabajo.md)                                | Cómo funciona Git y su ciclo de vida.                   |
+| 🌿 [Tema 3: Ramas en Git](Temas/Git-03-Ramas.md)                                                      | Creación, fusión y gestión de ramas.                    |
+| 🔄 [Tema 4: Repositorios remotos](Temas/Git-04-Repositorios-Remotos.md)                               | Uso de `git push`, `git pull` y colaboración en GitHub. |
+| 🏷️ [Tema 5: Etiquetas y versiones](Temas/Git-05-Tags.md)                                              | Cómo gestionar versiones con `git tag`.                 |
+| 📌 [Tema 6: Guardar cambios temporales](Temas/Git-06-Stash.md)                                        | Uso de `git stash` para cambios temporales.             |
+| 🏗️ [Tema 7: Rebase y organización del historial](Temas/Git-07-Rebase.md)                              | Uso avanzado de `git rebase`.                           |
+| 🍒 [Tema 8: Aplicar commits específicos](Temas/Git-08-Cherry-Pick.md)                                 | Uso de `git cherry-pick` para seleccionar cambios.      |
+| ⏪ [Tema 9: Deshacer cambios](Temas/Git-09-Restore-Revert.md)                                         | Uso de `git restore` y `git revert`.                    |
+| 🔐 [Tema 10: Repositorios públicos y privados](Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md) | Cómo administrar repositorios y borrar ramas.           |
+| 📜 [Tema 11: Creación de README.md](Temas/Git-11-Readme.md)                                           | Uso de Markdown para documentar proyectos.              |
+| 🌳 [Tema 12: Trabajar en varias ramas a lavez](Temas/Git-12-Varias-Ramas.md)                          | Cómo trabajar con varias ramas a la vez.                |
+| 💠 [Tema 13: Workflows en Git](Temas/Git-13-Workflows.md)                                             | Estrategias de ramas y flujos de trabajo.               |
 
 📌 **Para ver todos los temas disponibles, revisa este repositorio.**
 
@@ -57,6 +57,7 @@ Si prefieres aprender de forma visual, aquí tienes un video donde se explica to
 Este curso empieza desde 0, así que no tienes que partir con ningún conocimiento previo.
 
 Antes de empezar, asegúrate de tener:
+
 - Git instalado en tu sistema ([Guía de instalación](https://git-scm.com/downloads)).
 - Una cuenta en GitHub ([Crear cuenta](https://github.com/)).
 - Un editor de código recomendado (VS Code, Sublime Text, etc.).

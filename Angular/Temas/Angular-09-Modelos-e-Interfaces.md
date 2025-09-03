@@ -5,6 +5,7 @@
 En Angular, el uso de **modelos** e **interfaces** permite definir estructuras de datos claras y seguras, facilitando el mantenimiento y la escalabilidad del código. TypeScript ofrece herramientas como **interfaces** y **clases** para tipar objetos y garantizar que los datos sean utilizados de forma consistente.
 
 En este tema aprenderás:
+
 - La diferencia entre **interfaces** y **clases** en TypeScript.
 - Cuándo usar **interfaces** y cuándo usar **clases**.
 - Cómo implementar modelos en un proyecto Angular.
@@ -13,12 +14,12 @@ En este tema aprenderás:
 
 ## **2. Diferencias entre Interfaces y Clases**
 
-| **Característica**  | **Interface**  | **Clase**  |
-|---------------------|---------------|------------------|
-| Definición de estructura | Sí | Sí |
-| Implementación de lógica | No | Sí |
-| Genera código en JavaScript | No | Sí |
-| Se puede instanciar | No | Sí |
+| **Característica**          | **Interface** | **Clase** |
+| --------------------------- | ------------- | --------- |
+| Definición de estructura    | Sí            | Sí        |
+| Implementación de lógica    | No            | Sí        |
+| Genera código en JavaScript | No            | Sí        |
+| Se puede instanciar         | No            | Sí        |
 
 Las **interfaces** se usan para definir la forma de un objeto (un modelo), mientras que las **clases** pueden incluir lógica adicional y métodos.
 
@@ -31,6 +32,7 @@ Las interfaces en TypeScript permiten definir la forma de un objeto sin incluir 
 ### **Ejemplo de Interface**
 
 #### **Archivo: `User.ts`**
+
 ```ts
 export interface User {
   id: number;
@@ -43,22 +45,24 @@ export interface User {
 Se usa para tipar objetos en un servicio o componente:
 
 #### **Archivo: `user.component.ts`**
+
 ```ts
-import { User } from '../models/User';
+import { User } from "../models/User";
 
 export class UserComponent {
   getUser(): User {
     return {
       id: 1,
-      name: 'Juan',
-      email: 'juan@email.com',
-      isActive: true
+      name: "Juan",
+      email: "juan@email.com",
+      isActive: true,
     };
   }
 }
 ```
 
 Ventajas de las interfaces:
+
 - **Claridad**: Separa la estructura de los datos de la lógica.
 - **Tipado estático**: Evita errores en tiempo de compilación.
 

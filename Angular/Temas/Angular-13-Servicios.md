@@ -101,8 +101,8 @@ export class UserService {
   toggleActive(id: number) {
     this.users.update((users) =>
       users.map((user) =>
-        user.id === id ? { ...user, active: !user.active } : user
-      )
+        user.id === id ? { ...user, active: !user.active } : user,
+      ),
     );
   }
 }

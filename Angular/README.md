@@ -34,7 +34,7 @@ Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este reposit
 | 🏗️ [Tema 6: Comunicación entre Componentes](Temas/Angular-06-Input-Output.md)     | Uso de `@Input`, `@Output` y signals para la comunicación.  |
 | 🏁 [Tema 7: Constructor y ngOnInit](Temas/Angular-07-Constructor-ngOnInit.md)     | Métodos `constructor`, `ngOnInit`                           |
 | 🔄 [Tema 8: Ciclo de Vida de Componentes](Temas/Angular-08-Ciclo-de-Vida.md)      | Métodos y hooks del ciclo de vida.                          |
-| 🏛 [Tema 9: Modelos e Interfaces](Temas/Angular-09-Modelos-e-Interfaces.md)        | Modelos e Interfaces para el tipado de objetos.             |
+| 🏛 [Tema 9: Modelos e Interfaces](Temas/Angular-09-Modelos-e-Interfaces.md)       | Modelos e Interfaces para el tipado de objetos.             |
 | 🌈 [Tema 10: ngClass para clases dinámicas](Temas/Angular-10-ngClass.md)          | ngClass para dar clases y estilos dinámicos.                |
 | 📝 [Tema 11: Formularios con ngModel](Temas/Angular-11-Formularios-ngModel.md)    | Creación y validación de formularios.                       |
 | 🧮 [Tema 12: Formularios Reactivos](Temas/Angular-12-Formularios-Reactivos.md)    | Uso de `FormGroup` y `FormControl`.                         |

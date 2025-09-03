@@ -1,7 +1,8 @@
 # **Ejercicios - Tema 1: Introducción a CSS**
 
 ## **Instrucciones:**
-A continuación, encontrarás 5 ejercicios prácticos sobre la introducción a CSS. 
+
+A continuación, encontrarás 5 ejercicios prácticos sobre la introducción a CSS.
 
 Intenta resolverlos antes de consultar la solución.
 
@@ -30,16 +31,16 @@ Crea un documento HTML que defina un estilo CSS en la etiqueta `<style>` para qu
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-        p {
-            color: blue;
-        }
+      p {
+        color: blue;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <p>Este es un párrafo con CSS interno.</p>
-</body>
+  </body>
 </html>
 ```
 
@@ -54,22 +55,24 @@ Crea un archivo CSS externo llamado `styles.css` y aplícalo a un documento HTML
 <details><summary>Mostrar solución</summary>
 
 **Archivo `styles.css`**:
+
 ```css
 h1 {
-    color: green;
+  color: green;
 }
 ```
 
 **Archivo `index.html`**:
+
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <h1>Este es un título con CSS externo.</h1>
-</body>
+  </body>
 </html>
 ```
 
@@ -86,16 +89,16 @@ Usa CSS para cambiar el tamaño del texto de un párrafo a 20 píxeles.
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-        p {
-            font-size: 20px;
-        }
+      p {
+        font-size: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <p>Este es un párrafo con tamaño de texto de 20px.</p>
-</body>
+  </body>
 </html>
 ```
 
@@ -112,18 +115,18 @@ Crea un párrafo con CSS que tenga color de texto rojo, tamaño de fuente de 18p
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-        p {
-            color: red;
-            font-size: 18px;
-            text-align: center;
-        }
+      p {
+        color: red;
+        font-size: 18px;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <p>Este es un párrafo con múltiples propiedades CSS.</p>
-</body>
+  </body>
 </html>
 ```
 

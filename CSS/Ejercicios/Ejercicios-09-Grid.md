@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 8: Diseño con CSS Grid**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás 5 ejercicios prácticos sobre CSS Grid.
 
 Intenta resolverlos antes de consultar la solución.
@@ -15,20 +16,21 @@ Crea un contenedor con 3 columnas de igual tamaño y 2 filas.
 
 ```css
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 100px);
-    gap: 10px;
-    background-color: lightgray;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+  background-color: lightgray;
 }
 
 .item {
-    background-color: lightblue;
-    border: 1px solid #000;
-    text-align: center;
-    line-height: 100px;
+  background-color: lightblue;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 100px;
 }
 ```
+
 ```html
 <div class="container">
   <div class="item">1</div>
@@ -52,25 +54,26 @@ Crea un `div` que ocupe dos columnas en una cuadrícula de 3x2.
 
 ```css
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 100px);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
 }
 
 .item1 {
-    grid-column: 1 / 3;
-    background-color: salmon;
-    text-align: center;
-    line-height: 100px;
+  grid-column: 1 / 3;
+  background-color: salmon;
+  text-align: center;
+  line-height: 100px;
 }
 
 .item {
-    background-color: lightblue;
-    text-align: center;
-    line-height: 100px;
+  background-color: lightblue;
+  text-align: center;
+  line-height: 100px;
 }
 ```
+
 ```html
 <div class="container">
   <div class="item1">1</div>
@@ -93,38 +96,39 @@ Crea un diseño con áreas definidas para `header`, `sidebar`, `content` y `foot
 
 ```css
 .container {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "sidebar content"
-        "footer footer";
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 10px;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
 }
 
 .header {
-    grid-area: header;
-    background-color: lightcoral;
-    text-align: center;
+  grid-area: header;
+  background-color: lightcoral;
+  text-align: center;
 }
 
 .sidebar {
-    grid-area: sidebar;
-    background-color: lightgreen;
+  grid-area: sidebar;
+  background-color: lightgreen;
 }
 
 .content {
-    grid-area: content;
-    background-color: lightblue;
+  grid-area: content;
+  background-color: lightblue;
 }
 
 .footer {
-    grid-area: footer;
-    background-color: lightgray;
-    text-align: center;
+  grid-area: footer;
+  background-color: lightgray;
+  text-align: center;
 }
 ```
+
 ```html
 <div class="container">
   <div class="header">Header</div>
@@ -146,22 +150,23 @@ Crea una cuadrícula donde los elementos estén centrados tanto horizontal como 
 
 ```css
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    justify-items: center;
-    align-items: center;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .item {
-    background-color: lightblue;
-    text-align: center;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+  background-color: lightblue;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
 }
 ```
+
 ```html
 <div class="container">
   <div class="item">1</div>
@@ -188,17 +193,18 @@ Usa `auto-fit` para crear una cuadrícula flexible que se ajuste al tamaño de l
 
 ```css
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
 }
 
 .item {
-    background-color: lightblue;
-    text-align: center;
-    padding: 20px;
+  background-color: lightblue;
+  text-align: center;
+  padding: 20px;
 }
 ```
+
 ```html
 <div class="container">
   <div class="item">1</div>

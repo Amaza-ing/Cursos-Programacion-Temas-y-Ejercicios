@@ -77,7 +77,7 @@ Para reestablecer los campos podemos usar el método `reset()` de los formulario
 ```ts
   submitForm() {
     console.log("Datos del formulario:", this.userForm.value);
-    
+
     this.userForm.reset();
   }
 ```

@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 10: Media Queries y Diseño Responsivo**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás 5 ejercicios prácticos sobre media queries y diseño responsivo en CSS.
 
 Intenta resolverlos antes de consultar la solución.
@@ -95,11 +96,12 @@ Crea una galería de imágenes que muestre las imágenes en una sola columna en 
   }
 }
 ```
+
 ```html
 <div class="gallery">
-  <img src="img1.jpg" alt="Imagen 1">
-  <img src="img2.jpg" alt="Imagen 2">
-  <img src="img3.jpg" alt="Imagen 3">
+  <img src="img1.jpg" alt="Imagen 1" />
+  <img src="img2.jpg" alt="Imagen 2" />
+  <img src="img3.jpg" alt="Imagen 3" />
 </div>
 ```
 

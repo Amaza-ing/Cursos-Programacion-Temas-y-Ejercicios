@@ -157,7 +157,7 @@ const posts = ref([]);
 
 async function fetchPosts() {
   const response = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=5"
+    "https://jsonplaceholder.typicode.com/posts?_limit=5",
   );
   posts.value = await response.json();
 }

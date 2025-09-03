@@ -60,10 +60,10 @@ Crea dos promesas: `fetchUserData` que se resuelve en 1 segundo y `fetchPosts` q
 
 ```js
 const fetchUserData = new Promise((resolve) =>
-  setTimeout(() => resolve("Usuario obtenido"), 1000)
+  setTimeout(() => resolve("Usuario obtenido"), 1000),
 );
 const fetchPosts = new Promise((resolve) =>
-  setTimeout(() => resolve("Posts cargados"), 2000)
+  setTimeout(() => resolve("Posts cargados"), 2000),
 );
 
 async function loadData() {
@@ -86,13 +86,13 @@ Crea tres promesas: una que se resuelva en 1 segundo, otra que falle en 2 segund
 
 ```js
 const success1 = new Promise((resolve) =>
-  setTimeout(() => resolve("Éxito 1"), 1000)
+  setTimeout(() => resolve("Éxito 1"), 1000),
 );
 const failure = new Promise((_, reject) =>
-  setTimeout(() => reject("Error en la segunda promesa"), 2000)
+  setTimeout(() => reject("Error en la segunda promesa"), 2000),
 );
 const success2 = new Promise((resolve) =>
-  setTimeout(() => resolve("Éxito 2"), 3000)
+  setTimeout(() => resolve("Éxito 2"), 3000),
 );
 
 async function handlePromises() {

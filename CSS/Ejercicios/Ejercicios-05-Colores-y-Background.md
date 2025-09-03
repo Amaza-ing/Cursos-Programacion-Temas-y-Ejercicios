@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 5: Colores y Fondos en CSS**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás 5 ejercicios prácticos sobre colores y fondos en CSS.
 
 Intenta resolverlos antes de consultar la solución.
@@ -15,9 +16,10 @@ Crea un párrafo con el color de texto rojo.
 
 ```css
 p {
-    color: red;
+  color: red;
 }
 ```
+
 ```html
 <p>Este es un texto en color rojo.</p>
 ```
@@ -34,9 +36,10 @@ Crea un encabezado `<h1>` con color de texto azul utilizando un código hexadeci
 
 ```css
 h1 {
-    color: #0000ff;
+  color: #0000ff;
 }
 ```
+
 ```html
 <h1>Este título es azul.</h1>
 ```
@@ -53,11 +56,12 @@ Crea un `div` con una imagen de fondo llamada `fondo.jpg`.
 
 ```css
 div {
-    background-image: url("fondo.jpg");
-    width: 300px;
-    height: 200px;
+  background-image: url("fondo.jpg");
+  width: 300px;
+  height: 200px;
 }
 ```
+
 ```html
 <div>Este es un contenedor con una imagen de fondo.</div>
 ```
@@ -74,11 +78,12 @@ Crea un `div` con un fondo degradado de rojo a azul de izquierda a derecha.
 
 ```css
 div {
-    background: linear-gradient(to right, red, blue);
-    width: 300px;
-    height: 200px;
+  background: linear-gradient(to right, red, blue);
+  width: 300px;
+  height: 200px;
 }
 ```
+
 ```html
 <div>Este es un contenedor con un fondo degradado.</div>
 ```
@@ -95,12 +100,13 @@ Crea un `div` con una imagen de fondo que permanezca fija al hacer scroll.
 
 ```css
 div {
-    background-image: url("fondo.jpg");
-    background-attachment: fixed;
-    width: 100%;
-    height: 300px;
+  background-image: url("fondo.jpg");
+  background-attachment: fixed;
+  width: 100%;
+  height: 300px;
 }
 ```
+
 ```html
 <div>Este es un contenedor con una imagen de fondo fija.</div>
 ```

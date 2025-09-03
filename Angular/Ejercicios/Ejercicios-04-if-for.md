@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 4: Control de Flujo en Angular (@if y @for)**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás 10 ejercicios prácticos sobre el control de flujo en Angular usando `@if` y `@for`.
 
 Intenta resolverlos antes de consultar la solución.
@@ -8,15 +9,16 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Uso básico de `@if`**
+
 Crea una condición en la plantilla para mostrar un mensaje si la variable `isLoggedIn` es `true` y otro mensaje diferente si es `false`.
 
 <details><summary>Mostrar solución</summary>
 
 ```html
 @if (isLoggedIn) {
-  <p>Bienvenido, usuario.</p>
+<p>Bienvenido, usuario.</p>
 } @else {
-  <p>Por favor, inicia sesión.</p>
+<p>Por favor, inicia sesión.</p>
 }
 ```
 
@@ -31,6 +33,7 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 2: Uso de `@for` para mostrar una lista**
+
 Muestra una lista de nombres usando `@for` y optimiza con `track`.
 
 <details><summary>Mostrar solución</summary>
@@ -38,14 +41,14 @@ Muestra una lista de nombres usando `@for` y optimiza con `track`.
 ```html
 <ul>
   @for (name of names; track name) {
-    <li>{{ name }}</li>
+  <li>{{ name }}</li>
   }
 </ul>
 ```
 
 ```ts
 export class SomeComponent {
-  names: string[] = ['Ana', 'Luis', 'Carlos'];
+  names: string[] = ["Ana", "Luis", "Carlos"];
 }
 ```
 
@@ -54,17 +57,18 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 3: `@if` anidado**
+
 Crea una estructura condicional que muestre mensajes diferentes según la edad del usuario.
 
 <details><summary>Mostrar solución</summary>
 
 ```html
 @if (age < 18) {
-  <p>Eres menor de edad.</p>
+<p>Eres menor de edad.</p>
 } @else if (age < 65) {
-  <p>Eres un adulto.</p>
+<p>Eres un adulto.</p>
 } @else {
-  <p>Eres un adulto mayor.</p>
+<p>Eres un adulto mayor.</p>
 }
 ```
 
@@ -79,6 +83,7 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 4: Iterar sobre un array de objetos**
+
 Muestra una lista de productos con nombre y precio usando `@for`.
 
 <details><summary>Mostrar solución</summary>
@@ -86,7 +91,7 @@ Muestra una lista de productos con nombre y precio usando `@for`.
 ```html
 <ul>
   @for (product of products; track product.id) {
-    <li>{{ product.name }} - ${{ product.price }}</li>
+  <li>{{ product.name }} - ${{ product.price }}</li>
   }
 </ul>
 ```
@@ -94,8 +99,8 @@ Muestra una lista de productos con nombre y precio usando `@for`.
 ```ts
 export class SomeComponent {
   products = [
-    { id: 1, name: 'Ordenador', price: 1000 },
-    { id: 2, name: 'Ratón', price: 20 }
+    { id: 1, name: "Ordenador", price: 1000 },
+    { id: 2, name: "Ratón", price: 20 },
   ];
 }
 ```
@@ -105,6 +110,7 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 5: Alternar entre dos vistas con `@if`**
+
 Crea un botón que cambie entre "Mostrar más" y "Mostrar menos".
 
 <details><summary>Mostrar solución</summary>
@@ -126,19 +132,20 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 6: Uso combinado de `@if` y `@for`**
+
 Muestra una lista de tareas si hay elementos en el array, y un mensaje si está vacío.
 
 <details><summary>Mostrar solución</summary>
 
 ```html
 @if (tasks.length) {
-  <ul>
-    @for (task of tasks; track task) {
-      <li>{{ task }}</li>
-    }
-  </ul>
+<ul>
+  @for (task of tasks; track task) {
+  <li>{{ task }}</li>
+  }
+</ul>
 } @else {
-  <p>No hay tareas pendientes.</p>
+<p>No hay tareas pendientes.</p>
 }
 ```
 
@@ -153,6 +160,7 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 7: Uso de `@for` con índice**
+
 Muestra una lista numerada de elementos con su índice.
 
 <details><summary>Mostrar solución</summary>
@@ -160,14 +168,14 @@ Muestra una lista numerada de elementos con su índice.
 ```html
 <ul>
   @for ((item, index) of items; track item) {
-    <li>{{ index + 1 }}. {{ item }}</li>
+  <li>{{ index + 1 }}. {{ item }}</li>
   }
 </ul>
 ```
 
 ```ts
 export class SomeComponent {
-  items: string[] = ['Elemento 1', 'Elemento 2'];
+  items: string[] = ["Elemento 1", "Elemento 2"];
 }
 ```
 
@@ -176,31 +184,32 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 8: Alternar entre dos listas con `@if`**
+
 Muestra una lista diferente según una variable booleana.
 
 <details><summary>Mostrar solución</summary>
 
 ```html
 @if (showFruits) {
-  <ul>
-    @for (fruit of fruits; track fruit) {
-      <li>{{ fruit }}</li>
-    }
-  </ul>
+<ul>
+  @for (fruit of fruits; track fruit) {
+  <li>{{ fruit }}</li>
+  }
+</ul>
 } @else {
-  <ul>
-    @for (vegetable of vegetables; track vegetable) {
-      <li>{{ vegetable }}</li>
-    }
-  </ul>
+<ul>
+  @for (vegetable of vegetables; track vegetable) {
+  <li>{{ vegetable }}</li>
+  }
+</ul>
 }
 ```
 
 ```ts
 export class SomeComponent {
   showFruits: boolean = true;
-  fruits: string[] = ['Manzana', 'Banana'];
-  vegetables: string[] = ['Zanahoria', 'Brócoli'];
+  fruits: string[] = ["Manzana", "Banana"];
+  vegetables: string[] = ["Zanahoria", "Brócoli"];
 }
 ```
 
@@ -209,25 +218,24 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 9: Ocultar elementos de una lista con `@if`**
+
 Oculta elementos de una lista si cumplen cierta condición.
 
 <details><summary>Mostrar solución</summary>
 
 ```html
 <ul>
-  @for (user of users; track user.id) {
-    @if (!user.isBanned) {
-      <li>{{ user.name }}</li>
-    }
-  }
+  @for (user of users; track user.id) { @if (!user.isBanned) {
+  <li>{{ user.name }}</li>
+  } }
 </ul>
 ```
 
 ```ts
 export class SomeComponent {
   users = [
-    { id: 1, name: 'Carlos', isBanned: false },
-    { id: 2, name: 'Ana', isBanned: true }
+    { id: 1, name: "Carlos", isBanned: false },
+    { id: 2, name: "Ana", isBanned: true },
   ];
 }
 ```
@@ -237,6 +245,7 @@ export class SomeComponent {
 ---
 
 ### **Ejercicio 10: Mostrar una tabla con `@for`**
+
 Crea una tabla con datos de usuarios usando `@for`.
 
 <details><summary>Mostrar solución</summary>
@@ -248,10 +257,10 @@ Crea una tabla con datos de usuarios usando `@for`.
     <th>Edad</th>
   </tr>
   @for (user of users; track user.id) {
-    <tr>
-      <td>{{ user.name }}</td>
-      <td>{{ user.age }}</td>
-    </tr>
+  <tr>
+    <td>{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+  </tr>
   }
 </table>
 ```
@@ -259,8 +268,8 @@ Crea una tabla con datos de usuarios usando `@for`.
 ```ts
 export class SomeComponent {
   users = [
-    { id: 1, name: 'Laura', age: 25 },
-    { id: 2, name: 'Pedro', age: 30 }
+    { id: 1, name: "Laura", age: 25 },
+    { id: 2, name: "Pedro", age: 30 },
   ];
 }
 ```

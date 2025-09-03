@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 11: HTML Semántico**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás 5 ejercicios prácticos sobre HTML semántico.
 
 Intenta resolverlos antes de consultar la solución.
@@ -8,6 +9,7 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Crear una estructura básica con etiquetas semánticas**
+
 Crea una página HTML que contenga un encabezado (`<header>`), un menú de navegación (`<nav>`), una sección principal (`<main>`), un artículo (`<article>`), una barra lateral (`<aside>`) y un pie de página (`<footer>`).
 
 <details><summary>Mostrar solución</summary>
@@ -50,6 +52,7 @@ Crea una página HTML que contenga un encabezado (`<header>`), un menú de naveg
 ---
 
 ### **Ejercicio 2: Convertir una estructura basada en `div` en HTML semántico**
+
 Transforma la siguiente estructura que usa `div` en una estructura semántica adecuada.
 
 ```html
@@ -80,6 +83,7 @@ Transforma la siguiente estructura que usa `div` en una estructura semántica ad
 ---
 
 ### **Ejercicio 3: Crear una estructura con `<section>` y `<article>`**
+
 Crea una página que tenga una sección (`<section>`) con dos artículos (`<article>`), cada uno con un título y un párrafo de texto.
 
 <details><summary>Mostrar solución</summary>
@@ -103,13 +107,14 @@ Crea una página que tenga una sección (`<section>`) con dos artículos (`<arti
 ---
 
 ### **Ejercicio 4: Uso de `<figure>` y `<figcaption>`**
+
 Crea una estructura HTML que incluya una imagen con una descripción utilizando `<figure>` y `<figcaption>`.
 
 <details><summary>Mostrar solución</summary>
 
 ```html
 <figure>
-  <img src="imagen.jpg" alt="Descripción de la imagen">
+  <img src="imagen.jpg" alt="Descripción de la imagen" />
   <figcaption>Esta es una imagen de un hermoso paisaje.</figcaption>
 </figure>
 ```
@@ -119,6 +124,7 @@ Crea una estructura HTML que incluya una imagen con una descripción utilizando 
 ---
 
 ### **Ejercicio 5: Crear un `<footer>` con enlaces adicionales**
+
 Diseña un pie de página que contenga enlaces a una política de privacidad, términos de servicio y redes sociales.
 
 <details><summary>Mostrar solución</summary>
@@ -138,4 +144,3 @@ Diseña un pie de página que contenga enlaces a una política de privacidad, t�
 ```
 
 </details>
-

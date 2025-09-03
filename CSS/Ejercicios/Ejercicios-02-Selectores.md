@@ -1,7 +1,8 @@
 # **Ejercicios - Tema 2: Selectores y especificidad en CSS**
 
 ## **Instrucciones:**
-A continuación, encontrarás 5 ejercicios prácticos sobre selectores y especificidad en CSS. 
+
+A continuación, encontrarás 5 ejercicios prácticos sobre selectores y especificidad en CSS.
 
 Intenta resolverlos antes de consultar la solución.
 
@@ -15,7 +16,7 @@ Aplica un color de fondo amarillo a todos los párrafos (`<p>`) de una página w
 
 ```css
 p {
-    background-color: yellow;
+  background-color: yellow;
 }
 ```
 
@@ -31,10 +32,11 @@ Crea una clase llamada `.danger` y úsala para hacer que el texto de los element
 
 ```css
 .danger {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
 ```
+
 ```html
 <p class="danger">Este es un párrafo importante.</p>
 ```
@@ -51,9 +53,10 @@ Crea un ID llamado `#some-title` y úsalo para centrar el texto de un encabezado
 
 ```css
 #some-title {
-    text-align: center;
+  text-align: center;
 }
 ```
+
 ```html
 <h1 id="some-title">Este es un título centrado</h1>
 ```
@@ -70,9 +73,10 @@ Selecciona todos los enlaces (`<a>`) que estén dentro de un párrafo (`<p>`) y 
 
 ```css
 p a {
-    color: blue;
+  color: blue;
 }
 ```
+
 ```html
 <p>Visita <a href="#">este enlace</a> para más información.</p>
 ```
@@ -89,17 +93,20 @@ Aplica diferentes estilos a un párrafo usando un selector de tipo, un selector 
 
 ```css
 p {
-    color: black;
+  color: black;
 }
 .special {
-    color: green;
+  color: green;
 }
 #some-id {
-    color: red;
+  color: red;
 }
 ```
+
 ```html
-<p id="some-id" class="special">Este párrafo tendrá color rojo por la especificidad del ID.</p>
+<p id="some-id" class="special">
+  Este párrafo tendrá color rojo por la especificidad del ID.
+</p>
 ```
 
 </details>

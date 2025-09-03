@@ -1,9 +1,11 @@
 # **Tema 1: Introducción a Git y GitHub**
 
 ## **1. ¿Qué es Git?**
+
 Git es un **sistema de control de versiones distribuido** que permite gestionar los cambios en el código de un proyecto de manera eficiente. Fue creado por Linus Torvalds en 2005 y es ampliamente utilizado en el desarrollo de software.
 
 ### **Características clave de Git:**
+
 - Permite el **seguimiento de cambios** en los archivos del proyecto.
 - Facilita la **colaboración** entre desarrolladores.
 - Es un sistema **distribuido**, lo que significa que cada usuario tiene una copia completa del historial del proyecto.
@@ -13,6 +15,7 @@ Git es un **sistema de control de versiones distribuido** que permite gestionar 
 ---
 
 ## **2. ¿Qué es GitHub?**
+
 GitHub es una plataforma basada en la web que permite almacenar, compartir y colaborar en proyectos que utilizan Git. Además, proporciona herramientas adicionales como:
 
 - **Repositorios remotos**: Almacenamiento en la nube de código fuente.
@@ -29,9 +32,11 @@ GitHub es una plataforma basada en la web que permite almacenar, compartir y col
 ---
 
 ## **3. Instalación de Git**
+
 Para comenzar a utilizar Git, es necesario instalarlo en el sistema.
 
 ### **Instalación en Windows**
+
 1. Descarga Git desde [git-scm.com](https://git-scm.com/downloads).
 2. Ejecuta el instalador y sigue las instrucciones.
 3. Verifica la instalación ejecutando en la terminal:
@@ -40,6 +45,7 @@ Para comenzar a utilizar Git, es necesario instalarlo en el sistema.
    ```
 
 ### **Instalación en macOS**
+
 1. Abre la terminal y ejecuta:
    ```bash
    brew install git
@@ -50,6 +56,7 @@ Para comenzar a utilizar Git, es necesario instalarlo en el sistema.
    ```
 
 ### **Instalación en Linux**
+
 1. Para distribuciones basadas en Debian (Ubuntu):
    ```bash
    sudo apt update
@@ -71,22 +78,28 @@ Para comenzar a utilizar Git, es necesario instalarlo en el sistema.
 ---
 
 ## **4. Configuración inicial de Git**
+
 Antes de empezar a trabajar con Git, es importante configurarlo con los datos del usuario.
 
 ### **Configurar el nombre y el correo**
+
 ```bash
 git config --global user.name "Tu Nombre"
 git config --global user.email "tuemail@example.com"
 ```
 
 ### **Verificar la configuración**
+
 ```bash
 git config --list
 ```
+
 Esto mostrará la configuración actual de Git.
 
 ### **Configurar el editor de texto predeterminado**
+
 Si deseas cambiar el editor de texto que Git usa por defecto. Aunque no es necesario:
+
 ```bash
 git config --global core.editor "code --wait"  # Para VS Code
 git config --global core.editor "nano"         # Para Nano
@@ -100,13 +113,16 @@ git config --global core.editor "vim"          # Para Vim
 ---
 
 ## **5. Creación de un repositorio Git**
+
 Un repositorio Git es un directorio donde se almacenan los archivos del proyecto junto con su historial de cambios.
 
 ### **Crear un nuevo repositorio**
+
 ```bash
 # Crea una nueva carpeta o entra en una que ya exista y abre una terminal en ella
 git init           # Inicializa un repositorio Git dentro de la carpeta
 ```
+
 Esto generará una carpeta oculta `.git` donde se guardará la información del repositorio.
 
 ---
@@ -116,10 +132,13 @@ Esto generará una carpeta oculta `.git` donde se guardará la información del 
 ---
 
 ### **Clonar un repositorio existente**
+
 Si ya existe un repositorio en GitHub, puedes clonarlo en tu máquina local:
+
 ```bash
 git clone https://github.com/usuario/repositorio.git
 ```
+
 Esto descargará todos los archivos del repositorio y su historial de cambios.
 
 ---
@@ -129,6 +148,7 @@ Esto descargará todos los archivos del repositorio y su historial de cambios.
 ---
 
 ## **6. Buenas prácticas en Git**
+
 - Configurar correctamente los datos del usuario con `git config`.
 - Escribir **mensajes de commit descriptivos** para facilitar el seguimiento de cambios.
 - Usar ramas (**branches**) para desarrollar nuevas funcionalidades sin afectar la versión principal.
@@ -139,20 +159,21 @@ Esto descargará todos los archivos del repositorio y su historial de cambios.
 ---
 
 ## **Comandos básicos de Git**
-| Comando | Descripción |
-|---------|-------------|
-| `git init` | Inicializa un nuevo repositorio Git. |
-| `git clone <url>` | Clona un repositorio existente. |
-| `git status` | Muestra el estado actual del repositorio. |
-| `git add <archivo>` | Añade un archivo al área de preparación. |
+
+| Comando                   | Descripción                                         |
+| ------------------------- | --------------------------------------------------- |
+| `git init`                | Inicializa un nuevo repositorio Git.                |
+| `git clone <url>`         | Clona un repositorio existente.                     |
+| `git status`              | Muestra el estado actual del repositorio.           |
+| `git add <archivo>`       | Añade un archivo al área de preparación.            |
 | `git commit -m "mensaje"` | Guarda los cambios en el historial del repositorio. |
-| `git log` | Muestra el historial de commits. |
-| `git branch` | Lista las ramas disponibles. |
-| `git checkout <rama>` | Cambia a una rama específica. |
-| `git checkout -b <rama>` | Crea una nueva rama y cambia a ella. |
-| `git merge <rama>` | Fusiona una rama con la rama actual. |
-| `git pull` | Descarga cambios desde un repositorio remoto. |
-| `git push` | Envía cambios al repositorio remoto. |
+| `git log`                 | Muestra el historial de commits.                    |
+| `git branch`              | Lista las ramas disponibles.                        |
+| `git checkout <rama>`     | Cambia a una rama específica.                       |
+| `git checkout -b <rama>`  | Crea una nueva rama y cambia a ella.                |
+| `git merge <rama>`        | Fusiona una rama con la rama actual.                |
+| `git pull`                | Descarga cambios desde un repositorio remoto.       |
+| `git push`                | Envía cambios al repositorio remoto.                |
 
 ---
 

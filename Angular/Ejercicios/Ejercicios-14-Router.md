@@ -133,6 +133,7 @@ Añade una clase CSS para resaltar el enlace activo.
 ```
 
 #### **Archivo: `styles.css`**
+
 ```css
 .active {
   font-weight: bold;

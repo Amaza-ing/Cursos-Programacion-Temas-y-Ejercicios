@@ -156,10 +156,10 @@ En este ejemplo no se ejecutará la linea `console.log(result);` hasta que la li
 
 ```js
 const promise1 = new Promise((resolve) =>
-  setTimeout(() => resolve("Resultado 1"), 1000)
+  setTimeout(() => resolve("Resultado 1"), 1000),
 );
 const promise2 = new Promise((resolve) =>
-  setTimeout(() => resolve("Resultado 2"), 2000)
+  setTimeout(() => resolve("Resultado 2"), 2000),
 );
 
 async function executePromises() {
@@ -180,7 +180,7 @@ A diferencia de `Promise.all()`, `Promise.allSettled()` espera que todas las pro
 
 ```js
 const failingPromise = new Promise((_, reject) =>
-  setTimeout(() => reject("Fallo"), 1500)
+  setTimeout(() => reject("Fallo"), 1500),
 );
 
 async function executeAllSettled() {

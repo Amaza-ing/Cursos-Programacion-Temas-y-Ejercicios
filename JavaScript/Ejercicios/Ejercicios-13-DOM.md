@@ -123,9 +123,8 @@ Muestra en un `div` con `id="key-output"` la tecla presionada por el usuario.
 
 ```js
 document.addEventListener("keydown", (event) => {
-  document.getElementById(
-    "key-output"
-  ).textContent = `Tecla presionada: ${event.key}`;
+  document.getElementById("key-output").textContent =
+    `Tecla presionada: ${event.key}`;
 });
 ```
 

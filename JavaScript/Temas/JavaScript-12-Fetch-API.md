@@ -44,7 +44,7 @@ También podemos usar `async/await` para hacer el código más limpio y estructu
 async function fetchPost() {
   try {
     const response = await fetch(
-      "https://jsonplaceholder.typicode.com/users/1"
+      "https://jsonplaceholder.typicode.com/users/1",
     );
     const data = await response.json();
     console.log(data);
@@ -107,7 +107,7 @@ async function updateUser() {
           name: "Nombre actualizado",
           email: "Nuevo email",
         }),
-      }
+      },
     );
     const data = await response.json();
     console.log("Usuario actualizado:", data);
@@ -136,7 +136,7 @@ async function patchUser() {
         body: JSON.stringify({
           name: "Nombre modificado",
         }),
-      }
+      },
     );
     const data = await response.json();
     console.log("Usuario modificado:", data);
@@ -157,7 +157,7 @@ async function deleteUser() {
       "https://jsonplaceholder.typicode.com/users/1",
       {
         method: "DELETE",
-      }
+      },
     );
     if (response.ok) {
       console.log("Usuario eliminado correctamente");
@@ -180,7 +180,7 @@ El método `fetch()` **no lanza un error automáticamente** si la respuesta del 
 async function fetchWithErrorHandling() {
   try {
     const response = await fetch(
-      "https://jsonplaceholder.typicode.com/invalid-url"
+      "https://jsonplaceholder.typicode.com/invalid-url",
     );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

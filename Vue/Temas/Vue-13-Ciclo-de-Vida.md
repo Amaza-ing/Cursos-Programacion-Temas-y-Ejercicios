@@ -54,7 +54,7 @@ const message = ref("Hola Mundo");
 
 onBeforeMount(() => {
   console.log(
-    "Antes de montar: el componente se ha creado, pero no está en el DOM"
+    "Antes de montar: el componente se ha creado, pero no está en el DOM",
   );
 });
 

@@ -29,18 +29,19 @@ La directiva `ngModel` permite la vinculación bidireccional en los formularios,
 El evento `(ngSubmit)` permite gestionar el envío de un formulario.
 
 #### **Archivo: `form.component.ts`**
+
 ```ts
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-form',
+  selector: "app-form",
   imports: [FormsModule],
 })
 export class FormComponent {
-  user = { name: '', email: '' };
+  user = { name: "", email: "" };
 
   submitForm() {
-    console.log('Formulario enviado:', this.user);
+    console.log("Formulario enviado:", this.user);
   }
 }
 ```
@@ -50,10 +51,22 @@ export class FormComponent {
 ```html
 <form (ngSubmit)="submitForm()">
   <label for="username">Nombre:</label>
-  <input type="text" id="username" [(ngModel)]="user.name" name="username" required />
+  <input
+    type="text"
+    id="username"
+    [(ngModel)]="user.name"
+    name="username"
+    required
+  />
 
   <label for="email">Email:</label>
-  <input type="email" id="email" [(ngModel)]="user.email" name="email" required />
+  <input
+    type="email"
+    id="email"
+    [(ngModel)]="user.email"
+    name="email"
+    required
+  />
 
   <button type="submit">Enviar</button>
 </form>
@@ -84,9 +97,7 @@ export class FormComponent {
 <input type="number" id="age" [(ngModel)]="user.age" name="age" required />
 
 @if (!validateAge(user.age)) {
-  <div>
-    Debes ser mayor de edad.
-  </div>
+<div>Debes ser mayor de edad.</div>
 }
 ```
 

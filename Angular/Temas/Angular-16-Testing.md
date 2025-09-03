@@ -184,7 +184,7 @@ describe("Servicio Externo", () => {
     };
 
     const spy = spyOn(servicio, "obtenerDatos").and.returnValue(
-      "datos simulados"
+      "datos simulados",
     );
 
     expect(servicio.obtenerDatos()).toBe("datos simulados");

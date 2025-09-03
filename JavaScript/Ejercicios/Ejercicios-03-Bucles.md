@@ -157,7 +157,7 @@ Solicita al usuario un número y muestra su tabla de multiplicar del 1 al 10 usa
 
 ```js
 const number = parseInt(
-  prompt("Introduce un número para ver su tabla de multiplicar:")
+  prompt("Introduce un número para ver su tabla de multiplicar:"),
 );
 
 for (let i = 1; i <= 10; i++) {

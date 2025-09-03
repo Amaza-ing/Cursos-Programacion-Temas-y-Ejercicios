@@ -218,7 +218,7 @@ function debounce(func, delay) {
 
 const logMessage = debounce(
   () => console.log("Ejecutado después de escribir"),
-  500
+  500,
 );
 
 // Detectar cuándo una tecla es presionada
@@ -245,7 +245,7 @@ function throttle(func, limit) {
 
 const logThrottle = throttle(
   () => console.log("Ejecutado con limitación"),
-  1000
+  1000,
 );
 
 logThrottle(); // Se ejecuta inmediatamente
@@ -258,14 +258,14 @@ window.addEventListener(
   "scroll",
   throttle(() => {
     console.log("Scrolling...");
-  }, 500)
+  }, 500),
 ); // Sólo se ejecutará como máximo cada 500 ms
 
 window.addEventListener(
   "resize",
   throttle(() => {
     console.log("Ventana redimensionada");
-  }, 1000)
+  }, 1000),
 ); // Sólo se ejecutará cada segundo
 
 const button = document.querySelector("#btn");
@@ -273,7 +273,7 @@ button.addEventListener(
   "click",
   throttle(() => {
     console.log("Botón clickeado");
-  }, 2000)
+  }, 2000),
 ); // Sólo permite un clic cada 2 segundos
 ```
 

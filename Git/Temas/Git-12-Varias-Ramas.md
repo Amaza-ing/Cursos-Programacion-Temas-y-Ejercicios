@@ -50,14 +50,14 @@ git pull origin master  # Si estás trabajando con un repositorio remoto
 for branch in $(git branch --format='%(refname:short)' | grep -v 'master'); do
     # Cambia a la rama
     git checkout $branch
-    
+
     # Copia el archivo README.md desde master a la rama actual
     git checkout master -- README.md
-    
+
     # Añade y confirma el cambio en la rama actual
     git add README.md
     git commit -m "Update README.md from master"
-    
+
     # Opcional: Sube los cambios al remoto
     git push origin $branch
 done

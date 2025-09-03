@@ -7,6 +7,7 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Crear un objeto simple**
+
 Crea un objeto llamado `book` que tenga las siguientes propiedades: `title`, `author` y `year`. Muestra el objeto en la consola.
 
 <details><summary>Mostrar solución</summary>
@@ -15,7 +16,7 @@ Crea un objeto llamado `book` que tenga las siguientes propiedades: `title`, `au
 const book = {
   title: "Cien años de soledad",
   author: "Gabriel García Márquez",
-  year: 1967
+  year: 1967,
 };
 
 console.log(book);
@@ -26,6 +27,7 @@ console.log(book);
 ---
 
 ### **Ejercicio 2: Acceso a propiedades**
+
 Usando el objeto `book` del ejercicio anterior, muestra en la consola el título y el autor utilizando tanto la notación del punto como la notación de corchetes.
 
 <details><summary>Mostrar solución</summary>
@@ -45,12 +47,13 @@ console.log(book["author"]); // Salida: Gabriel García Márquez
 ---
 
 ### **Ejercicio 3: Agregar un método a un objeto**
+
 Agrega un método llamado `getSummary` al objeto `book` que retorne una cadena con el formato: "[title] fue escrito por [author] en [year]".
 
 <details><summary>Mostrar solución</summary>
 
 ```js
-book.getSummary = function() {
+book.getSummary = function () {
   return `${this.title} fue escrito por ${this.author} en ${this.year}`;
 };
 
@@ -62,6 +65,7 @@ console.log(book.getSummary()); // Salida: Cien años de soledad fue escrito por
 ---
 
 ### **Ejercicio 4: Crear un constructor de objetos**
+
 Crea una función constructora llamada `Movie` que reciba `title`, `director` y `year` como parámetros y cree un objeto con esas propiedades. Luego, crea una instancia llamada `myMovie`.
 
 <details><summary>Mostrar solución</summary>
@@ -82,6 +86,7 @@ console.log(myMovie);
 ---
 
 ### **Ejercicio 5: Desestructuración de objetos**
+
 Usa la desestructuración para extraer las propiedades `title` y `author` del objeto `book` y muéstralas en la consola.
 
 <details><summary>Mostrar solución</summary>
@@ -93,4 +98,3 @@ console.log(author); // Salida: Gabriel García Márquez
 ```
 
 </details>
-

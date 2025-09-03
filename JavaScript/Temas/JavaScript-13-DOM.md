@@ -221,10 +221,7 @@ document.querySelector("#form").addEventListener("submit", (event) => {
 
 ---
 
-
 [![Web Dinámica parte 1](https://img.youtube.com/vi/UY18JrstVzk/0.jpg)](https://www.youtube.com/watch?v=UY18JrstVzk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
-
-
 
 [![Web Dinámica parte 2](https://img.youtube.com/vi/tdPG9lezPsk/0.jpg)](https://www.youtube.com/watch?v=tdPG9lezPsk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 

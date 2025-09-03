@@ -110,4 +110,3 @@ Añade el atributo `role` al siguiente código para indicar que la navegación e
 ```
 
 </details>
-

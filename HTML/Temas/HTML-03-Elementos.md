@@ -1,7 +1,9 @@
 # **Tema 3: Elementos en línea y elementos en bloque**
 
 ## **1. Introducción**
+
 En HTML, los elementos se dividen en dos grandes categorías según su comportamiento en la página web:
+
 - **Elementos en bloque**: Ocupan todo el ancho disponible y comienzan en una nueva línea.
 - **Elementos en línea**: Solo ocupan el espacio necesario y no fuerzan un salto de línea.
 
@@ -10,14 +12,17 @@ Comprender esta diferencia es esencial para estructurar correctamente una págin
 ---
 
 ## **2. Elementos en bloque**
+
 Los elementos en bloque generan un nuevo bloque de contenido en la página. Por defecto, ocupan todo el ancho disponible y comienzan en una nueva línea.
 
 ### **Características de los elementos en bloque:**
+
 - Se expanden a lo largo del ancho de su contenedor.
 - Inician en una nueva línea.
 - Pueden contener otros elementos en bloque y en línea.
 
 ### **Ejemplos comunes:**
+
 - **Encabezados:** `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
 - **Párrafos:** `p`
 - **Listas:** `ul`, `ol`, `li`
@@ -25,6 +30,7 @@ Los elementos en bloque generan un nuevo bloque de contenido en la página. Por 
 - **Cajas de contenido estructurado:** `section`, `article`, `aside`, `header`, `footer`
 
 ### **Ejemplo práctico:**
+
 Imagina que estás estructurando un artículo en un blog. Usarás elementos en bloque para separar las secciones.
 
 ```HTML
@@ -35,20 +41,24 @@ Imagina que estás estructurando un artículo en un blog. Usarás elementos en b
 ```
 
 En este caso:
+
 - `h1` ocupa toda la línea.
 - `p` también genera un bloque independiente.
 
 ---
 
 ## **3. Elementos en línea**
+
 Los elementos en línea no generan un nuevo bloque de contenido, sino que se mantienen en la misma línea junto con otros elementos.
 
 ### **Características de los elementos en línea:**
+
 - Solo ocupan el espacio necesario.
 - No generan un salto de línea.
 - Solo pueden contener texto o elementos en línea (no pueden contener elementos en bloque).
 
 ### **Ejemplos comunes:**
+
 - **Enlaces:** `a`
 - **Negrita y cursiva:** `strong`, `em`
 - **Formato de texto:** `span`, `mark`, `code`
@@ -56,6 +66,7 @@ Los elementos en línea no generan un nuevo bloque de contenido, sino que se man
 - **Botones pequeños dentro de un texto:** `button`
 
 ### **Ejemplo práctico:**
+
 Supongamos que en un artículo de un blog queremos resaltar una palabra en negrita y enlazar un término importante.
 
 ```HTML
@@ -63,22 +74,25 @@ Supongamos que en un artículo de un blog queremos resaltar una palabra en negri
 ```
 
 En este caso:
+
 - `a` es un enlace que se mantiene en la misma línea.
 - `strong` enfatiza la palabra sin afectar la disposición del texto.
 
 ---
 
 ## **4. Diferencias clave entre elementos en bloque y en línea**
-| Característica | Elementos en bloque | Elementos en línea |
-|--------------|------------------|----------------|
-| Ocupa toda la línea | Sí | No |
-| Inicia en nueva línea | Sí | No |
-| Puede contener otros elementos en bloque | Sí | No |
-| Uso común | Estructura y diseño | Formateo de texto y enlaces |
+
+| Característica                           | Elementos en bloque | Elementos en línea          |
+| ---------------------------------------- | ------------------- | --------------------------- |
+| Ocupa toda la línea                      | Sí                  | No                          |
+| Inicia en nueva línea                    | Sí                  | No                          |
+| Puede contener otros elementos en bloque | Sí                  | No                          |
+| Uso común                                | Estructura y diseño | Formateo de texto y enlaces |
 
 ---
 
 ## **5. Combinación de elementos en bloque e inline**
+
 Es posible combinar ambos tipos de elementos en un diseño web. Por ejemplo, dentro de un `div` (bloque), se pueden incluir `span` (inline) para resaltar ciertas palabras.
 
 ```HTML
@@ -88,12 +102,14 @@ Es posible combinar ambos tipos de elementos en un diseño web. Por ejemplo, den
 ```
 
 En este caso:
+
 - `div` es un elemento en bloque que envuelve todo el contenido.
 - `span` es un elemento en línea que permite aplicar estilos sin alterar la estructura.
 
 ---
 
 ## **6. Buenas prácticas**
+
 - Usa **elementos en bloque** para definir la estructura de la página.
 - Usa **elementos en línea** para aplicar estilos o agregar interactividad sin modificar la disposición del contenido.
 - Evita encerrar elementos en bloque dentro de elementos en línea, ya que esto puede causar errores en la visualización.
@@ -102,4 +118,3 @@ En este caso:
 ---
 
 En el próximo tema, aprenderemos sobre **las etiquetas de texto en HTML** y su impacto en la estructura de una página web.
-

@@ -26,7 +26,6 @@ Crea un formulario que contenga un campo de texto para el nombre de usuario y un
 
 ---
 
-
 ### **Ejercicio 2: Campos con diferentes tipos de entrada**
 
 Crea un formulario con campos de tipo email, número y fecha de nacimiento.

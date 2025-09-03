@@ -7,6 +7,7 @@ A continuación, encontrarás 10 ejercicios prácticos sobre los aspectos básic
 Intenta resolverlos antes de consultar la solución.
 
 ### **Ejercicio 1: Instalación de Angular CLI**
+
 Instala Angular CLI en tu sistema y verifica la instalación con los comandos adecuados.
 
 <details><summary>Mostrar solución</summary>
@@ -21,6 +22,7 @@ ng version
 ---
 
 ### **Ejercicio 2: Creación de un nuevo proyecto Angular**
+
 Crea un nuevo proyecto en Angular llamado `mi-proyecto-angular` utilizando Angular CLI.
 
 <details><summary>Mostrar solución</summary>
@@ -34,6 +36,7 @@ ng new mi-proyecto-angular
 ---
 
 ### **Ejercicio 3: Estructura del proyecto**
+
 Explica brevemente la función de los siguientes archivos:
 
 - `src/app/app.component.ts`
@@ -52,6 +55,7 @@ Explica brevemente la función de los siguientes archivos:
 ---
 
 ### **Ejercicio 4: Servidor de desarrollo**
+
 Inicia el servidor de desarrollo y explica qué ocurre cuando cambias `app.component.html`.
 
 <details><summary>Mostrar solución</summary>
@@ -67,6 +71,7 @@ Cualquier cambio en `app.component.html` se reflejará automáticamente en el na
 ---
 
 ### **Ejercicio 5: Modificación del template inicial**
+
 Modifica `app.component.html` para mostrar un mensaje personalizado.
 
 <details><summary>Mostrar solución</summary>
@@ -82,6 +87,7 @@ Modifica `app.component.html` para mostrar un mensaje personalizado.
 ## **Ejercicios del Tema 2: Componentes en Angular**
 
 ### **Ejercicio 6: Creación de un componente**
+
 Crea un componente `header` dentro de la carpeta `components`.
 
 <details><summary>Mostrar solución</summary>
@@ -97,6 +103,7 @@ Este comando genera los archivos necesarios: `.ts`, `.html`, `.css` y `.spec.ts`
 ---
 
 ### **Ejercicio 7: Uso de un componente**
+
 Añade el componente `header` dentro de `app.component.html`.
 
 <details><summary>Mostrar solución</summary>
@@ -110,13 +117,14 @@ Añade el componente `header` dentro de `app.component.html`.
 ---
 
 ### **Ejercicio 8: Interpolación**
+
 Define una variable `title` en el componente `header` y muéstrala en su plantilla.
 
 <details><summary>Mostrar solución</summary>
 
 ```ts
 export class HeaderComponent {
-  title = 'Bienvenido a mi aplicación';
+  title = "Bienvenido a mi aplicación";
 }
 ```
 
@@ -129,18 +137,19 @@ export class HeaderComponent {
 ---
 
 ### **Ejercicio 9: Binding de propiedades**
+
 Crea un input con `placeholder` dinámico basado en una variable.
 
 <details><summary>Mostrar solución</summary>
 
 ```ts
 export class HeaderComponent {
-  placeholderText = 'Introduce tu nombre';
+  placeholderText = "Introduce tu nombre";
 }
 ```
 
 ```html
-<input [placeholder]="placeholderText">
+<input [placeholder]="placeholderText" />
 ```
 
 </details>
@@ -148,6 +157,7 @@ export class HeaderComponent {
 ---
 
 ### **Ejercicio 10: Componentes dentro de componentes**
+
 Crea un componente `footer` que contenga otros tres componentes internos.
 
 <details><summary>Mostrar solución</summary>

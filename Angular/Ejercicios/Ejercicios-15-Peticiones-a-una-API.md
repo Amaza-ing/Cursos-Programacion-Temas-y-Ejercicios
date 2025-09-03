@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 15: Realización de Peticiones HTTP con `HttpClient`**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás ejercicios sobre cómo realizar peticiones HTTP en Angular usando `HttpClient`.
 
 Intenta resolverlos antes de consultar la solución.
@@ -8,19 +9,21 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Realizar una Petición GET**
+
 Crea un servicio `UserService` que realice una petición GET para obtener una lista de usuarios desde `https://jsonplaceholder.typicode.com/users`.
 
 <details><summary>Mostrar solución</summary>
 
 #### **Archivo: `user.service.ts`**
-```ts
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+```ts
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+
+@Injectable({ providedIn: "root" })
 export class UserService {
-  apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  apiUrl = "https://jsonplaceholder.typicode.com/users";
   users: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -32,13 +35,14 @@ export class UserService {
 ```
 
 #### **Archivo: `user.component.ts`**
+
 ```ts
-import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
+import { Component, OnInit } from "@angular/core";
+import { UserService } from "./user.service";
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html'
+  selector: "app-user",
+  templateUrl: "./user.component.html",
 })
 export class UserComponent implements OnInit {
   constructor(public UserService: UserService) {}
@@ -55,31 +59,35 @@ export class UserComponent implements OnInit {
       },
       error: (e) => {
         console.error(e);
-      }
+      },
     });
   }
 }
 ```
 
 #### **Archivo: `user.component.html`**
+
 ```html
 <h2>Usuarios</h2>
 <ul>
   @for (user of UserService.users; track user.id) {
-    <li>{{ user.name }}</li>
+  <li>{{ user.name }}</li>
   }
 </ul>
 ```
+
 </details>
 
 ---
 
 ### **Ejercicio 2: Realizar una Petición POST**
+
 Crea un formulario para agregar un nuevo usuario usando una petición POST.
 
 <details><summary>Mostrar solución</summary>
 
 #### **Archivo: `user.service.ts`**
+
 ```ts
 addUser(user: { name: string; email: string }): Observable<any> {
   return this.http.user(this.apiUrl, user);
@@ -87,6 +95,7 @@ addUser(user: { name: string; email: string }): Observable<any> {
 ```
 
 #### **Archivo: `user.component.ts`**
+
 ```ts
 newUser = { name: '', email: '' };
 
@@ -104,22 +113,26 @@ addNewUser() {
 ```
 
 #### **Archivo: `user.component.html`**
+
 ```html
 <h2>Añadir Nuevo Usuario</h2>
-<input [(ngModel)]="newUser.name" placeholder="Nombre">
-<input [(ngModel)]="newUser.email" placeholder="email">
+<input [(ngModel)]="newUser.name" placeholder="Nombre" />
+<input [(ngModel)]="newUser.email" placeholder="email" />
 <button (click)="addNewUser()">Agregar</button>
 ```
+
 </details>
 
 ---
 
 ### **Ejercicio 3: Realizar una Petición PUT**
+
 Actualiza un usuario existente usando una petición PUT.
 
 <details><summary>Mostrar solución</summary>
 
 #### **Archivo: `user.service.ts`**
+
 ```ts
 updateUser(id: number, user: { name: string; email: string }): Observable<any> {
   return this.http.put(`${this.apiUrl}/${id}`, user);
@@ -127,6 +140,7 @@ updateUser(id: number, user: { name: string; email: string }): Observable<any> {
 ```
 
 #### **Archivo: `user.component.ts`**
+
 ```ts
 updateExistingUser() {
   const updatedUser = { name: 'Nombre Actualizado', email: 'Email Actualizado' };
@@ -142,19 +156,23 @@ updateExistingUser() {
 ```
 
 #### **Archivo: `user.component.html`**
+
 ```html
 <button (click)="updateExistingUser()">Actualizar Usuario</button>
 ```
+
 </details>
 
 ---
 
 ### **Ejercicio 4: Realizar una Petición DELETE**
+
 Elimina un usuario existente usando una petición DELETE.
 
 <details><summary>Mostrar solución</summary>
 
 #### **Archivo: `user.service.ts`**
+
 ```ts
 deleteUser(id: number): Observable<any> {
   return this.http.delete(`${this.apiUrl}/${id}`);
@@ -162,6 +180,7 @@ deleteUser(id: number): Observable<any> {
 ```
 
 #### **Archivo: `user.component.ts`**
+
 ```ts
 deleteUser(id: number) {
   this.UserService.deleteUser(id).subscribe({
@@ -177,14 +196,16 @@ deleteUser(id: number) {
 ```
 
 #### **Archivo: `user.component.html`**
+
 ```html
 <ul>
   @for (user of UserService.users; track user.id) {
-    <li>
-      {{ user.name }}
-      <button (click)="deleteUser(user.id)">Eliminar</button>
-    </li>
+  <li>
+    {{ user.name }}
+    <button (click)="deleteUser(user.id)">Eliminar</button>
+  </li>
   }
 </ul>
 ```
+
 </details>

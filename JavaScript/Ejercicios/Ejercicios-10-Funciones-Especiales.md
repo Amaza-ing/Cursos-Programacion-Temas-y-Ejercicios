@@ -7,6 +7,7 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Retrasar la ejecución de un mensaje con `setTimeout()`**
+
 Escribe una función que muestre el mensaje "Hola, después de 3 segundos" en la consola después de 3 segundos.
 
 <details><summary>Mostrar solución</summary>
@@ -26,6 +27,7 @@ delayedMessage();
 ---
 
 ### **Ejercicio 2: Contador con `setInterval()`**
+
 Crea una función que inicie un contador en la consola que muestre "Contador: X" cada segundo, y se detenga después de 5 segundos.
 
 <details><summary>Mostrar solución</summary>
@@ -51,6 +53,7 @@ startCounter();
 ---
 
 ### **Ejercicio 3: Cancelar un `setTimeout()` antes de que ocurra**
+
 Escribe un código que inicie un `setTimeout()` para mostrar un mensaje después de 4 segundos, pero que lo cancele en 2 segundos.
 
 <details><summary>Mostrar solución</summary>
@@ -75,6 +78,7 @@ cancelTimeout();
 ---
 
 ### **Ejercicio 4: Uso de `requestAnimationFrame()` para una animación simple**
+
 Crea una función que use `requestAnimationFrame()` para incrementar un número en la consola hasta que llegue a 10.
 
 <details><summary>Mostrar solución</summary>
@@ -94,6 +98,7 @@ animateCounter();
 ---
 
 ### **Ejercicio 5: `debounce()` para evitar múltiples llamadas seguidas**
+
 Crea una función `debounce()` que evite que una función se ejecute múltiples veces en un corto período de tiempo. Úsala con una función que imprima un mensaje cuando el usuario "escriba".
 
 <details><summary>Mostrar solución</summary>
@@ -101,7 +106,7 @@ Crea una función `debounce()` que evite que una función se ejecute múltiples 
 ```js
 function debounce(func, delay) {
   let timer;
-  return function(...args) {
+  return function (...args) {
     clearTimeout(timer);
     timer = setTimeout(() => func(...args), delay);
   };
@@ -115,4 +120,3 @@ onType(); // Solo este último se ejecutará después de 500ms
 ```
 
 </details>
-

@@ -1,9 +1,11 @@
 # **Tema 4: Control de Flujo en Angular (@if y @for)**
 
 ## **1. Introducción**
+
 En Angular, el control de flujo nos permite gestionar la lógica de visualización de los elementos en el DOM. A partir de Angular 17, se introdujeron las directivas `@if` y `@for`, que permiten mejorar la legibilidad y eficiencia del código.
 
 Este tema cubrirá:
+
 - La directiva `@if` para renderizar condicionalmente elementos en la vista.
 - La directiva `@for` para iterar sobre listas de elementos.
 - Comparación con las directivas `*ngIf` y `*ngFor` tradicionales.
@@ -20,21 +22,21 @@ Ejemplo en `control-flujo.component.html`:
 
 ```html
 @if (isLoggedIn) {
-  <p>Bienvenido, usuario.</p>
+<p>Bienvenido, usuario.</p>
 } @else {
-  <p>Por favor, inicia sesión.</p>
+<p>Por favor, inicia sesión.</p>
 }
 ```
 
 Ejemplo en `control-flujo.component.ts`:
 
 ```ts
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-control-flujo',
-  templateUrl: './control-flujo.component.html',
-  styleUrls: ['./control-flujo.component.css']
+  selector: "app-control-flujo",
+  templateUrl: "./control-flujo.component.html",
+  styleUrls: ["./control-flujo.component.css"],
 })
 export class ControlFlujoComponent {
   isLoggedIn: boolean = false;
@@ -42,6 +44,7 @@ export class ControlFlujoComponent {
 ```
 
 En este caso:
+
 - Si `isLoggedIn` es `true`, se mostrará el mensaje "Bienvenido, usuario.".
 - Si `isLoggedIn` es `false`, se mostrará "Por favor, inicia sesión.".
 
@@ -62,7 +65,7 @@ Ejemplo en `control-flujo.component.html`:
 ```html
 <ul>
   @for (item of items; track item) {
-    <li>{{ item }}</li>
+  <li>{{ item }}</li>
   }
 </ul>
 ```
@@ -70,19 +73,20 @@ Ejemplo en `control-flujo.component.html`:
 Ejemplo en `control-flujo.component.ts`:
 
 ```ts
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-control-flujo',
-  templateUrl: './control-flujo.component.html',
-  styleUrls: ['./control-flujo.component.css']
+  selector: "app-control-flujo",
+  templateUrl: "./control-flujo.component.html",
+  styleUrls: ["./control-flujo.component.css"],
 })
 export class ControlFlujoComponent {
-  items: string[] = ['Angular', 'React', 'Vue'];
+  items: string[] = ["Angular", "React", "Vue"];
 }
 ```
 
 En este caso:
+
 - Se genera dinámicamente una lista `ul` con los elementos de `items`.
 - Se usa `track` para optimizar la actualización del DOM haciendo que Angular identifique claramente a cada elemento de la lista.
 
@@ -94,12 +98,13 @@ En este caso:
 
 ## **4. Comparación entre `@if`/`@for` y `*ngIf`/`*ngFor`**
 
-| **Directiva**   | **Nueva Sintaxis** | **Sintaxis Anterior** |
-|---------------|----------------|----------------|
-| Condicional   | `@if (condición) { ... } @else { ... }` | `<ng-container *ngIf="condición; else otraPlantilla"></ng-container>` |
-| Iteración     | `@for (item of items; track item) { ... }` | `<div *ngFor="let item of items">{{ item }}</div>` |
+| **Directiva** | **Nueva Sintaxis**                         | **Sintaxis Anterior**                                                 |
+| ------------- | ------------------------------------------ | --------------------------------------------------------------------- |
+| Condicional   | `@if (condición) { ... } @else { ... }`    | `<ng-container *ngIf="condición; else otraPlantilla"></ng-container>` |
+| Iteración     | `@for (item of items; track item) { ... }` | `<div *ngFor="let item of items">{{ item }}</div>`                    |
 
 ### **4.1. Ventajas de `@if` y `@for`**
+
 - **Mayor legibilidad**: Se parece más a la sintaxis de JavaScript.
 - **Mejor rendimiento**: Reduce cálculos innecesarios en el DOM.
 - **Estructura más clara**: Evita el uso de `<ng-container>` y plantillas auxiliares.

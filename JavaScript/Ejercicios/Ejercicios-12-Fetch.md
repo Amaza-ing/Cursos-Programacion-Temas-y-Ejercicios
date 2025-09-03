@@ -73,7 +73,7 @@ async function updatePost() {
           body: "Nuevo contenido del post",
           userId: 1,
         }),
-      }
+      },
     );
     const data = await response.json();
     console.log("Post actualizado:", data);
@@ -104,7 +104,7 @@ async function modifyPostTitle() {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title: "Nuevo título" }),
-      }
+      },
     );
     const data = await response.json();
     console.log("Título modificado:", data);
@@ -133,7 +133,7 @@ async function deleteUser() {
       "https://jsonplaceholder.typicode.com/users/5",
       {
         method: "DELETE",
-      }
+      },
     );
     if (response.ok) {
       console.log("Usuario eliminado correctamente");

@@ -1,18 +1,22 @@
 # **Tema 10: Repositorios públicos vs privados y cómo borrar ramas y repositorios**
 
 ## **1. Introducción**
+
 Al trabajar con Git y plataformas como GitHub, GitLab o Bitbucket, es importante conocer la diferencia entre repositorios públicos y privados. Además, en ocasiones es necesario eliminar ramas o repositorios cuando ya no se necesitan.
 
 ---
 
 ## **2. Diferencias entre repositorios públicos y privados**
+
 ### **Repositorios públicos**
+
 - Son accesibles para cualquier persona en internet.
 - Cualquier usuario puede ver el código fuente y el historial de commits.
 - Se usan comúnmente en proyectos de código abierto y colaboraciones.
 - Pueden ser bifurcados (**forks**) por otros usuarios para hacer contribuciones.
 
 ### **Repositorios privados**
+
 - Solo pueden ser accedidos por usuarios con permisos específicos.
 - Ideales para proyectos personales o empresariales que no deben ser públicos.
 - No pueden ser bifurcados por otros usuarios sin autorización.
@@ -25,23 +29,31 @@ Al trabajar con Git y plataformas como GitHub, GitLab o Bitbucket, es importante
 ---
 
 ## **3. Cómo borrar ramas en Git**
+
 A medida que se trabaja en un proyecto, es común eliminar ramas obsoletas, tanto en el repositorio local como en el remoto.
 
 ### **Eliminar una rama local**
+
 Para eliminar una rama en el repositorio local:
+
 ```bash
 git branch -d nombre-de-la-rama
 ```
+
 Si la rama no ha sido fusionada y se desea forzar su eliminación:
+
 ```bash
 git branch -D nombre-de-la-rama
 ```
 
 ### **Eliminar una rama remota**
+
 Para eliminar una rama en un repositorio remoto como GitHub:
+
 ```bash
 git push origin --delete nombre-de-la-rama
 ```
+
 Si se usa GitHub, también se puede eliminar manualmente desde la pestaña **Branches** en la interfaz web del repositorio.
 
 ---
@@ -51,15 +63,19 @@ Si se usa GitHub, también se puede eliminar manualmente desde la pestaña **Bra
 ---
 
 ## **4. Cómo borrar un repositorio en Git**
+
 Si un repositorio ya no es necesario, se puede eliminar en local o en remoto.
 
 ### **Eliminar un repositorio local**
+
 Para borrar un repositorio en la máquina local, simplemente eliminar la carpeta que contiene el repositorio:
+
 ```bash
 rm -rf nombre-del-repositorio
 ```
 
 ### **Eliminar un repositorio remoto (GitHub, GitLab, etc.)**
+
 1. Ir al repositorio en la plataforma (GitHub, GitLab, etc.).
 2. Navegar a la configuración del repositorio (**Settings**).
 3. Buscar la opción **Delete this repository**.
@@ -74,6 +90,7 @@ rm -rf nombre-del-repositorio
 ---
 
 ## **5. Buenas prácticas al manejar repositorios y ramas**
+
 - Mantener los repositorios **públicos** solo si se desea compartir el código abiertamente.
 - Usar **repositorios privados** para proyectos en desarrollo o con información sensible.
 - Eliminar ramas que ya no sean necesarias para mantener un repositorio limpio.

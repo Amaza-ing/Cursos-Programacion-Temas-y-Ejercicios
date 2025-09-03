@@ -7,6 +7,7 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Guardar y recuperar un nombre de usuario en `localStorage`**
+
 Crea una función que almacene un nombre de usuario ingresado por el usuario en `localStorage` y otra función que lo recupere y lo muestre en la consola.
 
 <details><summary>Mostrar solución</summary>
@@ -29,6 +30,7 @@ getUsername(); // Salida: "Juan Pérez"
 ---
 
 ### **Ejercicio 2: Contador de clics con `localStorage`**
+
 Crea un botón en HTML con `id="click-btn"` que cuente cuántas veces ha sido presionado y almacene ese valor en `localStorage` para persistencia entre sesiones.
 
 <details><summary>Mostrar solución</summary>
@@ -48,6 +50,7 @@ document.getElementById("click-btn").addEventListener("click", () => {
 ---
 
 ### **Ejercicio 3: Guardar y recuperar preferencias del usuario con `sessionStorage`**
+
 Crea un formulario con un `select` para elegir un color de fondo. Guarda la preferencia en `sessionStorage` y aplícala a la página al cargar.
 
 <details><summary>Mostrar solución</summary>
@@ -65,9 +68,11 @@ function loadTheme() {
   }
 }
 
-document.getElementById("color-selector").addEventListener("change", (event) => {
-  saveTheme(event.target.value);
-});
+document
+  .getElementById("color-selector")
+  .addEventListener("change", (event) => {
+    saveTheme(event.target.value);
+  });
 
 loadTheme();
 ```
@@ -77,6 +82,7 @@ loadTheme();
 ---
 
 ### **Ejercicio 4: Almacenar y recuperar una lista de tareas en `localStorage`**
+
 Crea una función que permita agregar tareas a una lista y guardarlas en `localStorage`, asegurando que las tareas persistan entre sesiones.
 
 <details><summary>Mostrar solución</summary>
@@ -102,6 +108,7 @@ getTasks();
 ---
 
 ### **Ejercicio 5: Eliminar datos almacenados en `localStorage` y `sessionStorage`**
+
 Crea dos botones en HTML para limpiar el almacenamiento de `localStorage` y `sessionStorage` al hacer clic en ellos.
 
 <details><summary>Mostrar solución</summary>
@@ -119,4 +126,3 @@ document.getElementById("clear-session").addEventListener("click", () => {
 ```
 
 </details>
-

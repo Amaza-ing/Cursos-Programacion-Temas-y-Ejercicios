@@ -7,6 +7,7 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Hola Mundo**
+
 Crea un programa que muestre el mensaje "¡Hola, mundo!" en la consola.
 
 <details><summary>Mostrar solución</summary>
@@ -20,6 +21,7 @@ console.log("¡Hola, mundo!");
 ---
 
 ### **Ejercicio 2: Declaración de Variables**
+
 Declara dos variables llamadas `firstName` y `lastName`, asígnales tus nombres y apellidos, y muestra el mensaje "Hola, [firstName] [lastName]!" en la consola.
 
 <details><summary>Mostrar solución</summary>
@@ -36,6 +38,7 @@ console.log("Hola " + firstName + lastName");
 ---
 
 ### **Ejercicio 3: Condicionales**
+
 Crea un programa que verifique si una persona es mayor de edad. Pide al usuario su edad (usa `prompt`) y muestra un mensaje indicando si es mayor o menor de edad.
 
 <details><summary>Mostrar solución</summary>
@@ -55,6 +58,7 @@ if (age >= 18) {
 ---
 
 ### **Ejercicio 4: Bucle For**
+
 Muestra en la consola los números del 1 al 10 utilizando un bucle `for`.
 
 <details><summary>Mostrar solución</summary>
@@ -66,4 +70,3 @@ for (let i = 1; i <= 10; i++) {
 ```
 
 </details>
-

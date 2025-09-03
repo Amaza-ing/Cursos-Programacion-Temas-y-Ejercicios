@@ -3,6 +3,7 @@
 ## **1. Introducción**
 
 El almacenamiento web permite guardar información en el navegador del usuario de manera persistente o temporal sin necesidad de bases de datos. JavaScript ofrece dos opciones principales:
+
 - **`localStorage`**: Guarda datos de forma persistente hasta que el usuario los elimine manualmente o el navegador los borre.
 - **`sessionStorage`**: Guarda datos temporalmente, mientras dure la sesión del navegador.
 
@@ -126,11 +127,11 @@ console.log(`Número de visitas: ${visits}`);
 
 ## **6. Diferencias entre `localStorage` y `sessionStorage`**
 
-| Característica    | `localStorage` | `sessionStorage` |
-|------------------|---------------|----------------|
-| Persistencia    | Permanente    | Solo durante la sesión |
-| Tamaño máximo   | 5MB aprox.    | 5MB aprox. |
-| Disponibilidad  | Todas las pestañas | Solo la pestaña actual |
+| Característica | `localStorage`     | `sessionStorage`       |
+| -------------- | ------------------ | ---------------------- |
+| Persistencia   | Permanente         | Solo durante la sesión |
+| Tamaño máximo  | 5MB aprox.         | 5MB aprox.             |
+| Disponibilidad | Todas las pestañas | Solo la pestaña actual |
 
 ---
 
@@ -139,4 +140,3 @@ console.log(`Número de visitas: ${visits}`);
 El uso de `localStorage` y `sessionStorage` permite mejorar la experiencia del usuario almacenando datos de manera rápida y sencilla sin necesidad de bases de datos. Se debe usar con precaución, ya que los datos son accesibles desde el navegador del usuario y no deben contener información sensible como contraseñas o tokens de seguridad.
 
 En el próximo tema veremos algunas curiosidades y comportamientos extraños en JavaScript.
-

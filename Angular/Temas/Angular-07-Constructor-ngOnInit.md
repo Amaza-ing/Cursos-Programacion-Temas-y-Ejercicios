@@ -18,29 +18,32 @@ El constructor es un método especial en TypeScript que se ejecuta cuando se cre
 ### **Ejemplo de uso del constructor**
 
 #### **Archivo: `example.component.ts`**
+
 ```ts
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html'
+  selector: "app-example",
+  templateUrl: "./example.component.html",
 })
 export class ExampleComponent {
   message: string;
 
   constructor() {
-    this.message = 'Este mensaje se inicializó en el constructor';
-    console.log('Constructor ejecutado');
+    this.message = "Este mensaje se inicializó en el constructor";
+    console.log("Constructor ejecutado");
   }
 }
 ```
 
 #### **Archivo: `example.component.html`**
+
 ```html
 <p>{{ message }}</p>
 ```
 
 ### **Características del constructor**
+
 - Se ejecuta **antes de que Angular inicialice el componente**.
 - Se usa principalmente para **inicializar variables y recibir dependencias**.
 - No se debe realizar lógica pesada dentro del constructor.
@@ -58,34 +61,37 @@ export class ExampleComponent {
 ### **Ejemplo de uso de `ngOnInit`**
 
 #### **Archivo: `example.component.ts`**
+
 ```ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html'
+  selector: "app-example",
+  templateUrl: "./example.component.html",
 })
 export class ExampleComponent implements OnInit {
   message: string;
 
   constructor() {
-    this.message = 'Mensaje inicial';
-    console.log('Constructor ejecutado');
+    this.message = "Mensaje inicial";
+    console.log("Constructor ejecutado");
   }
 
   ngOnInit(): void {
-    this.message = 'Mensaje actualizado en ngOnInit';
-    console.log('ngOnInit ejecutado');
+    this.message = "Mensaje actualizado en ngOnInit";
+    console.log("ngOnInit ejecutado");
   }
 }
 ```
 
 #### **Archivo: `example.component.html`**
+
 ```html
 <p>{{ message }}</p>
 ```
 
 ### **Características de `ngOnInit`**
+
 - Se ejecuta **una sola vez**, después del constructor.
 - Se usa para **realizar inicializaciones complejas** como:
   - Llamadas a APIs.
@@ -101,18 +107,19 @@ export class ExampleComponent implements OnInit {
 
 ## **4. Diferencias entre el constructor y `ngOnInit`**
 
-| **Característica** | **Constructor** | **ngOnInit** |
-|-------------------|---------------|-------------|
-| Cuándo se ejecuta | Al crear el componente | Después de la inicialización del componente |
-| Uso principal | Inicialización de variables, inyección de dependencias | Llamadas a APIs, suscripciones y lógica compleja |
-| Cantidad de ejecuciones | Una sola vez | Una sola vez |
-| Interacción con Angular | No tiene acceso total al framework aún | Ya puede interactuar con Angular |
+| **Característica**      | **Constructor**                                        | **ngOnInit**                                     |
+| ----------------------- | ------------------------------------------------------ | ------------------------------------------------ |
+| Cuándo se ejecuta       | Al crear el componente                                 | Después de la inicialización del componente      |
+| Uso principal           | Inicialización de variables, inyección de dependencias | Llamadas a APIs, suscripciones y lógica compleja |
+| Cantidad de ejecuciones | Una sola vez                                           | Una sola vez                                     |
+| Interacción con Angular | No tiene acceso total al framework aún                 | Ya puede interactuar con Angular                 |
 
 ---
 
 ## **5. Cuándo usar `ngOnInit` en lugar del constructor**
 
 Debes usar `ngOnInit` en lugar del constructor cuando:
+
 - Necesitas esperar que el componente haya sido completamente inicializado.
 - Debes hacer llamadas a servicios o peticiones HTTP.
 - Requieres lógica que dependa de la inyección de dependencias.
@@ -122,16 +129,17 @@ Esto se suele utilizar muy a menudo en conjunto con los servicios. Hablaremos de
 Ejemplo con servicio:
 
 #### **Archivo: `example.component.ts`**
+
 ```ts
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "../services/data.service";
 
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html'
+  selector: "app-example",
+  templateUrl: "./example.component.html",
 })
 export class ExampleComponent implements OnInit {
-  data: string = '';
+  data: string = "";
 
   constructor(private dataService: DataService) {}
 

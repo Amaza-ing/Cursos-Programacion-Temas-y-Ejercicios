@@ -1,6 +1,7 @@
 # **Ejercicios - Tema 3: El Modelo de Caja en CSS**
 
 ## **Instrucciones:**
+
 A continuación, encontrarás 5 ejercicios prácticos sobre el modelo de caja en CSS.
 
 Intenta resolverlos antes de consultar la solución.
@@ -15,11 +16,12 @@ Crea un `div` con un fondo gris, un margen de 20 píxeles y un padding de 10 pí
 
 ```css
 .box {
-    background-color: gray;
-    margin: 20px;
-    padding: 10px;
+  background-color: gray;
+  margin: 20px;
+  padding: 10px;
 }
 ```
+
 ```html
 <div class="box">Este es un contenedor con margen y padding.</div>
 ```
@@ -36,11 +38,12 @@ Define un `div` con un ancho de 200 píxeles, un borde de 5 píxeles y activa la
 
 ```css
 .container {
-    width: 200px;
-    border: 5px solid black;
-    box-sizing: border-box;
+  width: 200px;
+  border: 5px solid black;
+  box-sizing: border-box;
 }
 ```
+
 ```html
 <div class="container">Este contenedor usa box-sizing.</div>
 ```
@@ -57,9 +60,10 @@ Crea un `div` con diferentes márgenes: 10 píxeles arriba, 20 píxeles a la der
 
 ```css
 .margin-box {
-    margin: 10px 20px 30px 40px;
+  margin: 10px 20px 30px 40px;
 }
 ```
+
 ```html
 <div class="margin-box">Este es un contenedor con márgenes diferentes.</div>
 ```
@@ -76,10 +80,11 @@ Define un `div` con un borde de 2 píxeles sólido negro y esquinas redondeadas 
 
 ```css
 .rounded-box {
-    border: 2px solid black;
-    border-radius: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
 }
 ```
+
 ```html
 <div class="rounded-box">Este es un contenedor con bordes redondeados.</div>
 ```
@@ -96,13 +101,13 @@ Crea un `div` con un fondo azul y una sombra de 5 píxeles de desplazamiento en 
 
 ```css
 .shadow-box {
-    background-color: blue;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: blue;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 ```
+
 ```html
 <div class="shadow-box">Este es un contenedor con sombra.</div>
 ```
 
 </details>
-

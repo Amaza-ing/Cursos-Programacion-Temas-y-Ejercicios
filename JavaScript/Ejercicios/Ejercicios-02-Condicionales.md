@@ -7,6 +7,7 @@ Intenta resolverlos antes de consultar la solución.
 ---
 
 ### **Ejercicio 1: Verificar número positivo o negativo**
+
 Crea un programa que solicite al usuario un número mediante `prompt` y muestre en la consola si es positivo, negativo o cero.
 
 <details><summary>Mostrar solución</summary>
@@ -28,7 +29,9 @@ if (number > 0) {
 ---
 
 ### **Ejercicio 2: Clasificación de edades**
+
 Solicita al usuario su edad y muestra un mensaje indicando su grupo de edad:
+
 - Menor de 13: "Niño/a"
 - Entre 13 y 19: "Adolescente"
 - Entre 20 y 64: "Adulto/a"
@@ -55,6 +58,7 @@ if (age < 13) {
 ---
 
 ### **Ejercicio 3: Calculadora simple con `switch`**
+
 Crea un programa que solicite dos números y una operación matemática (`+`, `-`, `*`, `/`) y muestre el resultado usando `switch`.
 
 <details><summary>Mostrar solución</summary>
@@ -91,9 +95,11 @@ console.log(`Resultado: ${result}`);
 ---
 
 ### **Ejercicio 4: Verificar año bisiesto**
+
 Crea un programa que solicite un año y determine si es bisiesto.
 
 **Reglas para un año bisiesto:**
+
 - Es divisible por 4.
 - No es divisible por 100, salvo que también sea divisible por 400.
 
@@ -114,6 +120,7 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
 ---
 
 ### **Ejercicio 5: Uso del operador ternario**
+
 Usando el operador ternario, solicita al usuario su edad y muestra "Eres mayor de edad" si tiene 18 años o más, y "Eres menor de edad" en caso contrario.
 
 <details><summary>Mostrar solución</summary>
@@ -121,9 +128,8 @@ Usando el operador ternario, solicita al usuario su edad y muestra "Eres mayor d
 ```js
 const age = parseInt(prompt("Introduce tu edad:"));
 
-const message = (age >= 18) ? "Eres mayor de edad" : "Eres menor de edad";
+const message = age >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
 console.log(message);
 ```
 
 </details>
-

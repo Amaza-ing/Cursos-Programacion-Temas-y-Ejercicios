@@ -1,14 +1,17 @@
 # **Tema 11: Media Queries y Diseño Responsivo en CSS**
 
 ## **1. Introducción al diseño responsivo**
+
 El diseño responsivo permite que una página web se adapte a diferentes tamaños de pantalla y dispositivos, mejorando la experiencia del usuario en móviles, tabletas y escritorios. Para lograrlo, CSS ofrece las **media queries**, que aplican estilos condicionales según las características del dispositivo.
 
 ---
 
 ## **2. ¿Qué son las Media Queries?**
+
 Las **media queries** permiten aplicar reglas CSS basadas en el ancho, alto, resolución o características específicas del dispositivo.
 
 ### **Sintaxis básica:**
+
 ```css
 @media (condición) {
   /* Reglas CSS */
@@ -16,6 +19,7 @@ Las **media queries** permiten aplicar reglas CSS basadas en el ancho, alto, res
 ```
 
 ### **Ejemplo:**
+
 ```css
 /* Cambia el fondo a azul en pantallas menores a 600px */
 @media (max-width: 600px) {
@@ -30,17 +34,19 @@ En este ejemplo, cuando el ancho de la pantalla sea de 600 píxeles o menos, el 
 ---
 
 ## **3. Breakpoints comunes en diseño responsivo**
+
 Los **breakpoints** son puntos donde el diseño cambia para adaptarse al tamaño del dispositivo.
 
-| Dispositivo      | Ancho máximo |
-|------------------|--------------|
-| Teléfonos pequeños | 480px        |
-| Teléfonos grandes  | 600px        |
-| Tabletas          | 768px        |
-| Laptops           | 1024px       |
-| Escritorios grandes| 1200px       |
+| Dispositivo         | Ancho máximo |
+| ------------------- | ------------ |
+| Teléfonos pequeños  | 480px        |
+| Teléfonos grandes   | 600px        |
+| Tabletas            | 768px        |
+| Laptops             | 1024px       |
+| Escritorios grandes | 1200px       |
 
 ### **Ejemplo de múltiples breakpoints:**
+
 ```css
 /* Estilos para teléfonos */
 @media (max-width: 600px) {
@@ -67,6 +73,7 @@ Los **breakpoints** son puntos donde el diseño cambia para adaptarse al tamaño
 ---
 
 ## **4. Uso de operadores lógicos en media queries**
+
 Las media queries pueden combinar condiciones usando operadores lógicos.
 
 - **`and`**: Combina múltiples condiciones.
@@ -74,6 +81,7 @@ Las media queries pueden combinar condiciones usando operadores lógicos.
 - **`only`**: Aplica estilos solo si se cumple toda la condición.
 
 ### **Ejemplo:**
+
 ```css
 /* Aplica estilos solo en pantallas entre 600px y 900px */
 @media (min-width: 600px) and (max-width: 900px) {
@@ -86,9 +94,11 @@ Las media queries pueden combinar condiciones usando operadores lógicos.
 ---
 
 ## **5. Media Queries para orientación y resolución**
+
 También se pueden usar media queries para detectar la orientación de la pantalla o la densidad de píxeles.
 
 ### **Ejemplo de orientación:**
+
 ```css
 /* Estilo para pantallas en orientación horizontal */
 @media (orientation: landscape) {
@@ -99,6 +109,7 @@ También se pueden usar media queries para detectar la orientación de la pantal
 ```
 
 ### **Ejemplo de resolución:**
+
 ```css
 /* Estilos para pantallas de alta resolución */
 @media (min-resolution: 192dpi) {
@@ -111,9 +122,11 @@ También se pueden usar media queries para detectar la orientación de la pantal
 ---
 
 ## **6. Diseño móvil primero (Mobile First)**
+
 El enfoque **mobile first** sugiere diseñar primero para dispositivos móviles y luego escalar hacia pantallas más grandes.
 
 ### **Ejemplo:**
+
 ```css
 /* Estilo base para móviles */
 .button {
@@ -145,6 +158,7 @@ La especificación de **Media Queries Level 4** trajo consigo una serie de mejor
 ### Sintaxis simplificada para rangos
 
 Antes, para definir un rango se usaban operadores lógicos:
+
 ```css
 /* Método antiguo */
 @media (min-width: 600px) and (max-width: 1200px) {
@@ -155,6 +169,7 @@ Antes, para definir un rango se usaban operadores lógicos:
 ```
 
 Con la sintaxis moderna, se puede escribir de forma más sencilla:
+
 ```css
 /* Método moderno */
 @media (600px <= width <= 1200px) {
@@ -165,6 +180,7 @@ Con la sintaxis moderna, se puede escribir de forma más sencilla:
 ```
 
 ### Nuevos tipos de consultas
+
 - `width` y `height`: Se puede omitir `min-` o `max-` usando operadores.
 - `aspect-ratio`: Detecta la relación de aspecto.
 - `color-gamut`: Detecta el rango de colores soportados.
@@ -175,6 +191,7 @@ Con la sintaxis moderna, se puede escribir de forma más sencilla:
 ## **8. Nuevas características y consultas avanzadas**
 
 ### **8.1. `prefers-color-scheme` (Modo oscuro/claro)**
+
 Permite detectar si el usuario utiliza un tema claro u oscuro.
 
 ```css
@@ -194,6 +211,7 @@ Permite detectar si el usuario utiliza un tema claro u oscuro.
 ```
 
 ### **8.2. `prefers-reduced-motion` (Reducir animaciones)**
+
 Detecta si el usuario prefiere minimizar las animaciones.
 
 ```css
@@ -206,6 +224,7 @@ Detecta si el usuario prefiere minimizar las animaciones.
 ```
 
 ### **8.3. `hover` y `pointer`**
+
 Permiten detectar las capacidades de entrada del dispositivo.
 
 ```css
@@ -225,6 +244,7 @@ Permiten detectar las capacidades de entrada del dispositivo.
 ```
 
 ### **8.4. `aspect-ratio` (Relación de aspecto)**
+
 Permite aplicar estilos basados en la relación de aspecto de la pantalla.
 
 ```css
@@ -261,8 +281,8 @@ Esto permite que los componentes sean más responsivos y adaptables sin depender
 
 Con estas novedades y sintaxis moderna, puedes crear diseños responsivos más inteligentes, accesibles y fáciles de mantener.
 
-
 ## **10. Buenas prácticas en diseño responsivo**
+
 - Diseñar con el enfoque **mobile first**.
 - Evitar unidades fijas como `px` y usar unidades relativas (`em`, `%`, `vh`, `vw`).
 - Utilizar **flexbox** o **grid** para layouts flexibles.
@@ -271,4 +291,3 @@ Con estas novedades y sintaxis moderna, puedes crear diseños responsivos más i
 - Utilizar la sintaxis simplificada para rangos para un código más limpio.
 - Implementar `prefers-color-scheme` y `prefers-reduced-motion` para mejorar la experiencia de usuario.
 - Aprovechar las Container Queries para componentes más flexibles.
-
