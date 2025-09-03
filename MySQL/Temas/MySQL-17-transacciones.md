@@ -93,6 +93,10 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 ---
 
+[![Transacciones](https://img.youtube.com/vi/3wDnXYfvI8o/0.jpg)](https://www.youtube.com/watch?v=3wDnXYfvI8o&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **7. Buenas prácticas**
 
 - Iniciar la transacción lo más cerca posible de las operaciones críticas.

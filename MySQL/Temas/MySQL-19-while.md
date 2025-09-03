@@ -105,6 +105,10 @@ DELIMITER ;
 
 ---
 
+[![Bucle WHILE](https://img.youtube.com/vi/0-bLHp3q1vw/0.jpg)](https://www.youtube.com/watch?v=0-bLHp3q1vw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **7. Buenas prácticas**
 
 - Evitar bucles infinitos asegurando que la condición cambie en cada iteración.

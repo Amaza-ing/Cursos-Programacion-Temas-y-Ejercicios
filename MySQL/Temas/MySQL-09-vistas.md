@@ -106,6 +106,10 @@ Usa vistas cuando:
 
 ---
 
+[![Vistas](https://img.youtube.com/vi/7T5ZYN78JaM/0.jpg)](https://www.youtube.com/watch?v=7T5ZYN78JaM&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **8. Conclusión**
 
 - Las vistas simplifican el acceso a datos complejos.

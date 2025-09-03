@@ -89,6 +89,10 @@ SHOW TRIGGERS;
 
 ---
 
+[![Triggers](https://img.youtube.com/vi/Z_IzfkrJDDg/0.jpg)](https://www.youtube.com/watch?v=Z_IzfkrJDDg&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **7. Buenas prácticas**
 
 - Usar triggers solo cuando la lógica debe ejecutarse **siempre** junto con la operación.

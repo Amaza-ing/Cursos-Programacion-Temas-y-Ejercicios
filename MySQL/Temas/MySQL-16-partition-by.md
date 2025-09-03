@@ -90,6 +90,10 @@ FROM orders;
 
 ---
 
+[![PARTITION BY](https://img.youtube.com/vi/uGM8a25TKNU/0.jpg)](https://www.youtube.com/watch?v=uGM8a25TKNU&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **7. Buenas prácticas**
 
 - Usar `PARTITION BY` cuando necesites cálculos por grupo sin perder el detalle de las filas.

@@ -127,6 +127,10 @@ SELECT * FROM customers WHERE is_active = 1;
 
 ---
 
+[![BOOL & DATETIME](https://img.youtube.com/vi/aIsdK6ct-h4/0.jpg)](https://www.youtube.com/watch?v=aIsdK6ct-h4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **6. Buenas prácticas**
 
 - Usar `BOOLEAN` para claridad, aunque internamente sea `TINYINT(1)`.

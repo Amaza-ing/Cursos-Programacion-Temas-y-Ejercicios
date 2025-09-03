@@ -88,6 +88,10 @@ DELIMITER ;
 
 ---
 
+[![Bucle LOOP](https://img.youtube.com/vi/F3lHxZ5jDa4/0.jpg)](https://www.youtube.com/watch?v=F3lHxZ5jDa4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **3. Diferencias entre WHILE, REPEAT y LOOP**
 
 | Bucle  | Evaluación de condición | Ejecución mínima           |

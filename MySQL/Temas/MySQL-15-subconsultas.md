@@ -110,6 +110,10 @@ JOIN pedidos_totales pt ON ca.id = pt.customer_id;
 
 ---
 
+[![Subconsultas con WITH](https://img.youtube.com/vi/q4xodEiY8B8/0.jpg)](https://www.youtube.com/watch?v=q4xodEiY8B8&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **8. Conclusión**
 
 - Las subconsultas permiten incorporar resultados intermedios.

@@ -110,6 +110,10 @@ DROP INDEX idx_nombre ON customers;
 
 ---
 
+[![Índices](https://img.youtube.com/vi/Eu2o5tefWdU/0.jpg)](https://www.youtube.com/watch?v=Eu2o5tefWdU&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **7. Conclusión**
 
 - Los índices mejoran la velocidad de lectura de datos.

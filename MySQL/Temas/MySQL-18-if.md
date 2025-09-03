@@ -104,6 +104,10 @@ DELIMITER ;
 
 ---
 
+[![Condicionales IF ELSE](https://img.youtube.com/vi/DFZmMB7DO_E/0.jpg)](https://www.youtube.com/watch?v=DFZmMB7DO_E&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **5. Buenas prácticas**
 
 - Usar `IF()` para condiciones simples en consultas.

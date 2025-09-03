@@ -135,6 +135,10 @@ SHOW PROCEDURE STATUS WHERE Db = 'nombre_base_datos';
 
 ---
 
+[![Procedimientos Almacenados](https://img.youtube.com/vi/4qnZDc2yWYc/0.jpg)](https://www.youtube.com/watch?v=4qnZDc2yWYc&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **8. Conclusión**
 
 - Los procedimientos almacenados permiten encapsular lógica SQL dentro de la base de datos.
