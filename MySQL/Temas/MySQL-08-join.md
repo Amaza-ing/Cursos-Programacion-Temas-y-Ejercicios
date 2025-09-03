@@ -105,6 +105,10 @@ JOIN products p ON d.product_id = p.id;
 
 ---
 
+[![JOIN](https://img.youtube.com/vi/y9-JFPGvEsI/0.jpg)](https://www.youtube.com/watch?v=y9-JFPGvEsI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **6. Conclusión**
 
 - `JOIN` permite unir tablas relacionadas a través de claves.

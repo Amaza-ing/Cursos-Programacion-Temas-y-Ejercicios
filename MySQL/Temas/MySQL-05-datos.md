@@ -129,6 +129,10 @@ VALUES (1, 1, 150.00, '2025-04-14 12:30:00');
 
 ---
 
+[![Modificación de tablas](https://img.youtube.com/vi/mYsI8AwooG4/0.jpg)](https://www.youtube.com/watch?v=mYsI8AwooG4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
 ## **5. Consideraciones importantes**
 
 - Las operaciones de modificación y eliminación pueden afectar muchos datos si no se usan condiciones específicas.
