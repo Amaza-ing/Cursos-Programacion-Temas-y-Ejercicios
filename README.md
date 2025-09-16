@@ -1,4 +1,4 @@
-# **Cursos de Programación - Temas y Ejercicios**
+# **AMazaing Code Academy**
 
 Bienvenido a este repositorio de **Cursos de Programación**, donde encontrarás material educativo para aprender distintas tecnologías y lenguajes de programación de forma estructurada y con ejercicios prácticos.
 
