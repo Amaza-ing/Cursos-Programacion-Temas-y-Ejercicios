@@ -57,7 +57,7 @@ Si prefieres aprender visualmente, aquí tienes el curso completo en video con e
 
 📺 **Curso Completo de JavaScript**
 
-[![Curso de JavaScript](https://img.youtube.com/vi/lD8C0NVmn7A/0.jpg)](https://www.youtube.com/watch?v=lD8C0NVmn7A&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Curso de JavaScript](https://img.youtube.com/vi/rygQhzMCKjg/0.jpg)](https://www.youtube.com/watch?v=rygQhzMCKjg&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
