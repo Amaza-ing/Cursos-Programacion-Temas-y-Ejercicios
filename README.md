@@ -34,8 +34,8 @@ Puedes explorar cada curso navegando por las carpetas correspondientes o accedie
 La mayoría de los cursos están diseñados para principiantes, por lo que no necesitas experiencia previa. Sin embargo, es recomendable tener:
 
 - Un navegador actualizado (Chrome, Firefox, Edge, etc.).
-- Un editor de código como **Visual Studio Code**.
-- Node.js y npm si deseas trabajar con Frameworks.
+- Un editor de código como **[Visual Studio Code](https://code.visualstudio.com/)**.
+- **[Node.js y npm](https://nodejs.org/)** si deseas trabajar con Frameworks.
 
 ---
 
