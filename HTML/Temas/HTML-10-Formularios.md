@@ -168,6 +168,10 @@ Los formularios permiten seleccionar opciones predefinidas mediante listas despl
 
 ---
 
+[![Formularios en HTML](https://img.youtube.com/vi/nEW11p_-gMo/0.jpg)](https://www.youtube.com/watch?v=nEW11p_-gMo&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **6. Validaciones básicas en formularios**
 
 HTML ofrece validaciones automáticas mediante atributos como `required`, `pattern`, `minlength` y `maxlength`.

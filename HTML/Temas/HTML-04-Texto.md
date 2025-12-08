@@ -85,6 +85,10 @@ Se usa para agrupar contenido en bloques sin un significado semántico específi
 
 ---
 
+[![Texto y Elementos en Linea y en Bloque](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **5. Buenas prácticas al trabajar con texto en HTML**
 
 - Utilizar **encabezados correctamente** para jerarquizar la información.

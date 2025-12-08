@@ -108,6 +108,10 @@ En este caso:
 
 ---
 
+[![Texto y Elementos en Linea y en Bloque](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **6. Buenas prácticas**
 
 - Usa **elementos en bloque** para definir la estructura de la página.

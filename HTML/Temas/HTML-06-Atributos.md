@@ -94,6 +94,10 @@ En este caso:
 
 ---
 
+[![Enlaces y Atributos](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **5. Otros atributos importantes**
 
 ### **Atributos en formularios**

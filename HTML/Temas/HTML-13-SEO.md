@@ -85,6 +85,10 @@ Open Graph (OG) es un estándar de metadatos usado por Facebook, Twitter y otras
 
 ---
 
+[![SEO & Open Graph](https://img.youtube.com/vi/mva6yRZxQwc/0.jpg)](https://www.youtube.com/watch?v=mva6yRZxQwc&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **5. Buenas prácticas en SEO básico con metadatos**
 
 - Usa **meta descripciones únicas y atractivas** para cada página.

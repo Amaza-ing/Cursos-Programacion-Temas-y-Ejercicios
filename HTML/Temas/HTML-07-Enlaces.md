@@ -83,6 +83,10 @@ Un enlace relativo apunta a una página dentro del mismo sitio web sin necesidad
 
 ---
 
+[![Enlaces y Atributos](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **6. Enlaces de correo electrónico y teléfono**
 
 También es posible crear enlaces que abran aplicaciones de correo o llamen a un número de teléfono.

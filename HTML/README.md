@@ -44,6 +44,16 @@ También tienes ejercicios resueltos en la carpeta de [Ejercicios](Ejercicios).
 
 ---
 
+## 🎥 **Curso en Video**
+
+Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
+
+📺 **Curso Completo de HTML**
+
+[![Curso de HTML](https://img.youtube.com/vi/YDDTEQgcAPg/0.jpg)](https://www.youtube.com/watch?v=YDDTEQgcAPg&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+
+---
+
 ## 🛠️ **Requisitos previos**
 
 Este curso empieza desde 0, así que no necesitas conocimientos previos. Sin embargo, para un mejor aprovechamiento, se recomienda:

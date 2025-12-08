@@ -121,6 +121,10 @@ Las listas de descripción se utilizan para definir términos y sus respectivas 
 
 ---
 
+[![Listas en HTML](https://img.youtube.com/vi/_eyqw1twuP0/0.jpg)](https://www.youtube.com/watch?v=_eyqw1twuP0&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **6. Buenas prácticas al trabajar con listas**
 
 - Utilizar **listas ordenadas** cuando el orden de los elementos es importante.

@@ -102,6 +102,10 @@ Las tablas pueden personalizarse con CSS para mejorar su apariencia.
 
 ---
 
+[![Tablas en HTML](https://img.youtube.com/vi/mgop_khNu8A/0.jpg)](https://www.youtube.com/watch?v=mgop_khNu8A&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **5. Buenas prácticas en el uso de tablas en HTML**
 
 - Utilizar **encabezados `<th>`** para mejorar la accesibilidad.

@@ -87,6 +87,10 @@ Dependiendo de la necesidad, podemos usar distintos formatos de imagen en la web
 
 ---
 
+[![Imágenes en HTML](https://img.youtube.com/vi/09vAXmbiD_4/0.jpg)](https://www.youtube.com/watch?v=09vAXmbiD_4&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **5. Buenas prácticas para la optimización de imágenes**
 
 - **Reducir el tamaño de las imágenes** antes de subirlas a la web.

@@ -40,6 +40,10 @@ Todo documento HTML está compuesto por las siguientes secciones:
 
 ---
 
+[![Estructura básica de HTML](https://img.youtube.com/vi/MenMpkevMpE/0.jpg)](https://www.youtube.com/watch?v=MenMpkevMpE&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **3. Explicación de las etiquetas principales**
 
 ### **1. `<!DOCTYPE html>`**

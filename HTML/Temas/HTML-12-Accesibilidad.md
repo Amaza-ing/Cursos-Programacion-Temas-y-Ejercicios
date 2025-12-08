@@ -102,6 +102,10 @@ El atributo `role` proporciona información adicional sobre el propósito de un 
 
 ---
 
+[![Accesibilidad & Lighthouse](https://img.youtube.com/vi/z8KEdAktCQQ/0.jpg)](https://www.youtube.com/watch?v=z8KEdAktCQQ&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **5. Consideraciones finales**
 
 - **Evitar el uso exclusivo de colores** para transmitir información.

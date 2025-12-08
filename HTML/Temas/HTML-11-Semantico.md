@@ -140,6 +140,10 @@ El elemento `<div>` se utiliza como un contenedor genérico sin significado sem�
 
 ---
 
+[![HTML Semántico](https://img.youtube.com/vi/easFWSS1Tqw/0.jpg)](https://www.youtube.com/watch?v=easFWSS1Tqw&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **4. Otros aspectos importantes del HTML semántico**
 
 - **Etiquetas semánticas adicionales:** `<figure>`, `<figcaption>`, ...

@@ -36,6 +36,10 @@ Los documentos HTML están compuestos por elementos como:
 
 ---
 
+[![Cómo empezar con HTML](https://img.youtube.com/vi/hkWMQFWgm34/0.jpg)](https://www.youtube.com/watch?v=hkWMQFWgm34&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+
+---
+
 ## **3. Primer documento HTML**
 
 Un documento HTML sigue una estructura básica que siempre debe incluir ciertas etiquetas obligatorias.
