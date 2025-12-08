@@ -11,7 +11,7 @@ El **Modelo de Caja** es un concepto fundamental en CSS que describe cómo se re
 
 Representación para un elemento con un contenido de 500px de ancho y 20px de alto, 5px de padding, 2px de borde y 20px de margen superior y 0px del resto de márgenes:
 
-![Box Model](../assets/box-model.png "Box Model")
+![Box Model](https://raw.githubusercontent.com/Amaza-ing/Cursos-Programacion-Temas-y-Ejercicios/master/CSS/Assets/box-model.png "Box Model")
 
 ---
 
@@ -165,6 +165,10 @@ p {
 ```
 
 En este caso, el margen resultante entre los dos elementos será de 30px, no 50px.
+
+---
+
+[![Modelo de Caja](https://img.youtube.com/vi/k6p6vJLQfFE/0.jpg)](https://www.youtube.com/watch?v=k6p6vJLQfFE&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 

@@ -132,6 +132,10 @@ body {
 
 ---
 
+[![Tipografía & Google Fonts](https://img.youtube.com/vi/3L7GkNa0jtc/0.jpg)](https://www.youtube.com/watch?v=3L7GkNa0jtc&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **7. Buenas prácticas con tipografía en CSS**
 
 - Utilizar `rem` o `em` en lugar de `px` para mejor accesibilidad.

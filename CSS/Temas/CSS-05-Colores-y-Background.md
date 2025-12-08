@@ -144,6 +144,10 @@ div {
 
 ---
 
+[![Colores en CSS](https://img.youtube.com/vi/zCdle5q-V14/0.jpg)](https://www.youtube.com/watch?v=zCdle5q-V14&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **8. Buenas prácticas al usar colores y fondos**
 
 - Usar colores con suficiente contraste para mejorar la legibilidad.

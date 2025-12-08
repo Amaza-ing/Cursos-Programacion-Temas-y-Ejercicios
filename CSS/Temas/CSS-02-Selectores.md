@@ -172,6 +172,10 @@ Aquí se aplicará el color azul.
 
 ---
 
+[![Selectores CSS](https://img.youtube.com/vi/vwAhrcfUmbE/0.jpg)](https://www.youtube.com/watch?v=vwAhrcfUmbE&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **4. Uso de `!important`**
 
 La regla `!important` sobrescribe todas las reglas anteriores, incluso si tienen mayor especificidad.
@@ -183,6 +187,10 @@ p {
 ```
 
 ⚠ **Usar con moderación**, ya que puede dificultar el mantenimiento del código. Es recomendable no usarlo en absoluto.
+
+---
+
+[![CSS anidado & !important](https://img.youtube.com/vi/9FNDDjs6u7I/0.jpg)](https://www.youtube.com/watch?v=9FNDDjs6u7I&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 

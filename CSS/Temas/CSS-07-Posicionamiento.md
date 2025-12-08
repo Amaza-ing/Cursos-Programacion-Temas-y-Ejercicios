@@ -116,6 +116,10 @@ El elemento se comporta como `relative` hasta alcanzar un punto del scroll, dond
 
 ---
 
+[![Posicionamiento en CSS](https://img.youtube.com/vi/-BfSfqOHrug/0.jpg)](https://www.youtube.com/watch?v=-BfSfqOHrug&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **9. Buenas prácticas en el uso del posicionamiento**
 
 - Usar `relative` cuando se necesite mover elementos sin afectar otros.

@@ -141,6 +141,10 @@ p {
 
 ---
 
+[![Cómo empezar con CSS](https://img.youtube.com/vi/4SHxtVj5NL4/0.jpg)](https://www.youtube.com/watch?v=4SHxtVj5NL4&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **5. Buenas prácticas en CSS**
 
 - Usar archivos CSS externos para mantener el código organizado.

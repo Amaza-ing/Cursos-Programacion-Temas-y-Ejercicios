@@ -101,6 +101,10 @@ Estas unidades permiten crear diseños fluidos.
 
 ---
 
+[![Unidades absolutas y relativas](https://img.youtube.com/vi/fMCka7YgKxg/0.jpg)](https://www.youtube.com/watch?v=fMCka7YgKxg&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **6. Buenas prácticas en el uso de unidades**
 
 - Usar `rem` para definir fuentes y mantener escalabilidad.
