@@ -162,4 +162,4 @@ Permite definir áreas dentro de la cuadrícula y asignar elementos a ellas.
 
 ---
 
-En el próximo tema, exploraremos **animaciones y transiciones en CSS**, para agregar dinamismo a los elementos de una página web.
+En el próximo tema, exploraremos **pseudoelementos y pseudoclases en CSS**, para tener una mayor flexibilidad a la hora de jugar con los elementos de una página web.

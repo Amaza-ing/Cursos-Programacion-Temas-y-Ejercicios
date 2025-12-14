@@ -23,19 +23,20 @@ Este curso está estructurado en **módulos prácticos**, con ejemplos y ejercic
 
 Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes explorar los temas a tu propio ritmo:
 
-| 📚 Tema                                                                              | Descripción                                                |
-| ------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| 🎨 [Tema 1: Introducción a CSS](Temas/CSS-01-Introduccion.md)                        | Qué es CSS y cómo funciona.                                |
-| 🔗 [Tema 2: Selectores y Especificidad](Temas/CSS-02-Selectores.md)                  | Cómo seleccionar y aplicar estilos a los elementos.        |
-| 📦 [Tema 3: El Modelo de Caja](Temas/CSS-03-Modelo-de-Caja.md)                       | Estructura interna de los elementos y su manipulación.     |
-| 🎨 [Tema 4: Unidades de Medida](Temas/CSS-04-Unidades.md)                            | Uso de unidades absolutas y relativas.                     |
-| 🌈 [Tema 5: Colores y Fondos](Temas/CSS-05-Colores-y-Background.md)                  | Aplicación de colores, degradados y fondos personalizados. |
-| ✍️ [Tema 6: Tipografía y Fuentes](Temas/CSS-06-Tipografia.md)                        | Personalización de textos y uso de fuentes externas.       |
-| 🗺 [Tema 7: Posicionamiento](Temas/CSS-07-Posicionamiento.md)                        | Personalización de textos y uso de fuentes externas.       |
-| 📐 [Tema 8: Flexbox](Temas/CSS-08-Flexbox.md)                                        | Diseño flexible de elementos en una sola dimensión.        |
-| 🗂️ [Tema 9: CSS Grid](Temas/CSS-09-Grid.md)                                          | Diseño en cuadrículas bidimensionales.                     |
-| 🎞️ [Tema 10: Animaciones y Transiciones](Temas/CSS-10-Animaciones-y-Transiciones.md) | Creación de animaciones y efectos dinámicos.               |
-| 📱 [Tema 11: Media Queries y Diseño Responsivo](Temas/CSS-11-Responsivo.md)          | Adaptación de sitios web a distintos dispositivos.         |
+| 📚 Tema                                                                                        | Descripción                                                |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 🎨 [Tema 1: Introducción a CSS](Temas/CSS-01-Introduccion.md)                                  | Qué es CSS y cómo funciona.                                |
+| 🔗 [Tema 2: Selectores y Especificidad](Temas/CSS-02-Selectores.md)                            | Cómo seleccionar y aplicar estilos a los elementos.        |
+| 📦 [Tema 3: El Modelo de Caja](Temas/CSS-03-Modelo-de-Caja.md)                                 | Estructura interna de los elementos y su manipulación.     |
+| 🎨 [Tema 4: Unidades de Medida](Temas/CSS-04-Unidades.md)                                      | Uso de unidades absolutas y relativas.                     |
+| 🌈 [Tema 5: Colores y Fondos](Temas/CSS-05-Colores-y-Background.md)                            | Aplicación de colores, degradados y fondos personalizados. |
+| ✍️ [Tema 6: Tipografía y Fuentes](Temas/CSS-06-Tipografia.md)                                  | Personalización de textos y uso de fuentes externas.       |
+| 🗺 [Tema 7: Posicionamiento](Temas/CSS-07-Posicionamiento.md)                                   | Personalización de textos y uso de fuentes externas.       |
+| 📐 [Tema 8: Flexbox](Temas/CSS-08-Flexbox.md)                                                  | Diseño flexible de elementos en una sola dimensión.        |
+| 🗂️ [Tema 9: CSS Grid](Temas/CSS-09-Grid.md)                                                    | Diseño en cuadrículas bidimensionales.                     |
+| 👁‍🗨️ [Tema 10: Pseudoclases y Pseudoelementos](Temas/CSS-10-Pseudoclases-y-Pseudoelementos.md) | Mayor flexibilidad y control en los elementos.             |
+| 🎞️ [Tema 11: Animaciones y Transiciones](Temas/CSS-11-Animaciones-y-Transiciones.md)           | Creación de animaciones y efectos dinámicos.               |
+| 📱 [Tema 12: Media Queries y Diseño Responsivo](Temas/CSS-12-Responsivo.md)                    | Adaptación de sitios web a distintos dispositivos.         |
 
 📌 **También encontrarás ejercicios resueltos en la carpeta de [Ejercicios](Ejercicios) para practicar lo aprendido.**
 

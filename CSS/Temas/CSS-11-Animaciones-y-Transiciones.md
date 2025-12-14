@@ -1,4 +1,4 @@
-# **Tema 10: Animaciones y Transiciones en CSS**
+# **Tema 11: Animaciones y Transiciones en CSS**
 
 ## **1. Introducción a las animaciones y transiciones en CSS**
 

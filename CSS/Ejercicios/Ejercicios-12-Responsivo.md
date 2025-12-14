@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 10: Media Queries y Diseño Responsivo**
+# **Ejercicios - Tema 12: Media Queries y Diseño Responsivo**
 
 ## **Instrucciones:**
 

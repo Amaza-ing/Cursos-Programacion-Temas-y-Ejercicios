@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 8: Diseño con CSS Grid**
+# **Ejercicios - Tema 9: Diseño con CSS Grid**
 
 ## **Instrucciones:**
 

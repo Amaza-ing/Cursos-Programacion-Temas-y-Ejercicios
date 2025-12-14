@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 6: Posicionamiento en CSS**
+# **Ejercicios - Tema 7: Posicionamiento en CSS**
 
 ## **Instrucciones:**
 

@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 7: Diseño con Flexbox en CSS**
+# **Ejercicios - Tema 8: Diseño con Flexbox en CSS**
 
 ## **Instrucciones:**
 

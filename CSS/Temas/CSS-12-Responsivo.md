@@ -1,4 +1,4 @@
-# **Tema 11: Media Queries y Diseño Responsivo en CSS**
+# **Tema 12: Media Queries y Diseño Responsivo en CSS**
 
 ## **1. Introducción al diseño responsivo**
 
