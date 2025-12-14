@@ -10,11 +10,13 @@ En este momento este repositorio contiene los siguientes cursos:
 - [**CSS**](./CSS/): Domina el diseño y la apariencia de las páginas web.
 - [**JavaScript**](./JavaScript/): Introducción a la programación con JavaScript para crear interactividad en sitios web.
 - [**Git y GitHub**](./Git/): Control de versiones y trabajo colaborativo en proyectos de desarrollo.
+- [**TypeScript**](./TypeScript/): Superset de JavaScript centrado en el tipado y que añade funcionalidades para la programación orientada a objetos.
+- [**React**](./React/): Desarrollo de aplicaciones web con uno de los framworks JS más utilizados.
 - [**Angular**](./Angular/): Desarrollo de aplicaciones web con el framework Angular y TypeScript.
 - [**Vue**](./Vue/): Desarrollo de aplicaciones web con el framework Vue y JavaScript.
 - [**MySQL**](./MySQL/): Creación y gestión de bases de datos desde 0 con MySQL y DBeaver.
 
-📌 _En el futuro, se agregarán más cursos._
+📌 _En el futuro se agregarán más cursos._
 
 ---
 
