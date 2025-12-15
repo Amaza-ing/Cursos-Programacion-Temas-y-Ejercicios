@@ -281,6 +281,12 @@ Esto permite que los componentes sean más responsivos y adaptables sin depender
 
 Con estas novedades y sintaxis moderna, puedes crear diseños responsivos más inteligentes, accesibles y fáciles de mantener.
 
+---
+
+[![CSS Responsivo](https://img.youtube.com/vi/o2BqdTxIA9I/0.jpg)](https://www.youtube.com/watch?v=o2BqdTxIA9I&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **10. Buenas prácticas en diseño responsivo**
 
 - Diseñar con el enfoque **mobile first**.

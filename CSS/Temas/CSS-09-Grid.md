@@ -146,6 +146,10 @@ Permite definir áreas dentro de la cuadrícula y asignar elementos a ellas.
 
 ---
 
+[![Grid](https://img.youtube.com/vi/Kl-W-vZOVZM/0.jpg)](https://www.youtube.com/watch?v=Kl-W-vZOVZM&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **8. Buenas prácticas con CSS Grid**
 
 - Usar `fr` para crear diseños flexibles sin necesidad de píxeles fijos.

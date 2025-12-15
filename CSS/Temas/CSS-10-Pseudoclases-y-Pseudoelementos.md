@@ -216,6 +216,10 @@ Aplica estilos al texto seleccionado por el usuario.
 
 ---
 
+[![Pseudoclases & Pseudoelementos](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **8. Buenas prácticas**
 
 - Usar `::` para pseudoelementos (estándar moderno).

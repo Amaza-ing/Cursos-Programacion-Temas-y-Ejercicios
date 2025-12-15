@@ -169,6 +169,10 @@ Por defecto, todos los elementos tienen `order: 0`. Un número menor se posicion
 
 ---
 
+[![Flexbox](https://img.youtube.com/vi/ONi3VOxQSjc/0.jpg)](https://www.youtube.com/watch?v=ONi3VOxQSjc&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+
+---
+
 ## **9. Buenas prácticas con Flexbox**
 
 - Usar `flex-wrap` cuando los elementos no deben encogerse demasiado.
