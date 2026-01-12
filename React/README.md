@@ -4,12 +4,12 @@ Bienvenido al **Curso Completo de React**, un curso diseñado para que aprendas 
 
 ---
 
-## 🎥 **Curso en Video**
-
-Dentro de poco se añadirán la teoría escrita y ejercicios resueltos.
+Dentro de poco se añadirán los capítulos que faltan de teoría escrita y ejercicios resueltos.
 De momento puedes ver el curso completo en el siguiente video:
 
-📺 **Curso Completo de React**
+---
+
+## 🎥 **Curso en Video**
 
 [![Curso de React](https://img.youtube.com/vi/vH1u6Xv6oXw/0.jpg)](https://www.youtube.com/watch?v=vH1u6Xv6oXw&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
