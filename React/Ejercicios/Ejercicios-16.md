@@ -1,6 +1,6 @@
 # **Ejercicios - Tema 16: Axios**
 
-Ejercicios - Tema 16: Axios. A continuación, encontrarás **10 ejercicios prácticos** para trabajar con **Axios en React**, usando `useEffect`, manejo de estado y peticiones HTTP.
+A continuación, encontrarás **10 ejercicios prácticos** para trabajar con **Axios en React**, usando `useEffect`, manejo de estado y peticiones HTTP.
 
 Intenta resolverlos antes de consultar la solución.
 
