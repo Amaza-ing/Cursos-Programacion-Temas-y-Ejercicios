@@ -209,4 +209,8 @@ import Header from "./components/Header";
 
 ---
 
+[![Componentes](https://img.youtube.com/vi/oCXYesB9q7w/0.jpg)](https://www.youtube.com/watch?v=oCXYesB9q7w&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos cómo aplicar **estilos en React** (CSS global, CSS por componente y buenas prácticas iniciales).

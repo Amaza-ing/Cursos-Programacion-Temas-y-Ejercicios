@@ -226,4 +226,8 @@ const createUser = async () => {
 
 ---
 
+[![Fetch API](https://img.youtube.com/vi/VkN96ZkyxzA/0.jpg)](https://www.youtube.com/watch?v=VkN96ZkyxzA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **Axios**, una alternativa a Fetch con una API más cómoda para muchos casos.

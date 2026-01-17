@@ -176,4 +176,8 @@ Primero que funcione, luego optimizar.
 
 ---
 
+[![React Memo](https://img.youtube.com/vi/Y9aWic62X7M/0.jpg)](https://www.youtube.com/watch?v=Y9aWic62X7M&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el siguiente tema aprenderás a optimizar la carga con **Lazy Loading**.

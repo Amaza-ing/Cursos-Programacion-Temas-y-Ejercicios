@@ -184,4 +184,8 @@ export default Header;
 
 ---
 
+[![Componentes de una Linea](https://img.youtube.com/vi/iIjk-AhtJ9A/0.jpg)](https://www.youtube.com/watch?v=iIjk-AhtJ9A&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos cómo manejar **eventos en React** (click, input, y funciones manejadoras).

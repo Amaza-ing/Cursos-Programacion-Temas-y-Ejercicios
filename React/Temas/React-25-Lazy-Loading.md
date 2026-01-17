@@ -159,4 +159,8 @@ Siempre informa al usuario de que algo se está cargando.
 
 ---
 
+[![Lazy Loading](https://img.youtube.com/vi/5WxFlccf5U8/0.jpg)](https://www.youtube.com/watch?v=5WxFlccf5U8&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el siguiente tema aprenderás a escribir **tests en React**.

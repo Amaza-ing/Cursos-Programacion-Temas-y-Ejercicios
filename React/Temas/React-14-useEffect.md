@@ -249,4 +249,8 @@ El efecto no es para generar JSX, sino para lógica secundaria.
 
 ---
 
+[![useEffect](https://img.youtube.com/vi/I9A4xAf_qMc/0.jpg)](https://www.youtube.com/watch?v=I9A4xAf_qMc&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **Fetch API**, para pedir datos a una API y combinarlos con `useEffect`.

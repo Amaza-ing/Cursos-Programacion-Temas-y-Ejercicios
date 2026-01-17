@@ -122,6 +122,10 @@ export default Home;
 
 ---
 
+[![Router](https://img.youtube.com/vi/zYr6Z6yQ-_0/0.jpg)](https://www.youtube.com/watch?v=zYr6Z6yQ-_0&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 ## **7. Navegar entre páginas con `Link`**
 
 Para cambiar de ruta **no se usan `<a>`**, sino el componente `Link`.
@@ -145,6 +149,10 @@ Ventajas de `Link`:
 
 - No recarga la página.
 - Mantiene el estado de la app.
+
+---
+
+[![Links](https://img.youtube.com/vi/Jm9LWjEvS78/0.jpg)](https://www.youtube.com/watch?v=Jm9LWjEvS78&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
@@ -216,6 +224,10 @@ element={<Home />}
 - Usa `Link` para navegación.
 - Mantén rutas simples y claras.
 - Centraliza la navegación en `App.jsx`.
+
+---
+
+[![Páginas y APIs](https://img.youtube.com/vi/u-axNHE7bPQ/0.jpg)](https://www.youtube.com/watch?v=u-axNHE7bPQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 

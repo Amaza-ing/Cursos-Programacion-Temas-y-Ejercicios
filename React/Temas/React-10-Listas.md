@@ -63,6 +63,10 @@ Ejemplo recomendado:
 
 ---
 
+[![Listas](https://img.youtube.com/vi/c8j6TtAqTYQ/0.jpg)](https://www.youtube.com/watch?v=c8j6TtAqTYQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 ## **4. Listas con `index` (Listas Index)**
 
 A veces se usa el **index** del `.map()` como `key`:
@@ -109,6 +113,10 @@ Si React identifica mal los elementos, puede:
 
 ---
 
+[![Listas Index](https://img.youtube.com/vi/HFp69Sp1bR0/0.jpg)](https://www.youtube.com/watch?v=HFp69Sp1bR0&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 ## **5. Renderizar listas de objetos (Listas de Objetos)**
 
 Lo más común es que tu lista sea un array de objetos.
@@ -142,6 +150,10 @@ Aquí la `key` ideal es `user.id` porque:
 - Es única.
 - No cambia.
 - React puede identificar cada item correctamente.
+
+---
+
+[![Listas de Objetos](https://img.youtube.com/vi/RxJ-8PTAuBY/0.jpg)](https://www.youtube.com/watch?v=RxJ-8PTAuBY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
@@ -208,7 +220,5 @@ Observa que:
 - Cada item debe tener una `key`.
 - `index` como `key` solo en listas estáticas.
 - En listas de objetos, usa `id` como `key`.
-
----
 
 En el próximo tema veremos **Props Padre a Hijo** para compartir información dinámica entre componentes.

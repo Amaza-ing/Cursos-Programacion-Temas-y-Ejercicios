@@ -220,4 +220,8 @@ Ejemplo correcto:
 
 ---
 
+[![Eventos](https://img.youtube.com/vi/t-L_Lo8XduQ/0.jpg)](https://www.youtube.com/watch?v=t-L_Lo8XduQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **useState**, que nos permitirá guardar información en el componente y actualizar la UI cuando cambie.

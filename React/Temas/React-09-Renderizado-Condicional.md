@@ -197,4 +197,8 @@ export default Result;
 
 ---
 
+[![Renderizado Condicional](https://img.youtube.com/vi/183eqNQNz3U/0.jpg)](https://www.youtube.com/watch?v=183eqNQNz3U&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **Listas**, para renderizar colecciones de elementos usando `.map()`.

@@ -205,4 +205,8 @@ Esta estructura ayuda a:
 
 ---
 
+[![Esquema de Ficheros y Carpetas](https://img.youtube.com/vi/TCfSknh03Lc/0.jpg)](https://www.youtube.com/watch?v=TCfSknh03Lc&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema comenzaremos a trabajar con **componentes en React** y entenderemos cómo crearlos y reutilizarlos correctamente.

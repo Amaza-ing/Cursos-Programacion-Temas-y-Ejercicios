@@ -231,4 +231,8 @@ Si usas el parámetro en un `useEffect`, debe estar en el array de dependencias.
 
 ---
 
+[![Rutas Paramétricas](https://img.youtube.com/vi/iC8whY8noHI/0.jpg)](https://www.youtube.com/watch?v=iC8whY8noHI&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el siguiente tema aprenderás a trabajar con **rutas protegidas**.

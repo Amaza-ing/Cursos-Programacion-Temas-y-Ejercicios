@@ -138,6 +138,10 @@ Aquí el estado vive en el padre, pero el input está en el hijo:
 
 ---
 
+[![Props Hijo a Padre](https://img.youtube.com/vi/A2hRoqV3z84/0.jpg)](https://www.youtube.com/watch?v=A2hRoqV3z84&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 ## **5. Elevar el estado: cuándo tiene sentido**
 
 Elevar el estado significa **mover el estado al componente padre común** cuando:
@@ -301,6 +305,10 @@ Si el hijo necesita cambiar algo, debe:
 - Comunicación hijo → padre: el padre pasa una función y el hijo la ejecuta.
 - Elevar el estado: mover el estado al padre común cuando varios componentes lo necesitan.
 - Patrón típico: `value` + `onValueChange` para inputs.
+
+---
+
+[![Elevar el Estado](https://img.youtube.com/vi/tLOeGTJudd4/0.jpg)](https://www.youtube.com/watch?v=tLOeGTJudd4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 

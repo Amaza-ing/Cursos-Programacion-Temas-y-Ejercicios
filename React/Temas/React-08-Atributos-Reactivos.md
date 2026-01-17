@@ -219,4 +219,8 @@ export default Status;
 
 ---
 
+[![Atributos Reactivos](https://img.youtube.com/vi/xF3J25ka1yk/0.jpg)](https://www.youtube.com/watch?v=xF3J25ka1yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **renderizado condicional**, para mostrar u ocultar elementos en la UI dependiendo del estado.

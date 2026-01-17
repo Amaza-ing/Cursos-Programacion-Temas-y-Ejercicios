@@ -623,6 +623,18 @@ test("renders users", () => {
 - Las peticiones se deben mockear (`fetch` o Axios).
 - Para testear Context, envuelve el componente con el Provider.
 
+## **19. Usando Jest**
+
+[![Testing Config](https://img.youtube.com/vi/bVTkCyxPwx0/0.jpg)](https://www.youtube.com/watch?v=bVTkCyxPwx0&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+[![Crear Tests con Jest y la React Testing Library](https://img.youtube.com/vi/H4epaNzJCmY/0.jpg)](https://www.youtube.com/watch?v=H4epaNzJCmY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+[![Testing & Context](https://img.youtube.com/vi/PgH9srj8Sj4/0.jpg)](https://www.youtube.com/watch?v=PgH9srj8Sj4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
 ---
 
 En el siguiente tema trabajarás verás **Cómo crear una web completa desde 0** (Una aplicación de notas).

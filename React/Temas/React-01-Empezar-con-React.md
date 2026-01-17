@@ -16,6 +16,10 @@ A diferencia de frameworks completos como Angular, React se centra exclusivament
 
 ---
 
+[![Presentación del curso de React](https://img.youtube.com/vi/Tyk4X3mU9DA/0.jpg)](https://www.youtube.com/watch?v=Tyk4X3mU9DA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 ## **2. Requisitos previos**
 
 Antes de comenzar a trabajar con React, es necesario tener instalado:
@@ -171,6 +175,10 @@ Características importantes de JSX:
 - Todo en React gira en torno a **componentes**.
 - JSX facilita la escritura de interfaces de usuario.
 - El proyecto se ejecuta en tiempo real gracias al servidor de desarrollo.
+
+---
+
+[![Cómo Empezar con React](https://img.youtube.com/vi/IRfa4mg4tNM/0.jpg)](https://www.youtube.com/watch?v=IRfa4mg4tNM&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 

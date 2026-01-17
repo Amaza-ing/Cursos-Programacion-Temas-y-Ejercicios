@@ -190,4 +190,12 @@ Para rutas protegidas, `Navigate` es la opción correcta.
 
 ---
 
+[![Rutas Protegidas](https://img.youtube.com/vi/MlG-j-SXDnM/0.jpg)](https://www.youtube.com/watch?v=MlG-j-SXDnM&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+[![Gestión de Estados de Carga](https://img.youtube.com/vi/SP1CIB_HnGA/0.jpg)](https://www.youtube.com/watch?v=SP1CIB_HnGA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el siguiente tema aprenderás a trabajar con **gestión de estado**.

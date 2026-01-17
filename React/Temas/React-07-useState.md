@@ -218,4 +218,8 @@ Aquí:
 
 ---
 
+[![useState](https://img.youtube.com/vi/ln8FKnZBvNo/0.jpg)](https://www.youtube.com/watch?v=ln8FKnZBvNo&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **Atributos Reactivos**, para conectar estado con atributos HTML (por ejemplo `disabled`, `value`, `checked`).

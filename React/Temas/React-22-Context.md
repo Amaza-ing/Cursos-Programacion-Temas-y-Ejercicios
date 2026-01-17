@@ -201,4 +201,8 @@ Context debe ser claro y predecible.
 
 ---
 
+[![Context](https://img.youtube.com/vi/qKJndLkZUIQ/0.jpg)](https://www.youtube.com/watch?v=qKJndLkZUIQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el siguiente tema aprenderás a combinar **Context con usuarios** para gestionar autenticación global.

@@ -291,4 +291,8 @@ Si necesitas cambiar algo, eso suele indicar que debe ser **estado** (useState) 
 
 ---
 
+[![Props Padre a Hijo](https://img.youtube.com/vi/N-uDcR4t9Yk/0.jpg)](https://www.youtube.com/watch?v=N-uDcR4t9Yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **`className` y `htmlFor`**, dos atributos clave en React cuando trabajas con CSS y formularios.

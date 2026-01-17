@@ -272,4 +272,8 @@ Debe ser un objeto:
 
 ---
 
+[![Classname, htmlFor y otros](https://img.youtube.com/vi/CcMlJxlHno8/0.jpg)](https://www.youtube.com/watch?v=CcMlJxlHno8&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **Props Hijo a Padre y Elevar el Estado**, para que un componente hijo pueda comunicar información al padre mediante funciones.

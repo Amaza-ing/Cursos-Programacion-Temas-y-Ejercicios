@@ -232,4 +232,12 @@ Siempre deben existir.
 
 ---
 
+[![Context Users Login/Logout](https://img.youtube.com/vi/nJzRGHUBK8o/0.jpg)](https://www.youtube.com/watch?v=nJzRGHUBK8o&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+[![Fetch & Context](https://img.youtube.com/vi/P3Pt-VuWV4w/0.jpg)](https://www.youtube.com/watch?v=P3Pt-VuWV4w&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el siguiente tema profundizarás en **optimización con React Memo**.

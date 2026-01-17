@@ -246,4 +246,8 @@ Ventajas:
 
 ---
 
+[![Estilos](https://img.youtube.com/vi/WkaNDbO8za4/0.jpg)](https://www.youtube.com/watch?v=WkaNDbO8za4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
 En el próximo tema veremos **componentes en una línea** y cómo escribir componentes pequeños y reutilizables de forma limpia.
