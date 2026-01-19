@@ -133,6 +133,17 @@ Java tiene **8 tipos primitivos**. Son datos “básicos” que no son objetos.
 
 > Regla práctica: al empezar, los más comunes son `int`, `double`, `boolean`, `char`.
 
+| Tipo primitivo | Tamaño  | Valores posibles                                                                |
+| -------------- | ------- | ------------------------------------------------------------------------------- |
+| byte           | 8 bits  | Desde -128 hasta 127                                                            |
+| short          | 16 bits | Desde -32,768 hasta 32,767                                                      |
+| int            | 32 bits | Desde -2,147,483,648 hasta 2,147,483,647                                        |
+| long           | 64 bits | Desde -9,223,372,036,854,775,808 hasta 9,223,372,036,854,775,807                |
+| float          | 32 bits | Aproximadamente desde ±1.4E-45 hasta ±3.4028235E38 (precisión simple)           |
+| double         | 64 bits | Aproximadamente desde ±4.9E-324 hasta ±1.7976931348623157E308 (doble precisión) |
+| char           | 16 bits | Desde '\u0000' (0) hasta '\uFFFF' (65,535), caracteres Unicode                  |
+| boolean        | 1 bit\* | true o false                                                                    |
+
 ---
 
 ## 8. Enteros: `byte`, `short`, `int`, `long`
@@ -225,7 +236,7 @@ Importante:
 `String` es un tipo de **referencia** (un objeto), no un primitivo, pero lo usarás desde el primer día.
 
 ```java
-String name = "Sara";
+String name = "Alberto";
 String city = "Madrid";
 ```
 
