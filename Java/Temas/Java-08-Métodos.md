@@ -542,4 +542,4 @@ Qué aporta este enfoque:
 
 ---
 
-En el próximo tema profundizaremos en **sobrecarga de métodos**, y verás cómo Java permite métodos con el mismo nombre pero diferentes parámetros.
+En el próximo tema aprenderemos sobre los **métodos de los String**, y veremos como sacarle el máximo partido a este tipo de dato.
