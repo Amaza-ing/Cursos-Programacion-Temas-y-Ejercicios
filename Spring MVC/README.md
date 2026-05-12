@@ -133,12 +133,14 @@ Para seguir el curso se recomienda usar:
 
 ## 📌 **Cómo usar este repositorio**
 
-Puedes seguir el curso directamente desde GitHub o descargarlo en tu ordenador.
+Puedes seguir el curso directamente desde esta página o descargar el código de GitHub en tu ordenador.
+
+Este Repositorio está separado por ramas, paso a paso.
 
 1️⃣ **Clona el repositorio** en tu máquina local:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/Amaza-ing/AMazaing-Spring-MVC
 ```
 
 2️⃣ **Abre el proyecto en IntelliJ**.
