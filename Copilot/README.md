@@ -40,12 +40,12 @@ Al finalizar el curso, serás capaz de:
 
 ## Organización del curso
 
-| Día   | Bloque principal                         | Contenidos                                                        |
-| ----- | ---------------------------------------- | ----------------------------------------------------------------- |
-| Día 1 | Fundamentos y ecosistema Copilot         | IA generativa, tipos de Copilot, privacidad y uso responsable     |
-| Día 2 | GitHub Copilot para desarrollo           | Instalación, prompting técnico y Copilot Chat                     |
-| Día 3 | GitHub Copilot avanzado                  | Testing, debugging, personalización, automatización, APIs y CI/CD |
-| Día 4 | Microsoft Copilot y adopción profesional | Microsoft 365, Copilot Studio y buenas prácticas de uso           |
+| Bloque   | Bloque principal                         | Contenidos                                                        |
+| -------- | ---------------------------------------- | ----------------------------------------------------------------- |
+| Bloque 1 | Fundamentos y ecosistema Copilot         | IA generativa, tipos de Copilot, privacidad y uso responsable     |
+| Bloque 2 | GitHub Copilot para desarrollo           | Instalación, prompting técnico y Copilot Chat                     |
+| Bloque 3 | GitHub Copilot avanzado                  | Testing, debugging, personalización, automatización, APIs y CI/CD |
+| Bloque 4 | Microsoft Copilot y adopción profesional | Microsoft 365, Copilot Studio y buenas prácticas de uso           |
 
 ---
 
