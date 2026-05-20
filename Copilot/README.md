@@ -40,13 +40,42 @@ Al finalizar el curso, serás capaz de:
 
 ## Organización del curso
 
-| Bloque   | Bloque principal                         | Contenidos                                                        |
-| -------- | ---------------------------------------- | ----------------------------------------------------------------- |
-| Bloque 1 | Fundamentos y ecosistema Copilot         | IA generativa, tipos de Copilot, privacidad y uso responsable     |
-| Bloque 2 | GitHub Copilot para desarrollo           | Instalación, prompting técnico y Copilot Chat                     |
-| Bloque 3 | GitHub Copilot avanzado                  | Testing, debugging, personalización, automatización, APIs y CI/CD |
-| Bloque 4 | Microsoft Copilot y adopción profesional | Microsoft 365, Copilot Studio y buenas prácticas de uso           |
-
+<table>
+  <colgroup>
+    <col width="110">
+    <col width="260">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Bloque</th>
+      <th>Bloque principal</th>
+      <th>Contenidos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Bloque 1</strong></td>
+      <td>Fundamentos y ecosistema Copilot</td>
+      <td>IA generativa, tipos de Copilot, privacidad y uso responsable</td>
+    </tr>
+    <tr>
+      <td><strong>Bloque 2</strong></td>
+      <td>GitHub Copilot para desarrollo</td>
+      <td>Instalación, prompting técnico y Copilot Chat</td>
+    </tr>
+    <tr>
+      <td><strong>Bloque 3</strong></td>
+      <td>GitHub Copilot avanzado</td>
+      <td>Testing, debugging, personalización, automatización, APIs y CI/CD</td>
+    </tr>
+    <tr>
+      <td><strong>Bloque 4</strong></td>
+      <td>Microsoft Copilot y adopción profesional</td>
+      <td>Microsoft 365, Copilot Studio y buenas prácticas de uso</td>
+    </tr>
+  </tbody>
+</table>
 ---
 
 ## Estructura del repositorio
@@ -92,21 +121,87 @@ Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de la carpeta d
 
 ## Temario completo
 
-| Tema | Archivo                                                                             | Descripción                                                                                  |
-| ---- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| 01   | [Copilot-01-Introducción](Temas/Copilot-01-Introducción.md)                         | Introducción a la IA generativa, modelos de lenguaje y primeros usos de Copilot.             |
-| 02   | [Copilot-02-Ecosistema](Temas/Copilot-02-Ecosistema.md)                             | Diferencias entre GitHub Copilot, Microsoft Copilot, Microsoft 365 Copilot y Copilot Studio. |
-| 03   | [Copilot-03-Privacidad](Temas/Copilot-03-Privacidad.md)                             | Seguridad, privacidad, límites, revisión humana y uso responsable de IA.                     |
-| 04   | [Copilot-04-Instalación](Temas/Copilot-04-Instalación.md)                           | Activación y configuración de GitHub Copilot en VS Code y JetBrains.                         |
-| 05   | [Copilot-05-Prompting](Temas/Copilot-05-Prompting.md)                               | Prompting para programadores: funciones, documentación, refactorización, tests y bugs.       |
-| 06   | [Copilot-06-Copilot-Chat](Temas/Copilot-06-Copilot-Chat.md)                         | Uso de Copilot Chat para preguntar, explicar, modificar y revisar código.                    |
-| 07   | [Copilot-07-Tareas-del-Desarrollador](Temas/Copilot-07-Tareas-del-Desarrollador.md) | Refactorización, documentación, testing, debugging y revisión de código con IA.              |
-| 08   | [Copilot-08-Personalización](Temas/Copilot-08-Personalización.md)                   | Instrucciones personalizadas, contexto del repositorio, agentes, CLI y trabajo avanzado.     |
-| 09   | [Copilot-09-Automatización](Temas/Copilot-09-Automatización.md)                     | APIs, Docker, infraestructura como código, GitHub Actions y CI/CD asistido por Copilot.      |
-| 10   | [Copilot-10-Microsoft](Temas/Copilot-10-Microsoft.md)                               | Microsoft Copilot en Windows y Edge para búsqueda, resumen y generación de contenido.        |
-| 11   | [Copilot-11-Microsoft-365](Temas/Copilot-11-Microsoft-365.md)                       | Copilot en Word, Excel, PowerPoint, Outlook y Teams.                                         |
-| 12   | [Copilot-12-Copilot-Studio](Temas/Copilot-12-Copilot-Studio.md)                     | Creación conceptual de agentes, fuentes de conocimiento, límites y casos de uso.             |
-| 13   | [Copilot-13-Buenas-Prácticas](Temas/Copilot-13-Buenas-Prácticas.md)                 | Estrategias profesionales para adoptar Copilot de forma segura, útil y sostenible.           |
+<table>
+  <colgroup>
+    <col width="70">
+    <col width="260">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Tema</th>
+      <th>Archivo</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>01</strong></td>
+      <td><a href="Temas/Copilot-01-Introducción.md">Copilot-01-Introducción</a></td>
+      <td>Introducción a la IA generativa, modelos de lenguaje y primeros usos de Copilot.</td>
+    </tr>
+    <tr>
+      <td><strong>02</strong></td>
+      <td><a href="Temas/Copilot-02-Ecosistema.md">Copilot-02-Ecosistema</a></td>
+      <td>Diferencias entre GitHub Copilot, Microsoft Copilot, Microsoft 365 Copilot y Copilot Studio.</td>
+    </tr>
+    <tr>
+      <td><strong>03</strong></td>
+      <td><a href="Temas/Copilot-03-Privacidad.md">Copilot-03-Privacidad</a></td>
+      <td>Seguridad, privacidad, límites, revisión humana y uso responsable de IA.</td>
+    </tr>
+    <tr>
+      <td><strong>04</strong></td>
+      <td><a href="Temas/Copilot-04-Instalación.md">Copilot-04-Instalación</a></td>
+      <td>Activación y configuración de GitHub Copilot en VS Code y JetBrains.</td>
+    </tr>
+    <tr>
+      <td><strong>05</strong></td>
+      <td><a href="Temas/Copilot-05-Prompting.md">Copilot-05-Prompting</a></td>
+      <td>Prompting para programadores: funciones, documentación, refactorización, tests y bugs.</td>
+    </tr>
+    <tr>
+      <td><strong>06</strong></td>
+      <td><a href="Temas/Copilot-06-Copilot-Chat.md">Copilot-06-Copilot-Chat</a></td>
+      <td>Uso de Copilot Chat para preguntar, explicar, modificar y revisar código.</td>
+    </tr>
+    <tr>
+      <td><strong>07</strong></td>
+      <td><a href="Temas/Copilot-07-Tareas-del-Desarrollador.md">Copilot-07-Tareas-del-Desarrollador</a></td>
+      <td>Refactorización, documentación, testing, debugging y revisión de código con IA.</td>
+    </tr>
+    <tr>
+      <td><strong>08</strong></td>
+      <td><a href="Temas/Copilot-08-Personalización.md">Copilot-08-Personalización</a></td>
+      <td>Instrucciones personalizadas, contexto del repositorio, agentes, CLI y trabajo avanzado.</td>
+    </tr>
+    <tr>
+      <td><strong>09</strong></td>
+      <td><a href="Temas/Copilot-09-Automatización.md">Copilot-09-Automatización</a></td>
+      <td>APIs, Docker, infraestructura como código, GitHub Actions y CI/CD asistido por Copilot.</td>
+    </tr>
+    <tr>
+      <td><strong>10</strong></td>
+      <td><a href="Temas/Copilot-10-Microsoft.md">Copilot-10-Microsoft</a></td>
+      <td>Microsoft Copilot en Windows y Edge para búsqueda, resumen y generación de contenido.</td>
+    </tr>
+    <tr>
+      <td><strong>11</strong></td>
+      <td><a href="Temas/Copilot-11-Microsoft-365.md">Copilot-11-Microsoft-365</a></td>
+      <td>Copilot en Word, Excel, PowerPoint, Outlook y Teams.</td>
+    </tr>
+    <tr>
+      <td><strong>12</strong></td>
+      <td><a href="Temas/Copilot-12-Copilot-Studio.md">Copilot-12-Copilot-Studio</a></td>
+      <td>Creación conceptual de agentes, fuentes de conocimiento, límites y casos de uso.</td>
+    </tr>
+    <tr>
+      <td><strong>13</strong></td>
+      <td><a href="Temas/Copilot-13-Buenas-Prácticas.md">Copilot-13-Buenas-Prácticas</a></td>
+      <td>Estrategias profesionales para adoptar Copilot de forma segura, útil y sostenible.</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
