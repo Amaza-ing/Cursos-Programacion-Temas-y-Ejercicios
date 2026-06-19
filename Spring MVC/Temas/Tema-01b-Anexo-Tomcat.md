@@ -35,6 +35,10 @@ En este curso se usará Tomcat de forma manual porque la integración directa de
 
 ---
 
+[![Tomcat](https://img.youtube.com/vi/r2sz9hEyDgs/0.jpg)](https://www.youtube.com/watch?v=r2sz9hEyDgs&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 2. Descargar y descomprimir Tomcat
 
 Descarga Apache Tomcat desde su página oficial:

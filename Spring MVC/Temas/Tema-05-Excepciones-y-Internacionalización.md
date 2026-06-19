@@ -106,6 +106,10 @@ src/main/webapp/WEB-INF/views/error
 
 ---
 
+[![Excepciones](https://img.youtube.com/vi/oeFiU11rBlk/0.jpg)](https://www.youtube.com/watch?v=oeFiU11rBlk&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 # Parte 1. Gestión de excepciones
 
 ## 3. ¿Por qué necesitamos gestionar excepciones?
@@ -709,6 +713,10 @@ Para este curso, lo mostramos para entender mejor qué está ocurriendo.
 
 ---
 
+[![Error 404](https://img.youtube.com/vi/phVpQszocuI/0.jpg)](https://www.youtube.com/watch?v=phVpQszocuI&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 10. Configurar páginas 404 y 500 en `web.xml`
 
 La gestión con `@ControllerAdvice` funciona muy bien para excepciones que se producen dentro de los controladores.
@@ -963,6 +971,10 @@ ErrorPageController atiende la ruta
 ↓
 Spring muestra error/not-found.jsp
 ```
+
+---
+
+[![Internacionalización](https://img.youtube.com/vi/ksmauF8G6XA/0.jpg)](https://www.youtube.com/watch?v=ksmauF8G6XA&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
@@ -2044,6 +2056,10 @@ course.title.notBlank=The title is required.
 ```
 
 Así los errores del formulario también cambian de idioma.
+
+---
+
+[![Temas](https://img.youtube.com/vi/MBKMcnjJKME/0.jpg)](https://www.youtube.com/watch?v=MBKMcnjJKME&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 

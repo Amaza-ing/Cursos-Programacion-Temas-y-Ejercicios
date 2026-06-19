@@ -252,6 +252,10 @@ Por eso en este tema será muy importante conservar el `id` cuando mostremos el 
 
 ---
 
+[![CRUD Completo](https://img.youtube.com/vi/YEoaT7bY1Ws/0.jpg)](https://www.youtube.com/watch?v=YEoaT7bY1Ws&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 # 5. Paso 1 — Ampliar la interfaz `CourseDao`
 
 Hasta ahora nuestra interfaz `CourseDao` tenía métodos para:

@@ -150,6 +150,10 @@ El controlador y las vistas no necesitan cambios importantes, porque ya estaban 
 
 ---
 
+[![Conexión con MySQL](https://img.youtube.com/vi/ulrXpghgoqM/0.jpg)](https://www.youtube.com/watch?v=ulrXpghgoqM&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 3. Crear la base de datos en DBeaver
 
 Primero abrimos DBeaver y creamos una conexión a MySQL.

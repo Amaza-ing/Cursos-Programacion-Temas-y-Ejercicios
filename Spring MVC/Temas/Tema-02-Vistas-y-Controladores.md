@@ -108,6 +108,10 @@ No todos los archivos son completamente nuevos. Algunos, como `pom.xml`, `app-se
 
 ---
 
+[![Anotaciones](https://img.youtube.com/vi/xpHJwu2M088/0.jpg)](https://www.youtube.com/watch?v=xpHJwu2M088&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 4. De la configuración XML a las anotaciones
 
 En el Tema 1 relacionábamos una URL con un controlador usando XML.
@@ -422,6 +426,10 @@ Spring buscará esta JSP:
 ```text
 /WEB-INF/views/courses/list.jsp
 ```
+
+---
+
+[![Modelos y Servicios](https://img.youtube.com/vi/t_Li68a1K7E/0.jpg)](https://www.youtube.com/watch?v=t_Li68a1K7E&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
@@ -805,6 +813,10 @@ Por tanto, Spring buscará:
 ```text
 /WEB-INF/views/about.jsp
 ```
+
+---
+
+[![Rutas Paramétricas](https://img.youtube.com/vi/ENzHoMrjD8I/0.jpg)](https://www.youtube.com/watch?v=ENzHoMrjD8I&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 

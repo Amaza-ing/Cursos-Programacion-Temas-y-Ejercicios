@@ -287,6 +287,10 @@ Crear métodos privados para preparar el formulario de creación y edición.
 
 ---
 
+[![Legibilidad](https://img.youtube.com/vi/PM_QiKZc01Y/0.jpg)](https://www.youtube.com/watch?v=PM_QiKZc01Y&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 # 7. Paso 1 — Activar `HiddenHttpMethodFilter` en `web.xml`
 
 Abrimos el archivo:

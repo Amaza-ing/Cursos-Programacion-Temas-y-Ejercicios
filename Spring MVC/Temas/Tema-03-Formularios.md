@@ -129,6 +129,10 @@ Ese archivo contendrá el formulario para crear un curso.
 
 ---
 
+[![Formularios](https://img.youtube.com/vi/fjZBNBwiu8c/0.jpg)](https://www.youtube.com/watch?v=fjZBNBwiu8c&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 4. Añadir la dependencia de validación
 
 Para validar formularios en Java usaremos **Jakarta Bean Validation**.
@@ -322,6 +326,10 @@ public class Course {
     }
 }
 ```
+
+---
+
+[![Validación](https://img.youtube.com/vi/JEYTTwuVz38/0.jpg)](https://www.youtube.com/watch?v=JEYTTwuVz38&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 

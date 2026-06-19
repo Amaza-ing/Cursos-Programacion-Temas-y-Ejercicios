@@ -105,6 +105,10 @@ En este tema no vamos a rehacer el proyecto desde cero. Vamos a aplicar mejoras 
 
 ---
 
+[![Lombok](https://img.youtube.com/vi/koH27nSBigc/0.jpg)](https://www.youtube.com/watch?v=koH27nSBigc&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 # 3. Mejora 1 — Usar Lombok para reducir código repetitivo
 
 ## 3.1. Qué problema queremos resolver
@@ -540,6 +544,10 @@ Una mejora sencilla es mover esos valores a un archivo `.properties`.
 
 ---
 
+[![database.properties](https://img.youtube.com/vi/VbtIhjTanAE/0.jpg)](https://www.youtube.com/watch?v=VbtIhjTanAE&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 # 11. Crear `database.properties`
 
 Creamos este archivo:
@@ -785,6 +793,10 @@ Si hay error, revisamos:
 4. Que MySQL esté iniciado.
 5. Que la base de datos exista.
 ```
+
+---
+
+[![Fragmentos](https://img.youtube.com/vi/HXiqJSppQnI/0.jpg)](https://www.youtube.com/watch?v=HXiqJSppQnI&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
@@ -1202,6 +1214,10 @@ header.jspf
 ```
 
 Esto hace que las vistas sean más cortas y más fáciles de mantener.
+
+---
+
+[![Atributos Globales](https://img.youtube.com/vi/FRhcFwESdEw/0.jpg)](https://www.youtube.com/watch?v=FRhcFwESdEw&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 

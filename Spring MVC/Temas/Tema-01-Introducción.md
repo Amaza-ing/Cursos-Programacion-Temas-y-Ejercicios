@@ -64,6 +64,10 @@ Spring MVC debe encargarse de responder a varias preguntas:
 
 ---
 
+[![Cómo empezar con Spring MVC](https://img.youtube.com/vi/1VVP5pDKAiI/0.jpg)](https://www.youtube.com/watch?v=1VVP5pDKAiI&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 3. Arquitectura general de Spring MVC
 
 En una aplicación Spring MVC, el usuario no accede directamente a las páginas JSP.
@@ -398,6 +402,10 @@ spring-mvc-day1.war
 
 ---
 
+[![Webapp](https://img.youtube.com/vi/oy_kIqiITCE/0.jpg)](https://www.youtube.com/watch?v=oy_kIqiITCE&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
+---
+
 ## 9. Crear el archivo `web.xml`
 
 Ahora vamos a configurar la aplicación web.
@@ -534,6 +542,10 @@ Por último, configuramos qué URLs pasarán por `DispatcherServlet`:
 ```
 
 Con esto indicamos que las peticiones de la aplicación pasarán por el servlet de Spring MVC.
+
+---
+
+[![Vista y Controlador](https://img.youtube.com/vi/a16QcdaHJFI/0.jpg)](https://www.youtube.com/watch?v=a16QcdaHJFI&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
