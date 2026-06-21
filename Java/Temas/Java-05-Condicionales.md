@@ -24,6 +24,10 @@ En este tema aprenderás a usarlos con claridad y con ejemplos guiados.
 
 ---
 
+[![Condicionales if / else](https://img.youtube.com/vi/ogHYPSBWS9A/0.jpg)](https://www.youtube.com/watch?v=ogHYPSBWS9A&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Condicional `if`
 
 ### 2.1. ¿Qué hace un `if`?
@@ -274,6 +278,10 @@ if (role.equals("admin")) {
     System.out.println("Admin access");
 }
 ```
+
+---
+
+[![Condicionales switch](https://img.youtube.com/vi/9cBYs_NqWuE/0.jpg)](https://www.youtube.com/watch?v=9cBYs_NqWuE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 

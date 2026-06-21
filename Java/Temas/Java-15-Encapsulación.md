@@ -32,6 +32,10 @@ En este tema aprenderás:
 
 ---
 
+[![Encapsulación](https://img.youtube.com/vi/Pnv8Bidh-vY/0.jpg)](https://www.youtube.com/watch?v=Pnv8Bidh-vY&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es la encapsulación
 
 Encapsular significa:

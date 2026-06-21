@@ -20,6 +20,10 @@ Es uno de los lenguajes más utilizados en el ámbito profesional y muy habitual
 
 ---
 
+[![Cómo Empezar con Java](https://img.youtube.com/vi/8qjZQZAvwBQ/0.jpg)](https://www.youtube.com/watch?v=8qjZQZAvwBQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Cómo funciona Java: JVM, JDK y JRE
 
 Java no se ejecuta directamente sobre el sistema operativo como otros lenguajes. Su funcionamiento se basa en varias capas.

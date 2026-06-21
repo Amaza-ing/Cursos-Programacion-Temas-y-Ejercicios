@@ -41,6 +41,10 @@ En este tema aprenderás:
 
 ---
 
+[![Clases y Métodos Abstractos](https://img.youtube.com/vi/do2XG0T4mR8/0.jpg)](https://www.youtube.com/watch?v=do2XG0T4mR8&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es una clase abstracta
 
 Una **clase abstracta** es una clase que:

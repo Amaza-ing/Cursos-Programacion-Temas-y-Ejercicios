@@ -30,6 +30,10 @@ En este tema aprenderás:
 
 ---
 
+[![ArrayList](https://img.youtube.com/vi/y3uzK_ilVwM/0.jpg)](https://www.youtube.com/watch?v=y3uzK_ilVwM&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. `List` vs `ArrayList`
 
 ### 2.1. ¿Qué es `List`?

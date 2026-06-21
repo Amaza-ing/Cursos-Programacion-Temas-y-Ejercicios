@@ -28,6 +28,10 @@ En este tema aprenderás, con ejemplos claros y guiados:
 
 ---
 
+[![Operadores](https://img.youtube.com/vi/72ushurVPRQ/0.jpg)](https://www.youtube.com/watch?v=72ushurVPRQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es un operador y qué es una expresión
 
 ### 2.1. Operador

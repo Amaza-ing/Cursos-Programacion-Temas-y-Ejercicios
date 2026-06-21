@@ -24,6 +24,10 @@ En este tema aprenderás:
 
 ---
 
+[![Métodos de los String](https://img.youtube.com/vi/y0D-t8WII6U/0.jpg)](https://www.youtube.com/watch?v=y0D-t8WII6U&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. `String` es inmutable (idea clave)
 
 En Java, los `String` son **inmutables**: no puedes cambiar el contenido de un `String` existente.  

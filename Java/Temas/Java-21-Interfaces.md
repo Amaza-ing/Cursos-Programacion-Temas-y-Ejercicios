@@ -38,6 +38,10 @@ En este tema aprenderás:
 
 ---
 
+[![Interfaces](https://img.youtube.com/vi/wpI-eBLVaQI/0.jpg)](https://www.youtube.com/watch?v=wpI-eBLVaQI&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es una interfaz
 
 Una **interfaz** es un tipo especial de Java que define un contrato.
@@ -770,6 +774,10 @@ Este estilo hace el código más mantenible y extensible.
 - **Múltiples interfaces**: una clase puede tener varias capacidades.
 - **`default` y `static`**: amplían lo que una interfaz puede ofrecer.
 - **Diseño flexible**: las interfaces ayudan a escribir código más reutilizable y limpio.
+
+---
+
+[![Los 4 Pilares de la Programación Orientada a Objetos (POO)](https://img.youtube.com/vi/RGHdVD7K-rE/0.jpg)](https://www.youtube.com/watch?v=RGHdVD7K-rE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 

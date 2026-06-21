@@ -29,6 +29,10 @@ En este tema aprenderás:
 
 ---
 
+[![Bucles](https://img.youtube.com/vi/YYZ6HcfevLs/0.jpg)](https://www.youtube.com/watch?v=YYZ6HcfevLs&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Concepto clave: condición, repetición y estado
 
 Todo bucle tiene tres ideas importantes:

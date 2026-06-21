@@ -28,6 +28,10 @@ En este tema aprenderás:
 
 ---
 
+[![Equals](https://img.youtube.com/vi/7D7EZIKwF3Q/0.jpg)](https://www.youtube.com/watch?v=7D7EZIKwF3Q&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. La clase `Object`: el origen de todo
 
 En Java, todas las clases heredan de `Object`.

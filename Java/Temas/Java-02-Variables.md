@@ -23,6 +23,10 @@ En este tema aprenderás:
 
 ---
 
+[![Variables](https://img.youtube.com/vi/_fHPet6Tx5c/0.jpg)](https://www.youtube.com/watch?v=_fHPet6Tx5c&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. ¿Qué es una variable?
 
 Una **variable** es un espacio en memoria con:

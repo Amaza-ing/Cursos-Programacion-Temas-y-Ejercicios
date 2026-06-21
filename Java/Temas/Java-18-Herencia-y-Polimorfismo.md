@@ -35,6 +35,10 @@ En este tema aprenderás:
 
 ---
 
+[![Herencia y Polimorfismo](https://img.youtube.com/vi/y677D9OB1IE/0.jpg)](https://www.youtube.com/watch?v=y677D9OB1IE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es herencia
 
 Herencia significa:

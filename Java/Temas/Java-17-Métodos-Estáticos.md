@@ -36,6 +36,10 @@ En este tema aprenderás:
 
 ---
 
+[![Métodos y Variables Estáticas](https://img.youtube.com/vi/KIGT1UcAv9Q/0.jpg)](https://www.youtube.com/watch?v=KIGT1UcAv9Q&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué significa `static` en Java
 
 `static` indica que un miembro (método o atributo) pertenece a la **clase**, no a un objeto concreto.

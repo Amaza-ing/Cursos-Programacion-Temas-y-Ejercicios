@@ -38,6 +38,10 @@ En este tema aprenderás:
 
 ---
 
+[![Sobrecarga de Constructores](https://img.youtube.com/vi/sfm4Cu2Q1fw/0.jpg)](https://www.youtube.com/watch?v=sfm4Cu2Q1fw&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es la sobrecarga de constructores
 
 Una clase puede tener **varios constructores**, siempre que sus parámetros sean diferentes.

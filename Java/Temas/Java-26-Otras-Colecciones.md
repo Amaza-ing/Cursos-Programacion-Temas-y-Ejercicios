@@ -32,6 +32,10 @@ En este tema aprenderás:
 
 ---
 
+[![Otras Colecciones](https://img.youtube.com/vi/BBNZmrhUKtc/0.jpg)](https://www.youtube.com/watch?v=BBNZmrhUKtc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. La idea clave: no todas las colecciones hacen lo mismo
 
 Hasta ahora ya has visto varias estructuras:

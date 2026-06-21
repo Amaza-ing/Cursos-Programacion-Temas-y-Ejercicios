@@ -33,6 +33,10 @@ En este tema aprenderás:
 
 ---
 
+[![Excepciones](https://img.youtube.com/vi/GEq5_Uuza_8/0.jpg)](https://www.youtube.com/watch?v=GEq5_Uuza_8&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es una excepción
 
 Una **excepción** es un objeto que representa una situación anómala o un error que ocurre durante la ejecución del programa.

@@ -33,6 +33,14 @@ En este tema aprenderás:
 
 ---
 
+[![Qué es la programación orientada a objetos](https://img.youtube.com/vi/q-2cUZENGd4/0.jpg)](https://www.youtube.com/watch?v=q-2cUZENGd4&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
+[![Clases y Objetos](https://img.youtube.com/vi/v8GXjxagGFU/0.jpg)](https://www.youtube.com/watch?v=v8GXjxagGFU&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es una clase y qué es un objeto
 
 ### 2.1. Clase

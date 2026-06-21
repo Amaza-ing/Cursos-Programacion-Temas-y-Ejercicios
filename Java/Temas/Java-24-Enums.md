@@ -43,6 +43,10 @@ En este tema aprenderás:
 
 ---
 
+[![Enums](https://img.youtube.com/vi/KxBI-WWq1yc/0.jpg)](https://www.youtube.com/watch?v=KxBI-WWq1yc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es un `enum`
 
 `enum` viene de **enumeration**, es decir, enumeración.

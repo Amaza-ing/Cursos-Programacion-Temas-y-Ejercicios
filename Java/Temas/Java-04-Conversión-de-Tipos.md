@@ -26,6 +26,10 @@ En este tema aprenderás:
 
 ---
 
+[![Conversión de Tipos de Datos](https://img.youtube.com/vi/AHVLPDTGGqc/0.jpg)](https://www.youtube.com/watch?v=AHVLPDTGGqc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Idea clave: convertir significa “cambiar la forma de interpretar un valor”
 
 Cuando conviertes tipos, no “cambias” el valor mágico del universo, sino cómo Java lo interpreta y lo maneja.

@@ -40,6 +40,10 @@ En este tema aprenderás:
 
 ---
 
+[![Maps](https://img.youtube.com/vi/uC5sj53SYDo/0.jpg)](https://www.youtube.com/watch?v=uC5sj53SYDo&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. Qué es un `Map`
 
 Un `Map` es una estructura que guarda datos en formato:
