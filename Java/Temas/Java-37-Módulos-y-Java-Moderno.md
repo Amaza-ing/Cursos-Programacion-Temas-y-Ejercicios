@@ -1,4 +1,4 @@
-# Tema 37. Módulos y Java Moderno
+# Tema 38. Módulos y Java Moderno
 
 ## 1. Introducción
 
@@ -1586,4 +1586,4 @@ Lo importante es entender qué problema resuelve cada una y aplicarla cuando mej
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos **Módulos y Java Moderno**, donde aprenderás cómo organizar proyectos con el sistema de módulos y conocerás algunas ideas actuales del ecosistema Java.
+En el siguiente tema veremos como trabajar con **Maven**.

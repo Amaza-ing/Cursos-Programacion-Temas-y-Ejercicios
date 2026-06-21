@@ -1,4 +1,4 @@
-# Tema 38. Anotaciones
+# Tema 37. Anotaciones
 
 ## 1. Introducción
 
@@ -1532,4 +1532,4 @@ Dominar las anotaciones te ayudará a entender mejor muchas librerías y framewo
 
 ---
 
-En el siguiente tema veremos como trabajar con **Maven**.
+En el siguiente tema seguiremos avanzando con Java moderno y veremos **Módulos y Java Moderno**, donde aprenderás cómo organizar proyectos con el sistema de módulos y conocerás algunas ideas actuales del ecosistema Java.

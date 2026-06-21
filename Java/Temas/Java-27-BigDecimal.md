@@ -42,6 +42,10 @@ En este tema aprenderás:
 
 ---
 
+[![BigDecimal](https://img.youtube.com/vi/yfJO-5ZHZqM/0.jpg)](https://www.youtube.com/watch?v=yfJO-5ZHZqM&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
 ## 2. El problema con `double`
 
 En Java, `double` es muy cómodo para trabajar con decimales.
