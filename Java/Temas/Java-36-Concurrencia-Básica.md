@@ -1,10 +1,10 @@
-# Tema 36. Concurrencia Básica
+# Topic 36. Basic Concurrency
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has escrito programas que normalmente se ejecutan de forma secuencial.
+Until now you have written programs that normally execute sequentially.
 
-Eso significa que Java va ejecutando las instrucciones una detrás de otra:
+That means that Java executes the instructions one after another:
 
 ```java
 System.out.println("Step 1");
@@ -12,49 +12,49 @@ System.out.println("Step 2");
 System.out.println("Step 3");
 ```
 
-Primero se ejecuta el paso 1, luego el 2 y luego el 3.
+Step 1 is executed first, then 2, and then 3.
 
-Pero en muchos programas reales necesitamos que varias tareas puedan avanzar al mismo tiempo o de forma independiente.
+But in many real programs we need several tasks to be able to progress at the same time or independently.
 
-Ejemplos:
+Examples:
 
-- descargar un archivo mientras la aplicación sigue funcionando
-- atender varias peticiones de usuarios
-- procesar datos en segundo plano
-- ejecutar tareas programadas
-- hacer cálculos largos sin bloquear todo el programa
-- leer varios archivos
-- consultar varios servicios externos
+- download a file while the app is still running
+- respond to various user requests
+- process data in the background
+- execute scheduled tasks
+- do long calculations without blocking the entire program
+- read multiple files
+- consult various external services
 
-Para eso usamos **concurrencia**.
+For that we use **concurrency**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es la concurrencia
-- Qué es un hilo de ejecución (_thread_)
-- Cómo crear tareas con `Thread`
-- Cómo usar `Runnable`
-- Cómo pausar un hilo con `sleep`
-- Cómo esperar a que termine un hilo con `join`
-- Qué problemas pueden aparecer con datos compartidos
-- Qué es una condición de carrera
-- Cómo usar `synchronized` de forma básica
-- Qué es `ExecutorService`
-- Cómo usar `Callable` y `Future`
-- Qué son los virtual threads como idea moderna
-- Errores típicos y buenas prácticas
+- What is concurrency?
+- What is a thread of execution (_thread_)
+- How to create tasks with `Thread`
+- How to use `Runnable`
+- How to pause a thread with `sleep`
+- How to wait for a thread to end with `join`
+- What problems may appear with shared data
+- What is a race condition
+- How to use `synchronized` in a basic way
+- What is `ExecutorService`
+- How to use `Callable` and `Future`
+- What are virtual threads as a modern idea?
+- Typical errors and good practices
 
 ---
 
-## 2. Qué es la concurrencia
+## 2. What is concurrency
 
-La **concurrencia** consiste en organizar un programa para que pueda gestionar varias tareas durante el mismo periodo de tiempo.
+**Concurrency** consists of organizing a program so that it can manage several tasks during the same period of time.
 
-No siempre significa que todo se ejecute literalmente al mismo instante.
+It doesn't always mean that everything runs literally at the same instant.
 
-Significa que el programa puede avanzar con varias tareas de manera coordinada.
+It means that the program can advance various tasks in a coordinated manner.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```text
 Tarea 1: descargar archivo
@@ -62,48 +62,48 @@ Tarea 2: mostrar progreso
 Tarea 3: responder al usuario
 ```
 
-En lugar de bloquear todo hasta que termine una tarea, el programa puede organizarse para atender varias cosas.
+Instead of blocking everything until a task is finished, the program can be organized to address multiple things.
 
 ---
 
-## 3. Concurrencia vs paralelismo
+## 3. Concurrency vs parallelism
 
-Estos dos conceptos suelen confundirse.
+These two concepts are often confused.
 
-### 3.1. Concurrencia
+### 3.1. Concurrency
 
-La concurrencia consiste en gestionar varias tareas a la vez desde el punto de vista del diseño.
+Concurrency is about managing several tasks at the same time from a design point of view.
 
-Ejemplo:
+Example:
 
-- una aplicación puede descargar un archivo y seguir respondiendo al usuario
+- an application can download a file and still respond to the user
 
-### 3.2. Paralelismo
+### 3.2. Parallelism
 
-El paralelismo ocurre cuando varias tareas se ejecutan literalmente al mismo tiempo, normalmente usando varios núcleos del procesador.
+Parallelism occurs when multiple tasks run literally at the same time, typically using multiple processor cores.
 
-Ejemplo:
+Example:
 
-- un ordenador con varios núcleos ejecuta varios cálculos simultáneamente
+- a computer with multiple cores executes several calculations simultaneously
 
-### 3.3. Regla sencilla
+### 3.3. simple rule
 
-- Concurrencia: organizar varias tareas
-- Paralelismo: ejecutar varias tareas al mismo tiempo
+- Concurrency: organize multiple tasks
+- Parallelism: execute several tasks at the same time
 
-En este tema nos centraremos en la base de la concurrencia.
+In this topic we will focus on the basis of concurrency.
 
 ---
 
-## 4. Qué es un thread
+## 4. What is a thread
 
-Un **thread** es un hilo de ejecución.
+A **thread** is a thread of execution.
 
-Cuando ejecutas un programa Java, existe al menos un hilo principal:
+When you run a Java program, there is at least one main thread:
 
-- el hilo donde se ejecuta `main`
+- the thread where `main` is executed
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -113,13 +113,13 @@ public class Main {
 }
 ```
 
-Pero Java permite crear más hilos para ejecutar tareas de forma independiente.
+But Java allows creating more threads to execute tasks independently.
 
 ---
 
-## 5. Primer ejemplo con `Thread`
+## 5. First example with `Thread`
 
-Una forma básica de crear un hilo es usar la clase `Thread`.
+A basic way to create a thread is to use the `Thread` class.
 
 ```java
 public class Main {
@@ -135,34 +135,33 @@ public class Main {
 }
 ```
 
-Aquí ocurren dos cosas:
+Two things happen here:
 
-- `thread.start()` inicia un nuevo hilo
-- el `main` sigue ejecutándose
+- `thread.start()` starts a new thread
+- `main` continues to run
 
-El orden de impresión puede variar.
+Print order may vary.
 
 ---
 
 ## 6. `start()` vs `run()`
 
-Este punto es muy importante.
+This point is very important.
 
-Para iniciar un hilo, debes llamar a:
+To start a thread, you must call:
 
 ```java
 thread.start();
 ```
 
-No a:
+Not to:
 
 ```java
 thread.run();
 ```
 
 ### 6.1. `start()`
-
-Crea un nuevo hilo de ejecución.
+Create a new thread of execution.
 
 ```java
 thread.start();
@@ -170,13 +169,13 @@ thread.start();
 
 ### 6.2. `run()`
 
-Ejecuta el código como una llamada normal de método, sin crear un nuevo hilo.
+Executes the code as a normal method call, without creating a new thread.
 
 ```java
 thread.run();
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -190,23 +189,23 @@ public class Main {
 }
 ```
 
-Regla práctica:
+Rule of thumb:
 
-> Para lanzar un hilo, usa `start()`.
+> To launch a thread, use `start()`.
 
 ---
 
 ## 7. `Runnable`
 
-`Runnable` es una interfaz funcional que representa una tarea que no recibe parámetros y no devuelve resultado.
+`Runnable` is a functional interface that represents a task that receives no parameters and returns no result.
 
-Su método principal es:
+Its main method is:
 
 ```java
 void run();
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -221,13 +220,13 @@ public class Main {
 }
 ```
 
-Como `Runnable` es una interfaz funcional, podemos usar una lambda.
+Since `Runnable` is a functional interface, we can use a lambda.
 
 ---
 
-## 8. Crear una clase que implemente `Runnable`
+## 8. Create a class that implements `Runnable`
 
-También puedes crear una clase propia.
+You can also create your own class.
 
 ### 8.1. `PrintTask.java`
 
@@ -260,11 +259,11 @@ public class Main {
 }
 ```
 
-Esta forma es útil cuando la tarea tiene más lógica o necesita atributos.
+This form is useful when the task has more logic or needs attributes.
 
 ---
 
-## 9. Crear varios hilos
+## 9. Create multiple threads
 
 ```java
 public class Main {
@@ -282,9 +281,9 @@ public class Main {
 }
 ```
 
-El orden de salida no está garantizado.
+The order of departure is not guaranteed.
 
-Podrías ver:
+You could see:
 
 ```text
 Thread 2
@@ -293,15 +292,15 @@ Thread 1
 Thread 3
 ```
 
-o cualquier otro orden.
+or any other order.
 
 ---
 
-## 10. El orden no está garantizado
+## 10. Order is not guaranteed
 
-En programación concurrente, el orden de ejecución puede variar.
+In concurrent programming, the order of execution can vary.
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -317,29 +316,29 @@ public class Main {
 }
 ```
 
-Podrías ver:
+You could see:
 
 ```text
 Main thread
 Child thread
 ```
 
-o:
+or:
 
 ```text
 Child thread
 Main thread
 ```
 
-Depende de cómo el sistema planifique los hilos.
+It depends on how the system schedules the threads.
 
 ---
 
-## 11. Pausar un hilo con `Thread.sleep`
+## 11. Pause a thread with `Thread.sleep`
 
-`Thread.sleep` pausa el hilo actual durante un tiempo.
+`Thread.sleep` pauses the current thread for a while.
 
-El tiempo se indica en milisegundos.
+The time is indicated in milliseconds.
 
 ```java
 public class Main {
@@ -357,17 +356,17 @@ public class Main {
 }
 ```
 
-Aquí el programa espera aproximadamente 1 segundo.
+Here the program waits approximately 1 second.
 
 ---
 
 ## 12. `InterruptedException`
 
-`Thread.sleep` puede lanzar `InterruptedException`.
+`Thread.sleep` can launch `InterruptedException`.
 
-Eso significa que el hilo puede ser interrumpido mientras está esperando.
+That means that the thread can be interrupted while it is waiting.
 
-Por eso debemos usar `try-catch`.
+That's why we must use `try-catch`.
 
 ```java
 try {
@@ -377,17 +376,17 @@ try {
 }
 ```
 
-Esta línea es una buena práctica:
+This line is good practice:
 
 ```java
 Thread.currentThread().interrupt();
 ```
 
-Sirve para restaurar el estado de interrupción del hilo.
+It is used to restore the interrupt state of the thread.
 
 ---
 
-## 13. Ejemplo guiado con `sleep`
+## 13. Guided example with `sleep`
 
 ```java
 public class Main {
@@ -412,15 +411,15 @@ public class Main {
 }
 ```
 
-Aquí el contador se ejecuta en otro hilo mientras el hilo principal continúa.
+Here the counter is executed in another thread while the main thread continues.
 
 ---
 
-## 14. Esperar a que termine un hilo con `join`
+## 14. Wait for a thread to end with `join`
 
-A veces quieres que el hilo principal espere a que otro hilo termine.
+Sometimes you want the main thread to wait for another thread to finish.
 
-Para eso usamos `join`.
+For that we use `join`.
 
 ```java
 public class Main {
@@ -450,13 +449,13 @@ public class Main {
 }
 ```
 
-Aquí `Main finished` se imprime después de que termine `worker`.
+Here `Main finished` is printed after `worker` finishes.
 
 ---
 
-## 15. Ejemplo sin `join` y con `join`
+## 15. Example without `join` and with `join`
 
-### 15.1. Sin `join`
+### 15.1. Without `join`
 
 ```java
 public class Main {
@@ -472,9 +471,9 @@ public class Main {
 }
 ```
 
-El orden no está garantizado.
+Order is not guaranteed.
 
-### 15.2. Con `join`
+### 15.2. With `join`
 
 ```java
 public class Main {
@@ -496,15 +495,15 @@ public class Main {
 }
 ```
 
-Ahora `Main finished` espera a que `worker` termine.
+Now `Main finished` waits for `worker` to finish.
 
 ---
 
-## 16. Datos compartidos entre hilos
+## 16. Data shared between threads
 
-Cuando varios hilos acceden a los mismos datos, pueden aparecer problemas.
+When multiple threads access the same data, problems may arise.
 
-Ejemplo:
+Example:
 
 ```java
 public class Counter {
@@ -520,31 +519,31 @@ public class Counter {
 }
 ```
 
-Parece sencillo, pero si varios hilos llaman a `increment` al mismo tiempo, el resultado puede ser incorrecto.
+It seems simple, but if multiple threads call `increment` at the same time, the result may be incorrect.
 
 ---
 
-## 17. Qué es una condición de carrera
+## 17. What is a race condition
 
-Una **condición de carrera** ocurre cuando el resultado depende del orden exacto en que se ejecutan varios hilos.
+A **race condition** occurs when the result depends on the exact order in which multiple threads execute.
 
-Ejemplo:
+Example:
 
 ```java
 value++;
 ```
 
-Parece una sola operación, pero internamente implica varios pasos:
+It looks like a single operation, but internally it involves several steps:
 
-1. leer `value`
-2. sumar 1
-3. guardar el resultado
+1. read `value`
+2. add 1
+3. save the result
 
-Si dos hilos hacen esto al mismo tiempo, pueden pisarse.
+If two threads do this at the same time, they can step on each other.
 
 ---
 
-## 18. Ejemplo de problema con contador compartido
+## 18. Example of problem with shared counter
 
 ```java
 public class Main {
@@ -578,7 +577,7 @@ public class Main {
 }
 ```
 
-Clase `Counter`:
+`Counter` class:
 
 ```java
 public class Counter {
@@ -594,21 +593,20 @@ public class Counter {
 }
 ```
 
-Podrías esperar:
+You could expect:
 
 ```text
 2000
 ```
 
-Pero puede salir un número menor.
+But a smaller number may come out.
 
 ---
 
-## 19. Solución básica: `synchronized`
+## 19. Basic solution: `synchronized`
+` synchronized` allows you to protect a section of code so that only one thread can execute it at a time on the same object.
 
-` synchronized` permite proteger una sección de código para que solo un hilo la ejecute a la vez sobre el mismo objeto.
-
-Ejemplo:
+Example:
 
 ```java
 public class Counter {
@@ -624,13 +622,13 @@ public class Counter {
 }
 ```
 
-Ahora, si dos hilos llaman a `increment`, Java evita que ambos entren a la vez en ese método para el mismo objeto.
+Now, if two threads call `increment`, Java prevents both threads from entering that method for the same object at the same time.
 
 ---
 
-## 20. `synchronized` en métodos
+## 20. `synchronized` in methods
 
-Puedes marcar un método como `synchronized`.
+You can mark a method as `synchronized`.
 
 ```java
 public synchronized void increment() {
@@ -638,9 +636,9 @@ public synchronized void increment() {
 }
 ```
 
-Esto bloquea el acceso concurrente al método para el mismo objeto.
+This blocks concurrent method access for the same object.
 
-También podrías sincronizar el getter si necesitas máxima consistencia:
+You could also synchronize the getter if you need maximum consistency:
 
 ```java
 public synchronized int getValue() {
@@ -650,7 +648,7 @@ public synchronized int getValue() {
 
 ---
 
-## 21. Ejemplo corregido con `synchronized`
+## 21. Fixed example with `synchronized`
 
 ```java
 public class Counter {
@@ -666,7 +664,7 @@ public class Counter {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -700,7 +698,7 @@ public class Main {
 }
 ```
 
-Ahora el resultado debería ser:
+Now the result should be:
 
 ```text
 2000
@@ -708,9 +706,9 @@ Ahora el resultado debería ser:
 
 ---
 
-## 22. Bloques `synchronized`
+## 22. `synchronized` Blocks
 
-También puedes sincronizar solo una parte del código.
+You can also sync just part of the code.
 
 ```java
 public class Counter {
@@ -730,37 +728,37 @@ public class Counter {
 }
 ```
 
-Esto permite controlar exactamente qué parte debe protegerse.
+This allows you to control exactly which part needs to be protected.
 
 ---
 
-## 23. Cuidado con compartir datos mutables
+## 23. Be careful with sharing mutable data
 
-La concurrencia se vuelve más compleja cuando varios hilos modifican los mismos datos.
+Concurrency becomes more complex when multiple threads modify the same data.
 
-Ejemplo de datos compartidos:
+Example of shared data:
 
-- listas modificables
-- mapas modificables
-- contadores
-- saldos
-- estados de objetos
+- modifiable lists
+- modifiable maps
+- counters
+- balances
+- object states
 
-Regla práctica inicial:
+Initial rule of thumb:
 
-> Cuantos menos datos compartidos entre hilos, mejor.
+> The less data shared between threads, the better.
 
 ---
 
 ## 24. `ExecutorService`
 
-Crear hilos manualmente con `new Thread(...)` está bien para aprender, pero en aplicaciones reales suele usarse una herramienta de más alto nivel:
+Creating threads manually with `new Thread(...)` is fine for learning, but in real applications a higher level tool is usually used:
 
 - `ExecutorService`
 
-`ExecutorService` permite gestionar un conjunto de hilos y enviar tareas para que se ejecuten.
+`ExecutorService` allows you to manage a set of threads and send tasks to be executed.
 
-Importaciones:
+Imports:
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -769,9 +767,9 @@ import java.util.concurrent.Executors;
 
 ---
 
-## 25. Crear un `ExecutorService`
+## 25. Create an `ExecutorService`
 
-Ejemplo con un pool de 2 hilos:
+Example with a 2-wire pool:
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -790,17 +788,17 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- el pool tiene 2 hilos
-- puedes enviar varias tareas
-- el executor decide cuándo ejecutarlas
+- the pool has 2 threads
+- you can submit multiple tasks
+- the executor decides when to execute them
 
 ---
 
 ## 26. `execute`
 
-`execute` recibe un `Runnable`.
+`execute` receives an `Runnable`.
 
 ```java
 executor.execute(() -> {
@@ -808,31 +806,31 @@ executor.execute(() -> {
 });
 ```
 
-Se usa cuando la tarea:
+Used when the task:
 
-- no devuelve resultado
-- no necesitas recoger un valor final
+- does not return result
+- you do not need to collect a final value
 
 ---
 
 ## 27. `shutdown`
 
-Cuando terminas de enviar tareas, debes cerrar el executor.
+When you finish submitting tasks, you must close the executor.
 
 ```java
 executor.shutdown();
 ```
 
-Esto significa:
+This means:
 
-- no acepta nuevas tareas
-- deja terminar las tareas ya enviadas
+- does not accept new tasks
+- let tasks already sent finish
 
-No debes olvidar llamar a `shutdown`.
+You must not forget to call `shutdown`.
 
 ---
 
-## 28. Ejemplo guiado con `ExecutorService`
+## 28. Guided example with `ExecutorService`
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -855,31 +853,31 @@ public class Main {
 }
 ```
 
-Importante:
+Important:
 
 ```java
 int taskNumber = i;
 ```
 
-Creamos una variable local para usarla dentro de la lambda.
+We create a local variable to use within the lambda.
 
 ---
 
 ## 29. `Callable`
 
-`Runnable` representa una tarea que no devuelve resultado.
+`Runnable` represents a task that does not return a result.
 
-Pero a veces quieres que una tarea devuelva un valor.
+But sometimes you want a task to return a value.
 
-Para eso existe `Callable`.
+That's why `Callable` exists.
 
-Importación:
+Import:
 
 ```java
 import java.util.concurrent.Callable;
 ```
 
-Ejemplo:
+Example:
 
 ```java
 Callable<Integer> task = () -> {
@@ -887,39 +885,39 @@ Callable<Integer> task = () -> {
 };
 ```
 
-`Callable<T>` devuelve un valor de tipo `T`.
+`Callable<T>` returns a value of type `T`.
 
 ---
 
 ## 30. `Future`
 
-Cuando envías un `Callable` a un executor, recibes un `Future`.
+When you send an `Callable` to an executor, you receive an `Future`.
 
-Un `Future` representa un resultado que estará disponible en el futuro.
+An `Future` represents a result that will be available in the future.
 
-Importación:
+Import:
 
 ```java
 import java.util.concurrent.Future;
 ```
 
-Ejemplo:
+Example:
 
 ```java
 Future<Integer> future = executor.submit(task);
 ```
 
-Para obtener el resultado:
+To get the result:
 
 ```java
 Integer result = future.get();
 ```
 
-`get()` espera hasta que la tarea termine.
+`get()` waits until the task finishes.
 
 ---
 
-## 31. Ejemplo con `Callable` y `Future`
+## 31. Example with `Callable` and `Future`
 
 ```java
 import java.util.concurrent.Callable;
@@ -952,9 +950,9 @@ public class Main {
 
 ---
 
-## 32. `submit` con `Runnable`
+## 32. `submit` with `Runnable`
 
-`submit` también puede recibir un `Runnable`.
+`submit` may also receive an `Runnable`.
 
 ```java
 Future<?> future = executor.submit(() -> {
@@ -962,17 +960,16 @@ Future<?> future = executor.submit(() -> {
 });
 ```
 
-Pero si necesitas solo ejecutar una tarea sin resultado, `execute` suele ser suficiente.
+But if you just need to run a task with no result, `execute` is usually enough.
 
 ---
-
-## 33. Diferencia entre `execute` y `submit`
+## 33. Difference between `execute` and `submit`
 
 ### 33.1. `execute`
 
-- recibe `Runnable`
-- no devuelve resultado
-- se usa para ejecutar tareas simples
+- receive `Runnable`
+- does not return result
+- used to execute simple tasks
 
 ```java
 executor.execute(() -> System.out.println("Hello"));
@@ -980,9 +977,9 @@ executor.execute(() -> System.out.println("Hello"));
 
 ### 33.2. `submit`
 
-- recibe `Runnable` o `Callable`
-- devuelve un `Future`
-- permite consultar el resultado o la finalización
+- receive `Runnable` or `Callable`
+- returns an `Future`
+- allows you to check the result or completion
 
 ```java
 Future<Integer> future = executor.submit(() -> 42);
@@ -990,7 +987,7 @@ Future<Integer> future = executor.submit(() -> 42);
 
 ---
 
-## 34. Ejemplo completo: calcular suma en segundo plano
+## 34. Complete example: calculate sum in the background
 
 ```java
 import java.util.List;
@@ -1032,17 +1029,17 @@ public class Main {
 
 ---
 
-## 35. Excepciones en tareas concurrentes
+## 35. Exceptions in concurrent tasks
 
-Las excepciones en tareas concurrentes requieren atención.
+Exceptions in concurrent tasks require attention.
 
-Si una tarea enviada con `Callable` falla, la excepción aparece al llamar a:
+If a task submitted with `Callable` fails, the exception is raised when calling:
 
 ```java
 future.get();
 ```
 
-Ejemplo:
+Example:
 
 ```java
 Callable<Integer> task = () -> {
@@ -1050,23 +1047,23 @@ Callable<Integer> task = () -> {
 };
 ```
 
-Al hacer:
+When doing:
 
 ```java
 future.get();
 ```
 
-se lanzará una excepción envolviendo el problema original.
+An exception will be thrown surrounding the original problem.
 
 ---
 
-## 36. Interrumpir un hilo
+## 36. Interrupt a thread
 
-Un hilo puede ser interrumpido.
+A thread can be interrupted.
 
-La interrupción es una forma de pedirle a un hilo que pare o reaccione.
+Interrupt is a way of asking a thread to stop or react.
 
-Ejemplo:
+Example:
 
 ```java
 Thread worker = new Thread(() -> {
@@ -1082,20 +1079,20 @@ worker.start();
 worker.interrupt();
 ```
 
-La interrupción no mata el hilo mágicamente.  
-Es una señal que el hilo debe manejar correctamente.
+The interruption does not magically kill the thread.  
+It is a signal that the thread must handle correctly.
 
 ---
 
 ## 37. `Thread.currentThread()`
 
-Puedes obtener el hilo actual con:
+You can get the current thread with:
 
 ```java
 Thread.currentThread()
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -1111,13 +1108,13 @@ public class Main {
 }
 ```
 
-Esto puede ayudarte a entender qué hilo está ejecutando cada parte del código.
+This can help you understand which thread is executing which piece of code.
 
 ---
 
-## 38. Poner nombre a un hilo
+## 38. Name a thread
 
-Puedes asignar un nombre a un hilo.
+You can assign a name to a thread.
 
 ```java
 Thread worker = new Thread(() -> {
@@ -1127,15 +1124,15 @@ Thread worker = new Thread(() -> {
 worker.start();
 ```
 
-Los nombres son útiles para depurar.
+Names are useful for debugging.
 
 ---
 
-## 39. Colecciones y concurrencia
+## 39. Collections and attendance
 
-Las colecciones normales como `ArrayList` o `HashMap` no están pensadas para ser modificadas por varios hilos a la vez sin protección.
+Normal collections like `ArrayList` or `HashMap` are not intended to be modified by multiple threads at once without protection.
 
-Ejemplo peligroso:
+Dangerous example:
 
 ```java
 List<String> names = new ArrayList<>();
@@ -1144,34 +1141,34 @@ Thread thread1 = new Thread(() -> names.add("Laura"));
 Thread thread2 = new Thread(() -> names.add("Alex"));
 ```
 
-En programas reales, para trabajar con colecciones compartidas entre hilos existen herramientas específicas en:
+In real programs, to work with collections shared between threads there are specific tools in:
 
 ```java
 java.util.concurrent
 ```
 
-Por ejemplo:
+For example:
 
 - `ConcurrentHashMap`
 - `CopyOnWriteArrayList`
 - `BlockingQueue`
 
-En este tema solo necesitas conocer la idea: compartir colecciones mutables entre hilos requiere cuidado.
+In this topic you just need to know the idea: sharing mutable collections between threads requires care.
 
 ---
 
-## 40. Introducción a virtual threads
+## 40. Introduction to virtual threads
 
-Java moderno incluye una herramienta llamada **virtual threads**.
+Modern Java includes a tool called **virtual threads**.
 
-Un virtual thread es un hilo ligero gestionado por la JVM.
+A virtual thread is a lightweight thread managed by the JVM.
 
-La idea principal es:
+The main idea is:
 
-- crear muchas tareas concurrentes con menor coste que los hilos tradicionales
-- simplificar ciertos tipos de aplicaciones, especialmente cuando hay muchas operaciones de espera
+- create many concurrent tasks with lower cost than traditional threads
+- simplify certain types of applications, especially when there are many waiting operations
 
-Ejemplo básico:
+Basic example:
 
 ```java
 public class Main {
@@ -1185,13 +1182,13 @@ public class Main {
 }
 ```
 
-No necesitas dominar virtual threads todavía, pero es importante saber que existen en Java moderno.
+You don't need to master virtual threads yet, but it's important to know that they exist in modern Java.
 
 ---
 
-## 41. Virtual threads con `ExecutorService`
+## 41. Virtual threads with `ExecutorService`
 
-También puedes usar un executor para virtual threads.
+You can also use an executor for virtual threads.
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -1208,7 +1205,7 @@ public class Main {
 }
 ```
 
-Este enfoque es moderno, pero para empezar es mejor entender primero:
+This approach is modern, but to get started it is better to first understand:
 
 - `Thread`
 - `Runnable`
@@ -1218,42 +1215,42 @@ Este enfoque es moderno, pero para empezar es mejor entender primero:
 
 ---
 
-## 42. Cuándo usar concurrencia
+## 42. When to use concurrency
 
-La concurrencia puede ser útil cuando:
+Concurrency can be useful when:
 
-- una tarea tarda mucho
-- necesitas no bloquear el programa principal
-- hay varias operaciones independientes
-- trabajas con entrada/salida
-- procesas muchas peticiones
-- quieres aprovechar mejor los recursos
+- a task takes a long time
+- you need not to block the main program
+- there are several independent operations
+- you work with input/output
+- you process many requests
+- you want to make better use of resources
 
-Ejemplos:
+Examples:
 
-- servidor web
-- procesamiento de archivos
-- llamadas a APIs
-- tareas programadas
-- carga de datos en segundo plano
-
----
-
-## 43. Cuándo NO usar concurrencia
-
-No uses concurrencia si:
-
-- el programa es muy simple
-- una solución secuencial es suficiente
-- no hay tareas independientes
-- aumenta la complejidad sin aportar valor
-- no sabes cómo proteger los datos compartidos
-
-La concurrencia puede mejorar un programa, pero también puede hacerlo más difícil de entender.
+- web server
+- file processing
+- API calls
+- scheduled tasks
+- background data loading
 
 ---
 
-## 44. Ejemplo completo: procesamiento de tareas
+## 43. When NOT to use concurrency
+
+Don't use concurrency if:
+
+- the program is very simple
+- a sequential solution is sufficient
+- no independent tasks
+- increases complexity without adding value
+- you don't know how to protect shared data
+
+Concurrency can improve a program, but it can also make it more difficult to understand.
+
+---
+
+## 44. Complete example: task processing
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -1286,12 +1283,12 @@ public class Main {
 }
 ```
 
-Aquí hay 4 tareas, pero solo 2 hilos en el pool.  
-El executor va organizando la ejecución.
+Here there are 4 tasks, but only 2 threads in the pool.  
+The executor organizes the execution.
 
 ---
 
-## 45. Ejemplo completo: servicio de notificaciones
+## 45. Complete example: notification service
 
 ### 45.1. `NotificationService.java`
 
@@ -1340,100 +1337,100 @@ public class Main {
 }
 ```
 
-Este ejemplo simula el envío concurrente de notificaciones.
+This example simulates concurrent sending of notifications.
 
 ---
 
-## 46. Errores típicos al empezar
+## 46. Typical mistakes when starting
 
-### 46.1. Llamar a `run()` en lugar de `start()`
+### 46.1. Call `run()` instead of `start()`
 
 ```java
 thread.run(); // no crea un hilo nuevo
 ```
 
-Debes usar:
+You must use:
 
 ```java
 thread.start();
 ```
 
-### 46.2. Asumir un orden fijo de ejecución
+### 46.2. Assume a fixed order of execution
 
-En concurrencia, el orden puede variar.
+In concurrence, the order may vary.
 
-### 46.3. Compartir datos mutables sin protección
+### 46.3. Sharing unprotected mutable data
 
-Esto puede producir condiciones de carrera.
+This can produce race conditions.
 
-### 46.4. Olvidar `shutdown`
+### 46.4. Forget `shutdown`
 
-Si usas `ExecutorService`, recuerda cerrarlo.
+If you use `ExecutorService`, remember to close it.
 
 ```java
 executor.shutdown();
 ```
 
-### 46.5. Ignorar `InterruptedException`
+### 46.5. Ignore `InterruptedException`
 
-No conviene dejar el `catch` vacío.
+It is not advisable to leave the `catch` empty.
 
-Mejor:
+Better:
 
 ```java
 Thread.currentThread().interrupt();
 ```
 
-### 46.6. Crear demasiados hilos manualmente
+### 46.6. Create too many threads manually
 
-Para muchas tareas, es mejor usar `ExecutorService`.
-
----
-
-## 47. Buenas prácticas
-
-- Empieza usando concurrencia solo cuando realmente sea necesaria.
-- Usa `Runnable` para tareas sin resultado.
-- Usa `Callable` para tareas con resultado.
-- Usa `ExecutorService` en vez de crear muchos hilos manualmente.
-- Llama a `shutdown` cuando termines con el executor.
-- Evita compartir datos mutables entre hilos.
-- Usa `synchronized` si varios hilos modifican el mismo estado.
-- Maneja correctamente `InterruptedException`.
-- Usa nombres de hilos si necesitas depurar.
-- Mantén las tareas pequeñas y claras.
+For many tasks, it is best to use `ExecutorService`.
 
 ---
 
-## 48. A tener en cuenta
+## 47. Good practices
 
-- Un thread es un hilo de ejecución.
-- `main` se ejecuta en el hilo principal.
-- `Thread.start()` crea un nuevo hilo.
-- `Runnable` representa una tarea sin resultado.
-- `Thread.sleep` pausa el hilo actual.
-- `join` permite esperar a que un hilo termine.
-- Los datos compartidos pueden provocar condiciones de carrera.
-- `synchronized` permite proteger secciones críticas.
-- `ExecutorService` gestiona pools de hilos.
-- `Callable` permite devolver resultados.
-- `Future` representa un resultado que llegará más adelante.
-- Los virtual threads son una herramienta moderna para concurrencia ligera.
+- Start using concurrency only when it is really necessary.
+- Use `Runnable` for tasks without results.
+- Use `Callable` for tasks with results.
+- Use `ExecutorService` instead of creating many threads manually.
+- Call `shutdown` when you are done with the executor.
+- Avoid sharing mutable data between threads.
+- Use `synchronized` if multiple threads modify the same state.
+- Handle `InterruptedException` correctly.
+- Use thread names if you need to debug.
+- Keep tasks small and clear.
 
 ---
 
-## 49. Resumen final
+## 48. To take into account
 
-La concurrencia permite que un programa gestione varias tareas durante el mismo periodo de tiempo.
+- A thread is a thread of execution.
+- `main` runs in the main thread.
+- `Thread.start()` creates a new thread.
+- `Runnable` represents a task with no result.
+- `Thread.sleep` pauses the current thread.
+- `join` allows waiting for a thread to finish.
+- Shared data can cause race conditions.
+- `synchronized` allows you to protect critical sections.
+- `ExecutorService` manages thread pools.
+- `Callable` allows returning results.
+- `Future` represents a result that will come later.
+- Virtual threads are a modern tool for lightweight concurrency.
 
-En Java, la base de la concurrencia empieza con:
+---
+
+## 49. Final summary
+
+Concurrency allows a program to manage multiple tasks during the same period of time.
+
+In Java, the basis of concurrency starts with:
 
 ```java
 Thread
 Runnable
 ```
 
-Pero en código más realista se suele trabajar con herramientas de más alto nivel:
+But in more realistic code you usually work with higher level tools:
 
 ```java
 ExecutorService
@@ -1441,18 +1438,17 @@ Callable
 Future
 ```
 
-También has visto que la concurrencia introduce nuevos problemas, especialmente cuando varios hilos comparten y modifican los mismos datos.
+You've also seen that concurrency introduces new problems, especially when multiple threads share and modify the same data.
 
-Por eso es importante entender ideas como:
+That is why it is important to understand ideas like:
 
-- orden no garantizado
-- condiciones de carrera
-- sincronización
-- interrupciones
-- cierre correcto de executors
+- order not guaranteed
+- race conditions
+- synchronization
+- interruptions
+- correct closure of executors
 
-La concurrencia es un tema amplio, pero con esta base ya puedes entender cómo Java ejecuta tareas en paralelo o en segundo plano de forma controlada.
+Concurrency is a broad topic, but with this foundation you can already understand how Java executes tasks in parallel or in the background in a controlled way.
 
 ---
-
-En el siguiente tema veremos qué son y cómo puedes trabajar con **Anotaciones**.
+In the next topic we will see what they are and how you can work with **Annotations**.

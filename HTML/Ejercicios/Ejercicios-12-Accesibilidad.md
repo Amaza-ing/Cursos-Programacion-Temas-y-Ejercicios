@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 12: Accesibilidad en HTML**
+# **Exercises - Topic 12: Accessibility in HTML**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre accesibilidad en HTML.
+Below you will find 5 practical exercises on accessibility in HTML.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Agregar `aria-label` a un botón con ícono**
+### **Exercise 1: Add `aria-label` to a button with an icon**
 
-Crea un botón que contenga solo un ícono (por ejemplo, un sobre de correo) y usa `aria-label` para describir su función.
+Create a button that contains only one icon (for example, a mail envelope) and use `aria-label` to describe its function.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <button aria-label="Enviar mensaje">📩</button>
@@ -22,15 +22,15 @@ Crea un botón que contenga solo un ícono (por ejemplo, un sobre de correo) y u
 
 ---
 
-### **Ejercicio 2: Mejorar accesibilidad con `aria-labelledby`**
+### **Exercise 2: Improve accessibility with `aria-labelledby`**
 
-Corrige el siguiente código para que el campo de entrada esté correctamente etiquetado con `aria-labelledby`.
+Correct the following code so that the input field is correctly labeled with `aria-labelledby`.
 
 ```html
 <input type="text" id="username" /> <label for="username">Nombre</label>
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <label for="username" id="label-name">Nombre</label>
@@ -41,15 +41,15 @@ Corrige el siguiente código para que el campo de entrada esté correctamente et
 
 ---
 
-### **Ejercicio 3: Agregar `alt` a una imagen**
+### **Exercise 3: Add `alt` to an image**
 
-Corrige el siguiente código para que la imagen tenga un texto alternativo adecuado.
+Fix the following code so that the image has proper alt text.
 
 ```html
 <img src="paisaje.jpg" />
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <img src="paisaje.jpg" alt="Imagen de un paisaje montañoso al atardecer" />
@@ -59,9 +59,9 @@ Corrige el siguiente código para que la imagen tenga un texto alternativo adecu
 
 ---
 
-### **Ejercicio 4: Hacer una lista navegable con teclado usando `tabindex`**
+### **Exercise 4: Make a keyboard-navigable list using `tabindex`**
 
-Agrega `tabindex` a los enlaces de la siguiente lista para definir el orden de navegación.
+Add `tabindex` to the links in the list below to define the browsing order.
 
 ```html
 <ul>
@@ -71,7 +71,7 @@ Agrega `tabindex` a los enlaces de la siguiente lista para definir el orden de n
 </ul>
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -85,9 +85,9 @@ Agrega `tabindex` a los enlaces de la siguiente lista para definir el orden de n
 
 ---
 
-### **Ejercicio 5: Usar `role` para definir elementos**
+### **Exercise 5: Use `role` to define elements**
 
-Añade el atributo `role` al siguiente código para indicar que la navegación es un menú.
+Add the `role` attribute to the following code to indicate that the navigation is a menu.
 
 ```html
 <nav>
@@ -98,7 +98,7 @@ Añade el atributo `role` al siguiente código para indicar que la navegación e
 </nav>
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <nav role="navigation">

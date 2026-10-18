@@ -1,17 +1,17 @@
 # Ejercicios - Tema 10: Wrappers de tipos de datos primitivos
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **wrappers**, autoboxing, unboxing, `parseXxx`, `valueOf`, comparación y manejo de `null`.
+Below you will find **10 practical exercises** to work with **wrappers**, autoboxing, unboxing, `parseXxx`, `valueOf`, comparison and handling of `null`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Autoboxing básico
+## Exercise 1: Basic Autoboxing
 
 Declara una variable primitiva `int` con valor `10` y asígnala a una variable `Integer` usando autoboxing.  
-Imprime el valor del wrapper.
+Prints the value of the wrapper.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -28,12 +28,12 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Unboxing básico
+## Exercise 2: Basic Unboxing
 
 Declara una variable `Integer` con valor `25` y asígnala a una variable `int` usando unboxing.  
-Imprime el valor primitivo.
+Print the primitive value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -50,13 +50,13 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Convertir texto a entero
+## Exercise 3: Convert text to integer
 
-Declara una variable `text` con valor `"42"`.
+Declare a variable `text` with value `"42"`.
 
 Convierte el texto a `int` usando `Integer.parseInt` y suma `8` al resultado.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -73,13 +73,13 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Convertir texto a `Double`
+## Exercise 4: Convert text to `Double`
 
-Declara una variable `priceText` con valor `"19.99"`.
+Declares a variable `priceText` with value `"19.99"`.
 
 Convierte el texto a `Double` usando `Double.valueOf` y muestra el valor.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -96,14 +96,14 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Comparar wrappers correctamente
+## Exercise 5: Compare wrappers correctly
 
 Declara dos variables `Integer` con valor `100`.
 
-- Compara los valores usando `equals`
-- Imprime el resultado
+- Compare values using `equals`
+- Print the result
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -120,12 +120,12 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Evitar `NullPointerException`
+## Exercise 6: Avoid `NullPointerException`
 
 Declara una variable `Integer` llamada `age` con valor `null`.
 
 Comprueba si es `null` antes de intentar convertirla a `int`.  
-Si es `null`, imprime `"No age provided"`.
+If it is `null`, print `"No age provided"`.
 
 <details><summary>Mostrar solución</summary>
 
@@ -150,12 +150,12 @@ public class Main {
 
 ## Ejercicio 7: Usar constantes `MIN_VALUE` y `MAX_VALUE`
 
-Imprime por consola:
+Print via console:
 
-- El valor mínimo de `Integer`
-- El valor máximo de `Integer`
+- The minimum value of `Integer`
+- The maximum value of `Integer`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -170,13 +170,13 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Comparar con `compareTo`
+## Exercise 8: Compare with `compareTo`
 
 Declara dos variables `Integer` con valores `15` y `30`.
 
 Usa `compareTo` para comparar ambos valores e imprime el resultado.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -193,13 +193,13 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Validar caracteres con `Character`
+## Exercise 9: Validate characters with `Character`
 
-Declara una variable `char` con valor `'7'`.
+Declare a variable `char` with value `'7'`.
 
 Usa `Character.isDigit` para comprobar si es un dígito e imprime el resultado.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -216,13 +216,13 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Convertir número a texto
+## Exercise 10: Convert number to text
 
 Declara una variable `int` con valor `50`.
 
-Convierte el número a `String` usando `String.valueOf` e imprime el resultado.
+Convert the number to `String` using `String.valueOf` and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -236,5 +236,4 @@ public class Main {
 ```
 
 </details>
-
 ---

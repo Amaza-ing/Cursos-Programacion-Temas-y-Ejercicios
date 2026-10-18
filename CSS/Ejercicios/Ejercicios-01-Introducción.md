@@ -1,32 +1,33 @@
-# **Ejercicios - Tema 1: Introducción a CSS**
+# **Exercises - Topic 1: Introduction to CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre la introducción a CSS.
+Below you will find 5 practical exercises on the introduction to CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Aplicar un estilo en línea**
+### **Exercise 1: Apply an inline style**
 
-Crea un párrafo en HTML que tenga el color de texto rojo utilizando CSS en línea.
+Create an HTML paragraph that has red text color using inline CSS.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <p style="color: red;">Este es un párrafo con CSS en línea.</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Usar CSS interno**
+### **Exercise 2: Use internal CSS**
 
-Crea un documento HTML que defina un estilo CSS en la etiqueta `<style>` para que todos los párrafos tengan color azul.
+Create an HTML document that defines a CSS style on the `<style>` tag so that all paragraphs are colored blue.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <!DOCTYPE html>
@@ -44,17 +45,18 @@ Crea un documento HTML que defina un estilo CSS en la etiqueta `<style>` para qu
 </html>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Aplicar un estilo desde un archivo externo**
+### **Exercise 3: Apply a style from an external file**
 
-Crea un archivo CSS externo llamado `styles.css` y aplícalo a un documento HTML para que los títulos `<h1>` tengan color verde.
+Create an external CSS file called `styles.css` and apply it to an HTML document so that the `<h1>` titles are colored green.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-**Archivo `styles.css`**:
+**`styles.css` file**:
 
 ```css
 h1 {
@@ -62,7 +64,8 @@ h1 {
 }
 ```
 
-**Archivo `index.html`**:
+
+**`index.html` file**:
 
 ```html
 <!DOCTYPE html>
@@ -76,15 +79,16 @@ h1 {
 </html>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Modificar el tamaño del texto**
+### **Exercise 4: Modify the text size**
 
-Usa CSS para cambiar el tamaño del texto de un párrafo a 20 píxeles.
+Use CSS to resize paragraph text to 20 pixels.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <!DOCTYPE html>
@@ -102,15 +106,16 @@ Usa CSS para cambiar el tamaño del texto de un párrafo a 20 píxeles.
 </html>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Usar múltiples propiedades CSS**
+### **Exercise 5: Using multiple CSS properties**
 
-Crea un párrafo con CSS que tenga color de texto rojo, tamaño de fuente de 18px y alineación centrada.
+Create a paragraph with CSS that has red text color, 18px font size, and centered alignment.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <!DOCTYPE html>
@@ -129,5 +134,6 @@ Crea un párrafo con CSS que tenga color de texto rojo, tamaño de fuente de 18p
   </body>
 </html>
 ```
+
 
 </details>

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 10: Funciones Especiales en JavaScript**
+# **Exercises - Topic 10: Special Functions in JavaScript**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre las funciones especiales en JavaScript.
+Below you will find 5 practical exercises on special functions in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Retrasar la ejecución de un mensaje con `setTimeout()`**
+### **Exercise 1: Delay the execution of a message with `setTimeout()`**
 
-Escribe una función que muestre el mensaje "Hola, después de 3 segundos" en la consola después de 3 segundos.
+Write a function that displays the message "Hello, after 3 seconds" in the console after 3 seconds.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function delayedMessage() {
@@ -26,11 +26,11 @@ delayedMessage();
 
 ---
 
-### **Ejercicio 2: Contador con `setInterval()`**
+### **Exercise 2: Counter with `setInterval()`**
 
-Crea una función que inicie un contador en la consola que muestre "Contador: X" cada segundo, y se detenga después de 5 segundos.
+Create a function that starts a counter in the console that displays "Counter: X" every second, and stops after 5 seconds.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function startCounter() {
@@ -52,11 +52,11 @@ startCounter();
 
 ---
 
-### **Ejercicio 3: Cancelar un `setTimeout()` antes de que ocurra**
+### **Exercise 3: Cancel an `setTimeout()` before it occurs**
 
-Escribe un código que inicie un `setTimeout()` para mostrar un mensaje después de 4 segundos, pero que lo cancele en 2 segundos.
+Write code that starts an `setTimeout()` to display a message after 4 seconds, but cancels it after 2 seconds.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function cancelTimeout() {
@@ -77,11 +77,11 @@ cancelTimeout();
 
 ---
 
-### **Ejercicio 4: Uso de `requestAnimationFrame()` para una animación simple**
+### **Exercise 4: Using `requestAnimationFrame()` for a simple animation**
 
-Crea una función que use `requestAnimationFrame()` para incrementar un número en la consola hasta que llegue a 10.
+Create a function that uses `requestAnimationFrame()` to increment a number in the console until it reaches 10.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function animateCounter(counter = 1) {
@@ -97,11 +97,11 @@ animateCounter();
 
 ---
 
-### **Ejercicio 5: `debounce()` para evitar múltiples llamadas seguidas**
+### **Exercise 5: `debounce()` to avoid multiple calls in a row**
 
-Crea una función `debounce()` que evite que una función se ejecute múltiples veces en un corto período de tiempo. Úsala con una función que imprima un mensaje cuando el usuario "escriba".
+Create a function `debounce()` that prevents a function from being executed multiple times in a short period of time. Use it with a function that prints a message when the user "types".
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function debounce(func, delay) {

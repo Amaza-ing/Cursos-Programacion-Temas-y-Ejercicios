@@ -1,0 +1,3024 @@
+{
+  "source": "Amaza-ing/Cursos-Programacion-Temas-y-Ejercicios",
+  "language": "en",
+  "method": "machine translation; code and link targets preserved",
+  "files": {
+    "Copilot/Ejercicios/Ejercicios-13-Buenas-Prácticas.md": {
+      "sourceSha": "43599b67d367b9a591325b643c81291b2746215d",
+      "translationSha": "2d12eb398dc4ddcc2abbaf3c477adc88702060048028c19e3ddb03c3ed03c8c9",
+      "integrity": {
+        "code": "5712db33abb6aad4294813c0fdb401469719d58ac0c150438b87bf9d812305aa",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Complemento-Frameworks-para-Prompting.md": {
+      "sourceSha": "c67d300aabe1b8b57e6a93a6417ca93ab57cd453",
+      "translationSha": "fb223a849efff30a6fdc2335c48f2c0f7f28dae81d672c32c6f9e25ee5752cf5",
+      "integrity": {
+        "code": "77b1bb0b7d2f8c57e4bf5246ecb62abfb5dc8ebcbdccbcdd1157cdcbab98ef9e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-01-Introducción.md": {
+      "sourceSha": "c7e37e8a11af9c491f1676c4b90fff453b6ca5a6",
+      "translationSha": "51543305e2d2cbb3d62fa2fe3aa321b41179533a9a9614c0ef8af8477f77b815",
+      "integrity": {
+        "code": "43c2e18d54ca91a2a3f252c8a21fa4bc99e7b2f5c6ad8683774fa03abf4522d7",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-02-Ecosistema.md": {
+      "sourceSha": "0d8e7c8483d92278c913e53df099621a13da8599",
+      "translationSha": "ee594c35d8f9b4b483267086a715708a2de71ddc211028604f430a0ec3543f12",
+      "integrity": {
+        "code": "e230a291a523dbc9008c71174828cfdb3687639dbb278ea99baad93011231254",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-03-Privacidad.md": {
+      "sourceSha": "7faea02cd0cc5bc0cc1ac47718b294a95810d6f4",
+      "translationSha": "da2c5c58912a18fbcbabd96f2e290814123c127a962f6b743dd0ae29599c2744",
+      "integrity": {
+        "code": "f9d9d1611b13550092536ae5018fda52a907b7c95404cd09d264934f7d48573b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-04-Instalación.md": {
+      "sourceSha": "b0000fd6306542b457c98a2b80e98f0b98d88268",
+      "translationSha": "06baa7b73ed74312bb3a4717d9a3d1d11705a2fd2b4410b869f79d49bdd980f5",
+      "integrity": {
+        "code": "da27355925638ab529f9b30087c2ddea777951e7ea23ff3cacfa6fd29ec88379",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/README.md": {
+      "sourceSha": "03a49e3cdaaef427d54e35f40e4175cd482c54f3",
+      "translationSha": "84b0798f2adec2704553423fb0b58074c83800aa6685a7b7550ae9fa35a90c10",
+      "integrity": {
+        "code": "1c6487dbed0eac10c4fe6059f0538b628ea40120272df45e909955e74a5a21db",
+        "links": "073d358523960122ec834016a2580a2d6cf0ae0581fe07e1da327d1aebc17f75"
+      }
+    },
+    "Copilot/Temas/Copilot-05-Prompting.md": {
+      "sourceSha": "3ea344d6b69283152e8f556a7967dfb3478a9940",
+      "translationSha": "4bfe8109f999cb1a6db0b78d25e9e483ffe1431bbb222a4fb6f0fbdd9fafef96",
+      "integrity": {
+        "code": "a25465acf75c1009d696b3ce5440e924a9a3204edf09f9dd39f443eaf19ecc8d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-06-Copilot-Chat.md": {
+      "sourceSha": "1337280583984d5cc03f953e168f0ef5b082f981",
+      "translationSha": "3cd22c1d12f15ff5e437cea1a71be9bc0f3192d242005de5bd07b8de3458e8e9",
+      "integrity": {
+        "code": "97bf6d8c8f17fbd130b696ece2101d7f2ff98a189597e4022710b100e7121de2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-07-Tareas-del-Desarrollador.md": {
+      "sourceSha": "cd5fc208165df9510cbf196a743930dfc031e41b",
+      "translationSha": "16f600aab9b2465faf54d51156af1517bd90688cd329ee7833aaa0a9e7bfa350",
+      "integrity": {
+        "code": "94229f081a4a2367854a80261ef875cf70f6d5df2566ad70b54f4c0682ff7446",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-08-Personalización.md": {
+      "sourceSha": "fb5d02b098315a0c4db69ad1b777b745c4a3b5c4",
+      "translationSha": "12b4f6b16e42db2e3ce2e85c730d075c83bd1ec12ed926ef794a968d9c6fc3d4",
+      "integrity": {
+        "code": "1c9c0d7cfa044f55edc8b7a1acb491f6fa74d1b3b03e95027fb9113b66e97b90",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-10-Microsoft.md": {
+      "sourceSha": "4570597b8bb178c340be2eba83c2fafa99333f9f",
+      "translationSha": "774ce77a76133ae225ca8bf7d37a1491383fe11d7de97bd5b75bdb0e6b8378c3",
+      "integrity": {
+        "code": "2032d1765d584cbbf341f57c3bcca7436c4c45748e4f2a429d4239456225da96",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-09-Automatización.md": {
+      "sourceSha": "d999761fb42a2e64b7f3799d2a35e69b91e9f10f",
+      "translationSha": "edb793c366eb0d522ab884861fdf1fb82f1adb25f15d3e6061695424e81cfc23",
+      "integrity": {
+        "code": "f86e6c765af4035347996689f47641a366fddd5fa87e081c4caad68962e3d1a1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/README.md": {
+      "sourceSha": "a2b9aadf4ad80ce102238450df5e23fdbdff353c",
+      "translationSha": "9de91c0be5d1bdf4c00746684183fda7940a14abc765cc6b3620254384683c04",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "3ee7a3fe7131224fd63e6b269fb42aedea335fdeece609ffebf2123e63cc70d2"
+      }
+    },
+    "Copilot/Temas/Copilot-12-Copilot-Studio.md": {
+      "sourceSha": "b714e2d5f3ddf67b05d997cabc9f468c871559f4",
+      "translationSha": "25c5c6d12b9482a2ebb67d60d3385c55cb52b9d2595a53c43b8bfeb0999a79f4",
+      "integrity": {
+        "code": "e2119ce7abe136ba1b46a38c698741c4b6b200db9c0ca8257f971e0fadc21868",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Temas/Copilot-11-Microsoft-365.md": {
+      "sourceSha": "1a595bba51bdf4bc0dacb7c377133032499f386d",
+      "translationSha": "8219517e9f601133e9d73aa659580a0f072033363560664534bfcac30c4c3968",
+      "integrity": {
+        "code": "6994805da06d8f0a3d907a2372fdfd699c98744c18ec3ed4cb2b931b83dbcd0f",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-02-Flujo-de-Trabajo.md": {
+      "sourceSha": "76a41a49216f44c27f4a17c7b00574002f0e1873",
+      "translationSha": "13a940350061bee82a7f8ef09d0b6595698bab8ba699a2ddefe5d30c2c0aa770",
+      "integrity": {
+        "code": "af5e9b356a3d4f2294705135f65f778f6ae19b7b82ecefb7a5496c09bcb205d2",
+        "links": "8e94def41923bbb6a68fde2960d5e133056af3e9bfa0728b5703b58e434b6b33"
+      }
+    },
+    "Copilot/Temas/Copilot-13-Buenas-Prácticas.md": {
+      "sourceSha": "f41dd0e45728a0e081b6619320b77dc1a7118fc9",
+      "translationSha": "68b1aeb862eb7b5ea0f4a00ca81cd44d3d891273caede84550dc1f2de19bddd0",
+      "integrity": {
+        "code": "02475152bdea2f9cd9ed2d2b2c07b823be60a64e835a8495cc5d061eaf67f6a4",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-01-Introducción.md": {
+      "sourceSha": "4006e67640f56e9685a27cbe8897820f2a813d48",
+      "translationSha": "aef6e5fcd5561cb282bd57a7c6ca498f0917c2bb505aef78e7e5c57f09d28594",
+      "integrity": {
+        "code": "62a3ab0be3b83f44b8f3dac23a5d9663adc42ee2dbbfcc958b54e0db4c29bda2",
+        "links": "2a568019a5d5ad3b31dd1e44d93dbc7828372796cd377659b22c359f2451b678"
+      }
+    },
+    "Git/Temas/Git-04-Repositorios-Remotos.md": {
+      "sourceSha": "d9c270d65fd61eacb697f080315dfd67654fe3f9",
+      "translationSha": "ae861180326c218035d1291014fe227c3c554cf122f82a9a20438c3146a9bcaa",
+      "integrity": {
+        "code": "92eac2cc99659d718f7371f39b0be42fb9e79e9f8d4af1da40ef2167bfe756e5",
+        "links": "47e49e735ff73ab3a521cab70aa62c724d2290c2f1c65ac2ceed1aa52ff1769c"
+      }
+    },
+    "Git/Temas/Git-06-Stash.md": {
+      "sourceSha": "58e9116629d31f95e84439c87da91115dfe9d833",
+      "translationSha": "ad47cf578536553a5bf7af9dc95aa69bd7cf5c37e917bdc4511a487ea00cade6",
+      "integrity": {
+        "code": "f71ea200af60048a8bda355f71f6574d93d597db63578079eb40ea95fe493bb2",
+        "links": "79528b365a8fca2fc2c5b75282e91a07c9dea2052b549fd543dc944c642b5a0f"
+      }
+    },
+    "Git/Temas/Git-05-Tags.md": {
+      "sourceSha": "68e4c3aa8e8097352e64535279ebd81979ca2029",
+      "translationSha": "f50513835893197e00dee201d00d9d9d8524fdc39c7689437b658235c3bcd1fa",
+      "integrity": {
+        "code": "ae829a181e99b28430ab642cb003aacf9810f0f2f89fe56861a152b02413e248",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md": {
+      "sourceSha": "49b72e8c074362e6ff909282d226a940fb83ae1a",
+      "translationSha": "9225a4a49a11424bcc13d1d3a4621e8f125a730d22c0b4d2ba2385bbe66f3101",
+      "integrity": {
+        "code": "7f86b3f295c3daec18f730ad7874ea40658060210541fa9dfd08c13b66827e1f",
+        "links": "b92555ba9a96d30b413cac89b32ad3c5793ebc7df0e86de82d39100d692b60fa"
+      }
+    },
+    "Git/Temas/Git-12-Varias-Ramas.md": {
+      "sourceSha": "7927b1a1e2cf181dafcf65176c0a64e8f63596da",
+      "translationSha": "0d91e61fc476132af839248d01793463c818ac84bae669d8eb4bd76e85209563",
+      "integrity": {
+        "code": "070807ec21385018c08ce61d338ec758febe9d4841026e42559597c18cf0686f",
+        "links": "003e476a056fd7aee25dc1d4cde5595d3136edb74e1ba0a01ae3495ced2a714f"
+      }
+    },
+    "Git/Temas/Git-11-Readme.md": {
+      "sourceSha": "7d8dc87e889db7d36b3642f0075819ce12051a3c",
+      "translationSha": "07d3da5c733117ed171f8bada77e91d035b1ce286383b64657ced63e3d12d72f",
+      "integrity": {
+        "code": "fb29e1ef5e8b47358a27cead62664a977e990a1d4c2ffd91518a3eae954d98ee",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-09-Restore-Revert.md": {
+      "sourceSha": "7108dfc13981f086a0d9f1b5c4098d4fcb12d23e",
+      "translationSha": "b728ddddf5cd2686f5d5f230f034d12406fb9f621978a108b1a94049ffc5e726",
+      "integrity": {
+        "code": "e02ed0e0f3a804925fc9548b581d8e87ed57d19ccf072244c97ba500e5c6b37d",
+        "links": "fb4422f435b5729ed7d58c6983bd6bf7caf50e585f5d6b2062bd327d883a3039"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-03-Elementos.md": {
+      "sourceSha": "707c226ded70880ca7a97be3e9bc604d24ed5fdd",
+      "translationSha": "54697acef8f0f8a38bc2fd8bd271f8dea351cb19c9bc7cff16c252dbfb2e0336",
+      "integrity": {
+        "code": "c8f59cad5b8c5baadcbb9563ecddab3ca3d670c3deed32bf001845d5099689de",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-08-Imagenes.md": {
+      "sourceSha": "296a172b5786fff5f9f94fe93190d545ae1765ad",
+      "translationSha": "3bf540ad242013fc8f27f28c3fa5adcc73b6c77d8356058269d2b74248e94317",
+      "integrity": {
+        "code": "7189ce04b2db656e426fe10f9db3c033597de6875b3f0d56bb04f27ad9b271de",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-04-y-05-Texto-y-Listas.md": {
+      "sourceSha": "b2025cc65ae76cc28626ee4c8df188efcb370d1b",
+      "translationSha": "3094953aeb45c01c78613e479edc1b348dc9d9d5d01100be741fec0b80408e3d",
+      "integrity": {
+        "code": "f26e28686888955ee8b7e8dd0338fc9a9b663023c1cc75aae112996ae89fc32d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-13-Workflows.md": {
+      "sourceSha": "408111d2765d39ae41bea76b1c6a237845edfd8d",
+      "translationSha": "71ba604f01290f0cb4f2e3688bc85bc3f825d58843d4108d235ad48718f00a17",
+      "integrity": {
+        "code": "9d45ed5a459e75ab434c9a0f137870c3289a187a6db5a8cbe9df60c9ef1848fb",
+        "links": "cd03dc64eb01920580663c017562d3764888781a786e28fe927d9dde1e01e95e"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-09-Tablas.md": {
+      "sourceSha": "d7b5ff39839026dbe4e397d446db8637b55ec466",
+      "translationSha": "9e693c078be331d471ea807c499e2ecb9b5b884448f1adfc71edc351ca9ea6d1",
+      "integrity": {
+        "code": "d473d180e2cfa978aaeb40b0f7fb8b357e91b87b1ef5de6803544e7bcb2522de",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-07-Enlaces.md": {
+      "sourceSha": "28e2b44e462a92f9b2793fcdb3471320fad7d8ec",
+      "translationSha": "32022366c19bc07b8ae2ccc640a03a3ae2e232fa4a238a6b9461b0804a2aae3a",
+      "integrity": {
+        "code": "e244cd1b5b05e0460dfe3430f5b30d15ba65b31019a545b8e4125fe49a5411e9",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-10-Formularios.md": {
+      "sourceSha": "15875a50abc8909f14295b7875a8eac9c3549b7e",
+      "translationSha": "11f1d21d7f6b9ddefd524c3aeb266cafdff5579ad312cfe937b839b90da7ec7a",
+      "integrity": {
+        "code": "c30264aedfb17a596d60cbafd44bf81f1197faa437b1c23e00ac17020d99b252",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-13-SEO.md": {
+      "sourceSha": "4b7fada7585ad064daf315e3a14dd70604dd649e",
+      "translationSha": "a603b25ae76a52e24624f43f0a0b07c08653387cac71cebfc723f4a607decf2f",
+      "integrity": {
+        "code": "b184b3a4d0f013718569bbe1ab2f743b1c15b266b617f8507b7b8add5f084f55",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-12-Accesibilidad.md": {
+      "sourceSha": "a3d2c2d0901966dbca3c7e9aabf78f2285e890e6",
+      "translationSha": "85fa0dc79bfb094713af4f04e28109890da82647e4f2eb0df426df89569a7d95",
+      "integrity": {
+        "code": "9aaf5f16032641491d71ed7742ad47b99c18448449376150a1ad065351d7099b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Ejercicios/Ejercicios-11-Semantico.md": {
+      "sourceSha": "9e609fad711e58ce7f0b8fbe1abeed1611d70abc",
+      "translationSha": "554579c59e92425230b816d0247bc0b4a0c4e300aa5fdd8c3b8fd4f6d3cefeb1",
+      "integrity": {
+        "code": "a80bea5cdca8162225b57e1ed2db4d256bf1523cde90582c99f538d682af3345",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "HTML/Temas/HTML-02-Estructura.md": {
+      "sourceSha": "e142f6863ca39dc2e6b3c63709bd4f4ad09c0bd8",
+      "translationSha": "1e44f9b283f27fdfa6cbdec0566f8b92ea4096c49669b1df7a415f2a46c9c5f0",
+      "integrity": {
+        "code": "5794ebf60b822ebd73cea9e0c4a898dc9d9b725f98ad9e62db0711edd5393e96",
+        "links": "6fc1382d4741ec4ca6ea54636c15380cc32f19b6b89cec1b2dbc3ae4d2f54529"
+      }
+    },
+    "HTML/README.md": {
+      "sourceSha": "b544a98f3d1ebfc1463a5aeb98c22fe5980cbf93",
+      "translationSha": "086853ba9dba8d1c8e1cae902e3bd5d94f391a3777477ac2b3c88b20b2b5dd16",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "3158eba3ce86df193be69be7d38081d57af88ba27227a7ba55eef585d4d13064"
+      }
+    },
+    "HTML/Temas/HTML-01-Introduccion.md": {
+      "sourceSha": "cacdb822a7820ff1e878a8337d92b6a855ad202e",
+      "translationSha": "55ec67a9ff6d425d5f235644eda5deb9b3f3004b8c662814855845b43c89f008",
+      "integrity": {
+        "code": "c0c85902216a257af715c158f721a7beb82790c50c3d2c017f456a8ed2b67267",
+        "links": "d4b7e7851bb73f7e853817219c4971f23daccf54fff1eaa72644963eea96cdd6"
+      }
+    },
+    "HTML/Temas/HTML-03-Elementos.md": {
+      "sourceSha": "591649fa8c4c03dc1e9f2b8314b2ba90d879321b",
+      "translationSha": "33263c7a7572bd5f2eed13bcdeb33692f9e1c91376820f37a97d94c8317d4110",
+      "integrity": {
+        "code": "a75c0bdb379dba0c16eabf278aa1aaec3cd0f5922c001089b6a09a1688bb6574",
+        "links": "e3efd4125dfa50b31cba42029dbba3238287b3f47566d9104cc0695d534a0b25"
+      }
+    },
+    "HTML/Temas/HTML-05-Listas.md": {
+      "sourceSha": "eee1906f275f8218127887ed7c95b4e4abc7e5cd",
+      "translationSha": "ccb79a7e5700aa6d9a7c60e535b4db5afbbc8f643c09f6539b46abc186744718",
+      "integrity": {
+        "code": "7c3d2e456051eb87b9da138c054702298791c6f4422bccb452306f946faff095",
+        "links": "c0f1d764c50bf28abc53d1ca398fa0cc201f1e031edad3f46b85569c2e1f0149"
+      }
+    },
+    "HTML/Temas/HTML-04-Texto.md": {
+      "sourceSha": "78634994898254a54da9433c55a50d4fb2d3aa14",
+      "translationSha": "bd1e95359c71f641b7fa53f7a6a7012cb30f8d354e3e69bfac32120d792af1ef",
+      "integrity": {
+        "code": "faaf1014fcba4b79cc8feb4f96df0fb29d984d28df2737484fac2f6f8475a3b4",
+        "links": "e3efd4125dfa50b31cba42029dbba3238287b3f47566d9104cc0695d534a0b25"
+      }
+    },
+    "HTML/Temas/HTML-09-Tablas.md": {
+      "sourceSha": "46c911388ccbc10c9816e59ae3643c624a93931b",
+      "translationSha": "6cb7dcb12e1f72bb09725c8212d0977af44a76edadb22aad5a9620d1574bf85b",
+      "integrity": {
+        "code": "233c455e47b2d69c1168f3087d2285fc46485f64e50307e033423e4d4b1b85fb",
+        "links": "d2bcc588d21886c3bfa8742731dbfd844e3b56ef86e633d79bd11f2d43177faa"
+      }
+    },
+    "HTML/Temas/HTML-07-Enlaces.md": {
+      "sourceSha": "250c24642f3bbc4ecb075a9119e9ff18e37e4d33",
+      "translationSha": "f281389c1837f9bbf20721aa0e237d248e8c7679f3d3eb94c86c1021f383c15e",
+      "integrity": {
+        "code": "f7c985fb16e1fa2275a6f8767f5e7887195cee3e09c7131c54b103bdd68fad21",
+        "links": "70e57149fa9afad89dbb0f37f0d2a2e58fe8e2a0d39ecba926750136ea19728d"
+      }
+    },
+    "HTML/Temas/HTML-08-Imagenes.md": {
+      "sourceSha": "463a48e31749a2bbe65389fe6e247fa3b441226d",
+      "translationSha": "edadc407b2863ed05831f0460cfe0169a75f317e4c1c246c7558525e35e34090",
+      "integrity": {
+        "code": "5f8195b5f09922373c1005d4ab344e9106dea7f550ea8c28e6d09133da99fb1e",
+        "links": "66ef888ead9c1c179b026b048ba6b7824f22f8b6d8407ec21fa0282bb0b6b0ac"
+      }
+    },
+    "HTML/Temas/HTML-10-Formularios.md": {
+      "sourceSha": "d3dfe17be193a068fed5f3e0f3e64bff66786614",
+      "translationSha": "4d9e6f1ebc684d8af1e1ac0acf6d967e8a8cdf7afb2f70a67325b96e25ec2de3",
+      "integrity": {
+        "code": "95131134a3010d2a0a2b6c06844ef0dcbd27ffb5d8e351b669f51b1ad80736b8",
+        "links": "7d7e5f6a3316302f810ae7e9e23cbfe9373074452191491114a6871bfa7dbd7a"
+      }
+    },
+    "HTML/Temas/HTML-12-Accesibilidad.md": {
+      "sourceSha": "55de37ae8311f6e8b0d38579b9d2636a31245d4a",
+      "translationSha": "f9d4bbad48adb96597db7066c20d6b81159a0c814682e16d97da7ba7a23f5e0a",
+      "integrity": {
+        "code": "08aea501262f40f8ed7f4d771168de131252827ce199947b0d6bc5b2bafd794e",
+        "links": "5e38fe61956c2bd695883abf6af6bc3e073143e4cff3f99217f3ed3252316a7f"
+      }
+    },
+    "HTML/Temas/HTML-13-SEO.md": {
+      "sourceSha": "5c20c4973ef265ed39d7a951b055e40fa65b24cb",
+      "translationSha": "f6874beed4a34d682229041ab5dbe89be6a63e6e72f01ded440fb70c2bee8fd4",
+      "integrity": {
+        "code": "fb42ee035a123531cd687e1d62f3ba57f0434bd4300b0d4081a7dfb1a9228980",
+        "links": "f8f9ffd1e500a256fb14b7f6c3bbcec1ac5a8174654c409db06aa017c430e5f7"
+      }
+    },
+    "HTML/Temas/HTML-11-Semantico.md": {
+      "sourceSha": "a6c54f0ccc511fc565602a8f3b43cae827d3180f",
+      "translationSha": "231525f4d3cb63540d0bc271aac408d22b75162abdda6f0104c739feb276c403",
+      "integrity": {
+        "code": "df7b3e5992f927924f76e66d71f8cf0afc869b3678c91b16ebb1cfc2fe84fd79",
+        "links": "330a4ff4b045cc5863ec6cd56ba1e90c33ee5cf3276e567b5e9f3df6ca935fb5"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-01-Cómo-Empezar.md": {
+      "sourceSha": "1fa9916426feb24d9877630b327cf2142145bc6d",
+      "translationSha": "3b06f20877a50a3b9c9ccf03fec26f19c32d1e9c728bd8d1bcdb3028ff8e6ede",
+      "integrity": {
+        "code": "72d5ce805ac35056222754a54024ab8849151a77ebc04a02783c2064ff129d87",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-03-Operadores.md": {
+      "sourceSha": "1082f75016a4c9e0af7b3eeab11e3c163361cf1a",
+      "translationSha": "f18444ac542c4c96d6eefe118216f52e8ad722444e6af6cf3c19a647f979bebf",
+      "integrity": {
+        "code": "2ea5697ffc1a91f69724473ca70e5281dd7411a7ec27923cac498feab7216840",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-06-Bucles.md": {
+      "sourceSha": "7fe65959fc16b5fc4b6ff229949272597671ebf7",
+      "translationSha": "c2875af9d1e23e0b65e7901d905b4383005665167b23b9051be8e326ebb02ad2",
+      "integrity": {
+        "code": "7f9aff32a78df3233491d08171062312e69832800a34d3d826c4c459ff898c7e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-02-Variables.md": {
+      "sourceSha": "b4656b8ad2023d20627f041cf3b062e6f10682bd",
+      "translationSha": "1b5ee82d7678dd07a37d04ae7d1410feeb660ef9184717902ae2598863b8edc1",
+      "integrity": {
+        "code": "6d559d7fb50bfcca30861093fe95fc176bc0bface2549286e3b41bd46c211f6b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-05-Condicionales.md": {
+      "sourceSha": "b635e8b6d7f3672b23832efda0f059aedf2c03cf",
+      "translationSha": "12b92ca1cf218847298a62b102f55842eb53a5ade44e0e77c0ab2764a94b722e",
+      "integrity": {
+        "code": "d1704b37fee307032ce049acee1bc610638aaca0f99260ab7bb51ae266291906",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-08-Métodos.md": {
+      "sourceSha": "133c1eaad6c79548ce4da0e0fb1d917c2950553d",
+      "translationSha": "7010bf3a076619a06b9a681b9f5c323273c1f71ede8b19304dae09a7f3719c90",
+      "integrity": {
+        "code": "b0a52c7114b300f35d1aafc3497040353d1ef4f6ba8a07621fb3f04979b668e3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-07-Break-y-Continue.md": {
+      "sourceSha": "11fde27995f7e6c8d293ec8a4c603559c5e38f1f",
+      "translationSha": "2784699d60356ccca53f336ef41496ede4b5da83520bba243dfe8f789cdeaee5",
+      "integrity": {
+        "code": "f904b62b439d6713e6998857c6d7cd76606604d9731d9ab2f17b98169683436b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-04-Conversión-de-Tipos.md": {
+      "sourceSha": "cea700eb431eda65bee831ae23c03de2c77500f2",
+      "translationSha": "f857f840087539bf8a583a5ae5014514741556c321a463c49ad53f14883cec9d",
+      "integrity": {
+        "code": "ad567809198d62a87595a8e67f8ab9f2b0cacee469aedf51f68e8acdb09920f3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-09-Métodos-de-los-String.md": {
+      "sourceSha": "f16dea9f4ec6b6f8d8559533b238a6218d57ca47",
+      "translationSha": "cd619704883c023b83249f7d4d59d3a1f678ec6723f3756b21d788e56d89c7de",
+      "integrity": {
+        "code": "3d6786c9fdd1417bcbb8ce04ce4ea52c1633ec53a859d992c3f61b7eceb2e325",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-11-Sobrecarga-de-Métodos.md": {
+      "sourceSha": "69b0ac77b1ac12ff9391d97ff32d20a525319335",
+      "translationSha": "59ddbb667ef9c29895b9b51f0070ef91b547427cd1bb2c241eb78e4fc249edce",
+      "integrity": {
+        "code": "cad41fc91c118a0c0f4d4e3bdcffd07eb95132394943a1bdd362e8356f9b2ed7",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-12-Arrays.md": {
+      "sourceSha": "059518fe472436b4b420cfafe199cbed358342d1",
+      "translationSha": "db4c4d9f6df09b4880fe80c6a595e87e21eea72148aa72d7d44c3403aab34ca3",
+      "integrity": {
+        "code": "7bce54d310b01efc903184649803c73ec7b04cb839ef6e1f66d542ebf6f0b3cd",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-10-Wrappers.md": {
+      "sourceSha": "82f16979476b68b9860249b4b7a39188f786218a",
+      "translationSha": "f1d134d788b2e45a87ec57c32d1b3cc14b9fd295db413de3026fc35f937ea99b",
+      "integrity": {
+        "code": "0f1b83f50aca0570938d05f08810022ad1ddf304e87a15a06b5f409ab2356933",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-14-Clases-y-Objetos.md": {
+      "sourceSha": "0ce73977b985608232e86566c8eaf9ce1d598110",
+      "translationSha": "ff3937e04936ac68c4c2ee6301a96a2f74723f92ec5a17f222a41a912c35b890",
+      "integrity": {
+        "code": "e428b736ddacc51e217987df8d429760dcd9fa78747b09aa5dbf3aee5c770ce3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-15-Encapsulación.md": {
+      "sourceSha": "0ad3c96f80484d98dc6a7bd39730af33a5497065",
+      "translationSha": "ca7a891da6b105808ce525a0eed740343ec23506cb68216823b7831c1d0a668a",
+      "integrity": {
+        "code": "a872849d620c767421ed34454e34b3203ade845eb4986ae3beb11261dee7155a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-16-Sobrecarga-de-Constructores.md": {
+      "sourceSha": "744ff56b12d95cd151fc14ffc3c21e2c3f204b23",
+      "translationSha": "263c2173c7388732593e28e4838619a2da26394371464097782765aaaaf988b7",
+      "integrity": {
+        "code": "7156e75d489fedc2b72ab79dbe9e05db8891153b018f62c727ec88902c55f724",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-17-Métodos-Estáticos.md": {
+      "sourceSha": "a973d646ef2485c439600f0fe5e588f1174fc3a1",
+      "translationSha": "7bd029e4f73cb663c47b39f2271cc93744a6e50c30f41b5e0eb2085514b380da",
+      "integrity": {
+        "code": "ccd3ed1b5c0049debed04b400ff28784808e7895b5f178ebf49ba364eea895d6",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-18-Herencia-y-Polimorfismo.md": {
+      "sourceSha": "304262be22265fa93921ce05107e0fdd8e0ef5f3",
+      "translationSha": "dee32fe62dd6fdaa0a9c427de3858c931b917701442871a61474ff1328b99855",
+      "integrity": {
+        "code": "5aafbdc3e0ecc02fb4b4e84bf3c624639091074c03417891c6289570f11c80f8",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-21-Interfaces.md": {
+      "sourceSha": "0130f46e64d7b29b908b052f1d22b6dcb7af9d13",
+      "translationSha": "43a8ede8d93079e854a22c2d79deb9d9ec5d59f700f4254aea32d2314747a345",
+      "integrity": {
+        "code": "79d95746a4aa6a0cf354be4df48802296a66b29ae7e273baa0a7e4bfeb12e93e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-19-Packages.md": {
+      "sourceSha": "da8a75cc4c41ba131d02d9bcafe503e9a05486e9",
+      "translationSha": "578a91350819b2f71ad5b4047a3b997afd433e5aae56ae7735d3ec940dae2069",
+      "integrity": {
+        "code": "4ea8b2869bfa844ef7bda9aa8603c6289d06a3b71d708d9540777ae8c6843315",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-20-Clases-Abstractas.md": {
+      "sourceSha": "51bdacb7cad331dc48fbde02d8537fe8a89310fb",
+      "translationSha": "42b993c9c2e4fcfa3913c70a0a26ff6b7b81aa17385134035bcd57e1f437bc13",
+      "integrity": {
+        "code": "2a97448a45979583eec746cccb984493ded9eaf0b127256624a289456736b7c1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-22-Equals.md": {
+      "sourceSha": "f0ffcdc7b861571e912b05de2df730bbb3346ee7",
+      "translationSha": "a1d045a6717385979057cce2cf72088458bf97e91b1c885a05775d48933f3489",
+      "integrity": {
+        "code": "f695fe601176073e67643ef97492e3c07222f253257d64988f8be46fdb287b33",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-23-Excepciones.md": {
+      "sourceSha": "1df0259579fb04827a6751814f23377b19f609e6",
+      "translationSha": "edf84233a924f00260f177bbd28c1430c5fe02d85a5014f04daf9fafbb919ebb",
+      "integrity": {
+        "code": "dc32f01188af16e66af11635138d9a10cb7a78f0c3631948dd8c504108e84c77",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-24-Enums.md": {
+      "sourceSha": "5864991f0393a1abf5f07850c5735a0f0713ed40",
+      "translationSha": "4c563910f1bcf79682df402eb2045f1a702c7c4f2f9bc2d2919d82a7dfa0e47f",
+      "integrity": {
+        "code": "68b877e6849a2608669444eab3d88be2c81dc64a4b4f75da211a5f4ec81b921b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-25-Maps.md": {
+      "sourceSha": "9c5df25ec9d507066ebe161441c56234326c078e",
+      "translationSha": "c0515dde54f30fa8345bbc208af0488b52d48f9493ce901386009adb1521fe73",
+      "integrity": {
+        "code": "89bb6675ffd671db5c9be18aa7e0ba924f2df8e7424ed7830ad2457e8bb0fc55",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-28-Genéricos.md": {
+      "sourceSha": "70a68f516edaebbf50accc67f4ed7dcf2c2a879e",
+      "translationSha": "8f6ee9702ab37a19bdac0b7d3136d57b334bd88a7d18cf8cee31290557f155d2",
+      "integrity": {
+        "code": "2402d9130f64b7a0a46ad05770d42f8538fe9fd8ae84163cea86592e7f2f9f2f",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-26-Otras-Colecciones.md": {
+      "sourceSha": "3cb15e67483ff67bb1a475d0530951705ea16b64",
+      "translationSha": "760d3e0619d9d97e9303221d1f3e12440fee454c1c0f369cd1728eb8605a99df",
+      "integrity": {
+        "code": "7331168cad8472d36ecdd9722bc725d3d006c119a4a32008192eca4d31c752b4",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-29-Expresiones-Lambda.md": {
+      "sourceSha": "c1cc8307c9d0662d467e8b2028520953a706b291",
+      "translationSha": "c0a4b08fb5d1b9ee76307a97741950ad4ae67803c85d09ec6d0f2f4ff0282b99",
+      "integrity": {
+        "code": "f1229c52be620592271a06137c00e33ae5b5eb829a7cf3c3ebdd5a6ca8071cff",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-27-BigDecimal.md": {
+      "sourceSha": "bc7e207b185fabe6ad7d450d08d27c3a07e4f241",
+      "translationSha": "7c1849ec5720c045e96cb8c0bba958ccfcceb1f44e6f26504be166d699a39579",
+      "integrity": {
+        "code": "ece77f9dbbb07653ccdd4b16838eeece0dde7d6723357a07539f4e86c00cf083",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-32-Date-Time-API.md": {
+      "sourceSha": "febe5f8003721ee97b432501592ca16c6ad69ed8",
+      "translationSha": "d9db97b3d9d3ce2709d789fcc0aa16966dcafa5b16ce8347a3b2ec94ddfe529d",
+      "integrity": {
+        "code": "778b221ec92ef7ae47d05553bff8425707d276215ab9d6baabbfb1020ff9203c",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-33-Files-&-Path.md": {
+      "sourceSha": "9686e56810364572a19e36ace9a986c78153b02d",
+      "translationSha": "12662d5c2b2b5acd04d1817a8479ae8a329b2c48308aa0d5fb80dfa007a14601",
+      "integrity": {
+        "code": "50b919ec1a33fc7b37a9337800af05d92482be45298fde05e0c3cbd6360d1cb0",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-31-Optional.md": {
+      "sourceSha": "29effa24750b08cbfc2964b8b654097391593ecd",
+      "translationSha": "3694782284e815855538c9cf9b664f2137428df84d263eabe671576de6c3b24b",
+      "integrity": {
+        "code": "0e89b85e91a1d9c3e1689170e06b98da5e31af4fa0bf37da36197e89dacdc3d1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-30-Stream-API.md": {
+      "sourceSha": "11bc96ef25d6b848fcc5c7f60cde1a4c1b42d90b",
+      "translationSha": "fd6940d0361f663aad846c542a4f115338ab5de2f7f2e2d05ed93c86f5c08cf8",
+      "integrity": {
+        "code": "95fbfc3f67abbc7a3d4d402b70a7d6218ef57e0ddd3f34aa495b5e11d29a4512",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-34-Records.md": {
+      "sourceSha": "e5f82486993a6e9b7944cb3ebc99bfc67538e993",
+      "translationSha": "c650af1433eba58492b7f3ee38364d1269f4ef0ad16c48bd70cbec87812c852f",
+      "integrity": {
+        "code": "205306ed5af7ac9abac45400159ee97f7e2241d0deb73832854c7b6c3e1b073a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-35-Sealed-Classes.md": {
+      "sourceSha": "cca27615c0f8b8c295ca4310d95a943af7195a36",
+      "translationSha": "bddad324897243001b7bd141c4fe8e2dab9a05d71ebdde8ffce31cd3edecc9f3",
+      "integrity": {
+        "code": "99000552cbdbd6136c72a3d340a5e288ada50254886b1ce53f434679554b8699",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-36-Concurrencia-Básica.md": {
+      "sourceSha": "d7124a156820072c51fb9e854ad79935773d21e6",
+      "translationSha": "a8d90effcef5f92e7d720f248043ede0591c599985c96eeb8f3a7f45b954920c",
+      "integrity": {
+        "code": "28a6c111616e55699b684af9dacdc6f023d405b329ae517758a1fcd244d141c2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-37-Anotaciones.md": {
+      "sourceSha": "32b5ffe45dca2f6e181984a29e6d76fef60857ca",
+      "translationSha": "6552d44079d87b9f09a440906e252afdece3a5388cfb2728b0079dd9ce3c345f",
+      "integrity": {
+        "code": "4e1691aaaea72d9b19568aeb7dcc7f223b2d68c47083b67dec9f072892b7b42e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-39-Maven.md": {
+      "sourceSha": "16e231d9c827c1f4072d040e4de9de94e15226de",
+      "translationSha": "a12226fa0dfec20b5cb7c86e35ffa20e4ae3d613a206a264f36886a9f640e78c",
+      "integrity": {
+        "code": "faa37bfef30a52253e161e67afc516a01ebe29f614b79fa717f0990e6fdb6bf8",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-38-Módulos-y-Java-Moderno.md": {
+      "sourceSha": "f00153af306668e8c8b8fa5f4e4c617be1898711",
+      "translationSha": "b451f99de4b1d11db4a05d823a50c6d201f5e56388a10818dc1da375ac2cda57",
+      "integrity": {
+        "code": "cbac0a9ca58b9dfe9387f7179a9c5217cb573b8b9a62043258a1d7c3fb5c4ac8",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-01-Empezar-con-Java.md": {
+      "sourceSha": "aedd31e3950f486332d8c6c8d6ac71c06f05a247",
+      "translationSha": "836df9fe09fb162f3331f674544d3ef7a386f44a833bfce1fd57940559952ae8",
+      "integrity": {
+        "code": "01081a96b860153fbd901a07c58599a4f00cd49dff4753d76a3174b1d8ce5b97",
+        "links": "c9567b64f24949493e08f8e35faa3c9f9da009a82c04c5432da1e7995f9087e0"
+      }
+    },
+    "Java/Temas/Java-02-Variables.md": {
+      "sourceSha": "7fb391f9e829814337393e48ba84f4de00d7ce99",
+      "translationSha": "dd851b1d8cee653471c531b47b95ab4687cbad665c63d3734287b1f10b4236f6",
+      "integrity": {
+        "code": "f7611d2e5e3a78fa44e50bcf9a0cc7bf769aa1948a41c3aae1b3081cbe2ceb7d",
+        "links": "585a1c3745905b9f088c890a03d6223f1b80840076ceb7a34906e080ba4efdea"
+      }
+    },
+    "Java/Temas/Java-03-Operadores.md": {
+      "sourceSha": "1ae199a71594baf429cec82b6270e9edd30f7512",
+      "translationSha": "f72f4c60296f77ece39bc8f61ac1b720346d81ffd299b2ae3b9f5edf0b7fefef",
+      "integrity": {
+        "code": "42bc615ffef641cca088bb9102a3d2bc65a8f5cde94d0c84f80e11352ca2ac90",
+        "links": "af8fd73f891834f14631f668241655c44c994d80f5b442a104cffa9339f095ab"
+      }
+    },
+    "Java/README.md": {
+      "sourceSha": "70ef2303f410508dc38c5655da7da6cfcdccdb8b",
+      "translationSha": "57e48cb9ddf4d4ab52eecb01189eadc8f950d9bd4797aae40ea2ac923261bbda",
+      "integrity": {
+        "code": "0d0c35c86fe2d5bdb7c4e53ebf064aee155cd1904205281baa1aaec28876ae27",
+        "links": "2df6202e2ad6e7bf047e95b7d71f3f67a1387bd851e7ba347bbb3277ea26c468"
+      }
+    },
+    "Java/Temas/Java-04-Conversión-de-Tipos.md": {
+      "sourceSha": "a24d6fee8eac5cc807dc4be663d91b7dde9405d7",
+      "translationSha": "212a613f95d2ece7549867c00467f3208902fed215a0d93c61c7f1052a0483f0",
+      "integrity": {
+        "code": "89c9822c4e610580f8f6917162540187f6f964ebf534d743151a47e8171fe73d",
+        "links": "ac7355af4270ec940183c4ebdd6d2a0d3971366e9246a76cc03914a53da62aa4"
+      }
+    },
+    "Java/Temas/Java-05-Condicionales.md": {
+      "sourceSha": "46d3c225e9e1383ac51045445d5b6690e83fd507",
+      "translationSha": "ed83bd62d766268b4719a29a7a6a613fee7f4a8e4738af6a2c083068d7c873bb",
+      "integrity": {
+        "code": "856cdfa9d9b95568bdbab3f31d482c346a5d26e669f1c3fbc9079b6391183ec8",
+        "links": "c042a94f2f6ffc9063f6b2a23d5560a8d08bdb5c6fe9ccc8438c7acf8e3cd190"
+      }
+    },
+    "Java/Temas/Java-06-Bucles.md": {
+      "sourceSha": "d5b22673712ef68b90da3b33d2ba7f62f78cc5fb",
+      "translationSha": "580054938659998df4342154c59b470ebc8575f7ea988321f84048ffed8700a5",
+      "integrity": {
+        "code": "184c445e7ca6062a216a055f4420458c9a0af197403929a93f34c42a8e22c366",
+        "links": "61d00bb9733d3ff73235e268342ab7e19c1048429bdfc4bfe56d2632f44e3899"
+      }
+    },
+    "Java/Temas/Java-07-Break-y-Continue.md": {
+      "sourceSha": "f2e310739185a8e11055453276be15202de233a1",
+      "translationSha": "f092b0fbd473d9a1d773dd5ad1f98fd9104a0a30ddabb29cffe1a0e5b60ce2f5",
+      "integrity": {
+        "code": "8a1b5050257bdd649738d54bc3e3b0a165a23646ecee037ccd96b26bd8da0993",
+        "links": "5682a6b51b7d69fc2f31899e2687a92130a127e7f936d842bfff50de15151221"
+      }
+    },
+    "Java/Temas/Java-08-Métodos.md": {
+      "sourceSha": "3c3c91f0301762a228eac68ada6417521a0d217e",
+      "translationSha": "cc2aa1c0c6e9f8f4076cfc0aa75bf49d5a08a84a7f5d551a7b7fe0296cfebd98",
+      "integrity": {
+        "code": "db67ab418dc795fed43ae225ecfecf22f7ed543df7f3eb3cb5ea5271699c3ab3",
+        "links": "62e48b57532cbe6c156d7be2604d4c3aabad177f2844b94c86c2e4b7c2b36a1b"
+      }
+    },
+    "Java/Temas/Java-09-Métodos-de-los-String.md": {
+      "sourceSha": "546a72ec6c7125e60956836721445002feb8530e",
+      "translationSha": "c7fe15e6eb4375e70ed5930826e6a6ebfee28f12dc160e9a0228c1cc4adbe6c9",
+      "integrity": {
+        "code": "b341ec6485179e761e35dd9db4aea2c41041ed68f824576ca534f05ee77472ee",
+        "links": "1f613de533217ec3bd56f17773df287cb301fc9f920560910ac43e12f5ce8e58"
+      }
+    },
+    "Java/Temas/Java-10-Wrappers.md": {
+      "sourceSha": "276841692b585a741c0f49df2e91e05f4e0ad1ea",
+      "translationSha": "c3797226ac23820ca4bf25cd0d0b442cdc45aa60de931244be3dc6ddc4a198d3",
+      "integrity": {
+        "code": "f245353f6f274cacf5b640900a49b35b8fe16a4f3ce29b3172b3143792ebc42e",
+        "links": "8b872067fe1d3c9253130417b76c55620f32da8e0b81ea75f867b391425e9e6c"
+      }
+    },
+    "Java/Temas/Java-11-Sobrecarga-de-Métodos.md": {
+      "sourceSha": "121d96c2185ad428f26e71529f68621e67db5828",
+      "translationSha": "fbce2c0b6fe7f0c0234a35565ba15f0182254c0ebd89720fcebc8cea1e8a3d7c",
+      "integrity": {
+        "code": "ffd2f61b094a087b5e72ec7f964c20da9ad5b85d037cad53017c81be95667854",
+        "links": "23c615cfab26c079b672fa55bf74c9a929dc97d683471f24c37461252f4b4d8c"
+      }
+    },
+    "Java/Temas/Java-12-Arrays.md": {
+      "sourceSha": "6e4bf903301189674ec08039652e5ebce93decb9",
+      "translationSha": "1bcadb5adabea5aa7581cc3a0a5c1004c8f48bbb0ac01bdde77a54a7765f4ec9",
+      "integrity": {
+        "code": "94e6ea9af699baa00f0278ae2a846134677257faaa654b12b29e634d31302d12",
+        "links": "ac64cf4ce9257c53be9e49896b9eb56906934fb5b2ea68d7d3bf146c6b72d552"
+      }
+    },
+    "Java/Temas/Java-15-Encapsulación.md": {
+      "sourceSha": "83b1ed775451705d3cd1a8d57cbb49bf1dbe4b47",
+      "translationSha": "e1bf4aa66248d4080a49bd50c98810d28b1c75e89c644d136bc6ba599e39109d",
+      "integrity": {
+        "code": "b1c583a6ab76a8f1e86eff304c127713e8f0b82498c6b2c0db9a10027f25bd28",
+        "links": "8f8279ab6cb958d9bc54cbef24e0723b8103cbb4bce92176b37dde48a54379e1"
+      }
+    },
+    "Java/Temas/Java-13-ArrayList.md": {
+      "sourceSha": "3822ba8a41bd61f81fefc150590468b66869154f",
+      "translationSha": "966634697c164b3bbef6fe22cf856ab186515a0d9ad9392ea67009ef9b51e986",
+      "integrity": {
+        "code": "1282045481fccc82dc51cbdeaf77375e1e09e634512dcd648afdac95ec5ccdeb",
+        "links": "55781ccdb291195f61605dfdb8941c8ea93a138cce515a08568eb763a61c904b"
+      }
+    },
+    "Java/Temas/Java-16-Sobrecarga-de-Constructores.md": {
+      "sourceSha": "68a54f562ccdf84d4e79d86c3b5bad16c3f14adb",
+      "translationSha": "5f41b1ccfa243ff7959ba3b9684b05058ee5aeeefbb62ebf2c7147a1e1970862",
+      "integrity": {
+        "code": "badb70428183011c238748fb703d101ceb0bf78223c69a9617c05f56c0c648b7",
+        "links": "80f62921c20baecc916a36ecf753319299088db4d885ee76b0caedc4a6bd6053"
+      }
+    },
+    "Java/Temas/Java-14-Clases-y-Objetos.md": {
+      "sourceSha": "7f6f8b305fbade18cb9e4c04faaec8381abf092a",
+      "translationSha": "e14466c5cc83965df0db6d891748f7cf79ca8fd70a02e36e9337fcca8c7aa675",
+      "integrity": {
+        "code": "8e4cee8f3e4e0da858edad911b8c70b4391d1e4f5f9301e00237bf83d221539e",
+        "links": "78c45751bcb9599cf874ad146de718522b3ab4f138d50180474663fa9c0392c1"
+      }
+    },
+    "Java/Temas/Java-18-Herencia-y-Polimorfismo.md": {
+      "sourceSha": "6f010224e2d2f9e7dd248e5fa99510454bd56bf7",
+      "translationSha": "05e8feec436aa9ed43445ab489ee2a720f086b1183dab2dbd01b87b788ad7485",
+      "integrity": {
+        "code": "d8664a468de741a7a657dd35b1da1f02472f5308e49d89bdbded0dcb0fa86ff1",
+        "links": "c58ea5fa7198c26e12c8eaafa3b7da908858b34eeebff9a724f895c1935089c6"
+      }
+    },
+    "Java/Temas/Java-17-Métodos-Estáticos.md": {
+      "sourceSha": "a158fdc9fb9f1f6cc28d6b99ad56801e9fd94b9a",
+      "translationSha": "1912f091587bc2e21e12448f72dab91d33bc7c2f6767fd86a93b4440b2a0d25d",
+      "integrity": {
+        "code": "a6c4f868b36bf87efd749798fb6044ff02e71c7f8ce23b0f0fce592043bf6dc9",
+        "links": "a7f8a8ff1ebe26ef16bf78f1cd9f1eca686306f1b128c550ae5e78ec685a2272"
+      }
+    },
+    "Java/Temas/Java-19-Packages.md": {
+      "sourceSha": "75e81258ce94236b50fa041870107dfb2976d3ea",
+      "translationSha": "af44479ab98e173984081c3428548a34ddce6a90850ceb9257e62b71a76254c4",
+      "integrity": {
+        "code": "1217b496421314d680be105b83f66d39a02a0d79e17b516bd25faac9944d1705",
+        "links": "c1147b1e3fd55ef8984681ccea678d3e554ba0d663f126b56da6ec1bfa7dc5b0"
+      }
+    },
+    "Java/Temas/Java-20-Clases-Abstractas.md": {
+      "sourceSha": "6839144a20a4113eac6ddee5405a38f8f319cd7e",
+      "translationSha": "9dfc72924827880328a57b8d3819fb33eeb04bff5f6665588ef89943646f63b4",
+      "integrity": {
+        "code": "4400eb7587224932d256a426cca089a198dd6eef69a2e1c1e4bb39826aa03602",
+        "links": "2daa11328b65e168d2f659f0337cb68864d304e99f404c7769c9c118d43b1223"
+      }
+    },
+    "Java/Temas/Java-21-Interfaces.md": {
+      "sourceSha": "50c9faaaf8192007d94fb98b107cb7347de7ab86",
+      "translationSha": "dd104039bfb8d83c3773fb5f6f5ffeafbc84e984d768c80fa4db08f75f16d61b",
+      "integrity": {
+        "code": "056cb25251a79c77327a9199ec7bae6d68917bbc9b758fd8352cf21765d2efbb",
+        "links": "1583a201f7e74c25d5220fa913175ee59a9ffabc549caf8b8ce7ba505d63ee42"
+      }
+    },
+    "Java/Temas/Java-22-Equals.md": {
+      "sourceSha": "8125687ef9d7f8b9532ff0908ead81f3b059407f",
+      "translationSha": "617de2dcb790ac824509806efafa362f921fa46205ecce89926d328caf66b2ac",
+      "integrity": {
+        "code": "7f1da5fcf62c8128eb093945b8ffdca3ab6daaf56f27a50d4705abcb3bf3944e",
+        "links": "7c2c2419939932f3b3dcbea2b9ce880f235804981cae7c1e96a96e08ef1fc275"
+      }
+    },
+    "Java/Temas/Java-23-Excepciones.md": {
+      "sourceSha": "e1bd3fe3d9093b25b1400cfc508dc443138c1fad",
+      "translationSha": "21d9477061cf3f3066394c7527dbe290dc926c2543534b161c4dc7ffed555399",
+      "integrity": {
+        "code": "0cf903a018461bcf23b55b1063ab4d63b410770ce1653dcae259693dd1339cc6",
+        "links": "5904c61046c6bd2d278399639ed7d936dc014e6b8c17782fcf98e82232fb265a"
+      }
+    },
+    "Java/Temas/Java-24-Enums.md": {
+      "sourceSha": "616001e09fc4650d65b64fbd51785729224b8f08",
+      "translationSha": "e67a450444f8c69f305b6cb0038b226baeb1928aca36427d4f1faa998ef5d3cd",
+      "integrity": {
+        "code": "35f0a89a743c3bdcf5a80118a434c9251d17205c0106aac35b2320ba4a4225b7",
+        "links": "ddee610b9f0325075ff95fae76b04dc5990483e2070f31b65b91d1660d3ceed5"
+      }
+    },
+    "Java/Temas/Java-25-Maps.md": {
+      "sourceSha": "ad1a3ef55033864785dd94a84f51b360ca5c6fff",
+      "translationSha": "720ccb438c55b22f469c3ff06f82693cbc8f5456867a76eb9ede00b52445afbd",
+      "integrity": {
+        "code": "989ddb5c86f001c6ccd7a1c3d203dab9fcf25af98bc90ccc9e7acbae18b128ee",
+        "links": "da3cc22a83fbbebd8a2aeff8b8ff6eac71d56db9a8bca9033051170e531d47e0"
+      }
+    },
+    "Java/Temas/Java-27-BigDecimal.md": {
+      "sourceSha": "0b83fce3595a7f502c1f7fb1bb07c2f2f214c91b",
+      "translationSha": "28b59ba952e503e474e2b836f3d24fda55e6e70e13781f84fcdc0be1ccd01f9a",
+      "integrity": {
+        "code": "8e4e42a7978472b6c959d5d9e86773e77567b220f1565d6ed2b2aeaa035d0dc6",
+        "links": "b09cf335d3ada7b98a24ed7114dbcd3ed1d0e9ad3b087f77ff5b530aabd34639"
+      }
+    },
+    "Java/Temas/Java-26-Otras-Colecciones.md": {
+      "sourceSha": "4891bef8f947763e7839ca265c72f27185349d5d",
+      "translationSha": "ad79ef7132b847135bbc4d3edaada1bc3b35349ff5491e8c85f556f90e14227d",
+      "integrity": {
+        "code": "ee383c5659408edc578a314f3aebb518a1caabd3aec3291469d7cb3ae9fb21ba",
+        "links": "264a5bfac995f9b9f06242fab3de917cfff3dd1b2c7d1f01c31900e276fa25e5"
+      }
+    },
+    "Java/Temas/Java-28-Genéricos.md": {
+      "sourceSha": "80d15eacab83200257ed3fabbab6b3d11f8be4af",
+      "translationSha": "f9f45f09b9aa9f9499d67f8cbe2c38d732499a42e55eb7c3d4c0f79f145a33d2",
+      "integrity": {
+        "code": "588f999c1c36083045c1feed3e1bd44e78d88d1810460939b075c1d855fff795",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-30-Stream-API.md": {
+      "sourceSha": "10a1fdfa9d87b8663e13b324d8895abe69ee1484",
+      "translationSha": "667846566a28d43a44abf55a6a5179f78569e1d532ce48afc749d6d501ba2853",
+      "integrity": {
+        "code": "285ad09fd2d18e28ba380af661409dc4cc5dd5449f412cfe58b6bc2651c058a1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-29-Expresiones-Lambda.md": {
+      "sourceSha": "080f03573c331aeaaa6423ab9d80d1cd94845ce6",
+      "translationSha": "a87ab30373a396a5de8d32e4b6d8ab888bbcd41bbe3b2c6b35fe5e5f0f616cfd",
+      "integrity": {
+        "code": "2f19f72e91d0b80fdbc3c1dd3c7f99f80cf26b771932b4d95c0772a7a23a5fa2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-31-Optional.md": {
+      "sourceSha": "ef33b5f5a059396109ac986882587015032bf575",
+      "translationSha": "36ad6adda1dd9070bc9b1a534a43fbacc6c7495d949db52ae9bb5cc956d7da21",
+      "integrity": {
+        "code": "564dc050d4246db72b1b2b621e274586e93847b2d19254014c09b9ad24b52538",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-32-Date-Time-API.md": {
+      "sourceSha": "335a5352958b3f1567a01c1260252b921063bda3",
+      "translationSha": "834eb72aa335f63e3d6369d4f2d9649bddb10c480e8092a04b19f3e3285283de",
+      "integrity": {
+        "code": "36b9734645f91d60b83bd44e88427f1cfc9609e7bf308802aba2e6ffb48de8d5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-33-Files-&-Path.md": {
+      "sourceSha": "edb3d53438303f05f955f1056a06165bf733d00b",
+      "translationSha": "e3595e7b4a6eb73ceb696043e7829e49e68ad661fbb444bffe0de4cf74938881",
+      "integrity": {
+        "code": "15a65b48f14d77ff40c01d8fd99105e7502ac07b5fafc845499ae92bb2433443",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-34-Records.md": {
+      "sourceSha": "1be8a75254ae3bd4c817f6e2837662745dd41942",
+      "translationSha": "454c8c79cd8c157bf8d8affd4316d3d0346d47002632c1f9eaad3bc5434d74ca",
+      "integrity": {
+        "code": "0d700dcad2a05dcccf8b0c1a5b287f93cd0d69725f1de6e17ada986a8d993742",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-35-Sealed-Classes.md": {
+      "sourceSha": "efe1e022cad61be5e785e020898994e37b448c97",
+      "translationSha": "b0ccefb747114e761720c0f6af109b86eaa1d4d6578d0942bd58f0c25375c8b0",
+      "integrity": {
+        "code": "d00d5e7e341f04d3d230bb87114b2b11352a36885cd188126da99d327e2dcf1a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-36-Concurrencia-Básica.md": {
+      "sourceSha": "cc35c305eaa477272cc79fa3e528d746f7888f56",
+      "translationSha": "f26b3f7bb907afda4277e1cc652f26cac75689378fc6afe802b78108e52f0140",
+      "integrity": {
+        "code": "e2a30fc677c07085a1ef4dc871214f5fc665e56a0b37e6ea030b4c8fbadec5b5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-37-Anotaciones.md": {
+      "sourceSha": "6351b64fa3876c41e134380664975c8dd3aa9bb1",
+      "translationSha": "f3cee7ecee2ee50e8b56aef93d0948757af8e688e598a0fcc8d3a713a26c7ecc",
+      "integrity": {
+        "code": "77816ae35d28fbcccd1821fc223d0bedb04071efb868142dfeb6c272869aab07",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-01-Introduccion.md": {
+      "sourceSha": "f40c6ba652d7972b832d767a2e2c734bde402571",
+      "translationSha": "fd4d3e17d4adf7f3ad00905c8756c5a0f7419173cb0bc452fb9c84d668086883",
+      "integrity": {
+        "code": "a600c04e27aca70e4c319ae635df32b818a7c1ebb82aad994914b905c4e53c87",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-38-Módulos-y-Java-Moderno.md": {
+      "sourceSha": "4812cb6a90d3f3c3982b25cd449425a3dab8f5d4",
+      "translationSha": "7fcb97a6649cdb05f8d765c5f04bd71de0fabe7e6544ac0940579ea6e2b532f6",
+      "integrity": {
+        "code": "1a78cd6d9419708f36a1ddaa64a3ec92ca67ceed89d77a9f27fcce5592ed9ef0",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-39-Maven.md": {
+      "sourceSha": "4a7b425dd18c2315e09f1f1e013b587405774882",
+      "translationSha": "30f94c8af0ab7f04e57f9afb0a3f1694c3921c82eaee9f8fd2746fdbf9c5603d",
+      "integrity": {
+        "code": "d28d788936ee26529250c8aaa1c9f925997d8ba3292f84b74a53cd9a3859712b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-03-Bucles.md": {
+      "sourceSha": "73f937964575e908d1103d7575b5817e29be6996",
+      "translationSha": "8360f92f18bb3fffcef5d55ffbe6d784e1f06ef57ba8ab8b8743462acbe612ce",
+      "integrity": {
+        "code": "dbc6bbb0a40b7b504e2a57ad81b3d1724cf3d0b90fddea2edf8e0b45581a7b5d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-02-Condicionales.md": {
+      "sourceSha": "09094b9537887ccf5660fe5a808c0812708c68de",
+      "translationSha": "9788b154761f63ed9c787985cc482ccc229807941f5cddf60a3d6bd3e48d3b82",
+      "integrity": {
+        "code": "cf14087c860837415c9b371de848ce934606e734740568a6322a71b082a9ec9a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-05-Objetos.md": {
+      "sourceSha": "3a18e052f48fba0262eadfa631da004427398f63",
+      "translationSha": "1cab4ec0a2fe3ad0e9b546a0d837048be4a826da220f1b77890169083b6cc741",
+      "integrity": {
+        "code": "3c420f1c65bb6637e2de2b6a002288300587ec527386a715348f6daa73238de9",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-04-Funciones.md": {
+      "sourceSha": "7cf2009a09f657b239959f2bb079dedef05372c4",
+      "translationSha": "b11a2dd80f503193906e1bc877641d6cc7b95133d92a72d95cacd8eae8f74cf9",
+      "integrity": {
+        "code": "bf056ce0e68e7b8860e42d024135ad6d9a897b01d2f9bb8864d79d793f641fbe",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-06-Arrays.md": {
+      "sourceSha": "5000e1729678fd11febdcfe68ed3b851fede29e7",
+      "translationSha": "ed4795df7aefdc9c9a2a8a756ca588df869d52915ff1e3596905a7a465924858",
+      "integrity": {
+        "code": "49ae926ba12b10a81ac921436541f96598431c65dce8ee5c120e8d601cd98951",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-08-Operadores-Avanzados.md": {
+      "sourceSha": "4e3abb888d5be3953eb07430bc3009dc84efbe02",
+      "translationSha": "3792aa0bf1dd42708e72ba4620ee992c1b49fe243a61375bae6397bc5bc5d8d8",
+      "integrity": {
+        "code": "d52ce0ec31cd9f716f40260d22ce90d2d4b6f1c7e0bfe19db5850dbf52dca2f9",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-07-Valor-y-Referencia.md": {
+      "sourceSha": "a36c64e0c5822dc554a72e0b4e04b20b599f628d",
+      "translationSha": "1d9f334bf7b4fb34d291c0c0a8dc99b4a8dab900032f06b1e11bde6bb92d7b7c",
+      "integrity": {
+        "code": "0550298e2460c63275c4fac019d69c37d0355853eda93096f83cb1df1be7ccd2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-09-Funciones-Avanzadas.md": {
+      "sourceSha": "440459d36814008d7ff0069d204c9b9cb19d6f2d",
+      "translationSha": "c347c1e2ae5a8b0884d9537d2baf9ba107bd00ac6ed9575b5be815b6c337226e",
+      "integrity": {
+        "code": "d1a4f81ca940e6d27a410f6b8b11dffc8c93d189a8add1e3597e38708af331c3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-11-Promesas.md": {
+      "sourceSha": "892a54bf7cd6caf3c13676d673b3670f71135ba3",
+      "translationSha": "e08e8441bf7cd8083b542c947d808d666e37654ff5db07d6098f7337bcf44676",
+      "integrity": {
+        "code": "ab2f0728ebc0d9867536d271fad3347224797be878c97be27ce4a834c5edc756",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-10-Funciones-Especiales.md": {
+      "sourceSha": "bbbbdd4761d7f8af09725ea081d4667936b35fe8",
+      "translationSha": "2bbf062a693c04b72436a780173eb19abfb9ab04de00aae6576721c918e43f8c",
+      "integrity": {
+        "code": "5c6da6edddbfad0644a130e3b1ce9e114c7c6e1f7f53def79c69d52490e34762",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-13-DOM.md": {
+      "sourceSha": "cb4ca9425b2f48e86480789b7c10e5bf9c40697a",
+      "translationSha": "338d50d75bf3527db30effae48966382e9fa05327caca0a4372834fa31a360ce",
+      "integrity": {
+        "code": "45341d33178ccb466cb73c6676ef6229350efc14c137dedd8d3db1b601f1b610",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-12-Fetch.md": {
+      "sourceSha": "230e196c6d5fd4650c0b193e22859c4a4bde38fb",
+      "translationSha": "d8b8db5ce81e75cb3f4677295c478dfd2ce7cd94a2e54f567938e14403908a3c",
+      "integrity": {
+        "code": "f97710d839c5c7a70197bc9a2edcf0e49e5628bbf0a008e6385175f541bceb3b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Ejercicios/Ejercicios-14-localStorage.md": {
+      "sourceSha": "166538a4e73bfe5e0b58674e95336760f922035d",
+      "translationSha": "cfa154e64c80ed69d816c79c1537be34126f0d012623038dce10979ffce52083",
+      "integrity": {
+        "code": "4721459c1baf9ff47cf96710c51884e42a121e227dcbf508e019c9f22fc1c14d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Java/Temas/Java-40-Proyecto-Final.md": {
+      "sourceSha": "7f2b4dc32cefee0a728c5206c66586b083decdcd",
+      "translationSha": "51c16f93c66ecd11cf341c53699d624a78075cb7937c750082de3799e5ec7fac",
+      "integrity": {
+        "code": "ca494ea5832f79f77ece8092f735f9edeeb6d10dd09783f3b70231301191313f",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/README.md": {
+      "sourceSha": "a9526134946f6895816c402d79ec39f4f4b5cfdd",
+      "translationSha": "421136907be5fcc96e38f5ff6542bbd069c9c9fd8d5b723266cf428033ed14cf",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "ca28f3a72a9515c72deabfef2bd33ad4993f9c8a04f3b41a42d3066ac5b3d7f7"
+      }
+    },
+    "JavaScript/Temas/JavaScript-03-Bucles.md": {
+      "sourceSha": "7130d9afbd590da6de4265166a33c86bed5bcfab",
+      "translationSha": "04a5806de56101027463a751b977a8dbf3150578d3fe0f085605856bceb908cb",
+      "integrity": {
+        "code": "22fa1515890f668234d59da0547d682ff63256671aa2da5b7364b5739805688b",
+        "links": "6bc448ef43e9063a749c8a5fb54fd80ff2df674240bc9beb6e506f48f8ce17fd"
+      }
+    },
+    "JavaScript/Temas/JavaScript-05-Objetos.md": {
+      "sourceSha": "8e5ec925542a7d3c781526138111e2aa008bb89e",
+      "translationSha": "c6104e7d0f7f45012da60c20eddde742e22d2dc046e8102e57898dedb00f8c3e",
+      "integrity": {
+        "code": "e219c309b25c1965b31948f3a114ed9db0a4298c3df7995cc17f0fb01fcf565d",
+        "links": "f2f514d4e38584b7758be5ad8437e9a2410550a5195582b66fb3471776f7983c"
+      }
+    },
+    "JavaScript/Temas/JavaScript-02-Condicionales.md": {
+      "sourceSha": "913e129f30682052f20c7974e59dd9093971a99e",
+      "translationSha": "327e10f5e314c58dd09a566e0480a1a6284201ea18ecc8086eac128096751e2c",
+      "integrity": {
+        "code": "8adc07677cc2a05d69e73fb021f4b37987340143dcc6c72961afbcba4d7366d3",
+        "links": "47a4aaa5161262e58eea1264f5f864c59d4b5a2ed0849530b780640ab731a329"
+      }
+    },
+    "JavaScript/Temas/JavaScript-04-Funciones.md": {
+      "sourceSha": "21d314c5a7d460acdc433ef946c49a7865234bd4",
+      "translationSha": "e80c340c21fbd6d77a771c79ccc74646190c8edf911a7279ad23f20fbec5462c",
+      "integrity": {
+        "code": "5fa2ae11385f5280b6f776e49c4f85ae11407c3433c78e4abdf37d9f00ba1d80",
+        "links": "cd999e4f013103376a9ebc43d99df5e554f7cd0d9c82103c120eb6438f38abaa"
+      }
+    },
+    "JavaScript/Temas/JavaScript-06-Arrays.md": {
+      "sourceSha": "61b0d327c7515b3df9589f76903e4175fcf1e549",
+      "translationSha": "0c27370d9205a52e4b5edc1f3cda2edd52e688b62aa62f2478c3f5c1fa951899",
+      "integrity": {
+        "code": "987d4a36ca01d3119ac2037d56c018278d15d6413ff421835112702cf8f8d462",
+        "links": "c58f377c52efddd38d03a44b46bfeb8ca6bc1075082a6d8c9cf6f5f63a899e78"
+      }
+    },
+    "JavaScript/Temas/JavaScript-08-Operadores-Avanzados.md": {
+      "sourceSha": "3d7cf464c57a0c1cc62afeff4d0eaa44f803f875",
+      "translationSha": "92a12cb13cde38403c40eadd342664d5403bd2410f8118127fcb33a99bc2f116",
+      "integrity": {
+        "code": "92e9cf51a920892b8541cbbb2a028381cee733dc83681cf6fc74d86652f45d3e",
+        "links": "060005b1c1238867a2fb70a36237494f4b73b23d3887453a083079535f26bdfa"
+      }
+    },
+    "JavaScript/Temas/JavaScript-09-Funciones-Avanzadas.md": {
+      "sourceSha": "67c2fe86ba21ee9fed6a7178c619dd181cce85ee",
+      "translationSha": "379de36966ae6e1786222066d7c84255f1444eaf54b59bfc918f14efcd473e89",
+      "integrity": {
+        "code": "fa91f7e2c9a4e336ef987c85e158ce2820338978f721cd63fb0fe4f3736a7fa6",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Temas/JavaScript-07-Valor-y-Referencia.md": {
+      "sourceSha": "470ce63e9584f6c8302ff0e5dca120b3900dadc8",
+      "translationSha": "d84ffa23de5c0984443b35ad4f66361bac4c7ca76bacc72151de6a2c64b505a8",
+      "integrity": {
+        "code": "b4def52e0fd41f918867df8dc4d8920003830456e07fa249e5b8e5cfbbc1fb0c",
+        "links": "f0cf7850cb97b521f00daf5337415f37d86bef31940ad669819c2906a656668c"
+      }
+    },
+    "JavaScript/Temas/JavaScript-12-Fetch-API.md": {
+      "sourceSha": "379daeb11aeec6e3f57be83745d666eb9dc15dc5",
+      "translationSha": "e6ae35e523a66b2cd56619f91bd788c6f5d229e9320c62a59742cbaebb93a390",
+      "integrity": {
+        "code": "be7b625a4795606d45240a716047401986f27750f7fe3ee08ddcc9ca47abd1d5",
+        "links": "9f0036477c18b78ad0586b66bc679dd8a7bbcfa12147732336e9f0ef3cfb5c3c"
+      }
+    },
+    "JavaScript/Temas/JavaScript-10-Funciones-Especiales.md": {
+      "sourceSha": "12b11282538bfe9f931e1b41d8c005d68303daf9",
+      "translationSha": "9b17d9b7de8bab5e3c3276a8640b2a3e52fd0c70b7914b036c40329822cd18dd",
+      "integrity": {
+        "code": "6a99f1cb27fb66d8480a33ec7569fbce4e910af0a011f0c251ba05d6938adfc8",
+        "links": "7cf81115399fe162d8d9d9b5dd5051d383ca652ce5f173d219a8ed0abf1e7181"
+      }
+    },
+    "JavaScript/Temas/JavaScript-11-Promesas.md": {
+      "sourceSha": "82bdc690bfa57798ac789d82e491116730b156d4",
+      "translationSha": "68205a81c04feafbbe8decc3afa61c32221379e2d02d43188fee11d937dd84ed",
+      "integrity": {
+        "code": "621b55a15f1427230e692e21473529cd3bfe37cbfe06c51852b3ff62f60996f4",
+        "links": "e52c9232024c36a8d8a6a3251dac201f821e76a527c57999d591c7f968d6d000"
+      }
+    },
+    "JavaScript/Temas/JavaScript-14-localStorage.md": {
+      "sourceSha": "abc61a692ae4091aa79dea27fba62327e902dacf",
+      "translationSha": "dae1cf46711e839f3af9aa0ea82370d09236966eba073d9bc646f312f2858a76",
+      "integrity": {
+        "code": "0223c86f76019d83f4cbfa73ae1e55104811a5d7abafb7a088547b02dc78f5a7",
+        "links": "87906f10d465bbb61034da3b19abaa58f8847726217d0240a56b90157322c5f4"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-01-introduccion.md": {
+      "sourceSha": "ee44855b8827d703c1b97b6846ad62da77491896",
+      "translationSha": "7dadaef2d5bf002f5629fa77b2e967f9291e8d55a1becea427b5679b2eaa4453",
+      "integrity": {
+        "code": "e5950906e6e352e230fdff292dd928153dd703d978ad9feff80b2e2887eb8908",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-02-tablas.md": {
+      "sourceSha": "4b8435aa0d39c34082874dc64d789b583a990204",
+      "translationSha": "055235b1f553f5f879b4e2736e48b1755e8d95aed2a1e09ee967e3b0d19f3031",
+      "integrity": {
+        "code": "e0b09d7c25b1a6017bbccc374331a90a55adf38e265b3b2e8f519e49ba5d4dd1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Temas/JavaScript-15-Curiosidades.md": {
+      "sourceSha": "59d5bb5132961b2523815e5e3ed28310109a61fe",
+      "translationSha": "4c1b3d6683a06dff4a971acac2270423fbe68238913d16294cef4d961299e82f",
+      "integrity": {
+        "code": "a00a9238d1fa448ed4b4cfd26918d95ade5d94372c8687758c7f67c267b3d872",
+        "links": "f0598b15765983e8afae6d687b2e76e19edf0e79c3ce55f99de45c90ec69adbf"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-03-claves.md": {
+      "sourceSha": "d3337495276be0b982e3c25dc2ed549fa2c41f01",
+      "translationSha": "53ba88ab1b87bfa550169587339b2e7c066646338be05ec985ea4af029829b56",
+      "integrity": {
+        "code": "10b4ab2deac2a2984b0a9cf4b4b0895ed2c9bc9f4f1946ef7620cdcf3b22399e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-05-datos.md": {
+      "sourceSha": "182060eb2a931df57edab906dba8fe79db47fde8",
+      "translationSha": "bd8f930870c0356eb5c8203ec1a854b19f6d41e5b5b4f6aad8824ad713f601ff",
+      "integrity": {
+        "code": "91c11221fca55db42dbd3a0f632eb5a7343f9c9834ba507e6ac1aa079f64c15c",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-04-normalización.md": {
+      "sourceSha": "3b3a8d6556172b549ef04184994423f5667bcd82",
+      "translationSha": "d614f4057ca7c679e36e6e2520c24c10a6ff01ff9de20882016f86f6d4a9ec72",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-06-select.md": {
+      "sourceSha": "37ddbabd154b3e40983a0a84db2a2a22779045b8",
+      "translationSha": "51267fcbb66be8265cf0eae0c05b1c5f595c376a132d3769ba79ff511fc1f62a",
+      "integrity": {
+        "code": "4051576a33aec1a87f229b6194aba464c1e90d45f2299bc6d63d9f329b1b5b42",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-09-vistas.md": {
+      "sourceSha": "6149121124d51e3719c46c3c0393828b43aed7c4",
+      "translationSha": "a8b3a6bcda1c98c2f0c45ea53eafbf177ac8a3a56067250bb36688e1c207a663",
+      "integrity": {
+        "code": "18ae53896e389fc614f403b572c049716000c9fb047265299071e9a263dd7006",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-07-agregacion.md": {
+      "sourceSha": "e8643bc0f1b64431e09061b5730b7ab929dd56b2",
+      "translationSha": "8cd80380ac880056d8a5cf4be54d41c3f34b101f30f9173b0230c882db18ddff",
+      "integrity": {
+        "code": "4a91d06eb025ce6b32220102c780c73511e0d61d89c308b64bacbb99f46c307e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-08-join.md": {
+      "sourceSha": "f8485f16272cb75c31b533db773614e46bf982aa",
+      "translationSha": "b3e05882ee5a890d5ea9389f4e69b612d4324217dc39817a46de7c1f8b41b0df",
+      "integrity": {
+        "code": "c944ae451654724604ed2679d435080be348e6eb61e23bfd6bcf1e737a90c99e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-10-indices.md": {
+      "sourceSha": "c5842faf35121dc882433de4ea36c4decb363f0a",
+      "translationSha": "ff1324b506870dfd45b80d83ec2824e1556494a8ec4ad8bd6868cd7d8739b31a",
+      "integrity": {
+        "code": "b1cbbebc73efc4b1b3472493eb32e6190838f5714ed3ce7f911198433c9dc2c5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-12-triggers.md": {
+      "sourceSha": "3cb67a2d88af07aa61bdc95273aa4ee08d4b8a87",
+      "translationSha": "fa38a65c85c0e2d733d3f0ebf8a2aa068e7851c349dece0da784539c5b785444",
+      "integrity": {
+        "code": "bc4933c2810c718f9e1ea8bc0a258e6b7e2fc16a8efbd74b5bcb7f45a6b6741b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-11-procedimientos-almacenados.md": {
+      "sourceSha": "8e35fb6e854be33609e1643ef6c9b18fa991a4f6",
+      "translationSha": "c959560f71a9cd1436133b302924426b1873486379bac608f2209998087cb9aa",
+      "integrity": {
+        "code": "9ddbc94927f178e10cf43ae5a8c3938227b8894c05279624c1f28b66f35ed4a3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-13-funciones.md": {
+      "sourceSha": "e59367f88621c07b7a0ff54cc8980eddb46ade59",
+      "translationSha": "b7f95430573bc9052757e77e46f62c7a468634e2893ff8a26390c06494cf39f1",
+      "integrity": {
+        "code": "07a69bf5c3ebd84fae454d894caa798aa0361da62e96d4cbb411dd2bc0514846",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-14-funciones.md": {
+      "sourceSha": "01fd0a373997c19c57f56443a3559d6648935004",
+      "translationSha": "1c8c002f94f4fcfefe7c0e4263b09999ad121de1f10956a7c5c879076826bb7e",
+      "integrity": {
+        "code": "9d2f13ecd54a97f014493d4079a4a98c9204c647fe08f4764e2fea2203140a42",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-15-subconsultas.md": {
+      "sourceSha": "a751daed0d34bdc35af4f1e406eb15647563e0a0",
+      "translationSha": "cd9bc48505ce21d4137b8755fcfeafee19c2bc60d6935fd6c50425e15de847c8",
+      "integrity": {
+        "code": "723caae3e9d66411c4337d947aea8a29603570fe24e108704039782777ca4ae2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-16-partition-by.md": {
+      "sourceSha": "9d589d8d937fcf250978b4f2a4178d1db86d9636",
+      "translationSha": "738c41db6ffb32a79caa2093bed97012a1fc7aa126f2229eae430e3979d68a8d",
+      "integrity": {
+        "code": "b2ddf53d69a08cb27384e7e5b061c1b7b6c87c1689ff5d8932d5e0e2078b1eba",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-17-transacciones.md": {
+      "sourceSha": "658064c511605ab5305af9c4a01a3bbe92fffe39",
+      "translationSha": "16e76f308b7d8fd8fa489c8c11ec1216bd3e528875319334ac3de7d4b94c16e3",
+      "integrity": {
+        "code": "45dacfc7ecf4418f44e2123f809b47e6a164dc30a61b7855ebf64ee7c9709420",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-18-if.md": {
+      "sourceSha": "92428783ae5339fe77253ec3c4b5f826d2dfecc6",
+      "translationSha": "72549391806894f88ae03a91e542f95e0b4e8fc4f28d5a67ef5e9780f140d460",
+      "integrity": {
+        "code": "2ca252ef7ab59c03af83ed9520556dcf72afe88975392c9216d988c2cb26eae1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-19-while.md": {
+      "sourceSha": "3810ed0d15ba9ef2ec7b007ddbd4cf3ef993a82c",
+      "translationSha": "28586752fcd9288d2d92844f51aa50098b1a1eb22d92ce728144dc150c779d4a",
+      "integrity": {
+        "code": "9962edbe1da40859c13e348c638938656a25186653a781afb9b8b1cc63aa8428",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Ejercicios/Ejercicios-20-repeat-loop.md": {
+      "sourceSha": "c20190b6cc19114fb744c40459657bed590d81a1",
+      "translationSha": "d8e996ee5bb1335367f0bd1dd692aa6db8a4d58d0ebf704e9815dbd6a6590663",
+      "integrity": {
+        "code": "44369297db3fa2389c7b6586ad872d470641dd20c8a604000e8638df11996882",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/README.md": {
+      "sourceSha": "1e564864f1165e7913e7ebeb8ad66a0a1924e1c5",
+      "translationSha": "86db36f6ad31377c92a7b150ba5bd0a2db6f1c21565c01917771d94acc844482",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "e372924562c56b255feb23bfc3b78a69f4a2e3b80f83412bafc418dd0c4901a0"
+      }
+    },
+    "MySQL/Temas/MySQL-03-Claves.md": {
+      "sourceSha": "4e1381781c2908a051a3465373c905a303110eef",
+      "translationSha": "4a1b426c8a8118bcb73292f508b889df8b7ee752207363234557fcf297aefcf6",
+      "integrity": {
+        "code": "c67d2af93f808e9a289b38877166f69f074eb4fdc1555edb947cf10306540b5d",
+        "links": "2d9e9b880a261255acd669ba9812a76b752aaeb24355e696744783f3e5a1d262"
+      }
+    },
+    "MySQL/Temas/MySQL-02-Tablas.md": {
+      "sourceSha": "ed3b6eab857c8139a5e13091b6e2046ccb7e9518",
+      "translationSha": "4c779e97bb6c4806b00748b852aa6f9cd61d1f62dedf4d17cab7db8ac4bd5ba7",
+      "integrity": {
+        "code": "c2adabdc3ff620fd4de090a0bc619e7feb0d2770ca70b83b074842177e0c9f0d",
+        "links": "3dfc3c8ffb02ad943d442cc05c34cb1b7f711c24e42a32aef4b446c6a4ec6f19"
+      }
+    },
+    "MySQL/Temas/MySQL-01-Introduccion.md": {
+      "sourceSha": "f766283922d8680f8a08a6e63bb9747609a22ade",
+      "translationSha": "7b48e99d95ceed29de8f40ea26c5740fe189255532c9cebd2ac3a9275b88b474",
+      "integrity": {
+        "code": "280691ff7df9ab39c6a38e3ce9c5f67dc284b6b44a5e809dbcaaf521d3549455",
+        "links": "a1978f2598f4f1d1089ded83e415a63c32b13720392e01e459f91e9d48398474"
+      }
+    },
+    "MySQL/Temas/MySQL-05-Datos.md": {
+      "sourceSha": "b66010c72369f35b0d8fe491b0e6b297f5bd3818",
+      "translationSha": "5f7d15f798b3aa6f25b94433a8e7c8e2e0e2d5d2840ff7d4b62da34779f44d78",
+      "integrity": {
+        "code": "b1211d8739a43d72f03dba1d16fd9e77ef444422b6e5209e7091289c5b82117a",
+        "links": "b549fc3ccbabe13de4e0f7f475dfedb1c2e7b028a41b032e842c9f4331f48962"
+      }
+    },
+    "MySQL/Temas/MySQL-06-Select-Consultas-Basicas.md": {
+      "sourceSha": "66d861414fa1f8188b67d44280579ae57753ab5c",
+      "translationSha": "0921c34691f23f8c0cfe468cfe82cb6515d6e3ab94f4f41e286bdffdf5dbe764",
+      "integrity": {
+        "code": "90ef4ab03eeee20ed30c02e40ccf12fa58d1fb0cf395ae10f7f5196f17decb8e",
+        "links": "a35f757f6785c7065979f6cd69a2ca9b63aaa4ce053570249151891fccb3d1c6"
+      }
+    },
+    "MySQL/Temas/MySQL-07-Agregacion.md": {
+      "sourceSha": "896ea9ec084f4073544813104406fbb4126c2e82",
+      "translationSha": "9a0a1f29ba8af63698744bd86b1872a588f72acf1363995d5dc439277c077dbc",
+      "integrity": {
+        "code": "021f5436136a29476510c481fad2bd15fdb5b50f4802666d7bd0f03ccabab4b7",
+        "links": "204afe1471bc6592d77ffe297c67969082f4e25742a3df7cfa250022b720a0f6"
+      }
+    },
+    "MySQL/Temas/MySQL-04-Normalizacion.md": {
+      "sourceSha": "a68b144c1cf99e429b38bd17e882fea40939f24c",
+      "translationSha": "e68d08c98ceab3c857eccd3d46e2e28478ba842d7c6d96371aa3c4bd451869b8",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "1c5e3397460686ef7955c755af98bfe2126fe69423415e6d5a8d82a75201c57f"
+      }
+    },
+    "MySQL/Temas/MySQL-08-Join.md": {
+      "sourceSha": "b74c6afc921f93c6d08b26c06b9a32f30dd53676",
+      "translationSha": "40bf099cb896702bf8b8496abbc14a4c478ad23eda2210f6327c312f61a5a159",
+      "integrity": {
+        "code": "c5fb352990a1928b6504246f7b36a75f3853c7a6261fd71ad05b152298bd2d86",
+        "links": "0e8a7964b71e5817100f901efc6c614d82097c943076954a506287f7a5da0b9b"
+      }
+    },
+    "MySQL/Temas/MySQL-11-Procedimientos-Almacenados.md": {
+      "sourceSha": "1d49661c6583920b22d03e4d282e19fe1278011f",
+      "translationSha": "19e75d3e5ef9e64340980dd2bfa8a8ea0a8acdb9b8de3b021abeeb61a0e43480",
+      "integrity": {
+        "code": "a1b7c8072b5906e7ee7b430a92089b51d86c34e0f3cd839e47d52cddaf0c8215",
+        "links": "8ffd98889d1c407f2eca6cd31039931e13a70d27956e9d5d4ecad4ec0f11b520"
+      }
+    },
+    "MySQL/Temas/MySQL-09-Vistas.md": {
+      "sourceSha": "255ce5e639372cec2479d895ba7412b890924ae2",
+      "translationSha": "d5ad81526258919e527a2c55acd141a6134f5dd455d1615ee28cc917f413ef16",
+      "integrity": {
+        "code": "181c0faaca10c03099ab5cb18f1fd88497bb0baa33f3f228a1bf546ed1ef0f6a",
+        "links": "72ae81173215df11cd2e06fabef73ed1ed014f6d9d08c76c1b6a48e0ffa03645"
+      }
+    },
+    "MySQL/Temas/MySQL-10-Indices.md": {
+      "sourceSha": "9b61493ea0444d306842317f018b3b17c93d8182",
+      "translationSha": "def6184a10a119340f3bc1ab7a3f576f359a7902184a8d81e241c5b29828691f",
+      "integrity": {
+        "code": "9c1422bc0cc9934925004ea14203cefff3c5ab2d281b68af4397ea3c91ce951e",
+        "links": "d65a9c0453ba501058e0012437832502cbabba6da0a2c0f969d9bd9cb85f4d32"
+      }
+    },
+    "MySQL/Temas/MySQL-12-Triggers.md": {
+      "sourceSha": "f359fb5e3df17ec3e0f8da1e415c69e9d03307c9",
+      "translationSha": "8fb2f1b5e74dc0aa33136441fb3beade781156ebf9ebcaa4bd8233d8e00eed1a",
+      "integrity": {
+        "code": "96af395252b6c2a2c8a0203123675f5b240d438eb955c6a0a61f35f8bec9f33a",
+        "links": "6c93f005605e2de96a91c1af9b7d02262e388979e1b9038d5a53d95feb6acb11"
+      }
+    },
+    "MySQL/Temas/MySQL-14-Booleanos-y-Fechas.md": {
+      "sourceSha": "2a86979946a5b47f6783dc5fc499be87b0490b2c",
+      "translationSha": "bbacbe93f63d539c71cf4adb9ab16643966a64746aba1651a40ec3ee2892602b",
+      "integrity": {
+        "code": "c662e537096eab2940104e5f9079ca5b1d7cbb6a592a747559498eed469dd596",
+        "links": "023afca3a1677cd7063766a1e0e9d776d1d533456f198ca2668b0a7cf6ae1d87"
+      }
+    },
+    "MySQL/Temas/MySQL-15-Subconsultas.md": {
+      "sourceSha": "652062bbc5851d501433b411ab1aec6e7a6bd65d",
+      "translationSha": "9e3332c360f6cd17276f1b182fe156d6e9bebcad74fb25e6c2ee32ad6e277661",
+      "integrity": {
+        "code": "4b45e63ed938ce0481b02ca5ab18a5c60a92e66cb735f59cc3a9b5eb5e48b536",
+        "links": "d6094a3043c4ad0921424f6382bbd8b0e4d47142205b7eeab06ea0319880c928"
+      }
+    },
+    "MySQL/Temas/MySQL-13-Funciones.md": {
+      "sourceSha": "8da0a1179522dfe7ffb32f4e52a50ba7351357e2",
+      "translationSha": "3d28a5e483b25b64e23d1076c2bd24eccaf858feb6ba83d355eeaeb5c89d1696",
+      "integrity": {
+        "code": "4cac047de57a5c6f3f89589ea35d024687bce95e1dd89b59ad6a5e3658d3fef8",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "MySQL/Temas/MySQL-16-Partition-By.md": {
+      "sourceSha": "faced259a05a4a1376e4147b3295e702d03b0aa7",
+      "translationSha": "0d2970e29905bffeb16f5dd608d1462f648678291c2d34128749f7d7c63b9dd5",
+      "integrity": {
+        "code": "3a390a8d928b3d5b7ccda625a82aeacd6e77c373b8c4243f1a184a3bbdaa5127",
+        "links": "cb186692612c5c7285f7be94b89f7a6c52d68166c2c34a8ea79d311d096fbe1d"
+      }
+    },
+    "MySQL/Temas/MySQL-17-Transacciones.md": {
+      "sourceSha": "cd5004f1577efca0cdc988af56ed66dfa505af13",
+      "translationSha": "240b84a4e826a243f4b6a85ac68dd47e9a0759bfe9a10979ed84cfa9c96c3032",
+      "integrity": {
+        "code": "1951d6bb1a91ff37bbd8b60ebee23cea5c3fde5e0901f8fd5d431e1fca741a15",
+        "links": "c7e9011886c9aa749ae97fc05069b423f8928ef5ba58ccaa47410a1c3aa8ef65"
+      }
+    },
+    "MySQL/Temas/MySQL-18-If.md": {
+      "sourceSha": "5a6c3be027da4539d23a46b468ab40c12eb2f1cc",
+      "translationSha": "d65de6caf6cacf5227498d7474c26c038466370027cbeb1147a41447494fd6af",
+      "integrity": {
+        "code": "ddc7d932d59ab9c5775760174a56208c949f3aa9b23a4836a7c16b6d548d1cdf",
+        "links": "3ac0000f9e9bd1daf58d1257facdfc5b8157b3fc107789b95dc690a38be88fae"
+      }
+    },
+    "MySQL/Temas/MySQL-19-While.md": {
+      "sourceSha": "ede23b658bef27e509cb4ff5c653821744e3e587",
+      "translationSha": "8eb96c3f3b81b6c7c2c3230a5d7444f65ddc18270869b0976c2606a8135da1bc",
+      "integrity": {
+        "code": "37ee5bd2dbb5875c76e56448d30c238ebe812dd0955eb372de63d9412a53db94",
+        "links": "96a79acf62abf71b85b687b99e84929edcb94597a49a9a74ed7491133b4cf2ab"
+      }
+    },
+    "MySQL/Temas/MySQL-20-Repeat-Loop.md": {
+      "sourceSha": "49253bf5690912d5d53887af9b894dc33a928fe5",
+      "translationSha": "f31f73b4e2eefadd072baa797e2b9ef8aa195bcbbced62155b12ad9b4d5cc652",
+      "integrity": {
+        "code": "fe3aa111cb950c79e18f81036f449994f96c17ca90118547def7c6c4ee291834",
+        "links": "c448c9c120a0fdde69293bb6f9d2ae62b6b8cf0d1f6c2d938866c7595e3d0852"
+      }
+    },
+    "README.md": {
+      "sourceSha": "f6dfea805f9f7adbd6e3684366a5053b0f29f0c0",
+      "translationSha": "59b1c8b2be6a243e0297cde44e628c46e6afd09eacf2473ad162a2f60f3dc08c",
+      "integrity": {
+        "code": "e702ad515157ef9788944fb40a018243bd309627a5a3168b3ee69b58d0a685e2",
+        "links": "52d78cf3ebee06679fc3dcff37ccdd763c670d7581491729400f731715193b23"
+      }
+    },
+    "React/Ejercicios/Ejercicios-01.md": {
+      "sourceSha": "218d6e4b678faca05d53887ca2c013f8b102daed",
+      "translationSha": "b8b48724547468fc206f9a85486b971cca5af28d973a81fc0806c32194a52657",
+      "integrity": {
+        "code": "4ad46dcc65f3dce8b512cfe2dbe078005ce98bd6ac396382f081b720ef290b19",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-02.md": {
+      "sourceSha": "30504cbe366a2cabd0930f7459c263eb8dd044a4",
+      "translationSha": "61040f8c0c27c16274411981f80d131eac748d975f1b247c3a1e446d4f528d03",
+      "integrity": {
+        "code": "7dc75870298a01511dabd9942cd6cc05605379845e4a2a972579ee0201205bfa",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-04.md": {
+      "sourceSha": "e28d1fa0b85356048c0c69f3d25d17779b80fa02",
+      "translationSha": "46f88178f21bfe8f5f0e39af46432acbb173b124070e14ac49a532f92883e46a",
+      "integrity": {
+        "code": "c201a9628308283fc18d9a2bfe796c5cd7d5033f58a02179a5824aafa1223347",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-05.md": {
+      "sourceSha": "8b1b44c044ace05063deabf036575fc01151b089",
+      "translationSha": "fa70fa86fe31613d10634b9ffef2dfd815b74c79afd521bf9ba15a2254283a44",
+      "integrity": {
+        "code": "7bb9927eb617dbc437f43856820d6d7cd6185ab01fbb04f145f34f975dd3f6e7",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-03.md": {
+      "sourceSha": "c1ef009a241e24a398aaa30b4ff2c831f2a6f840",
+      "translationSha": "edd444740da715d324c43d39604a4daaf365b35f511b5aeb18cb1fbd41c99f3f",
+      "integrity": {
+        "code": "f1fb44a5838c0dbad60bf8f991658c3f3c4aaec2a552ccf4b11879dbd3dfba5b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-06.md": {
+      "sourceSha": "bbe5877c254fc1b8fbaf28c8812fdc82c90732da",
+      "translationSha": "0dcc9d085a31fb247619faffdcea2aa0b582938988413f50d75713bf1cb28a1d",
+      "integrity": {
+        "code": "38cea5381d5fbbe7e02a4072a0d8373c594f5d89fb03ab65380918a8090ff3a7",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-07.md": {
+      "sourceSha": "09c2720f849d16aab461ae2e440b0bc8ec7878f3",
+      "translationSha": "5901569718643b353bfdef0d3f2e2902bd2e74c3701ec155628b1e62c20f3918",
+      "integrity": {
+        "code": "d42ad38331e07076f0ffd4a3671f30d8c98ba14513d2a6fed601bcdadda6ce67",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-09.md": {
+      "sourceSha": "98fa744c4b03e7e7644912b5c88a62dea8848327",
+      "translationSha": "7d7186ae977a15a4b98ed36e4e04343b82732730e1baf4bfda851daaf3754380",
+      "integrity": {
+        "code": "c2731127914244c7e83e1a324007e1e6e3cf81cc7f345357df9f87b5decb29c3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-08.md": {
+      "sourceSha": "8d25ceef2367ead3950201fa6eabf318c600dac1",
+      "translationSha": "de96f79e1b4c3566050b277148c2642110e91cfb5487fb6895a076adfd5a716e",
+      "integrity": {
+        "code": "793697c6c01c5988ee2224878505b5532125e063e938e73d58e479a6b7802f4b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-10.md": {
+      "sourceSha": "e3f11f68c0b565c3ed334561acc707f6d256bba0",
+      "translationSha": "08a8ecbe425961de98da508faee60d96d4cd08785153d7a7ebccbe3892641cce",
+      "integrity": {
+        "code": "2b0fee63ab9958988d2f85e915b61acb6ba1c386b99268770909c242f3f3c78b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Temas/JavaScript-13-DOM.md": {
+      "sourceSha": "041b2e488b60c17585c29e66d973ceb2aec92283",
+      "translationSha": "5813c2309880df0587ca720789111f209aad2509b4d33051c721fd15c8707314",
+      "integrity": {
+        "code": "51593d5b9dfb13d227b210ebd8799b4cc75a204b371369250e47ec9f22b1856e",
+        "links": "423b319b36e745d274850ac30648101d52aa78c19535f3c03f2081b31c3ba8f8"
+      }
+    },
+    "React/Ejercicios/Ejercicios-12.md": {
+      "sourceSha": "e77b01598946424c9c437ebfdb1b27954dbf131e",
+      "translationSha": "6bd9f0a1d1ce7c10289c368c366425b4da6643107ae05883b324abac3af4c499",
+      "integrity": {
+        "code": "181e435f5feeecfee639069bf0b963670dbe439476a62aa3dd883449498c604e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-11.md": {
+      "sourceSha": "34357c3dd68939b0855959a905401192b9607bff",
+      "translationSha": "f25f6cac1fa5bbeb320ee6753f3a2ea24f18106ecf00ece060369c2086975522",
+      "integrity": {
+        "code": "a0f84876b8ac481a2bb7c0c74b6cbd8b029566a4e07f4819cb11d57af77f862e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-14.md": {
+      "sourceSha": "7bd99e78e6ac47bff38b7ae7a706aac11da3f533",
+      "translationSha": "09d33a8fc1b484efc2002ac34ac54619cb825d76928d5a47f5f4598e486ff6ef",
+      "integrity": {
+        "code": "e69e0cf3b765a9e2751a3283a59d21e14a1a9f4db0650c71e280be5dfb132c45",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-13.md": {
+      "sourceSha": "9e1921571c73c1d236a61b852898738ac49c3d4e",
+      "translationSha": "17253d515185defc7311fe3104ee25bd50d9e1f38076bef49e96505a8d694689",
+      "integrity": {
+        "code": "9f5a7e77d89271cd686ff328b2a8928a619405f8a6e057213a17686ba87d2b63",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-16.md": {
+      "sourceSha": "5a3b15a2ca1a6d6f0b6b3b07c08e1c3ecd911f53",
+      "translationSha": "f75c1f3e273bc4dde4d41277d56dbf1d0005d98c92b8cfe714dcc395c6aad3d7",
+      "integrity": {
+        "code": "e70aedbeaa104fe54894a8ceb4c09369980416d84bf59b38ceea12c45b04c7f5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-15.md": {
+      "sourceSha": "c7b127aa0adadb06d9291d7259f42c60b5ccf617",
+      "translationSha": "a2867679b42c8d05b77a596a1d2d3795c0fa26f81b6523eb4b48412bf49e2e80",
+      "integrity": {
+        "code": "d4d5a7260fb95481b7f820e2e0aadc9b5121fee934e8c263c177fecb07da62eb",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-18.md": {
+      "sourceSha": "0c3c38c4e4f323664abc97448ef31e762a733dd4",
+      "translationSha": "c6058f7d3908e6fcadaf2b0bd31e910e3953b0d730055331ee802a749da9e4e2",
+      "integrity": {
+        "code": "32c59a0492792f9faf6785f829b11bb613e3f7bc422198259c3bc37773c92bfa",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-19.md": {
+      "sourceSha": "42ec2903c7ebbae4206e07f1025610696d9a8f6d",
+      "translationSha": "43c25158dc26bc384a282e9cef78578e9cb4a1c5db36af4443706b47a52062cc",
+      "integrity": {
+        "code": "61a9c07e51f12768727751a7183cf94f8f3cc012e16827d2ee7e6162f7a13cd5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-20.md": {
+      "sourceSha": "fbdba56956a918d2671f1332a798b201a7c5e514",
+      "translationSha": "f5281a261bc078cc15eadb6de34b902718bee7c8848d3d3c7c2d93f82a050882",
+      "integrity": {
+        "code": "6db897f5d1b506d156eb0ea4c760f2047187a01b49909639b0930b8e1625a406",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-17.md": {
+      "sourceSha": "be0cd61fcc97a43438ab25402a6e7919f8e9892d",
+      "translationSha": "9e93241634958b246edb3e79d35302a71560af7610df30ec949214c5ff29e84c",
+      "integrity": {
+        "code": "8f6b94b5be5e5b399e760297d8240385cf5b37f319e99fbbaaccb7fde4ce0536",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-21.md": {
+      "sourceSha": "4c15746b7cabec8fe4afd6d9290a52485bcfef64",
+      "translationSha": "b901d9c74d432528bb8eddef2d456b3e0ced510e4d7ac68ecdb801e97456ac60",
+      "integrity": {
+        "code": "6c6d931006a20096d29d4f7a695e80c554aa2f6333b9e694e89e2ddcfcf0e430",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-22.md": {
+      "sourceSha": "fab8893e447ad16a57af4b989bd63c1fcb69f003",
+      "translationSha": "312cc4fa13189778c0f70a167b266330272d6974943aaeead67127db1d0653d9",
+      "integrity": {
+        "code": "fe955ca03b39b573d3c081c74374630d74759de383c66d9ae49c11299b304b31",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-23.md": {
+      "sourceSha": "3d9899362faf6d032bee360e8c28c051f9b59f40",
+      "translationSha": "b2deabef241a51cd22fc4b5ba32b50ed9ee5fa7d4684511d948d522bd55325ee",
+      "integrity": {
+        "code": "b773945362dfb2884cb51fa6ff6cc9a16da866c888a47b5c7584369321109ab0",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-24.md": {
+      "sourceSha": "6b015815945e03ccf604c677122b3d6e26c7872e",
+      "translationSha": "11f602e2cedfa642c4efbfcee40c7767ac6ad127b2014f007df7c54d73d862c2",
+      "integrity": {
+        "code": "174ffc3b15c319c66fb3b7c7c62d0ae4e7d6f019a77110592404d574be9421aa",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-25.md": {
+      "sourceSha": "bf53082b8d60095139c788ffc53bff8bf9b6d1b4",
+      "translationSha": "3e633727651ba4c237414fa4a8dc84ba35cd99d3ac3d5e6d4527313ed80da676",
+      "integrity": {
+        "code": "10e7ceb63a8b1d04bb999019735f37d1c6172517c9e847910163f3961504f7e3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Ejercicios/Ejercicios-26.md": {
+      "sourceSha": "d02b8375637b0e45d2d342d6c05689e44d47e9b9",
+      "translationSha": "998f2a71704092ae6ecca2c34a364271d98275b2c460357db83dc0f0226515cf",
+      "integrity": {
+        "code": "eb04de6532314fee99ca0bc02f82bf1582d3df654ced6c5cb89854827e9ed4e6",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Temas/React-01-Empezar-con-React.md": {
+      "sourceSha": "e2fd9789612cbe84993a7d292c27700f2262287b",
+      "translationSha": "8ae0735f3fca50c4c87b6f831b50096f5bf60bd473139ef06c5fdc4ed6774506",
+      "integrity": {
+        "code": "28b0888a336645418aac670b5261bfd4660dc30493ba0254fd4bcd25f6e8aa58",
+        "links": "3e369c7cca51ade9a2e08fb04352682bb8dbd684f0be90b6e04187adb84da9e1"
+      }
+    },
+    "React/Temas/React-03-Componentes.md": {
+      "sourceSha": "6c718828ae26720f7ad62fd809b6de0553e51697",
+      "translationSha": "9779316da11ec28ccf455d46c53ac95014865b64c53b8b965b5da554ab8d17c6",
+      "integrity": {
+        "code": "8df3c68d771057938a675901032d392372ac0ea835079de1e02e5329c4833c2e",
+        "links": "aec7b40ed6c7862c3ff67208aa102d54962f90bbfc99c30a2050397b43b168b3"
+      }
+    },
+    "React/Temas/React-02-Esquema-de-Ficheros.md": {
+      "sourceSha": "df1656665b1e38f6d2a254494f775e04c9d06017",
+      "translationSha": "cd1936af0dee447a4aed0a3a8a1d81576ac09f180975a276de8b0cae3cd4ad18",
+      "integrity": {
+        "code": "55e2537bd5cb0126c5f4e60c75760b1a6e78f573379e81f0ad0d4780cca1db90",
+        "links": "310144feb93118b2e1c3931516dfd4fe0511ae5c08a8ea89d66ec3c3a04855f0"
+      }
+    },
+    "React/README.md": {
+      "sourceSha": "36a36e5f90dec6ea94a3f61ccb1b3f7ce8a4d5bc",
+      "translationSha": "dea196699cb53de1f332a5145da9cb2dd40f67d31ed17bc4363c915df79cda6a",
+      "integrity": {
+        "code": "978aae3b473f69119115637d64da7ee0a4c0c29483c31ee882bec8b5bc89c2f8",
+        "links": "3fb6e5a30a9dc2d7a33f1c3da99385b83d450c2942435702b20e97f630a825cd"
+      }
+    },
+    "React/Temas/React-06-Eventos.md": {
+      "sourceSha": "70aaed277eb99bb4f956dd8e4fbf627a86524357",
+      "translationSha": "f4f29da832eeacb450e5def829d3ce530e0248cd8f40083b42cd7d7ee3cb60d0",
+      "integrity": {
+        "code": "bf6f03c91968a46f926923efc994940dcd168117168ff771da9d1197949db0cf",
+        "links": "c9b679d4aa27bc20451399d529aa426497ee250a22c6ef800100729e42da9169"
+      }
+    },
+    "React/Temas/React-05-Componentes-en-una-Linea.md": {
+      "sourceSha": "40a3fe2704db952dd1100cf9b5ddac9571e9467c",
+      "translationSha": "87b27b08f4491266a46f0d9e4386a62b564aba16fbd70ad725e2a720c942ad4b",
+      "integrity": {
+        "code": "795bf0bb44ea8890abf8334e6161749b08a17732c2c0ced93de4f9a94128e41f",
+        "links": "5bd607518ed9595b3298be60adcfba5c7d7ca50ff5c6ec419ddf07154d1b7743"
+      }
+    },
+    "React/Temas/React-04-Estilos.md": {
+      "sourceSha": "4b905a0bdbd33dd8bf8fb1449e6c37b0217071e0",
+      "translationSha": "30e1b10ecab220f355927135b54bdf8111ee315b6b96edc9a139fe939ff742e8",
+      "integrity": {
+        "code": "33d6b8ed9bb8eb168d327bf2cd6c7ad854e5b400d59e807620200f53173e5338",
+        "links": "c08c1a21b2b29f77360efff5e5296a2cc5ba8becaee5c24146ab5fa55fbad463"
+      }
+    },
+    "React/Temas/React-09-Renderizado-Condicional.md": {
+      "sourceSha": "5d443a89aea0dbf50d7c0286335bbeb81184bd35",
+      "translationSha": "69f1b340c8b191063ebedf1897597591a2255b804a3daf54119c0bdce5edf377",
+      "integrity": {
+        "code": "067ee16fee8e6d1d8844c34d1bd03f10ad5c65c127f27b912fa0c152edb3d015",
+        "links": "6c2bfdeffde94db6ed0545ffdbd7c2a1711e45f236d5f70e58119f1eafff1886"
+      }
+    },
+    "React/Temas/React-07-useState.md": {
+      "sourceSha": "e036a3a7c1cbb199b1d1ab56757cff9055869abf",
+      "translationSha": "f965bf336788faf65661d6a219dec31bd3825d97823ad4ac879815a43916e7de",
+      "integrity": {
+        "code": "eea3916df0f1477094c632594cffdaf1c97e9735f12b86b01beebadd599a2e06",
+        "links": "130d205fa7a5269e3cb04fcf163af7bfe9cef1e2d2fcb7e447dea9b8c9517b9b"
+      }
+    },
+    "React/Temas/React-10-Listas.md": {
+      "sourceSha": "6eaa3c28e3e2f968c49eda56d79aa89534958382",
+      "translationSha": "a2e9fc5a461daf6a0a15e3fd78954df85c8cd19c92da0b07c8c4eb260f09fb22",
+      "integrity": {
+        "code": "688b47f616ef4be906a7d164c20848863edb6e29da95a0c4623330bef06dceaf",
+        "links": "0a925248eb92da2bb4bd9ef6a0b3084036f1d4ce566f2afc5f619dd80e39fe50"
+      }
+    },
+    "React/Temas/React-11-Props-Padre-a-Hijo.md": {
+      "sourceSha": "9fb2e59fbdecd2c08a1f679de389d63c4a98c44a",
+      "translationSha": "dbb3b389ef882fee896ba8d9f8d77040dfc2e69136d2921129798029362f894d",
+      "integrity": {
+        "code": "38ea8d1036e31780a96336d64128230905424d9eecb4d70c63864c555d2a3c42",
+        "links": "df635d02a1327c2d5ea4e6f5a358e00cdd03be6fc53fb04b8b4140dec4d1f54d"
+      }
+    },
+    "React/Temas/React-13-Props-Hijo-a-Padre-y-Elevar-el-Estado.md": {
+      "sourceSha": "22869f5d49dc47a3fc3d29ff4ba33248bb5e0193",
+      "translationSha": "a3356ae2f057e475f8ffcf1bddeb57349b1fe6b94edae91422e3230dc0467699",
+      "integrity": {
+        "code": "a2d6141108137cbd9125dd73271056c01b4240feea53347c900c28caa9a059aa",
+        "links": "9e3f5a3ec28e7eb490f85b4cb3ea525877d21bf03dc44974169bcc50e45accd0"
+      }
+    },
+    "React/Temas/React-15-Fetch-API.md": {
+      "sourceSha": "2abac5aecba83a5b1685acc6a3292cde5ded5104",
+      "translationSha": "100d78ecbb8121999d0d52831c204ef034b39fd5e72592b03148e6d7cc2090c3",
+      "integrity": {
+        "code": "e31befc3c089a032a7cb295d93e6e4d9c9900b22ca61abe82ff76295cd253943",
+        "links": "340e6f4e362e2c022ec60e77e7e61c54a59940ffc816b333a86a1902a89d9385"
+      }
+    },
+    "React/Temas/React-14-useEffect.md": {
+      "sourceSha": "e0f6725f72044a21c9d8373d9101001a2c8df158",
+      "translationSha": "501330698c7965ee5f945191d39def0951f023495845e6c565666a3cb6da7dd9",
+      "integrity": {
+        "code": "68df992f424314cb5d349faee1377a0b2005687bdddc0b214069ad5a31ee1672",
+        "links": "7416ea093f5ae1bc289cb38501f02422023eb11208dc05f56fb714506a4c3d44"
+      }
+    },
+    "React/Temas/React-16-Axios.md": {
+      "sourceSha": "afcf8e3c6a85d16e336ef97e2e5c0aa79762ac40",
+      "translationSha": "50ffd9a9d17aef7a3ae1cb0c6784a844fa915809b97cd16dc0bf645d6235653b",
+      "integrity": {
+        "code": "4303e6d170c9f6d3df16afb062b6540772087aba750fbae421defa76311899ad",
+        "links": "a633443cd31c886be8868b6be1564ef3176af961bec981f37aac87e01b79a547"
+      }
+    },
+    "React/Temas/React-17-Formularios.md": {
+      "sourceSha": "784726bef1a5f6eee256181d67f5d75bf64e1263",
+      "translationSha": "577a02dd937f866e748c7ad58339a849b850092d9300d30fa00971a4da817583",
+      "integrity": {
+        "code": "ab6506d730808c1f68901aeb60ea6ca17509a3e2727637458cf46aaf46f9aeea",
+        "links": "8816197ea3f4fc1cf183f18cf4116d46845c05d69b6eab7843059cd88131ecc7"
+      }
+    },
+    "React/Temas/React-18-Router.md": {
+      "sourceSha": "ab7772882c0fed68b14eee1bf1b8bdb2d931e89f",
+      "translationSha": "94e1e7e83fa56d46a9b3c3dda1d5c1a04114ea9e0211201df341ae2a2bb23f97",
+      "integrity": {
+        "code": "a31180e98a64ab743bf558f6fac3fba1f644d08a8bb115e5c0e812c40b42e279",
+        "links": "5b4f6c12eb4315f9f295e0e05c989826d517d0a1cc8b1ac0cd17b9ea87d84e82"
+      }
+    },
+    "React/Temas/React-19-Rutas-Paramétricas.md": {
+      "sourceSha": "af23a7aace9fb08924613a0ea5586b7f7e185df9",
+      "translationSha": "f477e821bd06e14724e037f716f7d930b158201438905b980f487a97f518d977",
+      "integrity": {
+        "code": "710e3d6d9be0ebaa84db45cf13c56f0746cb4d47bd0ef660f21cec756c673f54",
+        "links": "8d2445115bf3a58cb983bc7ddfe5593a6e22c82fec759830f3797df2f2ecfe4c"
+      }
+    },
+    "React/Temas/React-20-Rutas-Protegidas.md": {
+      "sourceSha": "858dd060e3de6e538ba7fe10fffcd9773f0e1dbd",
+      "translationSha": "d07fd97094d2e8c5e80f01016220a44da48c7a89bc8a87a3770fe0115599df7f",
+      "integrity": {
+        "code": "dcbda589741bfe3e1c451b96290f8418dbf225f7336d1b67c6ce485454bbb790",
+        "links": "d11a402fcd79791b6ea3aa405ca59ec338edce28f571067cea2129b8bd37e478"
+      }
+    },
+    "React/Temas/React-21-Gestion-de-Estado.md": {
+      "sourceSha": "a5640083fad195bad63aa59f524fa0d18851f547",
+      "translationSha": "a4a5ef0e9e62bdfe72b97cd2cf34c84505b9d0f28fee49671600253cc6fa649f",
+      "integrity": {
+        "code": "c8fe7ce2f407b241cc3a78d1eb685e79456e3e10fc655f6ac6bcf70c0f6ec20c",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "React/Temas/React-23-Context-Users-Fetch.md": {
+      "sourceSha": "0a9b616514777e5864051aa4f21210312e37352e",
+      "translationSha": "0631fc125e0f0f0130ee76b1cae8b128a73fc18e5751de1c6b23edf8a1e0300b",
+      "integrity": {
+        "code": "8536e3237008b967e27d141b02b81395fea299d000b12635297d2e29990be0ed",
+        "links": "0c75cb6eed76acb9afd311c6353142edb739f2be6bd7abefb50f81dd16f71756"
+      }
+    },
+    "React/Temas/React-22-Context.md": {
+      "sourceSha": "a392edfd0bdcaf14dd296753249211d34fda83f7",
+      "translationSha": "fe39c87035da87767b0afafd07d73d2dd5a562e85aea0246870a70bfe37afebe",
+      "integrity": {
+        "code": "1508b0e46485876f49afcd4bf85dc2d462f435b671fa9d3404200aedb6746390",
+        "links": "6d0df3d6eec8f0d69c0cace789df0b4d838f68d1bc6a2fbc2bc442861608efaf"
+      }
+    },
+    "React/Temas/React-24-Memo.md": {
+      "sourceSha": "9bbfcdbfd78486ba9f3d334ece6370398267a392",
+      "translationSha": "aace48c7e03c7230bddf3dc1ceb5af65e348b374d1421f3b22f5bf890708ddd8",
+      "integrity": {
+        "code": "18c7782617e63826a1a46aa73010de20cf91e189dffe93b9549fac9ced4c07d7",
+        "links": "cc8f3a9385f3e7d9f4bdb6b49308bdd8b8223058c7c1d6c68e39038ce5070c4d"
+      }
+    },
+    "React/Temas/React-25-Lazy-Loading.md": {
+      "sourceSha": "1ddf6ea363e75506bd7fc0d21fb9438395dbe9e9",
+      "translationSha": "8c176dcf8f25fa0cc6b4b33d0d48e6e554439010d88b3cff75903dc56f5f9e8f",
+      "integrity": {
+        "code": "8df25dd86dab04d553113db60c0e09b5da829ff53a6d908279ffbd582236c5a2",
+        "links": "6cbd4e40afc844cd5306641991df446ab5b98568c65e6b7be30ea32e8a2aef1a"
+      }
+    },
+    "React/Temas/React-Web-Completa-&-Fin-de-Curso.md": {
+      "sourceSha": "55dc8e1af889e7e3cb33838333e43fdff45330a1",
+      "translationSha": "f51af55c3309f4063d209b34ad819698bc90a125bd0d20c1c82b5c9bd6ec6d35",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "dfae82825bc0eb112684165b03a01f49b2ff38f89f9e71174b0c3f375b0936f3"
+      }
+    },
+    "React/Temas/React-26-Testing.md": {
+      "sourceSha": "783371b25b6f9b0c6f3405dd14fb17366c8cccac",
+      "translationSha": "155081a886ce6b7d33d10fac9f783f94f9bfd8f0cde65155928cf2be70c95651",
+      "integrity": {
+        "code": "13dc37a7a0638db737e2352e7c3d9f25b916bbcab07806967288f574e736604c",
+        "links": "28714b7333bda3a3a89e5bd27cd6538aa6d00c2ccf3e3b312818f453aea4ccf0"
+      }
+    },
+    "React/Temas/React-08-Atributos-Reactivos.md": {
+      "sourceSha": "bdfc5d1d3bb55bdc99ad32371f9895dd8b3fb366",
+      "translationSha": "68ee94a4626e9e9a4189674a771f1206cde23eb4b071131c017de348e3f2ae4b",
+      "integrity": {
+        "code": "6e2e42e1de424d189c1a29cad6117dbb0d959d60b524dc6cf5049af97c3d80b6",
+        "links": "9b0f13252233a305241ec158ce67b472825a1585b0af565d90da0ac6b89503df"
+      }
+    },
+    "React/Temas/React-12-ClassName-htmlFor.md": {
+      "sourceSha": "cdb9a5d6df15671695b433d98ebba2a592e20746",
+      "translationSha": "2cef927e99c7bf70e0bd49b805b45be51cd796d9c449515d99fa5b29c97f6bda",
+      "integrity": {
+        "code": "c7bf802df309adebafa23f4dc5980cbf359b9cd23cdc1085133c376217e5a28e",
+        "links": "fd197fd0086ebf7a1ad7e736a84e8a757fc9b4ee97d2e93546002f339b7796dc"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-01-Introducción.md": {
+      "sourceSha": "0cceef4885a93a765573412ec8e6fed23ea77d28",
+      "translationSha": "c6e9bf8918b5b59ba1ac7cd78950a95b1405c393b9b7eb76752b8eac7429b46a",
+      "integrity": {
+        "code": "c4c4fd356b511df8053492335020f72cb77ba969adbc742ed5e4fd148706292a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-02-Vistas-y-Controladores.md": {
+      "sourceSha": "09829167a8e32216c1962db7fa2390349eed651c",
+      "translationSha": "c8410437c61207a0803969849891f0a31121689c97e8ac73d3f26326a69693e4",
+      "integrity": {
+        "code": "60c9997663e2d327f323778007806e50162babfb5c6f20e61d2e7a88a834b94b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-03-Formularios.md": {
+      "sourceSha": "ee4079d2189227118f4ffb96f9a0b6190c70fb42",
+      "translationSha": "ecf13588fd73597b79f697700473aa08f794733ad6ce7cf9a232df69b082a794",
+      "integrity": {
+        "code": "49cf94cf0cb83dc8634aad0301f8f70a7374e6bc8a7905f36c3f1279934f45af",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-05-Tema-05-Excepciones-y-Internacionalización.md": {
+      "sourceSha": "7165cf900d3218504c74e24476d2f50336d0fd40",
+      "translationSha": "e1b3bcf703a445eded1ddf91849998f893fe295bd06d93619f4d2eb64c3ab1ca",
+      "integrity": {
+        "code": "6267602a7a4491fdd7920057438d5fd8eba7b154170fec4da6b5bb1750790518",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-04-MySQL.md": {
+      "sourceSha": "8789b6b6e8437ff436c56ed637cedaeea0d0a87f",
+      "translationSha": "7accbcaa7cce52b642101b3f0862a11e0ec6b5b50929cb917ce044c9c6fdbe24",
+      "integrity": {
+        "code": "657189136fab402b4150eca6964f70126bfbca0d307e61a83b221dd751abcba0",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-06-Mejoras.md": {
+      "sourceSha": "13ec4c577fc4d8b5b01ccb0a6e9872f1004b4c4c",
+      "translationSha": "edff1f5444a55dbc7dd26bcf8dba86ab03ced4779fc669b7d5fa512a35ac8779",
+      "integrity": {
+        "code": "5c682622af3adb656b654ff108a07328dcd2026fb6c862989788fd0318801a30",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-07-Crud-Completo.md": {
+      "sourceSha": "741234ee7b5810296f21c0d88dfb8d0ef341416c",
+      "translationSha": "1654db64022c9a930f2622b5318835ac289cf4c2962c0c7033ede6ea5f4e4952",
+      "integrity": {
+        "code": "372591cea4bd547b1ed6163cca436dc05ac5a2490dca3d18bfa15dcae2be38d8",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Ejercicios/Ejercicios-08-Legibilidad.md": {
+      "sourceSha": "db3362d031dbab57e1dd39395cf05dbf6449410f",
+      "translationSha": "559899ae9919161e340c102b014db90e271462ec78b557b28decaf250921ae32",
+      "integrity": {
+        "code": "46b591fb0a3ab3d3be1a09d0118d03d1675de644fac8176c62ce63d181ba85e1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Temas/Tema-01b-Anexo-Tomcat.md": {
+      "sourceSha": "6a748273ea08f0ae26ec55b383eb0a0d02757637",
+      "translationSha": "abc97a50bc4ae053474ec27f5373e90bc26117e1ff21884a7ce8f843ed12a3f3",
+      "integrity": {
+        "code": "445529ce8ab6cbac1c42db506eb207131636c3d9057316e5c485e1c27a006b02",
+        "links": "b1b8fc8ae985c144f271f9b8a998715c523e615aa521e4365f0f9027139cf31d"
+      }
+    },
+    "Spring MVC/README.md": {
+      "sourceSha": "cf374a9f9ffca488391f3cdeb4f1d97bc8c1e075",
+      "translationSha": "f461a182b26195b3d8abde58964b8b1ef16e7822f0b5c02d8ebacb2e7dbce44d",
+      "integrity": {
+        "code": "98dc749a0159dd753b99b50db6456d0a355018b2414449e634e873bb9eadb919",
+        "links": "e710c37071b3261e64a2df2d5d28e3fca18ecfb654fd7ef2e78d4f995f07580a"
+      }
+    },
+    "Spring MVC/Temas/Tema-01-Introducción.md": {
+      "sourceSha": "4489b4978039092311b5b3dd6bc286a57d067a1b",
+      "translationSha": "4e95eb9103224bad41ec832b1a016daaf14c86aa72d284be58c01697a924c578",
+      "integrity": {
+        "code": "6f2acf93d5fb89ea0b9d138edcf64d2b1de7e2c190b7d69fa6befe3c096929c5",
+        "links": "ea788ea7a08004ff375889e784eac2d1a1c02070fb0efd6a3df376026c2c7cab"
+      }
+    },
+    "Spring MVC/Temas/Tema-02-Vistas-y-Controladores.md": {
+      "sourceSha": "878083b6297d3064aa785b9f7e89ef40bf49514f",
+      "translationSha": "5f1542c1439fcb6787fa0603ffa921a98b810af8917b7e53754fe6b54edd497b",
+      "integrity": {
+        "code": "0d793be9225633e8c0f02f5093f79ba904098060284bd138f519b65df35b6f1c",
+        "links": "d9c7231251131deccc8f5a0497c8c3e95c92839e2e28048bad35c6602a84dcd0"
+      }
+    },
+    "Spring MVC/Temas/Tema-04-MySQL.md": {
+      "sourceSha": "f7988fef82e239a6ac535ba389ded1e5d2c5ee77",
+      "translationSha": "a58e8dace14761a89675690e13a5928c0c8ef803dea16d5d204f9e18a9eaab83",
+      "integrity": {
+        "code": "bda0e8077de13c4c061916ec963b028781db83d0ac5d438de2be103ecac3ce5c",
+        "links": "489a89e2eda95198b82b2d24e18dcee63c6563944782b4ef811e0a928fd38b9d"
+      }
+    },
+    "Spring MVC/Temas/Tema-05-Excepciones-y-Internacionalización.md": {
+      "sourceSha": "905f04ee107737b9bfbdee98de614968a055dd53",
+      "translationSha": "ed9eba4ca96cee017e1e5096ce5c8e4aad50ec818d99f8f9c4fad557755f3fe5",
+      "integrity": {
+        "code": "e24866a2214b0cb72f5634ea78b082f1866db214f8a1fe2cc0b3c88d7dfe496e",
+        "links": "482edde5abd1a77964af3d1f3f67ad6b087b815abbeb4d541a53eec9dff1727f"
+      }
+    },
+    "Spring MVC/Temas/Tema-03-Formularios.md": {
+      "sourceSha": "8222afffc4f73267afd06ec6d812a59de4e76e6b",
+      "translationSha": "19a5c8c7042f63b2414d0f0271c01dcc58f94405eff5c0a511d3418c7f0b0a90",
+      "integrity": {
+        "code": "9998623234fa13c9b492d432ba832a19cb087a5a6420b04c6d7d4e1d55a3bd49",
+        "links": "cedb831baf91a8832af9e6c303eecfd48a22a73d4eef6614dda5675f8c9991aa"
+      }
+    },
+    "TypeScript/README.md": {
+      "sourceSha": "f177bf957112154e8c0a0af0b8aaa77c9d00251c",
+      "translationSha": "af862015bcf89cf6edaf2b25cdb8005f425ce7dac37cef470e81804fe1193ff4",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "a366c80a7931811da962b6a46057d180b93daae7fd1870eb6d00b0b4c596cb80"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-01-Introduccion.md": {
+      "sourceSha": "49e337a03120502c2943262a97b5e49a3ed44698",
+      "translationSha": "cbd0da840fa7c8f6a87db92c27312c246475c890a3fc442b5f0cbc1282dc16c2",
+      "integrity": {
+        "code": "9780f51164b66807db81e995e756c09a29ade07b23dd6ea62ea56692c84826c8",
+        "links": "1deedc4a330b53586549441eeaf9fee1a75c6263607f8776ae0441b6b4aea99f"
+      }
+    },
+    "Spring MVC/Temas/Tema-06-Mejoras.md": {
+      "sourceSha": "b64ee1876e92879ecf83bb6b1485b1adcc6db0d9",
+      "translationSha": "ac78288396bfabcd734adf0e7cc8ed280a6e8cc5b46cd4f4c7da69e8d1eeb531",
+      "integrity": {
+        "code": "602e82de07edf538b0247044fce7746501955886916926b79249f26a3ecb307e",
+        "links": "274b16d2163edd7ef145d26f89f8ec519cc2559bdb5890b2db8ee77e579bbbab"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-02-Componentes.md": {
+      "sourceSha": "75a477694a36228b11e1485a13be0fe70038f242",
+      "translationSha": "6cc2d90a060d5233fd98090abd3b08f2094256f5cd0025897e5a90084033dad1",
+      "integrity": {
+        "code": "f728707812393a619e6a1763afbcb3434133f2e87753e179d225792522927308",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-03-Variables-y-Eventos.md": {
+      "sourceSha": "fcb356d942a58264f05fc122c49dbf3e269f395f",
+      "translationSha": "05a1cb8c8f5bb1232e7e8af6eae7a0a6d635150b8e19a5b3276625381c7c53a7",
+      "integrity": {
+        "code": "6c88146660b6fd904754031563782dd4813672e49955ca482655a0c51f811fb2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-05-v-if-v-for.md": {
+      "sourceSha": "524cf3a302ad5185288dde79034fdc35b303daeb",
+      "translationSha": "e869da1a9b0497f7666b89dec7f28745233c2d35f28931f4a0959d6184b693c4",
+      "integrity": {
+        "code": "ed0e6a0db67c9699def8e746155d85800eb90c7445c07983c4529f562618a692",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-04-Composition-y-Option-API.md": {
+      "sourceSha": "3b6a7577cb99e83824a23e42032ced1649a822ae",
+      "translationSha": "57d4550596f25367a4bdba4a5a436e60d93dba914454286d48285e5ed0c7a81d",
+      "integrity": {
+        "code": "5d626d6a2f5dce15b190129f158cb8c1d20ef16f0d507d272c4b92a01a85b431",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-07-Props-Events-Slots.md": {
+      "sourceSha": "1ba1f85b9d8aa33afa57c34f291a24beb2d4851e",
+      "translationSha": "19b47c3b0248d5eec14b1f9e8b0a93a7cdb3840ba6c11384a550b28bb7ffb49d",
+      "integrity": {
+        "code": "efb1a4b177ffda65ddb9d4ea8a48d9803d1d62381862943d0681c9d25c2996b9",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-08-Computed-watch-watchEffect.md": {
+      "sourceSha": "8806602ebfcc7f167558dc6cd3a5ae67192f818f",
+      "translationSha": "e77aa30e952e1a31550958f4913ef47561f4fbb293182c0e36512d70c68820af",
+      "integrity": {
+        "code": "d41b8c843c13a327d7b08003c5a17ee47d03e3bd5a92983ba22470356114efb2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-06-Clases-dinamicas.md": {
+      "sourceSha": "6f94581063e97297097a062d565b68b7231f83cf",
+      "translationSha": "a16264fb0d3152c67ed8076ec897789098b143983ac7cfb392321c905fda225a",
+      "integrity": {
+        "code": "b6a542e294a788768183fd8c440198e2c95bbd871b6d2cbf9b11b0ece5ebbc6b",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-09-Formularios.md": {
+      "sourceSha": "cfaa026ee7c192d3d933aad4e480128d5a9c5854",
+      "translationSha": "2b937a5bcd9c8a6159149d1fc88fddbde35191e03f1bdbc05e0d4e0837a0622e",
+      "integrity": {
+        "code": "671cecaf400fc68b146496f7e32236767c00d563330fa68a895e71d276e9dd43",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-10-Router.md": {
+      "sourceSha": "993920f7fa9db6f11190c82983aaa82254ea784d",
+      "translationSha": "4d3afdaf6ceef7221dbd4db363c9b891ac5587669b1192552d3420fe624106c2",
+      "integrity": {
+        "code": "01d9978bd7c5c32658b3ad917feaa978589915f786ad5464d401e741609cebf3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Temas/Tema-08-Legibilidad.md": {
+      "sourceSha": "57dc86dd3e6f8bdd99bb9eec5bf554e769d0b9b9",
+      "translationSha": "8991a02d99aa003faabb2f24d7d0826e81837b3c705dab1b324d94194bab4de6",
+      "integrity": {
+        "code": "b0ee945fd37ce3084f9683433e35465f2e3b8d02d9a416f09f756730e1a5ccfd",
+        "links": "cb84bf8346745784d45bc03ca067d1c2aa16e221fa02327a39f59a2e0a893a9a"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-13-Ciclo-de-Vida.md": {
+      "sourceSha": "d2403b2dae78ce5acd25e2b2f656c70704cd1053",
+      "translationSha": "2afd8dfb985e8605ecfbe075d7ff7d1d194bf7b2005e03ed4a64f0207e6b3821",
+      "integrity": {
+        "code": "28c3004923f46868876d9fdfc631d9b99fe60ad6e2c26cd5962e469779b683ff",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-12-fetch-API.md": {
+      "sourceSha": "3703b3761f2af0190599232d602fc71f6afc3d50",
+      "translationSha": "096baa387fd465339508ba31f3eed97dc18a66414c245afd13646e18f2ee5d26",
+      "integrity": {
+        "code": "fa5fb655b26300b1bc462284b96e25ebad83c2037496fa1cb8561c983e077bdf",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-11-Pinia.md": {
+      "sourceSha": "ea4e3aaf87f12af97c7340cd978f02201a0cb4f4",
+      "translationSha": "77a3fb4e8cd871ef8634933bb9413e9864be7a94d8aa3b29b0916dc4055485a8",
+      "integrity": {
+        "code": "7d809fb8c69d799a10218ac337e9c46d7df71e8ecca89718eb2ea2795110ba47",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Spring MVC/Temas/Tema-07-Crud.md": {
+      "sourceSha": "02421a74e8e9b8f548be2566614370361402eea1",
+      "translationSha": "d8fdea291145c251d9c6d20fce2578d115d38becd5ad57e0f67788abc84280c5",
+      "integrity": {
+        "code": "509d10cd3b7a95a0f569d58d5e2b7aab400833b865ed7f3e8094714166b3ba06",
+        "links": "a244a06d756a7ddbd9f2da4307342030d81ae201a61f1b72241015f3d1760b6e"
+      }
+    },
+    "Vue/Ejercicios/Ejercicios-14-Tests-Unitarios.md": {
+      "sourceSha": "d3026135a7de4facf8a9eb1d0eeaa2b847bd1e98",
+      "translationSha": "0818114cd444241acb772fef769df0284860f66e1655942f9611101eb7724506",
+      "integrity": {
+        "code": "564b5a99461828a50cf1e2af324785233d46f288613fca24d0421c30031240bd",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Temas/Vue-01-Introduccion.md": {
+      "sourceSha": "9abd4392c89bc953a03564d4a8dce3219ce112af",
+      "translationSha": "3c20bbca551cd2378f76e2e5235ab1ab90358f871d77e119fa60c3740692d378",
+      "integrity": {
+        "code": "eebb826db18418b2032d442b6a30bd040c658dccc46044a681ed94447b0f6c9a",
+        "links": "61818dcbcc9c7c154af7c6227e89aed1fbac58a2cdcfcd1fd764acb2e3bf8a61"
+      }
+    },
+    "Vue/Temas/Vue-02-Componentes.md": {
+      "sourceSha": "62104a0e4bd82b4ffdac496faab5409220805cde",
+      "translationSha": "0a98f57752e95d632b31a89cf53367f59346fbe4652add5baa34a514448e3af8",
+      "integrity": {
+        "code": "db4722b68e60da7148a8216ce4908ee28c5e6bdb7fd70657ea616cb27181359d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Temas/Vue-03-Variables-y-Eventos.md": {
+      "sourceSha": "b3e27e38c50e0b020f04e6e9f12af1ee3d36cbbe",
+      "translationSha": "4f41bd8cf647e8e0f43dfc81ffbf760b5f135f746541246ab2c5a5e73c9fec3b",
+      "integrity": {
+        "code": "71d765efdac2e3f599f1fee2fea5795e3481fec0392b659d26019c155208ac66",
+        "links": "37c81c71c8300ba60712b56272c7f4e7ace00a1e4df14bc42a4fcbfdb4230091"
+      }
+    },
+    "Vue/README.md": {
+      "sourceSha": "d75e7bcc52a26c4da5493af1feb43916b8fc1c0e",
+      "translationSha": "46c8b744aec5d58e0293d1dab7cf13f81f5e1ab46aecd3955c1cdce664cadf2e",
+      "integrity": {
+        "code": "978aae3b473f69119115637d64da7ee0a4c0c29483c31ee882bec8b5bc89c2f8",
+        "links": "3ebfc02d7c4c727257ba43dbfd390c3fe175863fd2ba1f08afb57a4c12f4b74b"
+      }
+    },
+    "Vue/Temas/Vue-04-Composition-y-Option-API.md": {
+      "sourceSha": "5641c35f2f90d6f74621fb4d7b9a8706677b3846",
+      "translationSha": "6764863f667996e937d02e85b4d2e21b25f9dbdf294ac09cae92d2779cc96219",
+      "integrity": {
+        "code": "a2cc65009e78b4295d3d597dfc315cfec0222563bce8b2282c21ccef4a8c4dc2",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Vue/Temas/Vue-05-v-if-v-for.md": {
+      "sourceSha": "b483067c231a73c423369be7dffdd4a2e58f71ec",
+      "translationSha": "87281f2c111bcefb3d61ee0804c45f168f368452e1c27e3bb1a87424084a44b4",
+      "integrity": {
+        "code": "c7d517e21ca27d462fe5d7ad030b56559726ffdbfbb9dd4c7dec619720727356",
+        "links": "7de35b1311633fe85d5e8fd777dafa3fa9f647a866b7c14c0100d4ab0fdc1033"
+      }
+    },
+    "Vue/Temas/Vue-07-Props-Events-Slots.md": {
+      "sourceSha": "91b63bd75a1c8fd9f24f965ea9196e8f91ca6b54",
+      "translationSha": "eb36122157e2ca163d29015af70eca5ff903640f71dfa59c1c7773a880612681",
+      "integrity": {
+        "code": "915969692b0db0b4ebf35937bbd0441917a8030f2aaf05e2516b61bf8af78e7a",
+        "links": "2106f6bc7fed0104579cff2b2c865c023d9967a067c8cdecfcd19c5f6f393b86"
+      }
+    },
+    "Vue/Temas/Vue-06-Clases-dinamicas.md": {
+      "sourceSha": "6c4b0d82c099185c4c1715a5fb2f37937236dbe6",
+      "translationSha": "8625c22fd8b1a49de65217433f2ee80401f797d190ee57a7c8fc4338fdc4450f",
+      "integrity": {
+        "code": "e811f682ef4e0eaa8b6c6e6486b389b1868ac19f11f086778d41b78a61a50cd2",
+        "links": "d9a27a6258250d3953ae02b9a89562743933af344cfadb2dcb2a17977b7988d7"
+      }
+    },
+    "Vue/Temas/Vue-08-Computed-watch-watchEffect.md": {
+      "sourceSha": "95c298c291200b45ec68326fce69d82ec5c4ddcd",
+      "translationSha": "2491ce2912c355d964d9b71752d07a64e66d15cccb2ea75b6879c4f7c026d752",
+      "integrity": {
+        "code": "cecaea63899842071bedc7b864e80470271f7a8a21df09c4f1e1b6270e64717f",
+        "links": "f766ebd675a45a25d42ec8539fcf52e2e7d3c3332ac0f0e68a8901dbed395944"
+      }
+    },
+    "Vue/Temas/Vue-09-Formularios.md": {
+      "sourceSha": "db0934948eaeea4ce5ca87cb8c9a9b17b0b8d067",
+      "translationSha": "960282f1234d0eabea6d7f9ab4f3116098287f0e7b1876e91f7f749e062e99c3",
+      "integrity": {
+        "code": "fe9c7514c28d3a72a08c87a288c11f2d61dbe01a4bfebfa13500b7a9791eaf58",
+        "links": "37283a0295025150e6e6c15f5a71b332db12d6db9a0d07078864e6c3ce1640aa"
+      }
+    },
+    "Vue/Temas/Vue-12-fetch-API.md": {
+      "sourceSha": "8b14cea18009af6edc3901b570cb48fe32a1034a",
+      "translationSha": "e5b32179d3010ee5101461050b68692e45f4a15b485a4e50dcd74df2163b93dd",
+      "integrity": {
+        "code": "844af78819e418123c89a1311ee4cb9c635e9af94ea0017e65fef69d8628beaf",
+        "links": "6238651dc74ae70dcf665363d6dc8a8a6ee51e5e1fb5910a554ea021c7a923b5"
+      }
+    },
+    "Vue/Temas/Vue-11-Pinia.md": {
+      "sourceSha": "de4e8cca6e53199bb2de344ec4d3b452ee998fa8",
+      "translationSha": "3c76bc60121909a3eea5a9b37b6faf6c0bb0c531816608ece7602cfcfd9aeabf",
+      "integrity": {
+        "code": "a335f781136260b95c2bc1d51c6afd49c16170a2d7cc6adc0d1a6a465a78bee6",
+        "links": "41b0c05218c85c558ee0200784425e70bd196fb6cc08ff47735d350f50cf9160"
+      }
+    },
+    "Vue/Temas/Vue-13-Ciclo-de-Vida.md": {
+      "sourceSha": "34380f1642d887e1f302b9dcd190134a88e52a01",
+      "translationSha": "725aa42b2f704a3e45af37570b72139cb0ba8a06c7a0a07b1e1a74b5b106ea95",
+      "integrity": {
+        "code": "5c70c3ddfe7edd64d25f7161bcfd239861c133786b2214e7a6eab8ad8efe6c55",
+        "links": "6dcc70891465a9cd76ffb69388f275e27687dcc3f099dc846207ef9e198587ca"
+      }
+    },
+    "Vue/Temas/Vue-10-Router.md": {
+      "sourceSha": "6ed67daad0e9813cb780833394dc2e1fb9ff80a5",
+      "translationSha": "f9b01a19797e933d8f949a64c15e1f08e1757c2d92029d345deee934329fa5d1",
+      "integrity": {
+        "code": "dec54a538f977ade887647a5ad9cb9169cc07db12a606253d10df101c8100b79",
+        "links": "9c758566b83294af7285486cbec609d2ca20fe3080870b0a1cd2bf2180d51cd4"
+      }
+    },
+    "Vue/Temas/Vue-Pagina-Completa.md": {
+      "sourceSha": "137f8ac936426b74b2c7228c2a014390ba079ef6",
+      "translationSha": "79e38c46d1bddefd88a0d01188e6d2ef84a37afa0fc4c94dfe6ac3492caafef8",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "5ec973e16f7d79a4885a71966f3125452eac64ee247ce28ad8bfd8fffe55a5c3"
+      }
+    },
+    "Vue/Temas/Vue-14-Tests-Unitarios.md": {
+      "sourceSha": "4000c412ab52991f3d4d34842ef34c2c1915c655",
+      "translationSha": "bc475f37d3c12bf3c712d70d1b6817642d3f5a329e230b4ef324eca2d6b06d68",
+      "integrity": {
+        "code": "6c72fe2207b57abe79e0662c7a020ce970a476641236d5270b3e4344052be74f",
+        "links": "b12326127b542420d7366b6333b53070b43e0058997fd7b333d656da43b9e532"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-05-signals.md": {
+      "sourceSha": "3dcb92e41358b630521fcb2ece8f6d6d06c9f7c5",
+      "translationSha": "77219eedb17be0e0d069314e8ded7f08a21a88ccaff4c4497f7ab8bbb526d01f",
+      "integrity": {
+        "code": "d8b10b0bed5149c3b4f5d6d327076b68db12ba13461eadb53105fcd3ae302b32",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-03-Eventos.md": {
+      "sourceSha": "bfaed5acc170db3ca7600ec6f80c13f5ea4bac43",
+      "translationSha": "b1ce2b506173b041495617537e903d720f322cd42418973c48b3a8048b62dc2a",
+      "integrity": {
+        "code": "c36eaec1cea67041506d309cfec330a9d2049cee6f7ff14da48c141c8313ba1d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-04-if-for.md": {
+      "sourceSha": "f23a3107acaaf8d66743dfe695b989ff2b2b1de0",
+      "translationSha": "4358ed7c2745f8b2a6f07269c6323ddeaff5e072988fc34e5354aa74ef654fb4",
+      "integrity": {
+        "code": "6dda98a2f19583461c12674934460dd6a7fab628048c6b18f116046b5b46ceca",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-01-y-02.md": {
+      "sourceSha": "4a32fc0e42a5921014ed590b14dc8dc1ed939184",
+      "translationSha": "d379b901fb43f719cd14c4d934676f8d3d20698b2c5f65973bdad2679f41d1c3",
+      "integrity": {
+        "code": "ac10c573cba081d5c82840e97bd13bbb7904e67c748529888806c4be33d6e75a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-07-Constructor-ngOnInit.md": {
+      "sourceSha": "a19ca7ac9c9c9892a4f1e5537571a5c658d99031",
+      "translationSha": "9095cd81f5d15707c5217a39e89f974056faf15979b649b43094d1d6e3c33e89",
+      "integrity": {
+        "code": "77a5fb6a730e68259fbef1745408934827b37e36bda6f28e2a46a62e0f964af6",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-06-Input-Output.md": {
+      "sourceSha": "806af4ffc27f2fe64d270e97e47493a34a1d6d94",
+      "translationSha": "8080334f33ae6aabc81a2d2c74d139ae07f0972a7a48398e7d39fe60fcda55a6",
+      "integrity": {
+        "code": "c5763d9900ecbd3266f6311e9d495f54865cfa736d64a3f06f315e5ed2abd57a",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-08-Ciclo-de-Vida.md": {
+      "sourceSha": "4f529a4910ab9f23457f811386cfa071e52dc3bb",
+      "translationSha": "81289222c73632ac3d122577c4b4bad200ddb3a5206455a45cc4705e54918c98",
+      "integrity": {
+        "code": "3745dfed2ff7e9d0f9e5c6495be499940a15b5ce4f714bf421884d7358933cc5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-09-Modelos-e-Interfaces.md": {
+      "sourceSha": "8cec68865491c3b33ec7ea35448cf30b5f59305e",
+      "translationSha": "f9f5f368f920408219d6c9b297df78a240007ad20f9e0b738c8b206cdabc97c1",
+      "integrity": {
+        "code": "4e134180d6b21929cff32bc2cb5f7f8b6b5e7c423e7bee633499612d1437e5e4",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-11-Formularios.md": {
+      "sourceSha": "8bcca0bf4eb567934678cc0ac68aaf7a4b85a59b",
+      "translationSha": "de11e92a5ce50bb26a04231eec6de5dc14dfb19af68ab86807b1d114f4e3a83e",
+      "integrity": {
+        "code": "d8e5716ff8512beb4d0f66f0b606274b6f8265892d2b1237a5dbd9582dd73422",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-12-Formularios-Reactivos.md": {
+      "sourceSha": "2f2856a4f60ffe169c54c1dc1d53423ba766e8d5",
+      "translationSha": "26803ffc9f0428288c2c1c930cc3f2c7ef55cfa1c2ae2628ce1ec610cd7e5edd",
+      "integrity": {
+        "code": "4bdb5881d28b00889970760688580bfa9acf4348c8fd961fa9ab7cae92faeff5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-10-ngClass.md": {
+      "sourceSha": "987992a05430612e7d679a4c02f7620d9368f11a",
+      "translationSha": "e17e254cfe0a80df099233301108314b811def5a6b7ee56c407bc509ed94096c",
+      "integrity": {
+        "code": "ace611a8809b191d97f7f72db41787a1120610969c8fc7000d681d3d5ab97cd5",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-13-Servicios.md": {
+      "sourceSha": "eba0f18d4157281f790145a1d050615954a0cbcd",
+      "translationSha": "9ddb29ce713bc3117040155414612a0ca44f449245a9ed2e9381b6f0fcb1ee06",
+      "integrity": {
+        "code": "b4906c85dbde803fa1a0a0dda024dc99a021299652dea67e6a80bc32959e6c3d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-14-Router.md": {
+      "sourceSha": "fb72a03ef3b86589c436ba78f686851c162c3fa5",
+      "translationSha": "b5e6c7b42a168af75f8f38bc26c8b30479d7bbdd5bd1170be6c6c4842a8b5f2c",
+      "integrity": {
+        "code": "0d6ff2a92e044e7052a01f75dcc167c731ab740f2c8be6a36eb6ea0ab9b17425",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-16-Testing.md": {
+      "sourceSha": "c39afe2fff28e60482cb2e28e6e33267dfee2334",
+      "translationSha": "59a504d9a1945bc9301678b43192a5d66909d1ddf3fc9b1f1b2279c355f3b458",
+      "integrity": {
+        "code": "ed21b087265a91ed3282872ddb228678299c1f4a66d842b153930b249d832b71",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Ejercicios/Ejercicios-15-Peticiones-a-una-API.md": {
+      "sourceSha": "11ce69f581a663d60a77cd42d15429926c7f8d16",
+      "translationSha": "2e760f9e83339dc192a30915bfd424fa2db1124f633a7b44ccf99146b2ee1d43",
+      "integrity": {
+        "code": "2355610decf759fef0b95e7b0e8165463069a9f9f83a50a1164da1d18f38e3e6",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Temas/Angular-02-Componentes.md": {
+      "sourceSha": "53db3859e0ed64e00e6257ae81b20752b4030727",
+      "translationSha": "5665cc80987e9b9201a085d89e18c7978c3274e0a9049258622ae37b0dfe2ea7",
+      "integrity": {
+        "code": "88d8e6a5b670f0d4467d0c73e381327d45ea99d5f35e6f5504d0c3da3808084a",
+        "links": "d5b01a50a0a89db46444846bbdf0ee82f2c35677377fa87a8abe9bb34388093e"
+      }
+    },
+    "Angular/Temas/Angular-01-Introducción.md": {
+      "sourceSha": "58b46680278b02611ead22ea30de4a6800a90f5a",
+      "translationSha": "2f15b3048a105dfdc294b57d5ad4ed5598abca0a76bee38b4f3c22847edc0649",
+      "integrity": {
+        "code": "afd6811493515f5279684864638105c65966558df518ed85833404012d886734",
+        "links": "301ed74668929b0cd031e5db5d3359495aa667ca7130465036c0ac06f4752c13"
+      }
+    },
+    "Angular/Temas/Angular-04-Control-de-Flujo.md": {
+      "sourceSha": "cb5f81ef61f64c2c6524a233ab0f4c1735753384",
+      "translationSha": "7f2843f74b28f52e5c761413307b22c3f2f96d8b86dbbfc5f57af03162d830cd",
+      "integrity": {
+        "code": "f36c97a7a1164c38998fb146ce83f8bda6967d4ae2990d65abb742fbf507dff2",
+        "links": "b3e2cba86d00e772d12c24f01651544d32e991cf9c0da9f2d77df9a00573d57e"
+      }
+    },
+    "Angular/Temas/Angular-03-eventos-y-ngModel.md": {
+      "sourceSha": "805d85f437bf551c3b84ee1a7e9e918646832846",
+      "translationSha": "84279d7ea6451734bc68746f2cb687ba7f113ffe5cba206d483b3b3480cf6f26",
+      "integrity": {
+        "code": "e8334b9030805d79e81f6e1325b408045ba37e8a4b077521277fbea387a0dd0c",
+        "links": "89208da4b440a37933659f3d65bf375eddadf8b4c5a550ba9a66107b858afad0"
+      }
+    },
+    "Angular/Temas/Angular-05-Signals.md": {
+      "sourceSha": "32b2847963b9fd79cb4afd12b3014a0f5338299f",
+      "translationSha": "cc2ca4532e71b8800112cbf2e9e357d4b1ee836c2bc6499625c3a270d079bcac",
+      "integrity": {
+        "code": "d15609f677b40df1218e230b41d22af066f990f6a77851517b8fb4144d5f8236",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Temas/Angular-06-Input-Output.md": {
+      "sourceSha": "b1d3e08e661e4762474fe67a0826c6d1b2cef81f",
+      "translationSha": "a6aefb8064a184688dea89cd613b31ce97cca581c73d288b191b620e44a11134",
+      "integrity": {
+        "code": "afdeafe4020c54061b355b67306af6964a6c2a0a4f978d4f05f8ef06afd17b2d",
+        "links": "2f9702660812b8cbc87fcd90540aed9837f280d05c8ef88dfe25a156dacf22dd"
+      }
+    },
+    "Angular/Temas/Angular-09-Modelos-e-Interfaces.md": {
+      "sourceSha": "f978504852d6791b31c89ffaa3a612d9cb943e77",
+      "translationSha": "58633a3794fcb690f8a9d3814e319558115d9c031c3c0d43f187beaa0caaeba5",
+      "integrity": {
+        "code": "94d453f81de6aea72654bd480ba18c8ad6385a2a60448eaa7ee10c0ae678762c",
+        "links": "d47c47095626b6a85dfb71cff86ccb63014381661a239223f67e61456acc6e33"
+      }
+    },
+    "Angular/Temas/Angular-07-Constructor-ngOnInit.md": {
+      "sourceSha": "5bcb7e61eaf5dc3f98a24ba926ebdf6cd1afcf2f",
+      "translationSha": "55fd7237131aa752f191a74cc89f346b4dc95fbc593541f41ae454f4f7342886",
+      "integrity": {
+        "code": "7a0c2ea9e4878bb181fa3fcb0c14eb187f7a2dba8eb32eba990fc53edd3023bb",
+        "links": "06906b3d8dbeeb05f6054b65bd065cb3cd81fc8c83b8b3e8326cbb83347c4807"
+      }
+    },
+    "Angular/Temas/Angular-08-Ciclo-de-Vida.md": {
+      "sourceSha": "f965353949f9b126d9565ee028d6971574ad3362",
+      "translationSha": "f12fc2d81970cfa8f80a839427fc5f903cdc04180d7a7ef0ac13885dca1b832a",
+      "integrity": {
+        "code": "2262a61e5726dd924ed41872bcb8e7d27e1a03d8a08c55dc34f1a210df60eb62",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/Temas/Angular-10-ngClass.md": {
+      "sourceSha": "7ec5386bfd01a7cb343c00cee26501b944e95bea",
+      "translationSha": "73cf7eb51ef25d9969bb47d85f83915d4d7e3f184f5001dd5102098663e201da",
+      "integrity": {
+        "code": "cadb4b88253ffa0b036dd2fe6e872f59758768b246da5b9824e83a6b86808fc8",
+        "links": "70738cc8f173712d1ace2ac05bdec723e49ef20e53655520e58206d0689a755e"
+      }
+    },
+    "Angular/Temas/Angular-11-Formularios-ngModel.md": {
+      "sourceSha": "0403aa8b15224400ef99660bc0185f7fc1253165",
+      "translationSha": "b60174956379bc5bf2fec03ce62fc3b8b9a20545293e3c25b1c0235af601149e",
+      "integrity": {
+        "code": "aa8702b80dc842c8da00d01d974735354ccf7a1aebe985af5bb7bba7c27edef5",
+        "links": "eac90029a3858689fde85cfd7182d6cbc5bf1d6acc4d2987ee908daed133b6ac"
+      }
+    },
+    "Angular/Temas/Angular-12-Formularios-Reactivos.md": {
+      "sourceSha": "d15dc78cfea4842300fd7815966077451bac9afe",
+      "translationSha": "de9362d946235438899cb0e9586b3a3d441f87396b770983bb73d6aed1ea3efb",
+      "integrity": {
+        "code": "a3e77cd090f21372902d0b81ac52799f2125376e08419c94f543aece6935cfdc",
+        "links": "1506c67f5705a058e8655cc949101b0bf54acfda9bd6e0b0910ebfbac176a1c6"
+      }
+    },
+    "Angular/Temas/Angular-13-Servicios.md": {
+      "sourceSha": "ba50b18359de6de68996ddeb1e784028c11548ae",
+      "translationSha": "e92d9baf60040cc3ba5ac86bc3857af01c4d1befc3d85f9cf4bdc6d515bb70a9",
+      "integrity": {
+        "code": "c13fd12c7b72ae6c8af1e900d9e296639aed96fe42cbceb4e3d69d8943010fc1",
+        "links": "4cbbc3ad6e65c9bad0ea08464ce189e0de89c8fd2597335f021cb2ed70e87549"
+      }
+    },
+    "Angular/Temas/Angular-16-Testing.md": {
+      "sourceSha": "c4d757e17eb886b999de62597020211fd993e477",
+      "translationSha": "727415436b251aa0de3f8d9964983951fab282ecb6d8ef64d271c5d21ef281cf",
+      "integrity": {
+        "code": "15b1942253d0b6643eaf37aac428d34466d8b62ae483095f5b9b056eeeb7fad8",
+        "links": "4db6138a0c5518166bab9493ef30af8dad634879972bb1ef3ccd5cddf3940b0b"
+      }
+    },
+    "Angular/Temas/Angular-14-Router.md": {
+      "sourceSha": "292427d344d800e735f2db240c11785cdd1ac36c",
+      "translationSha": "20d42c1ef7fcf93248393b394095f9039e22bcd169d186282f49f30cbf11bded",
+      "integrity": {
+        "code": "f10bc9b3d6005179540946b5bfda183a9b07e9d4234c8b610f737d8e53b9c072",
+        "links": "ef38d200a5e4990a12c23842c94b8bc2ca1cd2514e65a4e8f5d2cb15fce003e5"
+      }
+    },
+    "Angular/Temas/Angular-15-Peticiones-a-una-API.md": {
+      "sourceSha": "1123b0bc955c24f236dc25a49161b947d9949dc9",
+      "translationSha": "67f03a0bb78ca84e2784973e561ea3ab08deb72ab3af4569b5503636c36458cf",
+      "integrity": {
+        "code": "70eaa66e893bda99b659a1a8509a1cdb7de23532b17cc70131246bece136ab4b",
+        "links": "3f1ae26054c9685ade909bee7564f37510bebf194d1ce770d112af94e678f299"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-01-Introducción.md": {
+      "sourceSha": "8b30ce35c409a741ba4449c2a84e96db59ec4426",
+      "translationSha": "df63afed76ed8f68cb8a0d587c1d506e48c81ea765c08ed07ac0ea1b175497fd",
+      "integrity": {
+        "code": "a0f0ac26224c09ce58aa3452a1d29d622463e0ec2ba007dad08c38a024aeebeb",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-02-Selectores.md": {
+      "sourceSha": "f7b460a06368d0d26079a7c5fdbb99c77703dbe2",
+      "translationSha": "da389ffa5eb35cdd1faa82d9605ed053f6096c70f39730434bb76bd66ecefe48",
+      "integrity": {
+        "code": "3a10fdc609a3e4128993910ecd136e63bd2e2d4f6b9f972d37d094d235913f47",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-03-Modelo-de-Caja.md": {
+      "sourceSha": "79d3d10e496aa32613845032c5141b412a27d7df",
+      "translationSha": "a8d6191aa3a6b82eabfb7e6ba474670c11be28fa7046cfc6b4ff63a298fd0e3f",
+      "integrity": {
+        "code": "794e0dfb23720b0570f1d15e321dbc9ec10fc5417d3481dad180821b9ea743fc",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-04-Unidades.md": {
+      "sourceSha": "0f52b5c09db873be5c978cd5c0e24697e1b565a1",
+      "translationSha": "d0cefe407a44dbfda4062b32ddcc62cc4b1f7b3aa4602eaf94f10d971143b63f",
+      "integrity": {
+        "code": "4fbedd9f7315e0243c9599c9d57d86a0bdff812fad12da63f204dade0e333340",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-05-Colores-y-Background.md": {
+      "sourceSha": "a7610e60639e5fe8b1ddfc538afddbec4562b037",
+      "translationSha": "30aedc33a806d16ae7feecf588b778eb0c7705194af4030fadaa9a35b4c0f7b6",
+      "integrity": {
+        "code": "b841d85325d50277f32ef5f5c0efa4227618e5ccf5d90ccbe20a5e1de1cfafdd",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-06-Tipografía.md": {
+      "sourceSha": "6aca71e949bafd4ec5a6d15c617d19b2e202f503",
+      "translationSha": "ebe5fdecb8b2b4f42c9d2b962c6e77c6f6123dfd04d57ff04e4e75001e3b337b",
+      "integrity": {
+        "code": "70611849c5f7e1f6bcfa48b30f22dcd9ffab14f17ae3aaa11f3d3d14e7a98962",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Angular/README.md": {
+      "sourceSha": "5cba3cd0ba4b83844fe4e4a37223ba8991ff0821",
+      "translationSha": "0fb4201ff32c7e5589d7bf2f77007836fb2a141b14fd9b289b39f964e8c19b20",
+      "integrity": {
+        "code": "bee87d84194e8939dabd1834de9bdd05888596039d85cd39f96f40619983dc32",
+        "links": "0f682e337f71d8f7b27118e91685b4506a53b3b520ae60fc80a6caebbb436c15"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-07-Posicionamiento.md": {
+      "sourceSha": "bb666d9a7d1383142dfd01b2fecfeb15ad5630f0",
+      "translationSha": "9180b9a6afd9ad2785d7188d456f13f332f5317a3c85c2946efda62b992b47cc",
+      "integrity": {
+        "code": "b29b5a7c82d07104b69cf525684dda2d909c7b9fc1855eac2dfc4939ef09ce59",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-08-Flexbox.md": {
+      "sourceSha": "32dedccc6e5582f5c7aa53e53ff76e206d455dec",
+      "translationSha": "9d9f6fbf4f23e6674af24964f19f9209efe29de806032a4ff7f3d1d006c79753",
+      "integrity": {
+        "code": "c976a7b4e5bf5eb72a3fb0996c5fd53f218a07111af061813d4331d32e375283",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-10-Pseudoclases-y-Pseudoelementos.md": {
+      "sourceSha": "379d1da4479f26b9c873fc9554e667eb8586ff63",
+      "translationSha": "4bd96151b366cd272c178669e62e31eb4add6dc835a253a1f0ea8fb0f4d9a1dc",
+      "integrity": {
+        "code": "b89b59c7a4b4a1c05a2fd657af51bef869bf5f22ceff5c52d887c73e0919e211",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/README.md": {
+      "sourceSha": "e24952ef88b6bbe577c03befb3d1709851a6111c",
+      "translationSha": "aaaef5d3bb95caa80be1a6e1b1e953865e7fad4623f5850020c037f30913fadd",
+      "integrity": {
+        "code": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "links": "ae2d22c33b103cbee160cb5db5b7c8009818b394d813cf7a80318c0fdc292e5d"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-09-Grid.md": {
+      "sourceSha": "bf56b3a658eee54c1a5d1980ad8d6628cd038c16",
+      "translationSha": "49c96d2bfd3aed92d740b21169d33d8924e2cfa5e406a436a8d912c28e991b9d",
+      "integrity": {
+        "code": "f792598bb83db6415046c7571770ad23c3ecc84084ea5f44af321390f8c5eff4",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-11-Animaciones-y-Transiciones.md": {
+      "sourceSha": "73db3319f6e1eddcd874a43a1837b46496480321",
+      "translationSha": "fef0272e3d5f2d5ec994f93d11161576f5e38d137fd772d30d7608e3108f8d04",
+      "integrity": {
+        "code": "a70a69f59966e9d6579890a84d497933fe5a6544be3309eeb34e831ec7255ed3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Ejercicios/Ejercicios-12-Responsivo.md": {
+      "sourceSha": "7735f71466695116ff5d8ca34d98297b70c4dc55",
+      "translationSha": "4bc81cbee3e733b7ad1f787764ba09ad44a591baabc4866171ac7212a38a3788",
+      "integrity": {
+        "code": "b76a10209a13104f30bf3613ac2437911811343d88e692ac0e80fa4f3f47b9f8",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Temas/CSS-01-Introduccion.md": {
+      "sourceSha": "3ddc43606d2a1b8b7fbe2073aead742f070e432c",
+      "translationSha": "ada97eb52aa742ce2b457b59f3933e53bb78bb5d199634e321d5250dc5d0c534",
+      "integrity": {
+        "code": "8a33062a49878808a4a2693099318e4033667811e945ec386c855ad556dee550",
+        "links": "6f45004dcec43cf0903498c905e7c39e2c1a3503826e604246236bc832db6c14"
+      }
+    },
+    "CSS/Temas/CSS-03-Modelo-de-Caja.md": {
+      "sourceSha": "50a018f7a3d930324a2c8092f378bf90ead0ea07",
+      "translationSha": "29185d9282abbf3869486c32489b328cfaea52e9ef957a5f6ab2c1810f550b20",
+      "integrity": {
+        "code": "d1bbb8de9f296100a206589c21e621385fd98b06417ccb5c63f03e4c78019868",
+        "links": "71ac97c8d61dccd711bb659b9872b5dbd1bfc1dbaf66c79aecbe2a77650cd7e3"
+      }
+    },
+    "CSS/Temas/CSS-05-Colores-y-Background.md": {
+      "sourceSha": "067f5d741f59079ffb441a2c2b2cf5937d707694",
+      "translationSha": "787913491992fae1cc691a971fb9a9401865f725e0b3bda304857209144fd5e4",
+      "integrity": {
+        "code": "3d6974fa8d098cfae22e917dd2b189aa29a927e59234b562fa8c0f55801fd54a",
+        "links": "16426049bbdf7014f1736544109f9e35398b2e02e6eb881650f8732c37eb72c3"
+      }
+    },
+    "CSS/Temas/CSS-06-Tipografia.md": {
+      "sourceSha": "290a45af7f63755b4f94bc3cd36e6563b9d83b6a",
+      "translationSha": "9d69d48f6b62320dbf55880238251c2702489a081e1d6964085d31ebd2970473",
+      "integrity": {
+        "code": "f99e7c4d20aca0c7cd031e8327c8860b4b68d35d4f02d86f807577a14dcb8a65",
+        "links": "5906fda8e3d0e3dd90b7e0337775bdf6cd9d9f1617ef2186884ab1cd0b2a8a35"
+      }
+    },
+    "CSS/Temas/CSS-04-Unidades.md": {
+      "sourceSha": "0c95783441a6bf847290d7f4c23e9c0b375b768e",
+      "translationSha": "f7fbac96e45ee285fabbf763c4923cfbf2f58d7819c86aaef3f8135d0a973045",
+      "integrity": {
+        "code": "6ed425ccf57f509b8748cedc359c9c0308533a54532248b41bb7814cb7841ef9",
+        "links": "59c8ad9a496a82b7be2cbb164544147ba297a600fb6940b7a80bfddb8c059dd7"
+      }
+    },
+    "CSS/Temas/CSS-07-Posicionamiento.md": {
+      "sourceSha": "5da8b18b41c877372bbcbefcb2249c8ba83648e7",
+      "translationSha": "d6302bf8fa205a6d52579407933a876501cd342cf2d9f1fa31505231fad13205",
+      "integrity": {
+        "code": "830e1eeda913114a7fae7ef4ae0d1847e2c841629d2a23c297cf3b39d3dc1926",
+        "links": "aa3970fd07a21dcc5302d08356b5926967e90514c29aff623af70500e5a5d69c"
+      }
+    },
+    "CSS/Temas/CSS-09-Grid.md": {
+      "sourceSha": "b5a7916b393a2619bc9cad94e69170d92bdeddb9",
+      "translationSha": "4671b42bbfc05717455e2a71b3d9bc0dc61a04514636701a0175299bc1d5d471",
+      "integrity": {
+        "code": "1557e6f8556121dda7ef22366cc67fef6a198bb0d3c6a85f11f5616321727ebe",
+        "links": "18c3d5616c64828270020e522abfba04ae82bd568043cda23ca98ba768d216f2"
+      }
+    },
+    "CSS/Temas/CSS-10-Pseudoclases-y-Pseudoelementos.md": {
+      "sourceSha": "2351d61b6cf83d45f07416c6cf9fd9fc49474f7d",
+      "translationSha": "644414020daed1f75fe5e4342bf716ed5244437ff2b37bc5a7d7b31862710868",
+      "integrity": {
+        "code": "5f50803a1a39f57b3d567ee57fcee7e1de2012e7f8e7d7ce1a307b16dc292510",
+        "links": "b4a1389665864b5e7128cc005f25af11b23a47737f7cba25f6b8622a74ad14a5"
+      }
+    },
+    "CSS/Temas/CSS-08-Flexbox.md": {
+      "sourceSha": "76303ae8592b65d7c87dd7b9c6f8f363957eb0ee",
+      "translationSha": "22733d7e37a4fe5c946f55ec5332a1db3aa651c157c9266a3153033b68e360ce",
+      "integrity": {
+        "code": "675dc9505c5ebaf2db1c085db4da4158c8dca2ab2a11a469a62b531d014432d4",
+        "links": "ffae249b19159caab45f1330a04fbbae69777dc7302ce574c8c30b124d676b2b"
+      }
+    },
+    "CSS/Temas/CSS-11-Animaciones-y-Transiciones.md": {
+      "sourceSha": "f82fc74bb90f94a629216ae0f66801511ee36b92",
+      "translationSha": "6e3e339f3ea3dd98ef93f9edddbb77255c93487505f63ac3030a7e0b06f670f3",
+      "integrity": {
+        "code": "fade69d14317fbae0ca04d3ad50446c46d5d0b573f1aa07f53431664d572e192",
+        "links": "b4a1389665864b5e7128cc005f25af11b23a47737f7cba25f6b8622a74ad14a5"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-02-Ecosistema.md": {
+      "sourceSha": "301effec430c44d211a9f8551e7d835de517f28c",
+      "translationSha": "1c0fee12f36a7e91b370a3ea0cacc95c6c5c1c28860c0efeb3ddc8f04ca96224",
+      "integrity": {
+        "code": "48ee68e92fbf1b8b1c1baa76412a8ec5f54dffe0df57820e2c21134332c3d82e",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-01-Introducción.md": {
+      "sourceSha": "bb5c2e7056f702a072aa208b5727bc2ab0826cd1",
+      "translationSha": "0f579e323b460377ca7e0d36221fa492a38fe6d59c6850a8197ecd09b240e96e",
+      "integrity": {
+        "code": "19eeddeb4a8d8d374c2d9ef61bb72ea9cd35b9104c4f4a2b80481eacf20a80c9",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Temas/CSS-12-Responsivo.md": {
+      "sourceSha": "4fbb2a5e1b2251a2aa8b07890959e39c5c3bfe5c",
+      "translationSha": "765ba1f6bcedcaaf8a88c433155eb4c61da6926a19e924d054ff1dd41b8cef5c",
+      "integrity": {
+        "code": "757d43a4570796f4aa1ecc5310636b51a6d10ef5cf7fb2361663e7796869450a",
+        "links": "5aa2fa773637837e79d4a2d9df399acc6c2ead80bfe373dcfd5a19969dae6707"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-04-Instalación.md": {
+      "sourceSha": "043b251b049ed8a16fb2f5f83c739cddb40a8a10",
+      "translationSha": "f5604f5fbe3ea69414c62e3fa5f8f0ccd13f226fb9b4020533699c29532964ec",
+      "integrity": {
+        "code": "36adeb38e67f889c5f9d2e39ce81bd5ba5c3730562ff6b8ac6702ab91f9e01ef",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-03-Privacidad.md": {
+      "sourceSha": "0d1d39499a390ea8c486c0a6be4f9851684d9738",
+      "translationSha": "21f6f8ff2fe10d99215955867ea27afdaba78a450e9acd48e72b9d33bbd41777",
+      "integrity": {
+        "code": "8e102e44c0dcaf2290f94c99515f09c779f99dc07625dc43aab54e048b54b6a7",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "CSS/Temas/CSS-02-Selectores.md": {
+      "sourceSha": "0fba0e2b1b1fe16170bc8727d586a99cef950fab",
+      "translationSha": "f6dd40baeb849aaf80b7c72ec53229c82d7ba40c3074bb4d8ed46589ee41080f",
+      "integrity": {
+        "code": "57dead9ad169d365cf0bd010a32050e7e9bac5c7983f0cb183d6c4d743a9295d",
+        "links": "775b364bd7465eedbb9f1380e4c1bb45530dd06ad69102928d4a3e0e814db4d1"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-05-Prompting.md": {
+      "sourceSha": "053855863171e0925ce634107df338c8fcfd3731",
+      "translationSha": "00e8270b819976f52903b402fda248387dd5a0dc5fd12d13d4522856ca58be9e",
+      "integrity": {
+        "code": "39f1fa452a6696cff3bacc41653264a792df4c0af731e62b9f84a4528f9467e1",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-06-Copilot-Chat.md": {
+      "sourceSha": "9bea5c5c0f6419ae03cfd816c8773221b35761c1",
+      "translationSha": "9b315855661646f0b7dd388a30fba63998fa47f3de0c16d0592c9894618c3537",
+      "integrity": {
+        "code": "03f86a4ee961cc9af2d93f281ecea0084231932f59b84836b9106f4c9eedbc96",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-08-Personalización.md": {
+      "sourceSha": "30215d2ef3ae58d4f6e10746a0935c7da6d09652",
+      "translationSha": "7bb313a300b1aabb6574199dd572e3af11ed7754311e9aa55c469acec348c4ea",
+      "integrity": {
+        "code": "ddb2c1b596074ed67b5006f429105c4291d5c27a1464bc8f5e2a5b5f6415d747",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-07-Tareas-del-Desarrollador.md": {
+      "sourceSha": "87d522b8a95cb023486f698af52b41af995904b9",
+      "translationSha": "5d5eb5ed70117f9334dd23595df62c2fc034352f404d9bddf3c9989012a985ff",
+      "integrity": {
+        "code": "48f8794485a7b38b71ce8870eaf5d9760be8617f2933348317121ea76974ae17",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-09-Automatización.md": {
+      "sourceSha": "fb0368a1a241d74001905225877e96bb01a216e5",
+      "translationSha": "da7670e8f0f74100769e199ca485383057debad61a751631041f336829210769",
+      "integrity": {
+        "code": "928e40abdada46a6aeb045169fc12f22c4d87dde368d35388b5fc82569834aec",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-10-Microsoft.md": {
+      "sourceSha": "1d6e9fc2433f6e0fd6157bd07a258b537419aadb",
+      "translationSha": "44ce1e2ff841a01971d79c57a3b4e1400539bdac0da3451ea5292130607da180",
+      "integrity": {
+        "code": "f422495d8b1d4aa89a3fc7f598b9f905f93731f89c441d9e60ce17171ae73aae",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-11-Microsoft-365.md": {
+      "sourceSha": "4b843749582c8c4689d333fd2efa53244ca9d311",
+      "translationSha": "07fa3807684792d52930a4dfa291e34e225362978eb4cd77fd66d1d48c36ed9f",
+      "integrity": {
+        "code": "41388b68c6f34e0b1c225ee9b5c4db08c6ac2fbe62b30b85ac5afb8e08dc71d3",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Copilot/Ejercicios/Ejercicios-12-Copilot-Studio.md": {
+      "sourceSha": "731459a44329a9dcd6ab3886b3582354094db6aa",
+      "translationSha": "c439b86bb82c32a81f180a05ee4b47655ad3c1e6cffe6463518e3411ab9b2562",
+      "integrity": {
+        "code": "e7ba9f6168f89712fe7efa37035ce6ea562efbf4968e258acef957ae7b54de46",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-03-Ramas.md": {
+      "sourceSha": "85a6972bc7d60f0686d8ed709bcaf9aa1a7cb913",
+      "translationSha": "f91776db2560fd07e25450b0db0e94a64469556290368d143e664181bc4358ce",
+      "integrity": {
+        "code": "efe2f37d7418ac507ece54ad2e419127bf323dd8ee26843818aaae849a5e5696",
+        "links": "c4dfc784667b7922ba439a42253c1ce46da816fa3bab07d501b30510972d3e6c"
+      }
+    },
+    "HTML/Temas/HTML-06-Atributos.md": {
+      "sourceSha": "2a0bbf766b8c6a5e56c1f1ad2057658da9544fc6",
+      "translationSha": "eaeecda47d0c57930210b1c29b86b9eabf99c5801a746aea7ae4325609226d66",
+      "integrity": {
+        "code": "c029884bb59b9142c75baa21104c63c6ccf4061452938ba604af75bdf406752a",
+        "links": "70e57149fa9afad89dbb0f37f0d2a2e58fe8e2a0d39ecba926750136ea19728d"
+      }
+    },
+    "Git/Temas/Git-08-Cherry-Pick.md": {
+      "sourceSha": "5ebbebe8ad5852cd7eb5d8feb075bb63b0e699a4",
+      "translationSha": "39b1b256723bc734b6840e1a3df5eed2351770bc32a34d3e8b3c2e658a16770b",
+      "integrity": {
+        "code": "dcd1c862f6bfd44bee2c4883127ef1ad259ec6688854ba1d44f125de00a8972d",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "Git/Temas/Git-07-Rebase.md": {
+      "sourceSha": "44f586849aaf62868bdb2c90380ed70ecf55ec87",
+      "translationSha": "5365eda9b9304278575e43ae8b9a77f0f7742854c46f8755c2727e7e4f9da5ea",
+      "integrity": {
+        "code": "149928d76fbb05bc7a74984b3e7c4322bb3bbc9692a2037c63f3ccc78cce63a5",
+        "links": "d5aea29e0bb3053cae15331a6a647c748f72d64d6f749aa4e6144eb1dd76886d"
+      }
+    },
+    "Java/Ejercicios/Ejercicios-13-ArrayList.md": {
+      "sourceSha": "18b4ccf3a0259fea2841c1f13cc3833e89690a8d",
+      "translationSha": "18ecdbd220bdfaa03182a7b2f9b0d6e34fac834b0d058f851b452db41fd39de1",
+      "integrity": {
+        "code": "8c36c9ea6a06113792136dc5836ba8f633936147a0524aca45d6c4150e6abc04",
+        "links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "JavaScript/Temas/JavaScript-01-Introduccion.md": {
+      "sourceSha": "4731a6bd5abdf79d51cd4f2504215d75a2e7a6ed",
+      "translationSha": "df65932447f3fd40f14355cb2dde051edae8e9f7379fdd0130dc380d35fc9abb",
+      "integrity": {
+        "code": "f109a59ae5b2401dfc26b0e797e333fcac8df54611b60f3b0e9d8e9703b84962",
+        "links": "102e711af53267b5ca9def107676fc39dd2774ec10fef703f0129fb741eabd1b"
+      }
+    }
+  },
+  "maintenance": "This branch is the source of truth for the English Academy. Edit lessons directly here. The recorded hashes describe the initial translation only; later editorial changes are intentional. master remains the independent Spanish edition."
+}

@@ -1,14 +1,14 @@
-# **Ejercicios - Tema 2: Componentes en Vue.js**
+# **Exercises - Topic 2: Components in Vue.js**
 
-A continuación, encontrarás 3 ejercicios prácticos sobre los componentes en Vue.
+Below you will find 3 practical exercises on components in Vue.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
-## **Ejercicio 1: Crear un componente básico**
+## **Exercise 1: Create a basic component**
 
-Crea un componente llamado `WelcomeMessage.vue` que muestre un mensaje de bienvenida. Recuerda seguir la estructura: `<script setup>`, `<template>`, `<style>`.
+Create a component called `WelcomeMessage.vue` that displays a welcome message. Remember to follow the structure: `<script setup>`, `<template>`, `<style>`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `WelcomeMessage.vue`
 
@@ -35,11 +35,11 @@ h1 {
 
 ---
 
-## **Ejercicio 2: Componente de botón**
+## **Exercise 2: Button Component**
 
-Crea un componente llamado `BaseButton.vue` que reciba un texto como una variable y lo muestre dentro de un botón.
+Create a component called `BaseButton.vue` that receives text as a variable and displays it inside a button.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `BaseButton.vue`
 
@@ -67,11 +67,11 @@ button {
 
 ---
 
-## **Ejercicio 3: Componente padre-hijo**
+## **Exercise 3: Parent-child component**
 
-Crea un componente `ParentComponent.vue` que muestre el componente `WelcomeMessage.vue`.
+Create an `ParentComponent.vue` component that displays the `WelcomeMessage.vue` component.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `ParentComponent.vue`
 

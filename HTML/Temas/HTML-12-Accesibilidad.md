@@ -1,41 +1,41 @@
-# **Tema 12: Uso de accesibilidad en HTML**
+# **Topic 12: Use of accessibility in HTML**
 
-## **1. Introducción**
+## **1. Introduction**
 
-La accesibilidad en HTML es fundamental para garantizar que todas las personas, incluidas aquellas con discapacidades visuales, auditivas o cognitivas, puedan interactuar con los sitios web de manera efectiva. El uso de etiquetas semánticas y atributos específicos mejora la usabilidad y la experiencia del usuario.
-
----
-
-## **2. Importancia de la accesibilidad en la web**
-
-- Permite que las personas con discapacidades utilicen tecnologías asistivas como lectores de pantalla.
-- Mejora la experiencia de usuario para todos los visitantes.
-- Cumple con normativas y estándares de accesibilidad web como WCAG.
-- Beneficia el posicionamiento SEO y la estructura del código.
+Accessibility in HTML is essential to ensure that all people, including those with visual, hearing or cognitive disabilities, can interact with websites effectively. The use of semantic tags and specific attributes improves usability and user experience.
 
 ---
 
-## **3. Atributos de accesibilidad en HTML**
+## **2. Importance of accessibility on the web**
 
-### **3.1. Uso de `aria-label`**
+- Allows people with disabilities to use assistive technologies such as screen readers.
+- Improve the user experience for all visitors.
+- Complies with web accessibility regulations and standards such as WCAG.
+- Benefits SEO positioning and code structure.
 
-El atributo `aria-label` proporciona una descripción accesible de un elemento cuando no hay un texto visible adecuado.
+---
 
-**Ejemplo:**
+## **3. Accessibility attributes in HTML**
+
+### **3.1. Using `aria-label`**
+
+The `aria-label` attribute provides an accessible description of an element when there is no suitable visible text.
+
+**Example:**
 
 ```html
 <button aria-label="Enviar formulario">📩</button>
 ```
 
-En este caso, un lector de pantalla leerá "Enviar formulario", aunque el botón solo muestra un ícono.
+In this case, a screen reader will read "Submit Form," even though the button only displays an icon.
 
 ---
 
-### **3.2. Uso de `aria-labelledby`**
+### **3.2. Using `aria-labelledby`**
 
-Este atributo enlaza un elemento con otro que actúa como su etiqueta.
+This attribute links one element to another that acts as its tag.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <label for="username" id="label-name">Nombre:</label>
@@ -44,11 +44,11 @@ Este atributo enlaza un elemento con otro que actúa como su etiqueta.
 
 ---
 
-### **3.3. Uso de `aria-describedby`**
+### **3.3. Using `aria-describedby`**
 
-Proporciona información adicional sobre un elemento enlazándolo con una descripción.
+Provides additional information about an item by linking it to a description.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <input type="text" id="user" aria-describedby="user-help" />
@@ -57,27 +57,27 @@ Proporciona información adicional sobre un elemento enlazándolo con una descri
 
 ---
 
-## **4. Buenas prácticas para mejorar la accesibilidad**
+## **4. Good practices to improve accessibility**
 
-### **4.1. Uso correcto de etiquetas semánticas**
+### **4.1. Correct use of semantic tags**
 
-Emplear etiquetas como `<header>`, `<nav>`, `<main>`, `<article>` y `<footer>` ayuda a la estructura y comprensión del contenido.
+Using tags such as `<header>`, `<nav>`, `<main>`, `<article>` and `<footer>` helps with the structure and understanding of the content.
 
-### **4.2. Uso de `alt` en imágenes**
+### **4.2. Using `alt` in images**
 
-El atributo `alt` es esencial para describir el contenido de las imágenes.
+The `alt` attribute is essential to describe the content of images.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <img src="paisaje.jpg" alt="Imagen de un paisaje montañoso al atardecer" />
 ```
 
-### **4.3. Navegación accesible con `tabindex`**
+### **4.3. Accessible navigation with `tabindex`**
 
-Permite definir el orden de navegación con el teclado.
+Allows you to define the order of navigation with the keyboard.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <a href="#" tabindex="1">Inicio</a>
@@ -85,11 +85,11 @@ Permite definir el orden de navegación con el teclado.
 <a href="#" tabindex="3">Contacto</a>
 ```
 
-### **4.4. Uso de `role` para definir elementos**
+### **4.4. Using `role` to define elements**
 
-El atributo `role` proporciona información adicional sobre el propósito de un elemento.
+The `role` attribute provides additional information about the purpose of an element.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <nav role="navigation">
@@ -102,16 +102,16 @@ El atributo `role` proporciona información adicional sobre el propósito de un 
 
 ---
 
-[![Accesibilidad & Lighthouse](https://img.youtube.com/vi/z8KEdAktCQQ/0.jpg)](https://www.youtube.com/watch?v=z8KEdAktCQQ&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Accessibility & Lighthouse](https://img.youtube.com/vi/z8KEdAktCQQ/0.jpg)](https://www.youtube.com/watch?v=z8KEdAktCQQ&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **5. Consideraciones finales**
+## **5. Final considerations**
 
-- **Evitar el uso exclusivo de colores** para transmitir información.
-- **Garantizar suficiente contraste** entre texto y fondo.
-- **Probar accesibilidad** con herramientas como Lighthouse o el validador de W3C.
+- **Avoid the exclusive use of colors** to transmit information.
+- **Ensure sufficient contrast** between text and background.
+- **Test accessibility** with tools like Lighthouse or the W3C validator.
 
 ---
 
-En el próximo tema, exploraremos **cómo optimizar el seo y uso correcto de los metadatos**.
+In the next topic, we will explore **how to optimize SEO and correct use of metadata**.

@@ -1,25 +1,25 @@
-# **Tema 16: Realización de Tests Unitarios con Jasmine y Karma en Angular**
+# **Topic 16: Performing Unit Tests with Jasmine and Karma in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Las pruebas unitarias son esenciales para garantizar la calidad y el correcto funcionamiento del código. Angular utiliza **Jasmine** como framework de pruebas y **Karma** como ejecutor de las mismas.
+Unit tests are essential to ensure the quality and correct functioning of the code. Angular uses **Jasmine** as a testing framework and **Karma** as a test executor.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo configurar Jasmine y Karma.
-- Escribir pruebas unitarias básicas.
-- Probar componentes y servicios.
-- Simular dependencias usando _spies_.
+- How to configure Jasmine and Karma.
+- Write basic unit tests.
+- Test components and services.
+- Simulate dependencies using _spies_.
 
 ---
 
-## **2. Configuración Inicial**
+## **2. Initial Configuration**
 
-Angular viene con Jasmine y Karma preconfigurados. Para verificarlo, revisa los archivos `angular.json` y `package.json` (Si algunos elementos o versiones son diferentes a los ejemplos no pasa nada).
+Angular comes with Jasmine and Karma preconfigured. To verify it, check the files `angular.json` and `package.json` (If some elements or versions are different from the examples, nothing happens).
 
-### **2.1. Verificación en `angular.json`**
+### **2.1. Verification in `angular.json`**
 
-En la sección `architect > test`:
+In the `architect > test` section:
 
 ```json
 "test": {
@@ -34,7 +34,8 @@ En la sección `architect > test`:
 }
 ```
 
-### **2.2. Dependencias en `package.json`**
+
+### **2.2. Dependencies on `package.json`**
 
 ```json
 "devDependencies": {
@@ -48,19 +49,21 @@ En la sección `architect > test`:
 }
 ```
 
-Para ejecutar los tests:
+
+To run the tests:
 
 ```bash
 ng test
 ```
 
+
 ---
 
-## **3. Estructura de un Test con Jasmine**
+## **3. Structure of a Test with Jasmine**
 
-Jasmine utiliza funciones como `describe`, `it`, y _matchers_ como `toBe` y `toEqual`.
+Jasmine uses functions such as `describe`, `it`, and _matchers_ such as `toBe` and `toEqual`.
 
-### **Ejemplo Básico:**
+### **Basic Example:**
 
 ```ts
 describe("Funciones Matemáticas", () => {
@@ -71,19 +74,20 @@ describe("Funciones Matemáticas", () => {
 });
 ```
 
-- **`describe`**: Agrupa las pruebas.
-- **`it`**: Define un caso de prueba.
-- **`expect`**: Evalúa el resultado.
+
+- **`describe`**: Groups the tests.
+- **`it`**: Defines a test case.
+- **`expect`**: Evaluate the result.
 
 ---
 
-## **4. Pruebas Unitarias en Componentes**
+## **4. Unit Testing in Components**
 
-Todas las pruebas unitarias las haremos dentro de los fichero spec.ts que se generan con cada componente.
+We will do all the unit tests within the spec.ts files that are generated with each component.
 
-### **4.1. Componente Ejemplo**
+### **4.1. Example Component**
 
-#### **Archivo: `app.component.ts`**
+#### **File: `app.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -113,13 +117,14 @@ export class AppComponent {
 }
 ```
 
-### **4.2. Escribiendo Pruebas para el Componente**
 
-Dentro del fichero `spec.ts` crearemos una suite con varios tests utilizando la función `describe` para generar la suit y dentro de ella diferentes funciones `it` (individual test) e importaremos todo lo necesario para simular y testear el componente.
+### **4.2. Writing Tests for the Component**
 
-En el siguiente ejemplo se definen los tests que podemos realizar sobre el componente de ejemplo, que usa un formulario reactivo y se realizan diferentes comprobaciones para corroborar que todo funciona.
+Within the `spec.ts` file we will create a suite with several tests using the `describe` function to generate the suit and within it different `it` functions (individual test) and we will import everything necessary to simulate and test the component.
 
-#### **Archivo: `app.component.spec.ts`**
+The following example defines the tests that we can perform on the example component, which uses a reactive form and different checks are carried out to verify that everything works.
+
+#### **File: `app.component.spec.ts`**
 
 ```ts
 import { ComponentFixture, TestBed } from "@angular/core/testing";
@@ -168,13 +173,14 @@ describe("AppComponent", () => {
 });
 ```
 
+
 ---
 
-## **5. Simulación de Servicios con Spies**
+## **5. Simulation of Services with Spies**
 
-Usa `spyOn` para simular servicios externos.
+Use `spyOn` to simulate external services.
 
-### **Ejemplo:**
+### **Example:**
 
 ```ts
 describe("Servicio Externo", () => {
@@ -193,17 +199,19 @@ describe("Servicio Externo", () => {
 });
 ```
 
+
 ---
 
-## **6. Cobertura de Código**
+## **6. Code Coverage**
 
-Para generar un reporte de cobertura:
+To generate a coverage report:
 
 ```bash
 ng test --code-coverage
 ```
 
-El reporte estará disponible en `coverage/index.html`.
+
+The report will be available at `coverage/index.html`.
 
 ---
 
@@ -211,10 +219,10 @@ El reporte estará disponible en `coverage/index.html`.
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-- Jasmine y Karma permiten realizar pruebas unitarias robustas.
-- Las pruebas aseguran la estabilidad y calidad del código.
-- Simular dependencias es clave para aislar el código en las pruebas.
+- Jasmine and Karma allow for robust unit testing.
+- Testing ensures the stability and quality of the code.
+- Simulating dependencies is key to isolating code in tests.
 
-En el próximo tema, exploraremos **pruebas de integración y de extremo a extremo (E2E) usando Cypress en Angular**.
+In the next topic, we will explore **integration and end-to-end (E2E) testing using Cypress in Angular**.

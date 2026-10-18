@@ -1,42 +1,42 @@
-# **Tema 25: Lazy Loading en React**
+# **Topic 25: Lazy Loading in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Cuando una aplicación React crece, el tamaño del JavaScript inicial también aumenta. Cargar **todo** el código desde el principio puede hacer que la app tarde más en mostrarse, especialmente en conexiones lentas.
+When a React application grows, the size of the initial JavaScript also increases. Loading **all** code from the beginning can cause the app to take longer to display, especially on slow connections.
 
-Para mejorar el rendimiento, React permite **cargar componentes solo cuando se necesitan**. A esta técnica se la llama **Lazy Loading**.
+To improve performance, React allows you to **load components only when they are needed**. This technique is called **Lazy Loading**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es el Lazy Loading.
-- Por qué mejora el rendimiento.
-- Cómo usar `React.lazy` y `Suspense`.
-- Lazy Loading con rutas.
-- Errores comunes y buenas prácticas.
-
----
-
-## **2. ¿Qué es Lazy Loading?**
-
-Lazy Loading significa:
-
-> No cargar un componente hasta que realmente se vaya a usar.
-
-En lugar de descargar todo el código al inicio:
-
-- Se divide la app en **chunks**.
-- Cada chunk se descarga bajo demanda.
-
-Esto reduce:
-
-- El tiempo de carga inicial.
-- El tamaño del bundle principal.
+- What is Lazy Loading.
+- Why it improves performance.
+- How to use `React.lazy` and `Suspense`.
+- Lazy Loading with routes.
+- Common errors and good practices.
 
 ---
 
-## **3. Problema sin Lazy Loading**
+## **2. What is Lazy Loading?**
 
-Ejemplo típico:
+Lazy Loading means:
+
+> Do not load a component until it is actually going to be used.
+
+Instead of downloading all the code at startup:
+
+- The app is divided into **chunks**.
+- Each chunk is downloaded on demand.
+
+This reduces:
+
+- Initial loading time.
+- The size of the main bundle.
+
+---
+
+## **3. Problem without Lazy Loading**
+
+Typical example:
 
 ```js
 import Home from "./pages/Home";
@@ -44,13 +44,13 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 ```
 
-Aunque el usuario solo visite `Home`, el navegador descarga **todo**.
+Even if the user only visits `Home`, the browser downloads **everything**.
 
 ---
 
-## **4. Lazy Loading con `React.lazy`**
+## **4. Lazy Loading with `React.lazy`**
 
-`React.lazy` permite importar componentes de forma dinámica.
+`React.lazy` allows you to import components dynamically.
 
 ```js
 import { lazy } from "react";
@@ -59,13 +59,13 @@ const Home = lazy(() => import("./pages/Home"));
 const Profile = lazy(() => import("./pages/Profile"));
 ```
 
-Cada componente se cargará solo cuando se renderice.
+Each component will be loaded only when it is rendered.
 
 ---
 
-## **5. `Suspense`: mostrar un fallback**
+## **5. `Suspense`: show a fallback**
 
-Los componentes lazy **deben** estar envueltos en `Suspense`.
+Lazy components **must** be wrapped in `Suspense`.
 
 ```js
 import { Suspense } from "react";
@@ -75,13 +75,13 @@ import { Suspense } from "react";
 </Suspense>;
 ```
 
-- `fallback` es lo que se muestra mientras se descarga el chunk.
+- `fallback` is what is displayed while the chunk is downloading.
 
 ---
 
-## **6. Lazy Loading con React Router**
+## **6. Lazy Loading with React Router**
 
-El caso más común es cargar páginas por ruta.
+The most common case is to load pages by path.
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -104,58 +104,58 @@ function App() {
 export default App;
 ```
 
-Cada página se descarga solo cuando se visita.
+Each page is downloaded only when visited.
 
 ---
 
-## **7. Qué se puede cargar de forma lazy**
+## **7. What can be loaded lazy**
 
-✔️ Ideal para:
+✔️ Ideal for:
 
-- Páginas.
-- Componentes grandes.
-- Secciones poco usadas.
+- Pages.
+- Large components.
+- Little used sections.
 
-❌ No recomendable para:
+❌ Not recommended for:
 
-- Componentes muy pequeños.
-- Componentes que siempre se muestran.
+- Very small components.
+- Components that are always displayed.
 
 ---
 
 ## **8. Lazy Loading vs React.memo**
 
-Aunque ambos optimizan rendimiento, **no hacen lo mismo**:
+Although both optimize performance, **they do not do the same thing**:
 
-- `React.memo` → evita renders innecesarios.
-- Lazy Loading → evita descargar código innecesario.
+- `React.memo` → avoid unnecessary renders.
+- Lazy Loading → avoid downloading unnecessary code.
 
-Son técnicas complementarias.
-
----
-
-## **9. Errores típicos**
-
-### **9.1. Olvidar `Suspense`**
-
-Provoca error en tiempo de ejecución.
-
-### **9.2. Usar lazy en todo**
-
-Demasiados chunks pequeños pueden empeorar el rendimiento.
-
-### **9.3. Fallback poco claro**
-
-Siempre informa al usuario de que algo se está cargando.
+They are complementary techniques.
 
 ---
 
-## **10. Buenas prácticas**
+## **9. Typical errors**
 
-- Aplica lazy principalmente a páginas.
-- Usa `Suspense` a nivel de rutas.
-- Mantén fallbacks simples.
-- Combina Lazy Loading con memoización cuando sea necesario.
+### **9.1. Forget `Suspense`**
+
+Causes error at runtime.
+
+### **9.2. Use lazy in everything**
+
+Too many small chunks can worsen performance.
+
+### **9.3. Unclear fallback**
+
+Always informs the user that something is loading.
+
+---
+
+## **10. Good practices**
+
+- Applies lazy mainly to pages.
+- Use `Suspense` at the route level.
+- Keep fallbacks simple.
+- Combine Lazy Loading with memoization when necessary.
 
 ---
 
@@ -163,4 +163,4 @@ Siempre informa al usuario de que algo se está cargando.
 
 ---
 
-En el siguiente tema aprenderás a escribir **tests en React**.
+In the next topic you will learn how to write **tests in React**.

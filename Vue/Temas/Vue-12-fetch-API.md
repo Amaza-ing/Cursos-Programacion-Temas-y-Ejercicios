@@ -1,37 +1,37 @@
-# **Tema 12: Fetch a una API en Vue.js usando async/await**
+# **Topic 12: Fetch an API in Vue.js using async/await**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En muchas aplicaciones web es necesario obtener datos desde un servidor o API externa. En Vue.js, la forma más recomendada y moderna de hacerlo es utilizando `fetch` combinado con la sintaxis de `async/await`. Esto permite escribir código asíncrono más claro y fácil de leer.
+In many web applications it is necessary to obtain data from a server or external API. In Vue.js, the most recommended and modern way to do this is by using `fetch` combined with the `async/await` syntax. This allows you to write clearer, easier-to-read asynchronous code.
 
-En este tema aprenderemos:
+In this topic we will learn:
 
-- Cómo realizar una petición HTTP.
-- Dónde ejecutar la petición dentro de un componente Vue.
-- Cómo gestionar el estado de carga y posibles errores.
+- How to make an HTTP request.
+- Where to execute the request within a Vue component.
+- How to manage the charging status and possible errors.
 
 ---
 
-## **2. Conceptos básicos de fetch**
+## **2. fetch basics**
 
-`fetch()` es una función nativa de JavaScript que permite realizar peticiones HTTP.
+`fetch()` is a native JavaScript function that allows you to make HTTP requests.
 
-Ejemplo básico:
+Basic example:
 
 ```javascript
 const response = await fetch("https://jsonplaceholder.typicode.com/posts");
 const data = await response.json();
 ```
 
-`fetch` devuelve una promesa, por lo que podemos usar `await` para esperar la respuesta y después convertirla en JSON con `.json()`.
+`fetch` returns a promise, so we can use `await` to wait for the response and then convert it to JSON with `.json()`.
 
 ---
 
-## **3. ¿Dónde realizar el fetch en un componente Vue?**
+## **3. Where to perform the fetch in a Vue component?**
 
-En un componente Vue, las peticiones suelen hacerse al **montarse** el componente, es decir, cuando el componente ya está en el DOM. En Vue 3 con Composition API, lo más común es hacer el fetch dentro de `onMounted()`.
+In a Vue component, requests are usually made when the component is mounted, that is, when the component is already in the DOM. In Vue 3 with Composition API, the most common thing is to do the fetch inside `onMounted()`.
 
-> Nota: `onMounted()` es uno de los hooks (métodos) del ciclo de vida de los componentes. Esto lo veremos en el próximo tema.
+> Note: `onMounted()` is one of the hooks (methods) of the component life cycle. We will see this in the next topic.
 
 ```vue
 <script setup>
@@ -58,11 +58,11 @@ onMounted(() => {
 
 ---
 
-## **4. Manejar estado de carga y errores**
+## **4. Manage loading status and errors**
 
-Es importante mostrar un indicador de carga o un mensaje de error si la petición falla.
+It is important to display a loading indicator or an error message if the request fails.
 
-### Ejemplo completo
+### Complete example
 
 ```vue
 <script setup>
@@ -105,11 +105,11 @@ onMounted(fetchPosts);
 
 ---
 
-## **5. Fetch dentro de una acción de un store**
+## **5. Fetch inside a store action**
 
-Si la aplicación necesita compartir los datos entre múltiples componentes, es mejor hacer el fetch dentro de un store de Pinia.
+If the application needs to share data between multiple components, it is best to do the fetch within a Pinia store.
 
-### Ejemplo de un store con fetch
+### Example of a store with fetch
 
 ```javascript
 import { defineStore } from "pinia";
@@ -144,18 +144,18 @@ export const usePostStore = defineStore("post", {
 
 ---
 
-[![Fetch a una API](https://img.youtube.com/vi/4XMDamSRt4o/0.jpg)](https://www.youtube.com/watch?v=4XMDamSRt4o&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Fetch an API](https://img.youtube.com/vi/4XMDamSRt4o/0.jpg)](https://www.youtube.com/watch?v=4XMDamSRt4o&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **6. Resumen**
+## **6. Summary**
 
-| Tarea                                           | Mejor lugar                   |
-| ----------------------------------------------- | ----------------------------- |
-| Cargar datos al montar el componente            | `onMounted()`                 |
-| Mostrar carga y errores                         | Variables reactivas (`ref()`) |
-| Reutilizar la lógica de fetch entre componentes | Acciones de un store (Pinia)  |
+| Task | Best place |
+| -------------------------------------------- | -------------------------- |
+| Load data when mounting component | `onMounted()` |
+| Show loading and errors | Reactive variables (`ref()`) |
+| Reuse fetch logic between components | Actions of a store (Pinia) |
 
 ---
 
-En el próximo tema exploraremos **El Ciclo de Vida de los Componentes**, para ejecutar código en los momentos adecuados en cada caso.
+In the next topic we will explore **The Life Cycle of Components**, to execute code at the appropriate times in each case.

@@ -1,28 +1,28 @@
-# **Tema 16: Uso de PARTITION BY en MySQL**
+# **Topic 16: Using PARTITION BY in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Comprender qué es `PARTITION BY` y cuándo usarlo.
-- Aplicarlo con funciones de ventana (`window functions`).
-- Diferenciar `PARTITION BY` de `GROUP BY`.
-
----
-
-## **1. ¿Qué es PARTITION BY?**
-
-`PARTITION BY` es una cláusula utilizada junto con **funciones de ventana** para dividir un conjunto de resultados en grupos (particiones) y aplicar una función sobre cada grupo **sin colapsar las filas** como haría `GROUP BY`.
-
-Se ejecuta después de la cláusula `FROM` y `WHERE`, pero antes de `ORDER BY`.
+- Understand what `PARTITION BY` is and when to use it.
+- Apply it with window functions (`window functions`).
+- Differentiate `PARTITION BY` from `GROUP BY`.
 
 ---
 
-## **2. Sintaxis básica**
+## **1. What is PARTITION BY?**
+
+`PARTITION BY` is a clause used in conjunction with **window functions** to divide a result set into groups (partitions) and apply a function on each group **without collapsing the rows** as `GROUP BY` would do.
+
+It is executed after the `FROM` and `WHERE` clause, but before `ORDER BY`.
+
+---
+
+## **2. Basic syntax**
 
 ```sql
 funcion_ventana(...) OVER (PARTITION BY columna)
 ```
 
-Puedes combinarlo con `ORDER BY` dentro del mismo `OVER`:
+You can combine it with `ORDER BY` within the same `OVER`:
 
 ```sql
 funcion_ventana(...) OVER (PARTITION BY columna ORDER BY otra_columna)
@@ -30,11 +30,11 @@ funcion_ventana(...) OVER (PARTITION BY columna ORDER BY otra_columna)
 
 ---
 
-## **3. Ejemplo básico**
+## **3. Basic example**
 
-Supongamos la tabla `orders(id, customer_id, total_amount, created_at)`.
+Let's assume the table `orders(id, customer_id, total_amount, created_at)`.
 
-Queremos saber el **total de pedidos** por cliente, mostrando todas las filas:
+We want to know the **total orders** per customer, showing all rows:
 
 ```sql
 SELECT id,
@@ -44,17 +44,17 @@ SELECT id,
 FROM orders;
 ```
 
-> A diferencia de `GROUP BY`, este resultado muestra todas las filas originales junto con la información agregada.
+> Unlike `GROUP BY`, this result shows all the original rows along with the added information.
 
 ---
 
-## **4. Usar PARTITION BY con funciones de ventana comunes**
+## **4. Use PARTITION BY with common window functions**
 
-- `ROW_NUMBER()`: Numera filas en cada partición.
-- `RANK()` y `DENSE_RANK()`: Asignan rangos por partición.
-- `SUM()`, `AVG()`, `COUNT()`: Agregan datos dentro de cada partición.
+- `ROW_NUMBER()`: Number rows in each partition.
+- `RANK()` and `DENSE_RANK()`: Assign ranges per partition.
+- `SUM()`, `AVG()`, `COUNT()`: Add data within each partition.
 
-**Ejemplo:** Ranking de pedidos por importe dentro de cada cliente.
+**Example:** Ranking of orders by amount within each client.
 
 ```sql
 SELECT customer_id,
@@ -66,19 +66,19 @@ FROM orders;
 
 ---
 
-## **5. Diferencias entre PARTITION BY y GROUP BY**
+## **5. Differences between PARTITION BY and GROUP BY**
 
-| Característica                      | PARTITION BY | GROUP BY                            |
+| Feature | PARTITION BY | GROUP BY |
 | ----------------------------------- | ------------ | ----------------------------------- |
-| Mantiene todas las filas originales | Sí           | No (colapsa en una por grupo)       |
-| Se usa con funciones de ventana     | Sí           | No                                  |
-| Devuelve columnas no agrupadas      | Sí           | Solo columnas agregadas o agrupadas |
+| Keeps all original rows | Yes | No (collapses into one per group) |
+| Used with window functions | Yes | No |
+| Returns ungrouped columns | Yes | Only aggregated or grouped columns |
 
 ---
 
-## **6. Combinar PARTITION BY y ORDER BY**
+## **6. Combine PARTITION BY and ORDER BY**
 
-Podemos obtener acumulados ordenados dentro de cada partición:
+We can obtain accumulated accumulated within each partition:
 
 ```sql
 SELECT customer_id,
@@ -94,20 +94,20 @@ FROM orders;
 
 ---
 
-## **7. Buenas prácticas**
+## **7. Good practices**
 
-- Usar `PARTITION BY` cuando necesites cálculos por grupo sin perder el detalle de las filas.
-- Combinarlo con `ORDER BY` para obtener resultados acumulativos o rankings.
-- No abusar de funciones de ventana en tablas muy grandes sin índices apropiados.
-
----
-
-## **8. Conclusión**
-
-- `PARTITION BY` divide los resultados en grupos para aplicar funciones de ventana.
-- A diferencia de `GROUP BY`, mantiene todas las filas originales.
-- Es útil para obtener métricas por grupo conservando el detalle de cada fila.
+- Use `PARTITION BY` when you need group calculations without losing row detail.
+- Combine it with `ORDER BY` to obtain cumulative results or rankings.
+- Do not abuse window functions on very large tables without appropriate indexes.
 
 ---
 
-En el próximo tema veremos **Qué son y cómo usar las transacciones**.
+## **8. Conclusion**
+
+- `PARTITION BY` divides results into groups to apply window functions.
+- Unlike `GROUP BY`, it keeps all the original rows.
+- It is useful to obtain metrics by group while preserving the detail of each row.
+
+---
+
+In the next topic we will see **What they are and how to use transactions**.

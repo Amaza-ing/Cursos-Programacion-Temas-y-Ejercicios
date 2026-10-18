@@ -1,66 +1,66 @@
-# Tema 13 — Buenas prácticas profesionales y estrategia de adopción de Copilot
+# Topic 13 — Good professional practices and Copilot adoption strategy
 
-## 1. Introducción
+## 1. Introduction
 
-En los temas anteriores hemos visto cómo usar Copilot en distintos contextos:
+In the previous topics we have seen how to use Copilot in different contexts:
 
-- IA generativa y ecosistema Copilot;
-- GitHub Copilot para desarrollo;
-- prompting para programadores;
+- Generative AI and Copilot ecosystem;
+- GitHub Copilot for development;
+- prompting for programmers;
 - Copilot Chat;
-- testing, debugging y refactorización;
-- agentes, CLI e instrucciones personalizadas;
-- Docker, APIs y GitHub Actions;
+- testing, debugging and refactoring;
+- agents, CLI and custom instructions;
+- Docker, APIs and GitHub Actions;
 - Microsoft 365 Copilot;
 - Copilot Studio.
 
-Este último tema tiene un objetivo diferente: aprender a integrar Copilot de forma profesional, sostenible y responsable en el trabajo diario.
+This last topic has a different objective: learning to integrate Copilot in a professional, sustainable and responsible way into daily work.
 
-Saber usar Copilot no significa pedirle cualquier cosa y aceptar la primera respuesta. Significa saber cuándo usarlo, cómo pedirle ayuda, cómo revisar lo que genera y cómo incorporarlo a un flujo de trabajo real.
-
----
-
-## 2. Objetivos del tema
-
-Al finalizar este tema deberías ser capaz de:
-
-- Diseñar una forma profesional de trabajar con Copilot.
-- Decidir qué tareas se pueden delegar parcialmente en IA.
-- Saber qué tareas requieren revisión humana obligatoria.
-- Crear checklists de validación.
-- Definir normas básicas de uso para equipos.
-- Integrar Copilot en flujos de desarrollo y productividad.
-- Evitar dependencia excesiva de la IA.
-- Evaluar la calidad de los resultados generados.
+Knowing how to use Copilot does not mean asking you anything and accepting the first answer. It means knowing when to use it, how to ask it for help, how to review what it generates, and how to incorporate it into a real workflow.
 
 ---
 
-## 3. La idea principal: Copilot como asistente, no como sustituto
+## 2. Objectives of the topic
 
-Copilot debe entenderse como un asistente.
+By the end of this topic you should be able to:
 
-Puede ayudar a:
+- Design a professional way of working with Copilot.
+- Decide which tasks can be partially delegated to AI.
+- Know which tasks require mandatory human review.
+- Create validation checklists.
+- Define basic rules of use for equipment.
+- Integrate Copilot into development and productivity flows.
+- Avoid excessive dependence on AI.
+- Evaluate the quality of the results generated.
 
-- acelerar tareas;
-- generar borradores;
-- explicar conceptos;
-- sugerir código;
-- detectar problemas;
-- resumir información;
-- preparar documentación;
-- automatizar partes repetitivas.
+---
 
-Pero no debe sustituir:
+## 3. The main idea: Copilot as an assistant, not a substitute
 
-- el criterio profesional;
-- la revisión humana;
-- el conocimiento técnico;
-- la responsabilidad sobre el resultado;
-- la verificación de datos;
-- las normas de seguridad;
-- las políticas de la organización.
+Copilot should be understood as an assistant.
 
-Una buena regla general es:
+It can help:
+
+- speed up tasks;
+- generate drafts;
+- explain concepts;
+- suggest code;
+- detect problems;
+- summarize information;
+- prepare documentation;
+- automate repetitive parts.
+
+But it should not replace:
+
+- professional judgment;
+- human review;
+- technical knowledge;
+- responsibility for the result;
+- data verification;
+- safety regulations;
+- the organization's policies.
+
+A good rule of thumb is:
 
 ```text
 Copilot puede proponer. La persona decide, revisa y se responsabiliza.
@@ -68,119 +68,119 @@ Copilot puede proponer. La persona decide, revisa y se responsabiliza.
 
 ---
 
-# Parte 1. Qué tareas delegar y cuáles no
+# Part 1. Which tasks to delegate and which not to
 
-## 4. Tareas adecuadas para Copilot
+## 4. Tasks suitable for Copilot
 
-Copilot suele funcionar bien como apoyo en tareas como:
+Copilot usually works well as support in tasks such as:
 
-- generar primeras versiones;
-- resumir documentos;
-- explicar código;
-- crear ejemplos;
-- proponer estructuras;
-- redactar documentación;
-- sugerir tests;
-- refactorizar código sencillo;
-- detectar errores evidentes;
-- convertir notas en texto organizado;
-- preparar correos o presentaciones;
-- generar ideas iniciales.
+- generate first versions;
+- summarize documents;
+- explain code;
+- create examples;
+- propose structures;
+- write documentation;
+- suggest tests;
+- refactor simple code;
+- detect obvious errors;
+- convert notes to organized text;
+- prepare emails or presentations;
+- generate initial ideas.
 
-Estas tareas son adecuadas porque normalmente permiten revisión, corrección y mejora posterior.
-
----
-
-## 5. Tareas que requieren especial revisión
-
-Hay tareas donde Copilot puede ayudar, pero la revisión debe ser más estricta:
-
-- código de producción;
-- configuración de seguridad;
-- consultas a bases de datos;
-- scripts de despliegue;
-- workflows de CI/CD;
-- infraestructura como código;
-- análisis de datos importantes;
-- documentos legales o contractuales;
-- comunicación externa con clientes;
-- decisiones que afecten a usuarios reales.
-
-En estos casos, Copilot puede ser útil para generar una propuesta inicial, pero no debe aceptarse sin pruebas y validación.
+These tasks are appropriate because they usually allow for subsequent review, correction, and improvement.
 
 ---
 
-## 6. Tareas que no conviene delegar completamente
+## 5. Tasks that require special review
 
-No conviene delegar completamente:
+There are tasks where Copilot can help, but the review must be stricter:
 
-- decisiones estratégicas;
-- decisiones legales;
-- decisiones médicas;
-- decisiones financieras;
-- evaluación final de seguridad;
-- revisión final de código crítico;
-- gestión de datos confidenciales;
-- aprobación de cambios en producción;
-- comunicación sensible con clientes o empleados;
-- interpretación definitiva de políticas internas.
+- production code;
+- security settings;
+- database queries;
+- deployment scripts;
+- CI/CD workflows;
+- infrastructure as code;
+- analysis of important data;
+- legal or contractual documents;
+- external communication with clients;
+- decisions that affect real users.
 
-Copilot puede ayudar a preparar información, pero no debe ser la autoridad final.
-
----
-
-# Parte 2. Flujo profesional de trabajo con Copilot
-
-## 7. Flujo recomendado
-
-Un flujo profesional con Copilot puede seguir estos pasos:
-
-1. Definir el objetivo.
-2. Dar contexto.
-3. Pedir una primera propuesta.
-4. Revisar la respuesta.
-5. Pedir mejoras.
-6. Contrastar datos importantes.
-7. Probar si es código o configuración.
-8. Documentar los cambios.
-9. Revisar con otra persona si es necesario.
-10. Aceptar, modificar o descartar.
-
-Este flujo evita el error más común: aceptar demasiado rápido lo primero que genera la IA.
+In these cases, Copilot can be useful in generating an initial proposal, but should not be accepted without testing and validation.
 
 ---
 
-## 8. Paso 1: definir el objetivo
+## 6. Tasks that should not be delegated completely
 
-Antes de escribir un prompt, debemos saber qué queremos.
+It is not advisable to delegate completely:
 
-Mal enfoque:
+- strategic decisions;
+- legal decisions;
+- medical decisions;
+- financial decisions;
+- final safety evaluation;
+- final review of critical code;
+- confidential data management;
+- approval of changes in production;
+- sensitive communication with clients or employees;
+- definitive interpretation of internal policies.
+
+Copilot can help prepare information, but should not be the final authority.
+
+---
+
+# Part 2. Professional workflow with Copilot
+
+## 7. Recommended flow
+
+A professional flow with Copilot can follow these steps:
+
+1. Define the objective.
+2. Give context.
+3. Ask for a first proposal.
+4. Review the answer.
+5. Ask for improvements.
+6. Compare important data.
+7. Test if it is code or configuration.
+8. Document the changes.
+9. Review with another person if necessary.
+10. Accept, modify or discard.
+
+This flow avoids the most common mistake: accepting the first thing the AI ​​generates too quickly.
+
+---
+
+## 8. Step 1: define the objective
+
+Before writing a prompt, we must know what we want.
+
+Bad approach:
 
 ```text
 Hazme esto.
 ```
 
-Mejor enfoque:
+Best approach:
 
 ```text
 Necesito crear una función que valide formularios de registro. Debe comprobar email, contraseña y nombre de usuario. Quiero que el código sea claro, fácil de testear y sin dependencias externas.
 ```
 
-Cuanto más claro sea el objetivo, mejor será la respuesta.
+The clearer the objective, the better the response.
 
 ---
 
-## 9. Paso 2: dar contexto
+## 9. Step 2: Give context
 
-El contexto permite que Copilot entienda el entorno de trabajo.
+Context allows Copilot to understand the work environment.
 
-Ejemplo para desarrollo:
+Example for development:
 
 ```text
 Estoy trabajando en una aplicación React con Vite. Uso JavaScript, no TypeScript. Quiero crear un componente sencillo y mantener los estilos en CSS separado.
 ```
 
-Ejemplo para productividad:
+Example for productivity:
 
 ```text
 Estoy preparando un correo para un cliente que ha pedido una actualización del proyecto. Quiero sonar profesional, transmitir tranquilidad y explicar que enviaremos avances el viernes.
@@ -188,40 +188,40 @@ Estoy preparando un correo para un cliente que ha pedido una actualización del 
 
 ---
 
-## 10. Paso 3: pedir una primera propuesta
+## 10. Step 3: ask for a first proposal
 
-Una vez dado el contexto, pedimos una propuesta.
+Once the context is given, we ask for a proposal.
 
-Ejemplo:
+Example:
 
 ```text
 Propón una primera versión de la función. Después explica brevemente cómo funciona y qué casos debería probar.
 ```
 
-Es útil pedir siempre una explicación, no solo el resultado.
+It is helpful to always ask for an explanation, not just the result.
 
 ---
 
-## 11. Paso 4: revisar
+## 11. Step 4: Review
 
-Hay que revisar:
+You have to check:
 
-- si cumple el objetivo;
-- si respeta el contexto;
-- si hay errores;
-- si falta información;
-- si introduce dependencias no deseadas;
-- si el estilo encaja con el proyecto;
-- si hay riesgos de seguridad;
-- si hay partes inventadas.
+- if it meets the objective;
+- if it respects the context;
+- if there are errors;
+- if information is missing;
+- if you introduce unwanted dependencies;
+- if the style fits the project;
+- if there are security risks;
+- if there are invented parts.
 
 ---
 
-## 12. Paso 5: pedir mejoras
+## 12. Step 5: Ask for improvements
 
-La primera respuesta rara vez es la mejor.
+The first answer is rarely the best.
 
-Podemos pedir:
+We can ask:
 
 ```text
 Simplifica esta solución y elimina código innecesario.
@@ -241,129 +241,129 @@ Señala posibles problemas antes de darme la versión final.
 
 ---
 
-## 13. Paso 6: probar y verificar
+## 13. Step 6: Test and Verify
 
-Si se trata de código:
+If it is code:
 
-- ejecutar el proyecto;
-- pasar tests;
-- revisar errores;
-- comprobar casos límite;
-- hacer revisión manual;
-- revisar seguridad.
+- execute the project;
+- pass tests;
+- check errors;
+- check borderline cases;
+- do manual review;
+- review security.
 
-Si se trata de texto:
+If it is text:
 
-- comprobar datos;
-- revisar tono;
-- verificar nombres y fechas;
-- adaptar al público;
-- eliminar repeticiones;
-- confirmar que no hay información confidencial.
+- check data;
+- check tone;
+- verify names and dates;
+- adapt to the public;
+- remove repetitions;
+- confirm that there is no confidential information.
 
-Si se trata de análisis de datos:
+If it is data analysis:
 
-- revisar columnas;
-- comprobar fórmulas;
-- contrastar resultados;
-- validar supuestos;
-- revisar si hay datos faltantes o atípicos.
-
----
-
-# Parte 3. Checklist de calidad
-
-## 14. Checklist general para cualquier resultado de Copilot
-
-Antes de usar una respuesta generada por Copilot, revisa:
-
-- [ ] ¿Responde exactamente al objetivo?
-- [ ] ¿Usa el contexto correcto?
-- [ ] ¿El formato es adecuado?
-- [ ] ¿Hay datos inventados?
-- [ ] ¿Hay errores técnicos?
-- [ ] ¿Se ha incluido información sensible?
-- [ ] ¿El tono es apropiado?
-- [ ] ¿Necesita verificación con fuentes externas?
-- [ ] ¿Requiere revisión de otra persona?
-- [ ] ¿La responsabilidad final está clara?
+- review columns;
+- check formulas;
+- compare results;
+- validate assumptions;
+- check for missing or atypical data.
 
 ---
 
-## 15. Checklist para código generado
+# Part 3. Quality checklist
 
-Antes de aceptar código generado por Copilot:
+## 14. General checklist for any Copilot results
 
-- [ ] ¿Entiendo qué hace?
-- [ ] ¿Compila o se ejecuta correctamente?
-- [ ] ¿Respeta la arquitectura del proyecto?
-- [ ] ¿Sigue el estilo del equipo?
-- [ ] ¿Tiene nombres claros?
-- [ ] ¿Evita duplicación innecesaria?
-- [ ] ¿Tiene tests?
-- [ ] ¿Controla errores?
-- [ ] ¿Hay problemas de seguridad?
-- [ ] ¿Introduce dependencias innecesarias?
-- [ ] ¿Funciona en casos límite?
-- [ ] ¿Está documentado si es necesario?
+Before using a response generated by Copilot, review:
 
----
-
-## 16. Checklist para documentación
-
-Antes de publicar documentación generada con Copilot:
-
-- [ ] ¿Está actualizada?
-- [ ] ¿Es clara para el público objetivo?
-- [ ] ¿Tiene ejemplos correctos?
-- [ ] ¿No promete cosas que no son ciertas?
-- [ ] ¿No contiene información interna no autorizada?
-- [ ] ¿Está bien estructurada?
-- [ ] ¿Evita repeticiones?
-- [ ] ¿Distingue hechos de recomendaciones?
+- [ ] Does it respond exactly to the objective?
+- [ ] Do you use the correct context?
+- [ ] Is the format appropriate?
+- [ ] Is there invented data?
+- [ ] Are there technical errors?
+- [ ] Has sensitive information been included?
+- [ ] Is the tone appropriate?
+- [ ] Do you need verification with external sources?
+- [ ] Does it require review by another person?
+- [ ] Is the final responsibility clear?
 
 ---
 
-## 17. Checklist para presentaciones y correos
+## 15. Checklist for generated code
 
-Antes de enviar o presentar contenido generado:
+Before accepting code generated by Copilot:
 
-- [ ] ¿El tono es adecuado?
-- [ ] ¿El mensaje es claro?
-- [ ] ¿Hay información sensible?
-- [ ] ¿Los nombres y fechas son correctos?
-- [ ] ¿El contenido es demasiado genérico?
-- [ ] ¿Falta contexto?
-- [ ] ¿Puede malinterpretarse?
-- [ ] ¿Necesita una versión más breve?
-- [ ] ¿Representa bien la postura de la persona o empresa?
-
----
-
-# Parte 4. Uso en equipos
-
-## 18. Por qué los equipos necesitan normas
-
-Cuando una persona usa Copilot de forma individual, puede revisar sus propios resultados.
-
-Pero cuando lo usa un equipo completo, aparecen nuevas preguntas:
-
-- ¿Qué datos se pueden introducir?
-- ¿Qué herramientas están permitidas?
-- ¿Se puede usar con código privado?
-- ¿Quién revisa el código generado?
-- ¿Cómo se documenta el uso de IA?
-- ¿Qué ocurre si Copilot genera algo incorrecto?
-- ¿Hay tareas prohibidas?
-- ¿Qué criterios de calidad se aplican?
-
-Por eso conviene definir normas internas.
+- [ ] Do I understand what it does?
+- [ ] Does it compile or run correctly?
+- [ ] Do you respect the project architecture?
+- [ ] Do you follow the team's style?
+- [ ] Do you have clear names?
+- [ ] Avoid unnecessary duplication?
+- [ ] Do you have tests?
+- [ ] Do you control errors?
+- [ ] Are there security problems?
+- [ ] Does it introduce unnecessary dependencies?
+- [ ] Does it work in extreme cases?
+- [ ] Is it documented if necessary?
 
 ---
 
-## 19. Política básica de uso de Copilot para equipos
+## 16. Checklist for documentation
 
-Una política sencilla podría incluir:
+Before publishing documentation generated with Copilot:
+
+- [ ] Is it updated?
+- [ ] Is it clear for the target audience?
+- [ ] Do you have correct examples?
+- [ ] Don't you promise things that aren't true?
+- [ ] Does not contain unauthorized internal information?
+- [ ] Is it well structured?
+- [ ] Do you avoid repetitions?
+- [ ] Do you distinguish facts from recommendations?
+
+---
+
+## 17. Checklist for presentations and emails
+
+Before submitting or submitting generated content:
+
+- [ ] Is the tone appropriate?
+- [ ] Is the message clear?
+- [ ] Is there sensitive information?
+- [ ] Are the names and dates correct?
+- [ ] Is the content too generic?
+- [ ] Missing context?
+- [ ] Can it be misinterpreted?
+- [ ] Need a shorter version?
+- [ ] Does it represent the position of the person or company well?
+
+---
+
+# Part 4. Use in teams
+
+## 18. Why teams need norms
+
+When a person uses Copilot individually, they can review their own results.
+
+But when a whole team uses it, new questions arise:
+
+- What data can be entered?
+- What tools are allowed?
+- Can it be used with private code?
+- Who reviews the generated code?
+- How is the use of AI documented?
+- What happens if Copilot generates something incorrect?
+- Are there prohibited tasks?
+- What quality criteria are applied?
+
+That is why it is convenient to define internal rules.
+
+---
+
+## 19. Basic Copilot usage policy for teams
+
+A simple policy could include:
 
 ```text
 1. Copilot puede usarse como herramienta de apoyo, pero no sustituye la revisión humana.
@@ -378,155 +378,154 @@ Una política sencilla podría incluir:
 
 ---
 
-## 20. Roles en un flujo con Copilot
+## 20. Roles in a flow with Copilot
 
-En un equipo puede haber distintos roles:
+In a team there can be different roles:
 
-| Rol                      | Responsabilidad                                      |
+| Role | Responsibility |
 | ------------------------ | ---------------------------------------------------- |
-| Persona usuaria          | Formula prompts, revisa resultados y decide qué usar |
-| Revisor técnico          | Revisa código, arquitectura y seguridad              |
-| Responsable de datos     | Define qué información puede usarse                  |
-| Responsable de seguridad | Evalúa riesgos y permisos                            |
-| Responsable de equipo    | Define normas y buenas prácticas                     |
+| User person | Formulate prompts, review results and decide what to use |
+| Technical reviewer | Review code, architecture and security |
+| Data Manager | Defines what information can be used |
+| Security Manager | Evaluate risks and permissions |
+| Team manager | Defines standards and good practices |
 
-No siempre serán personas distintas, pero las responsabilidades deben estar claras.
-
----
-
-## 21. Integración con Git y GitHub
-
-En proyectos de desarrollo, un flujo recomendable sería:
-
-1. Crear una rama para el cambio.
-2. Usar Copilot para generar o mejorar partes concretas.
-3. Revisar manualmente el resultado.
-4. Ejecutar tests.
-5. Crear commits claros.
-6. Abrir una pull request.
-7. Revisar con otra persona.
-8. Usar GitHub Actions para validar.
-9. Corregir problemas.
-10. Fusionar solo cuando esté aprobado.
-
-Copilot puede participar en varias partes del proceso, pero no debe saltarse los controles del equipo.
+They will not always be different people, but responsibilities must be clear.
 
 ---
 
-# Parte 5. Estrategia de adopción
+## 21. Integration with Git and GitHub
 
-## 22. Cómo introducir Copilot en una organización
+In development projects, a recommended flow would be:
 
-Una adopción razonable puede hacerse en fases.
+1. Create a branch for the change.
+2. Use Copilot to generate or improve specific parts.
+3. Manually review the result.
+4. Run tests.
+5. Create clear commits.
+6. Open a pull request.
+7. Review with another person.
+8. Use GitHub Actions to validate.
+9. Correct problems.
+10. Merge only when approved.
 
-### Fase 1. Exploración
-
-Objetivo: entender posibilidades y límites.
-
-Acciones:
-
-- probar casos sencillos;
-- identificar tareas repetitivas;
-- formar a un grupo pequeño;
-- recopilar dudas y riesgos.
-
-### Fase 2. Piloto
-
-Objetivo: probar Copilot en un entorno controlado.
-
-Acciones:
-
-- elegir un equipo o proyecto;
-- definir normas básicas;
-- medir ahorro de tiempo;
-- revisar calidad;
-- documentar errores frecuentes.
-
-### Fase 3. Estandarización
-
-Objetivo: crear prácticas comunes.
-
-Acciones:
-
-- definir prompts recomendados;
-- crear checklists;
-- documentar buenas prácticas;
-- formar a más personas;
-- revisar políticas de seguridad.
-
-### Fase 4. Escalado
-
-Objetivo: ampliar el uso de forma segura.
-
-Acciones:
-
-- extender a más equipos;
-- integrar con flujos de trabajo;
-- crear agentes si procede;
-- medir impacto;
-- revisar periódicamente la política.
+Copilot can participate in various parts of the process, but must not bypass the team controls.
 
 ---
 
-## 23. Métricas para evaluar Copilot
+# Part 5. Adoption Strategy
+## 22. How to introduce Copilot in an organization
 
-Para saber si Copilot está aportando valor, se pueden medir indicadores como:
+A reasonable adoption can be done in phases.
 
-- reducción de tiempo en tareas repetitivas;
-- mejora en documentación;
-- número de tests generados;
-- reducción de errores simples;
-- satisfacción del equipo;
-- calidad de los prompts;
-- cantidad de resultados descartados;
-- incidencias relacionadas con uso incorrecto;
-- tiempo de revisión;
-- impacto en onboarding de nuevos miembros.
+### Phase 1. Exploration
 
-No basta con medir cuánto se usa Copilot. Hay que medir si mejora el trabajo.
+Objective: understand possibilities and limits.
+
+Actions:
+
+- test simple cases;
+- identify repetitive tasks;
+- form a small group;
+- collect doubts and risks.
+
+### Phase 2. Pilot
+
+Objective: test Copilot in a controlled environment.
+
+Actions:
+
+- choose a team or project;
+- define basic standards;
+- measure time savings;
+- check quality;
+- document frequent errors.
+
+### Phase 3. Standardization
+
+Objective: create common practices.
+
+Actions:
+
+- define recommended prompts;
+- create checklists;
+- document good practices;
+- train more people;
+- review security policies.
+
+### Phase 4. Scaling
+
+Objective: expand use safely.
+
+Actions:
+
+- extend to more teams;
+- integrate with workflows;
+- create agents if applicable;
+- measure impact;
+- periodically review the policy.
 
 ---
 
-## 24. Riesgos de una mala adopción
+## 23. Metrics to evaluate Copilot
 
-Una adopción mal gestionada puede provocar:
+To know if Copilot is providing value, you can measure indicators such as:
 
-- dependencia excesiva;
-- pérdida de criterio técnico;
-- código no revisado;
-- errores en producción;
-- documentación incorrecta;
-- fuga de información;
-- decisiones basadas en respuestas no verificadas;
-- falsa sensación de productividad;
-- reducción de aprendizaje real;
-- conflictos sobre responsabilidad.
+- reduction of time on repetitive tasks;
+- improvement in documentation;
+- number of tests generated;
+- reduction of simple errors;
+- team satisfaction;
+- quality of the prompts;
+- number of discarded results;
+- incidents related to incorrect use;
+- review time;
+- impact on onboarding of new members.
+
+It is not enough to measure how much Copilot is used. You have to measure if the work improves.
 
 ---
 
-## 25. Buenas prácticas para aprender con Copilot
+## 24. Risks of a bad adoption
 
-Copilot también puede ser una herramienta de aprendizaje.
+A poorly managed adoption can cause:
 
-Pero para aprender de verdad, conviene:
+- excessive dependence;
+- loss of technical judgment;
+- unreviewed code;
+- errors in production;
+- incorrect documentation;
+- information leak;
+- decisions based on unverified answers;
+- false sense of productivity;
+- reduction of real learning;
+- conflicts over responsibility.
 
-- pedir explicaciones, no solo soluciones;
-- comparar alternativas;
-- intentar resolver primero una parte;
-- preguntar por errores;
-- pedir ejemplos progresivos;
-- modificar el código generado;
-- comprobar si se entiende cada línea;
-- crear resúmenes propios;
-- no copiar sin comprender.
+---
 
-Un buen prompt de aprendizaje sería:
+## 25. Good practices for learning with Copilot
+
+Copilot can also be a learning tool.
+
+But to really learn, you should:
+
+- ask for explanations, not just solutions;
+- compare alternatives;
+- try to solve one part first;
+- ask about errors;
+- ask for progressive examples;
+- modify the generated code;
+- check if each line is understood;
+- create your own summaries;
+- do not copy without understanding.
+
+A good learning prompt would be:
 
 ```text
 Explícame esta solución paso a paso. Después hazme tres preguntas para comprobar si la he entendido.
 ```
 
-Otro ejemplo:
+Another example:
 
 ```text
 Dame dos formas de resolver este problema, compara ventajas e inconvenientes y recomiéndame una para un proyecto pequeño.
@@ -534,9 +533,9 @@ Dame dos formas de resolver este problema, compara ventajas e inconvenientes y r
 
 ---
 
-# Parte 6. Plantillas finales
+# Part 6. Final templates
 
-## 26. Plantilla de prompt profesional
+## 26. Professional prompt template
 
 ```text
 Necesito [objetivo].
@@ -547,7 +546,7 @@ Quiero la respuesta en formato [formato].
 Antes de dar la respuesta final, señala posibles problemas o riesgos.
 ```
 
-Ejemplo:
+Example:
 
 ```text
 Necesito refactorizar esta función.
@@ -560,7 +559,7 @@ Antes de dar la respuesta final, señala posibles problemas o riesgos.
 
 ---
 
-## 27. Plantilla para revisar una respuesta de Copilot
+## 27. Template for reviewing a Copilot response
 
 ```text
 Revisa la respuesta anterior.
@@ -572,7 +571,7 @@ No añadas información que no puedas justificar.
 
 ---
 
-## 28. Plantilla para pedir alternativas
+## 28. Template for ordering alternatives
 
 ```text
 Dame tres alternativas para resolver este problema.
@@ -582,7 +581,7 @@ Termina recomendando una opción para mi caso concreto.
 
 ---
 
-## 29. Plantilla para documentación
+## 29. Template for documentation
 
 ```text
 Genera documentación para este código.
@@ -592,7 +591,7 @@ Usa un lenguaje claro para personas con nivel principiante/intermedio.
 
 ---
 
-## 30. Plantilla para reuniones y productividad
+## 30. Meeting and Productivity Template
 
 ```text
 Convierte estas notas en un resumen profesional.
@@ -602,52 +601,52 @@ Usa un tono claro y directo.
 
 ---
 
-## 31. Conclusión del curso
+## 31. Conclusion of the course
 
-Copilot y GitHub Copilot son herramientas muy potentes, pero su valor depende de cómo se utilicen.
+Copilot and GitHub Copilot are very powerful tools, but their value depends on how they are used.
 
-Durante el curso hemos visto que Copilot puede ayudar a:
+During the course we have seen that Copilot can help:
 
-- escribir y revisar código;
-- documentar;
-- generar tests;
-- detectar errores;
-- automatizar workflows;
-- trabajar con APIs;
-- preparar documentos;
-- analizar datos;
-- crear presentaciones;
-- resumir reuniones;
-- diseñar agentes.
+- write and review code;
+- document;
+- generate tests;
+- detect errors;
+- automate workflows;
+- work with APIs;
+- prepare documents;
+- analyze data;
+- create presentations;
+- summarize meetings;
+- design agents.
 
-Pero también hemos visto que existen límites:
+But we have also seen that there are limits:
 
-- puede equivocarse;
-- puede inventar;
-- puede proponer código inseguro;
-- puede no entender el contexto;
-- puede generar resultados demasiado genéricos;
-- puede crear dependencia si se usa mal.
+- you can be wrong;
+- can invent;
+- may propose unsafe code;
+- may not understand the context;
+- may generate results that are too generic;
+- can create dependency if used incorrectly.
 
-La competencia profesional no consiste en usar Copilot para evitar pensar, sino en usarlo para pensar mejor, trabajar más rápido y revisar con más criterio.
-
----
-
-## 32. Resumen del tema
-
-Las ideas principales son:
-
-- Copilot debe usarse como asistente, no como sustituto.
-- El flujo profesional incluye contexto, revisión, pruebas y validación.
-- No todas las tareas son igual de adecuadas para IA.
-- Los equipos necesitan normas claras de uso.
-- La adopción debe ser gradual y medible.
-- La revisión humana sigue siendo imprescindible.
-- Un buen uso de Copilot combina productividad, criterio técnico y responsabilidad.
+Professional competence is not about using Copilot to avoid thinking, but about using it to think better, work faster, and review more judiciously.
 
 ---
 
-## 33. Documentación recomendada
+## 32. Summary of the topic
+
+The main ideas are:
+
+- Copilot should be used as an assistant, not a substitute.
+- The professional flow includes context, review, testing and validation.
+- Not all tasks are equally suitable for AI.
+- The equipment needs clear rules of use.
+- Adoption must be gradual and measurable.
+- Human review remains essential.
+- A good use of Copilot combines productivity, technical judgment and responsibility.
+
+---
+
+## 33. Recommended documentation
 
 - Microsoft Learn — Microsoft Copilot documentation: https://learn.microsoft.com/en-us/copilot/
 - Microsoft Learn — Microsoft 365 Copilot documentation: https://learn.microsoft.com/en-us/microsoft-365/copilot/

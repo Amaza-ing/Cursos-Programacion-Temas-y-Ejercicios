@@ -1,8 +1,8 @@
-# Tema 7 — Completar el CRUD: editar y borrar cursos en Spring MVC
+# Topic 7 — Completing the CRUD: editing and deleting courses in Spring MVC
 
-## 1. Objetivo del tema
+## 1. Objective of the topic
 
-En los temas anteriores hemos construido una aplicación Spring MVC que ya permite:
+In the previous topics we have built a Spring MVC application that already allows:
 
 ```text
 Ver el listado de cursos.
@@ -15,9 +15,9 @@ Usar internacionalización.
 Aplicar pequeñas mejoras al proyecto.
 ```
 
-En este **Tema 7** vamos a completar el CRUD.
+In this **Topic 7** we are going to complete the CRUD.
 
-CRUD significa:
+CRUD means:
 
 ```text
 Create  → Crear
@@ -26,16 +26,16 @@ Update  → Actualizar
 Delete  → Borrar
 ```
 
-Hasta ahora nuestra aplicación ya tenía parte del CRUD:
+Until now our application already had part of the CRUD:
 
-| Operación     | Estado                  |
+| Operation | Status |
 | ------------- | ----------------------- |
-| Crear cursos  | Ya hecho                |
-| Ver cursos    | Ya hecho                |
-| Editar cursos | Lo haremos en este tema |
-| Borrar cursos | Lo haremos en este tema |
+| Create courses | Already done |
+| See courses | Already done |
+| Edit courses | We will do it in this topic |
+| Delete courses | We will do it in this topic |
 
-Al terminar este tema, nuestra aplicación permitirá:
+Upon completion of this topic, our application will allow:
 
 ```text
 1. Ver todos los cursos.
@@ -47,11 +47,11 @@ Al terminar este tema, nuestra aplicación permitirá:
 
 ---
 
-# 2. Qué vamos a construir
+# 2. What are we going to build
 
-Vamos a añadir nuevas rutas a `CourseController`.
+We are going to add new routes to `CourseController`.
 
-Actualmente tenemos rutas parecidas a estas:
+We currently have routes similar to these:
 
 ```text
 GET  /courses             → Listado de cursos
@@ -60,7 +60,7 @@ GET  /courses/new         → Formulario de creación
 POST /courses             → Guardar curso nuevo
 ```
 
-En este tema añadiremos:
+In this topic we will add:
 
 ```text
 GET  /courses/edit?id=1   → Mostrar formulario de edición
@@ -68,7 +68,7 @@ POST /courses/update      → Procesar edición
 POST /courses/delete      → Borrar curso
 ```
 
-El flujo completo será:
+The complete flow will be:
 
 ```text
 Editar curso
@@ -105,9 +105,9 @@ Redirección al listado
 
 ---
 
-# 3. Punto de partida
+#3. Starting point
 
-Partimos de la aplicación anterior, donde ya tenemos una estructura parecida a esta:
+We start from the previous application, where we already have a structure similar to this:
 
 ```text
 spring-mvc-project
@@ -175,7 +175,7 @@ spring-mvc-project
                         └── not-found.jsp
 ```
 
-También partimos de una tabla MySQL como esta:
+We also start from a MySQL table like this:
 
 ```sql
 CREATE TABLE IF NOT EXISTS courses (
@@ -188,17 +188,17 @@ CREATE TABLE IF NOT EXISTS courses (
 
 ---
 
-# 4. Recordatorio del modelo `Course`
+#4. `Course` Model Reminder
 
-Después de aplicar las mejoras del Tema 6, nuestra clase `Course` puede estar usando Lombok.
+After applying the improvements from Topic 6, our `Course` class can be using Lombok.
 
-Archivo:
+File:
 
 ```text
 src/main/java/com/example/springmvcday1/model/Course.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.example.springmvcday1.model;
@@ -233,11 +233,11 @@ public class Course {
 }
 ```
 
-## Explicación
+## Explanation
 
-Esta clase representa un curso.
+This class represents a course.
 
-Tiene los campos:
+It has the fields:
 
 ```text
 id
@@ -246,19 +246,19 @@ level
 durationInHours
 ```
 
-El campo `id` nos permite identificar qué curso queremos editar o borrar.
+The `id` field allows us to identify which course we want to edit or delete.
 
-Por eso en este tema será muy importante conservar el `id` cuando mostremos el formulario de edición.
-
----
-
-[![CRUD Completo](https://img.youtube.com/vi/YEoaT7bY1Ws/0.jpg)](https://www.youtube.com/watch?v=YEoaT7bY1Ws&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+That is why in this topic it will be very important to preserve the `id` when we show the editing form.
 
 ---
 
-# 5. Paso 1 — Ampliar la interfaz `CourseDao`
+[![Full CRUD](https://img.youtube.com/vi/YEoaT7bY1Ws/0.jpg)](https://www.youtube.com/watch?v=YEoaT7bY1Ws&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
-Hasta ahora nuestra interfaz `CourseDao` tenía métodos para:
+---
+
+#5. Step 1 — Expand `CourseDao` interface
+
+Until now our `CourseDao` interface had methods for:
 
 ```text
 findAll()
@@ -266,20 +266,20 @@ findById()
 save()
 ```
 
-Ahora necesitamos añadir:
+Now we need to add:
 
 ```text
 update()
 deleteById()
 ```
 
-Archivo:
+File:
 
 ```text
 src/main/java/com/example/springmvcday1/dao/CourseDao.java
 ```
 
-Código actualizado:
+Updated code:
 
 ```java
 package com.example.springmvcday1.dao;
@@ -302,41 +302,41 @@ public interface CourseDao {
 }
 ```
 
-## Explicación
+## Explanation
 
-Añadimos este método:
+We add this method:
 
 ```java
 void update(Course course);
 ```
 
-Lo usaremos para modificar un curso existente en MySQL.
+We will use it to modify an existing course in MySQL.
 
-El objeto `Course` debe llegar con su `id`, porque necesitamos saber qué fila de la tabla hay que actualizar.
+The `Course` object must arrive with its `id`, because we need to know which row of the table to update.
 
-También añadimos:
+We also add:
 
 ```java
 void deleteById(Long id);
 ```
 
-Lo usaremos para borrar un curso por su identificador.
+We will use it to delete a course by its identifier.
 
-La interfaz no contiene SQL. Solo define qué operaciones debe ofrecer nuestra capa de acceso a datos.
+The interface does not contain SQL. It only defines what operations our data access layer should offer.
 
 ---
 
-# 6. Paso 2 — Implementar `update` y `deleteById` en `JdbcCourseDao`
+#6. Step 2 — Implement `update` and `deleteById` in `JdbcCourseDao`
 
-Ahora actualizamos la implementación JDBC.
+Now we update the JDBC implementation.
 
-Archivo:
+File:
 
 ```text
 src/main/java/com/example/springmvcday1/dao/JdbcCourseDao.java
 ```
 
-Código completo actualizado:
+Full code updated:
 
 ```java
 package com.example.springmvcday1.dao;
@@ -455,9 +455,9 @@ public class JdbcCourseDao implements CourseDao {
 
 ---
 
-# 7. Explicación del método `update`
+#7. `update` Method Explanation
 
-El método nuevo es:
+The new method is:
 
 ```java
 @Override
@@ -478,7 +478,7 @@ public void update(Course course) {
 }
 ```
 
-La consulta SQL es:
+The SQL query is:
 
 ```sql
 UPDATE courses
@@ -486,7 +486,7 @@ SET title = ?, level = ?, duration_in_hours = ?
 WHERE id = ?
 ```
 
-Esto significa:
+This means:
 
 ```text
 Actualiza la tabla courses.
@@ -494,15 +494,15 @@ Cambia el título, el nivel y la duración.
 Pero solo en la fila cuyo id coincida.
 ```
 
-La parte más importante es:
+The most important part is:
 
 ```sql
 WHERE id = ?
 ```
 
-Sin esta condición, actualizaríamos todos los cursos de la tabla.
+Without this condition, we would update all the courses in the table.
 
-Por ejemplo, si el curso tiene:
+For example, if the course has:
 
 ```java
 id = 2
@@ -511,9 +511,9 @@ level = "Avanzado"
 durationInHours = 30
 ```
 
-La consulta actualizará solo la fila con `id = 2`.
+The query will update only the row with `id = 2`.
 
-El orden de los valores es importante:
+The order of the values is important:
 
 ```java
 course.getTitle(),           // primer ?
@@ -524,9 +524,9 @@ course.getId()               // cuarto ?
 
 ---
 
-# 8. Explicación del método `deleteById`
+#8. `deleteById` Method Explanation
 
-El método de borrado es:
+The deletion method is:
 
 ```java
 @Override
@@ -540,43 +540,42 @@ public void deleteById(Long id) {
 }
 ```
 
-La consulta SQL es:
+The SQL query is:
 
 ```sql
 DELETE FROM courses
 WHERE id = ?
 ```
 
-Esto significa:
+This means:
 
 ```text
 Borra de la tabla courses
 la fila cuyo id coincida con el parámetro.
 ```
 
-De nuevo, la parte más importante es:
+Again, the most important part is:
 
 ```sql
 WHERE id = ?
 ```
 
-Sin `WHERE`, borraríamos todos los cursos.
-
-Por eso, cuando hacemos operaciones de borrado o actualización, debemos revisar muy bien la condición.
+Without `WHERE`, we would delete all courses.
+Therefore, when we perform deletion or update operations, we must check the condition very well.
 
 ---
 
-# 9. Paso 3 — Actualizar `CourseService`
+#9. Step 3 — Update `CourseService`
 
-Ahora el servicio también debe exponer métodos para editar y borrar.
+Now the service must also expose methods for editing and deleting.
 
-Archivo:
+File:
 
 ```text
 src/main/java/com/example/springmvcday1/service/CourseService.java
 ```
 
-Código actualizado:
+Updated code:
 
 ```java
 package com.example.springmvcday1.service;
@@ -638,9 +637,9 @@ public class CourseService {
 
 ---
 
-# 10. Explicación del método `update` en el servicio
+#10. Explanation of `update` method in service
 
-El método es:
+The method is:
 
 ```java
 public void update(Course course) {
@@ -654,15 +653,15 @@ public void update(Course course) {
 }
 ```
 
-Primero buscamos el curso existente:
+First we look for the existing course:
 
 ```java
 Course existingCourse = findByIdOrThrow(course.getId());
 ```
 
-Esto tiene una ventaja: si alguien intenta editar un curso que no existe, lanzamos nuestra excepción personalizada.
+This has an advantage: if someone tries to edit a course that doesn't exist, we throw our custom exception.
 
-Después copiamos los nuevos datos:
+Then we copy the new data:
 
 ```java
 existingCourse.setTitle(course.getTitle());
@@ -670,25 +669,25 @@ existingCourse.setLevel(course.getLevel());
 existingCourse.setDurationInHours(course.getDurationInHours());
 ```
 
-Finalmente actualizamos en la base de datos:
+Finally we update the database:
 
 ```java
 courseDao.update(existingCourse);
 ```
 
-Podríamos haber llamado directamente a:
+We could have called directly:
 
 ```java
 courseDao.update(course);
 ```
 
-Pero buscar antes el curso existente nos permite comprobar que realmente existe antes de actualizarlo.
+But searching for the existing course first allows us to verify that it really exists before updating it.
 
 ---
 
-# 11. Explicación del método `deleteById` en el servicio
+#11. Explanation of `deleteById` method in service
 
-El método es:
+The method is:
 
 ```java
 public void deleteById(Long id) {
@@ -697,29 +696,29 @@ public void deleteById(Long id) {
 }
 ```
 
-Primero comprobamos que el curso existe:
+First we check that the course exists:
 
 ```java
 findByIdOrThrow(id);
 ```
 
-Si no existe, se lanza `CourseNotFoundException`.
+If it does not exist, `CourseNotFoundException` is thrown.
 
-Si existe, borramos:
+If it exists, we delete:
 
 ```java
 courseDao.deleteById(id);
 ```
 
-Esto evita que la aplicación intente borrar silenciosamente un curso inexistente.
+This prevents the application from trying to silently delete a non-existent course.
 
 ---
 
-# 12. Paso 4 — Añadir mensajes al archivo de internacionalización
+#12. Step 4 — Add messages to the internationalization file
 
-Antes de modificar el controlador y las vistas, añadiremos nuevas claves de mensajes.
+Before modifying the controller and views, we will add new message keys.
 
-Archivos:
+Files:
 
 ```text
 src/main/resources/messages.properties
@@ -727,7 +726,7 @@ src/main/resources/messages_es.properties
 src/main/resources/messages_en.properties
 ```
 
-Añadimos estas claves a `messages.properties` y `messages_es.properties`:
+We add these keys to `messages.properties` and `messages_es.properties`:
 
 ```properties
 courses.edit=Editar
@@ -739,7 +738,7 @@ success.course.updated=El curso se ha actualizado correctamente.
 success.course.deleted=El curso se ha borrado correctamente.
 ```
 
-Y estas claves a `messages_en.properties`:
+And these keys to `messages_en.properties`:
 
 ```properties
 courses.edit=Edit
@@ -751,9 +750,9 @@ success.course.updated=The course has been updated successfully.
 success.course.deleted=The course has been deleted successfully.
 ```
 
-## Explicación
+## Explanation
 
-Estas claves nos permitirán mostrar textos como:
+These keys will allow us to display texts such as:
 
 ```text
 Editar
@@ -762,23 +761,23 @@ Actualizar curso
 El curso se ha actualizado correctamente.
 ```
 
-sin escribirlos directamente en la JSP.
+without writing them directly in the JSP.
 
-Así mantenemos la internacionalización que ya habíamos creado en el tema anterior.
+This way we maintain the internationalization that we had already created in the previous topic.
 
 ---
 
-# 13. Paso 5 — Actualizar `CourseController`
+#13. Step 5 — Update `CourseController`
 
-Ahora vamos a añadir los métodos de editar y borrar.
+Now let's add the edit and delete methods.
 
-Archivo:
+File:
 
 ```text
 src/main/java/com/example/springmvcday1/controller/CourseController.java
 ```
 
-Código completo actualizado:
+Full code updated:
 
 ```java
 package com.example.springmvcday1.controller;
@@ -942,33 +941,33 @@ public class CourseController {
 
 ---
 
-# 14. Explicación general del controlador actualizado
+#14. General explanation of the updated driver
 
-El controlador ahora tiene métodos para todas las operaciones CRUD:
+The controller now has methods for all CRUD operations:
 
-| Método           | Ruta                       | Función                        |
-| ---------------- | -------------------------- | ------------------------------ |
-| `listCourses`    | `GET /courses`             | Listar cursos                  |
-| `courseDetail`   | `GET /courses/detail?id=1` | Ver detalle                    |
-| `showCreateForm` | `GET /courses/new`         | Mostrar formulario de creación |
-| `createCourse`   | `POST /courses`            | Crear curso                    |
-| `showEditForm`   | `GET /courses/edit?id=1`   | Mostrar formulario de edición  |
-| `updateCourse`   | `POST /courses/update`     | Actualizar curso               |
-| `deleteCourse`   | `POST /courses/delete`     | Borrar curso                   |
+| Method | Route | Function |
+| ---------------- | -------------------------- | --------------------------- |
+| `listCourses` | `GET /courses` | List courses |
+| `courseDetail` | `GET /courses/detail?id=1` | See detail |
+| `showCreateForm` | `GET /courses/new` | Show creation form |
+| `createCourse` | `POST /courses` | Create course |
+| `showEditForm` | `GET /courses/edit?id=1` | Show edit form |
+| `updateCourse` | `POST /courses/update` | Update course |
+| `deleteCourse` | `POST /courses/delete` | Delete course |
 
-Además, hemos creado un método privado:
+Additionally, we have created a private method:
 
 ```java
 private void addFlashMessage(...)
 ```
 
-para no repetir el código de obtener mensajes internacionalizados.
+to avoid repeating the code to obtain internationalized messages.
 
 ---
 
-# 15. Explicación de `showEditForm`
+#15. `showEditForm` Explanation
 
-El método es:
+The method is:
 
 ```java
 @GetMapping("/edit")
@@ -987,86 +986,86 @@ public String showEditForm(
 }
 ```
 
-Este método responde a una URL como:
+This method responds to a URL like:
 
 ```text
 /courses/edit?id=2
 ```
 
-Primero lee el parámetro `id`:
+First read the `id` parameter:
 
 ```java
 @RequestParam("id") Long id
 ```
 
-Después busca el curso:
+Then search for the course:
 
 ```java
 Course course = courseService.findByIdOrThrow(id);
 ```
 
-Si el curso existe, se añade al modelo:
+If the course exists, it is added to the model:
 
 ```java
 model.addAttribute("course", course);
 ```
 
-La vista recibirá un curso con datos reales, no un curso vacío.
+The view will receive a course with actual data, not an empty course.
 
-También añadimos:
+We also add:
 
 ```java
 model.addAttribute("formAction", "/courses/update");
 model.addAttribute("submitCode", "courses.update");
 ```
 
-Esto nos permitirá reutilizar la misma vista `form.jsp` para crear y editar.
+This will allow us to reuse the same `form.jsp` view for creating and editing.
 
 ---
 
-# 16. Reutilizar `form.jsp` para crear y editar
+#16. Reuse `form.jsp` to create and edit
 
-En lugar de crear dos vistas separadas:
+Instead of creating two separate views:
 
 ```text
 create-form.jsp
 edit-form.jsp
 ```
 
-vamos a reutilizar:
+let's reuse:
 
 ```text
 courses/form.jsp
 ```
 
-La diferencia será:
+The difference will be:
 
-| Modo   | Acción del formulario | Texto del botón  |
+| Mode | Form Action | Button text |
 | ------ | --------------------- | ---------------- |
-| Crear  | `/courses`            | Crear curso      |
-| Editar | `/courses/update`     | Actualizar curso |
+| Create | `/courses` | Create course |
+| Edit | `/courses/update` | Update course |
 
-Por eso en el controlador enviamos estos atributos:
+That's why in the controller we send these attributes:
 
 ```java
 model.addAttribute("formAction", "/courses");
 model.addAttribute("submitCode", "form.submit");
 ```
 
-para crear, y:
+to create, and:
 
 ```java
 model.addAttribute("formAction", "/courses/update");
 model.addAttribute("submitCode", "courses.update");
 ```
 
-para editar.
+to edit.
 
 ---
 
-# 17. Explicación de `updateCourse`
+#17. `updateCourse` Explanation
 
-El método es:
+The method is:
 
 ```java
 @PostMapping("/update")
@@ -1095,41 +1094,41 @@ public String updateCourse(
 }
 ```
 
-Este método procesa el formulario de edición.
+This method processes the edit form.
 
-Recibe el objeto:
+Receive the object:
 
 ```java
 @ModelAttribute("course") Course course
 ```
 
-Spring rellena ese objeto con los datos enviados por el formulario.
+Spring fills that object with the data sent by the form.
 
-También usamos:
+We also use:
 
 ```java
 @Valid
 ```
 
-para validar los datos.
+to validate the data.
 
-Si hay errores:
+If there are errors:
 
 ```java
 if (bindingResult.hasErrors()) {
 ```
 
-volvemos al formulario.
+We return to the form.
 
-Si no hay errores:
+If there are no errors:
 
 ```java
 courseService.update(course);
 ```
 
-actualizamos el curso.
+We update the course.
 
-Después añadimos un mensaje flash y redirigimos:
+Then we add a flash message and redirect:
 
 ```java
 return "redirect:/courses";
@@ -1137,9 +1136,9 @@ return "redirect:/courses";
 
 ---
 
-# 18. Explicación de `deleteCourse`
+#18. `deleteCourse` Explanation
 
-El método es:
+The method is:
 
 ```java
 @PostMapping("/delete")
@@ -1158,25 +1157,25 @@ public String deleteCourse(
 }
 ```
 
-Este método recibe el `id` del curso que queremos borrar.
+This method receives the `id` of the course we want to delete.
 
-Usamos `POST` para borrar porque borrar datos modifica el estado de la aplicación.
+We use `POST` to clear because clearing data modifies the state of the application.
 
-No es recomendable borrar usando un enlace `GET` como:
+It is not recommended to delete using an `GET` link such as:
 
 ```text
 /courses/delete?id=1
 ```
 
-Es mejor usar un formulario con método `POST`.
+It is better to use a form with method `POST`.
 
-Después de borrar, redirigimos al listado.
+After deleting, we redirect to the list.
 
 ---
 
-# 19. Explicación de `addFlashMessage`
+#19. `addFlashMessage` Explanation
 
-Hemos creado este método privado:
+We have created this private method:
 
 ```java
 private void addFlashMessage(
@@ -1195,7 +1194,7 @@ private void addFlashMessage(
 }
 ```
 
-Lo usamos para no repetir este bloque varias veces:
+We use it to avoid repeating this block several times:
 
 ```java
 Locale locale = LocaleContextHolder.getLocale();
@@ -1209,27 +1208,27 @@ String message = messageSource.getMessage(
 redirectAttributes.addFlashAttribute("successMessage", message);
 ```
 
-Ahora, cuando queremos añadir un mensaje flash, solo hacemos:
+Now, when we want to add a flash message, we just do:
 
 ```java
 addFlashMessage(redirectAttributes, "success.course.updated");
 ```
 
-Esto mejora la limpieza del controlador.
+This improves controller cleanliness.
 
 ---
 
-# 20. Paso 6 — Actualizar `form.jsp`
+#20. Step 6 — Update `form.jsp`
 
-Ahora debemos modificar el formulario para que sirva tanto para crear como para editar.
+Now we must modify the form so that it can be used for both creating and editing.
 
-Archivo:
+File:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/form.jsp
 ```
 
-Código actualizado:
+Updated code:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1321,43 +1320,43 @@ Código actualizado:
 
 ---
 
-# 21. Explicación de los cambios en `form.jsp`
+#21. `form.jsp` changes explained
 
-## 21.1. Acción dinámica del formulario
+## 21.1. Dynamic Form Action
 
-Antes teníamos algo como:
+Before we had something like:
 
 ```jsp
 action="${pageContext.request.contextPath}/courses"
 ```
 
-Ahora tenemos:
+Now we have:
 
 ```jsp
 action="${pageContext.request.contextPath}${formAction}"
 ```
 
-Esto permite que el controlador decida a dónde se enviará el formulario.
+This allows the controller to decide where the form will be sent.
 
-Si estamos creando:
+If we are creating:
 
 ```java
 model.addAttribute("formAction", "/courses");
 ```
 
-la acción final será:
+the final action will be:
 
 ```text
 /courses
 ```
 
-Si estamos editando:
+If we are editing:
 
 ```java
 model.addAttribute("formAction", "/courses/update");
 ```
 
-la acción final será:
+the final action will be:
 
 ```text
 /courses/update
@@ -1365,35 +1364,35 @@ la acción final será:
 
 ---
 
-## 21.2. Campo oculto para el `id`
+## 21.2. Hidden field for `id`
 
-Añadimos:
+We add:
 
 ```jsp
 <form:hidden path="id" />
 ```
 
-Esto es muy importante.
+This is very important.
 
-Cuando editamos un curso, necesitamos conservar su identificador.
+When we edit a course, we need to preserve its identifier.
 
-El usuario no necesita ver el `id`, pero la aplicación sí lo necesita para saber qué curso actualizar.
+The user does not need to see the `id`, but the application does need it to know which course to update.
 
-El campo oculto genera algo parecido a:
+The hidden field generates something like:
 
 ```html
 <input type="hidden" name="id" value="2" />
 ```
 
-Cuando el formulario se envía, Spring rellena:
+When the form is submitted, Spring fills in:
 
 ```java
 course.setId(2L);
 ```
 
-Sin este campo oculto, el objeto `Course` llegaría al método `updateCourse` sin `id`.
+Without this hidden field, the `Course` object would arrive in the `updateCourse` method without `id`.
 
-Y si no tenemos `id`, no podemos hacer:
+And if we don't have `id`, we can't do:
 
 ```sql
 WHERE id = ?
@@ -1401,47 +1400,46 @@ WHERE id = ?
 
 ---
 
-## 21.3. Texto dinámico del botón
+## 21.3. Dynamic button text
 
-Antes el botón siempre decía:
+Before the button always said:
 
 ```text
 Crear curso
 ```
 
-Ahora usamos:
+Now we use:
 
 ```jsp
 <spring:message code="${submitCode}" />
 ```
 
-Si estamos creando, el controlador envía:
+If we are creating, the controller sends:
 
 ```java
 model.addAttribute("submitCode", "form.submit");
 ```
 
-Si estamos editando, envía:
+If we are editing, send:
 
 ```java
 model.addAttribute("submitCode", "courses.update");
 ```
 
-Así reutilizamos el mismo formulario.
+This way we reuse the same form.
 
 ---
+#22. Step 7 — Update `list.jsp`
 
-# 22. Paso 7 — Actualizar `list.jsp`
+Now we are going to add buttons to edit and delete in the list.
 
-Ahora vamos a añadir botones para editar y borrar en el listado.
-
-Archivo:
+File:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
-Código actualizado:
+Updated code:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1537,11 +1535,11 @@ Código actualizado:
 
 ---
 
-# 23. Explicación de los nuevos botones del listado
+#23. Explanation of the new listing buttons
 
-## 23.1. Enlace de detalle
+## 23.1. Detail link
 
-Ya teníamos:
+We already had:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/detail?id=${course.id}">
@@ -1549,13 +1547,13 @@ Ya teníamos:
 </a>
 ```
 
-Este enlace sirve para ver el detalle.
+This link is used to see the details.
 
 ---
 
-## 23.2. Enlace de edición
+## 23.2. Edit link
 
-Añadimos:
+We add:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/edit?id=${course.id}">
@@ -1563,26 +1561,26 @@ Añadimos:
 </a>
 ```
 
-Este enlace lleva a:
+This link leads to:
 
 ```text
 /courses/edit?id=1
 ```
 
-Ese endpoint ejecuta:
+That endpoint runs:
 
 ```java
 @GetMapping("/edit")
 public String showEditForm(...)
 ```
 
-El controlador carga el curso y muestra el formulario con sus datos.
+The controller loads the course and displays the form with its data.
 
 ---
 
-## 23.3. Formulario de borrado
+## 23.3. Delete form
 
-Para borrar usamos un formulario:
+To delete we use a form:
 
 ```jsp
 <form method="post"
@@ -1598,29 +1596,29 @@ Para borrar usamos un formulario:
 </form>
 ```
 
-No usamos un enlace normal para borrar.
+We don't use a normal link to delete.
 
-No hacemos esto:
+We don't do this:
 
 ```jsp
 <a href="/courses/delete?id=1">Borrar</a>
 ```
 
-porque un enlace usa `GET`, y `GET` debería usarse para consultar información, no para borrar datos.
+because a link uses `GET`, and `GET` should be used to query information, not delete data.
 
-Por eso usamos:
+That's why we use:
 
 ```html
 method="post"
 ```
 
-El `id` viaja en un campo oculto:
+The `id` travels in a hidden field:
 
 ```html
 <input type="hidden" name="id" value="${course.id}" />
 ```
 
-Y el controlador lo recibe con:
+And the controller receives it with:
 
 ```java
 @RequestParam("id") Long id
@@ -1628,21 +1626,21 @@ Y el controlador lo recibe con:
 
 ---
 
-## 23.4. Confirmación antes de borrar
+## 23.4. Confirmation before deletion
 
-Añadimos:
+We add:
 
 ```jsp
 onsubmit="return confirm('<spring:message code="courses.confirmDelete" />');"
 ```
 
-Esto muestra una ventana de confirmación del navegador.
+This displays a browser confirmation window.
 
-Si el usuario acepta, el formulario se envía.
+If the user accepts, the form is submitted.
 
-Si cancela, no se borra nada.
+If you cancel, nothing is deleted.
 
-El mensaje viene de:
+The message comes from:
 
 ```properties
 courses.confirmDelete=¿Seguro que quieres borrar este curso?
@@ -1650,17 +1648,17 @@ courses.confirmDelete=¿Seguro que quieres borrar este curso?
 
 ---
 
-# 24. Paso 8 — Añadir estilos para acciones
+#24. Step 8 — Add styles for actions
 
-Vamos a mejorar un poco el aspecto de los botones de acción.
+We are going to improve the appearance of the action buttons a little.
 
-Archivo:
+File:
 
 ```text
 src/main/webapp/resources/css/styles.css
 ```
 
-Añadimos al final:
+We add at the end:
 
 ```css
 .actions-cell {
@@ -1689,47 +1687,47 @@ Añadimos al final:
 }
 ```
 
-## Explicación
+## Explanation
 
-La clase:
+The class:
 
 ```css
 .actions-cell
 ```
 
-hace que las acciones se muestren en línea con separación.
+causes actions to be displayed in line with separation.
 
-La clase:
+The class:
 
 ```css
 .inline-form
 ```
 
-evita que el formulario de borrado ocupe una línea completa.
+prevents the delete form from taking up an entire line.
 
-La clase:
+The class:
 
 ```css
 .link-button
 ```
 
-hace que el botón de borrar parezca un enlace.
+makes the delete button look like a link.
 
-Esto permite usar un formulario `POST` sin romper visualmente la tabla.
+This allows an `POST` form to be used without visually breaking the table.
 
 ---
 
-# 25. Paso 9 — Ajustar el tema oscuro
+#25. Step 9 — Adjust the dark theme
 
-Si estamos usando `styles-dark.css`, añadimos también estilos para el botón de borrar.
+If we are using `styles-dark.css`, we also add styles for the delete button.
 
-Archivo:
+File:
 
 ```text
 src/main/webapp/resources/css/styles-dark.css
 ```
 
-Añadimos:
+We add:
 
 ```css
 .link-button {
@@ -1741,193 +1739,192 @@ Añadimos:
 }
 ```
 
-## Explicación
+## Explanation
 
-En tema oscuro, el color azul normal puede verse peor.
+In dark theme, normal blue color may look worse.
 
-Por eso usamos un azul más claro.
+That's why we used a lighter blue.
 
 ---
 
-# 26. Paso 10 — Probar la edición
+#26. Step 10 — Test the edit
 
-Ahora probamos la edición paso a paso.
+Now we try the editing step by step.
 
-## 26.1. Entrar al listado
+## 26.1. Enter the list
 
-Abrimos:
+We open:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses
 ```
 
-Deberíamos ver la tabla de cursos.
+We should see the course table.
 
-En cada fila debería aparecer:
+In each row it should appear:
 
 ```text
 Ver detalle | Editar | Borrar
 ```
 
-## 26.2. Pulsar editar
+## 26.2. Press edit
 
-Pulsamos en:
+We click on:
 
 ```text
 Editar
 ```
 
-La URL será parecida a:
+The URL will be similar to:
 
 ```text
 /courses/edit?id=1
 ```
 
-Debería aparecer el formulario con los datos actuales del curso.
+The form should appear with the current course data.
 
-## 26.3. Modificar datos
+## 26.3. Modify data
 
-Cambiamos, por ejemplo:
+We change, for example:
 
 ```text
 Duración: 20 → 30
 ```
 
-Pulsamos:
+We press:
 
 ```text
 Actualizar curso
 ```
 
-## 26.4. Comprobar resultado
+## 26.4. Check result
 
-La aplicación debe redirigir al listado.
+The application should redirect to the listing.
 
-Debe aparecer el mensaje:
+The message should appear:
 
 ```text
 El curso se ha actualizado correctamente.
 ```
 
-Y el curso debe mostrar la nueva duración.
+And the course should show the new duration.
 
-## 26.5. Comprobar en DBeaver
+## 26.5. Check in DBeaver
 
-También podemos ejecutar:
+We can also execute:
 
 ```sql
 SELECT * FROM courses;
 ```
 
-para comprobar que el cambio se ha guardado en MySQL.
+to verify that the change has been saved in MySQL.
 
 ---
 
-# 27. Paso 11 — Probar el borrado
+#27. Step 11 — Test the erase
 
-## 27.1. Entrar al listado
+## 27.1. Enter the list
 
-Abrimos:
+We open:
 
 ```text
 /courses
 ```
 
-## 27.2. Pulsar borrar
+## 27.2. Press delete
 
-Pulsamos el botón:
+We press the button:
 
 ```text
 Borrar
 ```
 
-El navegador debe mostrar una confirmación.
+The browser should display a confirmation.
 
-## 27.3. Cancelar
+## 27.3. Cancel
 
-Primero probamos a cancelar.
+First we tried canceling.
 
-El curso no debe borrarse.
+The course should not be deleted.
 
-## 27.4. Aceptar
+## 27.4. Accept
 
-Volvemos a pulsar borrar y aceptamos.
+We press delete again and accept.
 
-La aplicación debe enviar:
+The application must send:
 
 ```text
 POST /courses/delete
 ```
 
-Después debe redirigir al listado.
-
-Debe aparecer el mensaje:
+Then you must redirect to the list.
+The message should appear:
 
 ```text
 El curso se ha borrado correctamente.
 ```
 
-El curso ya no debe aparecer.
+The course should no longer appear.
 
-## 27.5. Comprobar en DBeaver
+## 27.5. Check in DBeaver
 
-Ejecutamos:
+We execute:
 
 ```sql
 SELECT * FROM courses;
 ```
 
-El curso borrado ya no debería aparecer.
+The deleted course should no longer appear.
 
 ---
 
-# 28. Por qué usamos `POST` para borrar
+#28. Why we use `POST` to delete
 
-Es importante entender esto.
+It is important to understand this.
 
-Un enlace normal hace una petición `GET`.
+A normal link makes an `GET` request.
 
-Por ejemplo:
+For example:
 
 ```html
 <a href="/courses/delete?id=1">Borrar</a>
 ```
 
-Eso enviaría:
+That would send:
 
 ```text
 GET /courses/delete?id=1
 ```
 
-Pero `GET` debería usarse para consultar información, no para modificar o borrar datos.
+But `GET` should be used to query information, not to modify or delete data.
 
-Borrar es una acción que cambia el estado de la aplicación.
+Delete is an action that changes the state of the application.
 
-Por eso usamos:
+That's why we use:
 
 ```html
 <form method="post"></form>
 ```
 
-Así el borrado se hace mediante:
+Thus the deletion is done by:
 
 ```text
 POST /courses/delete
 ```
 
-Es una opción más adecuada para este nivel del curso.
+It is a more suitable option for this level of the course.
 
-Más adelante, en aplicaciones REST, también se puede usar el método HTTP `DELETE`, pero en aplicaciones JSP tradicionales es habitual usar formularios `POST`.
+Later, in REST applications, the `DELETE` HTTP method can also be used, but in traditional JSP applications it is common to use `POST` forms.
 
 ---
 
-# 29. Diferencia entre crear y editar
+#29. Difference between create and edit
 
-Crear y editar se parecen, pero no son exactamente iguales.
+Creating and editing look similar, but they are not exactly the same.
 
-## Crear
+## Create
 
-Cuando creamos un curso:
+When we create a course:
 
 ```text
 No hay id todavía.
@@ -1936,7 +1933,7 @@ La aplicación hace un INSERT.
 MySQL genera el id.
 ```
 
-Ruta:
+Route:
 
 ```text
 GET  /courses/new
@@ -1950,9 +1947,9 @@ INSERT INTO courses (...)
 VALUES (...)
 ```
 
-## Editar
+##Edit
 
-Cuando editamos un curso:
+When we edit a course:
 
 ```text
 El curso ya existe.
@@ -1961,7 +1958,7 @@ El formulario se carga con datos actuales.
 La aplicación hace un UPDATE.
 ```
 
-Ruta:
+Route:
 
 ```text
 GET  /courses/edit?id=1
@@ -1976,36 +1973,36 @@ SET ...
 WHERE id = ?
 ```
 
-El `id` es la clave para saber qué fila modificar.
+The `id` is the key to knowing which row to modify.
 
 ---
 
-# 30. Diferencia entre borrar y ocultar
+#30. Difference between delete and hide
 
-En este tema usamos borrado real:
+In this topic we use real erase:
 
 ```sql
 DELETE FROM courses
 WHERE id = ?
 ```
 
-Esto elimina la fila de la tabla.
+This removes the row from the table.
 
-En aplicaciones reales, a veces se usa otra estrategia llamada **borrado lógico**.
+In real applications, another strategy called **logical erase** is sometimes used.
 
-En lugar de borrar la fila, se añade una columna como:
+Instead of deleting the row, a column is added like:
 
 ```sql
 active BOOLEAN
 ```
 
-o:
+or:
 
 ```sql
 deleted BOOLEAN
 ```
 
-Y al borrar se hace:
+And when deleting it is done:
 
 ```sql
 UPDATE courses
@@ -2013,45 +2010,45 @@ SET deleted = true
 WHERE id = ?
 ```
 
-Así el dato sigue en la base de datos, pero la aplicación deja de mostrarlo.
+Thus the data is still in the database, but the application stops displaying it.
 
-En este curso usaremos borrado real porque es más sencillo para aprender CRUD.
+In this course we will use real erasure because it is easier to learn CRUD.
 
 ---
 
-# 31. Errores habituales del Tema 7
+# 31. Common errors of Topic 7
 
-## Error 1 — Olvidar el campo oculto `id`
+## Error 1 — Forget hidden field `id`
 
-Si en `form.jsp` no ponemos:
+If in `form.jsp` we do not put:
 
 ```jsp
 <form:hidden path="id" />
 ```
 
-al editar, el objeto `Course` llegará sin identificador.
+when editing, the `Course` object will arrive without an identifier.
 
-Entonces el método `update` no sabrá qué curso actualizar.
+Then the `update` method will not know which course to update.
 
 ---
 
-## Error 2 — Usar la misma acción para crear y editar sin distinguir
+## Error 2 — Using the same action to create and edit without distinguishing
 
-Si el formulario de edición envía a:
+If the edit form sends to:
 
 ```text
 POST /courses
 ```
 
-se creará un curso nuevo en lugar de actualizar el existente.
+A new course will be created instead of updating the existing one.
 
-Para editar, la acción debe ser:
+To edit, the action must be:
 
 ```text
 POST /courses/update
 ```
 
-Por eso usamos:
+That's why we use:
 
 ```jsp
 action="${pageContext.request.contextPath}${formAction}"
@@ -2059,9 +2056,9 @@ action="${pageContext.request.contextPath}${formAction}"
 
 ---
 
-## Error 3 — No volver a añadir datos al modelo si hay errores
+## Error 3 — Do not add data back to the model if there are errors
 
-Si hay errores de validación en edición, debemos volver a añadir:
+If there are validation errors in editing, we must add again:
 
 ```java
 model.addAttribute("pageTitleCode", "courses.edit.title");
@@ -2069,59 +2066,59 @@ model.addAttribute("formAction", "/courses/update");
 model.addAttribute("submitCode", "courses.update");
 ```
 
-Si no lo hacemos, la vista `form.jsp` puede fallar o mostrar datos incorrectos.
+If we don't do this, the `form.jsp` view may fail or display incorrect data.
 
 ---
 
-## Error 4 — Borrar con un enlace `GET`
+## Error 4 — Delete with an `GET` link
 
-No es recomendable hacer:
+It is not recommended to do:
 
 ```jsp
 <a href="/courses/delete?id=1">Borrar</a>
 ```
 
-Es mejor usar:
+It is better to use:
 
 ```jsp
 <form method="post" action="/courses/delete">
 ```
 
-Así evitamos borrar datos con una simple visita a una URL.
+This way we avoid deleting data with a simple visit to a URL.
 
 ---
 
-## Error 5 — Olvidar el `WHERE` en SQL
+## Error 5 — Forgetting `WHERE` in SQL
 
-Este error es muy peligroso.
+This error is very dangerous.
 
-Incorrecto:
+Incorrect:
 
 ```sql
 DELETE FROM courses;
 ```
 
-Esto borra todos los cursos.
+This deletes all courses.
 
-Correcto:
+Correct:
 
 ```sql
 DELETE FROM courses
 WHERE id = ?;
 ```
 
-Lo mismo ocurre con `UPDATE`.
+The same goes for `UPDATE`.
 
-Incorrecto:
+Incorrect:
 
 ```sql
 UPDATE courses
 SET title = ?;
 ```
 
-Esto actualiza todos los cursos.
+This updates all courses.
 
-Correcto:
+Correct:
 
 ```sql
 UPDATE courses
@@ -2131,41 +2128,40 @@ WHERE id = ?;
 
 ---
 
-## Error 6 — No comprobar si el curso existe antes de actualizar o borrar
+## Error 6 — Not checking if the course exists before updating or deleting
 
-Si actualizamos o borramos un curso inexistente, puede que no ocurra nada y la aplicación parezca funcionar.
-
-Pero es mejor comprobar antes:
+If we update or delete a non-existent course, nothing may happen and the application appears to work.
+But it is better to check before:
 
 ```java
 findByIdOrThrow(id);
 ```
 
-Así, si el curso no existe, mostramos una página de error controlada.
+Thus, if the course does not exist, we display a controlled error page.
 
 ---
 
-## Error 7 — No tener mensajes en `messages.properties`
+## Error 7 — No messages in `messages.properties`
 
-Si usamos:
+If we use:
 
 ```jsp
 <spring:message code="courses.edit" />
 ```
 
-pero no existe la clave:
+but the key does not exist:
 
 ```properties
 courses.edit=Editar
 ```
 
-Spring no podrá resolver el mensaje correctamente.
+Spring will not be able to resolve the message correctly.
 
 ---
 
-# 32. Resumen del flujo completo de edición
+#32. Summary of the complete editing flow
 
-El flujo de edición es:
+The editing flow is:
 
 ```text
 Usuario pulsa Editar
@@ -2199,9 +2195,9 @@ Mensaje de éxito
 
 ---
 
-# 33. Resumen del flujo completo de borrado
+#33. Delete Complete Flow Summary
 
-El flujo de borrado es:
+The delete flow is:
 
 ```text
 Usuario pulsa Borrar
@@ -2225,34 +2221,34 @@ Mensaje de éxito
 
 ---
 
-# 34. Resultado final del CRUD
+#34. Final CRUD result
 
-Al terminar este tema, nuestra aplicación tendrá el CRUD completo:
+By the end of this topic, our application will have the complete CRUD:
 
-| Operación    | Ruta                       | SQL                   |
+| Operation | Route | SQL |
 | ------------ | -------------------------- | --------------------- |
-| Crear        | `POST /courses`            | `INSERT`              |
-| Leer listado | `GET /courses`             | `SELECT`              |
-| Leer detalle | `GET /courses/detail?id=1` | `SELECT WHERE id = ?` |
-| Editar       | `POST /courses/update`     | `UPDATE WHERE id = ?` |
-| Borrar       | `POST /courses/delete`     | `DELETE WHERE id = ?` |
+| Create | `POST /courses` | `INSERT` |
+| Read list | `GET /courses` | `SELECT` |
+| Read detail | `GET /courses/detail?id=1` | `SELECT WHERE id = ?` |
+| Edit | `POST /courses/update` | `UPDATE WHERE id = ?` |
+| Delete | `POST /courses/delete` | `DELETE WHERE id = ?` |
 
-La aplicación ya puede gestionar cursos de forma completa.
+The application can now manage courses completely.
 
 ---
 
-# 35. Cierre del tema
+#35. Closing the topic
 
-En este tema hemos completado una de las partes más importantes de cualquier aplicación web: el CRUD.
+In this topic we have completed one of the most important parts of any web application: the CRUD.
 
-Hasta ahora nuestra aplicación podía crear y consultar cursos. Ahora también puede:
+Until now our application could create and consult courses. Now you can also:
 
 ```text
 Editar cursos existentes.
 Borrar cursos existentes.
 ```
 
-Además, hemos reforzado varias ideas importantes:
+In addition, we have reinforced several important ideas:
 
 ```text
 El controlador recibe peticiones y decide el flujo.
@@ -2263,7 +2259,7 @@ El id es fundamental para editar y borrar.
 POST es más adecuado que GET para acciones que modifican datos.
 ```
 
-La estructura final sigue siendo clara:
+The final structure remains clear:
 
 ```text
 JSP
@@ -2279,4 +2275,4 @@ JdbcTemplate
 MySQL
 ```
 
-Con esto, la aplicación Spring MVC queda mucho más completa y cercana a un proyecto real.
+With this, the Spring MVC application is much more complete and closer to a real project.

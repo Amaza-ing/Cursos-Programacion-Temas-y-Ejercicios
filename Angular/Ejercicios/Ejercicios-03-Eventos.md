@@ -1,14 +1,14 @@
-# **Ejercicios - Tema 3: Eventos y Binding Bidireccional (`ngModel`)**
+# **Exercises - Topic 3: Events and Bidirectional Binding (`ngModel`)**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre eventos y binding bidireccional.
+Below you will find 5 practical exercises on events and bidirectional binding.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
-## **Ejercicio 1: Manejo de eventos con botones**
+## **Exercise 1: Handling events with buttons**
 
-Implementa un botón que cambie el texto de un párrafo cuando se presiona.
+Implement a button that changes the text of a paragraph when pressed.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class EventosComponent {
@@ -20,20 +20,22 @@ export class EventosComponent {
 }
 ```
 
+
 ```html
 <p>{{ mensaje }}</p>
 <button (click)="cambiarTexto()">Cambiar texto</button>
 ```
 
+
 </details>
 
 ---
 
-## **Ejercicio 2: Captura de eventos con `$event`**
+## **Exercise 2: Capturing events with `$event`**
 
-Detecta lo que el usuario escribe en un campo de entrada y muéstralo en pantalla en tiempo real.
+Detect what the user writes in an input field and display it on the screen in real time.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class EventosComponent {
@@ -45,20 +47,22 @@ export class EventosComponent {
 }
 ```
 
+
 ```html
 <input (input)="actualizarTexto($event)" placeholder="Escribe algo" />
 <p>Has escrito: {{ inputText }}</p>
 ```
 
+
 </details>
 
 ---
 
-## **Ejercicio 3: Binding bidireccional con `ngModel`**
+## **Exercise 3: Bidirectional Binding with `ngModel`**
 
-Crea un formulario donde el usuario escriba su nombre y edad, y se actualicen automáticamente en pantalla.
+Create a form where the user enters their name and age, and they automatically update on the screen.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class FormularioComponent {
@@ -67,34 +71,36 @@ export class FormularioComponent {
 }
 ```
 
+
 ```html
 <input [(ngModel)]="name" placeholder="Nombre" />
 <input [(ngModel)]="age" type="number" placeholder="Edad" />
 <p>Hola {{ name }}, tienes {{ age }} años.</p>
 ```
 
+
 </details>
 
 ---
 
-## **Ejercicio 4: Contador dinámico con eventos**
+## **Exercise 4: Dynamic counter with events**
 
-Implementa un contador que aumente y disminuya al hacer clic en botones.
+Implement a counter that increments and decrements when buttons are clicked.
 
-**Requisitos:**
+**Requirements:**
 
-1. En `counter.component.ts`, define una variable `counter` con valor inicial `0`.
-2. En `counter.component.html`, agrega:
-   - Un botón `+` que incremente el contador en `+1`.
-   - Un botón `-` que disminuya el contador en `-1`.
-   - Un párrafo `<p>` donde se muestre el valor actual del contador.
-3. Implementa lógica para evitar que el contador baje de `0`.
-4. Cuando el contador llegue a `10`, muestra una alerta `"Has alcanzado el límite"`.
+1. In `counter.component.ts`, define a variable `counter` with initial value `0`.
+2. In `counter.component.html`, add:
+   - An `+` button that increments the counter in `+1`.
+   - An `-` button that decrements the counter in `-1`.
+   - An `<p>` paragraph showing the current value of the counter.
+3. Implement logic to prevent the counter from going below `0`.
+4. When the counter reaches `10`, display an `"Has alcanzado el límite"` alert.
 
-Salida esperada:
-[Usuario hace clic en "+" 3 veces] → Se muestra: "3" [Usuario hace clic en "-" 1 vez] → Se muestra: "2"
+Expected output:
+[User clicks "+" 3 times] → Displays: "3" [User clicks "-" 1 time] → Displays: "2"
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class ContadorComponent {
@@ -116,21 +122,23 @@ export class ContadorComponent {
 }
 ```
 
+
 ```html
 <p>Contador: {{ counter }}</p>
 <button (click)="increase()">+</button>
 <button (click)="decrease()">-</button>
 ```
 
+
 </details>
 
 ---
 
-## **Ejercicio 5: Formulario interactivo con validaciones**
+## **Exercise 5: Interactive form with validations**
 
-Creaa un formulario que capture el nombre, email y edad de un usuario con validaciones simples.
+Create a form that captures a user's name, email, and age with simple validations.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class FormComponent {
@@ -157,6 +165,7 @@ export class FormComponent {
 }
 ```
 
+
 ```html
 <input [(ngModel)]="name" placeholder="Nombre" />
 <input [(ngModel)]="email" placeholder="Email" />
@@ -164,5 +173,6 @@ export class FormComponent {
 <button (click)="validateForm()">Enviar</button>
 <p>{{ message }}</p>
 ```
+
 
 </details>

@@ -1,28 +1,28 @@
-# **Tema 4: Estilos en React**
+# **Topic 4: Styles in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En React, los estilos se pueden aplicar de varias formas. Elegir un enfoque correcto desde el inicio te ayuda a mantener el código más **ordenado**, **escalable** y fácil de trabajar.
+In React, styles can be applied in several ways. Choosing the right approach from the start helps you keep your code more **tidy**, **scalable** and easier to work with.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo aplicar estilos globales.
-- Cómo usar CSS por componente.
-- Cómo escribir estilos inline.
-- Cómo usar clases dinámicas con `className`.
-- Buenas prácticas básicas para organizar estilos.
+- How to apply global styles.
+- How to use CSS per component.
+- How to write inline styles.
+- How to use dynamic classes with `className`.
+- Basic good practices for organizing styles.
 
 ---
 
-## **2. Estilos globales (`index.css`)**
+## **2. Global Styles (`index.css`)**
 
-Los estilos globales afectan a toda la aplicación. En proyectos con Vite, normalmente se cargan desde `main.jsx`:
+Global styles affect the entire application. In Vite projects, they are typically loaded from `main.jsx`:
 
 ```js
 import "./index.css";
 ```
 
-### **Ejemplo de estilos globales**
+### **Example of global styles**
 
 **`src/index.css`**
 
@@ -37,21 +37,21 @@ h1 {
 }
 ```
 
-Este tipo de estilos es útil para:
+This type of styles is useful for:
 
-- Reset o normalización
-- Tipografías
-- Estilos base de la aplicación
+- Reset or normalization
+- Fonts
+- Base styles of the application
 
 ---
 
-## **3. CSS por componente (archivo `.css` + import)**
+## **3. CSS per component (`.css` file + import)**
 
-Una forma muy común de trabajar en React es crear un CSS específico por componente y **importarlo** en el archivo del componente.
+A very common way to work in React is to create component-specific CSS and **import it** into the component file.
 
-### **Ejemplo: componente con CSS propio**
+### **Example: component with its own CSS**
 
-Estructura recomendada:
+Recommended structure:
 
 ```
 src/
@@ -83,27 +83,27 @@ function Button() {
 export default Button;
 ```
 
-Este enfoque es:
+This approach is:
 
-- Sencillo de entender
-- Compatible con cualquier proyecto
-- Fácil de escalar si eres consistente con nombres
+- Simple to understand
+- Compatible with any project
+- Easy to scale if you are consistent with names
 
-> Nota: Este CSS sigue siendo global (las clases existen en todo el proyecto), pero está **organizado por componente**.
+> Note: This CSS is still global (classes exist throughout the project), but is **organized by component**.
 
 ---
 
-## **4. Estilos inline (objeto JavaScript)**
+## **4. Inline styles (JavaScript object)**
 
-React permite aplicar estilos inline usando un objeto en la propiedad `style`.
+React allows you to apply inline styles using an object in the `style` property.
 
-### **Características clave**
+### **Key Features**
 
-- `style` recibe un **objeto**.
-- Las propiedades CSS se escriben en **camelCase**.
-- Los valores numéricos se interpretan como `px` (en muchos casos).
+- `style` receives an **item**.
+- CSS properties are written to **camelCase**.
+- Numeric values ​​are interpreted as `px` (in many cases).
 
-Ejemplo:
+Example:
 
 ```js
 function Card() {
@@ -119,24 +119,24 @@ function Card() {
 export default Card;
 ```
 
-### **Cuándo usar inline styles**
+### **When to use inline styles**
 
-- Para estilos muy puntuales
-- Para valores calculados en tiempo real
-- Para prototipos
+- For very specific styles
+- For values calculated in real time
+- For prototypes
 
-### **Cuándo evitarlos**
+### **When to avoid them**
 
-- Cuando el componente tiene mucho CSS
-- Cuando quieres usar pseudo-clases (`:hover`, `:focus`) sin librerías
+- When the component has a lot of CSS
+- When you want to use pseudo-classes (`:hover`, `:focus`) without libraries
 
 ---
 
-## **5. `className` en React (muy importante)**
+## **5. `className` in React (very important)**
 
-En React no se usa `class`, se usa `className`.
+In React `class` is not used, `className` is used.
 
-Esto es obligatorio:
+This is required:
 
 ```js
 function Alert() {
@@ -146,11 +146,11 @@ function Alert() {
 
 ---
 
-## **6. Clases dinámicas con `className`**
+## **6. Dynamic classes with `className`**
 
-Muchas veces, queremos cambiar la clase según una condición.
+Many times, we want to change the class based on a condition.
 
-Ejemplo:
+Example:
 
 ```js
 function StatusBadge() {
@@ -181,15 +181,15 @@ export default StatusBadge;
 
 ---
 
-## **7. CSS Modules (aislar estilos por componente)**
+## **7. CSS Modules (isolate styles per component)**
 
-Los **CSS Modules** permiten que las clases queden **aisladas** por archivo, evitando colisiones de nombres.
+**CSS Modules** allow classes to be **isolated** per file, avoiding name collisions.
 
-En Vite (y en muchos entornos), funcionan creando el archivo con extensión:
+In Vite (and in many environments), they work by creating the file with extension:
 
 - `Component.module.css`
 
-### **Ejemplo con CSS Modules**
+### **Example with CSS Modules**
 
 **`src/components/ProfileCard.module.css`**
 
@@ -221,33 +221,32 @@ function ProfileCard() {
 export default ProfileCard;
 ```
 
-Ventajas:
+Advantages:
 
-- No hay colisiones de clases.
-- Estilos realmente “por componente”.
-- Facilita mantener proyectos grandes.
-
----
-
-## **8. Buenas prácticas para organizar estilos**
-
-- Mantén estilos globales solo para lo imprescindible.
-- Para componentes reutilizables, usa CSS por componente o CSS Modules.
-- Evita mezclar muchos estilos inline con CSS tradicional.
-- Nombra clases con intención: `primaryButton`, `errorText`, `cardHeader`.
+- There are no class collisions.
+- Really “per component” styles.
+- Makes it easier to maintain large projects.
 
 ---
 
-## **9. A tener en cuenta**
+## **8. Good practices for organizing styles**
 
-- En React, `className` reemplaza a `class`.
-- Puedes aplicar estilos de muchas maneras: global, por componente, inline o CSS Modules.
-- Para proyectos que crecen, CSS Modules es una opción muy sólida.
+- Maintain global styles only for the essentials.
+- For reusable components, use CSS per component or CSS Modules.
+- Avoid mixing many inline styles with traditional CSS.
+- Name classes with intent: `primaryButton`, `errorText`, `cardHeader`.
+
+---
+## **9. To take into account**
+
+- In React, `className` replaces `class`.
+- You can apply styles in many ways: global, per component, inline or CSS Modules.
+- For growing projects, CSS Modules are a very solid option.
 
 ---
 
-[![Estilos](https://img.youtube.com/vi/WkaNDbO8za4/0.jpg)](https://www.youtube.com/watch?v=WkaNDbO8za4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Styles](https://img.youtube.com/vi/WkaNDbO8za4/0.jpg)](https://www.youtube.com/watch?v=WkaNDbO8za4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-En el próximo tema veremos **componentes en una línea** y cómo escribir componentes pequeños y reutilizables de forma limpia.
+In the next topic we will look at **components on a line** and how to write small, reusable components in a clean way.

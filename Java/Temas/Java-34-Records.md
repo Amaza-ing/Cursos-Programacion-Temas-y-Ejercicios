@@ -1,54 +1,54 @@
-# Tema 34. Records
+# Topic 34. Records
 
-## 1. Introducción
+## 1. Introduction
 
-En temas anteriores has aprendido a crear clases con:
+In previous topics you have learned how to create classes with:
 
-- atributos
-- constructores
-- getters
+- attributes
+- builders
+-getters
 - setters
-- métodos
+- methods
 - `equals`
 - `hashCode`
 - `toString`
 
-Muchas veces creamos clases cuyo objetivo principal es simplemente **guardar datos**.
+Many times we create classes whose main objective is to simply **save data**.
 
-Por ejemplo:
+For example:
 
-- un usuario con `name` y `email`
-- un producto con `name` y `price`
-- una coordenada con `x` e `y`
-- una respuesta de una API
-- un objeto para transportar datos entre partes del programa
+- a user with `name` and `email`
+- a product with `name` and `price`
+- a coordinate with `x` and `y`
+- a response from an API
+- an object to transport data between parts of the program
 
-Para estos casos, Java incluye una herramienta moderna llamada:
+For these cases, Java includes a modern tool called:
 
 - **record**
 
-Un `record` permite declarar de forma muy compacta una clase pensada principalmente para almacenar datos inmutables.
+An `record` allows you to declare in a very compact way a class intended mainly to store immutable data.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un `record`
-- Qué problema resuelve
-- Cómo declarar records
-- Qué código genera Java automáticamente
-- Cómo acceder a sus valores
-- Por qué son inmutables
-- Cómo crear constructores compactos
-- Cómo validar datos en un record
-- Cómo añadir métodos propios
-- Cómo usar records con listas, mapas y streams
-- Cuándo usar records y cuándo usar clases normales
-- Errores típicos y buenas prácticas
+- What is an `record`
+- What problem does it solve?
+- How to declare records
+- What code Java automatically generates
+- How to access your values
+- Why are they immutable?
+- How to create compact constructors
+- How to validate data in a record
+- How to add your own methods
+- How to use records with lists, maps and streams
+- When to use records and when to use normal classes
+- Typical errors and good practices
 
 ---
 
-## 2. El problema: clases con mucho código repetitivo
+## 2. The problem: classes with a lot of repetitive code
 
-Imagina una clase sencilla para representar un producto.
+Imagine a simple class to represent a product.
 
 ```java
 public class Product {
@@ -94,29 +94,29 @@ public class Product {
 }
 ```
 
-Esta clase solo guarda datos, pero tiene bastante código.
+This class only stores data, but has quite a bit of code.
 
-En Java moderno, un `record` permite expresar esta misma idea de forma mucho más corta.
+In modern Java, an `record` allows this same idea to be expressed in a much shorter way.
 
 ---
 
-## 3. Primer ejemplo de `record`
+## 3. First example of `record`
 
 ```java
 public record Product(String name, double price) {
 }
 ```
 
-Con una sola línea, Java genera automáticamente:
+With a single line, Java automatically generates:
 
-- atributos privados y finales
-- constructor
-- métodos de acceso
+- private and final attributes
+- builder
+- access methods
 - `toString`
 - `equals`
 - `hashCode`
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -130,7 +130,7 @@ public class Main {
 }
 ```
 
-Resultado aproximado:
+Approximate result:
 
 ```text
 Mouse
@@ -140,55 +140,55 @@ Product[name=Mouse, price=19.99]
 
 ---
 
-## 4. Sintaxis básica de un record
+## 4. Basic syntax of a record
 
-La sintaxis general es:
+The general syntax is:
 
 ```java
 public record RecordName(Type fieldName, Type fieldName2) {
 }
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
 }
 ```
 
-Los elementos declarados entre paréntesis se llaman **componentes del record**.
+The elements declared in parentheses are called **record components**.
 
-En este ejemplo, los componentes son:
+In this example, the components are:
 
 - `name`
 - `email`
 
 ---
 
-## 5. Métodos de acceso
+## 5. Access methods
 
-En una clase normal, normalmente creamos getters:
+In a normal class, we typically create getters:
 
 ```java
 getName()
 getEmail()
 ```
 
-En un `record`, Java crea métodos de acceso con el mismo nombre del componente:
+In an `record`, Java creates accessor methods with the same name as the component:
 
 ```java
 name()
 email()
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -201,23 +201,23 @@ public class Main {
 }
 ```
 
-Importante:
+Important:
 
-- en records no se usa `getName()`
-- se usa `name()`
+- `getName()` is not used in records
+- `name()` is used
 
 ---
 
-## 6. Los records son inmutables
+## 6. Records are immutable
 
-Los componentes de un record son:
+The components of a record are:
 
 - `private`
 - `final`
 
-Eso significa que, una vez creado el objeto, no puedes cambiar sus valores.
+That means that once the object is created, you cannot change its values.
 
-Ejemplo:
+Example:
 
 ```java
 User user = new User("Laura", "laura@example.com");
@@ -226,53 +226,52 @@ User user = new User("Laura", "laura@example.com");
 // user.setName("Alex"); // no existe
 ```
 
-Si quieres otro valor, creas otro objeto.
+If you want another value, you create another object.
 
 ```java
 User user = new User("Laura", "laura@example.com");
 User updatedUser = new User("Alex", user.email());
 ```
 
-Esto conecta con una idea muy importante:
+This connects with a very important idea:
 
-> Un record representa datos inmutables.
+> A record represents immutable data.
 
 ---
 
-## 7. Diferencia entre clase normal y record
+## 7. Difference between normal and record class
 
-### 7.1. Clase normal
+### 7.1. normal class
 
-Una clase normal es mejor cuando necesitas:
+A regular class is better when you need:
 
-- estado mutable
+- mutable state
 - setters
-- lógica compleja
-- herencia de otra clase
-- comportamiento con identidad propia
+- complex logic
+- inheritance from another class
+- behavior with its own identity
 
-### 7.2. Record
+### 7.2. record
 
-Un record es mejor cuando necesitas:
+A record is better when you need:
 
-- guardar datos
-- transportar información
-- representar valores inmutables
-- reducir código repetitivo
-- tener `equals`, `hashCode` y `toString` automáticamente
+- save data
+- transport information
+- represent immutable values
+- reduce repetitive code
+- have `equals`, `hashCode` and `toString` automatically
 
 ---
 
-## 8. `toString` automático
-
-Java genera automáticamente un `toString`.
+## 8. Automatic `toString`
+Java automatically generates an `toString`.
 
 ```java
 public record Product(String name, double price) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -284,33 +283,33 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Product[name=Keyboard, price=49.99]
 ```
 
-Esto es muy útil para depurar y mostrar información.
+This is very useful for debugging and displaying information.
 
 ---
 
-## 9. `equals` automático
+## 9. Automatic `equals`
 
-Java también genera `equals`.
+Java also generates `equals`.
 
-Dos records son iguales si:
+Two records are equal if:
 
-- son del mismo tipo
-- tienen los mismos valores en sus componentes
+- they are the same type
+- have the same values in their components
 
-Ejemplo:
+Example:
 
 ```java
 public record Product(String name, double price) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -325,20 +324,20 @@ public class Main {
 }
 ```
 
-Esto evita tener que escribir `equals` manualmente.
+This avoids having to type `equals` manually.
 
 ---
 
-## 10. `hashCode` automático
+## 10. `hashCode` automatic
 
-Java también genera `hashCode`.
+Java also generates `hashCode`.
 
-Esto es importante cuando usas records en estructuras como:
+This is important when you use records in structures like:
 
 - `HashSet`
 - `HashMap`
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.HashSet;
@@ -357,28 +356,28 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 2
 ```
 
-El producto repetido no se añade dos veces porque `equals` y `hashCode` funcionan automáticamente.
+The repeat product is not added twice because `equals` and `hashCode` work automatically.
 
 ---
 
-## 11. Constructor canónico
+## 11. Canonical constructor
 
-Cada record tiene un constructor con todos sus componentes.
+Each record has a constructor with all its components.
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
 }
 ```
 
-Java genera automáticamente algo equivalente a:
+Java automatically generates something equivalent to:
 
 ```java
 public User(String name, String email) {
@@ -387,21 +386,21 @@ public User(String name, String email) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 User user = new User("Laura", "laura@example.com");
 ```
 
-Ese constructor se llama **constructor canónico**.
+That constructor is called **canonical constructor**.
 
 ---
 
-## 12. Constructor compacto
+## 12. Compact Builder
 
-Puedes definir un constructor compacto para validar o ajustar valores.
+You can define a compact constructor to validate or adjust values.
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
@@ -417,7 +416,7 @@ public record User(String name, String email) {
 }
 ```
 
-Fíjate en la sintaxis:
+Look at the syntax:
 
 ```java
 public User {
@@ -425,13 +424,13 @@ public User {
 }
 ```
 
-No se escriben los parámetros porque ya están definidos en el record.
+The parameters are not written because they are already defined in the record.
 
 ---
 
-## 13. Validación en un constructor compacto
+## 13. Validation in a compact constructor
 
-Ejemplo completo:
+Complete example:
 
 ```java
 public record Product(String name, double price) {
@@ -447,7 +446,7 @@ public record Product(String name, double price) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -463,11 +462,11 @@ public class Main {
 
 ---
 
-## 14. Normalizar valores en un constructor compacto
+## 14. Normalize values in a compact constructor
 
-Además de validar, también puedes normalizar datos.
+In addition to validating, you can also normalize data.
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
@@ -478,7 +477,7 @@ public record User(String name, String email) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -491,23 +490,23 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Laura
 laura@example.com
 ```
 
-Importante:
+Important:
 
-- en un constructor compacto puedes reasignar los parámetros
-- Java asignará después esos valores normalizados a los componentes
+- in a compact constructor you can reassign the parameters
+- Java will then assign these normalized values to the components
 
 ---
 
-## 15. Constructor explícito completo
+## 15. Full Explicit Constructor
 
-También puedes escribir el constructor completo, aunque normalmente no hace falta.
+You can also write the full constructor, although this is usually not necessary.
 
 ```java
 public record Product(String name, double price) {
@@ -526,15 +525,15 @@ public record Product(String name, double price) {
 }
 ```
 
-En muchos casos, el constructor compacto es más limpio.
+In many cases the compact constructor is cleaner.
 
 ---
 
-## 16. Añadir métodos propios a un record
+## 16. Add your own methods to a record
 
-Un record puede tener métodos propios.
+A record can have its own methods.
 
-Ejemplo:
+Example:
 
 ```java
 public record Product(String name, double price) {
@@ -544,7 +543,7 @@ public record Product(String name, double price) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -556,12 +555,12 @@ public class Main {
 }
 ```
 
-Los records no son solo “datos sin métodos”.  
-Pueden tener comportamiento relacionado con esos datos.
+Records are not just “data without methods.”  
+They may have behavior related to that data.
 
 ---
 
-## 17. Ejemplo con método calculado
+## 17. Example with calculated method
 
 ```java
 public record Rectangle(double width, double height) {
@@ -575,7 +574,7 @@ public record Rectangle(double width, double height) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -590,9 +589,9 @@ public class Main {
 
 ---
 
-## 18. Records y `BigDecimal`
+## 18. Records and `BigDecimal`
 
-Cuando un record representa datos financieros, puedes usar `BigDecimal`.
+When a record represents financial data, you can use `BigDecimal`.
 
 ```java
 import java.math.BigDecimal;
@@ -610,7 +609,7 @@ public record Product(String name, BigDecimal price) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 import java.math.BigDecimal;
@@ -626,9 +625,9 @@ public class Main {
 
 ---
 
-## 19. Records y listas
+## 19. Records and charts
 
-Los records encajan muy bien con colecciones.
+Records fit very well with collections.
 
 ```java
 import java.util.List;
@@ -657,9 +656,9 @@ public record User(String name, String email) {
 
 ---
 
-## 20. Records y `Map`
+## 20. Records and `Map`
 
-También son útiles como valores en mapas.
+They are also useful as values on maps.
 
 ```java
 import java.util.HashMap;
@@ -688,9 +687,9 @@ public record User(String name, String email) {
 
 ---
 
-## 21. Records y `Stream API`
+## 21. Records and `Stream API`
 
-Los records se usan muy bien con streams porque son ligeros y expresivos.
+Records are used very well with streams because they are light and expressive.
 
 ```java
 import java.util.List;
@@ -722,46 +721,46 @@ public record Product(String name, double price) {
 
 ---
 
-## 22. Records como DTOs
+## 22. Records as DTOs
 
-Un uso muy común de records es crear DTOs.
+A very common use of records is to create DTOs.
 
-DTO significa:
+DTO means:
 
 - **Data Transfer Object**
 
-Es decir, un objeto usado para transportar datos entre partes del programa.
+That is, an object used to transport data between parts of the program.
 
-Ejemplo:
+Example:
 
 ```java
 public record UserResponse(String name, String email) {
 }
 ```
 
-Este record puede representar los datos que una aplicación devuelve, muestra o transfiere.
+This record can represent the data that an application returns, displays, or transfers.
 
-Los records encajan bien como DTOs porque:
+Records fit well as DTOs because:
 
-- son compactos
-- son inmutables
-- tienen `toString`, `equals` y `hashCode`
-- expresan claramente que son datos
+- they are compact
+- are immutable
+- have `toString`, `equals` and `hashCode`
+- clearly express that they are data
 
 ---
 
-## 23. Records como resultados de métodos
+## 23. Records as method results
 
-Un método puede devolver un record para agrupar datos.
+A method can return a record to group data.
 
-Ejemplo:
+Example:
 
 ```java
 public record SearchResult(String keyword, int totalResults) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -778,13 +777,13 @@ public class Main {
 }
 ```
 
-Esto es más claro que devolver varios valores separados.
+This is clearer than returning several separate values.
 
 ---
 
-## 24. Records anidados
+## 24. Nested records
 
-Puedes declarar un record dentro de una clase.
+You can declare a record within a class.
 
 ```java
 public class Main {
@@ -799,17 +798,17 @@ public class Main {
 }
 ```
 
-Esto puede ser útil en ejemplos pequeños o cuando el record solo se usa dentro de una clase.
+This can be useful in small examples or when the record is only used within a class.
 
-En proyectos reales, normalmente crearás records en sus propios archivos.
+In real projects, you will usually create records in their own files.
 
 ---
 
-## 25. Records y atributos adicionales
+## 25. Records and additional attributes
 
-Un record no puede tener atributos de instancia adicionales que no formen parte de sus componentes.
+A record cannot have additional instance attributes that are not part of its components.
 
-Esto no es válido:
+This is not valid:
 
 ```java
 public record User(String name, String email) {
@@ -817,9 +816,9 @@ public record User(String name, String email) {
 }
 ```
 
-¿Por qué?
+Why?
 
-Porque el estado principal de un record debe estar definido en su cabecera:
+Because the main state of a record must be defined in its header:
 
 ```java
 public record User(String name, String email, int age) {
@@ -828,9 +827,9 @@ public record User(String name, String email, int age) {
 
 ---
 
-## 26. Records y atributos estáticos
+## 26. Records and static attributes
 
-Un record sí puede tener atributos estáticos.
+A record can have static attributes.
 
 ```java
 public record User(String name, String email) {
@@ -838,7 +837,7 @@ public record User(String name, String email) {
 }
 ```
 
-También puede tener métodos estáticos.
+You can also have static methods.
 
 ```java
 public record User(String name, String email) {
@@ -848,7 +847,7 @@ public record User(String name, String email) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -862,29 +861,29 @@ public class Main {
 
 ---
 
-## 27. Records y herencia
+## 27. Records and inheritance
 
-Los records tienen una limitación importante:
+The records have an important limitation:
 
-> Un record no puede extender otra clase.
+> A record cannot extend another class.
 
-Esto no se puede:
+This cannot be done:
 
 ```java
 // public record User(String name) extends Person { } // error
 ```
 
-Todos los records ya extienden internamente de `java.lang.Record`.
+All records already extend internally from `java.lang.Record`.
 
-Pero sí pueden implementar interfaces.
+But they can implement interfaces.
 
 ---
 
-## 28. Records e interfaces
+## 28. Records and interfaces
 
-Un record puede implementar una interfaz.
+A record can implement an interface.
 
-Ejemplo:
+Example:
 
 ```java
 public interface Printable {
@@ -903,7 +902,7 @@ public record User(String name, String email) implements Printable {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -917,11 +916,11 @@ public class Main {
 
 ---
 
-## 29. Records y clases selladas
+## 29. Records and sealed classes
 
-Los records pueden combinarse con interfaces selladas.
+Records can be combined with sealed interfaces.
 
-Este tema se verá más adelante en **Sealed Classes**, pero conviene verlo de forma sencilla.
+This topic will be seen later in **Sealed Classes**, but it should be seen in a simple way.
 
 ```java
 public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
@@ -940,15 +939,15 @@ public record PaymentError(String message) implements PaymentResult {
 }
 ```
 
-La idea es que los records son muy útiles para representar diferentes tipos de resultados inmutables.
+The idea is that records are very useful for representing different types of immutable results.
 
 ---
 
-## 30. Records y validación con objetos nulos
+## 30. Records and validation with null objects
 
-Como los records no validan automáticamente `null`, debes hacerlo tú si lo necesitas.
+As records do not automatically validate `null`, you must do so if you need to.
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
@@ -964,21 +963,21 @@ public record User(String name, String email) {
 }
 ```
 
-Si no añades esta validación, esto sería posible:
+If you don't add this validation, this would be possible:
 
 ```java
 User user = new User(null, null);
 ```
 
-Por eso la validación depende de tu diseño.
+That's why validation depends on your design.
 
 ---
 
-## 31. Sobrescribir métodos en un record
+## 31. Override methods in a record
 
-Aunque Java genera `toString`, `equals` y `hashCode`, puedes sobrescribirlos.
+Although Java generates `toString`, `equals`, and `hashCode`, you can overwrite them.
 
-Por ejemplo, personalizar `toString`:
+For example, customize `toString`:
 
 ```java
 public record User(String name, String email) {
@@ -989,7 +988,7 @@ public record User(String name, String email) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -1001,17 +1000,17 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Laura <laura@example.com>
 ```
 
-Aun así, en muchos casos es mejor mantener el comportamiento automático.
+Still, in many cases it is better to keep the behavior automatic.
 
 ---
 
-## 32. Ejemplo completo: `Course`
+## 32. Complete example: `Course`
 
 ### 32.1. `Course.java`
 
@@ -1055,7 +1054,7 @@ public class Main {
 
 ---
 
-## 33. Ejemplo completo: carrito con records
+## 33. Complete example: cart with records
 
 ### 33.1. `Product.java`
 
@@ -1121,15 +1120,15 @@ public class Main {
 
 ---
 
-## 34. Records frente a clases con setters
+## 34. Records vs. classes with setters
 
-Un record no tiene setters.
+A record has no setters.
 
-Esto es intencionado.
+This is intentional.
 
-Si necesitas modificar mucho el estado de un objeto después de crearlo, probablemente una clase normal sea mejor.
+If you need to modify the state of an object a lot after creating it, a normal class is probably better.
 
-Ejemplo donde una clase normal puede tener más sentido:
+Example where a normal class may make more sense:
 
 ```java
 public class BankAccount {
@@ -1145,26 +1144,26 @@ public class BankAccount {
 }
 ```
 
-Aquí el objeto tiene un estado que cambia con el tiempo.  
-Un record no sería la mejor opción.
+Here the object has a state that changes over time.  
+A record would not be the best option.
 
 ---
 
-## 35. Cuándo usar records
+## 35. When to use records
 
-Usa records cuando quieras representar:
+Use records when you want to represent:
 
-- datos simples
-- valores inmutables
-- resultados de métodos
+- simple data
+- immutable values
+- method results
 - DTOs
-- coordenadas
-- configuraciones
-- pares de valores
-- respuestas simples
-- objetos que se comparan por contenido
+- coordinates
+- settings
+- value pairs
+- simple answers
+- objects that are compared by content
 
-Ejemplos:
+Examples:
 
 ```java
 public record Point(int x, int y) {
@@ -1183,18 +1182,18 @@ public record ProductSummary(String name, double price) {
 
 ---
 
-## 36. Cuándo no usar records
+## 36. When not to use records
 
-Evita records cuando necesites:
+Avoid records when you need to:
 
 - setters
-- estado mutable
-- herencia de clases
-- lógica compleja de ciclo de vida
-- identidad propia más allá de sus datos
-- objetos que cambian constantemente
+- mutable state
+- class inheritance
+- complex lifecycle logic
+- own identity beyond your data
+- constantly changing objects
 
-Ejemplos donde una clase normal puede ser mejor:
+Examples where a normal class can be better:
 
 - `BankAccount`
 - `ShoppingCart`
@@ -1204,34 +1203,34 @@ Ejemplos donde una clase normal puede ser mejor:
 
 ---
 
-## 37. Records y nombres de componentes
+## 37. Records and component names
 
-Los nombres de los componentes son importantes porque se convierten en métodos.
+Component names are important because they become methods.
 
-Ejemplo:
+Example:
 
 ```java
 public record User(String name, String email) {
 }
 ```
 
-Genera:
+Generates:
 
 ```java
 name()
 email()
 ```
 
-Por eso conviene usar nombres claros y expresivos.
+That is why it is advisable to use clear and expressive names.
 
-Evita:
+Avoid:
 
 ```java
 public record User(String n, String e) {
 }
 ```
 
-Mejor:
+Better:
 
 ```java
 public record User(String name, String email) {
@@ -1240,103 +1239,102 @@ public record User(String name, String email) {
 
 ---
 
-## 38. Errores típicos al empezar
+## 38. Typical mistakes when starting
 
-### 38.1. Intentar usar getters clásicos
+### 38.1. Try using classic getters
 
-Esto no existe automáticamente:
+This does not exist automatically:
 
 ```java
 // user.getName(); // error
 ```
 
-Debes usar:
+You must use:
 
 ```java
 user.name();
 ```
 
-### 38.2. Esperar setters
+### 38.2. Wait setters
 
-Los records son inmutables:
+The records are immutable:
 
 ```java
 // user.setName("Alex"); // error
 ```
 
-### 38.3. Pensar que validan `null` automáticamente
+### 38.3. Think they validate `null` automatically
 
-No lo hacen.  
-Si necesitas validar, usa un constructor compacto.
+They don't.  
+If you need to validate, use a compact constructor.
 
-### 38.4. Intentar añadir atributos de instancia extra
+### 38.4. Try to add extra instance attributes
 
-El estado del record debe estar en la cabecera.
+The record status must be in the header.
 
-### 38.5. Usar record para objetos con estado cambiante
+### 38.5. Use record for objects with changing state
 
-Si el objeto cambia mucho durante su vida, probablemente necesitas una clase normal.
-
----
-
-## 39. Buenas prácticas
-
-- Usa records para datos simples e inmutables.
-- Usa nombres claros para los componentes.
-- Añade validación en un constructor compacto si el dominio lo requiere.
-- No uses records como sustituto automático de todas las clases.
-- Aprovecha `toString`, `equals` y `hashCode` automáticos.
-- Usa records para DTOs, resultados y valores.
-- Si necesitas setters o estado mutable, usa una clase normal.
+If the object changes a lot during its lifetime, you probably need a normal class.
 
 ---
 
-## 40. A tener en cuenta
+## 39. Good practices
 
-- Un record es una forma compacta de declarar una clase de datos.
-- Sus componentes son privados y finales.
-- Java genera constructor, accesores, `toString`, `equals` y `hashCode`.
-- Los accesores se llaman como los componentes: `name()`, `price()`, etc.
-- Los records son inmutables.
-- Pueden tener métodos propios.
-- Pueden tener constructores compactos.
-- Pueden implementar interfaces.
-- No pueden extender otras clases.
-- Son ideales para datos simples, DTOs y resultados.
+- Use records for simple and immutable data.
+- Use clear names for components.
+- Add validation in a compact constructor if the domain requires it.
+- Don't use records as an automatic substitute for all classes.
+- Take advantage of automatic `toString`, `equals` and `hashCode`.
+- Use records for DTOs, results and values.
+- If you need setters or mutable state, use a normal class.
 
 ---
 
-## 41. Resumen final
+## 40. To take into account
 
-Los records son una herramienta muy útil del Java moderno.
+- A record is a compact way to declare a data class.
+- Its components are private and final.
+- Java generates constructor, accessors, `toString`, `equals` and `hashCode`.
+- The accessors are named like the components: `name()`, `price()`, etc.
+- Records are immutable.
+- They may have their own methods.
+- They can have compact constructors.
+- They can implement interfaces.
+- They cannot extend other classes.
+- They are ideal for simple data, DTOs and results.
 
-Permiten escribir menos código cuando necesitas representar datos inmutables.
+---
 
-En vez de crear una clase larga con:
+## 41. Final summary
 
-- atributos privados
-- constructor
-- getters
+Records are a very useful tool in modern Java.
+
+They allow you to write less code when you need to represent immutable data.
+
+Instead of creating a long class with:
+
+- private attributes
+- builder
+-getters
 - `toString`
 - `equals`
 - `hashCode`
 
-puedes escribir:
+you can write:
 
 ```java
 public record Product(String name, double price) {
 }
 ```
 
-Esto hace que el código sea más breve, más claro y menos repetitivo.
+This makes the code shorter, clearer, and less repetitive.
 
-La idea principal es:
+The main idea is:
 
-- usa records para datos inmutables
-- usa clases normales para objetos con estado mutable o comportamiento complejo
+- use records for immutable data
+- use normal classes for objects with mutable state or complex behavior
 
-Dominar records te ayudará a escribir código moderno, especialmente en aplicaciones que manejan DTOs, resultados, configuraciones y estructuras de datos simples.
+Mastering records will help you write modern code, especially in applications that handle DTOs, results, configurations, and simple data structures.
 
 ---
-
-En el siguiente tema seguiremos avanzando con Java moderno y veremos **Sealed Classes**, una herramienta que permite controlar qué clases pueden heredar o implementar una jerarquía.
+In the next topic we will continue advancing with modern Java and see **Sealed Classes**, a tool that allows you to control which classes can inherit or implement a hierarchy.

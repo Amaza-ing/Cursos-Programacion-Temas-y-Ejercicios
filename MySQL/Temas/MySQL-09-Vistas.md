@@ -1,28 +1,28 @@
-# **Tema 9: Crear y Gestionar Vistas (VIEW) en MySQL**
+# **Topic 9: Create and Manage Views (VIEW) in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué es una vista (`VIEW`).
-- Crear vistas para simplificar consultas complejas.
-- Actualizar, eliminar y usar vistas como tablas virtuales.
-
----
-
-## **1. ¿Qué es una vista (VIEW)?**
-
-Una **vista** es una consulta guardada que se comporta como una tabla virtual. No almacena datos por sí misma, sino que muestra el resultado de una consulta cada vez que se accede.
-
-### **Ventajas:**
-
-- Oculta la complejidad de consultas largas.
-- Mejora la legibilidad y mantenimiento del código.
-- Puede limitar el acceso a ciertos datos.
+- Understand what a view is (`VIEW`).
+- Create views to simplify complex queries.
+- Update, delete and use views as virtual tables.
 
 ---
 
-## **2. Crear una vista**
+## **1. What is a view (VIEW)?**
 
-### **Sintaxis básica:**
+A **view** is a saved query that behaves like a virtual table. It does not store data itself, but instead displays the result of a query each time it is accessed.
+
+### **Advantages:**
+
+- Hides the complexity of long queries.
+- Improves code readability and maintainability.
+- You can limit access to certain data.
+
+---
+
+## **2. Create a view**
+
+### **Basic syntax:**
 
 ```sql
 CREATE VIEW nombre_vista AS
@@ -31,9 +31,9 @@ FROM tabla(s)
 WHERE condición;
 ```
 
-### **Ejemplo:**
+### **Example:**
 
-Vista que muestra los pedidos con información del cliente:
+View showing orders with customer information:
 
 ```sql
 CREATE VIEW pedidos_con_clientes AS
@@ -44,15 +44,15 @@ JOIN customers c ON o.customer_id = c.id;
 
 ---
 
-## **3. Consultar una vista**
+## **3. Consult a view**
 
-Una vez creada, puedes consultar la vista como si fuera una tabla:
+Once created, you can query the view as if it were a table:
 
 ```sql
 SELECT * FROM pedidos_con_clientes;
 ```
 
-También puedes aplicar filtros adicionales:
+You can also apply additional filters:
 
 ```sql
 SELECT * FROM pedidos_con_clientes
@@ -61,9 +61,9 @@ WHERE total_amount > 100;
 
 ---
 
-## **4. Actualizar una vista**
+## **4. Update a view**
 
-Puedes modificar una vista con `CREATE OR REPLACE VIEW`:
+You can modify a view with `CREATE OR REPLACE VIEW`:
 
 ```sql
 CREATE OR REPLACE VIEW pedidos_con_clientes AS
@@ -72,13 +72,13 @@ FROM orders o
 JOIN customers c ON o.customer_id = c.id;
 ```
 
-> Ten en cuenta que solo algunas vistas pueden ser actualizadas directamente (cuando no contienen funciones de agregación, `GROUP BY`, `DISTINCT`, etc.).
+> Note that only some views can be updated directly (when they do not contain aggregation functions, `GROUP BY`, `DISTINCT`, etc.).
 
 ---
 
-## **5. Eliminar una vista**
+## **5. Delete a view**
 
-Para eliminar una vista:
+To delete a view:
 
 ```sql
 DROP VIEW pedidos_con_clientes;
@@ -86,9 +86,9 @@ DROP VIEW pedidos_con_clientes;
 
 ---
 
-## **6. Comprobar vistas existentes**
+## **6. Check existing views**
 
-Para ver todas las vistas definidas en la base de datos:
+To view all views defined in the database:
 
 ```sql
 SHOW FULL TABLES WHERE Table_type = 'VIEW';
@@ -96,26 +96,26 @@ SHOW FULL TABLES WHERE Table_type = 'VIEW';
 
 ---
 
-## **7. Cuándo usar vistas**
+## **7. When to use views**
 
-Usa vistas cuando:
+Use views when:
 
-- Necesites reutilizar una consulta larga o compleja.
-- Quieras presentar datos combinados de varias tablas.
-- Quieras restringir el acceso a columnas específicas.
-
----
-
-[![Vistas](https://img.youtube.com/vi/7T5ZYN78JaM/0.jpg)](https://www.youtube.com/watch?v=7T5ZYN78JaM&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+- You need to reuse a long or complex query.
+- You want to present combined data from several tables.
+- You want to restrict access to specific columns.
 
 ---
 
-## **8. Conclusión**
-
-- Las vistas simplifican el acceso a datos complejos.
-- Son útiles para estructurar mejor las consultas y reutilizarlas.
-- Aunque parecen tablas, no almacenan datos directamente.
+[![Views](https://img.youtube.com/vi/7T5ZYN78JaM/0.jpg)](https://www.youtube.com/watch?v=7T5ZYN78JaM&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-En el siguiente tema aprenderemos a **crear y utilizar índices.**
+## **8. Conclusion**
+
+- Views simplify access to complex data.
+- They are useful to better structure queries and reuse them.
+- Although they look like tables, they do not store data directly.
+
+---
+
+In the next topic we will learn to **create and use indexes.**

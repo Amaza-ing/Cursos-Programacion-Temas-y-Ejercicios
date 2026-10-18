@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 13: Servicios en Angular y Gestión del Estado Global**
+# **Exercises - Topic 13: Angular Services and Global State Management**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre cómo usar servicios y gestionar el estado global en Angular.
+Below you will find exercises on how to use services and manage global state in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un Servicio**
+### **Exercise 1: Create a Service**
 
-Crea un servicio `CounterService` que almacene un contador y permita incrementarlo y reiniciarlo.
+Create an `CounterService` service that stores a counter and allows it to be incremented and reset.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `counter.service.ts`**
+#### **File: `counter.service.ts`**
 
 ```ts
 import { Injectable } from "@angular/core";
@@ -33,9 +33,10 @@ export class CounterService {
 }
 ```
 
-Usando signals:
 
-#### **Archivo: `counter.service.ts`**
+Using signals:
+
+#### **File: `counter.service.ts`**
 
 ```ts
 import { Injectable, signal } from "@angular/core";
@@ -54,17 +55,18 @@ export class CounterService {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Usar un Servicio en un Componente**
+### **Exercise 2: Using a Service in a Component**
 
-Crea un componente `CounterComponent` que muestre el valor del contador y permita incrementarlo y reiniciarlo usando `CounterService`.
+Create an `CounterComponent` component that displays the counter value and allows it to be incremented and reset using `CounterService`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `counter.component.ts`**
+#### **File: `counter.component.ts`**
 
 ```ts
 import { CounterService } from "./counter.service";
@@ -77,7 +79,8 @@ export class CounterComponent {
 }
 ```
 
-#### **Archivo: `counter.component.html`**
+
+#### **File: `counter.component.html`**
 
 ```html
 <p>Contador: {{ counterService.counter }}</p>
@@ -85,17 +88,18 @@ export class CounterComponent {
 <button (click)="counterService.reset()">Reiniciar</button>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Crear un Servicio para Almacenar Usuarios**
+### **Exercise 3: Create a Service to Store Users**
 
-Crea un servicio `UserService` que maneje una lista de usuarios y permita agregar nuevos usuarios.
+Create an `UserService` service that manages a list of users and allows new users to be added.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `user.service.ts`**
+#### **File: `user.service.ts`**
 
 ```ts
 import { Injectable, signal } from "@angular/core";
@@ -113,17 +117,18 @@ export class UserService {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Mostrar Usuarios en un Componente**
+### **Exercise 4: Show Users in a Component**
 
-Crea un componente `UserComponent` que muestre la lista de usuarios y permita agregar nuevos.
+Create an `UserComponent` component that displays the list of users and allows new ones to be added.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `user.component.ts`**
+#### **File: `user.component.ts`**
 
 ```ts
 import { UserService } from "./user.service";
@@ -136,7 +141,8 @@ export class UserComponent {
 }
 ```
 
-#### **Archivo: `user.component.html`**
+
+#### **File: `user.component.html`**
 
 ```html
 <ul>
@@ -149,5 +155,6 @@ export class UserComponent {
   Agregar Usuario
 </button>
 ```
+
 
 </details>

@@ -1,21 +1,21 @@
-# **Tema 14: Variables Booleanas y de Tipo Fecha en MySQL**
+# **Topic 14: Boolean and Date Type Variables in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Usar y declarar variables booleanas en MySQL.
-- Trabajar con variables y columnas de tipo fecha (`DATE`, `DATETIME`, `TIMESTAMP`).
-- Aplicar funciones y operadores comunes para manipular fechas.
+- Use and declare boolean variables in MySQL.
+- Work with date type variables and columns (`DATE`, `DATETIME`, `TIMESTAMP`).
+- Apply common functions and operators to manipulate dates.
 
 ---
 
-## **1. Variables booleanas en MySQL**
+## **1. Boolean variables in MySQL**
 
-En MySQL no existe un tipo de dato `BOOLEAN` puro; en su lugar, se utiliza `TINYINT(1)` donde:
+In MySQL there is no pure `BOOLEAN` data type; instead `TINYINT(1)` is used where:
 
-- `0` = FALSO (`FALSE`)
-- `1` = VERDADERO (`TRUE`)
+- `0` = FALSE (`FALSE`)
+- `1` = TRUE (`TRUE`)
 
-### **Ejemplo:**
+### **Example:**
 
 ```sql
 CREATE TABLE customers (
@@ -25,28 +25,28 @@ CREATE TABLE customers (
 );
 ```
 
-Internamente, `BOOLEAN` es un alias de `TINYINT(1)`.
+Internally, `BOOLEAN` is an alias of `TINYINT(1)`.
 
-Podemos asignar valores así:
+We can assign values like this:
 
 ```sql
 UPDATE customers SET is_active = TRUE WHERE id = 1;
 UPDATE customers SET is_active = FALSE WHERE id = 2;
 ```
 
-También se pueden usar en condiciones:
+They can also be used in conditions:
 
 ```sql
 SELECT * FROM customers WHERE is_active = TRUE;
 ```
 
-También se comparan comunmente usando **IS**:
+They are also commonly compared using **IS**:
 
 ```sql
 SELECT * FROM customers WHERE is_active IS TRUE;
 ```
 
-O si evaluamos si una condición es **TRUE** ni siquiera hace falta especificarlo:
+Or if we evaluate whether a condition is **TRUE**, it is not even necessary to specify it:
 
 ```sql
 SELECT * FROM customers WHERE is_active;
@@ -54,15 +54,15 @@ SELECT * FROM customers WHERE is_active;
 
 ---
 
-## **2. Variables y columnas de tipo fecha**
+## **2. Date type variables and columns**
 
-### **Tipos principales:**
+### **Main types:**
 
-- `DATE`: Solo fecha (`YYYY-MM-DD`).
-- `DATETIME`: Fecha y hora (`YYYY-MM-DD HH:MM:SS`).
-- `TIMESTAMP`: Fecha y hora con zona horaria (ajusta automáticamente según la zona configurada).
+- `DATE`: Date only (`YYYY-MM-DD`).
+- `DATETIME`: Date and time (`YYYY-MM-DD HH:MM:SS`).
+- `TIMESTAMP`: Date and time with time zone (automatically adjusts according to the configured zone).
 
-### **Ejemplo de creación:**
+### **Creation example:**
 
 ```sql
 CREATE TABLE events (
@@ -75,17 +75,17 @@ CREATE TABLE events (
 
 ---
 
-## **3. Funciones comunes para fechas**
+## **3. Common functions for dates**
 
-- `NOW()`: Fecha y hora actuales.
-- `CURDATE()`: Fecha actual.
-- `CURTIME()`: Hora actual.
-- `DATE_ADD(fecha, INTERVAL X unidad)`: Suma tiempo.
-- `DATE_SUB(fecha, INTERVAL X unidad)`: Resta tiempo.
-- `DATEDIFF(fecha1, fecha2)`: Diferencia en días.
-- `DATE_FORMAT(fecha, formato)`: Devuelve la fecha con un formato específico.
+- `NOW()`: Current date and time.
+- `CURDATE()`: Current date.
+- `CURTIME()`: Current time.
+- `DATE_ADD(fecha, INTERVAL X unidad)`: Adds time.
+- `DATE_SUB(fecha, INTERVAL X unidad)`: Subtracts time.
+- `DATEDIFF(fecha1, fecha2)`: Difference in days.
+- `DATE_FORMAT(fecha, formato)`: Returns the date with a specific format.
 
-### **Ejemplos:**
+### **Examples:**
 
 ```sql
 SELECT NOW();
@@ -96,9 +96,9 @@ SELECT DATE_FORMAT(NOW(), '%d/%m/%Y') AS fecha_formateada;
 
 ---
 
-## **4. Variables locales de tipo booleano o fecha**
+## **4. Local variables of type boolean or date**
 
-En procedimientos o funciones podemos declarar variables así:
+In procedures or functions we can declare variables like this:
 
 ```sql
 DELIMITER $$
@@ -116,9 +116,9 @@ DELIMITER ;
 
 ---
 
-## **5. Comparaciones y uso en condiciones**
+## **5. Comparisons and use in conditions**
 
-Podemos filtrar por fechas o booleanos:
+We can filter by dates or booleans:
 
 ```sql
 SELECT * FROM events WHERE event_date > CURDATE();
@@ -131,21 +131,21 @@ SELECT * FROM customers WHERE is_active = 1;
 
 ---
 
-## **6. Buenas prácticas**
+## **6. Good practices**
 
-- Usar `BOOLEAN` para claridad, aunque internamente sea `TINYINT(1)`.
-- Preferir `DATETIME` o `TIMESTAMP` según la necesidad de zona horaria.
-- Aprovechar funciones como `DATE_ADD`, `DATE_SUB` y `DATE_FORMAT` para manipular fechas.
-- Mantener coherencia en el formato de fechas.
-
----
-
-## **7. Conclusión**
-
-- Las variables booleanas se usan como `TRUE` o `FALSE`, pero son equivalentes a `1` y `0`.
-- MySQL ofrece tipos de fecha y funciones para manipular y formatear fechas.
-- Son fundamentales para manejar datos temporales y estados lógicos en las bases de datos.
+- Use `BOOLEAN` for clarity, even if internally it is `TINYINT(1)`.
+- Prefer `DATETIME` or `TIMESTAMP` according to the need for time zone.
+- Take advantage of functions such as `DATE_ADD`, `DATE_SUB` and `DATE_FORMAT` to manipulate dates.
+- Maintain consistency in date format.
 
 ---
 
-En el siguiente tema aprenderemos a **crear subconsultas y a utilizar WITH**.
+## **7. Conclusion**
+
+- Boolean variables are used like `TRUE` or `FALSE`, but are equivalent to `1` and `0`.
+- MySQL offers date types and functions to manipulate and format dates.
+- They are essential for managing temporary data and logical states in databases.
+
+---
+
+In the next topic we will learn to **create subqueries and use WITH**.

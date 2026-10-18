@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 3: Bucles en JavaScript**
+# **Exercises - Topic 3: Loops in JavaScript**
 
-A continuación, encontrarás 6 ejercicios prácticos sobre el uso de bucles en JavaScript.
+Below you will find 6 practical exercises on using loops in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Contar del 1 al 10**
+### **Exercise 1: Count from 1 to 10**
 
-Crea un programa que imprima los números del 1 al 10 usando un bucle `for`.
+Create a program that prints the numbers 1 to 10 using an `for` loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 for (let i = 1; i <= 10; i++) {
@@ -22,11 +22,11 @@ for (let i = 1; i <= 10; i++) {
 
 ---
 
-### **Ejercicio 2: Suma de números pares**
+### **Exercise 2: Addition of even numbers**
 
-Usando un bucle `while`, suma todos los números pares entre 1 y 20 e imprime el resultado.
+Using an `while` loop, add all even numbers between 1 and 20 and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 let i = 1;
@@ -46,13 +46,13 @@ console.log(`La suma de los números pares entre 1 y 20 es: ${sum}`);
 
 ---
 
-### **Ejercicio 3: Palabra al revés**
+### **Exercise 3: Word backwards**
 
-Usa un bucle `for` para imprimir una palabra al revés.
+Use an `for` loop to print a word backwards.
 
-**Ejemplo:** Si la palabra es "JavaScript", el resultado debe ser "tpircSavaJ".
+**Example:** If the word is "JavaScript", the result must be "tpircSavaJ".
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const word = "JavaScript";
@@ -69,11 +69,11 @@ console.log(reversedWord);
 
 ---
 
-### **Ejercicio 4: Imprimir propiedades de un objeto**
+### **Exercise 4: Print properties of an object**
 
-Usa un bucle `for...in` para imprimir las claves y valores de un objeto.
+Uses an `for...in` loop to print the keys and values of an object.
 
-**Ejemplo:**
+**Example:**
 
 ```js
 const person = {
@@ -83,7 +83,7 @@ const person = {
 };
 ```
 
-**Salida esperada:**
+**Expected output:**
 
 ```
 nombre: Ana
@@ -91,7 +91,7 @@ edad: 30
 ciudad: Madrid
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const person = {
@@ -109,15 +109,15 @@ for (const key in person) {
 
 ---
 
-### **Ejercicio 5: Iterar sobre un array con `for...of`**
+### **Exercise 5: Iterate over an array with `for...of`**
 
-Crea un programa que itere sobre el siguiente array usando `for...of` y muestre cada elemento.
+Create a program that iterates over the following array using `for...of` and displays each element.
 
 ```js
 const fruits = ["manzana", "banana", "cereza", "mango"];
 ```
 
-**Salida esperada:**
+**Expected output:**
 
 ```
 manzana
@@ -126,7 +126,7 @@ cereza
 mango
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const fruits = ["manzana", "banana", "cereza", "mango"];
@@ -140,11 +140,11 @@ for (const fruit of fruits) {
 
 ---
 
-### **Ejercicio 6: Tabla de multiplicar**
+### **Exercise 6: Multiplication table**
 
-Solicita al usuario un número y muestra su tabla de multiplicar del 1 al 10 usando un bucle `for`.
+Prompts the user for a number and displays its multiplication table from 1 to 10 using an `for` loop.
 
-**Ejemplo:** Si el usuario introduce `5`, la salida será:
+**Example:** If the user enters `5`, the output will be:
 
 ```
 5 x 1 = 5
@@ -153,7 +153,7 @@ Solicita al usuario un número y muestra su tabla de multiplicar del 1 al 10 usa
 5 x 10 = 50
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const number = parseInt(

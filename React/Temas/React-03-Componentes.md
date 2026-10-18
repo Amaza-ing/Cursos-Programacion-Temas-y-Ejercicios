@@ -1,39 +1,39 @@
-# **Tema 3: Componentes en React**
+# **Topic 3: Components in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En React, un **componente** es una pieza reutilizable de interfaz. En lugar de construir una página entera en un único archivo, React te anima a dividir la interfaz en partes pequeñas y mantenibles.
+In React, a **component** is a reusable piece of interface. Instead of building an entire page in a single file, React encourages you to break the interface into small, maintainable parts.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un componente y por qué es la base de React.
-- Componentes funcionales y cómo se crean.
-- Cómo usar un componente dentro de otro.
-- Cómo organizar componentes en carpetas.
-- Buenas prácticas básicas para empezar.
-
----
-
-## **2. ¿Qué es un componente?**
-
-Un componente es una función (o clase, aunque hoy se usa casi siempre función) que **devuelve JSX**.
-
-Piensa en un componente como una “pieza” de la pantalla:
-
-- Un botón
-- Una tarjeta de producto
-- Un menú
-- Un formulario
-
-La idea clave es que esas piezas se puedan **reutilizar** y **componer** para construir una aplicación.
+- What is a component and why is it the basis of React.
+- Functional components and how they are created.
+- How to use one component inside another.
+- How to organize components in folders.
+- Basic good practices to get started.
 
 ---
 
-## **3. Componente funcional (Functional Component)**
+## **2. What is a component?**
 
-Un componente funcional es una función de JavaScript que devuelve JSX.
+A component is a function (or class, although today a function is almost always used) that **returns JSX**.
 
-Ejemplo simple:
+Think of a component as a “piece” of the screen:
+
+- One button
+- A product card
+- A menu
+- A form
+
+The key idea is that those pieces can be **reused** and **composed** to build an application.
+
+---
+
+## **3. Functional Component (Functional Component)**
+
+A functional component is a JavaScript function that returns JSX.
+
+Simple example:
 
 ```js
 function Title() {
@@ -43,17 +43,17 @@ function Title() {
 export default Title;
 ```
 
-### **Reglas básicas**
+### **Basic rules**
 
-- El nombre del componente debe ir en **PascalCase**.
-- Un componente debe **devolver un único elemento padre**.
-- Para exportarlo y usarlo en otros archivos, se suele usar `export default`.
+- The component name must be in **PascalCase**.
+- A component must **return a single parent element**.
+- To export it and use it in other files, `export default` is usually used.
 
 ---
 
-## **4. Crear tu primer componente en `components/`**
+## **4. Create your first component in `components/`**
 
-Una estructura típica sería:
+A typical structure would be:
 
 ```
 src/
@@ -62,7 +62,7 @@ src/
 │── App.jsx
 ```
 
-### **4.1. Crear `Header.jsx`**
+### **4.1. Create `Header.jsx`**
 
 ```js
 function Header() {
@@ -76,7 +76,7 @@ function Header() {
 export default Header;
 ```
 
-### **4.2. Usar el componente en `App.jsx`**
+### **4.2. Use the component in `App.jsx`**
 
 ```js
 import Header from "./components/Header";
@@ -93,18 +93,18 @@ function App() {
 export default App;
 ```
 
-Aquí ocurre lo siguiente:
+Here the following happens:
 
-- Importas el componente con `import`.
-- Lo usas como una etiqueta: `<Header />`.
+- You import the component with `import`.
+- You use it as a tag: `<Header />`.
 
 ---
 
-## **5. Composición de componentes**
+## **5. Component composition**
 
-La gran ventaja de React es que puedes combinar componentes para construir pantallas completas.
+The big advantage of React is that you can combine components to build complete screens.
 
-Ejemplo:
+Example:
 
 - `Header`
 - `Main`
@@ -147,15 +147,15 @@ export default App;
 
 ---
 
-## **6. JSX dentro de componentes**
+## **6. JSX within components**
 
-Dentro de JSX puedes:
+Within JSX you can:
 
-- Mostrar texto
-- Insertar expresiones JavaScript con `{}`
-- Renderizar otros componentes
+- Show text
+- Insert JavaScript expressions with `{}`
+- Render other components
 
-Ejemplo:
+Example:
 
 ```js
 function Welcome() {
@@ -174,17 +174,17 @@ export default Welcome;
 
 ---
 
-## **7. Importación correcta de componentes**
+## **7. Successful import of components**
 
-### **7.1. Importación por defecto**
+### **7.1. Default import**
 
-Si exportas así:
+If you export like this:
 
 ```js
 export default Header;
 ```
 
-Entonces importas así:
+Then you import like this:
 
 ```js
 import Header from "./components/Header";
@@ -192,25 +192,25 @@ import Header from "./components/Header";
 
 ---
 
-## **8. Buenas prácticas para empezar**
+## **8. Good practices to get started**
 
-- Un componente por archivo.
-- Nombres claros: `UserCard`, `ProductList`, `Navbar`.
-- Mantén los componentes pequeños y con una sola responsabilidad.
-- Reutiliza componentes en lugar de copiar y pegar JSX.
-
----
-
-## **9. A tener en cuenta**
-
-- Los componentes son el corazón de React.
-- En React compones la interfaz juntando componentes como piezas.
-- Por ahora, tus componentes serán “estáticos”. En el siguiente tema empezaremos a darles estilo.
+- One component per file.
+- Clear names: `UserCard`, `ProductList`, `Navbar`.
+- Keep components small and with only one responsibility.
+- Reuse components instead of copying and pasting JSX.
 
 ---
 
-[![Componentes](https://img.youtube.com/vi/oCXYesB9q7w/0.jpg)](https://www.youtube.com/watch?v=oCXYesB9q7w&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **9. To take into account**
+
+- Components are the heart of React.
+- In React you compose the interface by putting components together as pieces.
+- For now, your components will be “static”. In the next topic we will start styling them.
 
 ---
 
-En el próximo tema veremos cómo aplicar **estilos en React** (CSS global, CSS por componente y buenas prácticas iniciales).
+[![Components](https://img.youtube.com/vi/oCXYesB9q7w/0.jpg)](https://www.youtube.com/watch?v=oCXYesB9q7w&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will see how to apply **styles in React** (global CSS, per-component CSS and initial good practices).

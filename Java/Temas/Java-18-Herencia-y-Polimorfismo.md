@@ -1,55 +1,55 @@
-# Tema 18. Herencia de clases
+# Topic 18. Class inheritance
 
-## 1. Introducción
+## 1. Introduction
 
-En temas anteriores has aprendido a crear clases con:
+In previous topics you have learned how to create classes with:
 
-- Atributos y métodos
-- Encapsulación (atributos `private`, getters y setters)
-- Constructores y sobrecarga
-- Miembros estáticos (`static`)
+- Attributes and methods
+- Encapsulation (`private` attributes, getters and setters)
+- Constructors and overloading
+- Static members (`static`)
 
-Ahora vas a aprender un concepto central de la Programación Orientada a Objetos (POO):
+Now you are going to learn a central concept of Object-Oriented Programming (OOP):
 
-- **Herencia**
+- **Inheritance**
 
-La herencia permite crear una clase nueva a partir de otra, **reutilizando** código y ampliando comportamiento.
+Inheritance allows you to create a new class from another, **reusing** code and extending behavior.
 
-Ejemplo mental:
+Mental example:
 
-- `Animal` (clase base)
-- `Dog` y `Cat` (clases derivadas)
+- `Animal` (base class)
+- `Dog` and `Cat` (derived classes)
 
-Todas las mascotas comparten cosas (nombre, edad), pero cada una tiene comportamientos especiales.
+All pets share things (name, age), but each one has special behaviors.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es herencia y cuándo tiene sentido usarla
-- `extends` y la relación _is-a_ (es-un)
-- Qué es `super` y para qué sirve
-- Cómo funcionan los constructores en herencia
+- What is inheritance and when does it make sense to use it?
+- `extends` and the _is-a_ (es-un) relationship
+- What is `super` and what is it for?
+- How constructors work in inheritance
 - `protected` vs `private`
-- Sobrescritura de métodos (`@Override`)
-- Polimorfismo básico (usar una referencia del padre para un hijo)
-- Ejemplos completos listos para ejecutar
+- Method override (`@Override`)
+- Basic polymorphism (use a parent reference for a child)
+- Complete examples ready to run
 
 ---
 
-[![Herencia y Polimorfismo](https://img.youtube.com/vi/y677D9OB1IE/0.jpg)](https://www.youtube.com/watch?v=y677D9OB1IE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Inheritance and Polymorphism](https://img.youtube.com/vi/y677D9OB1IE/0.jpg)](https://www.youtube.com/watch?v=y677D9OB1IE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. Qué es herencia
+## 2. What is inheritance
 
-Herencia significa:
+Inheritance means:
 
-- Una clase “hija” (subclase) hereda los atributos y métodos de una clase “padre” (superclase).
-- La clase hija puede:
-  - Añadir nuevos atributos y métodos
-  - Reutilizar lo heredado
-  - Modificar comportamientos (sobrescribir métodos)
+- A “child” class (subclass) inherits the attributes and methods of a “parent” class (superclass).
+- The child class can:
+  - Add new attributes and methods
+  - Reuse what is inherited
+  - Modify behaviors (override methods)
 
-La sintaxis es:
+The syntax is:
 
 ```java
 public class Child extends Parent {
@@ -58,30 +58,30 @@ public class Child extends Parent {
 
 ---
 
-## 3. Relación _is-a_ (es-un)
+## 3. Relationship _is-a_ (is-a)
 
-Una regla práctica muy importante:
+A very important rule of thumb:
 
-> Usa herencia cuando la clase hija **es un** tipo de la clase padre.
+> Use inheritance when the child class **is a** type of the parent class.
 
-Ejemplos correctos (_is-a_):
+Correct examples (_is-a_):
 
-- `Car` es un `Vehicle`
-- `Student` es una `Person`
-- `Dog` es un `Animal`
+- `Car` is an `Vehicle`
+- `Student` is an `Person`
+- `Dog` is an `Animal`
 
-Ejemplos incorrectos (no es _is-a_):
+Incorrect examples (is not _is-a_):
 
-- `Engine` es un `Car` (no, un motor **no es** un coche)
-- `Address` es un `User` (no)
+- `Engine` is an `Car` (no, an engine is **not** a car)
+- `Address` is an `User` (not)
 
-Si la relación es más bien “tiene un” (_has-a_), suele ser composición (lo verás más adelante).
+If the relationship is more like “has-a_”, it is usually composition (you will see this later).
 
 ---
 
-## 4. Primer ejemplo simple: `Person` y `Student`
+## 4. First simple example: `Person` and `Student`
 
-### 4.1. Clase padre: `Person`
+### 4.1. Parent class: `Person`
 
 ```java
 public class Person {
@@ -125,9 +125,9 @@ public class Person {
 }
 ```
 
-### 4.2. Clase hija: `Student`
+### 4.2. Daughter class: `Student`
 
-`Student` hereda `name`, `age` y `printInfo()`, y añade `grade`.
+`Student` inherits `name`, `age` and `printInfo()`, and adds `grade`.
 
 ```java
 public class Student extends Person {
@@ -153,7 +153,7 @@ public class Student extends Person {
 }
 ```
 
-### 4.3. Uso
+### 4.3. Use
 
 ```java
 public class Main {
@@ -168,33 +168,33 @@ public class Main {
 }
 ```
 
-Puntos clave:
+Key points:
 
 - `Student extends Person`
-- `Student` llama al constructor del padre con `super(name, age)`
-- `Student` hereda métodos públicos del padre
+- `Student` calls the parent's constructor with `super(name, age)`
+- `Student` inherits public methods from the parent
 
 ---
 
-## 5. `super`: acceder al padre
+## 5. `super`: access parent
 
-`super` se usa para dos cosas principales:
+`super` is used for two main things:
 
-1. Llamar al constructor del padre: `super(...)`
-2. Llamar a un método del padre desde un método sobrescrito: `super.method()`
+1. Call the parent's constructor: `super(...)`
+2. Call a parent method from an overridden method: `super.method()`
 
 ---
 
-## 6. Constructores en herencia
+## 6. Constructors in inheritance
 
-Cuando creas un objeto de una clase hija:
+When you create an object of a child class:
 
-- Primero se construye la parte “padre”
-- Luego la parte “hija”
+- First the “parent” part is built
+- Then the “daughter” part
 
-Por eso Java exige que el constructor de la hija llame a `super(...)`.
+That's why Java requires the daughter's constructor to call `super(...)`.
 
-Ejemplo:
+Example:
 
 ```java
 public class Student extends Person {
@@ -204,9 +204,9 @@ public class Student extends Person {
 }
 ```
 
-### 6.1. `super(...)` debe ser la primera línea
+### 6.1. `super(...)` should be the first line
 
-Esto es obligatorio.
+This is mandatory.
 
 ```java
 public Student(String name, int age) {
@@ -217,23 +217,23 @@ public Student(String name, int age) {
 
 ---
 
-## 7. `private` vs `protected` en herencia
+## 7. `private` vs `protected` in inheritance
 
-- `private`: solo accesible dentro de la clase padre
-- `protected`: accesible dentro del padre y también dentro de las clases hijas
+- `private`: only accessible within the parent class
+- `protected`: accessible within the parent and also within the child classes
 
-En este curso, como estás empezando, lo más común es:
+In this course, since you are starting, the most common thing is:
 
-- Atributos `private`
-- Acceso desde la hija usando getters y setters del padre (recomendado)
+- `private` attributes
+- Access from the daughter using getters and setters of the parent (recommended)
 
-Si `name` es `private` en `Person`, no puedes hacer:
+If `name` is `private` in `Person`, you cannot do:
 
 ```java
 // this.name = "Laura"; // no se puede si es private
 ```
 
-Pero sí puedes hacer:
+But you can do:
 
 ```java
 setName("Laura"); // método heredado
@@ -241,11 +241,11 @@ setName("Laura"); // método heredado
 
 ---
 
-## 8. Sobrescritura de métodos (`@Override`)
+## 8. Method Override (`@Override`)
 
-Una clase hija puede **sobrescribir** un método del padre para cambiar su comportamiento.
+A child class can **override** a parent method to change its behavior.
 
-Ejemplo: queremos que `Student.printInfo()` muestre también la nota.
+Example: we want `Student.printInfo()` to also show the note.
 
 ```java
 public class Student extends Person {
@@ -273,21 +273,21 @@ public class Student extends Person {
 }
 ```
 
-- `@Override` le dice a Java: “esto sobrescribe un método del padre”.
-- `super.printInfo()` reutiliza la impresión del padre y luego añadimos información.
+- `@Override` tells Java: “this overwrites a parent method.”
+- `super.printInfo()` reuses the parent printout and then we add information.
 
 ---
 
-## 9. Polimorfismo básico
+## 9. Basic polymorphism
 
-Puedes tratar un objeto hijo como si fuera del tipo padre.
+You can treat a child object as if it were of the parent type.
 
 ```java
 Person p = new Student("Alex", 21, 8.5);
 p.printInfo();
 ```
 
-Esto es útil para colecciones:
+This is useful for collections:
 
 ```java
 import java.util.ArrayList;
@@ -302,13 +302,13 @@ for (Person person : people) {
 }
 ```
 
-Si `Student` sobrescribe `printInfo`, se ejecutará la versión correcta.
+If `Student` overwrites `printInfo`, the correct version will be executed.
 
 ---
 
-## 10. Ejemplo completo: `Employee` y `Manager`
+## 10. Complete example: `Employee` and `Manager`
 
-### 10.1. `Employee.java` (padre)
+### 10.1. `Employee.java` (parent)
 
 ```java
 public class Employee {
@@ -352,7 +352,7 @@ public class Employee {
 }
 ```
 
-### 10.2. `Manager.java` (hija)
+### 10.2. `Manager.java` (daughter)
 
 ```java
 public class Manager extends Employee {
@@ -419,31 +419,31 @@ public class Main {
 
 ---
 
-## 11. Errores típicos
+## 11. Typical errors
 
-- Olvidar llamar a `super(...)` cuando el padre no tiene constructor vacío
-- Intentar acceder a atributos `private` del padre desde la hija
-- Usar herencia donde no existe una relación _is-a_
-
----
-
-## 12. Buenas prácticas iniciales
-
-- Usa herencia para relaciones claras _is-a_.
-- Mantén atributos `private` y expón métodos.
-- Usa `@Override` siempre que sobrescribas.
-- Reutiliza lógica con `super.method()` cuando tenga sentido.
+- Forget to call `super(...)` when parent has no empty constructor
+- Try to access `private` attributes of the father from the daughter
+- Use inheritance where an _is-a_ relationship does not exist
 
 ---
 
-## 13. A tener en cuenta
+## 12. Good initial practices
 
-- `extends` crea una relación de herencia.
-- `super(...)` llama al constructor del padre y debe ser la primera línea.
-- `private` no es accesible en la hija; `protected` sí.
-- `@Override` ayuda a escribir código correcto.
-- Polimorfismo: puedes guardar un hijo como un padre y se ejecuta el método correcto.
+- Use inheritance for clear _is-a_ relationships.
+- Maintain `private` attributes and expose methods.
+- Use `@Override` whenever you overwrite.
+- Reuse logic with `super.method()` when it makes sense.
 
 ---
 
-En el siguiente tema aprenderemos a organizar el proyecto en **Packages** o paquetes, que te ayudan a diseñar jerarquías más robustas y a organizar el código.
+## 13. To take into account
+
+- `extends` creates an inheritance relationship.
+- `super(...)` calls the parent's constructor and must be the first line.
+- `private` is not accessible in the daughter; `protected` yes.
+- `@Override` helps to write correct code.
+- Polymorphism: you can save a child as a parent and the correct method is executed.
+
+---
+
+In the next topic we will learn how to organize the project into **Packages** or packages, which help you design more robust hierarchies and organize the code.

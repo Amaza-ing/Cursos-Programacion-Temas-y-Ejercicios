@@ -1,80 +1,80 @@
-# **Curso Completo de CSS desde Cero**
+# **Complete CSS Course from Scratch**
 
-Bienvenido al **Curso Completo de CSS**, un repositorio diseñado para ayudarte a aprender y dominar CSS, el lenguaje de estilos que da vida al diseño de las páginas web. Si eres principiante, este curso te guiará paso a paso para que puedas crear sitios web atractivos y responsivos.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 Cómo aplicar estilos a elementos HTML.<br>
-🔹 Principios básicos de selectores y especificidad.<br>
-🔹 Uso del modelo de caja para diseñar estructuras web.<br>
-🔹 Colores, fondos, fuentes y tipografías personalizadas.<br>
-🔹 Técnicas de diseño moderno con Flexbox y Grid.<br>
-🔹 Creación de animaciones y transiciones.<br>
-🔹 Diseño responsivo con media queries.<br>
-🔹 Buenas prácticas para escribir código limpio y escalable.<br>
-
-Este curso está estructurado en **módulos prácticos**, con ejemplos y ejercicios que te ayudarán a reforzar cada concepto.
+Welcome to **Complete CSS Course**, a repository designed to help you learn and master CSS, the styling language that brings web page design to life. If you are a beginner, this course will guide you step by step so you can create attractive and responsive websites.
 
 ---
 
-## 📂 **Estructura del curso**
+## 📌 **What will you learn in this course?**
 
-Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes explorar los temas a tu propio ritmo:
+🔹 How to apply styles to HTML.<br> elements
+🔹 Basic principles of selectors and specificity.<br>
+🔹 Using the box model to design web structures.<br>
+🔹 Custom colors, backgrounds, fonts and fonts.<br>
+🔹 Modern design techniques with Flexbox and Grid.<br>
+🔹 Creation of animations and transitions.<br>
+🔹 Responsive design with media queries.<br>
+🔹 Best practices for writing clean and scalable code.<br>
 
-| 📚 Tema                                                                                        | Descripción                                                |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| 🎨 [Tema 1: Introducción a CSS](Temas/CSS-01-Introduccion.md)                                  | Qué es CSS y cómo funciona.                                |
-| 🔗 [Tema 2: Selectores y Especificidad](Temas/CSS-02-Selectores.md)                            | Cómo seleccionar y aplicar estilos a los elementos.        |
-| 📦 [Tema 3: El Modelo de Caja](Temas/CSS-03-Modelo-de-Caja.md)                                 | Estructura interna de los elementos y su manipulación.     |
-| 🎨 [Tema 4: Unidades de Medida](Temas/CSS-04-Unidades.md)                                      | Uso de unidades absolutas y relativas.                     |
-| 🌈 [Tema 5: Colores y Fondos](Temas/CSS-05-Colores-y-Background.md)                            | Aplicación de colores, degradados y fondos personalizados. |
-| ✍️ [Tema 6: Tipografía y Fuentes](Temas/CSS-06-Tipografia.md)                                  | Personalización de textos y uso de fuentes externas.       |
-| 🗺 [Tema 7: Posicionamiento](Temas/CSS-07-Posicionamiento.md)                                   | Personalización de textos y uso de fuentes externas.       |
-| 📐 [Tema 8: Flexbox](Temas/CSS-08-Flexbox.md)                                                  | Diseño flexible de elementos en una sola dimensión.        |
-| 🗂️ [Tema 9: CSS Grid](Temas/CSS-09-Grid.md)                                                    | Diseño en cuadrículas bidimensionales.                     |
-| 👁‍🗨️ [Tema 10: Pseudoclases y Pseudoelementos](Temas/CSS-10-Pseudoclases-y-Pseudoelementos.md) | Mayor flexibilidad y control en los elementos.             |
-| 🎞️ [Tema 11: Animaciones y Transiciones](Temas/CSS-11-Animaciones-y-Transiciones.md)           | Creación de animaciones y efectos dinámicos.               |
-| 📱 [Tema 12: Media Queries y Diseño Responsivo](Temas/CSS-12-Responsivo.md)                    | Adaptación de sitios web a distintos dispositivos.         |
-
-📌 **También encontrarás ejercicios resueltos en la carpeta de [Ejercicios](Ejercicios) para practicar lo aprendido.**
+This course is structured in **practical modules**, with examples and exercises that will help you reinforce each concept.
 
 ---
 
-## 🛠️ **Requisitos previos**
+## 📂 **Course structure**
 
-Este curso está diseñado para principiantes, por lo que no necesitas conocimientos previos. Sin embargo, te ayudará tener:
+Each theme is located in a **Markdown (`.md`)** file within this repository. You can explore the topics at your own pace:
 
-- Conocimientos básicos de HTML.
-- Un navegador web actualizado (Google Chrome, Firefox, Edge, etc.).
-- Un editor de código como Visual Studio Code o Sublime Text.
+| 📚 Theme | Description |
+| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 🎨 [topic 1: Introduction to CSS](Temas/CSS-01-Introduccion.md) | What is CSS and how it works.                                |
+| 🔗 [Topic 2: Selectors and Specificity](Temas/CSS-02-Selectores.md) | How to select and apply styles to elements.        |
+| 📦 [topic 3: The Box Model](Temas/CSS-03-Modelo-de-Caja.md) | Internal structure of the elements and their manipulation.     |
+| 🎨 [Tem 4: Units of Measurement](Temas/CSS-04-Unidades.md) | Use of absolute and relative units.                     |
+| 🌈 [topic 5: Colors and Backgrounds](Temas/CSS-05-Colores-y-Background.md) | Application of custom colors, gradients and backgrounds. |
+| ✍️ [Tem 6: Typography and Fonts](Temas/CSS-06-Tipografia.md) | Customization of texts and use of external sources.       |
+| 🗺 [topic 7: Positioning](Temas/CSS-07-Posicionamiento.md) | Customization of texts and use of external sources.       |
+| 📐 [ Topic 8: Flexbox](Temas/CSS-08-Flexbox.md) | Flexible design of elements in a single dimension.        |
+| 🗂️ [Topic 9: CSS Grid](Temas/CSS-09-Grid.md) | Design in two-dimensional grids.                     |
+| 👁‍🗨️ [T Topic 10: Pseudoclasses and Pseudoelements](Temas/CSS-10-Pseudoclases-y-Pseudoelementos.md) | Greater flexibility and control in the elements.             |
+| 🎞️ [T Topic 11: Animations and Transitions](Temas/CSS-11-Animaciones-y-Transiciones.md) | Creation of animations and dynamic effects.               |
+| 📱 [Topic 12: Media Queries and Responsive Design](Temas/CSS-12-Responsivo.md) | Adaptation of websites to different devices.         |
 
----
-
-## 📌 **Cómo usar este repositorio**
-
-Puedes seguir el curso directamente desde este repositorio o descargarlo para estudiarlo en tu ordenador.
-
-1️⃣ **Clona el repositorio** en tu máquina local.
-
-2️⃣ **Explora los temas** y sigue las guías en cada archivo `.md`.
-
-3️⃣ **Realiza los ejercicios** y pon a prueba tus habilidades con ejemplos prácticos.
-
-4️⃣ **Aplica lo aprendido** creando tus propios proyectos.
-
----
-
-## 🚀 **¡Comienza a aprender CSS hoy!**
-
-Este curso está diseñado para que aprendas **a tu ritmo**, con explicaciones claras y ejercicios prácticos que consolidarán tus conocimientos.
+📌 **You will also find solved exercises in the [exercises](Ejercicios) folder to practice what you have learned.**
 
 ---
 
-## Hecho por Adrián Maza.
+## 🛠️ **Prerequisites**
 
-Espero que disfrutes el curso.
+This course is designed for beginners, so you do not need prior knowledge. However, it will help you to have:
+
+- Basic knowledge of HTML.
+- An updated web browser (Google Chrome, Firefox, Edge, etc.).
+- A code editor such as Visual Studio Code or Sublime Text.
+
+---
+
+## 📌 **How to use this repository**
+
+You can follow the course directly from this repository or download it to study it on your computer.
+
+1️⃣ **Clone the repository** on your local machine.
+
+2️⃣ **Explore the topics** and follow the guides in each `.md` file.
+
+3️⃣ **Do the exercises** and test your skills with practical examples.
+
+4️⃣ **Apply what you have learned** by creating your own projects.
+
+---
+
+## 🚀 **Start learning CSS today!**
+
+This course is designed for you to learn **at your own pace**, with clear explanations and practical exercises that will consolidate your knowledge.
+
+---
+
+## Made by Adrián Maza.
+
+I hope you enjoy the course.
 
 <div>
   <h5>
@@ -87,7 +87,7 @@ Espero que disfrutes el curso.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

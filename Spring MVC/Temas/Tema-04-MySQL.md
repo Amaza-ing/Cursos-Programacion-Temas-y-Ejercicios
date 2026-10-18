@@ -1,18 +1,18 @@
-# Tema 4 — (Opcional) Persistencia de datos con MySQL y DBeaver en Spring MVC
+# Topic 4 — (Optional) Data Persistence with MySQL and DBeaver in Spring MVC
 
-## Objetivo de este tema opcional
+##Purpose of this optional topic
 
-En el Tema 3 aprendimos a crear y procesar formularios en Spring MVC. Hasta ahora, los cursos se guardaban en una lista en memoria dentro de Java:
+In Topic 3 we learned how to create and process forms in Spring MVC. Until now, courses were stored in an in-memory list within Java:
 
 ```java
 private final List<Course> courses = new ArrayList<>();
 ```
 
-Esto era suficiente para aprender el flujo de un formulario, pero tiene una limitación importante: cuando reiniciamos la aplicación, los datos añadidos desaparecen.
+This was enough to learn the flow of a form, but it has an important limitation: when we restart the application, the added data disappears.
 
-En este tema vamos a cambiar esa lista por una base de datos MySQL. Usaremos DBeaver para crear y consultar la base de datos, y Spring JDBC para conectar nuestra aplicación Spring MVC con MySQL.
+In this topic we are going to change that list for a MySQL database. We will use DBeaver to create and query the database, and Spring JDBC to connect our Spring MVC application with MySQL.
 
-Al terminar este tema opcional, el flujo será el siguiente:
+At the end of this optional topic, the flow will be as follows:
 
 ```text
 Formulario JSP
@@ -30,15 +30,15 @@ JdbcTemplate
 MySQL
 ```
 
-El usuario seguirá usando la aplicación igual que antes: verá un listado de cursos, podrá entrar al detalle de un curso y podrá crear un nuevo curso mediante formulario. La diferencia estará en que los datos se guardarán de forma persistente en MySQL.
+The user will continue using the application the same as before: they will see a list of courses, they will be able to enter the details of a course and they will be able to create a new course using a form. The difference will be that the data will be saved persistently in MySQL.
 
 ---
 
-## 1. Qué vamos a modificar
+## 1. What are we going to modify
 
-Partimos del proyecto que ya teníamos en el Tema 3.
+We start from the project that we already had in Topic 3.
 
-Hasta ahora, la aplicación tenía estas rutas:
+Until now, the application had these routes:
 
 ```text
 GET  /courses             → muestra el listado de cursos
@@ -47,11 +47,11 @@ GET  /courses/new         → muestra el formulario de creación
 POST /courses             → procesa el formulario y crea un curso
 ```
 
-Estas rutas no van a cambiar.
+These routes will not change.
 
-Lo que cambia es la forma de obtener y guardar los datos.
+What changes is the way of obtaining and saving the data.
 
-Antes teníamos esta estructura interna:
+Before we had this internal structure:
 
 ```text
 CourseController
@@ -61,7 +61,7 @@ CourseService
 ArrayList<Course>
 ```
 
-Ahora tendremos esta:
+Now we will have this:
 
 ```text
 CourseController
@@ -75,15 +75,15 @@ JdbcCourseDao
 MySQL
 ```
 
-El controlador seguirá llamando al servicio. El servicio seguirá ofreciendo métodos como `findAll()`, `findById()` y `save()`. Pero por dentro, esos métodos ya no trabajarán con una lista en memoria, sino con una base de datos.
+The controller will continue to call the service. The service will continue to offer methods such as `findAll()`, `findById()` and `save()`. But inside, those methods will no longer work with an in-memory list, but with a database.
 
 ---
 
-## 2. Estructura final del proyecto
+## 2. Final project structure
 
-Añadiremos un nuevo paquete llamado `dao`.
+We will add a new package called `dao`.
 
-La estructura del proyecto quedará así:
+The structure of the project will be like this:
 
 ```text
 spring-mvc-day1
@@ -131,14 +131,14 @@ spring-mvc-day1
                         └── not-found.jsp
 ```
 
-Los archivos nuevos serán:
+The new files will be:
 
 ```text
 CourseDao.java
 JdbcCourseDao.java
 ```
 
-Los archivos que modificaremos serán:
+The files that we will modify will be:
 
 ```text
 pom.xml
@@ -146,19 +146,19 @@ app-servlet.xml
 CourseService.java
 ```
 
-El controlador y las vistas no necesitan cambios importantes, porque ya estaban bien separados de la lógica de datos.
+The controller and views don't need any major changes, because they were already well separated from the data logic.
 
 ---
 
-[![Conexión con MySQL](https://img.youtube.com/vi/ulrXpghgoqM/0.jpg)](https://www.youtube.com/watch?v=ulrXpghgoqM&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Connection with MySQL](https://img.youtube.com/vi/ulrXpghgoqM/0.jpg)](https://www.youtube.com/watch?v=ulrXpghgoqM&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-## 3. Crear la base de datos en DBeaver
+## 3. Create the database in DBeaver
 
-Primero abrimos DBeaver y creamos una conexión a MySQL.
+First we open DBeaver and create a connection to MySQL.
 
-Los datos habituales de conexión son:
+The usual connection details are:
 
 ```text
 Host: localhost
@@ -167,13 +167,13 @@ User: root
 Password: la contraseña de MySQL de cada alumno
 ```
 
-Si DBeaver pide descargar el driver de MySQL, aceptamos.
+If DBeaver asks to download the MySQL driver, we accept.
 
-Después abrimos un editor SQL y ejecutamos el siguiente script.
+Then we open a SQL editor and execute the following script.
 
 ---
 
-## 4. Script SQL completo
+## 4. Complete SQL script
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_courses
@@ -200,9 +200,9 @@ SELECT * FROM courses;
 
 ---
 
-## 5. Explicación del script SQL
+## 5. SQL script explanation
 
-Creamos la base de datos con:
+We create the database with:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_courses
@@ -210,21 +210,21 @@ CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 ```
 
-El nombre de la base de datos será:
+The database name will be:
 
 ```text
 spring_mvc_courses
 ```
 
-Usamos `utf8mb4` para que la base de datos acepte correctamente caracteres como tildes, eñes y otros símbolos.
+We use `utf8mb4` so that the database correctly accepts characters such as accents, eñes and other symbols.
 
-Después seleccionamos esa base de datos:
+Then we select that database:
 
 ```sql
 USE spring_mvc_courses;
 ```
 
-Luego creamos la tabla:
+Then we create the table:
 
 ```sql
 CREATE TABLE IF NOT EXISTS courses (
@@ -235,24 +235,23 @@ CREATE TABLE IF NOT EXISTS courses (
 );
 ```
 
-La tabla se llama `courses` y tendrá estas columnas:
+The table is called `courses` and will have these columns:
 
-| Columna             | Tipo          | Significado                   |
-| ------------------- | ------------- | ----------------------------- |
-| `id`                | `BIGINT`      | Identificador único del curso |
-| `title`             | `VARCHAR(80)` | Título del curso              |
-| `level`             | `VARCHAR(30)` | Nivel del curso               |
-| `duration_in_hours` | `INT`         | Duración en horas             |
-
-La columna `id` tiene:
+| Column | Type | Meaning |
+| ------------------- | ------------- | -------------------------- |
+| `id` | `BIGINT` | Unique course identifier |
+| `title` | `VARCHAR(80)` | Course title |
+| `level` | `VARCHAR(30)` | Course level |
+| `duration_in_hours` | `INT` | Duration in hours |
+The `id` column has:
 
 ```sql
 PRIMARY KEY AUTO_INCREMENT
 ```
 
-Esto significa que MySQL generará automáticamente un identificador diferente para cada curso.
+This means that MySQL will automatically generate a different identifier for each course.
 
-Después insertamos algunos cursos iniciales:
+Then we insert some initial courses:
 
 ```sql
 INSERT INTO courses (title, level, duration_in_hours)
@@ -262,15 +261,15 @@ VALUES
     ('Spring MVC avanzado', 'Avanzado', 25);
 ```
 
-No escribimos el `id`, porque MySQL lo genera automáticamente.
+We do not write the `id`, because MySQL generates it automatically.
 
-Finalmente comprobamos los datos con:
+Finally we check the data with:
 
 ```sql
 SELECT * FROM courses;
 ```
 
-El resultado debería ser parecido a este:
+The result should look like this:
 
 ```text
 id | title                         | level      | duration_in_hours
@@ -281,22 +280,22 @@ id | title                         | level      | duration_in_hours
 
 ---
 
-## 6. Actualizar el archivo `pom.xml`
+## 6. Update `pom.xml` file
 
-Ahora tenemos que añadir las dependencias necesarias para conectar Java con MySQL.
+Now we have to add the necessary dependencies to connect Java with MySQL.
 
-Necesitamos dos dependencias nuevas:
+We need two new dependencies:
 
 ```text
 spring-jdbc
 mysql-connector-j
 ```
 
-La primera nos permite usar `JdbcTemplate`, una clase de Spring que simplifica el trabajo con SQL.
+The first allows us to use `JdbcTemplate`, a Spring class that simplifies working with SQL.
 
-La segunda es el driver que permite que Java se comunique con MySQL.
+The second is the driver that allows Java to communicate with MySQL.
 
-Dentro de `<dependencies>`, añadimos:
+Inside `<dependencies>`, we add:
 
 ```xml
 <!-- Spring JDBC -->
@@ -314,7 +313,7 @@ Dentro de `<dependencies>`, añadimos:
 </dependency>
 ```
 
-El bloque completo de dependencias puede quedar así:
+The complete block of dependencies can look like this:
 
 ```xml
 <dependencies>
@@ -372,30 +371,30 @@ El bloque completo de dependencias puede quedar así:
 </dependencies>
 ```
 
-Después de modificar el `pom.xml`, en IntelliJ debemos recargar Maven para que descargue las nuevas dependencias.
+After modifying the `pom.xml`, in IntelliJ we must reload Maven so that it downloads the new dependencies.
 
-Normalmente IntelliJ muestra un icono o mensaje para hacer `Reload Maven Project`. También podemos abrir la ventana de Maven y pulsar el icono de recarga.
+Normally IntelliJ displays an icon or message to make `Reload Maven Project`. We can also open the Maven window and press the reload icon.
 
 ---
 
-## 7. Configurar la conexión en `app-servlet.xml`
+## 7. Set the connection to `app-servlet.xml`
 
-Ahora tenemos que decirle a Spring cómo conectarse a MySQL.
+Now we have to tell Spring how to connect to MySQL.
 
-Modificamos este archivo:
+We modify this file:
 
 ```text
 src/main/webapp/WEB-INF/spring/app-servlet.xml
 ```
 
-Añadiremos dos beans:
+We will add two beans:
 
 ```text
 dataSource
 jdbcTemplate
 ```
 
-El archivo quedará así:
+The file will look like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -452,82 +451,82 @@ El archivo quedará así:
 
 ---
 
-## 8. Explicación del `dataSource`
+## 8. Explanation of `dataSource`
 
-El bean `dataSource` representa la conexión con MySQL:
+The `dataSource` bean represents the connection to MySQL:
 
 ```xml
 <bean id="dataSource"
       class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 ```
 
-Dentro indicamos el driver:
+Inside we indicate the driver:
 
 ```xml
 <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 ```
 
-Después configuramos la URL de conexión:
+Then we configure the connection URL:
 
 ```xml
 <property name="url"
           value="jdbc:mysql://localhost:3306/spring_mvc_courses?useSSL=false&amp;serverTimezone=Europe/Madrid" />
 ```
 
-La URL se puede dividir así:
+The URL can be split like this:
 
 ```text
 jdbc:mysql://localhost:3306/spring_mvc_courses
 ```
 
-| Parte                | Significado                      |
+| Part | Meaning |
 | -------------------- | -------------------------------- |
-| `jdbc:mysql://`      | Indica que usamos JDBC con MySQL |
-| `localhost`          | MySQL está en nuestro ordenador  |
-| `3306`               | Puerto habitual de MySQL         |
-| `spring_mvc_courses` | Nombre de la base de datos       |
+| `jdbc:mysql://` | Indicates that we use JDBC with MySQL |
+| `localhost` | MySQL is on our computer |
+| `3306` | Usual MySQL port |
+| `spring_mvc_courses` | Database name |
 
-Después aparecen estos parámetros:
+Then these parameters appear:
 
 ```text
 useSSL=false
 serverTimezone=Europe/Madrid
 ```
 
-En XML no podemos escribir `&` directamente dentro de un atributo, por eso escribimos:
+In XML we cannot write `&` directly inside an attribute, so we write:
 
 ```xml
 &amp;
 ```
 
-Por tanto, la URL queda así:
+Therefore, the URL looks like this:
 
 ```xml
 ?useSSL=false&amp;serverTimezone=Europe/Madrid
 ```
 
-También indicamos usuario y contraseña:
+We also indicate username and password:
 
 ```xml
 <property name="username" value="root" />
 <property name="password" value="TU_PASSWORD" />
 ```
 
-Cada alumno debe sustituir:
+Each student must replace:
 
 ```text
 TU_PASSWORD
 ```
 
-por la contraseña real de su MySQL.
+by the actual password of your MySQL.
 
-En una aplicación real no conviene dejar contraseñas escritas directamente en un XML, pero para este curso introductorio nos permite entender el proceso de forma sencilla.
+In a real application it is not advisable to leave passwords written directly in an XML, but for this introductory course it allows us to understand the process in a simple way.
 
 ---
 
-## 9. Explicación de `JdbcTemplate`
+## 9. Explanation of `JdbcTemplate`
 
-El segundo bean es:
+The second bean is:
 
 ```xml
 <bean id="jdbcTemplate"
@@ -537,11 +536,11 @@ El segundo bean es:
 </bean>
 ```
 
-`JdbcTemplate` es el objeto que usaremos para ejecutar consultas SQL desde Java.
+`JdbcTemplate` is the object we will use to execute SQL queries from Java.
 
-Necesita un `DataSource` para saber a qué base de datos conectarse.
+You need an `DataSource` to know which database to connect to.
 
-La relación es esta:
+The relationship is this:
 
 ```text
 JdbcTemplate
@@ -551,25 +550,25 @@ DataSource
 MySQL
 ```
 
-Gracias a `JdbcTemplate`, no tendremos que abrir y cerrar conexiones manualmente en cada consulta. Spring se encarga de gran parte del trabajo repetitivo de JDBC.
+Thanks to `JdbcTemplate`, we will not have to manually open and close connections on each query. Spring takes care of much of the repetitive work of JDBC.
 
 ---
 
-## 10. Crear la interfaz `CourseDao`
+## 10. Create the `CourseDao` interface
 
-Ahora creamos un nuevo paquete:
+Now we create a new package:
 
 ```text
 com.example.springmvcday1.dao
 ```
 
-Dentro de ese paquete creamos el archivo:
+Inside that package we create the file:
 
 ```text
 CourseDao.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.example.springmvcday1.dao;
@@ -590,57 +589,56 @@ public interface CourseDao {
 
 ---
 
-## 11. Explicación de `CourseDao`
-
-DAO significa:
+## 11. `CourseDao` Explanation
+DAO means:
 
 ```text
 Data Access Object
 ```
 
-Un DAO es una clase o interfaz encargada de definir operaciones de acceso a datos.
+A DAO is a class or interface in charge of defining data access operations.
 
-En este caso, nuestra interfaz define tres operaciones:
+In this case, our interface defines three operations:
 
 ```java
 List<Course> findAll();
 ```
 
-Sirve para obtener todos los cursos.
+It is used to obtain all the courses.
 
 ```java
 Course findById(Long id);
 ```
 
-Sirve para buscar un curso por su identificador.
+Used to search for a course by its identifier.
 
 ```java
 void save(Course course);
 ```
 
-Sirve para guardar un nuevo curso.
+It is used to save a new course.
 
-Esta interfaz no tiene SQL. Solo dice qué operaciones necesitamos.
+This interface does not have SQL. It just says what operations we need.
 
-La implementación real la haremos en otra clase llamada `JdbcCourseDao`.
+We will do the actual implementation in another class called `JdbcCourseDao`.
 
 ---
 
-## 12. Crear la clase `JdbcCourseDao`
+## 12. Create the `JdbcCourseDao` class
 
-Dentro del mismo paquete:
+Within the same package:
 
 ```text
 com.example.springmvcday1.dao
 ```
 
-creamos el archivo:
+we create the file:
 
 ```text
 JdbcCourseDao.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.example.springmvcday1.dao;
@@ -732,32 +730,32 @@ public class JdbcCourseDao implements CourseDao {
 
 ---
 
-## 13. Explicación de `JdbcCourseDao`
+## 13. `JdbcCourseDao` Explanation
 
-La clase empieza con:
+The class starts with:
 
 ```java
 @Repository
 public class JdbcCourseDao implements CourseDao {
 ```
 
-La anotación `@Repository` le indica a Spring que esta clase pertenece a la capa de acceso a datos.
+The `@Repository` annotation tells Spring that this class belongs to the data access layer.
 
-Como en `app-servlet.xml` tenemos esta línea:
+As in `app-servlet.xml` we have this line:
 
 ```xml
 <context:component-scan base-package="com.example.springmvcday1" />
 ```
 
-Spring buscará clases anotadas dentro del paquete `com.example.springmvcday1` y registrará automáticamente `JdbcCourseDao` como bean.
+Spring will look for classes annotated within the `com.example.springmvcday1` package and automatically register `JdbcCourseDao` as a bean.
 
-La clase implementa la interfaz:
+The class implements the interface:
 
 ```java
 implements CourseDao
 ```
 
-Esto significa que debe implementar los métodos definidos en `CourseDao`:
+This means that you must implement the methods defined in `CourseDao`:
 
 ```java
 findAll()
@@ -767,15 +765,15 @@ save(Course course)
 
 ---
 
-## 14. Inyección de `JdbcTemplate`
+## 14. `JdbcTemplate` injection
 
-Dentro de `JdbcCourseDao` tenemos:
+Inside `JdbcCourseDao` we have:
 
 ```java
 private final JdbcTemplate jdbcTemplate;
 ```
 
-Y el constructor:
+And the constructor:
 
 ```java
 public JdbcCourseDao(JdbcTemplate jdbcTemplate) {
@@ -783,16 +781,16 @@ public JdbcCourseDao(JdbcTemplate jdbcTemplate) {
 }
 ```
 
-Esto significa que `JdbcCourseDao` necesita un objeto `JdbcTemplate` para funcionar.
+This means that `JdbcCourseDao` needs an `JdbcTemplate` object to work.
 
-Spring lo inyectará automáticamente usando el bean que habíamos configurado en XML:
+Spring will automatically inject it using the bean we had configured in XML:
 
 ```xml
 <bean id="jdbcTemplate"
       class="org.springframework.jdbc.core.JdbcTemplate">
 ```
 
-La cadena de dependencias queda así:
+The chain of dependencies looks like this:
 
 ```text
 JdbcCourseDao necesita JdbcTemplate
@@ -802,15 +800,15 @@ DataSource contiene la conexión a MySQL
 
 ---
 
-## 15. Convertir filas SQL en objetos Java con `RowMapper`
+## 15. Convert SQL rows to Java objects with `RowMapper`
 
-Una base de datos devuelve filas y columnas.
+A database returns rows and columns.
 
-Java trabaja con objetos.
+Java works with objects.
 
-Por eso necesitamos convertir cada fila de la tabla `courses` en un objeto `Course`.
+That's why we need to convert each row of the `courses` table into an `Course` object.
 
-Eso lo hacemos con un `RowMapper`:
+We do that with an `RowMapper`:
 
 ```java
 private final RowMapper<Course> courseRowMapper = (resultSet, rowNumber) ->
@@ -822,9 +820,9 @@ private final RowMapper<Course> courseRowMapper = (resultSet, rowNumber) ->
         );
 ```
 
-`resultSet` representa una fila devuelta por MySQL.
+`resultSet` represents a row returned by MySQL.
 
-Por ejemplo, si MySQL devuelve esta fila:
+For example, if MySQL returns this row:
 
 ```text
 id: 1
@@ -833,7 +831,7 @@ level: Inicial
 duration_in_hours: 20
 ```
 
-el `RowMapper` crea este objeto:
+the `RowMapper` creates this object:
 
 ```java
 new Course(
@@ -844,13 +842,13 @@ new Course(
 );
 ```
 
-El `RowMapper` se usará en las consultas `SELECT`.
+The `RowMapper` will be used in `SELECT` queries.
 
 ---
 
-## 16. Método `findAll()`
+## 16. `findAll()` method
 
-El método `findAll()` obtiene todos los cursos de la base de datos.
+The `findAll()` method gets all the courses in the database.
 
 ```java
 @Override
@@ -865,7 +863,7 @@ public List<Course> findAll() {
 }
 ```
 
-Primero definimos la consulta SQL:
+First we define the SQL query:
 
 ```sql
 SELECT id, title, level, duration_in_hours
@@ -873,15 +871,15 @@ FROM courses
 ORDER BY id
 ```
 
-Esta consulta pide todos los cursos ordenados por su identificador.
+This query asks for all courses sorted by their identifier.
 
-Después ejecutamos:
+Then we execute:
 
 ```java
 jdbcTemplate.query(sql, courseRowMapper);
 ```
 
-Esto significa:
+This means:
 
 ```text
 Ejecuta la consulta SQL.
@@ -889,13 +887,13 @@ Por cada fila devuelta, usa courseRowMapper.
 Devuelve una lista de objetos Course.
 ```
 
-El resultado final será un `List<Course>`.
+The final result will be an `List<Course>`.
 
 ---
 
-## 17. Método `findById(Long id)`
+## 17. `findById(Long id)` method
 
-Este método busca un curso concreto por su identificador.
+This method searches for a specific course by its identifier.
 
 ```java
 @Override
@@ -914,7 +912,7 @@ public Course findById(Long id) {
 }
 ```
 
-La consulta SQL es:
+The SQL query is:
 
 ```sql
 SELECT id, title, level, duration_in_hours
@@ -922,27 +920,27 @@ FROM courses
 WHERE id = ?
 ```
 
-El signo `?` es un parámetro.
+The sign `?` is a parameter.
 
-No hacemos esto:
+We don't do this:
 
 ```java
 "SELECT * FROM courses WHERE id = " + id
 ```
 
-porque concatenar valores dentro de una consulta SQL es menos seguro y menos limpio.
+because concatenating values within a SQL query is less safe and less clean.
 
-En su lugar hacemos:
+Instead we do:
 
 ```java
 jdbcTemplate.query(sql, courseRowMapper, id);
 ```
 
-Así `JdbcTemplate` pasa el valor de `id` como parámetro de la consulta.
+So `JdbcTemplate` passes the value of `id` as a query parameter.
 
-El resultado será una lista. Puede contener un curso o puede estar vacía.
+The result will be a list. It may contain a course or it may be empty.
 
-Por eso al final escribimos:
+That's why in the end we write:
 
 ```java
 return courses.stream()
@@ -950,7 +948,7 @@ return courses.stream()
         .orElse(null);
 ```
 
-Esto significa:
+This means:
 
 ```text
 Si hay un curso, devuelve el primero.
@@ -959,9 +957,9 @@ Si no hay ninguno, devuelve null.
 
 ---
 
-## 18. Método `save(Course course)`
+## 18. `save(Course course)` method
 
-Este método guarda un nuevo curso en la base de datos.
+This method saves a new course to the database.
 
 ```java
 @Override
@@ -994,32 +992,31 @@ public void save(Course course) {
 }
 ```
 
-La consulta es:
+The query is:
 
 ```sql
 INSERT INTO courses (title, level, duration_in_hours)
 VALUES (?, ?, ?)
 ```
 
-No insertamos el `id`, porque MySQL lo genera automáticamente.
+We do not insert the `id`, because MySQL generates it automatically.
+The three signs `?` represent:
 
-Los tres signos `?` representan:
-
-| Posición | Valor              |
+| Position | Value |
 | -------- | ------------------ |
-| `1`      | título del curso   |
-| `2`      | nivel del curso    |
-| `3`      | duración del curso |
+| `1` | course title |
+| `2` | course level |
+| `3` | course duration |
 
-Después creamos un `KeyHolder`:
+Then we create an `KeyHolder`:
 
 ```java
 KeyHolder keyHolder = new GeneratedKeyHolder();
 ```
 
-Este objeto nos permite recuperar el identificador generado por MySQL.
+This object allows us to retrieve the identifier generated by MySQL.
 
-Luego preparamos el `PreparedStatement`:
+Then we prepare the `PreparedStatement`:
 
 ```java
 PreparedStatement preparedStatement = connection.prepareStatement(
@@ -1028,15 +1025,15 @@ PreparedStatement preparedStatement = connection.prepareStatement(
 );
 ```
 
-La parte importante es:
+The important part is:
 
 ```java
 Statement.RETURN_GENERATED_KEYS
 ```
 
-Esto le dice a JDBC que queremos recuperar la clave generada automáticamente.
+This tells JDBC that we want to retrieve the automatically generated key.
 
-Después colocamos los valores:
+Then we put the values:
 
 ```java
 preparedStatement.setString(1, course.getTitle());
@@ -1044,7 +1041,7 @@ preparedStatement.setString(2, course.getLevel());
 preparedStatement.setInt(3, course.getDurationInHours());
 ```
 
-Si el usuario ha enviado el formulario con estos datos:
+If the user has sent the form with this data:
 
 ```text
 Título: Java Web con Spring
@@ -1052,15 +1049,15 @@ Nivel: Inicial
 Duración: 12
 ```
 
-la consulta final insertará esos valores en la tabla.
+the final query will insert those values into the table.
 
-Después recuperamos el id generado:
+Then we recover the generated id:
 
 ```java
 Number generatedId = keyHolder.getKey();
 ```
 
-Y se lo asignamos al objeto Java:
+And we assign it to the Java object:
 
 ```java
 if (generatedId != null) {
@@ -1068,29 +1065,29 @@ if (generatedId != null) {
 }
 ```
 
-Así el objeto `Course` también conoce su nuevo identificador.
+Thus the `Course` object also knows its new identifier.
 
 ---
 
-## 19. Actualizar `CourseService`
+## 19. Update `CourseService`
 
-Ahora el servicio ya no debe trabajar con una lista en memoria.
+Now the service should no longer work with an in-memory list.
 
-Antes teníamos algo parecido a esto:
+Before we had something similar to this:
 
 ```java
 private final List<Course> courses = new ArrayList<>();
 ```
 
-Ahora el servicio debe usar `CourseDao`.
+The service should now use `CourseDao`.
 
-Modificamos el archivo:
+We modify the file:
 
 ```text
 src/main/java/com/example/springmvcday1/service/CourseService.java
 ```
 
-Código actualizado:
+Updated code:
 
 ```java
 package com.example.springmvcday1.service;
@@ -1126,15 +1123,15 @@ public class CourseService {
 
 ---
 
-## 20. Explicación de `CourseService`
+## 20. `CourseService` Explanation
 
-El servicio tiene ahora esta dependencia:
+The service now has this dependency:
 
 ```java
 private final CourseDao courseDao;
 ```
 
-Y la recibe por constructor:
+And receives it by constructor:
 
 ```java
 public CourseService(CourseDao courseDao) {
@@ -1142,9 +1139,9 @@ public CourseService(CourseDao courseDao) {
 }
 ```
 
-Esto significa que `CourseService` no sabe exactamente cómo se guardan los datos.
+This means that `CourseService` does not know exactly how the data is saved.
 
-Solo sabe que existe un objeto `CourseDao` capaz de hacer esto:
+It only knows that there is an `CourseDao` object capable of doing this:
 
 ```java
 findAll()
@@ -1152,26 +1149,26 @@ findById(id)
 save(course)
 ```
 
-La clase concreta que implementa esas operaciones es `JdbcCourseDao`, pero el servicio no necesita conocer los detalles.
+The specific class that implements those operations is `JdbcCourseDao`, but the service does not need to know the details.
 
-Esto nos deja una arquitectura más limpia:
+This leaves us with a cleaner architecture:
 
-| Clase              | Responsabilidad                           |
+| Class | Responsibility |
 | ------------------ | ----------------------------------------- |
-| `CourseController` | Recibe peticiones web                     |
-| `CourseService`    | Coordina la lógica relacionada con cursos |
-| `CourseDao`        | Define las operaciones de acceso a datos  |
-| `JdbcCourseDao`    | Ejecuta SQL contra MySQL                  |
-| `JdbcTemplate`     | Facilita el uso de JDBC                   |
-| `DataSource`       | Define la conexión a la base de datos     |
+| `CourseController` | Receive web requests |
+| `CourseService` | Coordinates logic related to courses |
+| `CourseDao` | Defines data access operations |
+| `JdbcCourseDao` | Run SQL against MySQL |
+| `JdbcTemplate` | Makes JDBC easy to use |
+| `DataSource` | Defines the connection to the database |
 
 ---
 
-## 21. ¿Hay que cambiar el controlador?
+## 21. Should the driver be changed?
 
-En principio, no.
+In principle, no.
 
-El controlador ya estaba llamando al servicio:
+The controller was already calling the service:
 
 ```java
 courseService.findAll();
@@ -1179,11 +1176,11 @@ courseService.findById(id);
 courseService.save(course);
 ```
 
-Eso significa que el controlador no sabe si los datos vienen de una lista en memoria o de MySQL.
+That means the driver doesn't know if the data is coming from an in-memory list or from MySQL.
 
-Esa es una ventaja de separar la aplicación en capas.
+That's an advantage of separating the application into layers.
 
-Por ejemplo, el método que guarda un curso puede quedarse igual:
+For example, the method that saves a course can stay the same:
 
 ```java
 @PostMapping
@@ -1209,23 +1206,23 @@ public String createCourse(
 }
 ```
 
-Antes, esta línea:
+Before, this line:
 
 ```java
 courseService.save(course);
 ```
 
-añadía el curso a una lista.
+added the course to a list.
 
-Ahora esa misma línea termina ejecutando un `INSERT` en MySQL.
+Now that same line ends up executing an `INSERT` in MySQL.
 
 ---
 
-## 22. ¿Hay que cambiar las vistas JSP?
+## 22. Do I have to change JSP views?
 
-Tampoco.
+Neither.
 
-Las vistas siguen recibiendo los mismos datos:
+The views still receive the same data:
 
 ```text
 courses
@@ -1234,7 +1231,7 @@ pageTitle
 successMessage
 ```
 
-Por ejemplo, `list.jsp` puede seguir recorriendo la lista así:
+For example, `list.jsp` can continue looping through the list like this:
 
 ```jsp
 <c:forEach var="course" items="${courses}">
@@ -1251,21 +1248,21 @@ Por ejemplo, `list.jsp` puede seguir recorriendo la lista así:
 </c:forEach>
 ```
 
-La vista no necesita saber de dónde vienen los cursos.
+The eye does not need to know where the courses come from.
 
-Solo necesita recibir una lista de objetos `Course`.
+You only need to receive a list of `Course` objects.
 
 ---
 
-## 23. Flujo completo al listar cursos
+## 23. Complete flow when listing courses
 
-Cuando el usuario entra en:
+When the user enters:
 
 ```text
 /courses
 ```
 
-ocurre esto:
+this happens:
 
 ```text
 1. Tomcat recibe la petición.
@@ -1280,7 +1277,7 @@ ocurre esto:
 10. Spring muestra la vista courses/list.jsp.
 ```
 
-El método principal del DAO es:
+The main method of the DAO is:
 
 ```java
 public List<Course> findAll() {
@@ -1295,24 +1292,23 @@ public List<Course> findAll() {
 ```
 
 ---
+## 24. Complete flow when creating a course
 
-## 24. Flujo completo al crear un curso
-
-Cuando el usuario entra en:
+When the user enters:
 
 ```text
 /courses/new
 ```
 
-Spring muestra el formulario.
+Spring displays the form.
 
-Cuando el usuario rellena el formulario y pulsa el botón, el navegador envía:
+When the user fills out the form and presses the button, the browser sends:
 
 ```text
 POST /courses
 ```
 
-Entonces ocurre esto:
+Then this happens:
 
 ```text
 1. CourseController recibe los datos del formulario.
@@ -1327,7 +1323,7 @@ Entonces ocurre esto:
 10. El listado se vuelve a cargar desde MySQL.
 ```
 
-El método principal del DAO es:
+The main method of the DAO is:
 
 ```java
 public void save(Course course) {
@@ -1361,17 +1357,17 @@ public void save(Course course) {
 
 ---
 
-## 25. Comprobación en DBeaver
+## 25. Checking in DBeaver
 
-Después de crear un curso desde la aplicación web, volvemos a DBeaver y ejecutamos:
+After creating a course from the web application, we return to DBeaver and run:
 
 ```sql
 SELECT * FROM courses;
 ```
 
-Si todo ha funcionado bien, aparecerá el nuevo curso en la tabla.
+If everything has worked well, the new course will appear in the table.
 
-Por ejemplo:
+For example:
 
 ```text
 id | title                   | level      | duration_in_hours
@@ -1381,13 +1377,13 @@ id | title                   | level      | duration_in_hours
 4  | Java Web con Spring      | Inicial    | 12
 ```
 
-Esto confirma que el curso ya no se ha guardado solo en memoria, sino en MySQL.
+This confirms that the course has no longer been saved just in memory, but in MySQL.
 
 ---
 
-## 26. Comparación: versión en memoria y versión con MySQL
+## 26. Comparison: in-memory version and version with MySQL
 
-### Antes
+### Before
 
 ```text
 CourseController
@@ -1397,7 +1393,7 @@ CourseService
 ArrayList<Course>
 ```
 
-Ventajas:
+Advantages:
 
 ```text
 Es sencilla.
@@ -1405,7 +1401,7 @@ Es rápida para aprender formularios.
 No necesita base de datos.
 ```
 
-Limitaciones:
+Limitations:
 
 ```text
 Los datos se pierden al reiniciar.
@@ -1413,7 +1409,7 @@ No se pueden consultar desde DBeaver.
 No representa una aplicación real con persistencia.
 ```
 
-### Ahora
+### Now
 
 ```text
 CourseController
@@ -1429,7 +1425,7 @@ JdbcTemplate
 MySQL
 ```
 
-Ventajas:
+Advantages:
 
 ```text
 Los datos permanecen.
@@ -1438,7 +1434,7 @@ La aplicación se parece más a un proyecto real.
 La capa web queda separada de la capa de datos.
 ```
 
-Limitaciones:
+Limitations:
 
 ```text
 Necesitamos tener MySQL funcionando.
@@ -1448,51 +1444,51 @@ Pueden aparecer errores de conexión si los datos no son correctos.
 
 ---
 
-## 27. Errores habituales y cómo solucionarlos
+## 27. Common mistakes and how to solve them
 
-### Error 1: no cambiar `TU_PASSWORD`
+### Error 1: Do not change `TU_PASSWORD`
 
-En `app-servlet.xml` aparece:
+`app-servlet.xml` appears:
 
 ```xml
 <property name="password" value="TU_PASSWORD" />
 ```
 
-Hay que sustituir `TU_PASSWORD` por la contraseña real de MySQL.
+You must replace `TU_PASSWORD` with the real MySQL password.
 
 ---
 
-### Error 2: MySQL no está iniciado
+### Error 2: MySQL is not started
 
-Si MySQL no está ejecutándose, la aplicación no podrá conectarse.
+If MySQL is not running, the application will not be able to connect.
 
-El error puede mencionar algo como:
+The error may mention something like:
 
 ```text
 Communications link failure
 ```
 
-o:
+or:
 
 ```text
 Connection refused
 ```
 
-Solución: iniciar el servicio de MySQL y comprobar que DBeaver puede conectarse.
+Solution: Start the MySQL service and check that DBeaver can connect.
 
 ---
 
-### Error 3: la base de datos no existe
+### Error 3: Database does not exist
 
-Si en la URL escribimos:
+If in the URL we write:
 
 ```text
 spring_mvc_courses
 ```
 
-pero no hemos creado esa base de datos, la aplicación fallará.
+but we have not created that database, the application will fail.
 
-Solución: ejecutar en DBeaver:
+Solution: Run in DBeaver:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_courses;
@@ -1500,11 +1496,11 @@ CREATE DATABASE IF NOT EXISTS spring_mvc_courses;
 
 ---
 
-### Error 4: la tabla `courses` no existe
+### Error 4: `courses` table does not exist
 
-Si existe la base de datos pero no la tabla, fallarán las consultas.
+If the database exists but the table does not, queries will fail.
 
-Solución: ejecutar:
+Solution: run:
 
 ```sql
 CREATE TABLE IF NOT EXISTS courses (
@@ -1517,9 +1513,9 @@ CREATE TABLE IF NOT EXISTS courses (
 
 ---
 
-### Error 5: falta `spring-jdbc`
+### Error 5: `spring-jdbc` is missing
 
-Si IntelliJ no reconoce `JdbcTemplate`, puede faltar esta dependencia:
+If IntelliJ does not recognize `JdbcTemplate`, this dependency may be missing:
 
 ```xml
 <dependency>
@@ -1529,13 +1525,13 @@ Si IntelliJ no reconoce `JdbcTemplate`, puede faltar esta dependencia:
 </dependency>
 ```
 
-Después de añadirla, hay que recargar Maven.
+After adding it, you have to reload Maven.
 
 ---
 
-### Error 6: falta el driver de MySQL
+### Error 6: MySQL driver is missing
 
-Si falta esta dependencia:
+If this dependency is missing:
 
 ```xml
 <dependency>
@@ -1545,65 +1541,65 @@ Si falta esta dependencia:
 </dependency>
 ```
 
-la aplicación no podrá usar el driver:
+the application will not be able to use the driver:
 
 ```text
 com.mysql.cj.jdbc.Driver
 ```
 
-Solución: añadir la dependencia y recargar Maven.
+Solution: add the dependency and reload Maven.
 
 ---
 
-### Error 7: escribir mal el nombre de una columna
+### Error 7: misspelling a column name
 
-En Java usamos:
+In Java we use:
 
 ```java
 resultSet.getInt("duration_in_hours")
 ```
 
-Por tanto, la tabla debe tener una columna llamada exactamente:
+Therefore, the table must have a column named exactly:
 
 ```text
 duration_in_hours
 ```
 
-Si la columna se llama `duration`, `durationInHours` o de cualquier otra forma, la consulta fallará.
+If the column is named `duration`, `durationInHours`, or anything else, the query will fail.
 
 ---
 
-### Error 8: usar `&` en lugar de `&amp;` dentro del XML
+### Error 8: Using `&` instead of `&amp;` within the XML
 
-Incorrecto:
+Incorrect:
 
 ```xml
 value="jdbc:mysql://localhost:3306/spring_mvc_courses?useSSL=false&serverTimezone=Europe/Madrid"
 ```
 
-Correcto:
+Correct:
 
 ```xml
 value="jdbc:mysql://localhost:3306/spring_mvc_courses?useSSL=false&amp;serverTimezone=Europe/Madrid"
 ```
 
-En XML, el carácter `&` debe escribirse como `&amp;`.
+In XML, the character `&` must be written as `&amp;`.
 
 ---
 
-### Error 9: no recargar Maven después de modificar el `pom.xml`
+### Error 9: Not reloading Maven after modifying `pom.xml`
 
-Después de añadir dependencias, IntelliJ necesita descargarlas.
+After adding dependencies, IntelliJ needs to download them.
 
-Si no se recarga Maven, puede aparecer como si las clases no existieran.
+If Maven is not reloaded, it may appear as if the classes do not exist.
 
-Solución: usar `Reload Maven Project`.
+Solution: use `Reload Maven Project`.
 
 ---
 
-### Error 10: insertar datos duplicados al ejecutar varias veces el script
+### Error 10: inserting duplicate data when running the script multiple times
 
-Si ejecutamos varias veces este bloque:
+If we execute this block several times:
 
 ```sql
 INSERT INTO courses (title, level, duration_in_hours)
@@ -1613,27 +1609,26 @@ VALUES
     ('Spring MVC avanzado', 'Avanzado', 25);
 ```
 
-se insertarán los mismos cursos varias veces.
+the same courses will be inserted multiple times.
 
-Para evitarlo durante las pruebas, podemos borrar primero la tabla:
+To avoid this during testing, we can first clear the table:
 
 ```sql
 DELETE FROM courses;
 ```
 
-Y si queremos reiniciar el contador de ids:
+And if we want to reset the id counter:
 
 ```sql
 ALTER TABLE courses AUTO_INCREMENT = 1;
 ```
 
-Después podemos volver a insertar los datos iniciales.
+Then we can reinsert the initial data.
 
 ---
 
-## 28. Checklist final
-
-Antes de probar la aplicación, revisa esto:
+## 28. Final checklist
+Before trying the app, check this:
 
 ```text
 [ ] MySQL está iniciado.
@@ -1657,23 +1652,23 @@ Antes de probar la aplicación, revisa esto:
 
 ---
 
-## 29. Resumen final
+## 29. Final summary
 
-En este tema hemos sustituido el almacenamiento en memoria por persistencia real en MySQL.
+In this topic we have replaced in-memory storage with real persistence in MySQL.
 
-Antes, los datos estaban aquí:
+Before, the data was here:
 
 ```text
 ArrayList<Course>
 ```
 
-Ahora están aquí:
+Now they are here:
 
 ```text
 Tabla courses en MySQL
 ```
 
-La aplicación mantiene la misma parte visual:
+The application maintains the same visual part:
 
 ```text
 list.jsp
@@ -1681,13 +1676,13 @@ form.jsp
 detail.jsp
 ```
 
-Y el mismo controlador:
+And the same controller:
 
 ```text
 CourseController
 ```
 
-Pero internamente ahora tenemos una arquitectura más completa:
+But internally we now have a more complete architecture:
 
 ```text
 Controller
@@ -1701,12 +1696,12 @@ JdbcTemplate
 MySQL
 ```
 
-La idea más importante es que la persistencia no debe mezclarse con el controlador.
+The most important idea is that persistence should not be mixed with controller.
 
-El controlador se ocupa de la parte web.
+The controller takes care of the web part.
 
-El DAO se ocupa de la base de datos.
+The DAO takes care of the database.
 
-El servicio queda en medio, coordinando las operaciones de la aplicación.
+The service remains in the middle, coordinating the operations of the application.
 
-Con esta ampliación, el formulario del Tema 3 ya no solo crea objetos en memoria: ahora crea registros reales en una tabla MySQL que pueden consultarse desde DBeaver.
+With this extension, the form in Topic 3 no longer just creates objects in memory: it now creates actual records in a MySQL table that can be queried from DBeaver.

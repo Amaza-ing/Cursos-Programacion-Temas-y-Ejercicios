@@ -1,16 +1,16 @@
-# Ejercicios - Tema 29: Expresiones Lambda
+# Exercises - Topic 29: Lambda Expressions
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **lambdas, interfaces funcionales, `Predicate`, `Function`, `Consumer`, `Supplier`, `removeIf`, `sort` y method references**.
+Below you will find **10 practical exercises** to work with **lambdas, functional interfaces, `Predicate`, `Function`, `Consumer`, `Supplier`, `removeIf`, `sort` and method references**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Interfaz funcional
+## Exercise 1: Functional interface
 
-Crea `MessagePrinter` e impleméntala con lambda.
+Create `MessagePrinter` and implement it with lambda.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 @FunctionalInterface
@@ -30,11 +30,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Dos parámetros
+## Exercise 2: Two parameters
 
-Crea `Multiplier` con lambda.
+Create `Multiplier` with lambda.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 @FunctionalInterface
@@ -54,11 +54,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Bloque lambda
+## Exercise 3: Lambda Block
 
-Limpia espacios y convierte a mayúsculas.
+Clear spaces and convert to uppercase.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 @FunctionalInterface
@@ -81,11 +81,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: `Predicate`
+## Exercise 4: `Predicate`
 
-Comprueba si una edad es adulta.
+Checks if an age is adult.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.function.Predicate;
@@ -102,11 +102,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: `Function`
+## Exercise 5: `Function`
 
-Crea una función que devuelva un saludo.
+Create a function that returns a greeting.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.function.Function;
@@ -123,11 +123,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: `Consumer`
+## Exercise 6: `Consumer`
 
-Imprime un precio.
+Print a price.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.function.Consumer;
@@ -144,11 +144,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: `Supplier`
+## Exercise 7: `Supplier`
 
-Devuelve un código generado.
+Returns a generated code.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.function.Supplier;
@@ -165,11 +165,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: `removeIf`
+## Exercise 8: `removeIf`
 
-Elimina números negativos.
+Eliminate negative numbers.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -188,11 +188,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Ordenar
+## Exercise 9: Sort
 
-Ordena palabras por longitud.
+Sort words by length.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -211,11 +211,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Method reference
+## Exercise 10: Method reference
 
-Imprime nombres con `System.out::println`.
+Print names with `System.out::println`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;

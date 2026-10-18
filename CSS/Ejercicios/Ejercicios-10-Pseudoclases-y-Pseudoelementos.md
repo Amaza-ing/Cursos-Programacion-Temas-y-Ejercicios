@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 10: Pseudoclases y Pseudoelementos en CSS**
+# **Exercises - Topic 10: Pseudoclasses and Pseudoelements in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás **6 ejercicios prácticos** sobre pseudoclases y pseudoelementos en CSS.
+Below you will find **6 practical exercises** on pseudoclasses and pseudoelements in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Usar la pseudoclase `:hover`**
+### **Exercise 1: Using the `:hover` pseudo-class**
 
-Crea un botón que cambie su color de fondo a negro y el color del texto a blanco cuando el usuario pase el ratón por encima.
+Create a button that changes its background color to black and text color to white when the user hovers over it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 button:hover {
@@ -21,19 +21,21 @@ button:hover {
 }
 ```
 
+
 ```html
 <button>Pasar el ratón</button>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Aplicar `:focus` a un input**
+### **Exercise 2: Apply `:focus` to an input**
 
-Crea un campo de texto (`input`) que muestre un borde azul de 2 píxeles cuando tenga el foco.
+Creates a text field (`input`) that displays a 2 pixel blue border when it has focus.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 input:focus {
@@ -41,25 +43,28 @@ input:focus {
 }
 ```
 
+
 ```html
 <input type="text" placeholder="Escribe aquí" />
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 3: Usar pseudoclases estructurales**
+### **Exercise 3: Using structural pseudoclasses**
 
-Selecciona el primer elemento de una lista y haz que aparezca en negrita.
+Select the first item in a list and make it bold.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 li:first-child {
   font-weight: bold;
 }
 ```
+
 
 ```html
 <ul>
@@ -69,21 +74,23 @@ li:first-child {
 </ul>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Usar `:nth-child()`**
+### **Exercise 4: Use `:nth-child()`**
 
-Cambia el color de fondo de los elementos pares de una lista a un color gris claro.
+Changes the background color of even-numbered items in a list to a light gray color.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 li:nth-child(even) {
   background-color: lightgray;
 }
 ```
+
 
 ```html
 <ul>
@@ -94,15 +101,16 @@ li:nth-child(even) {
 </ul>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Insertar contenido con `::before`**
+### **Exercise 5: Insert content with `::before`**
 
-Añade un símbolo ★ antes del texto de todos los encabezados `<h2>` usando un pseudoelemento.
+Adds a ★ symbol before the text of all `<h2>` headers using a pseudo element.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 h2::before {
@@ -111,19 +119,21 @@ h2::before {
 }
 ```
 
+
 ```html
 <h2>Sección destacada</h2>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 6: Estilizar la selección de texto**
+### **Exercise 6: Styling the text selection**
 
-Cambia el color de fondo a negro y el color del texto a blanco cuando el usuario seleccione texto en la página.
+Changes the background color to black and the text color to white when the user selects text on the page.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 ::selection {
@@ -132,8 +142,10 @@ Cambia el color de fondo a negro y el color del texto a blanco cuando el usuario
 }
 ```
 
+
 ```html
 <p>Selecciona este texto para ver el efecto.</p>
 ```
+
 
 </details>

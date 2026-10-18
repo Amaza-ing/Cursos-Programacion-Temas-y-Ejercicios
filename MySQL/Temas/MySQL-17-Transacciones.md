@@ -1,32 +1,32 @@
-# **Tema 17: Transacciones en MySQL**
+# **Topic 17: Transactions in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Comprender qué es una transacción y su utilidad.
-- Usar transacciones para garantizar la integridad de los datos.
-- Controlar el inicio, confirmación y cancelación de transacciones.
-- Conocer las propiedades ACID.
-
----
-
-## **1. ¿Qué es una transacción?**
-
-Una **transacción** es un conjunto de operaciones SQL que se ejecutan como una unidad indivisible. Esto significa que **o se ejecutan todas correctamente o no se ejecuta ninguna**.
+- Understand what a transaction is and its usefulness.
+- Use transactions to ensure data integrity.
+- Control the initiation, confirmation and cancellation of transactions.
+- Know the ACID properties.
 
 ---
 
-## **2. Propiedades ACID**
+## **1. What is a transaction?**
 
-Las transacciones se rigen por cuatro propiedades conocidas como **ACID**:
-
-- **Atomicidad**: Todas las operaciones se completan o ninguna se aplica.
-- **Consistencia**: La base de datos pasa de un estado válido a otro.
-- **Aislamiento**: Las transacciones concurrentes no interfieren entre sí.
-- **Durabilidad**: Los cambios confirmados persisten incluso ante fallos.
+A **transaction** is a set of SQL operations that are executed as an indivisible unit. This means that **either all of them are executed correctly or none are executed**.
 
 ---
 
-## **3. Sintaxis básica de transacciones**
+## **2. ACID Properties**
+
+Transactions are governed by four properties known as **ACID**:
+
+- **Atomicity**: All operations are completed or none are applied.
+- **Consistency**: The database goes from one valid state to another.
+- **Isolation**: Concurrent transactions do not interfere with each other.
+- **Durability**: Committed changes persist even in the face of failures.
+
+---
+
+## **3. Basic transaction syntax**
 
 ```sql
 START TRANSACTION;
@@ -34,7 +34,7 @@ START TRANSACTION;
 COMMIT; -- confirma los cambios
 ```
 
-Si algo falla, puedes deshacer los cambios:
+If something goes wrong, you can undo the changes:
 
 ```sql
 ROLLBACK; -- revierte la transacción
@@ -42,9 +42,9 @@ ROLLBACK; -- revierte la transacción
 
 ---
 
-## **4. Ejemplo básico**
+## **4. Basic example**
 
-Supongamos que queremos transferir dinero de una cuenta a otra:
+Suppose we want to transfer money from one account to another:
 
 ```sql
 START TRANSACTION;
@@ -53,7 +53,7 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
 
-Si alguna de las dos actualizaciones falla, podemos hacer:
+If either of the two updates fails, we can do:
 
 ```sql
 ROLLBACK;
@@ -61,9 +61,9 @@ ROLLBACK;
 
 ---
 
-## **5. Uso de SAVEPOINT**
+## **5. Using SAVEPOINT**
 
-Un **savepoint** es un punto de guardado intermedio dentro de una transacción:
+A **savepoint** is an intermediate save point within a transaction:
 
 ```sql
 START TRANSACTION;
@@ -76,16 +76,16 @@ COMMIT;
 
 ---
 
-## **6. Aislamiento de transacciones**
+## **6. Transaction isolation**
 
-MySQL permite ajustar el nivel de aislamiento para controlar cómo interactúan las transacciones concurrentes:
+MySQL allows you to adjust the isolation level to control how concurrent transactions interact:
 
 - `READ UNCOMMITTED`
 - `READ COMMITTED`
-- `REPEATABLE READ` (por defecto)
+- `REPEATABLE READ` (default)
 - `SERIALIZABLE`
 
-Ejemplo para cambiarlo:
+Example to change it:
 
 ```sql
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
@@ -93,24 +93,24 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 ---
 
-[![Transacciones](https://img.youtube.com/vi/3wDnXYfvI8o/0.jpg)](https://www.youtube.com/watch?v=3wDnXYfvI8o&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Transactions](https://img.youtube.com/vi/3wDnXYfvI8o/0.jpg)](https://www.youtube.com/watch?v=3wDnXYfvI8o&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **7. Buenas prácticas**
+## **7. Good practices**
 
-- Iniciar la transacción lo más cerca posible de las operaciones críticas.
-- Confirmar (`COMMIT`) o revertir (`ROLLBACK`) lo antes posible.
-- Evitar mantener transacciones abiertas demasiado tiempo para no bloquear recursos.
-
----
-
-## **8. Conclusión**
-
-- Las transacciones permiten garantizar que un conjunto de operaciones se ejecute de forma segura y consistente.
-- Las propiedades ACID aseguran la fiabilidad en la manipulación de datos.
-- Herramientas como `SAVEPOINT` y niveles de aislamiento ofrecen mayor control sobre su ejecución.
+- Start the transaction as close as possible to critical operations.
+- Commit (`COMMIT`) or rollback (`ROLLBACK`) as soon as possible.
+- Avoid keeping transactions open for too long to avoid blocking resources.
 
 ---
 
-En el siguiente tema aprenderemos a **usar el IF en consultas y en procedimientos almacenados**.
+## **8. Conclusion**
+
+- Transactions ensure that a set of operations is executed safely and consistently.
+- ACID properties ensure reliability in data manipulation.
+- Tools like `SAVEPOINT` and isolation levels offer greater control over your execution.
+
+---
+
+In the next topic we will learn to **use IF in queries and stored procedures**.

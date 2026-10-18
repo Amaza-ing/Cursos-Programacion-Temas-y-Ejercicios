@@ -1,157 +1,156 @@
-# Tema 11 — Copilot en Word, Excel, PowerPoint, Outlook y Teams
+# Topic 11 — Copilot in Word, Excel, PowerPoint, Outlook and Teams
 
-## 1. Introducción
+## 1. Introduction
 
-Microsoft 365 Copilot integra capacidades de inteligencia artificial en aplicaciones habituales de trabajo como **Word, Excel, PowerPoint, Outlook y Teams**.
+Microsoft 365 Copilot integrates artificial intelligence capabilities into common work applications such as **Word, Excel, PowerPoint, Outlook and Teams**.
 
-El objetivo de este tema es aprender a usar Copilot como apoyo en tareas de productividad:
+The objective of this topic is to learn how to use Copilot to support productivity tasks:
 
-- redactar y mejorar documentos;
-- resumir información;
-- analizar datos;
-- generar presentaciones;
-- redactar correos;
-- preparar reuniones;
-- extraer decisiones y tareas.
+- write and improve documents;
+- summarize information;
+- analyze data;
+- generate presentations;
+- write emails;
+- prepare meetings;
+- extract decisions and tasks.
 
-No se trata de que Copilot haga todo el trabajo por nosotros. Se trata de aprender a usarlo como asistente para acelerar tareas, mejorar borradores, organizar información y reducir trabajo repetitivo.
-
----
-
-## 2. Objetivos del tema
-
-Al finalizar este tema deberías ser capaz de:
-
-- Entender cómo se integra Copilot en Microsoft 365.
-- Usar Copilot en Word para generar, resumir y transformar documentos.
-- Usar Copilot en Excel para analizar datos y explicar información.
-- Usar Copilot en PowerPoint para crear y mejorar presentaciones.
-- Usar Copilot en Outlook para redactar, resumir y responder correos.
-- Usar Copilot en Teams para resumir reuniones y extraer decisiones.
-- Redactar prompts claros para tareas de productividad.
-- Revisar críticamente los resultados generados.
+It's not about Copilot doing all the work for us. It's about learning to use it as an assistant to speed up tasks, improve drafts, organize information and reduce repetitive work.
 
 ---
 
-## 3. Antes de empezar: disponibilidad y licencias
+## 2. Objectives of the topic
 
-Las funciones de Copilot en Microsoft 365 pueden depender de:
+By the end of this topic you should be able to:
 
-- la licencia contratada;
-- el tipo de cuenta;
-- la configuración de la organización;
-- la aplicación utilizada;
-- la versión de escritorio o web;
-- los permisos sobre los documentos;
-- las políticas del administrador.
-
-Por este motivo, es posible que algunos alumnos vean opciones distintas o no tengan acceso a todas las funciones.
-
-La lógica de trabajo, sin embargo, es la misma:
-
-1. Abrir la aplicación.
-2. Seleccionar o crear contenido.
-3. Abrir Copilot.
-4. Dar una instrucción clara.
-5. Revisar el resultado.
-6. Ajustar con nuevas instrucciones.
-7. Hacer la edición humana final.
+- Understand how Copilot integrates into Microsoft 365.
+- Use Copilot in Word to generate, summarize and transform documents.
+- Use Copilot in Excel to analyze data and explain information.
+- Use Copilot in PowerPoint to create and improve presentations.
+- Use Copilot in Outlook to compose, summarize and reply to emails.
+- Use Copilot in Teams to summarize meetings and extract decisions.
+- Write clear prompts for productivity tasks.
+- Critically review the results generated.
 
 ---
 
-# Parte 1. Copilot en Word
+## 3. Before you start: availability and licenses
 
-## 4. Para qué usar Copilot en Word
+Copilot features in Microsoft 365 may depend on:
 
-Copilot en Word puede ayudar a:
+- the contracted license;
+- the type of account;
+- the configuration of the organization;
+- the application used;
+- the desktop or web version;
+- permissions on documents;
+- administrator policies.
 
-- crear borradores;
-- resumir documentos;
-- reescribir textos;
-- cambiar el tono;
-- transformar notas en informes;
-- organizar ideas;
-- mejorar claridad y coherencia;
-- crear tablas a partir de texto;
-- extraer conclusiones;
-- preparar versiones más breves o más formales.
+For this reason, some students may see different options or not have access to all features.
+
+The working logic, however, is the same:
+
+1. Open the application.
+2. Select or create content.
+3. Open Copilot.
+4. Give clear instruction.
+5. Review the result.
+6. Adjust with new instructions.
+7. Do the final human editing.
 
 ---
 
-## 5. Crear un borrador en Word paso a paso
+# Part 1. Copilot in Word
 
-### Paso 1. Abrir Word
+## 4. Why use Copilot in Word
 
-Abre Microsoft Word y crea un documento nuevo.
+Copilot in Word can help you:
 
-### Paso 2. Abrir Copilot
+- create drafts;
+- summarize documents;
+- rewrite texts;
+- change the tone;
+- transform notes into reports;
+- organize ideas;
+- improve clarity and coherence;
+- create tables from text;
+- draw conclusions;
+- prepare shorter or more formal versions.
 
-Busca el botón de **Copilot** en la cinta de opciones o en el área disponible de la aplicación.
+---
 
-### Paso 3. Escribir una instrucción clara
+## 5. Create a draft in Word step by step
 
-Ejemplo:
+### Step 1. Open Word
+
+Open Microsoft Word and create a new document.
+
+### Step 2. Open Copilot
+
+Look for the **Copilot** button in the ribbon or available area of the application.
+
+### Step 3. Write a clear instruction
+
+Example:
 
 ```text
 Redacta un borrador de informe sobre el uso de inteligencia artificial generativa en el trabajo administrativo. El texto debe tener una introducción, tres apartados principales y una conclusión. Usa un tono profesional y claro.
 ```
 
-### Paso 4. Revisar la estructura
+### Step 4. Review the structure
 
-Comprueba si el documento generado tiene:
+Checks if the generated document has:
 
-- título;
-- introducción;
-- apartados claros;
-- conclusión;
-- tono adecuado;
-- contenido correcto.
+- title;
+- introduction;
+- clear sections;
+- conclusion;
+- suitable tone;
+- correct content.
 
-### Paso 5. Pedir una mejora
+### Step 5. Request an upgrade
 
 ```text
 Haz el texto más concreto y añade ejemplos de tareas reales: resumen de correos, análisis de hojas de cálculo y preparación de reuniones.
 ```
 
-### Paso 6. Editar manualmente
+### Step 6. Edit manually
 
-La versión final debe revisarse y adaptarse. Copilot genera un borrador, pero no debe considerarse automáticamente un documento final.
+The final version must be reviewed and adapted. Copilot generates a draft, but it should not automatically be considered a final document.
 
 ---
 
-## 6. Prompts útiles para Word
+## 6. Useful Prompts for Word
 
-### 6.1. Crear un documento
+### 6.1. Create a document
 
 ```text
 Crea un borrador de documento sobre [tema]. El público objetivo es [tipo de público]. Usa un tono [formal/profesional/cercano] y organiza el texto en apartados.
 ```
 
-### 6.2. Resumir un documento
-
+### 6.2. Summarize a document
 ```text
 Resume este documento en una página. Mantén las ideas principales y elimina repeticiones.
 ```
 
-### 6.3. Mejorar claridad
+### 6.3. Improve clarity
 
 ```text
 Reescribe este texto para que sea más claro, directo y fácil de entender. No cambies el significado.
 ```
 
-### 6.4. Cambiar tono
+### 6.4. Change tone
 
 ```text
 Convierte este texto en una versión más profesional, manteniendo un tono amable y natural.
 ```
 
-### 6.5. Transformar notas en informe
+### 6.5. Transform notes into a report
 
 ```text
 Convierte estas notas en un informe organizado con introducción, apartados y conclusión.
 ```
 
-### 6.6. Extraer tareas
+### 6.6. Extract tasks
 
 ```text
 Extrae de este documento una lista de tareas pendientes, responsables posibles y fechas mencionadas.
@@ -159,34 +158,34 @@ Extrae de este documento una lista de tareas pendientes, responsables posibles y
 
 ---
 
-# Parte 2. Copilot en Excel
+# Part 2. Copilot in Excel
 
-## 7. Para qué usar Copilot en Excel
+## 7. Why use Copilot in Excel
 
-Copilot en Excel puede ayudar a:
+Copilot in Excel can help you:
 
-- entender datos;
-- resumir tablas;
-- detectar tendencias;
-- explicar fórmulas;
-- proponer fórmulas;
-- crear columnas calculadas;
-- identificar valores atípicos;
-- generar gráficos;
-- interpretar resultados;
-- preparar conclusiones.
+- understand data;
+- summarize tables;
+- detect trends;
+- explain formulas;
+- propose formulas;
+- create calculated columns;
+- identify outliers;
+- generate graphics;
+- interpret results;
+- prepare conclusions.
 
-Copilot no sustituye al conocimiento de Excel. Ayuda a acelerar tareas, pero los cálculos importantes deben verificarse.
+Copilot is not a substitute for knowledge of Excel. It helps speed up tasks, but important calculations need to be verified.
 
 ---
 
-## 8. Preparar los datos antes de usar Copilot
+## 8. Prepare data before using Copilot
 
-Para que Copilot funcione mejor, conviene preparar bien la hoja.
+For Copilot to work better, it is advisable to prepare the sheet well.
 
-### Paso 1. Usar encabezados claros
+### Step 1. Use clear headings
 
-Evita columnas llamadas:
+Avoid columns called:
 
 ```text
 Dato1
@@ -194,7 +193,7 @@ Columna2
 Info
 ```
 
-Mejor usa nombres como:
+Better use names like:
 
 ```text
 Fecha
@@ -205,92 +204,92 @@ Ingresos
 Departamento
 ```
 
-### Paso 2. Evitar filas y columnas vacías dentro de la tabla
+### Step 2. Avoid empty rows and columns within the table
 
-Una tabla limpia facilita el análisis.
+A clean table makes analysis easier.
 
-### Paso 3. Convertir el rango en tabla
+### Step 3. Convert range to table
 
-En Excel suele ser recomendable seleccionar los datos y convertirlos en tabla.
+In Excel it is usually advisable to select the data and convert it into a table.
 
-### Paso 4. Revisar formatos
+### Step 4. Review formats
 
-Comprueba que:
+Check that:
 
-- las fechas sean fechas;
-- los números sean números;
-- las monedas estén bien formateadas;
-- no haya espacios innecesarios;
-- no haya totales mezclados con datos brutos.
+- dates are dates;
+- numbers are numbers;
+- the coins are well formatted;
+- there are no unnecessary spaces;
+- no totals mixed with raw data.
 
 ---
 
-## 9. Analizar datos en Excel paso a paso
+## 9. Analyze data in Excel step by step
 
-### Paso 1. Abrir el archivo
+### Step 1. Open the file
 
-Abre una hoja de cálculo con datos organizados en tabla.
+Open a spreadsheet with data organized in a table.
 
-### Paso 2. Abrir Copilot
+### Step 2. Open Copilot
 
-Busca el botón de **Copilot** en Excel.
+Look for the **Copilot** button in Excel.
 
-### Paso 3. Pedir un resumen general
+### Step 3. Ask for a general summary
 
 ```text
 Analiza esta tabla y resume los principales patrones que encuentres. Señala tendencias, valores destacados y posibles anomalías.
 ```
 
-### Paso 4. Pedir una pregunta concreta
+### Step 4. Ask a specific question
 
 ```text
 ¿Qué categoría tiene mayores ingresos totales? Explica cómo has llegado a esa conclusión.
 ```
 
-### Paso 5. Pedir una fórmula
+### Step 5. Order a formula
 
 ```text
 Propón una fórmula para calcular el ingreso medio por producto. Explica qué hace cada parte de la fórmula.
 ```
 
-### Paso 6. Verificar el resultado
+### Step 6. Check the result
 
-Antes de usar los resultados, comprueba:
+Before using the results, check:
 
-- si la fórmula funciona;
-- si las columnas utilizadas son correctas;
-- si el rango es adecuado;
-- si la interpretación coincide con los datos.
+- if the formula works;
+- if the columns used are correct;
+- whether the range is adequate;
+- whether the interpretation matches the data.
 
 ---
 
-## 10. Prompts útiles para Excel
+## 10. Useful Prompts for Excel
 
-### 10.1. Resumen de datos
+### 10.1. Data summary
 
 ```text
 Resume esta tabla en un máximo de 6 conclusiones. Indica qué datos apoyan cada conclusión.
 ```
 
-### 10.2. Detección de tendencias
+### 10.2. Trend detection
 
 ```text
 Busca tendencias relevantes en esta tabla. Señala si hay aumentos, descensos, valores atípicos o patrones por categoría.
 ```
 
-### 10.3. Fórmulas
+### 10.3. Formulas
 
 ```text
 Necesito una fórmula para calcular [objetivo] usando las columnas [nombres de columnas]. Explícame la fórmula paso a paso.
 ```
 
-### 10.4. Gráficos
+### 10.4. Graphics
 
 ```text
 Sugiere qué gráfico sería más adecuado para representar estos datos y explica por qué.
 ```
 
-### 10.5. Limpieza de datos
+### 10.5. Data Cleaning
 
 ```text
 Revisa esta tabla y dime qué problemas de calidad de datos podrían afectar al análisis.
@@ -298,63 +297,63 @@ Revisa esta tabla y dime qué problemas de calidad de datos podrían afectar al 
 
 ---
 
-# Parte 3. Copilot en PowerPoint
+# Part 3. Copilot in PowerPoint
 
-## 11. Para qué usar Copilot en PowerPoint
+## 11. Why use Copilot in PowerPoint
 
-Copilot en PowerPoint puede ayudar a:
+Copilot in PowerPoint can help you:
 
-- crear una presentación desde cero;
-- transformar un documento en diapositivas;
-- resumir una presentación;
-- reorganizar secciones;
-- generar títulos;
-- crear notas del presentador;
-- mejorar claridad;
-- adaptar una presentación a otro público.
+- create a presentation from scratch;
+- transform a document into slides;
+- summarize a presentation;
+- rearrange sections;
+- generate titles;
+- create presenter notes;
+- improve clarity;
+- adapt a presentation to another audience.
 
-El punto más importante es que Copilot puede generar una primera estructura, pero la presentación final debe revisarse visual y conceptualmente.
+The most important point is that Copilot can generate a first structure, but the final presentation must be revised visually and conceptually.
 
 ---
 
-## 12. Crear una presentación paso a paso
+## 12. Create a presentation step by step
 
-### Paso 1. Definir el objetivo
+### Step 1. Define the objective
 
-Antes de usar Copilot, define:
+Before using Copilot, define:
 
-- tema;
-- público;
-- duración;
-- tono;
-- número aproximado de diapositivas;
-- objetivo de la presentación.
+- theme;
+- public;
+- duration;
+- tone;
+- approximate number of slides;
+- objective of the presentation.
 
-### Paso 2. Abrir PowerPoint
+### Step 2. Open PowerPoint
 
-Crea una presentación nueva.
+Create a new presentation.
 
-### Paso 3. Abrir Copilot
+### Step 3. Open Copilot
 
-Busca el botón de **Copilot**.
+Look for the **Copilot** button.
 
-### Paso 4. Pedir una estructura
+### Step 4. Order a structure
 
 ```text
 Crea una presentación de 8 diapositivas sobre el uso responsable de la inteligencia artificial en empresas. El público son empleados no técnicos. Usa un tono claro y profesional. Incluye una diapositiva final con buenas prácticas.
 ```
 
-### Paso 5. Revisar la organización
+### Step 5. Review the organization
 
-Comprueba:
+Check:
 
-- si el orden es lógico;
-- si hay demasiada información;
-- si las diapositivas son claras;
-- si falta algún punto importante;
-- si el tono se adapta al público.
+- if the order is logical;
+- if there is too much information;
+- if the slides are clear;
+- if any important point is missing;
+- if the tone suits the audience.
 
-### Paso 6. Pedir notas del presentador
+### Step 6. Ask for notes from the presenter
 
 ```text
 Genera notas del presentador para cada diapositiva. Deben ayudarme a explicar el contenido de forma natural durante una clase.
@@ -362,33 +361,33 @@ Genera notas del presentador para cada diapositiva. Deben ayudarme a explicar el
 
 ---
 
-## 13. Prompts útiles para PowerPoint
+## 13. Useful Prompts for PowerPoint
 
-### 13.1. Crear una presentación
+### 13.1. Create a presentation
 
 ```text
 Crea una presentación sobre [tema] para [público]. Debe durar [tiempo] y tener aproximadamente [número] diapositivas. Usa un tono [tono].
 ```
 
-### 13.2. Transformar un documento en diapositivas
+### 13.2. Transform a document into slides
 
 ```text
 Convierte este documento en una presentación clara. Usa una diapositiva por idea principal y evita sobrecargar las diapositivas con texto.
 ```
 
-### 13.3. Mejorar una presentación
+### 13.3. Improve a presentation
 
 ```text
 Revisa esta presentación y sugiere cómo mejorar la claridad, el orden y la cantidad de texto por diapositiva.
 ```
 
-### 13.4. Adaptar al público
+### 13.4. Adapt to the public
 
 ```text
 Adapta esta presentación para un público principiante. Simplifica el lenguaje y añade ejemplos prácticos.
 ```
 
-### 13.5. Crear notas
+### 13.5. Create notes
 
 ```text
 Crea notas del presentador para explicar cada diapositiva en una clase de 10 minutos.
@@ -396,55 +395,55 @@ Crea notas del presentador para explicar cada diapositiva en una clase de 10 min
 
 ---
 
-# Parte 4. Copilot en Outlook
+# Part 4. Copilot in Outlook
 
-## 14. Para qué usar Copilot en Outlook
+## 14. Why use Copilot in Outlook
 
-Copilot en Outlook puede ayudar a:
+Copilot in Outlook can help you:
 
-- redactar correos;
-- resumir conversaciones largas;
-- proponer respuestas;
-- cambiar el tono;
-- extraer tareas pendientes;
-- preparar respuestas a clientes o compañeros;
-- reducir tiempo en comunicación repetitiva.
+- write emails;
+- summarize long conversations;
+- propose answers;
+- change the tone;
+- extract pending tasks;
+- prepare responses to clients or colleagues;
+- reduce time in repetitive communication.
 
 ---
 
-## 15. Redactar un correo paso a paso
+## 15. Write an email step by step
 
-### Paso 1. Definir el objetivo
+### Step 1. Define the objective
 
-Antes de escribir, piensa:
+Before writing, think:
 
-- ¿a quién va dirigido?;
-- ¿qué quiero conseguir?;
-- ¿qué tono necesito?;
-- ¿qué información debe incluir?;
-- ¿hay algo que evitar?
+- Who is it addressed to?
+- what do I want to achieve?;
+- what tone do I need?;
+- What information should be included?
+- Is there anything to avoid?
 
-### Paso 2. Abrir un correo nuevo
+### Step 2. Open a new email
 
-Crea un nuevo mensaje en Outlook.
+Create a new message in Outlook.
 
-### Paso 3. Pedir un borrador
+### Step 3. Request a draft
 
 ```text
 Redacta un correo profesional para solicitar una reunión de seguimiento de proyecto. El tono debe ser amable y directo. Propón dos posibles horarios y pide confirmación.
 ```
 
-### Paso 4. Revisar el tono
+### Step 4. Check the tone
 
-Comprueba si el mensaje es:
+Check if the message is:
 
-- claro;
-- educado;
-- directo;
-- completo;
-- adecuado para el destinatario.
+- clear;
+- polite;
+- straight;
+- complete;
+- suitable for the recipient.
 
-### Paso 5. Pedir una versión alternativa
+### Step 5. Request an alternative version
 
 ```text
 Hazlo un poco más breve y menos formal, pero manteniendo un tono profesional.
@@ -452,33 +451,33 @@ Hazlo un poco más breve y menos formal, pero manteniendo un tono profesional.
 
 ---
 
-## 16. Prompts útiles para Outlook
+## 16. Useful Prompts for Outlook
 
-### 16.1. Redactar correo
+### 16.1. Compose email
 
 ```text
 Redacta un correo para [objetivo]. El destinatario es [tipo de destinatario]. Usa un tono [tono] e incluye [datos importantes].
 ```
 
-### 16.2. Responder correo
+### 16.2. Reply email
 
 ```text
 Ayúdame a responder este correo. Quiero agradecer la información, confirmar que lo he recibido y proponer una reunión la próxima semana.
 ```
 
-### 16.3. Resumir hilo
+### 16.3. Summarize thread
 
 ```text
 Resume esta conversación de correo. Indica decisiones tomadas, tareas pendientes y dudas abiertas.
 ```
 
-### 16.4. Cambiar tono
+### 16.4. Change tone
 
 ```text
 Reescribe este correo con un tono más amable y profesional, sin hacerlo demasiado largo.
 ```
 
-### 16.5. Extraer acciones
+### 16.5. Extract actions
 
 ```text
 Extrae de este hilo una lista de acciones pendientes, posibles responsables y fechas mencionadas.
@@ -486,33 +485,33 @@ Extrae de este hilo una lista de acciones pendientes, posibles responsables y fe
 
 ---
 
-# Parte 5. Copilot en Teams
+# Part 5. Copilot in Teams
 
-## 17. Para qué usar Copilot en Teams
+## 17. Why use Copilot in Teams
 
-Copilot en Teams puede ayudar antes, durante y después de reuniones.
+Copilot in Teams can help before, during and after meetings.
 
-Puede servir para:
+It can be used for:
 
-- resumir reuniones;
-- identificar decisiones;
-- extraer tareas;
-- localizar puntos de desacuerdo;
-- resumir lo que se ha dicho hasta el momento;
-- preparar actas;
-- generar mensajes de seguimiento.
+- summarize meetings;
+- identify decisions;
+- extract tasks;
+- locate points of disagreement;
+- summarize what has been said so far;
+- prepare minutes;
+- generate follow-up messages.
 
-La disponibilidad depende de la configuración de Teams, la licencia y las políticas de la organización.
+Availability depends on Teams configuration, licensing, and organization policies.
 
 ---
 
-## 18. Usar Copilot en una reunión paso a paso
+## 18. Use Copilot in a meeting step by step
 
-### Paso 1. Preparar la reunión
+### Step 1. Prepare the meeting
 
-Antes de la reunión, prepara una agenda clara.
+Before the meeting, prepare a clear agenda.
 
-Ejemplo:
+Example:
 
 ```text
 Agenda:
@@ -522,25 +521,25 @@ Agenda:
 4. Próximas tareas.
 ```
 
-### Paso 2. Activar las funciones necesarias
+### Step 2. Activate the necessary functions
 
-Según la configuración, puede ser necesario tener habilitada la transcripción o funciones relacionadas.
+Depending on your settings, you may need to have transcription or related features enabled.
 
-### Paso 3. Durante la reunión, pedir seguimiento
+### Step 3. During the meeting, ask for a follow-up
 
-Si la función está disponible, puedes pedir:
+If the feature is available, you can order:
 
 ```text
 Resume lo tratado hasta ahora y señala las decisiones que se han tomado.
 ```
 
-### Paso 4. Después de la reunión, pedir un resumen
+### Step 4. After the meeting, ask for a summary
 
 ```text
 Resume la reunión en tres apartados: decisiones tomadas, tareas pendientes y dudas abiertas.
 ```
 
-### Paso 5. Preparar mensaje de seguimiento
+### Step 5. Prepare follow-up message
 
 ```text
 Redacta un mensaje de seguimiento para enviar a los participantes. Incluye agradecimiento, decisiones tomadas y próximos pasos.
@@ -548,33 +547,33 @@ Redacta un mensaje de seguimiento para enviar a los participantes. Incluye agrad
 
 ---
 
-## 19. Prompts útiles para Teams
+## 19. Useful Prompts for Teams
 
-### 19.1. Resumen de reunión
+### 19.1. Meeting summary
 
 ```text
 Resume esta reunión en un máximo de 10 puntos. Separa decisiones, tareas y temas pendientes.
 ```
 
-### 19.2. Tareas pendientes
+### 19.2. Pending tasks
 
 ```text
 Extrae todas las tareas mencionadas en la reunión. Indica responsable, fecha límite si aparece y contexto.
 ```
 
-### 19.3. Decisiones
+### 19.3. Decisions
 
 ```text
 Enumera las decisiones tomadas durante la reunión y explica brevemente el motivo de cada una.
 ```
 
-### 19.4. Mensaje posterior
+### 19.4. Later message
 
 ```text
 Redacta un mensaje de seguimiento para los asistentes con un tono profesional y claro.
 ```
 
-### 19.5. Preparación de próxima reunión
+### 19.5. Preparation for next meeting
 
 ```text
 A partir de esta reunión, prepara una agenda para la próxima sesión de seguimiento.
@@ -582,26 +581,26 @@ A partir de esta reunión, prepara una agenda para la próxima sesión de seguim
 
 ---
 
-# Parte 6. Buenas prácticas transversales
+# Part 6. Good transversal practices
 
-## 20. Reglas generales para Microsoft 365 Copilot
+## 20. General rules for Microsoft 365 Copilot
 
-Al trabajar con Word, Excel, PowerPoint, Outlook y Teams, conviene seguir estas reglas:
+When working with Word, Excel, PowerPoint, Outlook and Teams, it is best to follow these rules:
 
-1. **No usar Copilot sin contexto.**
-2. **Pedir siempre un formato concreto.**
-3. **Revisar los resultados antes de compartirlos.**
-4. **No introducir datos sensibles innecesarios.**
-5. **Verificar números, fechas y nombres.**
-6. **No aceptar análisis de datos sin comprobación.**
-7. **Adaptar siempre el tono al destinatario.**
-8. **Usar Copilot para borradores, no como versión final automática.**
+1. **Do not use Copilot without context.**
+2. **Always ask for a specific format.**
+3. **Review the results before sharing them.**
+4. **Do not enter unnecessary sensitive data.**
+5. **Verify numbers, dates and names.**
+6. **Do not accept data analysis without verification.**
+7. **Always adapt the tone to the recipient.**
+8. **Use Copilot for drafts, not as an automatic final version.**
 
 ---
 
-## 21. Estructura de prompt recomendada
+## 21. Recommended prompt structure
 
-Una estructura útil para productividad es:
+A useful structure for productivity is:
 
 ```text
 Quiero [objetivo].
@@ -613,7 +612,7 @@ Incluye [elementos necesarios].
 Evita [elementos no deseados].
 ```
 
-Ejemplo:
+Example:
 
 ```text
 Quiero redactar un correo para confirmar una reunión.
@@ -627,38 +626,38 @@ Evita sonar demasiado rígido.
 
 ---
 
-## 22. Checklist antes de usar un resultado
+## 22. Checklist before using a result
 
-Antes de enviar, presentar o compartir contenido generado con Copilot, revisa:
+Before submitting, submitting or sharing content generated with Copilot, please review:
 
-- [ ] ¿El contenido es correcto?
-- [ ] ¿El tono es adecuado?
-- [ ] ¿Los datos están verificados?
-- [ ] ¿La estructura es clara?
-- [ ] ¿Hay información sensible?
-- [ ] ¿Se entiende sin contexto adicional?
-- [ ] ¿Hay repeticiones?
-- [ ] ¿Necesita edición humana?
-- [ ] ¿Cumple el objetivo inicial?
-
----
-
-## 23. Resumen del tema
-
-En este tema hemos visto cómo usar Microsoft 365 Copilot en aplicaciones de productividad.
-
-Las ideas principales son:
-
-- En Word, Copilot ayuda a redactar, resumir y transformar documentos.
-- En Excel, puede ayudar a analizar datos, explicar fórmulas y detectar patrones.
-- En PowerPoint, puede generar estructuras, presentaciones y notas del presentador.
-- En Outlook, ayuda a redactar, resumir y responder correos.
-- En Teams, puede resumir reuniones, extraer decisiones y preparar seguimientos.
-- En todos los casos, el resultado debe revisarse antes de usarlo.
+- [ ] Is the content correct?
+- [ ] Is the tone appropriate?
+- [ ] Is the data verified?
+- [ ] Is the structure clear?
+- [ ] Is there sensitive information?
+- [ ] Is it understood without additional context?
+- [ ] Are there repetitions?
+- [ ] Do you need human editing?
+- [ ] Does it meet the initial objective?
 
 ---
 
-## 24. Documentación recomendada
+## 23. Summary of the topic
+
+In this topic we have seen how to use Microsoft 365 Copilot in productivity applications.
+
+The main ideas are:
+
+- In Word, Copilot helps you compose, summarize and transform documents.
+- In Excel, it can help analyze data, explain formulas, and detect patterns.
+- In PowerPoint, you can generate structures, presentations and presenter notes.
+- In Outlook, helps compose, summarize and reply to emails.
+- In Teams, you can summarize meetings, extract decisions, and prepare follow-ups.
+- In all cases, the result must be reviewed before use.
+
+---
+
+## 24. Recommended documentation
 
 - Microsoft Support — Microsoft 365 Copilot help and learning: https://support.microsoft.com/en-us/microsoft-365-copilot
 - Microsoft Learn — Microsoft 365 Copilot documentation: https://learn.microsoft.com/en-us/microsoft-365/copilot/

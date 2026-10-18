@@ -1,33 +1,33 @@
-# **Tema 15: Fetch API**
+# **Topic 15: Fetch API**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En la mayoría de apps necesitas **pedir datos a una API** (usuarios, productos, posts…).
+In most apps you need to **request data from an API** (users, products, posts...).
 
-En React, lo más habitual es:
+In React, the most common is:
 
-- Hacer la petición con **Fetch API**.
-- Guardar los datos en **estado** con `useState`.
-- Ejecutar la petición en un **`useEffect`** (normalmente al montar).
+- Make the request with **Fetch API**.
+- Save data in **state** with `useState`.
+- Execute the request in an **`useEffect`** (normally when mounting).
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es Fetch y cómo funciona.
-- Cómo hacer un **GET**.
-- Cómo manejar estados típicos: **loading**, **error** y **data**.
-- Cómo cancelar/ignorar respuestas cuando el componente se desmonta.
-- Cómo hacer **POST** (básico).
+- What is Fetch and how it works.
+- How to do a **GET**.
+- How to handle typical states: **loading**, **error** and **data**.
+- How to cancel/ignore responses when component is unmounted.
+- How to do **POST** (basic).
 
 ---
 
-## **2. ¿Qué es Fetch API?**
+## **2. What is Fetch API?**
 
-`fetch` es una función del navegador para hacer peticiones HTTP.
+`fetch` is a browser function for making HTTP requests.
 
-- Devuelve una **Promise**.
-- Normalmente conviertes la respuesta a JSON con `response.json()`.
+- Returns a **Promise**.
+- Normally you convert the response to JSON with `response.json()`.
 
-Ejemplo básico:
+Basic example:
 
 ```js
 fetch("https://api.example.com/users")
@@ -35,17 +35,17 @@ fetch("https://api.example.com/users")
   .then((data) => console.log(data));
 ```
 
-En React, solemos usar `async/await` porque es más legible.
+In React, we usually use `async/await` because it is more readable.
 
 ---
 
-## **3. GET con `useEffect` (al montar)**
+## **3. GET with `useEffect` (when mounting)**
 
-Ejemplo completo con estado:
+Complete example with state:
 
-- `data` para guardar la respuesta.
-- `isLoading` para loader.
-- `error` para fallos.
+- `data` to save the answer.
+- `isLoading` for loader.
+- `error` for failures.
 
 ```js
 import { useEffect, useState } from "react";
@@ -103,16 +103,16 @@ export default Users;
 
 ---
 
-## **4. Por qué usamos `response.ok`**
+## **4. Why we use `response.ok`**
 
-`fetch` solo lanza error automáticamente si hay un problema de red.
+`fetch` only automatically throws error if there is a network problem.
 
-Si el servidor responde con:
+If the server responds with:
 
 - 404
 - 500
 
-**no** se lanza un error por defecto. Por eso es buena práctica comprobar:
+**no** error is thrown by default. That is why it is good practice to check:
 
 ```js
 if (!response.ok) {
@@ -122,16 +122,16 @@ if (!response.ok) {
 
 ---
 
-## **5. Evitar actualizar estado si el componente se desmonta**
+## **5. Avoid updating state if component is unmounted**
 
-Un problema común:
+A common problem:
 
-- Haces un fetch.
-- El usuario cambia de pantalla.
-- Llega la respuesta.
-- Intentas hacer `setState` en un componente que ya no está.
+- You make a fetch.
+- The user changes screen.
+- The answer arrives.
+- You are trying to do `setState` on a component that is no longer there.
 
-Una forma simple (patrón de “ignore flag”):
+A simple way (“ignore flag” pattern):
 
 ```js
 import { useEffect, useState } from "react";
@@ -172,17 +172,17 @@ function Posts() {
 export default Posts;
 ```
 
-> Más adelante verás otras formas (por ejemplo, `AbortController`), pero este patrón ya te protege de muchos casos.
+> Later you will see other ways (for example, `AbortController`), but this pattern already protects you from many cases.
 
 ---
 
-## **6. POST básico con Fetch**
+## **6. Basic POST with Fetch**
 
-Para enviar datos:
+To send data:
 
-- Método `POST`
-- Cabecera `Content-Type: application/json`
-- `body` con `JSON.stringify(...)`
+- `POST` method
+- `Content-Type: application/json` header
+- `body` with `JSON.stringify(...)`
 
 ```js
 const createUser = async () => {
@@ -207,22 +207,22 @@ const createUser = async () => {
 
 ---
 
-## **7. Buenas prácticas**
+## **7. Good practices**
 
-- Mantén el estado separado: `data`, `isLoading`, `error`.
-- Usa `try/catch/finally` para control de errores y loading.
-- Comprueba `response.ok`.
-- Si el componente puede desmontarse, evita hacer `setState` después (flag o cancelación).
-- Mantén la lógica de fetch en funciones (`loadUsers`, `loadPosts`) para que el componente se lea fácil.
+- Keep the state separate: `data`, `isLoading`, `error`.
+- Use `try/catch/finally` for error control and loading.
+- Check `response.ok`.
+- If the component can be disassembled, avoid doing `setState` afterwards (flag or cancel).
+- Keep the fetch logic in functions (`loadUsers`, `loadPosts`) to make the component easy to read.
 
 ---
 
-## **8. A tener en cuenta**
+## **8. To take into account**
 
-- `fetch` devuelve una Promise.
-- `response.json()` también devuelve una Promise.
-- Un patrón típico es: `useEffect` + `async function` + estados `loading/error/data`.
-- `fetch` no lanza error por HTTP 4xx/5xx a menos que lo compruebes.
+- `fetch` returns a Promise.
+- `response.json()` also returns a Promise.
+- A typical pattern is: `useEffect` + `async function` + `loading/error/data` states.
+- `fetch` does not throw an error for HTTP 4xx/5xx unless you check it.
 
 ---
 
@@ -230,4 +230,4 @@ const createUser = async () => {
 
 ---
 
-En el próximo tema veremos **Axios**, una alternativa a Fetch con una API más cómoda para muchos casos.
+In the next topic we will see **Axios**, an alternative to Fetch with a more comfortable API for many cases.

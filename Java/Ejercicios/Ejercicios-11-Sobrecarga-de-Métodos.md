@@ -1,21 +1,21 @@
-# Ejercicios - Tema 11: Sobrecarga de métodos
+# Exercises - Topic 11: Method overloading
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **sobrecarga de métodos** (mismo nombre, diferentes parámetros).
+Below you will find **10 practical exercises** to work with **method overloading** (same name, different parameters).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Sobrecargar `sum` (2 y 3 parámetros)
+## Exercise 1: Overload `sum` (2 and 3 parameters)
 
-Crea dos métodos `sum`:
+Create two `sum` methods:
 
-- Uno que reciba 2 enteros y devuelva la suma
-- Otro que reciba 3 enteros y devuelva la suma
+- One that receives 2 integers and returns the sum
+- Another who receives 3 integers and returns the sum
 
-Desde `main`, llama a ambos y muestra los resultados.
+From `main`, call both and display the results.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -38,16 +38,16 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Sobrecargar `sum` para `double`
+## Exercise 2: Overload `sum` for `double`
 
-Crea dos métodos `sum`:
+Create two `sum` methods:
 
 - `sum(int, int)`
 - `sum(double, double)`
 
-Llama a ambos desde `main`.
+Call both from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -70,16 +70,16 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Sobrecargar `printUser` con y sin edad
+## Exercise 3: Overload `printUser` with and without age
 
-Crea dos métodos `printUser`:
+Create two `printUser` methods:
 
-- Uno que reciba solo el nombre (`String`) y muestre `"User: <name>"`
-- Otro que reciba nombre y edad (`String`, `int`) y muestre `"User: <name> | Age: <age>"`
+- One that receives only the name (`String`) and shows `"User: <name>"`
+- Another that receives name and age (`String`, `int`) and shows `"User: <name> | Age: <age>"`
 
-Llama a ambos desde `main`.
+Call both from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -102,16 +102,16 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Sobrecargar `calculateTotal` (sin descuento y con descuento)
+## Exercise 4: Overload `calculateTotal` (without discount and with discount)
 
-Crea dos métodos `calculateTotal`:
+Create two `calculateTotal` methods:
 
-- Uno que reciba `unitPrice` (`double`) y `quantity` (`int`) y devuelva el total
-- Otro que además reciba `discountRate` (`double`) y aplique el descuento
+- One who receives `unitPrice` (`double`) and `quantity` (`int`) and returns the total
+- Another person who also receives `discountRate` (`double`) and applies the discount
 
-Llama a ambos desde `main`.
+Call both from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -135,16 +135,16 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Sobrecargar `isValid` para `int` y `String`
+## Exercise 5: Overload `isValid` for `int` and `String`
 
-Crea dos métodos `isValid`:
+Create two `isValid` methods:
 
-- `isValid(int value)` devuelve `true` si el valor es mayor que 0
-- `isValid(String value)` devuelve `true` si no es `null` y no está en blanco
+- `isValid(int value)` returns `true` if the value is greater than 0
+- `isValid(String value)` returns `true` if it is not `null` and is not blank
 
-Llama a ambos desde `main` con valores de prueba.
+Call both from `main` with test values.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -169,16 +169,16 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Sobrecargar `buildLabel` con diferentes tipos
+## Exercise 6: Overload `buildLabel` with different types
 
-Crea dos métodos `buildLabel`:
+Create two `buildLabel` methods:
 
 - `buildLabel(String text, int number)` → `"text-number"`
 - `buildLabel(String text, String code)` → `"text-code"`
 
-Imprime ambos resultados desde `main`.
+Print both results from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -201,16 +201,16 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Sobrecargar por orden de parámetros
+## Exercise 7: Overloading by parameter order
 
-Crea dos métodos `formatPair`:
+Create two `formatPair` methods:
 
 - `formatPair(String left, int right)` → `"left: <left> | right: <right>"`
 - `formatPair(int left, String right)` → `"left: <left> | right: <right>"`
 
-Llama a ambos desde `main` para comprobar que Java elige la versión correcta.
+Call both from `main` to verify that Java chooses the correct version.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -233,17 +233,17 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Sobrecarga y conversión implícita
+## Exercise 8: Overloading and implicit conversion
 
-Crea dos métodos `multiply`:
+Create two `multiply` methods:
 
 - `multiply(int a, int b)`
 - `multiply(double a, double b)`
 
-Llama a `multiply(3, 2.5)` desde `main` e imprime el resultado.  
-Observa qué versión se usa y por qué.
+Call `multiply(3, 2.5)` from `main` and print the result.  
+Note which version is used and why.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -261,22 +261,21 @@ public class Main {
 }
 ```
 
-Se utiliza `multiply(double, double)` porque `2.5` es `double` y Java convierte `3` a `double`.
+`multiply(double, double)` is used because `2.5` is `double` and Java converts `3` to `double`.
 
 </details>
 
 ---
+## Exercise 9: Avoid duplicating logic by using one overload that calls another
 
-## Ejercicio 9: Evitar duplicar lógica usando una sobrecarga que llama a otra
+Create two `sum` methods:
 
-Crea dos métodos `sum`:
+- `sum(int a, int b)` should internally call `sum(int a, int b, int c)` using `0` as the third value
+- `sum(int a, int b, int c)` returns the sum of the three
 
-- `sum(int a, int b)` debe llamar internamente a `sum(int a, int b, int c)` usando `0` como tercer valor
-- `sum(int a, int b, int c)` devuelve la suma de los tres
+Call both from `main`.
 
-Llama a ambos desde `main`.
-
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -299,16 +298,16 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Sobrecargar `calculateScore` con diferentes entradas
+## Exercise 10: Overload `calculateScore` with different inputs
 
-Crea dos métodos `calculateScore`:
+Create two `calculateScore` methods:
 
-- `calculateScore(int base)` devuelve `base * 10`
-- `calculateScore(int base, int bonus)` devuelve `base * 10 + bonus`
+- `calculateScore(int base)` returns `base * 10`
+- `calculateScore(int base, int bonus)` returns `base * 10 + bonus`
 
-Llama a ambos desde `main` y muestra los resultados.
+Call both from `main` and display the results.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

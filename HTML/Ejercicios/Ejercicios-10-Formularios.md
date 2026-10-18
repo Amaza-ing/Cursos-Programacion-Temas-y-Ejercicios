@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 10: Introducción a los formularios en HTML**
+# **Exercises - Topic 10: Introduction to HTML forms**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 8 ejercicios prácticos sobre formularios en HTML.
+Below you will find 8 practical exercises on HTML forms.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un formulario básico**
+### **Exercise 1: Create a basic form**
 
-Crea un formulario que contenga un campo de texto para el nombre de usuario y un botón de envío.
+Create a form that contains a text field for the username and a submit button.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -26,11 +26,11 @@ Crea un formulario que contenga un campo de texto para el nombre de usuario y un
 
 ---
 
-### **Ejercicio 2: Campos con diferentes tipos de entrada**
+### **Exercise 2: Fields with different input types**
 
-Crea un formulario con campos de tipo email, número y fecha de nacimiento.
+Create a form with fields such as email, number and date of birth.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -51,11 +51,11 @@ Crea un formulario con campos de tipo email, número y fecha de nacimiento.
 
 ---
 
-### **Ejercicio 3: Uso de `select` y `option`**
+### **Exercise 3: Using `select` and `option`**
 
-Crea un formulario con un menú desplegable para seleccionar la ciudad de residencia.
+Create a form with a drop-down menu to select the city of residence.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -73,11 +73,11 @@ Crea un formulario con un menú desplegable para seleccionar la ciudad de reside
 
 ---
 
-### **Ejercicio 4: Uso de checkboxes**
+### **Exercise 4: Using checkboxes**
 
-Crea un formulario con casillas de verificación para seleccionar intereses.
+Create a form with checkboxes to select interests.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -97,11 +97,11 @@ Crea un formulario con casillas de verificación para seleccionar intereses.
 
 ---
 
-### **Ejercicio 5: Uso de radio buttons**
+### **Exercise 5: Using radio buttons**
 
-Crea un formulario con botones de opción para elegir el estado civil.
+Create a form with radio buttons to choose marital status.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -116,11 +116,11 @@ Crea un formulario con botones de opción para elegir el estado civil.
 
 ---
 
-### **Ejercicio 6: Validaciones en formularios**
+### **Exercise 6: Validations in forms**
 
-Crea un formulario con un campo de usuario que requiera al menos 5 caracteres.
+Create a form with a user field that requires at least 5 characters.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -134,11 +134,11 @@ Crea un formulario con un campo de usuario que requiera al menos 5 caracteres.
 
 ---
 
-### **Ejercicio 7: Agrupar campos con `fieldset`**
+### **Exercise 7: Group fields with `fieldset`**
 
-Crea un formulario donde los datos personales estén agrupados con `fieldset`.
+Create a form where personal data is grouped with `fieldset`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>
@@ -160,11 +160,11 @@ Crea un formulario donde los datos personales estén agrupados con `fieldset`.
 
 ---
 
-### **Ejercicio 8: Crear un formulario de contacto completo**
+### **Exercise 8: Create a complete contact form**
 
-Diseña un formulario de contacto con nombre, correo, mensaje y un botón de envío.
+Design a contact form with name, email, message and a send button.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <form>

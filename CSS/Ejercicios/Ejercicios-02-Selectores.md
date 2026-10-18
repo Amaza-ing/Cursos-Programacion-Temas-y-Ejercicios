@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 2: Selectores y especificidad en CSS**
+# **Exercises - Topic 2: Selectors and specificity in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre selectores y especificidad en CSS.
+Below you will find 5 practical exercises on selectors and specificity in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Usar un selector de etiqueta**
+### **Exercise 1: Using a tag selector**
 
-Aplica un color de fondo amarillo a todos los párrafos (`<p>`) de una página web.
+Applies a yellow background color to all paragraphs (`<p>`) on a web page.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 p {
@@ -20,15 +20,16 @@ p {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Usar un selector de clase**
+### **Exercise 2: Using a class selector**
 
-Crea una clase llamada `.danger` y úsala para hacer que el texto de los elementos a los que se aplique sea rojo y en negrita.
+Create a class called `.danger` and use it to make the text of the elements it applies to red and bold.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .danger {
@@ -37,19 +38,21 @@ Crea una clase llamada `.danger` y úsala para hacer que el texto de los element
 }
 ```
 
+
 ```html
 <p class="danger">Este es un párrafo importante.</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 3: Usar un selector de ID**
+### **Exercise 3: Using an ID selector**
 
-Crea un ID llamado `#some-title` y úsalo para centrar el texto de un encabezado `<h1>`.
+Create an ID called `#some-title` and use it to center the text of an `<h1>` header.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 #some-title {
@@ -57,19 +60,21 @@ Crea un ID llamado `#some-title` y úsalo para centrar el texto de un encabezado
 }
 ```
 
+
 ```html
 <h1 id="some-title">Este es un título centrado</h1>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 4: Usar un selector de descendencia**
+### **Exercise 4: Using a descendant selector**
 
-Selecciona todos los enlaces (`<a>`) que estén dentro de un párrafo (`<p>`) y cambia su color a azul.
+Select all links (`<a>`) that are within a paragraph (`<p>`) and change their color to blue.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 p a {
@@ -77,19 +82,21 @@ p a {
 }
 ```
 
+
 ```html
 <p>Visita <a href="#">este enlace</a> para más información.</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 5: Usar la especificidad**
+### **Exercise 5: Using specificity**
 
-Aplica diferentes estilos a un párrafo usando un selector de tipo, un selector de clase y un selector de ID. Observa cuál tiene prioridad.
+Apply different styles to a paragraph using a type selector, a class selector, and an ID selector. See which one has priority.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 p {
@@ -103,10 +110,12 @@ p {
 }
 ```
 
+
 ```html
 <p id="some-id" class="special">
   Este párrafo tendrá color rojo por la especificidad del ID.
 </p>
 ```
+
 
 </details>

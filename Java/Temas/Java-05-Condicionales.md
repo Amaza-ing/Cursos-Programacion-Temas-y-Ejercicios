@@ -1,40 +1,40 @@
-# Tema 5. Condicionales (if y switch)
+# Topic 5. Conditionals (if and switch)
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has aprendido a:
+So far you have learned to:
 
-- Guardar información con **variables**
-- Operar con valores usando **operadores**
-- Convertir tipos cuando es necesario
+- Save information with **variables**
+- Trade values using **operators**
+- Convert types when necessary
 
-El siguiente paso es que el programa pueda **tomar decisiones**.
+The next step is for the program to **make decisions**.
 
-En programación, tomar decisiones significa:
+In programming, making decisions means:
 
-- Evaluar una condición (algo que es `true` o `false`)
-- Ejecutar un bloque de código u otro según el resultado
+- Evaluate a condition (something that is `true` or `false`)
+- Execute one block of code or another depending on the result
 
-En Java, los condicionales principales son:
+In Java, the main conditionals are:
 
 - `if`, `else if`, `else`
-- `switch` (incluyendo el **switch moderno**)
+- `switch` (including **modern switch**)
 
-En este tema aprenderás a usarlos con claridad y con ejemplos guiados.
-
----
-
-[![Condicionales if / else](https://img.youtube.com/vi/ogHYPSBWS9A/0.jpg)](https://www.youtube.com/watch?v=ogHYPSBWS9A&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+In this topic you will learn how to use them clearly and with guided examples.
 
 ---
 
-## 2. Condicional `if`
+[![Conditional if / else](https://img.youtube.com/vi/ogHYPSBWS9A/0.jpg)](https://www.youtube.com/watch?v=ogHYPSBWS9A&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-### 2.1. ¿Qué hace un `if`?
+---
 
-Un `if` ejecuta un bloque de código **solo si una condición es verdadera**.
+## 2. Conditional `if`
 
-Sintaxis básica:
+### 2.1. What does an `if` do?
+
+An `if` executes a block of code **only if a condition is true**.
+
+Basic syntax:
 
 ```java
 if (condition) {
@@ -42,12 +42,12 @@ if (condition) {
 }
 ```
 
-- `condition` debe ser una expresión que devuelva un `boolean` (`true` o `false`).
-- El bloque va entre llaves `{}`.
+- `condition` must be an expression that returns an `boolean` (`true` or `false`).
+- The block is enclosed in braces `{}`.
 
 ---
 
-### 2.2. Ejemplo 1: comprobar si una persona es mayor de edad
+### 2.2. Example 1: check if a person is of legal age
 
 ```java
 int age = 20;
@@ -57,11 +57,11 @@ if (age >= 18) {
 }
 ```
 
-Si `age` es 20, la condición `age >= 18` es `true`, por lo tanto se ejecuta el mensaje.
+If `age` is 20, the condition `age >= 18` is `true`, therefore the message is executed.
 
 ---
 
-### 2.3. Ejemplo 2: condición falsa (no pasa nada)
+### 23. Example 2: false condition (nothing happens)
 
 ```java
 int age = 15;
@@ -71,15 +71,15 @@ if (age >= 18) {
 }
 ```
 
-Aquí la condición es `false`, así que el bloque **no se ejecuta**.
+Here the condition is `false`, so the block **is not executed**.
 
 ---
 
-## 3. `if` con `else`
+## 3. `if` with `else`
 
-### 3.1. ¿Qué hace `else`?
+### 3.1. What does `else` do?
 
-`else` define qué hacer **si la condición del `if` es falsa**.
+`else` defines what to do **if the `if` condition is false**.
 
 ```java
 if (condition) {
@@ -91,7 +91,7 @@ if (condition) {
 
 ---
 
-### 3.2. Ejemplo: mayor de edad o menor de edad
+### 3.2. Example: of legal age or minor
 
 ```java
 int age = 15;
@@ -103,7 +103,7 @@ if (age >= 18) {
 }
 ```
 
-Con `age = 15`, imprime:
+With `age = 15`, print:
 
 ```
 You are a minor.
@@ -111,11 +111,11 @@ You are a minor.
 
 ---
 
-## 4. `if` con `else if` (varias condiciones)
+## 4. `if` with `else if` (various conditions)
 
-### 4.1. ¿Cuándo usar `else if`?
+### 4.1. When to use `else if`?
 
-Cuando necesitas evaluar **más de dos casos**.
+When you need to evaluate **more than two cases**.
 
 ```java
 if (condition1) {
@@ -127,11 +127,11 @@ if (condition1) {
 }
 ```
 
-Java evalúa de arriba hacia abajo y se queda con el **primer caso que sea true**.
+Java evaluates from top to bottom and sticks with the **first case that is true**.
 
 ---
 
-### 4.2. Ejemplo: clasificar una nota
+### 4.2. Example: classify a note
 
 ```java
 int score = 82;
@@ -147,7 +147,7 @@ if (score >= 90) {
 }
 ```
 
-Si `score = 82`, imprime:
+If `score = 82`, print:
 
 ```
 Grade: B
@@ -155,9 +155,9 @@ Grade: B
 
 ---
 
-### 4.3. Error típico: orden incorrecto
+### 4.3. Typical error: wrong order
 
-Este ejemplo está mal:
+This example is wrong:
 
 ```java
 int score = 82;
@@ -169,19 +169,19 @@ if (score >= 70) {
 }
 ```
 
-Con `82`, el primer `if` ya es `true`, así que nunca llega a `score >= 80`.
+With `82`, the first `if` is already `true`, so it never reaches `score >= 80`.
 
-**Regla práctica:** coloca primero las condiciones **más restrictivas** o “más altas”.
+**Rule of thumb:** place the **most restrictive** or “highest” conditions first.
 
 ---
 
-## 5. Condiciones compuestas (AND, OR, NOT)
+## 5. Composite conditions (AND, OR, NOT)
 
-Aquí es donde los operadores lógicos son muy útiles.
+This is where logical operators come in handy.
 
 ### 5.1. AND (`&&`)
 
-Ambas condiciones deben ser verdaderas.
+Both conditions must be true.
 
 ```java
 int age = 20;
@@ -198,7 +198,7 @@ if (age >= 18 && hasId) {
 
 ### 5.2. OR (`||`)
 
-Con que una condición sea verdadera, basta.
+If a condition is true, it is enough.
 
 ```java
 boolean isVip = true;
@@ -215,7 +215,7 @@ if (isVip || hasInvitation) {
 
 ### 5.3. NOT (`!`)
 
-Niega un valor booleano.
+Negates a boolean value.
 
 ```java
 boolean isBlocked = false;
@@ -227,11 +227,11 @@ if (!isBlocked) {
 
 ---
 
-## 6. Buenas prácticas con `if`
+## 6. Good practices with `if`
 
-### 6.1. Evita condiciones difíciles de leer
+### 6.1. Avoid difficult to read conditions
 
-Mal (difícil de entender):
+Wrong (hard to understand):
 
 ```java
 if (age >= 18 && (country.equals("ES") || country.equals("FR")) && !isBlocked) {
@@ -239,7 +239,7 @@ if (age >= 18 && (country.equals("ES") || country.equals("FR")) && !isBlocked) {
 }
 ```
 
-Mejor (variables intermedias):
+Better (intermediate variables):
 
 ```java
 boolean isAdult = age >= 18;
@@ -251,15 +251,15 @@ if (canAccess) {
 }
 ```
 
-Esto es más largo, pero mucho más legible.
+This is longer, but much more readable.
 
 ---
 
-### 6.2. Comparaciones con `String` (muy importante)
+### 6.2. Comparisons with `String` (very important)
 
-En Java, para comparar `String` debes usar `.equals(...)`, no `==`.
+In Java, to compare `String` you must use `.equals(...)`, not `==`.
 
-Incorrecto:
+Incorrect:
 
 ```java
 String role = "admin";
@@ -269,7 +269,7 @@ if (role == "admin") {
 }
 ```
 
-Correcto:
+Correct:
 
 ```java
 String role = "admin";
@@ -280,24 +280,23 @@ if (role.equals("admin")) {
 ```
 
 ---
-
-[![Condicionales switch](https://img.youtube.com/vi/9cBYs_NqWuE/0.jpg)](https://www.youtube.com/watch?v=9cBYs_NqWuE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
-
----
-
-## 7. Condicional `switch`
-
-### 7.1. ¿Qué es `switch`?
-
-`switch` se usa cuando quieres comparar **un mismo valor** contra múltiples casos.
-
-Ejemplo típico: menús, opciones, días de la semana, tipos, estados, etc.
+[![Conditional switch](https://img.youtube.com/vi/9cBYs_NqWuE/0.jpg)](https://www.youtube.com/watch?v=9cBYs_NqWuE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 8. `switch` clásico (con `case` y `break`)
+## 7. Conditional `switch`
 
-Sintaxis:
+### 7.1. What is `switch`?
+
+`switch` is used when you want to compare **the same value** against multiple cases.
+
+Typical example: menus, options, days of the week, types, states, etc.
+
+---
+
+## 8. Classic `switch` (with `case` and `break`)
+
+Syntax:
 
 ```java
 switch (value) {
@@ -312,11 +311,11 @@ switch (value) {
 }
 ```
 
-`break` es crucial para evitar que el programa “siga” con los siguientes casos.
+`break` is crucial to prevent the program from “continuing” with the following cases.
 
 ---
 
-### 8.1. Ejemplo: menú simple
+### 8.1. Example: simple menu
 
 ```java
 int option = 2;
@@ -338,7 +337,7 @@ switch (option) {
 
 ---
 
-### 8.2. Error típico: olvidar `break`
+### 8.2. Typical error: forgetting `break`
 
 ```java
 int option = 2;
@@ -353,31 +352,31 @@ switch (option) {
 }
 ```
 
-Con `option = 2`, imprimirá:
+With `option = 2`, you will print:
 
 ```
 Settings
 Exit
 ```
 
-Porque al no haber `break`, entra en `case 2` y continúa.
+Because since there is no `break`, enter `case 2` and continue.
 
 ---
 
-## 9. Switch moderno (recomendado en Java moderno)
+## 9. Modern Switch (recommended in modern Java)
 
-Java moderno permite escribir `switch` de forma más segura y compacta.
+Modern Java allows `switch` to be written in a more secure and compact way.
 
-Características:
+Features:
 
-- Usa `->` en lugar de `:`
-- No necesita `break`
-- Permite retornar valores fácilmente
-- Evita errores de “fall-through”
+- Use `->` instead of `:`
+- No need `break`
+- Allows easy return values
+- Avoid “fall-through” errors
 
 ---
 
-### 9.1. Ejemplo: switch moderno (expresión)
+### 9.1. Example: modern switch (expression)
 
 ```java
 int option = 2;
@@ -392,11 +391,11 @@ String message = switch (option) {
 System.out.println(message);
 ```
 
-Aquí `switch` devuelve un `String`, como si fuera una expresión.
+Here `switch` returns an `String`, as if it were an expression.
 
 ---
 
-### 9.2. Ejemplo: múltiples valores por caso
+### 9.2. Example: multiple values per case
 
 ```java
 String day = "SAT";
@@ -412,9 +411,9 @@ System.out.println(type);
 
 ---
 
-### 9.3. Ejemplo: bloque con `yield`
+### 9.3. Example: block with `yield`
 
-Cuando necesitas más de una línea en un caso, puedes usar un bloque `{}` y `yield`.
+When you need more than one line in a case, you can use an `{}` and `yield` block.
 
 ```java
 int score = 85;
@@ -434,15 +433,15 @@ System.out.println(grade);
 
 ---
 
-## 10. ¿Cuándo usar `if` y cuándo usar `switch`?
+## 10. When to use `if` and when to use `switch`?
 
-### 10.1. Usa `if` cuando
+### 10.1. Use `if` when
 
-- La condición es una comparación compleja (`&&`, `||`, rangos, etc.)
-- Necesitas evaluar expresiones como “entre 0 y 10”
-- Tienes condiciones que no dependen de un único valor
+- The condition is a complex comparison (`&&`, `||`, ranges, etc.)
+- You need to evaluate expressions like “between 0 and 10”
+- You have conditions that do not depend on a single value
 
-Ejemplo típico para `if`:
+Typical example for `if`:
 
 ```java
 if (age >= 18 && hasId) {
@@ -452,13 +451,13 @@ if (age >= 18 && hasId) {
 
 ---
 
-### 10.2. Usa `switch` cuando
+### 10.2. Use `switch` when
 
-- Comparas un valor con varias opciones posibles
-- Es un menú o una selección clara
-- Los casos son discretos (1, 2, 3 o "A", "B", "C")
+- You compare a value with several possible options
+- It is a menu or a clear selection
+- The cases are discrete (1, 2, 3 or "A", "B", "C")
 
-Ejemplo típico para `switch`:
+Typical example for `switch`:
 
 ```java
 switch (option) {
@@ -470,14 +469,14 @@ switch (option) {
 
 ---
 
-## 11. Ejemplos guiados (para entenderlo de verdad)
+## 11. Guided Examples (to really understand it)
 
-### 11.1. Ejemplo 1: validar una contraseña simple con `if`
+### 11.1. Example 1: Validate a simple password with `if`
 
-Queremos comprobar:
+We want to check:
 
-- Que la contraseña tenga al menos 8 caracteres
-- Que no esté bloqueado el usuario
+- The password must be at least 8 characters
+- That the user is not blocked
 
 ```java
 public class Main {
@@ -496,21 +495,21 @@ public class Main {
 }
 ```
 
-Puntos clave:
+Key points:
 
-- `password.length()` devuelve el número de caracteres
-- `isLongEnough` hace la condición más legible
-- `!isBlocked` significa “no está bloqueado”
+- `password.length()` returns the number of characters
+- `isLongEnough` makes the condition more readable
+- `!isBlocked` means “not locked”
 
 ---
 
-### 11.2. Ejemplo 2: sistema de niveles con `else if`
+### 11.2. Example 2: Level system with `else if`
 
-Queremos clasificar un nivel según puntos:
+We want to classify a level according to points:
 
-- 0 a 99: Beginner
-- 100 a 199: Intermediate
-- 200 o más: Advanced
+- 0 to 99: Beginner
+- 100 to 199: Intermediate
+- 200 or more: Advanced
 
 ```java
 public class Main {
@@ -528,14 +527,14 @@ public class Main {
 }
 ```
 
-Puntos clave:
+Key points:
 
-- No hace falta escribir `points >= 100` en el segundo caso
-- Si llega al `else if`, ya sabemos que `points >= 100`
+- It is not necessary to write `points >= 100` in the second case
+- If you reach `else if`, we already know that `points >= 100`
 
 ---
 
-### 11.3. Ejemplo 3: seleccionar una acción con switch moderno
+### 11.3. Example 3: Select an action with a modern switch
 
 ```java
 public class Main {
@@ -554,22 +553,22 @@ public class Main {
 }
 ```
 
-Puntos clave:
+Key points:
 
-- `switch` devuelve un valor
-- No hay `break`
-- El código es más limpio
-
----
-
-## 12. A tener en cuenta
-
-- `if` se usa para decisiones basadas en condiciones.
-- `else` cubre el caso contrario.
-- `else if` permite múltiples caminos, pero el orden importa.
-- `switch` es ideal cuando comparas un solo valor con varias opciones.
-- El **switch moderno** evita errores y suele ser más legible.
+- `switch` returns a value
+- There is no `break`
+- The code is cleaner
 
 ---
 
-En el próximo tema aprenderemos a repetir acciones con **bucles** (`while` y `for`), donde los condicionales serán clave para controlar cuándo parar o continuar.
+## 12. To take into account
+
+- `if` is used for condition-based decisions.
+- `else` covers the opposite case.
+- `else if` allows multiple paths, but the order matters.
+- `switch` is ideal when you compare a single security with multiple options.
+- The **modern switch** avoids errors and is usually more readable.
+
+---
+
+In the next topic we will learn to repeat actions with **loops** (`while` and `for`), where conditionals will be key to control when to stop or continue.

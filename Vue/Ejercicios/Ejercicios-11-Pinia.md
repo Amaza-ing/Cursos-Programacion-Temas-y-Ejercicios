@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 11: Gestión de Estado Global con Pinia**
+# **Exercises - Topic 11: Global State Management with Pinia**
 
-A continuación, encontrarás 6 ejercicios prácticos sobre la gestión de estado global con Pinia.
+Below you will find 6 practical exercises on global state management with Pinia.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Crear un store de contador**
+## **Exercise 1: Create a counter store**
 
-Crea un store llamado `counterStore` que tenga un estado `counter`, una acción para incrementarlo y un getter que devuelva el triple del contador.
+Create a store called `counterStore` that has a state `counter`, an action to increment it, and a getter that returns triple the counter.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `stores/counter.js`
 
@@ -36,11 +36,11 @@ export const useCounterStore = defineStore("counter", {
 
 ---
 
-## **Ejercicio 2: Mostrar y actualizar el contador en un componente**
+## **Exercise 2: Show and update the counter in a component**
 
-Crea un componente `CounterDisplay.vue` que muestre el valor de `counter` y tenga un botón para incrementarlo.
+Create an `CounterDisplay.vue` component that displays the value of `counter` and has a button to increment it.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `CounterDisplay.vue`
 
@@ -69,11 +69,11 @@ button {
 
 ---
 
-## **Ejercicio 3: Crear un store para usuarios**
+## **Exercise 3: Create a store for users**
 
-Crea un store `userStore` que gestione el nombre de un usuario y una acción para actualizarlo.
+Create an `userStore` store that manages a user's name and an action to update it.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `stores/user.js`
 
@@ -96,11 +96,11 @@ export const useUserStore = defineStore("user", {
 
 ---
 
-## **Ejercicio 4: Crear un componente que modifique el nombre del usuario**
+## **Exercise 4: Create a component that modifies the user name**
 
-Crea un componente `UserEditor.vue` con un input y un botón para guardar el nombre en el store.
+Create an `UserEditor.vue` component with an input and a button to save the name to the store.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `UserEditor.vue`
 
@@ -136,11 +136,11 @@ button {
 
 ---
 
-## **Ejercicio 5: Mostrar el nombre guardado en otro componente**
+## **Exercise 5: Show the saved name in another component**
 
-Crea un componente `UserGreeting.vue` que acceda al store y muestre un saludo personalizado usando el nombre almacenado.
+Create an `UserGreeting.vue` component that accesses the store and displays a custom greeting using the stored name.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `UserGreeting.vue`
 
@@ -166,11 +166,11 @@ p {
 
 ---
 
-## **Ejercicio 6: Crear un getter para calcular la longitud del nombre**
+## **Exercise 6: Create a getter to calculate the length of the name**
 
-Añade un getter al `userStore` llamado `nameLength` que devuelva la cantidad de caracteres del nombre actual.
+Add a getter to `userStore` called `nameLength` that returns the number of characters in the current name.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `stores/user.js`
 

@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 5: Signals y Reactividad en Angular 19**
+# **Exercises - Topic 5: Signals and Reactivity in Angular 19**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre el uso de Signals en Angular 19.
+Below you will find 10 practical exercises on using Signals in Angular 19.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una Signal**
+### **Exercise 1: Create a Signal**
 
-Crea una Signal que almacene un número y muestre su valor en la plantilla.
+Create a Signal that stores a number and displays its value in the template.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 import { signal } from "@angular/core";
@@ -22,19 +22,21 @@ export class CounterComponent {
 }
 ```
 
+
 ```html
 <p>Valor actual: {{ count() }}</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Actualizar una Signal**
+### **Exercise 2: Update a Signal**
 
-Crea un botón que incremente el valor de la Signal al hacer clic.
+Create a button that increments the Signal value when clicked.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class CounterComponent {
@@ -46,20 +48,22 @@ export class CounterComponent {
 }
 ```
 
+
 ```html
 <p>Valor: {{ count() }}</p>
 <button (click)="increment()">Incrementar</button>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Computed Signal**
+### **Exercise 3: Computed Signal**
 
-Crea una Computed Signal que calcule el doble del valor almacenado en una Signal.
+Create a Computed Signal that computes twice the value stored in a Signal.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 import { computed, signal } from "@angular/core";
@@ -70,20 +74,22 @@ export class MathComponent {
 }
 ```
 
+
 ```html
 <p>Valor: {{ value() }}</p>
 <p>El doble es: {{ doubleValue() }}</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Effect con Signal**
+### **Exercise 4: Effect with Signal**
 
-Crea un Effect que muestre un mensaje en la consola cuando cambie una Signal.
+Create an Effect that displays a message on the console when a Signal changes.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 import { effect, signal } from "@angular/core";
@@ -99,25 +105,28 @@ export class LoggerComponent {
 }
 ```
 
+
 ```html
 <input [(ngModel)]="message" />
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 5: Manejo de lista con @for**
+### **Exercise 5: List management with @for**
 
-Crea una signal con una lista de nombres y usa `@for` para mostrarlos en la plantilla.
+Create a signal with a list of names and use `@for` to display them in the template.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class NamesComponent {
   names = signal(["Ana", "Luis", "Carlos"]);
 }
 ```
+
 
 ```html
 <ul>
@@ -127,15 +136,16 @@ export class NamesComponent {
 </ul>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 6: Filtro con Computed Signal**
+### **Exercise 6: Filter with Computed Signal**
 
-Filtra una lista de números para mostrar solo los pares usando `computed()`.
+Filters a list of numbers to show only pairs using `computed()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class FilterComponent {
@@ -144,19 +154,21 @@ export class FilterComponent {
 }
 ```
 
+
 ```html
 <p>Números pares: {{ evenNumbers() }}</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 7: Uso de @if con Signal**
+### **Exercise 7: Using @if with Signal**
 
-Muestra un mensaje solo si un contador es mayor que 10.
+Display a message only if a counter is greater than 10.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 @if (count() > 10) {
@@ -164,21 +176,23 @@ Muestra un mensaje solo si un contador es mayor que 10.
 }
 ```
 
+
 ```ts
 export class ConditionComponent {
   count = signal(0);
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 8: Reset de Signal**
+### **Exercise 8: Signal Reset**
 
-Añade un botón para resetear el valor de una Signal a su estado inicial.
+Adds a button to reset the value of a Signal to its initial state.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class ResetComponent {
@@ -190,20 +204,22 @@ export class ResetComponent {
 }
 ```
 
+
 ```html
 <p>Contador: {{ count() }}</p>
 <button (click)="reset()">Resetear</button>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 9: Cambio de estado con Signal**
+### **Exercise 9: Change of state with Signal**
 
-Cambia el estado de una Signal entre "Activo" y "Inactivo" al hacer clic en un botón.
+Change the status of a Signal between "Active" and "Inactive" by clicking a button.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class ToggleComponent {
@@ -215,20 +231,22 @@ export class ToggleComponent {
 }
 ```
 
+
 ```html
 <p>Estado: {{ status() }}</p>
 <button (click)="toggle()">Cambiar Estado</button>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 10: Tabla de usuarios con Signals**
+### **Exercise 10: User table with Signals**
 
-Crea una tabla con datos de usuarios usando Signals.
+Create a table with user data using Signals.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class UsersComponent {
@@ -238,6 +256,7 @@ export class UsersComponent {
   ]);
 }
 ```
+
 
 ```html
 <table>
@@ -253,5 +272,6 @@ export class UsersComponent {
   }
 </table>
 ```
+
 
 </details>

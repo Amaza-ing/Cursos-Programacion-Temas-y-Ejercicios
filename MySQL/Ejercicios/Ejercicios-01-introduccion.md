@@ -1,32 +1,32 @@
-# **Ejercicios - Tema 1: Introducción a MySQL**
+# **Exercises - Topic 1: Introduction to MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para afianzar los conceptos del Tema 1.
+Below, you will find 5 practical exercises to strengthen the concepts of Topic 1.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Instalar MySQL y acceder al cliente de línea de comandos**
+### **Exercise 1: Install MySQL and access the command line client**
 
-Instala MySQL en tu sistema operativo e intenta acceder al cliente de MySQL como usuario root.
+Install MySQL on your operating system and try to access the MySQL client as root.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sh
 mysql -u root -p
 ```
 
-Luego introduce la contraseña establecida durante la instalación.
+Then enter the password set during installation.
 
 </details>
 
 ---
 
-### **Ejercicio 2: Crear una base de datos llamada `library`**
+### **Exercise 2: Create a database called `library`**
 
-Usando el cliente MySQL, crea una base de datos llamada `library` y confírmalo listando las bases existentes.
+Using the MySQL client, create a database called `library` and confirm it by listing the existing databases.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE DATABASE library;
@@ -37,15 +37,15 @@ SHOW DATABASES;
 
 ---
 
-### **Ejercicio 3: Crear una tabla `books` dentro de `library`**
+### **Exercise 3: Create a table `books` inside `library`**
 
-Crea una tabla llamada `books` con los siguientes campos:
+Create a table called `books` with the following fields:
 
-- `id`: número entero, clave primaria, auto incremental
-- `title`: texto de hasta 100 caracteres
-- `author`: texto de hasta 100 caracteres
+- `id`: integer, primary key, auto incremental
+- `title`: text up to 100 characters
+- `author`: text up to 100 characters
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 USE library;
@@ -61,11 +61,11 @@ CREATE TABLE books (
 
 ---
 
-### **Ejercicio 4: Insertar datos en la tabla `books`**
+### **Exercise 4: Insert data into table `books`**
 
-Inserta tres libros en la tabla `books` con los títulos y autores que prefieras.
+Insert three books into the `books` table with the titles and authors you prefer.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 INSERT INTO books (title, author)
@@ -78,11 +78,11 @@ VALUES ('1984', 'George Orwell'),
 
 ---
 
-### **Ejercicio 5: Consultar todos los libros registrados**
+### **Exercise 5: Consult all registered books**
 
-Haz una consulta para mostrar todos los libros de la tabla `books`.
+Make a query to display all books in the `books` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM books;

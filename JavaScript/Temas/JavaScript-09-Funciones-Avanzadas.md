@@ -1,16 +1,16 @@
-# **Tema 9: Funciones Avanzadas y Código Modular en JavaScript**
+# **Topic 9: Advanced Functions and Modular Code in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Las funciones avanzadas en JavaScript permiten escribir código más eficiente, reutilizable y modular. En este tema exploraremos técnicas avanzadas como funciones de orden superior, closures, currying y modularización del código.
+Advanced features in JavaScript allow you to write more efficient, reusable, and modular code. In this topic we will explore advanced techniques such as higher order functions, closures, currying and code modularization.
 
 ---
 
-## **2. Funciones de Orden Superior**
+## **2. Higher Order Functions**
 
-Una función de orden superior es aquella que recibe otra función como parámetro o devuelve una función.
+A higher order function is one that receives another function as a parameter or returns a function.
 
-### **Ejemplo: `map()` como función de orden superior**
+### **Example: `map()` as a higher order function**
 
 ```js
 const numbers = [1, 2, 3, 4];
@@ -18,7 +18,7 @@ const squaredNumbers = numbers.map((num) => num * num);
 console.log(squaredNumbers); // Salida: [1, 4, 9, 16]
 ```
 
-### **Ejemplo: Función que recibe otra función como argumento**
+### **Example: Function that receives another function as an argument**
 
 ```js
 function operate(a, b, operation) {
@@ -34,11 +34,11 @@ console.log(operate(5, 3, add)); // Salida: 8
 
 ---
 
-## **3. Closures (Funciones Anidadas con Acceso al Ámbito Externo)**
+## **3. Closures (Nested Functions with Access to the External Scope)**
 
-Un closure es una función que recuerda el ámbito (scope) en el que fue creada, permitiendo acceder a variables fuera de su propio ámbito.
+A closure is a function that remembers the scope in which it was created, allowing access to variables outside its own scope.
 
-### **Ejemplo de Closure**
+### **Closure Example**
 
 ```js
 function createCounter() {
@@ -54,15 +54,15 @@ console.log(counter()); // Salida: 1
 console.log(counter()); // Salida: 2
 ```
 
-Aquí, `counter` recuerda la variable `count` aunque la función externa `createCounter` haya finalizado su ejecución.
+Here, `counter` remembers the variable `count` even though the external function `createCounter` has finished executing.
 
 ---
 
 ## **4. Currying**
 
-El currying es una técnica que transforma una función que recibe múltiples argumentos en una serie de funciones que reciben un solo argumento cada vez.
+Currying is a technique that transforms a function that receives multiple arguments into a series of functions that receive a single argument at a time.
 
-### **Ejemplo de Currying**
+### **Currying Example**
 
 ```js
 function multiply(a) {
@@ -75,18 +75,18 @@ const double = multiply(2);
 console.log(double(5)); // Salida: 10
 ```
 
-Esto permite una mayor reutilización y composición de funciones.
+This allows for greater reuse and composition of functions.
 
 ---
 
-## **5. Funciones Puras e Inmutabilidad**
+## **5. Pure Functions and Immutability**
 
-Una función es **pura** si:
+A function is **pure** if:
 
-1. Su salida solo depende de sus entradas.
-2. No modifica variables externas ni el estado global.
+1. Your output only depends on your inputs.
+2. It does not modify external variables or the global state.
 
-### **Ejemplo de Función Pura**
+### **Pure Function Example**
 
 ```js
 function sum(a, b) {
@@ -96,15 +96,15 @@ function sum(a, b) {
 console.log(sum(3, 4)); // Salida: 7
 ```
 
-> **Nota:** Evita modificar arrays u objetos mutables dentro de funciones para mantener la inmutabilidad.
+> **Note:** Avoid modifying arrays or mutable objects within functions to maintain immutability.
 
 ---
 
-## **6. Modularización del Código**
+## **6. Code Modularization**
 
-Para hacer el código más reutilizable y fácil de mantener, se puede dividir en módulos usando `export` e `import`.
+To make the code more reusable and maintainable, it can be divided into modules using `export` and `import`.
 
-### **Ejemplo de Exportación en un Archivo `math.js`**
+### **Example of Exporting to an `math.js` File**
 
 ```js
 export function add(a, b) {
@@ -116,7 +116,7 @@ export function subtract(a, b) {
 }
 ```
 
-### **Ejemplo de Importación en `main.js`**
+### **Example of Import in `main.js`**
 
 ```js
 import { add, subtract } from "./math.js";
@@ -125,15 +125,15 @@ console.log(add(5, 3)); // Salida: 8
 console.log(subtract(5, 3)); // Salida: 2
 ```
 
-Esto permite organizar el código en archivos separados para mejorar la legibilidad y mantenibilidad.
+This allows code to be organized into separate files to improve readability and maintainability.
 
 ---
 
-## **7. Funciones Recursivas**
+## **7. Recursive Functions**
 
-Una función recursiva es aquella que se llama a sí misma hasta alcanzar una condición de salida.
+A recursive function is one that calls itself until an exit condition is reached.
 
-### **Ejemplo de Factorial con Recursión**
+### **Example of Factorial with Recursion**
 
 ```js
 function factorial(n) {
@@ -144,22 +144,22 @@ function factorial(n) {
 console.log(factorial(5)); // Salida: 120
 ```
 
-> **Nota:** Asegúrate de definir una condición de salida para evitar bucles infinitos.
+> **Note:** Make sure to define an exit condition to avoid infinite loops.
 
 ---
 
-## **8. Buenas Prácticas**
+## **8. Good Practices**
 
-- Usa funciones de orden superior para mejorar la reutilización del código.
-- Es preferible funciones puras para evitar efectos secundarios.
-- Aplica la modularización dividiendo el código en archivos separados.
-- Usa closures cuando necesites encapsulación de datos.
-- Emplea currying cuando sea útil dividir funciones en llamadas más pequeñas.
+- Use higher order functions to improve code reusability.
+- Pure functions are preferable to avoid side effects.
+- Apply modularization by dividing the code into separate files.
+- Use closures when you need data encapsulation.
+- Use currying when it is useful to split functions into smaller calls.
 
 ---
 
-## **9. Conclusión**
+## **9. Conclusion**
 
-Dominar funciones avanzadas en JavaScript permite escribir código más limpio, modular y eficiente. Aplicando estas técnicas, puedes mejorar la reutilización y escalabilidad de tus programas.
+Mastering advanced functions in JavaScript allows you to write cleaner, more modular and efficient code. By applying these techniques, you can improve the reusability and scalability of your programs.
 
-En el próximo tema veremos algunas funciones especiales que pueden resultar de utilidad, como `setTimeout()`, `setInterval()` y otras.
+In the next topic we will see some special functions that may be useful, such as `setTimeout()`, `setInterval()` and others.

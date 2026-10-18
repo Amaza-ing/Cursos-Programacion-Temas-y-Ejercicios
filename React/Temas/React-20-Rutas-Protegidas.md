@@ -1,39 +1,39 @@
-# **Tema 20: Rutas Protegidas**
+# **Topic 20: Protected Routes**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En muchas aplicaciones no todas las páginas deben ser accesibles para cualquier usuario. Por ejemplo:
+In many applications, not all pages must be accessible to any user. For example:
 
-- Un perfil solo para usuarios logueados.
-- Un panel de administración.
-- Páginas que requieren autenticación.
+- A profile only for logged in users.
+- An administration panel.
+- Pages that require authentication.
 
-En React Router, este comportamiento se implementa mediante **rutas protegidas**: rutas que solo se renderizan si se cumple una condición (normalmente, estar autenticado).
+In React Router, this behavior is implemented using **protected routes**: routes that are only rendered if a condition is met (typically being authenticated).
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué son las rutas protegidas.
-- Cómo crear un componente protector.
-- Cómo redirigir a otra ruta si no se cumple la condición.
-- Un patrón simple y reutilizable.
-
----
-
-## **2. Idea clave de las rutas protegidas**
-
-Una ruta protegida:
-
-- **Comprueba una condición** (por ejemplo, `isAuthenticated`).
-- Si se cumple → muestra la página.
-- Si no se cumple → redirige a otra ruta (login, home, etc.).
-
-La protección **no va en la ruta**, sino en un **componente intermedio**.
+- What are protected routes.
+- How to create a protective component.
+- How to redirect to another route if the condition is not met.
+- A simple and reusable pattern.
 
 ---
 
-## **3. Simular autenticación (estado)**
+## **2. Protected Routes Key Idea**
 
-Para entender el concepto, usaremos una simulación simple de autenticación con estado.
+A protected route:
+
+- **Checks a condition** (for example, `isAuthenticated`).
+- If met → shows the page.
+- If it is not met → redirect to another route (login, home, etc.).
+
+The protection **is not in the route**, but in an **intermediate component**.
+
+---
+
+## **3. Simulate authentication (state)**
+
+To understand the concept, we will use a simple simulation of stateful authentication.
 
 ```js
 import { useState } from "react";
@@ -45,18 +45,18 @@ function App() {
 }
 ```
 
-En una app real, este valor podría venir de:
+In a real app, this value could come from:
 
-- Context
+-Context
 - localStorage
-- Un token
-- Una API
+- A token
+- An API
 
 ---
 
-## **4. Crear un componente `ProtectedRoute`**
+## **4. Create an `ProtectedRoute`** component
 
-Este componente decide qué mostrar.
+This component decides what to display.
 
 ```js
 import { Navigate } from "react-router-dom";
@@ -72,17 +72,17 @@ function ProtectedRoute({ isAllowed, children }) {
 export default ProtectedRoute;
 ```
 
-Claves:
+Keys:
 
-- `isAllowed`: condición de acceso.
-- `children`: el componente protegido.
-- `Navigate`: redirige automáticamente.
+- `isAllowed`: access condition.
+- `children`: the protected component.
+- `Navigate`: redirect automatically.
 
 ---
 
-## **5. Usar `ProtectedRoute` en las rutas**
+## **5. Use `ProtectedRoute` on routes**
 
-Ahora protegemos una ruta concreta.
+Now we protect a specific route.
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -114,9 +114,9 @@ export default App;
 
 ---
 
-## **6. Página de Login (ejemplo)**
+## **6. Login page (example)**
 
-Ejemplo muy simple de login:
+Very simple login example:
 
 ```js
 import { useNavigate } from "react-router-dom";
@@ -137,20 +137,20 @@ export default Login;
 
 ---
 
-## **7. Flujo completo de ejemplo**
+## **7. Complete example flow**
 
-1. Usuario entra a `/profile`.
-2. `ProtectedRoute` comprueba `isAuthenticated`.
-3. Si es `false` → redirige a `/login`.
-4. El usuario hace login.
-5. Se actualiza el estado.
-6. Navega a `/profile`.
+1. User enters `/profile`.
+2. `ProtectedRoute` checks `isAuthenticated`.
+3. If it is `false` → redirect to `/login`.
+4. The user logs in.
+5. The status is updated.
+6. Navigate to `/profile`.
 
 ---
 
-## **8. Proteger varias rutas**
+## **8. Protect multiple routes**
 
-Puedes reutilizar `ProtectedRoute` para tantas rutas como quieras:
+You can reuse `ProtectedRoute` for as many routes as you want:
 
 ```js
 <Route
@@ -165,37 +165,37 @@ Puedes reutilizar `ProtectedRoute` para tantas rutas como quieras:
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Intentar proteger dentro del componente**
+### **9.1. Try to protect within the component**
 
-No es buena práctica hacer la redirección directamente en la página.
+It is not good practice to do the redirect directly on the page.
 
-### **9.2. Olvidar `children`**
+### **9.2. Forget `children`**
 
-`ProtectedRoute` debe renderizar `{children}`.
+`ProtectedRoute` should render `{children}`.
 
-### **9.3. Redirigir con `useNavigate` en lugar de `Navigate`**
+### **9.3. Redirect with `useNavigate` instead of `Navigate`**
 
-Para rutas protegidas, `Navigate` es la opción correcta.
-
----
-
-## **10. Buenas prácticas**
-
-- Usa un componente `ProtectedRoute` reutilizable.
-- Mantén la lógica de permisos fuera de las páginas.
-- Usa nombres claros: `isAuthenticated`, `isAdmin`, etc.
-- Más adelante puedes combinarlo con **Context**.
+For protected routes, `Navigate` is the correct option.
 
 ---
 
-[![Rutas Protegidas](https://img.youtube.com/vi/MlG-j-SXDnM/0.jpg)](https://www.youtube.com/watch?v=MlG-j-SXDnM&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **10. Good practices**
+
+- Uses a reusable `ProtectedRoute` component.
+- Keep permissions logic off pages.
+- Use clear names: `isAuthenticated`, `isAdmin`, etc.
+- Later you can combine it with **Context**.
 
 ---
 
-[![Gestión de Estados de Carga](https://img.youtube.com/vi/SP1CIB_HnGA/0.jpg)](https://www.youtube.com/watch?v=SP1CIB_HnGA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Protected Routes](https://img.youtube.com/vi/MlG-j-SXDnM/0.jpg)](https://www.youtube.com/watch?v=MlG-j-SXDnM&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-En el siguiente tema aprenderás a trabajar con **gestión de estado**.
+[![Charge State Management](https://img.youtube.com/vi/SP1CIB_HnGA/0.jpg)](https://www.youtube.com/watch?v=SP1CIB_HnGA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic you will learn how to work with **state management**.

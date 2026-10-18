@@ -1,23 +1,23 @@
-# **Tema 11: Animaciones y Transiciones en CSS**
+# **Topic 11: Animations and Transitions in CSS**
 
-## **1. Introducción a las animaciones y transiciones en CSS**
+## **1. Introduction to animations and transitions in CSS**
 
-Las animaciones y transiciones permiten agregar dinamismo y mejorar la experiencia de usuario en una página web. CSS ofrece propiedades específicas para crear efectos visuales sin necesidad de JavaScript.
+Animations and transitions add dynamism and improve the user experience on a web page. CSS offers specific properties to create visual effects without the need for JavaScript.
 
 ---
 
-## **2. Transiciones en CSS**
+## **2. Transitions in CSS**
 
-Las transiciones permiten cambiar suavemente el valor de una propiedad CSS durante un período de tiempo.
+Transitions allow you to smoothly change the value of a CSS property over a period of time.
 
-### **Propiedades principales:**
+### **Main properties:**
 
-- `transition-property`: Define qué propiedad será animada.
-- `transition-duration`: Especifica la duración de la transición.
-- `transition-timing-function`: Controla la aceleración de la transición.
-- `transition-delay`: Define un retraso antes de iniciar la transición.
+- `transition-property`: Defines which property will be animated.
+- `transition-duration`: Specifies the duration of the transition.
+- `transition-timing-function`: Controls the acceleration of the transition.
+- `transition-delay`: Defines a delay before starting the transition.
 
-### **Ejemplo básico:**
+### **Basic example:**
 
 ```css
 .button {
@@ -32,24 +32,25 @@ Las transiciones permiten cambiar suavemente el valor de una propiedad CSS duran
 }
 ```
 
-En este ejemplo, el fondo del botón cambia suavemente de azul a rojo cuando se pasa el cursor por encima.
 
-> Nota: Con `transition: all` se pueden afectar a todas las propiedades a la vez.
+In this example, the button background smoothly changes from blue to red when you hover over it.
+
+> Note: With `transition: all` all properties can be affected at the same time.
 
 ---
 
-## **3. Funciones de temporización (`transition-timing-function`)**
+## **3. Timing functions (`transition-timing-function`)**
 
-Controlan la velocidad de la transición durante su ejecución.
+They control the speed of the transition during its execution.
 
-- `linear`: Velocidad constante.
-- `ease` (por defecto): Inicio y fin lentos con velocidad media.
-- `ease-in`: Comienza lentamente.
-- `ease-out`: Termina lentamente.
-- `ease-in-out`: Inicio y fin lentos.
-- `cubic-bezier(n,n,n,n)`: Define una curva de Bézier personalizada.
+- `linear`: Constant speed.
+- `ease` (default): Slow start and end with medium speed.
+- `ease-in`: Start slowly.
+- `ease-out`: End slowly.
+- `ease-in-out`: Slow start and end.
+- `cubic-bezier(n,n,n,n)`: Defines a custom Bézier curve.
 
-### **Ejemplo:**
+### **Example:**
 
 ```css
 .box {
@@ -64,24 +65,25 @@ Controlan la velocidad de la transición durante su ejecución.
 }
 ```
 
+
 ---
 
-## **4. Animaciones en CSS**
+## **4. CSS animations**
 
-Las animaciones permiten crear secuencias de cambios de estilos más complejas que las transiciones.
+Animations allow you to create sequences of style changes that are more complex than transitions.
 
-### **Propiedades principales:**
+### **Main properties:**
 
-- `@keyframes`: Define los pasos de la animación.
-- `animation-name`: Nombre de la animación.
-- `animation-duration`: Duración de la animación.
-- `animation-timing-function`: Controla la aceleración.
-- `animation-delay`: Retraso antes de iniciar.
-- `animation-iteration-count`: Número de repeticiones.
-- `animation-direction`: Dirección de la animación.
-- `animation`: Shorthand para el resto de propiedades.
+- `@keyframes`: Defines the animation steps.
+- `animation-name`: Name of the animation.
+- `animation-duration`: Duration of the animation.
+- `animation-timing-function`: Controls acceleration.
+- `animation-delay`: Delay before starting.
+- `animation-iteration-count`: Number of repetitions.
+- `animation-direction`: Animation direction.
+- `animation`: Shorthand for the rest of the properties.
 
-### **Ejemplo básico:**
+### **Basic example:**
 
 ```css
 @keyframes mover {
@@ -101,29 +103,30 @@ Las animaciones permiten crear secuencias de cambios de estilos más complejas q
 }
 ```
 
-En este ejemplo, el cuadro se moverá de izquierda a derecha de forma infinita.
+
+In this example, the box will move from left to right infinitely.
 
 ---
 
-## **5. Control avanzado de animaciones**
+## **5. Advanced animation control**
 
-### **Propiedad `animation-iteration-count`**
+### **`animation-iteration-count` property**
 
-Define cuántas veces se ejecuta la animación.
+Defines how many times the animation is executed.
 
-- `infinite`: La animación se repite indefinidamente.
-- Número específico (`1`, `2`, etc.): Número de repeticiones.
+- `infinite`: The animation repeats indefinitely.
+- Specific number (`1`, `2`, etc.): Number of repetitions.
 
-### **Propiedad `animation-direction`**
+### **`animation-direction` property**
 
-Controla la dirección de la animación.
+Controls the direction of the animation.
 
-- `normal`: Ejecución estándar.
-- `reverse`: Inicia desde el final.
-- `alternate`: Alterna direcciones en cada iteración.
-- `alternate-reverse`: Alterna comenzando en reversa.
+- `normal`: Standard execution.
+- `reverse`: Start from the end.
+- `alternate`: Alternate addresses in each iteration.
+- `alternate-reverse`: Toggle starting in reverse.
 
-### **Ejemplo:**
+### **Example:**
 
 ```css
 @keyframes girar {
@@ -145,9 +148,10 @@ Controla la dirección de la animación.
 }
 ```
 
-En este ejemplo, se crea un efecto de cargador giratorio.
 
-También se puede controlar más en detalle la animación especificando más valores porcentuales:
+In this example, a rotating magazine effect is created.
+
+You can also control the animation more closely by specifying more percentage values:
 
 ```css
 @keyframes mover {
@@ -163,15 +167,16 @@ También se puede controlar más en detalle la animación especificando más val
 }
 ```
 
-En este ejemplo ahora la animación hace que además de lo anterior, cambie de color a verde a mitad de camino.
+
+In this example, the animation now causes, in addition to the above, to change color to green halfway through.
 
 ---
 
-## **6. Combinar transiciones y animaciones**
+## **6. Combine transitions and animations**
 
-Es posible combinar ambos efectos para lograr resultados más dinámicos.
+It is possible to combine both effects to achieve more dynamic results.
 
-### **Ejemplo:**
+### **Example:**
 
 ```css
 .button {
@@ -196,21 +201,21 @@ Es posible combinar ambos efectos para lograr resultados más dinámicos.
 }
 ```
 
-Aquí, el botón crece y se reduce mientras cambia de color al pasar el cursor.
+
+Here, the button grows and shrinks while changing color on hover.
+
+---
+[![Animations & Transitions](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-[![Animaciones & Transiciones](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+## **7. Good practices with animations and transitions**
+
+- Avoid animating properties that affect performance, such as `width` and `height`.
+- Use `transform` and `opacity` for smoother animations.
+- Maintain adequate durations to improve the user experience.
+- Do not abuse animations so as not to overload the interface.
 
 ---
 
-## **7. Buenas prácticas con animaciones y transiciones**
-
-- Evitar animar propiedades que afecten el rendimiento, como `width` y `height`.
-- Usar `transform` y `opacity` para animaciones más fluidas.
-- Mantener duraciones adecuadas para mejorar la experiencia del usuario.
-- No abusar de animaciones para no sobrecargar la interfaz.
-
----
-
-En el próximo tema, exploraremos **media queries y diseño responsivo**, para adaptar tus diseños a diferentes tamaños de pantalla.
+In the next topic, we will explore **media queries and responsive design**, to adapt your designs to different screen sizes.

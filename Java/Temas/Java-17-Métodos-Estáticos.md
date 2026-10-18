@@ -1,19 +1,19 @@
-# Tema 17. Métodos estáticos y la librería `Math`
+# Topic 17. Static methods and the `Math` library
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has trabajado principalmente con:
+Until now you have mainly worked with:
 
-- Variables y tipos
-- Métodos
-- Clases y objetos (POO)
-- Constructores y sobrecarga
+- Variables and types
+- Methods
+- Classes and objects (POO)
+- Constructors and overloading
 
-En este punto aparece una pregunta muy común:
+At this point a very common question appears:
 
-> ¿Por qué a veces llamamos métodos con un objeto, y otras veces los llamamos directamente con el nombre de una clase?
+> Why do we sometimes call methods with an object, and other times call them directly with the name of a class?
 
-Ejemplos:
+Examples:
 
 ```java
 String text = "Java";
@@ -24,32 +24,32 @@ System.out.println(text.length()); // método de instancia (necesita un objeto)
 System.out.println(Math.sqrt(9));   // método estático (se llama con la clase)
 ```
 
-La diferencia está en **static**.
+The difference is in **static**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un método estático y en qué se diferencia de uno de instancia
-- Cuándo usar `static` y cuándo no
-- Qué es un atributo estático (`static`) y para qué sirve
-- Cómo usar la librería `Math`: operaciones básicas, redondeos, potencias, raíces, aleatorios
-- Errores típicos y buenas prácticas
-
----
-
-[![Métodos y Variables Estáticas](https://img.youtube.com/vi/KIGT1UcAv9Q/0.jpg)](https://www.youtube.com/watch?v=KIGT1UcAv9Q&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is a static method and how does it differ from an instance method?
+- When to use `static` and when not to
+- What is a static attribute (`static`) and what is it for?
+- How to use the `Math` library: basic operations, rounding, powers, roots, random
+- Typical errors and good practices
 
 ---
 
-## 2. Qué significa `static` en Java
+[![Methods and Static Variables](https://img.youtube.com/vi/KIGT1UcAv9Q/0.jpg)](https://www.youtube.com/watch?v=KIGT1UcAv9Q&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-`static` indica que un miembro (método o atributo) pertenece a la **clase**, no a un objeto concreto.
+---
 
-- Miembro **de instancia**: pertenece a cada objeto
-- Miembro **estático**: pertenece a la clase y es compartido
+## 2. What does `static` mean in Java
 
-### 2.1. Ejemplo rápido
+`static` indicates that a member (method or attribute) belongs to the **class**, not to a specific object.
 
-Imagina una clase `Counter` que cuenta objetos creados:
+- **instance** member: belongs to each object
+- **static** member: belongs to the class and is shared
+
+### 2.1. Quick example
+
+Imagine an `Counter` class that counts created objects:
 
 ```java
 public class Counter {
@@ -65,7 +65,7 @@ public class Counter {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -79,54 +79,54 @@ public class Main {
 }
 ```
 
-- `total` es compartido por todos.
-- `getTotal()` es estático, así que se llama con `Counter.getTotal()`.
+- `total` is shared by everyone.
+- `getTotal()` is static, so it is called with `Counter.getTotal()`.
 
 ---
 
-## 3. Métodos de instancia vs métodos estáticos
+## 3. Instance methods vs static methods
 
-### 3.1. Método de instancia
+### 3.1. instance method
 
-Un método de instancia necesita un objeto para existir y suele trabajar con el estado de ese objeto.
+An instance method needs an object to exist and usually works with the state of that object.
 
 ```java
 String name = "Laura";
 int size = name.length();
 ```
 
-Aquí `length()` trabaja con los caracteres del objeto `name`.
+Here `length()` works with the characters of the `name` object.
 
-### 3.2. Método estático
+### 3.2. static method
 
-Un método estático no necesita un objeto. Se llama con el nombre de la clase.
+A static method does not need an object. It is called with the name of the class.
 
 ```java
 double root = Math.sqrt(25);
 ```
 
-Aquí `sqrt` es un cálculo general, no depende del estado de un objeto `Math`.
+Here `sqrt` is a general calculation, it does not depend on the state of an `Math` object.
 
 ---
 
-## 4. ¿Por qué `main` es `static`?
+## 4. Why `main` is `static`?
 
-El método `main` es el punto de entrada de un programa Java.
+The `main` method is the entry point of a Java program.
 
 ```java
 public static void main(String[] args) { ... }
 ```
 
-Java lo llama sin crear un objeto `Main`.  
-Por eso necesita ser `static`.
+Java calls it without creating an `Main` object.  
+That's why it needs to be `static`.
 
 ---
 
-## 5. Reglas importantes de `static`
+## 5. Important rules of `static`
 
-### 5.1. Un método estático NO puede acceder a atributos de instancia directamente
+### 5.1. A static method CANNOT access instance attributes directly
 
-Ejemplo (error):
+Example (error):
 
 ```java
 public class User {
@@ -138,9 +138,9 @@ public class User {
 }
 ```
 
-¿Por qué? Porque `name` pertenece a objetos concretos, y en un contexto estático no hay un objeto “actual”.
+Why? Because `name` belongs to concrete objects, and in a static context there is no “current” object.
 
-Para acceder, necesitas un objeto:
+To access, you need an object:
 
 ```java
 public static void printUserName(User user) {
@@ -148,32 +148,32 @@ public static void printUserName(User user) {
 }
 ```
 
-> En la práctica, lo habitual es evitar este patrón y usar métodos de instancia para imprimir datos de instancia.
+> In practice, it is common to avoid this pattern and use instance methods to print instance data.
 
-### 5.2. Un método de instancia sí puede usar miembros estáticos
+### 5.2. An instance method can use static members
 
-Porque los estáticos siempre existen a nivel de clase.
+Because statics always exist at the class level.
 
 ---
 
-## 6. Cuándo usar métodos estáticos
+## 6. When to use static methods
 
-Usa `static` cuando el método:
+Use `static` when the method:
 
-- No depende del estado de un objeto
-- Hace un cálculo o una utilidad general
-- Es una función “pura” (mismo input → mismo output)
-- Es un helper para reutilizar lógica
+- Does not depend on the state of an object
+- Makes a calculation or a general utility
+- It is a “pure” function (same input → same output)
+- It is a helper to reuse logic
 
-Ejemplos típicos:
+Typical examples:
 
 - `Math.sqrt`, `Math.max`, `Integer.parseInt`
-- Utilidades como `String.valueOf`
-- Métodos helper en clases `Utils` (cuando tiene sentido)
+- Utilities like `String.valueOf`
+- Helper methods in `Utils` classes (when it makes sense)
 
 ---
 
-## 7. Ejemplo: clase `Calculator` con métodos estáticos
+## 7. Example: `Calculator` class with static methods
 
 ```java
 public class Calculator {
@@ -192,7 +192,7 @@ public class Calculator {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -203,17 +203,17 @@ public class Main {
 }
 ```
 
-Observa que no necesitas crear `new Calculator()`.
+Note that you do not need to create `new Calculator()`.
 
 ---
 
-## 8. Atributos estáticos (`static`) y constantes (`static final`)
+## 8. Static attributes (`static`) and constants (`static final`)
 
-### 8.1. Atributo estático
+### 8.1. static attribute
 
-Un atributo estático se comparte entre todos los objetos.
+A static attribute is shared among all objects.
 
-Ejemplo: un contador de usuarios creados.
+Example: a counter of created users.
 
 ```java
 public class User {
@@ -232,7 +232,7 @@ public class User {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -245,11 +245,11 @@ public class Main {
 }
 ```
 
-### 8.2. Constantes: `static final`
+### 8.2. Constants: `static final`
 
-Para valores que no cambian.
+For values that do not change.
 
-Convención: nombre en MAYÚSCULAS.
+Convention: name in CAPITAL LETTERS.
 
 ```java
 public class AppConfig {
@@ -257,7 +257,7 @@ public class AppConfig {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 int attempts = AppConfig.MAX_ATTEMPTS;
@@ -265,24 +265,24 @@ int attempts = AppConfig.MAX_ATTEMPTS;
 
 ---
 
-## 9. La librería `Math`
+## 9. The `Math` library
 
-`Math` es una clase en `java.lang`, no necesitas importarla.
+`Math` is a class in `java.lang`, you don't need to import it.
 
-Sus métodos más usados son **estáticos**, por eso se llaman con `Math.`
+Its most used methods are **static**, that's why they are called with `Math.`
 
 ---
 
-## 10. Operaciones básicas con `Math`
+## 10. Basic operations with `Math`
 
-### 10.1. `Math.abs` (valor absoluto)
+### 10.1. `Math.abs` (absolute value)
 
 ```java
 int value = -10;
 System.out.println(Math.abs(value)); // 10
 ```
 
-### 10.2. `Math.max` y `Math.min`
+### 10.2. `Math.max` and `Math.min`
 
 ```java
 int a = 10;
@@ -294,11 +294,11 @@ System.out.println(Math.min(a, b)); // 10
 
 ---
 
-## 11. Potencias y raíces
+## 11. Powers and roots
 
 ### 11.1. `Math.pow`
 
-Devuelve `double`.
+Returns `double`.
 
 ```java
 double result = Math.pow(2, 3);
@@ -312,7 +312,7 @@ double root = Math.sqrt(81);
 System.out.println(root); // 9.0
 ```
 
-### 11.3. `Math.cbrt` (raíz cúbica)
+### 11.3. `Math.cbrt` (cubic root)
 
 ```java
 double value = Math.cbrt(27);
@@ -321,21 +321,21 @@ System.out.println(value); // 3.0
 
 ---
 
-## 12. Redondeos
+## 12. Roundings
 
 ### 12.1. `Math.round`
 
-Redondea al entero más cercano (devuelve `long` o `int` según el tipo).
+Rounds to the nearest integer (returns `long` or `int` depending on the type).
 
 ```java
 double value = 4.6;
 System.out.println(Math.round(value)); // 5
 ```
 
-### 12.2. `Math.floor` y `Math.ceil`
+### 12.2. `Math.floor` and `Math.ceil`
 
-- `floor`: hacia abajo
-- `ceil`: hacia arriba
+- `floor`: down
+- `ceil`: up
 
 ```java
 double value = 4.2;
@@ -346,31 +346,31 @@ System.out.println(Math.ceil(value));  // 5.0
 
 ---
 
-## 13. Números aleatorios
+## 13. Random numbers
 
 ### 13.1. `Math.random()`
 
-`Math.random()` devuelve un `double` entre:
+`Math.random()` returns an `double` between:
 
-- 0.0 (incluido)
-- 1.0 (excluido)
+- 0.0 (included)
+- 1.0 (excluded)
 
 ```java
 double r = Math.random();
 System.out.println(r);
 ```
 
-### 13.2. Aleatorio entero en un rango (muy común)
+### 13.2. Random integer in a range (very common)
 
-Queremos un entero entre `min` y `max` (incluidos).
+We want an integer between `min` and `max` (inclusive).
 
-Fórmula:
+Formula:
 
 ```java
 int randomInt = (int) (Math.random() * (max - min + 1)) + min;
 ```
 
-Ejemplo: entero entre 1 y 6 (como un dado)
+Example: integer between 1 and 6 (like a die)
 
 ```java
 int min = 1;
@@ -382,7 +382,7 @@ System.out.println(dice);
 
 ---
 
-## 14. Constantes matemáticas
+## 14. Mathematical constants
 
 ### 14.1. `Math.PI`
 
@@ -390,7 +390,7 @@ System.out.println(dice);
 System.out.println(Math.PI);
 ```
 
-Ejemplo: área de un círculo
+Example: area of a circle
 
 ```java
 double radius = 3.0;
@@ -407,11 +407,11 @@ System.out.println(Math.E);
 
 ---
 
-## 15. Ejemplos guiados completos
+## 15. Complete Guided Examples
 
-### 15.1. Calcular distancia en una línea (valor absoluto)
+### 15.1. Calculate distance on a line (absolute value)
 
-Objetivo: dados dos puntos en una recta, calcular la distancia.
+Objective: given two points on a line, calculate the distance.
 
 ```java
 public class Main {
@@ -427,13 +427,13 @@ public class Main {
 
 ---
 
-### 15.2. Redondear un precio a 2 decimales (enfoque simple)
+### 15.2. Round a price to 2 decimal places (simple approach)
 
-A veces quieres redondear a 2 decimales. Un enfoque típico es:
+Sometimes you want to round to 2 decimal places. A typical approach is:
 
-- Multiplicar por 100
-- Redondear
-- Dividir entre 100
+- Multiply by 100
+- Round
+- Divide by 100
 
 ```java
 public class Main {
@@ -448,9 +448,9 @@ public class Main {
 
 ---
 
-### 15.3. Generar una contraseña numérica de 4 dígitos
+### 15.3. Generate a 4-digit numeric password
 
-Generar un número aleatorio entre 1000 y 9999:
+Generate a random number between 1000 and 9999:
 
 ```java
 public class Main {
@@ -466,33 +466,33 @@ public class Main {
 
 ---
 
-## 16. Errores típicos con `Math` y `static`
+## 16. Typical errors with `Math` and `static`
 
-### 16.1. Pensar que `Math.random()` incluye el 1.0
+### 16.1. Thinking that `Math.random()` includes 1.0
 
-No lo incluye, puede acercarse pero no llega a 1.0.
+It does not include it, it can get close but it does not reach 1.0.
 
-### 16.2. Olvidar el `+ 1` en rangos inclusivos
+### 16.2. Forget `+ 1` in inclusive ranges
 
-Para rangos que incluyen `max`, necesitas `(max - min + 1)`.
+For ranges that include `max`, you need `(max - min + 1)`.
 
-### 16.3. Confundir métodos estáticos con métodos de instancia
+### 16.3. Confusing static methods with instance methods
 
-Esto es incorrecto:
+This is incorrect:
 
 ```java
 // Math m = new Math(); // no se puede (constructor privado)
 ```
 
-`Math` se usa directamente:
+`Math` is used directly:
 
 ```java
 double x = Math.sqrt(9);
 ```
 
-### 16.4. Usar `Math.pow` y esperar un `int`
+### 16.4. Use `Math.pow` and wait for an `int`
 
-`Math.pow` devuelve `double`. Si necesitas `int`, convierte con cuidado:
+`Math.pow` returns `double`. If you need `int`, please convert carefully:
 
 ```java
 int value = (int) Math.pow(2, 3); // 8
@@ -500,25 +500,25 @@ int value = (int) Math.pow(2, 3); // 8
 
 ---
 
-## 17. Buenas prácticas
+## 17. Good practices
 
-- Usa métodos estáticos cuando no necesites estado de objeto.
-- Centraliza utilidades en métodos estáticos (si tiene sentido).
-- Evita clases “Utils” enormes: que tengan un propósito claro.
-- Para aleatorios, recuerda la fórmula para rangos.
-- Para redondeos con decimales, usa técnicas claras (como la de multiplicar y dividir).
-
----
-
-## 18. A tener en cuenta
-
-- `static` significa “pertenece a la clase”.
-- Métodos estáticos se llaman con `ClassName.method()`.
-- Métodos de instancia se llaman con `object.method()`.
-- `main` es estático porque Java lo ejecuta sin crear objetos.
-- `Math` es una clase de utilidades con métodos estáticos: `sqrt`, `pow`, `max`, `round`, etc.
-- `Math.random()` genera un `double` entre 0.0 y 1.0 (sin incluir 1.0).
+- Use static methods when you don't need object state.
+- Centralize utilities in static methods (if it makes sense).
+- Avoid huge “Utils” classes: they have a clear purpose.
+- For randoms, remember the formula for ranges.
+- To round with decimals, use clear techniques (such as multiplying and dividing).
 
 ---
 
-En el siguiente tema continuaremos con los importantes conceptos de Programación Orientada a Objetos **Herencia y Polimorfismo**.
+## 18. To take into account
+
+- `static` means “belongs to the class”.
+- Static methods are called with `ClassName.method()`.
+- Instance methods are called with `object.method()`.
+- `main` is static because Java executes it without creating objects.
+- `Math` is a class of utilities with static methods: `sqrt`, `pow`, `max`, `round`, etc.
+- `Math.random()` generates an `double` between 0.0 and 1.0 (not including 1.0).
+
+---
+
+In the next topic we will continue with the important concepts of Object-Oriented Programming **Inheritance and Polymorphism**.

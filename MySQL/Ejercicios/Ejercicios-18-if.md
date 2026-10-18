@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 18: Uso de IF en Consultas y Procedimientos Almacenados en MySQL**
+# **Exercises - Topic 18: Use of IF in Queries and Stored Procedures in MySQL**
 
-A continuación, encontrarás 6 ejercicios prácticos para trabajar con **IF** en MySQL, tanto como función en consultas como estructura de control en procedimientos.
+Below, you will find 6 practical exercises to work with **IF** in MySQL, both as a function in queries and as a control structure in procedures.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: IF en consulta para clasificación de precios**
+### **Exercise 1: IF in query for price classification**
 
-En la tabla `products(id, name, price)`, muestra el nombre y una columna calculada `categoria_precio` que indique `'Caro'` si `price > 50`, en caso contrario `'Económico'`.
+In the `products(id, name, price)` table, displays the name and a calculated column `categoria_precio` that indicates `'Caro'` if `price > 50`, otherwise `'Económico'`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT name,
@@ -22,11 +22,11 @@ FROM products;
 
 ---
 
-### **Ejercicio 2: IF en consulta con comparación de fechas**
+### **Exercise 2: IF in query with date comparison**
 
-En la tabla `events(id, name, event_date)`, muestra el nombre y un campo `estado_evento` que indique `'Pasado'` si `event_date` es anterior a la fecha actual, o `'Próximo'` en caso contrario.
+In the `events(id, name, event_date)` table, display the name and an `estado_evento` field indicating `'Pasado'` if `event_date` is before the current date, or `'Próximo'` otherwise.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT name,
@@ -38,15 +38,15 @@ FROM events;
 
 ---
 
-### **Ejercicio 3: Procedimiento con IF y ELSEIF**
+### **Exercise 3: Procedure with IF and ELSEIF**
 
-Crea un procedimiento `evaluar_producto` que reciba `p_id INT` y muestre:
+Create a procedure `evaluar_producto` that receives `p_id INT` and displays:
 
-- `'Muy caro'` si `price > 100`
-- `'Caro'` si `price > 50`
-- `'Económico'` en otro caso.
+- `'Muy caro'` yes `price > 100`
+- `'Caro'` yes `price > 50`
+- `'Económico'` otherwise.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -70,11 +70,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 4: IF en SELECT con cálculo adicional**
+### **Exercise 4: IF in SELECT with additional calculation**
 
-En la tabla `orders(id, total_amount)`, muestra el `id`, el `total_amount` y una columna `total_con_envio` que sume 5 si `total_amount` es menor de 50, en caso contrario deje el mismo valor.
+In the `orders(id, total_amount)` table, display the `id`, the `total_amount`, and an `total_con_envio` column that sums to 5 if `total_amount` is less than 50, otherwise leave the same value.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT id,
@@ -87,15 +87,15 @@ FROM orders;
 
 ---
 
-### **Ejercicio 5: Procedimiento con IF anidado**
+### **Exercise 5: Procedure with nested IF**
 
-Crea un procedimiento `clasificar_cliente_por_pedidos` que reciba `p_id INT` y clasifique así:
+Create a procedure `clasificar_cliente_por_pedidos` that receives `p_id INT` and classifies like this:
 
-- `'Sin pedidos'` si no tiene registros en `orders`.
-- `'Cliente nuevo'` si tiene 1 o 2 pedidos.
-- `'Cliente recurrente'` si tiene más de 2 pedidos.
+- `'Sin pedidos'` if you have no records in `orders`.
+- `'Cliente nuevo'` if you have 1 or 2 orders.
+- `'Cliente recurrente'` if you have more than 2 orders.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -119,11 +119,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 6: IF en combinación con otras funciones**
+### **Exercise 6: IF in combination with other functions**
 
-En la tabla `employees(id, hire_date)`, muestra el `id`, la `hire_date` y una columna `antiguedad_categoria` que indique `'Antiguo'` si lleva más de 5 años en la empresa, en caso contrario `'Reciente'`.
+In the `employees(id, hire_date)` table, display the `id`, the `hire_date`, and an `antiguedad_categoria` column indicating `'Antiguo'` if you have been with the company for more than 5 years, otherwise `'Reciente'`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT id,

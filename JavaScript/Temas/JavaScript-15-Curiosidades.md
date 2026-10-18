@@ -1,30 +1,30 @@
-# **Tema 15: Curiosidades y Comportamientos Extraños en JavaScript**
+# **Topic 15: Curiosities and Strange Behaviors in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-JavaScript es un lenguaje flexible y dinámico, pero esta flexibilidad a veces genera comportamientos inesperados o curiosos. En este tema exploraremos algunas de las peculiaridades y cómo manejarlas correctamente.
+JavaScript is a flexible and dynamic language, but this flexibility sometimes generates unexpected or curious behavior. In this topic we will explore some of the quirks and how to handle them correctly.
 
 ---
 
-## **2. Comparaciones Extrañas**
+## **2. Strange Comparisons**
 
-JavaScript realiza conversiones implícitas de tipos al comparar valores, lo que puede producir resultados inesperados.
+JavaScript performs implicit type conversions when comparing values, which can produce unexpected results.
 
-### **2.1. Comparaciones con `==` y `===`**
+### **2.1. Comparisons with `==` and `===`**
 
 ```js
 console.log(0 == "0"); // true (conversión implícita)
 console.log(0 === "0"); // false (comparación estricta)
 ```
 
-### **2.2. `null` y `undefined` en Comparaciones**
+### **2.2. `null` and `undefined` in Comparisons**
 
 ```js
 console.log(null == undefined); // true (se consideran equivalentes)
 console.log(null === undefined); // false (son tipos distintos)
 ```
 
-### **2.3. ¿Es `NaN` igual a `NaN`?**
+### **23. Is `NaN` the same as `NaN`?**
 
 ```js
 console.log(NaN === NaN); // false (NaN nunca es igual a sí mismo)
@@ -33,9 +33,9 @@ console.log(Number.isNaN(NaN)); // true (forma correcta de verificar NaN)
 
 ---
 
-## **3. Comportamiento Extraño de los Arrays**
+## **3. Strange Array Behavior**
 
-### **3.1. Arrays con Espacios Vacíos**
+### **3.1. Arrays with Empty Spaces**
 
 ```js
 const arr = [1, , 3];
@@ -43,7 +43,7 @@ console.log(arr.length); // 3 (pero el segundo elemento es `empty`)
 console.log(arr[1]); // undefined
 ```
 
-### **3.2. Sumar Arrays con `+`**
+### **3.2. Add Arrays with `+`**
 
 ```js
 console.log([1, 2, 3] + [4, 5, 6]); // "1,2,34,5,6" (se convierten en strings y se concatenan)
@@ -51,18 +51,18 @@ console.log([1, 2, 3] + [4, 5, 6]); // "1,2,34,5,6" (se convierten en strings y 
 
 ---
 
-## **4. Conversión Implícita de Tipos**
+## **4. Implicit Type Conversion**
 
-JavaScript intenta convertir tipos automáticamente en ciertas operaciones.
+JavaScript tries to automatically convert types in certain operations.
 
-### **4.1. Sumando números con strings**
+### **4.1. Adding numbers with strings**
 
 ```js
 console.log(5 + "5"); // "55" (número convertido a string)
 console.log("5" - 2); // 3 (string convertido a número)
 ```
 
-### **4.2. `true` y `false` como números**
+### **4.2. `true` and `false` as numbers**
 
 ```js
 console.log(true + true); // 2 (true se convierte en 1)
@@ -71,9 +71,9 @@ console.log(false + 1); // 1 (false se convierte en 0)
 
 ---
 
-## **5. Objetos y Arrays en Comparaciones**
+## **5. Objects and Arrays in Comparisons**
 
-### **5.1. Objetos Comparados con Sí Mismos**
+### **5.1. Objects Compared to Themselves**
 
 ```js
 const obj = {};
@@ -81,7 +81,7 @@ console.log(obj === obj); // true (misma referencia en memoria)
 console.log({} === {}); // false (diferentes referencias en memoria)
 ```
 
-### **5.2. `typeof` de Arrays y `null`**
+### **5.2. `typeof` of Arrays and `null`**
 
 ```js
 console.log(typeof []); // "object" (aunque es un array)
@@ -90,15 +90,15 @@ console.log(typeof null); // "object" (error histórico de JavaScript)
 
 ---
 
-## **6. `null` y `undefined` en Operaciones Matemáticas**
+## **6. `null` and `undefined` in Mathematical Operations**
 
-### **6.1. Suma con `null`**
+### **6.1. Sum with `null`**
 
 ```js
 console.log(null + 1); // 1 (null se convierte en 0)
 ```
 
-### **6.2. Multiplicación con `undefined`**
+### **6.2. Multiplication with `undefined`**
 
 ```js
 console.log(undefined * 5); // NaN (undefined no puede convertirse a un número)
@@ -106,9 +106,9 @@ console.log(undefined * 5); // NaN (undefined no puede convertirse a un número)
 
 ---
 
-## **7. Comportamientos extraños con `typeof`**
+## **7. Strange behaviors with `typeof`**
 
-### **7.1. `typeof` en valores inesperados**
+### **7.1. `typeof` in unexpected values**
 
 ```js
 console.log(typeof NaN); // "number" (aunque no representa un número real)
@@ -117,7 +117,7 @@ console.log(typeof []); // "object" (un array es técnicamente un objeto)
 console.log(typeof function () {}); // "function" (pero sigue siendo un objeto)
 ```
 
-### **7.2. ¿Es un número infinito?**
+### **7.2. Is it an infinite number?**
 
 ```js
 console.log(typeof Infinity); // "number"
@@ -127,9 +127,9 @@ console.log(isFinite(1000)); // true
 
 ---
 
-## **8. Comportamiento Curioso de los Strings**
+## **8. Curious String Behavior**
 
-### **8.1. `String` convertido a número automáticamente**
+### **8.1. `String` converted to number automatically**
 
 ```js
 console.log("10" * 2); // 20 (convierte el string en número implícitamente)
@@ -137,7 +137,7 @@ console.log("10" - 1); // 9 (también convierte el string a número)
 console.log("10" + 1); // "101" (pero aquí lo trata como una concatenación de string)
 ```
 
-### **8.2. Comparación con `>` y `<` en strings**
+### **8.2. Comparison with `>` and `<` in strings**
 
 ```js
 console.log("2" > "12"); // true (comparación lexicográfica, "2" es mayor que "1")
@@ -145,9 +145,9 @@ console.log("2" > "12"); // true (comparación lexicográfica, "2" es mayor que 
 
 ---
 
-## **9. Valores `falsy` y `truthy` Extraños**
+## **9. `falsy` and `truthy` Strange Values**
 
-### **9.1. Valores `falsy` inesperados**
+### **9.1. Unexpected `falsy` values**
 
 ```js
 console.log(Boolean(0)); // false
@@ -157,7 +157,7 @@ console.log(Boolean([])); // true (un array vacío es truthy)
 console.log(Boolean({})); // true (un objeto vacío es truthy)
 ```
 
-### **9.2. ¿Cómo convertir cualquier valor en `true` o `false`?**
+### **9.2. How to convert any value to `true` or `false`?**
 
 ```js
 console.log(!!"texto"); // true
@@ -167,16 +167,16 @@ console.log(!!null); // false
 
 ---
 
-## **10. Rarezas con Arrays y Objetos**
+## **10. Oddities with Arrays and Objects**
 
-### **10.1. Comparación de Arrays**
+### **10.1. Array Comparison**
 
 ```js
 console.log([] == []); // false (son referencias distintas en memoria)
 console.log([] == ![]); // true (![] se convierte en false que se convierte en 0 implícitamente y [] es también convertido a 0 a efectos de esta comparación)
 ```
 
-### **10.2. Acceder a índices inexistentes en un array**
+### **10.2. Access non-existent indexes in an array**
 
 ```js
 const arr = [1, 2, 3];
@@ -185,9 +185,9 @@ console.log(arr[10]); // undefined (pero no error)
 
 ---
 
-## **11. Funciones y su Comportamiento Inusual**
+## **11. Functions and their Unusual Behavior**
 
-### **11.1. Funciones con parámetros duplicados**
+### **11.1. Functions with duplicate parameters**
 
 ```js
 function weird(a, a, a) {
@@ -198,16 +198,16 @@ weird(1, 2, 3); // Salida: 3 (el último valor sobrescribe los anteriores)
 
 ---
 
-[![Cómo crear un Reloj](https://img.youtube.com/vi/7cQ81kmMIpE/0.jpg)](https://www.youtube.com/watch?v=7cQ81kmMIpE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![How to create a Watch](https://img.youtube.com/vi/7cQ81kmMIpE/0.jpg)](https://www.youtube.com/watch?v=7cQ81kmMIpE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **12. Conclusión**
+## **12. Conclusion**
 
-JavaScript es un lenguaje poderoso, pero algunas de sus características pueden llevar a resultados inesperados. Comprender estas peculiaridades ayuda a escribir código más sólido y evitar errores difíciles de detectar.
+JavaScript is a powerful language, but some of its features can lead to unexpected results. Understanding these quirks helps you write more robust code and avoid hard-to-detect bugs.
 
 ---
 
-[![Fin de Curso](https://img.youtube.com/vi/pP-bbDGJZZE/0.jpg)](https://www.youtube.com/watch?v=pP-bbDGJZZE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![End of Course](https://img.youtube.com/vi/pP-bbDGJZZE/0.jpg)](https://www.youtube.com/watch?v=pP-bbDGJZZE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---

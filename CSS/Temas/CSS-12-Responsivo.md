@@ -1,16 +1,16 @@
-# **Tema 12: Media Queries y Diseño Responsivo en CSS**
+# **Topic 12: Media Queries and Responsive Design in CSS**
 
-## **1. Introducción al diseño responsivo**
+## **1. Introduction to responsive design**
 
-El diseño responsivo permite que una página web se adapte a diferentes tamaños de pantalla y dispositivos, mejorando la experiencia del usuario en móviles, tabletas y escritorios. Para lograrlo, CSS ofrece las **media queries**, que aplican estilos condicionales según las características del dispositivo.
+Responsive design allows a website to adapt to different screen sizes and devices, improving the user experience on mobiles, tablets and desktops. To achieve this, CSS offers **media queries**, which apply conditional styles depending on the characteristics of the device.
 
 ---
 
-## **2. ¿Qué son las Media Queries?**
+## **2. What are Media Queries?**
 
-Las **media queries** permiten aplicar reglas CSS basadas en el ancho, alto, resolución o características específicas del dispositivo.
+**media queries** allow you to apply CSS rules based on width, height, resolution or device-specific characteristics.
 
-### **Sintaxis básica:**
+### **Basic syntax:**
 
 ```css
 @media (condición) {
@@ -18,7 +18,8 @@ Las **media queries** permiten aplicar reglas CSS basadas en el ancho, alto, res
 }
 ```
 
-### **Ejemplo:**
+
+### **Example:**
 
 ```css
 /* Cambia el fondo a azul en pantallas menores a 600px */
@@ -29,23 +30,24 @@ Las **media queries** permiten aplicar reglas CSS basadas en el ancho, alto, res
 }
 ```
 
-En este ejemplo, cuando el ancho de la pantalla sea de 600 píxeles o menos, el fondo se volverá azul.
+
+In this example, when the screen width is 600 pixels or less, the background will turn blue.
 
 ---
 
-## **3. Breakpoints comunes en diseño responsivo**
+## **3. Common Breakpoints in Responsive Design**
 
-Los **breakpoints** son puntos donde el diseño cambia para adaptarse al tamaño del dispositivo.
+**breakpoints** are points where the layout changes to adapt to the size of the device.
 
-| Dispositivo         | Ancho máximo |
+| Device | Maximum width |
 | ------------------- | ------------ |
-| Teléfonos pequeños  | 480px        |
-| Teléfonos grandes   | 600px        |
-| Tabletas            | 768px        |
-| Laptops             | 1024px       |
-| Escritorios grandes | 1200px       |
+| Small phones | 480px |
+| Big phones | 600px |
+| Tablets | 768px |
+| Laptops | 1024px |
+| Large desks | 1200px |
 
-### **Ejemplo de múltiples breakpoints:**
+### **Example of multiple breakpoints:**
 
 ```css
 /* Estilos para teléfonos */
@@ -70,17 +72,18 @@ Los **breakpoints** son puntos donde el diseño cambia para adaptarse al tamaño
 }
 ```
 
+
 ---
 
-## **4. Uso de operadores lógicos en media queries**
+## **4. Use of logical operators in media queries**
 
-Las media queries pueden combinar condiciones usando operadores lógicos.
+Media queries can combine conditions using logical operators.
 
-- **`and`**: Combina múltiples condiciones.
-- **`not`**: Excluye ciertas condiciones.
-- **`only`**: Aplica estilos solo si se cumple toda la condición.
+- **`and`**: Combine multiple conditions.
+- **`not`**: Excludes certain conditions.
+- **`only`**: Applies styles only if all condition is met.
 
-### **Ejemplo:**
+### **Example:**
 
 ```css
 /* Aplica estilos solo en pantallas entre 600px y 900px */
@@ -91,13 +94,14 @@ Las media queries pueden combinar condiciones usando operadores lógicos.
 }
 ```
 
+
 ---
 
-## **5. Media Queries para orientación y resolución**
+## **5. Media Queries for guidance and resolution**
 
-También se pueden usar media queries para detectar la orientación de la pantalla o la densidad de píxeles.
+Media queries can also be used to detect screen orientation or pixel density.
 
-### **Ejemplo de orientación:**
+### **Guidance example:**
 
 ```css
 /* Estilo para pantallas en orientación horizontal */
@@ -108,7 +112,8 @@ También se pueden usar media queries para detectar la orientación de la pantal
 }
 ```
 
-### **Ejemplo de resolución:**
+
+### **Example resolution:**
 
 ```css
 /* Estilos para pantallas de alta resolución */
@@ -119,13 +124,14 @@ También se pueden usar media queries para detectar la orientación de la pantal
 }
 ```
 
+
 ---
 
-## **6. Diseño móvil primero (Mobile First)**
+## **6. Mobile First Design**
 
-El enfoque **mobile first** sugiere diseñar primero para dispositivos móviles y luego escalar hacia pantallas más grandes.
+The **mobile first** approach suggests designing for mobile devices first and then scaling to larger screens.
 
-### **Ejemplo:**
+### **Example:**
 
 ```css
 /* Estilo base para móviles */
@@ -141,23 +147,24 @@ El enfoque **mobile first** sugiere diseñar primero para dispositivos móviles 
 }
 ```
 
-Este enfoque mejora el rendimiento y la accesibilidad para dispositivos móviles.
+
+This approach improves performance and accessibility for mobile devices.
 
 ---
 
-## **7. Novedades y Sintaxis Moderna de Media Queries en CSS**
+## **7. News and Modern Syntax of Media Queries in CSS**
 
-Con el paso del tiempo, las **media queries** han evolucionado, introduciendo nuevas características y simplificaciones en la sintaxis. Estas actualizaciones permiten un control más granular y limpio del diseño responsivo.
+Over time, **media queries** have evolved, introducing new features and simplifications to the syntax. These updates allow for more granular and cleaner control of responsive design.
 
 ---
 
-### Sintaxis de nivel 4 de Media Queries
+### Media Queries Level 4 Syntax
 
-La especificación de **Media Queries Level 4** trajo consigo una serie de mejoras que simplifican la sintaxis y amplían las posibilidades.
+The **Media Queries Level 4** specification brought with it a series of improvements that simplify the syntax and expand the possibilities.
 
-### Sintaxis simplificada para rangos
+### Simplified syntax for ranges
 
-Antes, para definir un rango se usaban operadores lógicos:
+Previously, logical operators were used to define a range:
 
 ```css
 /* Método antiguo */
@@ -168,7 +175,8 @@ Antes, para definir un rango se usaban operadores lógicos:
 }
 ```
 
-Con la sintaxis moderna, se puede escribir de forma más sencilla:
+
+With modern syntax, it can be written more simply:
 
 ```css
 /* Método moderno */
@@ -179,20 +187,20 @@ Con la sintaxis moderna, se puede escribir de forma más sencilla:
 }
 ```
 
-### Nuevos tipos de consultas
 
-- `width` y `height`: Se puede omitir `min-` o `max-` usando operadores.
-- `aspect-ratio`: Detecta la relación de aspecto.
-- `color-gamut`: Detecta el rango de colores soportados.
-- `prefers-reduced-motion`: Detecta si el usuario prefiere animaciones reducidas.
+### New types of queries
+
+- `width` and `height`: `min-` or `max-` can be bypassed using operators.
+- `aspect-ratio`: Detects the aspect ratio.
+- `color-gamut`: Detects the range of supported colors.
+- `prefers-reduced-motion`: Detects if the user prefers reduced animations.
 
 ---
+## **8. New features and advanced queries**
 
-## **8. Nuevas características y consultas avanzadas**
+### **8.1. `prefers-color-scheme` (Dark/Light Mode)**
 
-### **8.1. `prefers-color-scheme` (Modo oscuro/claro)**
-
-Permite detectar si el usuario utiliza un tema claro u oscuro.
+Allows you to detect if the user uses a light or dark theme.
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -210,9 +218,10 @@ Permite detectar si el usuario utiliza un tema claro u oscuro.
 }
 ```
 
-### **8.2. `prefers-reduced-motion` (Reducir animaciones)**
 
-Detecta si el usuario prefiere minimizar las animaciones.
+### **8.2. `prefers-reduced-motion` (Reduce animations)**
+
+Detects if the user prefers to minimize animations.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -223,9 +232,10 @@ Detecta si el usuario prefiere minimizar las animaciones.
 }
 ```
 
-### **8.3. `hover` y `pointer`**
 
-Permiten detectar las capacidades de entrada del dispositivo.
+### **8.3. `hover` and `pointer`**
+
+They allow you to detect the input capabilities of the device.
 
 ```css
 /* Detecta dispositivos que soportan hover */
@@ -243,9 +253,10 @@ Permiten detectar las capacidades de entrada del dispositivo.
 }
 ```
 
-### **8.4. `aspect-ratio` (Relación de aspecto)**
 
-Permite aplicar estilos basados en la relación de aspecto de la pantalla.
+### **8.4. `aspect-ratio` (Aspect Ratio)**
+
+Allows you to apply styles based on the aspect ratio of the screen.
 
 ```css
 @media (aspect-ratio: 16/9) {
@@ -255,13 +266,14 @@ Permite aplicar estilos basados en la relación de aspecto de la pantalla.
 }
 ```
 
+
 ---
 
-## **9. Media Queries Contenedores (Container Queries)**
+## **9. Media Queries Containers (Container Queries)**
 
-Una de las novedades más importantes es la introducción de las **Container Queries**, que permiten aplicar estilos basados en el tamaño de un contenedor, en lugar del tamaño de la ventana.
+One of the most important new features is the introduction of **Container Queries**, which allow you to apply styles based on the size of a container, instead of the size of the window.
 
-### **9.1. Ejemplo básico de Container Queries**
+### **9.1. Basic Container Queries Example**
 
 ```css
 /* Definir un contenedor */
@@ -277,23 +289,24 @@ Una de las novedades más importantes es la introducción de las **Container Que
 }
 ```
 
-Esto permite que los componentes sean más responsivos y adaptables sin depender del tamaño del viewport.
 
-Con estas novedades y sintaxis moderna, puedes crear diseños responsivos más inteligentes, accesibles y fáciles de mantener.
+This allows components to be more responsive and adaptable without depending on the viewport size.
 
----
-
-[![CSS Responsivo](https://img.youtube.com/vi/o2BqdTxIA9I/0.jpg)](https://www.youtube.com/watch?v=o2BqdTxIA9I&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+With these new features and modern syntax, you can create responsive designs that are smarter, more accessible, and easier to maintain.
 
 ---
 
-## **10. Buenas prácticas en diseño responsivo**
+[![Responsive CSS](https://img.youtube.com/vi/o2BqdTxIA9I/0.jpg)](https://www.youtube.com/watch?v=o2BqdTxIA9I&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
-- Diseñar con el enfoque **mobile first**.
-- Evitar unidades fijas como `px` y usar unidades relativas (`em`, `%`, `vh`, `vw`).
-- Utilizar **flexbox** o **grid** para layouts flexibles.
-- Probar el diseño en múltiples dispositivos y tamaños de pantalla.
-- Optimizar imágenes y recursos para cargas rápidas en móviles.
-- Utilizar la sintaxis simplificada para rangos para un código más limpio.
-- Implementar `prefers-color-scheme` y `prefers-reduced-motion` para mejorar la experiencia de usuario.
-- Aprovechar las Container Queries para componentes más flexibles.
+---
+
+## **10. Good practices in responsive design**
+
+- Design with the **mobile first** approach.
+- Avoid fixed units like `px` and use relative units (`em`, `%`, `vh`, `vw`).
+- Use **flexbox** or **grid** for flexible layouts.
+- Test the layout on multiple devices and screen sizes.
+- Optimize images and resources for fast loads on mobile.
+- Use simplified syntax for ranges for cleaner code.
+- Implement `prefers-color-scheme` and `prefers-reduced-motion` to improve the user experience.
+- Take advantage of Container Queries for more flexible components.

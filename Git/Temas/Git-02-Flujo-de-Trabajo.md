@@ -1,30 +1,30 @@
-# **Tema 2: Flujo de trabajo en Git**
+# **Topic 2: Workflow in Git**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Git sigue un flujo de trabajo basado en la gestión de cambios mediante **commits**, **ramas** y **repositorios remotos**. Comprender este flujo es fundamental para aprovechar al máximo las capacidades del sistema de control de versiones.
+Git follows a workflow based on change management using **commits**, **branches** and **remote repositories**. Understanding this flow is essential to taking full advantage of the capabilities of the version control system.
 
-### **Conceptos clave**
+### **Key Concepts**
 
-- **Área de trabajo**: Directorio donde se encuentran los archivos editables del proyecto.
-- **Área de preparación (staging area)**: Espacio donde se almacenan los cambios antes de ser confirmados.
-- **Commit**: Punto de control del repositorio.
-- **Repositorio local**: Historial de cambios almacenado en la máquina del usuario.
-- **Repositorio remoto**: Copia del proyecto en un servidor, como GitHub, GitLab o Bitbucket.
+- **Work area**: Directory where the editable project files are located.
+- **Staging area**: Space where changes are stored before being committed.
+- **Commit**: Repository checkpoint.
+- **Local repository**: Change history stored on the user's machine.
+- **Remote repository**: Copy of the project on a server, such as GitHub, GitLab or Bitbucket.
 
 ---
 
-## **2. Flujo básico de Git**
+## **2. Basic Git flow**
 
-Un flujo de trabajo típico en Git sigue estos pasos:
+A typical workflow in Git follows these steps:
 
-1. **Modificar archivos** en el directorio de trabajo.
-2. **Añadir cambios** al área de preparación (`git add`).
-3. **Confirmar los cambios** en el historial (`git commit`).
-4. **Enviar los cambios al repositorio remoto** (`git push`).
-5. **Descargar cambios del repositorio remoto** (`git pull`).
+1. **Modify files** in the working directory.
+2. **Add changes** to the staging area (`git add`).
+3. **Commit changes** to history (`git commit`).
+4. **Push changes to remote repository** (`git push`).
+5. **Download changes from remote repository** (`git pull`).
 
-### **Diagrama del flujo de trabajo**
+### **Workflow diagram**
 
 ```
 [Modificación] → git add → [Staging Area] → git commit → [Repositorio Local] → git push → [Repositorio Remoto]
@@ -32,31 +32,31 @@ Un flujo de trabajo típico en Git sigue estos pasos:
 
 ---
 
-## **3. Comandos fundamentales del flujo de trabajo**
+## **3. Fundamental Workflow Commands**
 
-| Comando                   | Descripción                                                    |
-| ------------------------- | -------------------------------------------------------------- |
-| `git status`              | Muestra el estado actual del repositorio.                      |
-| `git add <archivo>`       | Añade un archivo específico al área de preparación.            |
-| `git add .`               | Añade todos los archivos modificados al área de preparación.   |
-| `git commit -m "mensaje"` | Guarda los cambios en el historial con un mensaje descriptivo. |
-| `git log`                 | Muestra el historial de commits del repositorio.               |
-| `git pull`                | Descarga y fusiona cambios desde el repositorio remoto.        |
-| `git push`                | Sube los cambios locales al repositorio remoto.                |
+| Command | Description |
+| ------------------------- | ----------------------------------------------------------- |
+| `git status` | Shows the current state of the repository.                      |
+| `git add <archivo>` | Adds a specific file to the staging area.            |
+| `git add .` | Add all modified files to the staging area.   |
+| `git commit -m "mensaje"` | Save changes to history with a descriptive message. |
+| `git log` | Shows the commit history of the repository.               |
+| `git pull` | Download and merge changes from the remote repository.        |
+| `git push` | Upload local changes to the remote repository.                |
 
 ---
 
-## **4. Ejemplo de flujo de trabajo**
+## **4. Workflow example**
 
-Si quieres subir tus cambios a un repositorio remoto como github, necesitas crearte una cuenta y vincularla con tu ordenador.
+If you want to upload your changes to a remote repository like github, you need to create an account and link it to your computer.
 
-### **1. Crear y modificar archivos**
+### **1. Create and modify files**
 
-- Crea una carpeta. Ej: `mi_proyecto`.
-- Añade algún fichero. Ej: `archivo.txt`.
-- Haz cambios en el fichero y abre una terminal.
+- Create a folder. Ex: `mi_proyecto`.
+- Add a file. Ex: `archivo.txt`.
+- Make changes to the file and open a terminal.
 
-### **2. Iniciar un repositorio y realizar el primer commit**
+### **2. Start a repository and make the first commit**
 
 ```bash
 git init
@@ -64,7 +64,7 @@ git add archivo.txt
 git commit -m "Primer commit"
 ```
 
-### **3. Subir los cambios a GitHub**
+### **3. Upload changes to GitHub**
 
 ```bash
 git remote add origin https://github.com/usuario/mi_proyecto.git
@@ -78,25 +78,25 @@ git push -u origin master
 
 ---
 
-### **Clave SSH**
+### **SSH Key**
 
-Otra manera de vincular tu equipo local con Github es mediante la creación de una clave SSH. [En la documentación oficial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) puedes ver cómo hacerlo facilmente.
-
----
-
-[![Clave SSH](https://img.youtube.com/vi/_vlrPpxs2Go/0.jpg)](https://www.youtube.com/watch?v=_vlrPpxs2Go&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+Another way to link your local machine to Github is by creating an SSH key. [In the official ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) documentation you can see how to do it easily.
 
 ---
 
-## **5. Buenas prácticas en el flujo de trabajo de Git**
-
-- Realizar **commits pequeños y frecuentes** para facilitar el seguimiento de cambios.
-- Escribir mensajes de commit **claros y descriptivos**.
-- Evitar hacer `git commit -m "Cambios"`, ya que no es informativo.
-- Utilizar **ramas** para desarrollar nuevas funcionalidades sin afectar la rama principal.
-- Sincronizar cambios con `git pull` antes de hacer `git push` para evitar conflictos.
-- Añadir un archivo `.gitignore` para evitar subir archivos innecesarios.
+[![SSH](https://img.youtube.com/vi/_vlrPpxs2Go/0.jpg) Key](https://www.youtube.com/watch?v=_vlrPpxs2Go&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
 ---
 
-En el próximo tema, aprenderemos sobre **ramas en Git**, cómo crearlas, fusionarlas y gestionar conflictos de manera eficiente.
+## **5. Git Workflow Best Practices**
+
+- Make **small and frequent commits** to facilitate the tracking of changes.
+- Write **clear and descriptive** commit messages.
+- Avoid doing `git commit -m "Cambios"`, as it is not informative.
+- Use **branches** to develop new features without affecting the main branch.
+- Sync changes with `git pull` before doing `git push` to avoid conflicts.
+- Add an `.gitignore` file to avoid uploading unnecessary files.
+
+---
+
+In the next topic, we will learn about **branches in Git**, how to create them, merge them, and manage conflicts efficiently.

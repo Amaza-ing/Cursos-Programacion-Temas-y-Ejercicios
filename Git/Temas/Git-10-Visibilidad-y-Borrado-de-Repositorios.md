@@ -1,102 +1,102 @@
-# **Tema 10: Repositorios públicos vs privados y cómo borrar ramas y repositorios**
+# **Topic 10: Public vs private repositories and how to delete branches and repositories**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Al trabajar con Git y plataformas como GitHub, GitLab o Bitbucket, es importante conocer la diferencia entre repositorios públicos y privados. Además, en ocasiones es necesario eliminar ramas o repositorios cuando ya no se necesitan.
-
----
-
-## **2. Diferencias entre repositorios públicos y privados**
-
-### **Repositorios públicos**
-
-- Son accesibles para cualquier persona en internet.
-- Cualquier usuario puede ver el código fuente y el historial de commits.
-- Se usan comúnmente en proyectos de código abierto y colaboraciones.
-- Pueden ser bifurcados (**forks**) por otros usuarios para hacer contribuciones.
-
-### **Repositorios privados**
-
-- Solo pueden ser accedidos por usuarios con permisos específicos.
-- Ideales para proyectos personales o empresariales que no deben ser públicos.
-- No pueden ser bifurcados por otros usuarios sin autorización.
-- Requieren planes de pago en algunas plataformas para ciertos equipos y funcionalidades avanzadas.
+When working with Git and platforms like GitHub, GitLab or Bitbucket, it is important to know the difference between public and private repositories. Additionally, it is sometimes necessary to delete branches or repositories when they are no longer needed.
 
 ---
 
-[![Repositorios Públicos vs Privados](https://img.youtube.com/vi/t_yOKbQkgPo/0.jpg)](https://www.youtube.com/watch?v=t_yOKbQkgPo&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+## **2. Differences between public and private repositories**
+
+### **Public repositories**
+
+- They are accessible to anyone on the internet.
+- Any user can view the source code and commit history.
+- They are commonly used in open source projects and collaborations.
+- They can be forked by other users to make contributions.
+
+### **Private repositories**
+
+- They can only be accessed by users with specific permissions.
+- Ideal for personal or business projects that should not be public.
+- They cannot be forked by other users without authorization.
+- Require payment plans on some platforms for certain equipment and advanced functionalities.
 
 ---
 
-## **3. Cómo borrar ramas en Git**
+[![Public vs Private Repositories](https://img.youtube.com/vi/t_yOKbQkgPo/0.jpg)](https://www.youtube.com/watch?v=t_yOKbQkgPo&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
-A medida que se trabaja en un proyecto, es común eliminar ramas obsoletas, tanto en el repositorio local como en el remoto.
+---
 
-### **Eliminar una rama local**
+## **3. How to delete branches in Git**
 
-Para eliminar una rama en el repositorio local:
+As you work on a project, it is common to delete obsolete branches, both in the local and remote repository.
+
+### **Delete a local branch**
+
+To delete a branch in the local repository:
 
 ```bash
 git branch -d nombre-de-la-rama
 ```
 
-Si la rama no ha sido fusionada y se desea forzar su eliminación:
+If the branch has not been merged and you want to force its removal:
 
 ```bash
 git branch -D nombre-de-la-rama
 ```
 
-### **Eliminar una rama remota**
+### **Delete a remote branch**
 
-Para eliminar una rama en un repositorio remoto como GitHub:
+To delete a branch in a remote repository such as GitHub:
 
 ```bash
 git push origin --delete nombre-de-la-rama
 ```
 
-Si se usa GitHub, también se puede eliminar manualmente desde la pestaña **Branches** en la interfaz web del repositorio.
+If using GitHub, it can also be removed manually from the **Branches** tab in the repository web interface.
 
 ---
 
-[![Borrar Ramas](https://img.youtube.com/vi/k4DycHO3ChQ/0.jpg)](https://www.youtube.com/watch?v=k4DycHO3ChQ&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+[![Delete Branches](https://img.youtube.com/vi/k4DycHO3ChQ/0.jpg)](https://www.youtube.com/watch?v=k4DycHO3ChQ&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
 ---
 
-## **4. Cómo borrar un repositorio en Git**
+## **4. How to delete a repository in Git**
 
-Si un repositorio ya no es necesario, se puede eliminar en local o en remoto.
+If a repository is no longer needed, it can be deleted locally or remotely.
 
-### **Eliminar un repositorio local**
+### **Delete a local repository**
 
-Para borrar un repositorio en la máquina local, simplemente eliminar la carpeta que contiene el repositorio:
+To delete a repository on the local machine, simply delete the folder containing the repository:
 
 ```bash
 rm -rf nombre-del-repositorio
 ```
 
-### **Eliminar un repositorio remoto (GitHub, GitLab, etc.)**
+### **Delete a remote repository (GitHub, GitLab, etc.)**
 
-1. Ir al repositorio en la plataforma (GitHub, GitLab, etc.).
-2. Navegar a la configuración del repositorio (**Settings**).
-3. Buscar la opción **Delete this repository**.
-4. Confirmar la eliminación siguiendo las instrucciones.
+1. Go to the repository on the platform (GitHub, GitLab, etc.).
+2. Navigate to the repository settings (**Settings**).
+3. Look for the **Delete this repository** option.
+4. Confirm the deletion by following the instructions.
 
-> **Nota:** Una vez eliminado un repositorio en remoto, no se puede recuperar a menos que se haya realizado una copia previa.
-
----
-
-[![Eliminar Repositorios](https://img.youtube.com/vi/_N10RGUFyBg/0.jpg)](https://www.youtube.com/watch?v=_N10RGUFyBg&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+> **Note:** Once a repository is deleted remotely, it cannot be recovered unless a previous copy has been made.
 
 ---
 
-## **5. Buenas prácticas al manejar repositorios y ramas**
-
-- Mantener los repositorios **públicos** solo si se desea compartir el código abiertamente.
-- Usar **repositorios privados** para proyectos en desarrollo o con información sensible.
-- Eliminar ramas que ya no sean necesarias para mantener un repositorio limpio.
-- Antes de eliminar un repositorio remoto, asegurarse de hacer una copia de seguridad si es necesario.
-- Evitar eliminar ramas activas en uso por otros colaboradores sin previo aviso.
+[![Delete Repositories](https://img.youtube.com/vi/_N10RGUFyBg/0.jpg)](https://www.youtube.com/watch?v=_N10RGUFyBg&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
 ---
 
-En el próximo tema, exploraremos **Qué es el README.md y cómo trabajar con markdown**.
+## **5. Good practices when managing repositories and branches**
+
+- Keep repositories **public** only if you want to share the code openly.
+- Use **private repositories** for projects in development or with sensitive information.
+- Delete branches that are no longer necessary to maintain a clean repository.
+- Before deleting a remote repository, make sure to make a backup if necessary.
+- Avoid deleting active branches in use by other collaborators without prior notice.
+
+---
+
+In the next topic, we will explore **What is the README.md and how to work with markdown**.

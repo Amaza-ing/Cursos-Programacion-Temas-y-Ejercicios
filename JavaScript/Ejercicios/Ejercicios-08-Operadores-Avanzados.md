@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 8: Operadores Avanzados en JavaScript**
+# **Exercises - Topic 8: Advanced Operators in JavaScript**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre los operadores avanzados en JavaScript.
+Below you will find 5 practical exercises on advanced operators in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Uso del Spread Operator (`...`) con Arrays**
+### **Exercise 1: Using the Spread Operator (`...`) with Arrays**
 
-Crea un array `numbers` con los valores `[5, 10, 15]` y otro array `moreNumbers` que contenga los valores de `numbers` más `20` y `25`. Muestra el resultado en consola.
+Create an `numbers` array with the `[5, 10, 15]` values and another `moreNumbers` array containing the `numbers` values plus `20` and `25`. Show the result in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const numbers = [5, 10, 15];
@@ -22,11 +22,11 @@ console.log(moreNumbers); // Salida: [5, 10, 15, 20, 25]
 
 ---
 
-### **Ejercicio 2: Uso del Rest Operator (`...`) en Funciones**
+### **Exercise 2: Using the Rest Operator (`...`) in Functions**
 
-Crea una función `multiplyAll` que acepte un número `factor` y un número variable de argumentos. La función debe devolver un array con cada número multiplicado por `factor`.
+Create a function `multiplyAll` that accepts an `factor` number and a variable number of arguments. The function should return an array with each number multiplied by `factor`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function multiplyAll(factor, ...numbers) {
@@ -40,9 +40,9 @@ console.log(multiplyAll(2, 3, 4, 5)); // Salida: [6, 8, 10]
 
 ---
 
-### **Ejercicio 3: Uso del Optional Chaining (`?.`)**
+### **Exercise 3: Using Optional Chaining (`?.`)**
 
-Dado el siguiente objeto `person`, accede a la propiedad `address.city` de forma segura usando `?.`. Si no existe, muestra "Ciudad no disponible".
+Given the following `person` object, access the `address.city` property safely using `?.`. If it does not exist, it shows "City not available".
 
 ```js
 const person = {
@@ -51,7 +51,7 @@ const person = {
 };
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 console.log(person.address?.city ?? "Ciudad no disponible"); // Salida: "Ciudad no disponible"
@@ -61,11 +61,11 @@ console.log(person.address?.city ?? "Ciudad no disponible"); // Salida: "Ciudad 
 
 ---
 
-### **Ejercicio 4: Uso de Nullish Coalescing (`??`)**
+### **Exercise 4: Using Nullish Coalescing (`??`)**
 
-Declara una variable `discount` que pueda ser `null` o `0`. Usa `??` para asignarle un valor por defecto de `10` solo si es `null` o `undefined`, pero manteniendo el `0` si es su valor.
+Declare an `discount` variable that can be `null` or `0`. Use `??` to assign a default value of `10` only if it is `null` or `undefined`, but keeping `0` if it is its value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 let discount = 0;
@@ -77,11 +77,11 @@ console.log(finalDiscount); // Salida: 0
 
 ---
 
-### **Ejercicio 5: Uso del Operador Ternario (`? :`)**
+### **Exercise 5: Using the Ternary Operator (`? :`)**
 
-Crea una variable `temperature` y usa un operador ternario para asignar "Calor" si es mayor a 30, "Frío" si es menor a 15, y "Templado" en cualquier otro caso.
+Create a variable `temperature` and use a ternary operator to assign "Hot" if greater than 30, "Cold" if less than 15, and "Warm" otherwise.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const temperature = 22;

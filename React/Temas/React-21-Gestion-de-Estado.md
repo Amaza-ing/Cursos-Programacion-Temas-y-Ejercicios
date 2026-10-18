@@ -1,43 +1,43 @@
-# **Tema 21: Gestión de Estado en React**
+# **Topic 21: State Management in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-A medida que una aplicación crece, también lo hace la cantidad de datos que necesita manejar: inputs, resultados de una API, estado de autenticación, filtros, preferencias del usuario, etc.
+As an application grows, so does the amount of data it needs to handle: inputs, results from an API, authentication status, filters, user preferences, etc.
 
-En React, **gestionar correctamente el estado** es clave para que la aplicación sea clara, predecible y fácil de mantener.
+In React, **properly managing state** is key to making the application clear, predictable, and easy to maintain.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es el estado y por qué es importante.
-- Estado local vs estado compartido.
-- Cuándo elevar el estado.
-- Patrones comunes de gestión de estado.
-- Errores típicos y buenas prácticas.
-
----
-
-## **2. ¿Qué es el estado?**
-
-El **estado** es la información que:
-
-- Puede cambiar con el tiempo.
-- Afecta a lo que se renderiza en pantalla.
-- Pertenece a un componente.
-
-Ejemplos de estado:
-
-- El texto de un input.
-- Si un modal está abierto o cerrado.
-- Los datos obtenidos de una API.
-- Si un usuario está autenticado.
-
-En React, el estado se gestiona principalmente con el hook `useState`.
+- What is the state and why is it important.
+- Local state vs shared state.
+- When to raise the status.
+- Common state management patterns.
+- Typical errors and good practices.
 
 ---
 
-## **3. Estado local con `useState`**
+## **2. What is the state?**
 
-El estado local pertenece a **un solo componente**.
+The **status** is the information that:
+
+- May change over time.
+- Affects what is rendered on screen.
+- Belongs to a component.
+
+State examples:
+
+- The text of an input.
+- Whether a modal is open or closed.
+- Data obtained from an API.
+- If a user is authenticated.
+
+In React, state is mainly managed with the `useState` hook.
+
+---
+
+## **3. Local state with `useState`**
+
+The local state belongs to **a single component**.
 
 ```js
 import { useState } from "react";
@@ -56,32 +56,32 @@ function Counter() {
 export default Counter;
 ```
 
-Este estado:
+This state:
 
-- Solo lo usa `Counter`.
-- No se comparte con otros componentes.
-
----
-
-## **4. Estado compartido: el problema**
-
-Problema típico:
-
-- Dos componentes necesitan el mismo dato.
-- Uno lo modifica y el otro lo muestra.
-
-Ejemplo:
-
-- `SearchInput` actualiza un texto.
-- `ResultsList` filtra resultados con ese texto.
-
-Si cada uno tiene su propio estado, **no se sincronizan**.
+- Only used by `Counter`.
+- It is not shared with other components.
 
 ---
 
-## **5. Elevar el estado (lifting state up)**
+## **4. Shared state: the problem**
 
-La solución es **elevar el estado** al componente padre común.
+Typical problem:
+
+- Two components need the same data.
+- One modifies it and the other shows it.
+
+Example:
+
+- `SearchInput` updates a text.
+- `ResultsList` filters results with that text.
+
+If each has its own state, they **do not sync**.
+
+---
+
+## **5. Lifting state up**
+
+The solution is to **raise the status** to the common parent component.
 
 ```js
 import { useState } from "react";
@@ -98,68 +98,68 @@ function App() {
 }
 ```
 
-Aquí:
+Here:
 
-- El estado vive en el padre.
-- Los hijos reciben datos y funciones.
-
----
-
-## **6. Flujo de datos en React**
-
-React sigue un flujo **unidireccional**:
-
-- El estado baja (props).
-- Las acciones suben (callbacks).
-
-Esto hace que:
-
-- El comportamiento sea predecible.
-- Sea más fácil depurar errores.
+- The state lives in the father.
+- Children receive data and functions.
 
 ---
 
-## **7. Patrones comunes de gestión de estado**
+## **6. Data flow in React**
 
-### **7.1. Un estado por campo**
+React follows a **one-way** flow:
+
+- Low status (props).
+- Shares rise (callbacks).
+
+This makes:
+
+- Behavior is predictable.
+- Be easier to debug errors.
+
+---
+
+## **7. Common state management patterns**
+
+### **7.1. One state per field**
 
 ```js
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 ```
 
-Claro y explícito.
+Clear and explicit.
 
 ---
 
-### **7.2. Un solo estado para varios campos**
+### **7.2. A single state for multiple fields**
 
 ```js
 const [form, setForm] = useState({ email: "", password: "" });
 ```
 
-Útil para formularios grandes.
+Useful for large forms.
 
 ---
 
-### **7.3. Estado derivado**
+### **7.3. Derived state**
 
-Datos que se calculan a partir de otro estado:
+Data that is calculated from another state:
 
 ```js
 const filteredItems = items.filter((item) => item.includes(query));
 ```
 
-No necesita `useState`.
+You do not need `useState`.
 
 ---
 
-## **8. Estado y efectos**
+## **8. Status and effects**
 
-Cuando el estado cambia:
+When the state changes:
 
-- El componente se re-renderiza.
-- Los `useEffect` que dependan de ese estado se ejecutan.
+- The component is re-rendered.
+- The `useEffect` that depend on that state are executed.
 
 ```js
 useEffect(() => {
@@ -169,29 +169,29 @@ useEffect(() => {
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Duplicar estado**
+### **9.1. Duplicate status**
 
-Guardar el mismo dato en varios sitios.
+Save the same data in multiple places.
 
-### **9.2. Estado innecesario**
+### **9.2. Unnecessary state**
 
-Usar `useState` para datos derivados.
+Use `useState` for derived data.
 
-### **9.3. Pasar demasiadas props (prop drilling)**
+### **9.3. Passing too many props (prop drilling)**
 
-Se resolverá más adelante con **Context**.
-
----
-
-## **10. Buenas prácticas**
-
-- Mantén el estado lo más arriba posible, pero no más.
-- Usa estado local cuando solo lo necesite un componente.
-- Eleva el estado cuando se comparta.
-- Evita duplicar información.
+Will be resolved later with **Context**.
 
 ---
 
-En el siguiente tema aprenderás a usar **Context** para compartir estado sin pasar props manualmente.
+## **10. Good practices**
+
+- Keep the status as high as possible, but no higher.
+- Use local state when only one component needs it.
+- Raise status when shared.
+- Avoid duplicating information.
+
+---
+
+In the next topic you will learn how to use **Context** to share state without manually passing props.

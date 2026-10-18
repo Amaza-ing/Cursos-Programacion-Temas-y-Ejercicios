@@ -1,40 +1,40 @@
-# **Tema 9: Renderizado Condicional**
+# **Topic 9: Conditional Rendering**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En una interfaz real, no siempre se muestra todo:
+In a real interface, not everything is always displayed:
 
-- A veces hay un loader mientras cargan datos.
-- A veces aparece un mensaje de error.
-- A veces se muestra un botón u otro según el estado.
+- Sometimes there is a loader while loading data.
+- Sometimes an error message appears.
+- Sometimes one button or another is shown depending on the status.
 
-En React, esto se consigue con **renderizado condicional**: decidir qué JSX se renderiza en función de una condición.
+In React, this is achieved with **conditional rendering**: deciding which JSX is rendered based on a condition.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Condicionales con `if`.
-- Condicionales con operador ternario.
-- Renderizado condicional con `&&`.
-- Buenas prácticas para mantener el código limpio.
-
----
-
-## **2. La idea base: condiciones dentro de JSX**
-
-En React, dentro de JSX puedes usar expresiones JavaScript con `{}`.
-
-Pero recuerda:
-
-- `if` no se puede poner directamente dentro del JSX como una sentencia.
-- Sí puedes usar operadores o preparar variables antes del `return`.
+- Conditional with `if`.
+- Conditionals with ternary operator.
+- Conditional rendering with `&&`.
+- Good practices to keep the code clean.
 
 ---
 
-## **3. Renderizado condicional con `if` (antes del return)**
+## **2. The basic idea: conditions within JSX**
 
-Cuando la condición es compleja, es común usar `if` antes del `return`.
+In React, within JSX you can use JavaScript expressions with `{}`.
 
-Ejemplo: mostrar un loader.
+But remember:
+
+- `if` cannot be put directly inside the JSX as a statement.
+- Yes, you can use operators or prepare variables before `return`.
+
+---
+
+## **3. Conditional rendering with `if` (before return)**
+
+When the condition is complex, it is common to use `if` before `return`.
+
+Example: show a loader.
 
 ```js
 function Page() {
@@ -50,17 +50,17 @@ function Page() {
 export default Page;
 ```
 
-Esto se usa mucho en:
+This is used a lot in:
 
-- Pantallas que dependen de datos
-- Estados de loading
-- Estados de error
+- Data dependent screens
+- Loading states
+- Error states
 
 ---
 
-## **4. Renderizado condicional con ternario**
+## **4. Conditional rendering with ternary**
 
-El operador ternario es muy útil cuando quieres escoger entre **dos opciones**.
+The ternary operator is very useful when you want to choose between **two options**.
 
 ```js
 function StatusText() {
@@ -72,7 +72,7 @@ function StatusText() {
 export default StatusText;
 ```
 
-Puedes usarlo también para renderizar bloques de JSX:
+You can also use it to render JSX blocks:
 
 ```js
 function Welcome() {
@@ -88,9 +88,9 @@ export default Welcome;
 
 ---
 
-## **5. Renderizado condicional con `&&`**
+## **5. Conditional rendering with `&&`**
 
-Si solo quieres renderizar algo cuando la condición sea `true`, puedes usar `&&`.
+If you only want to render something when the condition is `true`, you can use `&&`.
 
 ```js
 function Warning() {
@@ -107,35 +107,35 @@ function Warning() {
 export default Warning;
 ```
 
-Si `hasWarning` es `false`, React no renderiza nada en esa parte.
+If `hasWarning` is `false`, React doesn't render anything on that part.
 
 ---
 
-## **6. Condiciones con valores “falsy” (detalle importante)**
+## **6. Conditions with “falsy” values (important detail)**
 
-En JavaScript, estos valores son “falsy”:
+In JavaScript, these values are “falsy”:
 
 - `false`
 - `0`
-- `""` (string vacío)
+- `""` (empty string)
 - `null`
 - `undefined`
 - `NaN`
 
-Esto importa porque con `&&`:
+This matters because with `&&`:
 
-- Si la parte izquierda es `0`, React puede renderizar `0`.
+- If the left part is `0`, React can render `0`.
 
-Ejemplo:
+Example:
 
 ```js
 const count = 0;
 return <div>{count && <p>Count is {count}</p>}</div>;
 ```
 
-Aquí se renderiza `0`, lo cual suele ser un comportamiento no deseado.
+`0` is rendered here, which is usually unwanted behavior.
 
-Solución típica: usar una condición más explícita:
+Typical solution: use a more explicit condition:
 
 ```js
 {
@@ -145,9 +145,9 @@ Solución típica: usar una condición más explícita:
 
 ---
 
-## **7. Guardar JSX en variables para mejorar legibilidad**
+## **7. Save JSX in variables to improve readability**
 
-Si un `return` se llena de condiciones, puedes guardar JSX en una variable.
+If an `return` is filled with conditions, you can save JSX to a variable.
 
 ```js
 function Result() {
@@ -174,31 +174,31 @@ export default Result;
 
 ---
 
-## **8. Buenas prácticas**
+## **8. Good practices**
 
-- Para dos opciones claras, usa ternario.
-- Para “mostrar si se cumple”, usa `&&`.
-- Para condiciones complejas, usa `if` antes del return.
-- Evita JSX demasiado anidado.
-- Si el JSX se vuelve difícil de leer, extrae componentes.
+- For two clear options, use ternary.
+- To “show if met”, use `&&`.
+- For complex conditions, use `if` before return.
+- Avoid overly nested JSX.
+- If the JSX becomes difficult to read, extract components.
 
 ---
 
-## **9. A tener en cuenta**
+## **9. To take into account**
 
-- Renderizado condicional = decidir qué JSX se muestra según una condición.
-- Técnicas principales:
+- Conditional rendering = decide which JSX is displayed based on a condition.
+- Main techniques:
 
-  - `if` antes del `return`
-  - ternario `cond ? A : B`
+  - `if` before `return`
+  - `cond ? A : B` ternary
   - `cond && A`
 
-- Ojo con `0 && ...` porque puede renderizar `0`.
+- Be careful with `0 && ...` because it can render `0`.
 
 ---
 
-[![Renderizado Condicional](https://img.youtube.com/vi/183eqNQNz3U/0.jpg)](https://www.youtube.com/watch?v=183eqNQNz3U&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Conditional Rendering](https://img.youtube.com/vi/183eqNQNz3U/0.jpg)](https://www.youtube.com/watch?v=183eqNQNz3U&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-En el próximo tema veremos **Listas**, para renderizar colecciones de elementos usando `.map()`.
+In the next topic we will see **Lists**, to render collections of elements using `.map()`.

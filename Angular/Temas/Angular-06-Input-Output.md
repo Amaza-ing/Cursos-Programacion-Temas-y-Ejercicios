@@ -1,23 +1,23 @@
-# **Tema 6: Comunicación entre Componentes en Angular**
+# **Topic 6: Communication between Components in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, la comunicación entre componentes es clave para la construcción de aplicaciones escalables. Existen varias formas de pasar datos entre componentes, pero las más comunes son:
+In Angular, communication between components is key to building scalable applications. There are several ways to pass data between components, but the most common are:
 
-- `@Input()` y `@Output()`, que permiten la comunicación entre un componente padre y un componente hijo.
-- Las **Signals** `input` y `output`, que son una alternativa más eficiente introducida en Angular 16.
+- `@Input()` and `@Output()`, which allow communication between a parent component and a child component.
+- The **Signals** `input` and `output`, which are a more efficient alternative introduced in Angular 16.
 
-En este tema, exploraremos cómo utilizar estas técnicas para la comunicación entre componentes.
+In this topic, we will explore how to use these techniques for communication between components.
 
 ---
 
-## **2. Comunicación con `@Input()`**
+## **2. Communication with `@Input()`**
 
-La directiva `@Input()` permite que un componente hijo reciba datos desde su componente padre.
+The `@Input()` directive allows a child component to receive data from its parent component.
 
-### **Ejemplo de `@Input()`**
+### **`@Input()` example**
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, Input } from "@angular/core";
@@ -32,13 +32,15 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <p>Mensaje recibido: {{ message }}</p>
 ```
 
-#### **Archivo: `parent.component.ts`**
+
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -52,13 +54,15 @@ export class ParentComponent {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child [message]="parentMsg"></app-child>
 ```
 
-Por supuesto, se pueden pasar cualquier tipo de datos, no solamente strings. Se pueden pasar tambien objetos y cualquier otro tipo de dato.
+
+Of course, any type of data can be passed, not just strings. Objects and any other type of data can also be passed.
 
 ---
 
@@ -66,13 +70,13 @@ Por supuesto, se pueden pasar cualquier tipo de datos, no solamente strings. Se 
 
 ---
 
-## **3. Comunicación con `@Output()`**
+## **3. Communication with `@Output()`**
 
-La directiva `@Output()` permite que un componente hijo envíe datos al componente padre mediante eventos.
+The `@Output()` directive allows a child component to send data to the parent component using events.
 
-### **Ejemplo de `@Output()`**
+### **`@Output()` example**
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, EventEmitter, Output } from "@angular/core";
@@ -90,13 +94,15 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <button (click)="sendMsg()">Enviar mensaje al padre</button>
 ```
 
-#### **Archivo: `parent.component.ts`**
+
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -114,12 +120,14 @@ export class ParentComponent {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child (emittedMsg)="updateMsg($event)"></app-child>
 <p>Mensaje recibido del hijo: {{ receivedMsg }}</p>
 ```
+
 
 ---
 
@@ -127,19 +135,20 @@ export class ParentComponent {
 
 ---
 
-## **4. Comunicación con Signals `input` y `output`**
+## **4. Communication with Signals `input` and `output`**
 
-En Angular 16, se introdujeron `input()` y `output()`, una alternativa más optimizada a `@Input()` y `@Output()`.
+In Angular 16, `input()` and `output()` were introduced, a more optimized alternative to `@Input()` and `@Output()`.
 
-### **Ejemplo de `input()`**
+### **`input()` example**
 
-#### **Archivo: `parent.component.html`**
+#### **File: `parent.component.html`**
 
 ```html
 <app-child [message]="'Hola desde el padre con Signals'"></app-child>
 ```
 
-#### **Archivo: `child.component.ts`**
+
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, input } from "@angular/core";
@@ -153,17 +162,19 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <p>{{ message() }}</p>
 ```
 
+
 [![input signal](https://img.youtube.com/vi/3Jg9OYIqdSA/0.jpg)](https://www.youtube.com/watch?v=3Jg9OYIqdSA&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
-### **Ejemplo de `output()`**
+### **`output()` example**
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, output } from "@angular/core";
@@ -181,13 +192,15 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child (emittedMsg)="updateMsg($event)"></app-child>
 ```
 
-#### **Archivo: `parent.component.ts`**
+
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -205,27 +218,28 @@ export class ParentComponent {
 }
 ```
 
+
 [![output signal](https://img.youtube.com/vi/y5qUAE3ruP8/0.jpg)](https://www.youtube.com/watch?v=y5qUAE3ruP8&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **5. Comparación entre `@Input/@Output` y `input()/output()`**
+## **5. Comparison between `@Input/@Output` and `input()/output()`**
 
-| **Característica**      | **@Input/@Output**        | **input()/output()**         |
+| **Feature** | **@Input/@Output** | **input()/output()** |
 | ----------------------- | ------------------------- | ---------------------------- |
-| Forma de declarar       | Decoradores en la clase   | Variables dentro de la clase |
-| Reactividad             | No reactivo por defecto   | Reactivo automáticamente     |
-| Facilidad de uso        | Más conocido y compatible | Más eficiente en rendimiento |
-| Requiere `EventEmitter` | Sí                        | No                           |
+| Form of declaration | Decorators in class | Variables within the class |
+| Reactivity | Non-reactive by default | Automatically reactive |
+| Ease of use | Best known and compatible | More efficient in performance |
+| Requires `EventEmitter` | Yes | No |
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-- `@Input()` y `@Output()` son la forma clásica de comunicación entre componentes en Angular.
-- `input()` y `output()` introducen una forma más eficiente y reactiva de manejar el flujo de datos.
-- La elección entre ambos depende de la compatibilidad con versiones anteriores y la optimización de rendimiento.
+- `@Input()` and `@Output()` are the classic way of communication between components in Angular.
+- `input()` and `output()` introduce a more efficient and reactive way of handling data flow.
+- Choosing between the two depends on backward compatibility and performance optimization.
 
 ---
 
-En el próximo tema, exploraremos el **constructor y el ngOnInit** y cómo influyen en el ciclo de vida del componente
+In the next topic, we will explore the **constructor and ngOnInit** and how they influence the component lifecycle

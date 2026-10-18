@@ -1,89 +1,89 @@
-# **Tema 26: Tests Unitarios en React (Testing Library + Vitest)**
+# **Topic 26: Unit Tests in React (Testing Library + Vitest)**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Cuando empiezas a crear aplicaciones más completas, aparece una necesidad real: **asegurarte de que tu código funciona hoy y seguirá funcionando mañana**, incluso después de hacer cambios.
+When you start building richer applications, a real need arises: making sure your code works today and will continue to work tomorrow, even after you make changes.
 
-Ahí entran los **tests unitarios**.
+That's where **unit tests** come in.
 
-En este tema vas a aprender paso a paso:
+In this topic you will learn step by step:
 
-- Qué son los **tests unitarios** y para qué sirven.
-- Cómo configurar **Vitest** y **React Testing Library** en un proyecto React.
-- Cómo testear componentes: render, props, eventos, formularios.
-- Cómo testear comportamiento **asíncrono** (carga de datos, estados de loading).
-- Cómo hacer **mock** de `fetch` (y también de Axios si lo usas).
-- Cómo testear **Context** (Provider + consumidores + hooks).
+- What **unit tests** are and what they are for.
+- How to configure **Vitest** and **React Testing Library** in a React project.
+- How to test components: render, props, events, forms.
+- How to test **asynchronous** behavior (data loading, loading states).
+- How to **mock** `fetch` (and also Axios if you use it).
+- How to test **Context** (Provider + consumers + hooks).
 
-> El objetivo es que puedas seguirlo de forma cómoda, con una configuración inicial clara, y luego puedas repetir el proceso en cualquier proyecto.
-
----
-
-## **2. ¿Qué son los tests unitarios?**
-
-Un **test unitario** es una prueba que verifica que una **unidad pequeña** de código se comporta como esperamos.
-
-En React, las unidades típicas son:
-
-- Un componente.
-- Una función utilitaria.
-- Un hook.
-
-Ejemplos de cosas que un test unitario valida:
-
-- “Este componente renderiza un texto cuando recibe una prop”.
-- “Este botón llama a una función cuando hago click”.
-- “Si la petición falla, se muestra un mensaje de error”.
+> The goal is that you can follow it comfortably, with a clear initial configuration, and then you can repeat the process on any project.
 
 ---
 
-## **3. Por qué son importantes**
+## **2. What are unit tests?**
 
-Los tests te ayudan a:
+A **unit test** is a test that verifies that a **small unit** of code behaves as we expect.
 
-- Detectar errores rápidamente.
-- Evitar romper cosas cuando refactorizas.
-- Aumentar confianza al añadir nuevas features.
-- Mantener el código más estable en proyectos grandes.
+In React, typical units are:
 
----
+- A component.
+- A utilitarian function.
+- A hook.
 
-## **4. Qué librerías vamos a usar**
+Examples of things that a unit test validates:
 
-En React, lo más común hoy es esta combinación:
-
-- **Vitest** → runner de tests (muy rápido y perfecto con Vite).
-- **React Testing Library** → para testear componentes como si fueras un usuario.
-- **@testing-library/jest-dom** → matchers extra (por ejemplo: `toBeInTheDocument`).
-- **@testing-library/user-event** → para simular interacciones reales (teclado, clicks).
-
-> Puedes hacerlo con Jest también, pero en proyectos modernos con Vite, **Vitest suele ser la opción más cómoda**.
+- “This component renders a text when it receives a prop.”
+- “This button calls a function when I click.”
+- “If the request fails, an error message is displayed.”
 
 ---
 
-## **5. Configuración inicial paso a paso (Vite + React)**
+## **3. Why are they important**
 
-### **5.1. Instalar dependencias**
+The tests help you:
 
-Ejecuta:
+- Detect errors quickly.
+- Avoid breaking things when you refactor.
+- Increase confidence by adding new features.
+- Keep code more stable in large projects.
+
+---
+
+## **4. What libraries are we going to use**
+
+In React, the most common today is this combination:
+
+- **Vitest** → test runner (very fast and perfect with Vite).
+- **React Testing Library** → to test components as if you were a user.
+- **@testing-library/jest-dom** → extra matchers (for example: `toBeInTheDocument`).
+- **@testing-library/user-event** → to simulate real interactions (keyboard, clicks).
+
+> You can do it with Jest too, but in modern projects with Vite, **Vitest is usually the most comfortable option**.
+
+---
+
+## **5. Step-by-step initial setup (Vite + React)**
+
+### **5.1. Install dependencies**
+
+Run:
 
 ```bash
 npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
-Qué instala cada cosa:
+What installs everything:
 
-- `vitest`: herramienta que ejecuta los tests.
-- `jsdom`: simula el navegador.
-- `@testing-library/react`: funciones para renderizar componentes en tests.
-- `@testing-library/jest-dom`: matchers extra.
-- `@testing-library/user-event`: simula uso real.
+- `vitest`: tool that runs the tests.
+- `jsdom`: simulates the browser.
+- `@testing-library/react`: functions to render components in tests.
+- `@testing-library/jest-dom`: extra matchers.
+- `@testing-library/user-event`: simulates real use.
 
 ---
 
-### **5.2. Configurar Vitest en `vite.config.js`**
+### **5.2. Configure Vitest in `vite.config.js`**
 
-Abre `vite.config.js` y añade el bloque `test`:
+Open `vite.config.js` and add the `test` block:
 
 ```js
 import { defineConfig } from "vite";
@@ -98,28 +98,28 @@ export default defineConfig({
 });
 ```
 
-Esto significa:
+This means:
 
-- `environment: "jsdom"` → React necesita DOM.
-- `setupFiles` → archivo que se ejecuta antes de los tests (ideal para configurar jest-dom).
+- `environment: "jsdom"` → React needs DOM.
+- `setupFiles` → file that is executed before the tests (ideal for configuring jest-dom).
 
 ---
 
-### **5.3. Crear el archivo `src/test/setup.js`**
+### **5.3. Create the file `src/test/setup.js`**
 
-Crea esta ruta:
+Create this route:
 
 ```txt
 src/test/setup.js
 ```
 
-Y dentro añade:
+And inside he adds:
 
 ```js
 import "@testing-library/jest-dom";
 ```
 
-Así ya podrás usar matchers como:
+This way you can use matchers like:
 
 - `toBeInTheDocument()`
 - `toHaveTextContent()`
@@ -127,9 +127,9 @@ Así ya podrás usar matchers como:
 
 ---
 
-### **5.4. Añadir scripts en `package.json`**
+### **5.4. Add scripts in `package.json`**
 
-En tu `package.json` añade:
+In your `package.json` add:
 
 ```json
 {
@@ -141,17 +141,17 @@ En tu `package.json` añade:
 }
 ```
 
-Qué hace cada uno:
+What each one does:
 
-- `npm run test` → modo watch.
-- `npm run test:run` → ejecuta todos los tests una vez.
-- `npm run test:ui` → interfaz visual (si quieres usarla).
+- `npm run test` → watch mode.
+- `npm run test:run` → run all tests once.
+- `npm run test:ui` → visual interface (if you want to use it).
 
 ---
 
-## **6. Estructura recomendada de tests**
+## **6. Recommended test structure**
 
-La estructura más típica:
+The most typical structure:
 
 ```txt
 src/
@@ -164,16 +164,16 @@ src/
      └─ setup.js
 ```
 
-Es decir:
+That is to say:
 
-- El test se pone junto al componente.
-- Nombre: `Component.test.jsx`.
+- The test is placed next to the component.
+- Name: `Component.test.jsx`.
 
 ---
 
-## **7. Tu primer test: render básico**
+## **7. Your first test: basic render**
 
-### **7.1. Componente de ejemplo**
+### **7.1. Example Component**
 
 `src/components/Hello.jsx`
 
@@ -185,7 +185,7 @@ function Hello({ name }) {
 export default Hello;
 ```
 
-### **7.2. Test del componente**
+### **7.2. Component test**
 
 `src/components/Hello.test.jsx`
 
@@ -200,17 +200,17 @@ test("renders the name", () => {
 });
 ```
 
-Puntos clave:
+Key points:
 
-- `render(...)` monta el componente.
-- `screen.getByText(...)` busca en el DOM.
-- `expect(...).toBeInTheDocument()` verifica que existe.
+- `render(...)` mounts the component.
+- `screen.getByText(...)` searches the DOM.
+- `expect(...).toBeInTheDocument()` verifies that it exists.
 
 ---
 
-## **8. Tests de eventos (clicks) con user-event**
+## **8. Testing events (clicks) with user-event**
 
-### **8.1. Componente**
+### **8.1. Component**
 
 `Counter.jsx`
 
@@ -251,16 +251,16 @@ test("increments count on click", async () => {
 });
 ```
 
-Recomendación importante:
+Important recommendation:
 
-- Usa `getByRole` siempre que puedas.
-- Es más robusto y más parecido a accesibilidad real.
+- Use `getByRole` whenever you can.
+- It is more robust and closer to real accessibility.
 
 ---
 
-## **9. Tests de formularios (input + submit)**
+## **9. Form tests (input + submit)**
 
-### **9.1. Componente**
+### **9.1. Component**
 
 ```js
 import { useState } from "react";
@@ -329,31 +329,31 @@ test("shows success when input has value", async () => {
 
 ---
 
-## **10. Tests asíncronos: loading y datos**
+## **10. Asynchronous tests: loading and data**
 
-Una parte clave en React es testear componentes que:
+A key part of React is testing components that:
 
-- Cargan datos.
-- Muestran loading.
-- Muestran resultado.
+- Load data.
+- They show loading.
+- They show result.
 
-Para eso usamos:
+For that we use:
 
-- `findBy...` (espera automáticamente)
-- `waitFor(...)` (espera a que una condición se cumpla)
+- `findBy...` (auto hold)
+- `waitFor(...)` (waits for a condition to be met)
 
 ---
 
-## **11. Mock de Fetch (muy importante)**
+## **11. Fetch Mock (very important)**
 
-Si un componente usa `fetch`, en tests no queremos depender de Internet.
+If a component uses `fetch`, in tests we do not want to depend on the Internet.
 
-La idea es:
+The idea is:
 
-- Reemplazar `fetch` por un mock.
-- Decidir qué responde.
+- Replace `fetch` with a mock.
+- Decide what to answer.
 
-### **11.1. Componente que hace fetch**
+### **11.1. Component that does fetch**
 
 ```js
 import { useEffect, useState } from "react";
@@ -379,7 +379,7 @@ function UsersLoader() {
 export default UsersLoader;
 ```
 
-### **11.2. Test con mock de fetch**
+### **11.2. Test with fetch mock**
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -399,23 +399,23 @@ test("loads users and renders the count", async () => {
 });
 ```
 
-Notas importantes:
+Important notes:
 
-- `mockResolvedValue` hace que `fetch` devuelva una promesa resuelta.
-- `findByText` espera a que el texto exista.
-- `mockRestore()` limpia el mock.
+- `mockResolvedValue` causes `fetch` to return a resolved promise.
+- `findByText` waits for the text to exist.
+- `mockRestore()` cleans the mock.
 
 ---
 
-## **12. Mock de Axios (si lo usas en tu proyecto)**
+## **12. Axios Mock (if you use it in your project)**
 
-Si en lugar de `fetch` estás usando Axios:
+If instead of `fetch` you are using Axios:
 
 ```js
 import axios from "axios";
 ```
 
-Puedes mockearlo así:
+You can mock it like this:
 
 ```js
 import { vi } from "vitest";
@@ -434,17 +434,17 @@ test("loads users with axios", async () => {
 
 ---
 
-## **13. Testing de Context (Provider + consumidores)**
+## **13. Context Testing (Provider + Consumers)**
 
-Aquí está una de las partes más importantes si tu app ya usa Context.
+Here is one of the most important parts if your app already uses Context.
 
-La idea:
+The idea:
 
-- Si un componente depende del contexto, en tests necesitas envolverlo con su Provider.
+- If a component depends on the context, in tests you need to wrap it with its Provider.
 
 ---
 
-## **14. Ejemplo completo: UsersContext + Provider**
+## **14. Complete example: UsersContext + Provider**
 
 ### **14.1. Context + Provider**
 
@@ -468,7 +468,7 @@ export function UsersProvider({ children }) {
 }
 ```
 
-### **14.2. Componente consumidor**
+### **14.2. Consumer component**
 
 `UsersList.jsx`
 
@@ -493,9 +493,9 @@ export default UsersList;
 
 ---
 
-## **15. Testear un componente que usa Context**
+## **15. Test a component that uses Context**
 
-En el test, envolvemos el componente con el Provider.
+In the test, we wrap the component with the Provider.
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -515,11 +515,11 @@ test("renders users from context", async () => {
 
 ---
 
-## **16. Context con funciones: testear actualizaciones**
+## **16. Context with functions: test updates**
 
-Ahora un contexto que permite añadir usuarios.
+Now a context that allows adding users.
 
-### **16.1. Provider con función**
+### **16.1. Provider with function**
 
 ```js
 import { createContext, useState } from "react";
@@ -541,7 +541,7 @@ export function UsersProvider({ children }) {
 }
 ```
 
-### **16.2. Componente para añadir**
+### **16.2. Component to add**
 
 ```js
 import { useContext } from "react";
@@ -558,7 +558,7 @@ function AddUserButton() {
 export default AddUserButton;
 ```
 
-### **16.3. Test con interacción**
+### **16.3. Test with interaction**
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -585,9 +585,9 @@ test("adds user through context", async () => {
 
 ---
 
-## **17. Patrón útil: helper `renderWithProviders`**
+## **17. Useful pattern: helper `renderWithProviders`**
 
-En proyectos con varios Providers, te conviene un helper.
+In projects with several Providers, a helper is best for you.
 
 `src/test/renderWithProviders.js`
 
@@ -600,7 +600,7 @@ export function renderWithProviders(ui) {
 }
 ```
 
-Uso:
+Usage:
 
 ```js
 import { screen } from "@testing-library/react";
@@ -615,21 +615,21 @@ test("renders users", () => {
 
 ---
 
-## **18. Qué debes quedarte de este tema**
+## **18. What should you keep from this topic**
 
-- Un test unitario valida una unidad pequeña (componente, función, hook).
-- Con Vite, Vitest es una opción muy cómoda.
-- React Testing Library te enseña a testear como usuario.
-- Las peticiones se deben mockear (`fetch` o Axios).
-- Para testear Context, envuelve el componente con el Provider.
+- A unit test validates a small unit (component, function, hook).
+- With Vite, Vitest is a very convenient option.
+- React Testing Library teaches you how to test as a user.
+- Requests must be mocked (`fetch` or Axios).
+- To test Context, wrap the component with the Provider.
 
-## **19. Usando Jest**
+## **19. Using Jest**
 
 [![Testing Config](https://img.youtube.com/vi/bVTkCyxPwx0/0.jpg)](https://www.youtube.com/watch?v=bVTkCyxPwx0&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-[![Crear Tests con Jest y la React Testing Library](https://img.youtube.com/vi/H4epaNzJCmY/0.jpg)](https://www.youtube.com/watch?v=H4epaNzJCmY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Create Tests with Jest and the React Testing Library](https://img.youtube.com/vi/H4epaNzJCmY/0.jpg)](https://www.youtube.com/watch?v=H4epaNzJCmY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
@@ -637,4 +637,4 @@ test("renders users", () => {
 
 ---
 
-En el siguiente tema trabajarás verás **Cómo crear una web completa desde 0** (Una aplicación de notas).
+In the next topic you will work you will see **How to create a complete website from scratch** (A notes application).

@@ -1,36 +1,36 @@
-# **Tema 10: Uso de Clases y Estilos Dinámicos con `ngClass` en Angular**
+# **Topic 10: Using Dynamic Classes and Styles with `ngClass` in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, la directiva `ngClass` permite asignar clases CSS dinámicamente a los elementos HTML en función de condiciones o valores de variables. Esto facilita la personalización del estilo de los componentes en respuesta a eventos o cambios en los datos.
+In Angular, the `ngClass` directive allows you to dynamically assign CSS classes to HTML elements based on conditions or variable values. This makes it easy to customize the styling of components in response to events or data changes.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo utilizar `ngClass` para agregar o quitar clases dinámicamente.
-- Diferentes formas de aplicar `ngClass`.
-- Ejemplos prácticos del uso de `ngClass` en Angular.
-
----
-
-## **2. ¿Qué es `ngClass` y cómo funciona?**
-
-La directiva `ngClass` se utiliza en plantillas HTML para aplicar clases CSS de manera condicional o dinámica. Se puede usar de diferentes formas:
-
-1. **Como una cadena de texto**: Se asigna directamente una clase.
-2. **Como un array de strings**: Se pueden agregar múltiples clases.
-3. **Como un objeto**: Se pueden asignar clases de forma condicional.
+- How to use `ngClass` to dynamically add or remove classes.
+- Different ways to apply `ngClass`.
+- Practical examples of using `ngClass` in Angular.
 
 ---
 
-## **3. Diferentes Formas de Usar `ngClass`**
+## **2. What is `ngClass` and how does it work?**
 
-Para usar ngClass debemos añadirlo a los imports: `imports: [NgClass]`
+The `ngClass` directive is used in HTML templates to apply CSS classes conditionally or dynamically. It can be used in different ways:
 
-### **3.1. Uso de `ngClass` con una cadena de texto**
+1. **As a text string**: A class is directly assigned.
+2. **As an array of strings**: Multiple classes can be added.
+3. **As an object**: Classes can be assigned conditionally.
 
-Se puede asignar una clase CSS directamente desde el componente.
+---
 
-#### **Archivo: `example.component.ts`**
+## **3. Different Ways to Use `ngClass`**
+
+To use ngClass we must add it to the imports: `imports: [NgClass]`
+
+### **3.1. Using `ngClass` with a text string**
+
+A CSS class can be assigned directly from the component.
+
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -47,13 +47,15 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p [ngClass]="className">Este texto tiene una clase dinámica</p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .highlight {
@@ -63,13 +65,14 @@ export class ExampleComponent {
 }
 ```
 
+
 ---
 
-### **3.2. Uso de `ngClass` con un array de clases**
+### **3.2. Using `ngClass` with an array of classes**
 
-Se pueden asignar múltiples clases dinámicamente mediante un array.
+Multiple classes can be assigned dynamically using an array.
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -77,13 +80,15 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p [ngClass]="classList">Este texto tiene múltiples clases</p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .bold-text {
@@ -91,13 +96,14 @@ export class ExampleComponent {
 }
 ```
 
+
 ---
 
-### **3.3. Uso de `ngClass` con un objeto**
+### **3.3. Using `ngClass` with an object**
 
-Se pueden agregar o quitar clases de forma condicional.
+Classes can be added or removed conditionally.
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -106,7 +112,8 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p [ngClass]="{ 'active': isActive, 'highlight': isHighlighted }">
@@ -114,7 +121,8 @@ export class ExampleComponent {
 </p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .active {
@@ -122,13 +130,14 @@ export class ExampleComponent {
 }
 ```
 
+
 ---
 
-### **3.4. Alternar Clases con Eventos**
+### **3.4. Alternate Classes with Events**
 
-Es posible alternar clases mediante eventos como `click`.
+It is possible to toggle classes using events such as `click`.
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -140,26 +149,28 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <button (click)="toggleHighlight()">Alternar Clase</button>
 <p [ngClass]="{ 'highlight': isHighlighted }">Texto con clase condicional</p>
 ```
 
----
-
-[![Clases dinámicas con ngClass](https://img.youtube.com/vi/XrZKMaZccmA/0.jpg)](https://www.youtube.com/watch?v=XrZKMaZccmA&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **4. Conclusión**
-
-- `ngClass` facilita la aplicación dinámica de clases CSS en Angular.
-- Se puede utilizar como cadena de texto, array o un objeto de claves condicionales.
-- Permite alternar clases mediante eventos como `click`.
-- Mejora la personalización y la interacción en las aplicaciones Angular.
+[![Dynamic classes with ngClass](https://img.youtube.com/vi/XrZKMaZccmA/0.jpg)](https://www.youtube.com/watch?v=XrZKMaZccmA&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-En el próximo tema, exploraremos **cómo crear y validar formularios usando ngModel**.
+## **4. Conclusion**
+
+- `ngClass` makes it easy to dynamically apply CSS classes in Angular.
+- Can be used as a text string, array or a conditional key object.
+- Allows classes to be switched through events such as `click`.
+- Improves customization and interaction in Angular applications.
+
+---
+
+In the next topic, we will explore **how to create and validate forms using ngModel**.

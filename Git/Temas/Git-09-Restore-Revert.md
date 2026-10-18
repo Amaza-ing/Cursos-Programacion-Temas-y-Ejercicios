@@ -1,43 +1,43 @@
-# **Tema 9: Dar marcha atrás a los cambios con `git restore` y `git revert`**
+# **Topic 9: Reverse changes with `git restore` and `git revert`**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Git, a veces es necesario deshacer cambios no deseados en los archivos o en el historial de commits. Para ello, existen dos comandos clave:
+In Git, it is sometimes necessary to undo unwanted changes to files or commit history. To do this, there are two key commands:
 
-- `git restore`: Se usa para descartar cambios en archivos sin afectar el historial de commits.
-- `git revert`: Se usa para deshacer un commit específico sin modificar el historial, creando un nuevo commit que anula los cambios previos.
+- `git restore`: Used to discard changes to files without affecting the commit history.
+- `git revert`: Used to undo a specific commit without modifying the history, creating a new commit that overrides previous changes.
 
 ---
 
-## **2. Usar `git restore` para descartar cambios en archivos**
+## **2. Use `git restore` to discard file changes**
 
-El comando `git restore` permite deshacer modificaciones en los archivos sin alterar el historial del repositorio.
+The `git restore` command allows you to undo changes to files without altering the repository history.
 
-### **Descartar cambios en un archivo antes de hacer commit**
+### **Discard changes to a file before committing**
 
 ```bash
 git restore archivo.txt
 ```
 
-Esto revierte `archivo.txt` a su última versión confirmada en Git.
+This reverts `archivo.txt` to its latest committed version in Git.
 
-### **Descartar cambios en todos los archivos modificados**
+### **Discard changes to all modified files**
 
 ```bash
 git restore .
 ```
 
-Esto elimina cualquier cambio no confirmado en el área de trabajo.
+This removes any uncommitted changes to the workspace.
 
-### **Restaurar un archivo del área de staging**
+### **Restore a file from the staging area**
 
-Si un archivo ha sido agregado con `git add` pero aún no se ha hecho commit, se puede quitar del área de staging con:
+If a file has been added with `git add` but has not yet been committed, it can be removed from the staging area with:
 
 ```bash
 git restore --staged archivo.txt
 ```
 
-Esto mantiene los cambios en el área de trabajo pero los elimina del área de staging.
+This keeps the changes in the work area but removes them from the staging area.
 
 ---
 
@@ -45,35 +45,35 @@ Esto mantiene los cambios en el área de trabajo pero los elimina del área de s
 
 ---
 
-## **3. Usar `git revert` para deshacer un commit**
+## **3. Use `git revert` to undo a commit**
 
-A diferencia de `git restore`, el comando `git revert` crea un nuevo commit que anula los cambios de un commit anterior, manteniendo el historial intacto.
+Unlike `git restore`, the `git revert` command creates a new commit that overrides changes from a previous commit, keeping the history intact.
 
-### **Revertir un commit específico**
+### **Revert a specific commit**
 
-Para deshacer un commit sin perder su historial:
+To undo a commit without losing its history:
 
 ```bash
 git revert <commit-hash>
 ```
 
-Ejemplo:
+Example:
 
 ```bash
 git revert a1b2c3d
 ```
 
-Esto creará un nuevo commit que revierte los cambios de `a1b2c3d`.
+This will create a new commit that reverts the `a1b2c3d` changes.
 
-### **Revertir varios commits**
+### **Revert multiple commits**
 
-Se pueden revertir múltiples commits desde el más reciente hasta un punto específico:
+Multiple commits can be reverted from the most recent to a specific point:
 
 ```bash
 git revert HEAD~2..HEAD
 ```
 
-Esto revierte los dos últimos commits.
+This reverts the last two commits.
 
 ---
 
@@ -81,25 +81,24 @@ Esto revierte los dos últimos commits.
 
 ---
 
-## **4. Diferencias entre `git restore`, `git revert` y `git reset`**
+## **4. Differences between `git restore`, `git revert` and `git reset`**
 
-| Comando       | Descripción                                                                          |
+| Command | Description |
 | ------------- | ------------------------------------------------------------------------------------ |
-| `git restore` | Deshace cambios en el área de trabajo sin afectar commits.                           |
-| `git revert`  | Crea un nuevo commit que revierte un commit previo.                                  |
-| `git reset`   | Mueve la referencia de la rama a un commit anterior, eliminando commits posteriores. |
+| `git restore` | Undoes changes in the workspace without affecting commits.                           |
+| `git revert` | Creates a new commit that reverts a previous commit.                                  |
+| `git reset` | Moves the branch reference to a previous commit, removing later commits. |
 
-> **Nota:** `git reset` es más agresivo y puede reescribir el historial, por lo que se recomienda usar `git revert` en entornos colaborativos.
-
----
-
-## **5. Buenas prácticas al deshacer cambios**
-
-- Usar `git restore` para descartar cambios locales sin alterar commits previos.
-- Usar `git revert` para deshacer commits sin perder historial.
-- Evitar `git reset` en repositorios compartidos, ya que puede reescribir el historial y causar problemas a otros colaboradores.
-- Verificar el historial antes de hacer un `revert` con `git log --oneline`.
+> **Note:** `git reset` is more aggressive and may rewrite history, so it is recommended to use `git revert` in collaborative environments.
 
 ---
 
-En el próximo tema, veremos **cuál es la diferencia entre repositorios públicos y privados y cómo borrar ramas y repositorios en local y en remoto**.
+## **5. Best practices when undoing changes**
+
+- Use `git restore` to discard local changes without altering previous commits.
+- Use `git revert` to undo commits without losing history.
+- Avoid `git reset` in shared repositories, as it can rewrite the history and cause problems for other collaborators.
+- Check the history before making an `revert` with `git log --oneline`.
+
+---
+In the next topic, we will see **what is the difference between public and private repositories and how to delete branches and repositories locally and remotely**.

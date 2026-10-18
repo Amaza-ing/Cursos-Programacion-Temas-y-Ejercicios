@@ -1,52 +1,52 @@
-# **Tema 14: useEffect()**
+# **Topic 14: useEffect()**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Hasta ahora hemos usado `useState` para guardar datos y actualizar la interfaz. Pero hay situaciones en las que un componente necesita hacer “cosas extra” además de renderizar:
+So far we have used `useState` to save data and update the interface. But there are situations where a component needs to do “extra things” besides rendering:
 
-- Pedir datos a una API.
-- Leer o escribir en `localStorage`.
-- Configurar un `setInterval` o un `setTimeout`.
-- Suscribirse a eventos (por ejemplo, `resize` de ventana).
+- Request data from an API.
+- Read or write to `localStorage`.
+- Configure an `setInterval` or an `setTimeout`.
+- Subscribe to events (e.g. window `resize`).
 
-A este tipo de acciones React las llama **efectos** (_effects_). El hook principal para gestionarlos es **`useEffect`**.
+React calls these types of actions **effects_. The main hook to manage them is **`useEffect`**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un efecto.
-- Cómo funciona `useEffect`.
-- Qué significa la lista de dependencias.
-- Cómo ejecutar un efecto:
+- What is an effect.
+- How `useEffect` works.
+- What does the dependency list mean?
+- How to execute an effect:
 
-  - Solo al montar.
-  - Cada vez que cambia una variable.
-  - Con limpieza (_cleanup_).
-
----
-
-## **2. ¿Qué es un “efecto”?**
-
-Un efecto es cualquier lógica que:
-
-- No pertenece directamente al render.
-- Interactúa con algo “externo” al componente.
-
-Regla mental muy útil:
-
-- **Render**: genera JSX.
-- **Efecto**: hace trabajo “secundario” que ocurre después de renderizar.
+  - Only when riding.
+  - Every time a variable changes.
+  - With cleaning (_cleanup_).
 
 ---
 
-## **3. Sintaxis básica de `useEffect`**
+## **2. What is an “effect”?**
 
-Primero, lo importas:
+An effect is any logic that:
+
+- It does not belong directly to the render.
+- Interacts with something “external” to the component.
+
+Very useful mental rule:
+
+- **Render**: generates JSX.
+- **Effect**: does “secondary” work that occurs after rendering.
+
+---
+
+## **3. Basic syntax of `useEffect`**
+
+First, you import it:
 
 ```js
 import { useEffect } from "react";
 ```
 
-Luego lo usas con una función:
+Then you use it with a function:
 
 ```js
 useEffect(() => {
@@ -54,15 +54,15 @@ useEffect(() => {
 });
 ```
 
-Importante:
+Important:
 
-- Si no pones dependencias, se ejecuta **después de cada render**.
+- If you don't put dependencies, it is executed **after each render**.
 
 ---
 
-## **4. Dependencias: el segundo argumento**
+## **4. Dependencies: the second argument**
 
-`useEffect` puede recibir un segundo argumento: un array de dependencias.
+`useEffect` can take a second argument: an array of dependencies.
 
 ```js
 useEffect(() => {
@@ -70,15 +70,15 @@ useEffect(() => {
 }, [dependencyA, dependencyB]);
 ```
 
-Ese array le dice a React:
+That array tells React:
 
-- “Solo vuelve a ejecutar este efecto si cambia alguna de estas variables”.
+- “Only rerun this effect if any of these variables change.”
 
 ---
 
-## **5. Ejecutar un efecto solo al montar (equivalente a “on mount”)**
+## **5. Execute an effect only when mounted (equivalent to “on mount”)**
 
-Si quieres que un efecto se ejecute solo **una vez**, al montar el componente, usa un array vacío:
+If you want an effect to run only **once**, when mounting the component, use an empty array:
 
 ```js
 import { useEffect } from "react";
@@ -94,21 +94,21 @@ function App() {
 export default App;
 ```
 
-Este patrón se usa mucho para:
+This pattern is widely used for:
 
-- Cargar datos al inicio.
-- Inicializar algo una sola vez.
+- Load data at startup.
+- Initialize something only once.
 
 ---
 
-## **6. Ejecutar un efecto cuando cambia una variable**
+## **6. Run an effect when a variable changes**
 
-Si pones una dependencia, el efecto se ejecuta:
+If you put a dependency, the effect is executed:
 
-- Al montar, y
-- Cada vez que cambia esa dependencia.
+- When riding, and
+- Every time that dependency changes.
 
-Ejemplo:
+Example:
 
 ```js
 import { useEffect, useState } from "react";
@@ -130,16 +130,16 @@ export default CounterWatcher;
 
 ---
 
-## **7. Cleanup: limpiar un efecto**
+## **7. Cleanup: clean an effect**
 
-Algunos efectos crean “suscripciones” o timers. En esos casos hay que limpiar cuando:
+Some effects create “subscriptions” or timers. In these cases you have to clean when:
 
-- El componente se desmonta.
-- Antes de volver a ejecutar el efecto.
+- The component is disassembled.
+- Before running the effect again.
 
-La limpieza se hace devolviendo una función dentro del `useEffect`.
+Cleanup is done by returning a function inside `useEffect`.
 
-### **7.1. Ejemplo: `setInterval` con cleanup**
+### **7.1. Example: `setInterval` with cleanup**
 
 ```js
 import { useEffect, useState } from "react";
@@ -163,18 +163,18 @@ function Timer() {
 export default Timer;
 ```
 
-Sin cleanup, el interval seguiría funcionando incluso si el componente desaparece.
+Without cleanup, the interval would continue to work even if the component disappears.
 
 ---
 
-## **8. Caso típico: leer/escribir en `localStorage`**
+## **8. Typical case: read/write `localStorage`**
 
-Un caso práctico muy común:
+A very common practical case:
 
-- Al montar: leer un valor guardado.
-- Cuando cambie el estado: guardarlo.
+- When mounting: read a saved value.
+- When the state changes: save it.
 
-Ejemplo:
+Example:
 
 ```js
 import { useEffect, useState } from "react";
@@ -212,11 +212,11 @@ export default ThemeSaver;
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Olvidar dependencias**
+### **9.1. Forget dependencies**
 
-Si usas variables dentro del efecto, normalmente deberían estar en el array de dependencias.
+If you use variables inside the effect, they should normally be in the dependencies array.
 
 ```js
 useEffect(() => {
@@ -224,28 +224,27 @@ useEffect(() => {
 }, [query]);
 ```
 
-### **9.2. Hacer “trabajo de render” dentro del efecto**
+### **9.2. Do “render work” within the effect**
 
-El efecto no es para generar JSX, sino para lógica secundaria.
-
----
-
-## **10. Buenas prácticas**
-
-- Usa `[]` si solo quieres ejecutar al montar.
-- Añade dependencias cuando el efecto dependa de estado/props.
-- Si creas timers o listeners, devuelve un cleanup.
-- Mantén los efectos pequeños y con una responsabilidad clara.
+The effect is not to generate JSX, but for secondary logic.
 
 ---
 
-## **11. A tener en cuenta**
+## **10. Good practices**
 
-- `useEffect` se ejecuta **después** del render.
-- Sin dependencias: se ejecuta tras cada render.
-- Con `[]`: solo al montar.
-- Con `[x]`: al montar y cuando cambie `x`.
-- El cleanup evita fugas y comportamientos inesperados.
+- Use `[]` if you only want to run on mount.
+- Add dependencies when the effect depends on state/props.
+- If you create timers or listeners, return a cleanup.
+- Keep the effects small and with clear responsibility.
+
+---
+## **11. To take into account**
+
+- `useEffect` is executed **after** the render.
+- No dependencies: executed after each render.
+- With `[]`: only when mounting.
+- With `[x]`: when mounting and when changing `x`.
+- The cleanup prevents leaks and unexpected behavior.
 
 ---
 
@@ -253,4 +252,4 @@ El efecto no es para generar JSX, sino para lógica secundaria.
 
 ---
 
-En el próximo tema veremos **Fetch API**, para pedir datos a una API y combinarlos con `useEffect`.
+In the next topic we will see **Fetch API**, to request data from an API and combine it with `useEffect`.

@@ -1,39 +1,39 @@
-# Tema 9. Métodos de `String`
+# Topic 9. `String` methods
 
-## 1. Introducción
+## 1. Introduction
 
-En Java, `String` es el tipo más importante para trabajar con texto. Lo vas a usar constantemente:
+In Java, `String` is the most important type for working with text. You will use it constantly:
 
-- Nombres de usuario
-- Mensajes por consola
-- Datos leídos desde teclado
-- Rutas de archivos
-- Validaciones
-- Formateo de resultados
+- Usernames
+- Console messages
+- Data read from keyboard
+- File paths
+- Validations
+- Formatting results
 
-Aunque `String` se “usa como un tipo básico”, en realidad **es un objeto** y por eso tiene muchos métodos útiles.
+Although `String` is “used as a base type”, it is actually **an object** and therefore has many useful methods.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué significa que `String` sea **inmutable**
-- Métodos esenciales para medir, comparar y buscar texto
-- Métodos para extraer partes (`substring`) y acceder a caracteres (`charAt`)
-- Transformaciones típicas (`toLowerCase`, `strip`, `replace`…)
-- Métodos para dividir y unir texto (`split`, `String.join`)
-- Buenas prácticas y errores comunes (`==` vs `equals`, `null`, etc.)
-
----
-
-[![Métodos de los String](https://img.youtube.com/vi/y0D-t8WII6U/0.jpg)](https://www.youtube.com/watch?v=y0D-t8WII6U&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What does it mean for `String` to be **immutable**
+- Essential methods for measuring, comparing and searching text
+- Methods for extracting parts (`substring`) and accessing characters (`charAt`)
+- Typical transformations (`toLowerCase`, `strip`, `replace`…)
+- Methods for splitting and joining text (`split`, `String.join`)
+- Good practices and common mistakes (`==` vs `equals`, `null`, etc.)
 
 ---
 
-## 2. `String` es inmutable (idea clave)
+[![String Methods](https://img.youtube.com/vi/y0D-t8WII6U/0.jpg)](https://www.youtube.com/watch?v=y0D-t8WII6U&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-En Java, los `String` son **inmutables**: no puedes cambiar el contenido de un `String` existente.  
-Cuando “modificas” un `String`, en realidad estás creando **uno nuevo**.
+---
 
-Ejemplo:
+## 2. `String` is immutable (key idea)
+
+In Java, `String`s are **immutable**: you cannot change the contents of an existing `String`.  
+When you “modify” an `String`, you are actually creating **a new one**.
+
+Example:
 
 ```java
 String text = "Hello";
@@ -42,9 +42,9 @@ text.toUpperCase();
 System.out.println(text); // "Hello"
 ```
 
-¿Por qué? Porque `toUpperCase()` devuelve un nuevo `String`, pero tú no lo guardaste.
+Why? Because `toUpperCase()` returns a new `String`, but you didn't save it.
 
-Forma correcta:
+Correct way:
 
 ```java
 String text = "Hello";
@@ -55,9 +55,9 @@ System.out.println(text); // "HELLO"
 
 ---
 
-## 3. Longitud: `length()`
+## 3. Length: `length()`
 
-`length()` devuelve el número de caracteres de un `String`.
+`length()` returns the number of characters in an `String`.
 
 ```java
 String userName = "Laura";
@@ -66,7 +66,7 @@ int size = userName.length();
 System.out.println(size); // 5
 ```
 
-Esto es muy común en validaciones:
+This is very common in validations:
 
 ```java
 String password = "mySecret1";
@@ -77,9 +77,9 @@ System.out.println(isLongEnough);
 
 ---
 
-## 4. Acceso a caracteres: `charAt(index)`
+## 4. Character access: `charAt(index)`
 
-`charAt(int index)` devuelve el carácter en la posición indicada.
+`charAt(int index)` returns the character at the indicated position.
 
 ```java
 String code = "A7X";
@@ -90,26 +90,26 @@ System.out.println(first); // 'A'
 System.out.println(last);  // 'X'
 ```
 
-Recuerda: los índices empiezan en 0.
+Remember: indices start at 0.
 
-### 4.1. Error típico: índice fuera de rango
+### 4.1. Typical error: index out of range
 
 ```java
 String text = "Hi";
 char letter = text.charAt(2); // error
 ```
 
-Los índices válidos son 0 y 1.
+Valid indices are 0 and 1.
 
 ---
 
-## 5. Extraer partes: `substring(beginIndex)` y `substring(beginIndex, endIndex)`
+## 5. Extract parts: `substring(beginIndex)` and `substring(beginIndex, endIndex)`
 
-`substring` sirve para obtener una parte del texto.
+`substring` is used to obtain a part of the text.
 
 ### 5.1. `substring(beginIndex)`
 
-Devuelve desde `beginIndex` hasta el final.
+Returns from `beginIndex` to the end.
 
 ```java
 String text = "JavaProgramming";
@@ -120,7 +120,7 @@ System.out.println(part); // "Programming"
 
 ### 5.2. `substring(beginIndex, endIndex)`
 
-Devuelve desde `beginIndex` hasta `endIndex`, pero **sin incluir** `endIndex`.
+Returns `beginIndex` through `endIndex`, but **not including** `endIndex`.
 
 ```java
 String text = "JavaProgramming";
@@ -129,18 +129,18 @@ String part = text.substring(0, 4);
 System.out.println(part); // "Java"
 ```
 
-Regla práctica:
+Rule of thumb:
 
-- `beginIndex` incluido
-- `endIndex` excluido
+- `beginIndex` included
+- `endIndex` excluded
 
 ---
 
-## 6. Comparar `String`: `equals(...)` y `equalsIgnoreCase(...)`
+## 6. Compare `String`: `equals(...)` and `equalsIgnoreCase(...)`
 
-### 6.1. Por qué NO usar `==`
+### 6.1. Why NOT use `==`
 
-`==` compara referencias (si son el mismo objeto), no el contenido.
+`==` compares references (if they are the same object), not the content.
 
 ```java
 String a = "admin";
@@ -149,7 +149,7 @@ String b = "admin";
 System.out.println(a == b); // puede ser true o false dependiendo del caso
 ```
 
-Lo correcto para contenido es `equals`:
+The correct content is `equals`:
 
 ```java
 String a = "admin";
@@ -158,7 +158,7 @@ String b = "admin";
 System.out.println(a.equals(b)); // true
 ```
 
-### 6.2. Comparación sin distinguir mayúsculas: `equalsIgnoreCase`
+### 6.2. Case-insensitive comparison: `equalsIgnoreCase`
 
 ```java
 String input = "Admin";
@@ -169,13 +169,13 @@ System.out.println(isAdmin); // true
 
 ---
 
-## 7. Comparación alfabética: `compareTo(...)`
+## 7. Alphabetical comparison: `compareTo(...)`
 
-`compareTo` compara dos `String` en orden “alfabético” (orden lexicográfico).
+`compareTo` compares two `String` in “alphabetical” order (lexicographic order).
 
-- Devuelve 0 si son iguales
-- Devuelve un número negativo si el primero “va antes”
-- Devuelve un número positivo si el primero “va después”
+- Returns 0 if they are equal
+- Returns a negative number if the first one “comes first”
+- Returns a positive number if the first “comes after”
 
 ```java
 String a = "apple";
@@ -188,11 +188,11 @@ System.out.println(a.compareTo("apple")); // 0
 
 ---
 
-## 8. Buscar texto dentro de texto
+## 8. Search text within text
 
 ### 8.1. `contains(...)`
 
-Devuelve `true` si el texto contiene una subcadena.
+Returns `true` if the text contains a substring.
 
 ```java
 String email = "laura@example.com";
@@ -201,7 +201,7 @@ boolean hasAt = email.contains("@");
 System.out.println(hasAt); // true
 ```
 
-### 8.2. `startsWith(...)` y `endsWith(...)`
+### 8.2. `startsWith(...)` and `endsWith(...)`
 
 ```java
 String fileName = "report_2026.pdf";
@@ -212,12 +212,11 @@ System.out.println(fileName.endsWith(".pdf"));      // true
 
 ---
 
-## 9. Encontrar posiciones: `indexOf(...)` y `lastIndexOf(...)`
+## 9. Find positions: `indexOf(...)` and `lastIndexOf(...)`
 
 ### 9.1. `indexOf(...)`
 
-Devuelve el índice de la primera ocurrencia. Si no encuentra, devuelve `-1`.
-
+Returns the index of the first occurrence. If not found, returns `-1`.
 ```java
 String text = "Java is Java";
 int first = text.indexOf("Java");
@@ -225,7 +224,7 @@ int first = text.indexOf("Java");
 System.out.println(first); // 0
 ```
 
-### 9.2. Buscar desde un índice
+### 9.2. Search from an index
 
 ```java
 String text = "Java is Java";
@@ -236,7 +235,7 @@ System.out.println(second); // 8
 
 ### 9.3. `lastIndexOf(...)`
 
-Devuelve el índice de la última ocurrencia.
+Returns the index of the last occurrence.
 
 ```java
 String text = "Java is Java";
@@ -247,7 +246,7 @@ System.out.println(last); // 8
 
 ---
 
-## 10. Reemplazar texto: `replace(...)`, `replaceAll(...)`, `replaceFirst(...)`
+## 10. Replace text: `replace(...)`, `replaceAll(...)`, `replaceFirst(...)`
 
 ### 10.1. `replace(old, new)` (simple)
 
@@ -258,7 +257,7 @@ String updated = text.replace("world", "Java");
 System.out.println(updated); // "Hello Java"
 ```
 
-### 10.2. Reemplazar caracteres
+### 10.2. Replace characters
 
 ```java
 String phone = "123-456-789";
@@ -267,11 +266,11 @@ String cleaned = phone.replace("-", "");
 System.out.println(cleaned); // "123456789"
 ```
 
-### 10.3. `replaceAll(...)` (usa expresiones regulares)
+### 10.3. `replaceAll(...)` (uses regular expressions)
 
-`replaceAll` trabaja con patrones (regex). Úsalo si lo necesitas, pero si solo reemplazas texto literal, `replace` suele ser mejor.
+`replaceAll` works with patterns (regex). Use it if you need it, but if you're just replacing literal text, `replace` is usually better.
 
-Ejemplo: eliminar espacios múltiples (regex):
+Example: removing multiple spaces (regex):
 
 ```java
 String text = "Hello   Java   25";
@@ -282,7 +281,7 @@ System.out.println(normalized); // "Hello Java 25"
 
 ---
 
-## 11. Mayúsculas y minúsculas: `toUpperCase()` y `toLowerCase()`
+## 11. Case sensitive: `toUpperCase()` and `toLowerCase()`
 
 ```java
 String country = "Es";
@@ -290,7 +289,7 @@ System.out.println(country.toUpperCase()); // "ES"
 System.out.println(country.toLowerCase()); // "es"
 ```
 
-Esto se usa mucho antes de comparar entradas:
+This is used a lot before comparing inputs:
 
 ```java
 String input = "YES";
@@ -301,11 +300,11 @@ System.out.println(isYes);
 
 ---
 
-## 12. Quitar espacios: `trim()` y `strip()`
+## 12. Remove spaces: `trim()` and `strip()`
 
 ### 12.1. `trim()`
 
-Elimina espacios “simples” al principio y al final.
+Eliminate “simple” spaces at the beginning and end.
 
 ```java
 String raw = "   hello   ";
@@ -316,7 +315,7 @@ System.out.println(clean); // "hello"
 
 ### 12.2. `strip()`
 
-`strip()` es más moderno y maneja mejor ciertos tipos de espacios Unicode.
+`strip()` is more modern and handles certain types of Unicode spaces better.
 
 ```java
 String raw = "   hello   ";
@@ -327,10 +326,10 @@ System.out.println(clean); // "hello"
 
 ---
 
-## 13. Vacío vs blanco: `isEmpty()` y `isBlank()`
+## 13. Empty vs blank: `isEmpty()` and `isBlank()`
 
-- `isEmpty()` es `true` si la longitud es 0 (`""`).
-- `isBlank()` es `true` si está vacío o solo tiene espacios.
+- `isEmpty()` is `true` if the length is 0 (`""`).
+- `isBlank()` is `true` if it is empty or has only spaces.
 
 ```java
 String a = "";
@@ -345,9 +344,9 @@ System.out.println(b.isBlank()); // true
 
 ---
 
-## 14. Dividir texto: `split(...)`
+## 14. Split text: `split(...)`
 
-`split` separa un texto en partes y devuelve un array de `String`.
+`split` separates a text into parts and returns an array of `String`.
 
 ```java
 String line = "Laura,28,Madrid";
@@ -358,9 +357,9 @@ System.out.println(parts[1]); // "28"
 System.out.println(parts[2]); // "Madrid"
 ```
 
-### 14.1. Cuidado: `split` usa regex
+### 14.1. Beware: `split` uses regex
 
-Si divides por un punto `.` tienes que escaparlo:
+If you divide by a point `.` you have to escape it:
 
 ```java
 String domain = "example.com";
@@ -372,7 +371,7 @@ System.out.println(parts[1]); // "com"
 
 ---
 
-## 15. Unir texto: `String.join(...)`
+## 15. Join text: `String.join(...)`
 
 ```java
 String result = String.join(" - ", "Java", "IntelliJ", "JDK");
@@ -381,7 +380,7 @@ System.out.println(result); // "Java - IntelliJ - JDK"
 
 ---
 
-## 16. Formatear texto: `String.format(...)`
+## 16. Format text: `String.format(...)`
 
 ```java
 String userName = "Laura";
@@ -391,7 +390,7 @@ String message = String.format("User: %s | Age: %d", userName, age);
 System.out.println(message);
 ```
 
-Ejemplo con decimales:
+Example with decimals:
 
 ```java
 double price = 19.99;
@@ -402,7 +401,7 @@ System.out.println(text); // "Price: 19.99"
 
 ---
 
-## 17. Convertir a `String`: `String.valueOf(...)`
+## 17. Convert to `String`: `String.valueOf(...)`
 
 ```java
 int level = 5;
@@ -413,7 +412,7 @@ System.out.println("Level: " + text);
 
 ---
 
-## 18. Repetir texto: `repeat(n)`
+## 18. Repeat text: `repeat(n)`
 
 ```java
 String dash = "-";
@@ -422,12 +421,12 @@ System.out.println(dash.repeat(10)); // "----------"
 
 ---
 
-## 19. `String` y caracteres especiales (escapes)
+## 19. `String` and special characters (escapes)
 
-- `\n` salto de línea
-- `\t` tabulación
-- `\"` comilla doble
-- `\\` barra invertida
+- `\n` line break
+- `\t` tab
+- `\"` double quote
+- `\\` backslash
 
 ```java
 String text = "Line 1\nLine 2";
@@ -436,9 +435,9 @@ System.out.println(text);
 
 ---
 
-## 20. `null` y `String`: cómo evitar errores
+## 20. `null` and `String`: how to avoid errors
 
-Patrón seguro con comprobación:
+Secure pattern with verification:
 
 ```java
 String name = null;
@@ -448,7 +447,7 @@ if (name != null && !name.isBlank()) {
 }
 ```
 
-Comparación sin riesgo:
+Risk-free comparison:
 
 ```java
 String role = null;
@@ -459,9 +458,9 @@ System.out.println(isAdmin);
 
 ---
 
-## 21. `+` vs `StringBuilder` (vista previa)
+## 21. `+` vs `StringBuilder` (Preview)
 
-Para concatenaciones repetidas, `StringBuilder` suele ser mejor:
+For repeated concatenations, `StringBuilder` is usually better:
 
 ```java
 StringBuilder builder = new StringBuilder();
@@ -474,9 +473,9 @@ System.out.println(message);
 
 ---
 
-## 22. Ejemplos guiados completos
+## 22. Complete Guided Examples
 
-### 22.1. Normalizar entrada de usuario
+### 22.1. Normalize user input
 
 ```java
 public class Main {
@@ -496,7 +495,7 @@ public class Main {
 
 ---
 
-### 22.2. Extraer extensión de un archivo
+### 22.2. Extract extension from a file
 
 ```java
 public class Main {
@@ -517,7 +516,7 @@ public class Main {
 
 ---
 
-### 22.3. Convertir una línea CSV en variables
+### 22.3. Convert a CSV line to variables
 
 ```java
 public class Main {
@@ -538,14 +537,14 @@ public class Main {
 
 ---
 
-## 23. A tener en cuenta
+## 23. To take into account
 
-- Los `String` son inmutables: guarda el resultado de los métodos si quieres “modificar” el texto.
-- Para comparar contenido usa `equals` (y `equalsIgnoreCase` si aplica).
-- `substring`, `indexOf` y `split` son esenciales para procesar texto.
-- `strip/trim`, `isBlank/isEmpty` son clave en validaciones.
-- Evita `NullPointerException` comprobando `null` o comparando con `"literal".equals(variable)`.
+- The `String` are immutable: save the result of the methods if you want to “modify” the text.
+- To compare content use `equals` (and `equalsIgnoreCase` if applicable).
+- `substring`, `indexOf` and `split` are essential for text processing.
+- `strip/trim`, `isBlank/isEmpty` are key in validations.
+- Avoid `NullPointerException` by checking `null` or comparing with `"literal".equals(variable)`.
 
 ---
 
-En el próximo tema aprenderemos sobre los **Wrappers de tipos primitivos**, y verás qué ventajas tienen frente a usar los tipos básicos.
+In the next topic we will learn about **Primitive type Wrappers**, and you will see what advantages they have over using basic types.

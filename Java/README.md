@@ -1,56 +1,56 @@
-# Curso Completo de Java desde Cero
+# Complete Java Course from Scratch
 
 ![Java](https://img.shields.io/badge/Java-25-007396?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-Proyectos%20Java-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Formato-Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
-![Nivel](https://img.shields.io/badge/Nivel-Desde%20cero-2E8B57?style=for-the-badge)
-![Idioma](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-1F6FEB?style=for-the-badge)
+![Level](https://img.shields.io/badge/Nivel-Desde%20cero-2E8B57?style=for-the-badge)
+![Language](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-1F6FEB?style=for-the-badge)
 
-Repositorio del **Curso Completo de Java desde Cero**, creado para aprender Java de forma progresiva, práctica y estructurada.
+Repository of the **Complete Java Course from Scratch**, created to learn Java in a progressive, practical and structured way.
 
-El curso empieza por los fundamentos del lenguaje y avanza hasta conceptos modernos del ecosistema Java, como `Stream API`, `Optional`, `records`, `sealed classes`, concurrencia básica, anotaciones, módulos y Maven.
-
----
-
-## Descripción general
-
-Este repositorio está pensado para estudiantes que quieren aprender Java paso a paso, sin asumir conocimientos previos.
-
-Cada tema incluye explicaciones claras, ejemplos prácticos y una progresión pensada para construir una base sólida antes de pasar a conceptos más avanzados.
-
-El objetivo del curso es que puedas:
-
-- Entender la sintaxis esencial de Java.
-- Escribir programas simples desde cero.
-- Trabajar con clases, objetos y estructuras de datos.
-- Aplicar Programación Orientada a Objetos.
-- Usar herramientas modernas del lenguaje.
-- Organizar proyectos de forma profesional.
-- Prepararte para continuar con tecnologías como JDBC, Spring Boot o APIs REST.
+The course starts with the fundamentals of the language and progresses to modern Java ecosystem concepts such as `Stream API`, `Optional`, `records`, `sealed classes`, basic concurrency, annotations, modules, and Maven.
 
 ---
 
-## Contenidos principales
+## Overview
 
-A lo largo del curso trabajarás con:
+This repository is designed for students who want to learn Java step by step, without assuming prior knowledge.
 
-- Fundamentos de Java: variables, operadores, condicionales, bucles y métodos.
-- Tipos de datos, conversión de tipos, wrappers y cadenas de texto.
-- Arrays, `ArrayList`, maps y otras colecciones.
-- Programación Orientada a Objetos: clases, objetos, encapsulación, herencia y polimorfismo.
-- Interfaces, clases abstractas, enums y excepciones.
-- `BigDecimal`, genéricos, lambdas y programación funcional.
-- `Stream API`, `Optional` y Date/Time API.
-- Trabajo con archivos usando `Files` y `Path`.
-- Java moderno: records, sealed classes, anotaciones y módulos.
-- Concurrencia básica.
-- Gestión de proyectos con Maven.
+Each topic includes clear explanations, practical examples, and a progression designed to build a solid foundation before moving on to more advanced concepts.
+
+The objective of the course is that you can:
+
+- Understand the essential syntax of Java.
+- Write simple programs from scratch.
+- Work with classes, objects and data structures.
+- Apply Object Oriented Programming.
+- Use modern language tools.
+- Organize projects professionally.
+- Prepare to continue with technologies such as JDBC, Spring Boot or REST APIs.
 
 ---
 
-## Estructura del repositorio
+## Main contents
 
-El contenido se organiza principalmente en dos carpetas:
+Throughout the course you will work with:
+
+- Java fundamentals: variables, operators, conditionals, loops and methods.
+- Data types, type conversion, wrappers and text strings.
+- Arrays, `ArrayList`, maps and other collections.
+- Object Oriented Programming: classes, objects, encapsulation, inheritance and polymorphism.
+- Interfaces, abstract classes, enums and exceptions.
+- `BigDecimal`, generics, lambdas and functional programming.
+- `Stream API`, `Optional` and Date/Time API.
+- Work with files using `Files` and `Path`.
+- Modern Java: records, sealed classes, annotations and modules.
+- Basic concurrency.
+- Project management with Maven.
+
+---
+
+## Repository structure
+
+The content is mainly organized in two folders:
 
 ```text
 .
@@ -65,137 +65,137 @@ El contenido se organiza principalmente en dos carpetas:
 └── README.md
 ```
 
-- `Temas`: contiene las explicaciones teóricas y ejemplos guiados.
-- `Ejercicios`: contiene ejercicios prácticos con soluciones.
-- `README.md`: guía general del curso y tabla de contenidos.
+- `Temas`: contains theoretical explanations and guided examples.
+- `Ejercicios`: contains practical exercises with solutions.
+- `README.md`: general course guide and table of contents.
 
 ---
 
-## Temario completo
+## Complete agenda
 
-| Nº  | Tema                        | Archivo                                                                                | Descripción                                         |
+| No. | Theme | Archive | Description |
 | --- | --------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| 01  | Empezar con Java            | [Java-01-Empezar-con-Java.md](Temas/Java-01-Empezar-con-Java.md)                       | Instalación, configuración y primer programa.       |
-| 02  | Variables                   | [Java-02-Variables.md](Temas/Java-02-Variables.md)                                     | Declaración de variables y tipos básicos.           |
-| 03  | Operadores                  | [Java-03-Operadores.md](Temas/Java-03-Operadores.md)                                   | Operadores aritméticos, relacionales y lógicos.     |
-| 04  | Conversión de Tipos         | [Java-04-Conversión-de-Tipos.md](Temas/Java-04-Conversión-de-Tipos.md)                 | Conversiones automáticas y manuales.                |
-| 05  | Condicionales               | [Java-05-Condicionales.md](Temas/Java-05-Condicionales.md)                             | Estructuras `if`, `else if` y `else`.               |
-| 06  | Bucles                      | [Java-06-Bucles.md](Temas/Java-06-Bucles.md)                                           | Repetición con `for`, `while` y `do while`.         |
-| 07  | Break y Continue            | [Java-07-Break-y-Continue.md](Temas/Java-07-Break-y-Continue.md)                       | Control del flujo dentro de bucles.                 |
-| 08  | Métodos                     | [Java-08-Métodos.md](Temas/Java-08-Métodos.md)                                         | Métodos, parámetros y valores de retorno.           |
-| 09  | Métodos de los String       | [Java-09-Métodos-de-los-String.md](Temas/Java-09-Métodos-de-los-String.md)             | Operaciones habituales con cadenas de texto.        |
-| 10  | Wrappers                    | [Java-10-Wrappers.md](Temas/Java-10-Wrappers.md)                                       | Clases envoltorio, autoboxing y unboxing.           |
-| 11  | Sobrecarga de Métodos       | [Java-11-Sobrecarga-de-Métodos.md](Temas/Java-11-Sobrecarga-de-Métodos.md)             | Métodos con el mismo nombre y distintas firmas.     |
-| 12  | Arrays                      | [Java-12-Arrays.md](Temas/Java-12-Arrays.md)                                           | Creación, acceso y recorrido de arrays.             |
-| 13  | ArrayList                   | [Java-13-ArrayList.md](Temas/Java-13-ArrayList.md)                                     | Listas dinámicas y operaciones principales.         |
-| 14  | Clases y Objetos            | [Java-14-Clases-y-Objetos.md](Temas/Java-14-Clases-y-Objetos.md)                       | Introducción a la Programación Orientada a Objetos. |
-| 15  | Encapsulación               | [Java-15-Encapsulación.md](Temas/Java-15-Encapsulación.md)                             | Atributos privados, getters, setters y validación.  |
-| 16  | Sobrecarga de Constructores | [Java-16-Sobrecarga-de-Constructores.md](Temas/Java-16-Sobrecarga-de-Constructores.md) | Múltiples constructores y `this(...)`.              |
-| 17  | Métodos Estáticos           | [Java-17-Métodos-Estáticos.md](Temas/Java-17-Métodos-Estáticos.md)                     | Métodos `static`, constantes y utilidades.          |
-| 18  | Herencia y Polimorfismo     | [Java-18-Herencia-y-Polimorfismo.md](Temas/Java-18-Herencia-y-Polimorfismo.md)         | `extends`, `super`, sobrescritura y polimorfismo.   |
-| 19  | Packages                    | [Java-19-Packages.md](Temas/Java-19-Packages.md)                                       | Organización del código e imports.                  |
-| 20  | Clases Abstractas           | [Java-20-Clases-Abstractas.md](Temas/Java-20-Clases-Abstractas.md)                     | Clases base y métodos abstractos.                   |
-| 21  | Interfaces                  | [Java-21-Interfaces.md](Temas/Java-21-Interfaces.md)                                   | Contratos, implementación y diseño flexible.        |
-| 22  | Equals                      | [Java-22-Equals.md](Temas/Java-22-Equals.md)                                           | Comparación de objetos con `equals`.                |
-| 23  | Excepciones                 | [Java-23-Excepciones.md](Temas/Java-23-Excepciones.md)                                 | Manejo de errores y excepciones propias.            |
-| 24  | Enums                       | [Java-24-Enums.md](Temas/Java-24-Enums.md)                                             | Conjuntos cerrados de valores.                      |
-| 25  | Maps                        | [Java-25-Maps.md](Temas/Java-25-Maps.md)                                               | Estructuras clave-valor y búsquedas eficientes.     |
-| 26  | Otras Colecciones           | [Java-26-Otras-Colecciones.md](Temas/Java-26-Otras-Colecciones.md)                     | Sets, queues y colecciones adicionales.             |
-| 27  | BigDecimal                  | [Java-27-BigDecimal.md](Temas/Java-27-BigDecimal.md)                                   | Cálculos decimales precisos.                        |
-| 28  | Genéricos                   | [Java-28-Genéricos.md](Temas/Java-28-Genéricos.md)                                     | Clases, métodos e interfaces genéricas.             |
-| 29  | Expresiones Lambda          | [Java-29-Expresiones-Lambda.md](Temas/Java-29-Expresiones-Lambda.md)                   | Lambdas e interfaces funcionales.                   |
-| 30  | Stream API                  | [Java-30-Stream-API.md](Temas/Java-30-Stream-API.md)                                   | Procesamiento declarativo de colecciones.           |
-| 31  | Optional                    | [Java-31-Optional.md](Temas/Java-31-Optional.md)                                       | Gestión segura de valores ausentes.                 |
-| 32  | Date-Time API               | [Java-32-Date-Time-API.md](Temas/Java-32-Date-Time-API.md)                             | Fechas, horas, periodos y formateo.                 |
-| 33  | Files & Path                | [Java-33-Files-&-Path.md](Temas/Java-33-Files-&-Path.md)                               | Lectura, escritura y gestión de archivos.           |
-| 34  | Records                     | [Java-34-Records.md](Temas/Java-34-Records.md)                                         | Datos inmutables y código más conciso.              |
-| 35  | Sealed Classes              | [Java-35-Sealed-Classes.md](Temas/Java-35-Sealed-Classes.md)                           | Jerarquías controladas con `sealed` y `permits`.    |
-| 36  | Concurrencia Básica         | [Java-36-Concurrencia-Básica.md](Temas/Java-36-Concurrencia-Básica.md)                 | Hilos, tareas, executors y resultados futuros.      |
-| 37  | Anotaciones                 | [Java-37-Anotaciones.md](Temas/Java-37-Anotaciones.md)                                 | Anotaciones integradas y personalizadas.            |
-| 38  | Módulos y Java Moderno      | [Java-38-Módulos-y-Java-Moderno.md](Temas/Java-38-Módulos-y-Java-Moderno.md)           | Sistema de módulos y características modernas.      |
-| 39  | Maven                       | [Java-39-Maven.md](Temas/Java-39-Maven.md)                                             | Gestión de proyectos, dependencias y empaquetado.   |
-| 40  | Proyecto Final              | [Java-40-Proyecto-Final.md](Temas/Java-40-Proyecto-Final.md)                           | Aplicación Completa con los conceptos aprendidos.   |
+| 01 | Get started with Java | [Java-01-Getting Started with Java.md](Temas/Java-01-Empezar-con-Java.md) | Installation, configuration and first program.       |
+| 02 | Variables | [Java-02-Variables.md](Temas/Java-02-Variables.md) | Declaration of variables and basic types.           |
+| 03 | Operators | [Java-03-Operadores.md](Temas/Java-03-Operadores.md) | Arithmetic, relational and logical operators.     |
+| 04 | Type Conversion | [Java-04-Type-Conversion.md](Temas/Java-04-Conversión-de-Tipos.md) | Automatic and manual conversions.                |
+| 05 | Conditionals | [Java-05-Conditionals.md](Temas/Java-05-Condicionales.md) | Structures `if`, `else if` and `else`.               |
+| 06 | Loops | [Java-06-Loops.md](Temas/Java-06-Bucles.md) | Repetition with `for`, `while` and `do while`.         |
+| 07 | Break and Continue | [Java-07-Break-and-Continue.md](Temas/Java-07-Break-y-Continue.md) | Flow control within loops.                 |
+| 08 | Methods | [Java-08-Methods.md](Temas/Java-08-Métodos.md) | Methods, parameters and return values.           |
+| 09 | String Methods | [Java-09-String-Methods.md](Temas/Java-09-Métodos-de-los-String.md) | Common operations with text strings.        |
+| 10 | Wrappers | [Java-10-Wrappers.md](Temas/Java-10-Wrappers.md) | Wrapping, autoboxing and unboxing classes.           |
+| 11 | Method Overloading | [Java-11-Method-Overloading.md](Temas/Java-11-Sobrecarga-de-Métodos.md) | Methods with the same name and different signatures.     |
+| 12 | Arrays | [Java-12-Arrays.md](Temas/Java-12-Arrays.md) | Creation, access and traversal of arrays.             |
+| 13 | ArrayList | [Java-13-ArrayList.md](Temas/Java-13-ArrayList.md) | Dynamic lists and main operations.         |
+| 14 | Classes and Objects | [Java-14-Classes-and-Objects.md](Temas/Java-14-Clases-y-Objetos.md) | Introduction to Object Oriented Programming. |
+| 15 | Encapsulation | [Java-15-Encapsulation.md](Temas/Java-15-Encapsulación.md) | Private attributes, getters, setters and validation.  |
+| 16 | Builder Overload | [Java-16-Overloading-Constructors.md](Temas/Java-16-Sobrecarga-de-Constructores.md) | Multiple builders and `this(...)`.              |
+| 17 | Static Methods | [Java-17-Static-Methods.md](Temas/Java-17-Métodos-Estáticos.md) | `static` methods, constants and utilities.          |
+| 18 | Inheritance and Polymorphism | [Java-18-Inheritance-and-Polymorphism.md](Temas/Java-18-Herencia-y-Polimorfismo.md) | `extends`, `super`, overwriting and polymorphism.   |
+| 19 | Packages | [Java-19-Packages.md](Temas/Java-19-Packages.md) | Code organization and imports.                  |
+| 20 | Abstract Classes | [Java-20-Abstract-Classes.md](Temas/Java-20-Clases-Abstractas.md) | Base classes and abstract methods.                   |
+| 21 | Interfaces | [Java-21-Interfaces.md](Temas/Java-21-Interfaces.md) | Contracts, implementation and flexible design.        |
+| 22 | Equals | [Java-22-Equals.md](Temas/Java-22-Equals.md) | Comparison of objects with `equals`.                |
+| 23  | Exceptions | [Java-23-Exceptions.md](Temas/Java-23-Excepciones.md) | Handling of errors and own exceptions.            |
+| 24 | Enums | [Java-24-Enums.md](Temas/Java-24-Enums.md) | Closed sets of values.                      |
+| 25 | Maps | [Java-25-Maps.md](Temas/Java-25-Maps.md) | Key-value structures and efficient searches.     |
+| 26 | Other Collections | [Java-26-Other-Collections.md](Temas/Java-26-Otras-Colecciones.md) | Additional sets, queues and collections.             |
+| 27 | BigDecimal | [Java-27-BigDecimal.md](Temas/Java-27-BigDecimal.md) | Accurate decimal calculations.                        |
+| 28 | Generics | [Java-28-Generics.md](Temas/Java-28-Genéricos.md) | Generic classes, methods and interfaces.             |
+| 29 | Lambda Expressions | [Java-29-Lambda-Expressions.md](Temas/Java-29-Expresiones-Lambda.md) | Lambdas and functional interfaces.                   |
+| 30 | Stream API | [Java-30-Stream-API.md](Temas/Java-30-Stream-API.md) | Declarative collection processing.           |
+| 31 | Optional | [Java-31-Optional.md](Temas/Java-31-Optional.md) | Secure management of missing values.                 |
+| 32 | Date-Time API | [Java-32-Date-Time-API.md](Temas/Java-32-Date-Time-API.md) | Dates, times, periods and formatting.                 |
+| 33 | Files & Path | [Java-33-Files-&-Path.md](Temas/Java-33-Files-&-Path.md) | Reading, writing and file management.           |
+| 34 | Records | [Java-34-Records.md](Temas/Java-34-Records.md) | Immutable data and more concise code.              |
+| 35 | Sealed Classes | [Java-35-Sealed-Classes.md](Temas/Java-35-Sealed-Classes.md) | Controlled hierarchies with `sealed` and `permits`.    |
+| 36 | Basic Concurrency | [java-36-Concurrency-Basic.md](Temas/Java-36-Concurrencia-Básica.md) | Threads, tasks, executors and future results.      |
+| 37 | Annotations | [Java-37-Annotations.md](Temas/Java-37-Anotaciones.md) | Integrated and custom annotations.            |
+| 38 | Modules and Modern Java | [Java-38-Modules-and-Modern-Java.md](Temas/Java-38-Módulos-y-Java-Moderno.md) | Modern module system and features.      |
+| 39 | Maven | [Java-39-Maven.md](Temas/Java-39-Maven.md) | Project management, dependencies and packaging.   |
+| 40 | Final Project | [Java-40-Final-Project.md](Temas/Java-40-Proyecto-Final.md) | Complete application with the concepts learned.   |
 
 ---
 
-## Ejercicios
+## Exercises
 
-Los ejercicios están diseñados para practicar los contenidos de cada tema con ejemplos distintos a los de la teoría.
+The exercises are designed to practice the contents of each topic with examples other than those in theory.
 
-Cada archivo de ejercicios incluye:
+Each exercise file includes:
 
-- 10 ejercicios prácticos.
-- Enunciados progresivos.
-- Soluciones ocultas en bloques desplegables.
-- Código preparado para copiar, probar y modificar.
-- Casos pensados para reforzar los conceptos principales del tema.
+- 10 practical exercises.
+- Progressive statements.
+- Hidden solutions in drop-down blocks.
+- Code prepared to copy, test and modify.
+- Cases designed to reinforce the main concepts of the topic.
 
-Carpeta de ejercicios:
+Exercise folder:
 
-[Ejercicios](Ejercicios)
-
----
-
-## Curso en vídeo
-
-El curso también puede seguirse en YouTube con explicaciones paso a paso.
-
-**Curso Completo de Java desde Cero**
-
-[![Curso de Java desde Cero](https://img.youtube.com/vi/8qjZQZAvwBQ/0.jpg)](https://www.youtube.com/watch?v=8qjZQZAvwBQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD&index=1)
+[exercises](Ejercicios)
 
 ---
 
-## Requisitos
+## Video course
 
-Para seguir el curso necesitas:
+The course can also be followed on YouTube with step-by-step explanations.
 
-- JDK instalado.
-- Un editor o IDE compatible con Java.
-- Terminal o consola básica.
-- Conocimientos previos: ninguno.
+**Complete Java Course from Scratch**
 
-Recomendaciones:
-
-- IntelliJ IDEA, Eclipse, NetBeans o Visual Studio Code.
-- Java 25 para los temas más modernos.
-- Maven para el bloque final del curso.
+[![Java Course from Scratch](https://img.youtube.com/vi/8qjZQZAvwBQ/0.jpg)](https://www.youtube.com/watch?v=8qjZQZAvwBQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD&index=1)
 
 ---
 
-## Ruta de aprendizaje recomendada
+## Requirements
 
-Para aprovechar mejor el curso:
+To follow the course you need:
 
-1. Completa primero los fundamentos: temas 1 al 13.
-2. Dedica tiempo a Programación Orientada a Objetos: temas 14 al 24.
-3. Practica colecciones, genéricos y programación funcional: temas 25 al 31.
-4. Avanza hacia APIs modernas: temas 32 al 36.
-5. Termina con herramientas profesionales: temas 37 al 39.
+- JDK installed.
+- A Java-compatible editor or IDE.
+- Basic terminal or console.
+- Previous knowledge: none.
 
-La clave no es avanzar rápido, sino escribir código, equivocarse, corregir y volver a intentarlo.
+Recommendations:
 
----
-
-## Próximos pasos
-
-Después de completar este curso, puedes continuar con:
-
-- JUnit y testing.
-- JDBC y conexión con bases de datos.
-- MySQL desde Java.
-- Spring Boot.
-- APIs REST.
-- Persistencia con JPA e Hibernate.
-- Arquitectura por capas.
-- Patrones de diseño.
-- Desarrollo backend profesional.
+- IntelliJ IDEA, Eclipse, NetBeans or Visual Studio Code.
+- Java 25 for the most modern themes.
+- Maven for the final block of the course.
 
 ---
 
-## Autor
+## Recommended learning path
 
-Curso creado por **Adrián Maza**.
+To make the most of the course:
+
+1. Complete the fundamentals first: topics 1 to 13.
+2. Spend time on Object Oriented Programming: topics 14 to 24.
+3. Practice collections, generics and functional programming: topics 25 to 31.
+4. Move towards modern APIs: topics 32 to 36.
+5. Finish with professional tools: topics 37 to 39.
+
+The key is not to move quickly, but to write code, make mistakes, correct and try again.
+
+---
+
+## Next steps
+
+After completing this course, you can continue with:
+
+- JUnit and testing.
+- JDBC and connection to databases.
+- MySQL from Java.
+-SpringBoot.
+- REST APIs.
+- Persistence with JPA and Hibernate.
+- Layered architecture.
+- Design patterns.
+- Professional backend development.
+
+---
+
+## Author
+
+Course created by **Adrián Maza**.
 
 - YouTube: [AMaza-ing](https://www.youtube.com/@AMaza-Ing)
 - LinkedIn: [Adrián Maza](https://www.linkedin.com/in/adrian-maza-vazquez/)
@@ -204,8 +204,8 @@ Curso creado por **Adrián Maza**.
 
 ---
 
-## Nota final
+## Final note
 
-Este curso está diseñado para aprender Java de forma gradual, práctica y sólida.
+This course is designed to learn Java in a gradual, practical and solid way.
 
-Si estás empezando, no intentes memorizarlo todo. Escribe código, prueba los ejemplos, rompe cosas y vuelve a construirlas. Esa es la forma más efectiva de aprender a programar.
+If you're just starting out, don't try to memorize everything. Write code, test examples, break things and build them again. That is the most effective way to learn to program.

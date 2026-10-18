@@ -1,23 +1,23 @@
-# **Tema 3: Claves Primarias y Foráneas en MySQL**
+# **Topic 3: Primary and Foreign Keys in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Definir claves primarias (`PRIMARY KEY`).
-- Crear claves foráneas (`FOREIGN KEY`) para relacionar tablas.
-- Aplicar restricciones de integridad referencial.
+- Define primary keys (`PRIMARY KEY`).
+- Create foreign keys (`FOREIGN KEY`) to relate tables.
+- Apply referential integrity constraints.
 
 ---
 
-## **1. ¿Qué es una clave primaria?**
+## **1. What is a primary key?**
 
-Una **clave primaria** es una columna (o combinación de columnas) que identifica de forma única cada fila en una tabla.
+A **primary key** is a column (or combination of columns) that uniquely identifies each row in a table.
 
-### **Características:**
+### **Features:**
 
-- No puede contener valores duplicados.
-- No puede ser nula.
+- Cannot contain duplicate values.
+- It cannot be null.
 
-### **Ejemplo:**
+### **Example:**
 
 ```sql
 CREATE TABLE customers (
@@ -26,7 +26,7 @@ CREATE TABLE customers (
 );
 ```
 
-También puede definirse al final:
+It can also be defined at the end:
 
 ```sql
 CREATE TABLE customers (
@@ -38,11 +38,11 @@ CREATE TABLE customers (
 
 ---
 
-## **2. ¿Qué es una clave foránea?**
+## **2. What is a foreign key?**
 
-Una **clave foránea** es una columna que apunta a una clave primaria en otra tabla. Sirve para establecer una relación entre tablas.
+A **foreign key** is a column that points to a primary key in another table. It is used to establish a relationship between tables.
 
-### **Ejemplo:**
+### **Example:**
 
 ```sql
 CREATE TABLE orders (
@@ -52,13 +52,13 @@ CREATE TABLE orders (
 );
 ```
 
-Esto indica que `customer_id` en `orders` debe coincidir con un `id` existente en `customers`.
+This indicates that `customer_id` in `orders` must match an existing `id` in `customers`.
 
 ---
 
-## **3. Crear varias claves**
+## **3. Create multiple keys**
 
-Una tabla puede tener una clave primaria y varias claves foráneas.
+A table can have one primary key and multiple foreign keys.
 
 ```sql
 CREATE TABLE order_details (
@@ -71,19 +71,19 @@ CREATE TABLE order_details (
 );
 ```
 
-> En este caso, la clave primaria es compuesta: cada combinación de `order_id` y `product_id` debe ser única.
+> In this case, the primary key is composite: each combination of `order_id` and `product_id` must be unique.
 
 ---
 
-[![Claves primarias y foraneas](https://img.youtube.com/vi/2FF8n4hXcSs/0.jpg)](https://www.youtube.com/watch?v=2FF8n4hXcSs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Primary and foreign keys](https://img.youtube.com/vi/2FF8n4hXcSs/0.jpg)](https://www.youtube.com/watch?v=2FF8n4hXcSs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **4. Restricciones adicionales**
+## **4. Additional restrictions**
 
-Puedes definir qué ocurre cuando se elimina o actualiza un valor referenciado.
+You can define what happens when a referenced value is deleted or updated.
 
-### **ON DELETE y ON UPDATE**
+### **ON DELETE and ON UPDATE**
 
 ```sql
 FOREIGN KEY (customer_id) REFERENCES customers(id)
@@ -91,17 +91,17 @@ ON DELETE CASCADE
 ON UPDATE CASCADE
 ```
 
-### **Opciones comunes:**
+### **Common options:**
 
-- `CASCADE`: aplica el cambio a las filas relacionadas.
-- `SET NULL`: pone el valor a `NULL` si se elimina el registro referenciado.
-- `RESTRICT`: impide eliminar/actualizar si hay filas relacionadas.
+- `CASCADE`: Applies the change to related rows.
+- `SET NULL`: sets the value to `NULL` if the referenced record is deleted.
+- `RESTRICT`: prevent deleting/updating if there are related rows.
 
 ---
 
-## **5. Ver claves y relaciones en una tabla existente**
+## **5. View keys and relationships in an existing table**
 
-Consulta la estructura de una tabla para ver claves definidas:
+Query the structure of a table to see defined keys:
 
 ```sql
 SHOW CREATE TABLE orders;
@@ -109,20 +109,20 @@ SHOW CREATE TABLE orders;
 
 ---
 
-## **6. Ventajas de usar claves correctamente**
+## **6. Advantages of using keys correctly**
 
-- Garantizan la integridad de los datos.
-- Evitan registros huérfanos o inconsistentes.
-- Permiten trabajar con `JOIN` de forma segura.
-
----
-
-## **7. Conclusión**
-
-- Las claves primarias identifican registros de forma única.
-- Las claves foráneas permiten relacionar tablas.
-- Las restricciones `ON DELETE` y `ON UPDATE` controlan el comportamiento de las relaciones.
+- They guarantee the integrity of the data.
+- They avoid orphan or inconsistent records.
+- They allow you to work with `JOIN` safely.
 
 ---
 
-En el siguiente tema aprenderemos a **Normalizar tablas antes de trabajar con ellas**.
+## **7. Conclusion**
+
+- Primary keys uniquely identify records.
+- Foreign keys allow relating tables.
+- The `ON DELETE` and `ON UPDATE` constraints control the behavior of relationships.
+
+---
+
+In the next topic we will learn to **Normalize tables before working with them**.

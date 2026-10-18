@@ -1,20 +1,20 @@
-# **Tema 7: Comunicación entre Componentes - Props, Component Events y Slots en Vue.js**
+# **Topic 7: Communication between Components - Props, Component Events and Slots in Vue.js**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En aplicaciones Vue, la comunicación entre componentes es clave para que la información fluya correctamente. En Vue 3, esto se gestiona principalmente con:
+In Vue applications, communication between components is key for information to flow correctly. In Vue 3, this is primarily managed with:
 
-- **Props:** Para pasar datos de un componente padre a un componente hijo.
-- **Emits (Component Events):** Para que un hijo notifique eventos al padre.
-- **Slots:** Para que un componente padre inserte contenido personalizado dentro de un componente hijo.
+- **Props:** To pass data from a parent component to a child component.
+- **Emits (Component Events):** For a child to notify events to the parent.
+- **Slots:** For a parent component to insert custom content inside a child component.
 
 ---
 
-## **2. Props: Pasar datos de padre a hijo**
+## **2. Props: Pass data from parent to child**
 
-`defineProps()` permite a un componente hijo recibir datos desde su componente padre. La información se pasará del componente padre al componente mediante un atributo.
+`defineProps()` allows a child component to receive data from its parent component. The information will be passed from the parent component to the component using an attribute.
 
-### Ejemplo básico
+### Basic example
 
 #### ChildComponent.vue
 
@@ -30,13 +30,13 @@ const props = defineProps({
 </template>
 ```
 
-#### Uso en el componente padre:
+#### Usage in parent component:
 
 ```vue
 <ChildComponent title="Bienvenido" />
 ```
 
-#### Variable desde el componente padre:
+#### Variable from parent component:
 
 ```vue
 <ChildComponent :title="titleVariable" />
@@ -48,11 +48,11 @@ const props = defineProps({
 
 ---
 
-## **3. Emits (Component Events): Emitir eventos del hijo al padre**
+## **3. Emits (Component Events): Emit events from the child to the parent**
 
-`defineEmits()` permite a un componente hijo emitir eventos personalizados que el componente padre puede escuchar. Con los eventos puede viajar información del componente hijo al componente padre.
+`defineEmits()` allows a child component to emit custom events that the parent component can listen to. With events you can travel information from the child component to the parent component.
 
-### Ejemplo básico
+### Basic example
 
 ```vue
 <script setup>
@@ -68,7 +68,7 @@ function notify() {
 </template>
 ```
 
-Uso en el componente padre:
+Usage in parent component:
 
 ```vue
 <ChildComponent @sendMessage="handleMessage" />
@@ -86,13 +86,13 @@ function handleMessage(msg) {
 
 ---
 
-## **4. Slots: Personalizar el contenido de un componente hijo**
+## **4. Slots: Customize the content of a child component**
 
-Los `slots` permiten que el componente padre inserte contenido arbitrario dentro del componente hijo.
+`slots` allow the parent component to insert arbitrary content inside the child component.
 
-### Ejemplo básico
+### Basic example
 
-Componente hijo (`Card.vue`):
+Child component (`Card.vue`):
 
 ```vue
 <template>
@@ -110,7 +110,7 @@ Componente hijo (`Card.vue`):
 </style>
 ```
 
-Uso en el componente padre:
+Usage in parent component:
 
 ```vue
 <Card>
@@ -124,13 +124,13 @@ Uso en el componente padre:
 
 ---
 
-## **5. Slots con nombre**
+## **5. Named Slots**
 
-Los slots pueden tener nombres para permitir múltiples zonas personalizables dentro de un componente.
+Slots can be named to allow multiple customizable zones within a component.
 
-### Ejemplo
+### Example
 
-Componente hijo (`Modal.vue`):
+Child component (`Modal.vue`):
 
 ```vue
 <template>
@@ -142,7 +142,7 @@ Componente hijo (`Modal.vue`):
 </template>
 ```
 
-Uso en el componente padre:
+Usage in parent component:
 
 ```vue
 <Modal>
@@ -158,18 +158,18 @@ Uso en el componente padre:
 
 ---
 
-[![Slots con nombre](https://img.youtube.com/vi/4017IZG5218/0.jpg)](https://www.youtube.com/watch?v=4017IZG5218&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Slots with name](https://img.youtube.com/vi/4017IZG5218/0.jpg)](https://www.youtube.com/watch?v=4017IZG5218&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## Resumen
+## Summary
 
-| Técnica | Dirección     | Uso                             |
-| ------- | ------------- | ------------------------------- |
-| Props   | Padre ➡️ Hijo | Enviar datos al hijo            |
-| Emits   | Hijo ➡️ Padre | Notificar eventos al padre      |
-| Slots   | Padre ➡️ Hijo | Personalizar contenido del hijo |
+| Technique | Address | Usage |
+| ------- | ------------- | ---------------------------- |
+| Props | Father ➡️ Son | Send data to child |
+| Emits | Son ➡️ Father | Notify events to parent |
+| Slots | Father ➡️ Son | Customize child content |
 
 ---
 
-En el próximo tema exploraremos **Las Propiedades Computadas, watch y watchEffect**, para tener un proyecto completamente reactivo.
+In the next topic we will explore **Computed Properties, watch and watchEffect**, to have a completely reactive project.

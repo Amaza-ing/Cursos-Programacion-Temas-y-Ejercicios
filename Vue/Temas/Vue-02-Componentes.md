@@ -1,16 +1,16 @@
-# **Tema 2: Componentes en Vue.js**
+# **Topic 2: Components in Vue.js**
 
-## **1. ¿Qué es un componente?**
+## **1. What is a component?**
 
-En Vue.js, un **componente** es una unidad reutilizable e independiente de la interfaz de usuario. Cada componente gestiona su propio contenido, lógica y estilo.
+In Vue.js, a **component** is a reusable, independent unit of the user interface. Each component manages its own content, logic and style.
 
-Con **Composition API** y la sintaxis de `<script setup>`, trabajar con componentes es aún más sencillo y eficiente.
+With **Composition API** and the `<script setup>` syntax, working with components is even easier and more efficient.
 
 ---
 
-## **2. Estructura de un componente Vue**
+## **2. Structure of a Vue component**
 
-En Vue 3, cada componente se define en un archivo `.vue` con la siguiente estructura básica:
+In Vue 3, each component is defined in an `.vue` file with the following basic structure:
 
 ```vue
 <script setup>
@@ -32,27 +32,27 @@ h1 {
 </style>
 ```
 
-### Explicación
+### Explanation
 
-- `template`: Contiene el HTML del componente.
-- `script setup`: Define la lógica del componente utilizando Composition API.
-- `style scoped`: Añade estilos locales, aplicables solo al componente.
+- `template`: Contains the HTML of the component.
+- `script setup`: Defines the component logic using the Composition API.
+- `style scoped`: Add local styles, applicable only to the component.
 
-> Nota: Si no añadimos el atributo `scoped` en la etiquta `style` los estilos serán aplicables a todos los componentes del proyecto.
+> Note: If we do not add the `scoped` attribute in the `style` label, the styles will be applicable to all components of the project.
 
 ---
 
-## **3. Creación de un componente**
+## **3. Creating a component**
 
-Para crear un componente llamado `MyComponent.vue`, basta con crear el archivo dentro de `src/components`:
+To create a component called `MyComponent.vue`, simply create the file inside `src/components`:
 
-Los nombres de los componentes deben empezar en mayúsculas y usar PascalCase (Todas las palabras del nombre empiezan en mayúsculas).
+Component names must start in uppercase and use PascalCase (All words in the name start in uppercase).
 
 ```
 src/components/MyComponent.vue
 ```
 
-Contenido del componente:
+Component content:
 
 ```vue
 <script setup>
@@ -74,15 +74,15 @@ p {
 </style>
 ```
 
-> Nota: En este ejemplo se usa `ref()` para crear una variable reactiva, esto lo veremos más adelante.
+> Note: In this example `ref()` is used to create a reactive variable, we will see this later.
 
 ---
 
-## **4. Uso de un componente dentro de otro**
+## **4. Using one component inside another**
 
-Una vez creado, podemos importar y usar el componente dentro de `App.vue` u otros componentes.
+Once created, we can import and use the component within `App.vue` or other components.
 
-Ejemplo en `App.vue`:
+Example in `App.vue`:
 
 ```vue
 <script setup>
@@ -98,4 +98,4 @@ import MyComponent from "./components/MyComponent.vue";
 
 ---
 
-En el próximo tema, exploraremos **Variables reactivas, Eventos y Binding en Vue.js**, para aprender a gestionar la interacción del usuario.
+In the next topic, we will explore **Reactive Variables, Events and Binding in Vue.js**, to learn how to manage user interaction.

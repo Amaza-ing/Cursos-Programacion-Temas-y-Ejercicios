@@ -1,14 +1,14 @@
-# **Tema 8: Diseño con Flexbox en CSS**
+# **Topic 8: Design with Flexbox in CSS**
 
-## **1. Introducción a Flexbox**
+## **1. Introduction to Flexbox**
 
-Flexbox es un sistema de diseño en CSS que permite distribuir y alinear elementos de manera eficiente en un contenedor flexible. Es ideal para crear diseños responsivos y ajustar la posición de los elementos.
+Flexbox is a CSS layout system that allows you to efficiently distribute and align elements in a flexible container. It is ideal for creating responsive layouts and adjusting the position of elements.
 
 ---
 
-## **2. Propiedad `display: flex`**
+## **2. `display: flex`** property
 
-Para activar Flexbox en un contenedor, se usa la propiedad `display: flex`.
+To enable Flexbox on a container, the `display: flex` property is used.
 
 ```css
 .container {
@@ -16,13 +16,14 @@ Para activar Flexbox en un contenedor, se usa la propiedad `display: flex`.
 }
 ```
 
-Esto convierte a los elementos hijos en **flex items**, que pueden ser manipulados con propiedades adicionales.
+
+This turns the child elements into **flex items**, which can be manipulated with additional properties.
 
 ---
 
-## **3. Dirección del eje principal (`flex-direction`)**
+## **3. Main shaft direction (`flex-direction`)**
 
-Define la dirección en la que los elementos se organizan dentro del contenedor.
+Defines the direction in which elements are arranged within the container.
 
 ```css
 .container {
@@ -30,18 +31,19 @@ Define la dirección en la que los elementos se organizan dentro del contenedor.
 }
 ```
 
-Valores posibles:
 
-- `row` (por defecto): en fila, de izquierda a derecha.
-- `row-reverse`: en fila, de derecha a izquierda.
-- `column`: en columna, de arriba hacia abajo.
-- `column-reverse`: en columna, de abajo hacia arriba.
+Possible values:
+
+- `row` (default): in a row, from left to right.
+- `row-reverse`: in a row, from right to left.
+- `column`: in column, from top to bottom.
+- `column-reverse`: in column, from bottom to top.
 
 ---
 
-## **4. Alineación de elementos (`justify-content`)**
+## **4. Element Alignment (`justify-content`)**
 
-Controla la alineación de los elementos a lo largo del eje principal.
+Controls the alignment of elements along the main axis.
 
 ```css
 .container {
@@ -49,20 +51,21 @@ Controla la alineación de los elementos a lo largo del eje principal.
 }
 ```
 
-Valores posibles:
 
-- `flex-start` (por defecto): Alinea los elementos al inicio.
-- `flex-end`: Alinea los elementos al final.
-- `center`: Centra los elementos.
-- `space-between`: Distribuye los elementos con espacio entre ellos.
-- `space-around`: Agrega espacio alrededor de cada elemento.
-- `space-evenly`: Distribuye el espacio de manera equitativa.
+Possible values:
+
+- `flex-start` (default): Aligns elements at start.
+- `flex-end`: Align the elements at the end.
+- `center`: Center the elements.
+- `space-between`: Distribute the elements with space between them.
+- `space-around`: Add space around each element.
+- `space-evenly`: Distributes space evenly.
 
 ---
 
-## **5. Alineación en el eje secundario (`align-items`)**
+## **5. Alignment on the secondary axis (`align-items`)**
 
-Controla la alineación de los elementos en el eje perpendicular al principal.
+Controls the alignment of the elements on the axis perpendicular to the main one.
 
 ```css
 .container {
@@ -70,23 +73,24 @@ Controla la alineación de los elementos en el eje perpendicular al principal.
 }
 ```
 
-Valores posibles:
 
-- `stretch` (por defecto): Los elementos se expanden para ocupar el espacio disponible.
-- `flex-start`: Alinea los elementos en la parte superior.
-- `flex-end`: Alinea los elementos en la parte inferior.
-- `center`: Centra los elementos verticalmente.
-- `baseline`: Alinea los elementos según su línea base de texto.
+Possible values:
+
+- `stretch` (default): Items expand to fill available space.
+- `flex-start`: Align the elements on top.
+- `flex-end`: Align the elements at the bottom.
+- `center`: Centers elements vertically.
+- `baseline`: Aligns elements according to their text baseline.
 
 ---
 
-## **6. Control del tamaño de los elementos (`flex-grow`, `flex-shrink`, `flex-basis`)**
+## **6. Element size control (`flex-grow`, `flex-shrink`, `flex-basis`)**
 
-Estos tres valores permiten controlar cómo los elementos se distribuyen dentro del contenedor flexible.
+These three values allow you to control how elements are distributed within the flex container.
 
-### **`flex-grow` (Crecimiento)**
+### **`flex-grow` (Growth)**
 
-Define cuánto puede crecer un elemento en relación con los demás.
+Defines how much an element can grow in relation to the others.
 
 ```css
 .item {
@@ -94,9 +98,10 @@ Define cuánto puede crecer un elemento en relación con los demás.
 }
 ```
 
-### **`flex-shrink` (Encogimiento)**
 
-Determina cuánto se encoge un elemento si hay falta de espacio.
+### **`flex-shrink` (Shrinkage)**
+
+Determines how much an item shrinks if there is a lack of space.
 
 ```css
 .item {
@@ -104,9 +109,10 @@ Determina cuánto se encoge un elemento si hay falta de espacio.
 }
 ```
 
-### **`flex-basis` (Tamaño base)**
 
-Define el tamaño inicial del elemento antes de aplicar `flex-grow` o `flex-shrink`.
+### **`flex-basis` (Base size)**
+
+Sets the initial size of the element before applying `flex-grow` or `flex-shrink`.
 
 ```css
 .item {
@@ -114,11 +120,12 @@ Define el tamaño inicial del elemento antes de aplicar `flex-grow` o `flex-shri
 }
 ```
 
+
 ---
 
-## **7. Propiedad `align-self`**
+## **7. `align-self` property**
 
-Permite alinear elementos individuales dentro del contenedor, sobrescribiendo `align-items`.
+Allows individual elements to be aligned within the container, overriding `align-items`.
 
 ```css
 .item {
@@ -126,9 +133,10 @@ Permite alinear elementos individuales dentro del contenedor, sobrescribiendo `a
 }
 ```
 
-Valores posibles:
 
-- `auto` (por defecto)
+Possible values:
+
+- `auto` (default)
 - `flex-start`
 - `flex-end`
 - `center`
@@ -137,9 +145,9 @@ Valores posibles:
 
 ---
 
-## **8. Orden de los elementos (`order`)**
+## **8. Order of elements (`order`)**
 
-Permite cambiar el orden de los elementos dentro del contenedor.
+Allows you to change the order of the elements within the container.
 
 ```css
 .item1 {
@@ -150,15 +158,15 @@ Permite cambiar el orden de los elementos dentro del contenedor.
 }
 ```
 
-Por defecto, todos los elementos tienen `order: 0`. Un número menor se posiciona antes que un número mayor.
+
+By default, all items have `order: 0`. A smaller number is positioned before a larger number.
 
 ---
 
-## **9. Otras propiedades importantes**
+## **9. Other important properties**
+`flex-wrap` moves the last element to a new line if it does not fit in the current space.
 
-`flex-wrap` mueve el último elemento a una linea nueva si no cabe en el espacio actual.
-
-`gap` indica el espacio entre los diferentes items del contenedor flex.
+`gap` indicates the space between the different items of the flex container.
 
 ```css
 .container {
@@ -167,26 +175,27 @@ Por defecto, todos los elementos tienen `order: 0`. Un número menor se posicion
 }
 ```
 
+
 ---
 
 [![Flexbox](https://img.youtube.com/vi/ONi3VOxQSjc/0.jpg)](https://www.youtube.com/watch?v=ONi3VOxQSjc&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **9. Buenas prácticas con Flexbox**
+## **9. Good practices with Flexbox**
 
-- Usar `flex-wrap` cuando los elementos no deben encogerse demasiado.
-- Evitar establecer valores arbitrarios en `flex-grow` sin considerar la distribución.
-- Usar `align-items` y `justify-content` para mejorar la disposición de los elementos.
-- Aplicar `order` solo cuando sea necesario reordenar elementos visualmente.
-
----
-
-## **Enlaces de Interés.**
-
-- Juego para practicar con Flexbox: [froggy](https://flexboxfroggy.com/#es).
-- Guía para usar Flexbox: [css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+- Use `flex-wrap` when elements should not shrink too much.
+- Avoid setting arbitrary values in `flex-grow` without considering the distribution.
+- Use `align-items` and `justify-content` to improve the arrangement of elements.
+- Apply `order` only when it is necessary to visually reorder elements.
 
 ---
 
-En el próximo tema, exploraremos **CSS Grid**, un sistema de diseño más avanzado para organizar elementos en dos dimensiones.
+## **Links of Interest.**
+
+- Game to practice with Flexbox: [froggy](https://flexboxfroggy.com/#es).
+- Guide to using Flexbox: [css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+---
+
+In the next topic, we'll explore **CSS Grid**, a more advanced layout system for organizing elements in two dimensions.

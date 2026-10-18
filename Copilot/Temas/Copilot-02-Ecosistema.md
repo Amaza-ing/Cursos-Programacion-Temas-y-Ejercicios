@@ -1,495 +1,492 @@
-# Tema 02 — Ecosistema de Copilot: Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot y Copilot Studio
+# Topic 02 — Copilot ecosystem: Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot and Copilot Studio
 
-## 1. Objetivo del tema
+## 1. Objective of the topic
 
-En el tema anterior vimos qué es la inteligencia artificial generativa y cómo Copilot puede entenderse como un asistente de trabajo. En este tema vamos a ordenar el ecosistema Copilot, porque uno de los problemas más habituales al empezar es que existen varias herramientas con nombres parecidos.
+In the previous topic we saw what generative artificial intelligence is and how Copilot can be understood as a work assistant. In this topic we are going to organize the Copilot ecosystem, because one of the most common problems when starting out is that there are several tools with similar names.
 
-El objetivo de este tema es aprender a diferenciar los principales tipos de Copilot y saber en qué casos conviene usar cada uno.
+The objective of this topic is to learn to differentiate the main types of Copilot and know in which cases it is appropriate to use each one.
 
-Al terminar este tema deberías ser capaz de:
+Upon finishing this topic you should be able to:
 
-- Diferenciar entre Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot y Copilot Studio.
-- Saber qué herramienta usar según la tarea.
-- Reconocer qué Copilot está orientado a desarrollo, productividad, automatización o creación de agentes.
-- Entender que las funcionalidades pueden variar según la licencia, la cuenta y el entorno de trabajo.
-- Elegir una herramienta de Copilot de forma razonada.
+- Differentiate between Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot and Copilot Studio.
+- Know which tool to use depending on the task.
+- Recognize which Copilot is oriented towards development, productivity, automation or agent creation.
+- Understand that functionalities may vary depending on the license, account and work environment.
+- Choose a Copilot tool in a reasoned way.
 
 ---
 
-## 2. Por qué existen varios Copilot
+## 2. Why there are several Copilots
 
-Microsoft y GitHub utilizan el nombre Copilot para distintas herramientas de inteligencia artificial. Todas comparten una misma idea general: ayudar al usuario a realizar tareas mediante IA generativa.
+Microsoft and GitHub use the name Copilot for different artificial intelligence tools. They all share the same general idea: helping the user perform tasks through generative AI.
 
-Sin embargo, cada herramienta está pensada para un contexto diferente.
+However, each tool is designed for a different context.
 
-No es lo mismo:
+It is not the same:
 
-- Escribir código en un editor.
-- Resumir una reunión de Teams.
-- Crear una presentación en PowerPoint.
-- Analizar una tabla de Excel.
-- Crear un agente conversacional para soporte interno.
-- Pedir ayuda general desde el navegador.
+- Write code in an editor.
+- Summarize a Teams meeting.
+- Create a PowerPoint presentation.
+- Analyze an Excel table.
+- Create a conversational agent for internal support.
+- Ask for general help from the browser.
 
-Por eso es importante no hablar de “Copilot” de forma genérica sin aclarar a cuál nos referimos.
+That is why it is important not to talk about “Copilot” in a generic way without clarifying which one we are referring to.
 
-Durante el curso trabajaremos con esta clasificación:
+During the course we will work with this classification:
 
-| Herramienta           | Uso principal                                                                                |
+| Tool | Main use |
 | --------------------- | -------------------------------------------------------------------------------------------- |
-| Microsoft Copilot     | Asistente general para búsqueda, generación de contenido y productividad básica              |
-| GitHub Copilot        | Asistente de desarrollo de software                                                          |
-| Microsoft 365 Copilot | Asistente integrado en Word, Excel, PowerPoint, Outlook, Teams y otras apps de Microsoft 365 |
-| Copilot Studio        | Creación y gestión de agentes de IA                                                          |
+| Microsoft Copilot | General assistant for search, content generation and basic productivity |
+| GitHub Copilot | Software Development Assistant |
+| Microsoft 365 Copilot | Integrated assistant in Word, Excel, PowerPoint, Outlook, Teams and other Microsoft 365 apps |
+| Copilot Studio | Creating and managing AI agents |
 
 ---
 
 ## 3. Microsoft Copilot
 
-**Microsoft Copilot** es el asistente de IA general de Microsoft. Está pensado para ayudar en tareas amplias de productividad, consulta, redacción, búsqueda y generación de contenido.
+**Microsoft Copilot** is Microsoft's general AI assistant. It is designed to help with broad tasks of productivity, consultation, writing, searching and content generation.
 
-Puede utilizarse para tareas como:
+It can be used for tasks such as:
 
-- Hacer preguntas generales.
-- Resumir información.
-- Redactar textos.
-- Generar ideas.
-- Ayudar a preparar documentos.
-- Explicar conceptos.
-- Comparar opciones.
-- Crear borradores.
-- Transformar contenido.
+- Ask general questions.
+- Summarize information.
+- Write texts.
+- Generate ideas.
+- Help prepare documents.
+- Explain concepts.
+- Compare options.
+- Create drafts.
+- Transform content.
 
-Ejemplo de uso:
+Example of use:
 
 ```text
 Explícame las diferencias entre una aplicación web tradicional y una aplicación SPA con un ejemplo sencillo.
 ```
 
-Otro ejemplo:
+Another example:
 
 ```text
 Redacta un correo profesional para solicitar una reunión de seguimiento sobre un proyecto.
 ```
 
-Microsoft Copilot puede utilizarse en distintos entornos, como la web, Windows o Edge, aunque las funciones concretas dependen del país, cuenta, licencia, configuración y versión disponible.
+Microsoft Copilot can be used in different environments, such as the web, Windows, or Edge, although specific features depend on the country, account, license, configuration, and available version.
+### When to use Microsoft Copilot
 
-### Cuándo usar Microsoft Copilot
+It is convenient to use Microsoft Copilot when you need:
 
-Conviene usar Microsoft Copilot cuando necesitas:
+- A quick explanation.
+- A general summary.
+- A help for writing.
+- Initial ideas.
+- A comparison.
+- A simple text transformation.
+- Support in tasks that are not necessarily technical.
 
-- Una explicación rápida.
-- Un resumen general.
-- Una ayuda para redactar.
-- Ideas iniciales.
-- Una comparación.
-- Una transformación sencilla de texto.
-- Apoyo en tareas no necesariamente técnicas.
+### When it is not the best option
 
-### Cuándo no es la mejor opción
+It is not usually the best tool when you need:
 
-No suele ser la mejor herramienta cuando necesitas:
+- Work directly on the code of a project.
+- Access the context of a repository.
+- Generate tests connected to your code base.
+- Review a pull request.
+- Create GitHub Actions workflows within the repository.
 
-- Trabajar directamente sobre el código de un proyecto.
-- Acceder al contexto de un repositorio.
-- Generar tests conectados a tu base de código.
-- Revisar una pull request.
-- Crear workflows de GitHub Actions dentro del repositorio.
-
-Para esos casos, normalmente será más adecuado GitHub Copilot.
+For those cases, GitHub Copilot will usually be more suitable.
 
 ---
 
 ## 4. GitHub Copilot
 
-**GitHub Copilot** es el Copilot orientado al desarrollo de software.
+**GitHub Copilot** is the Copilot aimed at software development.
 
-Su función principal es asistir a personas programadoras dentro de su flujo de trabajo habitual. Puede utilizarse en editores como Visual Studio Code o entornos de JetBrains, y también en GitHub y otros entornos compatibles.
+Its main function is to assist programmers within their usual workflow. It can be used in editors such as Visual Studio Code or JetBrains environments, and also in GitHub and other supported environments.
 
-GitHub Copilot puede ayudar a:
+GitHub Copilot can help:
 
-- Completar código mientras escribimos.
-- Generar funciones.
-- Explicar código existente.
-- Refactorizar código.
-- Crear tests.
-- Detectar errores.
-- Escribir documentación técnica.
-- Crear mensajes de commit.
-- Resumir pull requests.
-- Proponer mejoras.
-- Trabajar con comandos o terminal, según el entorno.
-- Crear o revisar workflows de GitHub Actions.
+- Complete code while we write.
+- Generate functions.
+- Explain existing code.
+- Refactor code.
+- Create tests.
+- Detect errors.
+- Write technical documentation.
+- Create commit messages.
+- Summarize pull requests.
+- Propose improvements.
+- Work with commands or terminal, depending on the environment.
+- Create or review GitHub Actions workflows.
 
-Ejemplo de prompt para GitHub Copilot Chat:
+Prompt example for GitHub Copilot Chat:
 
 ```text
 Explica qué hace esta función, detecta posibles problemas y propón una versión más legible sin cambiar su comportamiento.
 ```
 
-Ejemplo de prompt para generar tests:
+Example of a prompt to generate tests:
 
 ```text
 Genera tests unitarios para esta función usando Jest. Incluye casos normales, casos límite y casos de error.
 ```
 
-### Diferencia entre sugerencias inline y Copilot Chat
+### Difference between inline suggestions and Copilot Chat
 
-GitHub Copilot se puede usar de varias formas.
+GitHub Copilot can be used in several ways.
 
-#### Sugerencias inline
+#### Inline Suggestions
 
-Son sugerencias que aparecen directamente mientras escribimos código.
+They are suggestions that appear directly while we write code.
 
-Por ejemplo, si escribimos:
+For example, if we write:
 
 ```javascript
 function calculateTotalPrice(products) {
 ```
 
-Copilot puede sugerir automáticamente el cuerpo de la función.
+Copilot can automatically suggest the function body.
 
-Este modo es útil para:
+This mode is useful for:
 
-- Completar código repetitivo.
-- Acelerar funciones sencillas.
-- Generar estructuras comunes.
-- Ahorrar tiempo en fragmentos previsibles.
+- Complete repetitive code.
+- Speed ​​up simple functions.
+- Generate common structures.
+- Save time in predictable fragments.
 
 #### Copilot Chat
 
-Copilot Chat permite conversar sobre el código.
+Copilot Chat allows you to chat about the code.
 
-Es útil para:
+It is useful for:
 
-- Pedir explicaciones.
-- Analizar errores.
-- Refactorizar código.
-- Generar tests.
-- Preguntar sobre el proyecto.
-- Revisar una selección de código.
-- Pedir alternativas de implementación.
+- Ask for explanations.
+- Analyze errors.
+- Refactor code.
+- Generate tests.
+- Ask about the project.
+- Review a selection of code.
+- Request implementation alternatives.
 
-Ejemplo:
+Example:
 
 ```text
 ¿Por qué esta función devuelve undefined en algunos casos? Explícalo paso a paso y propón una corrección mínima.
 ```
 
-### Cuándo usar GitHub Copilot
+### When to use GitHub Copilot
 
-Conviene usar GitHub Copilot cuando necesitas:
+It's a good idea to use GitHub Copilot when you need to:
 
-- Programar.
-- Comprender código.
-- Mejorar código existente.
-- Crear tests.
-- Documentar código.
-- Automatizar tareas de desarrollo.
-- Trabajar con repositorios.
-- Revisar cambios técnicos.
-- Crear workflows de CI/CD.
+- Schedule.
+- Understand code.
+- Improve existing code.
+- Create tests.
+- Document code.
+- Automate development tasks.
+- Work with repositories.
+- Review technical changes.
+- Create CI/CD workflows.
 
-### Cuándo no es la mejor opción
+### When it is not the best option
 
-No suele ser la mejor herramienta cuando necesitas:
+It is not usually the best tool when you need:
 
-- Redactar un informe empresarial largo.
-- Resumir una reunión de Teams.
-- Crear una presentación corporativa.
-- Analizar una hoja de cálculo de negocio dentro de Excel.
+- Write a long business report.
+- Summarize a Teams meeting.
+- Create a corporate presentation.
+- Analyze a business spreadsheet within Excel.
 
-Para esos casos, normalmente será más adecuado Microsoft 365 Copilot.
+For those cases, Microsoft 365 Copilot will usually be more suitable.
 
 ---
 
 ## 5. Microsoft 365 Copilot
 
-**Microsoft 365 Copilot** es Copilot integrado en las aplicaciones de Microsoft 365.
+**Microsoft 365 Copilot** is Copilot integrated into Microsoft 365 applications.
 
-Está pensado para trabajar con herramientas como:
+It is designed to work with tools such as:
 
-- Word.
+-Word.
 - Excel.
 - PowerPoint.
 - Outlook.
-- Teams.
-- OneNote.
-- Loop.
-- Otras aplicaciones del entorno Microsoft 365, según licencia y disponibilidad.
+-Teams.
+-OneNote.
+-Loop.
+- Other applications in the Microsoft 365 environment, according to license and availability.
 
-Su utilidad principal está en tareas de productividad y gestión de información.
+Its main use is in productivity and information management tasks.
 
-### 5.1 Copilot en Word
+### 5.1 Copilot in Word
 
-Puede ayudar a:
+It can help:
 
-- Crear borradores.
-- Reescribir textos.
-- Resumir documentos.
-- Cambiar el tono.
-- Transformar notas en documentos estructurados.
-- Crear introducciones, conclusiones o esquemas.
+- Create drafts.
+- Rewrite texts.
+- Summarize documents.
+- Change the tone.
+- Transform notes into structured documents.
+- Create introductions, conclusions or outlines.
 
-Ejemplo de prompt:
+Prompt example:
 
 ```text
 Reescribe este texto con un tono más profesional, manteniendo las ideas principales y reduciendo la extensión en un 30%.
 ```
 
-### 5.2 Copilot en Excel
+### 5.2 Copilot in Excel
 
-Puede ayudar a:
+It can help:
 
-- Interpretar tablas.
-- Crear fórmulas.
-- Explicar datos.
-- Detectar tendencias.
-- Generar resúmenes.
-- Proponer visualizaciones.
-- Identificar valores atípicos.
+- Interpret tables.
+- Create formulas.
+- Explain data.
+- Detect trends.
+- Generate summaries.
+- Propose visualizations.
+- Identify outliers.
 
-Ejemplo de prompt:
+Prompt example:
 
 ```text
 Analiza esta tabla de ventas y resume las principales tendencias por trimestre.
 ```
 
-### 5.3 Copilot en PowerPoint
+### 5.3 Copilot in PowerPoint
 
-Puede ayudar a:
+It can help:
 
-- Crear presentaciones a partir de un documento.
-- Resumir contenido en diapositivas.
-- Reorganizar una presentación.
-- Crear notas del presentador.
-- Proponer títulos y estructura.
+- Create presentations from a document.
+- Summarize content in slides.
+- Rearrange a presentation.
+- Create presenter notes.
+- Propose titles and structure.
 
-Ejemplo de prompt:
+Prompt example:
 
 ```text
 Crea una estructura de presentación de 8 diapositivas a partir de este documento. El público será técnico pero no experto.
 ```
 
-### 5.4 Copilot en Outlook
+### 5.4 Copilot in Outlook
 
-Puede ayudar a:
+It can help:
 
-- Redactar correos.
-- Resumir hilos largos.
-- Proponer respuestas.
-- Cambiar el tono.
-- Extraer tareas pendientes.
+- Write emails.
+- Summarize long threads.
+- Propose answers.
+- Change the tone.
+- Extract pending tasks.
 
-Ejemplo de prompt:
+Prompt example:
 
 ```text
 Resume este hilo de correos e indica qué decisiones se han tomado y qué tareas quedan pendientes.
 ```
 
-### 5.5 Copilot en Teams
+### 5.5 Copilot in Teams
 
-Puede ayudar a:
+It can help:
 
-- Resumir reuniones.
-- Identificar decisiones tomadas.
-- Extraer tareas asignadas.
-- Recoger preguntas sin responder.
-- Generar actas.
-- Revisar puntos clave de una conversación.
+- Summarize meetings.
+- Identify decisions made.
+- Extract assigned tasks.
+- Collect unanswered questions.
+- Generate minutes.
+- Review key points of a conversation.
 
-Ejemplo de prompt:
+Prompt example:
 
 ```text
 Resume la reunión en tres apartados: decisiones tomadas, tareas asignadas y temas que requieren seguimiento.
 ```
 
-### Cuándo usar Microsoft 365 Copilot
+### When to use Microsoft 365 Copilot
 
-Conviene usar Microsoft 365 Copilot cuando trabajas dentro de documentos, hojas de cálculo, correos, reuniones o presentaciones.
+It is convenient to use Microsoft 365 Copilot when you work within documents, spreadsheets, emails, meetings or presentations.
 
-Es especialmente útil cuando la información ya está dentro del entorno Microsoft 365 y se necesita transformarla, resumirla, analizarla o reutilizarla.
+It is especially useful when the information is already within the Microsoft 365 environment and needs to be transformed, summarized, analyzed or reused.
 
 ---
 
 ## 6. Copilot Studio
 
-**Copilot Studio** es una herramienta orientada a la creación, personalización y gestión de agentes de IA.
+**Copilot Studio** is a tool aimed at creating, customizing and managing AI agents.
 
-Un agente es un sistema que puede conversar con usuarios y, en algunos casos, ejecutar acciones o consultar fuentes de información conectadas.
+An agent is a system that can converse with users and, in some cases, execute actions or consult connected sources of information.
 
-Copilot Studio permite crear agentes con un enfoque de bajo código o low-code. Esto significa que muchas tareas pueden configurarse visualmente, sin necesidad de programar todo desde cero.
+Copilot Studio allows you to create agents with a low-code approach. This means that many tasks can be configured visually, without having to program everything from scratch.
 
-### Qué puede hacer un agente
+### What an agent can do
 
-Un agente creado con Copilot Studio puede servir para:
+An agent created with Copilot Studio can be used to:
 
-- Responder preguntas frecuentes.
-- Ayudar a empleados con documentación interna.
-- Atender solicitudes de soporte.
-- Guiar a usuarios en un proceso.
-- Consultar información de distintas fuentes.
-- Activar flujos de trabajo.
-- Conectarse con sistemas empresariales mediante conectores.
+- Answer frequently asked questions.
+- Help employees with internal documentation.
+- Respond to support requests.
+- Guide users in a process.
+- Consult information from different sources.
+- Activate workflows.
+- Connect to business systems using connectors.
 
-Ejemplo de caso de uso:
+Use case example:
 
 ```text
 Una empresa crea un agente interno para responder preguntas sobre vacaciones, permisos, teletrabajo y políticas de recursos humanos.
 ```
 
-Otro ejemplo:
+Another example:
 
 ```text
 Un equipo técnico crea un agente que consulta documentación interna y ayuda a resolver dudas sobre despliegues, ramas Git y entornos de desarrollo.
 ```
 
-### Elementos básicos de un agente
+### Basic elements of an agent
 
-Al diseñar un agente, conviene definir:
+When designing an agent, it is useful to define:
 
-1. **Objetivo**: para qué existe el agente.
-2. **Usuarios**: quién lo va a utilizar.
-3. **Fuentes de información**: qué documentación o datos puede consultar.
-4. **Instrucciones**: cómo debe responder.
-5. **Acciones**: qué puede hacer, si tiene permisos para ejecutar tareas.
-6. **Límites**: qué no debe responder o qué debe escalar a una persona.
-7. **Canales**: dónde se publicará, por ejemplo Teams, web u otros canales.
+1. **Objective**: what the agent exists for.
+2. **Users**: who is going to use it.
+3. **Sources of information**: what documentation or data you can consult.
+4. **Instructions**: how you should respond.
+5. **Actions**: What you can do, if you have permissions to run tasks.
+6. **Boundaries**: What should not be answered or what should be escalated to a person.
+7. **Channels**: where it will be published, for example Teams, web or other channels.
 
-### Cuándo usar Copilot Studio
+### When to use Copilot Studio
+It is convenient to use Copilot Studio when you need to create your own AI solution for a specific process.
 
-Conviene usar Copilot Studio cuando necesitas crear una solución propia de IA para un proceso concreto.
+For example:
 
-Por ejemplo:
+- An internal support assistant.
+- An agent to consult technical documentation.
+- A chatbot for customer service.
+- A human resources assistant.
+- An agent to guide administrative processes.
+- A conversational automation connected to business data.
 
-- Un asistente de soporte interno.
-- Un agente para consultar documentación técnica.
-- Un chatbot para atención al cliente.
-- Un asistente para recursos humanos.
-- Un agente para guiar procesos administrativos.
-- Una automatización conversacional conectada a datos empresariales.
+### When it is not necessary to use Copilot Studio
 
-### Cuándo no es necesario usar Copilot Studio
+There is no need to use Copilot Studio for individual tasks such as:
 
-No hace falta usar Copilot Studio para tareas individuales como:
+- Ask for a quick explanation.
+- Generate a simple function.
+- Summarize an isolated document.
+- Create a specific email.
 
-- Pedir una explicación rápida.
-- Generar una función sencilla.
-- Resumir un documento aislado.
-- Crear un correo puntual.
-
-En esos casos, probablemente sea suficiente con Microsoft Copilot, Microsoft 365 Copilot o GitHub Copilot.
-
----
-
-## 7. Comparativa general
-
-| Herramienta           | Principal usuario                               | Contexto                                | Ejemplos de uso                                              |
-| --------------------- | ----------------------------------------------- | --------------------------------------- | ------------------------------------------------------------ |
-| Microsoft Copilot     | Usuario general                                 | Web, Windows, Edge, app Copilot         | Preguntar, redactar, resumir, generar ideas                  |
-| GitHub Copilot        | Desarrolladores                                 | IDE, GitHub, terminal, repositorios     | Código, tests, refactorización, documentación, pull requests |
-| Microsoft 365 Copilot | Usuarios de Microsoft 365                       | Word, Excel, PowerPoint, Outlook, Teams | Documentos, correos, reuniones, datos, presentaciones        |
-| Copilot Studio        | Equipos de negocio, tecnología y automatización | Plataforma de creación de agentes       | Agentes internos, chatbots, soporte, automatizaciones        |
+In those cases, Microsoft Copilot, Microsoft 365 Copilot, or GitHub Copilot will probably suffice.
 
 ---
 
-## 8. Cómo elegir qué Copilot usar
+## 7. General comparison
 
-Para elegir la herramienta adecuada, podemos seguir esta guía.
+| Tool | Main user | Context | Examples of use |
+| --------------------- | -------------------------------------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Microsoft Copilot | General user | Web, Windows, Edge, Copilot app | Ask, write, summarize, generate ideas |
+| GitHub Copilot | Developers | IDE, GitHub, terminal, repositories | Code, tests, refactoring, documentation, pull requests |
+| Microsoft 365 Copilot | Microsoft 365 users | Word, Excel, PowerPoint, Outlook, Teams | Documents, emails, meetings, data, presentations |
+| Copilot Studio | Business, technology and automation teams | Agent Creation Platform | Internal agents, chatbots, support, automations |
 
-### Paso 1. Identifica el tipo de tarea
+---
 
-Pregúntate:
+## 8. How to choose which Copilot to use
+
+To choose the right tool, we can follow this guide.
+
+### Step 1. Identify the type of task
+
+Ask yourself:
 
 ```text
 ¿Estoy trabajando con código, documentos, correos, reuniones, datos o agentes?
 ```
 
-### Paso 2. Elige la herramienta según el contexto
+### Step 2. Choose the tool according to the context
 
-| Necesito...                          | Herramienta recomendada                   |
+| I need... | Recommended tool |
 | ------------------------------------ | ----------------------------------------- |
-| Crear o revisar código               | GitHub Copilot                            |
-| Explicar una función                 | GitHub Copilot                            |
-| Generar tests                        | GitHub Copilot                            |
-| Crear un workflow de GitHub Actions  | GitHub Copilot                            |
-| Redactar un correo                   | Microsoft Copilot o Microsoft 365 Copilot |
-| Resumir un documento de Word         | Microsoft 365 Copilot                     |
-| Analizar una tabla de Excel          | Microsoft 365 Copilot                     |
-| Resumir una reunión de Teams         | Microsoft 365 Copilot                     |
-| Crear un agente para soporte interno | Copilot Studio                            |
-| Hacer una consulta general           | Microsoft Copilot                         |
+| Create or review code | GitHub Copilot |
+| Explain a function | GitHub Copilot |
+| Generate tests | GitHub Copilot |
+| Create a GitHub Actions workflow | GitHub Copilot |
+| Write an email | Microsoft Copilot or Microsoft 365 Copilot |
+| Summarize a Word document | Microsoft 365 Copilot |
+| Analyze an Excel table | Microsoft 365 Copilot |
+| Summarize a Teams meeting | Microsoft 365 Copilot |
+| Create an agent for internal support | Copilot Studio |
+| Make a general inquiry | Microsoft Copilot |
 
-### Paso 3. Comprueba el contexto disponible
+### Step 3. Check the available context
+The tool will be more useful if you have access to the necessary context.
 
-La herramienta será más útil si tiene acceso al contexto necesario.
+For example:
 
-Por ejemplo:
+- GitHub Copilot works best when you can see the relevant code.
+- Microsoft 365 Copilot works best when the document, email, or meeting is within the Microsoft 365 environment.
+- Copilot Studio works best when the agent is connected to well-organized information sources.
 
-- GitHub Copilot funciona mejor cuando puede ver el código relevante.
-- Microsoft 365 Copilot funciona mejor cuando el documento, correo o reunión están dentro del entorno Microsoft 365.
-- Copilot Studio funciona mejor cuando el agente está conectado a fuentes de información bien organizadas.
+### Step 4. Review the conditions of use
 
-### Paso 4. Revisa las condiciones de uso
+Before using a Copilot tool in a company or class, it is worth checking:
 
-Antes de usar una herramienta de Copilot en una empresa o clase, conviene comprobar:
-
-- Tipo de cuenta.
-- Licencia disponible.
-- Políticas de privacidad.
-- Permisos del usuario.
-- Datos a los que puede acceder.
-- Reglas internas sobre uso de IA.
+- Account type.
+- License available.
+- Privacy policies.
+- User permissions.
+- Data you can access.
+- Internal rules on the use of AI.
 
 ---
 
-## 9. Escenarios prácticos de decisión
+## 9. Practical decision scenarios
 
-### Escenario 1. Necesito crear una función en JavaScript
+### Scenario 1. I need to create a function in JavaScript
 
-Herramienta recomendada: **GitHub Copilot**.
+Recommended tool: **GitHub Copilot**.
 
-Prompt posible:
+Possible prompt:
 
 ```text
 Crea una función en JavaScript que reciba un array de usuarios y devuelva solo los usuarios activos. Usa nombres de variables en inglés y comentarios breves en español.
 ```
 
-### Escenario 2. Necesito resumir un documento de 20 páginas
+### Scenario 2. I need to summarize a 20-page document
 
-Herramienta recomendada: **Microsoft 365 Copilot**, si el documento está en Word o OneDrive.
+Recommended tool: **Microsoft 365 Copilot**, if the document is in Word or OneDrive.
 
-Prompt posible:
+Possible prompt:
 
 ```text
 Resume este documento en una página. Mantén los conceptos principales y señala las conclusiones más importantes.
 ```
 
-### Escenario 3. Necesito preparar una reunión
+### Scenario 3. I need to prepare a meeting
 
-Herramienta recomendada: **Microsoft 365 Copilot**, especialmente en Outlook o Teams.
+Recommended tool: **Microsoft 365 Copilot**, especially in Outlook or Teams.
 
-Prompt posible:
+Possible prompt:
 
 ```text
 Resume los correos relacionados con esta reunión e indica los temas que debería preparar antes de asistir.
 ```
 
-### Escenario 4. Necesito crear un asistente interno para dudas frecuentes
+### Scenario 4. I need to create an internal FAQ assistant
 
-Herramienta recomendada: **Copilot Studio**.
+Recommended tool: **Copilot Studio**.
 
-Prompt o instrucción inicial del agente:
+Prompt or initial agent instruction:
 
 ```text
 Eres un asistente interno para responder preguntas frecuentes sobre procesos de incorporación, vacaciones y herramientas corporativas. Responde de forma breve y, si no tienes información suficiente, indica que la consulta debe escalarse al equipo correspondiente.
 ```
 
-### Escenario 5. Necesito entender un error en mi aplicación
+### Scenario 5. I need to understand a bug in my application
 
-Herramienta recomendada: **GitHub Copilot**.
+Recommended tool: **GitHub Copilot**.
 
-Prompt posible:
+Possible prompt:
 
 ```text
 Analiza este error y dime qué puede estar provocándolo. Después propón una corrección paso a paso.
@@ -497,94 +494,93 @@ Analiza este error y dime qué puede estar provocándolo. Después propón una c
 
 ---
 
-## 10. Errores habituales al empezar
+## 10. Common mistakes when starting out
 
-### Error 1. Pensar que todos los Copilot son iguales
+### Mistake 1. Thinking that all Copilots are the same
 
-No todos los Copilot tienen el mismo contexto ni las mismas funciones. Usar la herramienta equivocada puede generar respuestas menos útiles.
+Not all Copilots have the same context or the same functions. Using the wrong tool can lead to less useful answers.
 
-### Error 2. Usar prompts demasiado generales
+### Error 2. Using too general prompts
 
-Un prompt como este es poco útil:
+A prompt like this is of little use:
 
 ```text
 Hazme un resumen.
 ```
 
-Es mejor:
+It is better:
 
 ```text
 Resume este documento en 10 líneas, destacando los objetivos, las conclusiones y las tareas pendientes.
 ```
 
-### Error 3. No revisar la respuesta
+### Error 3. Not checking the answer
 
-Copilot puede equivocarse. Siempre hay que revisar, probar y validar.
+Copilot can be wrong. You always have to review, test and validate.
 
-### Error 4. Compartir información sensible sin comprobar el entorno
+### Error 4. Sharing sensitive information without checking the environment
 
-No se debe pegar código privado, datos personales, credenciales, contratos o información confidencial sin conocer las condiciones de privacidad y seguridad aplicables.
+You should not paste private code, personal data, credentials, contracts or confidential information without knowing the applicable privacy and security conditions.
 
-### Error 5. Pedir tareas demasiado grandes de una sola vez
+### Mistake 5. Asking for too large tasks at once
 
-Es mejor dividir un objetivo grande en pasos pequeños.
+It's better to break down a big goal into small steps.
 
-En lugar de:
+Instead of:
 
 ```text
 Créame una aplicación completa.
 ```
 
-Es mejor empezar por:
+It is better to start with:
 
 ```text
 Propón la estructura de carpetas para una aplicación sencilla de gestión de tareas con frontend, backend y base de datos.
 ```
 
-Después se puede continuar paso a paso.
+Then you can continue step by step.
 
 ---
 
-## 11. Buenas prácticas para elegir y usar Copilot
+## 11. Good practices for choosing and using Copilot
 
-1. **Define primero la tarea**.
-2. **Elige la herramienta según el contexto**.
-3. **Da instrucciones concretas**.
-4. **No mezcles objetivos diferentes en un solo prompt**.
-5. **Pide pasos intermedios cuando la tarea sea compleja**.
-6. **Comprueba siempre el resultado**.
-7. **No compartas datos sensibles sin autorización**.
-8. **Ten en cuenta la licencia y la configuración disponible**.
-9. **Usa Copilot como apoyo, no como sustituto del criterio profesional**.
-10. **Documenta los cambios importantes que aceptes**.
-
----
-
-## 12. Resumen del tema
-
-El ecosistema Copilot está formado por varias herramientas que comparten una idea común: asistir al usuario mediante inteligencia artificial generativa. Sin embargo, cada una tiene un objetivo distinto.
-
-Microsoft Copilot es útil para consultas generales y generación de contenido. GitHub Copilot está orientado al desarrollo de software. Microsoft 365 Copilot se integra en aplicaciones como Word, Excel, PowerPoint, Outlook y Teams. Copilot Studio permite crear y gestionar agentes de IA.
-
-La clave es elegir la herramienta adecuada según la tarea, el contexto disponible y las condiciones de uso.
+1. **Define the task first**.
+2. **Choose the tool according to the context**.
+3. **Give specific instructions**.
+4. **Do not mix different objectives in a single prompt**.
+5. **Ask for intermediate steps when the task is complex**.
+6. **Always check the result**.
+7. **Do not share sensitive data without authorization**.
+8. **Please note the license and available configuration**.
+9. **Use Copilot as a support, not a substitute for professional judgment**.
+10. **Document any important changes you accept**.
 
 ---
 
-## 13. Checklist final
+## 12. Summary of the topic
+The Copilot ecosystem is made up of several tools that share a common idea: assisting the user through generative artificial intelligence. However, each one has a different objective.
 
-Antes de pasar al siguiente tema, asegúrate de que puedes responder a estas preguntas:
+Microsoft Copilot is useful for general queries and content generation. GitHub Copilot is aimed at software development. Microsoft 365 Copilot integrates into applications such as Word, Excel, PowerPoint, Outlook and Teams. Copilot Studio allows you to create and manage AI agents.
 
-- ¿Qué diferencia hay entre Microsoft Copilot y GitHub Copilot?
-- ¿Para qué sirve Microsoft 365 Copilot?
-- ¿Qué tipo de herramienta es Copilot Studio?
-- ¿Qué Copilot usarías para generar tests?
-- ¿Qué Copilot usarías para resumir una reunión?
-- ¿Qué Copilot usarías para crear un agente interno?
-- ¿Por qué es importante tener en cuenta la licencia y el contexto?
+The key is to choose the right tool based on the task, the available context and the conditions of use.
 
 ---
 
-## 14. Documentación oficial recomendada
+## 13. Final checklist
+
+Before moving on to the next topic, make sure you can answer these questions:
+
+- What is the difference between Microsoft Copilot and GitHub Copilot?
+- What is Microsoft 365 Copilot for?
+- What type of tool is Copilot Studio?
+- Which Copilot would you use to generate tests?
+- Which Copilot would you use to summarize a meeting?
+- Which Copilot would you use to create an internal agent?
+- Why is it important to consider license and context?
+
+---
+
+## 14. Recommended official documentation
 
 - GitHub Copilot documentation: https://docs.github.com/copilot
 - GitHub Copilot features: https://docs.github.com/en/copilot/get-started/features

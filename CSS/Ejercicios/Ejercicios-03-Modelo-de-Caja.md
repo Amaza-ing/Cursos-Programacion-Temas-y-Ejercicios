@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 3: El Modelo de Caja en CSS**
+# **Exercises - Topic 3: The Box Model in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre el modelo de caja en CSS.
+Below you will find 5 practical exercises on the box model in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Definir márgenes y padding**
+### **Exercise 1: Define margins and padding**
 
-Crea un `div` con un fondo gris, un margen de 20 píxeles y un padding de 10 píxeles.
+Creates an `div` with a gray background, a 20 pixel margin, and a 10 pixel padding.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .box {
@@ -22,19 +22,21 @@ Crea un `div` con un fondo gris, un margen de 20 píxeles y un padding de 10 pí
 }
 ```
 
+
 ```html
 <div class="box">Este es un contenedor con margen y padding.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Usar `box-sizing: border-box`**
+### **Exercise 2: Use `box-sizing: border-box`**
 
-Define un `div` con un ancho de 200 píxeles, un borde de 5 píxeles y activa la propiedad `box-sizing: border-box`.
+Defines an `div` with a width of 200 pixels, a border of 5 pixels, and activates the `box-sizing: border-box` property.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -44,19 +46,21 @@ Define un `div` con un ancho de 200 píxeles, un borde de 5 píxeles y activa la
 }
 ```
 
+
 ```html
 <div class="container">Este contenedor usa box-sizing.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 3: Aplicar diferentes márgenes**
+### **Exercise 3: Apply different margins**
 
-Crea un `div` con diferentes márgenes: 10 píxeles arriba, 20 píxeles a la derecha, 30 píxeles abajo y 40 píxeles a la izquierda.
+Create an `div` with different margins: 10 pixels on top, 20 pixels on the right, 30 pixels on the bottom, and 40 pixels on the left.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .margin-box {
@@ -64,19 +68,21 @@ Crea un `div` con diferentes márgenes: 10 píxeles arriba, 20 píxeles a la der
 }
 ```
 
+
 ```html
 <div class="margin-box">Este es un contenedor con márgenes diferentes.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 4: Crear un borde redondeado**
+### **Exercise 4: Create a rounded edge**
 
-Define un `div` con un borde de 2 píxeles sólido negro y esquinas redondeadas de 15 píxeles.
+Defines an `div` with a 2 pixel solid black border and 15 pixel rounded corners.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .rounded-box {
@@ -85,19 +91,21 @@ Define un `div` con un borde de 2 píxeles sólido negro y esquinas redondeadas 
 }
 ```
 
+
 ```html
 <div class="rounded-box">Este es un contenedor con bordes redondeados.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 5: Crear un efecto de sombra**
+### **Exercise 5: Create a shadow effect**
 
-Crea un `div` con un fondo azul y una sombra de 5 píxeles de desplazamiento en los ejes X e Y, con una opacidad de 0.5.
+Creates an `div` with a blue background and a 5 pixel offset shadow on the X and Y axes, with an opacity of 0.5.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .shadow-box {
@@ -106,8 +114,10 @@ Crea un `div` con un fondo azul y una sombra de 5 píxeles de desplazamiento en 
 }
 ```
 
+
 ```html
 <div class="shadow-box">Este es un contenedor con sombra.</div>
 ```
+
 
 </details>

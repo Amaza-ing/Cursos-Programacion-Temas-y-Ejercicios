@@ -1,41 +1,41 @@
-# **Tema 23: Users, Fetch y Context**
+# **Topic 23: Users, Fetch and Context**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En aplicaciones reales es muy común combinar **usuarios**, **peticiones a APIs** y **Context**. Por ejemplo:
+In real applications it is very common to combine **users**, **API requests** and **Context**. For example:
 
-- Cargar usuarios desde una API.
-- Guardarlos en un estado global.
-- Acceder a esos usuarios desde cualquier componente.
+- Load users from an API.
+- Save them in a global state.
+- Access those users from any component.
 
-En este tema aprenderás a:
+In this topic you will learn to:
 
-- Gestionar usuarios con Context.
-- Cargar datos con Fetch (o Axios) dentro de un Provider.
-- Compartir datos y funciones globalmente.
-- Mantener una arquitectura clara y escalable.
-
----
-
-## **2. Problema a resolver**
-
-Sin Context:
-
-- Cada componente hace su propio fetch.
-- Se repite lógica.
-- El estado se fragmenta.
-
-Con Context:
-
-- El fetch se hace **una sola vez**.
-- Los datos se comparten.
-- Los componentes solo consumen lo que necesitan.
+- Manage users with Context.
+- Load data with Fetch (or Axios) within a Provider.
+- Share data and functions globally.
+- Maintain a clear and scalable architecture.
 
 ---
 
-## **3. Arquitectura recomendada**
+## **2. Problem to solve**
 
-Estructura típica:
+Without Context:
+
+- Each component makes its own fetch.
+- Logic is repeated.
+- The state is fragmented.
+
+With Context:
+
+- The fetch is done **only once**.
+- Data is shared.
+- Components only consume what they need.
+
+---
+
+## **3. Recommended architecture**
+
+Typical structure:
 
 ```txt
 src/
@@ -50,9 +50,9 @@ src/
 
 ---
 
-## **4. Crear el UsersContext**
+## **4. Create the UsersContext**
 
-Creamos el contexto que compartirá los usuarios.
+We create the context that users will share.
 
 ```js
 import { createContext } from "react";
@@ -64,13 +64,13 @@ export default UsersContext;
 
 ---
 
-## **5. Crear el UsersProvider con Fetch**
+## **5. Create the UsersProvider with Fetch**
 
-El Provider se encarga de:
+The Provider is responsible for:
 
-- Hacer la petición a la API.
-- Guardar los usuarios en estado.
-- Gestionar `loading` y `error`.
+- Make the request to the API.
+- Save users in status.
+- Manage `loading` and `error`.
 
 ```js
 import { useEffect, useState } from "react";
@@ -116,7 +116,7 @@ export default UsersProvider;
 
 ---
 
-## **6. Envolver la app con el Provider**
+## **6. Wrap the app with the Provider**
 
 ```js
 import UsersProvider from "./context/UsersProvider";
@@ -132,13 +132,13 @@ function App() {
 export default App;
 ```
 
-Ahora cualquier componente puede acceder a los usuarios.
+Now any component can access users.
 
 ---
 
-## **7. Consumir usuarios desde Context**
+## **7. Consume users from Context**
 
-Ejemplo de lista de usuarios:
+Example of user list:
 
 ```js
 import { useContext } from "react";
@@ -164,9 +164,9 @@ export default UsersList;
 
 ---
 
-## **8. Compartir funciones en Context**
+## **8. Share functions in Context**
 
-El Context no solo sirve para datos, también para funciones.
+The Context is not only used for data, but also for functions.
 
 ```js
 const addUser = (newUser) => {
@@ -176,13 +176,13 @@ const addUser = (newUser) => {
 <UsersContext.Provider value={{ users, addUser }}>
 ```
 
-Esto permite modificar el estado global desde cualquier componente.
+This allows the global state to be modified from any component.
 
 ---
 
-## **9. Context + rutas paramétricas (detalle de usuario)**
+## **9. Context + parametric routes (user detail)**
 
-En una página de detalle:
+On a detail page:
 
 ```js
 import { useParams } from "react-router-dom";
@@ -203,32 +203,32 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-No hace falta hacer un nuevo fetch.
+There is no need to make a new fetch.
 
 ---
 
-## **10. Errores típicos**
+## **10. Typical errors**
 
-### **10.1. Hacer fetch en cada componente**
+### **10.1. Fetch each component**
 
-Duplica lógica y llamadas.
+Duplicate logic and calls.
 
-### **10.2. Context demasiado grande**
+### **10.2. Context too large**
 
-Mejor varios contextos pequeños.
+Better several small contexts.
 
-### **10.3. No manejar loading/error**
+### **10.3. Do not handle loading/error**
 
-Siempre deben existir.
+They must always exist.
 
 ---
 
-## **11. Buenas prácticas**
+## **11. Good practices**
 
-- Haz el fetch en el Provider.
-- Comparte solo lo necesario.
-- Separa Context por dominio (users, auth, settings).
-- Mantén Providers simples y predecibles.
+- Do the fetch in the Provider.
+- Share only what is necessary.
+- Separate Context by domain (users, auth, settings).
+- Keep Providers simple and predictable.
 
 ---
 
@@ -240,4 +240,4 @@ Siempre deben existir.
 
 ---
 
-En el siguiente tema profundizarás en **optimización con React Memo**.
+In the next topic you will delve into **optimization with React Memo**.

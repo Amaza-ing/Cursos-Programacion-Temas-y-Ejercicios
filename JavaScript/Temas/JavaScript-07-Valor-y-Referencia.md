@@ -1,30 +1,30 @@
-# **Tema 7: Paso por Valor y Paso por Referencia en JavaScript**
+# **Topic 7: Passing by Value and Passing by Reference in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Cuando se asignan valores a variables o se pasan como argumentos a funciones en JavaScript, pueden manejarse de dos maneras:
+When values are assigned to variables or passed as arguments to functions in JavaScript, they can be handled in two ways:
 
-- **Paso por Valor** (Primtivos)
-- **Paso por Referencia** (Objetos y Arrays)
+- **Step by Value** (Primitives)
+- **Step by Reference** (Objects and Arrays)
 
-Comprender esta diferencia es clave para evitar efectos inesperados en el código.
+Understanding this difference is key to avoiding unexpected effects on your code.
 
 ---
 
-## **2. Paso por Valor**
+## **2. Step by Value**
 
-El **paso por valor** ocurre cuando se asigna o se pasa una variable que contiene un tipo de dato primitivo:
+**passing by value** occurs when a variable containing a primitive data type is assigned or passed:
 
-- Números (`Number`)
-- Cadenas (`String`)
-- Booleanos (`Boolean`)
+- Numbers (`Number`)
+- Chains (`String`)
+- Booleans (`Boolean`)
 - `null`, `undefined`
 - `Symbol`
 - `BigInt`
 
-Cada vez que una variable de tipo primitivo se asigna a otra variable, se crea una **copia independiente** del valor original.
+Each time a variable of primitive type is assigned to another variable, an **independent copy** of the original value is created.
 
-### **Ejemplo de Paso por Valor**
+### **Pass by Value Example**
 
 ```js
 let a = 10;
@@ -36,21 +36,21 @@ console.log(a); // Salida: 10
 console.log(b); // Salida: 20
 ```
 
-> **Nota:** La variable `b` obtiene una copia del valor de `a`, por lo que modificar `b` no afecta a `a`.
+> **Note:** The `b` variable gets a copy of the value of `a`, so modifying `b` does not affect `a`.
 
 ---
 
-## **3. Paso por Referencia**
+## **3. Step by Reference**
 
-El **paso por referencia** ocurre cuando se asigna o se pasa una variable que contiene un tipo de dato no primitivo:
+**Passing by reference** occurs when a variable containing a non-primitive data type is assigned or passed:
 
-- Objetos (`Object`)
+- Items (`Object`)
 - Arrays (`Array`)
-- Funciones (`Function`)
+- Functions (`Function`)
 
-En estos casos, en lugar de copiar el valor, **se copia la referencia** en memoria. Es decir, ambas variables apuntan al mismo objeto.
+In these cases, instead of copying the value, **the reference** is copied into memory. That is, both variables point to the same object.
 
-### **Ejemplo de Paso por Referencia**
+### **Example of Pass by Reference**
 
 ```js
 let person1 = { name: "Ana", age: 25 };
@@ -62,19 +62,19 @@ console.log(person1.age); // Salida: 30
 console.log(person2.age); // Salida: 30
 ```
 
-> **Nota:** Cambios en `person2` afectan a `person1` porque ambas variables hacen referencia al mismo objeto en memoria.
+> **Note:** Changes in `person2` affect `person1` because both variables refer to the same object in memory.
 
 ---
 
-[![Paso por Valor vs Referencia](https://img.youtube.com/vi/tPcA6iDA5yc/0.jpg)](https://www.youtube.com/watch?v=tPcA6iDA5yc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Step by Value vs Reference](https://img.youtube.com/vi/tPcA6iDA5yc/0.jpg)](https://www.youtube.com/watch?v=tPcA6iDA5yc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **4. Copiar Objetos y Arrays sin modificar el original**
+## **4. Copy Objects and Arrays without modifying the original**
 
-Para evitar modificaciones no deseadas en objetos y arrays, es necesario hacer **copias independientes**.
+To avoid unwanted modifications to objects and arrays, it is necessary to make **independent copies**.
 
-### **4.1. Copia superficial (Shallow Copy) con `Object.assign()`**
+### **4.1. Shallow Copy with `Object.assign()`**
 
 ```js
 const original = { name: "Carlos", age: 40 };
@@ -84,7 +84,7 @@ copy.age = 45;
 console.log(original.age); // Salida: 40 (no se modifica)
 ```
 
-### **4.2. Copia superficial con el operador Spread (`...`)**
+### **4.2. Shallow copy with the Spread operator (`...`)**
 
 ```js
 const copy2 = { ...original };
@@ -92,9 +92,9 @@ copy2.age = 50;
 console.log(original.age); // Salida: 40
 ```
 
-### **4.3. Copia profunda (Deep Copy) con `JSON.parse(JSON.stringify())`**
+### **4.3. Deep Copy with `JSON.parse(JSON.stringify())`**
 
-Si el objeto tiene anidaciones, `Object.assign()` y `spread` **no** copian los objetos internos.
+If the object is nested, `Object.assign()` and `spread` **do not** copy the internal objects.
 
 ```js
 const nestedObject = {
@@ -109,9 +109,9 @@ deepCopy.details.age = 35;
 console.log(nestedObject.details.age); // Salida: 30 (no se modifica)
 ```
 
-> **Nota:** `JSON.stringify()` no funciona bien con funciones o valores `undefined`.
+> **Note:** `JSON.stringify()` does not work well with `undefined` functions or values.
 
-### **4.4. Copia profunda con `structuredClone()` (ES2021)**
+### **4.4. Deep copy with `structuredClone()` (ES2021)**
 
 ```js
 const deepClone = structuredClone(nestedObject);
@@ -121,13 +121,13 @@ console.log(nestedObject.details.age); // Salida: 30
 
 ---
 
-[![Copia de Objetos](https://img.youtube.com/vi/nxcXzZzdXKU/0.jpg)](https://www.youtube.com/watch?v=nxcXzZzdXKU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Copy of Objects](https://img.youtube.com/vi/nxcXzZzdXKU/0.jpg)](https://www.youtube.com/watch?v=nxcXzZzdXKU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. Copiando Arrays**
+## **5. Copying Arrays**
 
-### **5.1. Copia superficial con `slice()`**
+### **5.1. Shallow copy with `slice()`**
 
 ```js
 const numbers = [1, 2, 3, 4];
@@ -138,19 +138,19 @@ console.log(numbers); // [1, 2, 3, 4]
 console.log(numbersCopy); // [1, 2, 3, 4, 5]
 ```
 
-### **5.2. Copia superficial con el operador Spread (`...`)**
+### **5.2. Shallow copy with the Spread operator (`...`)**
 
 ```js
 const newNumbers = [...numbers];
 ```
 
-### **5.3. Copia superficial con `map()`**
+### **5.3. Shallow copy with `map()`**
 
 ```js
 const newNumbers = numbers.map((number) => number);
 ```
 
-### **5.4. Copia profunda con `JSON.parse(JSON.stringify())`**
+### **5.4. Deep copy with `JSON.parse(JSON.stringify())`**
 
 ```js
 const nestedArray = [
@@ -163,7 +163,7 @@ deepArrayCopy[0][0] = 99;
 console.log(nestedArray[0][0]); // Salida: 1 (no se modifica)
 ```
 
-### **5.5. Copia profunda con `structuredClone()` (ES2021)**
+### **5.5. Deep copy with `structuredClone()` (ES2021)**
 
 ```js
 const originalArray = [
@@ -180,21 +180,20 @@ console.log(deepCopyArray[0][0]); // 99 (copia independiente)
 
 ---
 
-[![Copia de Arrays](https://img.youtube.com/vi/V727GTGDvv0/0.jpg)](https://www.youtube.com/watch?v=V727GTGDvv0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Copy of Arrays](https://img.youtube.com/vi/V727GTGDvv0/0.jpg)](https://www.youtube.com/watch?v=V727GTGDvv0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **6. Buenas Prácticas**
+## **6. Good Practices**
 
-- **Usar paso por valor** para tipos primitivos cuando no se necesita compartir referencia.
-- **Evitar modificar objetos compartidos** al usar paso por referencia.
-- **Hacer copias independientes** con `Object.assign()`, `spread (...)`, `JSON.parse(JSON.stringify())` o `structuredClone()`.
-- **Cuidado con copias superficiales**: No copian objetos anidados.
+- **Use passing by value** for primitive types when reference sharing is not needed.
+- **Avoid modifying shared objects** when using pass by reference.
+- **Make independent copies** with `Object.assign()`, `spread (...)`, `JSON.parse(JSON.stringify())` or `structuredClone()`.
+- **Be careful with superficial copies**: They do not copy nested objects.
 
 ---
+## **7. Conclusion**
 
-## **7. Conclusión**
+Understanding the difference between **passing by value** and **passing by reference** helps you write more predictable code and avoid unexpected errors when modifying objects and arrays in JavaScript.
 
-Comprender la diferencia entre **paso por valor** y **paso por referencia** ayuda a escribir código más predecible y a evitar errores inesperados al modificar objetos y arrays en JavaScript.
-
-En el siguiente tema veremos algunos operadores menos conocidos, como spread operator, optional chaining y otros.
+In the next topic we will see some less known operators, such as spread operator, optional chaining and others.

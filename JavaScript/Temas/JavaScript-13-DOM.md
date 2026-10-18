@@ -1,29 +1,29 @@
-# **Tema 13: Manipulación del DOM en JavaScript**
+# **Topic 13: DOM Manipulation in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-El **DOM (Document Object Model)** es una representación estructurada de una página web que JavaScript puede manipular para cambiar contenido, estructura y estilos dinámicamente.
+The **DOM (Document Object Model)** is a structured representation of a web page that JavaScript can manipulate to change content, structure, and styles dynamically.
 
-Con JavaScript podemos:
+With JavaScript we can:
 
-- Seleccionar elementos del DOM.
-- Modificar su contenido y estilos.
-- Crear, eliminar y mover elementos.
-- Responder a eventos del usuario.
+- Select DOM elements.
+- Modify its content and styles.
+- Create, delete and move items.
+- Respond to user events.
 
-> Nota: Antes de empezar a probar el código de manipulación del DOM debemos decirle al navegador que espere a que el HTML esté cargado antes de cargar el JavaScript. Esto lo podemos hacer añadiendo el atributo `defer` a la etiqueta `<script>` en el fichero .html:
+> Note: Before we start testing the DOM manipulation code we must tell the browser to wait for the HTML to be loaded before loading the JavaScript. We can do this by adding the attribute `defer` to the label `<script>` in the .html file:
 
 > `<script defer></script>`
 
 ---
 
-## **2. Seleccionar Elementos del DOM**
+## **2. Select DOM Elements**
 
-Existen varias formas para seleccionar un elemento del DOM.
+There are several ways to select a DOM element.
 
 ### **2.1. `getElementById()`**
 
-Selecciona un elemento por su `id`.
+Select an element by its `id`.
 
 ```html
 <h1 id="main-title">Este es el Título</h1>
@@ -36,7 +36,7 @@ console.log(title.textContent);
 
 ### **2.2. `getElementsByClassName()`**
 
-Selecciona elementos por su `class`. Devuelve una colección de elementos.
+Select elements by their `class`. Returns a collection of elements.
 
 ```html
 <ul>
@@ -53,7 +53,7 @@ console.log(items[0].textContent);
 
 ### **2.3. `getElementsByTagName()`**
 
-Selecciona elementos por su nombre de etiqueta.
+Select items by their tag name.
 
 ```html
 <p>Esto es un párrafo</p>
@@ -65,12 +65,12 @@ const paragraphs = document.getElementsByTagName("p");
 console.log(paragraphs.length);
 ```
 
-### **2.4. `querySelector()` y `querySelectorAll()`**
+### **2.4. `querySelector()` and `querySelectorAll()`**
 
-Es la manera recomanda de hacerlo, es más moderna y versátil, únicamente tenemos que utilizar los diferentes selectores CSS según necesitemos, pero las funciones `querySelector()` y `querySelectorAll()` se mantienen igual.
+It is the recommended way to do it, it is more modern and versatile, we only have to use the different CSS selectors as needed, but the functions `querySelector()` and `querySelectorAll()` they stay the same.
 
-- `querySelector()`: selecciona el **primer** elemento que coincida con un selector CSS.
-- `querySelectorAll()`: selecciona **todos** los elementos que coincidan.
+- `querySelector()`- Selects the **first** element that matches a CSS selector.
+- `querySelectorAll()`- Select **all** matching items.
 
 ```js
 const firstItem = document.querySelector(".list-item");
@@ -81,17 +81,17 @@ console.log(allItems.length);
 
 ---
 
-[![Seleccionar Elementos del DOM](https://img.youtube.com/vi/nB6KHr9U6mE/0.jpg)](https://www.youtube.com/watch?v=nB6KHr9U6mE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Select DOM Elements](https://img.youtube.com/vi/nB6KHr9U6mE/0.jpg)](https://www.youtube.com/watch?v=nB6KHr9U6mE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **3. Modificar el Contenido y Atributos**
+## **3. Modify Content and Attributes**
 
-Un elemento del DOM tiene muchos atributos diferentes a los que podemos acceder, vamos a ver algunos de los más utilizados.
+A DOM element has many different attributes that we can access, let's look at some of the most used ones.
 
-### **3.1. `textContent` y `innerHTML`**
+### **3.1. `textContent` and `innerHTML`**
 
-Representan el contenido de texto y el código html que está entre las etiquetas de cualquier elemento respectivamente.
+They represent the text content and the html code that is between the tags of any element respectively.
 
 ```js
 document.querySelector("#main-title").textContent = "Nuevo título";
@@ -99,7 +99,7 @@ document.querySelector("#content").innerHTML =
   "<strong>Texto en negrita</strong>";
 ```
 
-### **3.2. Modificar atributos con `setAttribute()` y `getAttribute()`**
+### **3.2. Modify attributes with `setAttribute()` and `getAttribute()`**
 
 ```js
 const link = document.querySelector("a");
@@ -107,19 +107,19 @@ link.setAttribute("href", "https://www.google.com");
 console.log(link.getAttribute("href"));
 ```
 
-### **3.3. Modificar estilos con `style`**
+### **3.3. Modify styles with `style`**
 
-Cuando accedemos directamente a la propiedad `style` debemos utilizar camelCase para el nombre de las propiedades CSS.
+When we directly access the property `style` we must use camelCase for the name of the CSS properties.
 
-Esto puede venir bien para pequeños cambios de estilo, pero suele ser más recomendable añadir o quitar clases para la mayoría de cambios de estilo.
+This can be good for small style changes, but it is usually more advisable to add or remove classes for most style changes.
 
 ```js
 document.body.style.backgroundColor = "lightblue";
 ```
 
-### **3.4. Añadir o elminar clases**
+### **3.4. Add or delete classes**
 
-Se pueden añadir o eliminar clases de los diferentes elementos del DOM dinámicamente, esto se puede utilizar para cambiar los estilos de una manera elegante.
+Classes can be added or removed from different DOM elements dynamically, this can be used to change styles in an elegant way.
 
 ```js
 const container = document.querySelector(".container") as HTMLElement;
@@ -130,21 +130,21 @@ container.classList.remove("red");
 
 ---
 
-[![Manipulación de Elementos del DOM](https://img.youtube.com/vi/Qh3PDWMl1iM/0.jpg)](https://www.youtube.com/watch?v=Qh3PDWMl1iM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![DOM Element Manipulation](https://img.youtube.com/vi/Qh3PDWMl1iM/0.jpg)](https://www.youtube.com/watch?v=Qh3PDWMl1iM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **4. Crear y Eliminar Elementos**
+## **4. Create and Delete Elements**
 
-Se pueden crear y elminar elementos del DOM usando JavaScript con los siguientes métodos:
+DOM elements can be created and deleted using JavaScript with the following methods:
 
-- `createElement()`: Crea un nuevo elemento.
-- `appendChild()`: Añade un elemento creado a otro que tengamos seleccionado en una variable.
-- `remove()`: Elimina un elemento del DOM.
-- `replaceWith()`: Reemplaza un elemento.
-- Propiedad `innerHTML`: Se puede utilizar para añadir o eliminar elementos escribiendo diréctamente el código HTML.
+- `createElement()`: Create a new item.
+- `appendChild()`: Adds a created element to another that we have selected in a variable.
+- `remove()`: Removes an element from the DOM.
+- `replaceWith()`: Replaces an element.
+- Property `innerHTML`: It can be used to add or remove elements by directly writing the HTML code.
 
-### **4.1. Crear elementos dinámicamente**
+### **4.1. Create elements dynamically**
 
 ```js
 const newElement = document.createElement("p");
@@ -152,14 +152,14 @@ newElement.textContent = "Este es un nuevo párrafo";
 document.body.appendChild(newElement);
 ```
 
-### **4.2. Eliminar elementos del DOM**
+### **4.2. Remove elements from the DOM**
 
 ```js
 const elementToRemove = document.querySelector("#old-element");
 elementToRemove.remove();
 ```
 
-### **4.3. Reemplazar un elemento**
+### **4.3. Replace an element**
 
 ```js
 const newHeading = document.createElement("h2");
@@ -168,7 +168,7 @@ const oldHeading = document.querySelector("#main-title");
 oldHeading.replaceWith(newHeading);
 ```
 
-### **4.2. Modificar elementos del usando `innerHTML`**
+### **4.2. Modify elements of the using `innerHTML`**
 
 ```js
 const container = document.querySelector("#container");
@@ -178,15 +178,15 @@ container.innerHTML =
 
 ---
 
-[![Creación de Elementos del DOM](https://img.youtube.com/vi/fFF77mgl6_Q/0.jpg)](https://www.youtube.com/watch?v=fFF77mgl6_Q&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Creating DOM Elements](https://img.youtube.com/vi/fFF77mgl6_Q/0.jpg)](https://www.youtube.com/watch?v=fFF77mgl6_Q&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. Manejo de Eventos**
+## **5. Event Management**
 
-Los eventos permiten que una página responda a las acciones del usuario. Existen multitud de eventos como `click` para cuando el usuario hace click con el ratón sobre un elemento o `input` para cuando se modifica un campo de un formulario.
+Events allow a page to respond to user actions. There are many events such as `click` for when the user clicks with the mouse on an element or `input` for when a form field is modified.
 
-### **5.1. Agregar eventos con `addEventListener()`**
+### **5.1. Add events with `addEventListener()`**
 
 ```js
 document.querySelector("#btn").addEventListener("click", () => {
@@ -194,7 +194,7 @@ document.querySelector("#btn").addEventListener("click", () => {
 });
 ```
 
-### **5.2. Eventos del teclado**
+### **5.2. Keyboard events**
 
 ```js
 document.addEventListener("keydown", (event) => {
@@ -202,11 +202,11 @@ document.addEventListener("keydown", (event) => {
 });
 ```
 
-### **5.3. Eventos de formulario**
+### **5.3. Form Events**
 
-Cuando se envía un formulario el comportamiento por defecto es recargar la página, podemos evitar este comportamiento por defecto usando el objeto del evento, que en este caso se llama `event` y el método `preventDefault()`.
+When a form is submitted the default behavior is to reload the page, we can avoid this default behavior by using the event object, which in this case is called `event` and the method `preventDefault()`.
 
-> Nota: El objeto del evento se puede llamar como queramos, habitualmente se les llama `event` o simplemente `e`.
+> Note: The event object can be called whatever we want, usually they are called `event` or simply `e`.
 
 ```js
 document.querySelector("#form").addEventListener("submit", (event) => {
@@ -217,18 +217,18 @@ document.querySelector("#form").addEventListener("submit", (event) => {
 
 ---
 
-[![Eventos](https://img.youtube.com/vi/PRUiwhjkGbc/0.jpg)](https://www.youtube.com/watch?v=PRUiwhjkGbc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Events](https://img.youtube.com/vi/PRUiwhjkGbc/0.jpg)](https://www.youtube.com/watch?v=PRUiwhjkGbc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-[![Web Dinámica parte 1](https://img.youtube.com/vi/UY18JrstVzk/0.jpg)](https://www.youtube.com/watch?v=UY18JrstVzk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Dynamic Web part 1](https://img.youtube.com/vi/UY18JrstVzk/0.jpg)](https://www.youtube.com/watch?v=UY18JrstVzk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
-[![Web Dinámica parte 2](https://img.youtube.com/vi/tdPG9lezPsk/0.jpg)](https://www.youtube.com/watch?v=tdPG9lezPsk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Dynamic Web part 2](https://img.youtube.com/vi/tdPG9lezPsk/0.jpg)](https://www.youtube.com/watch?v=tdPG9lezPsk&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-JavaScript permite una manipulación dinámica del DOM, haciendo que las páginas sean interactivas y dinámicas. Con estas técnicas, podemos modificar elementos, agregar eventos y crear nuevas estructuras dentro del documento.
+JavaScript allows dynamic manipulation of the DOM, making pages interactive and dynamic. With these techniques, we can modify elements, add events and create new structures within the document.
 
-En el siguiente tema veremos como podemos utilizar el **localStorage** y el **sessionStorage** para almacenar información en el cliente.
+In the next topic we will see how we can use the **localStorage** and the **sessionStorage** to store information on the client.

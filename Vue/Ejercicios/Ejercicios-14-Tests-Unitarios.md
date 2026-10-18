@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 14: Realizar Tests Unitarios en Vue 3 usando Vitest**
+# **Exercises - Topic 14: Perform Unit Tests in Vue 3 using Vitest**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre cómo realizar tests unitarios en Vue 3 usando Vitest.
+Below you will find 5 practical exercises on how to perform unit tests in Vue 3 using Vitest.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Test básico de renderizado**
+## **Exercise 1: Basic rendering test**
 
-Crea un test para un componente `Header.vue` que verifique que el componente muestra correctamente un título `<h1>` con el texto "Bienvenido a la aplicación".
+Create a test for an `Header.vue` component that verifies that the component correctly displays an `<h1>` title with the text "Welcome to the application."
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```javascript
 import { mount } from "@vue/test-utils";
@@ -29,11 +29,11 @@ describe("Header", () => {
 
 ---
 
-## **Ejercicio 2: Simulación de un clic**
+## **Exercise 2: Simulation of a click**
 
-Crea un test para `Counter.vue` que verifique que el contador incrementa al hacer clic en un botón.
+Create a test for `Counter.vue` that verifies that the counter increments when a button is clicked.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```javascript
 import { mount } from "@vue/test-utils";
@@ -56,11 +56,11 @@ describe("Counter", () => {
 
 ---
 
-## **Ejercicio 3: Test con prop inicial**
+## **Exercise 3: Test with initial prop**
 
-Crea un test para `Message.vue` que reciba una prop `text` y muestre ese mensaje.
+Create a test for `Message.vue` that receives an `text` prop and displays that message.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```javascript
 import { mount } from "@vue/test-utils";
@@ -82,11 +82,11 @@ describe("Message", () => {
 
 ---
 
-## **Ejercicio 4: Comprobar renderizado condicional**
+## **Exercise 4: Check conditional rendering**
 
-Crea un test para `UserStatus.vue` que muestre "Usuario activo" si `isActive` es true, y "Usuario inactivo" si es false.
+Create a test for `UserStatus.vue` that displays "Active User" if `isActive` is true, and "Inactive User" if false.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```javascript
 import { mount } from "@vue/test-utils";
@@ -114,11 +114,11 @@ describe("UserStatus", () => {
 
 ---
 
-## **Ejercicio 5: Simulación de input y v-model**
+## **Exercise 5: Input and v-model simulation**
 
-Crea un test para `NameForm.vue` que verifique que el input actualiza el modelo correctamente.
+Create a test for `NameForm.vue` that verifies that the input updates the model correctly.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```javascript
 import { mount } from "@vue/test-utils";

@@ -1,22 +1,22 @@
-# **Ejercicios - Tema 9: Renderizado Condicional**
+# **Exercises - Topic 9: Conditional Rendering**
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre renderizado condicional en React.
+Below you will find **10 practical exercises** on conditional rendering in React.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Loader con `if` antes del return**
+## **Exercise 1: Loader with `if` before return**
 
-Crea un componente `DataBlock.jsx` con una variable `isLoading = true`. Si está cargando, debe devolver **solo**:
+Creates an `DataBlock.jsx` component with an `isLoading = true` variable. If you are loading, you should return **only**:
 
-- `p` con el texto: **"Loading data..."**
+- `p` with the text: **"Loading data..."**
 
-Si no está cargando, debe devolver:
+If it is not loading, it should return:
 
-- `div` con `h3` **"Data Ready"**
+- `div` with `h3` **"Data Ready"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function DataBlock() {
@@ -40,16 +40,16 @@ export default DataBlock;
 
 ---
 
-## **Ejercicio 2: Ternario para mostrar un mensaje de acceso**
+## **Exercise 2: Ternary to display an access message**
 
-Crea un componente `AccessMessage.jsx` con una variable `hasAccess = false`.
+Creates an `AccessMessage.jsx` component with an `hasAccess = false` variable.
 
-- Si `hasAccess` es `true`, muestra: **"Access granted"**
-- Si `hasAccess` es `false`, muestra: **"Access denied"**
+- If `hasAccess` is `true`, displays: **"Access granted"**
+- If `hasAccess` is `false`, it shows: **"Access denied"**
 
-Hazlo con un ternario dentro de un `p`.
+Do it with a ternary inside an `p`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function AccessMessage() {
@@ -65,14 +65,14 @@ export default AccessMessage;
 
 ---
 
-## **Ejercicio 3: Renderizar un aviso solo si hay error (`&&`)**
+## **Exercise 3: Render a notice only if there is an error (`&&`)**
 
-Crea un componente `ErrorNotice.jsx` con una variable `hasError = true`.
+Creates an `ErrorNotice.jsx` component with an `hasError = true` variable.
 
-- Siempre muestra un `h3` con: **"Profile"**
-- Solo si `hasError` es `true`, muestra un `p` con: **"Something went wrong"**
+- Always show an `h3` with: **"Profile"**
+- Only if `hasError` is `true`, show an `p` with: **"Something went wrong"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function ErrorNotice() {
@@ -93,21 +93,21 @@ export default ErrorNotice;
 
 ---
 
-## **Ejercicio 4: Bloques grandes con ternario (dos secciones)**
+## **Exercise 4: Large blocks with ternary (two sections)**
 
-Crea un componente `AuthPanel.jsx` con `isLoggedIn = true`.
+Create an `AuthPanel.jsx` component with `isLoggedIn = true`.
 
-- Si está logueado, renderiza un `div` con:
+- If logged in, render an `div` with:
 
   - `h2` **"Dashboard"**
   - `p` **"Welcome back"**
 
-- Si no está logueado, renderiza un `div` con:
+- If you are not logged in, render an `div` with:
 
   - `h2` **"Login"**
   - `p` **"Please sign in"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function AuthPanel() {
@@ -137,14 +137,14 @@ export default AuthPanel;
 
 ---
 
-## **Ejercicio 5: Evitar el problema de `0 && ...`**
+## **Exercise 5: Avoid the `0 && ...` problem**
 
-Crea un componente `CartCount.jsx` con `itemsCount = 0`.
+Create an `CartCount.jsx` component with `itemsCount = 0`.
 
-- Solo debe mostrar `p` con **"Items: 0"** cuando `itemsCount > 0`.
-- Si `itemsCount` es 0, no debe renderizar nada en esa parte (y no debe aparecer el `0` suelto).
+- Should only show `p` with **"Items: 0"** when `itemsCount > 0`.
+- If `itemsCount` is 0, nothing should be rendered in that part (and the loose `0` should not appear).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function CartCount() {
@@ -165,17 +165,17 @@ export default CartCount;
 
 ---
 
-## **Ejercicio 6: Guardar JSX en una variable**
+## **Exercise 6: Saving JSX in a variable**
 
-Crea un componente `PaymentStatus.jsx` con una variable `status = "pending"`.
+Creates an `PaymentStatus.jsx` component with an `status = "pending"` variable.
 
-- Si `status` es `"success"`, guarda en una variable un `p` con **"Payment complete"**.
-- Si `status` es `"pending"`, guarda un `p` con **"Processing..."**.
-- Si `status` es `"error"`, guarda un `p` con **"Payment failed"**.
+- If `status` is `"success"`, save an `p` with **"Payment complete"** in a variable.
+- If `status` is `"pending"`, save an `p` with **"Processing..."**.
+- If `status` is `"error"`, save an `p` with **"Payment failed"**.
 
-Luego renderiza el `h3` **"Payment"** y la variable debajo.
+It then renders the `h3` **"Payment"** and the variable below it.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function PaymentStatus() {
@@ -206,16 +206,16 @@ export default PaymentStatus;
 
 ---
 
-## **Ejercicio 7: `&&` con condición compuesta**
+## **Exercise 7: `&&` with compound condition**
 
-Crea un componente `Banner.jsx` con:
+Create an `Banner.jsx` component with:
 
 - `hasPromo = true`
 - `isNewUser = false`
 
-Solo muestra el `p` **"Special offer"** si **ambas** condiciones son true.
+Only show the `p` **"Special offer"** if **both** conditions are true.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Banner() {
@@ -236,10 +236,9 @@ export default Banner;
 </details>
 
 ---
+## **Exercise 8: Extract condition to a variable for readability**
 
-## **Ejercicio 8: Extraer condición a una variable para legibilidad**
-
-Reescribe este renderizado creando una variable `showWarning` antes del return:
+Rewrite this render by creating an `showWarning` variable before the return:
 
 ```js
 {
@@ -247,9 +246,9 @@ Reescribe este renderizado creando una variable `showWarning` antes del return:
 }
 ```
 
-Supón que `isAdmin = true` e `isExpired = true`.
+Suppose `isAdmin = true` and `isExpired = true`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Example() {
@@ -268,17 +267,17 @@ export default Example;
 
 ---
 
-## **Ejercicio 9: Elegir técnica correcta (3 mini-casos)**
+## **Exercise 9: Choose correct technique (3 mini-cases)**
 
-Indica qué técnica usarías y escribe el JSX (una por caso):
+Indicate which technique you would use and write the JSX (one per case):
 
-1. Quiero devolver **solo** un loader y nada más cuando `isLoading` sea true.
-2. Quiero mostrar un texto entre dos opciones: `"Dark"` o `"Light"` según `isDarkMode`.
-3. Quiero mostrar un `p` solo si `hasNotifications` es true.
+1. I want to return **only** a loader and nothing else when `isLoading` is true.
+2. I want to display a text between two options: `"Dark"` or `"Light"` based on `isDarkMode`.
+3. I want to show an `p` only if `hasNotifications` is true.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. `if` antes del return:
+1. `if` before return:
 
 ```js
 if (isLoading) {
@@ -286,7 +285,7 @@ if (isLoading) {
 }
 ```
 
-2. ternario:
+2. ternary:
 
 ```js
 <p>{isDarkMode ? "Dark" : "Light"}</p>
@@ -304,9 +303,9 @@ if (isLoading) {
 
 ---
 
-## **Ejercicio 10: Corregir JSX demasiado anidado (mejora simple)**
+## **Exercise 10: Fix Overly Nested JSX (Simple Improvement)**
 
-Este código funciona, pero es poco legible. Reescríbelo guardando el bloque en una variable `content`:
+This code works, but it is poorly readable. Rewrite it by saving the block in an `content` variable:
 
 ```js
 function App() {
@@ -326,7 +325,7 @@ function App() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {

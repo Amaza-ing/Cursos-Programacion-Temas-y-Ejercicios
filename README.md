@@ -1,53 +1,53 @@
 # **AMazaing Code Academy**
 
-Bienvenido a este repositorio de **Cursos de Programación**, donde encontrarás material educativo para aprender distintas tecnologías y lenguajes de programación de forma estructurada y con ejercicios prácticos.
+Welcome to this repository of **Programming Courses**, where you will find educational material to learn different technologies and programming languages in a structured way and with practical exercises.
 
-## 📌 **Cursos disponibles**
+## 📌 **Courses available**
 
-En este momento este repositorio contiene los siguientes cursos:
+At this moment this repository contains the following courses:
 
-- [**HTML**](./HTML/): Aprende a estructurar documentos web correctamente.
-- [**CSS**](./CSS/): Domina el diseño y la apariencia de las páginas web.
-- [**JavaScript**](./JavaScript/): Introducción a la programación con JavaScript para crear interactividad en sitios web.
-- [**Git y GitHub**](./Git/): Control de versiones y trabajo colaborativo en proyectos de desarrollo.
-- [**TypeScript**](./TypeScript/): Superset de JavaScript centrado en el tipado y que añade funcionalidades para la programación orientada a objetos.
-- [**React**](./React/): Desarrollo de aplicaciones web con uno de los framworks JS más utilizados.
-- [**Angular**](./Angular/): Desarrollo de aplicaciones web con el framework Angular y TypeScript.
-- [**Vue**](./Vue/): Desarrollo de aplicaciones web con el framework Vue y JavaScript.
-- [**MySQL**](./MySQL/): Creación y gestión de bases de datos desde 0 con MySQL y DBeaver.
+- [**HTML**](./HTML/): Learn to structure web documents correctly.
+- [**CSS**](./CSS/): Master the design and appearance of web pages.
+- [**JavaScript**](./JavaScript/): Introduction to programming with JavaScript to create interactivity on websites.
+- [**Git and GitHub**](./Git/): Version control and collaborative work in development projects.
+- [**TypeScript**](./TypeScript/): JavaScript superset focused on typing and adding functionalities for object-oriented programming.
+- [**React**](./React/): Development of web applications with one of the most used JS frameworks.
+- [**Angular**](./Angular/): Development of web applications with the Angular and TypeScript framework.
+- [**Vue**](./Vue/): Development of web applications with the Vue and JavaScript framework.
+- [**MySQL**](./MySQL/): Creation and management of databases from scratch with MySQL and DBeaver.
 
-📌 _En el futuro se agregarán más cursos._
-
----
-
-## 📂 **Estructura del repositorio**
-
-Cada curso se encuentra en una carpeta independiente dentro del repositorio. Dentro de cada carpeta, encontrarás:
-
-- **Temas**: Archivos `.md` con explicaciones teóricas y ejemplos.
-- **Ejercicios**: Actividades prácticas para reforzar los conocimientos.
-
-Puedes explorar cada curso navegando por las carpetas correspondientes o accediendo a los archivos de temas y ejercicios directamente en GitHub.
+📌 _More courses will be added in the future._
 
 ---
 
-## 🛠️ **Requisitos previos**
+## 📂 **Repository structure**
 
-La mayoría de los cursos están diseñados para principiantes, por lo que no necesitas experiencia previa. Sin embargo, es recomendable tener:
+Each course is located in a separate folder within the repository. Inside each folder, you will find:
 
-- Un navegador actualizado (Chrome, Firefox, Edge, etc.).
-- Un editor de código como **[Visual Studio Code](https://code.visualstudio.com/)**.
-- **[Node.js y npm](https://nodejs.org/)** si deseas trabajar con Frameworks.
+- **Topics**: `.md` files with theoretical explanations and examples.
+- **Exercises**: Practical activities to reinforce knowledge.
+
+You can explore each course by browsing the corresponding folders or accessing the topic and exercise files directly on GitHub.
 
 ---
 
-## 🚀 **Cómo usar este repositorio**
+## 🛠️ **Prerequisites**
 
-Puedes utilizar este repositorio de dos maneras:
+Most courses are designed for beginners, so you don't need previous experience. However, it is advisable to have:
 
-1️⃣ **Explorarlo directamente en GitHub**, navegando por los temas y ejercicios.
+- An updated browser (Chrome, Firefox, Edge, etc.).
+- A code editor like **[Visual Studio Code](https://code.visualstudio.com/)**.
+- **[Node.js and npm](https://nodejs.org/)** if you want to work with Frameworks.
 
-2️⃣ **Descargarlo o clonarlo** en tu equipo para trabajarlo localmente:
+---
+
+## 🚀 **How to use this repository**
+
+You can use this repository in two ways:
+
+1️⃣ **Explore it directly on GitHub**, browsing the topics and exercises.
+
+2️⃣ **Download or clone it** on your computer to work on it locally:
 
 ```bash
 # Clonar el repositorio
@@ -56,34 +56,34 @@ git clone https://github.com/Amaza-ing/Cursos-Programacion-Temas-y-Ejercicios.gi
 
 ---
 
-## **¡Comienza a aprender hoy!**
+## **Start learning today!**
 
-Este repositorio está diseñado para que puedas aprender **a tu propio ritmo**, con explicaciones claras y ejercicios prácticos.
-
----
-
-## 📜 **Licencia**
-
-Este repositorio está bajo una licencia **Creative Commons Atribución 4.0 Internacional (CC BY 4.0)**. Esto significa que puedes compartir, modificar y utilizar el contenido para cualquier propósito, siempre y cuando otorgues el crédito adecuado.
-
-📜 **Más información sobre la licencia:** [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+This repository is designed so you can learn **at your own pace**, with clear explanations and practical exercises.
 
 ---
 
-## **Hecho por Adrián Maza**
+## 📜 **License**
+
+This repository is licensed under a **Creative Commons Attribution 4.0 International (CC BY 4.0)** license. This means you can share, modify and use the content for any purpose, as long as you give appropriate credit.
+
+📜 **More information about the license:** [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
+## **Made by Adrián Maza**
 
 <div>
   <h5>
     <a href="https://www.youtube.com/@AMaza-Ing" target="_blank">
       YouTube/AMaza-ing
     </a>
-  </h5>
+</h5>
   <h5>
     <a
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

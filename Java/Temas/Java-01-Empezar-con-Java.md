@@ -1,97 +1,97 @@
-# Tema 1. Qué es Java y primer programa con IntelliJ
+# Topic 1. What is Java and first program with IntelliJ
 
-## 1. ¿Qué es Java y para qué se usa?
+## 1. What is Java and what is it used for?
 
-Java es un **lenguaje de programación orientado a objetos**, de propósito general, diseñado para ser **portable**, **seguro** y **robusto**. Fue creado con la idea de que un mismo programa pudiera ejecutarse en distintos sistemas sin necesidad de modificar el código.
+Java is a general-purpose **object-oriented programming language** designed to be **portable**, **secure** and **robust**. It was created with the idea that the same program could be run on different systems without having to modify the code.
 
-Esta característica se resume en la famosa frase:
+This characteristic is summarized in the famous phrase:
 
 > _Write once, run anywhere_
 
-Java se utiliza en una gran variedad de contextos:
+Java is used in a wide variety of contexts:
 
-- Aplicaciones de escritorio
-- Aplicaciones web (backend)
-- Aplicaciones empresariales
-- Aplicaciones móviles (Android)
-- Sistemas embebidos
+- Desktop applications
+- Web applications (backend)
+- Business applications
+- Mobile applications (Android)
+- Embedded systems
 
-Es uno de los lenguajes más utilizados en el ámbito profesional y muy habitual en entornos académicos.
-
----
-
-[![Cómo Empezar con Java](https://img.youtube.com/vi/8qjZQZAvwBQ/0.jpg)](https://www.youtube.com/watch?v=8qjZQZAvwBQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+It is one of the most used languages in the professional field and very common in academic environments.
 
 ---
 
-## 2. Cómo funciona Java: JVM, JDK y JRE
+[![How to Get Started with Java](https://img.youtube.com/vi/8qjZQZAvwBQ/0.jpg)](https://www.youtube.com/watch?v=8qjZQZAvwBQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-Java no se ejecuta directamente sobre el sistema operativo como otros lenguajes. Su funcionamiento se basa en varias capas.
+---
 
-### 2.1. Código fuente y bytecode
+## 2. How Java works: JVM, JDK and JRE
 
-1. El programador escribe código Java (`.java`).
-2. El compilador de Java transforma ese código en **bytecode** (`.class`).
-3. El bytecode se ejecuta en la **Java Virtual Machine (JVM)**.
+Java does not run directly on the operating system like other languages. Its operation is based on several layers.
 
-Gracias a esto, el mismo bytecode puede ejecutarse en distintos sistemas.
+### 2.1. Source code and bytecode
+
+1. The programmer writes Java code (`.java`).
+2. The Java compiler transforms that code into **bytecode** (`.class`).
+3. The bytecode is executed in the **Java Virtual Machine (JVM)**.
+
+Thanks to this, the same bytecode can be executed on different systems.
 
 ---
 
 ### 2.2. JVM (Java Virtual Machine)
 
-La JVM es una **máquina virtual** que interpreta el bytecode y lo ejecuta.
+The JVM is a **virtual machine** that interprets the bytecode and executes it.
 
-- Existe una JVM para cada sistema operativo.
-- El programador no interactúa directamente con ella.
-- Garantiza la portabilidad del código Java.
-
----
-
-### 2.3. JDK (Java Development Kit)
-
-El JDK es el kit de desarrollo de Java. Incluye:
-
-- Compilador (`javac`)
-- JVM
-- Librerías estándar
-- Herramientas de desarrollo
-
-Para programar en Java **siempre necesitas el JDK**.
+- There is a JVM for each operating system.
+- The programmer does not interact directly with it.
+- Ensures the portability of Java code.
 
 ---
 
-## 3. IntelliJ IDEA y Java 25
+### 23. JDK (Java Development Kit)
 
-IntelliJ IDEA es uno de los entornos de desarrollo más utilizados para programar en Java.
+The JDK is the Java development kit. Includes:
 
-Ventajas principales:
+- Compiler (`javac`)
+-JVM
+- Standard libraries
+- Development tools
 
-- Autocompletado inteligente
-- Detección de errores en tiempo real
-- Integración directa con el JDK
-- Muy usado en el ámbito profesional
-
-En este curso trabajaremos con **Java 25** usando IntelliJ IDEA.
+To program in Java **you always need the JDK**.
 
 ---
 
-## 4. Crear el primer proyecto en IntelliJ
+## 3. IntelliJ IDEA and Java 25
 
-1. Abrir IntelliJ IDEA.
-2. Seleccionar **New Project**.
-3. Elegir **Java** como tipo de proyecto.
-4. Seleccionar el **JDK 25**.
-5. Elegir un nombre para el proyecto.
-6. Finalizar.
+IntelliJ IDEA is one of the most used development environments for programming in Java.
 
-IntelliJ creará automáticamente la estructura básica del proyecto.
+Main advantages:
+
+- Smart autocomplete
+- Real-time error detection
+- Direct integration with the JDK
+- Widely used in the professional field
+
+In this course we will work with **Java 25** using IntelliJ IDEA.
 
 ---
 
-## 5. Estructura básica de un proyecto Java
+## 4. Create the first project in IntelliJ
 
-Un proyecto Java sencillo suele tener esta estructura:
+1. Open IntelliJ IDEA.
+2. Select **New Project**.
+3. Choose **Java** as the project type.
+4. Select **JDK 25**.
+5. Choose a name for the project.
+6. Finish.
+
+IntelliJ will automatically create the basic structure of the project.
+
+---
+
+## 5. Basic structure of a Java project
+
+A simple Java project usually has this structure:
 
 ```
 project-name/
@@ -99,14 +99,14 @@ project-name/
 │   └── Main.java
 ```
 
-- `src` contiene el código fuente.
-- `Main.java` es el punto de entrada del programa.
+- `src` contains the source code.
+- `Main.java` is the entry point of the program.
 
 ---
 
-## 6. Primer programa en Java
+## 6. First program in Java
 
-### 6.1. La clase `Main`
+### 6.1. The `Main` class
 
 ```java
 public class Main {
@@ -116,45 +116,45 @@ public class Main {
 }
 ```
 
-Vamos a entender este código paso a paso.
+Let's understand this code step by step.
 
 ---
 
-### 6.2. Explicación del código
+### 6.2. Code explanation
 
-- `public class Main`: define una clase llamada `Main`.
-- `public static void main(String[] args)`: método principal.
-- `System.out.println`: muestra texto por consola.
-- `"Hello, Java!"`: texto que se imprime.
+- `public class Main`: defines a class called `Main`.
+- `public static void main(String[] args)`: main method.
+- `System.out.println`: display text per console.
+- `"Hello, Java!"`: text that is printed.
 
-El método `main` es el **punto de inicio** de cualquier programa Java.
+The `main` method is the **starting point** of any Java program.
 
 ---
 
-## 7. Ejecutar el programa
+## 7. Run the program
 
-Para ejecutar el programa en IntelliJ:
+To run the program in IntelliJ:
 
-- Haz clic en el botón **Run**.
-- O usa el atajo de teclado correspondiente.
+- Click the **Run** button.
+- Or use the corresponding keyboard shortcut.
 
-En la consola aparecerá:
+The console will appear:
 
 ```
 Hello, Java!
 ```
 
-Esto confirma que el programa se ha ejecutado correctamente.
+This confirms that the program ran successfully.
 
 ---
 
-## 8. A tener en cuenta
+## 8. To take into account
 
-- Java es un lenguaje compilado e interpretado.
-- Todo el código vive dentro de **clases**.
-- El método `main` es obligatorio para comenzar.
-- IntelliJ facilita enormemente el trabajo desde el primer momento.
+- Java is a compiled and interpreted language.
+- All code lives inside **classes**.
+- The `main` method is required to get started.
+- IntelliJ greatly facilitates the work from the first moment.
 
 ---
 
-En el próximo tema comenzaremos a trabajar con **variables y tipos de datos**, la base para empezar a escribir programas útiles en Java.
+In the next topic we will start working with **variables and data types**, the basis for starting to write useful programs in Java.

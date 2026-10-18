@@ -1,56 +1,56 @@
-# **Tema 19: Rutas Paramétricas**
+# **Topic 19: Parametric Routes**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En muchas aplicaciones no todas las páginas tienen una URL fija. A menudo necesitas rutas que cambian según un **identificador**: el id de un usuario, de un producto, de un post, etc.
+In many applications not all pages have a fixed URL. You often need routes that change according to an **identifier**: the id of a user, a product, a post, etc.
 
-Ejemplos típicos:
+Typical examples:
 
 - `/users/1`
 - `/users/42`
 - `/products/10`
 
-Este tipo de rutas se llaman **rutas paramétricas**.
+These types of routes are called **parametric routes**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué son las rutas paramétricas.
-- Cómo definir parámetros en una ruta.
-- Cómo leer esos parámetros con `useParams`.
-- Cómo usarlos para cargar datos dinámicos.
+- What are parametric routes.
+- How to define parameters in a route.
+- How to read those parameters with `useParams`.
+- How to use them to load dynamic data.
 
 ---
 
-## **2. ¿Qué es una ruta paramétrica?**
+## **2. What is a parametric route?**
 
-Una ruta paramétrica es una ruta que contiene **variables** en la URL.
+A parametric route is a route that contains **variables** in the URL.
 
-Ejemplo:
+Example:
 
 ```txt
 /users/:id
 ```
 
-Aquí:
+Here:
 
-- `:id` es un **parámetro**.
-- Su valor depende de la URL real.
+- `:id` is a **parameter**.
+- Its value depends on the actual URL.
 
-Si el usuario entra en:
+If the user enters:
 
 ```txt
 /users/5
 ```
 
-Entonces:
+So:
 
 - `id = "5"`
 
 ---
 
-## **3. Definir una ruta paramétrica**
+## **3. Define a parametric route**
 
-Las rutas paramétricas se definen igual que las normales, pero usando `:`.
+Parametric routes are defined the same as normal routes, but using `:`.
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -69,9 +69,9 @@ export default App;
 
 ---
 
-## **4. Leer parámetros con `useParams`**
+## **4. Read parameters with `useParams`**
 
-Para acceder a los parámetros de la URL se usa el hook `useParams`.
+To access the URL parameters, the `useParams` hook is used.
 
 ```js
 import { useParams } from "react-router-dom";
@@ -85,7 +85,7 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-Forma más común usando destructuring:
+Most common way using destructuring:
 
 ```js
 const { id } = useParams();
@@ -93,9 +93,9 @@ const { id } = useParams();
 
 ---
 
-## **5. Ruta paramétrica completa: ejemplo simple**
+## **5. Full Parametric Path – Simple Example**
 
-### **5.1. Página `UserDetail.jsx`**
+### **5.1. Page `UserDetail.jsx`**
 
 ```js
 import { useParams } from "react-router-dom";
@@ -109,7 +109,7 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-### **5.2. Enlace hacia la ruta paramétrica**
+### **5.2. Link to the parametric route**
 
 ```js
 import { Link } from "react-router-dom";
@@ -132,9 +132,9 @@ export default UsersList;
 
 ---
 
-## **6. Usar parámetros para cargar datos**
+## **6. Use parameters to load data**
 
-Un uso muy común es combinar rutas paramétricas con peticiones a una API.
+A very common use is to combine parametric routes with requests to an API.
 
 ```js
 import { useEffect, useState } from "react";
@@ -164,15 +164,15 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-Clave importante:
+Important key:
 
-- El `useEffect` depende de `id`.
+- The `useEffect` depends on `id`.
 
 ---
 
-## **7. Múltiples parámetros en una ruta**
+## **7. Multiple parameters in a route**
 
-Una ruta puede tener más de un parámetro:
+A route can have more than one parameter:
 
 ```txt
 /posts/:postId/comments/:commentId
@@ -184,13 +184,13 @@ const { postId, commentId } = useParams();
 
 ---
 
-## **8. Parámetros siempre son strings**
+## **8. Parameters are always strings**
 
-Los valores obtenidos con `useParams`:
+The values obtained with `useParams`:
 
-- Siempre son **strings**.
+- They are always **strings**.
 
-Si necesitas un número:
+If you need a number:
 
 ```js
 const numericId = Number(id);
@@ -198,17 +198,17 @@ const numericId = Number(id);
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Olvidar los dos puntos `:`**
+### **9.1. Forget the colon `:`**
 
-Incorrecto:
+Incorrect:
 
 ```js
 <Route path="/users/id" />
 ```
 
-Correcto:
+Correct:
 
 ```js
 <Route path="/users/:id" />
@@ -216,23 +216,23 @@ Correcto:
 
 ---
 
-### **9.2. No usar el parámetro en dependencias**
+### **9.2. Do not use parameter in dependencies**
 
-Si usas el parámetro en un `useEffect`, debe estar en el array de dependencias.
-
----
-
-## **10. Buenas prácticas**
-
-- Usa nombres claros para los parámetros (`id`, `userId`, `productId`).
-- Mantén las rutas simples.
-- Usa rutas paramétricas solo cuando el contenido sea dinámico.
-- Combínalas con APIs para vistas de detalle.
+If you use the parameter in an `useEffect`, it must be in the dependencies array.
 
 ---
 
-[![Rutas Paramétricas](https://img.youtube.com/vi/iC8whY8noHI/0.jpg)](https://www.youtube.com/watch?v=iC8whY8noHI&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **10. Good practices**
+
+- Use clear names for parameters (`id`, `userId`, `productId`).
+- Keep routes simple.
+- Use parametric routes only when the content is dynamic.
+- Combine them with APIs for detail views.
 
 ---
 
-En el siguiente tema aprenderás a trabajar con **rutas protegidas**.
+[![Parametric Routes](https://img.youtube.com/vi/iC8whY8noHI/0.jpg)](https://www.youtube.com/watch?v=iC8whY8noHI&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic you will learn how to work with **protected routes**.

@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 14: Uso del Router y `RouterLink` en Angular**
+# **Exercises - Topic 14: Using the Router and `RouterLink` in Angular**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre cómo configurar rutas y navegar dentro de una SPA en Angular.
+Below you will find exercises on how to configure routes and navigate within a SPA in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Configurar un Router con Rutas Básicas**
+### **Exercise 1: Configure a Router with Basic Routes**
 
-Define un enrutador con dos rutas: `home` y `about`, y haz que la aplicación arranque con `home`.
+Define a router with two routes: `home` and `about`, and have the application start with `home`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `app.routes.ts`**
+#### **File: `app.routes.ts`**
 
 ```ts
 import { Routes } from "@angular/router";
@@ -28,23 +28,25 @@ export const routes = [
 ];
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Crear Enlaces con `RouterLink`**
+### **Exercise 2: Create Links with `RouterLink`**
 
-Añade a un componente el código necesario para incluir enlaces de navegación con `RouterLink` y a otro componente `<router-outlet>` para renderizar las páginas.
+Add the code needed to include navigation links with `RouterLink` to one component and add `<router-outlet>` to another component to render the pages.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `app.component.html`**
+#### **File: `app.component.html`**
 
 ```html
 <router-outlet></router-outlet>
 ```
 
-#### **Archivo: `header.component.html`**
+
+#### **File: `header.component.html`**
 
 ```html
 <nav>
@@ -53,17 +55,18 @@ Añade a un componente el código necesario para incluir enlaces de navegación 
 </nav>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Crear una Ruta con Parámetros**
+### **Exercise 3: Create a Route with Parameters**
 
-Crea una nueva ruta `/profile/:id` y un componente `ProfileComponent` que muestre el ID del usuario recibido por la URL.
+Create a new `/profile/:id` route and an `ProfileComponent` component that displays the user ID received by the URL.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `app.routes.ts`**
+#### **File: `app.routes.ts`**
 
 ```ts
 import { ProfileComponent } from "./app/profile/profile.component";
@@ -71,7 +74,8 @@ import { ProfileComponent } from "./app/profile/profile.component";
 const routes = [{ path: "profile/:id", component: ProfileComponent }];
 ```
 
-#### **Archivo: `profile.component.ts`**
+
+#### **File: `profile.component.ts`**
 
 ```ts
 import { ActivatedRoute } from "@angular/router";
@@ -87,23 +91,25 @@ export class ProfileComponent {
 }
 ```
 
-#### **Archivo: `users.component.html`**
+
+#### **File: `users.component.html`**
 
 ```html
 <a routerLink="/profile/1">Ver Perfil de Usuario 1</a>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Redirección de Rutas y Manejo de 404**
+### **Exercise 4: Route Redirection and 404 Handling**
 
-Configura el Router para que cualquier ruta no definida redirija a `home`.
+Configure the Router so that any undefined routes redirect to `home`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `app.routes.ts`**
+#### **File: `app.routes.ts`**
 
 ```ts
 const routes = [
@@ -113,17 +119,18 @@ const routes = [
 ];
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Establecer una Ruta Activa con `routerLinkActive`**
+### **Exercise 5: Establish an Active Route with `routerLinkActive`**
 
-Añade una clase CSS para resaltar el enlace activo.
+Add a CSS class to highlight the active link.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `header.component.html`**
+#### **File: `header.component.html`**
 
 ```html
 <nav>
@@ -132,7 +139,8 @@ Añade una clase CSS para resaltar el enlace activo.
 </nav>
 ```
 
-#### **Archivo: `styles.css`**
+
+#### **File: `styles.css`**
 
 ```css
 .active {
@@ -140,5 +148,6 @@ Añade una clase CSS para resaltar el enlace activo.
   color: blue;
 }
 ```
+
 
 </details>

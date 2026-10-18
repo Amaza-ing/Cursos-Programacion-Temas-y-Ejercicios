@@ -1,16 +1,16 @@
-# **Tema 10: Pseudoclases y Pseudoelementos en CSS**
+# **Topic 10: Pseudoclasses and Pseudoelements in CSS**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Las **pseudoclases** y los **pseudoelementos** permiten aplicar estilos en CSS en función del **estado** de un elemento o de **partes específicas** de él, sin necesidad de modificar el HTML. Son herramientas fundamentales para mejorar la interacción, accesibilidad y presentación visual de una página web.
+**Pseudoclasses** and **Pseudoelements** allow you to apply CSS styling based on the **state** of an element or **specific parts** of it, without needing to modify the HTML. They are fundamental tools to improve the interaction, accessibility and visual presentation of a web page.
 
 ---
 
-## **2. ¿Qué es una pseudoclase?**
+## **2. What is a pseudo class?**
 
-Una **pseudoclase** define un estado especial de un elemento.
+A **pseudoclass** defines a special state of an element.
 
-Se escriben con **un solo dos puntos (`:`)**.
+They are written with **a single colon (`:`)**.
 
 ```css
 selector:pseudoclase {
@@ -18,13 +18,14 @@ selector:pseudoclase {
 }
 ```
 
+
 ---
 
-## **3. Pseudoclases más comunes**
+## **3. Most common pseudoclasses**
 
 ### **`:hover`**
 
-Aplica estilos cuando el usuario pasa el ratón por encima.
+Applies styles when the user hovers the mouse.
 
 ```css
 button:hover {
@@ -33,11 +34,12 @@ button:hover {
 }
 ```
 
+
 ---
 
 ### **`:active`**
 
-Se aplica mientras el elemento está siendo presionado.
+Applies while the element is being pressed.
 
 ```css
 button:active {
@@ -45,11 +47,12 @@ button:active {
 }
 ```
 
+
 ---
 
 ### **`:focus`**
 
-Se aplica cuando un elemento recibe el foco (formularios, enlaces, inputs).
+It is applied when an element receives focus (forms, links, inputs).
 
 ```css
 input:focus {
@@ -57,11 +60,12 @@ input:focus {
 }
 ```
 
+
 ---
 
 ### **`:visited`**
 
-Aplica estilos a enlaces que ya han sido visitados.
+Applies styles to links that have already been visited.
 
 ```css
 a:visited {
@@ -69,11 +73,12 @@ a:visited {
 }
 ```
 
+
 ---
 
-### **`:disabled` y `:enabled`**
+### **`:disabled` and `:enabled`**
 
-Permiten estilizar elementos de formulario según su estado.
+They allow you to style form elements according to their state.
 
 ```css
 input:disabled {
@@ -81,15 +86,16 @@ input:disabled {
 }
 ```
 
+
 ---
 
-## **4. Pseudoclases estructurales**
+## **4. Structural pseudoclasses**
 
-Permiten seleccionar elementos según su posición en el DOM.
+They allow elements to be selected according to their position in the DOM.
 
 ### **`:first-child`**
 
-Selecciona el primer hijo de un contenedor.
+Selects the first child of a container.
 
 ```css
 li:first-child {
@@ -97,11 +103,12 @@ li:first-child {
 }
 ```
 
+
 ---
 
 ### **`:last-child`**
 
-Selecciona el último hijo.
+Select the last child.
 
 ```css
 li:last-child {
@@ -109,11 +116,12 @@ li:last-child {
 }
 ```
 
+
 ---
 
 ### **`:nth-child()`**
 
-Selecciona elementos según su posición.
+Select elements based on their position.
 
 ```css
 li:nth-child(2) {
@@ -121,7 +129,8 @@ li:nth-child(2) {
 }
 ```
 
-Ejemplos habituales:
+
+Common examples:
 
 - `nth-child(odd)`
 - `nth-child(even)`
@@ -129,11 +138,11 @@ Ejemplos habituales:
 
 ---
 
-## **5. ¿Qué es un pseudoelemento?**
+## **5. What is a pseudo-element?**
 
-Un **pseudoelemento** permite seleccionar y estilizar **una parte concreta** de un elemento.
+A **pseudo-element** allows you to select and style **a specific part** of an element.
 
-Se escriben con **doble dos puntos (`::`)**.
+They are written with **double colon (`::`)**.
 
 ```css
 selector::pseudoelemento {
@@ -141,13 +150,14 @@ selector::pseudoelemento {
 }
 ```
 
+
 ---
 
-## **6. Pseudoelementos más utilizados**
+## **6. Most used pseudoelements**
 
-### **`::before` y `::after`**
+### **`::before` and `::after`**
 
-Permiten insertar contenido antes o después de un elemento.
+They allow content to be inserted before or after an element.
 
 ```css
 h2::before {
@@ -156,6 +166,7 @@ h2::before {
 }
 ```
 
+
 ```css
 p::after {
   content: " ✔";
@@ -163,13 +174,14 @@ p::after {
 }
 ```
 
-⚠ Es obligatorio usar la propiedad `content`.
+
+⚠ It is mandatory to use the `content` property.
 
 ---
 
 ### **`::first-letter`**
 
-Estiliza la primera letra de un texto.
+Stylizes the first letter of a text.
 
 ```css
 p::first-letter {
@@ -178,11 +190,12 @@ p::first-letter {
 }
 ```
 
+
 ---
 
 ### **`::first-line`**
 
-Estiliza la primera línea de un texto.
+Stylizes the first line of a text.
 
 ```css
 p::first-line {
@@ -190,11 +203,12 @@ p::first-line {
 }
 ```
 
+
 ---
 
 ### **`::selection`**
 
-Aplica estilos al texto seleccionado por el usuario.
+Applies styles to text selected by the user.
 
 ```css
 ::selection {
@@ -203,30 +217,30 @@ Aplica estilos al texto seleccionado por el usuario.
 }
 ```
 
+
 ---
 
-## **7. Diferencias entre pseudoclases y pseudoelementos**
+## **7. Differences between pseudoclasses and pseudoelements**
 
-| Característica        | Pseudoclases | Pseudoelementos     |
+| Feature | Pseudoclasses | Pseudoelements |
 | --------------------- | ------------ | ------------------- |
-| Sintaxis              | `:`          | `::`                |
-| Actúan sobre          | Estados      | Partes del elemento |
-| Modifican interacción | Sí           | No                  |
-| Insertan contenido    | No           | Sí (`before/after`) |
+| Syntax | `:` | `::` |
+| They act on | States | Parts of the element |
+| They modify interaction | Yes | No |
+| Insert content | No | Yes (`before/after`) |
 
 ---
 
-[![Pseudoclases & Pseudoelementos](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+[![Pseudoclasses & Pseudoelements](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **8. Buenas prácticas**
+## **8. Good practices**
 
-- Usar `::` para pseudoelementos (estándar moderno).
-- Evitar abusar de `::before` y `::after` para contenido importante.
-- Combinar pseudoclases con transiciones para mejorar la experiencia.
-- Usar pseudoclases estructurales para reducir clases innecesarias en HTML.
+- Use `::` for pseudo-elements (modern standard).
+- Avoid abusing `::before` and `::after` for important content.
+- Combine pseudo classes with transitions to improve the experience.
+- Use structural pseudoclasses to reduce unnecessary classes in HTML.
 
 ---
-
-En el próximo tema, exploraremos **animaciones y transiciones en CSS**, para dotar a nuestras interfaces de dinamismo y fluidez.
+In the next topic, we will explore **animations and transitions in CSS**, to give our interfaces dynamism and fluidity.

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 5: Estructuras de Control Condicional y Listas dinámicas en Vue.js**
+# **Exercises - Topic 5: Conditional Control Structures and Dynamic Lists in Vue.js**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre las estructuras de control condicional y las listas dinámicas en Vue.
+Below you will find 10 practical exercises on conditional control structures and dynamic lists in Vue.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Mostrar un mensaje de bienvenida solo si el usuario está logueado**
+## **Exercise 1: Show a welcome message only if the user is logged in**
 
-Crea un componente `WelcomeMessage.vue` que muestre un mensaje de bienvenida solo cuando `isLoggedIn` sea `true`.
+Create an `WelcomeMessage.vue` component that displays a welcome message only when `isLoggedIn` is `true`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -34,11 +34,11 @@ p {
 
 ---
 
-## **Ejercicio 2: Alternar entre dos mensajes según el estado de conexión**
+## **Exercise 2: Switch between two messages based on connection status**
 
-Crea un componente `ConnectionStatus.vue` que muestre "Conectado" o "Desconectado" según el valor de `isOnline`.
+Create an `ConnectionStatus.vue` component that displays "Connected" or "Disconnected" depending on the value of `isOnline`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -63,11 +63,11 @@ p {
 
 ---
 
-## **Ejercicio 3: Mostrar una lista de tareas**
+## **Exercise 3: Show a list of tasks**
 
-Crea un componente `TaskList.vue` que muestre una lista de tareas.
+Create an `TaskList.vue` component that displays a list of tasks.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -91,11 +91,11 @@ li {
 
 ---
 
-## **Ejercicio 4: Mostrar solo productos en stock**
+## **Exercise 4: Show only products in stock**
 
-Crea un componente `ProductList.vue` que muestre solo productos cuyo `inStock` sea `true`.
+Create an `ProductList.vue` component that displays only products whose `inStock` is `true`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -129,11 +129,11 @@ li {
 
 ---
 
-## **Ejercicio 5: Mostrar mensaje si la lista está vacía**
+## **Exercise 5: Show message if list is empty**
 
-Crea un componente `EmptyList.vue` que muestre "No hay elementos" si la lista `items` está vacía.
+Create an `EmptyList.vue` component that displays "No items" if the `items` list is empty.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -153,15 +153,15 @@ p {
 
 </details>
 
-> Nota: También se podría usar el operador negación `!` para la condición: `v-if="!items.length"`
+> Note: You could also use the `!` negation operator for the condition: `v-if="!items.length"`
 
 ---
 
-## **Ejercicio 6: Mostrar una tabla de usuarios**
+## **Exercise 6: Show a user table**
 
-Crea un componente `UserTable.vue` que muestre una tabla con nombre y edad de cada usuario.
+Create an `UserTable.vue` component that displays a table with the name and age of each user.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -197,11 +197,11 @@ td {
 
 ---
 
-## **Ejercicio 7: Mostrar mensaje de bienvenida según el rol**
+## **Exercise 7: Show welcome message according to role**
 
-Crea un componente `RoleMessage.vue` que muestre un mensaje diferente si el rol es `admin`, `user` o `guest`.
+Create an `RoleMessage.vue` component that displays a different message if the role is `admin`, `user`, or `guest`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -227,11 +227,11 @@ p {
 
 ---
 
-## **Ejercicio 8: Mostrar una lista de números pares**
+## **Exercise 8: Show a list of even numbers**
 
-Crea un componente `EvenNumbers.vue` que muestre solo los números pares de una lista.
+Create an `EvenNumbers.vue` component that displays only the even numbers in a list.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -257,11 +257,11 @@ li {
 
 ---
 
-## **Ejercicio 9: Mostrar detalles de un producto**
+## **Exercise 9: Show details of a product**
 
-Crea un componente `ProductDetails.vue` que recorra un objeto `product` y muestre sus propiedades.
+Create an `ProductDetails.vue` component that loops through an `product` object and displays its properties.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -289,11 +289,11 @@ li {
 
 ---
 
-## **Ejercicio 10: Mostrar una lista de nombres en mayúsculas**
+## **Exercise 10: Display a list of names in uppercase**
 
-Crea un componente `UppercaseList.vue` que muestre una lista de nombres transformados a mayúsculas.
+Create an `UppercaseList.vue` component that displays a list of names transformed to uppercase.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>

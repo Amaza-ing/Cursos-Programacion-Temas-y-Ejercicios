@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 9: Creación y Validación de Formularios en Vue.js**
+# **Exercises - Topic 9: Creating and Validating Forms in Vue.js**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre la creación y validación de formularios en Vue.
+Below you will find 5 practical exercises on creating and validating forms in Vue.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Formulario de contacto con v-model**
+## **Exercise 1: Contact form with v-model**
 
-Crea un componente `ContactForm.vue` con un formulario de contacto que tenga los campos `nombre`, `email` y `mensaje`, todos conectados con `v-model`.
+Create an `ContactForm.vue` component with a contact form that has the fields `nombre`, `email`, and `mensaje`, all connected to `v-model`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -60,11 +60,11 @@ button {
 
 ---
 
-## **Ejercicio 2: Validación básica de email**
+## **Exercise 2: Basic email validation**
 
-Crea un componente `EmailForm.vue` que tenga un input para email y valide que contenga `@` al enviarse.
+Create an `EmailForm.vue` component that has an input for email and validates that it contains `@` when sent.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -104,11 +104,11 @@ function handleSubmit() {
 
 ---
 
-## **Ejercicio 3: Mostrar mensaje al enviar formulario**
+## **Exercise 3: Show message when submitting form**
 
-Crea un componente `SimpleForm.vue` que muestre un mensaje de éxito al enviarse correctamente.
+Create an `SimpleForm.vue` component that displays a success message upon successful submission.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -144,11 +144,11 @@ p {
 
 ---
 
-## **Ejercicio 4: Deshabilitar botón si el formulario es inválido**
+## **Exercise 4: Disable button if the form is invalid**
 
-Crea un componente `LoginForm.vue` que solo permita enviar si `usuario` y `contraseña` no están vacíos.
+Create an `LoginForm.vue` component that only allows sending if `usuario` and `contraseña` are non-empty.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -185,11 +185,11 @@ button:disabled {
 
 ---
 
-## **Ejercicio 5: Validar que los campos estén completos antes de enviar**
+## **Exercise 5: Validate that the fields are complete before sending**
 
-Crea un componente `ProfileForm.vue` que valide que `nombre`, `apellido` y `edad` estén completos antes de enviar.
+Create an `ProfileForm.vue` component that validates that `nombre`, `apellido`, and `edad` are complete before sending.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>

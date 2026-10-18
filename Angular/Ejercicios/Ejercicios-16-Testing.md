@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 16: Realización de Tests Unitarios con Jasmine y Karma**
+# **Exercises - Topic 16: Performing Unit Tests with Jasmine and Karma**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre cómo realizar pruebas unitarias en Angular usando Jasmine y Karma.
+Below you will find exercises on how to unit test in Angular using Jasmine and Karma.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Probar una Función Simple**
+### **Exercise 1: Test a Simple Function**
 
-Escribe un test para una función que sume dos números.
+Write a test for a function that adds two numbers.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `math.util.ts`**
+#### **File: `math.util.ts`**
 
 ```ts
 export function sumar(a: number, b: number): number {
@@ -22,7 +22,8 @@ export function sumar(a: number, b: number): number {
 }
 ```
 
-#### **Archivo: `math.util.spec.ts`**
+
+#### **File: `math.util.spec.ts`**
 
 ```ts
 describe("sumar", () => {
@@ -36,17 +37,18 @@ describe("sumar", () => {
 });
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Probar un Componente Angular**
+### **Exercise 2: Test an Angular Component**
 
-Crea un test para un componente simple que muestra un mensaje.
+Create a test for a simple component that displays a message.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `mensaje.component.ts`**
+#### **File: `mensaje.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -60,7 +62,8 @@ export class MensajeComponent {
 }
 ```
 
-#### **Archivo: `mensaje.component.spec.ts`**
+
+#### **File: `mensaje.component.spec.ts`**
 
 ```ts
 import { ComponentFixture, TestBed } from "@angular/core/testing";
@@ -87,17 +90,18 @@ describe("MensajeComponent", () => {
 });
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Probar un Servicio Angular**
+### **Exercise 3: Test an Angular Service**
 
-Escribe un test para un servicio que devuelve un saludo.
+Write a test for a service that returns a greeting.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `saludo.service.ts`**
+#### **File: `saludo.service.ts`**
 
 ```ts
 import { Injectable } from "@angular/core";
@@ -110,7 +114,8 @@ export class SaludoService {
 }
 ```
 
-#### **Archivo: `saludo.service.spec.ts`**
+
+#### **File: `saludo.service.spec.ts`**
 
 ```ts
 import { TestBed } from "@angular/core/testing";
@@ -130,17 +135,18 @@ describe("SaludoService", () => {
 });
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Simular un Servicio con Spy**
+### **Exercise 4: Simulate a Service with Spy**
 
-Simula un servicio usando `spyOn` para un componente que depende de un servicio.
+Mock a service using `spyOn` for a component that depends on a service.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `usuario.service.ts`**
+#### **File: `usuario.service.ts`**
 
 ```ts
 import { Injectable } from "@angular/core";
@@ -153,7 +159,8 @@ export class UsuarioService {
 }
 ```
 
-#### **Archivo: `usuario.component.ts`**
+
+#### **File: `usuario.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -172,7 +179,8 @@ export class UsuarioComponent {
 }
 ```
 
-#### **Archivo: `usuario.component.spec.ts`**
+
+#### **File: `usuario.component.spec.ts`**
 
 ```ts
 import { ComponentFixture, TestBed } from "@angular/core/testing";
@@ -207,17 +215,18 @@ describe("UsuarioComponent", () => {
 });
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Probar un Método Asíncrono**
+### **Exercise 5: Test an Asynchronous Method**
 
-Escribe un test para un método que devuelve un observable.
+Write a test for a method that returns an observable.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `datos.service.ts`**
+#### **File: `datos.service.ts`**
 
 ```ts
 import { Injectable } from "@angular/core";
@@ -231,7 +240,8 @@ export class DatosService {
 }
 ```
 
-#### **Archivo: `datos.service.spec.ts`**
+
+#### **File: `datos.service.spec.ts`**
 
 ```ts
 import { TestBed } from "@angular/core/testing";
@@ -254,5 +264,6 @@ describe("DatosService", () => {
   });
 });
 ```
+
 
 </details>

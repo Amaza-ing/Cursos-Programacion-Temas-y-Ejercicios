@@ -1,14 +1,14 @@
-# Ejercicios - Tema 30: Stream API
+# Exercises - Topic 30: Stream API
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **Stream API**: `filter`, `map`, `sorted`, `distinct`, `count`, `reduce`, `findFirst`, `anyMatch`, `allMatch` y conversión final con `toList`.
+Below you will find **10 practical exercises** to work with **Stream API**: `filter`, `map`, `sorted`, `distinct`, `count`, `reduce`, `findFirst`, `anyMatch`, `allMatch` and final conversion with `toList`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Filtrar palabras largas
+## Exercise 1: Filter long words
 
-Crea una lista `List<String> words` con estos valores:
+Create an `List<String> words` list with these values:
 
 - `"java"`
 - `"stream"`
@@ -16,10 +16,10 @@ Crea una lista `List<String> words` con estos valores:
 - `"programming"`
 - `"code"`
 
-Usa `stream()` para quedarte solo con las palabras que tengan **más de 4 caracteres**.  
-Guarda el resultado en una nueva lista e imprímela.
+Use `stream()` to only keep words that are **more than 4 characters**.  
+Save the result in a new list and print it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -41,18 +41,18 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Convertir nombres a mayúsculas
+## Exercise 2: Convert names to uppercase
 
-Crea una lista `List<String> names` con:
+Create an `List<String> names` list with:
 
 - `"laura"`
 - `"alex"`
 - `"maria"`
 - `"david"`
 
-Usa `map` para crear una nueva lista con todos los nombres en mayúsculas.
+Use `map` to create a new list with all names in uppercase.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -74,15 +74,15 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Filtrar números pares
+## Exercise 3: Filter even numbers
 
-Crea una lista `List<Integer> numbers` con:
+Create an `List<Integer> numbers` list with:
 
 `3`, `8`, `12`, `5`, `7`, `20`.
 
-Usa `filter` para obtener solo los números pares e imprime la lista resultante.
+Use `filter` to get only the even numbers and print the resulting list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -104,15 +104,15 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Ordenar precios de menor a mayor
+## Exercise 4: Sort prices from lowest to highest
 
-Crea una lista `List<Double> prices` con:
+Create an `List<Double> prices` list with:
 
 `19.99`, `5.50`, `120.0`, `49.99`.
 
-Usa `sorted` para crear una lista ordenada de menor a mayor.
+Use `sorted` to create a list ordered from smallest to largest.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -134,9 +134,9 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Eliminar etiquetas repetidas
+## Exercise 5: Delete repeated tags
 
-Crea una lista `List<String> tags` con:
+Create an `List<String> tags` list with:
 
 - `"java"`
 - `"backend"`
@@ -144,9 +144,9 @@ Crea una lista `List<String> tags` con:
 - `"maven"`
 - `"backend"`
 
-Usa `distinct` para eliminar duplicados e imprime la lista resultante.
+Use `distinct` to remove duplicates and print the resulting list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -168,17 +168,17 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Contar productos caros
+## Exercise 6: Count expensive products
 
-Crea una clase `Product` con:
+Create a class `Product` with:
 
 - `name`
 - `price`
 
-En `main`, crea una lista con varios productos.  
-Usa `stream()` y `count()` para contar cuántos productos tienen precio mayor que `50`.
+In `main`, create a list with multiple products.  
+Use `stream()` and `count()` to count how many products have a price higher than `50`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -223,15 +223,15 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Sumar números con `reduce`
+## Exercise 7: Add numbers with `reduce`
 
-Crea una lista `List<Integer> expenses` con:
+Create an `List<Integer> expenses` list with:
 
 `10`, `25`, `15`, `40`.
 
-Usa `reduce` para calcular la suma total e imprime el resultado.
+Use `reduce` to calculate the total sum and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -252,19 +252,18 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Buscar el primer nombre que empieza por una letra
+## Exercise 8: Find the first name that starts with a letter
 
-Crea una lista `List<String> names` con:
+Create an `List<String> names` list with:
 
 - `"Carlos"`
 - `"Ana"`
 - `"Carmen"`
 - `"Luis"`
 
-Usa `stream()`, `filter` y `findFirst` para encontrar el primer nombre que empiece por `"C"`.  
-Si existe, imprímelo.
-
-<details><summary>Mostrar solución</summary>
+Use `stream()`, `filter`, and `findFirst` to find the first name that starts with `"C"`.  
+If it exists, print it.
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -287,17 +286,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Comprobar si hay algún usuario adulto
+## Exercise 9: Check if there are any adult users
 
-Crea una clase `User` con:
+Create a class `User` with:
 
 - `name`
 - `age`
 
-En `main`, crea una lista de usuarios.  
-Usa `anyMatch` para comprobar si existe al menos un usuario con edad mayor o igual que `18`.
+In `main`, create a list of users.  
+Use `anyMatch` to check if there is at least one user with an age greater than or equal to `18`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class User {
@@ -338,23 +337,23 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Filtrar, transformar y ordenar
+## Exercise 10: Filter, transform and sort
 
-Crea una lista `List<String> emails` con:
+Create an `List<String> emails` list with:
 
 - `"LAURA@EXAMPLE.COM"`
 - `"test@gmail.com"`
 - `"ADMIN@EXAMPLE.COM"`
 - `"hello@yahoo.com"`
 
-Usa Stream API para:
+Use the Stream API to:
 
-1. Quedarte solo con los emails que terminen en `"@example.com"` ignorando mayúsculas/minúsculas.
-2. Convertirlos a minúsculas.
-3. Ordenarlos alfabéticamente.
-4. Imprimir la lista final.
+1. Keep only emails that end in `"@example.com"`, ignoring upper/lower case.
+2. Convert them to lowercase.
+3. Sort them alphabetically.
+4. Print the final list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;

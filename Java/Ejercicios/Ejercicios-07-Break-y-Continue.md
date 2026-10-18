@@ -1,17 +1,17 @@
-# Ejercicios - Tema 7: Control del flujo en bucles (`break` y `continue`)
+# Exercises - Topic 7: Flow control in loops (`break` and `continue`)
 
-A continuación encontrarás **10 ejercicios prácticos** para aprender a usar `break` y `continue` dentro de bucles `for` y `while`.
+Below you will find **10 practical exercises** to learn how to use `break` and `continue` within `for` and `while` loops.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Detener un bucle al llegar a un valor
+## Exercise 1: Stop a loop when reaching a value
 
-Usa un bucle `for` del 1 al 20.  
-Cuando el contador llegue a `13`, muestra `"Found 13"` y detén el bucle.
+Use an `for` loop from 1 to 20.  
+When the counter reaches `13`, display `"Found 13"` and stop the loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -30,12 +30,12 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Saltar números múltiplos de 4
+## Exercise 2: Skip numbers multiples of 4
 
-Usa un bucle `for` del 1 al 30.  
-No debes imprimir los números que sean múltiplos de `4`.
+Use an `for` loop from 1 to 30.  
+You should not print numbers that are multiples of `4`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -55,12 +55,12 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Buscar el primer múltiplo de 7
+## Exercise 3: Find the first multiple of 7
 
-Usa un bucle `for` del 1 al 100.  
-Encuentra el **primer** múltiplo de `7`, imprímelo y sal del bucle.
+Use an `for` loop from 1 to 100.  
+Find the **first** multiple of `7`, print it and exit the loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -79,12 +79,12 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Ignorar el cero para evitar división entre cero
+## Exercise 4: Ignore zero to avoid division by zero
 
-Usa un bucle `for` desde `-5` hasta `5`.  
-Imprime el resultado de `50 / i`, pero **no** debes dividir entre 0.
+Use an `for` loop from `-5` to `5`.  
+Print the result of `50 / i`, but you **do not** divide by 0.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -104,16 +104,16 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Contar solo números que cumplen condición (usando `continue`)
+## Exercise 5: Count only numbers that meet condition (using `continue`)
 
-Usa un bucle del 1 al 50 y cuenta cuántos números son:
+Use a loop from 1 to 50 and count how many numbers there are:
 
-- múltiplos de 3
-- pero NO múltiplos de 6
+- multiples of 3
+- but NOT multiples of 6
 
-Imprime el contador final.
+Print the final counter.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -141,12 +141,12 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Bucle `while (true)` con salida controlada
+## Exercise 6: `while (true)` loop with controlled output
 
-Crea un bucle infinito (`while (true)`) que aumente una variable `attempts` desde 1.  
-Cuando `attempts` llegue a `5`, muestra `"Stop"` y termina el bucle.
+Create an infinite loop (`while (true)`) that increments an `attempts` variable from 1.  
+When `attempts` reaches `5`, it displays `"Stop"` and ends the loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -169,12 +169,12 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Saltar una iteración con `continue` en `while`
+## Exercise 7: Skip an iteration with `continue` in `while`
 
-Usa un bucle `while` para contar del 1 al 15.  
-No imprimas los números impares (solo deben mostrarse pares).
+Use an `while` loop to count from 1 to 15.  
+Do not print odd numbers (only even numbers should be displayed).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -198,13 +198,13 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Detener al encontrar un carácter
+## Exercise 8: Stop when encountering a character
 
-Declara una variable `text` con valor `"java_programming"`.  
-Recorre sus caracteres con un bucle y detente cuando encuentres el carácter `'_'`.  
-Imprime `"Underscore found"` justo antes de salir.
+Declare a variable `text` with value `"java_programming"`.  
+It loops through its characters and stops when it finds the character `'_'`.  
+Print `"Underscore found"` just before leaving.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -227,20 +227,20 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Sumar solo valores válidos
+## Exercise 9: Add only valid values
 
-Declara un array:
+Declare an array:
 
 ```java
 int[] values = {3, 0, 5, -2, 0, 7};
 ```
 
-Recorre el array y suma únicamente los valores que sean **mayores que 0**.  
-Usa `continue` para ignorar el resto.
+Loop through the array and add only the values that are **greater than 0**.  
+Use `continue` to ignore the rest.
 
-Imprime la suma final.
+Print the final sum.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -265,19 +265,19 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Parar cuando la suma supere un límite
+## Exercise 10: Stop when the sum exceeds a limit
 
-Declara un array:
+Declare an array:
 
 ```java
 int[] values = {10, 20, 15, 30, 5};
 ```
 
-Recorre el array sumando valores en orden.  
-Cuando la suma sea **mayor que 40**, detén el bucle con `break`.  
-Imprime la suma alcanzada.
+It goes through the array adding values in order.
+When the sum is **greater than 40**, stop the loop with `break`.  
+Prints the sum reached.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

@@ -1,10 +1,10 @@
-# Ejercicios - Tema 06: Copilot Chat aplicado al desarrollo
+# Exercises - Topic 06: Copilot Chat applied to development
 
-A continuación, encontrarás ejercicios prácticos para utilizar Copilot Chat como apoyo en explicación, análisis, mejora y revisión de código.
+Below, you will find practical exercises to use Copilot Chat to support explanation, analysis, improvement and code review.
 
-## Ejercicio 1: Pedir una explicación clara de una función
+## Exercise 1: Ask for a clear explanation of a function
 
-Tienes la siguiente función:
+You have the following function:
 
 ```javascript
 function groupOrdersByCustomer(orders) {
@@ -19,12 +19,13 @@ function groupOrdersByCustomer(orders) {
 }
 ```
 
-Escribe un mensaje para Copilot Chat pidiendo que explique la función de forma clara para una persona que está aprendiendo JavaScript.
+
+Write a message to Copilot Chat asking it to explain the feature clearly to a person learning JavaScript.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un mensaje adecuado sería:
+A suitable message would be:
 
 ```text
 Explícame esta función paso a paso como si estuviera aprendiendo JavaScript.
@@ -32,20 +33,21 @@ Quiero entender qué hace reduce, para qué sirve el objeto customers y por qué
 No cambies el código, solo explícalo de forma clara.
 ```
 
-Una buena respuesta debería explicar que:
 
-1. La función recibe un array de pedidos.
-2. Usa `reduce` para construir un objeto acumulador.
-3. Cada clave del objeto representa el `customerId` de un cliente.
-4. Si todavía no existe una entrada para ese cliente, se crea un array vacío.
-5. Cada pedido se añade al array correspondiente.
-6. El resultado final es un objeto con los pedidos agrupados por cliente.
+A good answer should explain that:
+
+1. The function receives an array of requests.
+2. Use `reduce` to build an accumulator object.
+3. Each key in the object represents the `customerId` of a client.
+4. If an entry does not yet exist for that client, an empty array is created.
+5. Each order is added to the corresponding array.
+6. The final result is an object with orders grouped by customer.
 
 </details>
 
-## Ejercicio 2: Pedir a Copilot Chat que detecte un bug
+## Exercise 2: Ask Copilot Chat to detect a bug
 
-Analiza este código:
+Analyze this code:
 
 ```javascript
 function getAverageScore(scores) {
@@ -56,12 +58,13 @@ function getAverageScore(scores) {
 console.log(getAverageScore([]));
 ```
 
-Escribe un mensaje para Copilot Chat que pida detectar el problema y proponer una corrección mínima.
+
+Write a message to Copilot Chat asking to detect the problem and propose a minimal fix.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un mensaje adecuado sería:
+A suitable message would be:
 
 ```text
 Revisa este código y dime qué problema puede aparecer cuando el array scores está vacío.
@@ -69,7 +72,8 @@ Propón una corrección mínima sin cambiar el nombre de la función ni el tipo 
 Después, explica brevemente por qué la corrección evita el error.
 ```
 
-Una posible corrección sería:
+
+A possible fix would be:
 
 ```javascript
 function getAverageScore(scores) {
@@ -82,13 +86,14 @@ function getAverageScore(scores) {
 }
 ```
 
-El problema es que, si el array está vacío, `scores.length` vale `0` y la división `total / scores.length` produce `NaN`. La corrección evita la división entre cero devolviendo un valor controlado.
+
+The problem is that if the array is empty, `scores.length` is `0` and dividing `total / scores.length` produces `NaN`. The fix prevents division by zero by returning a controlled value.
 
 </details>
 
-## Ejercicio 3: Usar Copilot Chat para mejorar legibilidad
+## Exercise 3: Use Copilot Chat to improve readability
 
-Tienes el siguiente código:
+You have the following code:
 
 ```javascript
 function f(items) {
@@ -102,12 +107,13 @@ function f(items) {
 }
 ```
 
-Escribe un mensaje para Copilot Chat pidiendo una mejora de legibilidad sin cambiar el comportamiento.
+
+Write a message to Copilot Chat requesting a readability improvement without changing behavior.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un mensaje adecuado sería:
+A suitable message would be:
 
 ```text
 Refactoriza este código para mejorar su legibilidad sin cambiar su comportamiento.
@@ -116,7 +122,8 @@ Si es posible, utiliza métodos de array modernos de JavaScript.
 Después, explica brevemente los cambios realizados.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 function getAvailablePaidItems(items) {
@@ -124,7 +131,8 @@ function getAvailablePaidItems(items) {
 }
 ```
 
-Una versión aún más clara, si se conocen los nombres reales de las propiedades, sería:
+
+An even clearer version, if the real property names are known, would be:
 
 ```javascript
 function getAvailablePaidItems(items) {
@@ -132,13 +140,14 @@ function getAvailablePaidItems(items) {
 }
 ```
 
-La mejora principal está en usar un nombre de función más claro, evitar variables poco descriptivas y sustituir el bucle manual por `filter`.
+
+The main improvement is to use a clearer function name, avoid non-descriptive variables and replace the manual loop with `filter`.
 
 </details>
 
-## Ejercicio 4: Pedir una revisión de código antes de aceptar cambios
+## Exercise 4: Ask for a code review before accepting changes
 
-Imagina que Copilot ha generado esta función:
+Imagine that Copilot has generated this function:
 
 ```javascript
 function removeUser(users, userId) {
@@ -147,14 +156,15 @@ function removeUser(users, userId) {
 }
 ```
 
-La intención era eliminar un usuario por su `id`, no por su posición en el array.
 
-Escribe un mensaje para Copilot Chat que pida revisar el código, detectar el problema y corregirlo.
+The intention was to remove a user by their `id`, not by their position in the array.
+
+Write a message to Copilot Chat asking to review the code, detect the problem, and fix it.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un mensaje adecuado sería:
+A suitable message would be:
 
 ```text
 Revisa esta función. La intención es eliminar un usuario por su propiedad id, no por la posición que ocupa en el array.
@@ -163,7 +173,8 @@ La función no debe modificar el array original.
 Explica brevemente por qué la nueva versión es más segura.
 ```
 
-Una posible corrección sería:
+
+A possible fix would be:
 
 ```javascript
 function removeUser(users, userId) {
@@ -171,19 +182,21 @@ function removeUser(users, userId) {
 }
 ```
 
-El problema del código original es que `splice(userId, 1)` interpreta `userId` como índice del array. Además, modifica el array original. La nueva versión usa `filter`, elimina el usuario cuya propiedad `id` coincide con `userId` y devuelve un nuevo array.
+
+The problem with the original code is that `splice(userId, 1)` interprets `userId` as the index of the array. Additionally, it modifies the original array. The new version uses `filter`, removes the user whose `id` property matches `userId` and returns a new array.
 
 </details>
 
-## Ejercicio 5: Pedir ayuda con un error de consola
+## Exercise 5: Ask for help with a console error
 
-Imagina que en una aplicación de React aparece este error:
+Imagine that this error appears in a React application:
 
 ```text
 Cannot read properties of undefined (reading 'name')
 ```
 
-El componente contiene este fragmento:
+
+The component contains this fragment:
 
 ```jsx
 function UserProfile({ user }) {
@@ -196,12 +209,12 @@ function UserProfile({ user }) {
 }
 ```
 
-Escribe un mensaje para Copilot Chat que pida ayuda para entender y corregir el error.
+Write a message to Copilot Chat asking for help understanding and correcting the error.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un mensaje adecuado sería:
+A suitable message would be:
 
 ```text
 Estoy recibiendo el error "Cannot read properties of undefined (reading 'name')" en este componente de React.
@@ -209,7 +222,8 @@ Explícame por qué ocurre y propón una corrección sencilla.
 Ten en cuenta que la prop user puede no estar disponible al principio.
 ```
 
-Una posible corrección sería:
+
+A possible fix would be:
 
 ```jsx
 function UserProfile({ user }) {
@@ -226,18 +240,19 @@ function UserProfile({ user }) {
 }
 ```
 
-El error ocurre porque el componente intenta acceder a `user.name` cuando `user` todavía es `undefined`. La condición inicial evita acceder a sus propiedades hasta que el objeto exista.
+
+The error occurs because the component tries to access `user.name` when `user` is still `undefined`. The initial condition prevents accessing its properties until the object exists.
 
 </details>
 
-## Ejercicio 6: Pedir alternativas de implementación
+## Exercise 6: Ask for implementation alternatives
 
-Necesitas guardar una lista de tareas en el navegador. Escribe un mensaje para Copilot Chat pidiendo dos alternativas posibles y una recomendación final.
+You need to save a list of tasks in the browser. Write a message to Copilot Chat asking for two possible alternatives and a final recommendation.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un mensaje adecuado sería:
+A suitable message would be:
 
 ```text
 Necesito guardar una lista de tareas en el navegador en una aplicación sencilla de JavaScript.
@@ -246,32 +261,33 @@ Compara ventajas e inconvenientes de cada una.
 Al final, recomiéndame cuál usarías para una primera versión sencilla y por qué.
 ```
 
-Una buena respuesta debería comparar:
+
+A good answer should compare:
 
 **localStorage**
 
-- Ventajas: sencillo, rápido, no necesita backend.
-- Inconvenientes: solo guarda datos en el navegador actual, no sincroniza entre dispositivos, no es adecuado para datos sensibles.
+- Advantages: simple, fast, no backend needed.
+- Disadvantages: only saves data in the current browser, does not sync between devices, not suitable for sensitive data.
 
-**API externa o backend**
+**External or backend API**
 
-- Ventajas: permite persistencia real, usuarios, sincronización y acceso desde varios dispositivos.
-- Inconvenientes: requiere servidor, base de datos, autenticación y más configuración.
+- Advantages: allows real persistence, users, synchronization and access from multiple devices.
+- Disadvantages: requires server, database, authentication and more configuration.
 
-Para una primera versión sencilla, normalmente sería razonable usar `localStorage`, siempre que los datos no sean sensibles.
+For a simple first release, it would usually be reasonable to use `localStorage`, as long as the data is not sensitive.
 
 </details>
 
-## Ejercicio 7: Crear una conversación de mejora iterativa
+## Exercise 7: Create an iterative improvement conversation
 
-Escribe una secuencia de tres mensajes que podrías enviar a Copilot Chat para mejorar progresivamente una función que filtra productos por categoría.
+Write a sequence of three messages that you could send to Copilot Chat to progressively improve a feature that filters products by category.
 
-La conversación debe incluir una primera petición, una mejora posterior y una petición final de revisión.
+The conversation should include a first request, a subsequent improvement, and a final request for revision.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible secuencia sería:
+A possible sequence would be:
 
 ```text
 1. Crea una función en JavaScript llamada filterProductsByCategory.
@@ -280,17 +296,20 @@ Cada producto tiene id, name, category y price.
 La función debe devolver solo los productos de la categoría indicada.
 ```
 
+
 ```text
 2. Mejora la función para que la comparación de categorías no distinga entre mayúsculas y minúsculas.
 No modifiques el array original.
 ```
+
 
 ```text
 3. Revisa la función final y dime si puede fallar en algún caso límite.
 Propón mejoras solo si son necesarias y explica brevemente por qué.
 ```
 
-Una posible función final sería:
+
+A possible final function would be:
 
 ```javascript
 function filterProductsByCategory(products, category) {
@@ -302,6 +321,7 @@ function filterProductsByCategory(products, category) {
 }
 ```
 
-Una revisión adicional podría comprobar si `category` o `product.category` pueden ser `undefined`. Si ese caso es posible, habría que añadir validaciones.
+
+Further review could check whether `category` or `product.category` may be `undefined`. If that case is possible, validations would have to be added.
 
 </details>

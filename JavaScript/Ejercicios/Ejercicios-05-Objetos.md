@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 5: Objetos en JavaScript**
+# **Exercises - Topic 5: Objects in JavaScript**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre el uso de objetos en JavaScript.
+Below you will find 5 practical exercises on using objects in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un objeto simple**
+### **Exercise 1: Create a simple object**
 
-Crea un objeto llamado `book` que tenga las siguientes propiedades: `title`, `author` y `year`. Muestra el objeto en la consola.
+Create an object named `book` that has the following properties: `title`, `author`, and `year`. Display the object in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const book = {
@@ -26,11 +26,11 @@ console.log(book);
 
 ---
 
-### **Ejercicio 2: Acceso a propiedades**
+### **Exercise 2: Access to properties**
 
-Usando el objeto `book` del ejercicio anterior, muestra en la consola el título y el autor utilizando tanto la notación del punto como la notación de corchetes.
+Using the `book` object from the previous exercise, display the title and author in the console using both dot notation and square bracket notation.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 // Notación del punto
@@ -46,11 +46,11 @@ console.log(book["author"]); // Salida: Gabriel García Márquez
 
 ---
 
-### **Ejercicio 3: Agregar un método a un objeto**
+### **Exercise 3: Add a method to an object**
 
-Agrega un método llamado `getSummary` al objeto `book` que retorne una cadena con el formato: "[title] fue escrito por [author] en [year]".
+Add a method called `getSummary` to the `book` object that returns a string in the format: "[title] was written by [author] in [year]".
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 book.getSummary = function () {
@@ -64,11 +64,11 @@ console.log(book.getSummary()); // Salida: Cien años de soledad fue escrito por
 
 ---
 
-### **Ejercicio 4: Crear un constructor de objetos**
+### **Exercise 4: Create an object constructor**
 
-Crea una función constructora llamada `Movie` que reciba `title`, `director` y `year` como parámetros y cree un objeto con esas propiedades. Luego, crea una instancia llamada `myMovie`.
+Create a constructor function called `Movie` that takes `title`, `director`, and `year` as parameters and creates an object with those properties. Next, create an instance called `myMovie`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Movie(title, director, year) {
@@ -85,11 +85,11 @@ console.log(myMovie);
 
 ---
 
-### **Ejercicio 5: Desestructuración de objetos**
+### **Exercise 5: Destructuring objects**
 
-Usa la desestructuración para extraer las propiedades `title` y `author` del objeto `book` y muéstralas en la consola.
+Use destructuring to extract the `title` and `author` properties from the `book` object and display them in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const { title, author } = book;

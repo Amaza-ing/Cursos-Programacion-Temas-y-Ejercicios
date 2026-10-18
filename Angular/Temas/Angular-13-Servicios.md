@@ -1,45 +1,47 @@
-# **Tema 13: Servicios en Angular y Gestión del Estado Global**
+# **Topic 13: Angular Services and Global State Management**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, los **servicios** son esenciales para manejar datos compartidos entre componentes y gestionar el estado global de una aplicación. Permiten desacoplar la lógica de negocio de los componentes, haciendo que la aplicación sea más escalable y mantenible.
+In Angular, **services** are essential for handling data shared between components and managing the global state of an application. They allow the business logic to be decoupled from the components, making the application more scalable and maintainable.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un servicio en Angular.
-- Cómo crear y usar un servicio.
-- Cómo gestionar el estado global con `signal`.
-- Uso de servicios con la nueva sintaxis de Angular.
-
----
-
-## **2. ¿Qué es un Servicio en Angular?**
-
-Un **servicio** en Angular es una clase que contiene lógica reutilizable, como peticiones HTTP, almacenamiento de datos y gestión del estado. Los servicios se pueden inyectar en cualquier componente o en otros servicios.
-
-Los servicios en Angular se pueden definir como **standalone** (`providedIn: 'root'`), lo que permite que estén disponibles en toda la aplicación sin necesidad de declararlos en un módulo.
+- What is a service in Angular.
+- How to create and use a service.
+- How to manage global state with `signal`.
+- Use of services with the new Angular syntax.
 
 ---
 
-## **3. Creación de un Servicio en Angular**
+## **2. What is a Service in Angular?**
 
-Para generar un servicio en nuestro proyecto de Angular tenemos que ejecutar el siguiente comando:
+A **service** in Angular is a class that contains reusable logic, such as HTTP requests, data storage, and state management. Services can be injected into any component or into other services.
+
+Services in Angular can be defined as **standalone** (`providedIn: 'root'`), which allows them to be available throughout the application without needing to declare them in a module.
+
+---
+
+## **3. Creating a Service in Angular**
+
+To generate a service in our Angular project we have to execute the following command:
 
 ```sh
 ng generate service services/user
 ```
 
-O en su versión resumida:
+
+Or in its summarized version:
 
 ```sh
 ng g s services/user
 ```
 
-Esto creará un fichero `user.service.ts` dentro de la carpeta `services`. Si la carpeta `services` no existe la creará también.
 
-### **3.1. Definir un Servicio**
+This will create an `user.service.ts` file inside the `services` folder. If the `services` folder does not exist, it will create it as well.
 
-#### **Archivo: `user.service.ts`**
+### **3.1. Define a Service**
+
+#### **File: `user.service.ts`**
 
 ```ts
 import { Injectable, signal } from "@angular/core";
@@ -69,17 +71,18 @@ export class UserService {
 }
 ```
 
-En este servicio:
 
-- Se usa `users` para almacenar el estado de los usuarios.
-- `addUser()` añade un nuevo usuario a la lista.
-- `toggleActive()` cambia el estado activo/inactivo de un usuario.
+In this service:
 
-### **3.2. Definir un Servicio usando Signals**
+- `users` is used to store users' state.
+- `addUser()` adds a new user to the list.
+- `toggleActive()` changes the active/inactive status of a user.
 
-También se puede trabajar con signals dentro de los servicios si queremos jugar con la reactividad.
+### **3.2. Define a Service using Signals**
 
-#### **Archivo: `user.service.ts`**
+You can also work with signals within the services if we want to play with reactivity.
+
+#### **File: `user.service.ts`**
 
 ```ts
 import { Injectable, signal } from "@angular/core";
@@ -108,13 +111,14 @@ export class UserService {
 }
 ```
 
+
 ---
 
-## **4. Uso de un Servicio en un Componente**
+## **4. Use of a Service in a Component**
 
-### **4.1. Inyección del Servicio en un Componente Standalone**
+### **4.1. Service Injection into a Standalone Component**
 
-#### **Archivo: `user.component.ts`**
+#### **File: `user.component.ts`**
 
 ```ts
 import { UserService } from "../services/user.service";
@@ -127,13 +131,14 @@ export class UserComponent {
 }
 ```
 
-Aquí se inyecta el servicio directamente en el constructor.
+
+Here the service is injected directly into the constructor.
 
 ---
 
-## **5. Mostrar Datos en el template (código HTML) con `@for`**
+## **5. Show Data in the template (HTML code) with `@for`**
 
-#### **Archivo: `user.component.html`**
+#### **File: `user.component.html`**
 
 ```html
 <ul>
@@ -151,35 +156,35 @@ Aquí se inyecta el servicio directamente en el constructor.
 </button>
 ```
 
-Aquí se usa:
 
-- `@for` para iterar sobre la lista de usuarios.
-- `userService.addUser()` y `userService.toggleActive()` directamente en los botones.
+Here it is used:
+
+- `@for` to iterate over the list of users.
+- `userService.addUser()` and `userService.toggleActive()` directly on the buttons.
 
 ---
 
-## **6. Beneficios de Usar Servicios para el Estado Global**
+## **6. Benefits of Using Services for Global Status**
 
-| **Beneficio**       | **Descripción**                                                                            |
+| **Benefit** | **Description** |
 | ------------------- | ------------------------------------------------------------------------------------------ |
-| **Desacoplamiento** | Los componentes no dependen unos de otros para compartir datos.                            |
-| **Reactividad**     | `signal` permite una gestión del estado eficiente sin necesidad de suscripciones manuales. |
-| **Escalabilidad**   | Los datos pueden ser accedidos desde cualquier parte de la aplicación.                     |
-| **Rendimiento**     | Menos necesidad de detección de cambios en comparación con `BehaviorSubject` de RxJS.      |
+| **Decoupling** | Components do not depend on each other to share data.                            |
+| **Reactivity** | `signal` enables efficient state management without the need for manual subscriptions. |
+| **Scalability** | The data can be accessed from anywhere in the application.                     |
+| **Performance** | Less need for change detection compared to RxJS's `BehaviorSubject`.      |
 
 ---
 
-[![Servicios](https://img.youtube.com/vi/ehv9_wYfAfU/0.jpg)](https://www.youtube.com/watch?v=ehv9_wYfAfU&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+[![](https://img.youtube.com/vi/ehv9_wYfAfU/0.jpg) Services](https://www.youtube.com/watch?v=ehv9_wYfAfU&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **7. Conclusión**
-
-- **Los servicios** permiten compartir datos y lógica entre componentes.
-- **Los signals** en Angular facilitan la reactividad sin depender de `RxJS`.
-- **La inyección de dependencias** simplifica el acceso a los servicios en toda la aplicación.
-- **El uso de `@for` y `@if`** en el template hace que el código sea más limpio y eficiente.
+## **7. Conclusion**
+- **Services** allow data and logic to be shared between components.
+- **Signals** in Angular facilitate reactivity without depending on `RxJS`.
+- **Dependency injection** simplifies access to services throughout the application.
+- **The use of `@for` and `@if`** in the template makes the code cleaner and more efficient.
 
 ---
 
-En el próximo tema, exploraremos **cómo usar el Router para crear rutas en una SPA y cómo usar RouterLink para crear enlaces**.
+In the next topic, we will explore **how to use Router to create routes in a SPA and how to use RouterLink to create links**.

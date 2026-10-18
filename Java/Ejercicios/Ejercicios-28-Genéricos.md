@@ -1,16 +1,16 @@
-# Ejercicios - Tema 28: Genéricos
+# Exercises - Topic 28: Generic
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **clases genéricas, métodos genéricos, comodines, `extends`, `super` y seguridad de tipos**.
+Below you will find **10 practical exercises** to work with **generic classes, generic methods, wildcards, `extends`, `super` and type safety**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Clase genérica
+## Exercise 1: Generic class
 
-Crea `Container<T>`.
+Create `Container<T>`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Container<T> {
@@ -34,11 +34,11 @@ public class Container<T> {
 
 ---
 
-## Ejercicio 2: Usar varios tipos
+## Exercise 2: Using multiple types
 
-Usa `Container` con distintos tipos.
+Use `Container` with different types.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -55,11 +55,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Dos parámetros
+## Exercise 3: Two parameters
 
-Crea `Entry<K, V>`.
+Create `Entry<K, V>`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Entry<K, V> {
@@ -80,11 +80,11 @@ public class Entry<K, V> {
 
 ---
 
-## Ejercicio 4: Método genérico
+## Exercise 4: Generic method
 
-Crea `printTwice(T value)`.
+Create `printTwice(T value)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -99,11 +99,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Último elemento
+## Exercise 5: Last element
 
-Crea `getLast(List<T> values)`.
+Create `getLast(List<T> values)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -119,11 +119,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Comodín `?`
+## Exercise 6: `?` wildcard
 
-Crea `printItems(List<?> items)`.
+Create `printItems(List<?> items)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -141,11 +141,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: `extends Number`
+## Exercise 7: `extends Number`
 
-Crea `average(List<? extends Number>)`.
+Create `average(List<? extends Number>)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -165,11 +165,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: `super Integer`
+## Exercise 8: `super Integer`
 
-Añade enteros a una lista `List<? super Integer>`.
+Adds integers to an `List<? super Integer>` list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.List;
@@ -187,11 +187,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Límite genérico
+## Exercise 9: Generic limit
 
-Crea `NumberBox<T extends Number>`.
+Create `NumberBox<T extends Number>`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class NumberBox<T extends Number> {
@@ -211,11 +211,11 @@ public class NumberBox<T extends Number> {
 
 ---
 
-## Ejercicio 10: Método `swap`
+## Exercise 10: `swap` Method
 
-Intercambia dos posiciones de un array genérico.
+Swaps two positions of a generic array.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

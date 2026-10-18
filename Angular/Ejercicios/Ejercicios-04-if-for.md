@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 4: Control de Flujo en Angular (@if y @for)**
+# **Exercises - Topic 4: Flow Control in Angular (@if and @for)**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre el control de flujo en Angular usando `@if` y `@for`.
+Below you will find 10 practical exercises on flow control in Angular using `@if` and `@for`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Uso básico de `@if`**
+### **Exercise 1: Basic use of `@if`**
 
-Crea una condición en la plantilla para mostrar un mensaje si la variable `isLoggedIn` es `true` y otro mensaje diferente si es `false`.
+Create a condition in the template to display one message if the `isLoggedIn` variable is `true` and a different message if it is `false`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 @if (isLoggedIn) {
@@ -22,21 +22,23 @@ Crea una condición en la plantilla para mostrar un mensaje si la variable `isLo
 }
 ```
 
+
 ```ts
 export class SomeComponent {
   isLoggedIn: boolean = false;
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Uso de `@for` para mostrar una lista**
+### **Exercise 2: Using `@for` to display a list**
 
-Muestra una lista de nombres usando `@for` y optimiza con `track`.
+Display a list of names using `@for` and optimize with `track`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -46,21 +48,23 @@ Muestra una lista de nombres usando `@for` y optimiza con `track`.
 </ul>
 ```
 
+
 ```ts
 export class SomeComponent {
   names: string[] = ["Ana", "Luis", "Carlos"];
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: `@if` anidado**
+### **Exercise 3: Nested `@if`**
 
-Crea una estructura condicional que muestre mensajes diferentes según la edad del usuario.
+Create a conditional structure that displays different messages depending on the user's age.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 @if (age < 18) {
@@ -72,21 +76,23 @@ Crea una estructura condicional que muestre mensajes diferentes según la edad d
 }
 ```
 
+
 ```ts
 export class SomeComponent {
   age: number = 30;
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Iterar sobre un array de objetos**
+### **Exercise 4: Iterate over an array of objects**
 
-Muestra una lista de productos con nombre y precio usando `@for`.
+Displays a list of products with name and price using `@for`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -95,6 +101,7 @@ Muestra una lista de productos con nombre y precio usando `@for`.
   }
 </ul>
 ```
+
 
 ```ts
 export class SomeComponent {
@@ -105,15 +112,16 @@ export class SomeComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Alternar entre dos vistas con `@if`**
+### **Exercise 5: Switch between two views with `@if`**
 
-Crea un botón que cambie entre "Mostrar más" y "Mostrar menos".
+Create a button that toggles between "Show More" and "Show Less."
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <button (click)="showMore = !showMore">
@@ -121,21 +129,23 @@ Crea un botón que cambie entre "Mostrar más" y "Mostrar menos".
 </button>
 ```
 
+
 ```ts
 export class SomeComponent {
   showMore: boolean = false;
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 6: Uso combinado de `@if` y `@for`**
+### **Exercise 6: Combined use of `@if` and `@for`**
 
-Muestra una lista de tareas si hay elementos en el array, y un mensaje si está vacío.
+Displays a list of tasks if there are elements in the array, and a message if it is empty.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 @if (tasks.length) {
@@ -149,21 +159,23 @@ Muestra una lista de tareas si hay elementos en el array, y un mensaje si está 
 }
 ```
 
+
 ```ts
 export class SomeComponent {
   tasks: string[] = [];
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 7: Uso de `@for` con índice**
+### **Exercise 7: Using `@for` with index**
 
-Muestra una lista numerada de elementos con su índice.
+Displays a numbered list of items with their index.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -173,21 +185,23 @@ Muestra una lista numerada de elementos con su índice.
 </ul>
 ```
 
+
 ```ts
 export class SomeComponent {
   items: string[] = ["Elemento 1", "Elemento 2"];
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 8: Alternar entre dos listas con `@if`**
+### **Exercise 8: Switch between two lists with `@if`**
 
-Muestra una lista diferente según una variable booleana.
+Displays a different list based on a boolean variable.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 @if (showFruits) {
@@ -205,6 +219,7 @@ Muestra una lista diferente según una variable booleana.
 }
 ```
 
+
 ```ts
 export class SomeComponent {
   showFruits: boolean = true;
@@ -213,15 +228,16 @@ export class SomeComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 9: Ocultar elementos de una lista con `@if`**
+### **Exercise 9: Hide list elements with `@if`**
 
-Oculta elementos de una lista si cumplen cierta condición.
+Hides elements of a list if they meet a certain condition.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -230,6 +246,7 @@ Oculta elementos de una lista si cumplen cierta condición.
   } }
 </ul>
 ```
+
 
 ```ts
 export class SomeComponent {
@@ -240,15 +257,16 @@ export class SomeComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 10: Mostrar una tabla con `@for`**
+### **Exercise 10: Show a table with `@for`**
 
-Crea una tabla con datos de usuarios usando `@for`.
+Create a table with user data using `@for`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <table>
@@ -265,6 +283,7 @@ Crea una tabla con datos de usuarios usando `@for`.
 </table>
 ```
 
+
 ```ts
 export class SomeComponent {
   users = [
@@ -273,5 +292,6 @@ export class SomeComponent {
   ];
 }
 ```
+
 
 </details>

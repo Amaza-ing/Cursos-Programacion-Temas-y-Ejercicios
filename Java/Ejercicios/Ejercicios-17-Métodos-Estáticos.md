@@ -1,24 +1,24 @@
-# Ejercicios - Tema 17: Métodos estáticos y la librería `Math`
+# Exercises - Topic 17: Static methods and the `Math` library
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **métodos estáticos** y la librería **`Math`**: diferencias entre métodos de instancia y `static`, creación de utilidades, `static final` (constantes), `Math.abs`, `min/max`, `pow`, `sqrt`, `round/floor/ceil`, `random` con rangos, y casos habituales de cálculo.
+Below you will find **10 practical exercises** on **static methods** and the **`Math`** library: differences between instance methods and `static`, creation of utilities, `static final` (constants), `Math.abs`, `min/max`, `pow`, `sqrt`, `round/floor/ceil`, `random` with ranges, and common calculation cases.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Método estático `isEven`
+## Exercise 1: Static method `isEven`
 
-Crea una clase `NumberUtils` con un método estático:
+Create an `NumberUtils` class with a static method:
 
 ```java
 public static boolean isEven(int value)
 ```
 
-Debe devolver `true` si `value` es par y `false` si es impar.
+It should return `true` if `value` is even and `false` if it is odd.
 
-En `main`, prueba el método con `4`, `7` y `0`.
+On `main`, try the method with `4`, `7` and `0`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class NumberUtils {
@@ -42,27 +42,27 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Método estático `clamp`
+## Exercise 2: Static method `clamp`
 
-Crea un método estático en `NumberUtils`:
+Create a static method on `NumberUtils`:
 
 ```java
 public static int clamp(int value, int min, int max)
 ```
 
-Debe devolver:
+You must return:
 
-- `min` si `value < min`
-- `max` si `value > max`
-- `value` si está dentro del rango
+- `min` yes `value < min`
+- `max` yes `value > max`
+- `value` if within range
 
-En `main`, prueba con:
+In `main`, try:
 
 - `clamp(5, 0, 10)`
 - `clamp(-2, 0, 10)`
 - `clamp(99, 0, 10)`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class NumberUtils {
@@ -94,25 +94,25 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Constante `static final` para IVA
+## Exercise 3: `static final` constant for VAT
 
-Crea una clase `TaxConfig` con una constante:
+Create a class `TaxConfig` with a constant:
 
 ```java
 public static final double VAT_RATE = 0.21;
 ```
 
-En `main`, calcula el precio final de un producto con:
+In `main`, calculate the final price of a product with:
 
 - `double basePrice = 100;`
 
-Fórmula:
+Formula:
 
 ```
 finalPrice = basePrice + basePrice * VAT_RATE
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class TaxConfig {
@@ -135,16 +135,16 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Distancia en una recta con `Math.abs`
+## Exercise 4: Distance on a straight line with `Math.abs`
 
-Declara:
+Declares:
 
 - `int a = -8;`
 - `int b = 3;`
 
-Calcula la distancia entre ambos en la recta numérica usando `Math.abs`.
+Calculate the distance between them on the number line using `Math.abs`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -162,22 +162,22 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Mayor y menor de 3 valores con `Math.max` y `Math.min`
+## Exercise 5: Greater and lesser than 3 values with `Math.max` and `Math.min`
 
-Declara:
+Declares:
 
 - `int x = 12;`
 - `int y = 5;`
 - `int z = 30;`
 
-Calcula:
+Calculate:
 
-- El mayor de los 3
-- El menor de los 3
+- The oldest of the 3
+- The youngest of the 3
 
-Usa combinaciones de `Math.max` y `Math.min`.
+Use combinations of `Math.max` and `Math.min`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -199,20 +199,20 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Hipotenusa con `Math.sqrt` y `Math.pow`
+## Exercise 6: Hypotenuse with `Math.sqrt` and `Math.pow`
 
-Declara un triángulo rectángulo con:
+Declare a right triangle with:
 
 - `double a = 3;`
 - `double b = 4;`
 
-Calcula la hipotenusa con:
+Calculate the hypotenuse with:
 
 ```
 c = sqrt(a^2 + b^2)
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -230,15 +230,15 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Redondear a 2 decimales usando `Math.round`
+## Exercise 7: Round to 2 decimal places using `Math.round`
 
-Declara:
+Declares:
 
 - `double price = 19.987;`
 
-Redondea a 2 decimales con la técnica de multiplicar y dividir por 100.
+Round to 2 decimal places with the technique of multiplying and dividing by 100.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -255,24 +255,24 @@ public class Main {
 
 ---
 
-## Ejercicio 8: `floor` y `ceil` para separar parte entera
+## Exercise 8: `floor` and `ceil` to separate integer part
 
-Declara:
+Declares:
 
 - `double value = 7.3;`
 
-Imprime:
+Print:
 
 - `Math.floor(value)`
 - `Math.ceil(value)`
 
-Luego calcula la parte decimal aproximada como:
+Then calculate the approximate decimal part as:
 
 ```
 decimal = value - floor(value)
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -295,12 +295,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Aleatorio entero en un rango
+## Exercise 9: Random integer in a range
+Generates a random integer between `1` and `10` (inclusive).  
+Print the result.
 
-Genera un número entero aleatorio entre `1` y `10` (incluidos).  
-Imprime el resultado.
-
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -318,19 +317,19 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Método estático para lanzar un dado `rollDice`
+## Exercise 10: Static method to roll a dice `rollDice`
 
-Crea una clase `RandomUtils` con un método estático:
+Create an `RandomUtils` class with a static method:
 
 ```java
 public static int rollDice()
 ```
 
-Debe devolver un entero entre `1` y `6` usando `Math.random()`.
+You must return an integer between `1` and `6` using `Math.random()`.
 
-En `main`, llama al método 5 veces e imprime cada resultado.
+In `main`, call the method 5 times and print each result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class RandomUtils {

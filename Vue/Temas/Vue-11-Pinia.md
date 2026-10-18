@@ -1,22 +1,22 @@
-# **Tema 11: Gestión de Estado Global con Pinia**
+# **Topic 11: Global State Management with Pinia**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En aplicaciones complejas es habitual que múltiples componentes necesiten acceder o modificar el mismo estado. En lugar de pasar datos de componente en componente (prop drilling), Vue 3 recomienda usar **Pinia**, una librería oficial de gestión de estado global.
+In complex applications it is common for multiple components to need to access or modify the same state. Instead of passing data from component to component (prop drilling), Vue 3 recommends using **Pinia**, an official global state management library.
 
-Pinia es sencilla, flexible y compatible con Composition API, lo que la hace perfecta para proyectos modernos de Vue 3.
+Pinia is simple, flexible, and compatible with the Composition API, making it perfect for modern Vue 3 projects.
 
 ---
 
-## **2. Instalación de Pinia**
+## **2. Pinia Installation**
 
-Si Pinia no se instaló al crear el proyecto, puedes añadirla fácilmente:
+If Pinia was not installed when creating the project, you can easily add it:
 
 ```sh
 npm install pinia
 ```
 
-Luego, en `main.js`, debes registrar Pinia en la aplicación:
+Then, in `main.js`, you need to register Pinia in the app:
 
 ```javascript
 import { createApp } from "vue";
@@ -30,11 +30,11 @@ app.mount("#app");
 
 ---
 
-## **3. Creación de un Store**
+## **3. Creation of a Store**
 
-Un **store** es un contenedor centralizado para el estado global. Se define como una función que devuelve un objeto con el estado, acciones y getters.
+A **store** is a centralized container for global state. It is defined as a function that returns an object with state, actions and getters.
 
-Ejemplo básico (`stores/counter.js`):
+Basic example (`stores/counter.js`):
 
 ```javascript
 import { defineStore } from "pinia";
@@ -54,9 +54,9 @@ export const useCounterStore = defineStore("counter", {
 });
 ```
 
-Como alternativa, podemos prescindir de usar `state`, `actions` y `getters`, y crear las variables y las funciones diréctamente dentro de la store:
+Alternatively, we can skip using `state`, `actions` and `getters`, and create the variables and functions directly within the store:
 
-Ejemplo básico (`stores/movie.js`):
+Basic example (`stores/movie.js`):
 
 ```javascript
 import { defineStore } from "pinia";
@@ -88,9 +88,9 @@ export const useMovieStore = defineStore("movie", () => {
 
 ---
 
-## **4. Usar el Store en un Componente**
+## **4. Use the Store in a Component**
 
-Para acceder al store desde un componente, usamos el composable que define el store:
+To access the store from a component, we use the composable that defines the store:
 
 ```vue
 <script setup>
@@ -119,33 +119,33 @@ button {
 
 ---
 
-## **5. Ventajas de Pinia**
+## **5. Advantages of Pinia**
 
-| Característica                 | Descripción                            |
-| ------------------------------ | -------------------------------------- |
-| Reactividad completa           | Los stores son completamente reactivos |
-| Compatible con Composition API | Usa el mismo flujo reactivo            |
-| Soporte para Devtools          | Integración completa con Vue Devtools  |
-
----
-
-## **6. Separación de Lógica**
-
-Pinia permite organizar el estado en múltiples stores. Por ejemplo:
-
-- `userStore`: Maneja datos de usuario.
-- `cartStore`: Maneja el carrito de compras.
-- `productStore`: Maneja el catálogo de productos.
-
-Esto mantiene el código modular y escalable.
+| Feature | Description |
+| --------------------------- | -------------------------------------- |
+| Complete reactivity | Stores are completely reactive |
+| Compatible with Composition API | Use the same reagent flow |
+| Devtools Support | Full integration with Vue Devtools |
 
 ---
 
-## **7. Acceso Global en cualquier Componente**
+## **6. Logic Separation**
 
-Como Pinia es global, cualquier componente puede importar y usar el mismo store, evitando problemas de sincronización entre componentes.
+Pinia allows you to organize the state in multiple stores. For example:
 
-Ejemplo:
+- `userStore`: Manages user data.
+- `cartStore`: Manage the shopping cart.
+- `productStore`: Manage the product catalog.
+
+This keeps the code modular and scalable.
+
+---
+
+## **7. Global Access on any Component**
+
+As Pinia is global, any component can import and use the same store, avoiding synchronization problems between components.
+
+Example:
 
 ```vue
 <script setup>
@@ -163,7 +163,7 @@ const userStore = useUserStore();
 
 ## **8. Plugin Persisted State**
 
-Si queremos, podemos instalar plugins que añadan funcionalidades a Pinia, como la posibilidad de guardar el estado en el `localStorage` del cliente con el plugin de **Pinia Persisted State**.
+If we want, we can install plugins that add functionality to Pinia, such as the possibility of saving the state in the client's `localStorage` with the **Pinia Persisted State** plugin.
 
 ---
 
@@ -171,14 +171,14 @@ Si queremos, podemos instalar plugins que añadan funcionalidades a Pinia, como 
 
 ---
 
-## Resumen
+## Summary
 
-| Concepto | Descripción                                        |
+| Concept | Description |
 | -------- | -------------------------------------------------- |
-| Pinia    | Librería oficial de estado global para Vue 3       |
-| Store    | Objeto centralizado con estado, acciones y getters |
-| Uso      | Importar el store en cualquier componente          |
+| Pinia | Official Global Status Library for Vue 3 |
+| Store | Centralized object with state, actions and getters |
+| Usage | Import the store in any component |
 
 ---
 
-En el próximo tema exploraremos **Cómo hacer fetch a una API**, usando la sintaxis de async/await para obtener datos de fuera de nuestro proyecto.
+In the next topic we will explore **How to fetch an API**, using the async/await syntax to obtain data from outside our project.

@@ -1,21 +1,21 @@
-# Ejercicios - Tema 34: Records
+# Exercises - Topic 34: Records
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **records**: creación de records, accesores, validación con constructor compacto, métodos propios, normalización, igualdad automática y uso con colecciones.
+Below you will find **10 practical exercises** to work with **records**: creation of records, accessors, validation with compact constructor, own methods, normalization, automatic equality and use with collections.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un record simple
+## Exercise 1: Create a simple record
 
-Crea un record `Movie` con:
+Create an `Movie` record with:
 
 - `title` (`String`)
 - `durationMinutes` (`int`)
 
-En `main`, crea una película e imprime sus dos valores usando los accesores del record.
+In `main`, create a movie and print its two values using the record accessors.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record Movie(String title, int durationMinutes) {
@@ -37,16 +37,16 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Usar `toString` automático
+## Exercise 2: Use automatic `toString`
 
-Crea un record `City` con:
+Create an `City` record with:
 
 - `name`
 - `country`
 
-Crea una ciudad en `main` e imprime directamente el objeto.
+Create a city in `main` and directly print the object.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record City(String name, String country) {
@@ -67,16 +67,16 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Comparar records con `equals`
+## Exercise 3: Compare records with `equals`
 
-Crea un record `Point` con:
+Create an `Point` record with:
 
 - `x`
 - `y`
 
-Crea dos puntos con los mismos valores y comprueba si son iguales usando `equals`.
+Create two points with the same values and check if they are equal using `equals`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record Point(int x, int y) {
@@ -98,19 +98,19 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Constructor compacto con validación
+## Exercise 4: Compact constructor with validation
 
-Crea un record `Course` con:
+Create an `Course` record with:
 
 - `name`
 - `hours`
 
-Añade un constructor compacto que:
+Adds a compact constructor that:
 
-- lance `IllegalArgumentException` si `name` es `null` o está en blanco
-- lance `IllegalArgumentException` si `hours` es menor o igual que `0`
+- cast `IllegalArgumentException` if `name` is `null` or blank
+- throw `IllegalArgumentException` if `hours` is less than or equal to `0`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record Course(String name, int hours) {
@@ -140,16 +140,16 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Normalizar valores
+## Exercise 5: Normalize values
 
-Crea un record `EmailAddress` con un componente `value`.
+Create an `EmailAddress` record with an `value` component.
 
-En el constructor compacto:
+In the compact constructor:
 
-- elimina espacios al principio y al final
-- convierte el email a minúsculas
+- removes spaces at the beginning and end
+- convert email to lowercase
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record EmailAddress(String value) {
@@ -177,15 +177,15 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Añadir métodos propios
+## Exercise 6: Add your own methods
 
-Crea un record `Circle` con:
+Create an `Circle` record with:
 
 - `radius`
 
-Añade un método `area()` que devuelva el área usando `Math.PI`.
+Add a method `area()` that returns the area using `Math.PI`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record Circle(double radius) {
@@ -215,19 +215,19 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Record con método estático
+## Exercise 7: Record with static method
 
-Crea un record `UserProfile` con:
+Create an `UserProfile` record with:
 
 - `username`
 - `active`
 
-Añade un método estático `guest()` que devuelva un usuario con:
+Add a static method `guest()` that returns a user with:
 
 - username: `"guest"`
 - active: `false`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record UserProfile(String username, boolean active) {
@@ -251,16 +251,16 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Record en una lista
+## Exercise 8: Record in a list
 
-Crea un record `Book` con:
+Create an `Book` record with:
 
 - `title`
 - `pages`
 
-En `main`, crea una lista de libros y usa `stream()` para obtener solo los libros con más de `300` páginas.
+In `main`, create a list of books and use `stream()` to get only books with more than `300` pages.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record Book(String title, int pages) {
@@ -291,17 +291,16 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Crear una copia modificada
+## Exercise 9: Create a modified copy
 
-Crea un record `Task` con:
+Create an `Task` record with:
 
 - `id`
 - `title`
 - `completed`
+Add a method `complete()` that returns a new same task, but with `completed = true`.
 
-Añade un método `complete()` que devuelva una nueva tarea igual, pero con `completed = true`.
-
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public record Task(int id, String title, boolean completed) {
@@ -328,22 +327,22 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Record implementando una interfaz
+## Exercise 10: Record implementing an interface
 
-Crea una interfaz `Printable` con un método `print()`.
+Creates an `Printable` interface with an `print()` method.
 
-Crea un record `Invoice` con:
+Create an `Invoice` record with:
 
 - `number`
 - `total`
 
-Haz que implemente `Printable` e imprima:
+Have it implement `Printable` and print:
 
 ```text
 Invoice number | Total: total
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface Printable {

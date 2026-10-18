@@ -1,29 +1,29 @@
-# **Tema 5: Componentes en una línea**
+# **Topic 5: Components in a line**
 
-## **1. Introducción**
+## **1. Introduction**
 
-A medida que empiezas a crear componentes en React, te darás cuenta de que algunos son **muy pequeños**: devuelven una sola línea de JSX y no necesitan lógica adicional.
+As you start creating components in React, you'll notice that some are **very small**: they return a single line of JSX and require no additional logic.
 
-En esos casos, puedes escribir el componente de forma más compacta (en “una línea”), manteniendo el código limpio y fácil de leer.
+In those cases, you can write the component more compactly (on “one line”), keeping the code clean and easy to read.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué significa “componente en una línea”.
-- Cuándo tiene sentido usarlo y cuándo no.
-- Diferencias entre `return (...)` y el retorno implícito.
-- Buenas prácticas para mantener legibilidad.
+- What does “component in a line” mean?
+- When it makes sense to use it and when it doesn't.
+- Differences between `return (...)` and implicit return.
+- Good practices to maintain readability.
 
 ---
 
-## **2. ¿Qué es un componente en una línea?**
+## **2. What is a component in a line?**
 
-Un componente en una línea es un componente funcional que:
+A component on a line is a functional component that:
 
-- No necesita lógica compleja.
-- Devuelve JSX directamente.
-- Se puede escribir de forma compacta.
+- Does not need complex logic.
+- Returns JSX directly.
+- Can be written compactly.
 
-Ejemplo:
+Example:
 
 ```js
 function Hello() {
@@ -33,30 +33,30 @@ function Hello() {
 export default Hello;
 ```
 
-Este componente ya es muy simple, pero todavía usa `return`.
+This component is already very simple, but it still uses `return`.
 
 ---
 
-## **3. Arrow functions y retorno implícito**
+## **3. Arrow functions and implicit return**
 
-En JavaScript, una **arrow function** puede devolver un valor sin escribir `return` si:
+In JavaScript, an arrow function can return a value without typing `return` if:
 
-- No usas llaves `{}`.
-- Devuelves directamente la expresión.
+- You do not use `{}` keys.
+- You directly return the expression.
 
-Ejemplo:
+Example:
 
 ```js
 const sum = (a, b) => a + b;
 ```
 
-En React, podemos aplicar lo mismo con JSX.
+In React, we can apply the same with JSX.
 
 ---
 
-## **4. Componente en una línea con arrow function**
+## **4. Component on a line with arrow function**
 
-Ejemplo:
+Example:
 
 ```js
 const Title = () => <h1>React Course</h1>;
@@ -64,17 +64,17 @@ const Title = () => <h1>React Course</h1>;
 export default Title;
 ```
 
-Características:
+Features:
 
-- Se declara como `const`.
-- Se usa una arrow function.
-- Se devuelve JSX de forma implícita.
+- It is declared as `const`.
+- An arrow function is used.
+- JSX is returned implicitly.
 
 ---
 
-## **5. Componentes en una línea con JSX más largo**
+## **5. Components in a line with longer JSX**
 
-Si el JSX ocupa varias líneas, puedes envolverlo entre paréntesis:
+If the JSX spans multiple lines, you can wrap it in parentheses:
 
 ```js
 const EmptyState = () => (
@@ -87,26 +87,26 @@ const EmptyState = () => (
 export default EmptyState;
 ```
 
-Aunque el componente sea pequeño, si ya tiene varias líneas, normalmente lo más importante es mantener **legibilidad**.
+Even if the component is small, if it already has multiple lines, usually the most important thing is to maintain **readability**.
 
 ---
 
-## **6. Cuándo usar componentes en una línea**
+## **6. When to use components on a line**
 
-Son útiles cuando:
+They are useful when:
 
-- El componente es muy pequeño.
-- No hay estado ni lógica.
-- Es un componente “visual” simple.
+- The component is very small.
+- There is no state or logic.
+- It is a simple “visual” component.
 
-Ejemplos típicos:
+Typical examples:
 
-- Etiquetas (`Tag`)
-- Separadores (`Divider`)
-- Iconos
-- Componentes “estáticos”
+- Tags (`Tag`)
+- Separators (`Divider`)
+- Icons
+- “Static” components
 
-Ejemplo:
+Example:
 
 ```js
 const Divider = () => <hr />;
@@ -116,15 +116,15 @@ export default Divider;
 
 ---
 
-## **7. Cuándo NO usarlos**
+## **7. When NOT to use them**
 
-Evita escribirlos en una línea si:
+Avoid writing them on one line if:
 
-- El JSX es largo y cuesta leerlo.
-- Hay lógica dentro del componente.
-- Estás empezando y te confunde el retorno implícito.
+- The JSX is long and difficult to read.
+- There is logic within the component.
+- You are just starting out and the implicit return confuses you.
 
-En estos casos, es mejor usar la forma clásica:
+In these cases, it is better to use the classic way:
 
 ```js
 function Profile() {
@@ -143,11 +143,11 @@ export default Profile;
 
 ---
 
-## **8. Diferencias rápidas: `function` vs arrow function**
+## **8. Quick differences: `function` vs arrow function**
 
-Ambas son válidas.
+Both are valid.
 
-### **8.1. Forma clásica (más común al empezar)**
+### **8.1. Classic shape (most common when starting out)**
 
 ```js
 function Header() {
@@ -157,7 +157,7 @@ function Header() {
 export default Header;
 ```
 
-### **8.2. Forma en una línea (compacta)**
+### **8.2. Shape in a line (compact)**
 
 ```js
 const Header = () => <h1>Header</h1>;
@@ -167,25 +167,25 @@ export default Header;
 
 ---
 
-## **9. Buenas prácticas**
+## **9. Good practices**
 
-- Prioriza **claridad** sobre “ahorrar líneas”.
-- Usa componentes en una línea para piezas muy simples.
-- Si el JSX crece, cambia a la forma clásica.
-- Mantén nombres claros en PascalCase.
-
----
-
-## **10. A tener en cuenta**
-
-- Un componente en una línea es una forma compacta de escribir componentes pequeños.
-- Se apoya en arrow functions y retorno implícito.
-- No es “mejor” por defecto: depende del tamaño y la legibilidad.
+- Prioritize **clarity** over “saving lines”.
+- Use components in a line for very simple parts.
+- If the JSX grows, it changes to the classic form.
+- Keep names clear in PascalCase.
 
 ---
 
-[![Componentes de una Linea](https://img.youtube.com/vi/iIjk-AhtJ9A/0.jpg)](https://www.youtube.com/watch?v=iIjk-AhtJ9A&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **10. To take into account**
+
+- A component on a line is a compact way to write small components.
+- It is supported by arrow functions and implicit return.
+- It is not “better” by default: it depends on size and readability.
 
 ---
 
-En el próximo tema veremos cómo manejar **eventos en React** (click, input, y funciones manejadoras).
+[![Components of a Line](https://img.youtube.com/vi/iIjk-AhtJ9A/0.jpg)](https://www.youtube.com/watch?v=iIjk-AhtJ9A&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will see how to handle **events in React** (click, input, and handler functions).

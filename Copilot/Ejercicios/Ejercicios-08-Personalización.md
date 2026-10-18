@@ -1,24 +1,24 @@
-# Ejercicios - Tema 08: GitHub Copilot avanzado, proyectos, instrucciones, agentes y CLI
+# Exercises - Topic 08: Advanced GitHub Copilot, projects, instructions, agents and CLI
 
-A continuación, encontrarás ejercicios prácticos para trabajar con GitHub Copilot en proyectos más completos, usando instrucciones personalizadas, planificación asistida, agentes y Copilot desde la terminal.
+Below, you'll find hands-on exercises for working with GitHub Copilot on more complete projects, using custom instructions, assisted planning, agents, and Copilot from the terminal.
 
-## Ejercicio 1: Crear instrucciones personalizadas para un repositorio
+## Exercise 1: Create custom instructions for a repository
 
-Imagina que tienes un proyecto de React con Vite. El equipo quiere que Copilot respete las siguientes normas:
+Imagine you have a React project with Vite. The team wants Copilot to respect the following rules:
 
-- Usar componentes funcionales.
-- Usar nombres de variables y funciones en inglés.
-- Escribir comentarios en español solo cuando sean necesarios.
-- Usar `fetch` para llamadas HTTP sencillas.
-- Mantener los componentes pequeños.
-- No añadir librerías externas sin pedir confirmación.
+- Use functional components.
+- Use variable and function names in English.
+- Write comments in Spanish only when necessary.
+- Use `fetch` for simple HTTP calls.
+- Keep components small.
+- Do not add external libraries without asking for confirmation.
 
-Escribe el contenido que pondrías en un archivo `.github/copilot-instructions.md`.
+Write the content that you would put in an `.github/copilot-instructions.md` file.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible solución sería:
+A possible solution would be:
 
 ```markdown
 # Instrucciones para GitHub Copilot
@@ -55,28 +55,29 @@ Este proyecto es una aplicación de React creada con Vite.
 - Prioriza soluciones simples antes que soluciones complejas.
 ```
 
-Estas instrucciones ayudan a Copilot a generar respuestas más coherentes con el estilo del proyecto y reducen la necesidad de repetir las mismas normas en cada prompt.
+
+These instructions help Copilot generate responses that are more consistent with the project style and reduce the need to repeat the same rules at each prompt.
 
 </details>
 
-## Ejercicio 2: Pedir a Copilot un plan antes de generar código
+## Exercise 2: Ask Copilot for a plan before generating code
 
-Quieres crear una pequeña aplicación de gestión de tareas con estas características:
+You want to create a small task management app with these features:
 
-- Listar tareas.
-- Crear tareas.
-- Marcar tareas como completadas.
-- Eliminar tareas.
-- Guardar los datos en `localStorage`.
+- List tasks.
+- Create tasks.
+- Mark tasks as completed.
+- Delete tasks.
+- Save the data in `localStorage`.
 
-Antes de pedir código, quieres que Copilot te proponga un plan de implementación.
+Before requesting code, you want Copilot to propose an implementation plan.
 
-Escribe un prompt adecuado.
+Write an appropriate prompt.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Quiero crear una pequeña aplicación de gestión de tareas con React.
@@ -86,36 +87,38 @@ No escribas todavía el código completo.
 Primero indica la estructura de componentes, el estado necesario y el orden recomendado de implementación.
 ```
 
-Una buena respuesta de Copilot debería incluir algo parecido a esto:
 
-1. Crear un componente principal `App`.
-2. Definir un estado `tasks`.
-3. Cargar las tareas desde `localStorage` al iniciar la aplicación.
-4. Guardar las tareas en `localStorage` cada vez que cambien.
-5. Crear un componente `TaskForm` para añadir tareas.
-6. Crear un componente `TaskList` para mostrar las tareas.
-7. Crear un componente `TaskItem` para cada tarea.
-8. Añadir funciones para crear, completar y eliminar tareas.
-9. Probar manualmente el flujo completo.
+A good Copilot response should include something like this:
 
-Pedir primero un plan ayuda a mantener el control del proyecto y evita aceptar código demasiado grande sin entender su estructura.
+1. Create a main component `App`.
+2. Define an `tasks` state.
+3. Load the tasks from `localStorage` when starting the application.
+4. Save tasks to `localStorage` every time they change.
+5. Create an `TaskForm` component to add tasks.
+6. Create an `TaskList` component to display the tasks.
+7. Create an `TaskItem` component for each task.
+8. Add functions to create, complete and delete tasks.
+9. Manually test the entire flow.
+
+Asking for a plan first helps you maintain control of the project and avoids accepting overly large code without understanding its structure.
 
 </details>
 
-## Ejercicio 3: Usar Copilot como asistente para dividir una tarea grande
+## Exercise 3: Use Copilot as an assistant to divide a large task
 
-Tienes esta petición demasiado amplia:
+You have this request too broad:
 
 ```text
 Crea una API completa para una tienda online.
 ```
 
-Reescribe la petición para que Copilot la divida en subtareas manejables antes de generar código.
+
+Rewrite the request so that Copilot breaks it into manageable subtasks before generating code.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible versión mejorada sería:
+A possible improved version would be:
 
 ```text
 Quiero crear una API para una tienda online con Node.js y Express, pero no quiero generar todo el código de golpe.
@@ -125,26 +128,26 @@ Para cada subtarea, indica qué archivos habría que crear, qué endpoints serí
 No escribas todavía la implementación completa.
 ```
 
-Esta petición es mejor porque:
 
-- Define el stack tecnológico.
-- Pide planificación antes que implementación.
-- Divide el problema en partes pequeñas.
-- Evita que Copilot genere demasiado código de golpe.
-- Permite revisar la arquitectura antes de empezar.
+This request is better because:
+
+- Defines the technological stack.
+- Ask for planning before implementation.
+- Divide the problem into small parts.
+- Prevent Copilot from generating too much code at once.
+- Allows you to review the architecture before starting.
 
 </details>
 
-## Ejercicio 4: Diseñar un prompt para Copilot CLI
+## Exercise 4: Design a prompt for Copilot CLI
+You are working from the terminal and want to ask for help understanding the scripts available in a Node.js project. The `package.json` file contains several scripts, but you don't know which one to use to run tests, start development or create the build.
 
-Estás trabajando desde la terminal y quieres pedir ayuda para entender los scripts disponibles en un proyecto Node.js. El archivo `package.json` contiene varios scripts, pero no sabes cuál usar para ejecutar tests, iniciar desarrollo o crear la build.
-
-Escribe una petición que podrías hacer a Copilot CLI.
+Write a request you could make to Copilot CLI.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible petición sería:
+A possible request would be:
 
 ```text
 Explica los scripts definidos en el package.json de este proyecto.
@@ -152,7 +155,8 @@ Indica cuál debería usar para iniciar el entorno de desarrollo, cuál para eje
 No modifiques ningún archivo.
 ```
 
-Si se estuviera usando Copilot CLI desde terminal, la idea sería pedir una explicación contextual del proyecto antes de ejecutar comandos. Una buena respuesta debería identificar scripts como:
+
+If you were using Copilot CLI from the terminal, the idea would be to ask for a contextual explanation of the project before executing commands. A good answer should identify scripts like:
 
 ```json
 {
@@ -165,32 +169,33 @@ Si se estuviera usando Copilot CLI desde terminal, la idea sería pedir una expl
 }
 ```
 
-Y explicarlos así:
 
-- `npm run dev`: inicia el entorno de desarrollo.
-- `npm test` o `npm run test`: ejecuta los tests.
-- `npm run build`: genera la versión de producción.
-- `npm run preview`: previsualiza la build generada.
+And explain them like this:
+
+- `npm run dev`: starts the development environment.
+- `npm test` or `npm run test`: run the tests.
+- `npm run build`: generates the production version.
+- `npm run preview`: preview the generated build.
 
 </details>
 
-## Ejercicio 5: Revisar una propuesta de agente antes de aceptar cambios
+## Exercise 5: Review an agent proposal before accepting changes
 
-Imagina que Copilot Agent propone resolver una issue con estos cambios:
+Imagine that Copilot Agent proposes to resolve an issue with these changes:
 
-- Crear un nuevo componente `UserCard`.
-- Cambiar el nombre de la propiedad `username` por `name` en toda la aplicación.
-- Añadir la librería `axios`.
-- Modificar tres tests existentes.
+- Create a new `UserCard` component.
+- Rename the `username` property to `name` throughout the application.
+- Add the `axios` library.
+- Modify three existing tests.
 
-La issue solo pedía mostrar el nombre de usuario y el correo en una tarjeta.
+The issue only asked to show the username and email on a card.
 
-Escribe una checklist de revisión antes de aceptar la pull request generada por el agente.
+Write a review checklist before accepting the pull request generated by the agent.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una checklist adecuada sería:
+A suitable checklist would be:
 
 ```markdown
 ## Checklist de revisión
@@ -206,28 +211,29 @@ Una checklist adecuada sería:
 - [ ] Revisar manualmente la interfaz si el cambio afecta a la vista.
 ```
 
-La parte más sospechosa es el cambio global de `username` a `name` y la incorporación de `axios`. Pueden ser cambios innecesarios para una tarea pequeña y conviene revisarlos antes de aceptar la pull request.
+
+The most suspicious part is the global change from `username` to `name` and the addition of `axios`. They may be unnecessary changes for a small task and should be reviewed before accepting the pull request.
 
 </details>
 
-## Ejercicio 6: Crear un prompt file reutilizable
+## Exercise 6: Create a reusable prompt file
 
-Quieres crear un prompt reutilizable para pedir a Copilot que revise funciones JavaScript antes de subirlas a GitHub.
+You want to create a reusable prompt to ask Copilot to review JavaScript functions before uploading them to GitHub.
 
-El prompt debe pedir:
+The prompt should ask:
 
-- Posibles bugs.
-- Problemas de legibilidad.
-- Casos límite.
-- Tests recomendados.
-- Una corrección mínima si encuentra errores.
+- Possible bugs.
+- Readability problems.
+- Borderline cases.
+- Recommended tests.
+- A minimal correction if you find errors.
 
-Escribe el contenido de ese prompt file.
+Write the content of that prompt file.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible solución sería:
+A possible solution would be:
 
 ```markdown
 # Revisión de función JavaScript
@@ -247,6 +253,7 @@ No reescribas toda la función salvo que sea necesario.
 Explica cada cambio de forma breve.
 ```
 
-Este prompt file sería útil porque convierte una petición habitual en una plantilla reutilizable. Así se evita escribir la misma instrucción cada vez que se quiere revisar una función.
+
+This prompt file would be useful because it turns a regular request into a reusable template. This avoids writing the same instruction every time you want to review a function.
 
 </details>

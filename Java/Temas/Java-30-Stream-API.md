@@ -1,90 +1,90 @@
-# Tema 30. Stream API
+# Topic 30. Stream API
 
-## 1. Introducción
+## 1. Introduction
 
-En el tema anterior aprendiste qué son las **lambdas** y las **interfaces funcionales**, y viste cómo permiten escribir código más compacto y expresivo.
+In the previous topic you learned what **lambdas** and **functional interfaces** are, and you saw how they allow you to write more compact and expressive code.
 
-Ahora vamos a estudiar una de las herramientas más importantes del Java moderno:
+Now we are going to study one of the most important tools of modern Java:
 
 - **Stream API**
 
-`Stream API` permite trabajar con colecciones y secuencias de datos de una forma más declarativa.
+`Stream API` allows you to work with collections and sequences of data in a more declarative way.
 
-En lugar de decir paso a paso:
+Instead of saying step by step:
 
-- recorre esta lista
-- comprueba esta condición
-- transforma estos valores
-- guarda este resultado
+- scroll through this list
+- check this condition
+- transform these values
+- save this result
 
-puedes expresar la intención de una forma más clara:
+You can express the intention more clearly:
 
-- filtra estos elementos
-- transforma estos valores
-- ordénalos
-- recógelos en una lista
+- filter these elements
+- transform these values
+- order them
+- collect them in a list
 
-Esto hace que muchas operaciones sobre datos sean:
+This makes many operations on data:
 
-- más legibles
-- más compactas
-- más fáciles de encadenar
-- más expresivas
+- more readable
+- more compact
+- easier to chain
+- more expressive
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un `Stream`
-- Cómo crear streams
-- Operaciones intermedias y terminales
-- Métodos como `filter`, `map`, `sorted`, `distinct`, `limit`
-- Cómo convertir el resultado en listas u otras estructuras
-- Qué es `forEach`
-- Métodos como `count`, `anyMatch`, `allMatch`, `findFirst`
-- Reducciones con `reduce`
-- Qué relación tiene `Stream API` con lambdas
-- Errores típicos y buenas prácticas
+- What is an `Stream`
+- How to create streams
+- Intermediate and terminal operations
+- Methods like `filter`, `map`, `sorted`, `distinct`, `limit`
+- How to convert the result into lists or other structures
+- What is `forEach`
+- Methods like `count`, `anyMatch`, `allMatch`, `findFirst`
+- Reductions with `reduce`
+- What relationship does `Stream API` have with lambdas?
+- Typical errors and good practices
 
 ---
 
-## 2. Qué es un `Stream`
+## 2. What is an `Stream`
 
-Un `Stream` es una secuencia de elementos sobre la que puedes aplicar operaciones como:
+An `Stream` is a sequence of elements on which you can apply operations such as:
 
-- filtrar
-- transformar
-- ordenar
-- limitar
-- contar
-- recopilar resultados
+- filter
+- transform
+- sort
+- limit
+- count
+- collect results
 
-Es muy importante entender esto:
+It is very important to understand this:
 
-> Un `Stream` no es una colección.
+> An `Stream` is not a collection.
 
-Una lista guarda datos.  
-Un stream representa una forma de **procesar** datos.
+A list stores data.  
+A stream represents a way to **process** data.
 
-Por ejemplo, si tienes una lista:
+For example, if you have a list:
 
 ```java
 List<String> names = List.of("Laura", "Alex", "Maria");
 ```
 
-puedes crear un stream a partir de ella:
+you can create a stream from it:
 
 ```java
 names.stream()
 ```
 
-y luego encadenar operaciones.
+and then chain operations.
 
 ---
 
-## 3. Procesamiento imperativo vs declarativo
+## 3. Imperative vs declarative processing
 
-Para entender bien `Stream API`, es útil comparar dos estilos.
+To understand `Stream API` well, it is useful to compare two styles.
 
-### 3.1. Estilo imperativo
+### 3.1. imperative style
 
 ```java
 import java.util.ArrayList;
@@ -106,9 +106,9 @@ public class Main {
 }
 ```
 
-Aquí indicas paso a paso cómo hacerlo.
+Here you show step by step how to do it.
 
-### 3.2. Estilo declarativo con streams
+### 3.2. Declarative style with streams
 
 ```java
 import java.util.List;
@@ -127,21 +127,21 @@ public class Main {
 }
 ```
 
-Aquí expresas la intención:
+Here you express the intention:
 
-- filtra
-- transforma
-- conviértelo en lista
+- filters
+- transform
+- convert it to list
 
-Ese es el gran valor de `Stream API`.
+That is the great value of `Stream API`.
 
 ---
 
-## 4. Cómo crear un stream
+## 4. How to create a stream
 
-La forma más habitual es a partir de una colección.
+The most common way is from a collection.
 
-### 4.1. Desde una lista
+### 4.1. From a list
 
 ```java
 List<String> names = List.of("Laura", "Alex", "Maria");
@@ -149,7 +149,7 @@ List<String> names = List.of("Laura", "Alex", "Maria");
 names.stream();
 ```
 
-### 4.2. Desde un array
+### 4.2. From an array
 
 ```java
 import java.util.Arrays;
@@ -164,7 +164,7 @@ public class Main {
 }
 ```
 
-### 4.3. Con `Stream.of`
+### 4.3. With `Stream.of`
 
 ```java
 import java.util.stream.Stream;
@@ -178,18 +178,18 @@ public class Main {
 
 ---
 
-## 5. Operaciones intermedias y terminales
+## 5. Intermediate and terminal operations
 
-En `Stream API` hay dos tipos de operaciones:
+In `Stream API` there are two types of operations:
 
-- **intermedias**
-- **terminales**
+- **intermediate**
+- **terminals**
 
-### 5.1. Intermedias
+### 5.1. Intermediate
 
-Devuelven otro stream y permiten seguir encadenando operaciones.
+They return another stream and allow you to continue chaining operations.
 
-Ejemplos:
+Examples:
 
 - `filter`
 - `map`
@@ -198,11 +198,11 @@ Ejemplos:
 - `limit`
 - `skip`
 
-### 5.2. Terminales
+### 5.2. Terminals
 
-Cierran el procesamiento y producen un resultado final.
+They close the processing and produce a final result.
 
-Ejemplos:
+Examples:
 
 - `toList`
 - `forEach`
@@ -211,15 +211,15 @@ Ejemplos:
 - `reduce`
 - `collect`
 
-### 5.3. Idea clave
+### 5.3. Key idea
 
-Un stream suele construirse así:
+A stream is usually constructed like this:
 
-- origen
-- varias operaciones intermedias
-- una operación terminal
+- origin
+- several intermediate operations
+- a terminal operation
 
-Ejemplo:
+Example:
 
 ```java
 names.stream()
@@ -232,12 +232,11 @@ names.stream()
 
 ## 6. `filter`
 
-`filter` sirve para quedarse solo con los elementos que cumplen una condición.
+`filter` is used to keep only the elements that meet a condition.
 
-Recibe un `Predicate<T>`.
+Receive an `Predicate<T>`.
 
-Ejemplo:
-
+Example:
 ```java
 import java.util.List;
 
@@ -254,17 +253,17 @@ public class Main {
 }
 ```
 
-Aquí solo pasan los nombres con longitud mayor o igual que 5.
+Only names with length greater than or equal to 5 are passed here.
 
 ---
 
 ## 7. `map`
 
-`map` sirve para transformar cada elemento en otro valor.
+`map` is used to transform each element into another value.
 
-Recibe una `Function<T, R>`.
+Receive an `Function<T, R>`.
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.List;
@@ -282,13 +281,13 @@ public class Main {
 }
 ```
 
-Cada `String` original se transforma en su versión en mayúsculas.
+Each original `String` is transformed into its uppercase version.
 
 ---
 
-## 8. Encadenar `filter` y `map`
+## 8. Chain `filter` and `map`
 
-Esto es muy habitual en `Stream API`.
+This is very common in `Stream API`.
 
 ```java
 import java.util.List;
@@ -307,22 +306,22 @@ public class Main {
 }
 ```
 
-Proceso:
+Process:
 
-1. parte de la lista original
-2. filtra los nombres largos
-3. los transforma a mayúsculas
-4. crea una nueva lista
+1. part of the original list
+2. filter out long names
+3. transforms them to uppercase letters
+4. create a new list
 
 ---
 
 ## 9. `forEach`
 
-`forEach` es una operación terminal que ejecuta una acción para cada elemento.
+`forEach` is a terminal operation that executes an action for each item.
 
-Recibe un `Consumer<T>`.
+Receive an `Consumer<T>`.
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.List;
@@ -337,7 +336,7 @@ public class Main {
 }
 ```
 
-También puedes usar una method reference:
+You can also use a method reference:
 
 ```java
 names.stream()
@@ -348,9 +347,9 @@ names.stream()
 
 ## 10. `toList`
 
-`toList()` convierte el resultado del stream en una lista.
+`toList()` converts the stream result into a list.
 
-Ejemplo:
+Example:
 
 ```java
 List<String> result = names.stream()
@@ -358,13 +357,13 @@ List<String> result = names.stream()
         .toList();
 ```
 
-Es una forma muy cómoda de terminar una cadena de operaciones.
+It is a very convenient way to end a chain of operations.
 
 ---
 
 ## 11. `count`
 
-`count` devuelve cuántos elementos hay después del procesamiento.
+`count` returns how many elements there are after processing.
 
 ```java
 import java.util.List;
@@ -382,15 +381,15 @@ public class Main {
 }
 ```
 
-Aquí cuenta cuántos nombres tienen al menos 5 caracteres.
+Here you count how many names have at least 5 characters.
 
 ---
 
 ## 12. `sorted`
 
-`sorted` ordena los elementos.
+`sorted` sorts the elements.
 
-### 12.1. Orden natural
+### 12.1. natural order
 
 ```java
 import java.util.List;
@@ -408,7 +407,7 @@ public class Main {
 }
 ```
 
-### 12.2. Con comparador
+### 12.2. With comparator
 
 ```java
 import java.util.Comparator;
@@ -431,7 +430,7 @@ public class Main {
 
 ## 13. `distinct`
 
-`distinct` elimina duplicados.
+`distinct` removes duplicates.
 
 ```java
 import java.util.List;
@@ -449,15 +448,15 @@ public class Main {
 }
 ```
 
-Es muy útil cuando quieres limpiar repeticiones.
+It is very useful when you want to clean replays.
 
 ---
 
-## 14. `limit` y `skip`
+## 14. `limit` and `skip`
 
 ### 14.1. `limit`
 
-Se queda con los primeros `n` elementos.
+It keeps the first `n` elements.
 
 ```java
 import java.util.List;
@@ -477,7 +476,7 @@ public class Main {
 
 ### 14.2. `skip`
 
-Salta los primeros `n` elementos.
+Skip the first `n` elements.
 
 ```java
 import java.util.List;
@@ -499,9 +498,9 @@ public class Main {
 
 ## 15. `findFirst`
 
-`findFirst` devuelve el primer elemento, si existe.
+`findFirst` returns the first element, if it exists.
 
-El resultado es un `Optional<T>`.
+The result is an `Optional<T>`.
 
 ```java
 import java.util.List;
@@ -520,7 +519,7 @@ public class Main {
 }
 ```
 
-Si quieres actuar sobre el valor:
+If you want to act on the value:
 
 ```java
 result.ifPresent(System.out::println);
@@ -528,13 +527,13 @@ result.ifPresent(System.out::println);
 
 ---
 
-## 16. `anyMatch`, `allMatch` y `noneMatch`
+## 16. `anyMatch`, `allMatch` and `noneMatch`
 
-Estos métodos sirven para comprobar condiciones.
+These methods are used to check conditions.
 
 ### 16.1. `anyMatch`
 
-Devuelve `true` si al menos un elemento cumple la condición.
+Returns `true` if at least one element meets the condition.
 
 ```java
 import java.util.List;
@@ -553,7 +552,7 @@ public class Main {
 
 ### 16.2. `allMatch`
 
-Devuelve `true` si todos cumplen la condición.
+Returns `true` if everyone meets the condition.
 
 ```java
 boolean allLongEnough = names.stream()
@@ -562,7 +561,7 @@ boolean allLongEnough = names.stream()
 
 ### 16.3. `noneMatch`
 
-Devuelve `true` si ninguno cumple la condición.
+Returns `true` if none meet the condition.
 
 ```java
 boolean noneStartsWithZ = names.stream()
@@ -573,9 +572,9 @@ boolean noneStartsWithZ = names.stream()
 
 ## 17. `reduce`
 
-`reduce` sirve para combinar todos los elementos en un único resultado.
+`reduce` is used to combine all elements into a single result.
 
-Ejemplo: sumar números.
+Example: adding numbers.
 
 ```java
 import java.util.List;
@@ -592,14 +591,14 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- `0` es el valor inicial
-- `(a, b) -> a + b` indica cómo combinar valores
+- `0` is the initial value
+- `(a, b) -> a + b` indicates how to combine values
 
 ---
 
-## 18. Ejemplo con `reduce` para concatenar texto
+## 18. Example with `reduce` to concatenate text
 
 ```java
 import java.util.List;
@@ -621,11 +620,11 @@ public class Main {
 
 ## 19. `collect`
 
-`collect` es una operación terminal muy importante que permite recopilar resultados de distintas formas.
+`collect` is a very important terminal operation that allows you to collect results in different ways.
 
-Aunque `toList()` es muy cómodo, `collect` ofrece más opciones.
+Although `toList()` is very convenient, `collect` offers more options.
 
-Ejemplo con `Collectors.toList()`:
+Example with `Collectors.toList()`:
 
 ```java
 import java.util.List;
@@ -646,9 +645,9 @@ public class Main {
 
 ---
 
-## 20. `collect` con `joining`
+## 20. `collect` with `joining`
 
-También puedes unir cadenas.
+You can also join chains.
 
 ```java
 import java.util.List;
@@ -666,7 +665,7 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Laura, Alex, Maria
@@ -674,9 +673,9 @@ Laura, Alex, Maria
 
 ---
 
-## 21. `collect` con `toSet`
+## 21. `collect` with `toSet`
 
-Puedes recopilar el resultado en un conjunto.
+You can collect the result into a set.
 
 ```java
 import java.util.List;
@@ -697,9 +696,9 @@ public class Main {
 
 ---
 
-## 22. Flujo mental de un stream
+## 22. Mental flow of a stream
 
-Un stream suele leerse así:
+A stream usually reads like this:
 
 ```java
 source.stream()
@@ -708,7 +707,7 @@ source.stream()
         .terminalOperation(...)
 ```
 
-Por ejemplo:
+For example:
 
 ```java
 names.stream()
@@ -718,21 +717,21 @@ names.stream()
         .toList();
 ```
 
-Lectura natural:
+Natural reading:
 
-- toma la lista
-- quédate con los nombres largos
-- pásalos a mayúsculas
-- ordénalos
-- conviértelos en lista
+- take the list
+- stick with long names
+- convert them to uppercase
+- order them
+- convert them into list
 
 ---
 
-## 23. Los streams no modifican la colección original
+## 23. Streams do not modify the original collection
 
-Esto es muy importante.
+This is very important.
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.List;
@@ -751,16 +750,16 @@ public class Main {
 }
 ```
 
-La lista original sigue igual.  
-El stream produce un nuevo resultado.
+The original list remains the same.  
+The stream produces a new result.
 
 ---
 
-## 24. Un stream no se reutiliza
+## 24. A stream is not reused
 
-Una vez que ejecutas una operación terminal, ese stream ya no puede volver a usarse.
+Once you execute a terminal operation, that stream can no longer be used.
 
-Ejemplo incorrecto:
+Incorrect example:
 
 ```java
 // Stream<String> stream = names.stream();
@@ -768,11 +767,11 @@ Ejemplo incorrecto:
 // stream.count(); // error
 ```
 
-Si necesitas otro procesamiento, crea un nuevo stream.
+If you need other processing, create a new stream.
 
 ---
 
-## 25. Ejemplo guiado: filtrar números pares
+## 25. Guided Example: Filter Even Numbers
 
 ```java
 import java.util.List;
@@ -792,7 +791,7 @@ public class Main {
 
 ---
 
-## 26. Ejemplo guiado: transformar nombres a mayúsculas
+## 26. Guided example: transforming names to uppercase
 
 ```java
 import java.util.List;
@@ -812,7 +811,7 @@ public class Main {
 
 ---
 
-## 27. Ejemplo guiado: filtrar y ordenar
+## 27. Guided Example: Filter and Sort
 
 ```java
 import java.util.List;
@@ -833,7 +832,7 @@ public class Main {
 
 ---
 
-## 28. Ejemplo guiado: contar elementos que cumplen una condición
+## 28. Guided Example: Counting Items That Meet a Condition
 
 ```java
 import java.util.List;
@@ -853,7 +852,7 @@ public class Main {
 
 ---
 
-## 29. Ejemplo guiado: obtener el primer número mayor que 10
+## 29. Guided Example: Get the first number greater than 10
 
 ```java
 import java.util.List;
@@ -874,7 +873,7 @@ public class Main {
 
 ---
 
-## 30. Ejemplo guiado: sumar con `reduce`
+## 30. Guided Example: Add with `reduce`
 
 ```java
 import java.util.List;
@@ -893,7 +892,7 @@ public class Main {
 
 ---
 
-## 31. Ejemplo guiado: eliminar duplicados y ordenar
+## 31. Guided Example: Remove Duplicates and Sort
 
 ```java
 import java.util.List;
@@ -914,11 +913,11 @@ public class Main {
 
 ---
 
-## 32. Ejemplo guiado: trabajar con objetos
+## 32. Guided Example: Working with Objects
 
-Los streams son especialmente útiles cuando trabajas con objetos.
+Streams are especially useful when working with objects.
 
-### 32.1. Clase `Product`
+### 32.1. `Product` class
 
 ```java
 public class Product {
@@ -940,7 +939,7 @@ public class Product {
 }
 ```
 
-### 32.2. Uso con stream
+### 32.2. Use with stream
 
 ```java
 import java.util.List;
@@ -964,22 +963,22 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- filtras productos caros
-- transformas cada producto en su nombre
-- recoges el resultado en una lista
+- you filter expensive products
+- you transform each product into its name
+- you collect the result in a list
 
 ---
 
-## 33. `map` no modifica, transforma
+## 33. `map` does not modify, transforms
 
-Esto es clave:
+This is key:
 
-- `filter` decide si un elemento pasa o no
-- `map` transforma un elemento en otro valor
+- `filter` decides whether an item passes or not
+- `map` transforms an element into another value
 
-Ejemplo:
+Example:
 
 ```java
 List<Integer> lengths = names.stream()
@@ -987,18 +986,18 @@ List<Integer> lengths = names.stream()
         .toList();
 ```
 
-Aquí conviertes una lista de `String` en una lista de `Integer`.
+Here you convert a list of `String` to a list of `Integer`.
 
 ---
 
-## 34. `Stream API` y pereza (_lazy evaluation_)
+## 34. `Stream API` and lazy (_lazy evaluation_)
 
-Las operaciones intermedias como `filter` o `map` son perezosas.
+Intermediate operations like `filter` or `map` are lazy.
 
-Eso significa que no hacen el trabajo inmediatamente.  
-El procesamiento real ocurre cuando aparece una operación terminal.
+That means they don't get the job done right away.  
+The actual processing occurs when a terminal operation appears.
 
-Ejemplo:
+Example:
 
 ```java
 names.stream()
@@ -1006,136 +1005,135 @@ names.stream()
         .map(name -> name.toUpperCase());
 ```
 
-Aquí todavía no pasa nada útil hasta que pongas algo como:
+Nothing useful happens here yet until you put something like:
 
 ```java
 .toList()
 ```
 
-o:
+or:
 
 ```java
 .forEach(...)
 ```
 
-A nivel inicial, lo importante es recordar:
+At the initial level, the important thing is to remember:
 
-- las operaciones intermedias preparan el procesamiento
-- la operación terminal lo ejecuta
-
----
-
-## 35. Cuándo usar `Stream API`
-
-Usa streams cuando necesites:
-
-- filtrar colecciones
-- transformar datos
-- ordenar resultados
-- contar elementos
-- buscar valores
-- encadenar varias operaciones de procesamiento
-
-Es especialmente útil cuando el flujo es claro y expresivo.
+- intermediate operations prepare processing
+- the terminal operation executes it
 
 ---
 
-## 36. Cuándo no conviene abusar de streams
+## 35. When to use `Stream API`
 
-Aunque son muy útiles, no todo debe hacerse con streams.
+Use streams when you need:
 
-Evita complicar el código si:
+- filter collections
+- transform data
+- sort results
+- count elements
+- search values
+- chain several processing operations
 
-- la lógica es muy larga
-- necesitas muchas condiciones difíciles de leer
-- un `for` simple resulta más claro
-- el equipo entenderá mejor una versión imperativa
-
-La idea no es usar streams siempre, sino cuando mejoren el código.
-
----
-
-## 37. Errores típicos al empezar
-
-### 37.1. Pensar que un stream modifica la lista original
-
-No la modifica.  
-Produce un resultado nuevo.
-
-### 37.2. Intentar reutilizar un stream
-
-Un stream solo se usa una vez.
-
-### 37.3. Confundir `filter` con `map`
-
-- `filter` selecciona
-- `map` transforma
-
-### 37.4. Olvidar la operación terminal
-
-Sin operación terminal, el procesamiento no se completa.
-
-### 37.5. Escribir cadenas de streams difíciles de leer
-
-Si una cadena empieza a ser demasiado compleja, quizá convenga dividirla o usar otro enfoque.
+It is especially useful when the flow is clear and expressive.
 
 ---
 
-## 38. Buenas prácticas
+## 36. When it is not advisable to abuse streams
 
-- Usa streams cuando hagan el código más claro.
-- Mantén las lambdas pequeñas y legibles.
-- Usa `map` para transformar y `filter` para seleccionar.
-- Prefiere nombres claros cuando una expresión se vuelve difícil de entender.
-- No fuerces el uso de streams en casos donde un bucle simple sea más expresivo.
-- Recuerda que `toList()`, `count()`, `findFirst()` o `forEach()` cierran el stream.
+Although they are very useful, not everything should be done with streams.
 
----
+Avoid complicating the code if:
 
-## 39. A tener en cuenta
+- the logic is very long
+- you need a lot of hard to read conditions
+- a simple `for` is clearer
+- the team will better understand an imperative version
 
-- Un `Stream` es una secuencia de procesamiento, no una colección.
-- Se suele crear a partir de listas, arrays u otras fuentes.
-- Hay operaciones intermedias y terminales.
-- `filter` filtra, `map` transforma, `sorted` ordena, `distinct` elimina duplicados.
-- `count`, `forEach`, `toList`, `findFirst` y `reduce` son operaciones terminales muy comunes.
-- Los streams no modifican la colección original.
-- Un stream no se reutiliza.
-- `Stream API` se apoya muchísimo en lambdas e interfaces funcionales.
+The idea is not to always use streams, but when they improve the code.
 
 ---
 
-## 40. Resumen final
+## 37. Typical mistakes when starting
 
-`Stream API` es una de las herramientas más potentes del Java moderno para trabajar con datos de forma declarativa.
+### 37.1. Thinking that a stream modifies the original list
 
-Te permite encadenar operaciones como:
+It does not modify it.  
+Produces a new result.
 
-- filtrar
-- transformar
-- ordenar
-- contar
-- recopilar resultados
+### 37.2. Try to reuse a stream
 
-de una manera clara y elegante.
+A stream is only used once.
 
-Al principio puede parecer una sintaxis nueva, pero en cuanto entiendes la diferencia entre:
+### 37.3. Confusing `filter` with `map`
 
-- origen
-- operaciones intermedias
-- operación terminal
+- `filter` select
+- `map` transforms
 
-todo empieza a tener mucho sentido.
+### 37.4. Forget terminal operation
+Without terminal operation, processing is not completed.
 
-Dominar `Stream API` te ayudará muchísimo a escribir código más limpio y expresivo cuando trabajes con:
+### 37.5. Write stream strings that are difficult to read
 
-- listas
-- conjuntos
-- mapas
-- objetos
-- resultados de búsqueda
-- transformaciones de datos
+If a chain starts to get too complex, you may want to split it or use another approach.
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos **Optional**, una herramienta muy útil para representar la presencia o ausencia de un valor de forma más segura.
+## 38. Good practices
+
+- Use streams when they make the code clearer.
+- Keep lambdas small and readable.
+- Use `map` to transform and `filter` to select.
+- Prefers clear names when an expression becomes difficult to understand.
+- Don't force the use of streams in cases where a simple loop is more expressive.
+- Remember that `toList()`, `count()`, `findFirst()` or `forEach()` close the stream.
+
+---
+
+## 39. To take into account
+
+- An `Stream` is a processing sequence, not a collection.
+- It is usually created from lists, arrays or other sources.
+- There are intermediate and terminal operations.
+- `filter` filters, `map` transforms, `sorted` sorts, `distinct` removes duplicates.
+- `count`, `forEach`, `toList`, `findFirst` and `reduce` are very common terminal operations.
+- Streams do not modify the original collection.
+- A stream is not reused.
+- `Stream API` relies heavily on lambdas and functional interfaces.
+
+---
+
+## 40. Final summary
+
+`Stream API` is one of the most powerful tools in modern Java for working with data declaratively.
+
+It allows you to chain operations such as:
+
+- filter
+- transform
+- sort
+- count
+- collect results
+
+in a clear and elegant way.
+
+At first it may seem like a new syntax, but once you understand the difference between:
+
+- origin
+- intermediate operations
+- terminal operation
+
+everything starts to make a lot of sense.
+
+Mastering `Stream API` will greatly help you write cleaner, more expressive code when working with:
+
+- lists
+- sets
+- maps
+- objects
+- search results
+- data transformations
+
+---
+
+In the next topic we will continue advancing with modern Java and see **Optional**, a very useful tool to represent the presence or absence of a value in a more secure way.

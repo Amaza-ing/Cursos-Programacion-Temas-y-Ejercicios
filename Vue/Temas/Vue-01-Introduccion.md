@@ -1,22 +1,22 @@
-# **Tema 1: Introducción a Vue.js y Configuración del Entorno con Vite**
+# **Topic 1: Introduction to Vue.js and Environment Configuration with Vite**
 
-## **1. ¿Qué es Vue.js?**
+## **1. What is Vue.js?**
 
-Vue.js es un **framework progresivo** para la construcción de interfaces de usuario. Fue creado por **Evan You** y destaca por su:
+Vue.js is a **progressive framework** for building user interfaces. It was created by **Evan You** and stands out for its:
 
-- **Simplicidad y curva de aprendizaje suave**.
-- **Enfoque basado en componentes reutilizables**.
-- **Reactividad declarativa** que actualiza la interfaz automáticamente.
-- **Flexibilidad** para integrarse en proyectos nuevos o existentes.
-- **Ligereza** en tamaño y rapidez en ejecución.
+- **Simplicity and smooth learning curve**.
+- **Approach based on reusable components**.
+- **Declarative reactivity** that updates the interface automatically.
+- **Flexibility** to integrate into new or existing projects.
+- **Lightness** in size and speed in execution.
 
 ---
 
-## **2. Instalación de Node.js**
+## **2. Installing Node.js**
 
-Vue requiere Node.js para gestionar dependencias y ejecutar scripts. Descarga Node.js desde [nodejs.org](https://nodejs.org/).
+Vue requires Node.js to manage dependencies and run scripts. Download Node.js from [nodejs.org](https://nodejs.org/).
 
-Para verificar la instalación:
+To verify the installation:
 
 ```sh
 node -v
@@ -25,37 +25,37 @@ npm -v
 
 ---
 
-## **3. Crear un nuevo proyecto Vue con Vite**
+## **3. Create a new Vue project with Vite**
 
-**Vite** es un gestor de proyectos. Vue recomienda utilizar **Vite** como herramienta de desarrollo por su rapidez y configuración sencilla.
+**Vite** is a project manager. Vue recommends using **Vite** as a development tool because of its speed and easy configuration.
 
-Para crear un nuevo proyecto Vue con Vite, ejecuta:
+To create a new Vue project with Vite, run:
 
 ```sh
 npm create vue@latest
 ```
 
-### Proceso de Creación
+### Creation Process
 
-1. El asistente te preguntará el nombre del proyecto. Por ejemplo:
+1. The wizard will ask you for the name of the project. For example:
 
 ```
 Project name: my-vue-project
 ```
 
-2. Selecciona las funcionalidades opcionales (pinia, router, testing, etc.) o deja las opciones por defecto para comenzar.
+2. Select the optional features (pinia, router, testing, etc.) or leave the default options to start.
 
-3. Accede al directorio del proyecto:
+3. Access the project directory:
 
-- Mediante terminal:
+- Via terminal:
 
 ```sh
 cd my-vue-project
 ```
 
-- O moviéndote diréctamente a la carpeta: file -> open folder -> my-vue-project
+- Or by moving directly to the folder: file -> open folder -> my-vue-project
 
-4. Instala las dependencias:
+4. Install the dependencies:
 
 ```sh
 npm install
@@ -63,9 +63,9 @@ npm install
 
 ---
 
-## **4. Estructura de carpetas de un proyecto Vue con Vite**
+## **4. Folder structure of a Vue project with Vite**
 
-Un proyecto Vue creado con Vite tendrá esta estructura:
+A Vue project created with Vite will have this structure:
 
 ```
 my-vue-project/
@@ -85,15 +85,15 @@ my-vue-project/
 
 ---
 
-## **5. Levantar el servidor de desarrollo**
+## **5. Raise the development server**
 
-Para iniciar el servidor de desarrollo, ejecuta:
+To start the development server, run:
 
 ```sh
 npm run dev
 ```
 
-La aplicación estará disponible en:
+The application will be available at:
 
 ```
 http://localhost:5173/
@@ -101,11 +101,11 @@ http://localhost:5173/
 
 ---
 
-## **6. Composición básica de un componente en Vue**
+## **6. Basic composition of a component in Vue**
 
-Vue utiliza un formato llamado **Single File Component (SFC)**, que combina lógica (JavaScript), template (HTML) y estilos (CSS) en un solo archivo `.vue`.
+Vue uses a format called **Single File Component (SFC)**, which combines logic (JavaScript), template (HTML) and styles (CSS) in a single `.vue` file.
 
-Ejemplo:
+Example:
 
 ```vue
 <script setup>
@@ -125,38 +125,38 @@ p {
 
 ---
 
-## **7. Extensiones recomendadas para Visual Studio Code**
+## **7. Recommended extensions for Visual Studio Code**
 
-Para mejorar la experiencia de desarrollo, instala las siguientes extensiones:
+To improve the development experience, install the following extensions:
 
-- **Vue - Official**: Extensión oficial para Vue 3.
-- **ESLint**: Para validar la calidad del código.
-- **Prettier**: Formateador de código.
+- **Vue - Official**: Official extension for Vue 3.
+- **ESLint**: To validate the quality of the code.
+- **Prettier**: Code formatter.
 
-> Nota: La extensión Vue - Official es especialmente importante para que los ficheros .vue se visualicen correctamente.
-
----
-
-[![Cómo empezar con Vue.js](https://img.youtube.com/vi/PqJeA7p2R-Y/0.jpg)](https://www.youtube.com/watch?v=PqJeA7p2R-Y&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+> Note: The Vue - Official extension is especially important for .vue files to display correctly.
 
 ---
 
-## Comandos importantes
+[![How to get started with Vue.js](https://img.youtube.com/vi/PqJeA7p2R-Y/0.jpg)](https://www.youtube.com/watch?v=PqJeA7p2R-Y&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
-Crear proyecto Vue con Vite:
+---
+
+## Important commands
+
+Create Vue project with Vite:
 
 ```sh
 npm create vue@latest
 ```
 
-Acceder al proyecto e instalar dependencias:
+Access the project and install dependencies:
 
 ```sh
 cd my-vue-project
 npm install
 ```
 
-Levantar servidor de desarrollo:
+Raise development server:
 
 ```sh
 npm run dev
@@ -164,4 +164,4 @@ npm run dev
 
 ---
 
-En el siguiente tema exploraremos **los componentes en Vue.js**.
+In the next topic we will explore **components in Vue.js**.

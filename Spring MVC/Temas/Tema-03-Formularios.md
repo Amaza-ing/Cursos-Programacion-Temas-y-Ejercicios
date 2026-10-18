@@ -1,12 +1,12 @@
-# Tema 3 — Procesamiento de formularios en Spring MVC
+# Topic 3 — Form processing in Spring MVC
 
-## 1. Objetivo del tema
+## 1. Objective of the topic
 
-En este tema aprenderemos a trabajar con formularios en una aplicación Spring MVC.
+In this topic we will learn how to work with forms in a Spring MVC application.
 
-Hasta ahora, la aplicación permite navegar entre páginas, mostrar un listado de cursos y ver el detalle de un curso concreto. En este tema añadiremos una funcionalidad nueva: **crear cursos desde un formulario web**.
+Until now, the application allows you to navigate between pages, show a list of courses and see the details of a specific course. In this topic we will add a new functionality: **create courses from a web form**.
 
-El objetivo es entender este flujo completo:
+The goal is to understand this complete flow:
 
 ```text
 1. El usuario entra en una página con un formulario.
@@ -21,27 +21,27 @@ El objetivo es entender este flujo completo:
 10. Redirige al listado de cursos.
 ```
 
-Durante este tema trabajaremos con estos conceptos:
+During this topic we will work with these concepts:
 
 - `@ModelAttribute`
 - `@Valid`
 - `BindingResult`
-- etiquetas de formulario de Spring
-- validación de campos
-- mensajes de error
-- redirecciones
-- patrón Post-Redirect-Get
-- mensajes temporales con `RedirectAttributes`
+- Spring form tags
+- field validation
+- error messages
+- redirects
+- Post-Redirect-Get pattern
+- temporary messages with `RedirectAttributes`
 
-En este tema **no usaremos todavía MySQL**. Guardaremos los cursos temporalmente en memoria para centrarnos en el procesamiento de formularios. Más adelante podríamos sustituir esta lista por una base de datos.
+In this topic **we will not use MySQL yet**. We will temporarily save courses in memory to focus on forms processing. Later we could replace this list with a database.
 
 ---
 
-## 2. Punto de partida
+## 2. Starting point
 
-Partimos del proyecto creado en los temas anteriores.
+We start from the project created in the previous topics.
 
-La aplicación ya tiene estas rutas:
+The application already has these routes:
 
 ```text
 /                     → Página de inicio
@@ -51,31 +51,31 @@ La aplicación ya tiene estas rutas:
 /courses/detail?id=1  → Detalle de un curso
 ```
 
-En este tema añadiremos estas rutas nuevas:
+In this topic we will add these new routes:
 
 ```text
 /courses/new          → Muestra el formulario para crear un curso
 /courses              → Procesa el formulario mediante POST
 ```
 
-Es importante observar que `/courses` se usará de dos formas diferentes:
+It is important to note that `/courses` will be used in two different ways:
 
 ```text
 GET  /courses    → muestra el listado de cursos
 POST /courses    → procesa el formulario de creación
 ```
 
-Esto es muy habitual en aplicaciones web.
+This is very common in web applications.
 
-El método `GET` suele usarse para **mostrar páginas**.
+The `GET` method is typically used to **display pages**.
 
-El método `POST` suele usarse para **enviar datos al servidor**.
+The `POST` method is typically used to **send data to the server**.
 
 ---
 
-## 3. Estructura final del proyecto
+## 3. Final project structure
 
-Al terminar este tema, el proyecto tendrá esta estructura:
+At the end of this topic, the project will have this structure:
 
 ```text
 spring-mvc-day1
@@ -119,40 +119,40 @@ spring-mvc-day1
                         └── not-found.jsp
 ```
 
-El archivo nuevo más importante será:
+The most important new file will be:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/form.jsp
 ```
 
-Ese archivo contendrá el formulario para crear un curso.
+That file will contain the form to create a course.
 
 ---
 
-[![Formularios](https://img.youtube.com/vi/fjZBNBwiu8c/0.jpg)](https://www.youtube.com/watch?v=fjZBNBwiu8c&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Forms](https://img.youtube.com/vi/fjZBNBwiu8c/0.jpg)](https://www.youtube.com/watch?v=fjZBNBwiu8c&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-## 4. Añadir la dependencia de validación
+## 4. Add validation dependency
 
-Para validar formularios en Java usaremos **Jakarta Bean Validation**.
+To validate forms in Java we will use **Jakarta Bean Validation**.
 
-Esta tecnología permite declarar reglas directamente en la clase Java.
+This technology allows you to declare rules directly in the Java class.
 
-Por ejemplo:
+For example:
 
 ```java
 @NotBlank(message = "El título es obligatorio.")
 private String title;
 ```
 
-Con esa anotación indicamos que el campo `title` no puede estar vacío.
+With this annotation we indicate that the `title` field cannot be empty.
 
-Para que estas anotaciones funcionen, necesitamos añadir Hibernate Validator al `pom.xml`.
+For these annotations to work, we need to add Hibernate Validator to the `pom.xml`.
 
-### Código que debemos añadir en `pom.xml`
+### Code that we must add in `pom.xml`
 
-Dentro de la etiqueta `<dependencies>`, añadimos esta dependencia:
+Inside the `<dependencies>` tag, we add this dependency:
 
 ```xml
 <!-- Implementación de Jakarta Bean Validation -->
@@ -163,9 +163,9 @@ Dentro de la etiqueta `<dependencies>`, añadimos esta dependencia:
 </dependency>
 ```
 
-### Bloque completo de dependencias
+### Complete block of dependencies
 
-El bloque completo de dependencias del proyecto quedaría así:
+The complete block of project dependencies would look like this:
 
 ```xml
 <dependencies>
@@ -209,9 +209,9 @@ El bloque completo de dependencias del proyecto quedaría así:
 </dependencies>
 ```
 
-### Explicación
+### Explanation
 
-La dependencia nueva es esta:
+The new dependency is this:
 
 ```xml
 <dependency>
@@ -221,7 +221,7 @@ La dependencia nueva es esta:
 </dependency>
 ```
 
-Gracias a ella podremos usar anotaciones como:
+Thanks to it we can use annotations such as:
 
 ```java
 @NotBlank
@@ -231,32 +231,32 @@ Gracias a ella podremos usar anotaciones como:
 @Max
 ```
 
-Estas anotaciones se colocan en la clase del modelo, no en el controlador ni en la vista.
+These annotations are placed in the model class, not in the controller or view.
 
-La idea es que las reglas de validación formen parte del propio objeto que queremos validar.
+The idea is that the validation rules are part of the object itself that we want to validate.
 
 ---
 
-## 5. Actualizar la clase `Course`
+## 5. Update `Course` class
 
-En el tema anterior nuestra clase `Course` era muy sencilla. Tenía atributos, constructor y getters.
+In the previous topic our `Course` class was very simple. It had attributes, constructor and getters.
 
-Ahora necesitamos que Spring MVC pueda crear un objeto `Course` a partir de los datos enviados por un formulario.
+Now we need Spring MVC to be able to create an `Course` object from data submitted by a form.
 
-Para eso, la clase debe tener:
+For that, the class must have:
 
-1. Un constructor vacío.
+1. An empty constructor.
 2. Getters.
-3. Setters.
-4. Anotaciones de validación.
+3.Setters.
+4. Validation notes.
 
-El archivo que vamos a modificar es:
+The file we are going to modify is:
 
 ```text
 src/main/java/com/example/springmvcday1/model/Course.java
 ```
 
-### Código completo de `Course.java`
+### Full code of `Course.java`
 
 ```java
 package com.example.springmvcday1.model;
@@ -328,16 +328,15 @@ public class Course {
 ```
 
 ---
-
-[![Validación](https://img.youtube.com/vi/JEYTTwuVz38/0.jpg)](https://www.youtube.com/watch?v=JEYTTwuVz38&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Validation](https://img.youtube.com/vi/JEYTTwuVz38/0.jpg)](https://www.youtube.com/watch?v=JEYTTwuVz38&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-## 6. Explicación de la clase `Course`
+## 6. Explanation of `Course` class
 
-### 6.1. Importaciones de validación
+### 6.1. Validation imports
 
-Al principio importamos estas clases:
+At first we import these classes:
 
 ```java
 import jakarta.validation.constraints.Max;
@@ -347,21 +346,21 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 ```
 
-Cada una sirve para una regla de validación diferente.
+Each one serves a different validation rule.
 
-| Anotación   | Función                                                           |
+| Annotation | Function |
 | ----------- | ----------------------------------------------------------------- |
-| `@NotBlank` | Comprueba que un texto no esté vacío ni formado solo por espacios |
-| `@Size`     | Comprueba la longitud de un texto                                 |
-| `@NotNull`  | Comprueba que el valor no sea `null`                              |
-| `@Min`      | Comprueba que un número tenga un valor mínimo                     |
-| `@Max`      | Comprueba que un número no supere un valor máximo                 |
+| `@NotBlank` | Check that a text is not empty or made up of only spaces |
+| `@Size` | Check the length of a text |
+| `@NotNull` | Check that the value is not `null` |
+| `@Min` | Checks that a number has a minimum value |
+| `@Max` | Checks that a number does not exceed a maximum value |
 
 ---
 
-### 6.2. Validación del título
+### 6.2. Title validation
 
-El atributo `title` queda así:
+The `title` attribute looks like this:
 
 ```java
 @NotBlank(message = "El título es obligatorio.")
@@ -369,20 +368,20 @@ El atributo `title` queda así:
 private String title;
 ```
 
-Esto significa que el título debe cumplir dos condiciones:
+This means that the title must meet two conditions:
 
 ```text
 1. No puede estar vacío.
 2. Debe tener entre 3 y 80 caracteres.
 ```
 
-Si el usuario deja el campo vacío, aparecerá este mensaje:
+If the user leaves the field empty, this message will appear:
 
 ```text
 El título es obligatorio.
 ```
 
-Si escribe un título demasiado corto o demasiado largo, aparecerá este mensaje:
+If you type a title that is too short or too long, this message appears:
 
 ```text
 El título debe tener entre 3 y 80 caracteres.
@@ -390,18 +389,18 @@ El título debe tener entre 3 y 80 caracteres.
 
 ---
 
-### 6.3. Validación del nivel
+### 6.3. Level validation
 
-El atributo `level` queda así:
+The `level` attribute looks like this:
 
 ```java
 @NotBlank(message = "El nivel es obligatorio.")
 private String level;
 ```
 
-Esto significa que el usuario debe elegir un nivel.
+This means that the user must choose a level.
 
-Más adelante, en la vista JSP, crearemos un desplegable con estas opciones:
+Later, in the JSP view, we will create a dropdown with these options:
 
 ```text
 Inicial
@@ -411,9 +410,9 @@ Avanzado
 
 ---
 
-### 6.4. Validación de la duración
+### 6.4. Duration validation
 
-El atributo `durationInHours` queda así:
+The `durationInHours` attribute looks like this:
 
 ```java
 @NotNull(message = "La duración es obligatoria.")
@@ -422,7 +421,7 @@ El atributo `durationInHours` queda así:
 private Integer durationInHours;
 ```
 
-Esto significa que la duración debe cumplir tres condiciones:
+This means that the duration must meet three conditions:
 
 ```text
 1. No puede estar vacía.
@@ -430,59 +429,59 @@ Esto significa que la duración debe cumplir tres condiciones:
 3. Debe ser como máximo 200.
 ```
 
-Por ejemplo:
+For example:
 
-| Valor introducido | Resultado                                 |
+| Entered value | Result |
 | ----------------- | ----------------------------------------- |
-| vacío             | Error: la duración es obligatoria         |
-| `0`               | Error: la duración mínima es de 1 hora    |
-| `201`             | Error: la duración máxima es de 200 horas |
-| `20`              | Correcto                                  |
+| empty | Error: duration is required |
+| `0` | Error: minimum duration is 1 hour |
+| `201` | Error: maximum duration is 200 hours |
+| `20` | Correct |
 
 ---
 
-### 6.5. Por qué usamos `Integer` y no `int`
+### 6.5. Why do we use `Integer` and not `int`
 
-En el tema anterior usábamos:
+In the previous topic we used:
 
 ```java
 private int durationInHours;
 ```
 
-Ahora usamos:
+Now we use:
 
 ```java
 private Integer durationInHours;
 ```
 
-La razón es importante.
+The reason is important.
 
-`int` es un tipo primitivo y no puede valer `null`.
+`int` is a primitive type and cannot take `null`.
 
-`Integer` es un objeto y sí puede valer `null`.
+`Integer` is an object and it can be used as `null`.
 
-Cuando el usuario deja el campo vacío, necesitamos que Spring pueda representar ese campo como `null`. Así se puede activar esta validación:
+When the user leaves the field empty, we need Spring to be able to represent that field as `null`. This is how you can activate this validation:
 
 ```java
 @NotNull(message = "La duración es obligatoria.")
 ```
 
-Por eso, en formularios, muchas veces es preferible usar `Integer` en lugar de `int`.
+Therefore, in forms, it is often preferable to use `Integer` instead of `int`.
 
 ---
 
-### 6.6. Constructor vacío
+### 6.6. empty constructor
 
-Añadimos este constructor:
+We add this constructor:
 
 ```java
 public Course() {
 }
 ```
 
-Este constructor es necesario para que Spring pueda crear un objeto vacío antes de rellenarlo con los datos del formulario.
+This constructor is necessary so that Spring can create an empty object before filling it with form data.
 
-Cuando el usuario envía el formulario, Spring hace internamente algo parecido a esto:
+When the user submits the form, Spring internally does something like this:
 
 ```java
 Course course = new Course();
@@ -491,13 +490,13 @@ course.setLevel(valorDelFormulario);
 course.setDurationInHours(valorDelFormulario);
 ```
 
-Para poder hacer `new Course()`, la clase necesita un constructor vacío.
+In order to do `new Course()`, the class needs an empty constructor.
 
 ---
 
-### 6.7. Setters
+### 6.7. setters
 
-También añadimos métodos `set`:
+We also add `set` methods:
 
 ```java
 public void setTitle(String title) {
@@ -505,15 +504,15 @@ public void setTitle(String title) {
 }
 ```
 
-Spring usa estos setters para introducir en el objeto los valores enviados por el formulario.
+Spring uses these setters to enter the values ​​sent by the form into the object.
 
-Por ejemplo, si el formulario envía esto:
+For example, if the form sends this:
 
 ```text
 title=Spring MVC práctico
 ```
 
-Spring hará algo equivalente a:
+Spring will do something equivalent to:
 
 ```java
 course.setTitle("Spring MVC práctico");
@@ -521,21 +520,21 @@ course.setTitle("Spring MVC práctico");
 
 ---
 
-## 7. Actualizar el servicio `CourseService`
+## 7. Update `CourseService` service
 
-En el tema anterior, la lista de cursos se había creado con `List.of(...)`.
+In the previous topic, the course list had been created with `List.of(...)`.
 
-Esa forma sirve para crear una lista fija, pero no permite añadir nuevos cursos.
+This form is used to create a fixed list, but does not allow adding new courses.
 
-Ahora necesitamos una lista modificable, porque el formulario creará cursos nuevos.
+Now we need a modifiable list, because the form will create new courses.
 
-El archivo que vamos a modificar es:
+The file we are going to modify is:
 
 ```text
 src/main/java/com/example/springmvcday1/service/CourseService.java
 ```
 
-### Código completo de `CourseService.java`
+### Complete code of `CourseService.java`
 
 ```java
 package com.example.springmvcday1.service;
@@ -580,31 +579,31 @@ public class CourseService {
 
 ---
 
-## 8. Explicación de `CourseService`
+## 8. `CourseService` Explanation
 
-### 8.1. Lista modificable
+### 8.1. Modifiable list
 
-Ahora usamos:
+Now we use:
 
 ```java
 private final List<Course> courses = new ArrayList<>();
 ```
 
-`ArrayList` permite añadir nuevos elementos.
+`ArrayList` allows adding new elements.
 
-Esto es necesario porque el método `save()` añadirá cursos a la lista.
+This is necessary because the `save()` method will add courses to the list.
 
 ---
 
-### 8.2. Identificador del siguiente curso
+### 8.2. Next course identifier
 
-También añadimos:
+We also add:
 
 ```java
 private Long nextId = 4L;
 ```
 
-Los cursos iniciales ya tienen estos identificadores:
+The initial courses already have these identifiers:
 
 ```text
 1
@@ -612,15 +611,15 @@ Los cursos iniciales ya tienen estos identificadores:
 3
 ```
 
-Por tanto, el siguiente curso que se cree desde el formulario tendrá identificador `4`.
+Therefore, the next course created from the form will have identifier `4`.
 
-Después, el siguiente tendrá `5`, y así sucesivamente.
+Then the next one will have `5`, and so on.
 
 ---
 
-### 8.3. Carga inicial de cursos
+### 8.3. Initial course load
 
-En el constructor añadimos tres cursos iniciales:
+In the constructor we add three initial courses:
 
 ```java
 public CourseService() {
@@ -630,13 +629,13 @@ public CourseService() {
 }
 ```
 
-Esto permite que la aplicación tenga datos desde el primer momento.
+This allows the application to have data from the first moment.
 
 ---
 
-### 8.4. Método `findAll()`
+### 8.4. `findAll()` method
 
-El método:
+The method:
 
 ```java
 public List<Course> findAll() {
@@ -644,15 +643,15 @@ public List<Course> findAll() {
 }
 ```
 
-devuelve todos los cursos.
+returns all courses.
 
-Lo usa el controlador para mostrar el listado.
+It is used by the controller to display the list.
 
 ---
 
-### 8.5. Método `findById()`
+### 8.5. `findById()` method
 
-El método:
+The method:
 
 ```java
 public Course findById(Long id) {
@@ -663,17 +662,17 @@ public Course findById(Long id) {
 }
 ```
 
-busca un curso por su identificador.
+Search for a course by its identifier.
 
-Si encuentra el curso, lo devuelve.
+If it finds the course, it returns it.
 
-Si no lo encuentra, devuelve `null`.
+If it is not found, it returns `null`.
 
 ---
 
-### 8.6. Método `save()`
+### 8.6. `save()` method
 
-El método nuevo es:
+The new method is:
 
 ```java
 public void save(Course course) {
@@ -683,7 +682,7 @@ public void save(Course course) {
 }
 ```
 
-Este método hace tres cosas:
+This method does three things:
 
 ```text
 1. Asigna un identificador al curso nuevo.
@@ -691,7 +690,7 @@ Este método hace tres cosas:
 3. Incrementa el contador para el siguiente curso.
 ```
 
-Por ejemplo, si llega un curso con estos datos:
+For example, if a course arrives with this data:
 
 ```text
 Título: Java Web
@@ -699,28 +698,28 @@ Nivel: Inicial
 Duración: 12
 ```
 
-el método `save()` le asignará el identificador `4` y lo añadirá a la lista.
+the `save()` method will assign it the identifier `4` and add it to the list.
 
-Después `nextId` pasará a valer `5`.
+Afterwards `nextId` will become `5`.
 
 ---
 
-## 9. Actualizar el controlador `CourseController`
+## 9. Update `CourseController` driver
 
-Ahora añadiremos dos métodos nuevos al controlador:
+Now we will add two new methods to the controller:
 
 ```text
 GET  /courses/new
 POST /courses
 ```
 
-El archivo que vamos a modificar es:
+The file we are going to modify is:
 
 ```text
 src/main/java/com/example/springmvcday1/controller/CourseController.java
 ```
 
-### Código completo actualizado de `CourseController.java`
+### Updated full code of `CourseController.java`
 
 ```java
 package com.example.springmvcday1.controller;
@@ -807,9 +806,9 @@ public class CourseController {
 
 ---
 
-## 10. Explicación del método que muestra el formulario
+## 10. Explanation of the method that displays the form
 
-El primer método nuevo es:
+The first new method is:
 
 ```java
 @GetMapping("/new")
@@ -821,33 +820,33 @@ public String showCreateForm(Model model) {
 }
 ```
 
-Este método responde a la ruta:
+This method responds to the route:
 
 ```text
 GET /courses/new
 ```
 
-Su responsabilidad es mostrar el formulario vacío.
+Your responsibility is to display the empty form.
 
 ---
 
-### 10.1. Añadir el título de la página
+### 10.1. Add page title
 
-Primero añadimos:
+First we add:
 
 ```java
 model.addAttribute("pageTitle", "Crear nuevo curso");
 ```
 
-Este atributo se usará en la vista JSP para mostrar el título.
+This attribute will be used in the JSP view to display the title.
 
-En la JSP podremos escribir:
+In the JSP we can write:
 
 ```jsp
 ${pageTitle}
 ```
 
-Y se mostrará:
+And it will show:
 
 ```text
 Crear nuevo curso
@@ -855,31 +854,31 @@ Crear nuevo curso
 
 ---
 
-### 10.2. Añadir el objeto del formulario
+### 10.2. Add the form object
 
-Después añadimos:
+Then we add:
 
 ```java
 model.addAttribute("course", new Course());
 ```
 
-Esta línea es fundamental.
+This line is fundamental.
 
-Estamos creando un objeto vacío:
+We are creating an empty object:
 
 ```java
 new Course()
 ```
 
-Y lo estamos enviando a la vista con el nombre:
+And we are sending it to view with the name:
 
 ```text
 course
 ```
 
-Ese objeto será usado por el formulario.
+That object will be used by the form.
 
-La relación será esta:
+The relationship will be this:
 
 ```text
 Controlador crea un Course vacío
@@ -893,25 +892,24 @@ Cada campo del formulario se vincula a una propiedad
 
 ---
 
-### 10.3. Devolver la vista del formulario
+### 10.3. Return form view
 
-Finalmente devolvemos:
+Finally we return:
 
 ```java
 return "courses/form";
 ```
 
-Esto no es el nombre exacto del archivo.
+This is not the exact file name.
 
-Es el nombre lógico de la vista.
-
-Como en `app-servlet.xml` tenemos configurado el `ViewResolver`, Spring hará esta transformación:
+It is the logical name of the view.
+Since we have `ViewResolver` configured in `app-servlet.xml`, Spring will do this transformation:
 
 ```text
 courses/form
 ```
 
-se convierte en:
+becomes:
 
 ```text
 /WEB-INF/views/courses/form.jsp
@@ -919,9 +917,9 @@ se convierte en:
 
 ---
 
-## 11. Explicación del método que procesa el formulario
+## 11. Explanation of the method that processes the form
 
-El segundo método nuevo es:
+The second new method is:
 
 ```java
 @PostMapping
@@ -947,25 +945,25 @@ public String createCourse(
 }
 ```
 
-Este método responde a:
+This method responds to:
 
 ```text
 POST /courses
 ```
 
-Como el controlador tiene esta ruta general:
+As the controller has this general path:
 
 ```java
 @RequestMapping("/courses")
 ```
 
-Y el método tiene:
+And the method has:
 
 ```java
 @PostMapping
 ```
 
-el resultado es:
+the result is:
 
 ```text
 POST /courses
@@ -975,19 +973,19 @@ POST /courses
 
 ## 12. `@ModelAttribute`
 
-La parte más importante del método es esta:
+The most important part of the method is this:
 
 ```java
 @ModelAttribute("course") Course course
 ```
 
-Esto le dice a Spring:
+This tells Spring:
 
 ```text
 Toma los datos enviados por el formulario y colócalos dentro de un objeto Course.
 ```
 
-Por ejemplo, si el formulario envía estos datos:
+For example, if the form submits this data:
 
 ```text
 title=Spring MVC práctico
@@ -995,7 +993,7 @@ level=Intermedio
 durationInHours=12
 ```
 
-Spring creará o rellenará un objeto similar a este:
+Spring will create or populate an object similar to this:
 
 ```java
 Course course = new Course();
@@ -1004,9 +1002,9 @@ course.setLevel("Intermedio");
 course.setDurationInHours(12);
 ```
 
-Así evitamos leer manualmente cada campo.
+This way we avoid manually reading each field.
 
-Sin `@ModelAttribute`, tendríamos que hacer algo mucho más repetitivo:
+Without `@ModelAttribute`, we would have to do something much more repetitive:
 
 ```java
 @PostMapping
@@ -1026,31 +1024,31 @@ public String createCourse(
 }
 ```
 
-Con `@ModelAttribute`, Spring hace esa conversión automáticamente.
+With `@ModelAttribute`, Spring does that conversion automatically.
 
 ---
 
 ## 13. `@Valid`
 
-Antes de `@ModelAttribute` hemos escrito:
+Before `@ModelAttribute` we have written:
 
 ```java
 @Valid
 ```
 
-El parámetro completo queda así:
+The complete parameter looks like this:
 
 ```java
 @Valid @ModelAttribute("course") Course course
 ```
 
-Esto significa:
+This means:
 
 ```text
 Después de rellenar el objeto Course, valida sus anotaciones.
 ```
 
-Spring revisará reglas como estas:
+Spring will review rules like these:
 
 ```java
 @NotBlank(message = "El título es obligatorio.")
@@ -1058,27 +1056,27 @@ Spring revisará reglas como estas:
 private String title;
 ```
 
-Si el título está vacío, se generará un error.
+If the title is empty, an error will be raised.
 
-Si el título tiene menos de 3 caracteres, también se generará un error.
+If the title is less than 3 characters, an error will also be raised.
 
-Si todo es correcto, no habrá errores de validación.
+If everything is correct, there will be no validation errors.
 
 ---
 
 ## 14. `BindingResult`
 
-Después del objeto validado aparece:
+After the validated object appears:
 
 ```java
 BindingResult bindingResult
 ```
 
-Este objeto contiene el resultado de la validación.
+This object contains the validation result.
 
-Si hay errores, estarán dentro de `bindingResult`.
+If there are errors, they will be inside `bindingResult`.
 
-Por eso usamos:
+That's why we use:
 
 ```java
 if (bindingResult.hasErrors()) {
@@ -1087,7 +1085,7 @@ if (bindingResult.hasErrors()) {
 }
 ```
 
-Esto significa:
+This means:
 
 ```text
 Si el formulario tiene errores:
@@ -1096,11 +1094,11 @@ Si el formulario tiene errores:
     - muestra los mensajes de error
 ```
 
-### Importante
+### Important
 
-`BindingResult` debe ir justo después del objeto que se está validando.
+`BindingResult` should come right after the object being validated.
 
-Correcto:
+Correct:
 
 ```java
 public String createCourse(
@@ -1109,7 +1107,7 @@ public String createCourse(
         Model model) {
 ```
 
-Incorrecto:
+Incorrect:
 
 ```java
 public String createCourse(
@@ -1118,35 +1116,35 @@ public String createCourse(
         BindingResult bindingResult) {
 ```
 
-Si se coloca mal, Spring no asociará correctamente los errores de validación al objeto `course`.
+If misplaced, Spring will not correctly associate validation errors with the `course` object.
 
 ---
 
-## 15. Guardar el curso
+## 15. Save the course
 
-Si no hay errores, ejecutamos:
+If there are no errors, we execute:
 
 ```java
 courseService.save(course);
 ```
 
-El controlador no guarda el curso directamente.
+The controller does not save the course directly.
 
-Delega esa tarea en el servicio.
+Delegate that task to the service.
 
-Esto mantiene separadas las responsabilidades:
+This keeps responsibilities separate:
 
-| Clase              | Responsabilidad                                    |
+| Class | Responsibility |
 | ------------------ | -------------------------------------------------- |
-| `CourseController` | Recibir peticiones web y decidir qué vista mostrar |
-| `CourseService`    | Gestionar los datos de los cursos                  |
-| `Course`           | Representar los datos de un curso                  |
+| `CourseController` | Receive web requests and decide which view to show |
+| `CourseService` | Manage course data |
+| `Course` | Represent course data |
 
 ---
 
-## 16. Mensaje de éxito con `RedirectAttributes`
+## 16. Success message with `RedirectAttributes`
 
-Después de guardar el curso, añadimos un mensaje temporal:
+After saving the course, we add a temporary message:
 
 ```java
 redirectAttributes.addFlashAttribute(
@@ -1155,13 +1153,13 @@ redirectAttributes.addFlashAttribute(
 );
 ```
 
-Este mensaje se mostrará en el listado después de la redirección.
+This message will be displayed in the listing after the redirect.
 
-La palabra clave aquí es **flash attribute**.
+The keyword here is **flash attribute**.
 
-Un atributo flash es un dato temporal que vive solo durante la siguiente petición.
+A flash attribute is temporary data that lives only during the next request.
 
-El flujo será:
+The flow will be:
 
 ```text
 POST /courses
@@ -1177,7 +1175,7 @@ El listado muestra successMessage
 El mensaje desaparece
 ```
 
-Esto es útil para mostrar mensajes como:
+This is useful for displaying messages like:
 
 ```text
 El curso se ha creado correctamente.
@@ -1185,43 +1183,42 @@ El curso se ha creado correctamente.
 
 ---
 
-## 17. Redirección después de guardar
+## 17. Redirect after saving
 
-Finalmente devolvemos:
+Finally we return:
 
 ```java
 return "redirect:/courses";
 ```
 
-Esto no busca una JSP llamada `redirect:/courses`.
+This does not look for a JSP called `redirect:/courses`.
 
-Cuando Spring ve que la cadena empieza por `redirect:`, entiende que debe enviar una redirección al navegador.
+When Spring sees that the string starts with `redirect:`, it understands that it must send a redirect to the browser.
 
-El navegador hará una nueva petición a:
+The browser will make a new request to:
 
 ```text
 /courses
 ```
 
-Esto es muy importante después de procesar formularios.
+This is very important after processing forms.
 
 ---
 
-## 18. Patrón Post-Redirect-Get
+## 18. Post-Redirect-Get Pattern
+After successfully processing a form, it is advisable not to directly return a view.
 
-Después de procesar correctamente un formulario, es recomendable no devolver directamente una vista.
+It is better to redirect.
 
-Es mejor redirigir.
+This pattern is called **Post-Redirect-Get**.
 
-Este patrón se llama **Post-Redirect-Get**.
-
-La secuencia es:
+The sequence is:
 
 ```text
 POST → redirect → GET
 ```
 
-En nuestro caso:
+In our case:
 
 ```text
 POST /courses
@@ -1231,33 +1228,33 @@ redirect:/courses
 GET /courses
 ```
 
-Esto evita un problema habitual: que el formulario se envíe dos veces si el usuario refresca la página.
+This avoids a common problem: the form being submitted twice if the user refreshes the page.
 
-Si después de guardar devolviéramos directamente una vista, al pulsar F5 el navegador podría intentar repetir el POST.
+If after saving we directly returned a view, when pressing F5 the browser could try to repeat the POST.
 
-Con una redirección, la última petición es un GET normal, por lo que refrescar la página no vuelve a crear el curso.
+With a redirect, the last request is a normal GET, so refreshing the page does not recreate the course.
 
 ---
 
-## 19. Crear la vista `form.jsp`
+## 19. Create the `form.jsp` view
 
-Ahora vamos a crear la vista del formulario.
+Now let's create the form view.
 
-Ruta del archivo:
+File path:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/form.jsp
 ```
 
-Para crear formularios en JSP con Spring MVC usamos la librería de etiquetas de formulario de Spring.
+To create forms in JSP with Spring MVC we use Spring's form tag library.
 
-Esta librería se activa con esta línea al principio del archivo:
+This library is activated with this line at the beginning of the file:
 
 ```jsp
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-### Código completo de `form.jsp`
+### Full code of `form.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1337,31 +1334,31 @@ Esta librería se activa con esta línea al principio del archivo:
 
 ---
 
-## 20. Explicación de `form.jsp`
+## 20. `form.jsp` Explanation
 
-### 20.1. Directiva de página
+### 20.1. Page Directive
 
-La primera línea es:
+The first line is:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 ```
 
-Esto indica que la página usa codificación UTF-8.
+This indicates that the page uses UTF-8 encoding.
 
-Es importante para que se vean correctamente las tildes y la ñ.
+It is important so that the accents and ñ are seen correctly.
 
 ---
 
-### 20.2. Librería de formularios de Spring
+### 20.2. Spring Forms Library
 
-La segunda línea es:
+The second line is:
 
 ```jsp
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-Gracias a esta línea podemos usar etiquetas como:
+Thanks to this line we can use tags like:
 
 ```jsp
 <form:form>
@@ -1371,13 +1368,13 @@ Gracias a esta línea podemos usar etiquetas como:
 <form:errors>
 ```
 
-Estas etiquetas son útiles porque se conectan directamente con el objeto del modelo.
+These tags are useful because they connect directly to the model object.
 
 ---
 
-### 20.3. La etiqueta `form:form`
+### 20.3. The `form:form` tag
 
-El formulario empieza así:
+The form starts like this:
 
 ```jsp
 <form:form
@@ -1387,19 +1384,19 @@ El formulario empieza así:
         cssClass="form">
 ```
 
-Esta etiqueta genera un formulario HTML.
+This tag generates an HTML form.
 
-Veamos cada parte.
+Let's look at each part.
 
 #### `method="post"`
 
-Indica que los datos se enviarán mediante POST.
+Indicates that the data will be sent via POST.
 
 ```jsp
 method="post"
 ```
 
-Eso significa que el formulario será procesado por este método del controlador:
+That means the form will be processed by this controller method:
 
 ```java
 @PostMapping
@@ -1410,27 +1407,27 @@ public String createCourse(...) {
 
 #### `action="${pageContext.request.contextPath}/courses"`
 
-Indica a qué URL se enviarán los datos.
+Indicates which URL the data will be sent to.
 
 ```jsp
 action="${pageContext.request.contextPath}/courses"
 ```
 
-Usamos:
+We use:
 
 ```jsp
 ${pageContext.request.contextPath}
 ```
 
-para no escribir manualmente el nombre de la aplicación.
+so as not to manually type the name of the application.
 
-Si la aplicación está desplegada como:
+If the application is deployed as:
 
 ```text
 /spring-mvc-day1
 ```
 
-la acción final será:
+the final action will be:
 
 ```text
 /spring-mvc-day1/courses
@@ -1438,27 +1435,27 @@ la acción final será:
 
 #### `modelAttribute="course"`
 
-Esta es la parte más importante:
+This is the most important part:
 
 ```jsp
 modelAttribute="course"
 ```
 
-Indica que el formulario está vinculado al objeto del modelo llamado `course`.
+Indicates that the form is linked to the model object named `course`.
 
-Ese objeto se añadió en el controlador:
+That object was added in the controller:
 
 ```java
 model.addAttribute("course", new Course());
 ```
 
-Por tanto, cada campo del formulario se conectará con una propiedad de ese objeto.
+Therefore, each field in the form will connect to a property of that object.
 
 ---
 
-### 20.4. Campo `title`
+### 20.4. `title` field
 
-El campo del título es:
+The title field is:
 
 ```jsp
 <div class="form-group">
@@ -1468,35 +1465,35 @@ El campo del título es:
 </div>
 ```
 
-La parte clave es:
+The key part is:
 
 ```jsp
 path="title"
 ```
 
-Esto significa que este campo se conecta con la propiedad `title` de la clase `Course`.
+This means that this field connects to the `title` property of the `Course` class.
 
-En Java, esa propiedad es:
+In Java, that property is:
 
 ```java
 private String title;
 ```
 
-Cuando el usuario envíe el formulario, Spring hará algo similar a:
+When the user submits the form, Spring will do something similar to:
 
 ```java
 course.setTitle(valorIntroducido);
 ```
 
-La etiqueta:
+The label:
 
 ```jsp
 <form:errors path="title" cssClass="error" />
 ```
 
-mostrará los errores relacionados con el título.
+will show errors related to the title.
 
-Por ejemplo, si el usuario deja el título vacío, se mostrará:
+For example, if the user leaves the title empty, it will display:
 
 ```text
 El título es obligatorio.
@@ -1504,9 +1501,9 @@ El título es obligatorio.
 
 ---
 
-### 20.5. Campo `level`
+### 20.5. `level` field
 
-El campo del nivel es:
+The level field is:
 
 ```jsp
 <div class="form-group">
@@ -1521,13 +1518,13 @@ El campo del nivel es:
 </div>
 ```
 
-Este campo se conecta con:
+This field connects to:
 
 ```java
 private String level;
 ```
 
-El usuario podrá elegir una de estas opciones:
+The user will be able to choose one of these options:
 
 ```text
 Inicial
@@ -1535,22 +1532,22 @@ Intermedio
 Avanzado
 ```
 
-La primera opción tiene valor vacío:
+The first option has empty value:
 
 ```jsp
 <form:option value="" label="Selecciona un nivel" />
 ```
 
-Esto permite detectar que el usuario no ha seleccionado ningún nivel.
+This allows us to detect that the user has not selected any level.
 
-Si envía el formulario sin elegir nivel, se activará esta validación:
+If you submit the form without choosing a level, this validation will be activated:
 
 ```java
 @NotBlank(message = "El nivel es obligatorio.")
 private String level;
 ```
 
-Y el error se mostrará aquí:
+And the error will be shown here:
 
 ```jsp
 <form:errors path="level" cssClass="error" />
@@ -1558,9 +1555,9 @@ Y el error se mostrará aquí:
 
 ---
 
-### 20.6. Campo `durationInHours`
+### 20.6. `durationInHours` field
 
-El campo de duración es:
+The duration field is:
 
 ```jsp
 <div class="form-group">
@@ -1570,15 +1567,15 @@ El campo de duración es:
 </div>
 ```
 
-Este campo se conecta con:
+This field connects to:
 
 ```java
 private Integer durationInHours;
 ```
 
-Si el usuario introduce `20`, Spring intentará convertir ese valor a `Integer`.
+If the user enters `20`, Spring will try to convert that value to `Integer`.
 
-Después se aplicarán estas validaciones:
+These validations will then be applied:
 
 ```java
 @NotNull(message = "La duración es obligatoria.")
@@ -1587,7 +1584,7 @@ Después se aplicarán estas validaciones:
 private Integer durationInHours;
 ```
 
-Si hay errores, se mostrarán aquí:
+If there are errors, they will be displayed here:
 
 ```jsp
 <form:errors path="durationInHours" cssClass="error" />
@@ -1595,9 +1592,9 @@ Si hay errores, se mostrarán aquí:
 
 ---
 
-### 20.7. Botones del formulario
+### 20.7. Form buttons
 
-Al final tenemos:
+In the end we have:
 
 ```jsp
 <div class="form-actions">
@@ -1611,15 +1608,15 @@ Al final tenemos:
 </div>
 ```
 
-El botón:
+The button:
 
 ```html
 <button type="submit" class="button">Crear curso</button>
 ```
 
-envía el formulario.
+submit the form.
 
-El enlace:
+The link:
 
 ```jsp
 <a class="secondary-button" href="${pageContext.request.contextPath}/courses">
@@ -1627,24 +1624,24 @@ El enlace:
 </a>
 ```
 
-lleva al usuario de vuelta al listado sin enviar datos.
+takes the user back to the list without sending data.
 
 ---
 
-## 21. Actualizar la vista `list.jsp`
+## 21. Update `list.jsp` view
 
-Ahora debemos modificar el listado para añadir dos cosas:
+Now we must modify the list to add two things:
 
-1. Un botón para ir al formulario.
-2. Un mensaje de éxito después de crear un curso.
+1. A button to go to the form.
+2. A success message after creating a course.
 
-El archivo que modificamos es:
+The file we modified is:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
-### Código completo actualizado de `list.jsp`
+### Updated full code of `list.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1727,11 +1724,11 @@ src/main/webapp/WEB-INF/views/courses/list.jsp
 
 ---
 
-## 22. Explicación de los cambios en `list.jsp`
+## 22. Explanation of changes in `list.jsp`
 
-### 22.1. Mostrar mensaje de éxito
+### 22.1. Show success message
 
-Añadimos este bloque:
+We add this block:
 
 ```jsp
 <c:if test="${not empty successMessage}">
@@ -1741,29 +1738,29 @@ Añadimos este bloque:
 </c:if>
 ```
 
-Este bloque usa JSTL.
+This block uses JSTL.
 
-La etiqueta:
+The label:
 
 ```jsp
 <c:if>
 ```
 
-permite mostrar contenido solo si se cumple una condición.
+allows displaying content only if a condition is met.
 
-En este caso, la condición es:
+In this case, the condition is:
 
 ```jsp
 ${not empty successMessage}
 ```
 
-Es decir:
+That is to say:
 
 ```text
 Si successMessage no está vacío, muestra el mensaje.
 ```
 
-Ese mensaje se crea en el controlador:
+That message is created in the controller:
 
 ```java
 redirectAttributes.addFlashAttribute(
@@ -1774,9 +1771,9 @@ redirectAttributes.addFlashAttribute(
 
 ---
 
-### 22.2. Botón para crear un curso
+### 22.2. Button to create a course
 
-También añadimos este enlace:
+We also added this link:
 
 ```jsp
 <a class="button" href="${pageContext.request.contextPath}/courses/new">
@@ -1784,13 +1781,13 @@ También añadimos este enlace:
 </a>
 ```
 
-Este enlace lleva al usuario a:
+This link takes the user to:
 
 ```text
 /courses/new
 ```
 
-Esa ruta será atendida por este método:
+That route will be served by this method:
 
 ```java
 @GetMapping("/new")
@@ -1801,23 +1798,23 @@ public String showCreateForm(Model model) {
 
 ---
 
-## 23. Actualizar el archivo CSS
+## 23. Update CSS file
 
-Ahora añadiremos estilos para:
+Now we will add styles for:
 
-- formulario
-- campos
-- errores
-- mensaje de éxito
-- botones secundarios
+- form
+- fields
+- errors
+- success message
+- secondary buttons
 
-El archivo es:
+The file is:
 
 ```text
 src/main/webapp/resources/css/styles.css
 ```
 
-Añadimos este código al final del archivo:
+We add this code to the end of the file:
 
 ```css
 .form {
@@ -1889,9 +1886,9 @@ Añadimos este código al final del archivo:
 
 ---
 
-## 24. Explicación del CSS
+## 24. CSS explanation
 
-### 24.1. Estilos del formulario
+### 24.1. Form styles
 
 ```css
 .form {
@@ -1899,11 +1896,11 @@ Añadimos este código al final del archivo:
 }
 ```
 
-Añade separación entre el texto introductorio y el formulario.
+Add separation between the introductory text and the form.
 
 ---
 
-### 24.2. Grupos de campos
+### 24.2. Field Groups
 
 ```css
 .form-group {
@@ -1911,11 +1908,11 @@ Añade separación entre el texto introductorio y el formulario.
 }
 ```
 
-Separa visualmente cada campo del formulario.
+Visually separate each field of the form.
 
 ---
 
-### 24.3. Etiquetas
+### 24.3. Tags
 
 ```css
 .form-group label {
@@ -1925,11 +1922,11 @@ Separa visualmente cada campo del formulario.
 }
 ```
 
-Hace que la etiqueta de cada campo aparezca encima del input y en negrita.
+Makes the label of each field appear above the input and in bold.
 
 ---
 
-### 24.4. Campos del formulario
+### 24.4. Form fields
 
 ```css
 .input {
@@ -1942,9 +1939,9 @@ Hace que la etiqueta de cada campo aparezca encima del input y en negrita.
 }
 ```
 
-Esta clase se aplica a los campos del formulario.
+This class applies to form fields.
 
-Por ejemplo:
+For example:
 
 ```jsp
 <form:input path="title" cssClass="input" />
@@ -1952,7 +1949,7 @@ Por ejemplo:
 
 ---
 
-### 24.5. Errores
+### 24.5. Errors
 
 ```css
 .error {
@@ -1963,19 +1960,19 @@ Por ejemplo:
 }
 ```
 
-Esta clase se aplica a los mensajes de error.
+This class applies to error messages.
 
-Por ejemplo:
+For example:
 
 ```jsp
 <form:errors path="title" cssClass="error" />
 ```
 
-Si hay un error en el campo `title`, el mensaje aparecerá con este estilo.
+If there is an error in the `title` field, the message will appear in this style.
 
 ---
 
-### 24.6. Mensaje de éxito
+### 24.6. success message
 
 ```css
 .success {
@@ -1988,25 +1985,25 @@ Si hay un error en el campo `title`, el mensaje aparecerá con este estilo.
 }
 ```
 
-Esta clase se aplica al mensaje que aparece después de crear un curso correctamente.
+This class applies to the message that appears after successfully creating a course.
 
 ---
 
-## 25. Flujo completo cuando el formulario es correcto
+## 25. Complete flow when the form is correct
 
-Veamos todo el proceso paso a paso.
+Let's see the whole process step by step.
 
-### Paso 1
+### Step 1
 
-El usuario entra en:
+The user enters:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses/new
 ```
 
-### Paso 2
+### Step 2
 
-Spring ejecuta este método:
+Spring executes this method:
 
 ```java
 @GetMapping("/new")
@@ -2018,26 +2015,26 @@ public String showCreateForm(Model model) {
 }
 ```
 
-### Paso 3
+### Step 3
 
-El controlador envía a la vista:
+The controller sends to the view:
 
 ```text
 pageTitle → Crear nuevo curso
 course    → objeto Course vacío
 ```
 
-### Paso 4
+### Step 4
 
-Spring muestra la vista:
+Spring shows the view:
 
 ```text
 /WEB-INF/views/courses/form.jsp
 ```
 
-### Paso 5
+### Step 5
 
-El usuario rellena el formulario:
+The user fills out the form:
 
 ```text
 Título: Spring MVC práctico
@@ -2045,25 +2042,25 @@ Nivel: Intermedio
 Duración: 12
 ```
 
-### Paso 6
+### Step 6
 
-El usuario pulsa el botón:
+The user presses the button:
 
 ```text
 Crear curso
 ```
 
-### Paso 7
+### Step 7
 
-El navegador envía una petición:
+The browser sends a request:
 
 ```text
 POST /courses
 ```
 
-### Paso 8
+### Step 8
 
-Spring ejecuta:
+Spring executes:
 
 ```java
 @PostMapping
@@ -2072,9 +2069,9 @@ public String createCourse(...) {
 }
 ```
 
-### Paso 9
+### Step 9
 
-Spring crea un objeto `Course` con los datos enviados:
+Spring creates an `Course` object with the submitted data:
 
 ```java
 course.setTitle("Spring MVC práctico");
@@ -2082,23 +2079,22 @@ course.setLevel("Intermedio");
 course.setDurationInHours(12);
 ```
 
-### Paso 10
+### Step 10
+Spring validates the object.
 
-Spring valida el objeto.
+Since the data is correct, there are no errors.
 
-Como los datos son correctos, no hay errores.
+### Step 11
 
-### Paso 11
-
-El controlador guarda el curso:
+The controller saves the course:
 
 ```java
 courseService.save(course);
 ```
 
-### Paso 12
+### Step 12
 
-El controlador crea un mensaje de éxito:
+The driver creates a success message:
 
 ```java
 redirectAttributes.addFlashAttribute(
@@ -2107,65 +2103,65 @@ redirectAttributes.addFlashAttribute(
 );
 ```
 
-### Paso 13
+### Step 13
 
-El controlador redirige al listado:
+The controller redirects to the listing:
 
 ```java
 return "redirect:/courses";
 ```
 
-### Paso 14
+### Step 14
 
-El navegador hace una nueva petición:
+The browser makes a new request:
 
 ```text
 GET /courses
 ```
 
-### Paso 15
+### Step 15
 
-Se muestra el listado actualizado con el nuevo curso.
+The updated list with the new course is displayed.
 
 ---
 
-## 26. Flujo completo cuando el formulario tiene errores
+## 26. Complete flow when form has errors
 
-Ahora supongamos que el usuario envía el formulario vacío.
+Now suppose the user submits the empty form.
 
-### Paso 1
+### Step 1
 
-El usuario entra en:
+The user enters:
 
 ```text
 /courses/new
 ```
 
-### Paso 2
+### Step 2
 
-Spring muestra el formulario.
+Spring displays the form.
 
-### Paso 3
+### Step 3
 
-El usuario no rellena nada y pulsa:
+The user does not fill out anything and clicks:
 
 ```text
 Crear curso
 ```
 
-### Paso 4
+### Step 4
 
-El navegador envía:
+The browser sends:
 
 ```text
 POST /courses
 ```
 
-### Paso 5
+### Step 5
 
-Spring intenta crear un objeto `Course`.
+Spring tries to create an `Course` object.
 
-Pero los campos no cumplen las reglas:
+But the fields don't follow the rules:
 
 ```java
 @NotBlank(message = "El título es obligatorio.")
@@ -2178,13 +2174,13 @@ private String level;
 private Integer durationInHours;
 ```
 
-### Paso 6
+### Step 6
 
-`BindingResult` contiene errores.
+`BindingResult` contains errors.
 
-### Paso 7
+### Step 7
 
-El controlador ejecuta:
+The controller executes:
 
 ```java
 if (bindingResult.hasErrors()) {
@@ -2193,21 +2189,21 @@ if (bindingResult.hasErrors()) {
 }
 ```
 
-### Paso 8
+### Step 8
 
-El curso no se guarda.
+The course is not saved.
 
-### Paso 9
+### Step 9
 
-Spring vuelve a mostrar:
+Spring shows again:
 
 ```text
 /WEB-INF/views/courses/form.jsp
 ```
 
-### Paso 10
+### Step 10
 
-La vista muestra los errores usando:
+The view displays the errors using:
 
 ```jsp
 <form:errors path="title" cssClass="error" />
@@ -2217,30 +2213,30 @@ La vista muestra los errores usando:
 
 ---
 
-## 27. Diferencia entre `@RequestParam` y `@ModelAttribute`
+## 27. Difference between `@RequestParam` and `@ModelAttribute`
 
-En el tema anterior usamos:
+In the previous topic we used:
 
 ```java
 @RequestParam("id") Long id
 ```
 
-Esto servía para leer un único parámetro de la URL:
+This was used to read a single parameter from the URL:
 
 ```text
 /courses/detail?id=1
 ```
 
-`@RequestParam` es útil para leer valores sueltos.
+`@RequestParam` is useful for reading single values.
 
-Por ejemplo:
+For example:
 
 ```java
 @RequestParam("id") Long id
 @RequestParam("search") String search
 ```
 
-Pero cuando tenemos un formulario con varios campos, sería incómodo leer cada campo por separado:
+But when we have a form with several fields, it would be uncomfortable to read each field separately:
 
 ```java
 @PostMapping
@@ -2252,30 +2248,30 @@ public String createCourse(
 }
 ```
 
-En esos casos usamos:
+In those cases we use:
 
 ```java
 @ModelAttribute("course") Course course
 ```
 
-Así Spring crea un objeto completo con todos los datos del formulario.
+So Spring creates a complete object with all the form data.
 
-| Anotación         | Uso principal                                 |
-| ----------------- | --------------------------------------------- |
-| `@RequestParam`   | Leer parámetros individuales                  |
-| `@ModelAttribute` | Construir un objeto a partir de varios campos |
+| Annotation | Main use |
+| ----------------- | ------------------------------------------ |
+| `@RequestParam` | Read individual parameters |
+| `@ModelAttribute` | Construct an object from several fields |
 
 ---
 
-## 28. Diferencia entre devolver una vista y devolver una redirección
+## 28. Difference between returning a view and returning a redirect
 
-En Spring MVC no es lo mismo devolver esto:
+In Spring MVC it is not the same to return this:
 
 ```java
 return "courses/form";
 ```
 
-que devolver esto:
+than return this:
 
 ```java
 return "redirect:/courses";
@@ -2283,25 +2279,25 @@ return "redirect:/courses";
 
 ---
 
-### 28.1. Devolver una vista
+### 28.1. Return a view
 
-Cuando devolvemos:
+When we return:
 
 ```java
 return "courses/form";
 ```
 
-Spring usa el `ViewResolver`.
+Spring uses the `ViewResolver`.
 
-Con nuestra configuración, buscará:
+With our setup, it will search for:
 
 ```text
 /WEB-INF/views/courses/form.jsp
 ```
 
-Esto se usa cuando queremos mostrar una página directamente.
+This is used when we want to display a page directly.
 
-Por ejemplo, cuando hay errores de validación:
+For example, when there are validation errors:
 
 ```java
 if (bindingResult.hasErrors()) {
@@ -2312,41 +2308,41 @@ if (bindingResult.hasErrors()) {
 
 ---
 
-### 28.2. Devolver una redirección
+### 28.2. Return a redirect
 
-Cuando devolvemos:
+When we return:
 
 ```java
 return "redirect:/courses";
 ```
 
-Spring no busca una JSP.
+Spring does not look for a JSP.
 
-En su lugar, envía una respuesta al navegador diciendo:
+Instead, it sends a response to the browser saying:
 
 ```text
 Haz una nueva petición a /courses
 ```
 
-Esto se usa después de procesar correctamente un formulario.
+This is used after successfully processing a form.
 
 ---
 
-## 29. Posible ampliación con MySQL
+## 29. Possible extension with MySQL
 
-En este tema hemos guardado los cursos en memoria:
+In this topic we have saved the courses in memory:
 
 ```java
 private final List<Course> courses = new ArrayList<>();
 ```
 
-Esto significa que los datos se pierden cuando se reinicia la aplicación.
+This means that data is lost when the application is restarted.
 
-Es suficiente para aprender formularios.
+It is enough to learn forms.
 
-Más adelante podríamos sustituir este almacenamiento por una base de datos MySQL.
+Later we could replace this storage with a MySQL database.
 
-El flujo sería:
+The flow would be:
 
 ```text
 Formulario
@@ -2360,9 +2356,9 @@ CourseRepository
 MySQL
 ```
 
-En ese caso, usaríamos DBeaver para gestionar la base de datos y comprobar los registros guardados.
+In that case, we would use DBeaver to manage the database and check the saved logs.
 
-Pero para este tema conviene separar los conceptos:
+But for this topic it is convenient to separate the concepts:
 
 ```text
 Primero: entender formularios y validación.
@@ -2371,25 +2367,24 @@ Después: añadir persistencia en base de datos.
 
 ---
 
-## 30. Errores habituales
+## 30. Common mistakes
 
-### Error 1: olvidar el objeto del formulario
-
-Si en el controlador no añadimos esto:
+### Error 1: forgetting the form object
+If we do not add this in the controller:
 
 ```java
 model.addAttribute("course", new Course());
 ```
 
-pero en la JSP usamos:
+but in the JSP we use:
 
 ```jsp
 <form:form modelAttribute="course">
 ```
 
-Spring no encontrará el objeto asociado al formulario.
+Spring will not find the object associated with the form.
 
-El formulario necesita que exista un atributo del modelo llamado exactamente:
+The form needs a model attribute named exactly:
 
 ```text
 course
@@ -2397,35 +2392,35 @@ course
 
 ---
 
-### Error 2: usar nombres de campos que no existen
+### Error 2: Using field names that do not exist
 
-Si en la JSP escribimos:
+If in the JSP we write:
 
 ```jsp
 <form:input path="name" />
 ```
 
-pero la clase `Course` no tiene una propiedad llamada `name`, el enlace fallará.
+but the `Course` class does not have a property called `name`, the link will fail.
 
-La clase tiene:
+The class has:
 
 ```java
 private String title;
 ```
 
-Por tanto, el formulario debe usar:
+Therefore, the form must use:
 
 ```jsp
 <form:input path="title" />
 ```
 
-Los valores de `path` deben coincidir con las propiedades del objeto.
+The `path` values must match the properties of the object.
 
 ---
 
-### Error 3: olvidar `BindingResult`
+### Error 3: Forget `BindingResult`
 
-Si escribimos:
+If we write:
 
 ```java
 @PostMapping
@@ -2435,9 +2430,9 @@ public String createCourse(@Valid @ModelAttribute("course") Course course) {
 }
 ```
 
-no podremos comprobar si hay errores.
+we will not be able to check for errors.
 
-Lo correcto es:
+The correct thing is:
 
 ```java
 @PostMapping
@@ -2450,9 +2445,9 @@ public String createCourse(
 
 ---
 
-### Error 4: colocar mal `BindingResult`
+### Error 4: misplace `BindingResult`
 
-Incorrecto:
+Incorrect:
 
 ```java
 public String createCourse(
@@ -2461,7 +2456,7 @@ public String createCourse(
         BindingResult bindingResult) {
 ```
 
-Correcto:
+Correct:
 
 ```java
 public String createCourse(
@@ -2470,27 +2465,27 @@ public String createCourse(
         Model model) {
 ```
 
-`BindingResult` debe ir justo después del objeto validado.
+`BindingResult` should come right after the validated object.
 
 ---
 
-### Error 5: usar `int` en lugar de `Integer`
+### Error 5: Using `int` instead of `Integer`
 
-Si usamos:
+If we use:
 
 ```java
 private int durationInHours;
 ```
 
-un valor vacío no se representa bien como `null`.
+an empty value is not represented well as `null`.
 
-Para formularios es más claro usar:
+For forms it is clearer to use:
 
 ```java
 private Integer durationInHours;
 ```
 
-Así esta validación puede funcionar correctamente:
+So this validation can work correctly:
 
 ```java
 @NotNull(message = "La duración es obligatoria.")
@@ -2498,27 +2493,27 @@ Así esta validación puede funcionar correctamente:
 
 ---
 
-### Error 6: devolver `courses/list` después de guardar
+### Error 6: Return `courses/list` after saving
 
-Después de guardar correctamente, podríamos pensar en hacer esto:
+After saving successfully, we might think about doing this:
 
 ```java
 return "courses/list";
 ```
 
-Pero es mejor hacer:
+But it is better to do:
 
 ```java
 return "redirect:/courses";
 ```
 
-Así evitamos que el formulario se vuelva a enviar si el usuario refresca la página.
+This way we prevent the form from being resubmitted if the user refreshes the page.
 
 ---
 
-### Error 7: olvidar la dependencia de validación
+### Error 7: Forget validation dependency
 
-Si usamos anotaciones como:
+If we use annotations like:
 
 ```java
 @NotBlank
@@ -2526,9 +2521,9 @@ Si usamos anotaciones como:
 @Min
 ```
 
-pero no tenemos Hibernate Validator en el `pom.xml`, la validación no funcionará correctamente.
+but we don't have Hibernate Validator in the `pom.xml`, the validation will not work correctly.
 
-Por eso añadimos:
+That's why we add:
 
 ```xml
 <dependency>
@@ -2540,9 +2535,9 @@ Por eso añadimos:
 
 ---
 
-### Error 8: olvidar la librería de formularios en JSP
+### Error 8: forgetting the forms library in JSP
 
-Si usamos etiquetas como:
+If we use tags like:
 
 ```jsp
 <form:form>
@@ -2550,27 +2545,27 @@ Si usamos etiquetas como:
 <form:errors>
 ```
 
-pero no añadimos esta línea al principio de la JSP:
+but we don't add this line at the beginning of the JSP:
 
 ```jsp
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-la vista no podrá interpretar esas etiquetas.
+the view will not be able to interpret those labels.
 
 ---
 
-## 31. Resumen final del tema
+## 31. Final summary of the topic
 
-En este tema hemos aprendido a procesar formularios en Spring MVC.
+In this topic we have learned how to process forms in Spring MVC.
 
-La idea principal es:
+The main idea is:
 
 ```text
 Spring MVC puede convertir automáticamente los datos de un formulario en un objeto Java.
 ```
 
-El flujo completo es:
+The complete flow is:
 
 ```text
 GET /courses/new
@@ -2598,22 +2593,22 @@ redirect:/courses
 Se muestra el listado actualizado
 ```
 
-Las piezas principales son:
+The main pieces are:
 
-| Elemento             | Función                                                 |
+| Element | Function |
 | -------------------- | ------------------------------------------------------- |
-| `@ModelAttribute`    | Vincula datos del formulario con un objeto Java         |
-| `@Valid`             | Activa la validación del objeto                         |
-| `BindingResult`      | Guarda los errores de validación                        |
-| `form:form`          | Crea un formulario vinculado al modelo                  |
-| `form:input`         | Crea un campo asociado a una propiedad                  |
-| `form:select`        | Crea un desplegable asociado a una propiedad            |
-| `form:errors`        | Muestra errores de validación                           |
-| `RedirectAttributes` | Permite enviar mensajes temporales tras una redirección |
-| `redirect:/...`      | Redirige al navegador a otra ruta                       |
-| Post-Redirect-Get    | Evita reenvíos accidentales del formulario              |
+| `@ModelAttribute` | Binds form data to a Java object |
+| `@Valid` | Activate object validation |
+| `BindingResult` | Save validation errors |
+| `form:form` | Create a form linked to the model |
+| `form:input` | Create a field associated with a property |
+| `form:select` | Create a dropdown associated with a property |
+| `form:errors` | Shows validation errors |
+| `RedirectAttributes` | Allows you to send temporary messages after a redirect |
+| `redirect:/...` | Redirect the browser to another route |
+| Post-Redirect-Get | Avoid accidental form resubmissions |
 
-La frase clave que debemos recordar es:
+The key phrase that we must remember is:
 
 ```text
 El controlador no necesita leer manualmente cada campo del formulario.

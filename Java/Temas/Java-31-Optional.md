@@ -1,20 +1,20 @@
-# Tema 31. `Optional`
+# Topic 31. `Optional`
 
-## 1. Introducción
+## 1. Introduction
 
-En Java es muy habitual trabajar con valores que pueden existir o no existir.
+In Java it is very common to work with values that may or may not exist.
 
-Por ejemplo:
+For example:
 
-- buscar un usuario por su id
-- obtener el primer producto de una lista
-- leer una configuración opcional
-- buscar una palabra en un texto
-- encontrar un resultado que quizá no está disponible
+- search for a user by their id
+- get the first product in a list
+- read an optional configuration
+- search for a word in a text
+- find a result that may not be available
 
-Durante mucho tiempo, una forma común de representar “no hay valor” ha sido usar `null`.
+For a long time, a common way to represent “no value” has been to use `null`.
 
-Ejemplo:
+Example:
 
 ```java
 User user = findUserById(1);
@@ -24,41 +24,41 @@ if (user != null) {
 }
 ```
 
-Esto funciona, pero tiene un problema muy conocido:
+This works, but has a well-known problem:
 
-> Si olvidas comprobar si el valor es `null`, puedes provocar un `NullPointerException`.
+> If you forget to check if the value is `null`, it may cause an `NullPointerException`.
 
-Para ayudar a trabajar mejor con valores que pueden estar presentes o ausentes, Java incluye una clase llamada:
+To help you work better with values that may be present or absent, Java includes a class called:
 
 - `Optional`
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué problema resuelve `Optional`
-- Qué es `Optional<T>`
-- Cómo crear un `Optional`
-- Cómo comprobar si contiene valor
-- Cómo obtener el valor de forma segura
-- Métodos como `orElse`, `orElseGet`, `orElseThrow`
-- Cómo usar `ifPresent`
-- Cómo transformar valores con `map`
-- Cómo encadenar operaciones con `flatMap`
-- Cómo usar `Optional` con `Stream API`
-- Errores típicos y buenas prácticas
+- What problem does `Optional` solve?
+- What is `Optional<T>`
+- How to create an `Optional`
+- How to check if it contains value
+- How to get the value safely
+- Methods like `orElse`, `orElseGet`, `orElseThrow`
+- How to use `ifPresent`
+- How to transform values with `map`
+- How to chain operations with `flatMap`
+- How to use `Optional` with `Stream API`
+- Typical errors and good practices
 
 ---
 
-## 2. El problema de `null`
+## 2. The `null` problem
 
-`null` significa que una variable no apunta a ningún objeto.
+`null` means that a variable does not point to any object.
 
-Ejemplo:
+Example:
 
 ```java
 String name = null;
 ```
 
-Si intentas llamar a un método sobre esa variable, el programa falla.
+If you try to call a method on that variable, the program fails.
 
 ```java
 String name = null;
@@ -66,13 +66,13 @@ String name = null;
 System.out.println(name.length()); // NullPointerException
 ```
 
-Este error es muy común en Java.
+This error is very common in Java.
 
 ---
 
-## 3. Ejemplo típico con `null`
+## 3. Typical example with `null`
 
-Imagina un método que busca un usuario.
+Imagine a method that a user searches for.
 
 ```java
 public static User findUserById(int id) {
@@ -84,7 +84,7 @@ public static User findUserById(int id) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 User user = findUserById(2);
@@ -92,13 +92,13 @@ User user = findUserById(2);
 System.out.println(user.getName()); // NullPointerException
 ```
 
-El método puede devolver un usuario o puede devolver `null`.
+The method can return a user or it can return `null`.
 
-El problema es que quien usa el método tiene que recordar comprobarlo.
+The problem is that whoever uses the method has to remember to check it.
 
 ---
 
-## 4. Solución clásica: comprobar `null`
+## 4. Classic solution: check `null`
 
 ```java
 User user = findUserById(2);
@@ -110,43 +110,43 @@ if (user != null) {
 }
 ```
 
-Esto es correcto, pero tiene algunos inconvenientes:
+This is correct, but it has some drawbacks:
 
-- depende de que recuerdes hacer la comprobación
-- puede llenar el código de `if (x != null)`
-- no expresa claramente en el tipo que el valor puede faltar
+- depends on whether you remember to check
+- you can fill in the code `if (x != null)`
+- does not clearly state in the type that the value may be missing
 
-Aquí entra `Optional`.
+This is where `Optional` comes in.
 
 ---
 
-## 5. Qué es `Optional`
+## 5. What is `Optional`
 
-`Optional<T>` es una clase contenedora que puede tener:
+`Optional<T>` is a wrapper class that can have:
 
-- un valor de tipo `T`
-- o ningún valor
+- a value of type `T`
+- or no value
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 Optional<String>
 ```
 
-Puede representar:
+It can represent:
 
-- un `String` presente
-- o ausencia de `String`
+- an `String` present
+- or absence of `String`
 
-La idea importante es:
+The important idea is:
 
-> `Optional` hace explícito que un valor puede estar o no estar.
+> `Optional` makes explicit that a value may or may not be present.
 
 ---
 
-## 6. Importación necesaria
+## 6. Import required
 
-`Optional` está en el paquete `java.util`.
+`Optional` is in the `java.util` package.
 
 ```java
 import java.util.Optional;
@@ -154,9 +154,9 @@ import java.util.Optional;
 
 ---
 
-## 7. Crear un `Optional` con valor: `Optional.of`
+## 7. Create an `Optional` with value: `Optional.of`
 
-Si tienes un valor que sabes que no es `null`, puedes usar `Optional.of`.
+If you have a value that you know is not `null`, you can use `Optional.of`.
 
 ```java
 import java.util.Optional;
@@ -170,27 +170,27 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional[Laura]
 ```
 
-### 7.1. Cuidado con `Optional.of(null)`
+### 7.1. Beware of `Optional.of(null)`
 
-Esto da error:
+This gives error:
 
 ```java
 // Optional<String> name = Optional.of(null); // NullPointerException
 ```
 
-Usa `Optional.of` solo cuando sabes que el valor no es `null`.
+Use `Optional.of` only when you know the value is not `null`.
 
 ---
 
-## 8. Crear un `Optional` vacío: `Optional.empty`
+## 8. Create an empty `Optional`: `Optional.empty`
 
-Si quieres representar ausencia de valor, usa `Optional.empty`.
+If you want to represent absence of value, use `Optional.empty`.
 
 ```java
 import java.util.Optional;
@@ -204,7 +204,7 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional.empty
@@ -212,9 +212,9 @@ Optional.empty
 
 ---
 
-## 9. Crear un `Optional` que puede recibir `null`: `Optional.ofNullable`
+## 9. Create an `Optional` that can receive `null`: `Optional.ofNullable`
 
-Si tienes un valor que puede ser `null`, usa `Optional.ofNullable`.
+If you have a value that can be `null`, use `Optional.ofNullable`.
 
 ```java
 import java.util.Optional;
@@ -230,13 +230,13 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional.empty
 ```
 
-Si el valor no es `null`:
+If the value is not `null`:
 
 ```java
 String text = "Java";
@@ -246,7 +246,7 @@ Optional<String> optionalText = Optional.ofNullable(text);
 System.out.println(optionalText);
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional[Java]
@@ -254,21 +254,21 @@ Optional[Java]
 
 ---
 
-## 10. Resumen de formas de crear `Optional`
+## 10. Summary of ways to create `Optional`
 
-### 10.1. Valor seguro no nulo
+### 10.1. Safe non-null value
 
 ```java
 Optional<String> name = Optional.of("Laura");
 ```
 
-### 10.2. Valor vacío
+### 10.2. Empty value
 
 ```java
 Optional<String> name = Optional.empty();
 ```
 
-### 10.3. Valor que puede ser `null`
+### 10.3. Value that can be `null`
 
 ```java
 Optional<String> name = Optional.ofNullable(possibleNullValue);
@@ -276,9 +276,9 @@ Optional<String> name = Optional.ofNullable(possibleNullValue);
 
 ---
 
-## 11. Comprobar si hay valor: `isPresent`
+## 11. Check for value: `isPresent`
 
-`isPresent` devuelve `true` si el `Optional` contiene un valor.
+`isPresent` returns `true` if the `Optional` contains a value.
 
 ```java
 import java.util.Optional;
@@ -296,9 +296,9 @@ public class Main {
 
 ---
 
-## 12. Comprobar si está vacío: `isEmpty`
+## 12. Check if empty: `isEmpty`
 
-`isEmpty` devuelve `true` si el `Optional` no contiene valor.
+`isEmpty` returns `true` if the `Optional` contains no value.
 
 ```java
 import java.util.Optional;
@@ -316,9 +316,9 @@ public class Main {
 
 ---
 
-## 13. Obtener el valor con `get`
+## 13. Get the value with `get`
 
-`get` devuelve el valor del `Optional`, pero solo si existe.
+`get` returns the value of `Optional`, but only if it exists.
 
 ```java
 Optional<String> name = Optional.of("Laura");
@@ -326,13 +326,13 @@ Optional<String> name = Optional.of("Laura");
 System.out.println(name.get());
 ```
 
-Resultado:
+Result:
 
 ```text
 Laura
 ```
 
-Pero si el `Optional` está vacío:
+But if the `Optional` is empty:
 
 ```java
 Optional<String> name = Optional.empty();
@@ -340,13 +340,13 @@ Optional<String> name = Optional.empty();
 // System.out.println(name.get()); // NoSuchElementException
 ```
 
-Por eso `get` debe usarse con mucho cuidado.
+That's why `get` should be used very carefully.
 
 ---
 
-## 14. Problema de usar demasiado `get`
+## 14. Problem of using too much `get`
 
-Esto no es buena práctica:
+This is not good practice:
 
 ```java
 if (name.isPresent()) {
@@ -354,9 +354,9 @@ if (name.isPresent()) {
 }
 ```
 
-Aunque funciona, muchas veces existen formas más limpias de trabajar con `Optional`.
+Although it works, there are often cleaner ways to work with `Optional`.
 
-Por ejemplo:
+For example:
 
 - `ifPresent`
 - `orElse`
@@ -366,9 +366,9 @@ Por ejemplo:
 
 ---
 
-## 15. Ejecutar una acción si hay valor: `ifPresent`
+## 15. Execute an action if there is value: `ifPresent`
 
-`ifPresent` ejecuta una acción solo si el valor existe.
+`ifPresent` executes an action only if the value exists.
 
 ```java
 import java.util.Optional;
@@ -382,22 +382,22 @@ public class Main {
 }
 ```
 
-Con method reference:
+With method reference:
 
 ```java
 name.ifPresent(System.out::println);
 ```
 
-Si el `Optional` está vacío, no pasa nada.
+If the `Optional` is empty, nothing happens.
 
 ---
 
-## 16. Ejecutar una acción si hay valor o si está vacío: `ifPresentOrElse`
+## 16. Execute an action if there is value or if it is empty: `ifPresentOrElse`
 
-`ifPresentOrElse` permite indicar:
+`ifPresentOrElse` allows you to indicate:
 
-- qué hacer si hay valor
-- qué hacer si no hay valor
+- what to do if there is value
+- what to do if there is no value
 
 ```java
 import java.util.Optional;
@@ -416,12 +416,12 @@ public class Main {
 
 ---
 
-## 17. Valor por defecto: `orElse`
+## 17. Default value: `orElse`
 
-`orElse` devuelve:
+`orElse` returns:
 
-- el valor real si existe
-- un valor por defecto si no existe
+- the real value if it exists
+- a default value if it does not exist
 
 ```java
 import java.util.Optional;
@@ -437,13 +437,13 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Unknown
 ```
 
-Si hay valor:
+If there is value:
 
 ```java
 Optional<String> name = Optional.of("Laura");
@@ -453,7 +453,7 @@ String result = name.orElse("Unknown");
 System.out.println(result);
 ```
 
-Resultado:
+Result:
 
 ```text
 Laura
@@ -461,9 +461,9 @@ Laura
 
 ---
 
-## 18. Valor por defecto calculado: `orElseGet`
+## 18. Calculated default value: `orElseGet`
 
-`orElseGet` también devuelve un valor alternativo, pero lo calcula mediante un `Supplier`.
+`orElseGet` also returns an alternative value, but it is calculated using an `Supplier`.
 
 ```java
 import java.util.Optional;
@@ -479,36 +479,36 @@ public class Main {
 }
 ```
 
-La diferencia principal es que `orElseGet` solo ejecuta el proveedor si hace falta.
+The main difference is that `orElseGet` only executes the provider if necessary.
 
 ---
 
-## 19. Diferencia entre `orElse` y `orElseGet`
+## 19. Difference between `orElse` and `orElseGet`
 
-Este punto es importante.
+This point is important.
 
-Con `orElse`, el valor alternativo se evalúa aunque el `Optional` tenga valor.
+With `orElse`, the alternative value is evaluated even if `Optional` has value.
 
 ```java
 String result = optionalName.orElse(createDefaultName());
 ```
 
-Con `orElseGet`, la función solo se ejecuta si el `Optional` está vacío.
+With `orElseGet`, the function is only executed if the `Optional` is empty.
 
 ```java
 String result = optionalName.orElseGet(() -> createDefaultName());
 ```
 
-### 19.1. Regla práctica
+### 19.1. Rule of thumb
 
-- usa `orElse` para valores simples
-- usa `orElseGet` si el valor por defecto requiere cálculo, acceso a datos o lógica más costosa
+- use `orElse` for simple values
+- use `orElseGet` if the default value requires calculation, data access or more expensive logic
 
 ---
 
-## 20. Lanzar excepción si no hay valor: `orElseThrow`
+## 20. Throw exception if there is no value: `orElseThrow`
 
-A veces quieres obtener el valor, pero si no existe quieres lanzar una excepción.
+Sometimes you want to get the value, but if it doesn't exist you want to throw an exception.
 
 ```java
 import java.util.Optional;
@@ -524,9 +524,9 @@ public class Main {
 }
 ```
 
-Esto lanza una excepción si está vacío.
+This throws an exception if it is empty.
 
-También puedes lanzar una excepción personalizada:
+You can also throw a custom exception:
 
 ```java
 String result = name.orElseThrow(() -> new IllegalArgumentException("Name not found"));
@@ -534,11 +534,11 @@ String result = name.orElseThrow(() -> new IllegalArgumentException("Name not fo
 
 ---
 
-## 21. Transformar un valor con `map`
+## 21. Transform a value with `map`
 
-`map` permite transformar el valor contenido dentro de un `Optional`.
+`map` allows transforming the value contained within an `Optional`.
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.Optional;
@@ -554,22 +554,21 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional[5]
 ```
 
-Aquí:
+Here:
 
-- tenías un `Optional<String>`
-- lo transformas en `Optional<Integer>`
+- you had an `Optional<String>`
+- you transform it into `Optional<Integer>`
 
 ---
 
-## 22. `map` con `Optional` vacío
-
-Si el `Optional` está vacío, `map` no ejecuta la transformación.
+## 22. `map` with empty `Optional`
+If `Optional` is empty, `map` does not execute the transformation.
 
 ```java
 import java.util.Optional;
@@ -585,17 +584,17 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional.empty
 ```
 
-Esto permite encadenar operaciones sin comprobar `null` manualmente.
+This allows chaining operations without checking `null` manually.
 
 ---
 
-## 23. Ejemplo con `map` y `orElse`
+## 23. Example with `map` and `orElse`
 
 ```java
 import java.util.Optional;
@@ -613,14 +612,14 @@ public class Main {
 }
 ```
 
-Si hay nombre, devuelve su longitud.  
-Si no hay nombre, devuelve `0`.
+If there is a name, it returns its length.  
+If there is no name, it returns `0`.
 
 ---
 
-## 24. Filtrar un `Optional` con `filter`
+## 24. Filter an `Optional` with `filter`
 
-`filter` permite mantener el valor solo si cumple una condición.
+`filter` allows you to keep the value only if it meets a condition.
 
 ```java
 import java.util.Optional;
@@ -636,19 +635,19 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional[Laura]
 ```
 
-Si no cumple la condición:
+If you do not meet the condition:
 
 ```java
 Optional<String> result = name.filter(value -> value.length() > 10);
 ```
 
-Resultado:
+Result:
 
 ```text
 Optional.empty
@@ -656,7 +655,7 @@ Optional.empty
 
 ---
 
-## 25. Encadenar `filter`, `map` y `orElse`
+## 25. Chain `filter`, `map` and `orElse`
 
 ```java
 import java.util.Optional;
@@ -675,19 +674,19 @@ public class Main {
 }
 ```
 
-Proceso:
+Process:
 
-1. si hay valor, comprueba la condición
-2. si la cumple, lo transforma
-3. si no hay valor o no cumple, devuelve `"UNKNOWN"`
+1. if there is value, check the condition
+2. If it is fulfilled, it transforms it
+3. if there is no value or it does not meet, return `"UNKNOWN"`
 
 ---
 
 ## 26. `flatMap`
 
-`flatMap` se usa cuando la transformación ya devuelve un `Optional`.
+`flatMap` is used when the transformation already returns an `Optional`.
 
-Primero veamos el problema.
+Let's first look at the problem.
 
 ```java
 Optional<String> name = Optional.of("Laura");
@@ -695,9 +694,9 @@ Optional<String> name = Optional.of("Laura");
 Optional<Optional<String>> result = name.map(value -> findEmailByName(value));
 ```
 
-Si `findEmailByName` devuelve `Optional<String>`, entonces `map` produce un `Optional` dentro de otro `Optional`.
+If `findEmailByName` returns `Optional<String>`, then `map` produces an `Optional` inside another `Optional`.
 
-Para evitar eso se usa `flatMap`.
+To avoid that, `flatMap` is used.
 
 ```java
 Optional<String> result = name.flatMap(value -> findEmailByName(value));
@@ -705,7 +704,7 @@ Optional<String> result = name.flatMap(value -> findEmailByName(value));
 
 ---
 
-## 27. Ejemplo guiado con `flatMap`
+## 27. Guided example with `flatMap`
 
 ```java
 import java.util.Optional;
@@ -729,11 +728,11 @@ public class Main {
 }
 ```
 
-Aquí `flatMap` evita tener un `Optional<Optional<String>>`.
+Here `flatMap` avoids having an `Optional<Optional<String>>`.
 
 ---
 
-## 28. Ejemplo completo: buscar usuario por id
+## 28. Complete example: search user by id
 
 ### 28.1. `User.java`
 
@@ -793,11 +792,11 @@ public class Main {
 }
 ```
 
-El método deja claro que puede encontrar o no encontrar un usuario.
+The method makes it clear that it may or may not find a user.
 
 ---
 
-## 29. Mejorar el ejemplo con `orElse`
+## 29. Improve the example with `orElse`
 
 ```java
 Optional<User> result = findUserById(users, 3);
@@ -807,28 +806,28 @@ User user = result.orElse(new User(0, "Unknown", "unknown@example.com"));
 System.out.println(user.getName());
 ```
 
-Aquí si no se encuentra el usuario, se usa uno por defecto.
+Here if the user is not found, a default one is used.
 
 ---
 
-## 30. Mejorar el ejemplo con `orElseThrow`
+## 30. Improve the example with `orElseThrow`
 
-En muchas aplicaciones, si no existe el usuario, quizá quieres lanzar una excepción.
+In many applications, if the user does not exist, you may want to throw an exception.
 
 ```java
 User user = findUserById(users, 3)
         .orElseThrow(() -> new IllegalArgumentException("User not found"));
 ```
 
-Esto es más claro que devolver `null`.
+This is clearer than returning `null`.
 
 ---
 
-## 31. `Optional` y `Stream API`
+## 31. `Optional` and `Stream API`
 
-`Optional` aparece mucho con streams.
+`Optional` appears a lot with streams.
 
-Por ejemplo, `findFirst` devuelve un `Optional`.
+For example, `findFirst` returns an `Optional`.
 
 ```java
 import java.util.List;
@@ -847,15 +846,15 @@ public class Main {
 }
 ```
 
-¿Por qué devuelve `Optional`?
+Why does `Optional` return?
 
-Porque puede existir un primer elemento que cumpla la condición o puede no existir ninguno.
+Because there may be a first element that meets the condition or there may be none.
 
 ---
 
-## 32. Ejemplo con `max` y `Optional`
+## 32. Example with `max` and `Optional`
 
-Algunos métodos de streams también devuelven `Optional`.
+Some stream methods also return `Optional`.
 
 ```java
 import java.util.Comparator;
@@ -874,12 +873,12 @@ public class Main {
 }
 ```
 
-Si la lista estuviera vacía, no habría máximo.  
-Por eso el resultado es `Optional<Integer>`.
+If the list was empty, there would be no maximum.  
+That's why the result is `Optional<Integer>`.
 
 ---
 
-## 33. Ejemplo con lista vacía
+## 33. Example with empty list
 
 ```java
 import java.util.Comparator;
@@ -898,7 +897,7 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 0
@@ -906,9 +905,9 @@ Resultado:
 
 ---
 
-## 34. `Optional` con objetos
+## 34. `Optional` with objects
 
-Ejemplo: queremos buscar el email de un usuario, pero puede que el usuario no exista.
+Example: we want to search for a user's email, but the user may not exist.
 
 ```java
 Optional<User> user = findUserById(users, 1);
@@ -920,27 +919,27 @@ String email = user
 System.out.println(email);
 ```
 
-Aquí:
+Here:
 
-- si el usuario existe, obtenemos su email
-- si no existe, usamos `"No email"`
+- if the user exists, we get his email
+- if it does not exist, we use `"No email"`
 
 ---
 
-## 35. `Optional` no sustituye todas las comprobaciones
+## 35. `Optional` does not replace all checks
 
-`Optional` es útil, pero no significa que debas usarlo en todas partes.
+`Optional` is useful, but it doesn't mean you should use it everywhere.
 
-No hace falta usar `Optional` para cualquier variable local.
+There is no need to use `Optional` for any local variables.
 
-Ejemplo innecesario:
+Unnecessary example:
 
 ```java
 Optional<String> name = Optional.of("Laura");
 System.out.println(name.orElse("Unknown"));
 ```
 
-Si sabes que el nombre existe, usa simplemente:
+If you know the name exists, simply use:
 
 ```java
 String name = "Laura";
@@ -948,11 +947,11 @@ String name = "Laura";
 
 ---
 
-## 36. Cuándo usar `Optional`
+## 36. When to use `Optional`
 
-Usa `Optional` especialmente como valor de retorno de métodos que pueden no encontrar un resultado.
+Use `Optional` especially as a return value for methods that may not find a result.
 
-Ejemplos adecuados:
+Suitable examples:
 
 ```java
 Optional<User> findUserById(int id)
@@ -960,22 +959,21 @@ Optional<Product> findProductByCode(String code)
 Optional<String> findEmailByUsername(String username)
 ```
 
-Esto comunica claramente:
-
-> este método puede devolver un valor o puede no devolver nada.
+This clearly communicates:
+> this method can return a value or it can return nothing.
 
 ---
 
-## 37. Cuándo evitar `Optional`
+## 37. When to avoid `Optional`
 
-Como regla inicial, evita usar `Optional`:
+As a first rule, avoid using `Optional`:
 
-- como atributo de una clase
-- como parámetro de método
-- en exceso para variables locales simples
-- para colecciones
+- as an attribute of a class
+- as method parameter
+- in excess for simple local variables
+- for collections
 
-Ejemplo poco recomendable:
+Not recommended example:
 
 ```java
 public class User {
@@ -983,7 +981,7 @@ public class User {
 }
 ```
 
-Normalmente es mejor:
+It is usually better to:
 
 ```java
 public class User {
@@ -991,27 +989,27 @@ public class User {
 }
 ```
 
-y controlar la ausencia en los métodos que lo necesiten.
+and control the absence in the methods that need it.
 
 ---
 
-## 38. `Optional` y colecciones
+## 38. `Optional` and collections
 
-No suele tener sentido devolver esto:
+It usually doesn't make sense to return this:
 
 ```java
 Optional<List<User>>
 ```
 
-Normalmente es mejor devolver una lista vacía:
+It's usually better to return an empty list:
 
 ```java
 List<User>
 ```
 
-Porque una lista vacía ya expresa que no hay resultados.
+Because an empty list already expresses that there are no results.
 
-Ejemplo:
+Example:
 
 ```java
 public static List<User> findActiveUsers() {
@@ -1019,11 +1017,11 @@ public static List<User> findActiveUsers() {
 }
 ```
 
-Esto suele ser más simple que envolver la lista en `Optional`.
+This is usually simpler than wrapping the list in `Optional`.
 
 ---
 
-## 39. Ejemplo guiado: buscar producto por código
+## 39. Guided example: search product by code
 
 ### 39.1. `Product.java`
 
@@ -1090,9 +1088,9 @@ public class Main {
 
 ---
 
-## 40. Ejemplo guiado con streams
+## 40. Guided example with streams
 
-El método anterior también puede escribirse con `Stream API`.
+The above method can also be written with `Stream API`.
 
 ```java
 public static Optional<Product> findProductByCode(List<Product> products, String code) {
@@ -1102,48 +1100,48 @@ public static Optional<Product> findProductByCode(List<Product> products, String
 }
 ```
 
-Esta versión es más compacta y devuelve naturalmente un `Optional<Product>`.
+This version is more compact and naturally returns an `Optional<Product>`.
 
 ---
 
-## 41. Errores típicos al empezar
+## 41. Typical mistakes when starting
 
-### 41.1. Usar `get` sin comprobar
+### 41.1. Use `get` without checking
 
-Evita:
+Avoid:
 
 ```java
 Optional<String> name = Optional.empty();
 System.out.println(name.get());
 ```
 
-Mejor:
+Better:
 
 ```java
 System.out.println(name.orElse("Unknown"));
 ```
 
-### 41.2. Usar `Optional.of` con valores que pueden ser `null`
+### 41.2. Use `Optional.of` with values that can be `null`
 
-Evita:
+Avoid:
 
 ```java
 Optional<String> name = Optional.of(possibleNullName);
 ```
 
-Mejor:
+Better:
 
 ```java
 Optional<String> name = Optional.ofNullable(possibleNullName);
 ```
 
-### 41.3. Usar `Optional` en todas partes
+### 41.3. Use `Optional` everywhere
 
-`Optional` es útil, pero no debe envolver cualquier variable.
+`Optional` is useful, but it should not wrap any variables.
 
-### 41.4. Devolver `null` desde un método que devuelve `Optional`
+### 41.4. Return `null` from a method that returns `Optional`
 
-Esto es un error de diseño:
+This is a design error:
 
 ```java
 public static Optional<String> findName() {
@@ -1151,7 +1149,7 @@ public static Optional<String> findName() {
 }
 ```
 
-Debe ser:
+It must be:
 
 ```java
 public static Optional<String> findName() {
@@ -1159,65 +1157,64 @@ public static Optional<String> findName() {
 }
 ```
 
-### 41.5. Usar `Optional<List<T>>` cuando basta una lista vacía
+### 41.5. Use `Optional<List<T>>` when an empty list is enough
 
-En muchos casos, una lista vacía es más simple.
-
----
-
-## 42. Buenas prácticas
-
-- Usa `Optional` principalmente como tipo de retorno.
-- Usa `Optional.empty()` para representar ausencia de valor.
-- Usa `Optional.ofNullable` si el valor puede ser `null`.
-- Evita llamar a `get` directamente.
-- Prefiere `orElse`, `orElseGet`, `orElseThrow`, `ifPresent`, `map` y `flatMap`.
-- No devuelvas `null` desde un método que promete devolver `Optional`.
-- No uses `Optional` para colecciones si una colección vacía expresa bien el caso.
-- Usa `Optional` para hacer más explícita la posibilidad de ausencia.
+In many cases, an empty list is simpler.
 
 ---
 
-## 43. A tener en cuenta
+## 42. Good practices
 
-- `Optional<T>` representa un valor que puede existir o no existir.
-- Ayuda a evitar errores por `null`.
-- `Optional.of` requiere un valor no nulo.
-- `Optional.empty` representa ausencia.
-- `Optional.ofNullable` acepta valores que pueden ser `null`.
-- `ifPresent` ejecuta una acción si hay valor.
-- `orElse` y `orElseGet` proporcionan valores por defecto.
-- `orElseThrow` lanza excepción si no hay valor.
-- `map` transforma el valor interno.
-- `flatMap` evita `Optional` anidados.
-- Muchos métodos de `Stream API` devuelven `Optional`.
+- Uses `Optional` primarily as a return type.
+- Use `Optional.empty()` to represent absence of value.
+- Use `Optional.ofNullable` if the value can be `null`.
+- Avoid calling `get` directly.
+- Prefer `orElse`, `orElseGet`, `orElseThrow`, `ifPresent`, `map` and `flatMap`.
+- Do not return `null` from a method that promises to return `Optional`.
+- Don't use `Optional` for collections if an empty collection makes the case well.
+- Use `Optional` to make the possibility of absence more explicit.
 
 ---
 
-## 44. Resumen final
+## 43. To take into account
 
-`Optional` es una herramienta muy útil para representar de forma explícita que un valor puede faltar.
+- `Optional<T>` represents a value that may or may not exist.
+- Helps avoid errors by `null`.
+- `Optional.of` requires a non-null value.
+- `Optional.empty` represents absence.
+- `Optional.ofNullable` accepts values ​​that can be `null`.
+- `ifPresent` executes an action if there is value.
+- `orElse` and `orElseGet` provide default values.
+- `orElseThrow` throws exception if there is no value.
+- `map` transforms the internal value.
+- `flatMap` avoids nested `Optional`.
+- Many `Stream API` methods return `Optional`.
 
-Su objetivo no es eliminar completamente `null` de Java, sino ayudarte a diseñar métodos más claros y seguros.
+---
 
-En vez de devolver `null`, puedes devolver:
+## 44. Final summary
+
+`Optional` is a very useful tool to explicitly represent that a value may be missing.
+
+Its goal is not to completely remove `null` from Java, but to help you design clearer and safer methods.
+Instead of returning `null`, you can return:
 
 ```java
 Optional.empty()
 ```
 
-Y en vez de obligar a quien usa el método a recordar una comprobación manual, el propio tipo ya comunica:
+And instead of forcing the user of the method to remember a manual check, the type itself already communicates:
 
-> este valor puede estar presente o puede no estarlo.
+> this value may or may not be present.
 
-Dominar `Optional` te ayudará a escribir código más claro, especialmente cuando trabajes con:
+Mastering `Optional` will help you write clearer code, especially when working with:
 
-- búsquedas
-- repositorios
+- searches
+- repositories
 - streams
-- valores opcionales
-- APIs modernas de Java
+- optional values
+- Modern Java APIs
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos la **Date/Time API**, que permite trabajar correctamente con fechas, horas, duraciones y zonas horarias.
+In the next topic we will continue advancing with modern Java and see the **Date/Time API**, which allows you to work correctly with dates, times, durations and time zones.

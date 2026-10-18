@@ -1,37 +1,37 @@
-# **Tema 9: Modelos e Interfaces en Angular para el Tipado de Objetos**
+# **Topic 9: Models and Interfaces in Angular for Object Typing**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, el uso de **modelos** e **interfaces** permite definir estructuras de datos claras y seguras, facilitando el mantenimiento y la escalabilidad del código. TypeScript ofrece herramientas como **interfaces** y **clases** para tipar objetos y garantizar que los datos sean utilizados de forma consistente.
+In Angular, the use of **models** and **interfaces** allows you to define clear and secure data structures, facilitating code maintenance and scalability. TypeScript provides tools such as **interfaces** and **classes** to type objects and ensure that data is used consistently.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- La diferencia entre **interfaces** y **clases** en TypeScript.
-- Cuándo usar **interfaces** y cuándo usar **clases**.
-- Cómo implementar modelos en un proyecto Angular.
+- The difference between **interfaces** and **classes** in TypeScript.
+- When to use **interfaces** and when to use **classes**.
+- How to implement models in an Angular project.
 
 ---
 
-## **2. Diferencias entre Interfaces y Clases**
+## **2. Differences between Interfaces and Classes**
 
-| **Característica**          | **Interface** | **Clase** |
+| **Feature** | **Interface** | **Class** |
 | --------------------------- | ------------- | --------- |
-| Definición de estructura    | Sí            | Sí        |
-| Implementación de lógica    | No            | Sí        |
-| Genera código en JavaScript | No            | Sí        |
-| Se puede instanciar         | No            | Sí        |
+| Definition of structure | Yes | Yes |
+| Logic implementation | No | Yes |
+| Generate code in JavaScript | No | Yes |
+| Can be instantiated | No | Yes |
 
-Las **interfaces** se usan para definir la forma de un objeto (un modelo), mientras que las **clases** pueden incluir lógica adicional y métodos.
+**Interfaces** are used to define the form of an object (a model), while **classes** can include additional logic and methods.
 
 ---
 
-## **3. Uso de Interfaces en Angular para crear modelos**
+## **3. Using Interfaces in Angular to create models**
 
-Las interfaces en TypeScript permiten definir la forma de un objeto sin incluir lógica adicional.
+Interfaces in TypeScript allow you to define the shape of an object without including additional logic.
 
-### **Ejemplo de Interface**
+### **Interface Example**
 
-#### **Archivo: `User.ts`**
+#### **File: `User.ts`**
 
 ```ts
 export interface User {
@@ -42,9 +42,10 @@ export interface User {
 }
 ```
 
-Se usa para tipar objetos en un servicio o componente:
 
-#### **Archivo: `user.component.ts`**
+Used to type objects in a service or component:
+
+#### **File: `user.component.ts`**
 
 ```ts
 import { User } from "../models/User";
@@ -61,23 +62,24 @@ export class UserComponent {
 }
 ```
 
-Ventajas de las interfaces:
 
-- **Claridad**: Separa la estructura de los datos de la lógica.
-- **Tipado estático**: Evita errores en tiempo de compilación.
+Advantages of interfaces:
 
----
-
-[![Modelos e Interfaces](https://img.youtube.com/vi/Hm9DDImpbNQ/0.jpg)](https://www.youtube.com/watch?v=Hm9DDImpbNQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+- **Clarity**: Separates data structure from logic.
+- **Static typing**: Avoid errors at compile time.
 
 ---
 
-## **4. Conclusión**
-
-- Las **interfaces** permiten definir estructuras de datos sin generar código extra en JavaScript.
-- Las **clases** permiten agregar métodos y lógica dentro de los objetos.
-- La elección entre **interfaces** y **clases** depende del uso que se les dará en la aplicación.
+[![Models and Interfaces](https://img.youtube.com/vi/Hm9DDImpbNQ/0.jpg)](https://www.youtube.com/watch?v=Hm9DDImpbNQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-En el próximo tema, exploraremos **cómo usar clases y estilos dinámicos con ngClass**.
+## **4. Conclusion**
+
+- **Interfaces** allow you to define data structures without generating extra code in JavaScript.
+- **classes** allow you to add methods and logic inside objects.
+- The choice between **interfaces** and **classes** depends on the use that will be given to them in the application.
+
+---
+
+In the next topic, we will explore **how to use dynamic classes and styles with ngClass**.

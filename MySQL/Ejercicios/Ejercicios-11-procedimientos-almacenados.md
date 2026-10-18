@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 11: Procedimientos Almacenados**
+# **Exercises - Topic 11: Stored Procedures**
 
-A continuación, encontrarás 8 ejercicios prácticos para crear, ejecutar y gestionar **procedimientos almacenados** en MySQL.
+Below, you will find 8 practical exercises to create, run and manage **stored procedures** in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Procedimiento sin parámetros**
+### **Exercise 1: Procedure without parameters**
 
-Crea un procedimiento `list_active_customers` que devuelva todos los clientes cuya columna `is_active` sea `TRUE`.
+Create a procedure `list_active_customers` that returns all clients whose column `is_active` is `TRUE`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -29,11 +29,11 @@ CALL list_active_customers();
 
 ---
 
-### **Ejercicio 2: Procedimiento con parámetro IN**
+### **Exercise 2: Procedure with IN parameter**
 
-Crea un procedimiento `get_orders_by_customer` que reciba `p_customer_id INT` y devuelva los pedidos (`orders`) de ese cliente ordenados por `created_at` descendente.
+Create a procedure `get_orders_by_customer` that receives `p_customer_id INT` and returns orders (`orders`) from that customer sorted by descending `created_at`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -53,11 +53,11 @@ CALL get_orders_by_customer(2);
 
 ---
 
-### **Ejercicio 3: Procedimiento con parámetro OUT**
+### **Exercise 3: Procedure with OUT parameter**
 
-Crea un procedimiento `count_orders_in_range` que reciba dos fechas `p_from DATE`, `p_to DATE` y devuelva por `OUT p_total INT` cuántos pedidos hay en ese rango (inclusive).
+Create a procedure `count_orders_in_range` that receives two dates `p_from DATE`, `p_to DATE` and returns for `OUT p_total INT` how many orders there are in that range (inclusive).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -81,11 +81,11 @@ SELECT @total AS total_orders_april;
 
 ---
 
-### **Ejercicio 4: Procedimiento con parámetro INOUT**
+### **Exercise 4: Procedure with INOUT parameter**
 
-Crea un procedimiento `apply_discount_if_high_spender` que reciba `IN p_customer_id INT` y `INOUT p_discount DECIMAL(5,2)`. Si el cliente ha gastado más de 500 en total (suma de `total_amount`), incrementa `p_discount` en `2.50`; si no, deja el valor como está.
+Create a procedure `apply_discount_if_high_spender` that receives `IN p_customer_id INT` and `INOUT p_discount DECIMAL(5,2)`. If the customer has spent more than 500 in total (sum of `total_amount`), increase `p_discount` by `2.50`; if not, leave the value as is.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -114,11 +114,11 @@ SELECT @disc AS new_discount;
 
 ---
 
-### **Ejercicio 5: Procedimiento con validación e `EXIT HANDLER`**
+### **Exercise 5: Procedure with validation and `EXIT HANDLER`**
 
-Crea un procedimiento `create_product_safe` que inserte en `products(name, price)` validando que `price > 0`. Si `price <= 0`, lanza un error usando `SIGNAL`. Añade un `EXIT HANDLER` que capture cualquier error y haga `ROLLBACK`.
+Create a procedure `create_product_safe` that inserts into `products(name, price)` validating that `price > 0`. If `price <= 0`, throw an error using `SIGNAL`. Add an `EXIT HANDLER` that catches any errors and makes `ROLLBACK`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -151,11 +151,11 @@ CALL create_product_safe('Notebook', 3.50);
 
 ---
 
-### **Ejercicio 6: Procedimiento que devuelve agregados**
+### **Exercise 6: Procedure that returns aggregates**
 
-Crea un procedimiento `customer_order_stats` que reciba `p_customer_id` y devuelva: número de pedidos (`total_orders`), importe medio (`avg_amount`) y última fecha (`last_order`).
+Create a procedure `customer_order_stats` that receives `p_customer_id` and returns: number of orders (`total_orders`), average amount (`avg_amount`) and last date (`last_order`).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -176,11 +176,11 @@ CALL customer_order_stats(1);
 
 ---
 
-### **Ejercicio 7: Procedimiento con parámetros opcionales (simulados)**
+### **Exercise 7: Procedure with optional parameters (simulated)**
 
-Crea un procedimiento `search_customers` con `IN p_name VARCHAR(100)` y `IN p_city VARCHAR(100)`. Si un parámetro llega `NULL`, no filtra por ese campo.
+Create a procedure `search_customers` with `IN p_name VARCHAR(100)` and `IN p_city VARCHAR(100)`. If a parameter arrives `NULL`, it does not filter on that field.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -203,13 +203,13 @@ CALL search_customers('an', NULL);
 
 ---
 
-### **Ejercicio 8: Reemplazar y eliminar procedimientos**
+### **Exercise 8: Replace and delete procedures**
 
-1. Crea `get_last_orders` que reciba `p_limit INT` y devuelva los últimos `p_limit` pedidos.
-2. Modifícalo para que también devuelva `customer_id` y renómbralo.
-3. Elimínalo.
+1. Create `get_last_orders` that receives `p_limit INT` and returns the latest `p_limit` orders.
+2. Modify it to also return `customer_id` and rename it.
+3. Delete it.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 -- 1) Crear

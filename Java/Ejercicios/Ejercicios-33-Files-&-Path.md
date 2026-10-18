@@ -1,25 +1,25 @@
-# Ejercicios - Tema 33: Files y Path
+# Exercises - Topic 33: Files and Path
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **Files y Path**: creación de rutas, escritura y lectura de archivos, carpetas, añadir contenido, copiar, borrar, listar archivos y trabajar con líneas.
+Below you will find **10 practical exercises** to work with **Files and Path**: creating paths, writing and reading files, folders, adding content, copying, deleting, listing files and working with lines.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear una ruta con `Path.of`
+## Exercise 1: Create a route with `Path.of`
 
-Crea una ruta que apunte al archivo:
+Create a path that points to the file:
 
 ```text
 data/notes.txt
 ```
 
-Usa `Path.of` e imprime:
+Use `Path.of` and print:
 
-- la ruta
-- la ruta absoluta
+- the route
+- the absolute path
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.nio.file.Path;
@@ -38,19 +38,19 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Escribir texto en un archivo
+## Exercise 2: Write text to a file
 
-Crea la carpeta `data` si no existe.
+Create the `data` folder if it does not exist.
 
-Después escribe el texto `"Learning Java files"` en:
+Then write the text `"Learning Java files"` in:
 
 ```text
 data/message.txt
 ```
 
-Usa `Files.createDirectories` y `Files.writeString`.
+Use `Files.createDirectories` and `Files.writeString`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -76,17 +76,17 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Leer texto de un archivo
+## Exercise 3: Read text from a file
 
-Usando el archivo del ejercicio anterior, lee el contenido de:
+Using the file from the previous exercise, read the contents of:
 
 ```text
 data/message.txt
 ```
 
-e imprímelo por consola.
+and print it through the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -111,23 +111,23 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Escribir varias líneas
+## Exercise 4: Write multiple lines
 
-Crea una lista con estas líneas:
+Create a list with these lines:
 
 - `"First line"`
 - `"Second line"`
 - `"Third line"`
 
-Escríbelas en:
+Write them in:
 
 ```text
 data/lines.txt
 ```
 
-Usa `Files.write`.
+Use `Files.write`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -156,17 +156,17 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Leer todas las líneas y filtrarlas
+## Exercise 5: Read all the lines and filter them
 
-Lee el archivo:
+Read the file:
 
 ```text
 data/lines.txt
 ```
 
-Usa `Files.readAllLines` y muestra solo las líneas que contengan la palabra `"Second"`.
+Use `Files.readAllLines` and display only lines that contain the word `"Second"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -195,19 +195,19 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Añadir contenido al final de un archivo
+## Exercise 6: Add content to the end of a file
 
-Añade la línea `"New entry"` al archivo:
+Add the line `"New entry"` to the file:
 
 ```text
 data/log.txt
 ```
 
-Si el archivo no existe, debe crearse.
+If the file does not exist, it must be created.
 
-Usa `StandardOpenOption.CREATE` y `StandardOpenOption.APPEND`.
+Use `StandardOpenOption.CREATE` and `StandardOpenOption.APPEND`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -240,23 +240,23 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Copiar un archivo
+## Exercise 7: Copy a file
 
-Crea una copia de:
+Create a copy of:
 
 ```text
 data/message.txt
 ```
 
-en:
+in:
 
 ```text
 data/message-copy.txt
 ```
 
-Usa `Files.copy` y `StandardCopyOption.REPLACE_EXISTING`.
+Use `Files.copy` and `StandardCopyOption.REPLACE_EXISTING`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -282,17 +282,17 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Borrar un archivo si existe
+## Exercise 8: Delete a file if it exists
 
-Borra el archivo:
+Delete the file:
 
 ```text
 data/message-copy.txt
 ```
 
-Usa `Files.deleteIfExists` e imprime si se ha borrado o no.
+Use `Files.deleteIfExists` and print whether it has been deleted or not.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -317,17 +317,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Listar archivos de una carpeta
+## Exercise 9: List files in a folder
 
-Lista todos los elementos de la carpeta:
+List all items in the folder:
 
 ```text
 data
 ```
 
-Usa `Files.list`.
+Use `Files.list`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;
@@ -352,17 +352,17 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Contar líneas de un archivo grande
+## Exercise 10: Count lines of a large file
 
-Usa `Files.lines` para contar cuántas líneas tiene:
+Use `Files.lines` to count how many lines it has:
 
 ```text
 data/lines.txt
 ```
 
-Recuerda usar `try-with-resources`.
+Remember to use `try-with-resources`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.io.IOException;

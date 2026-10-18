@@ -1,42 +1,42 @@
-# **Tema 13: El Ciclo de Vida de los Componentes en Vue.js**
+# **Topic 13: The Life Cycle of Components in Vue.js**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Cada componente en Vue pasa por una serie de fases o "etapas" desde su creación hasta su destrucción. A estas fases las llamamos el **ciclo de vida del componente**. Conocer el ciclo de vida es clave para saber **cuándo y dónde ejecutar código** específico, como peticiones a la API, suscripciones a eventos o limpieza de recursos.
+Each component in Vue goes through a series of phases or "stages" from its creation to its destruction. We call these phases the **component life cycle**. Knowing the lifecycle is key to knowing **when and where to execute specific code**, such as API requests, event subscriptions, or resource cleanup.
 
-En Vue 3, las funciones de ciclo de vida más importantes son:
+In Vue 3, the most important lifecycle functions are:
 
-| Hook              | Momento de ejecución                                      |
+| Hook | Time of execution |
 | ----------------- | --------------------------------------------------------- |
-| `onBeforeMount`   | Antes de que el componente se inserte en el DOM           |
-| `onMounted`       | Cuando el componente ya está en el DOM                    |
-| `onBeforeUpdate`  | Antes de que el DOM se actualice (por un cambio reactivo) |
-| `onUpdated`       | Justo después de que el DOM se haya actualizado           |
-| `onBeforeUnmount` | Justo antes de que el componente se elimine del DOM       |
-| `onUnmounted`     | Después de eliminar el componente del DOM                 |
+| `onBeforeMount` | Before the component is inserted into the DOM |
+| `onMounted` | When the component is already in the DOM |
+| `onBeforeUpdate` | Before the DOM is updated (by a reactive change) |
+| `onUpdated` | Just after the DOM has been updated |
+| `onBeforeUnmount` | Just before the component is removed from the DOM |
+| `onUnmounted` | After removing the DOM component |
 
 ---
 
-## **2. Ciclo de vida en detalle**
+## **2. Life cycle in detail**
 
-### Creación
+### Creation
 
-1. **onBeforeMount:** El componente ha sido creado, pero aún no está en el DOM.
-2. **onMounted:** El componente ya se ha añadido al DOM. Aquí es ideal para hacer `fetch`, observar el tamaño de elementos, o inicializar librerías externas.
+1. **onBeforeMount:** The component has been created, but is not yet in the DOM.
+2. **onMounted:** The component has already been added to the DOM. Here it is ideal to make `fetch`, observe the size of elements, or initialize external libraries.
 
-### Actualización
+### Update
 
-1. **onBeforeUpdate:** Se detectó un cambio reactivo, pero el DOM aún no refleja el cambio.
-2. **onUpdated:** El DOM ya refleja los nuevos valores reactivos.
+1. **onBeforeUpdate:** A reactive change was detected, but the DOM does not yet reflect the change.
+2. **onUpdated:** The DOM already reflects the new reactive values.
 
-### Destrucción
+### Destruction
 
-1. **onBeforeUnmount:** El componente está a punto de ser eliminado del DOM.
-2. **onUnmounted:** El componente ya se eliminó. Aquí es donde limpiamos timers, eventos o conexiones.
+1. **onBeforeUnmount:** The component is about to be removed from the DOM.
+2. **onUnmounted:** The component has already been removed. This is where we clean timers, events or connections.
 
 ---
 
-## **3. Ejemplo completo con todos los hooks**
+## **3. Complete example with all hooks**
 
 ```vue
 <script setup>
@@ -89,20 +89,20 @@ onUnmounted(() => {
 
 ---
 
-## **4. Cuándo usar cada hook**
+## **4. When to use each hook**
 
-| Hook            | Uso típico                                                         |
+| Hook | Typical use |
 | --------------- | ------------------------------------------------------------------ |
-| onBeforeMount   | Inicializar variables internas, preparar datos                     |
-| onMounted       | Hacer fetch, añadir listeners globales, iniciar librerías externas |
-| onBeforeUpdate  | Revisar valores antiguos antes de actualizar                       |
-| onUpdated       | Confirmar cambios visuales, ejecutar callbacks                     |
-| onBeforeUnmount | Guardar datos, advertir al usuario                                 |
-| onUnmounted     | Limpiar listeners, detener timers, cerrar conexiones               |
+| onBeforeMount | Initialize internal variables, prepare data |
+| onMounted | Fetch, add global listeners, start external libraries |
+| onBeforeUpdate | Review old values ​​before updating |
+| onUpdated | Commit visual changes, execute callbacks |
+| onBeforeUnmount | Save data, warn user |
+| onUnmounted | Clear listeners, stop timers, close connections |
 
 ---
 
-## **5. Diagrama básico**
+## **5. Basic diagram**
 
 ```
 Creación:
@@ -117,12 +117,12 @@ Destrucción:
 
 ---
 
-[![Ciclo de Vida de los Componentes](https://img.youtube.com/vi/68Vpwer3CHo/0.jpg)](https://www.youtube.com/watch?v=68Vpwer3CHo&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Component Life Cycle](https://img.youtube.com/vi/68Vpwer3CHo/0.jpg)](https://www.youtube.com/watch?v=68Vpwer3CHo&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## Resumen
+## Summary
 
-Comprender el ciclo de vida permite crear componentes más eficientes, limpios y con mejor manejo de recursos. Usar el hook correcto en cada momento mejora el rendimiento y la estabilidad de la aplicación.
+Understanding the life cycle allows us to create more efficient, cleaner components with better resource management. Using the correct hook at all times improves the performance and stability of the application.
 
-En el próximo tema exploraremos **Cómo realizar Tests Unitarios usando Vitest**.
+In the next topic we will explore **How to perform Unit Tests using Vitest**.

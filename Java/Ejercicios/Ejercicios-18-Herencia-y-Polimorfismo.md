@@ -1,28 +1,28 @@
-# Ejercicios - Tema 18: Herencia y Polimorfismo
+# Exercises - Topic 18: Inheritance and Polymorphism
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **herencia** y **polimorfismo**: `extends`, `super(...)`, sobrescritura con `@Override`, uso de referencias del padre para instancias del hijo, listas polimórficas, y un primer contacto con `instanceof`.
+Below you will find **10 practical exercises** on **inheritance** and **polymorphism**: `extends`, `super(...)`, overwriting with `@Override`, using parent references for child instances, polymorphic lists, and a first contact with `instanceof`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: `Person` y `Student`
+## Exercise 1: `Person` and `Student`
 
-Crea una clase `Person` con:
+Create a class `Person` with:
 
 - `private String name`
-- Constructor `Person(String name)`
-- Método `printInfo()` que muestre `Name: ...`
+- `Person(String name)` Builder
+- `printInfo()` method showing `Name: ...`
 
-Crea una clase `Student extends Person` con:
+Create a class `Student extends Person` with:
 
 - `private String studentId`
-- Constructor `Student(String name, String studentId)` que llame a `super(name)`
-- Método `printStudentId()`
+- `Student(String name, String studentId)` constructor that calls `super(name)`
+- `printStudentId()` method
 
-En `main`, crea un `Student` y llama a ambos métodos.
+In `main`, create an `Student` and call both methods.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Person {
@@ -67,17 +67,17 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Sobrescribir `printInfo()` con `@Override`
+## Exercise 2: Overwrite `printInfo()` with `@Override`
 
-Partiendo del ejercicio anterior, sobrescribe `printInfo()` en `Student` para que muestre:
+Building on the previous exercise, overwrite `printInfo()` in `Student` so that it displays:
 
 ```
 Name: ... | StudentId: ...
 ```
 
-Reutiliza el `printInfo()` del padre con `super.printInfo()` o imprime todo tú (elige una opción).
+Reuse the parent's `printInfo()` with `super.printInfo()` or print everything yourself (choose an option).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Student extends Person {
@@ -100,22 +100,22 @@ public class Student extends Person {
 
 ---
 
-## Ejercicio 3: `Vehicle`, `Car` y `Bike`
+## Exercise 3: `Vehicle`, `Car` and `Bike`
 
-Crea una clase `Vehicle` con un método `move()` que imprima:
+Create an `Vehicle` class with an `move()` method that prints:
 
 ```
 Moving...
 ```
 
-Crea:
+Create:
 
-- `Car extends Vehicle` → sobrescribe `move()` para imprimir `Driving...`
-- `Bike extends Vehicle` → sobrescribe `move()` para imprimir `Cycling...`
+- `Car extends Vehicle` → overwrite `move()` to print `Driving...`
+- `Bike extends Vehicle` → overwrite `move()` to print `Cycling...`
 
-En `main`, crea un `Vehicle` que sea un `Car` y otro que sea una `Bike` y llama a `move()`.
+In `main`, create one `Vehicle` that is an `Car` and another that is an `Bike` and call `move()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Vehicle {
@@ -159,16 +159,16 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Lista polimórfica de vehículos
+## Exercise 4: Polymorphic list of vehicles
 
-Usando las clases del ejercicio anterior, crea una lista `List<Vehicle>` y añade:
+Using the classes from the previous exercise, create an `List<Vehicle>` list and add:
 
-- 2 coches
-- 1 bici
+- 2 cars
+- 1 bike
 
-Recorre la lista y llama a `move()` en cada elemento.
+Loop through the list and call `move()` on each item.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -193,22 +193,22 @@ public class Main {
 
 ---
 
-## Ejercicio 5: `Animal` con método sobrescrito
+## Exercise 5: `Animal` with overridden method
 
-Crea una clase `Animal` con método `sound()` que imprima:
+Create a class `Animal` with method `sound()` that prints:
 
 ```
 Animal sound...
 ```
 
-Crea:
+Create:
 
-- `Dog extends Animal` → `sound()` imprime `Woof`
-- `Cat extends Animal` → `sound()` imprime `Meow`
+- `Dog extends Animal` → `sound()` prints `Woof`
+- `Cat extends Animal` → `sound()` prints `Meow`
 
-En `main`, guarda un `Dog` y un `Cat` en variables de tipo `Animal` y llama a `sound()`.
+In `main`, save an `Dog` and an `Cat` in variables of type `Animal` and call `sound()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Animal {
@@ -252,23 +252,23 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Acceso a métodos exclusivos del hijo
+## Exercise 6: Access to exclusive methods of the child
 
-Crea una clase `Employee` con método `work()` que imprima:
+Create a class `Employee` with method `work()` that prints:
 
 ```
 Working...
 ```
 
-Crea una clase `Manager extends Employee` con método adicional `approveVacation()`.
+Create a class `Manager extends Employee` with additional method `approveVacation()`.
 
-En `main`:
+In `main`:
 
-1. Crea un `Employee` que sea un `Manager` (referencia del padre)
-2. Llama a `work()`
-3. Para llamar a `approveVacation()`, haz un _cast_ a `Manager`
+1. Create an `Employee` that is an `Manager` (parent reference)
+2. Call `work()`
+3. To call `approveVacation()`, cast `Manager`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Employee {
@@ -302,27 +302,27 @@ public class Main {
 
 ---
 
-## Ejercicio 7: `instanceof` para evitar un cast inseguro
+## Exercise 7: `instanceof` to avoid an unsafe cast
 
-Usa las clases del ejercicio 6.
+Use the classes in exercise 6.
 
-En `main`, crea:
+In `main`, create:
 
 - `Employee e1 = new Employee();`
 - `Employee e2 = new Manager();`
 
-Escribe un método estático:
+Write a static method:
 
 ```java
 public static void tryApprove(Employee employee)
 ```
 
-Que:
+What:
 
-- Si `employee` es `Manager`, llame a `approveVacation()`
-- Si no, imprima `Not a manager`
+- If `employee` is `Manager`, call `approveVacation()`
+- If not, print `Not a manager`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Employee {
@@ -365,23 +365,23 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Sobrescritura y llamada a `super.method()`
+## Exercise 8: Overwriting and calling `super.method()`
 
-Crea una clase `BaseLogger` con un método `log(String message)` que imprima:
+Create a class `BaseLogger` with a method `log(String message)` that prints:
 
 ```
 LOG: message
 ```
 
-Crea una clase `FileLogger extends BaseLogger` que sobrescriba `log` para imprimir primero:
+Create a class `FileLogger extends BaseLogger` that overrides `log` to print first:
 
 ```
 Saving to file...
 ```
 
-Y luego llame a `super.log(message)`.
+And then call `super.log(message)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class BaseLogger {
@@ -414,22 +414,22 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Jerarquía con constructor del padre
+## Exercise 9: Hierarchy with parent constructor
 
-Crea una clase `Account` con:
+Create a class `Account` with:
 
 - `private String id`
-- Constructor `Account(String id)`
-- Método `printInfo()` que imprima `Account id: ...`
+- `Account(String id)` Builder
+- `printInfo()` method that prints `Account id: ...`
 
-Crea `PremiumAccount extends Account` con:
+Create `PremiumAccount extends Account` with:
 
 - `private int points`
-- Constructor `PremiumAccount(String id, int points)` que llame a `super(id)`
+- `PremiumAccount(String id, int points)` constructor that calls `super(id)`
 
-Sobrescribe `printInfo()` para incluir también los puntos.
+Overwrite `printInfo()` to also include the points.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Account {
@@ -475,29 +475,29 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Polimorfismo con cálculo en un método sobrescrito
+## Exercise 10: Polymorphism with calculation in an overridden method
 
-Crea una clase `Discount` con método:
+Create a class `Discount` with method:
 
 ```java
 public double apply(double price)
 ```
 
-Por defecto, devuelve el mismo `price` (sin descuento).
+By default, it returns the same `price` (no discount).
 
-Crea:
+Create:
 
-- `PercentageDiscount extends Discount` con atributo `percent` y `apply` que reste el porcentaje.
-- `FixedDiscount extends Discount` con atributo `amount` y `apply` que reste una cantidad fija (sin bajar de 0).
+- `PercentageDiscount extends Discount` with attribute `percent` and `apply` that subtracts the percentage.
+- `FixedDiscount extends Discount` with attribute `amount` and `apply` that subtracts a fixed amount (without going below 0).
 
-En `main`, crea una lista `List<Discount>` con:
+In `main`, create an `List<Discount>` list with:
 
-- un descuento porcentual del 10%
-- un descuento fijo de 5
+- a percentage discount of 10%
+- a fixed discount of 5
 
-Aplica ambos a `price = 50` y muestra el resultado de cada uno.
+It applies both to `price = 50` and shows the result of each.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Discount {

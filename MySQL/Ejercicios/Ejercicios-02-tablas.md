@@ -1,22 +1,22 @@
-# **Ejercicios - Tema 2: Creación y Modificación de Tablas en MySQL**
+# **Exercises - Topic 2: Creating and Modifying Tables in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre la creación y modificación de tablas, y el uso de tipos de datos en MySQL.
+Below you will find 5 practical exercises on creating and modifying tables, and using data types in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una tabla `customers`**
+### **Exercise 1: Create an `customers` table**
 
-Crea una tabla llamada `customers` con los siguientes campos:
+Create a table called `customers` with the following fields:
 
-- `customer_id`: número entero, clave primaria, auto incremental.
-- `first_name`: texto de hasta 50 caracteres.
-- `last_name`: texto de hasta 50 caracteres.
-- `signup_date`: fecha.
-- `newsletter_subscribed`: booleano.
+- `customer_id`: integer, primary key, auto incremental.
+- `first_name`: text up to 50 characters.
+- `last_name`: text of up to 50 characters.
+- `signup_date`: date.
+- `newsletter_subscribed`: boolean.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE customers (
@@ -32,16 +32,16 @@ CREATE TABLE customers (
 
 ---
 
-### **Ejercicio 2: Crear una tabla `orders` con clave foránea**
+### **Exercise 2: Create a table `orders` with foreign key**
 
-Crea una tabla `orders` con los siguientes campos:
+Create a table `orders` with the following fields:
 
-- `order_id`: clave primaria.
-- `customer_id`: clave foránea que referencia `customers(customer_id)`.
-- `total_amount`: número decimal con 2 decimales.
-- `created_at`: fecha y hora.
+- `order_id`: primary key.
+- `customer_id`: foreign key that references `customers(customer_id)`.
+- `total_amount`: decimal number with 2 decimal places.
+- `created_at`: date and time.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE orders (
@@ -57,11 +57,11 @@ CREATE TABLE orders (
 
 ---
 
-### **Ejercicio 3: Agregar una columna a la tabla `customers`**
+### **Exercise 3: Add a column to the `customers` table**
 
-Añade una columna llamada `phone_number` del tipo `VARCHAR(20)` a la tabla `customers`.
+Adds a column named `phone_number` of type `VARCHAR(20)` to the `customers` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 ALTER TABLE customers ADD COLUMN phone_number VARCHAR(20);
@@ -71,11 +71,11 @@ ALTER TABLE customers ADD COLUMN phone_number VARCHAR(20);
 
 ---
 
-### **Ejercicio 4: Modificar un tipo de dato**
+### **Exercise 4: Modify a data type**
 
-Modifica el campo `phone_number` para que pueda almacenar hasta 30 caracteres.
+Modifies the `phone_number` field so that it can store up to 30 characters.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 ALTER TABLE customers MODIFY COLUMN phone_number VARCHAR(30);
@@ -85,15 +85,15 @@ ALTER TABLE customers MODIFY COLUMN phone_number VARCHAR(30);
 
 ---
 
-### **Ejercicio 5: Crear una tabla con un campo `ENUM`**
+### **Exercise 5: Create a table with an `ENUM` field**
 
-Crea una tabla `feedback` con los siguientes campos:
+Create a table `feedback` with the following fields:
 
-- `id`: clave primaria.
-- `customer_id`: clave foránea hacia `customers`.
-- `rating`: valor enumerado que puede ser `'excellent'`, `'good'`, `'average'`, `'poor'`.
+- `id`: primary key.
+- `customer_id`: foreign key to `customers`.
+- `rating`: Enumerated value which can be `'excellent'`, `'good'`, `'average'`, `'poor'`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE feedback (

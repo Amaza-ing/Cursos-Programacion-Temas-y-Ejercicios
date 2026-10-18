@@ -1,20 +1,20 @@
-# Ejercicios - Tema 13: `List` y `ArrayList`
+# Exercises - Topic 13: `List` and `ArrayList`
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **`List` y `ArrayList`**: creación, genéricos, `add/get/set/remove`, búsquedas, recorridos, `size`, `isEmpty`, `contains/indexOf`, conversiones y casos típicos con `List<Integer>`.
+Below you will find **10 practical exercises** on **`List` and `ArrayList`**: creation, generics, `add/get/set/remove`, searches, tours, `size`, `isEmpty`, `contains/indexOf`, conversions and typical cases with `List<Integer>`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear una lista y añadir elementos
+## Exercise 1: Create a list and add items
 
-Crea una lista `List<String> animals`.
+Create an `List<String> animals` list.
 
-1. Añade `"Dog"`, `"Cat"`, `"Bird"` (en ese orden).
-2. Imprime la lista completa.
-3. Imprime el tamaño de la lista.
+1. Add `"Dog"`, `"Cat"`, `"Bird"` (in that order).
+2. Print the entire list.
+3. Print the size of the list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -34,22 +34,23 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 2: Acceso por índice con `get`
+## Exercise 2: Index access with `get`
 
-Crea una lista `List<Integer> numbers` y añade estos valores:
+Create an `List<Integer> numbers` list and add these values:
 
 `12`, `5`, `30`, `7`.
 
-Imprime:
+Print:
 
-- El primer elemento
-- El último elemento (sin escribir el índice a mano)
+- The first element
+- The last element (without writing the index by hand)
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -69,22 +70,23 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 3: Insertar en una posición concreta (`add(index, value)`)
+## Exercise 3: Insert at a specific position (`add(index, value)`)
 
-Crea una lista `List<String> cities` con:
+Create an `List<String> cities` list with:
 
 - `"Madrid"`
 - `"Paris"`
 - `"Rome"`
 
-Inserta `"Berlin"` en la posición 1.  
-Imprime la lista para comprobar el orden final.
+Insert `"Berlin"` in position 1.  
+Print the list to check the final order.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -104,22 +106,23 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 4: Reemplazar un elemento con `set`
+## Exercise 4: Replace an element with `set`
 
-Crea una lista `List<String> tasks` con:
+Create an `List<String> tasks` list with:
 
 - `"Study"`
 - `"Train"`
 - `"Cook"`
 
-Reemplaza `"Train"` por `"Practice Java"` usando `set`.  
-Imprime la lista final.
+Replace `"Train"` with `"Practice Java"` using `set`.  
+Print the final list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -139,24 +142,25 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 5: Eliminar por índice y por valor
+## Exercise 5: Delete by index and by value
 
-Crea una lista `List<String> fruits` con:
+Create an `List<String> fruits` list with:
 
 - `"Apple"`
 - `"Banana"`
 - `"Orange"`
 - `"Banana"`
 
-1. Elimina el elemento de índice 2.
-2. Elimina la **primera** aparición de `"Banana"` por valor.
-3. Imprime la lista final.
+1. Delete index element 2.
+2. Remove the **first** occurrence of `"Banana"` by value.
+3. Print the final list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -178,20 +182,21 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 6: Recorrer una lista y sumar valores
+## Exercise 6: Loop through a list and add values
 
-Crea una lista `List<Integer> values` con:
+Create an `List<Integer> values` list with:
 
 `3`, `8`, `2`, `10`.
 
-Recórrela con un `for-each` y calcula la suma total.  
-Imprime el resultado.
+Scan it with an `for-each` and calculate the total sum.  
+Print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -216,24 +221,25 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 7: Buscar con `contains` e `indexOf`
+## Exercise 7: Search with `contains` and `indexOf`
 
-Crea una lista `List<String> names` con:
+Create an `List<String> names` list with:
 
 - `"laura"`
 - `"alex"`
 - `"maria"`
 
-Crea una variable `String input = "Alex"` y comprueba si existe en la lista ignorando mayúsculas/minúsculas.
+Create a variable `String input = "Alex"` and check if it exists in the list ignoring case.
 
-Si existe, imprime `"Found at: X"` donde X es su índice.  
-Si no existe, imprime `"Not found"`.
+If it exists, it prints `"Found at: X"` where X is its index.  
+If it does not exist, print `"Not found"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -259,19 +265,20 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 8: `List<Integer>` y `remove` (caso especial)
+## Exercise 8: `List<Integer>` and `remove` (special case)
 
-Crea una lista `List<Integer> numbers` con:
+Create an `List<Integer> numbers` list with:
 
 `10`, `20`, `30`, `20`.
 
-Elimina el valor `20` **por valor** (no por índice) y muestra la lista final.
+Removes the `20` value **by value** (not by index) and displays the final list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -292,24 +299,26 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 9: Convertir un array a `ArrayList` modificable
+## Exercise 9: Convert an array to modifiable `ArrayList`
 
-Declara un array:
+Declare an array:
 
 ```java
 String[] data = {"A", "B", "C"};
 ```
 
-Convierte ese array en una lista **modificable** (no inmutable).
 
-1. Añade `"D"` a la lista.
-2. Imprime la lista.
+Converts that array into a **modifiable** list (not immutable).
 
-<details><summary>Mostrar solución</summary>
+1. Add `"D"` to the list.
+2. Print the list.
+
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -327,30 +336,32 @@ public class Main {
 }
 ```
 
+
 </details>
 
 ---
 
-## Ejercicio 10: Método que trabaja con `List<String>`
+## Exercise 10: Method that works with `List<String>`
 
-Crea un método:
+Create a method:
 
 ```java
 public static int countLongWords(List<String> words, int minLength)
 ```
 
-Debe contar cuántas palabras tienen longitud **mayor o igual** que `minLength`.
 
-En `main`, crea una lista con:
+You must count how many words are **greater than or equal to** length than `minLength`.
+
+In `main`, create a list with:
 
 - `"java"`
 - `"collections"`
 - `"list"`
 - `"arraylist"`
 
-Llama al método con `minLength = 5` e imprime el resultado.
+Call the method with `minLength = 5` and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -381,6 +392,7 @@ public class Main {
     }
 }
 ```
+
 
 </details>
 

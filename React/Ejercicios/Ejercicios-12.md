@@ -1,14 +1,14 @@
-# **Ejercicios - Tema 12: className, htmlFor y otros casos similares**
+# **Exercises - Topic 12: className, htmlFor and other similar cases**
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre los atributos “especiales” en React (`className`, `htmlFor`, `style`, eventos en camelCase, etc.).
+Below you will find **10 practical exercises** on “special” attributes in React (`className`, `htmlFor`, `style`, events in camelCase, etc.).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Corregir `class` por `className`**
+## **Exercise 1: Correct `class` by `className`**
 
-Este componente está escrito como HTML. Corrígelo para React:
+This component is written as HTML. Fix it for React:
 
 ```js
 function Card() {
@@ -18,7 +18,7 @@ function Card() {
 export default Card;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Card() {
@@ -32,18 +32,18 @@ export default Card;
 
 ---
 
-## **Ejercicio 2: `className` dinámico con ternario**
+## **Exercise 2: dynamic `className` with ternary**
 
-Crea un componente `ModeTag.jsx` con una variable `isDarkMode = true`.
+Creates an `ModeTag.jsx` component with an `isDarkMode = true` variable.
 
-- Si es `true`, usa `className="tagDark"`
-- Si es `false`, usa `className="tagLight"`
+- If it is `true`, use `className="tagDark"`
+- If it is `false`, use `className="tagLight"`
 
-Debe renderizar:
+You must render:
 
-- `span` con el texto: **"Mode"**
+- `span` with the text: **"Mode"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function ModeTag() {
@@ -59,9 +59,9 @@ export default ModeTag;
 
 ---
 
-## **Ejercicio 3: Corregir `for` por `htmlFor`**
+## **Exercise 3: Correct `for` by `htmlFor`**
 
-Este formulario tiene un error en React. Corrígelo:
+This form has a bug in React. Correct it:
 
 ```js
 function NameField() {
@@ -76,7 +76,7 @@ function NameField() {
 export default NameField;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function NameField() {
@@ -95,14 +95,14 @@ export default NameField;
 
 ---
 
-## **Ejercicio 4: Asociar `label` e `input` correctamente**
+## **Exercise 4: Associate `label` and `input` correctly**
 
-Crea un componente `PasswordField.jsx` que tenga:
+Create an `PasswordField.jsx` component that has:
 
-- `label` con `htmlFor="password"` y texto **"Password"**
-- `input` con `id="password"` y `type="password"`
+- `label` with `htmlFor="password"` and text **"Password"**
+- `input` with `id="password"` and `type="password"`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function PasswordField() {
@@ -121,18 +121,18 @@ export default PasswordField;
 
 ---
 
-## **Ejercicio 5: `style` como objeto (camelCase)**
+## **Exercise 5: `style` as object (camelCase)**
 
-Crea un componente `InlineBadge.jsx` que renderice un `span` con:
+Create an `InlineBadge.jsx` component that renders an `span` with:
 
-- Texto: **"New"**
-- `style` con:
+- Text: **"New"**
+- `style` with:
 
   - `padding: "6px 10px"`
   - `borderRadius: "999px"`
   - `border: "1px solid #ddd"`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function InlineBadge() {
@@ -156,9 +156,9 @@ export default InlineBadge;
 
 ---
 
-## **Ejercicio 6: Corregir evento `onclick` → `onClick`**
+## **Exercise 6: Correct event `onclick` → `onClick`**
 
-Este botón está mal escrito para React. Corrígelo:
+This button is misspelled for React. Correct it:
 
 ```js
 function App() {
@@ -168,7 +168,7 @@ function App() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {
@@ -184,14 +184,14 @@ export default App;
 
 ---
 
-## **Ejercicio 7: `tabIndex` y foco**
+## **Exercise 7: `tabIndex` and focus**
 
-Crea un componente `FocusableBox.jsx` que renderice un `div`:
+Create an `FocusableBox.jsx` component that renders an `div`:
 
-- Con `tabIndex={0}`
-- Con texto: **"Focus me"**
+- With `tabIndex={0}`
+- With text: **"Focus me"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function FocusableBox() {
@@ -205,14 +205,14 @@ export default FocusableBox;
 
 ---
 
-## **Ejercicio 8: `readOnly` y valor fijo**
+## **Exercise 8: `readOnly` and fixed value**
 
-Crea un componente `FixedInput.jsx` que renderice:
+Create an `FixedInput.jsx` component that renders:
 
-- Un `input` con `value="Read only"`
-- Y `readOnly`
+- An `input` with `value="Read only"`
+- AND `readOnly`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function FixedInput() {
@@ -226,14 +226,14 @@ export default FixedInput;
 
 ---
 
-## **Ejercicio 9: `autoFocus` (no `autofocus`)**
+## **Exercise 9: `autoFocus` (not `autofocus`)**
 
-Crea un componente `AutoFocusSearch.jsx` que renderice un input con:
+Create an `AutoFocusSearch.jsx` component that renders an input with:
 
 - `placeholder="Search"`
 - `autoFocus`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function AutoFocusSearch() {
@@ -247,14 +247,14 @@ export default AutoFocusSearch;
 
 ---
 
-## **Ejercicio 10: Mini-caso (elige la forma correcta)**
+## **Exercise 10: Mini-case (choose the correct form)**
 
-Quieres aplicar este estilo al `div`:
+You want to apply this style to `div`:
 
 - background color: `"#f5f5f5"`
 - padding: `"12px"`
 
-¿Cuál es la forma correcta en React?
+What is the correct way in React?
 
 1.
 
@@ -274,17 +274,16 @@ Quieres aplicar este estilo al `div`:
 <div style={{ "background-color": "#f5f5f5", padding: "12px" }} />
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-La opción correcta es la **2**:
+The correct option is **2**:
 
 ```js
 <div style={{ backgroundColor: "#f5f5f5", padding: "12px" }} />
 ```
 
-Motivo:
-
-- `style` recibe un objeto.
-- Las propiedades van en camelCase (`backgroundColor`).
+Reason:
+- `style` receives an item.
+- The properties go in camelCase (`backgroundColor`).
 
 </details>

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 12: Peticiones a una API con `fetch()`**
+# **Exercises - Topic 12: Requests to an API with `fetch()`**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre cómo hacer peticiones HTTP utilizando `fetch()` en JavaScript.
+Below you will find 5 practical exercises on how to make HTTP requests using `fetch()` in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Hacer una petición `GET` a una API pública**
+### **Exercise 1: Make an `GET` request to a public API**
 
-Realiza una petición `GET` a la API `https://jsonplaceholder.typicode.com/users/3` y muestra el nombre del usuario en la consola.
+Make an `GET` request to the `https://jsonplaceholder.typicode.com/users/3` API and display the user name in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/users/3")
@@ -23,11 +23,11 @@ fetch("https://jsonplaceholder.typicode.com/users/3")
 
 ---
 
-### **Ejercicio 2: Hacer una petición `POST` para crear un nuevo usuario**
+### **Exercise 2: Make an `POST` request to create a new user**
 
-Crea una función `createUser` que haga una petición `POST` a `https://jsonplaceholder.typicode.com/users` enviando un objeto con `name` y `email`. Muestra la respuesta en la consola.
+Create a function `createUser` that makes an `POST` request to `https://jsonplaceholder.typicode.com/users` by sending an object with `name` and `email`. Display the response in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 async function createUser() {
@@ -54,11 +54,11 @@ createUser();
 
 ---
 
-### **Ejercicio 3: Actualizar información de un post con `PUT`**
+### **Exercise 3: Update post information with `PUT`**
 
-Crea una función `updatePost` que haga una petición `PUT` a `https://jsonplaceholder.typicode.com/posts/2`, modificando el título y el contenido del post.
+Create a function `updatePost` that makes an `PUT` request to `https://jsonplaceholder.typicode.com/posts/2`, modifying the title and content of the post.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 async function updatePost() {
@@ -89,11 +89,11 @@ updatePost();
 
 ---
 
-### **Ejercicio 4: Modificar parcialmente un post con `PATCH`**
+### **Exercise 4: Partially modify a post with `PATCH`**
 
-Crea una función `modifyPostTitle` que haga una petición `PATCH` a `https://jsonplaceholder.typicode.com/posts/3`, modificando solo el título.
+Create a function `modifyPostTitle` that makes an `PATCH` request to `https://jsonplaceholder.typicode.com/posts/3`, modifying only the title.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 async function modifyPostTitle() {
@@ -120,11 +120,11 @@ modifyPostTitle();
 
 ---
 
-### **Ejercicio 5: Eliminar un usuario con `DELETE`**
+### **Exercise 5: Delete a user with `DELETE`**
 
-Crea una función `deleteUser` que haga una petición `DELETE` a `https://jsonplaceholder.typicode.com/users/5` y muestre un mensaje en la consola confirmando la eliminación.
+Create a function `deleteUser` that makes an `DELETE` request to `https://jsonplaceholder.typicode.com/users/5` and displays a message in the console confirming the deletion.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 async function deleteUser() {

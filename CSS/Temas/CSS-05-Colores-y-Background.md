@@ -1,19 +1,19 @@
-# **Tema 5: Colores y Fondos en CSS**
+# **Topic 5: Colors and Backgrounds in CSS**
 
-## **1. Introducción a los colores en CSS**
+## **1. Introduction to colors in CSS**
 
-CSS permite definir colores de varias maneras para aplicar a textos, fondos y bordes. Se pueden usar diferentes formatos para especificar colores.
+CSS allows you to define colors in various ways to apply to texts, backgrounds and borders. Different formats can be used to specify colors.
 
-### **Métodos para definir colores:**
+### **Methods to define colors:**
 
-- **Nombre del color**: `red`, `blue`, `green`, etc.
+- **Color name**: `red`, `blue`, `green`, etc.
 - **Hexadecimal**: `#ff0000`, `#00ff00`, `#0000ff`
 - **RGB**: `rgb(255, 0, 0)`, `rgb(0, 255, 0)`, `rgb(0, 0, 255)`
-- **RGBA**: `rgba(255, 0, 0, 0.5)` (con transparencia)
+- **RGBA**: `rgba(255, 0, 0, 0.5)` (with transparency)
 - **HSL**: `hsl(0, 100%, 50%)`
-- **HSLA**: `hsla(0, 100%, 50%, 0.5)` (con transparencia)
+- **HSLA**: `hsla(0, 100%, 50%, 0.5)` (with transparency)
 
-**Ejemplo:**
+**Example:**
 
 ```css
 .texto-rojo {
@@ -30,11 +30,12 @@ CSS permite definir colores de varias maneras para aplicar a textos, fondos y bo
 }
 ```
 
+
 ---
 
-## **2. Propiedad `background-color`**
+## **2. `background-color` property**
 
-Permite definir el color de fondo de un elemento.
+Allows you to define the background color of an element.
 
 ```css
 div {
@@ -42,7 +43,8 @@ div {
 }
 ```
 
-Se pueden combinar colores sólidos con transparencias mediante `rgba` o `hsla`.
+
+Solid colors can be combined with transparencies using `rgba` or `hsla`.
 
 ```css
 div {
@@ -50,11 +52,12 @@ div {
 }
 ```
 
+
 ---
 
-## **3. Fondos con imágenes**
+## **3. Backgrounds with images**
 
-CSS permite definir imágenes como fondo de un elemento con `background-image`.
+CSS allows you to define images as the background of an element with `background-image`.
 
 ```css
 div {
@@ -62,7 +65,8 @@ div {
 }
 ```
 
-También se puede ajustar el tamaño de la imagen:
+
+You can also adjust the image size:
 
 ```css
 div {
@@ -70,11 +74,12 @@ div {
 }
 ```
 
+
 ---
 
-## **4. Propiedad `background-repeat`**
+## **4. `background-repeat` property**
 
-Define cómo se repite una imagen de fondo.
+Defines how a background image repeats.
 
 ```css
 div {
@@ -84,11 +89,12 @@ div {
 }
 ```
 
+
 ---
 
-## **5. Propiedad `background-position`**
+## **5. Property `background-position`**
 
-Define la posición de una imagen de fondo dentro del contenedor.
+Defines the position of a background image within the container.
 
 ```css
 div {
@@ -96,7 +102,8 @@ div {
 }
 ```
 
-Valores posibles:
+
+Possible values:
 
 - `top left`, `top center`, `top right`
 - `center left`, `center center`, `center right`
@@ -104,9 +111,9 @@ Valores posibles:
 
 ---
 
-## **6. Propiedad `background-attachment`**
+## **6. Property `background-attachment`**
 
-Define si el fondo se desplaza con la página o permanece fijo.
+Defines whether the background moves with the page or remains fixed.
 
 ```css
 div {
@@ -114,19 +121,20 @@ div {
 }
 ```
 
-Valores posibles:
 
-- `scroll` (por defecto, el fondo se desplaza con la página)
-- `fixed` (el fondo permanece fijo al hacer scroll)
-- `local` (se mueve con el contenido del elemento)
+Possible values:
+
+- `scroll` (by default the background scrolls with the page)
+- `fixed` (the background remains fixed when scrolling)
+- `local` (moves with item content)
 
 ---
 
-## **7. Fondos con degradados**
+## **7. Backgrounds with gradients**
 
-CSS permite crear degradados con la propiedad `background`.
+CSS allows creating gradients with the `background` property.
 
-**Degradado lineal:**
+**Linear gradient:**
 
 ```css
 div {
@@ -134,7 +142,8 @@ div {
 }
 ```
 
-**Degradado radial:**
+
+**Radial Gradient:**
 
 ```css
 div {
@@ -142,20 +151,21 @@ div {
 }
 ```
 
----
-
-[![Colores en CSS](https://img.youtube.com/vi/zCdle5q-V14/0.jpg)](https://www.youtube.com/watch?v=zCdle5q-V14&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **8. Buenas prácticas al usar colores y fondos**
-
-- Usar colores con suficiente contraste para mejorar la legibilidad.
-- Preferir `rgba` para manejar transparencias cuando hagan falta.
-- No abusar de imágenes de fondo grandes para mejorar el rendimiento.
-- Usar `background-size` correctamente para que las imágenes se adapten correctamente.
-- Combinar colores y degradados para lograr diseños atractivos.
+[![Colors in CSS](https://img.youtube.com/vi/zCdle5q-V14/0.jpg)](https://www.youtube.com/watch?v=zCdle5q-V14&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-En el próximo tema, exploraremos **tipografías y fuentes en CSS**, incluyendo cómo personalizar textos y utilizar fuentes externas.
+## **8. Good practices when using colors and backgrounds**
+
+- Use colors with sufficient contrast to improve readability.
+- Prefer `rgba` to handle transparencies when necessary.
+- Do not abuse large background images to improve performance.
+- Use `background-size` correctly so that the images adapt correctly.
+- Combine colors and gradients to achieve attractive designs.
+
+---
+
+In the next topic, we will explore **typefaces and fonts in CSS**, including how to customize texts and use external fonts.

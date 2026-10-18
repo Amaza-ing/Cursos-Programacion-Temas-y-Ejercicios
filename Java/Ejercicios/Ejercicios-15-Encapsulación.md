@@ -1,27 +1,27 @@
-# Ejercicios - Tema 15: Encapsulación, getters & setters y modificadores de acceso
+# Exercises - Topic 15: Encapsulation, getters & setters and access modifiers
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **encapsulación**, **getters & setters** y **modificadores de acceso**: uso de `private`, control del estado, validación en setters, `public` vs _package-private_, `protected` (introducción) y casos típicos.
+Below you will find **10 practical exercises** on **encapsulation**, **getters & setters** and **access modifiers**: use of `private`, state control, validation in setters, `public` vs _package-private_, `protected` (introduction) and typical cases.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Encapsular atributos básicos
+## Exercise 1: Encapsulate basic attributes
 
-Crea una clase `Profile` con los atributos `private`:
+Create a class `Profile` with the attributes `private`:
 
 - `username` (String)
 - `age` (int)
 
-Crea:
+Create:
 
-- Constructor con ambos parámetros
+- Constructor with both parameters
 - `getUsername()`, `getAge()`
-- `setAge(int age)` que no permita valores negativos (si es negativo, no cambies el valor)
+- `setAge(int age)` not allowing negative values (if negative, don't change the value)
 
-En `main`, crea un objeto, imprime la edad, intenta poner `-5` y vuelve a imprimir.
+In `main`, create an object, print the age, try putting `-5` and print again.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Profile {
@@ -67,21 +67,21 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Setter con validación de `String`
+## Exercise 2: Setter with validation of `String`
 
-Crea una clase `Account` con:
+Create a class `Account` with:
 
 - `private String email`
 
-Crea:
+Create:
 
-- Constructor
+- Builder
 - `getEmail()`
-- `setEmail(String email)` que ignore `null` o cadenas vacías/blancas (`isBlank()`)
+- `setEmail(String email)` to ignore `null` or empty/white strings (`isBlank()`)
 
-Prueba en `main` asignando `"   "` y luego un email válido.
+Try `main` by assigning `"   "` and then a valid email.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Account {
@@ -123,20 +123,20 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Evitar setters peligrosos
+## Exercise 3: Avoid dangerous setters
 
-Crea una clase `BankAccount` con:
+Create a class `BankAccount` with:
 
 - `private double balance`
 
-Requisitos:
+Requirements:
 
-- NO crees `setBalance`
-- Crea `getBalance()`
-- Crea `deposit(double amount)` (solo si amount > 0)
-- Crea `withdraw(double amount)` (solo si amount > 0 y <= balance, devuelve boolean)
+- DO NOT believe `setBalance`
+- Create `getBalance()`
+- Create `deposit(double amount)` (only if amount > 0)
+- Create `withdraw(double amount)` (only if amount > 0 and <= balance, devuelve boolean)
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class BankAccount {
@@ -177,19 +177,19 @@ public class BankAccount {
 
 ---
 
-## Ejercicio 4: Getter boolean con convención `is...`
+## Exercise 4: Getter boolean with `is...` convention
 
-Crea una clase `FeatureFlag` con:
+Create a class `FeatureFlag` with:
 
 - `private boolean enabled`
 
-Crea:
+Create:
 
-- Constructor que reciba `enabled`
-- Getter llamado `isEnabled()`
-- Método `enable()` y `disable()`
+- Builder who receives `enabled`
+- Getter called `isEnabled()`
+- `enable()` and `disable()` method
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class FeatureFlag {
@@ -217,21 +217,21 @@ public class FeatureFlag {
 
 ---
 
-## Ejercicio 5: Constructor reutilizando setters
+## Exercise 5: Constructor reusing setters
 
-Crea una clase `User` con:
+Create a class `User` with:
 
 - `private String name`
 - `private int age`
 
-Crea setters con validación:
+Create setters with validation:
 
-- `setName`: si `null` o `isBlank()`, asigna `"Unknown"`
-- `setAge`: si `< 0`, asigna `0`
+- `setName`: if `null` or `isBlank()`, assign `"Unknown"`
+- `setAge`: if `< 0`, assign `0`
 
-En el constructor, en vez de asignar directamente, llama a los setters.
+In the constructor, instead of assigning directly, it calls the setters.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class User {
@@ -275,19 +275,19 @@ public class User {
 
 ---
 
-## Ejercicio 6: Campo “solo lectura” (sin setter)
+## Exercise 6: “Read only” field (without setter)
 
-Crea una clase `Ticket` con:
+Create a class `Ticket` with:
 
 - `private String id`
 - `private String description`
 
-Requisitos:
+Requirements:
 
-- `id` se asigna en el constructor y NO tiene setter
-- `description` sí puede cambiar con `setDescription(String description)` con validación `isBlank()`
+- `id` is assigned in the constructor and has NO setter
+- `description` can change with `setDescription(String description)` with `isBlank()` validation
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Ticket {
@@ -321,20 +321,19 @@ public class Ticket {
 
 ---
 
-## Ejercicio 7: _Package-private_ (sin modificador) en una clase auxiliar
+## Exercise 7: _Package-private_ (without modifier) in a helper class
 
-Crea un package `app.model` con:
+Create an `app.model` package with:
 
-- Clase `User` (`public`)
-- Clase `InternalLogger` (sin modificador, _package-private_)
+- `User` class (`public`)
+- `InternalLogger` class (no modifier, _package-private_)
 
-`InternalLogger` debe tener un método `log(String message)`.
+`InternalLogger` must have an `log(String message)` method.
+In `User`, create a method `printInfo()` that uses `InternalLogger`.
 
-En `User`, crea un método `printInfo()` que use `InternalLogger`.
+Check that from an `Main` in another package you CANNOT use `InternalLogger`.
 
-Comprueba que desde un `Main` en otro package NO puedes usar `InternalLogger`.
-
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app.model;
@@ -384,18 +383,18 @@ public class Main {
 
 ---
 
-## Ejercicio 8: `private` en atributos y control de rango
+## Exercise 8: `private` in attributes and range control
 
-Crea una clase `Temperature` con:
+Create a class `Temperature` with:
 
 - `private double celsius`
 
-Crea:
+Create:
 
-- Getter
-- Setter que solo permita valores entre `-100` y `100` (si no, no cambies el valor)
+-Getter
+- Setter that only allows values between `-100` and `100` (if not, don't change the value)
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Temperature {
@@ -423,21 +422,21 @@ public class Temperature {
 
 ---
 
-## Ejercicio 9: `protected` (introducción) con herencia
+## Exercise 9: `protected` (introduction) with inheritance
 
-Crea una clase `BaseMessage` con:
+Create a class `BaseMessage` with:
 
 - `protected String prefix`
 
-Crea un constructor que inicialice el prefijo y un método `print(String text)` que imprima:
+Create a constructor that initializes the prefix and an `print(String text)` method that prints:
 
 ```
 prefix + text
 ```
 
-Crea una clase `ErrorMessage extends BaseMessage` que use el mismo prefijo pero añada `"ERROR: "` al constructor.
+Create a class `ErrorMessage extends BaseMessage` that uses the same prefix but adds `"ERROR: "` to the constructor.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class BaseMessage {
@@ -474,23 +473,23 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Diseñar un objeto “seguro” con métodos de intención
+## Exercise 10: Design a “safe” object with intent methods
 
-Crea una clase `InventoryItem` con:
+Create a class `InventoryItem` with:
 
 - `private String name`
 - `private int stock`
 
-Requisitos:
+Requirements:
 
-- Constructor con `name` y `stock` (si stock < 0, usar 0)
+- Builder with `name` and `stock` (if stock < 0, usar 0)
 - Getter para ambos
 - NO crear `setStock`
 - Crear métodos:
   - `addStock(int amount)` (solo si amount > 0)
-  - `removeStock(int amount)` (solo si amount > 0 y <= stock, devuelve boolean)
+  - `removeStock(int amount)` (only if amount > 0 and <= stock, devuelve boolean)
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class InventoryItem {

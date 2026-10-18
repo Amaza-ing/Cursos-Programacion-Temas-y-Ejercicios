@@ -1,150 +1,151 @@
-# Ejercicios - Tema 04: Instalación y configuración de GitHub Copilot
+# Exercises - Topic 04: Installation and configuration of GitHub Copilot
 
-A continuación, encontrarás ejercicios prácticos sobre instalación, configuración y primeros pasos con GitHub Copilot en un entorno de desarrollo.
+Below you'll find hands-on exercises on installing, configuring, and getting started with GitHub Copilot in a development environment.
 
-## Ejercicio 1: Comprobar los requisitos antes de instalar GitHub Copilot
+## Exercise 1: Check requirements before installing GitHub Copilot
 
-Antes de instalar GitHub Copilot, indica qué elementos deberías comprobar para asegurarte de que puedes utilizarlo correctamente en tu equipo.
+Before you install GitHub Copilot, here are some things you should check to make sure you can use it correctly on your computer.
 
-Debes incluir, al menos, aspectos relacionados con la cuenta, el editor de código, la extensión y la conexión.
+You should include, at least, aspects related to the account, the code editor, the extension, and the connection.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Antes de instalar GitHub Copilot, debería comprobar lo siguiente:
+Before installing GitHub Copilot, you should check the following:
 
-1. Tener una cuenta de GitHub activa.
-2. Tener acceso a una suscripción de GitHub Copilot, ya sea individual, educativa, de empresa o proporcionada por una organización.
-3. Tener instalado un editor compatible, como Visual Studio Code o un IDE de JetBrains.
-4. Tener conexión a Internet, ya que Copilot necesita comunicarse con los servicios de GitHub.
-5. Comprobar que el editor está actualizado.
-6. Instalar la extensión oficial de GitHub Copilot.
-7. Iniciar sesión en GitHub desde el editor.
-8. Aceptar los permisos necesarios para vincular el editor con la cuenta de GitHub.
-9. Revisar si la organización tiene políticas específicas que limiten o configuren el uso de Copilot.
+1. Have an active GitHub account.
+2. Have access to a GitHub Copilot subscription, whether individual, educational, enterprise, or provided by an organization.
+3. Have a compatible editor installed, such as Visual Studio Code or a JetBrains IDE.
+4. Have an Internet connection, since Copilot needs to communicate with GitHub services.
+5. Check that the editor is updated.
+6. Install the official GitHub Copilot extension.
+7. Sign in to GitHub from the editor.
+8. Accept the necessary permissions to link the editor with the GitHub account.
+9. Review if the organization has specific policies that limit or configure the use of Copilot.
 
 </details>
 
-## Ejercicio 2: Instalación de GitHub Copilot en Visual Studio Code
+## Exercise 2: Installing GitHub Copilot in Visual Studio Code
 
-Ordena los pasos que seguirías para instalar y activar GitHub Copilot en Visual Studio Code.
+Order the steps you would follow to install and activate GitHub Copilot in Visual Studio Code.
 
-Pasos desordenados:
+Messy steps:
 
-- Buscar la extensión de GitHub Copilot.
-- Abrir Visual Studio Code.
-- Iniciar sesión con la cuenta de GitHub.
-- Abrir el panel de extensiones.
-- Instalar la extensión oficial.
-- Comprobar que aparecen sugerencias al escribir código.
+- Find the GitHub Copilot extension.
+- Open Visual Studio Code.
+- Sign in with GitHub account.
+- Open the extensions panel.
+- Install the official extension.
+- Check that suggestions appear when writing code.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-El orden correcto sería:
+The correct order would be:
 
-1. Abrir Visual Studio Code.
-2. Abrir el panel de extensiones.
-3. Buscar la extensión de GitHub Copilot.
-4. Instalar la extensión oficial.
-5. Iniciar sesión con la cuenta de GitHub.
-6. Comprobar que aparecen sugerencias al escribir código.
+1. Open Visual Studio Code.
+2. Open the extensions panel.
+3. Search for the GitHub Copilot extension.
+4. Install the official extension.
+5. Sign in with the GitHub account.
+6. Check that suggestions appear when writing code.
 
-Una vez hecho esto, se puede crear un archivo de prueba, por ejemplo `app.js`, y escribir un comentario como este:
+Once this is done, you can create a test file, for example `app.js`, and write a comment like this:
 
 ```javascript
 // Crear una función que reciba un array de precios y devuelva el total
 ```
 
-Si Copilot está activo, debería proponer una posible implementación.
+
+If Copilot is active, it should propose a possible implementation.
 
 </details>
 
-## Ejercicio 3: Instalación de GitHub Copilot en JetBrains
+## Exercise 3: Installing GitHub Copilot on JetBrains
 
-Explica qué pasos seguirías para instalar GitHub Copilot en un IDE de JetBrains, como IntelliJ IDEA, WebStorm o PyCharm.
+Explain what steps you would take to install GitHub Copilot on a JetBrains IDE, such as IntelliJ IDEA, WebStorm, or PyCharm.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Los pasos serían:
+The steps would be:
 
-1. Abrir el IDE de JetBrains.
-2. Entrar en `Settings` o `Preferences`.
-3. Ir al apartado `Plugins`.
-4. Buscar `GitHub Copilot` en el marketplace de plugins.
-5. Instalar el plugin oficial.
-6. Reiniciar el IDE si se solicita.
-7. Iniciar sesión con la cuenta de GitHub.
-8. Autorizar la conexión entre GitHub y el IDE.
-9. Abrir un archivo de código y comprobar que Copilot ofrece sugerencias.
+1. Open the JetBrains IDE.
+2. Enter `Settings` or `Preferences`.
+3. Go to the `Plugins` section.
+4. Search `GitHub Copilot` in the plugin marketplace.
+5. Install the official plugin.
+6. Restart the IDE if requested.
+7. Sign in with the GitHub account.
+8. Authorize the connection between GitHub and the IDE.
+9. Open a code file and check that Copilot offers suggestions.
 
-Para comprobarlo, se puede crear un archivo como `ProductService.java` y escribir:
+To check this, you can create a file like `ProductService.java` and write:
 
 ```java
 // Crear un método que calcule el precio final aplicando un descuento
 ```
 
-Si Copilot está correctamente activado, debería sugerir una implementación relacionada con ese comentario.
+
+If Copilot is correctly enabled, it should suggest an implementation related to that comment.
+</details>
+
+## Exercise 4: Differentiate inline suggestions and Copilot Chat
+
+Read the following situations and indicate whether it would be more appropriate to use inline suggestions or Copilot Chat.
+
+1. You are writing a simple function and want Copilot to complete the code.
+2. You have an error in a class and you want Copilot to explain what may be happening.
+3. You want to quickly generate a condition inside a loop.
+4. You want Copilot to compare two possible ways to solve a problem.
+5. You want to ask for a general explanation of an entire file.
+
+<details>
+<summary>Show solution</summary>
+
+1. **Inline Suggestions**. They are suitable for completing code while typing.
+2. **Copilot Chat**. It allows you to explain errors and reason about the context.
+3. **Inline suggestions**. It is a quick help within the writing flow.
+4. **Copilot Chat**. It is best to compare alternatives and ask for reasoning.
+5. **Copilot Chat**. Can analyze and explain code conversationally.
+
+Inline suggestions are useful when you already know what you want to write and just need help completing it. Copilot Chat is best suited when explanation, analysis, comparison, or a more elaborate response is needed.
 
 </details>
 
-## Ejercicio 4: Diferenciar sugerencias inline y Copilot Chat
+## Exercise 5: Configure Copilot to work with more control
 
-Lee las siguientes situaciones e indica si sería más adecuado usar sugerencias inline o Copilot Chat.
-
-1. Estás escribiendo una función sencilla y quieres que Copilot complete el código.
-2. Tienes un error en una clase y quieres que Copilot te explique qué puede estar pasando.
-3. Quieres generar rápidamente una condición dentro de un bucle.
-4. Quieres que Copilot compare dos posibles formas de resolver un problema.
-5. Quieres pedir una explicación general de un archivo completo.
+Imagine a student installs GitHub Copilot and starts accepting all suggestions automatically without reviewing them. Write a short list of recommendations to use Copilot in a more controlled way.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-1. **Sugerencias inline**. Son adecuadas para completar código mientras se escribe.
-2. **Copilot Chat**. Permite explicar errores y razonar sobre el contexto.
-3. **Sugerencias inline**. Es una ayuda rápida dentro del flujo de escritura.
-4. **Copilot Chat**. Es mejor para comparar alternativas y pedir razonamiento.
-5. **Copilot Chat**. Puede analizar y explicar código de forma conversacional.
+Recommendations:
 
-Las sugerencias inline son útiles cuando ya se sabe qué se quiere escribir y solo se necesita ayuda para completarlo. Copilot Chat es más adecuado cuando se necesita explicación, análisis, comparación o una respuesta más elaborada.
+1. Always read the generated code before accepting it.
+2. Check that the suggestion fits the objective of the file.
+3. Do not accept code that is not understood.
+4. Test the code after checking in.
+5. Review names of variables, functions and classes.
+6. Check that no unnecessary dependencies have been introduced.
+7. Verify that the code does not expose sensitive data.
+8. Ask Copilot for an explanation if the suggestion is not clear.
+9. Use Copilot as an aid, not a substitute for human review.
+
+A correct way to work would be to accept only the useful parts of a suggestion and manually modify what does not fit the project.
 
 </details>
 
-## Ejercicio 5: Configurar Copilot para trabajar con más control
+## Exercise 6: First test file with GitHub Copilot
 
-Imagina que un alumno instala GitHub Copilot y empieza a aceptar todas las sugerencias automáticamente sin revisarlas. Escribe una pequeña lista de recomendaciones para usar Copilot de forma más controlada.
+Create a file called `cart.js` and write an initial comment to help Copilot generate a function to calculate a cart total. The cart will have products with name, price and quantity.
 
-<details>
-<summary>Mostrar solución</summary>
-
-Recomendaciones:
-
-1. Leer siempre el código generado antes de aceptarlo.
-2. Comprobar que la sugerencia encaja con el objetivo del archivo.
-3. No aceptar código que no se entiende.
-4. Probar el código después de incorporarlo.
-5. Revisar nombres de variables, funciones y clases.
-6. Comprobar que no se han introducido dependencias innecesarias.
-7. Verificar que el código no expone datos sensibles.
-8. Pedir a Copilot una explicación si la sugerencia no está clara.
-9. Usar Copilot como ayuda, no como sustituto de la revisión humana.
-
-Una forma correcta de trabajar sería aceptar solo las partes útiles de una sugerencia y modificar manualmente lo que no encaje con el proyecto.
-
-</details>
-
-## Ejercicio 6: Primer archivo de prueba con GitHub Copilot
-
-Crea un archivo llamado `cart.js` y escribe un comentario inicial que ayude a Copilot a generar una función para calcular el total de un carrito. El carrito tendrá productos con nombre, precio y cantidad.
-
-Después, indica qué código podría generar Copilot y cómo lo revisarías.
+Next, indicate what code Copilot might generate and how you would review it.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un comentario adecuado podría ser:
+An appropriate comment could be:
 
 ```javascript
 // Crear una función que reciba un array de productos y calcule el total del carrito.
@@ -152,7 +153,8 @@ Un comentario adecuado podría ser:
 // La función debe devolver el total como número.
 ```
 
-Copilot podría generar algo parecido a esto:
+
+Copilot could generate something like this:
 
 ```javascript
 function calculateCartTotal(products) {
@@ -162,16 +164,17 @@ function calculateCartTotal(products) {
 }
 ```
 
-La revisión debería comprobar:
 
-1. Que la función recibe el parámetro correcto.
-2. Que usa nombres claros en inglés.
-3. Que multiplica correctamente `price` por `quantity`.
-4. Que devuelve un número.
-5. Que no modifica el array original.
-6. Que funciona con un array vacío.
+The review should check:
 
-Se podría probar con este ejemplo:
+1. That the function receives the correct parameter.
+2. That uses clear names in English.
+3. That correctly multiplies `price` by `quantity`.
+4. Which returns a number.
+5. That does not modify the original array.
+6. That works with an empty array.
+
+You could try this example:
 
 ```javascript
 const products = [
@@ -181,5 +184,6 @@ const products = [
 
 console.log(calculateCartTotal(products)); // 75
 ```
+
 
 </details>

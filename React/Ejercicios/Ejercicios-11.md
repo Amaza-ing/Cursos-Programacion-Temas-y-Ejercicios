@@ -1,20 +1,20 @@
-**Ejercicios - Tema 11: Props Padre a Hijo**
+**Exercises - Topic 11: Props Father to Son**
 
-A continuación, encontrarás **10 ejercicios prácticos** para aprender a pasar datos desde un componente padre a un componente hijo usando **props**.
+Below you will find **10 practical exercises** to learn how to pass data from a parent component to a child component using **props**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Pasar un texto como prop**
+## **Exercise 1: Pass a text as a prop**
 
-Crea un componente `Headline.jsx` que reciba una prop `text` y renderice un `h2` con ese texto.
+Create an `Headline.jsx` component that receives an `text` prop and renders an `h2` with that text.
 
-Luego, en `App.jsx`, úsalo así:
+Then in `App.jsx`, use it like this:
 
-- `Headline` con `text="React Basics"`
+- `Headline` with `text="React Basics"`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`Headline.jsx`**
 
@@ -46,15 +46,15 @@ export default App;
 
 ---
 
-## **Ejercicio 2: Pasar un número y mostrarlo**
+## **Exercise 2: Pass a number and display it**
 
-Crea un componente `PriceTag.jsx` que reciba una prop `price` (número) y muestre:
+Create an `PriceTag.jsx` component that receives an `price` (number) prop and displays:
 
-- `p` con: **"Price: X€"**
+- `p` with: **"Price: €X"**
 
-En `App.jsx`, pásale `price={29}`.
+In `App.jsx`, pass it `price={29}`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`PriceTag.jsx`**
 
@@ -86,16 +86,16 @@ export default App;
 
 ---
 
-## **Ejercicio 3: Prop booleana con renderizado condicional**
+## **Exercise 3: Boolean Prop with Conditional Rendering**
 
-Crea un componente `FeatureBadge.jsx` que reciba una prop booleana `isFeatured`.
+Create an `FeatureBadge.jsx` component that receives an `isFeatured` boolean prop.
 
-- Si `isFeatured` es `true`, muestra: `span` con **"Featured"**.
-- Si es `false`, no muestres nada.
+- If `isFeatured` is `true`, displays: `span` with **"Featured"**.
+- If it is `false`, don't show anything.
 
-Pruébalo en `App.jsx` con `isFeatured` en `true`.
+Try it on `App.jsx` with `isFeatured` on `true`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`FeatureBadge.jsx`**
 
@@ -127,17 +127,17 @@ export default App;
 
 ---
 
-## **Ejercicio 4: Pasar una variable (no un literal)**
+## **Exercise 4: Pass a variable (not a literal)**
 
-En `App.jsx`, crea:
+In `App.jsx`, create:
 
 - `const userName = "Marta";`
 
-Crea un componente `Greeting.jsx` que reciba `name` y muestre:
+Create an `Greeting.jsx` component that receives `name` and displays:
 
-- `p` con: **"Hello, Marta"** (dinámico).
+- `p` with: **"Hello, Marta"** (dynamic).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`Greeting.jsx`**
 
@@ -171,21 +171,21 @@ export default App;
 
 ---
 
-## **Ejercicio 5: Pasar varias props (destructuring en el hijo)**
+## **Exercise 5: Pass several props (destructuring in the child)**
 
-Crea un componente `ProfileSummary.jsx` que reciba:
+Create an `ProfileSummary.jsx` component that receives:
 
 - `name`
 - `jobTitle`
 
-Debe renderizar:
+You must render:
 
-- `h3` con el nombre
-- `p` con: **"Job: ..."**
+- `h3` with name
+- `p` with: **"Job: ..."**
 
-En `App.jsx`, úsalo con `name="Alex"` y `jobTitle="Designer"`.
+On `App.jsx`, use it with `name="Alex"` and `jobTitle="Designer"`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`ProfileSummary.jsx`**
 
@@ -222,27 +222,27 @@ export default App;
 
 ---
 
-## **Ejercicio 6: Pasar un objeto completo como prop**
+## **Exercise 6: Passing an entire object as a prop**
 
-Crea un componente `UserRow.jsx` que reciba una prop `user` (objeto) con:
+Create an `UserRow.jsx` component that receives an `user` prop (object) with:
 
 - `name`
 - `email`
 
-Debe renderizar:
+You must render:
 
-- `p` con: **"Name: ..."**
-- `p` con: **"Email: ..."**
+- `p` with: **"Name: ..."**
+- `p` with: **"Email: ..."**
 
-En `App.jsx`, crea:
+In `App.jsx`, create:
 
 ```js
 const user = { name: "Leo", email: "leo@mail.com" };
 ```
 
-Y pásalo como `user={user}`.
+And pass it as `user={user}`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`UserRow.jsx`**
 
@@ -281,13 +281,13 @@ export default App;
 
 ---
 
-## **Ejercicio 7: Props + lista de objetos**
+## **Exercise 7: Props + list of objects**
 
-Crea un componente `CourseItem.jsx` que reciba `title` y `level` y renderice:
+Create an `CourseItem.jsx` component that receives `title` and `level` and renders:
 
-- `li` con: **"Title - Level"**
+- `li` with: **"Title - Level"**
 
-Crea un componente `CoursesList.jsx` que tenga:
+Create an `CoursesList.jsx` component that has:
 
 ```js
 const courses = [
@@ -297,11 +297,11 @@ const courses = [
 ];
 ```
 
-- Renderiza un `ul`.
-- Usa `.map()` para renderizar `CourseItem`.
-- Pon la `key` en el componente repetido usando `course.id`.
+- Renders an `ul`.
+- Use `.map()` to render `CourseItem`.
+- Put the `key` in the repeated component using `course.id`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`CourseItem.jsx`**
 
@@ -345,9 +345,9 @@ export default CoursesList;
 
 ---
 
-## **Ejercicio 8: Corregir el error de llaves en una prop dinámica**
+## **Exercise 8: Correct the braces error in a dynamic prop**
 
-Este código tiene un error. Corrígelo:
+This code has an error. Correct it:
 
 ```js
 function App() {
@@ -357,9 +357,9 @@ function App() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-En JSX, las variables se pasan con llaves:
+In JSX, variables are passed with curly braces:
 
 ```js
 function App() {
@@ -375,16 +375,16 @@ export default App;
 
 ---
 
-## **Ejercicio 9: Props con valor por defecto (default)**
+## **Exercise 9: Props with default value (default)**
 
-Crea un componente `Avatar.jsx` que reciba una prop `altText`.
+Create an `Avatar.jsx` component that receives an `altText` prop.
 
-- Si `altText` no viene, usa por defecto `"User avatar"`.
-- Renderiza un `img` con `src="/avatar.png"` y `alt={altText}`.
+- If `altText` is not included, use `"User avatar"` by default.
+- Renders an `img` with `src="/avatar.png"` and `alt={altText}`.
 
-Pista: puedes definir el valor por defecto en el destructuring.
+Hint: you can define the default value in destructuring.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Avatar({ altText = "User avatar" }) {
@@ -398,9 +398,9 @@ export default Avatar;
 
 ---
 
-## **Ejercicio 10: Elegir qué pasar como prop (mini-caso)**
+## **Exercise 10: Choose what to pass as a prop (mini-case)**
 
-Tienes este componente hijo:
+You have this child component:
 
 ```js
 function ProductCard({ name, price }) {
@@ -413,15 +413,15 @@ function ProductCard({ name, price }) {
 }
 ```
 
-Y estos datos en el padre:
+And this data in the parent:
 
 ```js
 const product = { id: 7, name: "Chair", price: 40 };
 ```
 
-Escribe el JSX correcto para renderizar `ProductCard` pasando las props adecuadas.
+Write the correct JSX to render `ProductCard` by passing the appropriate props.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <ProductCard name={product.name} price={product.price} />

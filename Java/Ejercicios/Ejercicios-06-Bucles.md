@@ -1,16 +1,16 @@
-# Ejercicios - Tema 6: Bucles (while y for)
+# Exercises - Topic 6: Loops (while and for)
 
-A continuación encontrarás **10 ejercicios prácticos** sobre el uso de bucles `while`, `do-while` y `for`.
+Below you will find **10 practical exercises** on using `while`, `do-while` and `for` loops.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Contar del 1 al 10 con `while`
+## Exercise 1: Count from 1 to 10 with `while`
 
-Escribe un programa que muestre por consola los números del **1 al 10** usando un bucle `while`.
+Write a program that displays the numbers **1 to 10** on the console using an `while` loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -29,11 +29,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Contar del 10 al 1 con `for`
+## Exercise 2: Count from 10 to 1 with `for`
 
-Muestra por consola los números del **10 al 1** usando un bucle `for`.
+Display the numbers **10 to 1** via console using an `for` loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -49,11 +49,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Mostrar solo números pares
+## Exercise 3: Show only even numbers
 
-Usa un bucle `for` para mostrar por consola los números **pares del 1 al 20**.
+Use an `for` loop to display the **even numbers from 1 to 20** on the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -71,11 +71,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Sumar números del 1 al 100
+## Exercise 4: Add numbers from 1 to 100
 
-Calcula la **suma de los números del 1 al 100** usando un bucle.
+Calculates the **sum of numbers 1 to 100** using a loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -95,11 +95,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Contar cuántos múltiplos de 3 hay entre 1 y 50
+## Exercise 5: Count how many multiples of 3 there are between 1 and 50
 
-Usa un bucle para contar cuántos números entre **1 y 50** son múltiplos de 3.
+Use a loop to count how many numbers between **1 and 50** are multiples of 3.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -121,11 +121,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Repetir un mensaje 5 veces con `do-while`
+## Exercise 6: Repeat a message 5 times with `do-while`
 
-Muestra el mensaje `"Learning Java"` **5 veces** usando un bucle `do-while`.
+Displays the message `"Learning Java"` **5 times** using an `do-while` loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -144,11 +144,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Calcular el factorial de un número
+## Exercise 7: Calculate the factorial of a number
 
-Declara una variable `number` con valor `5` y calcula su **factorial** usando un bucle.
+Declare a variable `number` with value `5` and calculate its **factorial** using a loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -169,11 +169,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Sumar solo los números impares del 1 al 20
+## Exercise 8: Add only the odd numbers from 1 to 20
 
-Usa un bucle para sumar únicamente los **números impares** entre 1 y 20.
+Use a loop to add only the **odd numbers** between 1 and 20.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -195,11 +195,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Contar caracteres de una cadena
+## Exercise 9: Count characters in a string
 
-Declara una variable `text` con el valor `"Java"` y usa un bucle para contar cuántos caracteres tiene.
+Declare a variable `text` with the value `"Java"` and use a loop to count how many characters it has.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -220,13 +220,13 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Simular intentos hasta alcanzar un valor
+## Exercise 10: Simulate attempts until a value is reached
 
-Declara una variable `progress` que empiece en `0`.  
-En cada iteración aumenta su valor en `15` hasta que llegue o supere `100`.  
-Muestra cuántos intentos han sido necesarios.
+Declare an `progress` variable starting with `0`.  
+In each iteration its value increases by `15` until it reaches or exceeds `100`.  
+Shows how many attempts were necessary.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

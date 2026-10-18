@@ -1,35 +1,35 @@
-# **Tema 8: Imágenes en HTML y optimización para la web**
+# **Topic 8: Images in HTML and optimization for the web**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Las imágenes son una parte esencial del contenido web, ya que enriquecen la experiencia del usuario y mejoran la presentación visual de una página. HTML proporciona la etiqueta `<img>` para insertar imágenes, junto con varios atributos para mejorar su accesibilidad y rendimiento.
+Images are an essential part of web content, as they enrich the user experience and improve the visual presentation of a page. HTML provides the `<img>` tag for inserting images, along with several attributes to improve their accessibility and performance.
 
 ---
 
-## **2. Insertar imágenes con `<img>`**
+## **2. Insert images with `<img>`**
 
-La etiqueta `<img>` permite mostrar imágenes en una página web. Es un elemento de tipo **vacío**, lo que significa que no necesita una etiqueta de cierre.
+The `<img>` tag allows images to be displayed on a web page. It is an element of type **empty**, which means it does not need a closing tag.
 
-### **Ejemplo básico:**
+### **Basic example:**
 
 ```html
 <img src="imagen.jpg" alt="Descripción de la imagen" />
 ```
 
-### **Explicación de los atributos:**
+### **Explanation of attributes:**
 
-- `src`: Define la ruta o URL de la imagen.
-- `alt`: Proporciona una descripción alternativa en caso de que la imagen no se cargue o para accesibilidad.
+- `src`: Defines the path or URL of the image.
+- `alt`: Provides an alternative description in case the image does not load or for accessibility.
 
 ---
 
-## **3. Atributos importantes de `<img>`**
+## **3. Important attributes of `<img>`**
 
-### **3.1. Atributos de tamaño: `width` y `height`**
+### **3.1. Size attributes: `width` and `height`**
 
-Estos atributos permiten definir el ancho y la altura de una imagen en píxeles o en porcentajes.
+These attributes allow you to define the width and height of an image in pixels or percentages.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <img
@@ -40,13 +40,13 @@ Estos atributos permiten definir el ancho y la altura de una imagen en píxeles 
 />
 ```
 
-> **Nota:** Es preferible controlar el tamaño con CSS para mayor flexibilidad.
+> **Note:** It is preferable to control the size with CSS for greater flexibility.
 
-### **3.2. `loading="lazy"` (Carga diferida)**
+### **3.2. `loading="lazy"` (Lazy Loading)**
 
-El atributo `loading="lazy"` permite que las imágenes se carguen solo cuando el usuario se desplaza hasta ellas, mejorando el rendimiento de la página.
+The `loading="lazy"` attribute allows images to load only when the user scrolls to them, improving page performance.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <img src="imagen.jpg" alt="Imagen optimizada" loading="lazy" />
@@ -54,32 +54,32 @@ El atributo `loading="lazy"` permite que las imágenes se carguen solo cuando el
 
 ---
 
-## **4. Uso de imágenes en diferentes formatos**
+## **4. Use of images in different formats**
 
-Dependiendo de la necesidad, podemos usar distintos formatos de imagen en la web:
+Depending on the need, we can use different image formats on the web:
 
 ### **4.1. `.jpg` (JPEG)**
 
-- Formato comúnmente utilizado para fotografías.
-- Buena compresión, pero con pérdida de calidad.
+- Format commonly used for photographs.
+- Good compression, but with loss of quality.
 
 ### **4.2. `.png`**
 
-- Soporta transparencia.
-- Ideal para gráficos con fondos transparentes.
-- Archivos más pesados que JPEG.
+- Supports transparency.
+- Ideal for graphics with transparent backgrounds.
+- Files larger than JPEG.
 
 ### **4.3. `.webp`**
 
-- Formato moderno que ofrece mejor compresión y calidad.
-- Compatible con la mayoría de navegadores modernos.
+- Modern format that offers better compression and quality.
+- Compatible with most modern browsers.
 
 ### **4.4. `.svg`**
 
-- Formato vectorial, escalable sin pérdida de calidad.
-- Ideal para logotipos e íconos.
+- Vector format, scalable without loss of quality.
+- Ideal for logos and icons.
 
-**Ejemplo de uso de un archivo SVG:**
+**Example of using an SVG file:**
 
 ```html
 <img src="logo.svg" alt="Logotipo en formato SVG" />
@@ -87,18 +87,18 @@ Dependiendo de la necesidad, podemos usar distintos formatos de imagen en la web
 
 ---
 
-[![Imágenes en HTML](https://img.youtube.com/vi/09vAXmbiD_4/0.jpg)](https://www.youtube.com/watch?v=09vAXmbiD_4&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Images in HTML](https://img.youtube.com/vi/09vAXmbiD_4/0.jpg)](https://www.youtube.com/watch?v=09vAXmbiD_4&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **5. Buenas prácticas para la optimización de imágenes**
+## **5. Good practices for image optimization**
 
-- **Reducir el tamaño de las imágenes** antes de subirlas a la web.
-- Usar **formatos optimizados** como WebP cuando sea posible.
-- Aplicar **compresión sin pérdida** con herramientas como TinyPNG o Squoosh.
-- Implementar `loading="lazy"` para mejorar el rendimiento en páginas con muchas imágenes.
-- Definir correctamente el `alt` para mejorar la accesibilidad y SEO.
+- **Reduce the size of the images** before uploading them to the website.
+- Use **optimized formats** such as WebP when possible.
+- Apply **lossless compression** with tools like TinyPNG or Squoosh.
+- Implement `loading="lazy"` to improve performance on image-heavy pages.
+- Correctly define the `alt` to improve accessibility and SEO.
 
 ---
 
-En el próximo tema, exploraremos **las tablas en HTML**, su estructura y cómo utilizarlas para organizar información en la web.
+In the next topic, we will explore HTML tables, their structure, and how to use them to organize information on the web.

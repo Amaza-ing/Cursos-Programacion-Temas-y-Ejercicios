@@ -1,10 +1,10 @@
-# Tema 8 — Legibilidad
+# Topic 8 — Readability
 
-## 1. Objetivo del tema
+## 1. Objective of the topic
 
-En el **Tema 7** completamos el CRUD de nuestra aplicación Spring MVC.
+In **Topic 7** we complete the CRUD of our Spring MVC application.
 
-La aplicación ya permite:
+The application already allows:
 
 ```text
 Crear cursos.
@@ -14,9 +14,9 @@ Editar cursos.
 Borrar cursos.
 ```
 
-Sin embargo, todavía hay algo que podemos mejorar.
+However, there is still something we can improve.
 
-En el Tema 7 usamos rutas como estas:
+In Topic 7 we use routes like these:
 
 ```text
 GET  /courses/detail?id=1
@@ -25,9 +25,9 @@ POST /courses/update
 POST /courses/delete
 ```
 
-Funcionan correctamente, pero no son las rutas más expresivas.
+They work correctly, but they are not the most expressive routes.
 
-En este **Tema 8** vamos a mejorar la legibilidad del CRUD usando:
+In this **Topic 8** we are going to improve the readability of the CRUD using:
 
 ```java
 @PutMapping
@@ -35,9 +35,9 @@ En este **Tema 8** vamos a mejorar la legibilidad del CRUD usando:
 @PathVariable
 ```
 
-El objetivo es que las rutas sean más claras y que el código refleje mejor la intención de cada operación.
+The goal is for the routes to be clearer and for the code to better reflect the intention of each operation.
 
-Al terminar este tema, nuestras rutas quedarán así:
+At the end of this topic, our routes will look like this:
 
 ```text
 GET    /courses           → Listar cursos
@@ -49,13 +49,13 @@ PUT    /courses/{id}      → Actualizar curso
 DELETE /courses/{id}      → Borrar curso
 ```
 
-Este cambio no añade una funcionalidad completamente nueva, pero mejora mucho la claridad del proyecto.
+This change does not add completely new functionality, but it greatly improves the clarity of the project.
 
 ---
 
-# 2. Qué problema queremos resolver
+#2. What problem do we want to solve?
 
-En el Tema 7 teníamos este tipo de métodos:
+In Topic 7 we had these types of methods:
 
 ```java
 @PostMapping("/update")
@@ -64,7 +64,7 @@ public String updateCourse(...) {
 }
 ```
 
-y:
+and:
 
 ```java
 @PostMapping("/delete")
@@ -73,9 +73,9 @@ public String deleteCourse(...) {
 }
 ```
 
-Estos métodos funcionan, pero tienen un pequeño problema de legibilidad.
+These methods work, but have a small readability problem.
 
-Ambos usan `POST`, aunque hacen cosas diferentes:
+They both use `POST`, although they do different things:
 
 ```text
 POST /courses        → crear
@@ -83,9 +83,9 @@ POST /courses/update → actualizar
 POST /courses/delete → borrar
 ```
 
-El nombre de la URL nos dice lo que ocurre, pero el método HTTP no ayuda mucho.
+The URL name tells us what is happening, but the HTTP method doesn't help much.
 
-En una aplicación web más clara, podemos usar:
+In a clearer web application, we can use:
 
 ```text
 POST   → crear
@@ -93,13 +93,13 @@ PUT    → actualizar
 DELETE → borrar
 ```
 
-Así, al leer el controlador, la intención queda mucho más clara.
+Thus, when reading the driver, the intention becomes much clearer.
 
 ---
 
-# 3. Antes y después
+#3. Before and after
 
-## Antes
+## Before
 
 ```text
 GET  /courses
@@ -111,7 +111,7 @@ POST /courses/update
 POST /courses/delete
 ```
 
-## Después
+## After
 
 ```text
 GET    /courses
@@ -123,53 +123,53 @@ PUT    /courses/1
 DELETE /courses/1
 ```
 
-### También mejoraremos la legibilidad de las rutas
+### We will also improve the readability of the routes
 
-La diferencia principal es que ahora el identificador del curso forma parte de la ruta.
+The main difference is that the course identifier is now part of the route.
 
-Antes:
+Before:
 
 ```text
 /courses/detail?id=1
 ```
 
-Ahora:
+Now:
 
 ```text
 /courses/1
 ```
 
-Antes:
+Before:
 
 ```text
 /courses/edit?id=1
 ```
 
-Ahora:
+Now:
 
 ```text
 /courses/1/edit
 ```
 
-Antes:
+Before:
 
 ```text
 POST /courses/update
 ```
 
-Ahora:
+Now:
 
 ```text
 PUT /courses/1
 ```
 
-Antes:
+Before:
 
 ```text
 POST /courses/delete
 ```
 
-Ahora:
+Now:
 
 ```text
 DELETE /courses/1
@@ -177,60 +177,60 @@ DELETE /courses/1
 
 ---
 
-# 4. Tabla de métodos HTTP
+#4. HTTP Method Table
 
-Antes de modificar el código, conviene recordar qué representa cada método HTTP.
+Before modifying the code, it is worth remembering what each HTTP method represents.
 
-| Método   | Uso habitual                             | En nuestro CRUD                   |
+| Method | Regular use | In our CRUD |
 | -------- | ---------------------------------------- | --------------------------------- |
-| `GET`    | Consultar información                    | Ver listado, detalle o formulario |
-| `POST`   | Crear un nuevo recurso                   | Crear curso                       |
-| `PUT`    | Actualizar un recurso existente completo | Actualizar curso                  |
-| `DELETE` | Borrar un recurso existente              | Borrar curso                      |
+| `GET` | Consult information | See list, detail or form |
+| `POST` | Create a new resource | Create course |
+| `PUT` | Update a complete existing resource | Update course |
+| `DELETE` | Delete an existing resource | Delete course |
 
-En este tema no vamos a construir una API REST completa. Seguimos trabajando con Spring MVC, JSP y formularios tradicionales.
+In this topic we are not going to build a complete REST API. We continue working with Spring MVC, JSP and traditional forms.
 
-Pero sí vamos a usar métodos HTTP más expresivos dentro de nuestra aplicación.
+But we are going to use more expressive HTTP methods within our application.
 
 ---
 
-# 5. Problema importante: los formularios HTML solo envían GET y POST
+#5. Major issue: HTML forms only send GET and POST
 
-Aquí aparece una limitación importante.
+An important limitation appears here.
 
-Un formulario HTML tradicional solo permite:
+A traditional HTML form only allows:
 
 ```html
 <form method="get"></form>
 ```
 
-o:
+or:
 
 ```html
 <form method="post"></form>
 ```
 
-No podemos escribir de forma fiable:
+We cannot reliably write:
 
 ```html
 <form method="put"></form>
 ```
 
-o:
+or:
 
 ```html
 <form method="delete"></form>
 ```
 
-Por eso, para poder usar `@PutMapping` y `@DeleteMapping` desde formularios JSP, necesitamos una ayuda de Spring:
+Therefore, in order to use `@PutMapping` and `@DeleteMapping` from JSP forms, we need help from Spring:
 
 ```java
 HiddenHttpMethodFilter
 ```
 
-Este filtro permite enviar un formulario como `POST`, pero añadir un campo oculto llamado `_method` con el método real que queremos usar.
+This filter allows you to submit a form like `POST`, but add a hidden field called `_method` with the actual method we want to use.
 
-Por ejemplo:
+For example:
 
 ```html
 <form method="post">
@@ -238,47 +238,47 @@ Por ejemplo:
 </form>
 ```
 
-Spring recibe la petición como `POST`, lee el campo `_method`, y la trata internamente como si fuera una petición `PUT`.
+Spring receives the request as `POST`, reads the `_method` field, and treats it internally as if it were an `PUT` request.
 
-Lo mismo ocurre con `DELETE`.
+The same goes for `DELETE`.
 
 ---
 
-# 6. Qué vamos a modificar
+# 6. What are we going to modify
 
-En este tema modificaremos principalmente estos archivos:
+In this topic we will mainly modify these files:
 
 ```text
 src/main/webapp/WEB-INF/web.xml
 ```
 
-para activar `HiddenHttpMethodFilter`.
+to activate `HiddenHttpMethodFilter`.
 
 ```text
 src/main/java/com/example/springmvcday1/controller/CourseController.java
 ```
 
-para cambiar rutas y anotaciones.
+to change routes and annotations.
 
 ```text
 src/main/webapp/WEB-INF/views/courses/form.jsp
 ```
 
-para enviar `_method=put` cuando editemos.
+to send `_method=put` when we edit.
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
-para enviar `_method=delete` cuando borremos.
+to send `_method=delete` when we delete.
 
 ```text
 src/main/webapp/WEB-INF/views/courses/detail.jsp
 ```
 
-para adaptar los enlaces a las nuevas rutas.
+to adapt the links to the new routes.
 
-También haremos dos pequeñas mejoras:
+We will also make two small improvements:
 
 ```text
 Centralizar rutas de redirección dentro del controlador.
@@ -287,23 +287,23 @@ Crear métodos privados para preparar el formulario de creación y edición.
 
 ---
 
-[![Legibilidad](https://img.youtube.com/vi/PM_QiKZc01Y/0.jpg)](https://www.youtube.com/watch?v=PM_QiKZc01Y&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Readability](https://img.youtube.com/vi/PM_QiKZc01Y/0.jpg)](https://www.youtube.com/watch?v=PM_QiKZc01Y&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-# 7. Paso 1 — Activar `HiddenHttpMethodFilter` en `web.xml`
+#7. Step 1 — Activate `HiddenHttpMethodFilter` on `web.xml`
 
-Abrimos el archivo:
+We open the file:
 
 ```text
 src/main/webapp/WEB-INF/web.xml
 ```
 
-En este archivo ya tenemos configurado el `DispatcherServlet`.
+In this file we already have the `DispatcherServlet` configured.
 
-Ahora añadiremos un filtro antes de la configuración del servlet.
+Now we will add a filter before the servlet configuration.
 
-## Código que debemos añadir
+## Code that we must add
 
 ```xml
 <filter>
@@ -317,9 +317,9 @@ Ahora añadiremos un filtro antes de la configuración del servlet.
 </filter-mapping>
 ```
 
-## `web.xml` completo orientativo
+## `web.xml` complete indicative
 
-El archivo puede quedar así:
+The file can look like this:
 
 ```xml
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
@@ -373,96 +373,96 @@ El archivo puede quedar así:
 
 ---
 
-# 8. Explicación de `HiddenHttpMethodFilter`
+#8. `HiddenHttpMethodFilter` Explanation
 
-El filtro:
+The filter:
 
 ```xml
 <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
 ```
 
-sirve para detectar formularios `POST` que contienen un campo oculto llamado:
+serves to detect `POST` forms that contain a hidden field called:
 
 ```text
 _method
 ```
 
-Por ejemplo:
+For example:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-o:
+or:
 
 ```html
 <input type="hidden" name="_method" value="delete" />
 ```
 
-Entonces Spring interpreta la petición como:
+Spring then interprets the request as:
 
 ```text
 PUT
 ```
 
-o:
+or:
 
 ```text
 DELETE
 ```
 
-aunque el navegador haya enviado realmente un `POST`.
+even though the browser actually sent an `POST`.
 
-Esto nos permite tener métodos en el controlador como:
+This allows us to have methods in the controller like:
 
 ```java
 @PutMapping("/{id}")
 ```
 
-y:
+and:
 
 ```java
 @DeleteMapping("/{id}")
 ```
 
-desde formularios HTML tradicionales.
+from traditional HTML forms.
 
 ---
 
-# 9. Paso 2 — Cambiar rutas con `@PathVariable`
+#9. Step 2 — Change routes with `@PathVariable`
 
-Hasta ahora, para ver un detalle usábamos:
+Until now, to see a detail we used:
 
 ```text
 /courses/detail?id=1
 ```
 
-y en el controlador recibíamos:
+and in the controller we received:
 
 ```java
 @RequestParam("id") Long id
 ```
 
-Ahora usaremos:
+Now we will use:
 
 ```text
 /courses/1
 ```
 
-y recibiremos el valor con:
+and we will receive the value with:
 
 ```java
 @PathVariable Long id
 ```
 
-## Diferencia entre `@RequestParam` y `@PathVariable`
+## Difference between `@RequestParam` and `@PathVariable`
 
-| Anotación       | De dónde lee el dato | Ejemplo                |
+| Annotation | Where do you read the data from? Example |
 | --------------- | -------------------- | ---------------------- |
-| `@RequestParam` | De la query string   | `/courses/detail?id=1` |
-| `@PathVariable` | De la ruta           | `/courses/1`           |
+| `@RequestParam` | From the query string | `/courses/detail?id=1` |
+| `@PathVariable` | From the route | `/courses/1` |
 
-Antes:
+Before:
 
 ```java
 @GetMapping("/detail")
@@ -471,7 +471,7 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-Ahora:
+Now:
 
 ```java
 @GetMapping("/{id}")
@@ -482,17 +482,17 @@ public String courseDetail(@PathVariable Long id, Model model) {
 
 ---
 
-# 10. Paso 3 — Actualizar `CourseController`
+#10. Step 3 — Update `CourseController`
 
-Vamos a modificar el controlador para usar rutas más limpias y métodos HTTP más expresivos.
+We are going to modify the controller to use cleaner routes and more expressive HTTP methods.
 
-Archivo:
+File:
 
 ```text
 src/main/java/com/example/springmvcday1/controller/CourseController.java
 ```
 
-## Código actualizado completo
+## Complete updated code
 
 ```java
 package com.example.springmvcday1.controller;
@@ -671,11 +671,11 @@ public class CourseController {
 
 ---
 
-# 11. Explicación de los cambios en el controlador
+#11. Driver Changes Explained
 
-## 11.1. Nuevos imports
+## 11.1. New imports
 
-Ahora necesitamos importar:
+Now we need to import:
 
 ```java
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -683,56 +683,56 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 ```
 
-`@PutMapping` se usará para actualizar.
+`@PutMapping` will be used to update.
 
-`@DeleteMapping` se usará para borrar.
+`@DeleteMapping` will be used to delete.
 
-`@PathVariable` se usará para leer el `id` desde la ruta.
+`@PathVariable` will be used to read the `id` from the path.
 
 ---
 
-## 11.2. Constantes para vistas y redirecciones
+## 11.2. Constants for views and redirects
 
-Añadimos:
+We add:
 
 ```java
 private static final String REDIRECT_COURSES = "redirect:/courses";
 private static final String COURSE_FORM_VIEW = "courses/form";
 ```
 
-No es obligatorio, pero mejora la legibilidad.
+It is not required, but it improves readability.
 
-Antes repetíamos varias veces:
+Before we repeated several times:
 
 ```java
 return "redirect:/courses";
 ```
 
-y:
+and:
 
 ```java
 return "courses/form";
 ```
 
-Ahora podemos escribir:
+Now we can write:
 
 ```java
 return REDIRECT_COURSES;
 ```
 
-o:
+or:
 
 ```java
 return COURSE_FORM_VIEW;
 ```
 
-Si en el futuro cambia el nombre de la vista o la ruta de redirección, solo tendríamos que cambiarlo en un sitio.
+If the view name or redirection path changes in the future, we would only have to change it in one place.
 
 ---
 
-# 12. Ruta de detalle con `@PathVariable`
+#12. Detail Route with `@PathVariable`
 
-Antes:
+Before:
 
 ```java
 @GetMapping("/detail")
@@ -741,7 +741,7 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-Ahora:
+Now:
 
 ```java
 @GetMapping("/{id}")
@@ -750,37 +750,37 @@ public String courseDetail(
         Model model) {
 ```
 
-La URL antes era:
+The URL before was:
 
 ```text
 /courses/detail?id=1
 ```
 
-Ahora es:
+Now it is:
 
 ```text
 /courses/1
 ```
 
-El valor `1` se guarda automáticamente en la variable `id`.
+The `1` value is automatically saved in the `id` variable.
 
 ---
 
-# 13. Ruta de edición con `@PathVariable`
+#13. Edit path with `@PathVariable`
 
-Antes:
+Before:
 
 ```text
 /courses/edit?id=1
 ```
 
-Ahora:
+Now:
 
 ```text
 /courses/1/edit
 ```
 
-El método queda así:
+The method looks like this:
 
 ```java
 @GetMapping("/{id}/edit")
@@ -796,7 +796,7 @@ public String showEditForm(
 }
 ```
 
-Esta ruta se lee de forma muy natural:
+This route reads very naturally:
 
 ```text
 Mostrar el formulario de edición del curso 1.
@@ -804,9 +804,9 @@ Mostrar el formulario de edición del curso 1.
 
 ---
 
-# 14. Actualizar con `@PutMapping`
+#14. Update with `@PutMapping`
 
-Antes:
+Before:
 
 ```java
 @PostMapping("/update")
@@ -815,7 +815,7 @@ public String updateCourse(...) {
 }
 ```
 
-Ahora:
+Now:
 
 ```java
 @PutMapping("/{id}")
@@ -827,53 +827,53 @@ public String updateCourse(
         RedirectAttributes redirectAttributes) {
 ```
 
-La URL será:
+The URL will be:
 
 ```text
 PUT /courses/1
 ```
 
-Esto expresa mejor la intención:
+This best expresses the intention:
 
 ```text
 Actualizar el curso con id 1.
 ```
 
-Dentro del método hacemos:
+Within the method we do:
 
 ```java
 course.setId(id);
 ```
 
-## ¿Por qué hacemos `course.setId(id)`?
+## Why do we make `course.setId(id)`?
 
-Porque ahora el `id` principal viene en la ruta:
+Because now the main `id` comes in the path:
 
 ```text
 /courses/1
 ```
 
-y lo recibimos con:
+and we receive it with:
 
 ```java
 @PathVariable Long id
 ```
 
-Aunque el formulario también puede enviar un campo oculto con el `id`, es más claro usar el `id` de la ruta como fuente principal.
+Although the form can also submit a hidden field with the `id`, it is clearer to use the `id` of the path as the primary source.
 
-Por eso hacemos:
+That's why we do:
 
 ```java
 course.setId(id);
 ```
 
-Así nos aseguramos de que el objeto `Course` tiene el identificador correcto antes de actualizar.
+This ensures that the `Course` object has the correct identifier before updating.
 
 ---
 
-# 15. Borrar con `@DeleteMapping`
+#15. Erase with `@DeleteMapping`
 
-Antes:
+Before:
 
 ```java
 @PostMapping("/delete")
@@ -882,7 +882,7 @@ public String deleteCourse(@RequestParam("id") Long id, ...) {
 }
 ```
 
-Ahora:
+Now:
 
 ```java
 @DeleteMapping("/{id}")
@@ -891,25 +891,25 @@ public String deleteCourse(
         RedirectAttributes redirectAttributes) {
 ```
 
-La URL será:
+The URL will be:
 
 ```text
 DELETE /courses/1
 ```
 
-Esto expresa claramente:
+This clearly states:
 
 ```text
 Borrar el curso con id 1.
 ```
 
-El método queda más limpio porque el `id` forma parte de la ruta.
+The method is cleaner because the `id` is part of the path.
 
 ---
 
-# 16. Métodos auxiliares para preparar formularios
+# 16. Auxiliary methods for preparing forms
 
-En el Tema 7 repetíamos varias veces estos atributos:
+In Topic 7 we repeated these attributes several times:
 
 ```java
 model.addAttribute("pageTitleCode", ...);
@@ -918,7 +918,7 @@ model.addAttribute("submitCode", ...);
 model.addAttribute("course", ...);
 ```
 
-Ahora hemos creado dos métodos privados:
+Now we have created two private methods:
 
 ```java
 private void prepareCreateForm(Model model, Course course) {
@@ -926,7 +926,7 @@ private void prepareCreateForm(Model model, Course course) {
 }
 ```
 
-y:
+and:
 
 ```java
 private void prepareEditForm(Model model, Course course) {
@@ -934,7 +934,7 @@ private void prepareEditForm(Model model, Course course) {
 }
 ```
 
-## Método para creación
+## Method for creation
 
 ```java
 private void prepareCreateForm(Model model, Course course) {
@@ -946,9 +946,9 @@ private void prepareCreateForm(Model model, Course course) {
 }
 ```
 
-Este método prepara el formulario para crear.
+This method prepares the form for creation.
 
-Los valores principales son:
+The main values are:
 
 ```text
 formAction → /courses
@@ -956,7 +956,7 @@ formMethod → post
 submitCode → form.submit
 ```
 
-## Método para edición
+## Method for editing
 
 ```java
 private void prepareEditForm(Model model, Course course) {
@@ -968,9 +968,9 @@ private void prepareEditForm(Model model, Course course) {
 }
 ```
 
-Este método prepara el formulario para editar.
+This method prepares the form for editing.
 
-Los valores principales son:
+The main values are:
 
 ```text
 formAction → /courses/1
@@ -978,21 +978,21 @@ formMethod → put
 submitCode → courses.update
 ```
 
-Esto nos permitirá usar la misma vista `form.jsp` para crear y editar.
+This will allow us to use the same `form.jsp` view for creating and editing.
 
 ---
 
-# 17. Paso 4 — Actualizar `form.jsp`
+#17. Step 4 — Update `form.jsp`
 
-Ahora modificamos el formulario para que pueda enviar `PUT` cuando estemos editando.
+We now modify the form so that it can submit `PUT` when we are editing.
 
-Archivo:
+File:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/form.jsp
 ```
 
-## Código actualizado
+## Updated code
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1088,11 +1088,11 @@ src/main/webapp/WEB-INF/views/courses/form.jsp
 
 ---
 
-# 18. Explicación de los cambios en `form.jsp`
+#18. `form.jsp` changes explained
 
-## 18.1. El formulario sigue usando `POST`
+## 18.1. The form still uses `POST`
 
-El formulario tiene:
+The form has:
 
 ```jsp
 <form:form
@@ -1102,15 +1102,15 @@ El formulario tiene:
         cssClass="form">
 ```
 
-Aunque vayamos a actualizar con `PUT`, el formulario HTML sigue enviando `POST`.
+Even though we are updating with `PUT`, the HTML form still sends `POST`.
 
-Esto es normal porque los formularios HTML tradicionales no envían `PUT` directamente.
+This is normal because traditional HTML forms do not send `PUT` directly.
 
 ---
 
-## 18.2. Campo oculto `_method`
+## 18.2. Hidden field `_method`
 
-La clave está aquí:
+The key is here:
 
 ```jsp
 <c:if test="${formMethod == 'put'}">
@@ -1118,21 +1118,21 @@ La clave está aquí:
 </c:if>
 ```
 
-Si estamos editando, el controlador habrá enviado:
+If we are editing, the controller will have sent:
 
 ```java
 model.addAttribute("formMethod", "put");
 ```
 
-Entonces la JSP añade:
+Then the JSP adds:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-Cuando se envía el formulario, `HiddenHttpMethodFilter` detecta este campo y transforma la petición en `PUT`.
+When the form is submitted, `HiddenHttpMethodFilter` detects this field and transforms the request into `PUT`.
 
-Así puede ejecutarse este método del controlador:
+This is how this controller method can be executed:
 
 ```java
 @PutMapping("/{id}")
@@ -1143,37 +1143,37 @@ public String updateCourse(...) {
 
 ---
 
-## 18.3. Campo oculto `id`
+## 18.3. Hidden field `id`
 
-Seguimos manteniendo:
+We continue to maintain:
 
 ```jsp
 <form:hidden path="id" />
 ```
 
-Aunque el `id` también está en la ruta, este campo sigue siendo útil para que el objeto `course` mantenga su identificador en el formulario.
+Although the `id` is also in the path, this field is still useful for the `course` object to maintain its identifier in the form.
 
-La fuente principal del `id` será la ruta:
+The main source of the `id` will be the path:
 
 ```java
 @PathVariable Long id
 ```
 
-pero conservar el campo oculto ayuda a mantener el formulario completo.
+but keeping the field hidden helps keep the form complete.
 
 ---
 
-# 19. Paso 5 — Actualizar `list.jsp`
+#19. Step 5 — Update `list.jsp`
 
-Ahora debemos cambiar los enlaces del listado.
+Now we must change the links in the listing.
 
-Archivo:
+File:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
-## Código actualizado
+## Updated code
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1268,24 +1268,23 @@ src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
 ---
+#20. `list.jsp` changes explained
 
-# 20. Explicación de los cambios en `list.jsp`
+## 20.1. Detail link
 
-## 20.1. Enlace de detalle
-
-Antes:
+Before:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/detail?id=${course.id}">
 ```
 
-Ahora:
+Now:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/${course.id}">
 ```
 
-Esto genera rutas como:
+This generates routes like:
 
 ```text
 /courses/1
@@ -1295,21 +1294,21 @@ Esto genera rutas como:
 
 ---
 
-## 20.2. Enlace de edición
+## 20.2. Edit link
 
-Antes:
+Before:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/edit?id=${course.id}">
 ```
 
-Ahora:
+Now:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/${course.id}/edit">
 ```
 
-Esto genera rutas como:
+This generates routes like:
 
 ```text
 /courses/1/edit
@@ -1319,31 +1318,31 @@ Esto genera rutas como:
 
 ---
 
-## 20.3. Formulario de borrado con `_method=delete`
+## 20.3. Deletion form with `_method=delete`
 
-Antes el borrado podía ir a:
+Before deletion could go to:
 
 ```text
 POST /courses/delete
 ```
 
-Ahora el formulario apunta a:
+Now the form points to:
 
 ```jsp
 action="${pageContext.request.contextPath}/courses/${course.id}"
 ```
 
-y contiene:
+and contains:
 
 ```html
 <input type="hidden" name="_method" value="delete" />
 ```
 
-El navegador envía un `POST`.
+The browser sends an `POST`.
 
-Pero `HiddenHttpMethodFilter` convierte la petición en `DELETE`.
+But `HiddenHttpMethodFilter` converts the request to `DELETE`.
 
-Entonces Spring ejecuta:
+Then Spring executes:
 
 ```java
 @DeleteMapping("/{id}")
@@ -1354,17 +1353,17 @@ public String deleteCourse(...) {
 
 ---
 
-# 21. Paso 6 — Actualizar `detail.jsp`
+#21. Step 6 — Update `detail.jsp`
 
-Ahora debemos adaptar la vista de detalle para que sus enlaces usen las rutas nuevas.
+Now we must adapt the detail view so that its links use the new routes.
 
-Archivo:
+File:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/detail.jsp
 ```
 
-Código orientativo:
+Guidance code:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1414,29 +1413,29 @@ Código orientativo:
 </html>
 ```
 
-## Explicación
+## Explanation
 
-El enlace de edición ahora apunta a:
+The edit link now points to:
 
 ```jsp
 /courses/${course.id}/edit
 ```
 
-Por ejemplo:
+For example:
 
 ```text
 /courses/3/edit
 ```
 
-Así mantenemos el nuevo estilo de rutas en todo el proyecto.
+This way we maintain the new style of routes throughout the project.
 
 ---
 
-# 22. Paso 7 — Revisar `CourseService` y `CourseDao`
+#22. Step 7 — Check `CourseService` and `CourseDao`
 
-La buena noticia es que, en principio, no necesitamos cambiar `CourseService` ni `CourseDao`.
+The good news is that, in principle, we do not need to change `CourseService` or `CourseDao`.
 
-El cambio principal está en:
+The main change is in:
 
 ```text
 Controller
@@ -1444,7 +1443,7 @@ JSP
 web.xml
 ```
 
-Los métodos del servicio siguen siendo válidos:
+The service methods are still valid:
 
 ```java
 public void update(Course course) {
@@ -1463,7 +1462,7 @@ public void deleteById(Long id) {
 }
 ```
 
-Y los métodos del DAO también:
+And the DAO methods too:
 
 ```java
 public void update(Course course) {
@@ -1475,25 +1474,25 @@ public void deleteById(Long id) {
 }
 ```
 
-Esto demuestra una ventaja de tener el proyecto separado por capas.
+This demonstrates an advantage of having the project separated by layers.
 
-Podemos cambiar las rutas del controlador sin tocar la lógica de acceso a datos.
+We can change the controller routes without touching the data access logic.
 
 ---
 
-# 23. Paso 8 — Probar el flujo completo
+#23. Step 8 — Test the entire flow
 
-## 23.1. Probar listado
+## 23.1. Test list
 
-Entramos en:
+We enter:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses
 ```
 
-Comprobamos que aparecen los cursos.
+We check that the courses appear.
 
-Los enlaces deberían ser ahora parecidos a:
+The links should now look like:
 
 ```text
 /courses/1
@@ -1502,79 +1501,79 @@ Los enlaces deberían ser ahora parecidos a:
 
 ---
 
-## 23.2. Probar detalle
+## 23.2. Test detail
 
-Pulsamos en:
+We click on:
 
 ```text
 Ver detalle
 ```
 
-La URL debe ser parecida a:
+The URL should look like:
 
 ```text
 /courses/1
 ```
 
-Debe mostrarse el detalle del curso.
+The course details must be shown.
 
 ---
 
-## 23.3. Probar creación
+## 23.3. Test creation
 
-Entramos en:
+We enter:
 
 ```text
 /courses/new
 ```
 
-Creamos un curso.
+We create a course.
 
-La creación sigue usando:
+The creation continues using:
 
 ```text
 POST /courses
 ```
 
-Debe funcionar igual que antes.
+It should work the same as before.
 
 ---
 
-## 23.4. Probar edición
+## 23.4. Test edition
 
-Pulsamos:
+We press:
 
 ```text
 Editar
 ```
 
-La URL debe ser:
+The URL must be:
 
 ```text
 /courses/1/edit
 ```
 
-Modificamos el curso y enviamos el formulario.
+We modify the course and send the form.
 
-Internamente, el formulario envía:
+Internally, the form sends:
 
 ```text
 POST /courses/1
 ```
 
-con:
+with:
 
 ```text
 _method=put
 ```
 
-Spring lo interpreta como:
+Spring interprets it as:
 
 ```text
 PUT /courses/1
 ```
 
-Debe ejecutarse el método con:
+The method must be executed with:
 
 ```java
 @PutMapping("/{id}")
@@ -1582,33 +1581,33 @@ Debe ejecutarse el método con:
 
 ---
 
-## 23.5. Probar borrado
+## 23.5. Test deletion
 
-Pulsamos:
+We press:
 
 ```text
 Borrar
 ```
 
-El formulario envía:
+The form sends:
 
 ```text
 POST /courses/1
 ```
 
-con:
+with:
 
 ```text
 _method=delete
 ```
 
-Spring lo interpreta como:
+Spring interprets it as:
 
 ```text
 DELETE /courses/1
 ```
 
-Debe ejecutarse:
+It must be executed:
 
 ```java
 @DeleteMapping("/{id}")
@@ -1616,11 +1615,11 @@ Debe ejecutarse:
 
 ---
 
-# 24. Cómo comprobar que `HiddenHttpMethodFilter` funciona
+#24. How to check that `HiddenHttpMethodFilter` works
 
-Una forma sencilla de comprobarlo es poner temporalmente un mensaje en el controlador.
+An easy way to check this is to temporarily put a message in the controller.
 
-Por ejemplo:
+For example:
 
 ```java
 @PutMapping("/{id}")
@@ -1630,30 +1629,30 @@ public String updateCourse(...) {
 }
 ```
 
-Si al enviar el formulario de edición aparece ese mensaje en la consola, el filtro está funcionando.
+If this message appears in the console when you submit the edit form, the filter is working.
 
-También puedes probar a quitar temporalmente esta línea del formulario:
+You can also try temporarily removing this line from the form:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-Si la quitas, el formulario llegará como `POST`, y Spring no encontrará el método `@PutMapping`.
+If you remove it, the form will arrive as `POST`, and Spring will not find the `@PutMapping` method.
 
 ---
 
-# 25. Mejora adicional sencilla — Métodos privados para reducir repetición
+#25. Simple Additional Improvement — Private Methods to Reduce Repetition
 
-En este tema hemos añadido dos métodos privados:
+In this topic we have added two private methods:
 
 ```java
 prepareCreateForm(...)
 prepareEditForm(...)
 ```
 
-Esto es una mejora pequeña pero importante.
+This is a small but important improvement.
 
-Antes podíamos tener repetido varias veces:
+Before we could have it repeated several times:
 
 ```java
 model.addAttribute("pageTitleCode", "courses.edit.title");
@@ -1662,80 +1661,79 @@ model.addAttribute("submitCode", "courses.update");
 model.addAttribute("course", course);
 ```
 
-Ahora lo concentramos en:
-
+Now we focus on:
 ```java
 prepareEditForm(model, course);
 ```
 
-Esto hace que el controlador sea más legible.
+This makes the driver more readable.
 
 ---
 
-# 26. Mejora adicional sencilla — Constantes para vistas y redirecciones
+#26. Simple additional improvement — Constants for views and redirects
 
-También añadimos:
+We also add:
 
 ```java
 private static final String REDIRECT_COURSES = "redirect:/courses";
 private static final String COURSE_FORM_VIEW = "courses/form";
 ```
 
-Esto evita repetir cadenas de texto.
+This avoids repeating text strings.
 
-Antes:
+Before:
 
 ```java
 return "redirect:/courses";
 ```
 
-varias veces.
+several times.
 
-Ahora:
+Now:
 
 ```java
 return REDIRECT_COURSES;
 ```
 
-No es obligatorio, pero en proyectos medianos ayuda a evitar errores de escritura.
+It is not mandatory, but in medium projects it helps avoid writing errors.
 
 ---
 
-# 27. Errores habituales del Tema 8
+#27. Common mistakes from Topic 8
 
-## Error 1 — Olvidar `HiddenHttpMethodFilter`
+## Error 1 — Forget `HiddenHttpMethodFilter`
 
-Si no configuramos:
+If we do not configure:
 
 ```xml
 <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
 ```
 
-Spring no convertirá `_method=put` en `PUT`.
+Spring will not convert `_method=put` to `PUT`.
 
-Entonces el formulario llegará como `POST`.
+Then the form will arrive as `POST`.
 
-El método:
+The method:
 
 ```java
 @PutMapping("/{id}")
 ```
 
-no se ejecutará.
+will not be executed.
 
 ---
 
-## Error 2 — Olvidar el campo `_method`
+## Error 2 — Forgetting the `_method` field
 
-Si en el formulario de edición no ponemos:
+If in the editing form we do not put:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-el formulario seguirá siendo un `POST`.
+the form will still be an `POST`.
 
-Para el borrado ocurre lo mismo:
+The same thing happens for deletion:
 
 ```html
 <input type="hidden" name="_method" value="delete" />
@@ -1743,47 +1741,47 @@ Para el borrado ocurre lo mismo:
 
 ---
 
-## Error 3 — Usar `method="put"` directamente en el formulario
+## Error 3 — Using `method="put"` directly in the form
 
-No debemos escribir:
+We should not write:
 
 ```jsp
 <form:form method="put">
 ```
 
-En una aplicación JSP tradicional es más claro y seguro usar:
+In a traditional JSP application it is clearer and safer to use:
 
 ```jsp
 <form:form method="post">
 ```
 
-y añadir:
+and add:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-Así sabemos exactamente qué está ocurriendo.
+This way we know exactly what is happening.
 
 ---
 
-## Error 4 — Cambiar la ruta del controlador pero no los enlaces de la JSP
+## Error 4 — Change the controller path but not the JSP bindings
 
-Si el controlador usa:
+If the driver uses:
 
 ```java
 @GetMapping("/{id}")
 ```
 
-pero la JSP sigue enlazando a:
+but the JSP keeps linking to:
 
 ```text
 /courses/detail?id=1
 ```
 
-la ruta antigua dejará de funcionar.
+the old route will no longer work.
 
-Hay que actualizar los enlaces:
+Links need to be updated:
 
 ```jsp
 /courses/${course.id}
@@ -1791,33 +1789,33 @@ Hay que actualizar los enlaces:
 
 ---
 
-## Error 5 — Cambiar a `@PathVariable` pero seguir usando `@RequestParam`
+## Error 5 — Switch to `@PathVariable` but still use `@RequestParam`
 
-Si la ruta es:
+If the route is:
 
 ```java
 @GetMapping("/{id}")
 ```
 
-el método debe recibir:
+the method should receive:
 
 ```java
 @PathVariable Long id
 ```
 
-No:
+Not:
 
 ```java
 @RequestParam("id") Long id
 ```
 
-`@RequestParam` espera algo como:
+`@RequestParam` expects something like:
 
 ```text
 ?id=1
 ```
 
-pero la nueva ruta tiene:
+but the new route has:
 
 ```text
 /courses/1
@@ -1825,60 +1823,60 @@ pero la nueva ruta tiene:
 
 ---
 
-## Error 6 — Confundir `/courses/new` con `/{id}`
+## Error 6 — Confusing `/courses/new` with `/{id}`
 
-Tenemos estas dos rutas:
+We have these two routes:
 
 ```java
 @GetMapping("/new")
 @GetMapping("/{id}")
 ```
 
-Spring suele resolver correctamente la ruta más específica, pero conviene escribir rutas claras y no usar identificadores que puedan confundirse con palabras.
+Spring usually resolves the most specific path correctly, but it is a good idea to write clear paths and not use identifiers that could be confused with words.
 
-En nuestro caso, `/new` significa formulario de creación, y `/{id}` significa detalle de un curso.
+In our case, `/new` means creation form, and `/{id}` means course details.
 
 ---
 
-## Error 7 — No hacer `course.setId(id)` en el método `update`
+## Error 7 — Not doing `course.setId(id)` in `update` method
 
-En el método `@PutMapping`, el `id` viene de la ruta:
+In the `@PutMapping` method, the `id` comes from the path:
 
 ```java
 @PathVariable Long id
 ```
 
-Conviene hacer:
+It is advisable to do:
 
 ```java
 course.setId(id);
 ```
 
-Así nos aseguramos de que el objeto que llega al servicio tiene el identificador correcto.
+This way we ensure that the object that arrives at the service has the correct identifier.
 
 ---
 
-# 28. Resumen del CRUD después del Tema 8
+#28. CRUD summary after Topic 8
 
-Después de este tema, el CRUD queda así:
+After this topic, the CRUD looks like this:
 
-| Operación        | Método HTTP | Ruta                 | Método del controlador |
+| Operation | HTTP Method | Route | Controller method |
 | ---------------- | ----------- | -------------------- | ---------------------- |
-| Listar           | `GET`       | `/courses`           | `listCourses`          |
-| Ver detalle      | `GET`       | `/courses/{id}`      | `courseDetail`         |
-| Mostrar creación | `GET`       | `/courses/new`       | `showCreateForm`       |
-| Crear            | `POST`      | `/courses`           | `createCourse`         |
-| Mostrar edición  | `GET`       | `/courses/{id}/edit` | `showEditForm`         |
-| Actualizar       | `PUT`       | `/courses/{id}`      | `updateCourse`         |
-| Borrar           | `DELETE`    | `/courses/{id}`      | `deleteCourse`         |
+| List | `GET` | `/courses` | `listCourses` |
+| See detail | `GET` | `/courses/{id}` | `courseDetail` |
+| Show creation | `GET` | `/courses/new` | `showCreateForm` |
+| Create | `POST` | `/courses` | `createCourse` |
+| Show edition | `GET` | `/courses/{id}/edit` | `showEditForm` |
+| Update | `PUT` | `/courses/{id}` | `updateCourse` |
+| Delete | `DELETE` | `/courses/{id}` | `deleteCourse` |
 
-Ahora el controlador comunica mucho mejor la intención de cada operación.
+Now the controller communicates the intention of each operation much better.
 
 ---
 
-# 39. Comparación final
+#39. Final Comparison
 
-## Tema 7
+## Topic 7
 
 ```java
 @PostMapping("/update")
@@ -1892,7 +1890,7 @@ public String deleteCourse(...) {
 }
 ```
 
-## Tema 8
+## Topic 8
 
 ```java
 @PutMapping("/{id}")
@@ -1906,15 +1904,15 @@ public String deleteCourse(...) {
 }
 ```
 
-La aplicación no cambia mucho para el usuario final, pero el código queda más claro.
+The application doesn't change much for the end user, but the code becomes clearer.
 
 ---
 
-# 30. Cierre
+#30. Closure
 
-En este tema hemos mejorado la legibilidad del CRUD usando métodos HTTP más expresivos.
+In this topic we have improved the readability of CRUD by using more expressive HTTP methods.
 
-Hemos aprendido que:
+We have learned that:
 
 ```text
 GET sirve para consultar.
@@ -1923,25 +1921,25 @@ PUT sirve para actualizar.
 DELETE sirve para borrar.
 ```
 
-También hemos visto que los formularios HTML tradicionales no envían `PUT` ni `DELETE` directamente, por lo que usamos:
+We have also seen that traditional HTML forms do not send `PUT` or `DELETE` directly, so we use:
 
 ```text
 HiddenHttpMethodFilter
 ```
 
-y un campo oculto:
+and a hidden field:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-o:
+or:
 
 ```html
 <input type="hidden" name="_method" value="delete" />
 ```
 
-Además, hemos limpiado un poco el controlador usando:
+Additionally, we've cleaned up the controller a bit using:
 
 ```text
 @PathVariable
@@ -1949,7 +1947,7 @@ Métodos privados para preparar formularios
 Constantes para vistas y redirecciones
 ```
 
-La estructura final sigue siendo la misma:
+The final structure remains the same:
 
 ```text
 JSP
@@ -1965,4 +1963,4 @@ JdbcTemplate
 MySQL
 ```
 
-Pero ahora el controlador expresa mucho mejor la intención del CRUD.
+But now the controller expresses the intention of the CRUD much better.

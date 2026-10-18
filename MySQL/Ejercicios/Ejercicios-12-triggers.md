@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 12: Triggers (Disparadores) en MySQL**
+# **Exercises - Topic 12: Triggers in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para trabajar con **triggers** en MySQL.
+Below, you will find 5 practical exercises to work with **triggers** in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Auditoría de actualizaciones de precios**
+### **Exercise 1: Price Update Audit**
 
-Crea un trigger `audit_price_update` que registre en una tabla `price_changes_log` el `product_id`, el precio antiguo y el precio nuevo cada vez que se actualice el precio de un producto.
+Create an `audit_price_update` trigger that records the `product_id`, the old price, and the new price in an `price_changes_log` table each time a product price is updated.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -30,11 +30,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 2: Validar stock mínimo antes de insertar**
+### **Exercise 2: Validate minimum stock before inserting**
 
-Crea un trigger `validate_stock_before_insert` que impida insertar un producto en `inventory` si la cantidad (`quantity`) es menor que 0.
+Create an `validate_stock_before_insert` trigger that prevents inserting a product into `inventory` if the quantity (`quantity`) is less than 0.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -54,11 +54,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 3: Actualizar fecha de última modificación**
+### **Exercise 3: Update last modified date**
 
-Crea un trigger `update_last_modified` que, cada vez que se actualice un registro en `customers`, cambie automáticamente el campo `last_modified` a la fecha y hora actual.
+Create an `update_last_modified` trigger that, every time a record in `customers` is updated, automatically changes the `last_modified` field to the current date and time.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -75,11 +75,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 4: Registrar eliminaciones de pedidos**
+### **Exercise 4: Record order deletions**
 
-Crea un trigger `log_order_deletion` que, al eliminar un pedido de `orders`, inserte un registro en `deleted_orders_log` con el `order_id` y la fecha de eliminación.
+Create an `log_order_deletion` trigger that, when deleting an `orders` order, inserts a record in `deleted_orders_log` with the `order_id` and the deletion date.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -97,11 +97,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 5: Evitar cambios en el rol de administrador**
+### **Exercise 5: Prevent changes to the administrator role**
 
-Crea un trigger `prevent_admin_role_change` que impida modificar el campo `role` de un usuario en `users` si el valor antiguo era `'admin'`.
+Create an `prevent_admin_role_change` trigger that prevents modifying a user's `role` field in `users` if the old value was `'admin'`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$

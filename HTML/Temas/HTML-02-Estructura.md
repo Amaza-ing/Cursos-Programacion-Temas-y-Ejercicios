@@ -1,27 +1,27 @@
-# **Tema 2: Estructura básica de un documento HTML**
+# **Topic 2: Basic structure of an HTML document**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Un documento HTML tiene una estructura fundamental que todos los archivos deben seguir. Esta estructura está compuesta por diversas etiquetas que organizan el contenido y definen su comportamiento dentro de un navegador web.
+An HTML document has a fundamental structure that all files must follow. This structure is made up of various tags that organize the content and define its behavior within a web browser.
 
-### **Importancia de una estructura ordenada:**
+### **Importance of an ordered structure:**
 
-- Facilita la comprensión del documento.
-- Mejora la accesibilidad y la usabilidad.
-- Permite una mejor interpretación por los navegadores y motores de búsqueda.
+- Facilitates understanding of the document.
+- Improves accessibility and usability.
+- Allows better interpretation by browsers and search engines.
 
 ---
 
-## **2. Componentes principales de un documento HTML**
+## **2. Main components of an HTML document**
 
-Todo documento HTML está compuesto por las siguientes secciones:
+Every HTML document is made up of the following sections:
 
-1. **Declaración del tipo de documento (`DOCTYPE`)**
-2. **Elemento `<html>`** (Contenedor principal de la página)
-3. **Sección `<head>`** (Metadatos e importaciones)
-4. **Sección `<body>`** (Contenido visible en la página)
+1. **Document type declaration (`DOCTYPE`)**
+2. **`<html>` element** (Main container of the page)
+3. **`<head>` Section** (Metadata and imports)
+4. **`<body>` Section** (Content visible on the page)
 
-### **Ejemplo de estructura básica:**
+### **Basic structure example:**
 
 ```HTML
 <!DOCTYPE html>
@@ -40,76 +40,76 @@ Todo documento HTML está compuesto por las siguientes secciones:
 
 ---
 
-[![Estructura básica de HTML](https://img.youtube.com/vi/MenMpkevMpE/0.jpg)](https://www.youtube.com/watch?v=MenMpkevMpE&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![HTML basic structure](https://img.youtube.com/vi/MenMpkevMpE/0.jpg)](https://www.youtube.com/watch?v=MenMpkevMpE&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **3. Explicación de las etiquetas principales**
+## **3. Explanation of main tags**
 
 ### **1. `<!DOCTYPE html>`**
 
-- Indica al navegador que el documento está escrito en HTML5.
-- No es una etiqueta propiamente dicha, sino una instrucción para el navegador.
+- Indicates to the browser that the document is written in HTML5.
+- It is not a label itself, but an instruction for the browser.
 
 ### **2. `<html>`**
 
-- Contiene todo el código HTML de la página.
-- Es la etiqueta raíz de cualquier documento HTML.
+- Contains all the HTML code of the page.
+- It is the root tag of any HTML document.
 
 ### **3. `<head>`**
 
-- Contiene información sobre el documento.
-- Puede incluir:
-  - Metadatos (`<meta>`)
-  - Título de la página (`<title>`)
-  - Enlaces a hojas de estilo (`<link>`)
+- Contains information about the document.
+- May include:
+  - Metadata (`<meta>`)
+  - Page Title (`<title>`)
+  - Links to style sheets (`<link>`)
   - Scripts (`<script>`)
 
 ### **4. `<body>`**
 
-- Contiene todo el contenido visible en la página.
-- Puede incluir:
-  - Encabezados (`<h1>` a `<h6>`)
-  - Párrafos (`<p>`)
-  - Imágenes (`<img>`)
-  - Enlaces (`<a>`)
-  - Listas (`<ul>`, `<ol>`, `<li>`)
-  - Tablas (`<table>`)
-  - Formularios (`<form>`)
+- Contains all the content visible on the page.
+- May include:
+  - Headers (`<h1>` to `<h6>`)
+  - Paragraphs (`<p>`)
+  - Images (`<img>`)
+  - Links (`<a>`)
+  - Lists (`<ul>`, `<ol>`, `<li>`)
+  - Tables (`<table>`)
+  - Forms (`<form>`)
 
 ---
 
-## **4. Importancia de los metadatos en el `<head>`**
+## **4. Importance of metadata in the `<head>`**
 
-Los metadatos ayudan a mejorar el rendimiento, la accesibilidad y el posicionamiento en buscadores (**SEO**).
+Metadata helps improve performance, accessibility, and search engine optimization (**SEO**).
 
-### **Metadatos comunes:**
+### **Common metadata:**
 
-- `<meta charset="UTF-8">` → Define la codificación de caracteres.
-- `<meta name="viewport" content="width=device-width, initial-scale=1.0">` → Optimiza la página para dispositivos móviles.
-- `<meta name="description" content="Descripción de la página">` → Mejora el posicionamiento en buscadores.
-
----
-
-## **5. Buenas prácticas en la estructuración HTML**
-
-- **Usar una estructura clara y semántica.**
-- **Cerrar correctamente todas las etiquetas.**
-- **Evitar el uso excesivo de `<div>` cuando hay etiquetas semánticas disponibles.**
-- **Incluir metadatos básicos para compatibilidad y SEO.**
-- **Mantener el código limpio y comentado cuando sea necesario.**
+- `<meta charset="UTF-8">` → Defines the character encoding.
+- `<meta name="viewport" content="width=device-width, initial-scale=1.0">` → Optimize the page for mobile devices.
+- `<meta name="description" content="Descripción de la página">` → Improves search engine positioning.
 
 ---
 
-## **6. Creación de un archivo HTML**
+## **5. Good practices in HTML structuring**
 
-Para crear un archivo HTML en tu computadora:
-
-1. Abre un editor de texto (Visual Studio Code, Notepad++, Sublime Text).
-2. Guarda el archivo con la extensión `.html` (Ejemplo: `index.html`).
-3. Escribe la estructura básica de HTML.
-4. Abre el archivo en un navegador web para visualizarlo.
+- **Use a clear and semantic structure.**
+- **Close all labels correctly.**
+- **Avoid excessive use of `<div>` when semantic tags are available.**
+- **Include basic metadata for compatibility and SEO.**
+- **Keep the code clean and commented when necessary.**
 
 ---
 
-En el próximo tema, aprenderemos sobre **Elementos, etiquetas y atributos en HTML**, fundamentales para el desarrollo web.
+## **6. Creating an HTML file**
+
+To create an HTML file on your computer:
+
+1. Open a text editor (Visual Studio Code, Notepad++, Sublime Text).
+2. Save the file with the extension `.html` (Example: `index.html`).
+3. Write the basic HTML structure.
+4. Open the file in a web browser to view it.
+
+---
+
+In the next topic, we will learn about **Elements, tags and attributes in HTML**, fundamental for web development.

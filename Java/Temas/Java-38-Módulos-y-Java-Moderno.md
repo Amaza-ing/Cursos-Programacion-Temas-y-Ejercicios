@@ -1,56 +1,56 @@
-# Tema 38. Módulos y Java Moderno
+# Topic 38. Modules and Modern Java
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has trabajado con muchos elementos fundamentales de Java:
+So far you have worked with many fundamental elements of Java:
 
 - variables
-- condicionales
-- bucles
-- métodos
-- clases
-- objetos
-- herencia
+- conditionals
+- loops
+- methods
+- classes
+- objects
+- inheritance
 - interfaces
-- colecciones
+- collections
 - generics
 - lambdas
 - streams
-- optional
-- fechas
-- archivos
+-optional
+- dates
+- files
 - records
 - sealed classes
-- concurrencia básica
+- basic concurrency
 
-En este tema vamos a dar un paso más y veremos dos ideas importantes:
+In this topic we are going to go one step further and see two important ideas:
 
-- **el sistema de módulos de Java**
-- **algunas características del Java moderno**
+- **the Java module system**
+- **some features of modern Java**
 
-Los módulos permiten organizar mejor aplicaciones grandes.  
-Java moderno incluye mejoras pensadas para hacer el lenguaje más claro, expresivo y cómodo.
+Modules allow you to better organize large applications.  
+Modern Java includes improvements designed to make the language clearer, more expressive, and more comfortable.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué problema resuelven los módulos
-- Qué es un módulo en Java
-- Qué es `module-info.java`
-- Cómo usar `requires`
-- Cómo usar `exports`
-- Cómo organizar paquetes dentro de un módulo
-- Qué es `java.base`
-- Qué son `requires transitive` y `opens`
-- Qué son las declaraciones `import module`
-- Qué son los compact source files
-- Qué características modernas has ido viendo en el curso
-- Cómo pensar Java como un lenguaje que sigue evolucionando
+- What problem do the modules solve?
+- What is a module in Java
+- What is `module-info.java`
+- How to use `requires`
+- How to use `exports`
+- How to organize packages within a module
+- What is `java.base`
+- What are `requires transitive` and `opens`
+- What are `import module` statements
+- What are compact source files?
+- What modern features have you seen in the course
+- How to think of Java as a language that continues to evolve
 
 ---
 
-## 2. El problema de organizar aplicaciones grandes
+## 2. The problem of organizing large applications
 
-En proyectos pequeños, puedes tener unas pocas clases:
+In small projects, you can have a few classes:
 
 ```text
 Main.java
@@ -58,16 +58,16 @@ User.java
 Product.java
 ```
 
-Pero en aplicaciones grandes puedes tener:
+But in large applications you can have:
 
-- decenas o cientos de clases
-- muchos paquetes
-- librerías externas
-- capas separadas
-- dependencias entre partes del proyecto
-- código que no debería ser accesible desde cualquier lugar
+- dozens or hundreds of classes
+- many packages
+- external libraries
+- separate layers
+- dependencies between parts of the project
+- code that should not be accessible from anywhere
 
-Ejemplo:
+Example:
 
 ```text
 com.amazaing.app.users
@@ -77,53 +77,53 @@ com.amazaing.app.database
 com.amazaing.app.security
 ```
 
-Los paquetes ayudan a organizar el código, pero no siempre son suficientes para controlar bien las dependencias y la visibilidad.
+Packages help organize code, but they are not always enough to control dependencies and visibility well.
 
-Ahí aparecen los módulos.
+The modules appear there.
 
 ---
 
-## 3. Qué es un módulo
+## 3. What is a module
 
-Un **módulo** es una unidad de organización superior al paquete.
+A **module** is a unit of organization superior to the package.
 
-Un módulo puede contener:
+A module can contain:
 
-- paquetes
-- clases
+- packages
+- classes
 - interfaces
 - records
-- recursos
-- una declaración de dependencias
-- una declaración de qué paquetes expone al exterior
+- resources
+- a dependency declaration
+- a declaration of which packages it exposes to the outside
 
-La idea es que un módulo puede decir:
+The idea is that a module can say:
 
-- qué necesita
-- qué ofrece
-- qué oculta
+- what do you need
+- what does it offer
+- what is hidden
 
 ---
 
-## 4. Paquetes vs módulos
+## 4. Packages vs modules
 
-### 4.1. Paquete
+### 4.1. Package
 
-Un paquete organiza clases.
+A package organizes classes.
 
-Ejemplo:
+Example:
 
 ```java
 package com.amazaing.users;
 ```
 
-Sirve para agrupar clases relacionadas.
+It is used to group related classes.
 
-### 4.2. Módulo
+### 4.2. Module
 
-Un módulo organiza paquetes y dependencias.
+A module organizes packages and dependencies.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
@@ -131,34 +131,34 @@ module com.amazaing.app {
 }
 ```
 
-Un módulo puede contener varios paquetes.
+A module can contain multiple packages.
 
 ---
 
-## 5. Qué es `module-info.java`
+## 5. What is `module-info.java`
 
-Un módulo se define mediante un archivo especial llamado:
+A module is defined by a special file called:
 
 ```text
 module-info.java
 ```
 
-Este archivo se coloca en la raíz del código fuente del módulo.
+This file is placed at the root of the module source code.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
 }
 ```
 
-Este sería un módulo vacío que todavía no exporta paquetes ni declara dependencias.
+This would be an empty module that does not yet export packages or declare dependencies.
 
 ---
 
-## 6. Estructura básica de un proyecto modular
+## 6. Basic structure of a modular project
 
-Un proyecto modular puede tener una estructura como esta:
+A modular project can have a structure like this:
 
 ```text
 src
@@ -170,13 +170,13 @@ src
                 └── Main.java
 ```
 
-El archivo importante es:
+The important file is:
 
 ```text
 module-info.java
 ```
 
-Y dentro se declara el módulo:
+And inside the module is declared:
 
 ```java
 module com.amazaing.app {
@@ -185,7 +185,7 @@ module com.amazaing.app {
 
 ---
 
-## 7. Primer ejemplo de módulo
+## 7. First module example
 
 ### 7.1. `module-info.java`
 
@@ -206,19 +206,19 @@ public class Main {
 }
 ```
 
-Aquí tenemos:
+Here we have:
 
-- un módulo llamado `com.amazaing.app`
-- un paquete llamado `com.amazaing.app`
-- una clase `Main`
+- a module called `com.amazaing.app`
+- a package called `com.amazaing.app`
+- a class `Main`
 
 ---
 
-## 8. Nombre del módulo
+## 8. Module name
 
-Los nombres de módulos suelen seguir una convención parecida a los paquetes.
+Module names usually follow a convention similar to packages.
 
-Ejemplos:
+Examples:
 
 ```text
 com.amazaing.app
@@ -226,9 +226,9 @@ com.amazaing.users
 com.amazaing.products
 ```
 
-Se recomienda usar nombres únicos y descriptivos.
+It is recommended to use unique and descriptive names.
 
-Evita nombres demasiado genéricos como:
+Avoid names that are too generic like:
 
 ```text
 app
@@ -236,7 +236,7 @@ users
 core
 ```
 
-Mejor:
+Better:
 
 ```text
 com.amazaing.app
@@ -248,36 +248,36 @@ com.amazaing.core
 
 ## 9. `java.base`
 
-Todos los módulos de Java dependen automáticamente de un módulo llamado:
+All Java modules automatically depend on a module called:
 
 ```java
 java.base
 ```
 
-Este módulo contiene clases fundamentales como:
+This module contains fundamental classes such as:
 
 - `String`
 - `Object`
 - `Integer`
 - `System`
 - `Math`
-- muchas clases básicas de Java
+- many basic Java classes
 
-No necesitas escribir esto:
+You don't need to write this:
 
 ```java
 requires java.base;
 ```
 
-porque Java lo añade automáticamente.
+because Java adds it automatically.
 
 ---
 
-## 10. Usar `requires`
+## 10. Use `requires`
 
-Cuando un módulo necesita usar otro módulo, se declara con `requires`.
+When a module needs to use another module, it is declared with `requires`.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
@@ -285,15 +285,15 @@ module com.amazaing.app {
 }
 ```
 
-Esto significa:
+This means:
 
-> el módulo `com.amazaing.app` necesita el módulo `java.sql`
+> `com.amazaing.app` module needs `java.sql` module
 
-`java.sql` contiene clases relacionadas con bases de datos, como JDBC.
+`java.sql` contains database-related classes, such as JDBC.
 
 ---
 
-## 11. Ejemplo con `requires java.sql`
+## 11. Example with `requires java.sql`
 
 ### 11.1. `module-info.java`
 
@@ -303,7 +303,7 @@ module com.amazaing.app {
 }
 ```
 
-### 11.2. Clase usando `java.sql`
+### 11.2. Class using `java.sql`
 
 ```java
 package com.amazaing.app;
@@ -319,15 +319,15 @@ public class Main {
 }
 ```
 
-Si el módulo no declara `requires java.sql`, no podría acceder correctamente a esas clases en un proyecto modular.
+If the module does not declare `requires java.sql`, you would not be able to properly access those classes in a modular project.
 
 ---
 
-## 12. Usar `exports`
+## 12. Use `exports`
 
-Por defecto, los paquetes de un módulo no quedan expuestos para otros módulos.
+By default, packages from one module are not exposed to other modules.
 
-Si quieres que un paquete pueda ser usado desde fuera, debes exportarlo.
+If you want a package to be used from outside, you must export it.
 
 ```java
 module com.amazaing.users {
@@ -335,22 +335,22 @@ module com.amazaing.users {
 }
 ```
 
-Esto significa:
+This means:
 
-> otros módulos pueden usar las clases públicas del paquete `com.amazaing.users`
+> other modules can use the public classes from the `com.amazaing.users` package
 
 ---
 
-## 13. Ejemplo con dos módulos
+## 13. Example with two modules
 
-Imagina dos módulos:
+Imagine two modules:
 
 ```text
 com.amazaing.users
 com.amazaing.app
 ```
 
-El módulo `users` contiene la clase `User`.
+The `users` module contains the `User` class.
 
 ### 13.1. `com.amazaing.users/module-info.java`
 
@@ -402,19 +402,19 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- `com.amazaing.users` exporta su paquete
-- `com.amazaing.app` requiere el módulo de usuarios
-- `Main` puede usar `User`
+- `com.amazaing.users` exports your package
+- `com.amazaing.app` requires the users module
+- `Main` can use `User`
 
 ---
 
-## 14. Paquetes no exportados
+## 14. Packages not exported
 
-Un módulo puede tener paquetes internos que no exporta.
+A module can have internal packages that it does not export.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.users {
@@ -422,29 +422,29 @@ module com.amazaing.users {
 }
 ```
 
-Estructura:
+Structure:
 
 ```text
 com.amazaing.users.api
 com.amazaing.users.internal
 ```
 
-Solo se exporta:
+Only exported:
 
 ```text
 com.amazaing.users.api
 ```
 
-El paquete interno queda oculto para otros módulos.
+The internal package is hidden from other modules.
 
-Esto ayuda a separar:
+This helps separate:
 
-- API pública
-- implementación interna
+- Public API
+- internal implementation
 
 ---
 
-## 15. Ejemplo de API pública e implementación interna
+## 15. Example of public API and internal implementation
 
 ```text
 com.amazaing.users.api.UserService
@@ -459,13 +459,13 @@ module com.amazaing.users {
 }
 ```
 
-Otros módulos pueden usar:
+Other modules can use:
 
 ```java
 com.amazaing.users.api.UserService
 ```
 
-Pero no deberían acceder directamente a:
+But they should not directly access:
 
 ```java
 com.amazaing.users.internal.FileUserRepository
@@ -473,34 +473,34 @@ com.amazaing.users.internal.FileUserRepository
 
 ---
 
-## 16. Ventaja principal de los módulos
+## 16. Main advantage of modules
 
-Los módulos permiten un nivel de encapsulación más fuerte que los paquetes.
+Modules allow a stronger level of encapsulation than packages.
 
-Con paquetes puedes organizar.  
-Con módulos puedes controlar qué partes del código son realmente accesibles desde fuera.
+With packages you can organize.  
+With modules you can control which parts of the code are actually accessible from the outside.
 
-Esto ayuda a:
+This helps:
 
-- reducir acoplamiento
-- proteger detalles internos
-- mejorar el mantenimiento
-- hacer más claras las dependencias
-- diseñar APIs más limpias
+- reduce coupling
+- protect internal details
+- improve maintenance
+- make dependencies clearer
+- design cleaner APIs
 
 ---
 
 ## 17. `requires transitive`
 
-A veces un módulo expone tipos que pertenecen a otro módulo.
+Sometimes one module exposes types that belong to another module.
 
-En ese caso puede tener sentido usar:
+In that case it may make sense to use:
 
 ```java
 requires transitive
 ```
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.orders {
@@ -509,15 +509,15 @@ module com.amazaing.orders {
 }
 ```
 
-Esto significa que quien requiera `com.amazaing.orders` también tendrá acceso a `com.amazaing.users`.
+This means that whoever requires `com.amazaing.orders` will also have access to `com.amazaing.users`.
 
-Es un concepto más avanzado, pero conviene conocerlo.
+It is a more advanced concept, but it is worth knowing it.
 
 ---
 
-## 18. Ejemplo conceptual de `requires transitive`
+## 18. Conceptual example of `requires transitive`
 
-Imagina que tienes:
+Imagine that you have:
 
 ```java
 public class Order {
@@ -529,15 +529,15 @@ public class Order {
 }
 ```
 
-Si `Order` forma parte de la API pública del módulo `orders`, entonces los usuarios de ese módulo también necesitan conocer el tipo `User`.
+If `Order` is part of the public API of the `orders` module, then users of that module also need to know the `User` type.
 
-En ese caso, `requires transitive` puede tener sentido.
+In that case `requires transitive` may make sense.
 
 ---
 
 ## 19. `exports ... to`
 
-Puedes exportar un paquete solo a módulos concretos.
+You can export a package only to specific modules.
 
 ```java
 module com.amazaing.users {
@@ -545,24 +545,24 @@ module com.amazaing.users {
 }
 ```
 
-Esto significa:
+This means:
 
-- el paquete se exporta
-- pero solo al módulo `com.amazaing.app`
+- the package is exported
+- but only to the `com.amazaing.app` module
 
-No suele ser necesario al empezar, pero es útil en diseños más controlados.
+It is not usually necessary when starting out, but is useful in more controlled designs.
 
 ---
 
 ## 20. `opens`
 
-`opens` permite abrir un paquete para reflexión.
+`opens` allows opening a packet for reflection.
 
-La reflexión es una técnica que permite inspeccionar clases, métodos y atributos en tiempo de ejecución.
+Reflection is a technique that allows classes, methods, and attributes to be inspected at runtime.
 
-Algunas herramientas y frameworks la usan.
+Some tools and frameworks use it.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
@@ -570,20 +570,20 @@ module com.amazaing.app {
 }
 ```
 
-Esto no es lo mismo que `exports`.
+This is not the same as `exports`.
 
-### 20.1. Diferencia sencilla
+### 20.1. Simple difference
 
-- `exports` permite usar clases públicas desde otros módulos
-- `opens` permite acceso por reflexión
+- `exports` allows using public classes from other modules
+- `opens` allows access by reflection
 
-Para cursos introductorios, lo importante es conocer la diferencia general.
+For introductory courses, the important thing is to know the general difference.
 
 ---
 
 ## 21. `opens ... to`
 
-También puedes abrir un paquete solo a un módulo concreto.
+You can also open a package only to a specific module.
 
 ```java
 module com.amazaing.app {
@@ -591,15 +591,15 @@ module com.amazaing.app {
 }
 ```
 
-Esto puede ser útil con librerías que convierten objetos a JSON o trabajan con reflexión.
+This can be useful with libraries that convert objects to JSON or work with reflection.
 
 ---
 
 ## 22. `requires static`
 
-`requires static` indica una dependencia necesaria en compilación, pero no obligatoria en tiempo de ejecución.
+`requires static` indicates a dependency that is required at compile time, but not required at runtime.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
@@ -607,38 +607,38 @@ module com.amazaing.app {
 }
 ```
 
-Es un caso más avanzado.
+It is a more advanced case.
 
-Puede aparecer con librerías de anotaciones o herramientas de análisis.
+It can appear with annotation libraries or analysis tools.
 
 ---
 
-## 23. `uses` y `provides`
+## 23. `uses` and `provides`
 
-El sistema de módulos también puede trabajar con servicios.
+The module system can also work with services.
 
-Ejemplo:
+Example:
 
 ```java
 uses com.amazaing.notifications.NotificationSender;
 ```
 
-Y otro módulo puede proporcionar una implementación:
+And another module can provide an implementation:
 
 ```java
 provides com.amazaing.notifications.NotificationSender
         with com.amazaing.email.EmailNotificationSender;
 ```
 
-Esto permite diseñar aplicaciones extensibles.
+This allows you to design extensible applications.
 
-No necesitas dominarlo todavía, pero conviene saber que existe.
+You don't need to master it yet, but it's good to know it exists.
 
 ---
 
-## 24. Resumen de palabras clave en `module-info.java`
+## 24. Keyword summary in `module-info.java`
 
-Las más importantes son:
+The most important ones are:
 
 ```java
 requires
@@ -648,7 +648,7 @@ uses
 provides
 ```
 
-Y algunas variantes:
+And some variants:
 
 ```java
 requires transitive
@@ -657,7 +657,7 @@ exports ... to
 opens ... to
 ```
 
-Para empezar, las más importantes son:
+To begin with, the most important ones are:
 
 ```java
 requires
@@ -666,9 +666,9 @@ exports
 
 ---
 
-## 25. Ejemplo completo: módulo de productos
+## 25. Complete Example: Products Module
 
-### 25.1. Estructura
+### 25.1. Structure
 
 ```text
 src
@@ -732,40 +732,40 @@ public class Main {
 
 ---
 
-## 26. Compilar módulos desde terminal
+## 26. Compile modules from terminal
 
-Este apartado es más avanzado, pero ayuda a entender cómo funciona.
+This section is more advanced, but it helps to understand how it works.
 
-Supongamos esta estructura:
+Let's assume this structure:
 
 ```text
 src/com.amazaing.app/module-info.java
 src/com.amazaing.app/com/amazing/app/Main.java
 ```
 
-Podrías compilar con:
+You could compile with:
 
 ```bash
 javac -d out --module-source-path src -m com.amazaing.app
 ```
 
-Y ejecutar con:
+And run with:
 
 ```bash
 java --module-path out -m com.amazaing.app/com.amazaing.app.Main
 ```
 
-En proyectos reales normalmente usarás un IDE o herramientas como Maven o Gradle, pero conocer estos comandos ayuda a entender la base.
+In real projects you will normally use an IDE or tools like Maven or Gradle, but knowing these commands helps you understand the basics.
 
 ---
 
 ## 27. Classpath vs module path
 
-Antes del sistema de módulos, Java usaba principalmente el **classpath**.
+Before the module system, Java mainly used the **classpath**.
 
-El classpath indica dónde buscar clases y librerías.
+The classpath indicates where to look for classes and libraries.
 
-Con módulos aparece el **module path**.
+With modules the **module path** appears.
 
 ### 27.1. Classpath
 
@@ -779,105 +779,104 @@ Busca clases y librerías de forma tradicional.
 Busca módulos con información declarada en module-info.java.
 ```
 
-A nivel inicial, puedes pensar así:
+At an initial level, you can think like this:
 
-- proyectos tradicionales → classpath
-- proyectos modulares → module path
+- traditional projects → classpath
+- modular projects → module path
 
 ---
 
-## 28. ¿Todos los proyectos Java necesitan módulos?
+## 28. Do all Java projects need modules?
 
 No.
 
-Muchísimos proyectos Java no usan módulos explícitamente.
+Many Java projects do not use modules explicitly.
 
-Por ejemplo, muchos proyectos con:
+For example, many projects with:
 
-- Spring
+-Spring
 - Jakarta EE
-- Maven
+-Maven
 - Gradle
+they can work without you writing an `module-info.java`.
 
-pueden funcionar sin que tú escribas un `module-info.java`.
-
-Esto no significa que los módulos no sean útiles, sino que no siempre son necesarios en cursos iniciales o proyectos sencillos.
-
----
-
-## 29. Cuándo usar módulos
-
-Los módulos pueden ser útiles cuando:
-
-- tienes una aplicación grande
-- quieres separar partes claramente
-- quieres controlar dependencias
-- quieres ocultar paquetes internos
-- estás creando librerías
-- quieres diseñar APIs bien encapsuladas
-- quieres aprovechar el sistema modular de Java
+This does not mean that the modules are not useful, but that they are not always necessary in initial courses or simple projects.
 
 ---
 
-## 30. Cuándo no usar módulos todavía
+## 29. When to use modules
 
-Puede que no merezca la pena usarlos si:
+Modules can be useful when:
 
-- el proyecto es pequeño
-- estás aprendiendo lo básico
-- usas frameworks que ya gestionan la estructura
-- añadir módulos complica más de lo que ayuda
-- todavía no tienes una arquitectura clara
-
-Para empezar, es suficiente con entenderlos y saber reconocer un `module-info.java`.
+- you have a big application
+- you want to separate parts clearly
+- you want to control dependencies
+- you want to hide internal packages
+- you are creating libraries
+- you want to design well-encapsulated APIs
+- you want to take advantage of Java's modular system
 
 ---
 
-## 31. Java moderno: una visión general
+## 30. When not to use modules yet
 
-Java ha evolucionado mucho en los últimos años.
+It may not be worth using them if:
 
-Aunque durante mucho tiempo tuvo fama de ser muy verboso, las versiones modernas han añadido muchas mejoras.
+- the project is small
+- you are learning the basics
+- you use frameworks that already manage the structure
+- adding modules complicates more than it helps
+- you still don't have a clear architecture
 
-En este curso ya has visto varias:
+To start, it is enough to understand them and know how to recognize an `module-info.java`.
+
+---
+
+## 31. Modern Java: An Overview
+
+Java has evolved a lot in recent years.
+
+Although it long had a reputation for being very verbose, modern versions have added many improvements.
+
+In this course you have already seen several:
 
 - lambdas
-- interfaces funcionales
+- functional interfaces
 - Stream API
-- Optional
+-Optional
 - Date/Time API
 - records
 - sealed classes
 - virtual threads
-- mejoras en `switch`
+- improvements in `switch`
 - pattern matching
-- módulos
+- modules
 
-Java moderno busca ser:
+Modern Java seeks to be:
 
-- más expresivo
-- más seguro
-- más claro
-- más cómodo para aprender
-- más preparado para aplicaciones grandes
+- more expressive
+- safer
+- clearer
+- more comfortable to learn
+- more prepared for large applications
 
 ---
 
 ## 32. Module Import Declarations
 
-En Java moderno existe una forma de importar todos los paquetes exportados por un módulo con una sola declaración:
+In modern Java there is a way to import all packages exported by a module with a single statement:
 
 ```java
 import module java.base;
 ```
 
-Esto se llama:
+This is called:
 
 - **Module Import Declaration**
 
-La idea es reducir muchos imports individuales cuando estás usando clases de un mismo módulo.
+The idea is to reduce many individual imports when you are using classes from the same module.
 
-Por ejemplo, en lugar de importar varias clases concretas:
+For example, instead of importing multiple concrete classes:
 
 ```java
 import java.util.List;
@@ -885,24 +884,24 @@ import java.util.Map;
 import java.util.Optional;
 ```
 
-puedes importar las clases públicas exportadas por un módulo:
+you can import the public classes exported by a module:
 
 ```java
 import module java.base;
 ```
 
-### 32.1. Importante
+### 32.1. Important
 
-Esto no sustituye el sistema de módulos completo.
+This does not replace the complete module system.
 
-No es lo mismo que `requires`.
+It is not the same as `requires`.
 
-- `requires` se escribe en `module-info.java`
-- `import module` se escribe en un archivo `.java`
+- `requires` is written to `module-info.java`
+- `import module` is written to an `.java` file
 
 ---
 
-## 33. Ejemplo conceptual con `import module`
+## 33. Conceptual example with `import module`
 
 ```java
 import module java.base;
@@ -919,26 +918,26 @@ public class Main {
 }
 ```
 
-Con `import module java.base`, las clases exportadas por `java.base` pueden estar disponibles sin importarlas una a una.
+With `import module java.base`, classes exported by `java.base` can be made available without importing them one by one.
 
-Aun así, en muchos proyectos se siguen usando imports clásicos porque son explícitos y conocidos por todo el mundo.
+Even so, in many projects classic imports are still used because they are explicit and known to everyone.
 
 ---
 
-## 34. Imports clásicos vs `import module`
+## 34. Classic Imports vs `import module`
 
-### 34.1. Imports clásicos
+### 34.1. Classic imports
 
 ```java
 import java.util.List;
 import java.util.Optional;
 ```
 
-Ventajas:
+Advantages:
 
-- son muy explícitos
-- funcionan en todas las versiones modernas anteriores
-- son familiares
+- they are very explicit
+- work on all previous modern versions
+- they are family
 
 ### 34.2. `import module`
 
@@ -946,21 +945,21 @@ Ventajas:
 import module java.base;
 ```
 
-Ventajas:
+Advantages:
 
-- puede reducir imports repetitivos
-- encaja con la organización modular de Java
-- puede ser cómodo en ejemplos o programas pequeños
+- can reduce repetitive imports
+- fits with Java's modular organization
+- can be comfortable in examples or small programs
 
-Para un curso inicial, es buena idea conocerlo, pero no es obligatorio usarlo siempre.
+For an initial course, it is a good idea to know it, but it is not mandatory to always use it.
 
 ---
 
 ## 35. Compact Source Files
 
-Java moderno también ha mejorado la forma de escribir programas pequeños.
+Modern Java has also improved the way small programs are written.
 
-Tradicionalmente, el primer programa en Java era así:
+Traditionally, the first Java program looked like this:
 
 ```java
 public class Main {
@@ -970,9 +969,9 @@ public class Main {
 }
 ```
 
-En Java moderno, para programas sencillos se puede escribir código más compacto.
+In modern Java, for simple programs you can write more compact code.
 
-Ejemplo:
+Example:
 
 ```java
 void main() {
@@ -980,26 +979,26 @@ void main() {
 }
 ```
 
-Esto reduce la cantidad de código necesario para empezar.
+This reduces the amount of code needed to get started.
 
-Es especialmente útil para:
+It is especially useful for:
 
-- aprendizaje
-- scripts pequeños
-- ejemplos sencillos
-- primeros programas
+- learning
+- small scripts
+- simple examples
+- first programs
 
 ---
 
-## 36. ¿Significa esto que ya no necesitamos clases?
+## 36. Does this mean we don't need classes anymore?
 
 No.
 
-En proyectos reales seguirás usando clases, paquetes y estructuras completas.
+In real projects you will still use classes, packages and complete structures.
 
-Los compact source files están pensados para hacer más fácil escribir programas pequeños.
+Compact source files are intended to make it easier to write small programs.
 
-Ejemplo de aprendizaje:
+Learning example:
 
 ```java
 void main() {
@@ -1007,7 +1006,7 @@ void main() {
 }
 ```
 
-Ejemplo de proyecto más estructurado:
+Example of a more structured project:
 
 ```java
 public class Main {
@@ -1018,43 +1017,43 @@ public class Main {
 }
 ```
 
-Ambos estilos pueden convivir.
+Both styles can coexist.
 
 ---
 
 ## 37. Instance main methods
 
-Relacionado con lo anterior, Java moderno permite métodos `main` más sencillos en ciertos contextos.
+Related to the above, modern Java allows simpler `main` methods in certain contexts.
 
-Forma clásica:
+Classic shape:
 
 ```java
 public static void main(String[] args) {
 }
 ```
 
-Forma más simple:
+Simplest way:
 
 ```java
 void main() {
 }
 ```
 
-Esto facilita empezar sin explicar desde el minuto uno conceptos como:
+This makes it easier to start without explaining concepts such as:
 
 - `public`
 - `static`
 - `String[] args`
 
-En un curso completo, sigue siendo importante entender la forma clásica, porque la verás constantemente en proyectos y documentación.
+In a complete course, it is still important to understand the classical form, because you will constantly see it in projects and documentation.
 
 ---
 
-## 38. Pattern matching con `instanceof`
+## 38. Pattern matching with `instanceof`
 
-Ya has visto una forma moderna de usar `instanceof`.
+You have already seen a modern way to use `instanceof`.
 
-Antes:
+Before:
 
 ```java
 if (value instanceof String) {
@@ -1063,7 +1062,7 @@ if (value instanceof String) {
 }
 ```
 
-Ahora:
+Now:
 
 ```java
 if (value instanceof String text) {
@@ -1071,17 +1070,17 @@ if (value instanceof String text) {
 }
 ```
 
-Java declara automáticamente la variable `text` si la condición se cumple.
+Java automatically declares the `text` variable if the condition is met.
 
-Esto reduce código repetitivo y hace el programa más claro.
+This reduces repetitive code and makes the program clearer.
 
 ---
 
-## 39. `switch` moderno
+## 39. Modern `switch`
 
-Java moderno también ha mejorado `switch`.
+Modern Java has also improved `switch`.
 
-Ejemplo tradicional:
+Traditional example:
 
 ```java
 switch (status) {
@@ -1096,7 +1095,7 @@ switch (status) {
 }
 ```
 
-Forma moderna:
+Modern shape:
 
 ```java
 String message = switch (status) {
@@ -1106,24 +1105,24 @@ String message = switch (status) {
 };
 ```
 
-Ventajas:
+Advantages:
 
-- menos código
-- menos `break`
-- puede devolver un valor
-- más expresivo
+- less code
+- less `break`
+- can return a value
+- more expressive
 
 ---
 
-## 40. `switch` con sealed classes
+## 40. `switch` with sealed classes
 
-Una de las combinaciones más potentes es:
+One of the most powerful combinations is:
 
 - sealed interfaces
 - records
-- switch moderno
+- modern switch
 
-Ejemplo:
+Example:
 
 ```java
 public sealed interface Result permits Success, Error {
@@ -1140,7 +1139,7 @@ public record Error(String reason) implements Result {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 String text = switch (result) {
@@ -1149,15 +1148,15 @@ String text = switch (result) {
 };
 ```
 
-Como la jerarquía está cerrada, Java puede saber qué casos existen.
+Since the hierarchy is closed, Java can know which cases exist.
 
 ---
 
-## 41. Records como parte de Java moderno
+## 41. Records as part of modern Java
 
-Los records reducen muchísimo el código repetitivo para clases de datos.
+Records greatly reduce repetitive code for data classes.
 
-Antes:
+Before:
 
 ```java
 public class User {
@@ -1179,42 +1178,42 @@ public class User {
 }
 ```
 
-Ahora:
+Now:
 
 ```java
 public record User(String name, String email) {
 }
 ```
 
-Esto no significa que todas las clases deban ser records.  
-Significa que Java ofrece una herramienta mejor para ciertos casos.
+This does not mean that all classes must be records.  
+It means that Java offers a better tool for certain cases.
 
 ---
 
-## 42. Sealed classes como parte de Java moderno
+## 42. Sealed classes as part of modern Java
 
-Las sealed classes permiten controlar jerarquías.
+Sealed classes allow you to control hierarchies.
 
-Ejemplo:
+Example:
 
 ```java
 public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
 }
 ```
 
-Esto comunica claramente:
+This clearly communicates:
 
-> un resultado de pago solo puede ser éxito o error
+> a payment result can only be success or error
 
-Son especialmente útiles cuando se combinan con records.
+They are especially useful when combined with records.
 
 ---
 
-## 43. Virtual threads como parte de Java moderno
+## 43. Virtual threads as part of modern Java
 
-Los virtual threads permiten crear tareas concurrentes ligeras.
+Virtual threads allow you to create lightweight concurrent tasks.
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -1228,15 +1227,15 @@ public class Main {
 }
 ```
 
-No sustituyen todo lo que existe sobre concurrencia, pero simplifican muchos escenarios donde hay muchas tareas esperando.
+They don't replace everything that exists about concurrency, but they simplify many scenarios where there are many tasks waiting.
 
 ---
 
 ## 44. Text blocks
 
-Los text blocks permiten escribir textos de varias líneas de forma más cómoda.
+Text blocks allow you to write multi-line text more comfortably.
 
-Ejemplo:
+Example:
 
 ```java
 String html = """
@@ -1248,15 +1247,15 @@ String html = """
         """;
 ```
 
-Son útiles para:
+They are useful for:
 
-- HTML
-- JSON
-- SQL
-- mensajes largos
-- plantillas
+-HTML
+-JSON
+-SQL
+- long messages
+- templates
 
-Ejemplo con JSON:
+Example with JSON:
 
 ```java
 String json = """
@@ -1271,9 +1270,9 @@ String json = """
 
 ## 45. `var`
 
-Java permite inferir el tipo de variables locales con `var`.
+Java allows you to infer the type of local variables with `var`.
 
-Ejemplo:
+Example:
 
 ```java
 var name = "Laura";
@@ -1281,31 +1280,30 @@ var age = 28;
 var users = List.of("Laura", "Alex");
 ```
 
-Java deduce el tipo a partir del valor.
+Java deduces the type from the value.
 
-### 45.1. Cuándo usar `var`
+### 45.1. When to use `var`
 
-Puede ser útil cuando el tipo es evidente:
+It can be useful when the type is obvious:
 
 ```java
 var message = "Hello";
 ```
 
-### 45.2. Cuándo evitarlo
-
-Evítalo si hace el código menos claro:
+### 45.2. When to avoid it
+Avoid it if it makes the code less clear:
 
 ```java
 var result = service.process();
 ```
 
-Si no se entiende qué tipo devuelve, puede ser mejor escribir el tipo explícito.
+If you don't understand what type it returns, it may be better to write the type explicit.
 
 ---
 
-## 46. APIs modernas que ya has visto
+## 46. Modern APIs that you have already seen
 
-En este curso también has trabajado con APIs modernas como:
+In this course you have also worked with modern APIs such as:
 
 ```java
 java.time
@@ -1315,9 +1313,9 @@ java.util.Optional
 java.math.BigDecimal
 ```
 
-Estas APIs hacen que Java sea más cómodo y seguro.
+These APIs make Java more convenient and secure.
 
-Ejemplos:
+Examples:
 
 ```java
 LocalDate.now()
@@ -1328,27 +1326,27 @@ List.of("A", "B", "C")
 
 ---
 
-## 47. Java moderno no significa usar todo siempre
+## 47. Modern Java does not mean always using everything
 
-Aprender Java moderno no significa usar todas las novedades en cada archivo.
+Learning modern Java doesn't mean using everything new in every file.
 
-La idea es elegir bien.
+The idea is to choose well.
 
-Ejemplos:
+Examples:
 
-- usa records para datos inmutables
-- usa clases normales para objetos con estado cambiante
-- usa sealed classes para jerarquías cerradas
-- usa enums para constantes simples
-- usa streams cuando mejoren la claridad
-- usa bucles cuando sean más simples
-- usa módulos si el proyecto lo necesita
+- use records for immutable data
+- use normal classes for objects with changing state
+- use sealed classes for closed hierarchies
+- use enums for simple constants
+- use streams when they improve clarity
+- use loops when they are simpler
+- use modules if the project needs it
 
-La buena programación no consiste en usar lo más nuevo, sino en usar la herramienta adecuada.
+Good programming is not about using the newest thing, but about using the right tool.
 
 ---
 
-## 48. Ejemplo completo: aplicación moderna sencilla
+## 48. Complete Example – Simple Modern App
 
 ### 48.1. `module-info.java`
 
@@ -1451,113 +1449,113 @@ public class Main {
 }
 ```
 
-Este ejemplo mezcla varias ideas modernas:
+This example mixes several modern ideas:
 
-- módulos
+- modules
 - records
 - sealed interfaces
 - streams
-- optional
-- switch moderno
+-optional
+- modern switch
 - BigDecimal
 
 ---
 
-## 49. Cómo aprender Java moderno sin abrumarse
+## 49. How to learn modern Java without getting overwhelmed
 
-Java tiene muchas herramientas, pero no necesitas dominarlas todas a la vez.
+Java has many tools, but you don't need to master them all at once.
 
-Una progresión razonable sería:
+A reasonable progression would be:
 
-1. dominar clases, objetos, colecciones y excepciones
-2. entender generics
-3. aprender lambdas y streams
-4. usar Optional correctamente
-5. usar APIs modernas como Date/Time y Files
-6. aprender records y sealed classes
-7. entender concurrencia básica
-8. conocer módulos y herramientas modernas
-9. practicar con proyectos completos
+1. master classes, objects, collections and exceptions
+2. understand generics
+3. learn lambdas and streams
+4. use Optional correctly
+5. use modern APIs like Date/Time and Files
+6. learn records and sealed classes
+7. understand basic concurrency
+8. Learn about modern modules and tools
+9. Practice with complete projects
 
-El objetivo no es memorizar sintaxis, sino entender qué problema resuelve cada herramienta.
-
----
-
-## 50. Errores típicos al empezar con módulos y Java moderno
-
-### 50.1. Pensar que un paquete y un módulo son lo mismo
-
-No lo son.
-
-- paquete: organiza clases
-- módulo: organiza paquetes y dependencias
-
-### 50.2. Olvidar `exports`
-
-Si un módulo no exporta un paquete, otros módulos no podrán usarlo directamente.
-
-### 50.3. Confundir `requires` con `import`
-
-- `requires` declara dependencia entre módulos
-- `import` permite usar clases con nombres más cortos dentro del código
-
-### 50.4. Usar módulos en proyectos demasiado simples
-
-Para proyectos pequeños, pueden añadir complejidad innecesaria.
-
-### 50.5. Usar novedades modernas sin que mejoren el código
-
-No uses records, streams, sealed classes o `var` solo porque existen.  
-Úsalos cuando hagan el código más claro.
-
-### 50.6. Abusar de `var`
-
-Si el tipo no es evidente, escribirlo explícitamente puede ser mejor.
+The goal is not to memorize syntax, but to understand what problem each tool solves.
 
 ---
 
-## 51. Buenas prácticas
+## 50. Typical mistakes when getting started with modules and modern Java
 
-- Usa paquetes para organizar clases.
-- Usa módulos cuando necesites controlar dependencias y visibilidad.
-- Exporta solo los paquetes que forman parte de tu API pública.
-- Mantén los paquetes internos sin exportar.
-- Usa `requires` para declarar dependencias reales.
-- Usa records para datos inmutables.
-- Usa sealed classes para jerarquías cerradas.
-- Usa `switch` moderno cuando mejore la claridad.
-- Usa streams para flujos de datos claros.
-- Usa bucles tradicionales cuando sean más legibles.
-- Aprende las novedades como herramientas, no como obligaciones.
+### 50.1. Thinking that a package and a module are the same
+
+They are not.
+
+- package: organize classes
+- module: organize packages and dependencies
+
+### 50.2. Forget `exports`
+
+If a module does not export a package, other modules will not be able to use it directly.
+
+### 50.3. Confusing `requires` with `import`
+
+- `requires` declares dependency between modules
+- `import` allows using classes with shorter names within the code
+
+### 50.4. Using modules in projects that are too simple
+
+For small projects, they can add unnecessary complexity.
+
+### 50.5. Use modern features without improving the code
+
+Don't use records, streams, sealed classes or `var` just because they exist.  
+Use them when they make the code clearer.
+
+### 50.6. Abuse `var`
+
+If the type is not obvious, writing it explicitly may be better.
 
 ---
 
-## 52. A tener en cuenta
+## 51. Good practices
 
-- `module-info.java` define un módulo.
-- `requires` declara dependencias.
-- `exports` expone paquetes.
-- `opens` permite acceso por reflexión.
-- `java.base` está disponible automáticamente.
-- `import module` permite importar paquetes exportados por un módulo.
-- Los compact source files simplifican programas pequeños.
-- Java moderno incluye records, sealed classes, streams, optional, virtual threads y mejoras en `switch`.
-- No todos los proyectos necesitan módulos.
-- Lo importante es elegir la herramienta adecuada para cada caso.
+- Use packages to organize classes.
+- Use modules when you need to control dependencies and visibility.
+- Export only packages that are part of your public API.
+- Keep internal packages without exporting.
+- Use `requires` to declare real dependencies.
+- Use records for immutable data.
+- Use sealed classes for closed hierarchies.
+- Use modern `switch` when clarity improves.
+- Use streams for clear data flows.
+- Use traditional loops when they are more readable.
+- Learn the news as tools, not as obligations.
 
 ---
 
-## 53. Resumen final
+## 52. To take into account
 
-Los módulos permiten organizar aplicaciones Java de forma más clara y controlada.
+- `module-info.java` defines a module.
+- `requires` declares dependencies.
+- `exports` exposes packets.
+- `opens` allows access by reflection.
+- `java.base` is available automatically.
+- `import module` allows importing packages exported by a module.
+- Compact source files simplify small programs.
+- Modern Java includes records, sealed classes, streams, optional, virtual threads and improvements to `switch`.
+- Not all projects need modules.
+- The important thing is to choose the right tool for each case.
 
-Con un archivo:
+---
+
+## 53. Final summary
+
+The modules allow you to organize Java applications in a clearer and more controlled way.
+
+With a file:
 
 ```java
 module-info.java
 ```
 
-puedes declarar:
+you can declare:
 
 ```java
 module com.amazaing.app {
@@ -1566,24 +1564,24 @@ module com.amazaing.app {
 }
 ```
 
-Esto ayuda a definir qué necesita tu módulo y qué partes expone.
+This helps define what your module needs and what parts it exposes.
 
-Además, Java moderno ha añadido muchas mejoras que hacen el lenguaje más cómodo y expresivo:
+In addition, modern Java has added many improvements that make the language more comfortable and expressive:
 
 - records
 - sealed classes
-- switch moderno
+- modern switch
 - pattern matching
 - virtual threads
 - compact source files
 - module import declarations
-- APIs modernas como `java.time`, `java.nio.file` y `Stream API`
+- Modern APIs like `java.time`, `java.nio.file` and `Stream API`
 
-La idea principal es que Java sigue evolucionando, pero mantiene una base sólida.
+The main idea is that Java continues to evolve, but maintains a solid foundation.
 
-Para programar bien en Java moderno no necesitas usar todas las características nuevas a la vez.  
-Lo importante es entender qué problema resuelve cada una y aplicarla cuando mejore tu código.
+To program well in modern Java you don't need to use all the new features at once.  
+The important thing is to understand what problem each one solves and apply it when it improves your code.
 
 ---
 
-En el siguiente tema veremos como trabajar con **Maven**.
+In the next topic we will see how to work with **Maven**.

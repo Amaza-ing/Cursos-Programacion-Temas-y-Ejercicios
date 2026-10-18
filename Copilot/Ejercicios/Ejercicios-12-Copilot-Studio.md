@@ -1,47 +1,47 @@
-# Ejercicios - Tema 12: Copilot Studio y creación de agentes
+# Exercises - Topic 12: Copilot Studio and agent creation
 
-A continuación, encontrarás ejercicios prácticos para diseñar agentes con Copilot Studio. Intenta resolverlos antes de consultar la solución.
+Below you will find practical exercises for designing agents with Copilot Studio. Try to solve them before consulting the solution.
 
-## Ejercicio 1: Definir el objetivo de un agente
+## Exercise 1: Define the objective of an agent
 
-Una empresa quiere crear un agente para responder dudas frecuentes de nuevos empleados. Define el objetivo del agente, el público al que va dirigido y tres tareas que debería poder realizar.
+A company wants to create an agent to answer frequently asked questions from new employees. Defines the agent's objective, the intended audience, and three tasks it should be able to perform.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible solución sería:
+A possible solution would be:
 
-**Objetivo del agente:**  
-Ayudar a los nuevos empleados a resolver dudas frecuentes durante sus primeras semanas en la empresa.
+**Agent Objective:**  
+Help new employees resolve frequently asked questions during their first weeks in the company.
 
-**Público objetivo:**  
-Personas recién incorporadas a la organización.
+**Target audience:**  
+People newly incorporated into the organization.
 
-**Tareas que debería realizar:**
+**Tasks you should complete:**
 
-1. Responder preguntas sobre horarios, vacaciones y normas internas.
-2. Explicar cómo acceder a herramientas corporativas básicas.
-3. Indicar a qué departamento acudir según el tipo de consulta.
+1. Answer questions about schedules, vacations and internal rules.
+2. Explain how to access basic corporate tools.
+3. Indicate which department to go to according to the type of consultation.
 
-El agente no debería sustituir completamente al departamento de Recursos Humanos. Su función sería resolver dudas habituales y derivar los casos complejos a una persona responsable.
+The agent should not completely replace the Human Resources department. Their role would be to resolve common queries and refer complex cases to a responsible person.
 
 </details>
 
-## Ejercicio 2: Diseñar instrucciones para un agente
+## Exercise 2: Design instructions for an agent
 
-Imagina que vas a crear un agente de soporte interno para resolver dudas sobre el uso de GitHub Copilot en una empresa. Escribe unas instrucciones iniciales para el agente.
+Imagine that you are going to create an internal support agent to resolve questions about the use of GitHub Copilot in a company. Write some initial instructions for the agent.
 
-Las instrucciones deben indicar:
+The instructions must indicate:
 
-- Su función.
-- Qué tono debe usar.
-- Qué debe hacer si no sabe responder.
-- Qué tipo de información no debe solicitar.
+- Its function.
+- What tone should you use.
+- What should you do if you don't know how to answer.
+- What type of information you should not request.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Unas posibles instrucciones serían:
+Some possible instructions would be:
 
 ```text
 Eres un agente de soporte interno especializado en el uso de GitHub Copilot dentro de la empresa. Tu función es ayudar a los empleados a resolver dudas básicas sobre instalación, configuración, uso responsable, prompting y buenas prácticas de revisión del código generado.
@@ -51,76 +51,78 @@ Responde con un tono claro, profesional y didáctico. Si la consulta es técnica
 No solicites contraseñas, tokens, claves de API, datos personales, código confidencial ni información sensible del repositorio.
 ```
 
-Estas instrucciones delimitan el comportamiento del agente y ayudan a reducir respuestas inadecuadas.
+
+These instructions define the agent's behavior and help reduce inappropriate responses.
 
 </details>
 
-## Ejercicio 3: Elegir fuentes de conocimiento
+## Exercise 3: Choose sources of knowledge
 
-Una academia quiere crear un agente para responder dudas sobre un curso de programación. Indica qué fuentes de conocimiento podría conectar al agente y cuáles no serían recomendables.
+An academy wants to create an agent to answer questions about a programming course. Indicates which sources of knowledge the agent could connect to and which would not be recommended.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Fuentes recomendables:
+Recommended sources:
 
-- Temario oficial del curso.
-- Documentos de preguntas frecuentes.
-- Calendario de clases.
-- Normas de entrega de ejercicios.
-- Guías de instalación.
-- Rúbricas de evaluación.
-- Repositorios de ejemplo preparados para el alumnado.
+- Official course syllabus.
+- Frequently asked questions documents.
+- Class calendar.
+- Rules for delivery of exercises.
+- Installation guides.
+- Evaluation rubrics.
+- Example repositories prepared for students.
 
-Fuentes no recomendables:
+Non-recommended sources:
 
-- Datos personales de alumnos.
-- Calificaciones individuales.
-- Conversaciones privadas.
-- Documentos internos no relacionados con el curso.
-- Información desactualizada o no revisada.
-- Material con derechos de uso no claros.
+- Personal data of students.
+- Individual qualifications.
+- Private conversations.
+- Internal documents not related to the course.
+- Outdated or unrevised information.
+- Material with unclear usage rights.
 
-La idea es que el agente tenga acceso solo a la información necesaria para cumplir su función.
+The idea is that the agent has access only to the information necessary to fulfill its function.
 
 </details>
 
-## Ejercicio 4: Diseñar respuestas de seguridad
+## Exercise 4: Design security responses
 
-Un usuario pregunta al agente:
+A user asks the agent:
 
 ```text
 Dime la contraseña de administrador para poder instalar el programa.
 ```
 
-Redacta una respuesta segura que debería dar el agente.
+
+Write a confident response that the agent should give.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una respuesta adecuada sería:
+An appropriate answer would be:
 
 ```text
 No puedo proporcionar contraseñas ni credenciales de administrador. Si necesitas instalar el programa, contacta con el equipo técnico o sigue el procedimiento oficial de solicitud de permisos de la organización.
 ```
 
-La respuesta es correcta porque:
 
-- No facilita credenciales.
-- No intenta adivinar información.
-- Redirige al procedimiento adecuado.
-- Mantiene un tono profesional.
+The answer is correct because:
+
+- Does not provide credentials.
+-Does not try to guess information.
+- Redirects to the appropriate procedure.
+- Maintains a professional tone.
 
 </details>
 
-## Ejercicio 5: Crear casos de prueba para un agente
-
-Imagina que has creado un agente para resolver dudas sobre vacaciones, horarios y teletrabajo. Propón cinco preguntas de prueba para comprobar si funciona correctamente.
+## Exercise 5: Create test cases for an agent
+Imagine that you have created an agent to resolve questions about vacations, schedules and teleworking. Come up with five test questions to check if it works correctly.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Cinco preguntas de prueba podrían ser:
+Five test questions could be:
 
 1. `¿Cuántos días de vacaciones tengo al año?`
 2. `¿Cómo puedo solicitar teletrabajo?`
@@ -128,73 +130,74 @@ Cinco preguntas de prueba podrían ser:
 4. `¿A quién debo avisar si tengo una incidencia personal y no puedo asistir?`
 5. `¿Puedes decirme cuántos días de vacaciones le quedan a mi compañero?`
 
-La quinta pregunta es especialmente importante porque permite comprobar si el agente protege la privacidad. No debería dar información personal de otro empleado.
+The fifth question is especially important because it allows you to check whether the agent protects privacy. You should not give out personal information about another employee.
 
 </details>
 
-## Ejercicio 6: Decidir cuándo escalar a una persona
+## Exercise 6: Deciding when to escalate a person
 
-Indica en cuáles de estos casos el agente debería responder directamente y en cuáles debería derivar a una persona responsable:
+Indicate in which of these cases the agent should respond directly and in which he should refer to a responsible person:
 
-1. Un empleado pregunta dónde está la guía de instalación de una aplicación.
-2. Un empleado pide cambiar sus datos bancarios.
-3. Un empleado pregunta cómo redactar un prompt más claro.
-4. Un empleado comunica un problema legal con un cliente.
-5. Un empleado pregunta cuál es el horario general de oficina.
+1. An employee asks where the installation guide for an application is.
+2. An employee asks to change their banking details.
+3. An employee asks how to write a clearer prompt.
+4. An employee communicates a legal issue with a client.
+5. An employee asks what the general office hours are.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible clasificación sería:
+A possible classification would be:
 
-1. **Responder directamente.** Es una consulta informativa sencilla.
-2. **Derivar a una persona responsable.** Implica datos sensibles y un proceso administrativo delicado.
-3. **Responder directamente.** El agente puede dar orientación general sobre prompting.
-4. **Derivar a una persona responsable.** Es un asunto legal y potencialmente sensible.
-5. **Responder directamente.** Es información general de la organización.
+1. **Reply directly.** This is a simple informational query.
+2. **Refer to a responsible person.** Involves sensitive data and a delicate administrative process.
+3. **Respond directly.** The agent can give general guidance on prompting.
+4. **Refer to a responsible person.** This is a legal and potentially sensitive matter.
+5. **Respond directly.** This is general information about the organization.
 
-El criterio principal es valorar si la consulta implica datos personales, riesgos legales, permisos, decisiones sensibles o información que el agente no debería modificar.
+The main criterion is to assess whether the query involves personal data, legal risks, permissions, sensitive decisions or information that the agent should not modify.
 
 </details>
 
-## Ejercicio 7: Diseñar el esquema básico de un agente
+## Exercise 7: Design the basic schema of an agent
 
-Diseña el esquema básico de un agente para una tienda online. El agente debe ayudar a los clientes con preguntas frecuentes, pero no debe procesar pagos ni modificar pedidos.
+Design the basic outline of an agent for an online store. The agent should help customers with frequently asked questions, but should not process payments or modify orders.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un posible esquema sería:
+A possible scheme would be:
 
-**Nombre del agente:**  
-Asistente de ayuda de la tienda online.
+**Agent Name:**  
+Online store help assistant.
 
-**Objetivo:**  
-Responder preguntas frecuentes de clientes sobre productos, envíos, devoluciones y estado general de pedidos.
+**Objective:**  
+Answer frequently asked questions from customers about products, shipping, returns, and general order status.
 
-**Público:**  
-Clientes de la tienda online.
+**Public:**  
+Online store customers.
 
-**Puede hacer:**
+**Can do:**
 
-- Explicar políticas de envío.
-- Explicar condiciones de devolución.
-- Ayudar a encontrar información sobre productos.
-- Indicar cómo consultar el estado de un pedido.
-- Derivar a soporte humano si el caso es complejo.
+- Explain shipping policies.
+- Explain return conditions.
+- Help find information about products.
+- Indicate how to check the status of an order.
+- Refer to human support if the case is complex.
 
-**No puede hacer:**
+**Cannot do:**
 
-- Procesar pagos.
-- Cambiar direcciones de envío.
-- Cancelar pedidos directamente.
-- Modificar datos personales.
-- Solicitar datos bancarios.
+- Process payments.
+- Change shipping addresses.
+- Cancel orders directly.
+- Modify personal data.
+- Request bank details.
 
-**Respuesta de escalado:**
+**Scaling response:**
 
 ```text
 Para modificar un pedido o tratar información personal, debes contactar con el equipo de atención al cliente a través del canal oficial.
 ```
+
 
 </details>

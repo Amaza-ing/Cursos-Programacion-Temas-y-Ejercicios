@@ -1,57 +1,57 @@
-# Tema 6. Bucles (while y for)
+# Topic 6. Loops (while and for)
 
-## 1. Introducción
+## 1. Introduction
 
-En programación, muchas tareas consisten en **repetir acciones**:
+In programming, many tasks consist of **repeating actions**:
 
-- Mostrar una lista de números
-- Sumar valores hasta que ocurra algo
-- Pedir datos al usuario hasta que sean válidos
-- Repetir intentos en un juego
-- Recorrer una estructura de datos (arrays, listas, etc.)
+- Show a list of numbers
+- Add values until something happens
+- Ask the user for data until they are valid
+- Repeat attempts in a game
+- Loop through a data structure (arrays, lists, etc.)
 
-Para esto existen los **bucles**.
+For this there are **loops**.
 
-Un bucle permite ejecutar un bloque de código **varias veces**, bajo una condición o un número determinado de repeticiones.
+A loop allows a block of code to be executed **multiple times**, under a condition or a certain number of repetitions.
 
-En Java, los bucles más importantes al empezar son:
+In Java, the most important loops to get started with are:
 
-- `while` (bucle condicional)
-- `for` (bucle contador)
+- `while` (conditional loop)
+- `for` (counter loop)
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo funciona un bucle `while`
-- Cómo funciona un bucle `for`
-- Cómo elegir entre uno y otro
-- Errores comunes (bucles infinitos, off-by-one, etc.)
-- Patrones básicos que usarás constantemente
-
----
-
-[![Bucles](https://img.youtube.com/vi/YYZ6HcfevLs/0.jpg)](https://www.youtube.com/watch?v=YYZ6HcfevLs&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- How an `while` loop works
+- How an `for` loop works
+- How to choose between one and the other
+- Common errors (infinite loops, off-by-one, etc.)
+- Basic patterns that you will use constantly
 
 ---
 
-## 2. Concepto clave: condición, repetición y estado
-
-Todo bucle tiene tres ideas importantes:
-
-1. **Condición**: decide si el bucle continúa o se detiene.
-2. **Estado**: una variable (o varias) que cambia con el tiempo.
-3. **Actualización**: lo que modifica el estado para que el bucle avance.
-
-Si no actualizas el estado, es fácil caer en un **bucle infinito**.
+[![Loops](https://img.youtube.com/vi/YYZ6HcfevLs/0.jpg)](https://www.youtube.com/watch?v=YYZ6HcfevLs&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 3. Bucle `while`
+## 2. Key concept: condition, repetition and state
 
-### 3.1. ¿Qué es un `while`?
+Every loop has three important ideas:
 
-Un `while` repite un bloque **mientras** la condición sea `true`.
+1. **Condition**: Decides whether the loop continues or stops.
+2. **State**: a variable (or several) that changes over time.
+3. **Update**: which modifies the state so that the loop advances.
 
-Sintaxis:
+If you don't update the state, it's easy to fall into an **infinite loop**.
+
+---
+
+## 3. `while` loop
+
+### 3.1. What is an `while`?
+
+An `while` repeats a block **as long as** the condition is `true`.
+
+Syntax:
 
 ```java
 while (condition) {
@@ -59,13 +59,13 @@ while (condition) {
 }
 ```
 
-- Si la condición es `true`, entra al bucle.
-- Después de cada iteración, vuelve a comprobar la condición.
-- Si la condición es `false`, el bucle termina.
+- If the condition is `true`, enter the loop.
+- After each iteration, check the condition again.
+- If the condition is `false`, the loop ends.
 
 ---
 
-### 3.2. Ejemplo 1: contar de 1 a 5
+### 3.2. Example 1: counting from 1 to 5
 
 ```java
 public class Main {
@@ -80,14 +80,14 @@ public class Main {
 }
 ```
 
-Qué está pasando:
+What's happening:
 
-- `counter` empieza en 1 (estado inicial)
-- La condición es `counter <= 5`
-- En cada vuelta se imprime y luego se incrementa
-- Al llegar a 6, la condición es falsa y el bucle termina
+- `counter` starts at 1 (initial state)
+- Condition is `counter <= 5`
+- On each turn it is printed and then incremented
+- When reaching 6, the condition is false and the loop ends
 
-Salida:
+Output:
 
 ```
 1
@@ -99,7 +99,7 @@ Salida:
 
 ---
 
-### 3.3. Ejemplo 2: sumar números hasta alcanzar un límite
+### 3.3. Example 2: Adding numbers until a limit is reached
 
 ```java
 public class Main {
@@ -117,16 +117,16 @@ public class Main {
 }
 ```
 
-Ideas clave:
+Key ideas:
 
-- `total` cambia y controla cuándo parar
-- `number` también cambia para que cada suma sea distinta
+- `total` changes and controls when to stop
+- `number` also changes so that each sum is different
 
 ---
 
-### 3.4. Error típico: bucle infinito por no actualizar el contador
+### 3.4. Typical error: infinite loop due to not updating the counter
 
-Esto es un error clásico:
+This is a classic mistake:
 
 ```java
 int counter = 1;
@@ -136,10 +136,10 @@ while (counter <= 5) {
 }
 ```
 
-La condición siempre es `true` porque `counter` nunca cambia.  
-El programa no termina (bucle infinito).
+The condition is always `true` because `counter` never changes.  
+The program does not terminate (infinite loop).
 
-Solución: actualiza el estado
+Solution: update the status
 
 ```java
 int counter = 1;
@@ -152,11 +152,11 @@ while (counter <= 5) {
 
 ---
 
-## 4. Bucle `do-while` (muy útil para validar)
+## 4. `do-while` loop (very useful for validating)
 
-Aunque el tema se centra en `while` y `for`, conviene conocer `do-while` porque aparece mucho cuando quieres que algo se ejecute al menos una vez.
+Although the topic focuses on `while` and `for`, it is worth knowing `do-while` because it appears a lot when you want something to be executed at least once.
 
-Sintaxis:
+Syntax:
 
 ```java
 do {
@@ -164,11 +164,11 @@ do {
 } while (condition);
 ```
 
-La diferencia con `while` es:
+The difference with `while` is:
 
-- `do-while` ejecuta el bloque **una vez** y luego evalúa la condición.
+- `do-while` executes the block **once** and then evaluates the condition.
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -183,17 +183,17 @@ public class Main {
 }
 ```
 
-Esto imprime `10` una vez, aunque la condición sea falsa desde el inicio.
+This prints `10` once, even if the condition is false from the start.
 
 ---
 
-## 5. Bucle `for`
+## 5. `for` loop
 
-### 5.1. ¿Qué es un `for`?
+### 5.1. What is an `for`?
 
-Un `for` es ideal cuando sabes cuántas veces quieres repetir algo. Es un bucle contador.
+An `for` is ideal when you know how many times you want to repeat something. It is a counter loop.
 
-Sintaxis:
+Syntax:
 
 ```java
 for (initialization; condition; update) {
@@ -201,13 +201,13 @@ for (initialization; condition; update) {
 }
 ```
 
-- **initialization**: se ejecuta una sola vez al inicio
-- **condition**: se comprueba antes de cada iteración
-- **update**: se ejecuta después de cada iteración
+- **initialization**: executed once at startup
+- **condition**: checked before each iteration
+- **update**: executed after each iteration
 
 ---
 
-### 5.2. Ejemplo 1: contar de 1 a 5
+### 5.2. Example 1: counting from 1 to 5
 
 ```java
 public class Main {
@@ -219,15 +219,15 @@ public class Main {
 }
 ```
 
-Comparado con `while`, el `for` agrupa en una sola línea:
+Compared to `while`, `for` groups into a single line:
 
-- variable contador (`int i = 1`)
-- condición (`i <= 5`)
-- actualización (`i++`)
+- counter variable (`int i = 1`)
+- condition (`i <= 5`)
+- update (`i++`)
 
 ---
 
-### 5.3. Ejemplo 2: contar hacia atrás
+### 5.3. Example 2: counting backwards
 
 ```java
 public class Main {
@@ -239,7 +239,7 @@ public class Main {
 }
 ```
 
-Salida:
+Output:
 
 ```
 5
@@ -251,7 +251,7 @@ Salida:
 
 ---
 
-### 5.4. Ejemplo 3: saltos (step) de 2 en 2
+### 5.4. Example 3: jumps (step) 2 by 2
 
 ```java
 public class Main {
@@ -263,7 +263,7 @@ public class Main {
 }
 ```
 
-Salida:
+Output:
 
 ```
 0
@@ -276,15 +276,15 @@ Salida:
 
 ---
 
-## 6. ¿Cuándo usar `while` y cuándo usar `for`?
+## 6. When to use `while` and when to use `for`?
 
-### 6.1. Usa `for` cuando
+### 6.1. Use `for` when
 
-- Sabes cuántas repeticiones habrá
-- Estás recorriendo un rango claro: 1 a 10, 0 a 99, etc.
-- Hay un contador con incremento simple
+- You know how many repetitions there will be
+- You are running through a clear range: 1 to 10, 0 to 99, etc.
+- There is a counter with simple increment
 
-Ejemplo típico: repetir 10 veces
+Typical example: repeat 10 times
 
 ```java
 for (int i = 0; i < 10; i++) {
@@ -294,13 +294,13 @@ for (int i = 0; i < 10; i++) {
 
 ---
 
-### 6.2. Usa `while` cuando
+### 6.2. Use `while` when
 
-- No sabes cuántas repeticiones habrá
-- Dependende de una condición externa
-- Estás esperando que ocurra algo
+- You don't know how many repetitions there will be
+-Depends on an external condition
+- You are waiting for something to happen
 
-Ejemplo típico: repetir hasta que un valor alcance un estado
+Typical example: repeat until a value reaches a state
 
 ```java
 while (balance > 0) {
@@ -310,9 +310,9 @@ while (balance > 0) {
 
 ---
 
-## 7. Patrones básicos de bucles (muy importantes)
+## 7. Basic loop patterns (very important)
 
-### 7.1. Patrón 1: contador
+### 7.1. Pattern 1: counter
 
 ```java
 int counter = 0;
@@ -325,9 +325,9 @@ while (counter < 3) {
 
 ---
 
-### 7.2. Patrón 2: acumulador
+### 7.2. Pattern 2: accumulator
 
-Un acumulador es una variable que “va guardando” un resultado.
+An accumulator is a variable that “stores” a result.
 
 ```java
 int sum = 0;
@@ -339,13 +339,13 @@ for (int i = 1; i <= 5; i++) {
 System.out.println(sum); // 15
 ```
 
-Aquí `sum` es el acumulador.
+Here `sum` is the accumulator.
 
 ---
 
-### 7.3. Patrón 3: encontrar un máximo
+### 7.3. Pattern 3: Find a maximum
 
-Aunque aún no hemos visto arrays, podemos entender la idea con variables sueltas:
+Although we haven't seen arrays yet, we can understand the idea with single variables:
 
 ```java
 int max = 10;
@@ -356,13 +356,13 @@ if (value > max) {
 }
 ```
 
-Cuando veas arrays, este patrón se usa dentro de bucles.
+When you see arrays, this pattern is used inside loops.
 
 ---
 
-### 7.4. Patrón 4: contador condicionado
+### 7.4. Pattern 4: Conditional Counter
 
-Contar cuántas veces ocurre algo:
+Count how many times something happens:
 
 ```java
 int count = 0;
@@ -378,19 +378,19 @@ System.out.println(count); // cuántos pares hay entre 1 y 10
 
 ---
 
-## 8. Errores comunes al trabajar con bucles
+## 8. Common mistakes when working with loops
 
-### 8.1. Bucle infinito
+### 8.1. infinite loop
 
-Ocurre cuando la condición nunca se vuelve `false`.
+Occurs when the condition never becomes `false`.
 
-Causas típicas:
+Typical causes:
 
-- No actualizar el contador
-- Actualizarlo en la dirección incorrecta
-- Condición mal escrita
+- Do not update the counter
+- Update it in the wrong address
+- Condition misspelled
 
-Ejemplo típico (dirección incorrecta):
+Typical example (wrong address):
 
 ```java
 int counter = 1;
@@ -403,11 +403,11 @@ while (counter <= 5) {
 
 ---
 
-### 8.2. Error de “una vez de más” (off-by-one)
+### 8.2. “Off-by-one” error
 
-Muy frecuente en rangos.
+Very common in ranges.
 
-Ejemplo:
+Example:
 
 ```java
 for (int i = 0; i <= 10; i++) {
@@ -415,9 +415,9 @@ for (int i = 0; i <= 10; i++) {
 }
 ```
 
-Imprime 11 números (0 a 10).
+Prints 11 numbers (0 to 10).
 
-Si querías imprimir 10 números, suele ser:
+If you wanted to print 10 numbers, it is usually:
 
 ```java
 for (int i = 0; i < 10; i++) {
@@ -425,15 +425,15 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-- `i < 10` → 0 a 9 (10 valores)
+- `i < 10` → 0 to 9 (10 values)
 
 ---
 
-### 8.3. Reutilizar contadores con valores “sucios”
+### 8.3. Reuse counters with “dirty” values
 
-Si reusas la misma variable sin reiniciarla, puede causar fallos lógicos.
+If you reuse the same variable without resetting it, it may cause logic failures.
 
-Ejemplo:
+Example:
 
 ```java
 int i = 0;
@@ -448,13 +448,13 @@ while (i < 3) {
 }
 ```
 
-Solución: reiniciar `i` antes del segundo bucle.
+Solution: Reset `i` before the second loop.
 
 ---
 
-## 9. Ejemplos completos y guiados
+## 9. Complete and guided examples
 
-### 9.1. Ejemplo 1: imprimir una tabla simple (multiplicar por 3)
+### 9.1. Example 1: Print a simple table (multiply by 3)
 
 ```java
 public class Main {
@@ -469,11 +469,11 @@ public class Main {
 }
 ```
 
-Esto imprime una tabla de multiplicar del 3, del 1 al 10.
+This prints a multiplication table of 3, 1 to 10.
 
 ---
 
-### 9.2. Ejemplo 2: simular intentos hasta alcanzar un objetivo
+### 9.2. Example 2: simulate attempts until reaching a goal
 
 ```java
 public class Main {
@@ -493,15 +493,15 @@ public class Main {
 }
 ```
 
-Ideas clave:
+Key ideas:
 
-- `progress` controla cuándo parar
-- `attempts` cuenta cuántas vueltas ha dado el bucle
-- `progress` crece y eventualmente alcanza el objetivo
+- `progress` controls when to stop
+- `attempts` counts how many turns the loop has taken
+- `progress` grows and eventually reaches the target
 
 ---
 
-### 9.3. Ejemplo 3: combinar bucle y condicional dentro
+### 9.3. Example 3: Combine loop and conditional inside
 
 ```java
 public class Main {
@@ -519,19 +519,19 @@ public class Main {
 }
 ```
 
-Esto suma solo los pares del 1 al 10.
+This adds only the pairs 1 to 10.
 
 ---
 
-## 10. A tener en cuenta
+## 10. To take into account
 
-- Un bucle repite código hasta que se cumple una condición de salida.
-- `while` es ideal cuando no sabes cuántas repeticiones habrá.
-- `for` es ideal cuando hay un contador y un rango claro.
-- Casi todos los bucles necesitan una variable que cambie (estado).
-- Los errores más comunes son: bucles infinitos y off-by-one.
-- Practicar patrones (contador, acumulador, filtrado) te ayudará en temas futuros como arrays y colecciones.
+- A loop repeats code until an exit condition is met.
+- `while` is ideal when you don't know how many repetitions there will be.
+- `for` is ideal when there is a counter and a clear range.
+- Almost all loops need a variable that changes (state).
+- The most common errors are: infinite loops and off-by-one.
+- Practicing patterns (counter, accumulator, filtering) will help you in future topics such as arrays and collections.
 
 ---
 
-En el próximo tema veremos **control del flujo en bucles** (`break` y `continue`), para detener una repetición o saltar una iteración cuando lo necesites.
+In the next topic we will see **flow control in loops** (`break` and `continue`), to stop a repetition or skip an iteration when you need it.

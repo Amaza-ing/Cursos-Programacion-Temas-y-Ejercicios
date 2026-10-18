@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 6: Eventos en React**
+# **Exercises - Topic 6: Events in React**
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre eventos en React.
+Below you will find **10 practical exercises** on events in React.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Botón con `onClick`**
+## **Exercise 1: Button with `onClick`**
 
-Crea un componente `ClickCounter.jsx` con un botón que al hacer click muestre en consola: **"Button clicked"**.
+Create an `ClickCounter.jsx` component with a button that when clicked shows in the console: **"Button clicked"**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function ClickCounter() {
@@ -28,9 +28,9 @@ export default ClickCounter;
 
 ---
 
-## **Ejercicio 2: Corregir el evento escrito como en HTML**
+## **Exercise 2: Correct the event written as in HTML**
 
-Este código está escrito como si fuera HTML tradicional. Corrígelo para React:
+This code is written as if it were traditional HTML. Fix it for React:
 
 ```js
 function App() {
@@ -38,9 +38,9 @@ function App() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-En React, se usa `onClick` y se pasa una función:
+In React, you use `onClick` and pass a function:
 
 ```js
 function App() {
@@ -58,16 +58,16 @@ export default App;
 
 ---
 
-## **Ejercicio 3: Pasar parámetros sin ejecutar al renderizar**
+## **Exercise 3: Pass parameters without executing when rendering**
 
-Crea un componente `MessageButtons.jsx` con dos botones:
+Create an `MessageButtons.jsx` component with two buttons:
 
-- Uno que envíe el mensaje **"Hello"**.
-- Otro que envíe el mensaje **"Goodbye"**.
+- One that sends the message **"Hello"**.
+- Another one who sends the message **"Goodbye"**.
 
-Al hacer click, debe mostrarse el mensaje con `alert`.
+When you click, the message with `alert` should be displayed.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function MessageButtons() {
@@ -90,13 +90,13 @@ export default MessageButtons;
 
 ---
 
-## **Ejercicio 4: Capturar texto de un input con `onChange`**
+## **Exercise 4: Capture text from an input with `onChange`**
 
-Crea un componente `LiveInput.jsx` con un input que:
+Create an `LiveInput.jsx` component with an input that:
 
-- En cada cambio muestre en consola el texto que escribe el usuario.
+- In each change, show the text that the user writes in the console.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function LiveInput() {
@@ -114,14 +114,14 @@ export default LiveInput;
 
 ---
 
-## **Ejercicio 5: Evento `onMouseEnter` y `onMouseLeave`**
+## **Exercise 5: Event `onMouseEnter` and `onMouseLeave`**
 
-Crea un componente `HoverLogger.jsx` con un `div` que:
+Create an `HoverLogger.jsx` component with an `div` that:
 
-- Al entrar el ratón muestre: **"Mouse entered"** en consola.
-- Al salir el ratón muestre: **"Mouse left"** en consola.
+- When the mouse enters, show: **"Mouse entered"** in the console.
+- When the mouse exits, show: **"Mouse left"** in the console.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function HoverLogger() {
@@ -147,19 +147,19 @@ export default HoverLogger;
 
 ---
 
-## **Ejercicio 6: `onSubmit` con `preventDefault()`**
+## **Exercise 6: `onSubmit` with `preventDefault()`**
 
-Crea un componente `NewsletterForm.jsx` con un formulario que tenga:
+Create an `NewsletterForm.jsx` component with a form that has:
 
-- Un input con `name="email"`.
-- Un botón de tipo submit.
+- An entry with `name="email"`.
+- A submit button.
 
-Cuando se envíe el formulario:
+When the form is submitted:
 
-- Evita la recarga con `preventDefault()`.
-- Muestra en consola: **"Form submitted"**.
+- Avoid recharging with `preventDefault()`.
+- Show in console: **"Form submitted"**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function NewsletterForm() {
@@ -183,20 +183,20 @@ export default NewsletterForm;
 
 ---
 
-## **Ejercicio 7: Obtener el valor de un input en `onSubmit`**
+## **Exercise 7: Obtain the value of an input in `onSubmit`**
 
-Crea un componente `SimpleSearchForm.jsx` con:
+Create an `SimpleSearchForm.jsx` component with:
 
-- Un `form`.
-- Un `input` con `name="query"`.
-- Un botón submit.
+- An `form`.
+- An `input` with `name="query"`.
+- A submit button.
 
-Al enviar:
+When sending:
 
-- Usa `preventDefault()`.
-- Muestra en consola el texto del input usando `event.target`.
+- Use `preventDefault()`.
+- Show the input text in the console using `event.target`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function SimpleSearchForm() {
@@ -222,9 +222,9 @@ export default SimpleSearchForm;
 
 ---
 
-## **Ejercicio 8: Evitar una llamada incorrecta del handler**
+## **Exercise 8: Avoid an incorrect handler call**
 
-Este código ejecuta la función al renderizar. Corrígelo:
+This code runs the function when rendering. Correct it:
 
 ```js
 function App() {
@@ -234,9 +234,9 @@ function App() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-En React debes pasar la función, no llamarla:
+In React you must pass the function, not call it:
 
 ```js
 function App() {
@@ -252,9 +252,9 @@ export default App;
 
 ---
 
-## **Ejercicio 9: Crear handlers con nombres correctos**
+## **Exercise 9: Create handlers with correct names**
 
-Reescribe este componente usando nombres de handlers más recomendables:
+Rewrite this component using more recommended handler names:
 
 ```js
 function App() {
@@ -264,7 +264,7 @@ function App() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {
@@ -282,11 +282,10 @@ export default App;
 
 ---
 
-## **Ejercicio 10: Mini-caso práctico (elige la solución correcta)**
+## **Exercise 10: Mini-case study (choose the correct solution)**
 
-Quieres que un botón llame a una función `handleSelect` pasando el texto `"Option A"`.
-
-¿Cuál es la opción correcta?
+You want a button to call a function `handleSelect` by passing the text `"Option A"`.
+What is the correct option?
 
 1.
 
@@ -306,18 +305,18 @@ Quieres que un botón llame a una función `handleSelect` pasando el texto `"Opt
 <button onclick={() => handleSelect("Option A")}>Select</button>
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-La opción correcta es la **2**:
+The correct option is **2**:
 
 ```js
 <button onClick={() => handleSelect("Option A")}>Select</button>
 ```
 
-Motivo:
+Reason:
 
-- `onClick` debe ir en camelCase.
-- Para pasar parámetros, necesitas una función que se ejecute al hacer click.
+- `onClick` must go in camelCase.
+- To pass parameters, you need a function that is executed when clicked.
 
 </details>
 

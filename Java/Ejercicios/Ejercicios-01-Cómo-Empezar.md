@@ -1,14 +1,14 @@
-# Ejercicios - Tema 1: Qué es Java y primer programa con IntelliJ
+# Exercises - Topic 1: What is Java and first program with IntelliJ
 
-A continuación, encontrarás **4 ejercicios prácticos** relacionados con el primer contacto con Java, el entorno IntelliJ y la estructura básica de un programa.
+Below, you will find **4 practical exercises** related to the first contact with Java, the IntelliJ environment and the basic structure of a program.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Identificar los elementos de un programa Java
+## Exercise 1: Identify the elements of a Java program
 
-Observa el siguiente código:
+Look at the following code:
 
 ```java
 public class Main {
@@ -18,19 +18,19 @@ public class Main {
 }
 ```
 
-Indica:
+Indicates:
 
-- El nombre de la clase
-- El nombre del método principal
-- Qué línea muestra texto por consola
+- The name of the class
+- The name of the main method
+- Which line shows text per console
 
-No modifiques el código, solo analízalo.
+Don't modify the code, just analyze it.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-- La clase se llama `Main`.
-- El método principal es `main`.
-- La línea que muestra texto por consola es:
+- The class is called `Main`.
+- The main method is `main`.
+- The line that shows text through the console is:
 
 ```java
 System.out.println("Hello, Java!");
@@ -40,9 +40,9 @@ System.out.println("Hello, Java!");
 
 ---
 
-## Ejercicio 2: Cambiar el texto que se muestra por consola
+## Exercise 2: Change the text displayed by the console
 
-Partiendo de este programa:
+Starting from this program:
 
 ```java
 public class Main {
@@ -52,13 +52,13 @@ public class Main {
 }
 ```
 
-Modifica el texto para que muestre el mensaje:
+Modify the text to display the message:
 
 ```
 My first Java program
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -72,17 +72,17 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Mostrar varios mensajes por consola
+## Exercise 3: Show multiple messages per console
 
-Escribe un programa que muestre **tres líneas distintas** por consola:
+Write a program that displays **three different lines** per console:
 
-- Tu nombre
-- El nombre del lenguaje (`Java`)
-- El mensaje `Learning programming`
+- Your name
+- The name of the language (`Java`)
+- The message `Learning programming`
 
-Cada mensaje debe aparecer en una línea diferente.
+Each message must appear on a different line.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -98,9 +98,9 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Reconocer errores básicos
+## Exercise 4: Recognize basic errors
 
-Este código no es correcto. Léelo y responde:
+This code is not correct. Read it and answer:
 
 ```java
 public class main {
@@ -110,19 +110,19 @@ public class main {
 }
 ```
 
-Indica **al menos tres errores** que impedirían que el programa se ejecute correctamente.
+Indicates **at least three errors** that would prevent the program from running correctly.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Errores del código:
+Code errors:
 
-1. El nombre de la clase debe empezar por mayúscula: `Main`.
-2. El método principal debe llamarse exactamente `main` (minúsculas).
-3. La firma correcta es `public static void main(String[] args)`.
-4. `System` debe escribirse con mayúscula.
-5. Falta `[]` en `String[] args`.
+1. The class name must begin with a capital letter: `Main`.
+2. The main method must be called exactly `main` (lowercase).
+3. The correct signature is `public static void main(String[] args)`.
+4. `System` must be capitalized.
+5. `[]` is missing from `String[] args`.
 
-Una versión corregida sería:
+A corrected version would be:
 
 ```java
 public class Main {

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 1: Introducción a Vue.js y Configuración del Entorno**
+# **Exercises - Topic 1: Introduction to Vue.js and Environment Configuration**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre los aspectos básicos de Vue.
+Below you will find 5 practical exercises on the basics of Vue.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
-## **Ejercicio 1: Instalación de Node.js**
+## **Exercise 1: Installing Node.js**
 
-Instala Node.js en tu sistema y verifica que esté correctamente instalado.
+Install Node.js on your system and verify that it is installed correctly.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Descarga Node.js desde [https://nodejs.org](https://nodejs.org) e instálalo. Luego, verifica la instalación ejecutando:
+Download Node.js from [https://nodejs.org](https://nodejs.org) and install it. Then, verify the installation by running:
 
 ```sh
 node -v
@@ -21,19 +21,19 @@ npm -v
 
 ---
 
-## **Ejercicio 2: Crear un nuevo proyecto Vue con Vite**
+## **Exercise 2: Create a new Vue project with Vite**
 
-Crea un proyecto llamado `my-blog` utilizando Vite.
+Create a project called `my-blog` using Vite.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Ejecuta el siguiente comando:
+Run the following command:
 
 ```sh
 npm create vue@latest
 ```
 
-Durante la instalación, elige `my-blog` como nombre de carpeta y selecciona Vue 3 como framework. Luego:
+During installation, choose `my-blog` as the folder name and select Vue 3 as the framework. Then:
 
 ```sh
 cd my-blog
@@ -44,51 +44,51 @@ npm install
 
 ---
 
-## **Ejercicio 3: Explicación de la estructura de un proyecto Vue**
+## **Exercise 3: Explanation of the structure of a Vue project**
 
-Explica brevemente la función de los siguientes archivos o carpetas:
+Briefly explain the function of the following files or folders:
 
 - `src/main.js`
 - `src/App.vue`
 - `vite.config.js`
 - `package.json`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-- `src/main.js`: Es el punto de entrada donde se crea la aplicación Vue y se monta sobre el DOM.
-- `src/App.vue`: Es el componente raíz de la aplicación.
-- `vite.config.js`: Configuración personalizada para Vite (servidor, alias, plugins, etc).
-- `package.json`: Define las dependencias, scripts y metadatos del proyecto.
+- `src/main.js`: It is the entry point where the Vue application is created and mounted on the DOM.
+- `src/App.vue`: It is the root component of the application.
+- `vite.config.js`: Custom configuration for Vite (server, aliases, plugins, etc.).
+- `package.json`: Defines the dependencies, scripts and metadata of the project.
 
 </details>
 
 ---
 
-## **Ejercicio 4: Levantar el servidor de desarrollo**
+## **Exercise 4: Stand up the development server**
 
-Arranca el servidor de desarrollo y explica qué ocurre al modificar `App.vue`.
+Start the development server and explain what happens when you modify `App.vue`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Para iniciar el servidor:
+To start the server:
 
 ```sh
 npm run dev
 ```
 
-Al modificar `App.vue`, los cambios se reflejan automáticamente en el navegador sin necesidad de refrescar manualmente, gracias al Hot Module Replacement (HMR).
+When modifying `App.vue`, the changes are automatically reflected in the browser without the need to refresh manually, thanks to Hot Module Replacement (HMR).
 
 </details>
 
 ---
 
-## **Ejercicio 5: Crear un componente básico en Vue**
+## **Exercise 5: Create a basic component in Vue**
 
-Crea un componente llamado `HelloWorld.vue` dentro de la carpeta `src/components` que muestre un mensaje de bienvenida.
+Create a component called `HelloWorld.vue` inside the `src/components` folder that displays a welcome message.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Crea el archivo `src/components/HelloWorld.vue` con el siguiente contenido:
+Create the `src/components/HelloWorld.vue` file with the following content:
 
 ```vue
 <script setup>
@@ -106,7 +106,7 @@ h1 {
 </style>
 ```
 
-Luego, impórtalo y úsalo en `App.vue`:
+Then import it and use it in `App.vue`:
 
 ```vue
 <script setup>

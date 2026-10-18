@@ -1,10 +1,10 @@
-# Ejercicios - Tema 07: Refactorización, documentación, testing y debugging con GitHub Copilot
+# Exercises - Topic 07: Refactoring, documentation, testing and debugging with GitHub Copilot
 
-A continuación, encontrarás ejercicios prácticos para trabajar con GitHub Copilot en tareas de refactorización, documentación, creación de tests y detección de errores.
+Below, you will find practical exercises to work with GitHub Copilot on refactoring, documentation, test creation, and error detection tasks.
 
-## Ejercicio 1: Refactorizar una función poco legible
+## Exercise 1: Refactor a poorly readable function
 
-Tienes el siguiente código:
+You have the following code:
 
 ```javascript
 function c(a) {
@@ -18,14 +18,15 @@ function c(a) {
 }
 ```
 
-La función calcula el total de los pedidos pagados cuyo importe es mayor de 50.
 
-Escribe un prompt para pedir a GitHub Copilot que refactorice el código mejorando la legibilidad, sin cambiar el comportamiento.
+The function calculates the total of paid orders whose amount is greater than 50.
+
+Write a prompt to ask GitHub Copilot to refactor the code to improve readability, without changing the behavior.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Refactoriza esta función para que sea más legible, pero sin cambiar su comportamiento.
@@ -34,7 +35,8 @@ Sustituye el bucle manual por métodos de array si mejora la claridad.
 Después, explica brevemente qué cambios has realizado.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 function calculatePaidOrdersTotal(orders) {
@@ -44,7 +46,8 @@ function calculatePaidOrdersTotal(orders) {
 }
 ```
 
-Si no se pueden cambiar los nombres de las propiedades porque vienen de una API externa, una alternativa sería:
+
+If the property names cannot be changed because they come from an external API, an alternative would be:
 
 ```javascript
 function calculatePaidOrdersTotal(orders) {
@@ -54,13 +57,14 @@ function calculatePaidOrdersTotal(orders) {
 }
 ```
 
-La segunda opción mantiene exactamente las propiedades originales. La primera opción es más clara, pero solo sería válida si también se puede modificar la estructura de los datos.
+
+The second option maintains exactly the original properties. The first option is clearer, but would only be valid if the data structure can also be modified.
 
 </details>
 
-## Ejercicio 2: Documentar una función con JSDoc
+## Exercise 2: Document a function with JSDoc
 
-Tienes la siguiente función:
+You have the following function:
 
 ```javascript
 function calculateDiscount(price, percentage) {
@@ -72,12 +76,13 @@ function calculateDiscount(price, percentage) {
 }
 ```
 
-Escribe un prompt para pedir a GitHub Copilot que añada documentación JSDoc clara y breve.
+
+Write a prompt to ask GitHub Copilot to add clear and concise JSDoc documentation.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Añade documentación JSDoc a esta función.
@@ -86,7 +91,8 @@ No cambies el código de la función.
 Usa una explicación breve y clara.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 /**
@@ -106,13 +112,14 @@ function calculateDiscount(price, percentage) {
 }
 ```
 
-La documentación es útil porque permite entender la función sin tener que leer todo el cuerpo del código. Además, ayuda a otros desarrolladores y mejora la asistencia que puede ofrecer Copilot en el proyecto.
+
+Documentation is useful because it allows you to understand the function without having to read the entire body of the code. Additionally, it helps other developers and improves the support that Copilot can offer on the project.
 
 </details>
 
-## Ejercicio 3: Generar tests unitarios con Copilot
+## Exercise 3: Generate unit tests with Copilot
 
-Tienes la siguiente función:
+You have the following function:
 
 ```javascript
 function isValidPassword(password) {
@@ -122,14 +129,15 @@ function isValidPassword(password) {
 }
 ```
 
-La función debe devolver `true` si la contraseña tiene al menos 8 caracteres, una mayúscula y un número.
 
-Escribe un prompt para pedir a GitHub Copilot que genere tests unitarios usando Jest.
+The function should return `true` if the password has at least 8 characters, a capital letter, and a number.
+
+Write a prompt to ask GitHub Copilot to generate unit tests using Jest.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Genera tests unitarios con Jest para la función isValidPassword.
@@ -137,7 +145,8 @@ Incluye casos válidos, contraseñas demasiado cortas, contraseñas sin mayúscu
 No modifiques la función original.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 describe("isValidPassword", () => {
@@ -159,13 +168,14 @@ describe("isValidPassword", () => {
 });
 ```
 
-Los tests cubren tanto un caso correcto como varios casos incorrectos. Esto permite comprobar que la función no solo funciona cuando la contraseña es válida, sino también cuando debe rechazar valores que no cumplen las condiciones.
+
+The tests cover both one correct case and several incorrect cases. This allows you to verify that the function not only works when the password is valid, but also when it must reject values ​​that do not meet the conditions.
 
 </details>
 
-## Ejercicio 4: Detectar un bug en una función generada
+## Exercise 4: Detect a bug in a generated function
 
-Copilot ha generado esta función para buscar un producto por su `id`:
+Copilot has generated this function to search for a product by its `id`:
 
 ```javascript
 function findProduct(products, productId) {
@@ -173,14 +183,15 @@ function findProduct(products, productId) {
 }
 ```
 
-La intención era obtener un único producto, no un array.
 
-Escribe un prompt para pedir a Copilot que revise el código, detecte el problema y proponga una corrección mínima.
+The intention was to obtain a single product, not an array.
+
+Write a prompt to ask Copilot to review the code, detect the problem, and propose a minimal fix.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Revisa esta función. La intención es encontrar un único producto por su id, no devolver una lista de productos.
@@ -189,7 +200,8 @@ No cambies el nombre de la función ni los parámetros.
 Explica brevemente por qué la corrección es mejor para este caso.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 function findProduct(products, productId) {
@@ -197,13 +209,14 @@ function findProduct(products, productId) {
 }
 ```
 
-La función original usa `filter`, que siempre devuelve un array. Si se quiere recuperar un único elemento, es más adecuado usar `find`, porque devuelve el primer elemento que cumple la condición o `undefined` si no encuentra ninguno.
+
+The original function uses `filter`, which always returns an array. If you want to retrieve a single element, it is more appropriate to use `find`, because it returns the first element that meets the condition or `undefined` if none are found.
 
 </details>
 
-## Ejercicio 5: Pedir una refactorización sin romper compatibilidad
+## Exercise 5: Request a refactoring without breaking compatibility
 
-Tienes este código en una aplicación existente:
+You have this code in an existing application:
 
 ```javascript
 function getUserName(user) {
@@ -211,14 +224,14 @@ function getUserName(user) {
 }
 ```
 
-El problema es que algunos usuarios no tienen `profile` o no tienen `name`, y la aplicación puede fallar.
+The problem is that some users do not have `profile` or do not have `name`, and the application may crash.
 
-Escribe un prompt para pedir a Copilot que haga la función más segura sin cambiar el tipo de resultado esperado cuando el nombre existe.
+Write a prompt to ask Copilot to make the function safer without changing the type of result expected when the name exists.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Haz esta función más segura para evitar errores cuando user, profile o name no existan.
@@ -228,7 +241,8 @@ No cambies el nombre de la función.
 Explica brevemente la solución.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 function getUserName(user) {
@@ -236,7 +250,8 @@ function getUserName(user) {
 }
 ```
 
-También podría escribirse así:
+
+It could also be written like this:
 
 ```javascript
 function getUserName(user) {
@@ -245,13 +260,14 @@ function getUserName(user) {
 }
 ```
 
-La segunda versión puede ser más legible porque separa la obtención del nombre de la transformación a mayúsculas.
+
+The second version may be more readable because it separates getting the name from converting it to uppercase.
 
 </details>
 
-## Ejercicio 6: Crear una estrategia de debugging asistida por Copilot
+## Exercise 6: Create a Copilot-assisted debugging strategy
 
-Tienes el siguiente código:
+You have the following code:
 
 ```javascript
 async function loadUsers() {
@@ -261,14 +277,15 @@ async function loadUsers() {
 }
 ```
 
-Al ejecutarlo aparece un error relacionado con `response.json`.
 
-Escribe un prompt para pedir a GitHub Copilot que ayude a detectar el problema y proponga una corrección.
+When you run it, an error related to `response.json` appears.
+
+Write a prompt to ask GitHub Copilot to help detect the issue and propose a fix.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Analiza esta función asíncrona y detecta por qué puede fallar en la línea response.json().
@@ -276,7 +293,8 @@ Propón una corrección mínima y explica qué papel tiene await en este caso.
 Después, añade una comprobación básica para controlar respuestas HTTP no correctas.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 async function loadUsers() {
@@ -291,6 +309,7 @@ async function loadUsers() {
 }
 ```
 
-El problema era que faltaba `await` delante de `fetch`. Sin `await`, `response` no contiene todavía la respuesta HTTP, sino una promesa. Por eso no se puede llamar correctamente a `response.json()`.
+
+The problem was that `await` was missing in front of `fetch`. Without `await`, `response` does not yet contain the HTTP response, but rather a promise. That's why `response.json()` cannot be called correctly.
 
 </details>

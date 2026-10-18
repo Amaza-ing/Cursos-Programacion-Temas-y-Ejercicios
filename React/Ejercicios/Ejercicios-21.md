@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 21: Gestión de Estado en React**
+# **Exercises - Topic 21: State Management in React**
 
-A continuación, encontrarás **10 ejercicios prácticos** para afianzar el uso de `useState`, el estado local, el estado compartido y el patrón de elevar el estado.
+Below you will find **10 practical exercises** to strengthen your use of `useState`, the local state, the shared state, and the raising state pattern.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Estado local básico**
+## **Exercise 1: Basic local state**
 
-Crea un componente `Counter.jsx` que:
+Create an `Counter.jsx` component that:
 
-- Tenga estado `count` inicial `0`.
-- Muestre el valor en un `p`.
-- Tenga un botón **+1** que incremente el contador.
+- Have initial status `count` `0`.
+- Display the value in an `p`.
+- Have a **+1** button that increments the counter.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -37,15 +37,15 @@ export default Counter;
 
 ---
 
-## **Ejercicio 2: Estado booleano**
+## **Exercise 2: Boolean state**
 
-Crea un componente `Toggle.jsx` que:
+Create an `Toggle.jsx` component that:
 
-- Tenga estado `isOn` inicial `false`.
-- Muestre `ON` o `OFF`.
-- Cambie el estado al pulsar un botón.
+- Have initial status `isOn` `false`.
+- Show `ON` or `OFF`.
+- Change status by pressing a button.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -68,15 +68,15 @@ export default Toggle;
 
 ---
 
-## **Ejercicio 3: Estado con input controlado**
+## **Exercise 3: State with controlled input**
 
-Crea un componente `SearchInput.jsx` que:
+Create an `SearchInput.jsx` component that:
 
-- Tenga estado `query`.
-- Renderice un input controlado.
-- Muestre un `p` con el valor actual.
+- Have status `query`.
+- Render a controlled input.
+- Show an `p` with the current value.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -103,19 +103,19 @@ export default SearchInput;
 
 ---
 
-## **Ejercicio 4: Elevar el estado (input + preview)**
+## **Exercise 4: Raise the state (input + preview)**
 
-Crea:
+Create:
 
-- `TextInput.jsx` → input controlado.
-- `TextPreview.jsx` → muestra texto.
+- `TextInput.jsx` → controlled input.
+- `TextPreview.jsx` → shows text.
 
-En `App.jsx`:
+In `App.jsx`:
 
-- Guarda el estado `text`.
-- Pásalo a ambos componentes.
+- Saves `text` state.
+- Pass it to both components.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {
@@ -134,19 +134,19 @@ function App() {
 
 ---
 
-## **Ejercicio 5: Estado compartido entre hermanos**
+## **Exercise 5: Shared state between siblings**
 
-Crea:
+Create:
 
 - `FilterInput.jsx`
 - `ItemsList.jsx`
 
-En `App.jsx`:
+In `App.jsx`:
 
-- Guarda `filter` en estado.
-- Filtra una lista de strings.
+- Save `filter` in status.
+- Filters a list of strings.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const filteredItems = items.filter((item) => item.includes(filter));
@@ -156,18 +156,18 @@ const filteredItems = items.filter((item) => item.includes(filter));
 
 ---
 
-## **Ejercicio 6: Estado con objeto**
+## **Exercise 6: State with object**
 
-Crea un componente `ProfileForm.jsx` con estado:
+Create a stateful `ProfileForm.jsx` component:
 
 ```js
 { name: "", email: "" }
 ```
 
-- Dos inputs controlados.
-- Actualiza el estado usando spread.
+- Two controlled inputs.
+- Update status using spread.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 setProfile((prev) => ({ ...prev, name: e.target.value }));
@@ -177,18 +177,18 @@ setProfile((prev) => ({ ...prev, name: e.target.value }));
 
 ---
 
-## **Ejercicio 7: Estado derivado (no usar `useState`)**
+## **Exercise 7: Derived state (do not use `useState`)**
 
-Dado:
+Given:
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
 ```
 
-- Crea estado `minValue`.
-- Calcula una lista filtrada sin usar otro estado.
+- Create `minValue` state.
+- Calculates a filtered list without using another state.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const filtered = numbers.filter((n) => n >= minValue);
@@ -198,30 +198,30 @@ const filtered = numbers.filter((n) => n >= minValue);
 
 ---
 
-## **Ejercicio 8: Evitar duplicar estado**
+## **Exercise 8: Avoid duplicating state**
 
-Explica por qué este estado es incorrecto:
+Explain why this status is incorrect:
 
 ```js
 const [fullName, setFullName] = useState(firstName + " " + lastName);
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-`fullName` es un estado derivado y no debería almacenarse en `useState`.
+`fullName` is a derived state and should not be stored in `useState`.
 
 </details>
 
 ---
 
-## **Ejercicio 9: Contador con reset**
+## **Exercise 9: Counter with reset**
 
-Amplía el ejercicio 1:
+Expand exercise 1:
 
-- Añade un botón **Reset**.
-- Vuelve el contador a `0`.
+- Add a **Reset** button.
+- Returns the counter to `0`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <button onClick={() => setCount(0)}>Reset</button>
@@ -231,17 +231,17 @@ Amplía el ejercicio 1:
 
 ---
 
-## **Ejercicio 10: Detectar cuándo elevar el estado**
+## **Exercise 10: Detect when to raise the status**
 
-Dada esta situación:
+Given this situation:
 
-- Un input cambia un valor.
-- Dos componentes lo usan.
+- An input changes a value.
+- Two components use it.
 
-Explica dónde debe vivir el estado y por qué.
+Explain where the state should live and why.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-El estado debe vivir en el componente padre común para evitar duplicación y mantener sincronización.
+The state must live in the common parent component to avoid duplication and maintain synchronization.
 
 </details>

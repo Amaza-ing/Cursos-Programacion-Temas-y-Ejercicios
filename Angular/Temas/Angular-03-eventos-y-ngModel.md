@@ -1,44 +1,45 @@
-# **Tema 3: Eventos y Binding Bidireccional `[(ngModel)]` en Angular**
+# **Topic 3: Events and Bidirectional Binding `[(ngModel)]` in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, los eventos y el binding bidireccional `[(ngModel)]` son herramientas esenciales para la interacción del usuario con la aplicación.  
-Este tema cubrirá:
+In Angular, events and the `[(ngModel)]` bidirectional binding are essential tools for user interaction with the application.  
+This topic will cover:
 
-- Cómo manejar eventos en Angular con `(event)`.
-- El binding bidireccional con `[(ngModel)]` para sincronizar datos entre la vista y el modelo.
-
----
-
-## **2. Manejo de eventos en Angular**
-
-Un evento en Angular ocurre cuando el usuario interactúa con la aplicación, por ejemplo:
-
-- Hacer clic en un botón.
-- Escribir en un campo de entrada.
-- Mover el ratón sobre un elemento.
-
-Angular proporciona un mecanismo para manejar estos eventos con el binding de eventos, utilizando la sintaxis `(evento)="función()"`.
+- How to handle events in Angular with `(event)`.
+- Bidirectional binding with `[(ngModel)]` to synchronize data between the view and the model.
 
 ---
 
-### **2.1. Sintaxis del binding de eventos**
+## **2. Handling events in Angular**
 
-La sintaxis básica es:
+An event in Angular occurs when the user interacts with the application, for example:
+
+- Click a button.
+- Write in an input field.
+- Move the mouse over an element.
+
+Angular provides a mechanism to handle these events with event binding, using the `(evento)="función()"` syntax.
+
+---
+
+### **2.1. Event binding syntax**
+
+The basic syntax is:
 
 ```html
 <button (click)="myFunction()">Haz clic</button>
 ```
 
-Cuando el usuario haga clic en el botón, se ejecutará la función `myFunction()` en el componente.
+
+When the user clicks the button, the `myFunction()` function will be executed on the component.
 
 ---
 
-### **2.2. Ejemplo de manejo de eventos**
+### **2.2. Example of event handling**
 
-Supongamos que queremos mostrar un mensaje cuando el usuario haga clic en un botón.
+Suppose we want to display a message when the user clicks a button.
 
-**Ejemplo en `eventos.component.ts`**:
+**Example in `eventos.component.ts`**:
 
 ```ts
 import { Component } from "@angular/core";
@@ -55,31 +56,34 @@ export class EventosComponent {
 }
 ```
 
-**Ejemplo en `eventos.component.html`**:
+
+**Example in `eventos.component.html`**:
 
 ```html
 <button (click)="showMessage()">Haz clic aquí</button>
 ```
 
-En este caso, al hacer clic en el botón, se ejecuta `showMessage()`, mostrando una alerta.
+
+In this case, clicking the button runs `showMessage()`, displaying an alert.
 
 ---
 
-[![Eventos](https://img.youtube.com/vi/efvtZZDpixc/0.jpg)](https://www.youtube.com/watch?v=efvtZZDpixc&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+[![Events](https://img.youtube.com/vi/efvtZZDpixc/0.jpg)](https://www.youtube.com/watch?v=efvtZZDpixc&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-### **2.3. Pasar parámetros en eventos**
+### **23. Pass parameters in events**
 
-Podemos pasar valores a la función dentro del componente.
+We can pass values to the function inside the component.
 
-Ejemplo en `eventos.component.html`:
+Example in `eventos.component.html`:
 
 ```html
 <button (click)="sayHello('Sara')">Saludar</button>
 ```
 
-Ejemplo en `eventos.component.ts`:
+
+Example in `eventos.component.ts`:
 
 ```ts
 export class EventosComponent {
@@ -89,22 +93,24 @@ export class EventosComponent {
 }
 ```
 
-Cuando el usuario haga clic en el botón, se ejecutará la función `sayHello('Sara')`, mostrando `"¡Hola, Sara!"`.
+
+When the user clicks the button, the `sayHello('Sara')` function will be executed, displaying `"¡Hola, Sara!"`.
 
 ---
 
-### **2.4. Eventos con `$event`**
+### **2.4. Events with `$event`**
 
-También podemos capturar información del evento utilizando `$event`.
+We can also capture event information using `$event`.
 
-Ejemplo en `eventos.component.html`:
+Example in `eventos.component.html`:
 
 ```html
 <input (input)="updateText($event)" />
 <p>{{ mensaje }}</p>
 ```
 
-Ejemplo en `eventos.component.ts`:
+
+Example in `eventos.component.ts`:
 
 ```ts
 export class EventosComponent {
@@ -116,23 +122,24 @@ export class EventosComponent {
 }
 ```
 
-Aquí:
 
-1. Cada vez que el usuario escribe en el campo de entrada, se ejecuta `updateText()`.
-2. La variable `mensaje` se actualiza con el texto introducido.
-3. La interpolación `{{ mensaje }}` muestra el contenido actualizado en la pantalla.
+Here:
+
+1. Every time the user types in the input field, `updateText()` is executed.
+2. The `mensaje` variable is updated with the entered text.
+3. `{{ mensaje }}` interpolation displays the updated content on the screen.
 
 ---
 
-## **3. Binding bidireccional con `ngModel`**
+## **3. Bidirectional binding with `ngModel`**
 
-El **binding bidireccional** permite que una variable en el componente y un campo en la vista se mantengan sincronizados automáticamente.
+**Two-way binding** allows a variable in the component and a field in the view to stay in sync automatically.
 
-Para lograrlo, usamos la directiva `[(ngModel)]`, que combina el binding de propiedad y el binding de eventos. Por eso usa tanto los corchetes [binding de propiedad] como los paréntesis (binding de eventos).
+To achieve this, we use the `[(ngModel)]` directive, which combines property binding and event binding. That's why it uses both square brackets [property binding] and parentheses (event binding).
 
-> Nota: Esta sintaxis es conocida como: Banana in a box.
+> Note: This syntax is known as: Banana in a box.
 
-**Ejemplo básico en `ngmodel.component.ts`**:
+**Basic example in `ngmodel.component.ts`**:
 
 ```ts
 import { Component } from "@angular/core";
@@ -147,26 +154,28 @@ export class NgModelComponent {
 }
 ```
 
-**Ejemplo en `ngmodel.component.html`**:
+
+**Example in `ngmodel.component.html`**:
 
 ```html
 <input [(ngModel)]="userName" placeholder="Escribe tu nombre" />
 <p>Hola, {{ userName }}</p>
 ```
 
-En este caso:
 
-- `[(ngModel)]="userName"` hace que el valor del input y la variable `userName` estén sincronizados.
-- Al escribir en el input, `userName` se actualiza automáticamente.
-- El mensaje `"Hola, [nombre]"` se actualiza en tiempo real.
+In this case:
+
+- `[(ngModel)]="userName"` causes the input value and the `userName` variable to be synchronized.
+- When writing to the input, `userName` is automatically updated.
+- The `"Hola, [nombre]"` message is updated in real time.
 
 ---
 
-### **3.1. Importar `FormsModule`**
+### **3.1. Import `FormsModule`**
 
-Para que `ngModel` funcione, necesitamos importar `FormsModule` en el componente donde se utilice.
+For `ngModel` to work, we need to import `FormsModule` into the component where it is used.
 
-Ejemplo en `app.module.ts`:
+Example in `app.module.ts`:
 
 ```ts
 import { NgModule } from "@angular/core";
@@ -183,30 +192,30 @@ import { NgModelComponent } from "./ngmodel/ngmodel.component";
 export class AppModule {}
 ```
 
-Sin esta importación, `ngModel` no funcionará.
+
+Without this import, `ngModel` will not work.
 
 ---
-
 [![ngModel](https://img.youtube.com/vi/2NWc1x-VLcM/0.jpg)](https://www.youtube.com/watch?v=2NWc1x-VLcM&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **4. Comparación entre binding de eventos y `ngModel`**
+## **4. Comparison between event binding and `ngModel`**
 
-| **Tipo de Binding**                     | **Descripción**                                                   | **Ejemplo**              |
+| **Binding Type** | **Description** | **Example** |
 | --------------------------------------- | ----------------------------------------------------------------- | ------------------------ |
-| **Binding de eventos `(event)`**        | Captura eventos del usuario y ejecuta funciones en el componente. | `(click)="myFunction()"` |
-| **Binding bidireccional `[(ngModel)]`** | Sincroniza el valor de una variable con el input en tiempo real.  | `[(ngModel)]="variable"` |
+| **`(event)` event binding** | Captures user events and executes functions on the component. | `(click)="myFunction()"` |
+| **Bidirectional binding `[(ngModel)]`** | Synchronizes the value of a variable with the input in real time.  | `[(ngModel)]="variable"` |
 
 ---
 
-## **5. A Resaltar**
+## **5. Highlight**
 
-- **Los Eventos en Angular** permiten ejecutar funciones en respuesta a acciones del usuario.
-- Podemos usar `$event` para capturar información del evento.
-- Usar **binding bidireccional con `ngModel`** mantiene sincronizados los valores de variables y los inputs.
-- Para usar `ngModel`, es necesario importar `FormsModule` en el componente que lo utilice.
+- **Events in Angular** allow functions to be executed in response to user actions.
+- We can use `$event` to capture event information.
+- Using **bidirectional binding with `ngModel`** keeps variable values and inputs synchronized.
+- To use `ngModel`, it is necessary to import `FormsModule` in the component that uses it.
 
 ---
 
-En el siguiente tema, exploraremos algunas herramientas de control de flujo de Angular como `@if` y `@for`
+In the next topic, we will explore some Angular flow control tools like `@if` and `@for`

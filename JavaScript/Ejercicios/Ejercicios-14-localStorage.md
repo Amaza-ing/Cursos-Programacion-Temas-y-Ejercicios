@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 14: Almacenamiento en el Cliente con `localStorage` y `sessionStorage`**
+# **Exercises - Topic 14: Storage on the Client with `localStorage` and `sessionStorage`**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre cómo utilizar `localStorage` y `sessionStorage` en JavaScript.
+Below you will find 5 practical exercises on how to use `localStorage` and `sessionStorage` in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Guardar y recuperar un nombre de usuario en `localStorage`**
+### **Exercise 1: Save and retrieve a username in `localStorage`**
 
-Crea una función que almacene un nombre de usuario ingresado por el usuario en `localStorage` y otra función que lo recupere y lo muestre en la consola.
+Create a function that stores a username entered by the user in `localStorage` and another function that retrieves it and displays it in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function saveUsername(name) {
@@ -29,11 +29,11 @@ getUsername(); // Salida: "Juan Pérez"
 
 ---
 
-### **Ejercicio 2: Contador de clics con `localStorage`**
+### **Exercise 2: Click counter with `localStorage`**
 
-Crea un botón en HTML con `id="click-btn"` que cuente cuántas veces ha sido presionado y almacene ese valor en `localStorage` para persistencia entre sesiones.
+Create a button in HTML with `id="click-btn"` that counts how many times it has been pressed and stores that value in `localStorage` for persistence between sessions.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 let count = localStorage.getItem("clicks") || 0;
@@ -49,11 +49,11 @@ document.getElementById("click-btn").addEventListener("click", () => {
 
 ---
 
-### **Ejercicio 3: Guardar y recuperar preferencias del usuario con `sessionStorage`**
+### **Exercise 3: Saving and Retrieving User Preferences with `sessionStorage`**
 
-Crea un formulario con un `select` para elegir un color de fondo. Guarda la preferencia en `sessionStorage` y aplícala a la página al cargar.
+Create a form with an `select` to choose a background color. Save the preference to `sessionStorage` and apply it to the page on load.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function saveTheme(color) {
@@ -81,11 +81,11 @@ loadTheme();
 
 ---
 
-### **Ejercicio 4: Almacenar y recuperar una lista de tareas en `localStorage`**
+### **Exercise 4: Store and retrieve a task list in `localStorage`**
 
-Crea una función que permita agregar tareas a una lista y guardarlas en `localStorage`, asegurando que las tareas persistan entre sesiones.
+Create a function that allows tasks to be added to a list and saved to `localStorage`, ensuring that tasks persist between sessions.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function addTask(task) {
@@ -107,11 +107,11 @@ getTasks();
 
 ---
 
-### **Ejercicio 5: Eliminar datos almacenados en `localStorage` y `sessionStorage`**
+### **Exercise 5: Delete data stored in `localStorage` and `sessionStorage`**
 
-Crea dos botones en HTML para limpiar el almacenamiento de `localStorage` y `sessionStorage` al hacer clic en ellos.
+Create two buttons in HTML to clear the storage of `localStorage` and `sessionStorage` when clicked.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 document.getElementById("clear-local").addEventListener("click", () => {

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 17: Transacciones en MySQL**
+# **Exercises - Topic 17: Transactions in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para trabajar con **transacciones** en MySQL.
+Below, you will find 5 practical exercises to work with **transactions** in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Transferencia entre cuentas con control de errores**
+### **Exercise 1: Transfer between accounts with error control**
 
-En la tabla `accounts(id, balance)`, realiza una transacción para transferir 250 de la cuenta `id = 3` a la cuenta `id = 4`. Si alguna actualización falla, revierte todos los cambios.
+In table `accounts(id, balance)`, make a transaction to transfer 250 from account `id = 3` to account `id = 4`. If any update fails, revert all changes.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 START TRANSACTION;
@@ -25,11 +25,11 @@ COMMIT;
 
 ---
 
-### **Ejercicio 2: Uso de SAVEPOINT para revertir parcialmente**
+### **Exercise 2: Using SAVEPOINT to partially roll back**
 
-En la tabla `orders(id, status)`, actualiza primero el pedido `id = 10` a `status = 'SHIPPED'` y guarda un punto de control llamado `sp1`. Después actualiza el pedido `id = 11` a `status = 'SHIPPED'`, pero revierte solo esta última actualización usando `SAVEPOINT`.
+In the `orders(id, status)` table, first update the order `id = 10` to `status = 'SHIPPED'` and save a checkpoint named `sp1`. It then updates the request `id = 11` to `status = 'SHIPPED'`, but reverts only this last update using `SAVEPOINT`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 START TRANSACTION;
@@ -44,11 +44,11 @@ COMMIT;
 
 ---
 
-### **Ejercicio 3: Ajuste de inventario con validación**
+### **Exercise 3: Inventory adjustment with validation**
 
-En `inventory(product_id, quantity)`, resta 5 unidades del producto con `product_id = 7` solo si la cantidad disponible es mayor o igual a 5. Si no, revierte la transacción.
+In `inventory(product_id, quantity)`, subtract 5 units from the product with `product_id = 7` only if the available quantity is greater than or equal to 5. If not, reverse the transaction.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 START TRANSACTION;
@@ -68,11 +68,11 @@ END IF;
 
 ---
 
-### **Ejercicio 4: Cambio de nivel de aislamiento**
+### **Exercise 4: Change of isolation level**
 
-Configura el nivel de aislamiento a `READ COMMITTED` y luego inserta un nuevo cliente en `customers`. Asegúrate de confirmar la transacción.
+Set the isolation level to `READ COMMITTED` and then insert a new client into `customers`. Make sure you confirm the transaction.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
@@ -86,11 +86,11 @@ COMMIT;
 
 ---
 
-### **Ejercicio 5: Múltiples operaciones con confirmación final**
+### **Exercise 5: Multiple operations with final confirmation**
 
-En `products(id, price)` y `suppliers(id, city)`, actualiza el precio del producto `id = 5` a 19.99 y cambia la ciudad del proveedor `id = 2` a `'Barcelona'` en una misma transacción. Confirma solo si ambas operaciones se ejecutan correctamente.
+For `products(id, price)` and `suppliers(id, city)`, update the price of the product `id = 5` to 19.99 and change the supplier city `id = 2` to `'Barcelona'` in the same transaction. Confirms only if both operations are executed correctly.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 START TRANSACTION;

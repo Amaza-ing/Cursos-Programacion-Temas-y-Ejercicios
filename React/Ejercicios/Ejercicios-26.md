@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 26: Tests Unitarios en React**
+# **Exercises - Topic 26: Unit Tests in React**
 
-A continuación, encontrarás **10 ejercicios prácticos** para afianzar la configuración y escritura de tests unitarios usando **Vitest** y **React Testing Library**, incluyendo tests de componentes, eventos, comportamiento asíncrono y **Context**.
+Below you will find **10 practical exercises** to master setting up and writing unit tests using **Vitest** and **React Testing Library**, including component, event, asynchronous behavior, and **Context** tests.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Comprobar que un componente renderiza**
+## **Exercise 1: Check that a component renders**
 
-Crea un componente `Title.jsx` que renderice un `h1` con el texto **"Welcome"**.
+Create an `Title.jsx` component that renders an `h1` with the text **"Welcome"**.
 
-Escribe un test que compruebe que el texto aparece en el documento.
+Write a test that verifies that the text appears in the document.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -28,13 +28,13 @@ test("renders title", () => {
 
 ---
 
-## **Ejercicio 2: Testear props**
+## **Exercise 2: Test props**
 
-Crea un componente `Greeting.jsx` que reciba una prop `name` y muestre **"Hello {name}"**.
+Create an `Greeting.jsx` component that receives an `name` prop and displays **"Hello {name}"**.
 
-Escribe un test que renderice el componente con `name="Sara"`.
+Write a test that renders the component with `name="Sara"`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 render(<Greeting name="Sara" />);
@@ -45,16 +45,16 @@ expect(screen.getByText("Hello Sara")).toBeInTheDocument();
 
 ---
 
-## **Ejercicio 3: Testear un botón y un click**
+## **Exercise 3: Test a button and a click**
 
-Crea un componente `LikeButton.jsx` con:
+Create an `LikeButton.jsx` component with:
 
-- Estado `likes` inicial `0`.
-- Un botón **Like** que incremente el contador.
+- Initial `likes` state `0`.
+- A **Like** button that increments the counter.
 
-Escribe un test que haga click y compruebe que el contador pasa a `1`.
+Write a test that clicks and verifies that the counter goes to `1`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import userEvent from "@testing-library/user-event";
@@ -68,11 +68,11 @@ expect(screen.getByText("Likes: 1")).toBeInTheDocument();
 
 ---
 
-## **Ejercicio 4: Usar `getByRole` correctamente**
+## **Exercise 4: Using `getByRole` correctly**
 
-Modifica un test para localizar un botón usando `getByRole` en lugar de `getByText`.
+Modify a test to locate a button using `getByRole` instead of `getByText`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 screen.getByRole("button", { name: /like/i });
@@ -82,17 +82,17 @@ screen.getByRole("button", { name: /like/i });
 
 ---
 
-## **Ejercicio 5: Testear un formulario con validación**
+## **Exercise 5: Test a form with validation**
 
-Crea un formulario con:
+Create a form with:
 
-- Input controlado.
-- Botón **Submit**.
-- Mensaje de error si el input está vacío.
+- Controlled input.
+- **Submit** button.
+- Error message if the input is empty.
 
-Escribe un test que compruebe que aparece el error al enviar vacío.
+Write a test that verifies that the error appears when sending empty.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 await user.click(screen.getByRole("button", { name: "Submit" }));
@@ -103,13 +103,13 @@ expect(screen.getByText("Required")).toBeInTheDocument();
 
 ---
 
-## **Ejercicio 6: Test asíncrono con `findByText`**
+## **Exercise 6: Asynchronous test with `findByText`**
 
-Crea un componente que muestre **"Loading..."** y luego **"Done"** tras un `setTimeout`.
+Create a component that displays **"Loading..."** and then **"Done"** after an `setTimeout`.
 
-Escribe un test usando `findByText`.
+Write a test using `findByText`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 expect(await screen.findByText("Done")).toBeInTheDocument();
@@ -119,13 +119,13 @@ expect(await screen.findByText("Done")).toBeInTheDocument();
 
 ---
 
-## **Ejercicio 7: Mock de `fetch`**
+## **Exercise 7: `fetch` Mock**
 
-Crea un componente que haga fetch a una API y muestre el número de elementos recibidos.
+Create a component that fetches an API and displays the number of items received.
 
-Escribe un test que **mockee `fetch`** para devolver 3 elementos.
+Write a test that **mocks `fetch`** to return 3 elements.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { vi } from "vitest";
@@ -139,11 +139,11 @@ vi.spyOn(global, "fetch").mockResolvedValue({
 
 ---
 
-## **Ejercicio 8: Envolver un componente con Context en tests**
+## **Exercise 8: Wrap a component with Context in tests**
 
-Dado un `UsersContext`, escribe un test para un componente que consuma `users` desde el contexto.
+Given an `UsersContext`, write a test for a component that consumes `users` from the context.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 render(
@@ -157,13 +157,13 @@ render(
 
 ---
 
-## **Ejercicio 9: Testear una función del Context**
+## **Exercise 9: Test a Context function**
 
-Crea un botón que use una función `addUser` del contexto.
+Create a button that uses an `addUser` function from the context.
 
-Escribe un test que haga click y compruebe que el usuario aparece en pantalla.
+Write a test that clicks and verifies that the user appears on the screen.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 await user.click(screen.getByRole("button", { name: "Add" }));
@@ -174,13 +174,12 @@ expect(screen.getByText("New user")).toBeInTheDocument();
 
 ---
 
-## **Ejercicio 10: Helper `renderWithProviders`**
+## **Exercise 10: Helper `renderWithProviders`**
 
-Crea un helper `renderWithProviders` que envuelva los componentes con los Providers necesarios.
+Create an `renderWithProviders` helper that wraps the components with the necessary Providers.
+Write a test that uses it.
 
-Escribe un test que lo utilice.
-
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 renderWithProviders(<UsersList />);

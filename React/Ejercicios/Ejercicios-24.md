@@ -1,21 +1,21 @@
-# **Ejercicios - Tema 24: React.memo**
+# **Exercises - Topic 24: React.memo**
 
-A continuación, encontrarás **10 ejercicios prácticos** para comprender y aplicar `React.memo` como técnica de optimización de renderizados en React.
+Below you will find **10 practical exercises** to understand and apply `React.memo` as a rendering optimization technique in React.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Detectar renderizados innecesarios**
+## **Exercise 1: Detect unnecessary renders**
 
-Crea dos componentes:
+Create two components:
 
-- `Parent.jsx` con estado `count`.
-- `Child.jsx` que solo renderice un texto.
+- `Parent.jsx` with state `count`.
+- `Child.jsx` to only render text.
 
-Añade un `console.log` en `Child` para comprobar cuántas veces se renderiza al cambiar `count`.
+Add an `console.log` to `Child` to check how many times it is rendered when changing `count`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Child() {
@@ -28,11 +28,11 @@ function Child() {
 
 ---
 
-## **Ejercicio 2: Usar `React.memo`**
+## **Exercise 2: Use `React.memo`**
 
-Envuelve el componente `Child` con `React.memo` para evitar renderizados innecesarios.
+Wrap the `Child` component with `React.memo` to avoid unnecessary rendering.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { memo } from "react";
@@ -49,13 +49,13 @@ export default memo(Child);
 
 ---
 
-## **Ejercicio 3: `React.memo` con props**
+## **Exercise 3: `React.memo` with props**
 
-Modifica `Child` para que reciba una prop `name` y muestre `Hello {name}`.
+Modify `Child` so that it receives an `name` prop and displays `Hello {name}`.
 
-Comprueba cuándo se vuelve a renderizar.
+Checks when it renders again.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Child({ name }) {
@@ -70,11 +70,11 @@ export default memo(Child);
 
 ---
 
-## **Ejercicio 4: Props que no cambian**
+## **Exercise 4: Props that do not change**
 
-En `Parent`, pasa siempre el mismo valor de `name` a `Child` y observa el comportamiento.
+In `Parent`, always pass the same value from `name` to `Child` and observe the behavior.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <Child name="Sara" />
@@ -84,11 +84,11 @@ En `Parent`, pasa siempre el mismo valor de `name` a `Child` y observa el compor
 
 ---
 
-## **Ejercicio 5: Props que sí cambian**
+## **Exercise 5: Props that do change**
 
-Modifica `Parent` para que `name` dependa del estado y observa cómo `Child` vuelve a renderizarse.
+Modify `Parent` to make `name` state dependent and watch `Child` re-render.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const [name, setName] = useState("Sara");
@@ -98,60 +98,60 @@ const [name, setName] = useState("Sara");
 
 ---
 
-## **Ejercicio 6: Problema con objetos como props**
+## **Exercise 6: Problem with objects like props**
 
-Pasa a `Child` una prop `options={{ theme: "dark" }}` y observa los renderizados.
+Pass `Child` an `options={{ theme: "dark" }}` prop and look at the renders.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Cada render crea un nuevo objeto, por lo que `React.memo` no evita el render.
-
-</details>
-
----
-
-## **Ejercicio 7: Explicar la comparación superficial**
-
-Explica por qué `React.memo` no funciona bien con objetos creados inline.
-
-<details><summary>Mostrar Solución</summary>
-
-Porque compara referencias, no el contenido del objeto.
+Each render creates a new object, so `React.memo` does not prevent the render.
 
 </details>
 
 ---
 
-## **Ejercicio 8: Cuándo NO usar `React.memo`**
+## **Exercise 7: Explain superficial comparison**
 
-Da un ejemplo de un componente donde `React.memo` no aporta beneficios.
+Explains why `React.memo` doesn't work well with inline created objects.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Componentes pequeños con render barato y pocas actualizaciones.
-
-</details>
-
----
-
-## **Ejercicio 9: `React.memo` y estado local**
-
-¿Se renderiza un componente memoizado si cambia su propio estado?
-
-<details><summary>Mostrar Solución</summary>
-
-Sí. `React.memo` solo afecta a cambios en props, no al estado interno.
+Because it compares references, not the content of the object.
 
 </details>
 
 ---
 
-## **Ejercicio 10: React.memo como optimización**
+## **Exercise 8: When NOT to use `React.memo`**
 
-Explica por qué no deberías usar `React.memo` de forma indiscriminada.
+Give an example of a component where `React.memo` does not provide benefits.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Porque puede añadir complejidad innecesaria y no siempre mejora el rendimiento.
+Small components with cheap render and few updates.
+
+</details>
+
+---
+
+## **Exercise 9: `React.memo` and local state**
+
+Is a memoized component rendered if its own state changes?
+
+<details><summary>Show Solution</summary>
+
+Yes. `React.memo` only affects changes to props, not internal state.
+
+</details>
+
+---
+
+## **Exercise 10: React.memo as optimization**
+
+Explain why you should not use `React.memo` indiscriminately.
+
+<details><summary>Show Solution</summary>
+
+Because it can add unnecessary complexity and does not always improve performance.
 
 </details>

@@ -1,109 +1,109 @@
-# **Curso Completo de MySQL desde Cero**
+# **Complete MySQL Course from Scratch**
 
-Bienvenido al **Curso Completo de MySQL**, un repositorio diseñado para que aprendas paso a paso a manejar este potente sistema de gestión de bases de datos. Si eres principiante, aquí encontrarás explicaciones claras, ejemplos prácticos y ejercicios resueltos que te guiarán desde los fundamentos hasta técnicas avanzadas.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 Conceptos básicos de bases de datos y de MySQL.<br>
-🔹 Creación y modificación de tablas.<br>
-🔹 Uso de claves primarias, foráneas y restricciones.<br>
-🔹 Normalización de bases de datos.<br>
-🔹 Consultas con `SELECT`, `WHERE`, `ORDER BY` y operadores lógicos.<br>
-🔹 Funciones de agregación y `GROUP BY`.<br>
-🔹 Uniones de tablas (`JOIN`).<br>
-🔹 Inserción, actualización y eliminación de datos.<br>
-🔹 Creación y uso de vistas.<br>
-🔹 Índices para optimizar consultas.<br>
-🔹 Procedimientos almacenados y funciones.<br>
-🔹 Triggers y manejo de transacciones.<br>
-🔹 Estructuras de control (`IF`, `WHILE`, `REPEAT`, `LOOP`).<br>
-🔹 Consultas avanzadas con `PARTITION BY`, `WITH` y subconsultas.<br>
-
-Este curso está organizado en **temas prácticos**, cada uno con explicaciones y ejercicios para reforzar lo aprendido.
+Welcome to the **Complete MySQL Course**, a repository designed for you to learn step by step how to use this powerful database management system. If you are a beginner, here you will find clear explanations, practical examples and solved exercises that will guide you from the fundamentals to advanced techniques.
 
 ---
 
-## 📂 **Estructura del curso**
+## 📌 **What will you learn in this course?**
 
-Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes explorar los temas directamente desde el directorio del curso:
+🔹 Basic concepts of databases and MySQL.<br>
+🔹 Creation and modification of tables.<br>
+🔹 Use of primary, foreign keys and restrictions.<br>
+🔹 Database normalization.<br>
+🔹 Queries with `SELECT`, `WHERE`, `ORDER BY` and logical operators.<br>
+🔹 Aggregation functions and `GROUP BY`.<br>
+🔹 Table joins (`JOIN`).<br>
+🔹 Insertion, update and deletion of data.<br>
+🔹 Creating and using views.<br>
+🔹Indices to optimize queries.<br>
+🔹 Stored procedures and functions.<br>
+🔹 Triggers and transaction management.<br>
+🔹 Control structures (`IF`, `WHILE`, `REPEAT`, `LOOP`).<br>
+🔹 Advanced queries with `PARTITION BY`, `WITH` and subqueries.<br>
 
-| 📚 Tema                                                                                | Descripción                                                   |
+This course is organized into **practical topics**, each with explanations and exercises to reinforce what has been learned.
+
+---
+
+## 📂 **Course structure**
+
+Each theme is located in a **Markdown (`.md`)** file within this repository. You can explore topics directly from the course directory:
+
+| 📚 Theme | Description |
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| 🏗️ [Tema 1: Introducción a MySQL](Temas/MySQL-01-Introduccion.md)                      | Qué es MySQL, cómo instalarlo y primeros pasos.               |
-| 📑 [Tema 2: Creación y modificación de tablas](Temas/MySQL-02-Tablas.md)               | Cómo definir y alterar tablas en MySQL.                       |
-| 🔑 [Tema 3: Claves y restricciones](Temas/MySQL-03-Claves.md)                          | Uso de claves primarias, foráneas y restricciones.            |
-| 🗂️ [Tema 4: Normalización](Temas/MySQL-04-Normalizacion.md)                            | Cómo normalizar bases de datos para evitar redundancias.      |
-| 📋 [Tema 5: Manipulación de Datos](Temas/MySQL-05-Datos.md)                            | Cómo insertar, modificar y eliminar datos.                    |
-| 🔍 [Tema 6: Consultas básicas](Temas/MySQL-06-Select-Consultas-Basicas.md)             | Uso de SELECT, WHERE, ORDER BY, LIMIT y operadores lógicos.   |
-| 📊 [Tema 7: Agregación y GROUP BY](Temas/MySQL-07-Agregacion.md)                       | Funciones de agregación y agrupamiento de resultados.         |
-| 🔗 [Tema 8: JOIN](Temas/MySQL-08-Join.md)                                              | Cómo unir datos de múltiples tablas.                          |
-| 👁️ [Tema 9: Vistas](Temas/MySQL-09-Vistas.md)                                          | Creación y uso de vistas.                                     |
-| 📌 [Tema 10: Índices](Temas/MySQL-10-Indices.md)                                       | Optimización de consultas con índices.                        |
-| ⚙️ [Tema 11: Procedimientos almacenados](Temas/MySQL-11-Procedimientos-Almacenados.md) | Creación y uso de procedimientos almacenados.                 |
-| 🛎️ [Tema 12: Triggers](Temas/MySQL-12-Triggers.md)                                     | Automatización de tareas con disparadores.                    |
-| 🧮 [Tema 13: Funciones](Temas/MySQL-13-Funciones.md)                                   | Creación y uso de funciones personalizadas.                   |
-| 📅 [Tema 14: Booleanos y fechas](Temas/MySQL-14-Booleanos-y-Fechas.md)                 | Uso de variables booleanas y tipos de fecha.                  |
-| 🔍 [Tema 15: Subconsultas y WITH](Temas/MySQL-15-Subconsultas.md)                      | Consultas avanzadas con subconsultas y CTEs.                  |
-| 📊 [Tema 16: PARTITION BY](Temas/MySQL-16-Partition-By.md)                             | Uso de funciones de ventana y particionamiento de resultados. |
-| 💾 [Tema 17: Transacciones](Temas/MySQL-17-Transacciones.md)                           | Manejo de transacciones y propiedades ACID.                   |
-| 🔀 [Tema 18: IF](Temas/MySQL-18-IF.md)                                                 | Uso de condicionales en consultas y procedimientos.           |
-| 🔄 [Tema 19: WHILE](Temas/MySQL-19-While.md)                                           | Iteraciones con bucles WHILE.                                 |
-| 🔁 [Tema 20: REPEAT y LOOP](Temas/MySQL-20-Repeat-Loop.md)                             | Iteraciones flexibles con bucles REPEAT y LOOP.               |
+| 🏗️ [topic 1: Introduction to MySQL](Temas/MySQL-01-Introduccion.md) | What is MySQL, how to install it and first steps.               |
+| 📑 [ Topic 2: Creating and modifying tables](Temas/MySQL-02-Tablas.md) | How to define and alter tables in MySQL.                       |
+| 🔑 [ Topic 3: Keys and restrictions](Temas/MySQL-03-Claves.md) | Use of primary, foreign keys and restrictions.            |
+| 🗂️ [topic 4: Normalization](Temas/MySQL-04-Normalizacion.md) | How to normalize databases to avoid redundancies.      |
+| 📋 [Topic 5: Data Manipulation](Temas/MySQL-05-Datos.md) | How to insert, modify and delete data.                    |
+| 🔍 [Topic 6: Basic queries](Temas/MySQL-06-Select-Consultas-Basicas.md) | Use of SELECT, WHERE, ORDER BY, LIMIT and logical operators.   |
+| 📊 [T Topic 7: Aggregation and GROUP BY](Temas/MySQL-07-Agregacion.md) | Aggregation and grouping functions for results.         |
+| 🔗 [topic 8: JOIN](Temas/MySQL-08-Join.md) | How to join data from multiple tables.                          |
+| 👁️ [T Topic 9: Views](Temas/MySQL-09-Vistas.md) | Creating and using views.                                     |
+| 📌 [ Topic 10: Indices](Temas/MySQL-10-Indices.md) | Optimizing queries with indexes.                        |
+| ⚙️ [T Topic 11: Stored Procedures](Temas/MySQL-11-Procedimientos-Almacenados.md) | Creation and use of stored procedures.                 |
+| 🛎️ [ Topic 12: Triggers](Temas/MySQL-12-Triggers.md) | Automation of tasks with triggers.                    |
+| 🧮 [topic 13: Functions](Temas/MySQL-13-Funciones.md) | Creating and using custom functions.                   |
+| 📅 [Topic 14: Booleans and dates](Temas/MySQL-14-Booleanos-y-Fechas.md) | Using Boolean variables and date types.                  |
+| 🔍 [T Topic 15: Subqueries and WITH](Temas/MySQL-15-Subconsultas.md) | Advanced queries with subqueries and CTEs.                  |
+| 📊 [topic 16: PARTITION BY](Temas/MySQL-16-Partition-By.md) | Using window functions and partitioning results. |
+| 💾 [topic 17: Transactions](Temas/MySQL-17-Transacciones.md) | Management of ACID transactions and properties.                   |
+| 🔀 [ Topic 18: IF](Temas/MySQL-18-IF.md) | Use of conditionals in queries and procedures.           |
+| 🔄 [topic 19: WHILE](Temas/MySQL-19-While.md) | Iterations with WHILE loops.                                 |
+| 🔁 [ Topic 20: REPEAT and LOOP](Temas/MySQL-20-Repeat-Loop.md) | Flexible iterations with REPEAT and LOOP loops.               |
 
-📌 **Para ver todos los temas disponibles, revisa este repositorio.**
+📌 **To see all available themes, check this repository.**
 
-También encontrarás ejercicios resueltos en la carpeta [Ejercicios](Ejercicios).
-
----
-
-## 🎥 **Curso en Video**
-
-Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
-
-📺 **Curso Completo de MySQL**
-
-[![Curso de MySQL](https://img.youtube.com/vi/8LQUlshIdqw/0.jpg)](https://www.youtube.com/watch?v=8LQUlshIdqw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+You will also find solved exercises in the [exercises](Ejercicios) folder.
 
 ---
 
-## 🐱‍👤 **Recursos y Código**
+## 🎥 **Video Course**
 
-También puedes acceder a [esta carpeta con los recursos y el código utilizados en el curso](Recursos).
+If you prefer to learn visually, here is the complete video course with detailed explanations and practical examples:
 
----
+📺 **Complete MySQL Course**
 
-## 🛠️ **Requisitos previos**
-
-Este curso está pensado para quienes parten desde cero, así que no necesitas conocimientos previos.
+[![MySQL course](https://img.youtube.com/vi/8LQUlshIdqw/0.jpg)](https://www.youtube.com/watch?v=8LQUlshIdqw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## 📌 **Cómo usar este repositorio**
+## 🐱‍👤 **Resources and Code**
 
-Puedes seguir el curso directamente en este repositorio de GitHub o descargarlo para estudiarlo en tu ordenador.
-
-1️⃣ **Clona o descarga** el repositorio.<br>
-2️⃣ **Lee los temas** en orden y sigue las guías paso a paso.<br>
-3️⃣ **Realiza los ejercicios** y comprueba los resultados en tu instalación de MySQL.<br>
+You can also access [this folder with the resources and code used in the ](Recursos) course.
 
 ---
 
-## 🚀 **¡Aprende MySQL a tu ritmo!**
+## 🛠️ **Prerequisites**
 
-Este curso está diseñado para que avances de forma progresiva, reforzando cada concepto con ejemplos y ejercicios prácticos.
+This course is designed for those starting from scratch, so you do not need prior knowledge.
 
 ---
 
-## Hecho por Adrián Maza.
+## 📌 **How to use this repository**
 
-Espero que disfrutes el curso.
+You can follow the course directly in this GitHub repository or download it to study on your computer.
+
+1️⃣ **Clone or download** the repository.<br>
+2️⃣ **Read the topics** in order and follow the guides step by step.<br>
+3️⃣ **Do the exercises** and check the results in your MySQL.<br> installation
+
+---
+
+## 🚀 **Learn MySQL at your own pace!**
+
+This course is designed so that you advance progressively, reinforcing each concept with examples and practical exercises.
+
+---
+
+## Made by Adrián Maza.
+
+I hope you enjoy the course.
 
 <div>
   <h5>
     <a href="https://www.youtube.com/@AMaza-Ing" target="_blank">
-      YouTube/AMaza-ing
+YouTube/AMaza-ing
     </a>
   </h5>
   <h5>
@@ -111,7 +111,7 @@ Espero que disfrutes el curso.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

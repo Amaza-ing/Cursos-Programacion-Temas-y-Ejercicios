@@ -1,82 +1,82 @@
-# Tema 14. Clases y Objetos (POO): atributos, métodos, constructores, getters y setters
+# Topic 14. Classes and Objects (OPO): attributes, methods, constructors, getters and setters
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has programado usando:
+So far you have programmed using:
 
-- Variables y tipos
-- Condicionales y bucles
-- Métodos
-- Arrays, listas y colecciones básicas
+- Variables and types
+- Conditionals and loops
+- Methods
+- Arrays, lists and basic collections
 
-Con eso puedes hacer muchísimas cosas, pero a medida que tus programas crecen aparece un problema:
+With that you can do a lot of things, but as your programs grow a problem appears:
 
-- Necesitas organizar el código y los datos de una forma más estructurada
-- Quieres representar “cosas del mundo real” dentro del programa (un usuario, un producto, una tarea, un coche…)
-- Quieres agrupar datos y acciones que están relacionados
+- You need to organize code and data in a more structured way
+- You want to represent “things from the real world” within the program (a user, a product, a task, a car…)
+- You want to group data and actions that are related
 
-Aquí entra la **Programación Orientada a Objetos** (POO).
+This is where **Object Oriented Programming** (OOP) comes in.
 
-La POO se basa en dos conceptos principales:
+The OOP is based on two main concepts:
 
-- **Clase**: el “molde” o plantilla
-- **Objeto**: una “instancia” creada a partir de ese molde
+- **Class**: the “mold” or template
+- **Object**: an “instance” created from that mold
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es una clase y qué es un objeto
-- Cómo crear atributos (estado) y métodos (comportamiento)
-- Cómo crear constructores (inicialización)
-- Qué es la encapsulación y por qué usar `private`
-- Cómo crear getters y setters correctamente
-- Ejemplos completos y buenas prácticas iniciales
-
----
-
-[![Qué es la programación orientada a objetos](https://img.youtube.com/vi/q-2cUZENGd4/0.jpg)](https://www.youtube.com/watch?v=q-2cUZENGd4&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is a class and what is an object
+- How to create attributes (state) and methods (behavior)
+- How to create constructors (initialization)
+- What is encapsulation and why use `private`
+- How to create getters and setters correctly
+- Complete examples and good initial practices
 
 ---
 
-[![Clases y Objetos](https://img.youtube.com/vi/v8GXjxagGFU/0.jpg)](https://www.youtube.com/watch?v=v8GXjxagGFU&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![What is object-oriented programming](https://img.youtube.com/vi/q-2cUZENGd4/0.jpg)](https://www.youtube.com/watch?v=q-2cUZENGd4&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. Qué es una clase y qué es un objeto
-
-### 2.1. Clase
-
-Una **clase** es una plantilla que describe:
-
-- Qué datos tiene algo (atributos)
-- Qué puede hacer (métodos)
-
-Ejemplo: la clase `User` puede tener:
-
-- Atributos: `name`, `age`, `email`
-- Métodos: `printInfo()`, `isAdult()`
-
-### 2.2. Objeto
-
-Un **objeto** es una instancia concreta de una clase.
-
-Ejemplo: si `User` es la plantilla, entonces:
-
-- `User laura = new User(...);` es un objeto real.
-
-Puedes crear varios objetos a partir de la misma clase, cada uno con sus propios datos.
+[![Classes and Objects](https://img.youtube.com/vi/v8GXjxagGFU/0.jpg)](https://www.youtube.com/watch?v=v8GXjxagGFU&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 3. Estructura básica de una clase
+## 2. What is a class and what is an object
 
-Una clase en Java normalmente tiene esta estructura:
+### 2.1. Class
 
-- Atributos (campos)
-- Constructores
-- Métodos
-- Getters y setters (si procede)
+A **class** is a template that describes:
 
-Ejemplo mínimo:
+- What data does something have (attributes)
+- What it can do (methods)
+
+Example: `User` class can have:
+
+- Attributes: `name`, `age`, `email`
+- Methods: `printInfo()`, `isAdult()`
+
+### 2.2. Object
+
+An **object** is a concrete instance of a class.
+
+Example: If `User` is the template, then:
+
+- `User laura = new User(...);` is a real item.
+
+You can create multiple objects from the same class, each with its own data.
+
+---
+
+## 3. Basic structure of a class
+
+A class in Java typically has this structure:
+
+- Attributes (fields)
+- Builders
+- Methods
+- Getters and setters (if applicable)
+
+Minimal example:
 
 ```java
 public class User {
@@ -96,11 +96,11 @@ public class User {
 
 ---
 
-## 4. Atributos (estado de un objeto)
+## 4. Attributes (state of an object)
 
-Un **atributo** (también llamado _field_ o _property_) es una variable declarada dentro de una clase.
+An **attribute** (also called a _field_ or _property_) is a variable declared within a class.
 
-Ejemplo:
+Example:
 
 ```java
 public class Product {
@@ -109,17 +109,17 @@ public class Product {
 }
 ```
 
-Cada objeto `Product` tiene su propio `name` y `price`.
+Each `Product` object has its own `name` and `price`.
 
-### 4.1. `private` y encapsulación
+### 4.1. `private` and encapsulation
 
-En Java, es una buena práctica que los atributos sean `private`:
+In Java, it is good practice for the attributes to be `private`:
 
-- Para proteger el estado del objeto
-- Para controlar cómo se modifica
-- Para evitar cambios “incontrolados” desde fuera
+- To protect the state of the object
+- To control how it is modified
+- To avoid “uncontrolled” changes from outside
 
-Ejemplo (mala práctica):
+Example (bad practice):
 
 ```java
 public class Product {
@@ -127,21 +127,21 @@ public class Product {
 }
 ```
 
-Si `price` es público, cualquier parte del programa podría poner valores inválidos:
+If `price` is public, any part of the program could put invalid values:
 
 ```java
 product.price = -999; // mal
 ```
 
-Con `private`, lo controlas con setters o métodos específicos.
+With `private`, you control it with specific setters or methods.
 
 ---
 
-## 5. Métodos (comportamiento de un objeto)
+## 5. Methods (behavior of an object)
 
-Un método dentro de una clase representa lo que el objeto “puede hacer”.
+A method within a class represents what the object “can do.”
 
-Ejemplo en `Product`:
+Example in `Product`:
 
 ```java
 public class Product {
@@ -154,38 +154,38 @@ public class Product {
 }
 ```
 
-- El método usa y modifica atributos del objeto (`price`).
-- Cada objeto aplica el descuento sobre **su propio estado**.
+- The method uses and modifies attributes of the object (`price`).
+- Each object applies the discount on **its own status**.
 
 ---
 
-## 6. Crear objetos con `new`
+## 6. Create objects with `new`
 
-Para usar una clase, debes crear objetos.
+To use a class, you must create objects.
 
-Ejemplo:
+Example:
 
 ```java
 Product mouse = new Product();
 ```
 
-Pero esto solo funciona si la clase tiene un constructor sin parámetros (por defecto o creado por ti).
+But this only works if the class has a parameterless constructor (default or created by you).
 
-En la práctica, para inicializar bien un objeto, usamos constructores.
+In practice, to properly initialize an object, we use constructors.
 
 ---
 
-## 7. Constructores
+## 7. Builders
 
-Un **constructor** es un método especial que se ejecuta al crear un objeto con `new`.
+A **constructor** is a special method that is executed when creating an object with `new`.
 
-Características:
+Features:
 
-- Tiene el mismo nombre que la clase
-- No tiene tipo de retorno (ni `void`)
-- Se usa para inicializar atributos
+- Has the same name as the class
+- It has no return type (nor `void`)
+- Used to initialize attributes
 
-### 7.1. Constructor con parámetros
+### 7.1. Constructor with parameters
 
 ```java
 public class User {
@@ -199,20 +199,20 @@ public class User {
 }
 ```
 
-### 7.2. Qué es `this`
+### 7.2. What is `this`
 
-`this` se refiere al objeto actual (la instancia actual).
+`this` refers to the current object (the current instance).
 
-En el constructor:
+In the constructor:
 
-- `this.name` es el atributo del objeto
-- `name` (sin `this`) es el parámetro del constructor
+- `this.name` is the attribute of the object
+- `name` (without `this`) is the constructor parameter
 
 ```java
 this.name = name;
 ```
 
-### 7.3. Usar el constructor desde `main`
+### 7.3. Use the constructor from `main`
 
 ```java
 public class Main {
@@ -227,13 +227,13 @@ public class Main {
 
 ---
 
-## 8. Constructor por defecto (sin parámetros)
+## 8. Default constructor (without parameters)
 
-Si no defines ningún constructor, Java crea uno “vacío” automáticamente.
+If you don't define any constructor, Java creates an “empty” one automatically.
 
-Pero si defines al menos un constructor, el constructor por defecto deja de existir, y si lo necesitas debes crearlo tú.
+But if you define at least one constructor, the default constructor ceases to exist, and if you need it you must create it yourself.
 
-Ejemplo:
+Example:
 
 ```java
 public class User {
@@ -252,7 +252,7 @@ public class User {
 }
 ```
 
-Ahora puedes hacer:
+Now you can do:
 
 ```java
 User u1 = new User();
@@ -261,14 +261,14 @@ User u2 = new User("Laura", 28);
 
 ---
 
-## 9. Getters y setters
+## 9. Getters and setters
 
-Como los atributos suelen ser `private`, necesitas una forma controlada de acceder y modificar valores:
+Since attributes are usually `private`, you need a controlled way to access and modify values:
 
-- **Getter**: devuelve el valor de un atributo
-- **Setter**: modifica el valor de un atributo
+- **Getter**: returns the value of an attribute
+- **Setter**: modifies the value of an attribute
 
-### 9.1. Ejemplo completo con getters y setters
+### 9.1. Complete example with getters and setters
 
 ```java
 public class User {
@@ -298,7 +298,7 @@ public class User {
 }
 ```
 
-### 9.2. Usarlos desde `main`
+### 9.2. Use them from `main`
 
 ```java
 public class Main {
@@ -319,11 +319,11 @@ public class Main {
 
 ---
 
-## 10. Validación dentro de setters (buena práctica)
+## 10. Validation within setters (good practice)
 
-Un setter no tiene por qué aceptar cualquier valor. Puedes validar.
+A setter does not have to accept any value. You can validate.
 
-Ejemplo: evitar edad negativa
+Example: avoid negative age
 
 ```java
 public void setAge(int age) {
@@ -335,7 +335,7 @@ public void setAge(int age) {
 }
 ```
 
-Más explícito:
+More explicit:
 
 ```java
 public void setAge(int age) {
@@ -348,13 +348,13 @@ public void setAge(int age) {
 }
 ```
 
-Esto protege la coherencia del objeto.
+This protects the consistency of the object.
 
 ---
 
-## 11. Métodos que usan atributos (ejemplos útiles)
+## 11. Methods that use attributes (useful examples)
 
-### 11.1. Método `isAdult()`
+### 11.1. `isAdult()` method
 
 ```java
 public boolean isAdult() {
@@ -362,7 +362,7 @@ public boolean isAdult() {
 }
 ```
 
-### 11.2. Método `printInfo()`
+### 11.2. `printInfo()` method
 
 ```java
 public void printInfo() {
@@ -372,9 +372,9 @@ public void printInfo() {
 
 ---
 
-## 12. Ejemplo completo: clase `User`
+## 12. Complete example: `User` class
 
-Aquí tienes un ejemplo completo, listo para copiar y ejecutar.
+Here's a complete example, ready to copy and run.
 
 ### 12.1. `User.java`
 
@@ -451,9 +451,9 @@ public class Main {
 
 ---
 
-## 13. Ejemplo completo: clase `Product`
+## 13. Complete example: `Product` class
 
-Un ejemplo diferente para ver que la idea se aplica a cualquier “cosa”.
+A different example to see that the idea applies to any “thing”.
 
 ### 13.1. `Product.java`
 
@@ -517,50 +517,50 @@ public class Main {
 
 ---
 
-## 14. Errores típicos al empezar con clases
+## 14. Typical mistakes when starting classes
 
-### 14.1. Intentar acceder a atributos `private` desde fuera
+### 14.1. Trying to access `private` attributes from outside
 
-Si un atributo es `private`, no puedes hacer esto:
+If an attribute is `private`, you cannot do this:
 
 ```java
 // user.age = 30; // error
 ```
 
-Debes usar un setter o un método:
+You must use a setter or a method:
 
 ```java
 user.setAge(30);
 ```
 
-### 14.2. Olvidar inicializar atributos
+### 14.2. Forget to initialize attributes
 
-Si no inicializas, tendrás valores por defecto:
+If you do not initialize, you will have default values:
 
 - `int` → 0
 - `double` → 0.0
 - `boolean` → false
 - `String` → null
 
-Por eso los constructores son importantes.
+That's why builders are important.
 
-### 14.3. Confundir clase con objeto
+### 14.3. Confuse class with object
 
-- Clase: `User`
-- Objeto: `User laura = new User("Laura", 28);`
-
----
-
-## 15. A tener en cuenta
-
-- Una **clase** es una plantilla; un **objeto** es una instancia.
-- Los **atributos** representan el estado del objeto.
-- Los **métodos** representan su comportamiento.
-- Los **constructores** inicializan el objeto al crearlo.
-- `this` se refiere al objeto actual.
-- Usar atributos `private` + getters/setters mejora el control y la seguridad del estado.
-- Los setters pueden y deben validar valores cuando tenga sentido.
+- Class: `User`
+- Object: `User laura = new User("Laura", 28);`
 
 ---
 
-En el siguiente tema profundizaremos en conceptos fundamentales de POO como **encapsulación**, **modificadores de acceso**, `this` en más detalle y cómo organizar mejor las clases para proyectos reales.
+## 15. To take into account
+
+- A **class** is a template; an **object** is an instance.
+- **attributes** represent the state of the object.
+- The **methods** represent its behavior.
+- **Constructors** initialize the object when creating it.
+- `this` refers to the current object.
+- Using `private` attributes + getters/setters improves state control and security.
+- Setters can and should validate values ​​when it makes sense.
+
+---
+
+In the next topic we will delve into fundamental OOP concepts like **encapsulation**, **access modifiers**, `this` in more detail and how to better organize classes for real projects.

@@ -1,63 +1,63 @@
-# **Tema 10: Índices en MySQL**
+# **Topic 10: Indexes in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué es un índice y para qué sirve.
-- Crear índices para optimizar consultas.
-- Conocer los diferentes tipos de índices en MySQL.
-- Gestionar y eliminar índices.
-
----
-
-## **1. ¿Qué es un índice?**
-
-Un **índice** es una estructura de datos especial que MySQL utiliza para localizar rápidamente las filas de una tabla sin tener que escanearla completamente.
-
-### **Ventajas:**
-
-- Acelera las consultas `SELECT`.
-- Mejora el rendimiento en búsquedas y ordenaciones.
-
-### **Desventajas:**
-
-- Ocupa espacio adicional en disco.
-- Puede ralentizar operaciones `INSERT`, `UPDATE` y `DELETE` debido a la actualización del índice.
+- Understand what an index is and what it is for.
+- Create indexes to optimize queries.
+- Know the different types of indexes in MySQL.
+- Manage and delete indexes.
 
 ---
 
-## **2. Tipos de índices en MySQL**
+## **1. What is an index?**
 
-### **Índice normal (INDEX)**
+An **index** is a special data structure that MySQL uses to quickly locate rows in a table without having to scan the entire table.
 
-Se utiliza para acelerar búsquedas en columnas específicas.
+### **Advantages:**
+
+- Speed up `SELECT` queries.
+- Improves search and sort performance.
+
+### **Disadvantages:**
+
+- Takes up additional disk space.
+- May slow down `INSERT`, `UPDATE` and `DELETE` operations due to index update.
+
+---
+
+## **2. Types of indexes in MySQL**
+
+### **Normal index (INDEX)**
+
+Used to speed up searches on specific columns.
 
 ```sql
 CREATE INDEX idx_nombre ON customers(first_name);
 ```
 
-### **Índice único (UNIQUE)**
+### **Unique index (UNIQUE)**
 
-Garantiza que todos los valores en una columna sean únicos.
+Ensures that all values in a column are unique.
 
 ```sql
 CREATE UNIQUE INDEX idx_email ON customers(email);
 ```
 
-### **Índice de clave primaria (PRIMARY KEY)**
+### **Primary Key Index**
 
-Se crea automáticamente cuando definimos una `PRIMARY KEY`.
+It is created automatically when we define an `PRIMARY KEY`.
 
-### **Índice de texto completo (FULLTEXT)**
+### **Full text index (FULLTEXT)**
 
-Especial para búsquedas de texto en columnas grandes (`TEXT`, `VARCHAR`).
+Special for text searches in large columns (`TEXT`, `VARCHAR`).
 
 ```sql
 CREATE FULLTEXT INDEX idx_texto ON articles(content);
 ```
 
-### **Índice compuesto**
+### **Composite index**
 
-Cubre múltiples columnas para optimizar búsquedas que involucren varias condiciones.
+Cover multiple columns to optimize searches involving multiple conditions.
 
 ```sql
 CREATE INDEX idx_nombre_apellido ON customers(first_name, last_name);
@@ -65,9 +65,9 @@ CREATE INDEX idx_nombre_apellido ON customers(first_name, last_name);
 
 ---
 
-## **3. Crear índices al momento de crear la tabla**
+## **3. Create indexes when creating the table**
 
-Podemos definir índices directamente en la creación de una tabla:
+We can define indexes directly when creating a table:
 
 ```sql
 CREATE TABLE products (
@@ -80,9 +80,9 @@ CREATE TABLE products (
 
 ---
 
-## **4. Ver índices existentes**
+## **4. View existing indexes**
 
-Para ver los índices de una tabla:
+To view the indexes of a table:
 
 ```sql
 SHOW INDEX FROM customers;
@@ -90,36 +90,36 @@ SHOW INDEX FROM customers;
 
 ---
 
-## **5. Eliminar índices**
+## **5. Delete indexes**
 
-Podemos borrar un índice con:
+We can delete an index with:
 
 ```sql
 DROP INDEX idx_nombre ON customers;
 ```
 
-> No se pueden eliminar índices creados automáticamente por una clave primaria sin eliminar primero la clave primaria.
+> Indexes created automatically by a primary key cannot be deleted without first deleting the primary key.
 
 ---
 
-## **6. Buenas prácticas con índices**
+## **6. Good practices with indexes**
 
-- Indexar columnas utilizadas frecuentemente en `WHERE`, `JOIN` u `ORDER BY`.
-- Evitar crear demasiados índices innecesarios.
-- Revisar periódicamente el rendimiento con `EXPLAIN`.
-
----
-
-[![Índices](https://img.youtube.com/vi/Eu2o5tefWdU/0.jpg)](https://www.youtube.com/watch?v=Eu2o5tefWdU&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+- Index frequently used columns in `WHERE`, `JOIN` or `ORDER BY`.
+- Avoid creating too many unnecessary indexes.
+- Periodically review performance with `EXPLAIN`.
 
 ---
 
-## **7. Conclusión**
-
-- Los índices mejoran la velocidad de lectura de datos.
-- Existen varios tipos: normales, únicos, compuestos y de texto completo.
-- Deben usarse estratégicamente para equilibrar rendimiento y consumo de recursos.
+[![Indices](https://img.youtube.com/vi/Eu2o5tefWdU/0.jpg)](https://www.youtube.com/watch?v=Eu2o5tefWdU&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-En el próximo tema aprenderemos a **crear y utlizar procedimientos almacenados para reutilizar el código**
+## **7. Conclusion**
+
+- Indexes improve data reading speed.
+- There are several types: normal, unique, compound and full text.
+- They should be used strategically to balance performance and resource consumption.
+
+---
+
+In the next topic we will learn to **create and use stored procedures to reuse code**

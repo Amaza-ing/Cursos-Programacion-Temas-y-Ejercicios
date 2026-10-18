@@ -1,37 +1,37 @@
-# **Tema 3: Elementos en línea y elementos en bloque**
+# **Topic 3: Inline elements and block elements**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En HTML, los elementos se dividen en dos grandes categorías según su comportamiento en la página web:
+In HTML, elements are divided into two large categories according to their behavior on the web page:
 
-- **Elementos en bloque**: Ocupan todo el ancho disponible y comienzan en una nueva línea.
-- **Elementos en línea**: Solo ocupan el espacio necesario y no fuerzan un salto de línea.
+- **Block elements**: They occupy the entire available width and start on a new line.
+- **Inline elements**: They only take up the necessary space and do not force a line break.
 
-Comprender esta diferencia es esencial para estructurar correctamente una página web y mejorar su diseño.
+Understanding this difference is essential to correctly structure a web page and improve its design.
 
 ---
 
-## **2. Elementos en bloque**
+## **2. Block elements**
 
-Los elementos en bloque generan un nuevo bloque de contenido en la página. Por defecto, ocupan todo el ancho disponible y comienzan en una nueva línea.
+Block elements generate a new block of content on the page. By default, they take up the entire available width and start on a new line.
 
-### **Características de los elementos en bloque:**
+### **Characteristics of block elements:**
 
-- Se expanden a lo largo del ancho de su contenedor.
-- Inician en una nueva línea.
-- Pueden contener otros elementos en bloque y en línea.
+- They expand across the width of their container.
+- They start on a new line.
+- They can contain other block and inline elements.
 
-### **Ejemplos comunes:**
+### **Common examples:**
 
-- **Encabezados:** `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
-- **Párrafos:** `p`
-- **Listas:** `ul`, `ol`, `li`
-- **Divisiones o contenedores:** `div`
-- **Cajas de contenido estructurado:** `section`, `article`, `aside`, `header`, `footer`
+- **Headers:** `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
+- **Paragraphs:** `p`
+- **Lists:** `ul`, `ol`, `li`
+- **Divisions or containers:** `div`
+- **Structured content boxes:** `section`, `article`, `aside`, `header`, `footer`
 
-### **Ejemplo práctico:**
+### **Practical example:**
 
-Imagina que estás estructurando un artículo en un blog. Usarás elementos en bloque para separar las secciones.
+Imagine that you are structuring an article on a blog. You will use block elements to separate the sections.
 
 ```HTML
 <article>
@@ -40,60 +40,59 @@ Imagina que estás estructurando un artículo en un blog. Usarás elementos en b
 </article>
 ```
 
-En este caso:
+In this case:
 
-- `h1` ocupa toda la línea.
-- `p` también genera un bloque independiente.
+- `h1` occupies the entire line.
+- `p` also generates a separate block.
 
 ---
 
-## **3. Elementos en línea**
+## **3. Inline elements**
 
-Los elementos en línea no generan un nuevo bloque de contenido, sino que se mantienen en la misma línea junto con otros elementos.
+Inline elements do not generate a new block of content, but rather remain on the same line with other elements.
 
-### **Características de los elementos en línea:**
+### **Characteristics of online elements:**
 
-- Solo ocupan el espacio necesario.
-- No generan un salto de línea.
-- Solo pueden contener texto o elementos en línea (no pueden contener elementos en bloque).
+- They only take up the necessary space.
+- They do not generate a line break.
+- Can only contain text or inline elements (cannot contain block elements).
 
-### **Ejemplos comunes:**
+### **Common examples:**
 
-- **Enlaces:** `a`
-- **Negrita y cursiva:** `strong`, `em`
-- **Formato de texto:** `span`, `mark`, `code`
-- **Imágenes:** `img`
-- **Botones pequeños dentro de un texto:** `button`
+- **Links:** `a`
+- **Bold and italics:** `strong`, `em`
+- **Text format:** `span`, `mark`, `code`
+- **Images:** `img`
+- **Small buttons within a text:** `button`
 
-### **Ejemplo práctico:**
+### **Practical example:**
 
-Supongamos que en un artículo de un blog queremos resaltar una palabra en negrita y enlazar un término importante.
+Suppose in a blog article we want to highlight a word in bold and link to an important term.
 
 ```HTML
 <p>Para aprender más sobre HTML, visita <a href="https://developer.mozilla.org/">Mozilla Developer Network</a> y revisa los elementos <strong>semánticos</strong>.</p>
 ```
 
-En este caso:
+In this case:
 
-- `a` es un enlace que se mantiene en la misma línea.
-- `strong` enfatiza la palabra sin afectar la disposición del texto.
+- `a` is a link that remains on the same line.
+- `strong` emphasizes the word without affecting the layout of the text.
 
 ---
 
-## **4. Diferencias clave entre elementos en bloque y en línea**
+## **4. Key Differences Between Block and Inline Elements**
 
-| Característica                           | Elementos en bloque | Elementos en línea          |
+| Feature | Block elements | Online elements |
 | ---------------------------------------- | ------------------- | --------------------------- |
-| Ocupa toda la línea                      | Sí                  | No                          |
-| Inicia en nueva línea                    | Sí                  | No                          |
-| Puede contener otros elementos en bloque | Sí                  | No                          |
-| Uso común                                | Estructura y diseño | Formateo de texto y enlaces |
+| Occupies the entire line | Yes | No |
+| Start on new line | Yes | No |
+| May contain other block elements | Yes | No |
+| Common use | Structure and design | Text and link formatting |
 
 ---
 
-## **5. Combinación de elementos en bloque e inline**
-
-Es posible combinar ambos tipos de elementos en un diseño web. Por ejemplo, dentro de un `div` (bloque), se pueden incluir `span` (inline) para resaltar ciertas palabras.
+## **5. Combination of block and inline elements**
+It is possible to combine both types of elements in a web design. For example, within an `div` (block), `span` (inline) can be included to highlight certain words.
 
 ```HTML
 <div>
@@ -101,24 +100,24 @@ Es posible combinar ambos tipos de elementos en un diseño web. Por ejemplo, den
 </div>
 ```
 
-En este caso:
+In this case:
 
-- `div` es un elemento en bloque que envuelve todo el contenido.
-- `span` es un elemento en línea que permite aplicar estilos sin alterar la estructura.
-
----
-
-[![Texto y Elementos en Linea y en Bloque](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+- `div` is a block element that wraps the entire content.
+- `span` is an inline element that allows you to apply styles without altering the structure.
 
 ---
 
-## **6. Buenas prácticas**
-
-- Usa **elementos en bloque** para definir la estructura de la página.
-- Usa **elementos en línea** para aplicar estilos o agregar interactividad sin modificar la disposición del contenido.
-- Evita encerrar elementos en bloque dentro de elementos en línea, ya que esto puede causar errores en la visualización.
-- Aprovecha las etiquetas semánticas de HTML5 (`section`, `article`, `aside`, etc.) para mejorar la accesibilidad y la optimización de motores de búsqueda (**SEO**).
+[![Text and Elements in Line and in Block](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-En el próximo tema, aprenderemos sobre **las etiquetas de texto en HTML** y su impacto en la estructura de una página web.
+## **6. Good practices**
+
+- Use **block elements** to define the structure of the page.
+- Use **inline elements** to apply styling or add interactivity without modifying the layout of the content.
+- Avoid enclosing block elements within inline elements, as this can cause display errors.
+- Leverages HTML5 semantic tags (`section`, `article`, `aside`, etc.) to improve accessibility and search engine optimization (**SEO**).
+
+---
+
+In the next topic, we will learn about **text tags in HTML** and their impact on the structure of a web page.

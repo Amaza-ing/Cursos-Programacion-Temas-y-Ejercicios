@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 6: Comunicación entre Componentes**
+# **Exercises - Topic 6: Communication between Components**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre la comunicación entre componentes en Angular.
+Below you will find 10 practical exercises on communication between components in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Uso básico de `@Input()`**
+### **Exercise 1: Basic use of `@Input()`**
 
-Crea un componente hijo que reciba un mensaje desde el padre y lo muestre en pantalla.
+Create a child component that receives a message from the parent and displays it on the screen.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `parent.component.ts`**
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -28,13 +28,15 @@ export class ParentComponent {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child [message]="parentMsg"></app-child>
 ```
 
-#### **Archivo: `child.component.ts`**
+
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, Input } from "@angular/core";
@@ -48,23 +50,25 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <p>Mensaje recibido: {{ message }}</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Uso básico de `@Output()`**
+### **Exercise 2: Basic use of `@Output()`**
 
-Permite que un componente hijo envíe un mensaje al componente padre mediante eventos.
+Allows a child component to send a message to the parent component using events.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, EventEmitter, Output } from "@angular/core";
@@ -82,13 +86,15 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <button (click)="sendMsg()">Enviar mensaje al padre</button>
 ```
 
-#### **Archivo: `parent.component.ts`**
+
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -106,30 +112,33 @@ export class ParentComponent {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child (emittedMsg)="updateMsg($event)"></app-child>
 <p>Mensaje recibido del hijo: {{ receivedMsg }}</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Uso de `input()` con Signals**
+### **Exercise 3: Using `input()` with Signals**
 
-Crea un componente hijo que reciba una Signal de un padre y la muestre en pantalla.
+Create a child component that receives a Signal from a parent and displays it on the screen.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `parent.component.html`**
+#### **File: `parent.component.html`**
 
 ```html
 <app-child [message]="'Hola desde el padre con Signals'"></app-child>
 ```
 
-#### **Archivo: `child.component.ts`**
+
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, input } from "@angular/core";
@@ -143,23 +152,25 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <p>{{ message() }}</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Uso de `output()` con Signals**
+### **Exercise 4: Using `output()` with Signals**
 
-Crea un componente hijo que emita un evento al padre utilizando `output()`.
+Create a child component that emits an event to the parent using `output()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, output } from "@angular/core";
@@ -177,13 +188,15 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child (emittedMsg)="updateMsg($event)"></app-child>
 ```
 
-#### **Archivo: `parent.component.ts`**
+
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -201,17 +214,18 @@ export class ParentComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Comunicación bidireccional con Signals**
+### **Exercise 5: Two-way communication with Signals**
 
-Crea una interacción donde el padre pueda actualizar el estado de un hijo y viceversa.
+Create an interaction where the parent can update the status of a child and vice versa.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, input, output } from "@angular/core";
@@ -230,21 +244,24 @@ export class ChildComponent {
 }
 ```
 
-#### **Archivo: `child.component.html`**
+
+#### **File: `child.component.html`**
 
 ```html
 <input [(ngModel)]="message" placeholder="Escribe un mensaje" />
 <button (click)="updateMsg()">Actualizar mensaje en el padre</button>
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <app-child [message]="parentMsg" (emittedMsg)="parentMsg = $event"></app-child>
 <p>Mensaje en el padre: {{ parentMsg }}</p>
 ```
 
-#### **Archivo: `parent.component.ts`**
+
+#### **File: `parent.component.ts`**
 
 ```ts
 import { Component, signal } from "@angular/core";
@@ -257,5 +274,6 @@ export class ParentComponent {
   parentMsg = signal("");
 }
 ```
+
 
 </details>

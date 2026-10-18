@@ -1,103 +1,103 @@
-# **Curso Completo de JavaScript desde Cero**
+# **Complete JavaScript Course from Scratch**
 
-Bienvenido al **Curso Completo de JavaScript**, un curso diseñado para que aprendas JavaScript desde cero y domines uno de los lenguajes de programación más utilizados en el desarrollo web. Si tienes poca experiencia, este curso te guiará paso a paso con explicaciones claras y ejercicios prácticos.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 Fundamentos y sintaxis de JavaScript.<br>
-🔹 Condicionales, bucles y estructuras de control de flujo.<br>
-🔹 Manipulación del DOM para crear páginas dinámicas.<br>
-🔹 Uso de funciones y modularización del código.<br>
-🔹 Almacenamiento en el navegador con `localStorage` y `sessionStorage`.<br>
-🔹 Peticiones a APIs y consumo de datos con `fetch`.<br>
-🔹 Programación asincrónica con promesas y `async/await`.<br>
-🔹 Manejo de eventos y optimización del rendimiento en JavaScript.<br>
-
-Este curso está estructurado en **módulos prácticos**, con ejemplos y ejercicios que te ayudarán a reforzar lo aprendido.
+Welcome to the **Complete JavaScript Course**, a course designed for you to learn JavaScript from scratch and master one of the most used programming languages in web development. If you have little experience, this course will guide you step by step with clear explanations and practical exercises.
 
 ---
 
-[![Introducción al Curso](https://img.youtube.com/vi/BwdLgrccs3g/0.jpg)](https://www.youtube.com/watch?v=BwdLgrccs3g&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+## 📌 **What will you learn in this course?**
+
+🔹 JavaScript basics and syntax.<br>
+🔹 Conditionals, loops and control flow structures.<br>
+🔹 DOM manipulation to create dynamic pages.<br>
+🔹 Use of functions and code modularization.<br>
+🔹 In-browser storage with `localStorage` and `sessionStorage`.<br>
+🔹 API requests and data consumption with `fetch`.<br>
+🔹 Asynchronous programming with promises and `async/await`.<br>
+🔹 Event handling and performance optimization in JavaScript.<br>
+
+This course is structured in **practical modules**, with examples and exercises that will help you reinforce what you have learned.
 
 ---
 
-## 📂 **Estructura del curso**
-
-Cada tema está en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes explorar los temas en la carpeta correspondiente:
-
-| 📚 Tema                                                                             | Descripción                                                 |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| 🚀 [Tema 1: Introducción a JavaScript](Temas/JavaScript-01-Introduccion.md)         | ¿Qué es JavaScript y cómo funciona?                         |
-| 🔍 [Tema 2: Condicionales](Temas/JavaScript-02-Condicionales.md)                    | Uso de `if`, `else`, `switch` y operadores lógicos.         |
-| 🔄 [Tema 3: Bucles](Temas/JavaScript-03-Bucles.md)                                  | `for`, `while`, `do...while` y cómo recorrer datos.         |
-| 🛠️ [Tema 4: Funciones](Temas/JavaScript-04-Funciones.md)                            | Definición, tipos de funciones y modularización del código. |
-| 🎭 [Tema 5: Objetos](Temas/JavaScript-05-Objetos.md)                                | Creación, manipulación y uso de objetos en JavaScript.      |
-| 📦 [Tema 6: Arrays](Temas/JavaScript-06-Arrays.md)                                  | Métodos y operaciones con listas de datos.                  |
-| 🏗️ [Tema 7: Paso por Valor y Referencia](Temas/JavaScript-07-Valor-y-Referencia.md) | Diferencias y efectos en variables, objetos y arrays.       |
-| 🎯 [Tema 8: Funciones Avanzadas](Temas/JavaScript-08-Funciones-Avanzadas.md)        | Closures, funciones de orden superior y más.                |
-| ✨ [Tema 9: Operadores Avanzados](Temas/JavaScript-09-Operadores-Avanzados.md)      | `spread`, `rest`, `optional chaining` y otros.              |
-| ⏳ [Tema 10: Funciones Especiales](Temas/JavaScript-10-Funciones-Especiales.md)     | `setTimeout`, `setInterval`, `debounce`, `throttle`, etc.   |
-| ⚡ [Tema 11: Asincronía y Promesas](Temas/JavaScript-11-Promesas.md)                | Promesas, `async/await` y `fetch()`.                        |
-| 🔗 [Tema 12: Peticiones a una API](Temas/JavaScript-12-Fetch-API.md)                | Cómo consumir datos de APIs con JavaScript.                 |
-| 🌐 [Tema 13: Manipulación del DOM](Temas/JavaScript-13-DOM.md)                      | Cómo seleccionar y modificar elementos HTML dinámicamente.  |
-| 💾 [Tema 14: Almacenamiento en el Navegador](Temas/JavaScript-14-localStorage.md)   | Uso de `localStorage` y `sessionStorage`.                   |
-| 🤯 [Tema 15: Curiosidades de JavaScript](Temas/JavaScript-15-Curiosidades.md)       | Comportamientos extraños y trucos en JavaScript.            |
-
-📌 **Para ver todos los temas disponibles, revisa este repositorio.**
-
-También tienes ejercicios resueltos en la carpeta de [Ejercicios](Ejercicios).
+[![Introduction to the ](https://img.youtube.com/vi/BwdLgrccs3g/0.jpg) Course](https://www.youtube.com/watch?v=BwdLgrccs3g&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## 🎥 **Curso en Video**
+## 📂 **Course structure**
 
-Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
+Each theme is in a **Markdown (`.md`)** file within this repository. You can explore the topics in the corresponding folder:
 
-📺 **Curso Completo de JavaScript**
+| 📚 Theme | Description |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| 🚀 [topic 1: Introduction to JavaScript](Temas/JavaScript-01-Introduccion.md) | What is JavaScript and how does it work?                         |
+| 🔍 [Topic 2: Conditionals](Temas/JavaScript-02-Condicionales.md) | Use of `if`, `else`, `switch` and logical operators.         |
+| 🔄 [topic 3: Loops](Temas/JavaScript-03-Bucles.md) | `for`, `while`, `do...while` and how to traverse data.         |
+| 🛠️ [Topic 4: Functions](Temas/JavaScript-04-Funciones.md) | Definition, types of functions and code modularization. |
+| 🎭 [topic 5: Objects](Temas/JavaScript-05-Objetos.md) | Creation, manipulation and use of objects in JavaScript.      |
+| 📦 [Topic 6: Arrays](Temas/JavaScript-06-Arrays.md) | Methods and operations with data lists.                  |
+| 🏗️ [Tem 7: Passage by Value and Reference](Temas/JavaScript-07-Valor-y-Referencia.md) | Differences and effects in variables, objects and arrays.       |
+| 🎯 [Topic 8: Advanced Functions](Temas/JavaScript-08-Funciones-Avanzadas.md) | Closures, higher order functions and more.                |
+| ✨ [topic 9: Advanced Operators](Temas/JavaScript-09-Operadores-Avanzados.md) | `spread`, `rest`, `optional chaining` and others.              |
+| ⏳ [Topic 10: Special Functions](Temas/JavaScript-10-Funciones-Especiales.md) | `setTimeout`, `setInterval`, `debounce`, `throttle`, etc.   |
+| ⚡ [T Topic 11: Asynchrony and Promises](Temas/JavaScript-11-Promesas.md) | Promises, `async/await` and `fetch()`.                        |
+| 🔗 [T Topic 12: Requests to an API](Temas/JavaScript-12-Fetch-API.md) | How to consume data from APIs with JavaScript.                 |
+| 🌐 [T Topic 13: Manipulation of DOM](Temas/JavaScript-13-DOM.md) | How to select and modify HTML elements dynamically.  |
+| 💾 [Topic 14: Storage in the Browser](Temas/JavaScript-14-localStorage.md) | Use of `localStorage` and `sessionStorage`.                   |
+| 🤯 [ Topic 15: JavaScript Curiosities](Temas/JavaScript-15-Curiosidades.md) | Strange behaviors and tricks in JavaScript.            |
 
-[![Curso de JavaScript](https://img.youtube.com/vi/rygQhzMCKjg/0.jpg)](https://www.youtube.com/watch?v=rygQhzMCKjg&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+📌 **To see all available themes, check this repository.**
 
----
-
-## 🐱‍👤 **Repositorio con Código y Ejemplos**
-
-También puedes acceder a [este repositorio con el código y ejemplos de cada sección ordenados](https://github.com/Amaza-ing/AMazaing-JavaScript-Course).
-
----
-
-## 🛠️ **Requisitos previos**
-
-Este curso está diseñado para principiantes, por lo que no necesitas conocimientos previos en programación. Sin embargo, es recomendable tener:
-
-- Un navegador web actualizado (Chrome, Firefox, Edge, etc.).
-- Un editor de código como Visual Studio Code o Sublime Text.
-- Ciertos conocimientos de [HTML](../HTML/) & [CSS](../CSS/).
-
----
-
-## 📌 **Cómo usar este repositorio**
-
-Puedes seguir el curso directamente en este repositorio de GitHub o descargarlo en tu computadora para estudiarlo a tu ritmo.
-
-1️⃣ **Clona el repositorio** en tu máquina local.
-
-2️⃣ **Explora los temas** y sigue las explicaciones en cada archivo `.md`.
-
-3️⃣ **Realiza los ejercicios** para reforzar lo aprendido.
+You also have solved exercises in the [exercises](Ejercicios) folder.
 
 ---
 
-## 🚀 **¡Empieza a aprender JavaScript hoy!**
+## 🎥 **Video Course**
 
-Este curso está diseñado para que puedas aprender JavaScript **a tu ritmo**, con ejercicios prácticos y explicaciones sencillas.
+If you prefer to learn visually, here is the complete video course with detailed explanations and practical examples:
+
+📺 **Complete JavaScript Course**
+
+[![JavaScript Course](https://img.youtube.com/vi/rygQhzMCKjg/0.jpg)](https://www.youtube.com/watch?v=rygQhzMCKjg&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
-## Hecho por Adrián Maza.
+## 🐱‍👤 **Repository with Code and Examples**
 
-Espero que sea lo que buscas.
+You can also access [this repository with the code and examples of each section ordered by ](https://github.com/Amaza-ing/AMazaing-JavaScript-Course).
+
+---
+
+## 🛠️ **Prerequisites**
+
+This course is designed for beginners, so you do not need prior programming knowledge. However, it is advisable to have:
+
+- An updated web browser (Chrome, Firefox, Edge, etc.).
+- A code editor such as Visual Studio Code or Sublime Text.
+- Some knowledge of [HTML](../HTML/) & [CSS](../CSS/).
+
+---
+
+## 📌 **How to use this repository**
+
+You can follow the course directly in this GitHub repository or download it to your computer to study at your own pace.
+
+1️⃣ **Clone the repository** on your local machine.
+
+2️⃣ **Explore the topics** and follow the explanations in each `.md` file.
+
+3️⃣ **Do the exercises** to reinforce what you have learned.
+
+---
+
+## 🚀 **Start learning JavaScript today!**
+
+This course is designed so that you can learn JavaScript **at your own pace**, with practical exercises and simple explanations.
+
+---
+
+## Made by Adrián Maza.
+
+I hope it's what you're looking for.
 
 <div>
   <h5>
@@ -110,7 +110,7 @@ Espero que sea lo que buscas.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

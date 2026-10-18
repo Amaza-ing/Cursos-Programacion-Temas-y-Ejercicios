@@ -1,21 +1,21 @@
-# **Ejercicios - Tema 8: Consultas con JOIN en MySQL**
+# **Exercises - Topic 8: Queries with JOIN in MySQL**
 
-A continuación, encontrarás 6 ejercicios prácticos para aplicar distintos tipos de `JOIN` y consultar datos relacionados entre varias tablas.
+Below you will find 6 practical exercises to apply different types of `JOIN` and consult related data between several tables.
 
-Todos los ejercicios utilizan las siguientes tablas:
+All exercises use the following tables:
 
 - `customers(id, first_name, last_name)`
-- `orders(id, customer_id, created_at)`
+-`orders(id, customer_id, created_at)`
 - `order_details(order_id, product_id, quantity)`
 - `products(id, name, price)`
 
 ---
 
-### **Ejercicio 1: Mostrar el nombre completo de los clientes junto con sus IDs de pedido**
+### **Exercise 1: Show customers' full name along with their order IDs**
 
-Muestra el `first_name`, `last_name` y el `id` del pedido para cada cliente que haya realizado un pedido.
+Displays the `first_name`, `last_name`, and `id` of the order for each customer who placed an order.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT c.first_name, c.last_name, o.id AS order_id
@@ -27,11 +27,11 @@ JOIN orders o ON c.id = o.customer_id;
 
 ---
 
-### **Ejercicio 2: Obtener todos los pedidos (aunque no tengan detalles)**
+### **Exercise 2: Get all orders (even if they do not have details)**
 
-Muestra el ID del pedido y la cantidad total de productos comprados. Incluye también los pedidos sin detalles.
+Shows the order ID and the total quantity of products purchased. Also includes orders without details.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT o.id AS order_id, SUM(od.quantity) AS total_items
@@ -44,11 +44,11 @@ GROUP BY o.id;
 
 ---
 
-### **Ejercicio 3: Ver productos que aparecen en algún pedido**
+### **Exercise 3: View products that appear in an order**
 
-Lista el nombre de todos los productos que han sido incluidos al menos en un pedido.
+Lists the name of all products that have been included in at least one order.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT DISTINCT p.name
@@ -60,11 +60,11 @@ JOIN order_details od ON p.id = od.product_id;
 
 ---
 
-### **Ejercicio 4: Mostrar el historial de pedidos de un cliente específico**
+### **Exercise 4: Show order history for a specific customer**
 
-Muestra los pedidos del cliente con `id = 2`, indicando la fecha del pedido y el nombre de cada producto incluido.
+Displays customer orders with `id = 2`, indicating the date of the order and the name of each product included.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT o.created_at, p.name AS product_name
@@ -78,11 +78,11 @@ WHERE o.customer_id = 2;
 
 ---
 
-### **Ejercicio 5: Ver todos los productos, incluso los que nunca se han vendido**
+### **Exercise 5: View all products, even those that have never been sold**
 
-Muestra todos los productos junto con la cantidad total vendida. Si un producto no se ha vendido, debe aparecer con cantidad nula o 0.
+Shows all products along with the total quantity sold. If a product has not been sold, it must appear with a null or 0 quantity.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT p.name, SUM(od.quantity) AS total_vendida
@@ -95,11 +95,11 @@ GROUP BY p.id;
 
 ---
 
-### **Ejercicio 6: Obtener el gasto total por cliente**
+### **Exercise 6: Obtain the total spending per customer**
 
-Muestra el nombre de cada cliente y la suma total gastada, multiplicando cantidad por precio de cada producto.
+Shows the name of each customer and the total amount spent, multiplying quantity by price of each product.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT c.first_name, c.last_name, SUM(od.quantity * p.price) AS total_gastado

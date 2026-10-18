@@ -1,62 +1,62 @@
-# **Tema 1: Empezar con React**
+# **Topic 1: Getting started with React**
 
-## **1. ¿Qué es React?**
+## **1. What is React?**
 
-React es una **librería de JavaScript** desarrollada por Meta (Facebook) para construir interfaces de usuario de forma **declarativa**, **componentizada** y **reactiva**. Su objetivo principal es facilitar la creación de aplicaciones web modernas, mantenibles y escalables.
+React is a **JavaScript library** developed by Meta (Facebook) to build user interfaces in a **declarative**, **componentized** and **reactive** way. Its main objective is to facilitate the creation of modern, maintainable and scalable web applications.
 
-A diferencia de frameworks completos como Angular, React se centra exclusivamente en la **capa de vista**, dejando al desarrollador libertad para elegir el resto de herramientas del ecosistema.
+Unlike complete frameworks like Angular, React focuses exclusively on the **view layer**, leaving the developer free to choose the rest of the tools in the ecosystem.
 
-### **Características principales de React**
+### **Key Features of React**
 
-- Basado en **componentes reutilizables**.
-- Utiliza un **Virtual DOM** para optimizar el rendimiento.
-- Programación **declarativa**.
-- Flujo de datos **unidireccional**.
-- Amplio ecosistema y comunidad.
-
----
-
-[![Presentación del curso de React](https://img.youtube.com/vi/Tyk4X3mU9DA/0.jpg)](https://www.youtube.com/watch?v=Tyk4X3mU9DA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+- Based on **reusable components**.
+- Uses a **Virtual DOM** to optimize performance.
+- **declarative** programming.
+- **unidirectional** data flow.
+- Large ecosystem and community.
 
 ---
 
-## **2. Requisitos previos**
+[![React Course Presentation](https://img.youtube.com/vi/Tyk4X3mU9DA/0.jpg)](https://www.youtube.com/watch?v=Tyk4X3mU9DA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
-Antes de comenzar a trabajar con React, es necesario tener instalado:
+---
 
-- **Node.js** (incluye npm)
-- Conocimientos básicos de **HTML**, **CSS** y **JavaScript**
+## **2. Prerequisites**
 
-Puedes comprobar si tienes Node instalado ejecutando en la terminal:
+Before starting to work with React, you need to have installed:
+
+- **Node.js** (includes npm)
+- Basic knowledge of **HTML**, **CSS** and **JavaScript**
+
+You can check if you have Node installed by running in the terminal:
 
 ```sh
 node -v
 npm -v
 ```
 
-Si no lo tienes instalado, puedes descargarlo desde [https://nodejs.org](https://nodejs.org)
+If you do not have it installed, you can download it from [https://nodejs.org](https://nodejs.org)
 
 ---
 
-## **3. Crear un proyecto React con Vite**
+## **3. Create a React project with Vite**
 
-Actualmente, una de las formas más recomendadas de iniciar un proyecto React es utilizando **Vite**, ya que ofrece un entorno de desarrollo rápido y moderno.
+Currently, one of the most recommended ways to start a React project is using **Vite**, as it offers a fast and modern development environment.
 
-### **3.1. Crear el proyecto**
+### **3.1. Create the project**
 
-Ejecuta el siguiente comando en la terminal:
+Run the following command in the terminal:
 
 ```sh
 npm create vite@latest my-react-app
 ```
 
-Durante el proceso se te preguntará:
+During the process you will be asked:
 
-- Nombre del proyecto
+- Project name
 - Framework: **React**
-- Variante: **JavaScript**
+- Variant: **JavaScript**
 
-Una vez creado, accede a la carpeta del proyecto:
+Once created, access the project folder:
 
 ```sh
 cd my-react-app
@@ -65,27 +65,27 @@ npm install
 
 ---
 
-## **4. Levantar el servidor de desarrollo**
+## **4. Raise the development server**
 
-Para arrancar el proyecto en modo desarrollo, ejecuta:
+To start the project in development mode, run:
 
 ```sh
 npm run dev
 ```
 
-Esto iniciará un servidor local y mostrará una URL similar a:
+This will start a local server and display a URL similar to:
 
 ```
 http://localhost:5173
 ```
 
-Cada cambio que realices en el código se reflejará automáticamente en el navegador.
+Every change you make to the code will automatically be reflected in the browser.
 
 ---
 
-## **5. Estructura básica del proyecto React**
+## **5. Basic structure of the React project**
 
-Un proyecto React creado con Vite tiene una estructura similar a esta:
+A React project created with Vite has a structure similar to this:
 
 ```
 my-react-app/
@@ -101,15 +101,15 @@ my-react-app/
 │── vite.config.js         # Configuración de Vite
 ```
 
-### **Archivos clave**
+### **Key Files**
 
-- **main.jsx**: punto de entrada donde React se monta en el DOM.
-- **App.jsx**: componente raíz de la aplicación.
-- **index.html**: contiene el div donde se renderiza React.
+- **main.jsx**: entry point where React is mounted to the DOM.
+- **App.jsx**: root component of the application.
+- **index.html**: contains the div where React is rendered.
 
 ---
 
-## **6. Primer vistazo a React**
+## **6. First look at React**
 
 ### **main.jsx**
 
@@ -126,10 +126,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
-Aquí ocurre lo siguiente:
+Here the following happens:
 
-- Se importa React y ReactDOM.
-- Se monta el componente `App` dentro del elemento con id `root`.
+- React and ReactDOM are imported.
+- The `App` component is mounted inside the element with id `root`.
 
 ---
 
@@ -143,15 +143,15 @@ function App() {
 export default App;
 ```
 
-Este es un **componente funcional**, que devuelve JSX (una mezcla de JavaScript y HTML).
+This is a **functional component**, which returns JSX (a mix of JavaScript and HTML).
 
 ---
 
-## **7. ¿Qué es JSX?**
+## **7. What is JSX?**
 
-JSX es una extensión de JavaScript que permite escribir estructuras similares a HTML dentro del código JavaScript.
+JSX is a JavaScript extension that allows you to write HTML-like structures within JavaScript code.
 
-Ejemplo:
+Example:
 
 ```js
 const title = "Bienvenido a React";
@@ -161,25 +161,25 @@ function App() {
 }
 ```
 
-Características importantes de JSX:
+Important features of JSX:
 
-- Se escribe como HTML, pero **no es HTML**.
-- Permite usar expresiones JavaScript con `{}`.
-- Cada componente debe devolver **un único elemento padre**.
-
----
-
-## **8. A tener en cuenta**
-
-- React es una **librería**, no un framework completo.
-- Todo en React gira en torno a **componentes**.
-- JSX facilita la escritura de interfaces de usuario.
-- El proyecto se ejecuta en tiempo real gracias al servidor de desarrollo.
+- It is written as HTML, but it is **not HTML**.
+- Allows you to use JavaScript expressions with `{}`.
+- Each component must return **a single parent element**.
 
 ---
 
-[![Cómo Empezar con React](https://img.youtube.com/vi/IRfa4mg4tNM/0.jpg)](https://www.youtube.com/watch?v=IRfa4mg4tNM&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **8. To take into account**
+
+- React is a **library**, not a complete framework.
+- Everything in React revolves around **components**.
+- JSX makes it easy to write user interfaces.
+- The project runs in real time thanks to the development server.
 
 ---
 
-En el próximo tema veremos en detalle el **esquema de ficheros** y cómo organizar correctamente un proyecto React desde el inicio.
+[![How to Get Started with React](https://img.youtube.com/vi/IRfa4mg4tNM/0.jpg)](https://www.youtube.com/watch?v=IRfa4mg4tNM&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will see in detail the **file scheme** and how to correctly organize a React project from the beginning.

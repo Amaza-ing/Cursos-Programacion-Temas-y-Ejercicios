@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 15: Uso de PARTITION BY en MySQL**
+# **Exercises - Topic 15: Using PARTITION BY in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para trabajar con **PARTITION BY** y funciones de ventana en MySQL.
+Below you will find 5 practical exercises to work with **PARTITION BY** and window functions in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Contar registros por categoría**
+### **Exercise 1: Count records by category**
 
-En la tabla `products(id, category_id, name, price)`, muestra todos los productos junto con el **número total de productos** que hay en su misma categoría.
+In the `products(id, category_id, name, price)` table, it shows all the products along with the **total number of products** that are in the same category.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT id,
@@ -24,11 +24,11 @@ FROM products;
 
 ---
 
-### **Ejercicio 2: Calcular promedio por departamento**
+### **Exercise 2: Calculate average by department**
 
-En la tabla `employees(id, department_id, salary)`, muestra cada empleado, su salario y el **salario promedio** de su departamento.
+In the `employees(id, department_id, salary)` table, it shows each employee, their salary, and the **average salary** of their department.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT id,
@@ -42,11 +42,11 @@ FROM employees;
 
 ---
 
-### **Ejercicio 3: Ranking de ventas por vendedor**
+### **Exercise 3: Sales ranking by seller**
 
-En la tabla `sales(id, seller_id, amount)`, asigna un **número de ranking** a cada venta dentro de cada vendedor, de mayor a menor `amount`.
+In the `sales(id, seller_id, amount)` table, assign a **rank number** to each sale within each seller, from highest to lowest `amount`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT seller_id,
@@ -60,11 +60,11 @@ FROM sales;
 
 ---
 
-### **Ejercicio 4: Acumulado de ingresos por mes**
+### **Exercise 4: Accumulated income per month**
 
-En la tabla `invoices(id, customer_id, total_amount, invoice_date)`, calcula el **acumulado** de `total_amount` para cada cliente, ordenado por `invoice_date`.
+In the `invoices(id, customer_id, total_amount, invoice_date)` table, calculate the **cumulative** `total_amount` for each customer, sorted by `invoice_date`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT customer_id,
@@ -79,11 +79,11 @@ FROM invoices;
 
 ---
 
-### **Ejercicio 5: Diferencia con la venta más alta del vendedor**
+### **Exercise 5: Difference with the seller's highest sale**
 
-En la tabla `sales(id, seller_id, amount)`, muestra cada venta junto con la **diferencia** respecto a la venta más alta del mismo vendedor.
+In the `sales(id, seller_id, amount)` table, show each sale along with the **difference** to the highest sale from the same seller.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT seller_id,

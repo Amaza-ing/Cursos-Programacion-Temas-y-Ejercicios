@@ -1,16 +1,16 @@
-# Ejercicios - Tema 24: Enums
+# Exercises - Topic 24: Enums
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **`enum`, `switch`, `values`, `valueOf`, atributos y métodos propios**.
+Below you will find **10 practical exercises** to work with **`enum`, `switch`, `values`, `valueOf`, attributes and own methods**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un enum
+## Exercise 1: Create an enum
 
-Crea `Level` con `BEGINNER`, `INTERMEDIATE`, `ADVANCED`.
+Create `Level` with `BEGINNER`, `INTERMEDIATE`, `ADVANCED`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum Level {
@@ -24,11 +24,11 @@ public enum Level {
 
 ---
 
-## Ejercicio 2: Comparar con `==`
+## Exercise 2: Compare with `==`
 
-Comprueba si `SubscriptionType` es `PRO`.
+Check if `SubscriptionType` is `PRO`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum SubscriptionType { FREE, PLUS, PRO }
@@ -45,11 +45,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Switch con enum
+## Exercise 3: Switch with enum
 
-Usa `switch` con `Weather`.
+Use `switch` with `Weather`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum Weather { SUNNY, RAINY, CLOUDY }
@@ -71,11 +71,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Recorrer `values()`
+## Exercise 4: Loop through `values()`
 
-Recorre todos los valores de `Language`.
+Iterates through all values of `Language`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum Language { JAVA, PYTHON, JAVASCRIPT }
@@ -93,11 +93,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Usar `valueOf`
+## Exercise 5: Use `valueOf`
 
-Convierte el texto `LARGE` a `Size`.
+Converts the text `LARGE` to `Size`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum Size { SMALL, MEDIUM, LARGE }
@@ -114,11 +114,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Enum con atributo
+## Exercise 6: Enum with attribute
 
-Crea `ShippingMethod` con precio.
+Create `ShippingMethod` with price.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum ShippingMethod {
@@ -140,11 +140,11 @@ public enum ShippingMethod {
 
 ---
 
-## Ejercicio 7: Enum con método
+## Exercise 7: Enum with method
 
-Crea `AccountRole` con `canPublish()`.
+Create `AccountRole` with `canPublish()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum AccountRole {
@@ -160,11 +160,11 @@ public enum AccountRole {
 
 ---
 
-## Ejercicio 8: Sobrescribir `toString`
+## Exercise 8: Overwrite `toString`
 
-Crea `TicketStatus` con textos legibles.
+Create `TicketStatus` with readable texts.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum TicketStatus {
@@ -185,11 +185,11 @@ public enum TicketStatus {
 
 ---
 
-## Ejercicio 9: Enum como parámetro
+## Exercise 9: Enum as a parameter
 
-Crea `hasSupport(UserPlan plan)`.
+Create `hasSupport(UserPlan plan)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum UserPlan { BASIC, STANDARD, PREMIUM }
@@ -205,11 +205,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Enum en clase
+## Exercise 10: Enum in class
 
-Crea `Task` con un atributo `TaskPriority`.
+Creates `Task` with an `TaskPriority` attribute.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public enum TaskPriority { LOW, MEDIUM, HIGH }

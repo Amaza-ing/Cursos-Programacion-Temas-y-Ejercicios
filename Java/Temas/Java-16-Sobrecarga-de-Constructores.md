@@ -1,52 +1,52 @@
-# Tema 16. Sobrecarga de constructores
+# Topic 16. Constructor overloading
 
-## 1. Introducción
+## 1. Introduction
 
-En temas anteriores ya has usado **constructores** para inicializar objetos al crearlos con `new`.
+In previous topics you have already used **constructors** to initialize objects when creating them with `new`.
 
-Ejemplo:
+Example:
 
 ```java
 User user = new User("Laura", 28);
 ```
 
-Pero en proyectos reales es habitual que un objeto se pueda crear de **varias formas**.
+But in real projects it is common that an object can be created in **several ways**.
 
-Por ejemplo, imagina una clase `User`:
+For example, imagine a class `User`:
 
-- A veces tienes nombre y edad
-- A veces solo tienes el nombre
-- A veces solo quieres crear un usuario “vacío” con valores por defecto
-- A veces tienes nombre, edad y email
+- Sometimes you have a name and age
+- Sometimes you only have the name
+- Sometimes you just want to create an “empty” user with default values
+- Sometimes you have a name, age and email
 
-En Java, esto se resuelve con:
+In Java, this is solved with:
 
-- **Sobrecarga de constructores**
+- **Constructor overload**
 
-La idea es la misma que en la sobrecarga de métodos:
+The idea is the same as in method overloading:
 
-- Mismo nombre (el de la clase)
-- Diferentes parámetros (número y/o tipos)
+- Same name (that of the class)
+- Different parameters (number and/or types)
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es la sobrecarga de constructores y por qué se usa
-- Cómo crear varios constructores en una clase
-- Qué es `this(...)` y por qué es clave para no duplicar código
-- Buenas prácticas de inicialización y validación
-- Ejemplos completos listos para copiar y ejecutar
-
----
-
-[![Sobrecarga de Constructores](https://img.youtube.com/vi/sfm4Cu2Q1fw/0.jpg)](https://www.youtube.com/watch?v=sfm4Cu2Q1fw&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is constructor overloading and why is it used?
+- How to create multiple constructors in one class
+- What is `this(...)` and why is it key to not duplicate code?
+- Good initialization and validation practices
+- Complete examples ready to copy and run
 
 ---
 
-## 2. Qué es la sobrecarga de constructores
+[![Builder Overload](https://img.youtube.com/vi/sfm4Cu2Q1fw/0.jpg)](https://www.youtube.com/watch?v=sfm4Cu2Q1fw&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-Una clase puede tener **varios constructores**, siempre que sus parámetros sean diferentes.
+---
 
-Ejemplo de firmas distintas:
+## 2. What is constructor overloading
+
+A class can have **multiple constructors**, as long as their parameters are different.
+
+Example of different signatures:
 
 ```java
 public User() { ... }
@@ -55,7 +55,7 @@ public User(String name, int age) { ... }
 public User(String name, int age, String email) { ... }
 ```
 
-Esto permite crear objetos de distintas formas:
+This allows you to create objects in different ways:
 
 ```java
 User u1 = new User();
@@ -66,24 +66,24 @@ User u4 = new User("Laura", 28, "laura@example.com");
 
 ---
 
-## 3. Valores por defecto y consistencia
+## 3. Defaults and consistency
 
-Cuando tienes varios constructores, debes asegurarte de que el objeto siempre queda en un estado coherente.
+When you have multiple constructors, you must ensure that the object is always left in a consistent state.
 
-Ejemplo de valores por defecto típicos:
+Example of typical default values:
 
 - `name` → `"Unknown"`
 - `age` → `0`
-- `email` → `null` (según diseño)
+- `email` → `null` (depending on design)
 - `active` → `true`
 
 ---
 
-## 4. Problema típico: duplicación de código
+## 4. Typical problem: code duplication
 
-Una forma inicial (pero mala) de hacer sobrecarga es repetir el mismo código en cada constructor.
+An early (but bad) way to do overloading is to repeat the same code in each constructor.
 
-Ejemplo a evitar:
+Example to avoid:
 
 ```java
 public class User {
@@ -107,26 +107,26 @@ public class User {
 }
 ```
 
-Esto funciona, pero:
+This works, but:
 
-- Si cambias la lógica (por ejemplo, validación), tienes que cambiarla en varios sitios
-- Es fácil olvidarse de actualizar un constructor
-- Con el tiempo, se convierte en un foco de errores
+- If you change the logic (e.g. validation), you have to change it in multiple places
+- It's easy to forget to update a builder
+- Over time, it becomes a source of errors
 
-Para solucionarlo, se usa `this(...)`.
+To fix this, `this(...)` is used.
 
 ---
 
-## 5. `this(...)`: llamar a otro constructor
+## 5. `this(...)`: Call another constructor
 
-`this(...)` permite llamar a otro constructor **dentro de la misma clase**.
+`this(...)` allows calling another constructor **within the same class**.
 
-Reglas importantes:
+Important rules:
 
-1. `this(...)` debe ser **la primera línea** del constructor
-2. Sirve para reutilizar código y centralizar inicialización
+1. `this(...)` must be **the first line** of the constructor
+2. It serves to reuse code and centralize initialization
 
-Ejemplo:
+Example:
 
 ```java
 public User() {
@@ -143,24 +143,24 @@ public User(String name, int age) {
 }
 ```
 
-Aquí:
+Here:
 
-- El constructor sin parámetros delega en el constructor más completo
-- El constructor con `name` delega en el constructor más completo
-- La lógica real de inicialización está en un solo sitio
+- The parameterless constructor delegates to the more complete constructor
+- The builder with `name` delegates to the most complete builder
+- The actual initialization logic is in one place
 
 ---
 
-## 6. Ejemplo completo 1: `User` con sobrecarga de constructores
+## 6. Complete Example 1: `User` with constructor overloading
 
-### 6.1. Objetivo
+### 6.1. Objective
 
-Queremos poder crear usuarios así:
+We want to be able to create users like this:
 
-- `new User()` → valores por defecto
-- `new User("Laura")` → solo nombre
-- `new User("Laura", 28)` → nombre y edad
-- `new User("Laura", 28, "laura@example.com")` → nombre, edad y email
+- `new User()` → default values
+- `new User("Laura")` → name only
+- `new User("Laura", 28)` → name and age
+- `new User("Laura", 28, "laura@example.com")` → name, age and email
 
 ### 6.2. `User.java`
 
@@ -249,11 +249,11 @@ public class User {
 }
 ```
 
-Puntos clave del ejemplo:
+Key points from the example:
 
-- Los constructores “pequeños” llaman al “grande” (`this(...)`).
-- El constructor principal reutiliza setters para validar.
-- El objeto siempre queda con valores coherentes.
+- The “small” builders call the “big” one (`this(...)`).
+- The main constructor reuses setters to validate.
+- The object always remains with coherent values.
 
 ### 6.3. `Main.java`
 
@@ -276,16 +276,15 @@ public class Main {
 ```
 
 ---
+## 7. Complete example 2: `Order` with overload and initial state
 
-## 7. Ejemplo completo 2: `Order` con sobrecarga y estado inicial
+### 7.1. Objective
 
-### 7.1. Objetivo
+Create orders in several ways:
 
-Crear pedidos de varias formas:
-
-- `new Order()` → id + estado `"CREATED"` + total 0
-- `new Order(String customer)` → lo mismo pero con cliente
-- `new Order(String customer, double total)` → cliente y total
+- `new Order()` → id + status `"CREATED"` + total 0
+- `new Order(String customer)` → the same but with a client
+- `new Order(String customer, double total)` → customer and total
 
 ### 7.2. `Order.java`
 
@@ -386,19 +385,19 @@ public class Main {
 }
 ```
 
-Puntos clave:
+Key points:
 
-- `nextId` es `static`: pertenece a la clase, no a cada objeto.
-- Los constructores delegan a uno principal.
-- El estado por defecto (`status`) se inicializa de forma consistente.
+- `nextId` is `static`: it belongs to the class, not to each object.
+- Builders delegate to a main one.
+- The default state (`status`) is initialized consistently.
 
 ---
 
-## 8. Errores típicos en sobrecarga de constructores
+## 8. Typical errors in constructor overloading
 
-### 8.1. Llamar a `this(...)` después de otras líneas
+### 8.1. Call `this(...)` after other lines
 
-Esto es inválido:
+This is invalid:
 
 ```java
 public User() {
@@ -407,9 +406,9 @@ public User() {
 }
 ```
 
-### 8.2. Crear constructores que se llaman en bucle
+### 8.2. Create constructors that are called in a loop
 
-Ejemplo de error (bucle infinito):
+Error example (infinite loop):
 
 ```java
 public User() {
@@ -421,34 +420,34 @@ public User(String name) {
 }
 ```
 
-### 8.3. Dejar atributos sin inicializar en algunas sobrecargas
+### 8.3. Leaving attributes uninitialized in some overloads
 
-Si un constructor no inicializa lo mismo que los demás, puedes terminar con estados inconsistentes.  
-Por eso el patrón recomendado es:
+If one constructor doesn't initialize the same thing as the others, you can end up with inconsistent states.  
+That is why the recommended pattern is:
 
-- Un constructor “principal”
-- El resto delegan a él
-
----
-
-## 9. Buenas prácticas
-
-- Usa sobrecarga para ofrecer distintas formas de crear objetos.
-- Centraliza la inicialización con `this(...)` para no duplicar lógica.
-- El constructor más completo suele ser el que hace el trabajo real.
-- Reutiliza setters con validación si ya existen y tiene sentido.
-- Define valores por defecto coherentes (y mantenlos en un solo lugar).
+- A “main” constructor
+- The rest delegate to him
 
 ---
 
-## 10. A tener en cuenta
+## 9. Good practices
 
-- Sobrecarga de constructores = varios constructores con diferentes parámetros.
-- `this(...)` llama a otro constructor de la misma clase.
-- `this(...)` siempre debe ser la primera instrucción del constructor.
-- Evita duplicar lógica: delega siempre a un constructor “principal”.
-- Diseña valores por defecto coherentes para evitar objetos “a medias”.
+- Use overloading to provide different ways to create objects.
+- Centralize initialization with `this(...)` to avoid duplicating logic.
+- The most complete builder is usually the one who does the actual work.
+- Reuse setters with validation if they already exist and make sense.
+- Define consistent default values ​​(and keep them in one place).
 
 ---
 
-En el siguiente tema seguiremos profundizando en POO con conceptos como **`static`**, miembros de clase vs instancia, y patrones comunes para organizar modelos en proyectos reales.
+## 10. To take into account
+
+- Constructor overloading = multiple constructors with different parameters.
+- `this(...)` calls another constructor of the same class.
+- `this(...)` should always be the first instruction in the constructor.
+- Avoid duplicating logic: always delegate to a “main” constructor.
+- Design consistent defaults to avoid “half-baked” objects.
+
+---
+
+In the next topic we will continue delving into OOP with concepts such as **`static`**, class members vs instance, and common patterns for organizing models in real projects.

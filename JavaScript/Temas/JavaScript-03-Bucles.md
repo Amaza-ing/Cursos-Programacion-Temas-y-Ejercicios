@@ -1,16 +1,16 @@
-# **Tema 3: Bucles en JavaScript**
+# **Topic 3: Loops in JavaScript**
 
-## **1. Introducción a los bucles**
+## **1. Introduction to loops**
 
-Los bucles permiten ejecutar un bloque de código repetidamente mientras se cumpla una condición específica. En JavaScript, existen varios tipos de bucles que nos permiten iterar sobre datos y ejecutar tareas repetitivas.
+Loops allow a block of code to be executed repeatedly as long as a specific condition is met. In JavaScript, there are several types of loops that allow us to iterate over data and execute repetitive tasks.
 
 ---
 
-## **2. Bucle `for`**
+## **2. `for`** loop
 
-El bucle `for` es uno de los más utilizados cuando conocemos el número exacto de iteraciones.
+The `for` loop is one of the most used when we know the exact number of iterations.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 for (inicialización; condición; incremento) {
@@ -18,7 +18,7 @@ for (inicialización; condición; incremento) {
 }
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 for (let i = 0; i < 5; i++) {
@@ -26,7 +26,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 Iteración número 0
@@ -38,15 +38,15 @@ Iteración número 4
 
 ---
 
-[![Bucle for](https://img.youtube.com/vi/MvneErXddY4/0.jpg)](https://www.youtube.com/watch?v=MvneErXddY4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Loop for](https://img.youtube.com/vi/MvneErXddY4/0.jpg)](https://www.youtube.com/watch?v=MvneErXddY4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **3. Bucle `while`**
+## **3. `while`** loop
 
-El bucle `while` ejecuta el bloque de código mientras la condición sea verdadera.
+The `while` loop executes the code block as long as the condition is true.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 while (condición) {
@@ -54,7 +54,7 @@ while (condición) {
 }
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 let count = 0;
@@ -65,7 +65,7 @@ while (count < 3) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 Contador: 0
@@ -73,15 +73,15 @@ Contador: 1
 Contador: 2
 ```
 
-> **Precaución:** Asegúrate de que la condición se vuelva falsa en algún momento para evitar bucles infinitos.
+> **Caution:** Make sure the condition becomes false at some point to avoid infinite loops.
 
 ---
 
-## **4. Bucle `do...while`**
+## **4. `do...while`** loop
 
-El bucle `do...while` ejecuta el bloque de código al menos una vez antes de verificar la condición.
+The `do...while` loop executes the code block at least once before checking the condition.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 do {
@@ -89,7 +89,7 @@ do {
 } while (condición);
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 let i = 0;
@@ -100,7 +100,7 @@ do {
 } while (i < 3);
 ```
 
-**Salida:**
+**Output:**
 
 ```
 Número: 0
@@ -108,19 +108,19 @@ Número: 1
 Número: 2
 ```
 
-> **Nota:** `do...while` siempre ejecutará el bloque de código al menos una vez.
+> **Note:** `do...while` will always execute the code block at least once.
 
 ---
 
-[![Bucles while & do while](https://img.youtube.com/vi/3LZHs0xtJEY/0.jpg)](https://www.youtube.com/watch?v=3LZHs0xtJEY&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![While & do while](https://img.youtube.com/vi/3LZHs0xtJEY/0.jpg) loops](https://www.youtube.com/watch?v=3LZHs0xtJEY&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. Bucle `for...of`**
+## **5. `for...of`** loop
 
-El bucle `for...of` se utiliza para iterar sobre elementos de estructuras iterables como arrays, strings o sets.
+The `for...of` loop is used to iterate over elements of iterable structures such as arrays, strings or sets.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 for (const elemento of iterable) {
@@ -128,7 +128,7 @@ for (const elemento of iterable) {
 }
 ```
 
-### **Ejemplo con un array:**
+### **Example with an array:**
 
 ```js
 const fruits = ["manzana", "banana", "cereza"];
@@ -138,7 +138,7 @@ for (const fruit of fruits) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 manzana
@@ -146,7 +146,7 @@ banana
 cereza
 ```
 
-### **Ejemplo con un string:**
+### **Example with a string:**
 
 ```js
 const word = "Hola";
@@ -156,7 +156,7 @@ for (const letter of word) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 H
@@ -167,11 +167,11 @@ a
 
 ---
 
-## **6. Bucle `for...in`**
+## **6. `for...in`** loop
 
-El bucle `for...in` se usa para iterar sobre las propiedades enumerables de un objeto.
+The `for...in` loop is used to iterate over the enumerable properties of an object.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 for (const clave in objeto) {
@@ -179,7 +179,7 @@ for (const clave in objeto) {
 }
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 const person = {
@@ -193,7 +193,7 @@ for (const key in person) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 nombre: Ana
@@ -201,20 +201,20 @@ edad: 25
 ciudad: Madrid
 ```
 
-> **Nota:** `for...in` es mejor usarlo con objetos y no con arrays.
+> **Note:** `for...in` is best used with objects and not arrays.
 
 ---
 
-[![Bucles for of & for in](https://img.youtube.com/vi/kB2vGOxs024/0.jpg)](https://www.youtube.com/watch?v=kB2vGOxs024&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Loops for of & for in](https://img.youtube.com/vi/kB2vGOxs024/0.jpg)](https://www.youtube.com/watch?v=kB2vGOxs024&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **7. Controlando bucles: `break` y `continue`**
+## **7. Controlling loops: `break` and `continue`**
 
-- **`break`**: Termina el bucle por completo.
-- **`continue`**: Omite la iteración actual y pasa a la siguiente.
+- **`break`**: Completely ends the loop.
+- **`continue`**: Skip the current iteration and move to the next one.
 
-### **Ejemplo con `break`:**
+### **Example with `break`:**
 
 ```js
 for (let i = 0; i < 10; i++) {
@@ -225,7 +225,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 0
@@ -235,7 +235,7 @@ for (let i = 0; i < 10; i++) {
 4
 ```
 
-### **Ejemplo con `continue`:**
+### **Example with `continue`:**
 
 ```js
 for (let i = 0; i < 5; i++) {
@@ -246,7 +246,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
 0
@@ -261,13 +261,13 @@ for (let i = 0; i < 5; i++) {
 
 ---
 
-## **8. Métodos de arrays para iterar**
+## **8. Array methods to iterate**
 
-JavaScript también ofrece métodos funcionales para iterar sobre arrays. Profundizaremos sobre este tema más adelante.
+JavaScript also offers functional methods for iterating over arrays. We will delve into this topic later.
 
 ### **`forEach()`**
 
-Ejecuta una función para cada elemento del array.
+Execute a function for each element of the array.
 
 ```js
 const numbers = [1, 2, 3];
@@ -275,7 +275,7 @@ const numbers = [1, 2, 3];
 numbers.forEach((num) => console.log(num));
 ```
 
-**Salida:**
+**Output:**
 
 ```
 1
@@ -283,21 +283,20 @@ numbers.forEach((num) => console.log(num));
 3
 ```
 
-Existen otros métodos de los array como `map` o `filter` que se explicarán en las próximas lecciones.
+There are other array methods such as `map` or `filter` that will be explained in the next lessons.
 
 ---
 
-## **9. Buenas prácticas**
+## **9. Good practices**
 
-- Elige el bucle adecuado según la estructura de datos.
-- Evita bucles infinitos verificando bien las condiciones.
-- Usa métodos funcionales (`forEach`) para código más limpio.
-- Evita usar `for...in` en arrays, ya que puede incluir propiedades heredadas.
+- Choose the appropriate loop based on the data structure.
+- Avoid infinite loops by verifying the conditions well.
+- Use functional methods (`forEach`) for cleaner code.
+- Avoid using `for...in` in arrays, as it may include inherited properties.
 
 ---
 
-## **10. Conclusión**
+## **10. Conclusion**
+Loops are essential for handling data and automating repetitive tasks in JavaScript. Understanding the differences between different types of loops will allow you to write more efficient and cleaner code.
 
-Los bucles son fundamentales para manejar datos y automatizar tareas repetitivas en JavaScript. Comprender las diferencias entre los distintos tipos de bucles te permitirá escribir código más eficiente y limpio.
-
-En el próximo tema, exploraremos las **funciones** y cómo modularizar tu código en JavaScript.
+In the next topic, we'll explore **functions** and how to modularize your code in JavaScript.

@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 4: Unidades de Medida en CSS**
+# **Exercises - Topic 4: Units of Measurement in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 6 ejercicios prácticos sobre unidades de medida en CSS.
+Below you will find 6 practical exercises on units of measurement in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Usar unidades absolutas**
+### **Exercise 1: Using absolute units**
 
-Crea un `div` con un ancho de 500 pixels y una altura de 80 pixels.
+Creates an `div` with a width of 500 pixels and a height of 80 pixels.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .box {
@@ -22,19 +22,21 @@ Crea un `div` con un ancho de 500 pixels y una altura de 80 pixels.
 }
 ```
 
+
 ```html
 <div class="box">Caja con unidades absolutas.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Usar porcentajes para diseño flexible**
+### **Exercise 2: Using percentages for flexible design**
 
-Define un contenedor con un ancho del 80% del tamaño del elemento padre.
+Defines a container with a width of 80% of the size of the parent element.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -43,21 +45,23 @@ Define un contenedor con un ancho del 80% del tamaño del elemento padre.
 }
 ```
 
+
 ```html
 <div class="container">
   Este contenedor ocupa el 80% del ancho del elemento padre.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Comparar `em` y `rem`**
+### **Exercise 3: Compare `em` and `rem`**
 
-Crea un párrafo donde el tamaño de la fuente sea 2em y otro donde sea 2rem. Define `html` con un `font-size` de 16px y el contenedor padre con `font-size` de 10px y observa la diferencia.
+Create a paragraph where the font size is 2em and another where it is 2rem. Define `html` with an `font-size` of 16px and the parent container with an `font-size` of 10px and see the difference.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 html {
@@ -74,6 +78,7 @@ p.em-example {
 }
 ```
 
+
 ```html
 <div class="container">
   <p class="em-example">Este texto usa 2em.</p>
@@ -81,15 +86,16 @@ p.em-example {
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Aplicar `vw` y `vh`**
+### **Exercise 4: Apply `vw` and `vh`**
 
-Crea un `div` que ocupe el 50% del ancho y el 30% del alto de la ventana del navegador.
+Create an `div` that takes up 50% of the width and 30% of the height of the browser window.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .full-screen-box {
@@ -99,19 +105,21 @@ Crea un `div` que ocupe el 50% del ancho y el 30% del alto de la ventana del nav
 }
 ```
 
+
 ```html
 <div class="full-screen-box">Este contenedor usa vw y vh.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 5: Uso de `vmin` y `vmax`**
+### **Exercise 5: Using `vmin` and `vmax`**
 
-Crea un `div` donde el tamaño de la fuente sea `5vmin`, y otro donde sea `5vmax`.
+Create one `div` where the font size is `5vmin`, and another where the font size is `5vmax`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .text-vmin {
@@ -122,20 +130,22 @@ Crea un `div` donde el tamaño de la fuente sea `5vmin`, y otro donde sea `5vmax
 }
 ```
 
+
 ```html
 <p class="text-vmin">Este texto usa vmin.</p>
 <p class="text-vmax">Este texto usa vmax.</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 6: Crear un diseño responsivo combinando unidades**
+### **Exercise 6: Create a responsive design by combining units**
 
-Define un contenedor flexible con `width: 80%`, `max-width: 600px` y `min-width: 300px`. Usa `rem` para definir el padding.
+Defines a flexible container with `width: 80%`, `max-width: 600px`, and `min-width: 300px`. Use `rem` to define padding.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .responsive-box {
@@ -147,8 +157,10 @@ Define un contenedor flexible con `width: 80%`, `max-width: 600px` y `min-width:
 }
 ```
 
+
 ```html
 <div class="responsive-box">Este contenedor es flexible.</div>
 ```
+
 
 </details>

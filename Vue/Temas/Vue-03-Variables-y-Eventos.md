@@ -1,14 +1,14 @@
-# **Tema 3: Variables Reactivas, Eventos y Binding en Vue.js**
+# **Topic 3: Reactive Variables, Events and Binding in Vue.js**
 
-## **1. Variables reactivas en Vue 3**
+## **1. Reactive variables in Vue 3**
 
-En Vue 3, las variables reactivas se crean utilizando `ref()` o `reactive()` dentro de `<script setup>`. Estas variables permiten que la interfaz se actualice automáticamente cuando cambian sus valores. Para utilizar `ref()` hay que importarlo desde el `<script setup>`.
+In Vue 3, reactive variables are created using `ref()` or `reactive()` within `<script setup>`. These variables allow the interface to update automatically when their values ​​change. To use `ref()` you must import it from `<script setup>`.
 
-Cuando usamos variables reactivas como `ref()` debemos tener en cuenta que no podemos acceder a su valor directamente como en una variable normal en la parte del `<script setup>` sino que debemos acceder usando la propiedad `.value`.
+When we use reactive variables like `ref()` we must keep in mind that we cannot access its value directly as in a normal variable in the `<script setup>` part but rather we must access it using the `.value` property.
 
-En la parte del `<template>` sí podemos acceder a su valor directamente sin usar `.value`.
+In the `<template>` part we can access its value directly without using `.value`.
 
-### Ejemplo con `ref()`
+### Example with `ref()`
 
 ```vue
 <script setup>
@@ -34,15 +34,15 @@ p {
 
 ---
 
-[![Variables y Reactividad](https://img.youtube.com/vi/gC8metiacVg/0.jpg)](https://www.youtube.com/watch?v=gC8metiacVg&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Variables and Reactivity](https://img.youtube.com/vi/gC8metiacVg/0.jpg)](https://www.youtube.com/watch?v=gC8metiacVg&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **2. Eventos en Vue 3**
+## **2. Events in Vue 3**
 
-Los eventos permiten que el usuario interactúe con la aplicación. Los eventos se capturan directamente en el template usando la directiva `v-on:`, o en su versión resumida: el prefijo `@`.
+Events allow the user to interact with the application. Events are captured directly in the template using the `v-on:` directive, or in its shortened version: the `@` prefix.
 
-### Ejemplo: Manejar clics
+### Example: Handle clicks
 
 ```vue
 <script setup>
@@ -75,15 +75,15 @@ button {
 
 ---
 
-[![Cómo empezar con Vue.js](https://img.youtube.com/vi/D-gokiIzbyw/0.jpg)](https://www.youtube.com/watch?v=D-gokiIzbyw&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![How to get started with Vue.js](https://img.youtube.com/vi/D-gokiIzbyw/0.jpg)](https://www.youtube.com/watch?v=D-gokiIzbyw&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **3. Binding de atributos (v-bind)**
+## **3. Attribute binding (v-bind)**
 
-El **binding** permite enlazar atributos HTML al valor de variables reactivas. Se usa la directiva `v-bind` o directamente `:` como atajo.
+**binding** allows you to link HTML attributes to the value of reactive variables. The directive `v-bind` or directly `:` is used as a shortcut.
 
-### Ejemplo: Cambiar el placeholder dinámicamente
+### Example: Change the placeholder dynamically
 
 ```vue
 <script setup>
@@ -106,15 +106,15 @@ input {
 
 ---
 
-[![Directiva v-bind](https://img.youtube.com/vi/CpdZPw36i4A/0.jpg)](https://www.youtube.com/watch?v=CpdZPw36i4A&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![v-bindDirective](https://img.youtube.com/vi/CpdZPw36i4A/0.jpg)](https://www.youtube.com/watch?v=CpdZPw36i4A&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **4. Binding bidireccional (v-model)**
+## **4. Bidirectional binding (v-model)**
 
-`v-model` es una directiva que crea un **binding bidireccional** entre una variable y un input, es decir, el valor del input se actualiza automáticamente cuando la variable cambia, y viceversa.
+`v-model` is a directive that creates **bidirectional binding** between a variable and an input, that is, the value of the input is automatically updated when the variable changes, and vice versa.
 
-### Ejemplo: Input conectado a una variable
+### Example: Input connected to a variable
 
 ```vue
 <script setup>
@@ -144,15 +144,15 @@ input {
 
 ---
 
-[![Directiva v-model](https://img.youtube.com/vi/QQuXu1ingRo/0.jpg)](https://www.youtube.com/watch?v=QQuXu1ingRo&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Directive v-model](https://img.youtube.com/vi/QQuXu1ingRo/0.jpg)](https://www.youtube.com/watch?v=QQuXu1ingRo&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **5. Eventos con argumentos**
+## **5. Events with arguments**
 
-Algunas veces necesitamos pasar argumentos o el propio evento al manejador de eventos.
+Sometimes we need to pass arguments or the event itself to the event handler.
 
-### Ejemplo: Capturar texto introducido
+### Example: Capture entered text
 
 ```vue
 <script setup>
@@ -181,14 +181,14 @@ input {
 
 ---
 
-## Resumen
+## Summary
 
-| Concepto              | Sintaxis    | Ejemplo                         |
-| --------------------- | ----------- | ------------------------------- |
-| Evento de clic        | `@click`    | `<button @click='doSomething'>` |
-| Binding de atributo   | `:atributo` | `<img :src='imageUrl'>`         |
-| Binding bidireccional | `v-model`   | `<input v-model='name'>`        |
+| Concept | Syntax | Example |
+| --------------------- | ----------- | ---------------------------- |
+| Click event | `@click` | `<button @click='doSomething'>` |
+| Attribute Binding | `:atributo` | `<img :src='imageUrl'>` |
+| Bidirectional binding | `v-model` | `<input v-model='name'>` |
 
 ---
 
-En el próximo tema exploraremos **las diferencias entre Composition API y Option API**.
+In the next topic we will explore **the differences between Composition API and Option API**.

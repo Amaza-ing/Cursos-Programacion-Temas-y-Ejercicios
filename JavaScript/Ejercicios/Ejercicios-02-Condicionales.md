@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 2: Condicionales en JavaScript**
+# **Exercises - Topic 2: Conditionals in JavaScript**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre el uso de condicionales en JavaScript.
+Below you will find 5 practical exercises on using conditionals in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Verificar número positivo o negativo**
+### **Exercise 1: Verify positive or negative number**
 
-Crea un programa que solicite al usuario un número mediante `prompt` y muestre en la consola si es positivo, negativo o cero.
+Create a program that prompts the user for a number using `prompt` and displays on the console whether it is positive, negative, or zero.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const number = parseFloat(prompt("Introduce un número:"));
@@ -28,16 +28,16 @@ if (number > 0) {
 
 ---
 
-### **Ejercicio 2: Clasificación de edades**
+### **Exercise 2: Age classification**
 
-Solicita al usuario su edad y muestra un mensaje indicando su grupo de edad:
+Asks the user for their age and displays a message indicating their age group:
 
-- Menor de 13: "Niño/a"
-- Entre 13 y 19: "Adolescente"
-- Entre 20 y 64: "Adulto/a"
-- 65 o más: "Adulto/a mayor"
+- Under 13: "Child"
+- Between 13 and 19: "Adolescent"
+- Between 20 and 64: "Adult"
+- 65 or more: "Older adult"
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const age = parseInt(prompt("Introduce tu edad:"));
@@ -57,11 +57,11 @@ if (age < 13) {
 
 ---
 
-### **Ejercicio 3: Calculadora simple con `switch`**
+### **Exercise 3: Simple calculator with `switch`**
 
-Crea un programa que solicite dos números y una operación matemática (`+`, `-`, `*`, `/`) y muestre el resultado usando `switch`.
+Create a program that requests two numbers and a math operation (`+`, `-`, `*`, `/`) and displays the result using `switch`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const num1 = parseFloat(prompt("Introduce el primer número:"));
@@ -94,16 +94,16 @@ console.log(`Resultado: ${result}`);
 
 ---
 
-### **Ejercicio 4: Verificar año bisiesto**
+### **Exercise 4: Check leap year**
 
-Crea un programa que solicite un año y determine si es bisiesto.
+Create a program that requests a year and determines if it is a leap year.
 
-**Reglas para un año bisiesto:**
+**Rules for a leap year:**
 
-- Es divisible por 4.
-- No es divisible por 100, salvo que también sea divisible por 400.
+- It is divisible by 4.
+- It is not divisible by 100, unless it is also divisible by 400.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const year = parseInt(prompt("Introduce un año:"));
@@ -119,11 +119,11 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
 
 ---
 
-### **Ejercicio 5: Uso del operador ternario**
+### **Exercise 5: Using the ternary operator**
 
-Usando el operador ternario, solicita al usuario su edad y muestra "Eres mayor de edad" si tiene 18 años o más, y "Eres menor de edad" en caso contrario.
+Using the ternary operator, it prompts the user for their age and displays "You are of legal age" if they are 18 or older, and "You are a minor" otherwise.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const age = parseInt(prompt("Introduce tu edad:"));

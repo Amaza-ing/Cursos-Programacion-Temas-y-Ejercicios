@@ -1,27 +1,27 @@
-# **Tema 13: Funciones en MySQL y Diferencias con Procedimientos Almacenados**
+# **Topic 13: Functions in MySQL and Differences with Stored Procedures**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué es una función en MySQL.
-- Crear y ejecutar funciones personalizadas.
-- Conocer las diferencias clave entre funciones y procedimientos almacenados.
-- Aplicar buenas prácticas en su uso.
-
----
-
-## **1. ¿Qué es una función en MySQL?**
-
-Una **función** es un bloque de código SQL almacenado en la base de datos que recibe parámetros, realiza operaciones y devuelve **un único valor**.
-
-### **Características:**
-
-- Siempre devuelve un valor mediante `RETURN`.
-- Puede recibir uno o más parámetros.
-- Puede usarse directamente en consultas `SELECT`.
+- Understand what a function is in MySQL.
+- Create and run custom functions.
+- Know the key differences between functions and stored procedures.
+- Apply good practices in its use.
 
 ---
 
-## **2. Sintaxis para crear una función**
+## **1. What is a function in MySQL?**
+
+A **function** is a block of SQL code stored in the database that receives parameters, performs operations, and returns **a single value**.
+
+### **Features:**
+
+- Always returns a value using `RETURN`.
+- Can receive one or more parameters.
+- Can be used directly in `SELECT` queries.
+
+---
+
+## **2. Syntax to create a function**
 
 ```sql
 DELIMITER $$
@@ -35,13 +35,13 @@ END $$
 DELIMITER ;
 ```
 
-> `DETERMINISTIC` indica que la función devuelve siempre el mismo resultado para los mismos parámetros.
+> `DETERMINISTIC` indicates that the function always returns the same result for the same parameters.
 
 ---
 
-## **3. Ejemplo básico**
+## **3. Basic example**
 
-Función para calcular el precio con IVA (21%).
+Function to calculate the price with VAT (21%).
 
 ```sql
 DELIMITER $$
@@ -54,7 +54,7 @@ END $$
 DELIMITER ;
 ```
 
-Uso:
+Usage:
 
 ```sql
 SELECT name, precio_con_iva(price) AS precio_final FROM products;
@@ -62,7 +62,7 @@ SELECT name, precio_con_iva(price) AS precio_final FROM products;
 
 ---
 
-## **4. Función con lógica condicional**
+## **4. Function with conditional logic**
 
 ```sql
 DELIMITER $$
@@ -79,7 +79,7 @@ END $$
 DELIMITER ;
 ```
 
-Uso:
+Usage:
 
 ```sql
 SELECT first_name, es_mayor_de_edad(age) AS mayor FROM customers;
@@ -87,18 +87,18 @@ SELECT first_name, es_mayor_de_edad(age) AS mayor FROM customers;
 
 ---
 
-## **5. Diferencias entre funciones y procedimientos almacenados**
+## **5. Differences between functions and stored procedures**
 
-| Característica   | Función                           | Procedimiento                                            |
+| Feature | Function | Procedure |
 | ---------------- | --------------------------------- | -------------------------------------------------------- |
-| Devuelve valor   | Sí, uno solo                      | No necesariamente (puede devolver cero o más resultados) |
-| Uso en consultas | Sí                                | No directamente                                          |
-| Llamada          | Dentro de `SELECT`, `WHERE`, etc. | Con `CALL nombre_procedimiento()`                        |
-| Parámetros       | Solo `IN`                         | `IN`, `OUT` e `INOUT`                                    |
+| Returns value | Yes, just one | Not necessarily (may return zero or more results) |
+| Use in queries | Yes | Not directly |
+| Call | Inside `SELECT`, `WHERE`, etc. | With `CALL nombre_procedimiento()` |
+| Parameters | Only `IN` | `IN`, `OUT` and `INOUT` |
 
 ---
 
-## **6. Ver funciones existentes**
+## **6. View existing features**
 
 ```sql
 SHOW FUNCTION STATUS WHERE Db = 'nombre_base_datos';
@@ -106,7 +106,7 @@ SHOW FUNCTION STATUS WHERE Db = 'nombre_base_datos';
 
 ---
 
-## **7. Eliminar una función**
+## **7. Delete a function**
 
 ```sql
 DROP FUNCTION IF EXISTS precio_con_iva;
@@ -114,20 +114,20 @@ DROP FUNCTION IF EXISTS precio_con_iva;
 
 ---
 
-## **8. Buenas prácticas**
+## **8. Good practices**
 
-- Usar funciones para cálculos y transformaciones que devuelvan un solo valor.
-- Mantener la lógica sencilla y evitar operaciones que modifiquen datos.
-- Documentar el propósito de cada función.
-
----
-
-## **9. Conclusión**
-
-- Las funciones permiten encapsular cálculos y reutilizarlos en consultas.
-- Se diferencian de los procedimientos en que siempre devuelven un valor y pueden usarse dentro de sentencias SQL.
-- Un uso adecuado mejora la claridad y reutilización del código SQL.
+- Use functions for calculations and transformations that return a single value.
+- Keep the logic simple and avoid operations that modify data.
+- Document the purpose of each function.
 
 ---
 
-En el siguiente tema aprenderemos a **trabajar con variables booleanas y de tipo fecha**.
+## **9. Conclusion**
+
+- Functions allow you to encapsulate calculations and reuse them in queries.
+- They differ from procedures in that they always return a value and can be used within SQL statements.
+- Proper use improves the clarity and reusability of SQL code.
+
+---
+
+In the next topic we will learn to **work with boolean and date type variables**.

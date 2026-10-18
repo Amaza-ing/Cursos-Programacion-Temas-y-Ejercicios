@@ -1,17 +1,17 @@
-# Ejercicios - Tema 8: Métodos
+# Exercises - Topic 8: Methods
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **métodos**, parámetros, argumentos y valores de retorno.
+Below you will find **10 practical exercises** to work with **methods**, parameters, arguments and return values.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Método sin parámetros ni retorno
+## Exercise 1: Method without parameters or return
 
-Crea un método llamado `printHello` que muestre por consola el mensaje `"Hello Java"`.  
-Llama al método desde `main`.
+Create a method called `printHello` that displays the `"Hello Java"` message in the console.  
+Call the method from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -29,14 +29,14 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Método con un parámetro
+## Exercise 2: Method with a parameter
 
-Crea un método `printName` que reciba un `String` llamado `name` y muestre  
+Create a method `printName` that receives an `String` called `name` and returns  
 `"Name: <name>"`.
 
-Llama al método pasando `"Laura"` como argumento.
+Calls the method passing `"Laura"` as an argument.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -54,12 +54,12 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Método con dos parámetros y `return`
+## Exercise 3: Method with two parameters and `return`
 
-Crea un método `sum` que reciba dos `int` y devuelva su suma.  
-Guarda el resultado en una variable y muéstralo por consola.
+Create a method `sum` that receives two `int` and returns their sum.  
+Save the result in a variable and display it in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -78,11 +78,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Método que devuelve `boolean`
+## Exercise 4: Method that returns `boolean`
 
-Crea un método `isAdult` que reciba una edad (`int`) y devuelva `true` si es mayor o igual a 18.
+Create a method `isAdult` that receives an age (`int`) and returns `true` if it is greater than or equal to 18.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -101,15 +101,15 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Método que construye un `String`
+## Exercise 5: Method that builds an `String`
 
-Crea un método `buildMessage` que reciba un nombre y una edad, y devuelva un texto con el formato:
+Create a method `buildMessage` that takes a name and age, and returns text in the format:
 
 ```
 Name: Laura | Age: 28
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -128,12 +128,12 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Método que usa otro método
+## Exercise 6: Method that uses another method
 
-Crea un método `doubleNumber` que devuelva el doble de un número.  
-Luego crea otro método `printDouble` que use `doubleNumber` para imprimir el resultado.
+Create a method `doubleNumber` that returns double a number.  
+Then create another `printDouble` method that uses `doubleNumber` to print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -156,13 +156,13 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Método con condición y `return` anticipado
+## Exercise 7: Method with condition and early `return`
 
-Crea un método `clampToZero` que reciba un `int`.  
-Si el valor es negativo, devuelve `0`.  
-Si no, devuelve el valor original.
+Create a method `clampToZero` that receives an `int`.  
+If the value is negative, it returns `0`.  
+If not, it returns the original value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -185,12 +185,12 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Método con `double` y cálculo
+## Exercise 8: Method with `double` and calculation
 
-Crea un método `calculateArea` que reciba el radio de un círculo (`double`)  
-y devuelva el área (`π * r * r`). Usa `Math.PI`.
+Create a method `calculateArea` that receives the radius of a circle (`double`)  
+and return the area (`π * r * r`). Use `Math.PI`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -209,15 +209,15 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Método que valida texto
+## Exercise 9: Method that validates text
 
-Crea un método `isValidName` que reciba un `String` y devuelva `true` si:
+Create a method `isValidName` that receives an `String` and returns `true` if:
 
-- No es `null`
-- No está vacío
-- No está en blanco
+- Not `null`
+- It is not empty
+- Not blank
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -236,15 +236,15 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Programa organizado con métodos
+## Exercise 10: Program organized with methods
 
-Crea un programa que:
+Create a program that:
 
-- Tenga un método `printWelcome`
-- Tenga un método `calculateScore` que reciba dos números y devuelva un resultado
-- Desde `main`, llame a ambos métodos y muestre el resultado
+- Have an `printWelcome` method
+- Have a method `calculateScore` that receives two numbers and returns a result
+- From `main`, call both methods and display the result
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

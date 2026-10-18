@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 10: Índices en MySQL**
+# **Exercises - Topic 10: Indexes in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para crear, gestionar y eliminar índices en MySQL.
+Below you will find 5 practical exercises to create, manage and delete indexes in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un índice simple en una columna de búsqueda frecuente**
+### **Exercise 1: Create a simple index on a frequently searched column**
 
-Crea un índice llamado `idx_city` en la columna `city` de la tabla `customers`.
+Creates an index named `idx_city` on column `city` of table `customers`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE INDEX idx_city ON customers(city);
@@ -20,11 +20,11 @@ CREATE INDEX idx_city ON customers(city);
 
 ---
 
-### **Ejercicio 2: Crear un índice único para asegurar datos sin duplicados**
+### **Exercise 2: Create a unique index to ensure duplicate-free data**
 
-En la tabla `suppliers`, crea un índice único en la columna `tax_id` para que no se repita.
+On the `suppliers` table, create a unique index on the `tax_id` column so that it is not repeated.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE UNIQUE INDEX idx_tax_id ON suppliers(tax_id);
@@ -34,11 +34,11 @@ CREATE UNIQUE INDEX idx_tax_id ON suppliers(tax_id);
 
 ---
 
-### **Ejercicio 3: Crear un índice compuesto**
+### **Exercise 3: Create a composite index**
 
-En la tabla `orders`, crea un índice llamado `idx_customer_date` que incluya las columnas `customer_id` y `created_at`.
+On the table `orders`, create an index named `idx_customer_date` that includes the columns `customer_id` and `created_at`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE INDEX idx_customer_date ON orders(customer_id, created_at);
@@ -48,11 +48,11 @@ CREATE INDEX idx_customer_date ON orders(customer_id, created_at);
 
 ---
 
-### **Ejercicio 4: Ver los índices existentes en una tabla**
+### **Exercise 4: View existing indexes on a table**
 
-Consulta todos los índices creados en la tabla `products`.
+Queries all indexes created on the `products` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SHOW INDEX FROM products;
@@ -62,11 +62,11 @@ SHOW INDEX FROM products;
 
 ---
 
-### **Ejercicio 5: Eliminar un índice existente**
+### **Exercise 5: Delete an existing index**
 
-Elimina el índice `idx_city` de la tabla `customers`.
+Removes index `idx_city` from table `customers`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DROP INDEX idx_city ON customers;

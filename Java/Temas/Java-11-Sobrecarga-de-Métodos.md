@@ -1,59 +1,59 @@
-# Tema 11. Sobrecarga de métodos
+# Topic 11. Method overloading
 
-## 1. Introducción
+## 1. Introduction
 
-En los temas anteriores aprendiste a crear y usar métodos con parámetros y con `return`. Ahora vamos a dar un paso más: **usar el mismo nombre de método para diferentes “versiones”**.
+In the previous topics you learned how to create and use methods with parameters and with `return`. Now let's take it one step further: **use the same method name for different “versions”**.
 
-Esto se llama **sobrecarga de métodos** (_method overloading_).
+This is called method overloading.
 
-La sobrecarga es una técnica muy común en Java porque permite:
+Overloading is a very common technique in Java because it allows:
 
-- Tener un nombre de método coherente para una misma acción
-- Adaptar esa acción a distintos tipos de datos o cantidades de parámetros
-- Mantener el código más limpio y fácil de leer
+- Have a consistent method name for the same action
+- Adapt that action to different types of data or quantities of parameters
+- Keep code cleaner and easier to read
 
-Ejemplo de idea:
+Idea example:
 
 - `sum(2, 3)`
 - `sum(2, 3, 4)`
 - `sum(2.5, 3.1)`
 
-Todos hacen “sumar”, pero con firmas distintas.
+They all do “add”, but with different signatures.
 
 ---
 
-[![Sobrecarga de Métodos](https://img.youtube.com/vi/RPVgs7bGaso/0.jpg)](https://www.youtube.com/watch?v=RPVgs7bGaso&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Method Overload](https://img.youtube.com/vi/RPVgs7bGaso/0.jpg)](https://www.youtube.com/watch?v=RPVgs7bGaso&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. Qué es la sobrecarga de métodos
+## 2. What is method overloading
 
-Dos métodos están **sobrecargados** si:
+Two methods are **overloaded** if:
 
-- Tienen el mismo **nombre**
-- Están en la misma **clase**
-- Pero tienen una **lista de parámetros diferente**
+- They have the same **name**
+- They are in the same **class**
+- But they have a **different parameter list**
 
-La lista de parámetros puede ser distinta por:
+The parameter list may be different because:
 
-- Número de parámetros
-- Tipo de parámetros
-- Orden de tipos en los parámetros
+- Number of parameters
+- Type of parameters
+- Order of types in parameters
 
-A esa combinación se le llama la **firma del método** (_method signature_).
+That combination is called the method signature.
 
 ---
 
-## 3. La firma de un método (lo que Java usa para diferenciarlos)
+## 3. The signature of a method (what Java uses to differentiate them)
 
-Java identifica un método por:
+Java identifies a method by:
 
-- Nombre del método
-- Tipos de los parámetros (incluyendo su orden)
+- Method name
+- Parameter types (including their order)
 
-**Java NO usa** el tipo de retorno para diferenciar métodos.
+**Java DOES NOT use** the return type to differentiate methods.
 
-Ejemplo de firmas distintas:
+Example of different signatures:
 
 ```java
 sum(int, int)
@@ -64,11 +64,11 @@ sum(String, String)
 
 ---
 
-## 4. Sobrecarga por número de parámetros
+## 4. Overloading by number of parameters
 
-Esta es la forma más fácil de entender.
+This is the easiest way to understand.
 
-### 4.1. Ejemplo: `sum` con 2 y con 3 valores
+### 4.1. Example: `sum` with 2 and with 3 values
 
 ```java
 public class Main {
@@ -90,20 +90,20 @@ public class Main {
 }
 ```
 
-Qué ocurre:
+What happens:
 
-- `sum(2, 3)` llama a `sum(int, int)`
-- `sum(2, 3, 4)` llama a `sum(int, int, int)`
+- `sum(2, 3)` calls `sum(int, int)`
+- `sum(2, 3, 4)` calls `sum(int, int, int)`
 
-Java elige automáticamente la versión correcta.
+Java automatically chooses the correct version.
 
 ---
 
-## 5. Sobrecarga por tipo de parámetros
+## 5. Overloading by type of parameters
 
-Puedes tener métodos con el mismo nombre y mismo número de parámetros, pero con **tipos diferentes**.
+You can have methods with the same name and the same number of parameters, but with **different types**.
 
-### 5.1. Ejemplo: `sum` para `int` y para `double`
+### 5.1. Example: `sum` for `int` and for `double`
 
 ```java
 public class Main {
@@ -125,18 +125,18 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- Si pasas enteros, Java usa la versión `int`
-- Si pasas decimales, Java usa la versión `double`
+- If you pass integers, Java uses the `int` version
+- If you pass decimals, Java uses the `double` version
 
 ---
 
-## 6. Sobrecarga por orden de tipos
+## 6. Overloading by type order
 
-También puedes sobrecargar si cambias el orden de tipos en los parámetros.
+You can also overload if you change the type order in the parameters.
 
-### 6.1. Ejemplo: `formatUser` con orden distinto
+### 6.1. Example: `formatUser` with different order
 
 ```java
 public class Main {
@@ -155,18 +155,18 @@ public class Main {
 }
 ```
 
-Esto funciona porque la firma es distinta:
+This works because the signature is different:
 
 - `formatUser(String, int)`
 - `formatUser(int, String)`
 
 ---
 
-## 7. Lo que NO es sobrecarga
+## 7. What is NOT overload
 
-### 7.1. No es sobrecarga cambiar solo el tipo de retorno
+### 7.1. It is not overhead to change only the return type
 
-Esto NO compila:
+This DOES NOT compile:
 
 ```java
 public static int getValue() {
@@ -178,13 +178,13 @@ public static double getValue() {
 }
 ```
 
-Java no puede diferenciarlo porque los parámetros son idénticos (no hay parámetros).
+Java can't tell it apart because the parameters are identical (there are no parameters).
 
 ---
 
-### 7.2. No es sobrecarga cambiar solo los nombres de los parámetros
+### 7.2. It is not overhead to change only the parameter names
 
-Esto NO es sobrecarga, porque el tipo y el número son iguales:
+This is NOT overloading, because the type and number are the same:
 
 ```java
 public static int sum(int a, int b) {
@@ -196,24 +196,24 @@ public static int sum(int x, int y) {
 }
 ```
 
-Para Java, ambas firmas son `sum(int, int)`.
+For Java, both signatures are `sum(int, int)`.
 
 ---
 
-## 8. Cómo decide Java qué método llamar
+## 8. How Java decides which method to call
 
-Cuando llamas a un método sobrecargado, Java elige la versión que “mejor encaja” con los argumentos.
+When you call an overloaded method, Java chooses the version that “best fits” the arguments.
 
-### 8.1. Ejemplo: llamada exacta
+### 8.1. Example: exact call
 
 ```java
 sum(2, 3);          // encaja con sum(int, int)
 sum(2.0, 3.0);      // encaja con sum(double, double)
 ```
 
-### 8.2. Ejemplo: conversión implícita
+### 8.2. Example: implicit conversion
 
-Recuerda el tema de conversión de tipos: Java puede convertir implícitamente `int` a `double`.
+Remember the type conversion topic: Java can implicitly convert `int` to `double`.
 
 ```java
 public class Main {
@@ -232,32 +232,32 @@ public class Main {
 }
 ```
 
-En `sum(2, 3.5)`:
+In `sum(2, 3.5)`:
 
-- `3.5` ya es `double`
-- Java convierte `2` a `double`
-- Elige `sum(double, double)`
-
----
-
-## 9. Ambigüedad (cuando Java no sabe qué versión usar)
-
-A veces puedes crear sobrecargas que generan llamadas ambiguas. En estos casos, Java dará error de compilación.
-
-Un ejemplo típico es cuando hay varias conversiones posibles y ninguna es claramente “mejor”.
-
-La regla práctica para evitarlo:
-
-- No crees sobrecargas que dependan de conversiones “dudosas”
-- Mantén firmas muy claras y diferentes
+- `3.5` is now `double`
+- Java converts `2` to `double`
+- Choose `sum(double, double)`
 
 ---
 
-## 10. Caso real: métodos tipo “build” con variantes
+## 9. Ambiguity (when Java doesn't know which version to use)
 
-Un uso común de la sobrecarga es permitir varias formas de usar un método para generar una salida o construir un valor.
+Sometimes you can create overloads that lead to ambiguous calls. In these cases, Java will give a compilation error.
 
-### 10.1. Ejemplo: `buildMessage` con variantes
+A typical example is when there are several possible conversions and none is clearly “better”.
+
+The rule of thumb to avoid it:
+
+- Do not create overloads that depend on “dodgy” conversions
+- Keep very clear and different signatures
+
+---
+
+## 10. Real case: “build” type methods with variants
+
+A common use of overloading is to allow multiple ways of using a method to generate output or construct a value.
+
+### 10.1. Example: `buildMessage` with variants
 
 ```java
 public class Main {
@@ -283,24 +283,24 @@ public class Main {
 
 ---
 
-## 11. Buenas prácticas al sobrecargar
+## 11. Good practices when overloading
 
-### 11.1. Mantén la intención consistente
+### 11.1. Keep the intention consistent
 
-Si el método se llama `sum`, todas las versiones deben “sumar”.  
-Si el método se llama `calculateTotal`, todas las versiones deben calcular un total.
-
----
-
-### 11.2. Evita sobrecargas que confundan
-
-Cambiar el orden de parámetros puede ser legal, pero puede generar llamadas difíciles de leer si no eres consistente.
+If the method is called `sum`, all versions must “sum up”.  
+If the method is called `calculateTotal`, all versions must calculate a total.
 
 ---
 
-### 11.3. Usa sobrecarga para simplificar el uso
+### 11.2. Avoid overloads that confuse
 
-Un patrón habitual es que una versión “simple” llame a otra más completa.
+Changing the order of parameters may be legal, but it can lead to calls that are difficult to read if you are not consistent.
+
+---
+
+### 11.3. Use overloading to simplify use
+
+A common pattern is that a “simple” version calls for a more complete one.
 
 ```java
 public static int sum(int x, int y) {
@@ -314,7 +314,7 @@ public static int sum(int x, int y, int z) {
 
 ---
 
-## 12. Ejemplo completo: cálculo de precio final con variantes
+## 12. Complete example: final price calculation with variants
 
 ```java
 public class Main {
@@ -342,22 +342,22 @@ public class Main {
 
 ---
 
-## 13. Errores comunes al empezar
+## 13. Common mistakes when starting out
 
-- Pensar que el retorno crea sobrecarga (no).
-- Crear sobrecargas demasiado parecidas.
-- Duplicar lógica en cada versión (mejor reutilizar).
-
----
-
-## 14. A tener en cuenta
-
-- La sobrecarga permite varios métodos con el mismo nombre y distintas firmas.
-- La firma depende del nombre y parámetros (no del retorno).
-- Puedes sobrecargar por número, tipo u orden de parámetros.
-- Java elige la versión que mejor encaja con los argumentos.
-- Bien usada, la sobrecarga hace el código más limpio y fácil de usar.
+- Thinking that the return creates overload (no).
+- Create overloads that are too similar.
+- Duplicate logic in each version (better to reuse).
 
 ---
 
-En el próximo tema seguiremos trabajando buenas prácticas y organización del código, preparando el terreno para **arrays** y estructuras de datos.
+## 14. To take into account
+
+- Overloading allows multiple methods with the same name and different signatures.
+- The signature depends on the name and parameters (not the return).
+- You can overload by number, type or order of parameters.
+- Java chooses the version that best fits the arguments.
+- Used well, overloading makes the code cleaner and easier to use.
+
+---
+
+In the next topic we will continue working on good practices and code organization, preparing the ground for **arrays** and data structures.

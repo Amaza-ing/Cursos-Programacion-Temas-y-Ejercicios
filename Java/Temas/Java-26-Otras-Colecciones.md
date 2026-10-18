@@ -1,61 +1,61 @@
-# Tema 26. Otras colecciones habituales de Java: `Set`, `LinkedHashMap` y `TreeMap`
+# Topic 26. Other common Java collections: `Set`, `LinkedHashMap` and `TreeMap`
 
-## 1. Introducción
+## 1. Introduction
 
-En el tema anterior aprendiste a trabajar con `Map` y `HashMap`, una estructura clave-valor muy útil cuando necesitas asociar datos.
+In the previous topic you learned how to work with `Map` and `HashMap`, a very useful key-value structure when you need to associate data.
 
-Pero la librería de colecciones de Java ofrece más opciones, y es importante conocerlas porque no todas las estructuras se comportan igual.
+But the Java collections library offers more options, and it is important to know them because not all structures behave the same.
 
-En este tema vamos a estudiar tres colecciones muy habituales:
+In this topic we are going to study three very common collections:
 
 - `Set`
 - `LinkedHashMap`
 - `TreeMap`
 
-Todas son muy útiles, pero cada una resuelve un problema diferente:
+They are all very useful, but each one solves a different problem:
 
-- `Set` sirve para guardar elementos **sin duplicados**
-- `LinkedHashMap` es un mapa que **mantiene el orden de inserción**
-- `TreeMap` es un mapa que **ordena automáticamente por clave**
+- `Set` is used to save elements **without duplicates**
+- `LinkedHashMap` is a map that **maintains insertion order**
+- `TreeMap` is a map that **automatically sorts by key**
 
-Aprender a elegir bien la estructura correcta es muy importante en Java real.
+Learning to choose the right structure is very important in real Java.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un `Set`
-- Qué diferencia hay entre `HashSet`, `LinkedHashSet` y `TreeSet` a nivel conceptual
-- Cómo usar `Set` para evitar duplicados
-- Qué es `LinkedHashMap` y cuándo usarlo en lugar de `HashMap`
-- Qué es `TreeMap` y cómo ordena las claves
-- Cómo recorrer estas colecciones
-- Qué errores típicos debes evitar
-
----
-
-[![Otras Colecciones](https://img.youtube.com/vi/BBNZmrhUKtc/0.jpg)](https://www.youtube.com/watch?v=BBNZmrhUKtc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is an `Set`
+- What is the difference between `HashSet`, `LinkedHashSet` and `TreeSet` at a conceptual level?
+- How to use `Set` to avoid duplicates
+- What is `LinkedHashMap` and when to use it instead of `HashMap`
+- What is `TreeMap` and how it sorts the keys
+- How to browse these collections
+- What typical mistakes you should avoid
 
 ---
 
-## 2. La idea clave: no todas las colecciones hacen lo mismo
+[![Other Collections](https://img.youtube.com/vi/BBNZmrhUKtc/0.jpg)](https://www.youtube.com/watch?v=BBNZmrhUKtc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-Hasta ahora ya has visto varias estructuras:
+---
+
+## 2. The key idea: not all collections do the same
+
+So far you have seen several structures:
 
 - Arrays
 - `ArrayList`
 - `HashMap`
 
-Cada una tiene un propósito distinto.
+Each one has a different purpose.
 
 ### 2.1. `ArrayList`
 
-Sirve para:
+Serves for:
 
-- guardar elementos en secuencia
-- permitir duplicados
-- acceder por índice
-- mantener el orden de inserción
+- save items in sequence
+- allow duplicates
+- access by index
+- maintain insertion order
 
-Ejemplo:
+Example:
 
 ```java
 List<String> names = new ArrayList<>();
@@ -64,66 +64,66 @@ names.add("Alex");
 names.add("Laura");
 ```
 
-Aquí el valor `"Laura"` puede repetirse.
+Here the value `"Laura"` can be repeated.
 
 ### 2.2. `Set`
 
-Sirve para:
+Serves for:
 
-- guardar elementos únicos
-- evitar duplicados
-- no trabajar por índice
+- save unique items
+- avoid duplicates
+- do not work by index
 
-### 2.3. `Map`
+### 23. `Map`
 
-Sirve para:
+Serves for:
 
-- guardar pares clave-valor
-- acceder por clave
+- save key-value pairs
+- access by password
 
-Por tanto:
+Therefore:
 
-- `List` = colección ordenada con posibles duplicados
-- `Set` = colección sin duplicados
-- `Map` = estructura clave-valor
+- `List` = sorted collection with possible duplicates
+- `Set` = collection without duplicates
+- `Map` = key-value structure
 
 ---
 
-## 3. Qué es un `Set`
+## 3. What is an `Set`
 
-Un `Set` es una colección que **no permite elementos duplicados**.
+An `Set` is a collection that **does not allow duplicate elements**.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```text
 ["Laura", "Alex", "Laura", "Maria"]
 ```
 
-En una lista eso sería válido.
+In a list that would be valid.
 
-Pero en un `Set`, el resultado sería algo equivalente a:
+But in an `Set`, the result would be something equivalent to:
 
 ```text
 ["Laura", "Alex", "Maria"]
 ```
 
-porque `"Laura"` no puede aparecer dos veces.
+because `"Laura"` cannot appear twice.
 
-La interfaz principal es:
+The main interface is:
 
 ```java
 Set<T>
 ```
 
-Y una implementación muy usada es:
+And a widely used implementation is:
 
 - `HashSet`
 
 ---
 
-## 4. Importaciones necesarias
+## 4. Necessary imports
 
-Para trabajar con `Set` y con algunas implementaciones habituales, suelen usarse estos imports:
+To work with `Set` and some common implementations, these imports are often used:
 
 ```java
 import java.util.HashSet;
@@ -133,24 +133,24 @@ import java.util.Set;
 import java.util.TreeMap;
 ```
 
-Más adelante también verás otras implementaciones como `LinkedHashSet` o `TreeSet`, pero en este tema vamos a centrarnos sobre todo en la idea general de `Set` y en `LinkedHashMap` y `TreeMap`.
+Later you will also see other implementations such as `LinkedHashSet` or `TreeSet`, but in this topic we are going to focus mainly on the general idea of `Set` and on `LinkedHashMap` and `TreeMap`.
 
 ---
 
-## 5. Crear un `Set`
+## 5. Create an `Set`
 
-Forma habitual:
+Usual form:
 
 ```java
 Set<String> names = new HashSet<>();
 ```
 
-Aquí estás diciendo:
+Here you are saying:
 
-- la colección guardará `String`
-- no permitirá duplicados
+- the collection will save `String`
+- will not allow duplicates
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.HashSet;
@@ -169,13 +169,12 @@ public class Main {
 }
 ```
 
-Aunque intentes añadir `"Laura"` dos veces, en el conjunto solo habrá una.
+Even if you try to add `"Laura"` twice, there will only be one in the set.
 
 ---
 
-## 6. Operación principal: `add`
-
-Para insertar elementos se usa `add`.
+## 6. Main operation: `add`
+To insert elements, `add` is used.
 
 ```java
 Set<String> cities = new HashSet<>();
@@ -185,26 +184,26 @@ cities.add("Berlin");
 cities.add("Paris");
 ```
 
-Si añades un elemento repetido, el `Set` no lo guarda otra vez.
+If you add a repeated item, `Set` does not save it again.
 
 ```java
 cities.add("Madrid");
 ```
 
-El conjunto seguirá teniendo una sola vez `"Madrid"`.
+The set will still have a single `"Madrid"`.
 
 ---
 
-## 7. `add` devuelve `true` o `false`
+## 7. `add` returns `true` or `false`
 
-Esto es muy útil y muchas veces se olvida.
+This is very useful and is often forgotten.
 
-En un `Set`, `add(...)` devuelve:
+On an `Set`, `add(...)` returns:
 
-- `true` si el elemento se añadió
-- `false` si no se añadió porque ya existía
+- `true` if the item was added
+- `false` if it was not added because it already existed
 
-Ejemplo:
+Example:
 
 ```java
 Set<String> names = new HashSet<>();
@@ -216,34 +215,34 @@ System.out.println(firstInsert);  // true
 System.out.println(secondInsert); // false
 ```
 
-Esto puede ser útil si quieres detectar duplicados.
+This can be useful if you want to detect duplicates.
 
 ---
 
-## 8. `Set` no usa índices
+## 8. `Set` does not use indexes
 
-A diferencia de una lista, un `Set` no tiene posiciones como `0`, `1`, `2`...
+Unlike a list, an `Set` does not have positions like `0`, `1`, `2`...
 
-Esto no existe:
+This does not exist:
 
 ```java
 // names.get(0); // NO
 ```
 
-En un `Set`:
+On an `Set`:
 
-- no accedes por índice
-- recorres los elementos con un bucle
-- compruebas si un elemento existe
-- añades y eliminas
+- you do not access by index
+- you loop through the elements
+- you check if an element exists
+- you add and delete
 
-Esto tiene sentido porque el objetivo de un `Set` no es gestionar posiciones, sino unicidad.
+This makes sense because the goal of an `Set` is not to manage positions, but rather uniqueness.
 
 ---
 
-## 9. Métodos básicos de `Set`
+## 9. Basic methods of `Set`
 
-Los métodos más importantes al empezar son:
+The most important methods when starting out are:
 
 - `add`
 - `remove`
@@ -256,7 +255,7 @@ Los métodos más importantes al empezar son:
 
 ## 10. `contains`
 
-Sirve para comprobar si un elemento está en el conjunto.
+It is used to check if an element is in the set.
 
 ```java
 Set<String> names = new HashSet<>();
@@ -271,7 +270,7 @@ System.out.println(names.contains("Maria")); // false
 
 ## 11. `remove`
 
-Sirve para eliminar un elemento.
+Used to delete an element.
 
 ```java
 Set<String> names = new HashSet<>();
@@ -283,14 +282,14 @@ names.remove("Laura");
 System.out.println(names.contains("Laura")); // false
 ```
 
-También devuelve `true` o `false`:
+Also returns `true` or `false`:
 
-- `true` si se eliminó
-- `false` si no existía
+- `true` if removed
+- `false` if it did not exist
 
 ---
 
-## 12. `size`, `isEmpty` y `clear`
+## 12. `size`, `isEmpty` and `clear`
 
 ### 12.1. `size`
 
@@ -324,9 +323,9 @@ System.out.println(names.size()); // 0
 
 ---
 
-## 13. Recorrer un `Set`
+## 13. Loop through an `Set`
 
-Como no hay índices, se suele recorrer con `for-each`.
+Since there are no indexes, it is usually traversed with `for-each`.
 
 ```java
 import java.util.HashSet;
@@ -349,11 +348,11 @@ public class Main {
 
 ---
 
-## 14. Orden en `HashSet`
+## 14. Order on `HashSet`
 
-Igual que ocurría con `HashMap`, **`HashSet` no garantiza el orden**.
+As with `HashMap`, **`HashSet` does not guarantee order**.
 
-Ejemplo:
+Example:
 
 ```java
 Set<String> names = new HashSet<>();
@@ -364,35 +363,35 @@ names.add("Maria");
 System.out.println(names);
 ```
 
-El orden de impresión puede no coincidir con el orden en que añadiste los elementos.
+The printing order may not match the order in which you added the items.
 
-Por tanto:
+Therefore:
 
-- no asumas orden de inserción
-- no uses `HashSet` si necesitas orden concreto
-
----
-
-## 15. Cuándo usar un `Set`
-
-Un `Set` es ideal cuando quieres:
-
-- evitar duplicados
-- comprobar rápidamente si algo ya existe
-- trabajar con una colección de elementos únicos
-
-Ejemplos típicos:
-
-- usuarios únicos conectados
-- categorías de productos sin repetir
-- palabras únicas en un texto
-- emails registrados sin duplicados
+- don't assume insertion order
+- do not use `HashSet` if you need a specific order
 
 ---
 
-## 16. Ejemplo guiado: eliminar duplicados de una lista
+## 15. When to use an `Set`
 
-Este es uno de los usos más típicos de `Set`.
+An `Set` is ideal when you want:
+
+- avoid duplicates
+- quickly check if something already exists
+- work with a collection of unique items
+
+Typical examples:
+
+- unique logged in users
+- unrepeated product categories
+- unique words in a text
+- registered emails without duplicates
+
+---
+
+## 16. Guided Example: Remove Duplicates from a List
+
+This is one of the most typical uses of `Set`.
 
 ```java
 import java.util.ArrayList;
@@ -417,14 +416,14 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- la lista original tiene duplicados
-- el `Set` elimina los repetidos automáticamente
+- the original list has duplicates
+- `Set` removes duplicates automatically
 
 ---
 
-## 17. Ejemplo guiado: detectar si un valor ya apareció
+## 17. Guided Example: Detect if a value has already appeared
 
 ```java
 import java.util.HashSet;
@@ -447,37 +446,36 @@ public class Main {
 }
 ```
 
-Aquí aprovechamos que `add(...)` devuelve `false` si el elemento ya existía.
+Here we take advantage of the fact that `add(...)` returns `false` if the element already existed.
 
 ---
 
-## 18. Variantes importantes de `Set`
+## 18. Important Variants of `Set`
 
-Aunque `Set` es la interfaz, hay varias implementaciones.
+Although `Set` is the interface, there are several implementations.
 
-A nivel inicial conviene que tengas esta idea mental:
+At an initial level, it is advisable that you have this mental idea:
 
-- `HashSet` → no garantiza orden
-- `LinkedHashSet` → mantiene orden de inserción
-- `TreeSet` → ordena automáticamente
-
-En este tema no vamos a profundizar en todas ellas, pero es importante que sepas que existen porque siguen la misma lógica que verás ahora con `LinkedHashMap` y `TreeMap`.
+- `HashSet` → does not guarantee order
+- `LinkedHashSet` → maintains insertion order
+- `TreeSet` → order automatically
+In this topic we are not going to delve into all of them, but it is important that you know that they exist because they follow the same logic that you will see now with `LinkedHashMap` and `TreeMap`.
 
 ---
 
-## 19. Qué es `LinkedHashMap`
+## 19. What is `LinkedHashMap`
 
-En el tema anterior viste `HashMap`, que:
+In the previous topic you saw `HashMap`, which:
 
-- guarda pares clave-valor
-- permite búsqueda rápida por clave
-- **no garantiza el orden**
+- saves key-value pairs
+- allows quick search by key
+- **does not guarantee order**
 
-`LinkedHashMap` es muy parecido a `HashMap`, pero con una diferencia clave:
+`LinkedHashMap` is very similar to `HashMap`, but with one key difference:
 
-> `LinkedHashMap` mantiene el orden de inserción.
+> `LinkedHashMap` maintains the insertion order.
 
-Es decir, si insertas:
+That is, if you insert:
 
 ```text
 "Laura" -> 28
@@ -485,11 +483,11 @@ Es decir, si insertas:
 "Maria" -> 31
 ```
 
-al recorrer el mapa, aparecerán en ese mismo orden.
+When you go around the map, they will appear in that same order.
 
 ---
 
-## 20. Crear un `LinkedHashMap`
+## 20. Create an `LinkedHashMap`
 
 ```java
 import java.util.LinkedHashMap;
@@ -508,19 +506,19 @@ public class Main {
 }
 ```
 
-Resultado esperado:
+Expected result:
 
 ```text
 {Laura=28, Alex=35, Maria=31}
 ```
 
-Aquí sí se conserva el orden de inserción.
+Here the insertion order is preserved.
 
 ---
 
-## 21. `LinkedHashMap` tiene casi la misma forma de uso que `HashMap`
+## 21. `LinkedHashMap` has almost the same usage as `HashMap`
 
-Los métodos básicos son los mismos:
+The basic methods are the same:
 
 - `put`
 - `get`
@@ -534,7 +532,7 @@ Los métodos básicos son los mismos:
 - `keySet`
 - `values`
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.LinkedHashMap;
@@ -560,23 +558,23 @@ public class Main {
 }
 ```
 
-La gran diferencia no está en los métodos, sino en el comportamiento del orden.
+The big difference is not in the methods, but in the behavior of the order.
 
 ---
 
-## 22. Cuándo usar `LinkedHashMap`
+## 22. When to use `LinkedHashMap`
 
-Usa `LinkedHashMap` cuando necesitas:
+Use `LinkedHashMap` when you need to:
 
-- asociar clave y valor
-- mantener el orden en que insertaste las entradas
+- associate key and value
+- maintain the order in which you inserted the entries
 
-Ejemplos típicos:
+Typical examples:
 
-- mostrar datos en el mismo orden en que se cargaron
-- generar menús o configuraciones ordenadas
-- almacenar historial de inserción
-- tener comportamiento más predecible al imprimir o recorrer
+- display data in the same order it was loaded
+- generate menus or ordered settings
+- store insert history
+- have more predictable behavior when printing or scrolling
 
 ---
 
@@ -584,15 +582,15 @@ Ejemplos típicos:
 
 ### 23.1. `HashMap`
 
-- estructura clave-valor
-- no garantiza orden
+- key-value structure
+- does not guarantee order
 
 ### 23.2. `LinkedHashMap`
 
-- estructura clave-valor
-- mantiene orden de inserción
+- key-value structure
+- maintains insertion order
 
-Ejemplo comparativo:
+Comparative example:
 
 ```java
 Map<String, Integer> hashMap = new HashMap<>();
@@ -610,31 +608,31 @@ System.out.println(hashMap);
 System.out.println(linkedHashMap);
 ```
 
-En `linkedHashMap`, el orden será:
+In `linkedHashMap`, the order will be:
 
 ```text
 {C=3, A=1, B=2}
 ```
 
-En `hashMap`, no debes asumir nada.
+At `hashMap`, you should not assume anything.
 
 ---
 
-## 24. Qué es `TreeMap`
+## 24. What is `TreeMap`
 
-`TreeMap` es otra implementación de `Map`, pero con una diferencia muy importante:
+`TreeMap` is another implementation of `Map`, but with a very important difference:
 
-> `TreeMap` ordena automáticamente las entradas por la clave.
+> `TreeMap` automatically sorts entries by key.
 
-No por el orden de inserción, sino por el **orden natural de las claves**.
+Not by the insertion order, but by the **natural order of the keys**.
 
-Ejemplo con claves `String`:
+Example with `String` keys:
 
 - `"A"`
 - `"B"`
 - `"C"`
 
-Ejemplo con claves `Integer`:
+Example with `Integer` keys:
 
 - `1`
 - `2`
@@ -642,7 +640,7 @@ Ejemplo con claves `Integer`:
 
 ---
 
-## 25. Crear un `TreeMap`
+## 25. Create an `TreeMap`
 
 ```java
 import java.util.Map;
@@ -661,17 +659,17 @@ public class Main {
 }
 ```
 
-Resultado esperado:
+Expected result:
 
 ```text
 {Alex=35, Laura=28, Maria=31}
 ```
 
-Aunque insertaste en otro orden, `TreeMap` organiza por clave.
+Although you inserted in a different order, `TreeMap` organizes by key.
 
 ---
 
-## 26. Ejemplo con claves numéricas en `TreeMap`
+## 26. Example with numeric keys in `TreeMap`
 
 ```java
 import java.util.Map;
@@ -690,7 +688,7 @@ public class Main {
 }
 ```
 
-Resultado esperado:
+Expected result:
 
 ```text
 {1=Alex, 2=Maria, 3=Laura}
@@ -698,9 +696,9 @@ Resultado esperado:
 
 ---
 
-## 27. `TreeMap` también usa los mismos métodos básicos
+## 27. `TreeMap` also uses the same basic methods
 
-Los métodos principales son los mismos que en otros mapas:
+The main methods are the same as other maps:
 
 - `put`
 - `get`
@@ -709,7 +707,7 @@ Los métodos principales son los mismos que en otros mapas:
 - `size`
 - `entrySet`
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.Map;
@@ -732,37 +730,37 @@ public class Main {
 }
 ```
 
-La diferencia sigue siendo el orden por clave.
+The difference is still the order by key.
 
 ---
 
-## 28. Cuándo usar `TreeMap`
+## 28. When to use `TreeMap`
 
-Usa `TreeMap` cuando necesitas:
+Use `TreeMap` when you need to:
 
-- almacenar pares clave-valor
-- tener las claves ordenadas automáticamente
+- store key-value pairs
+- have the keys sorted automatically
 
-Ejemplos típicos:
+Typical examples:
 
-- listado alfabético de productos
-- ranking por identificador numérico
-- mostrar datos ordenados por clave sin ordenar manualmente después
-- estructuras donde el orden por clave es importante
+- alphabetical list of products
+- ranking by numerical identifier
+- show data sorted by key without manually sorting after
+- structures where order by key is important
 
 ---
 
 ## 29. `LinkedHashMap` vs `TreeMap`
 
-Esta comparación es muy importante.
+This comparison is very important.
 
 ### 29.1. `LinkedHashMap`
 
-Mantiene:
+Maintains:
 
-- el orden en que insertaste las entradas
+- the order in which you inserted the entries
 
-Ejemplo:
+Example:
 
 ```text
 C -> 3
@@ -770,7 +768,7 @@ A -> 1
 B -> 2
 ```
 
-Se recorre así:
+It goes like this:
 
 ```text
 C, A, B
@@ -778,30 +776,30 @@ C, A, B
 
 ### 29.2. `TreeMap`
 
-Mantiene:
+Maintains:
 
-- el orden natural de las claves
+- the natural order of the keys
 
-Con esas mismas claves, se recorre así:
+With those same keys, it goes like this:
 
 ```text
 A, B, C
 ```
 
-### 29.3. Regla práctica
+### 29.3. Rule of thumb
 
-- Si quieres conservar el orden de inserción → `LinkedHashMap`
-- Si quieres ordenar por clave automáticamente → `TreeMap`
+- If you want to keep the insertion order → `LinkedHashMap`
+- If you want to sort by key automatically → `TreeMap`
 
 ---
 
-## 30. Qué pasa con claves duplicadas en `LinkedHashMap` y `TreeMap`
+## 30. What happens with duplicate keys in `LinkedHashMap` and `TreeMap`
 
-Igual que en cualquier `Map`, las claves son únicas.
+As with any `Map`, the keys are unique.
 
-Si repites una clave, el valor anterior se sobrescribe.
+If you repeat a key, the previous value is overwritten.
 
-Ejemplo:
+Example:
 
 ```java
 Map<String, Integer> ages = new TreeMap<>();
@@ -812,34 +810,34 @@ ages.put("Laura", 29);
 System.out.println(ages.get("Laura")); // 29
 ```
 
-No se crean dos entradas. Solo queda una.
+Two entries are not created. There's only one left.
 
 ---
 
-## 31. `null` en estas colecciones
+## 31. `null` in these collections
 
 ### 31.1. `LinkedHashMap`
 
-Se comporta de forma parecida a `HashMap` en muchos casos y permite trabajar con `null` en clave y valores.
+It behaves similar to `HashMap` in many cases and allows working with `null` in key and values.
 
 ### 31.2. `TreeMap`
 
-Aquí hay que tener más cuidado.
+You have to be more careful here.
 
-Como `TreeMap` necesita ordenar claves, el uso de `null` como clave puede dar problemas porque no puede compararse correctamente en el orden natural.
+Since `TreeMap` needs to order keys, using `null` as a key can cause problems because it cannot be compared correctly in the natural order.
 
-A nivel inicial, la mejor recomendación es:
+At an initial level, the best recommendation is:
 
-- evita usar `null` como clave en `TreeMap`
-- usa claves comparables y bien definidas
+- avoid using `null` as key in `TreeMap`
+- use comparable and well-defined keys
 
 ---
 
-## 32. Recorrer `LinkedHashMap` y `TreeMap`
+## 32. Loop through `LinkedHashMap` and `TreeMap`
 
-Igual que con `HashMap`, la forma más útil suele ser `entrySet()`.
+As with `HashMap`, the most useful form is usually `entrySet()`.
 
-### 32.1. Recorrido de `LinkedHashMap`
+### 32.1. `LinkedHashMap` Walkthrough
 
 ```java
 Map<String, Integer> ages = new LinkedHashMap<>();
@@ -852,7 +850,7 @@ for (Map.Entry<String, Integer> entry : ages.entrySet()) {
 }
 ```
 
-### 32.2. Recorrido de `TreeMap`
+### 32.2. `TreeMap` Walkthrough
 
 ```java
 Map<String, Integer> ages = new TreeMap<>();
@@ -865,11 +863,11 @@ for (Map.Entry<String, Integer> entry : ages.entrySet()) {
 }
 ```
 
-La sintaxis es la misma, pero el orden de recorrido cambia.
+The syntax is the same, but the traversal order changes.
 
 ---
 
-## 33. Ejemplo completo: categorías únicas con `Set`
+## 33. Complete example: unique categories with `Set`
 
 ```java
 import java.util.HashSet;
@@ -893,14 +891,14 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- `"Technology"` solo aparece una vez
-- el conjunto evita duplicados automáticamente
+- `"Technology"` only appears once
+- the set automatically avoids duplicates
 
 ---
 
-## 34. Ejemplo completo: historial de inserción con `LinkedHashMap`
+## 34. Complete Example: Push History with `LinkedHashMap`
 
 ```java
 import java.util.LinkedHashMap;
@@ -921,15 +919,15 @@ public class Main {
 }
 ```
 
-Este ejemplo mantiene el orden:
+This example maintains the order:
 
 1. Spain
 2. France
-3. Germany
+3.Germany
 
 ---
 
-## 35. Ejemplo completo: mapa ordenado con `TreeMap`
+## 35. Complete example: map sorted with `TreeMap`
 
 ```java
 import java.util.Map;
@@ -951,77 +949,76 @@ public class Main {
 }
 ```
 
-Aunque insertes en otro orden, el resultado estará ordenado por nombre de producto.
+Even if you insert in another order, the result will be ordered by product name.
 
 ---
 
-## 36. Cómo elegir la estructura correcta
+## 36. How to choose the right structure
 
-Aquí tienes una guía mental muy útil.
+Here you have a very useful mental guide.
 
-### 36.1. Usa `Set` cuando
+### 36.1. Use `Set` when
 
-- no quieres duplicados
-- no te importa trabajar por índice
-- quieres comprobar existencia de elementos únicos
+- you don't want duplicates
+- you don't mind working by index
+- you want to check existence of unique elements
 
-### 36.2. Usa `HashMap` cuando
+### 36.2. Use `HashMap` when
 
-- quieres pares clave-valor
-- no necesitas orden
+- you want key-value pairs
+- you don't need order
 
-### 36.3. Usa `LinkedHashMap` cuando
+### 36.3. Use `LinkedHashMap` when
 
-- quieres pares clave-valor
-- quieres mantener el orden de inserción
+- you want key-value pairs
+- you want to maintain the insertion order
 
-### 36.4. Usa `TreeMap` cuando
+### 36.4. Use `TreeMap` when
 
-- quieres pares clave-valor
-- quieres que las claves estén ordenadas automáticamente
+- you want key-value pairs
+- you want the keys to be sorted automatically
 
 ---
 
-## 37. Errores típicos al empezar
+## 37. Typical mistakes when starting
 
-### 37.1. Intentar usar índices en un `Set`
+### 37.1. Trying to use indexes on an `Set`
 
-Esto no existe:
+This does not exist:
 
 ```java
 // set.get(0); // error
 ```
 
-### 37.2. Pensar que `HashSet` mantiene orden
+### 37.2. Thinking that `HashSet` maintains order
 
-No debes asumirlo.
+You shouldn't assume it.
 
-### 37.3. Pensar que `LinkedHashMap` ordena alfabéticamente
+### 37.3. Thinking that `LinkedHashMap` sorts alphabetically
 
-No ordena alfabéticamente por sí mismo.  
-Solo mantiene el orden de inserción.
-
-### 37.4. Pensar que `TreeMap` conserva el orden de inserción
+It doesn't sort alphabetically by itself.  
+It only maintains the insertion order.
+### 37.4. Thinking that `TreeMap` preserves insertion order
 
 No.  
-`TreeMap` ordena por clave.
+`TreeMap` sort by key.
 
-### 37.5. Olvidar que las claves en un `Map` son únicas
+### 37.5. Forgetting that the keys in an `Map` are unique
 
-Si repites la clave, reemplazas el valor anterior.
+If you repeat the key, you replace the previous value.
 
 ---
 
-## 38. Buenas prácticas iniciales
+## 38. Good initial practices
 
-- Usa la interfaz como tipo de referencia cuando tenga sentido:
+- Use interface as a reference type when it makes sense:
   - `Set<String> names = new HashSet<>();`
-  - `Map<String, Integer> ages = new LinkedHashMap<>();`
-- Elige la colección según el comportamiento que necesitas, no por costumbre.
-- Si necesitas unicidad, piensa en `Set`.
-- Si necesitas orden de inserción en un mapa, piensa en `LinkedHashMap`.
-- Si necesitas orden por clave, piensa en `TreeMap`.
-- Usa nombres claros como:
+  -`Map<String, Integer> ages = new LinkedHashMap<>();`
+- Choose the collection based on the behavior you need, not out of habit.
+- If you need uniqueness, think about `Set`.
+- If you need insertion order in a map, think about `LinkedHashMap`.
+- If you need order by key, think about `TreeMap`.
+- Use clear names like:
   - `uniqueNames`
   - `pricesByProduct`
   - `usersById`
@@ -1029,27 +1026,27 @@ Si repites la clave, reemplazas el valor anterior.
 
 ---
 
-## 39. A tener en cuenta
+## 39. To take into account
 
-- `Set` guarda elementos únicos.
-- `HashSet` no garantiza orden.
-- `LinkedHashMap` mantiene el orden de inserción.
-- `TreeMap` ordena automáticamente por clave.
-- `Map` sigue usando pares clave-valor con claves únicas.
-- Elegir bien la colección hace el código más claro y más útil.
+- `Set` saves unique items.
+- `HashSet` does not guarantee order.
+- `LinkedHashMap` maintains insertion order.
+- `TreeMap` automatically sorts by key.
+- `Map` still uses key-value pairs with unique keys.
+- Choosing the collection well makes the code clearer and more useful.
 
 ---
 
-## 40. Resumen final
+## 40. Final summary
 
-En Java no existe una única colección “mejor” para todo.
+In Java there is no single “best” collection for everything.
 
-Cada estructura está pensada para un tipo de problema.
+Each structure is designed for a type of problem.
 
-- `Set` te ayuda a trabajar con valores únicos
-- `LinkedHashMap` te ayuda a conservar el orden en que añadiste entradas
-- `TreeMap` te ayuda a tener claves ordenadas automáticamente
+- `Set` helps you work with unique securities
+- `LinkedHashMap` helps you keep the order in which you added entries
+- `TreeMap` helps you have keys automatically sorted
 
-Saber distinguir estos casos es muy importante porque, en proyectos reales, la elección de la colección adecuada simplifica mucho el código y evita errores innecesarios.
+Knowing how to distinguish these cases is very important because, in real projects, choosing the appropriate collection greatly simplifies the code and avoids unnecessary errors.
 
 ---

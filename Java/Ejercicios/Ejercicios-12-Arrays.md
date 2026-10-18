@@ -1,17 +1,17 @@
-# Ejercicios - Tema 12: Arrays
+# Exercises - Topic 12: Arrays
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **arrays**: creación, acceso por índice, modificación, `length` y recorridos con bucles.
+Below you will find **10 practical exercises** for working with **arrays**: creation, index access, modification, `length` and looping.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un array y mostrar su tamaño
+## Exercise 1: Create an array and show its size
 
-Crea un array `int[] numbers` con tamaño `5`.  
-Imprime el valor de `numbers.length`.
+Creates an `int[] numbers` array with size `5`.  
+Prints the value of `numbers.length`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -26,15 +26,15 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Inicialización literal y acceso a elementos
+## Exercise 2: Literal initialization and element access
 
-Crea un array `String[] colors` con estos valores:
+Create an `String[] colors` array with these values:
 
 - `"Blue"`, `"Orange"`, `"Purple"`
 
-Imprime el primer y el último elemento.
+Prints the first and last element.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -51,13 +51,13 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Modificar un elemento del array
+## Exercise 3: Modify an element of the array
 
-Crea un array `int[] scores` con valores `{10, 20, 30, 40}`.
+Creates an `int[] scores` array with `{10, 20, 30, 40}` values.
 
-Cambia el valor de la segunda posición (índice 1) a `25` e imprime el array completo usando un bucle.
+Change the value of the second position (index 1) to `25` and print the entire array using a loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -77,11 +77,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Sumar todos los elementos de un array
+## Exercise 4: Add all the elements of an array
 
-Declara `int[] values = {3, 6, 2, 9}` y calcula la suma total con un bucle.
+Declare `int[] values = {3, 6, 2, 9}` and calculate the total sum with a loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -102,13 +102,13 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Encontrar el valor máximo
+## Exercise 5: Find the maximum value
 
 Declara `int[] values = {7, 3, 11, 2, 9}`.
 
-Encuentra el valor máximo usando un bucle y muestra el resultado.
+Find the maximum value using a loop and display the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -132,13 +132,13 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Contar valores mayores que un número
+## Exercise 6: Count values greater than a number
 
-Declara `int[] values = {5, 12, 3, 18, 9}` y cuenta cuántos valores son mayores que `10`.
+Declare `int[] values = {5, 12, 3, 18, 9}` and count how many values are greater than `10`.
 
-Imprime el contador final.
+Print the final counter.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -161,19 +161,19 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Crear un array y rellenarlo con un patrón
+## Exercise 7: Create an array and fill it with a pattern
 
-Crea un array `int[] numbers` de tamaño `6`.
+Creates an `int[] numbers` array of size `6`.
 
-Rellénalo con los valores:
+Fill it with the values:
 
 ```
 2, 4, 6, 8, 10, 12
 ```
 
-Imprime todos los valores con un bucle.
+Print all values with a loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -195,13 +195,13 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Buscar un valor y detenerse al encontrarlo
+## Exercise 8: Search for a value and stop when finding it
 
-Declara `int[] values = {4, 8, 15, 16, 23, 42}` y una variable `target` con valor `16`.
+Declare `int[] values = {4, 8, 15, 16, 23, 42}` and a variable `target` with value `16`.
 
-Recorre el array y cuando encuentres el valor, imprime `"Found"` y detén el bucle.
+Loop through the array and when you find the value, print `"Found"` and stop the loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -223,16 +223,16 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Método que recibe un array
+## Exercise 9: Method that receives an array
 
-Crea un método `printFirstAndLast` que reciba `int[] values` e imprima:
+Create a method `printFirstAndLast` that receives `int[] values` and prints:
 
 - El primer elemento
 - El último elemento
 
-Llama al método desde `main` con un array de ejemplo.
+Call the method from `main` with an example array.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -255,15 +255,15 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Copiar valores a otro array
+## Exercise 10: Copy values to another array
 
-Declara `int[] source = {2, 4, 6, 8}` y crea un array `int[] copy` del mismo tamaño.
+Declare `int[] source = {2, 4, 6, 8}` and create an `int[] copy` array of the same size.
 
-Copia todos los valores de `source` a `copy` usando un bucle.
+Copy all values ​​from `source` to `copy` using a loop.
 
-Imprime `copy` para comprobarlo.
+Print `copy` to check.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

@@ -1,10 +1,10 @@
-# **Tema 5: Objetos en JavaScript**
+# **Topic 5: Objects in JavaScript**
 
-## **1. Introducción a los objetos**
+## **1. Introduction to objects**
 
-En JavaScript, un **objeto** es una colección de pares clave-valor donde las claves son cadenas de caracteres y los valores pueden ser cualquier tipo de dato, incluidas otras funciones y objetos. Los objetos permiten estructurar datos complejos y son fundamentales en la programación orientada a objetos.
+In JavaScript, an **object** is a collection of key-value pairs where the keys are strings and the values can be any data type, including other functions and objects. Objects allow complex data to be structured and are essential in object-oriented programming.
 
-Esta es la estructura de un objeto:
+This is the structure of an object:
 
 ```js
 const myObject {
@@ -15,15 +15,15 @@ const myObject {
 
 ---
 
-[![Objetos](https://img.youtube.com/vi/6jMtvnjITdw/0.jpg)](https://www.youtube.com/watch?v=6jMtvnjITdw&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Objects](https://img.youtube.com/vi/6jMtvnjITdw/0.jpg)](https://www.youtube.com/watch?v=6jMtvnjITdw&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **2. Creación de objetos**
+## **2. Object creation**
 
-### **2.1. Usando la sintaxis de objeto literal**
+### **2.1. Using object literal syntax**
 
-La forma más común y sencilla de crear un objeto.
+The most common and easiest way to create an object.
 
 ```js
 const person = {
@@ -36,7 +36,7 @@ const person = {
 console.log(person);
 ```
 
-### **2.2. Usando el constructor `Object`**
+### **2.2. Using the `Object`** constructor
 
 ```js
 const car = new Object();
@@ -47,7 +47,7 @@ car.year = 2022;
 console.log(car);
 ```
 
-### **2.3. Usando funciones constructoras**
+### **23. Using constructor functions**
 
 ```js
 function Person(firstName, lastName, age) {
@@ -60,7 +60,7 @@ const user = new Person("Carlos", "López", 28);
 console.log(user);
 ```
 
-### **2.4. Usando clases (ES6)**
+### **2.4. Using classes (ES6)**
 
 ```js
 class Animal {
@@ -80,36 +80,36 @@ console.log(dog.describe()); // Salida: Firulais es un perro
 
 ---
 
-## **3. Acceso a propiedades**
+## **3. Access to properties**
 
-No hace falta usar el objeto al completo, se puede acceder a las propiedades de un objeto de diferentes formas.
+It is not necessary to use the entire object, you can access the properties of an object in different ways.
 
-### **3.1. Notación del punto**
+### **3.1. Point notation**
 
-objeto.propiedad
+object.property
 
 ```js
 console.log(person.firstName); // Salida: Ana
 ```
 
-### **3.2. Notación de corchetes**
+### **3.2. Bracket Notation**
 
-objeto[propiedad]
+object[property]
 
 ```js
 console.log(person["lastName"]); // Salida: García
 ```
 
-> **Nota:** La notación por corchetes es útil cuando el nombre de la propiedad está en una variable.
+> **Note:** Bracket notation is useful when the property name is in a variable.
 
 ```js
 const key = "age";
 console.log(person[key]); // Salida: 30
 ```
 
-### **3.3. Añadir propiedades**
+### **3.3. Add properties**
 
-Se pueden añadir propiedades nuevas a un objeto accediendo a ellas aunque previamente no existieran.
+New properties can be added to an object by accessing them even if they did not previously exist.
 
 ```js
 person.country = "España";
@@ -118,9 +118,9 @@ console.log(person.country); // Salida: España
 
 ---
 
-## **4. Métodos en objetos**
+## **4. Methods on objects**
 
-Los objetos pueden tener funciones como propiedades, llamadas **métodos**.
+Objects can have functions as properties, called **methods**.
 
 ```js
 const calculator = {
@@ -138,9 +138,9 @@ console.log(calculator.subtract(5, 3)); // Salida: 2
 
 ---
 
-## **5. El objeto `this`**
+## **5. The `this`** object
 
-Dentro de un método, `this` hace referencia al objeto que llama al método.
+Within a method, `this` refers to the object that calls the method.
 
 ```js
 const user = {
@@ -153,11 +153,11 @@ const user = {
 user.greet(); // Salida: Hola, soy Laura
 ```
 
-> **Nota:** Las funciones flecha no tienen su propio `this`, por lo que es preferible usar funciones normales para métodos que dependan de `this`.
+> **Note:** Arrow functions do not have their own `this`, so it is preferable to use normal functions for methods that depend on `this`.
 
 ---
 
-## **6. Métodos útiles para objetos**
+## **6. Useful methods for objects**
 
 ```js
 const person = {
@@ -170,7 +170,7 @@ const person = {
 
 ### **6.1. `Object.keys()`**
 
-Devuelve un array con las claves del objeto.
+Returns an array with the keys of the object.
 
 ```js
 console.log(Object.keys(person)); // Salida: ["firstName", "lastName", "age", "isStudent"]
@@ -178,7 +178,7 @@ console.log(Object.keys(person)); // Salida: ["firstName", "lastName", "age", "i
 
 ### **6.2. `Object.values()`**
 
-Devuelve un array con los valores del objeto.
+Returns an array with the values of the object.
 
 ```js
 console.log(Object.values(person)); // Salida: ["Ana", "García", 30, false]
@@ -186,7 +186,7 @@ console.log(Object.values(person)); // Salida: ["Ana", "García", 30, false]
 
 ### **6.3. `Object.entries()`**
 
-Devuelve un array de arrays con pares clave-valor.
+Returns an array of arrays with key-value pairs.
 
 ```js
 console.log(Object.entries(person));
@@ -195,7 +195,7 @@ console.log(Object.entries(person));
 
 ### **6.4. `hasOwnProperty()`**
 
-Verifica si el objeto tiene una propiedad específica.
+Checks if the object has a specific property.
 
 ```js
 console.log(person.hasOwnProperty("age")); // Salida: true
@@ -203,13 +203,13 @@ console.log(person.hasOwnProperty("age")); // Salida: true
 
 ---
 
-[![Métodos de los objetos y funciones constructoras](https://img.youtube.com/vi/8G3gSkERg0o/0.jpg)](https://www.youtube.com/watch?v=8G3gSkERg0o&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Object methods and constructor functions](https://img.youtube.com/vi/8G3gSkERg0o/0.jpg)](https://www.youtube.com/watch?v=8G3gSkERg0o&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **7. Desestructuración de objetos**
+## **7. Destructuring objects**
 
-Permite extraer propiedades de un objeto y asignarlas a variables.
+It allows extracting properties from an object and assigning them to variables.
 
 ```js
 const { firstName, age } = person;
@@ -217,7 +217,7 @@ console.log(firstName); // Salida: Ana
 console.log(age); // Salida: 30
 ```
 
-También puedes asignar nuevos nombres a las variables:
+You can also assign new names to variables:
 
 ```js
 const { firstName: name, age: years } = person;
@@ -231,8 +231,8 @@ console.log(years); // Salida: 30
 
 ---
 
-## **8. Conclusión**
+## **8. Conclusion**
 
-Los objetos en JavaScript son una herramienta poderosa para estructurar y manipular datos complejos. Con la capacidad de agregar métodos, heredar propiedades y utilizar clases, los objetos forman la base de muchas aplicaciones modernas.
+Objects in JavaScript are a powerful tool for structuring and manipulating complex data. With the ability to add methods, inherit properties, and use classes, objects form the basis of many modern applications.
 
-En el próximo tema, profundizaremos en los **arrays** y cómo trabajar eficientemente con colecciones de datos en JavaScript.
+In the next topic, we will delve into **arrays** and how to efficiently work with data collections in JavaScript.

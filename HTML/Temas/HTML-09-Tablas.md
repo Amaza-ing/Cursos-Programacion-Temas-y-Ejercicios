@@ -1,21 +1,21 @@
-# **Tema 9: Tablas en HTML - Organización de datos**
+# **Topic 9: Tables in HTML - Data Organization**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Las tablas en HTML permiten organizar y mostrar datos en filas y columnas. Son útiles para mostrar información estructurada de manera clara y comprensible.
+HTML tables allow you to organize and display data in rows and columns. They are useful for displaying structured information in a clear and understandable way.
 
 ---
 
-## **2. Creación de tablas con `<table>`, `<tr>`, `<td>`, `<th>`**
+## **2. Creating tables with `<table>`, `<tr>`, `<td>`, `<th>`**
 
-Una tabla en HTML se construye utilizando diferentes etiquetas:
+A table in HTML is built using different tags:
 
-- `<table>`: Define el inicio y fin de la tabla.
-- `<tr>` (Table Row): Representa una fila en la tabla.
-- `<td>` (Table Data): Define una celda de datos dentro de una fila.
-- `<th>` (Table Header): Define una celda de encabezado dentro de una fila.
+- `<table>`: Defines the start and end of the table.
+- `<tr>` (Table Row): Represents a row in the table.
+- `<td>` (Table Data): Defines a data cell within a row.
+- `<th>` (Table Header): Defines a header cell within a row.
 
-### **Ejemplo básico de una tabla:**
+### **Basic example of a table:**
 
 ```html
 <table border="1">
@@ -39,14 +39,14 @@ Una tabla en HTML se construye utilizando diferentes etiquetas:
 
 ---
 
-## **3. Uso de `colspan` y `rowspan` para fusionar celdas**
+## **3. Using `colspan` and `rowspan` to merge cells**
 
-En algunas ocasiones, es necesario fusionar celdas en una tabla. Para ello, utilizamos:
+Sometimes it is necessary to merge cells in a table. To do this, we use:
 
-- **`colspan`**: Extiende una celda en varias columnas.
-- **`rowspan`**: Extiende una celda en varias filas.
+- **`colspan`**: Extends a cell into multiple columns.
+- **`rowspan`**: Extends a cell into multiple rows.
 
-### **Ejemplo de uso de `colspan`:**
+### **Example of use of `colspan`:**
 
 ```html
 <table border="1">
@@ -60,7 +60,7 @@ En algunas ocasiones, es necesario fusionar celdas en una tabla. Para ello, util
 </table>
 ```
 
-### **Ejemplo de uso de `rowspan`:**
+### **Example of use of `rowspan`:**
 
 ```html
 <table border="1">
@@ -76,11 +76,11 @@ En algunas ocasiones, es necesario fusionar celdas en una tabla. Para ello, util
 
 ---
 
-## **4. Aplicación de estilos básicos a tablas**
+## **4. Applying basic styles to tables**
 
-Las tablas pueden personalizarse con CSS para mejorar su apariencia.
+Tables can be customized with CSS to improve their appearance.
 
-### **Ejemplo de estilos básicos con CSS:**
+### **Example of basic styles with CSS:**
 
 ```html
 <style>
@@ -102,17 +102,17 @@ Las tablas pueden personalizarse con CSS para mejorar su apariencia.
 
 ---
 
-[![Tablas en HTML](https://img.youtube.com/vi/mgop_khNu8A/0.jpg)](https://www.youtube.com/watch?v=mgop_khNu8A&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Tables in HTML](https://img.youtube.com/vi/mgop_khNu8A/0.jpg)](https://www.youtube.com/watch?v=mgop_khNu8A&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **5. Buenas prácticas en el uso de tablas en HTML**
+## **5. Good practices in using tables in HTML**
 
-- Utilizar **encabezados `<th>`** para mejorar la accesibilidad.
-- Emplear **`colspan` y `rowspan`** solo cuando sea necesario.
-- Evitar tablas demasiado complejas para facilitar su lectura.
-- Aplicar **CSS** para mejorar la visualización de la tabla.
+- Use **`<th>` headers** to improve accessibility.
+- Use **`colspan` and `rowspan`** only when necessary.
+- Avoid tables that are too complex to make them easier to read.
+- Apply **CSS** to improve the table display.
 
 ---
 
-En el próximo tema, exploraremos **los formularios en HTML**, su estructura y cómo capturar datos del usuario de manera efectiva.
+In the next topic, we will explore **HTML forms**, their structure, and how to capture user data effectively.

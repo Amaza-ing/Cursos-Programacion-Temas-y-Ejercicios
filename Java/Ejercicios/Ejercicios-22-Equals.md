@@ -1,16 +1,16 @@
-# Ejercicios - Tema 22: `equals`, `hashCode` y `toString`
+# Exercises - Topic 22: `equals`, `hashCode` and `toString`
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **`equals`, `hashCode`, `toString`, comparación de objetos y uso en colecciones**.
+Below you will find **10 practical exercises** to work with **`equals`, `hashCode`, `toString`, object comparison and use in collections**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Comparar con `==`
+## Exercise 1: Compare with `==`
 
-Crea dos objetos `Customer` con el mismo nombre y compáralos con `==`.
+Create two `Customer` objects with the same name and compare them with `==`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Customer {
@@ -35,11 +35,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Sobrescribir `equals`
+## Exercise 2: Overwrite `equals`
 
-Crea una clase `Customer` con `email`. Dos clientes deben ser iguales si tienen el mismo email.
+Create a class `Customer` with `email`. Two clients must be the same if they have the same email.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Objects;
@@ -71,11 +71,11 @@ public class Customer {
 
 ---
 
-## Ejercicio 3: Añadir `hashCode`
+## Exercise 3: Add `hashCode`
 
-Añade `hashCode()` a la clase anterior usando `Objects.hash(email)`.
+Add `hashCode()` to the above class using `Objects.hash(email)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Objects;
@@ -112,11 +112,11 @@ public class Customer {
 
 ---
 
-## Ejercicio 4: Duplicados en `HashSet`
+## Exercise 4: Duplicates in `HashSet`
 
-Crea una clase `Course` con `code`, sobrescribe `equals` y `hashCode`, y comprueba que un `HashSet` no duplica cursos con el mismo código.
+Create a class `Course` with `code`, override `equals` and `hashCode`, and check that an `HashSet` does not duplicate courses with the same code.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashSet;
@@ -165,11 +165,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Sobrescribir `toString`
+## Exercise 5: Overwrite `toString`
 
-Crea una clase `Movie` con `title` y `year`. Sobrescribe `toString()`.
+Create a class `Movie` with `title` and `year`. Overwrites `toString()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Movie {
@@ -192,11 +192,11 @@ public class Movie {
 
 ---
 
-## Ejercicio 6: Comparar valores `null`
+## Exercise 6: Compare `null` values
 
-Crea una clase `Tag` con `name` y usa `Objects.equals` en `equals`.
+Create a class `Tag` with `name` and use `Objects.equals` in `equals`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Objects;
@@ -233,11 +233,11 @@ public class Tag {
 
 ---
 
-## Ejercicio 7: Comparar `double`
+## Exercise 7: Compare `double`
 
-Crea una clase `Measurement` con `double value` y compara el valor con `Double.compare`.
+Create a class `Measurement` with `double value` and compare the value with `Double.compare`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Objects;
@@ -274,11 +274,11 @@ public class Measurement {
 
 ---
 
-## Ejercicio 8: Igualdad por id
+## Exercise 8: Equality by id
 
-Crea una clase `Employee` con `id`, `name` y `department`. Usa solo `id` para `equals` y `hashCode`.
+Create a class `Employee` with `id`, `name`, and `department`. Use only `id` for `equals` and `hashCode`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Objects;
@@ -319,11 +319,11 @@ public class Employee {
 
 ---
 
-## Ejercicio 9: Lista con `toString`
+## Exercise 9: List with `toString`
 
-Crea una clase `Task` con `toString`, añade objetos a una lista e imprime la lista.
+Create a class `Task` with `toString`, add objects to a list, and print the list.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -359,11 +359,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Clase completa
+## Exercise 10: Complete class
 
-Crea una clase `LibraryCard` con `equals`, `hashCode` y `toString`.
+Create a class `LibraryCard` with `equals`, `hashCode`, and `toString`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Objects;

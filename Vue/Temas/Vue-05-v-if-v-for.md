@@ -1,16 +1,16 @@
-# **Tema 5: Estructuras de Control Condicional y Listas dinámicas en Vue.js**
+# **Topic 5: Conditional Control Structures and Dynamic Lists in Vue.js**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Vue.js, podemos controlar qué elementos se muestran y cómo se muestran utilizando **estructuras de control condicional** y **directivas para listas dinámicas**. Estas herramientas son esenciales para crear interfaces dinámicas y adaptables.
+In Vue.js, we can control which elements are displayed and how they are displayed using **conditional control structures** and **directives for dynamic lists**. These tools are essential for creating dynamic and adaptable interfaces.
 
 ---
 
-## **2. Directivas condicionales: v-if, v-else-if y v-else**
+## **2. Conditional directives: v-if, v-else-if and v-else**
 
-Vue proporciona la directiva `v-if` para mostrar u ocultar elementos de forma condicional.
+Vue provides the `v-if` directive to conditionally show or hide elements.
 
-### Ejemplo básico
+### Basic example
 
 ```vue
 <script setup>
@@ -35,15 +35,15 @@ p {
 
 ---
 
-[![Directiva v-if](https://img.youtube.com/vi/iSxPEkS4P2s/0.jpg)](https://www.youtube.com/watch?v=iSxPEkS4P2s&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Directive v-if](https://img.youtube.com/vi/iSxPEkS4P2s/0.jpg)](https://www.youtube.com/watch?v=iSxPEkS4P2s&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **3. Mostrar listas dinámicas con v-for**
+## **3. Show dynamic lists with v-for**
 
-La directiva `v-for` permite recorrer arrays y mostrar cada elemento en el DOM.
+The `v-for` directive allows you to loop through arrays and display each element in the DOM.
 
-### Ejemplo básico
+### Basic example
 
 ```vue
 <script setup>
@@ -63,23 +63,23 @@ li {
 </style>
 ```
 
-Cuando usamos `v-for` es importante dar un valor adecuado a la propiedad `key`, ya que esta propiedad es la que lleva el control de cada elemento de la lista. El valor de key debe ser único para cada elemento.
+When we use `v-for` it is important to give an appropriate value to the `key` property, since this property is what controls each element in the list. The key value must be unique for each element.
 
 ---
 
-[![Listas dinámicas v-for](https://img.youtube.com/vi/RUQ5RffUh5o/0.jpg)](https://www.youtube.com/watch?v=RUQ5RffUh5o&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Dynamic lists v-for](https://img.youtube.com/vi/RUQ5RffUh5o/0.jpg)](https://www.youtube.com/watch?v=RUQ5RffUh5o&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-[![Index en v-for](https://img.youtube.com/vi/vqrNhPDhDnA/0.jpg)](https://www.youtube.com/watch?v=vqrNhPDhDnA&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Index in v-for](https://img.youtube.com/vi/vqrNhPDhDnA/0.jpg)](https://www.youtube.com/watch?v=vqrNhPDhDnA&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **4. Listas de objetos y visualización compleja**
+## **4. Object Lists and Complex Display**
 
-Las listas pueden contener objetos con múltiples propiedades, y podemos mostrar esas propiedades fácilmente.
+Lists can contain objects with multiple properties, and we can display those properties easily.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -119,19 +119,19 @@ td {
 </style>
 ```
 
-Cuando utilizamos `v-for` con objetos es muy común utilizar el campo `id` u otro campo que tenga un valor único para la propiedad `key`.
+When we use `v-for` with objects it is very common to use the `id` field or another field that has a unique value for the `key` property.
 
 ---
 
-[![Listas de objetos con v-for](https://img.youtube.com/vi/jyTqcRGQpSY/0.jpg)](https://www.youtube.com/watch?v=jyTqcRGQpSY&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Lists of objects with v-for](https://img.youtube.com/vi/jyTqcRGQpSY/0.jpg)](https://www.youtube.com/watch?v=jyTqcRGQpSY&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **5. v-for con objetos (propiedades dinámicas)**
+## **5. v-for with objects (dynamic properties)**
 
-También se puede usar `v-for` para recorrer las propiedades de un objeto.
+`v-for` can also be used to loop through the properties of an object.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -157,15 +157,15 @@ li {
 
 ---
 
-## Resumen
+## Summary
 
-| Directiva   | Uso                                                                    |
+| Directive | Usage |
 | ----------- | ---------------------------------------------------------------------- |
-| `v-if`      | Muestra u oculta elementos según una condición                         |
-| `v-else-if` | Encadena condiciones alternativas                                      |
-| `v-else`    | Define el bloque final cuando no se cumplen las condiciones anteriores |
-| `v-for`     | Recorre arrays u objetos mostrando sus elementos                       |
+| `v-if` | Show or hide elements based on a condition |
+| `v-else-if` | Chain alternative conditions |
+| `v-else` | Defines the final block when the previous conditions are not met |
+| `v-for` | Cycle through arrays or objects showing their elements |
 
 ---
 
-En el próximo tema exploraremos **Estilo y Clases Dinámicas en Vue.js**, para aprender a aplicar clases y estilos de forma condicional y reactiva.
+In the next topic we will explore **Styling and Dynamic Classes in Vue.js**, to learn how to apply classes and styles conditionally and reactively.

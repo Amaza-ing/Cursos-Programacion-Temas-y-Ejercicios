@@ -1,90 +1,95 @@
-# **Tema 1: Introducción a Angular y Configuración del Entorno**
+# **Topic 1: Introduction to Angular and Environment Configuration**
 
-## **1. ¿Qué es Angular?**
+## **1. What is Angular?**
 
-Angular es un framework de desarrollo web creado por Google, basado en TypeScript. Permite construir aplicaciones web escalables, modulares y mantenibles.
+Angular is a web development framework created by Google, based on TypeScript. It allows you to build scalable, modular and maintainable web applications.
 
-### **Características clave de Angular:**
+### **Key Features of Angular:**
 
-- Basado en **TypeScript**, un superset de JavaScript.
-- Utiliza un sistema de **componentes** para construir interfaces.
-- Ofrece **vinculación de datos bidireccional**.
-- Soporta **enrutamiento** y **gestión de estado**.
-- Cuenta con una arquitectura modular basada en **módulos y servicios**.
+- Based on **TypeScript**, a JavaScript superset.
+- Uses a system of **components** to build interfaces.
+- Offers **bi-directional data linking**.
+- Supports **routing** and **state management**.
+- It has a modular architecture based on **modules and services**.
 
 ---
 
-## **2. Instalación de Angular CLI**
+## **2. Installing Angular CLI**
 
-Angular CLI (Command Line Interface) es la herramienta oficial para gestionar proyectos en Angular.
+Angular CLI (Command Line Interface) is the official tool for managing projects in Angular.
 
-### **Paso 1: Instalar Angular CLI**
+### **Step 1: Install Angular CLI**
 
-Para instalar Angular CLI globalmente en tu sistema, ejecuta el siguiente comando en la terminal:
+To install Angular CLI globally on your system, run the following command in the terminal:
 
 ```sh
 npm install -g @angular/cli
 ```
 
-> Nota: Se requiere tener instalado Node.js y npm. Puedes descargarlo desde [nodejs.org](https://nodejs.org/).
 
-## **3. Verificación de la instalación**
+> Note: It is required to have Node.js and npm installed. You can download it from [nodejs.org](https://nodejs.org/).
 
-Una vez instalado Angular CLI, verifica que la instalación se haya realizado correctamente ejecutando el siguiente comando en la terminal:
+## **3. Installation Verification**
+
+Once Angular CLI is installed, verify that the installation was successful by running the following command in the terminal:
 
 ```sh
 ng version
 ```
 
-Este comando mostrará la versión instalada de Angular CLI, junto con otras dependencias del sistema.
+
+This command will display the installed version of Angular CLI, along with other system dependencies.
 
 ---
 
-## **4. Creación de un nuevo proyecto Angular**
+## **4. Creating a new Angular project**
 
-Para crear un nuevo proyecto en Angular, usa el siguiente comando:
+To create a new project in Angular, use the following command:
 
 ```sh
 ng new my-project
 ```
 
-### **Opciones del comando:**
 
-- `my-project`: Nombre del proyecto (puedes cambiarlo por el que prefieras).
-- Durante la creación, se te preguntará:
-  - El tipo de estilos a usar (**CSS, SCSS, SASS, LESS**), puedes seleccionar `CSS` para comenzar.
-  - Si deseas incluir **SSR** (elige `No` a no ser que quieras Server Side Rendering).
+### **Command options:**
 
-Este comando generará la estructura base de un proyecto Angular en la carpeta `my-project`.
+- `my-project`: Project name (you can change it to whatever you prefer).
+- During creation, you will be asked:
+  - The type of styles to use (**CSS, SCSS, SASS, LESS**), you can select `CSS` to start.
+  - If you want to include **SSR** (choose `No` unless you want Server Side Rendering).
+
+This command will generate the base structure of an Angular project in the `my-project` folder.
 
 ---
 
-## **5. Levantar el servidor de desarrollo**
+## **5. Raise the development server**
 
-Una vez creado el proyecto, navega dentro de la carpeta del proyecto y ejecuta:
+Once the project is created, navigate inside the project folder and run:
 
 ```sh
 cd my-project
 ng serve
 ```
 
-Esto iniciará un servidor local y podrás acceder a la aplicación en tu navegador en la siguiente dirección:
+
+This will start a local server and you can access the application in your browser at the following address:
 
 ```
 http://localhost:4200/
 ```
 
-Cada cambio que realices en el código se reflejará automáticamente en el navegador.
+
+Every change you make to the code will automatically be reflected in the browser.
 
 ---
 
-[![Cómo empezar con Angular](https://img.youtube.com/vi/K8BqmCUqrME/0.jpg)](https://www.youtube.com/watch?v=K8BqmCUqrME&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+[![How to get started with Angular](https://img.youtube.com/vi/K8BqmCUqrME/0.jpg)](https://www.youtube.com/watch?v=K8BqmCUqrME&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **6. Estructura de archivos y carpetas en un proyecto Angular**
+## **6. File and folder structure in an Angular project**
 
-Un proyecto Angular generado con `ng new` tiene la siguiente estructura de archivos:
+An Angular project generated with `ng new` has the following file structure:
 
 ```
 my-project/
@@ -101,50 +106,53 @@ my-project/
 │── Otros ficheros       # Otros ficheros de configuración
 ```
 
-### **Explicación breve de los archivos clave:**
 
-- **`src/app/`**: Contiene los componentes, módulos y servicios de la aplicación.
-- **`main.ts`**: Archivo de arranque de la aplicación.
-- **`index.html`**: Página principal donde se monta la aplicación Angular.
-- **`styles.css`**: Archivo global de estilos.
-- **`angular.json`**: Archivo de configuración del proyecto Angular.
+### **Brief explanation of key files:**
 
----
-
-[![Estructura de Ficheros y Carpetas](https://img.youtube.com/vi/jwCiqmOKKKo/0.jpg)](https://www.youtube.com/watch?v=jwCiqmOKKKo&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+- **`src/app/`**: Contains the components, modules and services of the application.
+- **`main.ts`**: Application startup file.
+- **`index.html`**: Main page where the Angular application is mounted.
+- **`styles.css`**: Global style file.
+- **`angular.json`**: Angular project configuration file.
 
 ---
 
-## **7. Extensión Angular Language Service**
-
-Añade la extensión Angular Language Service en Visual Studio Code para desarrollar aplicaciones en Angular con más facilidad.
+[![File and Folder Structure](https://img.youtube.com/vi/jwCiqmOKKKo/0.jpg)](https://www.youtube.com/watch?v=jwCiqmOKKKo&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-[![Extensión Angular Language Service](https://img.youtube.com/vi/llHGjwLP7-4/0.jpg)](https://www.youtube.com/watch?v=llHGjwLP7-4&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+## **7. Angular Language Service Extension**
+
+Add the Angular Language Service extension to Visual Studio Code to make developing applications in Angular easier.
+
+---
+[![Angular Language Service Extension](https://img.youtube.com/vi/llHGjwLP7-4/0.jpg)](https://www.youtube.com/watch?v=llHGjwLP7-4&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## Comandos importantes
+## Important commands
 
-Instalar Angular
+Install Angular
 
 ```sh
 npm install -g @angular/cli
 ```
 
-Creación de nuevo proyecto
+
+Creation of new project
 
 ```sh
 ng new my-project
 ```
 
-Levantar el proyecto
+
+Raise the project
 
 ```sh
 ng serve
 ```
 
+
 ---
 
-En el próximo tema, exploraremos en profundidad los **componentes en Angular** y cómo estructurar nuestra aplicación correctamente.
+In the next topic, we will explore in depth **components in Angular** and how to structure our application correctly.

@@ -1,29 +1,29 @@
-# **Creación de un Página Completa con Vue.js**
+# **Creating a Full Page with Vue.js**
 
-## **App de Notas**
+## **Notes App**
 
-En los siguientes videos crearemos una página web completa para una App de notas usando todo lo aprendido en este curso de Vue.js
+In the following videos we will create a complete web page for a Notes App using everything learned in this Vue.js course
 
-### Parte 1. Cómo empezar una web.
-
----
-
-[![App de Notas 1/3](https://img.youtube.com/vi/GslcO7gQQBE/0.jpg)](https://www.youtube.com/watch?v=GslcO7gQQBE&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+### Part 1. How to start a website.
 
 ---
 
-### Parte 2. Formulario y persistencia.
+[![Notes App 1/3](https://img.youtube.com/vi/GslcO7gQQBE/0.jpg)](https://www.youtube.com/watch?v=GslcO7gQQBE&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-[![App de Notas 2/3](https://img.youtube.com/vi/d-08LuA377U/0.jpg)](https://www.youtube.com/watch?v=d-08LuA377U&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+### Part 2. Form and persistence.
 
 ---
 
-### Parte 3. Conexión a una API.
+[![Notes App 2/3](https://img.youtube.com/vi/d-08LuA377U/0.jpg)](https://www.youtube.com/watch?v=d-08LuA377U&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-[![App de Notas 3/3](https://img.youtube.com/vi/GBxXdBCaA0Q/0.jpg)](https://www.youtube.com/watch?v=GBxXdBCaA0Q&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+### Part 3. Connecting to an API.
+
+---
+
+[![Notes App 3/3](https://img.youtube.com/vi/GBxXdBCaA0Q/0.jpg)](https://www.youtube.com/watch?v=GBxXdBCaA0Q&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---

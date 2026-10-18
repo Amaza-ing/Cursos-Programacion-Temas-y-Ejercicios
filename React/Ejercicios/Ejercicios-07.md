@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 7: useState**
+# **Exercises - Topic 7: useState**
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre `useState`.
+Below you will find **10 practical exercises** on `useState`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Contador con decremento**
+## **Exercise 1: Counter with decrement**
 
-Crea un componente `Stepper.jsx` que tenga:
+Create an `Stepper.jsx` component that has:
 
-- Un estado `count` con valor inicial `5`.
-- Un botón **+** que incremente.
-- Un botón **-** que decrementa.
+- A state `count` with initial value `5`.
+- A *+** button that increases.
+- A **-** button that decreases.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -46,15 +46,15 @@ export default Stepper;
 
 ---
 
-## **Ejercicio 2: Reset del estado**
+## **Exercise 2: State reset**
 
-Crea un componente `ResettableCounter.jsx` con:
+Create an `ResettableCounter.jsx` component with:
 
-- Estado `count` inicial `0`.
-- Botón **Add** que incremente.
-- Botón **Reset** que lo ponga en `0`.
+- Initial `count` state `0`.
+- **Add** button that increases.
+- **Reset** button to set it to `0`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -86,18 +86,18 @@ export default ResettableCounter;
 
 ---
 
-## **Ejercicio 3: Toggle con texto dinámico**
+## **Exercise 3: Toggle with dynamic text**
 
-Crea un componente `PowerSwitch.jsx` con:
+Create an `PowerSwitch.jsx` component with:
 
-- Estado booleano `isOn` inicial `false`.
-- Un botón que cambie el estado.
-- Un texto que muestre:
+- Initial `isOn` boolean state `false`.
+- A button that changes the state.
+- A text that shows:
 
-  - **"Power: ON"** si `isOn` es `true`.
-  - **"Power: OFF"** si `isOn` es `false`.
+  - **"Power: ON"** if `isOn` is `true`.
+  - **"Power: OFF"** if `isOn` is `false`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -124,15 +124,15 @@ export default PowerSwitch;
 
 ---
 
-## **Ejercicio 4: Input controlado con contador de caracteres**
+## **Exercise 4: Controlled input with character counter**
 
-Crea un componente `BioInput.jsx` con:
+Create an `BioInput.jsx` component with:
 
-- Estado `bio` inicial `""`.
-- Un input controlado.
-- Un `p` que muestre: **"Chars: X"**, donde X es `bio.length`.
+- Initial `bio` state `""`.
+- A controlled input.
+- An `p` showing: **"Chars: X"**, where X is `bio.length`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -159,17 +159,17 @@ export default BioInput;
 
 ---
 
-## **Ejercicio 5: Guardar un número desde un input**
+## **Exercise 5: Save a number from an input**
 
-Crea un componente `AgeInput.jsx` con:
+Create an `AgeInput.jsx` component with:
 
-- Estado `age` inicial `0`.
-- Un input de tipo `number` controlado.
-- Un `p` que muestre: **"Age: {age}"**.
+- Initial `age` state `0`.
+- A controlled `number` type input.
+- An `p` showing: **"Age: {age}"**.
 
-Pista: `event.target.value` llega como string.
+Hint: `event.target.value` arrives as a string.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -196,9 +196,9 @@ export default AgeInput;
 
 ---
 
-## **Ejercicio 6: Actualización incorrecta (corrige el bug)**
+## **Exercise 6: Incorrect update (fixes the bug)**
 
-Este componente intenta incrementar 2 veces, pero no siempre funciona como esperas:
+This component tries to increment 2 times, but it doesn't always work as you expect:
 
 ```js
 import { useState } from "react";
@@ -217,11 +217,11 @@ function DoubleAdd() {
 export default DoubleAdd;
 ```
 
-Corrígelo para que realmente sume 2.
+Correct it so that it actually adds up to 2.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Hay que usar la forma funcional:
+You have to use the functional form:
 
 ```js
 import { useState } from "react";
@@ -244,15 +244,15 @@ export default DoubleAdd;
 
 ---
 
-## **Ejercicio 7: Limpiar un input con un botón**
+## **Exercise 7: Clear an input with a button**
 
-Crea un componente `ClearableInput.jsx` con:
+Create an `ClearableInput.jsx` component with:
 
-- Estado `text` inicial `""`.
-- Input controlado.
-- Botón **Clear** que ponga `text` en `""`.
+- Initial `text` state `""`.
+- Controlled input.
+- **Clear** button that puts `text` in `""`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -283,15 +283,15 @@ export default ClearableInput;
 
 ---
 
-## **Ejercicio 8: Alternar entre dos textos**
+## **Exercise 8: Switch between two texts**
 
-Crea un componente `LanguageToggle.jsx` con:
+Create an `LanguageToggle.jsx` component with:
 
-- Estado `language` inicial `"EN"`.
-- Un botón que alterne entre `"EN"` y `"ES"`.
-- Un `p` que muestre: **"Language: EN"** o **"Language: ES"**.
+- Initial `language` state `"EN"`.
+- A button that toggles between `"EN"` and `"ES"`.
+- An `p` showing: **"Language: EN"** or **"Language: ES"**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -318,14 +318,13 @@ export default LanguageToggle;
 
 ---
 
-## **Ejercicio 9: Evitar estado negativo**
+## **Exercise 9: Avoid negative state**
 
-Crea un componente `NonNegativeCounter.jsx` con:
+Create an `NonNegativeCounter.jsx` component with:
 
-- Estado `count` inicial `0`.
-- Botón **-** que reste, pero nunca deje el contador por debajo de `0`.
-
-<details><summary>Mostrar Solución</summary>
+- Initial `count` state `0`.
+- **-** button that subtracts, but never leave the counter below `0`.
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -357,11 +356,11 @@ export default NonNegativeCounter;
 
 ---
 
-## **Ejercicio 10: Mini-caso de decisión (elige la mejor forma)**
+## **Exercise 10: Mini-decision case (choose the best way)**
 
-Quieres actualizar un estado `count` basándote en el valor anterior.
+You want to update an `count` status based on the previous value.
 
-¿Cuál es la forma más recomendable?
+What is the most recommended way?
 
 1.
 
@@ -375,15 +374,15 @@ setCount(count + 1);
 setCount((prevCount) => prevCount + 1);
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-La forma más recomendable es la **2**:
+The most recommended way is **2**:
 
 ```js
 setCount((prevCount) => prevCount + 1);
 ```
 
-Motivo: es más segura cuando el nuevo estado depende del anterior.
+Reason: It is safer when the new state depends on the previous one.
 
 </details>
 

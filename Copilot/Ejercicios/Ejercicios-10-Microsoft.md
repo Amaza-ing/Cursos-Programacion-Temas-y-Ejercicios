@@ -1,167 +1,176 @@
-# Ejercicios - Tema 10: Microsoft Copilot en Windows y Edge
+# Exercises - Topic 10: Microsoft Copilot on Windows and Edge
 
-A continuación, encontrarás ejercicios prácticos para trabajar con Microsoft Copilot en Windows y Edge. Intenta resolverlos antes de consultar la solución.
+Below you will find practical exercises for working with Microsoft Copilot on Windows and Edge. Try to solve them before consulting the solution.
 
-## Ejercicio 1: Crear un prompt para resumir una página web
+## Exercise 1: Create a prompt to summarize a web page
 
-Imagina que estás leyendo una página web larga sobre tendencias de inteligencia artificial en empresas. Escribe un prompt para pedirle a Copilot en Edge que resuma la página y extraiga las ideas más importantes.
+Imagine that you are reading a long web page about artificial intelligence trends in companies. Write a prompt to ask Copilot in Edge to summarize the page and extract the most important ideas.
 
-El prompt debe pedir:
+The prompt should ask:
 
-- Un resumen breve.
-- Las 5 ideas principales.
-- Posibles aplicaciones profesionales.
-- Una advertencia sobre información que debería verificarse.
+- A brief summary.
+- The 5 main ideas.
+- Possible professional applications.
+- A warning about information that should be verified.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un posible prompt sería:
+A possible prompt would be:
 
 ```text
 Resume esta página web en un máximo de 10 líneas. Después, extrae las 5 ideas principales en forma de lista y explica brevemente cómo podrían aplicarse en un contexto profesional. Al final, indica qué datos, cifras o afirmaciones importantes debería verificar antes de usarlos en un informe.
 ```
 
-Este prompt es adecuado porque no se limita a pedir un resumen general. También indica el formato de la respuesta, pide una aplicación práctica y recuerda que la información generada debe revisarse antes de utilizarse profesionalmente.
+
+This prompt is appropriate because it does not limit itself to asking for a general summary. It also indicates the format of the response, asks for practical application, and remembers that the information generated must be reviewed before being used professionally.
 
 </details>
 
-## Ejercicio 2: Transformar información en una explicación sencilla
+## Exercise 2: Transform information into a simple explanation
 
-Supón que tienes abierto en Edge un artículo técnico sobre ciberseguridad y quieres entenderlo sin conocimientos avanzados. Escribe un prompt para pedirle a Copilot que lo explique de forma sencilla.
+Suppose you have a technical article on cybersecurity open in Edge and you want to understand it without advanced knowledge. Write a prompt to ask Copilot to explain it simply.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un posible prompt sería:
+A possible prompt would be:
 
 ```text
 Explícame el contenido de esta página como si estuviera empezando a estudiar ciberseguridad. Usa un lenguaje sencillo, evita tecnicismos innecesarios y añade ejemplos cotidianos para entender los conceptos principales.
 ```
 
-También podría añadirse una petición de estructura:
+
+A structure request could also be added:
 
 ```text
 Organiza la explicación en tres apartados: concepto principal, riesgos importantes y ejemplo práctico.
 ```
 
-La clave es adaptar el nivel de explicación al conocimiento del usuario y no pedir únicamente una traducción literal del contenido.
+
+The key is to adapt the level of explanation to the user's knowledge and not only ask for a literal translation of the content.
 
 </details>
 
-## Ejercicio 3: Preparar una búsqueda inteligente
+## Exercise 3: Prepare an intelligent search
 
-Quieres buscar información sobre herramientas de IA para mejorar la productividad de un equipo administrativo. Escribe un prompt para Copilot que ayude a organizar la búsqueda.
+You want to find information about AI tools to improve the productivity of an administrative team. Write a prompt for Copilot that helps organize the search.
 
-Debe incluir:
+Must include:
 
-- Qué tipo de herramientas buscar.
-- Criterios de comparación.
-- Una tabla final.
-- Recomendación de revisar las fuentes.
+- What type of tools to look for.
+- Comparison criteria.
+- A final table.
+- Recommendation to review sources.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un posible prompt sería:
+A possible prompt would be:
 
 ```text
 Ayúdame a buscar herramientas de inteligencia artificial para mejorar la productividad de un equipo administrativo. Organiza la información en una tabla con estas columnas: herramienta, uso principal, ventajas, posibles limitaciones, coste aproximado si está disponible y fuente consultada. Prioriza herramientas que sirvan para redactar documentos, resumir información, organizar tareas y preparar reuniones. Indica al final qué datos debería comprobar manualmente antes de tomar una decisión.
 ```
 
-Este prompt funciona porque convierte una búsqueda general en una comparación organizada. Además, pide fuentes y recuerda que los datos de precio, disponibilidad o características pueden cambiar.
+
+This prompt works because it turns a general search into an organized comparison. Also, ask for sources and remember that price, availability or feature data may change.
 
 </details>
 
-## Ejercicio 4: Detectar información sensible antes de usar Copilot
+## Exercise 4: Detect sensitive information before using Copilot
 
-Lee el siguiente caso:
+Read the following case:
 
-> Una trabajadora quiere usar Copilot para resumir un documento interno que contiene nombres de clientes, números de contrato, importes económicos y comentarios privados de reuniones.
+> A worker wants to use Copilot to summarize an internal document that contains client names, contract numbers, financial amounts, and private meeting comments.
 
-Indica qué debería hacer antes de copiar ese contenido en Copilot.
+Tells you what you should do before copying that content into Copilot.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Antes de usar Copilot, debería revisar si tiene permiso para introducir esa información en la herramienta. Además, debería eliminar o anonimizar los datos sensibles.
+Before using Copilot, you should check if you have permission to enter that information into the tool. Additionally, you should delete or anonymize sensitive data.
 
-Una respuesta adecuada sería:
+An appropriate answer would be:
 
-- No copiar directamente nombres reales de clientes.
-- Eliminar números de contrato, importes confidenciales y datos privados.
-- Sustituir datos reales por ejemplos ficticios si solo necesita ayuda con la estructura.
-- Consultar la política de la empresa sobre uso de IA.
-- Usar solo herramientas autorizadas por la organización.
-- Revisar el resultado antes de compartirlo.
+- Do not directly copy real names of clients.
+- Delete contract numbers, confidential amounts and private data.
+- Substitute real data for fictitious examples if you just need help with the structure.
+- Consult the company policy on the use of AI.
+- Use only tools authorized by the organization.
+- Review the result before sharing it.
 
-Por ejemplo, en lugar de introducir:
+For example, instead of entering:
 
 ```text
 El cliente Juan Pérez, contrato 4588-XZ, reclama una devolución de 12.500 €.
 ```
 
-Podría escribir:
+
+You could write:
 
 ```text
 Un cliente solicita una devolución económica asociada a un contrato. Resume el caso de forma profesional sin incluir datos personales.
 ```
 
+
 </details>
 
-## Ejercicio 5: Crear un flujo de trabajo con Copilot en Edge
+## Exercise 5: Create a workflow with Copilot in Edge
 
-Imagina que debes preparar una breve explicación sobre las ventajas y riesgos de usar IA generativa en una empresa. Describe paso a paso cómo usarías Copilot en Edge para ayudarte.
+Imagine that you must prepare a brief explanation about the advantages and risks of using generative AI in a company. Describe step by step how you would use Copilot in Edge to help you.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un posible flujo de trabajo sería:
+A possible workflow would be:
 
-1. Buscar páginas fiables sobre IA generativa en empresas.
-2. Abrir una página relevante en Microsoft Edge.
-3. Pedir a Copilot un resumen del contenido.
-4. Pedirle que extraiga ventajas y riesgos en dos listas separadas.
-5. Solicitar ejemplos prácticos de aplicación en una empresa.
-6. Comparar la información con otras fuentes.
-7. Pedir una versión más clara y breve para explicar oralmente.
-8. Revisar manualmente el contenido antes de utilizarlo.
+1. Search for reliable pages on generative AI in companies.
+2. Open a relevant page in Microsoft Edge.
+3. Ask Copilot for a summary of the content.
+4. Ask you to extract advantages and risks in two separate lists.
+5. Request practical examples of application in a company.
+6. Compare the information with other sources.
+7. Ask for a clearer and shorter version to explain orally.
+8. Manually review the content before using it.
 
-Un prompt posible sería:
+A possible prompt would be:
 
 ```text
 Resume esta página sobre IA generativa en empresas. Después, separa la información en dos apartados: ventajas y riesgos. Añade ejemplos concretos de uso empresarial y señala qué afirmaciones debería verificar con otras fuentes.
 ```
 
+
 </details>
 
-## Ejercicio 6: Mejorar un prompt demasiado general
+## Exercise 6: Improve a too general prompt
 
-Observa este prompt:
+Look at this prompt:
 
 ```text
 Háblame de Copilot.
 ```
 
-Mejóralo para que sirva para preparar una explicación breve sobre Microsoft Copilot en Windows y Edge para personas sin conocimientos técnicos.
+
+Enhance it to prepare a short explanation of Microsoft Copilot on Windows and Edge for non-technical people.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una versión mejorada sería:
+An improved version would be:
 
 ```text
 Prepara una explicación breve sobre Microsoft Copilot en Windows y Edge para personas sin conocimientos técnicos. Explica qué es, para qué puede servir, qué tareas puede ayudar a realizar y qué precauciones básicas deben tenerse en cuenta. Usa un tono claro, ejemplos sencillos y una extensión máxima de 300 palabras.
 ```
 
-Este prompt es mejor porque concreta:
 
-- El tema.
-- El público.
-- El objetivo.
-- El tono.
-- El tipo de contenido.
-- La extensión aproximada.
-- La necesidad de incluir precauciones.
+This prompt is better because it specifies:
+
+- The theme.
+- The public.
+- The objective.
+- The tone.
+- The type of content.
+- The approximate extension.
+- The need to include precautions.
 
 </details>

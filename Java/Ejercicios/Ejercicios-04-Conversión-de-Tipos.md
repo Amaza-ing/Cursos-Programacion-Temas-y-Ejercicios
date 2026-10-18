@@ -1,21 +1,21 @@
-# Ejercicios - Tema 4: Conversión de tipos (Java)
+# Exercises - Topic 4: Type conversion (Java)
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre conversión implícita, conversión explícita (casting), división entre enteros y conversión entre `String` y tipos numéricos.
+Below you will find **10 practical exercises** on implicit conversion, explicit conversion (casting), division between integers and conversion between `String` and numeric types.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Conversión implícita de `int` a `double`
+## Exercise 1: Implicit conversion from `int` to `double`
 
-Declara:
+Declares:
 
-- Una variable `points` de tipo `int` con valor `7`
-- Una variable `finalPoints` de tipo `double` que reciba el valor de `points`
+- A variable `points` of type `int` with value `7`
+- A variable `finalPoints` of type `double` that receives the value of `points`
 
-Imprime `finalPoints`.
+Print `finalPoints`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -32,16 +32,16 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Conversión explícita de `double` a `int`
+## Exercise 2: Explicit conversion from `double` to `int`
 
-Declara:
+Declares:
 
-- Una variable `price` de tipo `double` con valor `24.75`
+- A variable `price` of type `double` with value `24.75`
 
-Convierte ese valor a `int` y guárdalo en `roundedPrice`.  
-Imprime `roundedPrice`.
+Convert that value to `int` and save it to `roundedPrice`.  
+Print `roundedPrice`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -58,16 +58,16 @@ public class Main {
 
 ---
 
-## Ejercicio 3: División entre enteros (detecta el problema)
+## Exercise 3: Division by integers (detect the problem)
 
-Declara:
+Declares:
 
-- `totalScore` con valor `5`
-- `players` con valor `2`
+- `totalScore` with `5` value
+- `players` with `2` value
 
-Calcula la media **correcta** usando `double`.
+Calculate the **correct** mean using `double`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -85,9 +85,9 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Casting en el lugar incorrecto
+## Exercise 4: Casting in the wrong place
 
-Este código no da el resultado esperado. Corrígelo:
+This code does not give the expected result. Correct it:
 
 ```java
 int a = 7;
@@ -97,9 +97,9 @@ double result = (double) (a / b);
 System.out.println(result);
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-El problema es que la división ocurre antes del casting.
+The problem is that the division occurs before casting.
 
 ```java
 int a = 7;
@@ -113,15 +113,15 @@ System.out.println(result);
 
 ---
 
-## Ejercicio 5: Conversión de `char` a `int`
+## Exercise 5: Conversion from `char` to `int`
 
-Declara:
+Declares:
 
-- Un `char` llamado `symbol` con valor `'B'`
+- An `char` named `symbol` with value `'B'`
 
-Convierte ese carácter a `int` y muestra el resultado.
+Converts that character to `int` and displays the result.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -138,15 +138,15 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Conversión de `String` a `int`
+## Exercise 6: Conversion from `String` to `int`
 
-Declara:
+Declares:
 
-- Una variable `textValue` con valor `"15"`
+- A variable `textValue` with value `"15"`
 
-Convierte el texto a número y calcula `textValue + 5`.
+Convert text to number and calculate `textValue + 5`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -163,15 +163,15 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Conversión de `String` a `double`
+## Exercise 7: Conversion from `String` to `double`
 
-Declara:
+Declares:
 
-- `priceText` con valor `"9.99"`
+- `priceText` with `"9.99"` value
 
-Convierte el valor a `double` y multiplícalo por `2`.
+Convert the value to `double` and multiply it by `2`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -188,15 +188,15 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Convertir un número a `String`
+## Exercise 8: Convert a number to `String`
 
-Declara:
+Declares:
 
-- Una variable `level` de tipo `int` con valor `4`
+- A variable `level` of type `int` with value `4`
 
-Convierte ese valor a `String` y concaténalo con el texto `"Level: "`.
+Convert that value to `String` and concatenate it with the text `"Level: "`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -213,16 +213,16 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Casting peligroso
+## Exercise 9: Dangerous casting
 
-Declara:
+Declares:
 
-- Un `int` con valor `130`
+- An `int` with `130` value
 
-Haz un cast a `byte` y muestra el resultado.  
-Reflexiona sobre por qué el valor no es el esperado.
+Cast `byte` and show the result.  
+Reflect on why the value is not what you expected.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -235,28 +235,27 @@ public class Main {
 }
 ```
 
-El resultado no es correcto porque `byte` solo admite valores entre -128 y 127.
+The result is not correct because `byte` only supports values between -128 and 127.
 
 </details>
 
 ---
+## Exercise 10: Combined conversion into an expression
 
-## Ejercicio 10: Conversión combinada en una expresión
+Declares:
 
-Declara:
+- `hits` with `7` value
+- `attempts` with `3` value
 
-- `hits` con valor `7`
-- `attempts` con valor `3`
+Calculates the hit percentage as `double`.
 
-Calcula el porcentaje de aciertos como `double`.
-
-Resultado esperado:
+Expected result:
 
 ```
 2.3333333333333335
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {

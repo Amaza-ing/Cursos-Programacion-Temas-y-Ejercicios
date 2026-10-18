@@ -1,40 +1,40 @@
-# Tema 21. Interfaces
+# Topic 21. Interfaces
 
-## 1. Introducción
+## 1. Introduction
 
-En el tema anterior viste las **clases abstractas** y los **métodos abstractos**, que permiten crear una base común para varias clases hijas.
+In the previous topic you saw the **abstract classes** and **abstract methods**, which allow you to create a common base for several child classes.
 
-Ahora vamos a estudiar otro concepto fundamental de Java y de la Programación Orientada a Objetos:
+Now we are going to study another fundamental concept of Java and Object-Oriented Programming:
 
 - **Interfaces**
 
-Las interfaces sirven para definir un **contrato**: indican qué métodos debe tener una clase, sin obligar a compartir estado ni una implementación común completa.
+Interfaces serve to define a **contract**: they indicate what methods a class should have, without forcing the sharing of state or a complete common implementation.
 
-Esto es muy útil cuando varias clases distintas:
+This is very useful when several different classes:
 
-- no comparten una jerarquía clara de herencia
-- pero sí comparten un comportamiento esperado
+- do not share a clear inheritance hierarchy
+- but they do share an expected behavior
 
-Ejemplos típicos:
+Typical examples:
 
 - `Printable`
 - `Payable`
 - `Comparable`
 - `Runnable`
 
-Una interfaz permite decir:
+An interface allows you to say:
 
-> “Cualquier clase que implemente esto debe saber hacer estas operaciones”.
+> “Any class that implements this must know how to do these operations.”
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es una interfaz
-- Cómo se declara y cómo se implementa
-- Diferencias entre interfaz y clase abstracta
-- Qué son los métodos `default` y `static` en interfaces
-- Qué significa que una clase pueda implementar varias interfaces
-- Cómo usar interfaces con polimorfismo
-- Ejemplos reales y buenas prácticas
+- What is an interface
+- How it is declared and how it is implemented
+- Differences between interface and abstract class
+- What are the `default` and `static` methods in interfaces
+- What does it mean that a class can implement several interfaces?
+- How to use interfaces with polymorphism
+- Real examples and good practices
 
 ---
 
@@ -42,16 +42,16 @@ En este tema aprenderás:
 
 ---
 
-## 2. Qué es una interfaz
+## 2. What is an interface
 
-Una **interfaz** es un tipo especial de Java que define un contrato.
+An **interface** is a special type of Java that defines a contract.
 
-Ese contrato indica:
+That contract indicates:
 
-- qué métodos deben existir
-- pero no obliga a una implementación concreta clásica en todos los casos
+- what methods should exist
+- but does not force a classical concrete implementation in all cases
 
-Sintaxis básica:
+Basic syntax:
 
 ```java
 public interface Printable {
@@ -59,18 +59,18 @@ public interface Printable {
 }
 ```
 
-Esto significa:
+This means:
 
-- cualquier clase que implemente `Printable`
-- deberá tener un método `print()`
+- any class that implements `Printable`
+- must have an `print()` method
 
 ---
 
-## 3. Cómo implementar una interfaz
+## 3. How to implement an interface
 
-Una clase implementa una interfaz usando `implements`.
+A class implements an interface using `implements`.
 
-Ejemplo:
+Example:
 
 ```java
 public interface Printable {
@@ -87,7 +87,7 @@ public class Invoice implements Printable {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -100,39 +100,39 @@ public class Main {
 
 ---
 
-## 4. Interfaz como contrato, no como objeto “normal”
+## 4. Interface as a contract, not as a “normal” object
 
-Igual que una clase abstracta, una interfaz no se instancia directamente.
+Like an abstract class, an interface is not directly instantiated.
 
-Esto no se puede hacer:
+This cannot be done:
 
 ```java
 // Printable p = new Printable(); // error
 ```
 
-Pero sí puedes hacer:
+But you can do:
 
 ```java
 Printable p = new Invoice();
 p.print();
 ```
 
-Esto es polimorfismo: trabajas con la interfaz, no con la clase concreta.
+This is polymorphism: you work with the interface, not the concrete class.
 
 ---
 
-## 5. Qué pueden contener las interfaces
+## 5. What interfaces can contain
 
-En Java moderno, una interfaz puede contener:
+In modern Java, an interface can contain:
 
-- métodos abstractos
-- métodos `default`
-- métodos `static`
-- constantes (`public static final`)
+- abstract methods
+- `default` methods
+- `static` methods
+- constants (`public static final`)
 
-### 5.1. Método abstracto
+### 5.1. Abstract method
 
-Es el caso clásico:
+It is the classic case:
 
 ```java
 public interface Payable {
@@ -140,15 +140,15 @@ public interface Payable {
 }
 ```
 
-### 5.2. Constantes
+### 5.2. Constants
 
-Todo atributo declarado en una interfaz es, implícitamente:
+Every attribute declared in an interface is, implicitly:
 
 - `public`
 - `static`
 - `final`
 
-Ejemplo:
+Example:
 
 ```java
 public interface AppConfig {
@@ -156,7 +156,7 @@ public interface AppConfig {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 System.out.println(AppConfig.MAX_USERS);
@@ -164,11 +164,11 @@ System.out.println(AppConfig.MAX_USERS);
 
 ---
 
-## 6. Primer ejemplo completo: `Playable`
+## 6. First complete example: `Playable`
 
-Queremos que distintas clases sepan “reproducirse”.
+We want different classes to know how to “reproduce.”
 
-### 6.1. Interfaz
+### 6.1. Interface
 
 ```java
 public interface Playable {
@@ -176,7 +176,7 @@ public interface Playable {
 }
 ```
 
-### 6.2. Clases que implementan la interfaz
+### 6.2. Classes that implement the interface
 
 ```java
 public class Song implements Playable {
@@ -208,7 +208,7 @@ public class Video implements Playable {
 }
 ```
 
-### 6.3. Uso polimórfico
+### 6.3. Polymorphic use
 
 ```java
 import java.util.ArrayList;
@@ -228,78 +228,77 @@ public class Main {
 }
 ```
 
-Observa lo potente que es esto:
+Notice how powerful this is:
 
-- `Song` y `Video` no tienen por qué heredar de una misma clase concreta
-- pero ambas cumplen el contrato `Playable`
-- así puedes tratarlas de forma uniforme
+- `Song` and `Video` do not have to inherit from the same concrete class
+- but both fulfill the `Playable` contract
+- so you can treat them evenly
 
 ---
 
-## 7. Diferencia entre `extends` e `implements`
+## 7. Difference between `extends` and `implements`
 
-- `extends` se usa para heredar de una clase o extender otra interfaz
-- `implements` se usa cuando una clase implementa una interfaz
+- `extends` is used to inherit from a class or extend another interface
+- `implements` is used when a class implements an interface
 
-Ejemplo:
+Example:
 
 ```java
 public class Dog extends Animal implements Playable {
 }
 ```
 
-Aquí:
-
-- `Dog` hereda de `Animal`
-- `Dog` implementa `Playable`
+Here:
+- `Dog` inherits from `Animal`
+- `Dog` implements `Playable`
 
 ---
 
-## 8. Interfaz vs clase abstracta
+## 8. Interface vs abstract class
 
-Esta comparación es muy importante.
+This comparison is very important.
 
-### 8.1. Usa una clase abstracta cuando
+### 8.1. Use an abstract class when
 
-- quieres compartir estado común (atributos)
-- quieres reutilizar implementación común
-- existe una relación clara de herencia (_is-a_)
+- you want to share common status (attributes)
+- you want to reuse common implementation
+- there is a clear inheritance relationship (_is-a_)
 
-Ejemplo:
+Example:
 
 - `Animal`
 - `Employee`
 - `Shape`
 
-### 8.2. Usa una interfaz cuando
+### 8.2. Use an interface when
 
-- quieres definir capacidades o comportamientos
-- varias clases no relacionadas deben cumplir el mismo contrato
-- no necesitas compartir estado común obligatorio
+- you want to define capabilities or behaviors
+- several unrelated classes must fulfill the same contract
+- you don't need to share common status required
 
-Ejemplo:
+Example:
 
 - `Printable`
 - `Payable`
 - `Sortable`
 
-### 8.3. Regla práctica simple
+### 8.3. Simple rule of thumb
 
-- Clase abstracta = base común
-- Interfaz = capacidad o contrato
+- Abstract class = common base
+- Interface = capacity or contract
 
 ---
 
-## 9. Una clase puede implementar varias interfaces
+## 9. A class can implement multiple interfaces
 
-Aquí está una gran diferencia respecto a la herencia de clases.
+Here is a big difference regarding class inheritance.
 
-En Java:
+In Java:
 
-- una clase solo puede heredar de una clase
-- pero puede implementar varias interfaces
+- a class can only inherit from one class
+- but can implement multiple interfaces
 
-Ejemplo:
+Example:
 
 ```java
 public interface Printable {
@@ -327,7 +326,7 @@ public class Report implements Printable, Exportable {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -340,24 +339,24 @@ public class Main {
 }
 ```
 
-Esto es muy útil porque una clase puede tener varias “capacidades”.
+This is very useful because a class can have several “abilities”.
 
 ---
 
-## 10. Polimorfismo con interfaces
+## 10. Polymorphism with interfaces
 
-Igual que en herencia, las interfaces permiten polimorfismo.
+As in inheritance, interfaces allow polymorphism.
 
-Ejemplo:
+Example:
 
 ```java
 Printable p1 = new Report();
 Printable p2 = new Invoice();
 ```
 
-Si ambas clases implementan `Printable`, puedes tratarlas como `Printable`.
+If both classes implement `Printable`, you can treat them as `Printable`.
 
-### 10.1. Ejemplo completo
+### 10.1. Complete example
 
 ```java
 public interface Printable {
@@ -403,13 +402,13 @@ public class Main {
 
 ---
 
-## 11. Métodos `default` en interfaces
+## 11. `default` methods in interfaces
 
-Desde Java 8, una interfaz puede tener métodos `default`, es decir, métodos con implementación por defecto.
+Since Java 8, an interface can have `default` methods, that is, methods with default implementation.
 
-Esto permite añadir comportamiento común sin obligar a que todas las clases lo reescriban.
+This allows common behavior to be added without forcing all classes to rewrite it.
 
-Ejemplo:
+Example:
 
 ```java
 public interface Greeter {
@@ -421,7 +420,7 @@ public interface Greeter {
 }
 ```
 
-Clase que implementa:
+Class that implements:
 
 ```java
 public class Person implements Greeter {
@@ -432,7 +431,7 @@ public class Person implements Greeter {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -445,14 +444,14 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- `greet()` debe implementarse
-- `sayGoodbye()` ya viene “regalado” por la interfaz
+- `greet()` must be implemented
+- `sayGoodbye()` is already “gifted” by the interface
 
-### 11.1. Sobrescribir un método `default`
+### 11.1. Overriding an `default` method
 
-También puedes sobrescribirlo:
+You can also overwrite it:
 
 ```java
 public class FriendlyPerson implements Greeter {
@@ -470,13 +469,13 @@ public class FriendlyPerson implements Greeter {
 
 ---
 
-## 12. Métodos `static` en interfaces
+## 12. `static` methods in interfaces
 
-Una interfaz también puede tener métodos estáticos.
+An interface can also have static methods.
 
-Se llaman con el nombre de la interfaz, no con el objeto.
+They are called with the name of the interface, not the object.
 
-Ejemplo:
+Example:
 
 ```java
 public interface TemperatureConverter {
@@ -486,7 +485,7 @@ public interface TemperatureConverter {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -497,15 +496,15 @@ public class Main {
 }
 ```
 
-No necesitas crear ninguna clase que implemente la interfaz para usar ese método estático.
+You don't need to create any class that implements the interface to use that static method.
 
 ---
 
-## 13. Interfaces que extienden otras interfaces
+## 13. Interfaces that extend other interfaces
 
-Una interfaz también puede heredar de otra interfaz usando `extends`.
+An interface can also inherit from another interface using `extends`.
 
-Ejemplo:
+Example:
 
 ```java
 public interface Printable {
@@ -519,12 +518,12 @@ public interface AdvancedPrintable extends Printable {
 }
 ```
 
-Cualquier clase que implemente `AdvancedPrintable` deberá implementar:
+Any class that implements `AdvancedPrintable` must implement:
 
 - `print()`
 - `preview()`
 
-Ejemplo:
+Example:
 
 ```java
 public class Report implements AdvancedPrintable {
@@ -542,13 +541,13 @@ public class Report implements AdvancedPrintable {
 
 ---
 
-## 14. Ejemplo completo: sistema de pagos con interfaz
+## 14. Complete example: payment system with interface
 
-Este es un ejemplo muy realista.
+This is a very realistic example.
 
-Queremos que distintos métodos de pago compartan un mismo contrato.
+We want different payment methods to share the same contract.
 
-### 14.1. Interfaz `Payable`
+### 14.1. `Payable` interface
 
 ```java
 public interface Payable {
@@ -603,7 +602,7 @@ public class PaypalPayment implements Payable {
 }
 ```
 
-### 14.4. Uso
+### 14.4. Use
 
 ```java
 import java.util.ArrayList;
@@ -624,18 +623,17 @@ public class Main {
 }
 ```
 
-Lo importante aquí no es la clase concreta, sino que todas cumplen `Payable`.
+The important thing here is not the specific class, but that they all comply with `Payable`.
 
 ---
 
-## 15. Ejemplo completo: `Comparable` como interfaz real de Java
+## 15. Complete example: `Comparable` as a real Java interface
 
-Una de las interfaces más famosas de Java es `Comparable<T>`.
+One of the most famous interfaces in Java is `Comparable<T>`.
 
-Sirve para indicar que los objetos de una clase pueden compararse entre sí.
+It serves to indicate that the objects of a class can be compared with each other.
 
-Ejemplo simple:
-
+Simple example:
 ```java
 public class Product implements Comparable<Product> {
     private String name;
@@ -658,7 +656,7 @@ public class Product implements Comparable<Product> {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 import java.util.ArrayList;
@@ -679,69 +677,69 @@ public class Main {
 }
 ```
 
-Esto demuestra que las interfaces están por todas partes en Java real.
+This shows that interfaces are everywhere in real Java.
 
 ---
 
-## 16. Errores típicos al empezar
+## 16. Typical mistakes when starting
 
-### 16.1. Pensar que una interfaz es una clase normal
+### 16.1. Thinking that an interface is a normal class
 
-No puedes hacer:
+You cannot do:
 
 ```java
 // Printable p = new Printable(); // error
 ```
 
-### 16.2. Olvidar implementar todos los métodos
+### 16.2. Forget to implement all methods
 
-Si una clase implementa una interfaz, debe implementar todos sus métodos abstractos, o entonces la clase también debe ser abstracta.
+If a class implements an interface, it must implement all of its abstract methods, or then the class must also be abstract.
 
-### 16.3. Usar interfaz cuando en realidad necesitas una clase base con estado común
+### 16.3. Use interface when you actually need a base class with common state
 
-Si muchas clases comparten atributos y mucha lógica, quizá una clase abstracta sea mejor opción.
+If many classes share attributes and a lot of logic, perhaps an abstract class is a better option.
 
-### 16.4. Confundir `extends` e `implements`
+### 16.4. Confusing `extends` and `implements`
 
-- clase + interfaz → `implements`
-- interfaz + interfaz → `extends`
+- class + interface → `implements`
+- interface + interface → `extends`
 
 ---
 
-## 17. Buenas prácticas
+## 17. Good practices
 
-- Usa interfaces para definir contratos claros.
-- Nombra las interfaces según la capacidad o responsabilidad (`Printable`, `Payable`, `Sortable`).
-- Programa contra la interfaz cuando tenga sentido:
+- Use interfaces to define clear contracts.
+- Name the interfaces according to the capacity or responsibility (`Printable`, `Payable`, `Sortable`).
+- Program against the interface when it makes sense:
 
 ```java
 List<Printable> items = new ArrayList<>();
 ```
 
-en lugar de trabajar siempre con clases concretas.
+instead of always working with concrete classes.
 
-- Usa métodos `default` con moderación: ayudan, pero no deberían convertir la interfaz en una “clase disfrazada”.
-- Si varias clases comparten mucho estado, valora si una clase abstracta encaja mejor.
+- Use `default` methods sparingly: they help, but should not turn the interface into a “disguised class”.
+- If several classes share a lot of state, consider whether an abstract class fits better.
 
 ---
 
-## 18. Interfaces y diseño limpio
+## 18. Clean interfaces and design
 
-Las interfaces favorecen un diseño más flexible porque desacoplan:
+Interfaces favor a more flexible design because they decouple:
 
-- el **qué** se hace
-- del **cómo** se hace
+- the **what** is done
+- **how** it is done
 
-Por ejemplo, si tienes un método que recibe `Payable`, no le importa si el pago viene de:
+For example, if you have a method that receives `Payable`, it doesn't care if the payment comes from:
 
-- tarjeta
-- PayPal
-- transferencia
-- otro método futuro
+- card
+-PayPal
+- transfer
+- another future method
 
-Solo necesita que cumpla el contrato.
+You just need to fulfill the contract.
 
-Ejemplo:
+Example:
 
 ```java
 public static void executePayment(Payable payment) {
@@ -749,36 +747,36 @@ public static void executePayment(Payable payment) {
 }
 ```
 
-Este estilo hace el código más mantenible y extensible.
+This style makes the code more maintainable and extensible.
 
 ---
 
-## 19. A tener en cuenta
+## 19. To take into account
 
-- Una interfaz define un contrato.
-- Una clase la implementa con `implements`.
-- Las interfaces permiten polimorfismo.
-- Una clase puede implementar varias interfaces.
-- Una interfaz puede tener métodos abstractos, `default`, `static` y constantes.
-- Una interfaz no sustituye siempre a una clase abstracta: ambas herramientas tienen propósitos distintos.
-- En Java real, las interfaces se usan constantemente.
-
----
-
-## 20. Resumen final
-
-- **Clase abstracta**: buena para compartir base común y estado.
-- **Interfaz**: buena para definir capacidades y contratos.
-- **`implements`**: se usa para implementar interfaces.
-- **Polimorfismo**: puedes trabajar con referencias de la interfaz.
-- **Múltiples interfaces**: una clase puede tener varias capacidades.
-- **`default` y `static`**: amplían lo que una interfaz puede ofrecer.
-- **Diseño flexible**: las interfaces ayudan a escribir código más reutilizable y limpio.
+- An interface defines a contract.
+- A class is implemented with `implements`.
+- Interfaces allow polymorphism.
+- A class can implement several interfaces.
+- An interface can have abstract methods, `default`, `static` and constants.
+- An interface does not always replace an abstract class: both tools have different purposes.
+- In real Java, interfaces are constantly used.
 
 ---
 
-[![Los 4 Pilares de la Programación Orientada a Objetos (POO)](https://img.youtube.com/vi/RGHdVD7K-rE/0.jpg)](https://www.youtube.com/watch?v=RGHdVD7K-rE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+## 20. Final summary
+
+- **Abstract class**: good for sharing common base and state.
+- **Interface**: good for defining capabilities and contracts.
+- **`implements`**: used to implement interfaces.
+- **Polymorphism**: you can work with interface references.
+- **Multiple interfaces**: a class can have multiple capabilities.
+- **`default` and `static`**: expand what an interface can offer.
+- **Flexible design**: Interfaces help write more reusable and cleaner code.
 
 ---
 
-En el siguiente tema seguiremos avanzando en Java con nuevas herramientas del lenguaje y veremos como comparar objetos correctamente con `equals`.
+[![The 4 Pillars of Object-Oriented Programming (OOP)](https://img.youtube.com/vi/RGHdVD7K-rE/0.jpg)](https://www.youtube.com/watch?v=RGHdVD7K-rE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+
+---
+
+In the next topic we will continue advancing in Java with new language tools and we will see how to compare objects correctly with `equals`.

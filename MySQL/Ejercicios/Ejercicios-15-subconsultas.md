@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 15: Subconsultas y Consultas con WITH**
+# **Exercises - Topic 15: Subqueries and Queries with WITH**
 
-A continuación, encontrarás 7 ejercicios prácticos para trabajar con subconsultas y consultas con `WITH` en MySQL.
+Below you will find 7 practical exercises to work with subqueries and queries with `WITH` in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Subconsulta en WHERE con IN**
+### **Exercise 1: Subquery in WHERE with IN**
 
-Muestra los nombres de los productos que han sido comprados en pedidos cuyo importe supera los 150€.
+Shows the names of the products that have been purchased in orders whose amount exceeds €150.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT name
@@ -28,11 +28,11 @@ WHERE id IN (
 
 ---
 
-### **Ejercicio 2: Subconsulta en SELECT**
+### **Exercise 2: Subquery in SELECT**
 
-Muestra el nombre de cada cliente y el número total de productos distintos que ha comprado.
+Shows the name of each customer and the total number of different products they have purchased.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT c.first_name,
@@ -47,11 +47,11 @@ FROM customers c;
 
 ---
 
-### **Ejercicio 3: Subconsulta en FROM con alias**
+### **Exercise 3: Subquery in FROM with aliases**
 
-Crea una consulta que muestre los clientes que han gastado más de 300€, usando una subconsulta en la cláusula `FROM`.
+Create a query that shows customers who have spent more than €300, using a subquery in the `FROM` clause.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT t.customer_id, t.total_gastado
@@ -67,11 +67,11 @@ WHERE t.total_gastado > 300;
 
 ---
 
-### **Ejercicio 4: Consulta con WITH para pedidos recientes**
+### **Exercise 4: Query WITH for recent orders**
 
-Utiliza `WITH` para definir una tabla temporal `pedidos_recientes` con los pedidos hechos en abril de 2025, y consulta su `order_id` y `customer_id`.
+It uses `WITH` to define a temporary table `pedidos_recientes` with orders placed in April 2025, and queries its `order_id` and `customer_id`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 WITH pedidos_recientes AS (
@@ -86,11 +86,11 @@ SELECT * FROM pedidos_recientes;
 
 ---
 
-### **Ejercicio 5: WITH + JOIN**
+### **Exercise 5: WITH + JOIN**
 
-Define dos subconsultas con `WITH`: una para clientes que han hecho pedidos, otra para productos vendidos más de una vez. Une ambas para mostrar los IDs de cliente y producto.
+Define two subqueries with `WITH`: one for customers who have placed orders, another for products sold more than once. Join the two to show the customer and product IDs.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 WITH clientes_con_pedidos AS (
@@ -108,11 +108,11 @@ JOIN productos_vendidos pv;
 
 ---
 
-### **Ejercicio 6: Subconsulta con comparación escalar**
+### **Exercise 6: Subquery with scalar comparison**
 
-Muestra el nombre del cliente que ha realizado el pedido más caro de todos.
+Shows the name of the customer who placed the most expensive order of all.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT first_name
@@ -129,11 +129,11 @@ WHERE id = (
 
 ---
 
-### **Ejercicio 7: Subconsulta correlacionada**
+### **Exercise 7: Correlated subquery**
 
-Muestra el nombre de cada cliente y el importe total de su pedido más reciente.
+Shows each customer's name and the total amount of their most recent order.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT c.first_name,

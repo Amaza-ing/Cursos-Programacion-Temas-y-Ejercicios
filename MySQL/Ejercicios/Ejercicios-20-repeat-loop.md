@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 20: Uso de REPEAT y LOOP en MySQL**
+# **Exercises - Topic 20: Using REPEAT and LOOP in MySQL**
 
-A continuación, encontrarás 6 ejercicios prácticos para trabajar con los bucles **REPEAT** y **LOOP** en MySQL.
+Below you will find 6 practical exercises to work with **REPEAT** and **LOOP** loops in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: REPEAT para insertar números impares**
+### **Exercise 1: REPEAT to insert odd numbers**
 
-Crea un procedimiento `insertar_impares_repeat` que inserte en `numbers(value)` los **impares** desde 1 hasta nine (1, 3, 5, 7, 9) usando `REPEAT`.
+Create a procedure `insertar_impares_repeat` that inserts into `numbers(value)` the **odd** numbers from 1 to nine (1, 3, 5, 7, 9) using `REPEAT`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -30,11 +30,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 2: REPEAT con suma acumulada**
+### **Exercise 2: REPEAT with accumulated sum**
 
-Crea un procedimiento `sumar_de_siete_en_siete` que vaya acumulando en `v_total` de 7 en 7 y registre cada valor en `accumulated(total)` **hasta que** `v_total` sea **mayor o igual a 70**.
+Create a procedure `sumar_de_siete_en_siete` that accumulates in `v_total` in 7 at a time and records each value in `accumulated(total)` **until** `v_total` is **greater than or equal to 70**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -54,11 +54,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 3: LOOP con `LEAVE` e `ITERATE`**
+### **Exercise 3: LOOP with `LEAVE` and `ITERATE`**
 
-Crea un procedimiento `insertar_multiplos_de_cinco` que recorra números desde 1 hasta 50 usando `LOOP`. Inserta en `numbers(value)` **solo los múltiplos de 5**. Usa `ITERATE` para **saltar** los que no lo sean y `LEAVE` para salir al superar 50.
+Create a procedure `insertar_multiplos_de_cinco` that loops numbers from 1 to 50 using `LOOP`. Insert into `numbers(value)` **only multiples of 5**. Use `ITERATE` to **skip** those that are not and `LEAVE` to exit when exceeding 50.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -86,11 +86,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 4: LOOP anidado para tabla de combinaciones**
+### **Exercise 4: Nested LOOP for join table**
 
-Crea un procedimiento `generar_combinaciones_3x3` que llene `pairs(a, b)` con todas las combinaciones **(a, b)** donde `a` y `b` van de **1 a 3** usando dos `LOOP` anidados y `LEAVE` en cada uno.
+Create a procedure `generar_combinaciones_3x3` that fills `pairs(a, b)` with all combinations **(a, b)** where `a` and `b` range from **1 to 3** using two nested `LOOP` and `LEAVE` in each.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -119,11 +119,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 5: Procesar cola con LOOP hasta que no queden elementos**
+### **Exercise 5: Process queue with LOOP until there are no elements left**
 
-Dada una tabla `task_queue(id, processed TINYINT(1))`, crea un procedimiento `procesar_cola` que, usando `LOOP`, marque como `processed = 1` de **uno en uno** las tareas **no procesadas**. Detén el bucle cuando **no existan más**.
+Given a table `task_queue(id, processed TINYINT(1))`, create a procedure `procesar_cola` that, using `LOOP`, marks **unprocessed** tasks **one at a time** as `processed = 1`. Stop the loop when **no more exist**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -146,11 +146,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 6: REPEAT para generar fechas hacia atrás**
+### **Exercise 6: REPEAT to generate backward dates**
 
-Crea un procedimiento `generar_ultimos_dias` que reciba `p_dias INT` y llene `dates_list(fecha)` con las fechas **desde hoy hacia atrás** `p_dias` días (incluyendo hoy) usando `REPEAT`.
+Create a procedure `generar_ultimos_dias` that receives `p_dias INT` and populates `dates_list(fecha)` with the dates **from today backwards** `p_dias` days (including today) using `REPEAT`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$

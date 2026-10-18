@@ -1,23 +1,23 @@
-# **Ejercicios - Tema 10: Listas, Index y Listas de Objetos**
+# **Exercises - Topic 10: Lists, Index and Lists of Objects**
 
-A continuación, encontrarás **10 ejercicios prácticos** para aprender a renderizar listas en React con `.map()`, usar `key` correctamente, y trabajar con **listas de objetos**.
+Below you will find **10 practical exercises** to learn how to render lists in React with `.map()`, use `key` correctly, and work with **lists of objects**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Lista simple de strings**
+## **Exercise 1: Simple list of strings**
 
-Crea un componente `CitiesList.jsx` que renderice un `ul` con estas ciudades:
+Create an `CitiesList.jsx` component that renders an `ul` with these cities:
 
 ```js
 const cities = ["Madrid", "Sevilla", "Valencia", "Bilbao"];
 ```
 
-- Renderiza cada ciudad en un `li`.
-- Usa una `key` estable (no uses index).
+- Renders each city in an `li`.
+- Use a stable `key` (don't use index).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function CitiesList() {
@@ -39,19 +39,19 @@ export default CitiesList;
 
 ---
 
-## **Ejercicio 2: Mostrar también el index (sin usarlo como key)**
+## **Exercise 2: Also show the index (without using it as a key)**
 
-Crea un componente `Steps.jsx` con este array:
+Create an `Steps.jsx` component with this array:
 
 ```js
 const steps = ["Install", "Create", "Run", "Build"];
 ```
 
-- Renderiza cada paso como: `1. Install`, `2. Create`, etc.
-- Muestra el número usando el `index`.
-- La `key` NO debe ser el `index` (usa el texto del paso).
+- Renders each step as: `1. Install`, `2. Create`, etc.
+- Show the number using the `index`.
+- The `key` must NOT be the `index` (use the text from the step).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Steps() {
@@ -75,17 +75,17 @@ export default Steps;
 
 ---
 
-## **Ejercicio 3: Cuándo usar index como `key` (lista estática)**
+## **Exercise 3: When to use index as `key` (static list)**
 
-Crea un componente `FixedRules.jsx` con una lista fija de 3 reglas:
+Create an `FixedRules.jsx` component with a fixed list of 3 rules:
 
 - "Be respectful"
 - "Write clear code"
 - "Keep components small"
 
-En este caso, usa el **index** como `key` y añade un comentario en el código explicando por qué es aceptable aquí.
+In this case, use the **index** as `key` and add a comment to the code explaining why it is acceptable here.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function FixedRules() {
@@ -108,9 +108,9 @@ export default FixedRules;
 
 ---
 
-## **Ejercicio 4: Lista de objetos con `id` como key**
+## **Exercise 4: List of objects with `id` as key**
 
-Crea un componente `ProductsList.jsx` con este array:
+Create an `ProductsList.jsx` component with this array:
 
 ```js
 const products = [
@@ -120,13 +120,13 @@ const products = [
 ];
 ```
 
-Renderiza un `ul` donde cada `li` muestre:
+Renders an `ul` where each `li` displays:
 
 - `Keyboard - 30€`
 
-Usa `product.id` como `key`.
+Use `product.id` as `key`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function ProductsList() {
@@ -154,13 +154,13 @@ export default ProductsList;
 
 ---
 
-## **Ejercicio 5: Renderizar componentes dentro de una lista**
+## **Exercise 5: Render components within a list**
 
-Crea un componente `SkillItem.jsx` que reciba `name` por props y renderice:
+Create an `SkillItem.jsx` component that receives `name` by props and renders:
 
-- Un `li` con el texto del skill.
+- An `li` with the skill text.
 
-Luego crea `SkillsList.jsx` con este array:
+Then create `SkillsList.jsx` with this array:
 
 ```js
 const skills = [
@@ -170,9 +170,9 @@ const skills = [
 ];
 ```
 
-Renderiza `SkillItem` usando `.map()` y pon la `key` en el componente que se repite.
+Render `SkillItem` using `.map()` and put the `key` in the repeating component.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`SkillItem.jsx`**
 
@@ -212,9 +212,9 @@ export default SkillsList;
 
 ---
 
-## **Ejercicio 6: Filtrar y renderizar (sin modificar el array original)**
+## **Exercise 6: Filter and render (without modifying the original array)**
 
-Crea un componente `ExpensiveProducts.jsx` con este array:
+Create an `ExpensiveProducts.jsx` component with this array:
 
 ```js
 const products = [
@@ -224,10 +224,10 @@ const products = [
 ];
 ```
 
-- Renderiza solo los productos con `price >= 25`.
-- Usa `.filter()` antes del `.map()`.
+- Render only products with `price >= 25`.
+- Use `.filter()` before `.map()`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function ExpensiveProducts() {
@@ -257,9 +257,9 @@ export default ExpensiveProducts;
 
 ---
 
-## **Ejercicio 7: Ordenar y renderizar (crea una copia)**
+## **Exercise 7: Sort and render (create a copy)**
 
-Crea un componente `SortedUsers.jsx` con este array:
+Create an `SortedUsers.jsx` component with this array:
 
 ```js
 const users = [
@@ -269,10 +269,10 @@ const users = [
 ];
 ```
 
-- Renderiza los usuarios ordenados alfabéticamente por `name`.
-- No modifiques el array original: crea una copia antes de ordenar.
+- Renders users sorted alphabetically by `name`.
+- Do not modify the original array: create a copy before sorting.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function SortedUsers() {
@@ -300,9 +300,9 @@ export default SortedUsers;
 
 ---
 
-## **Ejercicio 8: Renderizar una lista con formato (card simple)**
+## **Exercise 8: Render a formatted list (simple card)**
 
-Crea un componente `BookCards.jsx` con este array:
+Create an `BookCards.jsx` component with this array:
 
 ```js
 const books = [
@@ -311,14 +311,14 @@ const books = [
 ];
 ```
 
-Renderiza cada libro en un `div` (tipo card) con:
+Render each book on an `div` (card type) with:
 
-- `h4` para el título
-- `p` para el autor
+- `h4` for title
+- `p` for the author
 
-Recuerda poner `key` en el `div` que se repite.
+Remember to put `key` in the repeating `div`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function BookCards() {
@@ -346,9 +346,9 @@ export default BookCards;
 
 ---
 
-## **Ejercicio 9: Detectar una `key` incorrecta**
+## **Exercise 9: Detect an incorrect `key`**
 
-Este código tiene una `key` mala. Explica por qué y corrígelo.
+This code has a bad `key`. Explain why and correct it.
 
 ```js
 function Tags() {
@@ -364,16 +364,16 @@ function Tags() {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-El problema es que `tag` no es único ("sale" aparece dos veces). La `key` debe ser única dentro de la lista.
+The problem is that `tag` is not unique ("sale" appears twice). The `key` must be unique within the list.
 
-Soluciones posibles:
+Possible solutions:
 
-- Si los tags pueden repetirse, crear una key combinada con el index.
-- O usar objetos con id.
+- If the tags can be repeated, create a key combined with the index.
+- Or use objects with id.
 
-Ejemplo simple (key combinada):
+Simple example (combined key):
 
 ```js
 function Tags() {
@@ -395,9 +395,9 @@ export default Tags;
 
 ---
 
-## **Ejercicio 10: Mini-caso (elige la mejor `key`)**
+## **Exercise 10: Mini-case (choose the best `key`)**
 
-Tienes una lista de tareas:
+You have a list of tasks:
 
 ```js
 const tasks = [
@@ -406,20 +406,20 @@ const tasks = [
 ];
 ```
 
-¿Cuál es la mejor `key` y por qué?
+Which is the best `key` and why?
 
 - a) `key={index}`
 - b) `key={task.text}`
 - c) `key={task.id}`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-La mejor opción es **c) `key={task.id}`**.
+The best option is **c) `key={task.id}`**.
 
-Motivo:
+Reason:
 
-- Es única.
-- Es estable.
-- No depende del orden ni del texto.
+- It's unique.
+- It's stable.
+- It does not depend on the order or the text.
 
 </details>

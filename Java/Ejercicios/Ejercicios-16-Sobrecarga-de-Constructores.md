@@ -1,27 +1,27 @@
-# Ejercicios - Tema 16: Sobrecarga de constructores
+# Exercises - Topic 16: Constructor overloading
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **sobrecarga de constructores**: múltiples constructores con distintas firmas, valores por defecto, uso de `this(...)` para delegar entre constructores, inicialización consistente y errores típicos (como bucles de llamadas).
+Below you will find **10 practical exercises** on **constructor overloading**: multiple constructors with different signatures, default values, using `this(...)` to delegate between constructors, consistent initialization and typical errors (such as call loops).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: `User` con 3 constructores
+## Exercise 1: `User` with 3 constructors
 
-Crea una clase `User` con atributos `private`:
+Create a class `User` with attributes `private`:
 
 - `name` (String)
 - `age` (int)
 
-Crea estos constructores:
+Create these constructors:
 
 1. `User()` → `name = "Unknown"`, `age = 0`
 2. `User(String name)` → `age = 0`
-3. `User(String name, int age)` → ambos valores
+3. `User(String name, int age)` → both values
 
-Usa `this(...)` para delegar y evitar duplicar lógica.
+Use `this(...)` to delegate and avoid duplicate logic.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class User {
@@ -51,23 +51,23 @@ public class User {
 
 ---
 
-## Ejercicio 2: `Product` con valores por defecto
+## Exercise 2: `Product` with default values
 
-Crea una clase `Product` con:
+Create a class `Product` with:
 
 - `name` (String)
 - `price` (double)
 - `stock` (int)
 
-Constructores:
+Builders:
 
 1. `Product(String name)` → `price = 0.0`, `stock = 0`
 2. `Product(String name, double price)` → `stock = 0`
 3. `Product(String name, double price, int stock)`
 
-Usa `this(...)` para delegar al constructor más completo.
+Use `this(...)` to delegate to the most complete builder.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Product {
@@ -95,22 +95,22 @@ public class Product {
 
 ---
 
-## Ejercicio 3: Constructor principal con validación reutilizable
+## Exercise 3: Main constructor with reusable validation
 
-Crea una clase `Student` con:
+Create a class `Student` with:
 
 - `name` (String)
 - `grade` (double)
 
-Constructores:
+Builders:
 
 1. `Student(String name)` → `grade = 0`
 2. `Student(String name, double grade)`
 
-Implementa `setGrade(double grade)` con validación (0..10).  
-En el constructor principal, usa el setter.
+Implement `setGrade(double grade)` with validation (0..10).  
+In the main constructor, use the setter.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Student {
@@ -141,24 +141,24 @@ public class Student {
 
 ---
 
-## Ejercicio 4: `Order` con `id` autoincremental
+## Exercise 4: `Order` with autoincremental `id`
 
-Crea una clase `Order` con:
+Create a class `Order` with:
 
 - `private static int nextId`
 - `private int id`
 - `private String customer`
 - `private double total`
 
-Constructores:
+Builders:
 
 1. `Order()` → customer `"Unknown"`, total `0.0`
 2. `Order(String customer)` → total `0.0`
 3. `Order(String customer, double total)`
 
-El `id` debe asignarse usando `nextId` en el constructor principal.
+The `id` must be assigned using `nextId` in the main constructor.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Order {
@@ -194,21 +194,21 @@ public class Order {
 
 ---
 
-## Ejercicio 5: `Rectangle` con constructor “cuadrado”
+## Exercise 5: `Rectangle` with “square” constructor
 
-Crea una clase `Rectangle` con:
+Create a class `Rectangle` with:
 
 - `width` (double)
 - `height` (double)
 
-Constructores:
+Builders:
 
 1. `Rectangle(double width, double height)`
-2. `Rectangle(double side)` → crea un cuadrado (`width = side`, `height = side`)
+2. `Rectangle(double side)` → create a square (`width = side`, `height = side`)
 
-El constructor de un parámetro debe delegar al de dos parámetros con `this(...)`.
+The one-parameter constructor must delegate to the two-parameter constructor with `this(...)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Rectangle {
@@ -230,25 +230,25 @@ public class Rectangle {
 
 ---
 
-## Ejercicio 6: `Point` con constructor sin parámetros
+## Exercise 6: `Point` with parameterless constructor
 
-Crea una clase `Point` con:
+Create a class `Point` with:
 
 - `x` (int)
 - `y` (int)
 
-Constructores:
+Builders:
 
 1. `Point()` → `(0, 0)`
 2. `Point(int x, int y)`
 
-Añade método `print()` que muestre:
+Add method `print()` that displays:
 
 ```
 (x, y)
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Point {
@@ -274,23 +274,23 @@ public class Point {
 
 ---
 
-## Ejercicio 7: Evitar duplicación con `this(...)` en `Car`
+## Exercise 7: Avoid duplication with `this(...)` in `Car`
 
-Crea una clase `Car` con:
+Create a class `Car` with:
 
 - `brand` (String)
 - `model` (String)
 - `year` (int)
 
-Constructores:
+Builders:
 
 1. `Car(String brand)` → model `"Unknown"`, year `0`
 2. `Car(String brand, String model)` → year `0`
 3. `Car(String brand, String model, int year)`
 
-Delegación obligatoria usando `this(...)`.
+Mandatory delegation using `this(...)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Car {
@@ -318,23 +318,23 @@ public class Car {
 
 ---
 
-## Ejercicio 8: Constructor con parámetros opcionales “simulados”
+## Exercise 8: Constructor with optional “mock” parameters
 
-Crea una clase `Notification` con:
+Create a class `Notification` with:
 
 - `message` (String)
 - `priority` (int)
 - `sender` (String)
 
-Constructores:
+Builders:
 
 1. `Notification(String message)` → `priority = 1`, `sender = "System"`
 2. `Notification(String message, int priority)` → `sender = "System"`
 3. `Notification(String message, int priority, String sender)`
 
-Centraliza todo en el constructor principal.
+Centralize everything in the main constructor.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Notification {
@@ -362,19 +362,19 @@ public class Notification {
 
 ---
 
-## Ejercicio 9: Identificar un error de “bucle” de constructores
+## Exercise 9: Identify a constructor “loop” error
 
-Crea una clase `Demo` y escribe dos constructores que NO causen bucle infinito.
+Create a class `Demo` and write two constructors that DO NOT cause an infinite loop.
 
-- `Demo()` debe delegar a `Demo(String value)`
-- `Demo(String value)` debe asignar `value` a un atributo
+- `Demo()` must delegate to `Demo(String value)`
+- `Demo(String value)` must assign `value` to an attribute
 
-Evita este error:
+Avoid this mistake:
 
 - `Demo()` → `this("x")`
-- `Demo(String value)` → `this()` (esto crearía bucle)
+- `Demo(String value)` → `this()` (this would create loop)
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Demo {
@@ -394,20 +394,20 @@ public class Demo {
 
 ---
 
-## Ejercicio 10: `this(...)` debe ser la primera línea
+## Exercise 10: `this(...)` must be the first line
 
-Crea una clase `Logger` con:
+Create a class `Logger` with:
 
 - `prefix` (String)
 
-Constructores:
+Builders:
 
 1. `Logger()` → prefix `"APP"`
 2. `Logger(String prefix)`
 
-Asegúrate de que el constructor sin parámetros llama a `this("APP")` como primera línea.
+Make sure the parameterless constructor calls `this("APP")` as the first line.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Logger {

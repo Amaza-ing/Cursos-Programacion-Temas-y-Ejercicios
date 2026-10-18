@@ -1,16 +1,16 @@
-# **Tema 13: Metadatos en HTML y SEO básico**
+# **Topic 13: Metadata in HTML and basic SEO**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Los metadatos en HTML proporcionan información sobre una página web a los navegadores y motores de búsqueda. Su correcta configuración mejora la indexación, accesibilidad y visibilidad del sitio en plataformas como Google y redes sociales.
+Metadata in HTML provides information about a web page to browsers and search engines. Its correct configuration improves the indexing, accessibility and visibility of the site on platforms such as Google and social networks.
 
 ---
 
-## **2. Uso de `<meta>` para mejorar la indexación**
+## **2. Using `<meta>` to improve indexing**
 
-La etiqueta `<meta>` se usa en la sección `<head>` para definir información clave sobre la página.
+The `<meta>` tag is used in the `<head>` section to define key information about the page.
 
-### **Ejemplo básico de metadatos en HTML:**
+### **Basic HTML metadata example:**
 
 ```html
 <head>
@@ -20,29 +20,29 @@ La etiqueta `<meta>` se usa en la sección `<head>` para definir información cl
 </head>
 ```
 
-### **Explicación:**
+### **Explanation:**
 
-- `charset="UTF-8"`: Define la codificación de caracteres.
-- `viewport`: Ajusta la visualización en dispositivos móviles.
-- `robots`: Indica si los motores de búsqueda pueden indexar la página y seguir enlaces.
+- `charset="UTF-8"`: Defines the character encoding.
+- `viewport`: Adjust display on mobile devices.
+- `robots`: Indicates whether search engines can index the page and follow links.
 
 ---
 
-## **3. Configuración del título y descripción**
+## **3. Title and description settings**
 
-El título y la descripción de una página influyen en la presentación en los resultados de búsqueda.
+The title and description of a page influence its presentation in search results.
 
-### **3.1. Configuración del `<title>`**
+### **3.1. `<title>` Configuration**
 
-El título de la página es crucial para el SEO y debe ser breve y descriptivo.
+The page title is crucial for SEO and should be short and descriptive.
 
 ```html
 <title>Guía Completa sobre Metadatos en HTML</title>
 ```
 
-### **3.2. Meta descripción (`<meta name="description">`)**
+### **3.2. Meta description (`<meta name="description">`)**
 
-La descripción influye en el CTR (Click-Through Rate) en los resultados de búsqueda.
+The description influences the CTR (Click-Through Rate) in the search results.
 
 ```html
 <meta
@@ -51,18 +51,18 @@ La descripción influye en el CTR (Click-Through Rate) en los resultados de bús
 />
 ```
 
-**Buenas prácticas:**
+**Good practices:**
 
-- El título debe tener entre 50-60 caracteres.
-- La meta descripción debe estar entre 150-160 caracteres.
+- The title must be between 50-60 characters.
+- The meta description must be between 150-160 characters.
 
 ---
 
-## **4. Open Graph: Mejorando la vista previa en redes sociales**
+## **4. Open Graph: Improving the preview on social networks**
 
-Open Graph (OG) es un estándar de metadatos usado por Facebook, Twitter y otras redes para mejorar la apariencia de las vistas previas cuando se comparte un enlace.
+Open Graph (OG) is a metadata standard used by Facebook, Twitter, and other networks to improve the appearance of previews when a link is shared.
 
-### **Ejemplo de configuración de Open Graph:**
+### **Open Graph configuration example:**
 
 ```html
 <meta property="og:title" content="Guía Completa sobre Metadatos en HTML" />
@@ -75,13 +75,13 @@ Open Graph (OG) es un estándar de metadatos usado por Facebook, Twitter y otras
 <meta property="og:type" content="website" />
 ```
 
-### **Explicación:**
+### **Explanation:**
 
-- `og:title`: Define el título que aparecerá en redes sociales.
-- `og:description`: Resumen del contenido.
-- `og:image`: Imagen de vista previa.
-- `og:url`: URL de la página compartida.
-- `og:type`: Tipo de contenido (`website`, `article`, `video`, etc.).
+- `og:title`: Defines the title that will appear on social networks.
+- `og:description`: Summary of content.
+- `og:image`: Preview image.
+- `og:url`: URL of the shared page.
+- `og:type`: Content type (`website`, `article`, `video`, etc.).
 
 ---
 
@@ -89,10 +89,10 @@ Open Graph (OG) es un estándar de metadatos usado por Facebook, Twitter y otras
 
 ---
 
-## **5. Buenas prácticas en SEO básico con metadatos**
+## **5. Good practices in basic SEO with metadata**
 
-- Usa **meta descripciones únicas y atractivas** para cada página.
-- Asegúrate de que el título incluya **palabras clave relevantes**.
-- Configura correctamente **Open Graph** para mejorar la apariencia en redes sociales.
-- Utiliza **meta etiquetas de indexación** para controlar qué páginas pueden ser rastreadas por los motores de búsqueda.
-- Aprovecha **Google Search Console** para monitorear la indexación y optimización de tu sitio.
+- Use **unique and attractive meta descriptions** for each page.
+- Make sure the title includes **relevant keywords**.
+- Correctly configure **Open Graph** to improve appearance on social networks.
+- Use **meta indexing tags** to control which pages can be crawled by search engines.
+- Take advantage of **Google Search Console** to monitor the indexing and optimization of your site.

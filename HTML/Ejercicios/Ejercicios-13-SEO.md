@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 13: Metadatos en HTML y SEO básico**
+# **Exercises - Topic 13: Metadata in HTML and basic SEO**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre metadatos en HTML y SEO básico.
+Below you will find 5 practical exercises on metadata in HTML and basic SEO.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Agregar una meta descripción**
+### **Exercise 1: Add a meta description**
 
-Agrega una meta descripción adecuada para una página web sobre desarrollo web.
+Add an appropriate meta description for a web page about web development.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <meta
@@ -25,11 +25,11 @@ Agrega una meta descripción adecuada para una página web sobre desarrollo web.
 
 ---
 
-### **Ejercicio 2: Configurar Open Graph para una vista previa en redes sociales**
+### **Exercise 2: Configure Open Graph for Social Preview**
 
-Escribe las etiquetas Open Graph necesarias para mejorar la apariencia de una página de blog en redes sociales.
+Write the necessary Open Graph tags to improve the appearance of a blog page on social networks.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <meta property="og:title" content="10 Consejos para Mejorar tu Código HTML" />
@@ -46,11 +46,11 @@ Escribe las etiquetas Open Graph necesarias para mejorar la apariencia de una p�
 
 ---
 
-### **Ejercicio 3: Definir una etiqueta `robots`**
+### **Exercise 3: Define an `robots` tag**
 
-Especifica una metaetiqueta que impida que los motores de búsqueda indexen la página.
+Specify a meta tag that prevents search engines from indexing the page.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <meta name="robots" content="noindex, nofollow" />
@@ -60,11 +60,11 @@ Especifica una metaetiqueta que impida que los motores de búsqueda indexen la p
 
 ---
 
-### **Ejercicio 4: Configurar el título de la página**
+### **Exercise 4: Set the page title**
 
-Escribe una etiqueta `<title>` efectiva para una tienda en línea de ropa deportiva.
+Write an effective `<title>` tag for an online sportswear store.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <title>
@@ -76,11 +76,11 @@ Escribe una etiqueta `<title>` efectiva para una tienda en línea de ropa deport
 
 ---
 
-### **Ejercicio 5: Establecer la configuración de viewport para móviles**
+### **Exercise 5: Set mobile viewport settings**
 
-Agrega la metaetiqueta adecuada para hacer que una página web sea responsive en dispositivos móviles.
+Add the appropriate meta tag to make a web page responsive on mobile devices.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

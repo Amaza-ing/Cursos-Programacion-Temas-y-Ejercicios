@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 14: Booleanos y Fechas en MySQL**
+# **Exercises - Topic 14: Booleans and Dates in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para trabajar con columnas y variables **booleanas** y de **fecha** en MySQL.
+Below, you will find 5 practical exercises to work with columns and **boolean** and **date** variables in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Actualizar un booleano según una condición de fecha**
+### **Exercise 1: Update a boolean based on a date condition**
 
-En la tabla `subscriptions(user_id, expires_at DATE, is_active BOOLEAN)`, marca como inactivos (`is_active = FALSE`) los registros cuya fecha `expires_at` sea **anterior a hoy**.
+In the `subscriptions(user_id, expires_at DATE, is_active BOOLEAN)` table, mark records whose `expires_at` date is **earlier than today** as inactive (`is_active = FALSE`).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 UPDATE subscriptions
@@ -22,11 +22,11 @@ WHERE expires_at < CURDATE();
 
 ---
 
-### **Ejercicio 2: Calcular días restantes para un evento**
+### **Exercise 2: Calculate days left for an event**
 
-En la tabla `events(id, name, event_date DATE)`, muestra `name` y los **días que faltan** para cada evento (pueden salir valores negativos si ya pasó).
+In the `events(id, name, event_date DATE)` table, it shows `name` and the **days left** for each event (negative values may appear if it has already passed).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT name,
@@ -38,11 +38,11 @@ FROM events;
 
 ---
 
-### **Ejercicio 3: Filtrar por rango de fechas y ordenar**
+### **Exercise 3: Filter by date range and sort**
 
-Obtén los registros de `orders(id, created_at DATETIME, total_amount)` realizados **entre el 1 y el 15 de mayo de 2025** (inclusive) y ordénalos del más reciente al más antiguo.
+Get `orders(id, created_at DATETIME, total_amount)` registrations made **between May 1 and 15, 2025** (inclusive) and sort them from newest to oldest.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT id, created_at, total_amount
@@ -55,11 +55,11 @@ ORDER BY created_at DESC;
 
 ---
 
-### **Ejercicio 4: Formatear fecha y mostrar estado booleano**
+### **Exercise 4: Format date and show boolean status**
 
-Muestra de `customers(id, first_name, signup_date DATE, is_active BOOLEAN)` el `first_name`, la `signup_date` con formato `DD/MM/YYYY` y un campo calculado `status` con valor `'ACTIVE'` cuando `is_active = 1` y `'INACTIVE'` en caso contrario.
+`customers(id, first_name, signup_date DATE, is_active BOOLEAN)` shows the `first_name`, the `signup_date` with format `DD/MM/YYYY` and a calculated field `status` with value `'ACTIVE'` when `is_active = 1` and `'INACTIVE'` otherwise.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT first_name,
@@ -72,11 +72,11 @@ FROM customers;
 
 ---
 
-### **Ejercicio 5: Procedimiento con variables booleanas y de fecha**
+### **Exercise 5: Procedure with boolean and date variables**
 
-Crea un procedimiento `deactivate_old_posts(days_back INT)` que desactive (`is_published = 0`) en `posts(id, published_at DATETIME, is_published TINYINT(1))` las entradas **publicadas hace más de** `days_back` días.
+Create a procedure `deactivate_old_posts(days_back INT)` that deactivates (`is_published = 0`) in `posts(id, published_at DATETIME, is_published TINYINT(1))` entries **published more than** `days_back` days ago.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$

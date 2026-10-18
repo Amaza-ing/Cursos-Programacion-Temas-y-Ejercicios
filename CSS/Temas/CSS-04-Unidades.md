@@ -1,30 +1,30 @@
-# **Tema 4: Unidades de Medida en CSS**
+# **Topic 4: Units of Measurement in CSS**
 
-## **1. Introducción a las unidades de medida**
+## **1. Introduction to units of measurement**
 
-CSS permite definir tamaños, espacios y dimensiones utilizando distintas **unidades de medida**. Comprenderlas es clave para diseñar sitios web flexibles y adaptables.
+CSS allows you to define sizes, spaces and dimensions using different **units of measurement**. Understanding them is key to designing flexible and adaptable websites.
 
-Existen dos grandes categorías de unidades:
+There are two main categories of units:
 
-1. **Unidades absolutas**: Tienen un tamaño fijo, independientemente del contexto.
-2. **Unidades relativas**: Dependen de otro elemento o del tamaño de la pantalla.
+1. **Absolute units**: They have a fixed size, regardless of the context.
+2. **Relative units**: They depend on another element or the size of the screen.
 
 ---
 
-## **2. Unidades absolutas**
+## **2. Absolute units**
 
-Las unidades absolutas tienen un valor fijo y no cambian con el tamaño de la pantalla o el contenedor.
+Absolute units have a fixed value and do not change with the size of the screen or container.
 
-| Unidad | Descripción         | Equivalencia                       |
+| Unit | Description | Equivalence |
 | ------ | ------------------- | ---------------------------------- |
-| `px`   | Píxeles             | Unidad más común en pantallas      |
-| `cm`   | Centímetros         | Relacionada con impresiones        |
-| `mm`   | Milímetros          | Similar a cm, usada en impresiones |
-| `in`   | Pulgadas            | 1in = 2.54cm                       |
-| `pt`   | Puntos tipográficos | 1pt = 1/72 in                      |
-| `pc`   | Picas               | 1pc = 12pt                         |
+| `px` | Pixels | Most common unit in screens |
+| `cm` | Centimeters | Related to impressions |
+| `mm` | Millimeters | Similar to cm, used in prints |
+| `in` | Inches | 1in = 2.54cm |
+| `pt` | Typographic points | 1pt = 1/72 in |
+| `pc` | Spades | 1pc = 12pt |
 
-**Ejemplo:**
+**Example:**
 
 ```css
 p {
@@ -33,23 +33,24 @@ p {
 }
 ```
 
+
 ---
 
-## **3. Unidades relativas**
+## **3. Relative units**
 
-Las unidades relativas dependen del tamaño de otros elementos o de la pantalla.
+Relative units depend on the size of other elements or the screen.
 
-| Unidad | Descripción                                                       |
+| Unit | Description |
 | ------ | ----------------------------------------------------------------- |
-| `%`    | Relativo al tamaño del contenedor padre                           |
-| `em`   | Relativo al tamaño de la fuente del elemento                      |
-| `rem`  | Relativo al tamaño de la fuente del elemento raíz (`html`)        |
-| `vw`   | Relativo al ancho del viewport (1vw = 1% del ancho de la ventana) |
-| `vh`   | Relativo al alto del viewport (1vh = 1% del alto de la ventana)   |
-| `vmin` | Relativo al menor valor entre `vw` y `vh`                         |
-| `vmax` | Relativo al mayor valor entre `vw` y `vh`                         |
+| `%` | Relative to the size of the parent container |
+| `em` | Relative to element font size |
+| `rem` | Relative to root element font size (`html`) |
+| `vw` | Relative to viewport width (1vw = 1% of window width) |
+| `vh` | Relative to the height of the viewport (1vh = 1% of the window height) |
+| `vmin` | Relative to the lower value between `vw` and `vh` |
+| `vmax` | Relative to the highest value between `vw` and `vh` |
 
-**Ejemplo:**
+**Example:**
 
 ```css
 .container {
@@ -58,14 +59,15 @@ Las unidades relativas dependen del tamaño de otros elementos o de la pantalla.
 }
 ```
 
+
 ---
 
-## **4. Diferencia entre `em` y `rem`**
+## **4. Difference between `em` and `rem`**
 
-- `em` se basa en el tamaño de la fuente del elemento padre.
-- `rem` se basa en el tamaño de la fuente del `html`.
+- `em` is based on the font size of the parent element.
+- `rem` is based on the `html` font size.
 
-**Ejemplo:**
+**Example:**
 
 ```css
 html {
@@ -81,16 +83,17 @@ div {
 }
 ```
 
+
 ---
 
-## **5. Uso de `vw`, `vh`, `vmin`, y `vmax`**
+## **5. Use of `vw`, `vh`, `vmin`, and `vmax`**
 
-Estas unidades permiten crear diseños fluidos.
+These units allow you to create fluid designs.
 
-- `vw` y `vh` son útiles para definir tamaños según la pantalla.
-- `vmin` y `vmax` permiten ajustar elementos según el menor o mayor valor del viewport.
+- `vw` and `vh` are useful for defining sizes based on the screen.
+- `vmin` and `vmax` allow you to adjust elements according to the lower or higher value of the viewport.
 
-**Ejemplo:**
+**Example:**
 
 ```css
 .full-screen {
@@ -99,19 +102,20 @@ Estas unidades permiten crear diseños fluidos.
 }
 ```
 
----
-
-[![Unidades absolutas y relativas](https://img.youtube.com/vi/fMCka7YgKxg/0.jpg)](https://www.youtube.com/watch?v=fMCka7YgKxg&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **6. Buenas prácticas en el uso de unidades**
-
-- Usar `rem` para definir fuentes y mantener escalabilidad.
-- Emplear `%` y `vw/vh` para hacer diseños responsivos.
-- Evitar usar `px` en tamaños de fuente si se busca accesibilidad.
-- Combinar unidades relativas y absolutas según la necesidad.
+[![Absolute and relative units](https://img.youtube.com/vi/fMCka7YgKxg/0.jpg)](https://www.youtube.com/watch?v=fMCka7YgKxg&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-En el próximo tema, exploraremos **colores y fondos en CSS**, incluyendo distintos formatos de color y cómo aplicarlos a los elementos.
+## **6. Good practices in the use of units**
+
+- Use `rem` to define sources and maintain scalability.
+- Use `%` and `vw/vh` to make responsive designs.
+- Avoid using `px` in font sizes if you are looking for accessibility.
+- Combine relative and absolute units as needed.
+
+---
+
+In the next topic, we will explore **colors and backgrounds in CSS**, including different color formats and how to apply them to elements.

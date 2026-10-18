@@ -1,30 +1,30 @@
-# Tema 7. Control del flujo en bucles
+# Topic 7. Flow control in loops
 
-## 1. Introducción
+## 1. Introduction
 
-En el tema anterior aprendiste a repetir acciones con `while` y `for`. Sin embargo, en programas reales no siempre quieres que el bucle:
+In the previous topic you learned how to repeat actions with `while` and `for`. However, in real programs you don't always want that loop:
 
-- Se ejecute siempre de principio a fin
-- Repita todas las iteraciones
-- Dependa únicamente de la condición del bucle
+- Always runs from start to finish
+- Repeat all iterations
+- Depend solely on the loop condition
 
-A veces necesitas **controlar el flujo** dentro del bucle:
+Sometimes you need to **control the flow** inside the loop:
 
-- Salir del bucle antes de tiempo
-- Saltarte una iteración concreta y seguir con la siguiente
-- Evitar ejecutar parte del bloque cuando se cumple una condición
+- Exit the loop early
+- Skip a specific iteration and continue with the next one
+- Avoid executing part of the block when a condition is met
 
-Para esto, Java ofrece principalmente:
+For this, Java mainly offers:
 
 - `break`
 - `continue`
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué hace exactamente `break`
-- Qué hace exactamente `continue`
-- Cuándo conviene usarlos y cuándo evitarlos
-- Ejemplos prácticos y patrones típicos
+- What exactly `break` does
+- What exactly `continue` does
+- When to use them and when to avoid them
+- Practical examples and typical patterns
 
 ---
 
@@ -32,40 +32,40 @@ En este tema aprenderás:
 
 ---
 
-## 2. Idea clave: “alterar” el bucle desde dentro
+## 2. Key idea: “alter” the loop from within
 
-Un bucle normalmente avanza así:
+A loop normally proceeds like this:
 
-1. Comprueba condición
-2. Ejecuta el bloque
-3. Actualiza contador (si es `for`)
-4. Repite
+1. Check condition
+2. Run the block
+3. Update counter (if `for`)
+4. Repeat
 
-Con `break` y `continue` puedes intervenir en ese flujo:
+With `break` and `continue` you can intervene in that flow:
 
-- `break` corta el bucle completo
-- `continue` corta _solo la iteración actual_
+- `break` cuts the entire loop
+- `continue` cuts _only the current iteration_
 
 ---
 
-## 3. `break`: salir del bucle
+## 3. `break`: exit the loop
 
-### 3.1. Qué hace `break`
+### 3.1. What `break` does
 
-Cuando Java ejecuta `break` dentro de un bucle, el bucle termina inmediatamente y el programa continúa **después** del bucle.
+When Java executes `break` inside a loop, the loop ends immediately and the program continues **after** the loop.
 
-Esto funciona igual en:
+This works the same in:
 
 - `while`
 - `for`
 - `do-while`
-- `switch` (aunque en switch es otro uso, ya lo conoces)
+- `switch` (although in switches it is another use, you already know it)
 
 ---
 
-### 3.2. Ejemplo 1: detenerse cuando se encuentra un valor
+### 3.2. Example 1: Stop when a value is found
 
-Imagina que estás “buscando” el número 7 dentro de un rango.
+Imagine that you are “searching” for the number 7 within a range.
 
 ```java
 public class Main {
@@ -84,17 +84,17 @@ public class Main {
 }
 ```
 
-Qué ocurre:
+What happens:
 
-- El bucle imprime “Checking” para 1, 2, 3...
-- Cuando `i` vale 7, imprime “Found it!” y ejecuta `break`
-- El bucle termina, aunque todavía quedarían iteraciones 8, 9 y 10
+- The loop prints “Checking” for 1, 2, 3...
+- When `i` is 7, print “Found it!” and run `break`
+- The loop ends, although there would still be iterations 8, 9 and 10
 
 ---
 
-### 3.3. Ejemplo 2: bucle `while` que se detiene por una condición interna
+### 3.3. Example 2: `while` loop stopping for an internal condition
 
-A veces la condición del `while` no es suficiente, y decides terminar desde dentro.
+Sometimes the condition of the `while` is not enough, and you decide to finish from within.
 
 ```java
 public class Main {
@@ -116,23 +116,23 @@ public class Main {
 }
 ```
 
-Aquí la condición del bucle es `true`, así que **solo `break` puede detenerlo**.
+Here the loop condition is `true`, so **only `break` can stop it**.
 
-Esto se usa mucho cuando:
+This is often used when:
 
-- No sabes qué condición exacta detendrá el bucle al inicio
-- La condición depende de varios factores internos
+- You don't know what exact condition will stop the loop at the start
+- Condition depends on several internal factors
 
 ---
 
-### 3.4. Patrón común: “buscar y parar”
+### 3.4. Common pattern: “find and stop”
 
-Este patrón aparece muchísimo cuando trabajes con arrays o listas:
+This pattern appears a lot when you work with arrays or lists:
 
-- Recorres algo
-- Si encuentras lo que buscas, paras con `break`
+- You walk something
+- If you find what you are looking for, stop with `break`
 
-Aunque aún no hemos visto arrays, puedes entender la idea con un rango.
+Although we haven't seen arrays yet, you can get the idea with a range.
 
 ```java
 public class Main {
@@ -154,21 +154,21 @@ public class Main {
 
 ---
 
-## 4. `continue`: saltar una iteración
+## 4. `continue`: skip an iteration
 
-### 4.1. Qué hace `continue`
+### 4.1. What `continue` does
 
-Cuando Java ejecuta `continue` dentro de un bucle:
+When Java executes `continue` inside a loop:
 
-- Se detiene la iteración actual
-- Se salta lo que queda del bloque
-- El bucle pasa directamente a la siguiente iteración
+- The current iteration is stopped
+- Skip what's left of the block
+- The loop goes directly to the next iteration
 
-Es decir, no termina el bucle, solo “salta” una vuelta.
+That is, the loop does not end, it only “jumps” one turn.
 
 ---
 
-### 4.2. Ejemplo 1: saltar números impares
+### 4.2. Example 1: Skip odd numbers
 
 ```java
 public class Main {
@@ -184,17 +184,17 @@ public class Main {
 }
 ```
 
-Qué ocurre:
+What happens:
 
-- Para `i = 1`, es impar, así que hace `continue` y no imprime.
-- Para `i = 2`, no entra al `if` y se imprime.
-- Resultado: solo imprime los pares.
+- For `i = 1`, it is odd, so it does `continue` and does not print.
+- For `i = 2`, it does not enter the `if` and print.
+- Result: only print the pairs.
 
 ---
 
-### 4.3. Ejemplo 2: evitar procesar valores “inválidos”
+### 4.3. Example 2: Avoid processing “invalid” values
 
-Imagina que quieres “procesar” números, pero ignorar el 0.
+Imagine that you want to “process” numbers, but ignore the 0.
 
 ```java
 public class Main {
@@ -211,14 +211,14 @@ public class Main {
 }
 ```
 
-Si no usas `continue`, habría división entre cero (error).  
-Con `continue`, `i == 0` se salta y el bucle sigue.
+If you don't use `continue`, there would be division by zero (error).  
+With `continue`, `i == 0` is skipped and the loop continues.
 
 ---
 
-### 4.4. Ejemplo 3: filtrar y contar
+### 4.4. Example 3: filter and count
 
-Puedes usar `continue` para filtrar valores que no te interesan.
+You can use `continue` to filter out securities that you are not interested in.
 
 ```java
 public class Main {
@@ -240,28 +240,28 @@ public class Main {
 
 ---
 
-## 5. Comparación rápida: `break` vs `continue`
+## 5. Quick Comparison: `break` vs `continue`
 
-- `break` → termina el bucle completo
-- `continue` → salta la iteración actual y sigue
+- `break` → complete loop ends
+- `continue` → skip current iteration and continue
 
-Ejemplo visual (idea):
+Visual example (idea):
 
-- `break`: “me voy del bucle”
-- `continue`: “esta vuelta no, siguiente”
+- `break`: “I'm leaving the loop”
+- `continue`: “not this round, next”
 
 ---
 
-## 6. `break` y `continue` en `while`
+## 6. `break` and `continue` in `while`
 
-En `while`, el efecto es el mismo, pero hay un detalle importante:
+In `while`, the effect is the same, but there is an important detail:
 
-- En un `for`, el contador se actualiza automáticamente al final de la iteración
-- En un `while`, tú controlas todo
+- On an `for`, the counter is automatically updated at the end of the iteration
+- In an `while`, you control everything
 
-Eso significa que, si haces `continue` en un `while`, debes asegurarte de que el estado del bucle sigue actualizándose, o podrías crear un bucle infinito.
+That means that if you do `continue` on an `while`, you have to make sure the loop state keeps updating, or you could create an infinite loop.
 
-### 6.1. Ejemplo: `continue` en `while` con cuidado
+### 6.1. Example: `continue` in `while` carefully
 
 ```java
 public class Main {
@@ -281,20 +281,20 @@ public class Main {
 }
 ```
 
-Fíjate en que `i++` ocurre **antes** del `continue`.  
-Si estuviera después, el bucle se quedaría “atascado”.
+Note that `i++` occurs **before** `continue`.  
+If it were after, the loop would get “stuck”.
 
 ---
 
-## 7. Buenas prácticas (cuándo usarlos y cuándo evitarlo)
+## 7. Good practices (when to use them and when to avoid it)
 
-### 7.1. Cuándo `break` es una buena opción
+### 7.1. When `break` is a good option
 
-- Cuando estás buscando algo y quieres parar al encontrarlo
-- Cuando necesitas una salida clara ante un caso especial
-- Cuando un `while (true)` tiene un punto de salida explícito y claro
+- When you are looking for something and want to stop when you find it
+- When you need a clear way out in a special case
+- When an `while (true)` has an explicit and clear exit point
 
-Ejemplo de uso razonable:
+Example of reasonable use:
 
 ```java
 for (int i = 0; i < 100; i++) {
@@ -306,12 +306,12 @@ for (int i = 0; i < 100; i++) {
 
 ---
 
-### 7.2. Cuándo `continue` es una buena opción
+### 7.2. When `continue` is a good option
 
-- Cuando quieres filtrar casos rápidamente
-- Cuando quieres evitar un bloque grande de `if` anidados
+- When you want to filter cases quickly
+- When you want to avoid a large block of nested `if`
 
-Ejemplo más limpio con `continue`:
+Cleaner example with `continue`:
 
 ```java
 for (int i = 1; i <= 10; i++) {
@@ -325,21 +325,21 @@ for (int i = 1; i <= 10; i++) {
 
 ---
 
-### 7.3. Cuándo deberías tener cuidado
+### 7.3. When you should be careful
 
-Si abusas de `break` y `continue`, tu bucle puede volverse difícil de leer, especialmente si hay muchas condiciones y varios `continue`.
+If you abuse `break` and `continue`, your loop can become difficult to read, especially if there are many conditions and multiple `continue`.
 
-En esos casos suele ser mejor:
+In those cases it is usually better:
 
-- Reescribir la condición del bucle
-- Mover parte de la lógica a métodos (lo verás más adelante)
-- Usar variables booleanas para claridad
+- Rewrite loop condition
+- Move part of the logic to methods (you will see it later)
+- Use boolean variables for clarity
 
 ---
 
-## 8. Ejemplos completos (patrones frecuentes)
+## 8. Complete examples (frequent patterns)
 
-### 8.1. Patrón: validar intentos y cortar
+### 8.1. Pattern: Validate attempts and cut
 
 ```java
 public class Main {
@@ -365,7 +365,7 @@ public class Main {
 
 ---
 
-### 8.2. Patrón: filtrar y procesar
+### 8.2. Pattern: filter and process
 
 ```java
 public class Main {
@@ -388,7 +388,7 @@ public class Main {
 
 ---
 
-### 8.3. Patrón: combinar `continue` para evitar una excepción
+### 8.3. Pattern: Combine `continue` to avoid an exception
 
 ```java
 public class Main {
@@ -406,14 +406,14 @@ public class Main {
 
 ---
 
-## 9. A tener en cuenta
+## 9. To take into account
 
-- `break` termina el bucle completo inmediatamente.
-- `continue` salta la iteración actual y pasa a la siguiente.
-- Son herramientas útiles, pero deben usarse con intención.
-- En `while`, usa `continue` con cuidado para no crear bucles infinitos.
-- Son especialmente útiles para patrones como “buscar”, “filtrar” y “evitar casos especiales”.
+- `break` ends the entire loop immediately.
+- `continue` skips the current iteration and goes to the next one.
+- They are useful tools, but they must be used with intention.
+- In `while`, use `continue` carefully so as not to create infinite loops.
+- They are especially useful for patterns like “search”, “filter” and “avoid special cases”.
 
 ---
 
-En el próximo tema veremos **métodos**: qué son, cómo se definen y cómo se usan para organizar mejor tu código cuando empieza a crecer.
+In the next topic we will see **methods**: what they are, how they are defined and how they are used to better organize your code when it starts to grow.

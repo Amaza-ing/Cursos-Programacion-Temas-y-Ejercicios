@@ -1,31 +1,31 @@
-# Ejercicios Tema 3: Formularios, validación y procesamiento de datos en Spring MVC
+# Exercises Topic 3: Forms, validation and data processing in Spring MVC
 
-## Introducción
+## Introduction
 
-En estos ejercicios vas a practicar los contenidos principales del **Tema 3**:
+In these exercises you will practice the main contents of **Topic 3**:
 
-- Creación de formularios en Spring MVC.
-- Uso de `@ModelAttribute`.
-- Uso de `@Valid`.
-- Uso de `BindingResult`.
-- Validación con Jakarta Bean Validation.
-- Uso de etiquetas `<form:form>`, `<form:input>`, `<form:select>` y `<form:errors>`.
-- Procesamiento de peticiones `GET` y `POST`.
-- Redirección después de guardar datos.
-- Uso de mensajes temporales con `RedirectAttributes`.
-- Separación entre controlador, modelo y servicio.
+- Creation of forms in Spring MVC.
+- Use of `@ModelAttribute`.
+- Use of `@Valid`.
+- Use of `BindingResult`.
+- Validation with Jakarta Bean Validation.
+- Use of `<form:form>`, `<form:input>`, `<form:select>` and `<form:errors>` tags.
+- Processing of `GET` and `POST` requests.
+- Redirection after saving data.
+- Use of temporary messages with `RedirectAttributes`.
+- Separation between controller, model and service.
 
-Los ejercicios siguen una progresión paso a paso. Usaremos como ejemplo una pequeña aplicación de gestión de **productos**, diferente al ejemplo de cursos visto en la teoría.
+The exercises follow a step-by-step progression. We will use as an example a small **products** management application, different from the course example seen in theory.
 
-Cada solución está oculta bajo el botón **mostrar solución**.
+Each solution is hidden under the **show solution** button.
 
 ---
 
-# Ejercicio 1 — Añadir las dependencias necesarias para validación
+# Exercise 1 — Add the necessary dependencies for validation
 
-## Enunciado
+## Statement
 
-En el Tema 3 vamos a validar formularios usando anotaciones como:
+In Topic 3 we are going to validate forms using annotations such as:
 
 ```java
 @NotBlank
@@ -35,12 +35,12 @@ En el Tema 3 vamos a validar formularios usando anotaciones como:
 @Max
 ```
 
-Añade al `pom.xml` la dependencia necesaria para usar Jakarta Bean Validation con Hibernate Validator.
+Adds to `pom.xml` the necessary dependency to use Jakarta Bean Validation with Hibernate Validator.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <!-- Implementación de Jakarta Bean Validation -->
@@ -51,9 +51,9 @@ Añade al `pom.xml` la dependencia necesaria para usar Jakarta Bean Validation c
 </dependency>
 ```
 
-### Explicación
+### Explanation
 
-Las anotaciones como:
+Annotations like:
 
 ```java
 @NotBlank
@@ -62,55 +62,55 @@ Las anotaciones como:
 @Max
 ```
 
-pertenecen a Jakarta Bean Validation.
+belong to Jakarta Bean Validation.
 
-Sin una implementación de validación, Spring MVC no podrá aplicar correctamente esas reglas cuando usemos:
+Without a validation implementation, Spring MVC will not be able to correctly apply those rules when we use:
 
 ```java
 @Valid
 ```
 
-Hibernate Validator es una implementación habitual de Jakarta Bean Validation.
+Hibernate Validator is a common implementation of Jakarta Bean Validation.
 
 </details>
 
 ---
 
-# Ejercicio 2 — Crear el modelo `Product` con validación
+# Exercise 2 — Create the `Product` model with validation
 
-## Enunciado
+## Statement
 
-Crea una clase llamada `Product` en el paquete:
+Create a class called `Product` in the package:
 
 ```text
 com.example.shop.model
 ```
 
-La clase debe tener estos atributos:
+The class must have these attributes:
 
-| Atributo   | Tipo      |
+| Attribute | Type |
 | ---------- | --------- |
-| `id`       | `Long`    |
-| `name`     | `String`  |
-| `category` | `String`  |
-| `price`    | `Double`  |
-| `stock`    | `Integer` |
+| `id` | `Long` |
+| `name` | `String` |
+| `category` | `String` |
+| `price` | `Double` |
+| `stock` | `Integer` |
 
-Añade las siguientes validaciones:
+Add the following validations:
 
-| Campo      | Validación                            |
+| Field | Validation |
 | ---------- | ------------------------------------- |
-| `name`     | Obligatorio y entre 3 y 60 caracteres |
-| `category` | Obligatorio                           |
-| `price`    | Obligatorio y mínimo 0.01             |
-| `stock`    | Obligatorio y mínimo 0                |
+| `name` | Required and between 3 and 60 characters |
+| `category` | Mandatory |
+| `price` | Mandatory and minimum 0.01 |
+| `stock` | Mandatory and minimum 0 |
 
-La clase debe tener constructor vacío, constructor con todos los campos, getters y setters.
+The class must have empty constructor, constructor with all fields, getters and setters.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.shop.model;
@@ -193,59 +193,58 @@ public class Product {
 }
 ```
 
-### Explicación
+### Explanation
 
-Usamos:
+We use:
 
 ```java
 @NotBlank
 ```
 
-para campos de texto que no pueden estar vacíos.
+for text fields that cannot be empty.
 
-Usamos:
+We use:
 
 ```java
 @NotNull
 ```
 
-para campos numéricos que deben tener valor.
+for numeric fields that must have value.
 
-El campo `price` es `Double`, no `double`, porque necesitamos que pueda valer `null` cuando el usuario deja el campo vacío.
+The `price` field is `Double`, not `double`, because we need `null` to be valid when the user leaves the field empty.
 
-El campo `stock` es `Integer`, no `int`, por la misma razón.
+The `stock` field is `Integer`, not `int`, for the same reason.
 
-Si usamos tipos primitivos como `int` o `double`, no podemos representar bien la ausencia de valor.
+If we use primitive types like `int` or `double`, we cannot represent the absence of value well.
 
 </details>
 
 ---
 
-# Ejercicio 3 — Crear un servicio mutable de productos
+# Exercise 3 — Create a mutable product service
 
-## Enunciado
-
-Crea una clase llamada `ProductService` en el paquete:
+## Statement
+Create a class called `ProductService` in the package:
 
 ```text
 com.example.shop.service
 ```
 
-Debe estar anotada con `@Service`.
+It must be noted with `@Service`.
 
-La clase debe:
+The class must:
 
-1. Tener una lista mutable de productos.
-2. Cargar tres productos iniciales.
-3. Tener un contador `nextId`.
-4. Tener un método `findAll()`.
-5. Tener un método `findById(Long id)`.
-6. Tener un método `save(Product product)` que asigne un id nuevo y guarde el producto.
+1. Have a mutable list of products.
+2. Load three initial products.
+3. Have an `nextId` counter.
+4. Have an `findAll()` method.
+5. Have an `findById(Long id)` method.
+6. Have a method `save(Product product)` that assigns a new id and saves the product.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.shop.service;
@@ -288,25 +287,25 @@ public class ProductService {
 }
 ```
 
-### Explicación
+### Explanation
 
-Usamos:
+We use:
 
 ```java
 new ArrayList<>()
 ```
 
-porque necesitamos una lista modificable.
+because we need a modifiable list.
 
-Si usáramos:
+If we used:
 
 ```java
 List.of(...)
 ```
 
-no podríamos añadir productos nuevos.
+We could not add new products.
 
-El método `save` hace tres cosas:
+The `save` method does three things:
 
 ```java
 product.setId(nextId);
@@ -314,37 +313,37 @@ products.add(product);
 nextId++;
 ```
 
-Primero asigna un identificador, después guarda el producto y finalmente aumenta el contador para el siguiente producto.
+It first assigns an identifier, then saves the product, and finally increments the counter for the next product.
 
 </details>
 
 ---
 
-# Ejercicio 4 — Crear un controlador para listar productos
+# Exercise 4 — Create a controller to list products
 
-## Enunciado
+## Statement
 
-Crea un controlador llamado `ProductController` en el paquete:
+Create a handler named `ProductController` in the package:
 
 ```text
 com.example.shop.controller
 ```
 
-Debe:
+You must:
 
-1. Estar anotado con `@Controller`.
-2. Tener una ruta base `/products`.
-3. Recibir `ProductService` por constructor.
-4. Tener un método que responda a `GET /products`.
-5. Añadir al modelo:
-   - `pageTitle` con el valor `Listado de productos`.
-   - `products` con la lista de productos.
-6. Devolver la vista `products/list`.
+1. Be registered with `@Controller`.
+2. Have a base path `/products`.
+3. Receive `ProductService` by builder.
+4. Have a method that responds to `GET /products`.
+5. Add to model:
+   - `pageTitle` with the value `Listado de productos`.
+   - `products` with product list.
+6. Return the `products/list` view.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.shop.controller;
@@ -375,39 +374,39 @@ public class ProductController {
 }
 ```
 
-### Explicación
+### Explanation
 
-La ruta base es:
+The base route is:
 
 ```java
 @RequestMapping("/products")
 ```
 
-Como el método tiene:
+As the method has:
 
 ```java
 @GetMapping
 ```
 
-responde a:
+responds to:
 
 ```text
 GET /products
 ```
 
-El controlador no crea los productos directamente. Se los pide al servicio:
+The controller does not create the products directly. You ask the service:
 
 ```java
 productService.findAll()
 ```
 
-La vista devuelta es:
+The view returned is:
 
 ```java
 return "products/list";
 ```
 
-Spring buscará:
+Spring will look for:
 
 ```text
 /WEB-INF/views/products/list.jsp
@@ -417,34 +416,34 @@ Spring buscará:
 
 ---
 
-# Ejercicio 5 — Crear la vista de listado de productos
+# Exercise 5 — Create the product listing view
 
-## Enunciado
+## Statement
 
-Crea la vista:
+Create the view:
 
 ```text
 src/main/webapp/WEB-INF/views/products/list.jsp
 ```
 
-Debe mostrar una tabla con:
+It should show a table with:
 
 ```text
 Nombre | Categoría | Precio | Stock | Acción
 ```
 
-También debe incluir un botón para crear un producto nuevo que apunte a:
+You should also include a button to create a new product that points to:
 
 ```text
 /products/new
 ```
 
-Usa JSTL para recorrer la lista de productos.
+Use JSTL to loop through the list of products.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -510,21 +509,21 @@ Usa JSTL para recorrer la lista de productos.
 </html>
 ```
 
-### Explicación
+### Explanation
 
-La lista se recorre con:
+The list is traversed with:
 
 ```jsp
 <c:forEach var="product" items="${products}">
 ```
 
-El atributo `products` viene del controlador:
+The `products` attribute comes from the driver:
 
 ```java
 model.addAttribute("products", productService.findAll());
 ```
 
-Para acceder a las propiedades usamos:
+To access the properties we use:
 
 ```jsp
 ${product.name}
@@ -533,15 +532,15 @@ ${product.price}
 ${product.stock}
 ```
 
-Cada expresión llama internamente al getter correspondiente.
+Each expression internally calls the corresponding getter.
 
-Por ejemplo:
+For example:
 
 ```jsp
 ${product.name}
 ```
 
-llama a:
+call:
 
 ```java
 getName()
@@ -551,26 +550,26 @@ getName()
 
 ---
 
-# Ejercicio 6 — Mostrar el formulario de creación
+# Exercise 6 — Show the creation form
 
-## Enunciado
+## Statement
 
-Añade a `ProductController` un método que responda a:
+Add a method to `ProductController` that responds to:
 
 ```text
 GET /products/new
 ```
 
-Este método debe:
+This method must:
 
-1. Añadir al modelo `pageTitle` con el valor `Crear nuevo producto`.
-2. Añadir al modelo un objeto vacío `Product` con el nombre `product`.
-3. Devolver la vista `products/form`.
+1. Add to the model `pageTitle` with the value `Crear nuevo producto`.
+2. Add to the model an empty object `Product` with the name `product`.
+3. Return the `products/form` view.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @GetMapping("/new")
@@ -582,7 +581,7 @@ public String showCreateForm(Model model) {
 }
 ```
 
-### Controlador completo hasta este punto
+### Complete driver up to this point
 
 ```java
 package com.example.shop.controller;
@@ -622,23 +621,23 @@ public class ProductController {
 }
 ```
 
-### Explicación
+### Explanation
 
-El formulario necesita un objeto al que vincularse.
+The form needs an object to bind to.
 
-Por eso añadimos:
+That's why we add:
 
 ```java
 model.addAttribute("product", new Product());
 ```
 
-La vista usará ese objeto con:
+The view will use that object with:
 
 ```jsp
 <form:form modelAttribute="product">
 ```
 
-El nombre debe coincidir exactamente:
+The name must match exactly:
 
 ```text
 product
@@ -648,29 +647,28 @@ product
 
 ---
 
-# Ejercicio 7 — Crear la vista del formulario con etiquetas de Spring
+# Exercise 7 — Create the form view with Spring tags
 
-## Enunciado
+## Statement
 
-Crea la vista:
-
+Create the view:
 ```text
 src/main/webapp/WEB-INF/views/products/form.jsp
 ```
 
-El formulario debe:
+The form must:
 
-1. Usar la librería de etiquetas de formulario de Spring.
-2. Enviar los datos por `POST` a `/products`.
-3. Estar vinculado al atributo `product`.
-4. Tener campos para:
+1. Use Spring's form tag library.
+2. Send the data via `POST` to `/products`.
+3. Be linked to the `product` attribute.
+4. Have fields for:
    - `name`
    - `category`
    - `price`
    - `stock`
-5. Mostrar errores debajo de cada campo.
+5. Show errors below each field.
 
-Para `category`, usa un desplegable con las opciones:
+For `category`, use a dropdown with the options:
 
 ```text
 Informática
@@ -682,7 +680,7 @@ Otros
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -762,39 +760,39 @@ Otros
 </html>
 ```
 
-### Explicación
+### Explanation
 
-La línea:
+The line:
 
 ```jsp
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-permite usar etiquetas de formulario de Spring.
+allows using Spring form tags.
 
-La etiqueta principal es:
+The main tag is:
 
 ```jsp
 <form:form modelAttribute="product">
 ```
 
-Esto significa que el formulario está vinculado al objeto `product` enviado desde el controlador.
+This means that the form is bound to the `product` object sent from the controller.
 
-Cada campo se conecta con una propiedad de `Product`.
+Each field connects to a property of `Product`.
 
-Por ejemplo:
+For example:
 
 ```jsp
 <form:input path="name" />
 ```
 
-se conecta con:
+connects with:
 
 ```java
 private String name;
 ```
 
-Los errores se muestran con:
+Errors are shown with:
 
 ```jsp
 <form:errors path="name" cssClass="error" />
@@ -804,28 +802,28 @@ Los errores se muestran con:
 
 ---
 
-# Ejercicio 8 — Procesar el formulario con `@ModelAttribute`
+# Exercise 8 — Process the form with `@ModelAttribute`
 
-## Enunciado
+## Statement
 
-Añade a `ProductController` un método que responda a:
+Add a method to `ProductController` that responds to:
 
 ```text
 POST /products
 ```
 
-El método debe:
+The method must:
 
-1. Recibir un objeto `Product` mediante `@ModelAttribute("product")`.
-2. Guardarlo usando `productService.save(product)`.
-3. Redirigir a `/products`.
+1. Receive an `Product` object using `@ModelAttribute("product")`.
+2. Save it using `productService.save(product)`.
+3. Redirect to `/products`.
 
-En este ejercicio todavía no añadas validación.
+In this exercise do not add validation yet.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @PostMapping
@@ -836,7 +834,7 @@ public String createProduct(@ModelAttribute("product") Product product) {
 }
 ```
 
-### Controlador con imports necesarios
+### Controller with necessary imports
 
 ```java
 package com.example.shop.controller;
@@ -885,17 +883,17 @@ public class ProductController {
 }
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @ModelAttribute("product")
 ```
 
-hace que Spring MVC construya un objeto `Product` a partir de los campos enviados por el formulario.
+causes Spring MVC to construct an `Product` object from the fields submitted by the form.
 
-Si el formulario envía:
+If the form sends:
 
 ```text
 name=Monitor
@@ -904,7 +902,7 @@ price=149.99
 stock=8
 ```
 
-Spring hace algo parecido a:
+Spring does something like:
 
 ```java
 Product product = new Product();
@@ -914,7 +912,7 @@ product.setPrice(149.99);
 product.setStock(8);
 ```
 
-Después guardamos el producto y redirigimos:
+Then we save the product and redirect:
 
 ```java
 return "redirect:/products";
@@ -924,23 +922,23 @@ return "redirect:/products";
 
 ---
 
-# Ejercicio 9 — Añadir validación con `@Valid` y `BindingResult`
+# Exercise 9 — Add validation with `@Valid` and `BindingResult`
 
-## Enunciado
+## Statement
 
-Modifica el método `createProduct` para que:
+Modify the `createProduct` method so that:
 
-1. Valide el producto con `@Valid`.
-2. Reciba un `BindingResult`.
-3. Si hay errores, vuelva a mostrar la vista `products/form`.
-4. Si no hay errores, guarde el producto y redirija a `/products`.
+1. Validate the product with `@Valid`.
+2. Receive an `BindingResult`.
+3. If there are errors, redisplay the `products/form` view.
+4. If there are no errors, save the product and redirect to `/products`.
 
-Recuerda que si hay errores debes volver a añadir `pageTitle` al modelo.
+Remember that if there are errors you must add `pageTitle` to the model again.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @PostMapping
@@ -960,52 +958,52 @@ public String createProduct(
 }
 ```
 
-### Imports necesarios
+### Imports required
 
 ```java
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @Valid
 ```
 
-activa las validaciones definidas en `Product`.
+activates the validations defined in `Product`.
 
-Por ejemplo:
+For example:
 
 ```java
 @NotBlank(message = "El nombre es obligatorio.")
 private String name;
 ```
 
-Si el usuario deja el nombre vacío, Spring añade un error a `BindingResult`.
+If the user leaves the name empty, Spring adds an error to `BindingResult`.
 
-Por eso comprobamos:
+That's why we check:
 
 ```java
 if (bindingResult.hasErrors()) {
 ```
 
-Si hay errores, no guardamos el producto. Volvemos al formulario:
+If there are errors, we do not keep the product. We return to the form:
 
 ```java
 return "products/form";
 ```
 
-Si no hay errores, guardamos y redirigimos:
+If there are no errors, we save and redirect:
 
 ```java
 productService.save(product);
 return "redirect:/products";
 ```
 
-`BindingResult` debe ir justo después del objeto validado:
+`BindingResult` should come right after the validated object:
 
 ```java
 @Valid @ModelAttribute("product") Product product,
@@ -1016,26 +1014,26 @@ BindingResult bindingResult,
 
 ---
 
-# Ejercicio 10 — Añadir mensaje de éxito con `RedirectAttributes`
+# Exercise 10 — Add success message with `RedirectAttributes`
 
-## Enunciado
+## Statement
 
-Modifica el método `createProduct` para que, cuando el producto se guarde correctamente, añada un mensaje temporal llamado `successMessage`.
+Modify the `createProduct` method so that when the product saves successfully, it adds a temporary message called `successMessage`.
 
-El mensaje debe ser:
+The message must be:
 
 ```text
 El producto se ha creado correctamente.
 ```
 
-Después, modifica `list.jsp` para mostrar ese mensaje si existe.
+Then modify `list.jsp` to display that message if it exists.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Controlador
+## Controller
 
 ```java
 @PostMapping
@@ -1061,15 +1059,15 @@ public String createProduct(
 }
 ```
 
-### Import necesario
+### Import required
 
 ```java
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 ```
 
-## Vista `list.jsp`
+## View `list.jsp`
 
-Añade este bloque antes de la tabla:
+Add this block before the table:
 
 ```jsp
 <c:if test="${not empty successMessage}">
@@ -1079,7 +1077,7 @@ Añade este bloque antes de la tabla:
 </c:if>
 ```
 
-La vista quedaría así en la parte principal:
+The view would look like this in the main part:
 
 ```jsp
 <main class="container">
@@ -1103,54 +1101,54 @@ La vista quedaría así en la parte principal:
 </main>
 ```
 
-### Explicación
+### Explanation
 
-`RedirectAttributes` permite enviar datos temporales después de una redirección.
+`RedirectAttributes` allows temporary data to be sent after a redirect.
 
-Esto es útil porque después de guardar hacemos:
+This is useful because after saving we do:
 
 ```java
 return "redirect:/products";
 ```
 
-El atributo flash:
+The flash attribute:
 
 ```java
 redirectAttributes.addFlashAttribute("successMessage", "...");
 ```
 
-estará disponible en la siguiente petición, pero no se quedará permanentemente en sesión.
+It will be available on the next request, but will not stay permanently in session.
 
 </details>
 
 ---
 
-# Ejercicio 11 — Crear una vista de detalle de producto
+# Exercise 11 — Create a product detail view
 
-## Enunciado
+## Statement
 
-Añade una ruta:
+Add a route:
 
 ```text
 GET /products/detail?id=1
 ```
 
-El método debe:
+The method must:
 
-1. Recibir el parámetro `id` con `@RequestParam`.
-2. Buscar el producto.
-3. Si no existe, devolver la vista `products/not-found`.
-4. Si existe, añadir `product` y `pageTitle` al modelo.
-5. Devolver la vista `products/detail`.
+1. Receive parameter `id` with `@RequestParam`.
+2. Search for the product.
+3. If it does not exist, return the `products/not-found` view.
+4. If it exists, add `product` and `pageTitle` to the model.
+5. Return the `products/detail` view.
 
-Después crea la vista `detail.jsp`.
+Then create the view `detail.jsp`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Método en `ProductController`
+## Method in `ProductController`
 
 ```java
 @GetMapping("/detail")
@@ -1171,13 +1169,13 @@ public String productDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-### Import necesario
+### Import required
 
 ```java
 import org.springframework.web.bind.annotation.RequestParam;
 ```
 
-## Vista `detail.jsp`
+## View `detail.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1229,7 +1227,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 </html>
 ```
 
-## Vista `not-found.jsp`
+## View `not-found.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1270,52 +1268,52 @@ import org.springframework.web.bind.annotation.RequestParam;
 </html>
 ```
 
-### Explicación
+### Explanation
 
-`@RequestParam` permite leer un parámetro concreto de la URL.
+`@RequestParam` allows reading a specific parameter from the URL.
 
-Si la URL es:
+If the URL is:
 
 ```text
 /products/detail?id=2
 ```
 
-Spring asigna:
+Spring assigns:
 
 ```java
 id = 2L;
 ```
 
-Después buscamos el producto con:
+Then we search for the product with:
 
 ```java
 productService.findById(id)
 ```
 
-Si no existe, mostramos una página específica.
+If it does not exist, we show a specific page.
 
 </details>
 
 ---
 
-# Ejercicio 12 — Añadir validación a un campo desplegable
+# Exercise 12 — Add validation to a dropdown field
 
-## Enunciado
+## Statement
 
-En `Product`, el campo `category` tiene esta validación:
+In `Product`, the `category` field has this validation:
 
 ```java
 @NotBlank(message = "La categoría es obligatoria.")
 private String category;
 ```
 
-Explica por qué en el formulario es importante que la primera opción tenga valor vacío:
+Explain why in the form it is important that the first option has an empty value:
 
 ```jsp
 <form:option value="" label="Selecciona una categoría" />
 ```
 
-Después modifica el desplegable para que tenga estas categorías:
+Then modify the dropdown so that it has these categories:
 
 ```text
 Informática
@@ -1327,35 +1325,35 @@ Alimentación
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Explicación
+## Explanation
 
-La primera opción debe tener valor vacío:
+The first option must have an empty value:
 
 ```jsp
 <form:option value="" label="Selecciona una categoría" />
 ```
 
-porque así podemos detectar que el usuario no ha seleccionado ninguna categoría real.
+because this way we can detect that the user has not selected any real category.
 
-Si la primera opción tuviera un valor válido, como:
+If the first option had a valid value, such as:
 
 ```jsp
 <form:option value="Informática" label="Informática" />
 ```
 
-entonces el formulario se enviaría con una categoría válida aunque el usuario no hubiera elegido nada.
+then the form would be submitted with a valid category even if the user had not chosen anything.
 
-Como tenemos:
+As we have:
 
 ```java
 @NotBlank(message = "La categoría es obligatoria.")
 ```
 
-necesitamos que la opción inicial envíe un valor vacío para que la validación pueda activarse.
+we need the initial option to send an empty value so that validation can be triggered.
 
-## Código actualizado
+## Updated code
 
 ```jsp
 <form:select path="category" cssClass="input">
@@ -1372,33 +1370,33 @@ necesitamos que la opción inicial envíe un valor vacío para que la validació
 
 ---
 
-# Ejercicio 13 — Diagnosticar errores frecuentes en formularios
+# Exercise 13 — Diagnose frequent errors in forms
 
-## Enunciado
+## Statement
 
-Lee cada caso y explica cuál es el problema.
+Read each case and explain what the problem is.
 
-## Caso A
+## Case A
 
-En el controlador se añade el objeto así:
+In the controller the object is added like this:
 
 ```java
 model.addAttribute("product", new Product());
 ```
 
-Pero en la JSP se escribe:
+But in the JSP it is written:
 
 ```jsp
 <form:form modelAttribute="item">
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
-## Caso B
+## Case B
 
-En el método POST se escribe:
+In the POST method you write:
 
 ```java
 public String createProduct(
@@ -1407,50 +1405,50 @@ public String createProduct(
         BindingResult bindingResult) {
 ```
 
-¿Por qué está mal?
+Why is it wrong?
 
 ---
 
-## Caso C
+## Case C
 
-En la clase `Product` existe el atributo:
+In the class `Product` there is the attribute:
 
 ```java
 private String name;
 ```
 
-Pero en la JSP se escribe:
+But in the JSP it is written:
 
 ```jsp
 <form:input path="productName" />
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-El nombre del atributo no coincide.
+The attribute name does not match.
 
-El controlador envía:
+The controller sends:
 
 ```java
 model.addAttribute("product", new Product());
 ```
 
-pero la JSP busca:
+but the JSP looks for:
 
 ```jsp
 modelAttribute="item"
 ```
 
-Spring no encontrará un objeto llamado `item` en el modelo.
+Spring will not find an object named `item` in the model.
 
-La solución es usar el mismo nombre:
+The solution is to use the same name:
 
 ```jsp
 <form:form modelAttribute="product">
@@ -1458,13 +1456,12 @@ La solución es usar el mismo nombre:
 
 ---
 
-## Caso B
+## Case B
 
-El problema es el orden de los parámetros.
+The problem is the order of the parameters.
+`BindingResult` should come right after the validated object.
 
-`BindingResult` debe ir justo después del objeto validado.
-
-Incorrecto:
+Incorrect:
 
 ```java
 @Valid @ModelAttribute("product") Product product,
@@ -1472,7 +1469,7 @@ Model model,
 BindingResult bindingResult
 ```
 
-Correcto:
+Correct:
 
 ```java
 @Valid @ModelAttribute("product") Product product,
@@ -1480,62 +1477,62 @@ BindingResult bindingResult,
 Model model
 ```
 
-Si `BindingResult` no está colocado justo después del objeto validado, Spring no asociará correctamente los errores de validación.
+If `BindingResult` is not placed right after the validated object, Spring will not correctly associate validation errors.
 
 ---
 
-## Caso C
+## Case C
 
-El campo de la JSP no coincide con ninguna propiedad del modelo.
+The JSP field does not match any model property.
 
-La clase tiene:
+The class has:
 
 ```java
 private String name;
 ```
 
-Por tanto, el formulario debe usar:
+Therefore, the form must use:
 
 ```jsp
 <form:input path="name" />
 ```
 
-Si escribimos:
+If we write:
 
 ```jsp
 <form:input path="productName" />
 ```
 
-Spring intentará buscar una propiedad llamada `productName`, pero no existe.
+Spring will try to look for a property called `productName`, but it does not exist.
 
 </details>
 
 ---
 
-# Ejercicio 14 — Reto final: formulario completo para registrar clientes
+# Exercise 14 — Final challenge: complete form to register clients
 
-## Enunciado
+## Statement
 
-Crea una nueva sección para registrar clientes.
+Create a new section to register clients.
 
-Debes crear:
+You must create:
 
-1. Una clase `Customer`.
-2. Una clase `CustomerService`.
-3. Una clase `CustomerController`.
-4. Una vista `customers/list.jsp`.
-5. Una vista `customers/form.jsp`.
+1. An `Customer` class.
+2. An `CustomerService` class.
+3. An `CustomerController` class.
+4. An `customers/list.jsp` view.
+5. An `customers/form.jsp` view.
 
-El modelo `Customer` debe tener:
+The `Customer` model must have:
 
-| Campo            | Tipo     | Validación                           |
+| Field | Type | Validation |
 | ---------------- | -------- | ------------------------------------ |
-| `id`             | `Long`   | Sin validación                       |
-| `fullName`       | `String` | Obligatorio, entre 3 y 80 caracteres |
-| `email`          | `String` | Obligatorio y formato email          |
-| `membershipType` | `String` | Obligatorio                          |
+| `id` | `Long` | No validation |
+| `fullName` | `String` | Required, between 3 and 80 characters |
+| `email` | `String` | Mandatory and email format |
+| `membershipType` | `String` | Mandatory |
 
-Las rutas deben ser:
+The routes must be:
 
 ```text
 GET  /customers      → listado de clientes
@@ -1543,7 +1540,7 @@ GET  /customers/new  → formulario
 POST /customers      → guardar cliente
 ```
 
-El formulario debe tener un desplegable para `membershipType` con:
+The form should have a dropdown for `membershipType` with:
 
 ```text
 Basic
@@ -1554,9 +1551,9 @@ VIP
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Modelo `Customer.java`
+## Model `Customer.java`
 
 ```java
 package com.example.shop.model;
@@ -1624,7 +1621,7 @@ public class Customer {
 }
 ```
 
-## Servicio `CustomerService.java`
+## `CustomerService.java` service
 
 ```java
 package com.example.shop.service;
@@ -1659,7 +1656,7 @@ public class CustomerService {
 }
 ```
 
-## Controlador `CustomerController.java`
+## `CustomerController.java` driver
 
 ```java
 package com.example.shop.controller;
@@ -1726,7 +1723,7 @@ public class CustomerController {
 }
 ```
 
-## Vista `customers/list.jsp`
+## View `customers/list.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1791,7 +1788,7 @@ public class CustomerController {
 </html>
 ```
 
-## Vista `customers/form.jsp`
+## View `customers/form.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>

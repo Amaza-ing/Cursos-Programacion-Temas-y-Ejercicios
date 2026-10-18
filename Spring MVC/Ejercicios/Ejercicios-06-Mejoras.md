@@ -1,46 +1,46 @@
-# Ejercicios resueltos — Tema 6: Mejoras del proyecto Spring MVC
+# Solved exercises — Topic 6: Spring MVC project improvements
 
-## Introducción
+## Introduction
 
-En estos ejercicios vas a practicar pequeñas mejoras para un proyecto Spring MVC ya creado.
+In these exercises you will practice small improvements for an already created Spring MVC project.
 
-El objetivo no es añadir funcionalidades grandes, sino aprender a dejar el proyecto más limpio, mantenible y fácil de ampliar.
+The goal is not to add large features, but to learn how to make the project cleaner, maintainable and easier to extend.
 
-Trabajaremos con mejoras parecidas a las del tema, pero usando ejemplos diferentes para que puedas practicar sin copiar exactamente el código de la teoría.
+We will work with improvements similar to those of the topic, but using different examples so that you can practice without copying the theory code exactly.
 
-Vas a practicar:
+You are going to practice:
 
-- Añadir Lombok al proyecto.
-- Usar `@Data`, `@NoArgsConstructor` y `@AllArgsConstructor`.
-- Reducir getters, setters y constructores en modelos.
-- Externalizar configuración de MySQL en un archivo `.properties`.
-- Cargar propiedades externas desde `app-servlet.xml`.
-- Crear fragmentos JSP reutilizables.
-- Reutilizar un `<head>` común.
-- Reutilizar un menú común.
-- Crear atributos globales con `@ControllerAdvice` y `@ModelAttribute`.
-- Usar listas globales en formularios.
-- Diagnosticar errores frecuentes.
+- Add Lombok to the project.
+- Use `@Data`, `@NoArgsConstructor` and `@AllArgsConstructor`.
+- Reduce getters, setters and constructors in models.
+- Externalize MySQL configuration in an `.properties` file.
+- Load external properties from `app-servlet.xml`.
+- Create reusable JSP fragments.
+- Reuse a common `<head>`.
+- Reuse a common menu.
+- Create global attributes with `@ControllerAdvice` and `@ModelAttribute`.
+- Use global lists in forms.
+- Diagnose frequent errors.
 
-Las soluciones están ocultas bajo el botón **mostrar solución**.
+The solutions are hidden under the **show solution** button.
 
 ---
 
-# Ejercicio 1 — Añadir Lombok al proyecto
+# Exercise 1 — Add Lombok to the project
 
-## Enunciado
+## Statement
 
-Queremos usar Lombok en un proyecto Spring MVC para reducir código repetitivo en los modelos.
+We want to use Lombok in a Spring MVC project to reduce repetitive code in models.
 
-Añade al `pom.xml` la dependencia necesaria para usar Lombok.
+Adds the necessary dependency to use Lombok to `pom.xml`.
 
-Para que sea fácil actualizar la versión más adelante, crea también una propiedad llamada:
+To make it easy to update the version later, also create a property called:
 
 ```xml
 <lombok.version>
 ```
 
-El objetivo es poder usar anotaciones como:
+The goal is to be able to use annotations like:
 
 ```java
 @Data
@@ -51,17 +51,17 @@ El objetivo es poder usar anotaciones como:
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Propiedad en el `pom.xml`
+## Ownership in the `pom.xml`
 
-Dentro de `<properties>` añadimos:
+Inside `<properties>` we add:
 
 ```xml
 <lombok.version>1.18.46</lombok.version>
 ```
 
-El bloque de propiedades podría quedar así:
+The properties block could look like this:
 
 ```xml
 <properties>
@@ -73,9 +73,9 @@ El bloque de propiedades podría quedar así:
 </properties>
 ```
 
-## Dependencia de Lombok
+## Lombok Dependency
 
-Dentro de `<dependencies>` añadimos:
+Inside `<dependencies>` we add:
 
 ```xml
 <!-- Lombok: reduce código repetitivo en modelos y clases Java -->
@@ -87,35 +87,35 @@ Dentro de `<dependencies>` añadimos:
 </dependency>
 ```
 
-### Explicación
+### Explanation
 
-La dependencia:
+The dependency:
 
 ```xml
 <artifactId>lombok</artifactId>
 ```
 
-permite usar anotaciones de Lombok.
+allows using Lombok annotations.
 
-El `scope`:
+The `scope`:
 
 ```xml
 <scope>provided</scope>
 ```
 
-indica que Lombok se usa durante la compilación, pero no se empaqueta dentro del archivo `.war`.
+indicates that Lombok is used during compilation, but is not packaged within the `.war` file.
 
-Esto tiene sentido porque Lombok genera código al compilar. Cuando la aplicación se ejecuta en Tomcat, ese código ya está generado.
+This makes sense because Lombok generates code when compiling. When the application runs on Tomcat, that code is already generated.
 
 </details>
 
 ---
 
-# Ejercicio 2 — Activar Lombok en IntelliJ
+# Exercise 2 — Activate Lombok in IntelliJ
 
-## Enunciado
+## Statement
 
-Después de añadir Lombok al `pom.xml`, IntelliJ sigue marcando error en anotaciones como:
+After adding Lombok to the `pom.xml`, IntelliJ still fails with annotations like:
 
 ```java
 @Data
@@ -123,16 +123,16 @@ Después de añadir Lombok al `pom.xml`, IntelliJ sigue marcando error en anotac
 @AllArgsConstructor
 ```
 
-Explica qué configuración hay que revisar en IntelliJ.
+Explains what settings to check in IntelliJ.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-Hay que comprobar que IntelliJ tenga activado el procesamiento de anotaciones.
+You must verify that IntelliJ has annotation processing activated.
 
-Ruta habitual:
+Usual route:
 
 ```text
 File
@@ -142,13 +142,13 @@ File
 → Annotation Processors
 ```
 
-Después activamos:
+Then we activate:
 
 ```text
 Enable annotation processing
 ```
 
-También conviene:
+Also convenient:
 
 ```text
 1. Recargar Maven.
@@ -156,7 +156,7 @@ También conviene:
 3. Comprobar que los imports de Lombok son correctos.
 ```
 
-Los imports deberían ser, por ejemplo:
+The imports should be, for example:
 
 ```java
 import lombok.AllArgsConstructor;
@@ -164,21 +164,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 ```
 
-### Explicación
+### Explanation
 
-Lombok genera código en tiempo de compilación.
+Lombok generates code at compile time.
 
-Si IntelliJ no procesa anotaciones, puede parecer que los getters, setters o constructores no existen, aunque el código esté bien.
+If IntelliJ does not process annotations, it may appear that getters, setters, or constructors do not exist, even though the code is fine.
 
 </details>
 
 ---
 
-# Ejercicio 3 — Refactorizar un modelo usando Lombok
+# Exercise 3 — Refactor a model using Lombok
 
-## Enunciado
+## Statement
 
-Tenemos esta clase `Book`:
+We have this class `Book`:
 
 ```java
 package com.example.library.model;
@@ -234,19 +234,19 @@ public class Book {
 }
 ```
 
-Refactoriza la clase usando Lombok.
+Refactor the class using Lombok.
 
-Debe seguir teniendo:
+You must still have:
 
 1. Getters.
-2. Setters.
-3. Constructor vacío.
-4. Constructor con todos los atributos.
+2.Setters.
+3. Empty constructor.
+4. Constructor with all attributes.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.library.model;
@@ -267,15 +267,15 @@ public class Book {
 }
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @Data
 ```
 
-genera automáticamente:
+automatically generates:
 
 ```text
 getters
@@ -285,23 +285,23 @@ equals()
 hashCode()
 ```
 
-La anotación:
+The annotation:
 
 ```java
 @NoArgsConstructor
 ```
 
-genera el constructor vacío.
+generates the empty constructor.
 
-La anotación:
+The annotation:
 
 ```java
 @AllArgsConstructor
 ```
 
-genera el constructor con todos los atributos.
+generates the constructor with all the attributes.
 
-Aunque ya no veamos los métodos escritos manualmente, el resto de la aplicación podrá seguir usando:
+Although we no longer see the manually written methods, the rest of the application can still use:
 
 ```java
 book.getTitle()
@@ -312,35 +312,35 @@ book.setTitle("Nuevo título")
 
 ---
 
-# Ejercicio 4 — Refactorizar un modelo con validación usando Lombok
+# Exercise 4 — Refactor a model with validation using Lombok
 
-## Enunciado
+## Statement
 
-Tenemos una clase `Student` que se usa en un formulario.
+We have a class `Student` that is used in a form.
 
-Queremos usar Lombok, pero sin perder las validaciones.
+We want to use Lombok, but without losing validations.
 
-Crea la clase `Student` en el paquete:
+Create the `Student` class in the package:
 
 ```text
 com.example.academy.model
 ```
 
-Debe tener estos campos:
+You must have these fields:
 
-| Campo      | Tipo      | Validación                            |
+| Field | Type | Validation |
 | ---------- | --------- | ------------------------------------- |
-| `id`       | `Long`    | Sin validación                        |
-| `fullName` | `String`  | Obligatorio y entre 3 y 80 caracteres |
-| `email`    | `String`  | Obligatorio                           |
-| `age`      | `Integer` | Obligatorio y mínimo 16               |
+| `id` | `Long` | No validation |
+| `fullName` | `String` | Required and between 3 and 80 characters |
+| `email` | `String` | Mandatory |
+| `age` | `Integer` | Mandatory and minimum 16 |
 
-Usa Lombok para generar getters, setters y constructores.
+Use Lombok to generate getters, setters and constructors.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.academy.model;
@@ -373,17 +373,17 @@ public class Student {
 }
 ```
 
-### Explicación
+### Explanation
 
-Lombok no elimina las validaciones.
+Lombok does not remove validations.
 
-Podemos combinar perfectamente:
+We can perfectly combine:
 
 ```java
 @Data
 ```
 
-con:
+with:
 
 ```java
 @NotBlank
@@ -392,9 +392,9 @@ con:
 @Min
 ```
 
-Las anotaciones de validación siguen funcionando igual.
+The validation annotations still work the same.
 
-Spring MVC seguirá validando el objeto cuando en el controlador usemos:
+Spring MVC will continue to validate the object when in the controller we use:
 
 ```java
 @Valid @ModelAttribute("student") Student student
@@ -404,72 +404,72 @@ Spring MVC seguirá validando el objeto cuando en el controlador usemos:
 
 ---
 
-# Ejercicio 5 — Identificar qué genera cada anotación de Lombok
+# Exercise 5 — Identify what generates each Lombok annotation
 
-## Enunciado
+## Statement
 
-Relaciona cada anotación con lo que genera.
+Relate each annotation to what it generates.
 
-| Anotación             | Qué genera |
+| Annotation | What generates |
 | --------------------- | ---------- |
-| `@Data`               | ?          |
-| `@NoArgsConstructor`  | ?          |
+| `@Data` | ?          |
+| `@NoArgsConstructor` | ?          |
 | `@AllArgsConstructor` | ?          |
 
-Después explica por qué `@NoArgsConstructor` es especialmente importante cuando usamos formularios en Spring MVC.
+He then explains why `@NoArgsConstructor` is especially important when using forms in Spring MVC.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-| Anotación             | Qué genera                                                |
+| Annotation | What generates |
 | --------------------- | --------------------------------------------------------- |
-| `@Data`               | Getters, setters, `toString()`, `equals()` y `hashCode()` |
-| `@NoArgsConstructor`  | Constructor vacío                                         |
-| `@AllArgsConstructor` | Constructor con todos los atributos                       |
+| `@Data` | Getters, setters, `toString()`, `equals()` and `hashCode()` |
+| `@NoArgsConstructor` | Empty constructor |
+| `@AllArgsConstructor` | Constructor with all attributes |
 
-`@NoArgsConstructor` es importante porque Spring MVC suele necesitar crear un objeto vacío antes de rellenarlo con los datos enviados por un formulario.
+`@NoArgsConstructor` is important because Spring MVC often needs to create an empty object before filling it with data submitted by a form.
 
-Por ejemplo:
+For example:
 
 ```java
 model.addAttribute("student", new Student());
 ```
 
-O al recibir datos de un formulario:
+Or when receiving data from a form:
 
 ```java
 @ModelAttribute("student") Student student
 ```
 
-Spring necesita poder crear el objeto y después asignarle valores.
+Spring needs to be able to create the object and then assign values to it.
 
 </details>
 
 ---
 
-# Ejercicio 6 — Crear un archivo `database.properties`
+# Exercise 6 — Create an `database.properties` file
 
-## Enunciado
+## Statement
 
-En un proyecto Spring MVC tenemos la configuración de MySQL escrita directamente en `app-servlet.xml`.
+In a Spring MVC project we have the MySQL configuration written directly to `app-servlet.xml`.
 
-Queremos mover esos datos a un archivo externo.
+We want to move that data to an external file.
 
-Crea el archivo:
+Create the file:
 
 ```text
 src/main/resources/database.properties
 ```
 
-para una base de datos llamada:
+for a database called:
 
 ```text
 spring_mvc_library
 ```
 
-Los datos son:
+The data is:
 
 ```text
 Driver: com.mysql.cj.jdbc.Driver
@@ -481,7 +481,7 @@ Contraseña: TU_PASSWORD
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```properties
 db.driverClassName=com.mysql.cj.jdbc.Driver
@@ -490,21 +490,21 @@ db.username=root
 db.password=TU_PASSWORD
 ```
 
-### Explicación
+### Explanation
 
-El archivo debe colocarse en:
+The file should be placed in:
 
 ```text
 src/main/resources/database.properties
 ```
 
-porque después lo cargaremos desde XML usando:
+because later we will load it from XML using:
 
 ```xml
 classpath:database.properties
 ```
 
-En este archivo escribimos:
+In this file we write:
 
 ```text
 &
@@ -512,58 +512,58 @@ En este archivo escribimos:
 
 normal.
 
-No escribimos:
+We do not write:
 
 ```text
 &amp;
 ```
 
-porque eso solo es necesario dentro de XML.
+because that is only necessary within XML.
 
 </details>
 
 ---
 
-# Ejercicio 7 — Cargar `database.properties` desde `app-servlet.xml`
+# Exercise 7 — Load `database.properties` from `app-servlet.xml`
 
-## Enunciado
+## Statement
 
-Modifica `app-servlet.xml` para cargar el archivo:
+Modify `app-servlet.xml` to upload the file:
 
 ```text
 database.properties
 ```
 
-desde el classpath.
+from the classpath.
 
-Escribe solo la línea necesaria.
+Write only the necessary line.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <context:property-placeholder location="classpath:database.properties" />
 ```
 
-### Explicación
+### Explanation
 
-Esta línea le dice a Spring:
+This line tells Spring:
 
 ```text
 Busca un archivo llamado database.properties dentro del classpath.
 ```
 
-Como el archivo está en:
+Since the file is in:
 
 ```text
 src/main/resources
 ```
 
-Maven lo copiará al classpath cuando compile el proyecto.
+Maven will copy it to the classpath when you build the project.
 
-Gracias a esta línea podremos usar expresiones como:
+Thanks to this line we can use expressions like:
 
 ```xml
 ${db.url}
@@ -575,11 +575,11 @@ ${db.password}
 
 ---
 
-# Ejercicio 8 — Sustituir valores fijos por propiedades
+# Exercise 8 — Substitute fixed values for properties
 
-## Enunciado
+## Statement
 
-Tienes este `dataSource` en `app-servlet.xml`:
+You have this `dataSource` in `app-servlet.xml`:
 
 ```xml
 <bean id="dataSource"
@@ -595,12 +595,12 @@ Tienes este `dataSource` en `app-servlet.xml`:
 </bean>
 ```
 
-Modifícalo para que lea los valores desde `database.properties`.
+Modify it to read values from `database.properties`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <bean id="dataSource"
@@ -613,11 +613,11 @@ Modifícalo para que lea los valores desde `database.properties`.
 </bean>
 ```
 
-### Explicación
+### Explanation
 
-Antes los valores estaban escritos directamente en XML.
+Previously the values were written directly in XML.
 
-Ahora se leen desde:
+Now read from:
 
 ```properties
 db.driverClassName
@@ -626,13 +626,13 @@ db.username
 db.password
 ```
 
-Por ejemplo:
+For example:
 
 ```xml
 <property name="url" value="${db.url}" />
 ```
 
-Spring buscará en `database.properties` una línea como:
+Spring will look in `database.properties` for a line like:
 
 ```properties
 db.url=jdbc:mysql://localhost:3306/spring_mvc_library?useSSL=false&serverTimezone=Europe/Madrid
@@ -642,17 +642,17 @@ db.url=jdbc:mysql://localhost:3306/spring_mvc_library?useSSL=false&serverTimezon
 
 ---
 
-# Ejercicio 9 — Crear una configuración completa de MySQL con propiedades externas
+# Exercise 9 — Create a complete MySQL configuration with external properties
 
-## Enunciado
+## Statement
 
-Escribe el bloque completo de configuración XML para:
+Write the complete XML configuration block to:
 
-1. Cargar `database.properties`.
-2. Configurar `dataSource`.
-3. Configurar `jdbcTemplate`.
+1. Load `database.properties`.
+2. Configure `dataSource`.
+3. Configure `jdbcTemplate`.
 
-Usa las propiedades:
+Use the properties:
 
 ```text
 db.driverClassName
@@ -664,7 +664,7 @@ db.password
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <!-- Carga propiedades externas desde src/main/resources/database.properties -->
@@ -688,27 +688,27 @@ db.password
 </bean>
 ```
 
-### Explicación
+### Explanation
 
-La línea:
+The line:
 
 ```xml
 <context:property-placeholder location="classpath:database.properties" />
 ```
 
-debe aparecer antes de usar:
+should appear before use:
 
 ```xml
 ${db.url}
 ```
 
-El `JdbcTemplate` usa el `dataSource`:
+The `JdbcTemplate` uses the `dataSource`:
 
 ```xml
 <property name="dataSource" ref="dataSource" />
 ```
 
-La relación queda así:
+The relationship looks like this:
 
 ```text
 JdbcTemplate
@@ -722,97 +722,96 @@ MySQL
 
 ---
 
-# Ejercicio 10 — Diagnosticar un error con `database.properties`
+# Exercise 10 — Diagnose an error with `database.properties`
 
-## Enunciado
+## Statement
 
-La aplicación tiene esta línea en `app-servlet.xml`:
+The app has this line in `app-servlet.xml`:
 
 ```xml
 <context:property-placeholder location="classpath:database.properties" />
 ```
 
-Pero al arrancar aparece un error indicando que no se encuentra el archivo.
+But when starting up, an error appears indicating that the file cannot be found.
 
-El archivo está en:
+The file is in:
 
 ```text
 src/main/webapp/database.properties
 ```
 
-¿Qué está mal y cómo lo solucionarías?
+What is wrong and how would you fix it?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-El problema es la ubicación del archivo.
+The problem is the location of the file.
 
-Si usamos:
+If we use:
 
 ```xml
 classpath:database.properties
 ```
 
-el archivo debe estar en:
+the file must be in:
 
 ```text
 src/main/resources/database.properties
 ```
 
-No en:
+Not in:
 
 ```text
 src/main/webapp/database.properties
 ```
 
-La solución es mover el archivo a:
+The solution is to move the file to:
 
 ```text
 src/main/resources/database.properties
 ```
 
-### Explicación
+### Explanation
 
-`src/main/resources` se copia automáticamente al classpath.
+`src/main/resources` is automatically copied to the classpath.
 
-`src/main/webapp` pertenece a la parte web de la aplicación, pero no es el lugar adecuado para cargar propiedades con `classpath:`.
+`src/main/webapp` belongs to the web part of the application, but it is not the right place to load properties with `classpath:`.
 
 </details>
 
 ---
 
-# Ejercicio 11 — Crear carpeta de fragmentos JSP
+# Exercise 11 — Create JSP Fragments Folder
 
-## Enunciado
+## Statement
 
-Queremos evitar repetir el mismo menú y el mismo `<head>` en todas las vistas JSP.
+We want to avoid repeating the same menu and the same `<head>` in all JSP views.
 
-Indica qué carpeta crearías y qué dos archivos pondrías dentro.
+Indicate which folder you would create and which two files you would put inside.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-Creamos esta carpeta:
+We create this folder:
 
 ```text
 src/main/webapp/WEB-INF/views/fragments
 ```
 
-Dentro creamos:
+Inside we create:
 
 ```text
 head.jspf
 header.jspf
 ```
 
-### Explicación
+### Explanation
 
-`head.jspf` contendrá código común del `<head>`:
-
+`head.jspf` will contain common code of `<head>`:
 ```text
 meta charset
 title
@@ -821,7 +820,7 @@ CSS del tema oscuro
 taglibs necesarias
 ```
 
-`header.jspf` contendrá el menú común:
+`header.jspf` will contain the common menu:
 
 ```text
 Inicio
@@ -830,35 +829,35 @@ Cambio de idioma
 Cambio de tema
 ```
 
-La extensión `.jspf` suele usarse para fragmentos JSP.
+The `.jspf` extension is typically used for JSP fragments.
 
 </details>
 
 ---
 
-# Ejercicio 12 — Crear un fragmento `head.jspf`
+# Exercise 12 — Create an `head.jspf` fragment
 
-## Enunciado
+## Statement
 
-Crea un fragmento llamado:
+Create a fragment called:
 
 ```text
 head.jspf
 ```
 
-Debe:
+You must:
 
-1. Importar las taglibs de Spring y JSTL.
-2. Calcular el tema actual desde `sessionScope.theme`.
-3. Usar `light` como tema por defecto.
-4. Cargar siempre `styles.css`.
-5. Cargar `styles-dark.css` solo si el tema es `dark`.
-6. Mostrar el título usando `pageTitleCode` si existe, o `pageTitle` si no existe.
+1. Import the Spring and JSTL taglibs.
+2. Calculate the current topic from `sessionScope.theme`.
+3. Use `light` as default theme.
+4. Always load `styles.css`.
+5. Load `styles-dark.css` only if the topic is `dark`.
+6. Display the title using `pageTitleCode` if it exists, or `pageTitle` if it does not exist.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -884,38 +883,38 @@ Debe:
 </c:if>
 ```
 
-### Explicación
+### Explanation
 
-Este fragmento evita repetir el mismo `<head>` en muchas JSP.
+This snippet avoids repeating the same `<head>` in many JSPs.
 
-La parte:
+The part:
 
 ```jsp
 <c:set var="currentTheme" value="${empty sessionScope.theme ? 'light' : sessionScope.theme}" />
 ```
 
-significa:
+means:
 
 ```text
 Si no hay tema en sesión, usa light.
 Si hay tema en sesión, usa ese valor.
 ```
 
-La parte:
+The part:
 
 ```jsp
 <c:choose>
 ```
 
-permite que algunas páginas usen un título internacionalizado y otras usen un título dinámico.
+allows some pages to use an internationalized title and others to use a dynamic title.
 
-Por ejemplo:
+For example:
 
 ```java
 model.addAttribute("pageTitleCode", "books.list.title");
 ```
 
-o:
+or:
 
 ```java
 model.addAttribute("pageTitle", book.getTitle());
@@ -925,19 +924,19 @@ model.addAttribute("pageTitle", book.getTitle());
 
 ---
 
-# Ejercicio 13 — Crear un fragmento `header.jspf`
+# Exercise 13 — Create an `header.jspf` fragment
 
-## Enunciado
+## Statement
 
-Crea un fragmento llamado:
+Create a fragment called:
 
 ```text
 header.jspf
 ```
 
-para una aplicación de biblioteca.
+for a library application.
 
-Debe incluir enlaces a:
+You must include links to:
 
 ```text
 /home
@@ -945,7 +944,7 @@ Debe incluir enlaces a:
 /authors
 ```
 
-También debe incluir enlaces para:
+You should also include links to:
 
 ```text
 /home?lang=es
@@ -954,12 +953,12 @@ También debe incluir enlaces para:
 /theme/change?theme=dark
 ```
 
-Usa `<spring:message>` para los textos.
+Use `<spring:message>` for texts.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <header class="header">
@@ -997,19 +996,19 @@ Usa `<spring:message>` para los textos.
 </header>
 ```
 
-### Explicación
+### Explanation
 
-Este fragmento centraliza el menú.
+This fragment centralizes the menu.
 
-Si queremos añadir una nueva sección al menú, ya no tenemos que modificar todas las JSP.
+If we want to add a new section to the menu, we no longer have to modify all the JSPs.
 
-Solo modificamos:
+We only modify:
 
 ```text
 header.jspf
 ```
 
-Los textos salen de los archivos de mensajes gracias a:
+Texts come out of message files thanks to:
 
 ```jsp
 <spring:message code="nav.books" />
@@ -1019,24 +1018,24 @@ Los textos salen de los archivos de mensajes gracias a:
 
 ---
 
-# Ejercicio 14 — Usar fragmentos en una JSP
+# Exercise 14 — Using fragments in a JSP
 
-## Enunciado
+## Statement
 
-Tienes una vista llamada:
+You have a view called:
 
 ```text
 books/list.jsp
 ```
 
-Modifica su estructura para que use:
+Modify its structure so that it uses:
 
 ```text
 head.jspf
 header.jspf
 ```
 
-Debe quedar una JSP con esta estructura:
+There should be a JSP with this structure:
 
 ```text
 directivas iniciales
@@ -1050,7 +1049,7 @@ main
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1097,55 +1096,55 @@ main
 </html>
 ```
 
-### Explicación
+### Explanation
 
-La línea:
+The line:
 
 ```jsp
 <%@ include file="/WEB-INF/views/fragments/head.jspf" %>
 ```
 
-inserta el `<head>` común.
+insert the common `<head>`.
 
-La línea:
+The line:
 
 ```jsp
 <%@ include file="/WEB-INF/views/fragments/header.jspf" %>
 ```
 
-inserta el menú común.
+insert the common menu.
 
-La vista queda más limpia porque ya no repite el mismo código en todas las páginas.
+The view is cleaner because it no longer repeats the same code on all pages.
 
 </details>
 
 ---
 
-# Ejercicio 15 — Crear atributos globales para un formulario
+# Exercise 15 — Create global attributes for a form
 
-## Enunciado
+## Statement
 
-En una aplicación de biblioteca, queremos que varios formularios tengan disponible una lista de géneros literarios.
+In a library application, we want several forms to have a list of literary genres available.
 
-Crea una clase llamada:
+Create a class called:
 
 ```text
 GlobalModelAttributes
 ```
 
-en el paquete:
+in the package:
 
 ```text
 com.example.library.config
 ```
 
-Debe añadir al modelo un atributo llamado:
+You must add an attribute called:
 
 ```text
 bookGenres
 ```
 
-con esta lista:
+with this list:
 
 ```text
 Novela
@@ -1155,12 +1154,12 @@ Teatro
 Ciencia ficción
 ```
 
-La clase debe usar `@ControllerAdvice` y `@ModelAttribute`.
+The class must use `@ControllerAdvice` and `@ModelAttribute`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.library.config;
@@ -1186,45 +1185,45 @@ public class GlobalModelAttributes {
 }
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @ControllerAdvice
 ```
 
-permite aplicar lógica común a varios controladores.
+allows applying common logic to multiple controllers.
 
-El método:
+The method:
 
 ```java
 @ModelAttribute("bookGenres")
 ```
 
-añade automáticamente al modelo un atributo llamado:
+automatically adds an attribute called:
 
 ```text
 bookGenres
 ```
 
-Las JSP podrán usarlo así:
+JSPs can use it like this:
 
 ```jsp
 ${bookGenres}
 ```
 
-sin que cada controlador tenga que añadirlo manualmente.
+without each driver having to add it manually.
 
 </details>
 
 ---
 
-# Ejercicio 16 — Usar un atributo global en un desplegable
+# Exercise 16 — Use a global attribute in a dropdown
 
-## Enunciado
+## Statement
 
-Tienes este formulario de libros:
+You have this book form:
 
 ```jsp
 <form:select path="genre" cssClass="input">
@@ -1235,7 +1234,7 @@ Tienes este formulario de libros:
 </form:select>
 ```
 
-Modifícalo para que las opciones salgan de:
+Modify it so that the options come from:
 
 ```jsp
 ${bookGenres}
@@ -1244,7 +1243,7 @@ ${bookGenres}
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <form:select path="genre" cssClass="input">
@@ -1262,15 +1261,15 @@ ${bookGenres}
 <form:errors path="genre" cssClass="error" />
 ```
 
-### Explicación
+### Explanation
 
-El bucle:
+The loop:
 
 ```jsp
 <c:forEach var="genre" items="${bookGenres}">
 ```
 
-recorre la lista global creada en Java:
+loops through the global list created in Java:
 
 ```java
 @ModelAttribute("bookGenres")
@@ -1279,38 +1278,38 @@ public List<String> bookGenres() {
 }
 ```
 
-Por cada género, se crea una opción del desplegable.
+For each genre, a drop-down option is created.
 
-Si mañana queremos añadir un género nuevo, lo cambiamos en Java, no en la JSP.
+If tomorrow we want to add a new gender, we change it in Java, not in the JSP.
 
 </details>
 
 ---
 
-# Ejercicio 17 — Añadir el nombre de la aplicación como atributo global
+# Exercise 17 — Add the application name as a global attribute
 
-## Enunciado
+## Statement
 
-Modifica `GlobalModelAttributes` para añadir un atributo global llamado:
+Modify `GlobalModelAttributes` to add a global attribute called:
 
 ```text
 appName
 ```
 
-con el valor:
+with the value:
 
 ```text
 Library Manager
 ```
 
-Después muestra ese valor en `header.jspf`.
+It then displays that value in `header.jspf`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Clase `GlobalModelAttributes`
+## `GlobalModelAttributes` class
 
 ```java
 package com.example.library.config;
@@ -1341,7 +1340,7 @@ public class GlobalModelAttributes {
 }
 ```
 
-## Uso en `header.jspf`
+## Use in `header.jspf`
 
 ```jsp
 <header class="header">
@@ -1365,38 +1364,38 @@ public class GlobalModelAttributes {
 </header>
 ```
 
-### Explicación
+### Explanation
 
-`appName` está disponible en todas las vistas porque se añade desde una clase con:
+`appName` is available in all views because it is added from a class with:
 
 ```java
 @ControllerAdvice
 ```
 
-Esto evita repetir el nombre de la aplicación directamente en cada JSP.
+This avoids repeating the application name directly in each JSP.
 
 </details>
 
 ---
 
-# Ejercicio 18 — Añadir estilo para la marca de la aplicación
+# Exercise 18 — Add style for app branding
 
-## Enunciado
+## Statement
 
-Añade estilo CSS para la clase:
+Add CSS style for the class:
 
 ```css
 .brand
 ```
 
-Debe mostrarse en blanco, en negrita y con separación respecto al menú.
+It must be displayed in white, bold and separated from the menu.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-Añadimos en:
+We add in:
 
 ```text
 src/main/webapp/resources/css/styles.css
@@ -1410,7 +1409,7 @@ src/main/webapp/resources/css/styles.css
 }
 ```
 
-Si el `header` usa flexbox, puede quedar mejor con:
+If the `header` uses flexbox, it may look better with:
 
 ```css
 .header {
@@ -1420,15 +1419,15 @@ Si el `header` usa flexbox, puede quedar mejor con:
 }
 ```
 
-### Explicación
+### Explanation
 
-La clase:
+The class:
 
 ```css
 .brand
 ```
 
-se aplica al nombre de la aplicación:
+applies to application name:
 
 ```jsp
 <div class="brand">
@@ -1436,21 +1435,21 @@ se aplica al nombre de la aplicación:
 </div>
 ```
 
-Así la aplicación tiene una pequeña identidad visual en el menú.
+Thus the application has a small visual identity in the menu.
 
 </details>
 
 ---
 
-# Ejercicio 19 — Diagnosticar errores con Lombok
+# Exercise 19 — Diagnose errors with Lombok
 
-## Enunciado
+## Statement
 
-Lee los siguientes casos y explica qué ocurre.
+Read the following cases and explain what happens.
 
-## Caso A
+## Case A
 
-La clase tiene:
+The class has:
 
 ```java
 @Data
@@ -1461,48 +1460,48 @@ public class Book {
 }
 ```
 
-Pero al mostrar el formulario, Spring falla al crear un objeto vacío.
+But when displaying the form, Spring fails to create an empty object.
 
-¿Qué falta?
-
----
-
-## Caso B
-
-El proyecto compila en Maven, pero IntelliJ marca error en `getTitle()` diciendo que no existe.
-
-¿Qué puede estar ocurriendo?
+Missing?
 
 ---
 
-## Caso C
+## Case B
 
-Se ha añadido Lombok al `pom.xml`, pero no se ha recargado Maven.
+The project compiles in Maven, but IntelliJ flags an error on `getTitle()` saying that it does not exist.
 
-¿Qué problema puede aparecer?
+What could be happening?
+
+---
+
+## Case C
+
+Lombok has been added to `pom.xml`, but Maven has not been reloaded.
+
+What problem may appear?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-Falta:
-
-```java
-@NoArgsConstructor
-```
-
-La clase tiene constructor con todos los campos, pero no tiene constructor vacío.
-
-Para formularios en Spring MVC normalmente necesitamos:
+Missing:
 
 ```java
 @NoArgsConstructor
 ```
 
-La clase debería quedar así:
+The class has a constructor with all the fields, but it does not have an empty constructor.
+
+For forms in Spring MVC we normally need:
+
+```java
+@NoArgsConstructor
+```
+
+The class should look like this:
 
 ```java
 @Data
@@ -1516,11 +1515,11 @@ public class Book {
 
 ---
 
-## Caso B
+## Case B
 
-Puede que IntelliJ no esté procesando las anotaciones de Lombok.
+IntelliJ may not be processing Lombok annotations.
 
-Hay que revisar:
+You have to check:
 
 ```text
 File
@@ -1531,15 +1530,15 @@ File
 → Enable annotation processing
 ```
 
-También conviene comprobar que los imports de Lombok son correctos.
+It is also worth checking that the Lombok imports are correct.
 
 ---
 
-## Caso C
+## Case C
 
-Si no se recarga Maven, IntelliJ puede no descargar Lombok.
+If Maven is not reloaded, IntelliJ may not download Lombok.
 
-En ese caso, las anotaciones:
+In that case, the annotations:
 
 ```java
 @Data
@@ -1547,146 +1546,146 @@ En ese caso, las anotaciones:
 @AllArgsConstructor
 ```
 
-aparecerán en rojo o no funcionarán correctamente.
+They will appear red or not work correctly.
 
-La solución es recargar el proyecto Maven.
+The solution is to reload the Maven project.
 
 </details>
 
 ---
 
-# Ejercicio 20 — Diagnosticar errores con fragmentos JSP
+# Exercise 20 — Diagnose errors with JSP fragments
 
-## Enunciado
+## Statement
 
-Lee los siguientes casos y explica qué ocurre.
+Read the following cases and explain what happens.
 
-## Caso A
+## Case A
 
-La vista contiene:
+The view contains:
 
 ```jsp
 <%@ include file="/WEB-INF/views/fragments/head.jspf" %>
 ```
 
-pero el archivo está realmente en:
+but the file is actually in:
 
 ```text
 /WEB-INF/views/common/head.jspf
 ```
 
-¿Qué ocurrirá?
+What will happen?
 
 ---
 
-## Caso B
+## Case B
 
-El archivo `header.jspf` usa:
+The `header.jspf` file uses:
 
 ```jsp
 <spring:message code="nav.home" />
 ```
 
-pero ninguna JSP incluye la taglib de Spring ni se incluye `head.jspf`.
+but no JSP includes the Spring taglib nor is `head.jspf` included.
 
-¿Qué ocurrirá?
+What will happen?
 
 ---
 
-## Caso C
+## Case C
 
-La JSP usa:
+The JSP uses:
 
 ```jsp
 <c:forEach var="genre" items="${bookGenres}">
 ```
 
-pero no se ha declarado JSTL.
+but no JSTL has been declared.
 
-¿Qué falta?
+Missing?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-La ruta del fragmento está mal.
+The fragment path is wrong.
 
-La JSP intenta incluir:
+The JSP attempts to include:
 
 ```text
 /WEB-INF/views/fragments/head.jspf
 ```
 
-pero el archivo está en:
+but the file is in:
 
 ```text
 /WEB-INF/views/common/head.jspf
 ```
 
-La solución es corregir la ruta:
+The solution is to correct the route:
 
 ```jsp
 <%@ include file="/WEB-INF/views/common/head.jspf" %>
 ```
 
-o mover el archivo a la carpeta esperada.
+or move the file to the expected folder.
 
 ---
 
-## Caso B
+## Case B
 
-La etiqueta:
+The label:
 
 ```jsp
 <spring:message>
 ```
 
-no funcionará si no está declarada la taglib de Spring.
+will not work if the Spring taglib is not declared.
 
-Debe existir:
+There must be:
 
 ```jsp
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 ```
 
-Puede estar en la JSP directamente o en un fragmento incluido antes.
+It can be in the JSP directly or in a fragment included before it.
 
 ---
 
-## Caso C
+## Case C
 
-Falta declarar JSTL:
+JSTL missing declaration:
 
 ```jsp
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 ```
 
-Además, el proyecto debe tener las dependencias de JSTL en el `pom.xml`.
+Additionally, the project must have the JSTL dependencies on the `pom.xml`.
 
 </details>
 
 ---
 
-# Ejercicio 21 — Diagnosticar errores con atributos globales
+# Exercise 21 — Diagnose errors with global attributes
 
-## Enunciado
+## Statement
 
-Lee los siguientes casos y explica qué ocurre.
+Read the following cases and explain what happens.
 
-## Caso A
+## Case A
 
-La clase `GlobalModelAttributes` no tiene `@ControllerAdvice`.
+The `GlobalModelAttributes` class does not have `@ControllerAdvice`.
 
-¿Qué problema puede aparecer?
+What problem may appear?
 
 ---
 
-## Caso B
+## Case B
 
-El método tiene:
+The method has:
 
 ```java
 @ModelAttribute("genres")
@@ -1695,82 +1694,82 @@ public List<String> bookGenres() {
 }
 ```
 
-pero la JSP usa:
+but the JSP uses:
 
 ```jsp
 ${bookGenres}
 ```
 
-¿Por qué no aparece la lista?
+Why doesn't the list appear?
 
 ---
 
-## Caso C
+## Case C
 
-La clase `GlobalModelAttributes` está en:
+The `GlobalModelAttributes` class is in:
 
 ```text
 com.other.config
 ```
 
-pero el `component-scan` solo escanea:
+but the `component-scan` only scans:
 
 ```text
 com.example.library
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-Si falta:
+If missing:
 
 ```java
 @ControllerAdvice
 ```
 
-Spring no tratará esa clase como una clase global para controladores.
+Spring will not treat that class as a global class for controllers.
 
-Los métodos con:
+The methods with:
 
 ```java
 @ModelAttribute
 ```
 
-no se aplicarán globalmente.
+They will not apply globally.
 
 ---
 
-## Caso B
+## Case B
 
-El nombre del atributo no coincide.
+The attribute name does not match.
 
-Java crea un atributo llamado:
+Java creates an attribute called:
 
 ```text
 genres
 ```
 
-pero la JSP busca:
+but the JSP looks for:
 
 ```text
 bookGenres
 ```
 
-La solución es usar el mismo nombre.
+The solution is to use the same name.
 
-O cambiamos Java:
+Or we change Java:
 
 ```java
 @ModelAttribute("bookGenres")
 ```
 
-o cambiamos la JSP:
+or we change the JSP:
 
 ```jsp
 ${genres}
@@ -1778,60 +1777,60 @@ ${genres}
 
 ---
 
-## Caso C
+## Case C
 
-Spring no encontrará la clase porque está fuera del paquete escaneado.
+Spring will not find the class because it is outside the scanned package.
 
-El `component-scan` debe incluir el paquete donde está la clase.
+The `component-scan` must include the package where the class is.
 
-Por ejemplo:
+For example:
 
 ```xml
 <context:component-scan base-package="com.example.library" />
 ```
 
-solo escanea clases dentro de:
+it only scans classes within:
 
 ```text
 com.example.library
 ```
 
-Si la clase está en:
+If the class is in:
 
 ```text
 com.other.config
 ```
 
-no será detectada.
+will not be detected.
 
 </details>
 
 ---
 
-# Ejercicio 22 — Reto final: mejorar una sección de películas
+# Exercise 22 — Final challenge: improve a movie section
 
-## Enunciado
+## Statement
 
-Tienes una aplicación Spring MVC de películas.
+You have a Spring MVC movie application.
 
-Quieres aplicar varias mejoras del Tema 6.
+You want to apply several improvements from Theme 6.
 
-Crea o modifica lo necesario para conseguir lo siguiente:
+Create or modify what is necessary to achieve the following:
 
-1. Añadir Lombok a `Movie`.
-2. Crear `database.properties` para una base de datos `spring_mvc_movies`.
-3. Configurar `dataSource` y `jdbcTemplate` usando propiedades externas.
-4. Crear fragmentos `head.jspf` y `header.jspf`.
-5. Crear una clase `GlobalModelAttributes`.
-6. Añadir una lista global `movieGenres`.
-7. Usar `movieGenres` en un formulario de películas.
+1. Add Lombok to `Movie`.
+2. Create `database.properties` for an `spring_mvc_movies` database.
+3. Configure `dataSource` and `jdbcTemplate` using external properties.
+4. Create `head.jspf` and `header.jspf` fragments.
+5. Create a class `GlobalModelAttributes`.
+6. Add a global `movieGenres` list.
+7. Use `movieGenres` in a movie form.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## 1. Dependencia de Lombok en `pom.xml`
+## 1. Lombok's dependence on `pom.xml`
 
 ```xml
 <properties>
@@ -1848,7 +1847,7 @@ Crea o modifica lo necesario para conseguir lo siguiente:
 </dependency>
 ```
 
-## 2. Modelo `Movie.java`
+## 2. Model `Movie.java`
 
 ```java
 package com.example.movies.model;
@@ -1881,7 +1880,7 @@ public class Movie {
 
 ## 3. `database.properties`
 
-Archivo:
+File:
 
 ```text
 src/main/resources/database.properties
@@ -1894,7 +1893,7 @@ db.username=root
 db.password=TU_PASSWORD
 ```
 
-## 4. Configuración en `app-servlet.xml`
+## 4. Configuration in `app-servlet.xml`
 
 ```xml
 <context:property-placeholder location="classpath:database.properties" />
@@ -1915,7 +1914,7 @@ db.password=TU_PASSWORD
 </bean>
 ```
 
-## 5. Fragmento `head.jspf`
+## 5. `head.jspf` Fragment
 
 ```jsp
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -1941,7 +1940,7 @@ db.password=TU_PASSWORD
 </c:if>
 ```
 
-## 6. Fragmento `header.jspf`
+## 6. `header.jspf` Fragment
 
 ```jsp
 <header class="header">
@@ -2010,7 +2009,7 @@ public class GlobalModelAttributes {
 }
 ```
 
-## 8. Uso de `movieGenres` en `movies/form.jsp`
+## 8. Using `movieGenres` in `movies/form.jsp`
 
 ```jsp
 <form:select path="genre" cssClass="input">
@@ -2028,9 +2027,9 @@ public class GlobalModelAttributes {
 <form:errors path="genre" cssClass="error" />
 ```
 
-### Explicación del reto
+### Explanation of the challenge
 
-Este reto reúne las principales mejoras del Tema 6:
+This challenge brings together the main improvements of Topic 6:
 
 ```text
 Lombok reduce código repetitivo.
@@ -2039,6 +2038,6 @@ Los fragmentos JSP evitan repetir código en vistas.
 GlobalModelAttributes permite reutilizar datos comunes.
 ```
 
-El proyecto seguirá funcionando igual para el usuario, pero estará mejor organizado internamente.
+The project will continue to work the same for the user, but it will be better organized internally.
 
 </details>

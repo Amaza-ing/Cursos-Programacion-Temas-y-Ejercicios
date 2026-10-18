@@ -1,26 +1,27 @@
-# **Tema 8: Uso de `git cherry-pick` para seleccionar commits específicos**
+# **Topic 8: Using `git cherry-pick` to select specific commits**
 
-## **1. Introducción**
+## **1. Introduction**
 
-El comando `git cherry-pick` permite aplicar un commit específico de una rama a otra sin fusionar toda la rama. Esto es útil cuando se necesita llevar cambios individuales a otra rama sin afectar su historial general.
+The `git cherry-pick` command allows you to apply a specific commit from one branch to another without merging the entire branch. This is useful when you need to push individual changes to another branch without affecting its overall history.
 
-### **Beneficios de `git cherry-pick`**
+### **Benefits of `git cherry-pick`**
 
-- Permite seleccionar cambios específicos sin fusionar ramas completas.
-- Evita la necesidad de duplicar código manualmente.
-- Es útil para corregir errores en ramas estables sin traer cambios no deseados.
+- Allows you to select specific changes without merging entire branches.
+- Avoids the need to manually duplicate code.
+- It is useful for fixing bugs in stable branches without bringing unwanted changes.
 
 ---
 
-## **2. Obtener el identificador del commit**
+## **2. Get the commit identifier**
 
-Antes de usar `git cherry-pick`, es necesario identificar el commit que se desea aplicar. Para ello, se puede ejecutar:
+Before using `git cherry-pick`, it is necessary to identify the commit you want to apply. To do this, you can execute:
 
 ```bash
 git log --oneline
 ```
 
-Este comando muestra una lista de commits con sus identificadores (hashes), por ejemplo:
+
+This command displays a list of commits with their identifiers (hashes), for example:
 
 ```
 3f4d2e5 Corrección de bug en el login
@@ -28,82 +29,90 @@ b8a1c9d Actualización de la documentación
 2a7e6f3 Nueva funcionalidad de exportación
 ```
 
-El identificador del commit (ej. `3f4d2e5`) es necesario para el siguiente paso.
+
+The commit identifier (e.g. `3f4d2e5`) is necessary for the next step.
 
 ---
 
-## **3. Aplicar un commit específico con `git cherry-pick`**
+## **3. Apply a specific commit with `git cherry-pick`**
 
-Una vez obtenido el hash del commit, se puede aplicar en la rama actual con:
+Once the commit hash is obtained, it can be applied to the current branch with:
 
 ```bash
 git cherry-pick 3f4d2e5
 ```
 
-Esto copia los cambios realizados en ese commit y los añade a la rama actual como un nuevo commit.
+
+This copies the changes made in that commit and adds them to the current branch as a new commit.
 
 ---
 
-## **4. Aplicar múltiples commits**
+## **4. Apply multiple commits**
 
-Si se desean traer varios commits a la vez, se pueden especificar múltiples hashes:
+If you want to bring several commits at the same time, you can specify multiple hashes:
 
 ```bash
 git cherry-pick 3f4d2e5 b8a1c9d
 ```
 
-O para un rango de commits consecutivos:
+
+Or for a range of consecutive commits:
 
 ```bash
 git cherry-pick 3f4d2e5..b8a1c9d
 ```
 
-Esto aplicará todos los commits en el rango seleccionado.
+
+This will apply all commits in the selected range.
 
 ---
 
-## **5. Resolver conflictos durante un `cherry-pick`**
+## **5. Resolve conflicts during an `cherry-pick`**
 
-Si el commit seleccionado afecta partes del código que han cambiado en la rama actual, puede haber conflictos. Para resolverlos:
+If the selected commit affects parts of the code that have changed in the current branch, there may be conflicts. To solve them:
 
-1. Git pausará el proceso y mostrará los archivos en conflicto.
-2. Editar los archivos para resolver los conflictos.
-3. Añadir los cambios resueltos con:
+1. Git will pause the process and display the conflicting files.
+2. Edit the files to resolve conflicts.
+3. Add the resolved changes with:
    ```bash
    git add archivo-afectado
    ```
-4. Continuar el proceso con:
+
+4. Continue the process with:
    ```bash
    git cherry-pick --continue
    ```
-   Si se desea cancelar el `cherry-pick` y deshacer los cambios:
+
+   If you wish to cancel the `cherry-pick` and undo the changes:
 
 ```bash
 git cherry-pick --abort
 ```
 
+
 ---
 
-## **6. Aplicar un commit sin crear un nuevo commit**
+## **6. Apply a commit without creating a new commit**
 
-Si se quiere aplicar los cambios de un commit pero sin generar un nuevo commit, se puede usar:
+If you want to apply the changes from a commit but without generating a new commit, you can use:
 
 ```bash
 git cherry-pick -n 3f4d2e5
 ```
 
-Esto aplica los cambios al área de trabajo sin confirmarlos, permitiendo hacer ajustes antes de hacer un `git commit` manualmente.
+
+This applies the changes to the workspace without committing them, allowing adjustments to be made before doing an `git commit` manually.
 
 ---
 
-## **7. Buenas prácticas al usar `git cherry-pick`**
+## **7. Good practices when using `git cherry-pick`**
 
-- Usar `git log --oneline` para identificar correctamente los commits antes de aplicarlos.
-- Evitar cherry-pick de commits con dependencias en otros commits para prevenir inconsistencias.
-- Resolver conflictos con calma y verificar los cambios antes de confirmar.
-- Utilizar `git cherry-pick -n` si se necesita modificar los cambios antes de confirmarlos.
-- Si un cherry-pick genera un error, usar `git cherry-pick --abort` para cancelar la operación.
+- Use `git log --oneline` to correctly identify commits before applying them.
+- Avoid cherry-picking commits with dependencies on other commits to prevent inconsistencies.
+- Resolve conflicts calmly and verify changes before committing.
+- Use `git cherry-pick -n` if you need to modify the changes before committing them.
+- If a cherry-pick generates an error, use `git cherry-pick --abort` to cancel the operation.
 
 ---
 
-En el próximo tema, exploraremos **cómo dar marcha atrás a los cambios con git restore y git revert**.
+In the next topic, we will explore **how to roll back changes with git restore and git revert**.

@@ -1,22 +1,22 @@
-# Ejercicios - Tema 39: Maven
+# Exercises - Topic 39: Maven
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **Maven**: estructura de proyecto, `pom.xml`, coordenadas Maven, versión de Java, dependencias, scopes, comandos, plugins, resources, `.gitignore` y Maven Wrapper.
+Below you will find **10 practical exercises** to work with **Maven**: project structure, `pom.xml`, Maven coordinates, Java version, dependencies, scopes, commands, plugins, resources, `.gitignore` and Maven Wrapper.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Identificar coordenadas Maven
+## Exercise 1: Identify Maven coordinates
 
-Escribe las coordenadas Maven para un proyecto con estos datos:
+Write the Maven coordinates for a project with this data:
 
-- grupo: `com.amazaing`
-- nombre del proyecto: `library-app`
-- versión: `1.0.0`
+- group: `com.amazaing`
+- project name: `library-app`
+- version: `1.0.0`
 
-Debes escribir los elementos XML correspondientes.
+You must write the corresponding XML elements.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```xml
 <groupId>com.amazaing</groupId>
@@ -28,21 +28,21 @@ Debes escribir los elementos XML correspondientes.
 
 ---
 
-## Ejercicio 2: Crear un `pom.xml` mínimo
+## Exercise 2: Create a minimum `pom.xml`
 
-Crea un `pom.xml` mínimo para un proyecto llamado:
+Create a minimal `pom.xml` for a project called:
 
 ```text
 maven-practice
 ```
 
-Con:
+With:
 
 - `groupId`: `com.amazaing`
 - `artifactId`: `maven-practice`
 - `version`: `1.0.0`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -63,11 +63,11 @@ Con:
 
 ---
 
-## Ejercicio 3: Configurar Java 25
+## Exercise 3: Configure Java 25
 
-Añade al `pom.xml` la configuración necesaria para compilar con Java 25 usando propiedades.
+Add to `pom.xml` the necessary configuration to compile with Java 25 using properties.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```xml
 <properties>
@@ -80,15 +80,15 @@ Añade al `pom.xml` la configuración necesaria para compilar con Java 25 usando
 
 ---
 
-## Ejercicio 4: Escribir la estructura estándar
+## Exercise 4: Write the standard structure
 
-Escribe la estructura básica de carpetas de un proyecto Maven con:
+Write the basic folder structure of a Maven project with:
 
-- código principal
+- main code
 - tests
-- archivo `pom.xml`
+- file `pom.xml`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```text
 my-project
@@ -104,13 +104,13 @@ my-project
 
 ---
 
-## Ejercicio 5: Añadir dependencia de JUnit
+## Exercise 5: Add JUnit dependency
 
-Añade una dependencia de JUnit Jupiter al `pom.xml`.
+Adds a JUnit Jupiter dependency to `pom.xml`.
 
-Debe tener scope `test`.
+Must have scope `test`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```xml
 <dependencies>
@@ -127,16 +127,16 @@ Debe tener scope `test`.
 
 ---
 
-## Ejercicio 6: Comandos básicos
+## Exercise 6: Basic commands
 
-Escribe el comando Maven para cada acción:
+Write the Maven command for each action:
 
-1. Compilar el proyecto
-2. Ejecutar tests
-3. Crear el paquete final
-4. Limpiar y crear el paquete desde cero
+1. Compile the project
+2. Run tests
+3. Create the final package
+4. Clean and create the package from scratch
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```bash
 mvn compile
@@ -158,15 +158,15 @@ mvn clean package
 
 ---
 
-## Ejercicio 7: Configurar clase principal del `.jar`
+## Exercise 7: Configure `.jar` main class
 
-Añade al `pom.xml` una configuración del `maven-jar-plugin` para que la clase principal sea:
+Add to `pom.xml` a configuration of `maven-jar-plugin` so that the main class is:
 
 ```text
 com.amazaing.app.Main
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```xml
 <build>
@@ -190,15 +190,15 @@ com.amazaing.app.Main
 
 ---
 
-## Ejercicio 8: Crear un `.gitignore` para Maven
+## Exercise 8: Create an `.gitignore` for Maven
 
-Escribe un `.gitignore` básico para un proyecto Maven que ignore:
+Write a basic `.gitignore` for a Maven project that ignores:
 
-- carpeta `target`
-- archivos `.iml`
-- carpeta `.idea`
+- `target` folder
+- `.iml` files
+- `.idea` folder
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```gitignore
 target/
@@ -210,19 +210,19 @@ target/
 
 ---
 
-## Ejercicio 9: Usar resources
+## Exercise 9: Use resources
 
-Indica dónde colocarías un archivo llamado:
+Indicates where you would place a file called:
 
 ```text
 config.properties
 ```
 
-para que Maven lo trate como recurso del proyecto.
+so that Maven treats it as a project resource.
 
-Después escribe la ruta completa.
+Then write the full path.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```text
 src/main/resources/config.properties
@@ -232,16 +232,16 @@ src/main/resources/config.properties
 
 ---
 
-## Ejercicio 10: Maven Wrapper
+## Exercise 10: Maven Wrapper
 
-Escribe los comandos equivalentes con Maven Wrapper para:
+Write the equivalent commands with Maven Wrapper to:
 
-1. Ejecutar tests en macOS/Linux
-2. Ejecutar tests en Windows
-3. Crear el paquete en macOS/Linux
-4. Crear el paquete en Windows
+1. Run tests on macOS/Linux
+2. Run tests on Windows
+3. Create the package on macOS/Linux
+4. Create the package on Windows
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```bash
 ./mvnw test

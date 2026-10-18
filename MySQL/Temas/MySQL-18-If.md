@@ -1,26 +1,26 @@
-# **Tema 18: Uso de IF en Consultas y Procedimientos Almacenados en MySQL**
+# **Topic 18: Use of IF in Queries and Stored Procedures in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Usar `IF()` en consultas para tomar decisiones condicionales.
-- Utilizar estructuras `IF ... THEN ... ELSE` dentro de procedimientos almacenados.
-- Diferenciar entre `IF()` como función y `IF` como estructura de control.
+- Use `IF()` in queries to make conditional decisions.
+- Use `IF ... THEN ... ELSE` structures within stored procedures.
+- Differentiate between `IF()` as a function and `IF` as a control structure.
 
 ---
 
-## **1. IF() en consultas**
+## **1. IF() in queries**
 
-En MySQL, `IF()` es una **función** que permite evaluar una condición y devolver un valor si es verdadera y otro si es falsa.
+In MySQL, `IF()` is a **function** that allows you to evaluate a condition and return one value if it is true and another if it is false.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```sql
 IF(condición, valor_si_verdadero, valor_si_falso)
 ```
 
-### **Ejemplo:**
+### **Example:**
 
-Mostrar el estado de un cliente según el campo `is_active`:
+Show the status of a client based on the `is_active` field:
 
 ```sql
 SELECT first_name,
@@ -30,9 +30,9 @@ FROM customers;
 
 ---
 
-## **2. Uso de CASE como alternativa**
+## **2. Using CASE as an alternative**
 
-Aunque no es parte del tema principal, es útil saber que `CASE` también permite condicionales y es más flexible:
+Although not part of the main topic, it is useful to know that `CASE` also allows conditionals and is more flexible:
 
 ```sql
 SELECT first_name,
@@ -45,11 +45,11 @@ FROM customers;
 
 ---
 
-## **3. IF en procedimientos almacenados**
+## **3. IF in stored procedures**
 
-Dentro de procedimientos almacenados, `IF` se usa como **estructura de control**.
+Within stored procedures, `IF` is used as a **control structure**.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```sql
 IF condición THEN
@@ -61,7 +61,7 @@ ELSE
 END IF;
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```sql
 DELIMITER $$
@@ -85,9 +85,9 @@ DELIMITER ;
 
 ---
 
-## **4. IF dentro de SET o SELECT en procedimientos**
+## **4. IF within SET or SELECT in procedures**
 
-Podemos usar `IF()` como función en procedimientos:
+We can use `IF()` as a function in procedures:
 
 ```sql
 DELIMITER $$
@@ -104,24 +104,24 @@ DELIMITER ;
 
 ---
 
-[![Condicionales IF ELSE](https://img.youtube.com/vi/DFZmMB7DO_E/0.jpg)](https://www.youtube.com/watch?v=DFZmMB7DO_E&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Conditional IF ELSE](https://img.youtube.com/vi/DFZmMB7DO_E/0.jpg)](https://www.youtube.com/watch?v=DFZmMB7DO_E&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **5. Buenas prácticas**
+## **5. Good practices**
 
-- Usar `IF()` para condiciones simples en consultas.
-- Usar `IF ... THEN ... END IF` en procedimientos para lógica más compleja.
-- Cuando hay múltiples condiciones, `CASE` suele ser más legible.
-
----
-
-## **6. Conclusión**
-
-- `IF()` en consultas devuelve valores condicionales sin modificar la estructura de las filas.
-- `IF ... THEN` en procedimientos permite ejecutar distintas instrucciones según condiciones.
-- Son herramientas clave para aplicar lógica condicional en SQL.
+- Use `IF()` for simple conditions in queries.
+- Use `IF ... THEN ... END IF` in procedures for more complex logic.
+- When there are multiple conditions, `CASE` is usually more readable.
 
 ---
 
-En el próximo tema veremos **cómo crear iteraciones usando `while`**.
+## **6. Conclusion**
+
+- `IF()` in queries returns conditional values without modifying the structure of the rows.
+- `IF ... THEN` in procedures allows different instructions to be executed according to conditions.
+- They are key tools for applying conditional logic in SQL.
+
+---
+
+In the next topic we will see **how to create iterations using `while`**.

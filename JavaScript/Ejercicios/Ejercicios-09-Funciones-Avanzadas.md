@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 9: Funciones Avanzadas en JavaScript**
+# **Exercises - Topic 9: Advanced Functions in JavaScript**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre funciones avanzadas en JavaScript.
+Below you will find 5 practical exercises on advanced functions in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Función de Orden Superior**
+### **Exercise 1: Higher Order Function**
 
-Crea una función llamada `applyOperation` que reciba dos números y una función como parámetros. La función debe aplicar la operación dada a los dos números.
+Create a function called `applyOperation` that takes two numbers and a function as parameters. The function must apply the given operation to the two numbers.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function applyOperation(a, b, operation) {
@@ -33,11 +33,11 @@ console.log(applyOperation(5, 3, multiply)); // Salida: 15
 
 ---
 
-### **Ejercicio 2: Closure**
+### **Exercise 2: Closure**
 
-Crea una función `createMultiplier` que acepte un número como argumento y devuelva otra función que multiplique cualquier número por el número dado.
+Create a function `createMultiplier` that accepts a number as an argument and returns another function that multiplies any number by the given number.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function createMultiplier(factor) {
@@ -54,11 +54,11 @@ console.log(double(5)); // Salida: 10
 
 ---
 
-### **Ejercicio 3: Currying**
+### **Exercise 3: Currying**
 
-Convierte la función `sum` en una función curried que permita sumar números en llamadas separadas.
+Converts the `sum` function to a curried function that allows adding numbers in separate calls.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function sum(a) {
@@ -75,11 +75,11 @@ console.log(addFive(3)); // Salida: 8
 
 ---
 
-### **Ejercicio 4: Modularización con `import` y `export`**
+### **Exercise 4: Modularization with `import` and `export`**
 
-Crea un módulo `math.js` que exporte dos funciones (`add` y `subtract`). Luego, impórtalas y úsalas en otro archivo.
+Create a module `math.js` that exports two functions (`add` and `subtract`). Then import them and use them in another file.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 **math.js**
 
@@ -106,11 +106,11 @@ console.log(subtract(10, 5)); // Salida: 5
 
 ---
 
-### **Ejercicio 5: Recursión**
+### **Exercise 5: Recursion**
 
-Crea una función recursiva `factorial` que calcule el factorial de un número.
+Create a recursive function `factorial` that calculates the factorial of a number.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function factorial(n) {

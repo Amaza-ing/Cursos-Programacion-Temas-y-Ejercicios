@@ -1,10 +1,10 @@
-# **Tema 8: Atributos Reactivos**
+# **Topic 8: Reactive Attributes**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En React, una gran parte de la interacción consiste en **conectar el estado con la interfaz**.
+In React, a big part of interaction is **connecting state to interface**.
 
-Esto no solo significa mostrar texto en pantalla, sino también controlar **atributos HTML** como:
+This not only means displaying text on the screen, but also controlling **HTML attributes** such as:
 
 - `disabled`
 - `checked`
@@ -13,39 +13,39 @@ Esto no solo significa mostrar texto en pantalla, sino también controlar **atri
 - `src`
 - `title`
 
-Cuando un atributo depende del estado (o de variables), decimos que es un **atributo reactivo**: cambia automáticamente cuando cambia el estado.
+When an attribute depends on state (or variables), we say that it is a **reactive attribute**: it changes automatically when the state changes.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo enlazar estado con atributos.
-- Cómo usar atributos booleanos (como `disabled` o `checked`).
-- Cómo controlar `value` en inputs.
-- Casos típicos y buenas prácticas.
+- How to link state with attributes.
+- How to use boolean attributes (like `disabled` either `checked`).
+- How to control `value` in inputs.
+- Typical cases and good practices.
 
 ---
 
-## **2. Recordatorio: JSX usa llaves `{}` para expresiones**
+## **2. Reminder: JSX uses braces `{}` for expressions**
 
-En React, para asignar un valor dinámico a un atributo, se usan llaves:
+In React, to assign a dynamic value to an attribute, curly braces are used:
 
 ```js
 <img src={imageUrl} />
 ```
 
-Esto vale para:
+This goes for:
 
 - Variables
-- Expresiones
-- Condiciones
-- Estado
+- Expressions
+- Conditions
+- Status
 
 ---
 
-## **3. Atributo `disabled` (botones desactivados)**
+## **3. Attribute `disabled` (buttons disabled)**
 
-`disabled` es un atributo booleano. En React puedes activarlo o desactivarlo con una expresión.
+`disabled` is a boolean attribute. In React you can activate or deactivate it with an expression.
 
-### **Ejemplo: desactivar un botón si el input está vacío**
+### **Example: disable a button if the input is empty**
 
 ```js
 import { useState } from "react";
@@ -70,18 +70,18 @@ function SaveButton() {
 export default SaveButton;
 ```
 
-Aquí:
+Here:
 
-- `disabled={isDisabled}` cambia automáticamente.
-- Si el usuario escribe, el botón se activa.
+- `disabled={isDisabled}` changes automatically.
+- If the user types, the button is activated.
 
 ---
 
-## **4. Atributo `checked` (checkbox controlado)**
+## **4. Attribute `checked` (checkbox controlled)**
 
-Un checkbox se controla con `checked`.
+A checkbox is controlled with `checked`.
 
-### **Ejemplo: checkbox controlado**
+### **Example: controlled checkbox**
 
 ```js
 import { useState } from "react";
@@ -104,21 +104,21 @@ function TermsCheckbox() {
 export default TermsCheckbox;
 ```
 
-Aquí:
+Here:
 
-- `checked={accepted}` depende del estado.
-- `event.target.checked` devuelve `true/false`.
+- `checked={accepted}` It depends on the state.
+- `event.target.checked` returns `true/false`.
 
 ---
 
-## **5. Atributo `value` (inputs controlados)**
+## **5. Attribute `value` (controlled inputs)**
 
-Un input controlado es el caso más frecuente de atributo reactivo:
+A controlled input is the most frequent case of a reactive attribute:
 
-- `value` depende del estado.
-- `onChange` actualiza el estado.
+- `value` It depends on the state.
+- `onChange` updates the status.
 
-Ejemplo:
+Example:
 
 ```js
 import { useState } from "react";
@@ -138,11 +138,11 @@ export default EmailInput;
 
 ---
 
-## **6. Atributos dinámicos: `placeholder`, `title` y `src`**
+## **6. Dynamic attributes: `placeholder`, `title` and `src`**
 
-Cualquier atributo puede ser dinámico.
+Any attribute can be dynamic.
 
-### **6.1. `placeholder` dinámico**
+### **6.1. `placeholder` dynamic**
 
 ```js
 function SearchInput() {
@@ -155,7 +155,7 @@ function SearchInput() {
 export default SearchInput;
 ```
 
-### **6.2. `title` dinámico**
+### **6.2. `title` dynamic**
 
 ```js
 function HelpIcon() {
@@ -167,7 +167,7 @@ function HelpIcon() {
 export default HelpIcon;
 ```
 
-### **6.3. `src` dinámico**
+### **6.3. `src` dynamic**
 
 ```js
 function Avatar() {
@@ -181,11 +181,11 @@ export default Avatar;
 
 ---
 
-## **7. Clases reactivas con `className`**
+## **7. Reactive classes with `className`**
 
-Aunque el tema de estilos ya lo vimos, `className` también es un atributo y puede ser reactivo.
+Although we already saw the issue of styles, `className` It is also an attribute and can be reactive.
 
-Ejemplo:
+Example:
 
 ```js
 function Status() {
@@ -199,28 +199,28 @@ export default Status;
 
 ---
 
-## **8. Buenas prácticas**
+## **8. Good practices**
 
-- Para atributos booleanos, pasa siempre un booleano (`true/false`).
-- Para inputs, evita mezclar controlado y no controlado.
-- Calcula valores derivados (como `isDisabled`) en variables para mejorar legibilidad.
-- Recuerda:
+- For boolean attributes, always pass a boolean (`true/false`).
+- For inputs, avoid mixing controlled and uncontrolled.
+- Calculates derived values ​​(such as `isDisabled`) in variables to improve readability.
+- Remember:
 
-  - `event.target.value` para texto
-  - `event.target.checked` para checkbox
-
----
-
-## **9. A tener en cuenta**
-
-- Un atributo reactivo es un atributo cuyo valor depende del estado o variables.
-- React actualiza automáticamente la UI cuando cambia el estado.
-- `disabled`, `checked` y `value` son los más comunes.
+  - `event.target.value` for text
+  - `event.target.checked` for checkbox
 
 ---
 
-[![Atributos Reactivos](https://img.youtube.com/vi/xF3J25ka1yk/0.jpg)](https://www.youtube.com/watch?v=xF3J25ka1yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **9. To take into account**
+
+- A reactive attribute is an attribute whose value depends on the state or variables.
+- React automatically updates the UI when the state changes.
+- `disabled`, `checked` and `value` They are the most common.
 
 ---
 
-En el próximo tema veremos **renderizado condicional**, para mostrar u ocultar elementos en la UI dependiendo del estado.
+[![Reactive Attributes](https://img.youtube.com/vi/xF3J25ka1yk/0.jpg)](https://www.youtube.com/watch?v=xF3J25ka1yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will see **conditional rendering**, to show or hide elements in the UI depending on the state.

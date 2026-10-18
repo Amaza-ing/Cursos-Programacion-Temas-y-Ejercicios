@@ -1,38 +1,38 @@
-# **Tema 11: Asincronía en JavaScript**
+# **Topic 11: Asynchrony in JavaScript**
 
-## **1. Introducción a la Asincronía**
+## **1. Introduction to Asynchrony**
 
-JavaScript es un lenguaje de programación **single-threaded**, lo que significa que solo puede ejecutar una tarea a la vez en su hilo principal. Sin embargo, muchas veces necesitamos ejecutar tareas que toman tiempo, como solicitar datos de una API o leer archivos. Para manejar estas situaciones sin bloquear la ejecución del código, usamos técnicas asincrónicas.
-
----
-
-## **2. Manejo de la Asincronía en JavaScript**
-
-En JavaScript, podemos manejar la asincronía de varias maneras:
-
-1. **Callbacks** (primera forma de manejar operaciones asincrónicas)
-2. **Promesas** (introducidas en ES6, permiten un mejor control del flujo)
-3. **Async/Await** (sintaxis más limpia para manejar promesas, introducida en ES8)
+JavaScript is a **single-threaded** programming language, which means that it can only execute one task at a time in its main thread. However, many times we need to execute tasks that take time, such as requesting data from an API or reading files. To handle these situations without blocking code execution, we use asynchronous techniques.
 
 ---
 
-[![Qué es la Asincronía](https://img.youtube.com/vi/LZhXXiccCXQ/0.jpg)](https://www.youtube.com/watch?v=LZhXXiccCXQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+## **2. Handling Asynchrony in JavaScript**
+
+In JavaScript, we can handle asynchrony in several ways:
+
+1. **Callbacks** (first way to handle asynchronous operations)
+2. **Promises** (introduced in ES6, allow better flow control)
+3. **Async/Await** (cleaner syntax for handling promises, introduced in ES8)
 
 ---
 
-## **3. Uso de Promesas**
+[![What is Asynchrony](https://img.youtube.com/vi/LZhXXiccCXQ/0.jpg)](https://www.youtube.com/watch?v=LZhXXiccCXQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
-Las **promesas** son objetos que representan un valor que puede estar disponible ahora, en el futuro o nunca. Una promesa tiene tres estados posibles:
+---
 
-- **Pending** (pendiente): La operación aún no ha finalizado.
-- **Fulfilled** (resuelta): La operación se completó con éxito.
-- **Rejected** (rechazada): La operación falló.
+## **3. Use of Promises**
 
-### **3.1. Creación de una Promesa**
+**Promises** are objects that represent value that may be available now, in the future, or never. A promise has three possible states:
 
-Para crear una promesa podemos utilizar `new Promise()` y añadir la lógica que necesitemos dentro del callback que recibe como parámetro.
+- **Pending**: The operation has not finished yet.
+- **Fulfilled** (resolved): The operation was completed successfully.
+- **Rejected**: The operation failed.
 
-Aunque habitualmente no vamos a necesitar crear ninguna promesa, únicamente consumirla, viene bien tener una idea de cómo está hecha por dentro.
+### **3.1. Creating a Promise**
+
+To create a promise we can use `new Promise()` and add the logic we need within the callback that it receives as a parameter.
+
+Although usually we will not need to create any promise, only consume it, it is good to have an idea of how it is made inside.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -47,19 +47,19 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-En este ejemplo se simula la asincronía con un `setTimeout()` haciendo que tarde 2 segundos en resolverse. En un caso real no tendría un tiempo estipulado, sino que se resolvería en cuanto terminase de ejecutar sus procesos, como alguna petición a una API o una consulta a una base de datos.
+This example simulates the asynchrony with an `setTimeout()` making it take 2 seconds to resolve. In a real case it would not have a stipulated time, but would be resolved as soon as it finished executing its processes, such as a request to an API or a query to a database.
 
 ---
 
-[![Qué es una Promesa](https://img.youtube.com/vi/VcO04YuoglM/0.jpg)](https://www.youtube.com/watch?v=VcO04YuoglM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![What is a Promise](https://img.youtube.com/vi/VcO04YuoglM/0.jpg)](https://www.youtube.com/watch?v=VcO04YuoglM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-### **3.2. Consumir una Promesa con `.then()` y `.catch()`**
+### **3.2. Consume a Promise with `.then()` and `.catch()`**
 
-Consumir una promesa es lo verdaderamente importante. Existen varias sintaxis para ello.
+Consuming a promise is what is truly important. There are several syntaxes for this.
 
-En la sintaxis de `.then()` necesitamos pasarle un callback que se ejecutará cuando la promesa se resuelva, y otro callback al método `.catch()` que se ejecutará sólo si la promesa falla.
+In the `.then()` syntax we need to pass a callback that will be executed when the promise resolves, and another callback to the `.catch()` method that will be executed only if the promise fails.
 
 ```js
 myPromise
@@ -71,7 +71,7 @@ myPromise
   });
 ```
 
-Si el `.then()` devuelve a su vez una promesa, podemos anidar tantos como haga falta. En estos casos sólo sería necesario un único `.catch()` que puede capturar un error en cualquiera de las promesas anteriores.
+If the `.then()` returns a promise, we can nest as many as necessary. In these cases you would only need a single `.catch()` that can catch an error in any of the above promises.
 
 ```js
 myPromise
@@ -90,9 +90,9 @@ myPromise
   });
 ```
 
-### **3.3. `finally()` en Promesas**
+### **3.3. `finally()` in Promises**
 
-El método `.finally()` se ejecuta siempre, independientemente del resultado de la promesa.
+The `.finally()` method is always executed, regardless of the result of the promise.
 
 ```js
 myPromise
@@ -103,17 +103,17 @@ myPromise
 
 ---
 
-[![Consumir una Promesa con .then](https://img.youtube.com/vi/-Ax2L0YzT4I/0.jpg)](https://www.youtube.com/watch?v=-Ax2L0YzT4I&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Consume a Promise with .then](https://img.youtube.com/vi/-Ax2L0YzT4I/0.jpg)](https://www.youtube.com/watch?v=-Ax2L0YzT4I&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **4. Uso de `async/await`**
+## **4. Using `async/await`**
 
-La sintaxis `async/await` permite manejar promesas de forma más clara y estructurada, como si fueran código síncrono.
+The `async/await` syntax allows you to handle promises in a clearer and more structured way, as if they were synchronous code.
 
-### **4.1. Definir una función asíncrona**
+### **4.1. Define an asynchronous function**
 
-Para usar `await`, la función debe declararse con `async`.
+To use `await`, the function must be declared with `async`.
 
 ```js
 async function fetchData() {
@@ -121,11 +121,10 @@ async function fetchData() {
 }
 ```
 
-Esta función devuelve automáticamente una promesa.
+This function automatically returns a promise.
 
-### **4.2. Esperar la resolución de una Promesa con `await`**
-
-Como medida de seguridad debemos encerrar nuestro código en un bloque "try/catch" donde se ejecutará todo lo que hay dentro del `try{}` mientras no haya problemas y únicamente se ejecutará el `catch(error){}` si algo falla.
+### **4.2. Wait for the resolution of a Promise with `await`**
+As a security measure we must enclose our code in a "try/catch" block where everything inside the `try{}` will be executed as long as there are no problems and only the `catch(error){}` will be executed if something fails.
 
 ```js
 async function getData() {
@@ -142,17 +141,17 @@ async function getData() {
 getData();
 ```
 
-En este ejemplo no se ejecutará la linea `console.log(result);` hasta que la linea anterior no haya terminado de resolver su ejecución, ya que tiene un await.
+In this example, the `console.log(result);` line will not be executed until the previous line has finished resolving its execution, since it has an await.
 
 ---
 
-[![Consumir una Promesa con .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Consume a Promise with .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. Ejecutar Promesas en Paralelo con `Promise.all()`**
+## **5. Execute Promises in Parallel with `Promise.all()`**
 
-`Promise.all()` permite ejecutar varias promesas simultáneamente y esperar a que todas se resuelvan.
+`Promise.all()` allows you to execute multiple promises simultaneously and wait for them all to resolve.
 
 ```js
 const promise1 = new Promise((resolve) =>
@@ -170,13 +169,13 @@ async function executePromises() {
 executePromises();
 ```
 
-En este ejemplo sólo se tardaría 2 segundos en resolver todas las promesas, mientras que si no usamos el `Promise.all()` y lo hiciéramos una detrás de otra tardaríamos 3 segundos, porque no se iniciaría la segunda promesa hasta que no se hubiese resuelto la primera.
+In this example it would only take 2 seconds to resolve all the promises, while if we did not use the `Promise.all()` and did it one after the other it would take 3 seconds, because the second promise would not be started until the first had been resolved.
 
 ---
 
-## **6. Ejecutar Promesas en Secuencia con `Promise.allSettled()`**
+## **6. Execute Promises in Sequence with `Promise.allSettled()`**
 
-A diferencia de `Promise.all()`, `Promise.allSettled()` espera que todas las promesas finalicen, sin importar si fueron resueltas o rechazadas.
+Unlike `Promise.all()`, `Promise.allSettled()` waits for all promises to finish, regardless of whether they were resolved or rejected.
 
 ```js
 const failingPromise = new Promise((_, reject) =>
@@ -193,12 +192,12 @@ executeAllSettled();
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-- **Las promesas** permiten manejar operaciones asincrónicas sin anidaciones excesivas.
-- **Async/Await** simplifica la lectura y escritura del código asincrónico.
-- **Métodos como `Promise.all()` y `Promise.allSettled()`** permiten gestionar múltiples promesas eficientemente.
+- **Promises** allow asynchronous operations to be handled without excessive nesting.
+- **Async/Await** simplifies reading and writing asynchronous code.
+- **Methods like `Promise.all()` and `Promise.allSettled()`** allow multiple promises to be managed efficiently.
 
-Manejar la asincronía correctamente en JavaScript es clave para mejorar el rendimiento y evitar bloqueos en la ejecución del código.
+Handling asynchrony correctly in JavaScript is key to improving performance and avoiding code execution crashes.
 
-En el próximo tema veremos cómo podemos hacer peticiones a una API utilizando el método fetch y promesas.
+In the next topic we will see how we can make requests to an API using the fetch method and promises.

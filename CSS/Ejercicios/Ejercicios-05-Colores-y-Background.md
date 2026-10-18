@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 5: Colores y Fondos en CSS**
+# **Exercises - Topic 5: Colors and Backgrounds in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre colores y fondos en CSS.
+Below you will find 5 practical exercises on colors and backgrounds in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Aplicar color a un texto**
+### **Exercise 1: Apply color to text**
 
-Crea un párrafo con el color de texto rojo.
+Create a paragraph with the text color red.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 p {
@@ -20,19 +20,21 @@ p {
 }
 ```
 
+
 ```html
 <p>Este es un texto en color rojo.</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Usar un color hexadecimal**
+### **Exercise 2: Using a hexadecimal color**
 
-Crea un encabezado `<h1>` con color de texto azul utilizando un código hexadecimal.
+Creates an `<h1>` header with blue text color using a hexadecimal code.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 h1 {
@@ -40,19 +42,21 @@ h1 {
 }
 ```
 
+
 ```html
 <h1>Este título es azul.</h1>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 3: Aplicar una imagen de fondo**
+### **Exercise 3: Apply a background image**
 
-Crea un `div` con una imagen de fondo llamada `fondo.jpg`.
+Creates an `div` with a background image named `fondo.jpg`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 div {
@@ -62,19 +66,21 @@ div {
 }
 ```
 
+
 ```html
 <div>Este es un contenedor con una imagen de fondo.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 4: Crear un degradado de fondo**
+### **Exercise 4: Create a background gradient**
 
-Crea un `div` con un fondo degradado de rojo a azul de izquierda a derecha.
+Creates an `div` with a red to blue gradient background from left to right.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 div {
@@ -84,19 +90,21 @@ div {
 }
 ```
 
+
 ```html
 <div>Este es un contenedor con un fondo degradado.</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 5: Fijar una imagen de fondo**
+### **Exercise 5: Set a background image**
 
-Crea un `div` con una imagen de fondo que permanezca fija al hacer scroll.
+Create an `div` with a background image that remains fixed when scrolling.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 div {
@@ -107,8 +115,10 @@ div {
 }
 ```
 
+
 ```html
 <div>Este es un contenedor con una imagen de fondo fija.</div>
 ```
+
 
 </details>

@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 8: Imágenes en HTML y optimización para la web**
+# **Exercises - Topic 8: Images in HTML and optimization for the web**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre imágenes en HTML.
+Below you will find 5 practical exercises on HTML images.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Insertar una imagen básica**
+### **Exercise 1: Insert a basic image**
 
-Crea un documento HTML que muestre una imagen ubicada en la misma carpeta que el archivo HTML.
+Create an HTML document that displays an image located in the same folder as the HTML file.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <img src="imagen.jpg" alt="Descripción de la imagen" />
@@ -22,11 +22,11 @@ Crea un documento HTML que muestre una imagen ubicada en la misma carpeta que el
 
 ---
 
-### **Ejercicio 2: Definir tamaño de una imagen**
+### **Exercise 2: Define the size of an image**
 
-Modifica el código del ejercicio anterior para que la imagen tenga un ancho de 400 píxeles y una altura de 300 píxeles.
+Modify the code from the previous exercise so that the image has a width of 400 pixels and a height of 300 pixels.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <img
@@ -41,11 +41,11 @@ Modifica el código del ejercicio anterior para que la imagen tenga un ancho de 
 
 ---
 
-### **Ejercicio 3: Aplicar carga diferida (`loading="lazy"`)**
+### **Exercise 3: Apply lazy loading (`loading="lazy"`)**
 
-Añade el atributo `loading="lazy"` a la imagen para que solo se cargue cuando el usuario la vea en pantalla.
+Add the `loading="lazy"` attribute to the image so that it only loads when the user sees it on the screen.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <img src="imagen.jpg" alt="Imagen con carga diferida" loading="lazy" />
@@ -55,11 +55,11 @@ Añade el atributo `loading="lazy"` a la imagen para que solo se cargue cuando e
 
 ---
 
-### **Ejercicio 4: Usar diferentes formatos de imagen**
+### **Exercise 4: Use different image formats**
 
-Crea un documento HTML que muestre una imagen en formato `.webp` y otra en formato `.svg`.
+Create an HTML document that displays an image in `.webp` format and another in `.svg` format.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <img src="imagen.webp" alt="Imagen en formato WebP" />
@@ -70,11 +70,11 @@ Crea un documento HTML que muestre una imagen en formato `.webp` y otra en forma
 
 ---
 
-### **Ejercicio 5: Imagen con enlace**
+### **Exercise 5: Image with link**
 
-Haz que una imagen actúe como un enlace a otra página web.
+Make an image act as a link to another web page.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <a href="https://www.ejemplo.com">

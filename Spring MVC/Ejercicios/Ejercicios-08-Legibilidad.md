@@ -1,62 +1,62 @@
-# Ejercicios resueltos — Tema 8: Legibilidad
+# Solved exercises — Topic 8: Readability
 
-## Introducción
+## Introduction
 
-En estos ejercicios vas a practicar las mejoras del **Tema 8**, donde aprendimos a hacer que el CRUD sea más legible usando métodos HTTP más expresivos y rutas más limpias.
+In these exercises you will practice the improvements from **Topic 8**, where we learned how to make the CRUD more readable using more expressive HTTP methods and cleaner routes.
 
-En lugar de trabajar con cursos, usaremos una pequeña aplicación de gestión de **productos**. Así practicarás la misma idea, pero con un ejemplo diferente.
+Instead of working with courses, we will use a small **product management** application. This way you will practice the same idea, but with a different example.
 
-Vas a trabajar con:
+You will work with:
 
-- Rutas limpias usando `@PathVariable`.
-- Diferencia entre `@RequestParam` y `@PathVariable`.
-- Uso de `@PutMapping` para actualizar.
-- Uso de `@DeleteMapping` para borrar.
-- Configuración de `HiddenHttpMethodFilter`.
-- Formularios HTML que envían `POST` con `_method=put` o `_method=delete`.
-- Reutilización de formularios para crear y editar.
-- Métodos privados para preparar formularios.
-- Constantes para vistas y redirecciones.
-- Diagnóstico de errores frecuentes.
+- Clean routes using `@PathVariable`.
+- Difference between `@RequestParam` and `@PathVariable`.
+- Using `@PutMapping` to update.
+- Using `@DeleteMapping` to delete.
+- `HiddenHttpMethodFilter` configuration.
+- HTML forms that submit `POST` with `_method=put` or `_method=delete`.
+- Reuse of forms to create and edit.
+- Private methods to prepare forms.
+- Constants for views and redirects.
+- Diagnosis of frequent errors.
 
-Cada solución está oculta bajo el botón **mostrar solución**.
+Each solution is hidden under the **show solution** button.
 
 ---
 
-# Ejercicio 1 — Relacionar método HTTP y operación CRUD
+# Exercise 1 — Relate HTTP method and CRUD operation
 
-## Enunciado
+## Statement
 
-Completa la tabla indicando qué método HTTP usarías para cada operación de una aplicación de productos.
+Complete the table by indicating which HTTP method you would use for each operation in a product application.
 
-| Operación                        | Método HTTP recomendado |
+| Operation | Recommended HTTP method |
 | -------------------------------- | ----------------------- |
-| Ver todos los productos          | ?                       |
-| Ver el detalle de un producto    | ?                       |
-| Mostrar formulario de creación   | ?                       |
-| Crear un producto nuevo          | ?                       |
-| Mostrar formulario de edición    | ?                       |
-| Actualizar un producto existente | ?                       |
-| Borrar un producto existente     | ?                       |
+| See all products | ?                       |
+| See the details of a product | ?                       |
+| Show creation form | ?                       |
+| Create a new product | ?                       |
+| Show edit form | ?                       |
+| Update an existing product | ?                       |
+| Delete an existing product | ?                       |
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-| Operación                        | Método HTTP recomendado |
+| Operation | Recommended HTTP method |
 | -------------------------------- | ----------------------- |
-| Ver todos los productos          | `GET`                   |
-| Ver el detalle de un producto    | `GET`                   |
-| Mostrar formulario de creación   | `GET`                   |
-| Crear un producto nuevo          | `POST`                  |
-| Mostrar formulario de edición    | `GET`                   |
-| Actualizar un producto existente | `PUT`                   |
-| Borrar un producto existente     | `DELETE`                |
+| See all products | `GET` |
+| See the details of a product | `GET` |
+| Show creation form | `GET` |
+| Create a new product | `POST` |
+| Show edit form | `GET` |
+| Update an existing product | `PUT` |
+| Delete an existing product | `DELETE` |
 
-### Explicación
+### Explanation
 
-La idea general es:
+The general idea is:
 
 ```text
 GET    → consultar información
@@ -65,58 +65,58 @@ PUT    → actualizar un recurso existente
 DELETE → borrar un recurso existente
 ```
 
-En una aplicación Spring MVC con JSP seguimos usando formularios tradicionales, pero podemos hacer que Spring interprete algunos formularios como `PUT` o `DELETE` usando `HiddenHttpMethodFilter`.
+In a Spring MVC application with JSP we still use traditional forms, but we can make Spring interpret some forms like `PUT` or `DELETE` using `HiddenHttpMethodFilter`.
 
 </details>
 
 ---
 
-# Ejercicio 2 — Transformar rutas antiguas en rutas limpias
+# Exercise 2 — Transform old routes into clean routes
 
-## Enunciado
+## Statement
 
-Transforma estas rutas antiguas en rutas más limpias usando el estilo del Tema 8.
+Transform these old routes into cleaner routes using Theme 8 style.
 
-| Ruta antigua                | Ruta nueva |
+| Old route | New route |
 | --------------------------- | ---------- |
 | `GET /products/detail?id=4` | ?          |
-| `GET /products/edit?id=4`   | ?          |
-| `POST /products/update`     | ?          |
-| `POST /products/delete`     | ?          |
+| `GET /products/edit?id=4` | ?          |
+| `POST /products/update` | ?          |
+| `POST /products/delete` | ?          |
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-| Ruta antigua                | Ruta nueva             |
+| Old route | New route |
 | --------------------------- | ---------------------- |
-| `GET /products/detail?id=4` | `GET /products/4`      |
-| `GET /products/edit?id=4`   | `GET /products/4/edit` |
-| `POST /products/update`     | `PUT /products/4`      |
-| `POST /products/delete`     | `DELETE /products/4`   |
+| `GET /products/detail?id=4` | `GET /products/4` |
+| `GET /products/edit?id=4` | `GET /products/4/edit` |
+| `POST /products/update` | `PUT /products/4` |
+| `POST /products/delete` | `DELETE /products/4` |
 
-### Explicación
+### Explanation
 
-Antes el identificador viajaba como parámetro:
+Before, the identifier traveled as a parameter:
 
 ```text
 /products/detail?id=4
 ```
 
-Ahora forma parte de la ruta:
+Now it is part of the route:
 
 ```text
 /products/4
 ```
 
-Esto permite que el controlador use:
+This allows the driver to use:
 
 ```java
 @PathVariable Long id
 ```
 
-en lugar de:
+instead of:
 
 ```java
 @RequestParam("id") Long id
@@ -126,46 +126,46 @@ en lugar de:
 
 ---
 
-# Ejercicio 3 — Diferenciar `@RequestParam` y `@PathVariable`
+# Exercise 3 — Differentiate `@RequestParam` and `@PathVariable`
 
-## Enunciado
+## Statement
 
-Indica qué anotación usarías para recoger el `id` en cada caso.
+Indicate which annotation you would use to collect the `id` in each case.
 
-## Caso A
+## Case A
 
 ```text
 /products/detail?id=7
 ```
 
-## Caso B
+## Case B
 
 ```text
 /products/7
 ```
 
-Después escribe un ejemplo de método controlador para cada caso.
+Then write an example controller method for each case.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-La URL es:
+The URL is:
 
 ```text
 /products/detail?id=7
 ```
 
-Aquí el `id` está en la query string, así que usamos:
+Here the `id` is in the query string, so we use:
 
 ```java
 @RequestParam("id")
 ```
 
-Ejemplo:
+Example:
 
 ```java
 @GetMapping("/detail")
@@ -177,21 +177,21 @@ public String productDetail(
 }
 ```
 
-## Caso B
+## Case B
 
-La URL es:
+The URL is:
 
 ```text
 /products/7
 ```
 
-Aquí el `id` forma parte de la ruta, así que usamos:
+Here the `id` is part of the path, so we use:
 
 ```java
 @PathVariable
 ```
 
-Ejemplo:
+Example:
 
 ```java
 @GetMapping("/{id}")
@@ -203,28 +203,28 @@ public String productDetail(
 }
 ```
 
-### Explicación
+### Explanation
 
-`@RequestParam` lee valores que vienen después de `?`.
+`@RequestParam` reads values that come after `?`.
 
-`@PathVariable` lee valores que forman parte de la ruta.
+`@PathVariable` reads values ​​that are part of the route.
 
 </details>
 
 ---
 
-# Ejercicio 4 — Activar `HiddenHttpMethodFilter` en `web.xml`
+# Exercise 4 — Activate `HiddenHttpMethodFilter` in `web.xml`
 
-## Enunciado
+## Statement
 
-Queremos que los formularios HTML puedan enviar acciones que Spring interprete como `PUT` o `DELETE`.
+We want HTML forms to be able to submit actions that Spring interprets as `PUT` or `DELETE`.
 
-Añade en `web.xml` la configuración necesaria para activar `HiddenHttpMethodFilter`.
+Add to `web.xml` the necessary configuration to activate `HiddenHttpMethodFilter`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <filter>
@@ -238,38 +238,38 @@ Añade en `web.xml` la configuración necesaria para activar `HiddenHttpMethodFi
 </filter-mapping>
 ```
 
-### Explicación
+### Explanation
 
-Los formularios HTML tradicionales solo envían:
+Traditional HTML forms only submit:
 
 ```text
 GET
 POST
 ```
 
-Para simular `PUT` o `DELETE`, enviamos un formulario `POST` con un campo oculto:
+To simulate `PUT` or `DELETE`, we submit an `POST` form with a hidden field:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-o:
+or:
 
 ```html
 <input type="hidden" name="_method" value="delete" />
 ```
 
-`HiddenHttpMethodFilter` lee ese campo y hace que Spring trate la petición como `PUT` o `DELETE`.
+`HiddenHttpMethodFilter` reads that field and causes Spring to treat the request as `PUT` or `DELETE`.
 
 </details>
 
 ---
 
-# Ejercicio 5 — Crear una ruta de detalle con `@PathVariable`
+# Exercise 5 — Create a detail route with `@PathVariable`
 
-## Enunciado
+## Statement
 
-Tienes este método antiguo en `ProductController`:
+You have this old method in `ProductController`:
 
 ```java
 @GetMapping("/detail")
@@ -286,13 +286,13 @@ public String productDetail(
 }
 ```
 
-Modifícalo para que responda a:
+Modify it to respond to:
 
 ```text
 GET /products/{id}
 ```
 
-Por ejemplo:
+For example:
 
 ```text
 GET /products/3
@@ -301,7 +301,7 @@ GET /products/3
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @GetMapping("/{id}")
@@ -318,29 +318,29 @@ public String productDetail(
 }
 ```
 
-### Import necesario
+### Import required
 
 ```java
 import org.springframework.web.bind.annotation.PathVariable;
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @GetMapping("/{id}")
 ```
 
-indica que la ruta contiene una variable.
+indicates that the path contains a variable.
 
-Si el usuario entra en:
+If the user enters:
 
 ```text
 /products/3
 ```
 
-Spring asigna:
+Spring assigns:
 
 ```java
 id = 3L;
@@ -350,34 +350,34 @@ id = 3L;
 
 ---
 
-# Ejercicio 6 — Crear una ruta de edición con `@PathVariable`
+# Exercise 6 — Create an edit path with `@PathVariable`
 
-## Enunciado
+## Statement
 
-Crea un método que muestre el formulario de edición de un producto.
+Create a method that displays a product edit form.
 
-Debe responder a:
+You must respond to:
 
 ```text
 GET /products/{id}/edit
 ```
 
-Debe:
+You must:
 
-1. Recibir el `id` con `@PathVariable`.
-2. Buscar el producto con `productService.findByIdOrThrow(id)`.
-3. Añadir al modelo:
-   - `pageTitleCode` con `products.edit.title`.
-   - `formAction` con `/products/ID_DEL_PRODUCTO`.
-   - `formMethod` con `put`.
-   - `submitCode` con `products.update`.
-   - `product` con el producto encontrado.
-4. Devolver `products/form`.
+1. Receive the `id` with `@PathVariable`.
+2. Search for the product with `productService.findByIdOrThrow(id)`.
+3. Add to model:
+   - `pageTitleCode` with `products.edit.title`.
+   - `formAction` with `/products/ID_DEL_PRODUCTO`.
+   - `formMethod` with `put`.
+   - `submitCode` with `products.update`.
+   - `product` with the found product.
+4. Return `products/form`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @GetMapping("/{id}/edit")
@@ -397,65 +397,65 @@ public String showEditForm(
 }
 ```
 
-### Explicación
+### Explanation
 
-La ruta:
+The route:
 
 ```java
 @GetMapping("/{id}/edit")
 ```
 
-permite URLs como:
+allows URLs like:
 
 ```text
 /products/5/edit
 ```
 
-El formulario se enviará después a:
+The form will then be sent to:
 
 ```text
 /products/5
 ```
 
-pero con:
+but with:
 
 ```text
 _method=put
 ```
 
-para que Spring ejecute el método `@PutMapping`.
+for Spring to execute the `@PutMapping` method.
 
 </details>
 
 ---
 
-# Ejercicio 7 — Actualizar usando `@PutMapping`
+# Exercise 7 — Update using `@PutMapping`
 
-## Enunciado
+## Statement
 
-Crea un método para actualizar un producto.
+Create a method to update a product.
 
-Debe responder a:
+You must respond to:
 
 ```text
 PUT /products/{id}
 ```
 
-Debe:
+You must:
 
-1. Recibir el `id` con `@PathVariable`.
-2. Recibir el producto con `@Valid @ModelAttribute("product")`.
-3. Recibir `BindingResult`.
-4. Asignar el `id` de la ruta al producto con `product.setId(id)`.
-5. Si hay errores, volver a `products/form`.
-6. Si no hay errores, llamar a `productService.update(product)`.
-7. Añadir mensaje flash `success.product.updated`.
-8. Redirigir a `/products`.
+1. Receive the `id` with `@PathVariable`.
+2. Receive the product with `@Valid @ModelAttribute("product")`.
+3. Receive `BindingResult`.
+4. Assign the `id` of the path to the product with `product.setId(id)`.
+5. If there are errors, return to `products/form`.
+6. If there are no errors, call `productService.update(product)`.
+7. Add `success.product.updated` flash message.
+8. Redirect to `/products`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @PutMapping("/{id}")
@@ -488,62 +488,62 @@ public String updateProduct(
 }
 ```
 
-### Imports necesarios
+### Imports required
 
 ```java
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 ```
 
-### Explicación
+### Explanation
 
-La ruta contiene el `id`:
+The path contains the `id`:
 
 ```text
 /products/5
 ```
 
-Por eso recibimos:
+That's why we receive:
 
 ```java
 @PathVariable Long id
 ```
 
-Después hacemos:
+Then we do:
 
 ```java
 product.setId(id);
 ```
 
-Así nos aseguramos de que el objeto que llega al servicio tiene el identificador correcto.
+This way we ensure that the object that arrives at the service has the correct identifier.
 
 </details>
 
 ---
 
-# Ejercicio 8 — Borrar usando `@DeleteMapping`
+# Exercise 8 — Delete using `@DeleteMapping`
 
-## Enunciado
+## Statement
 
-Crea un método para borrar un producto.
+Create a method to delete a product.
 
-Debe responder a:
+You must respond to:
 
 ```text
 DELETE /products/{id}
 ```
 
-Debe:
+You must:
 
-1. Recibir el `id` con `@PathVariable`.
-2. Llamar a `productService.deleteById(id)`.
-3. Añadir mensaje flash `success.product.deleted`.
-4. Redirigir a `/products`.
+1. Receive the `id` with `@PathVariable`.
+2. Call `productService.deleteById(id)`.
+3. Add flash message `success.product.deleted`.
+4. Redirect to `/products`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @DeleteMapping("/{id}")
@@ -562,63 +562,63 @@ public String deleteProduct(
 }
 ```
 
-### Import necesario
+### Import required
 
 ```java
 import org.springframework.web.bind.annotation.DeleteMapping;
 ```
 
-### Explicación
+### Explanation
 
-La ruta:
+The route:
 
 ```text
 DELETE /products/5
 ```
 
-expresa claramente que queremos borrar el producto con id `5`.
+clearly states that we want to delete the product with id `5`.
 
-El controlador ya no necesita recibir el id con:
+The controller no longer needs to receive the id with:
 
 ```java
 @RequestParam("id")
 ```
 
-porque el id forma parte de la ruta.
+because the id is part of the route.
 
 </details>
 
 ---
 
-# Ejercicio 9 — Crear métodos privados para preparar formularios
+# Exercise 9 — Create private methods to prepare forms
 
-## Enunciado
+## Statement
 
-En `ProductController`, crea dos métodos privados:
+In `ProductController`, create two private methods:
 
 ```java
 prepareCreateForm(...)
 prepareEditForm(...)
 ```
 
-`prepareCreateForm` debe preparar el formulario para crear un producto.
+`prepareCreateForm` must prepare the form to create a product.
 
-`prepareEditForm` debe preparar el formulario para editar un producto.
+`prepareEditForm` must prepare the form to edit a product.
 
-Usa estos atributos:
+Use these attributes:
 
-| Atributo        | Crear                   | Editar                |
+| Attribute | Create | Edit |
 | --------------- | ----------------------- | --------------------- |
 | `pageTitleCode` | `products.create.title` | `products.edit.title` |
-| `formAction`    | `/products`             | `/products/{id}`      |
-| `formMethod`    | `post`                  | `put`                 |
-| `submitCode`    | `products.create`       | `products.update`     |
-| `product`       | producto recibido       | producto recibido     |
+| `formAction` | `/products` | `/products/{id}` |
+| `formMethod` | `post` | `put` |
+| `submitCode` | `products.create` | `products.update` |
+| `product` | product received | product received |
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 private void prepareCreateForm(Model model, Product product) {
@@ -638,39 +638,39 @@ private void prepareEditForm(Model model, Product product) {
 }
 ```
 
-### Explicación
+### Explanation
 
-Estos métodos evitan repetir muchas veces:
+These methods avoid repeating many times:
 
 ```java
 model.addAttribute(...)
 ```
 
-En creación usamos:
+In creation we use:
 
 ```text
 POST /products
 ```
 
-En edición usamos:
+In editing we use:
 
 ```text
 PUT /products/{id}
 ```
 
-La vista `products/form.jsp` podrá funcionar en ambos casos.
+The `products/form.jsp` view will be able to work in both cases.
 
 </details>
 
 ---
 
-# Ejercicio 10 — Usar los métodos privados en creación
+# Exercise 10 — Use private methods in creation
 
-## Enunciado
+## Statement
 
-Modifica estos dos métodos para usar `prepareCreateForm`.
+Modify these two methods to use `prepareCreateForm`.
 
-Método que muestra el formulario:
+Method displaying the form:
 
 ```java
 @GetMapping("/new")
@@ -685,7 +685,7 @@ public String showCreateForm(Model model) {
 }
 ```
 
-Método que procesa el formulario:
+Method that processes the form:
 
 ```java
 @PostMapping
@@ -713,7 +713,7 @@ public String createProduct(
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @GetMapping("/new")
@@ -748,48 +748,47 @@ public String createProduct(
 }
 ```
 
-### Explicación
+### Explanation
+With `prepareCreateForm` we avoid repeating the same attributes.
 
-Con `prepareCreateForm` evitamos repetir los mismos atributos.
-
-Si hay errores, enviamos de nuevo el mismo producto recibido:
+If there are errors, we send again the same product received:
 
 ```java
 prepareCreateForm(model, product);
 ```
 
-Así el formulario conserva los datos que el usuario había escrito.
+Thus the form preserves the data that the user had written.
 
 </details>
 
 ---
 
-# Ejercicio 11 — Añadir constantes para vistas y redirecciones
+# Exercise 11 — Add constants for views and redirects
 
-## Enunciado
+## Statement
 
-En `ProductController`, añade constantes para evitar repetir estas cadenas:
+In `ProductController`, add constants to avoid repeating these strings:
 
 ```java
 "redirect:/products"
 "products/form"
 ```
 
-Después úsalas en los métodos del controlador.
+Then use them in the controller methods.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-Al principio de la clase añadimos:
+At the beginning of the class we add:
 
 ```java
 private static final String REDIRECT_PRODUCTS = "redirect:/products";
 private static final String PRODUCT_FORM_VIEW = "products/form";
 ```
 
-Ejemplo de uso:
+Example of use:
 
 ```java
 @GetMapping("/new")
@@ -824,21 +823,21 @@ public String createProduct(
 }
 ```
 
-### Explicación
+### Explanation
 
-Esto no cambia el funcionamiento de la aplicación.
+This does not change how the application works.
 
-Pero evita repetir cadenas de texto y reduce errores de escritura.
+But it avoids repeating text strings and reduces typing errors.
 
 </details>
 
 ---
 
-# Ejercicio 12 — Crear un formulario que envíe `PUT`
+# Exercise 12 — Create a form that sends `PUT`
 
-## Enunciado
+## Statement
 
-Modifica este formulario para que, cuando `formMethod` sea `put`, añada un campo oculto `_method` con valor `put`.
+Modify this form so that when `formMethod` is `put`, it adds a hidden field `_method` with value `put`.
 
 ```jsp
 <form:form
@@ -857,7 +856,7 @@ Modifica este formulario para que, cuando `formMethod` sea `put`, añada un camp
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <form:form
@@ -877,21 +876,21 @@ Modifica este formulario para que, cuando `formMethod` sea `put`, añada un camp
 </form:form>
 ```
 
-### Explicación
+### Explanation
 
-El formulario sigue usando:
+The form still uses:
 
 ```jsp
 method="post"
 ```
 
-Pero cuando estamos editando, añadimos:
+But when we are editing, we add:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-`HiddenHttpMethodFilter` detecta ese campo y Spring ejecuta el método con:
+`HiddenHttpMethodFilter` detects that field and Spring executes the method with:
 
 ```java
 @PutMapping
@@ -901,22 +900,22 @@ Pero cuando estamos editando, añadimos:
 
 ---
 
-# Ejercicio 13 — Crear un formulario de borrado que envíe `DELETE`
+# Exercise 13 — Create a deletion form that sends `DELETE`
 
-## Enunciado
+## Statement
 
-En `products/list.jsp`, crea un formulario para borrar un producto usando:
+In `products/list.jsp`, create a form to delete a product using:
 
 ```text
 DELETE /products/{id}
 ```
 
-Recuerda que el formulario HTML debe usar `method="post"` y un campo oculto `_method`.
+Remember that the HTML form must use `method="post"` and a hidden field `_method`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <form method="post"
@@ -932,27 +931,27 @@ Recuerda que el formulario HTML debe usar `method="post"` y un campo oculto `_me
 </form>
 ```
 
-### Explicación
+### Explanation
 
-El navegador envía realmente:
+The browser actually sends:
 
 ```text
 POST /products/3
 ```
 
-pero el formulario incluye:
+but the form includes:
 
 ```text
 _method=delete
 ```
 
-Entonces `HiddenHttpMethodFilter` hace que Spring lo interprete como:
+So `HiddenHttpMethodFilter` causes Spring to interpret it as:
 
 ```text
 DELETE /products/3
 ```
 
-y se ejecuta:
+and it runs:
 
 ```java
 @DeleteMapping("/{id}")
@@ -962,11 +961,11 @@ y se ejecuta:
 
 ---
 
-# Ejercicio 14 — Actualizar enlaces del listado
+# Exercise 14 — Update list links
 
-## Enunciado
+## Statement
 
-Tienes estos enlaces antiguos en `products/list.jsp`:
+You have these old links in `products/list.jsp`:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/products/detail?id=${product.id}">
@@ -978,12 +977,12 @@ Tienes estos enlaces antiguos en `products/list.jsp`:
 </a>
 ```
 
-Actualízalos para usar rutas limpias.
+Update them to use clean routes.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <a href="${pageContext.request.contextPath}/products/${product.id}">
@@ -995,45 +994,45 @@ Actualízalos para usar rutas limpias.
 </a>
 ```
 
-### Explicación
+### Explanation
 
-Antes usábamos query string:
+Before we used query string:
 
 ```text
 /products/detail?id=3
 ```
 
-Ahora usamos rutas con `PathVariable`:
+Now we use routes with `PathVariable`:
 
 ```text
 /products/3
 /products/3/edit
 ```
 
-Esto hace que las rutas sean más limpias y expresivas.
+This makes the routes cleaner and more expressive.
 
 </details>
 
 ---
 
-# Ejercicio 15 — Crear una tabla de acciones completa en `list.jsp`
+# Exercise 15 — Create a complete stock table in `list.jsp`
 
-## Enunciado
+## Statement
 
-Crea la celda de acciones para una tabla de productos.
+Create the actions cell for a products table.
 
-Debe incluir:
+Must include:
 
-1. Enlace a detalle con `/products/{id}`.
-2. Enlace a edición con `/products/{id}/edit`.
-3. Formulario de borrado con `DELETE /products/{id}`.
+1. Link to detail with `/products/{id}`.
+2. Link to edition with `/products/{id}/edit`.
+3. Deletion form with `DELETE /products/{id}`.
 
-Usa mensajes internacionalizados.
+Use internationalized messages.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <td class="actions-cell">
@@ -1059,9 +1058,9 @@ Usa mensajes internacionalizados.
 </td>
 ```
 
-### Explicación
+### Explanation
 
-La celda combina tres acciones:
+The cell combines three actions:
 
 ```text
 GET    /products/{id}
@@ -1069,17 +1068,17 @@ GET    /products/{id}/edit
 DELETE /products/{id}
 ```
 
-El borrado necesita un formulario porque modifica datos.
+Deletion requires a form because it modifies data.
 
 </details>
 
 ---
 
-# Ejercicio 16 — Crear `ProductController` completo con rutas limpias
+# Exercise 16 — Create complete `ProductController` with clean paths
 
-## Enunciado
+## Statement
 
-Crea un `ProductController` completo usando:
+Create a complete `ProductController` using:
 
 ```java
 @GetMapping
@@ -1091,18 +1090,18 @@ Crea un `ProductController` completo usando:
 @DeleteMapping("/{id}")
 ```
 
-El controlador debe usar:
+The driver must use:
 
 - `ProductService`
 - `MessageSource`
-- métodos privados `prepareCreateForm`, `prepareEditForm`
-- método privado `addFlashMessage`
-- constantes para vista de formulario y redirección
+- private methods `prepareCreateForm`, `prepareEditForm`
+- private method `addFlashMessage`
+- constants for form view and redirection
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.shop.controller;
@@ -1279,9 +1278,9 @@ public class ProductController {
 }
 ```
 
-### Explicación
+### Explanation
 
-Este controlador expresa el CRUD de forma más clara:
+This controller expresses the CRUD more clearly:
 
 ```text
 POST   /products      → crear
@@ -1289,35 +1288,35 @@ PUT    /products/{id} → actualizar
 DELETE /products/{id} → borrar
 ```
 
-Además, usa rutas limpias para detalle y edición.
+Also, use clean paths for detail and editing.
 
 </details>
 
 ---
 
-# Ejercicio 17 — Actualizar `products/form.jsp` completo
+# Exercise 17 — Update full `products/form.jsp`
 
-## Enunciado
+## Statement
 
-Crea un formulario JSP reutilizable para crear y editar productos.
+Create a reusable JSP form to create and edit products.
 
-Debe:
+You must:
 
-1. Enviar siempre `method="post"`.
-2. Usar `${formAction}` como acción.
-3. Añadir `_method=put` solo si `formMethod == 'put'`.
-4. Tener campo oculto `id`.
-5. Tener campos para:
+1. Always send `method="post"`.
+2. Use `${formAction}` as action.
+3. Add `_method=put` only if `formMethod == 'put'`.
+4. Have hidden field `id`.
+5. Have fields for:
    - `name`
    - `category`
    - `price`
    - `stock`
-6. Usar `${submitCode}` para el texto del botón.
+6. Use `${submitCode}` for the button text.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1403,44 +1402,44 @@ Debe:
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Aunque estemos editando, el formulario usa:
+Even though we are editing, the form uses:
 
 ```jsp
 method="post"
 ```
 
-La diferencia está en:
+The difference is in:
 
 ```jsp
 <input type="hidden" name="_method" value="put">
 ```
 
-Ese campo solo aparece cuando el formulario está en modo edición.
+That field only appears when the form is in edit mode.
 
 </details>
 
 ---
 
-# Ejercicio 18 — Actualizar `products/list.jsp` completo
+# Exercise 18 — Update full `products/list.jsp`
 
-## Enunciado
+## Statement
 
-Crea una vista `products/list.jsp` que use las nuevas rutas limpias.
+Create an `products/list.jsp` view that uses the new clean paths.
 
-Debe incluir:
+Must include:
 
-1. Listado de productos.
-2. Enlace a detalle: `/products/{id}`.
-3. Enlace a editar: `/products/{id}/edit`.
-4. Formulario para borrar con `_method=delete`.
-5. Mensaje de éxito si existe `successMessage`.
+1. List of products.
+2. Link to detail: `/products/{id}`.
+3. Link to edit: `/products/{id}/edit`.
+4. Form to delete with `_method=delete`.
+5. Success message if `successMessage` exists.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1523,9 +1522,9 @@ Debe incluir:
 </html>
 ```
 
-### Explicación
+### Explanation
 
-La vista ya no usa rutas como:
+The view no longer uses routes like:
 
 ```text
 /products/detail?id=1
@@ -1533,7 +1532,7 @@ La vista ya no usa rutas como:
 /products/delete
 ```
 
-Ahora usa rutas más limpias:
+Now use cleaner routes:
 
 ```text
 /products/1
@@ -1545,96 +1544,96 @@ DELETE /products/1
 
 ---
 
-# Ejercicio 19 — Diagnosticar errores con `HiddenHttpMethodFilter`
+# Exercise 19 — Diagnose errors with `HiddenHttpMethodFilter`
 
-## Enunciado
+## Statement
 
-Lee los siguientes casos y explica qué ocurre.
+Read the following cases and explain what happens.
 
-## Caso A
+## Case A
 
-El formulario de edición contiene:
+The edit form contains:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-pero en `web.xml` no se ha configurado `HiddenHttpMethodFilter`.
+but in `web.xml` `HiddenHttpMethodFilter` has not been set.
 
-¿Qué ocurre?
-
----
-
-## Caso B
-
-En `web.xml` sí está configurado `HiddenHttpMethodFilter`, pero el formulario no contiene el campo `_method`.
-
-¿Qué ocurre?
+What's happening?
 
 ---
 
-## Caso C
+## Case B
 
-El formulario tiene:
+In `web.xml`, `HiddenHttpMethodFilter` is configured, but the form does not contain the `_method` field.
+
+What's happening?
+
+---
+
+## Case C
+
+The form has:
 
 ```html
 <input type="hidden" name="method" value="put" />
 ```
 
-en lugar de:
+instead of:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-El formulario llegará como `POST`.
+The form will arrive as `POST`.
 
-Spring no lo transformará en `PUT`.
+Spring will not transform it into `PUT`.
 
-Por tanto, el método:
+Therefore, the method:
 
 ```java
 @PutMapping("/{id}")
 ```
 
-no se ejecutará.
+will not be executed.
 
 ---
 
-## Caso B
+## Case B
 
-Aunque el filtro esté configurado, no tiene ningún campo `_method` que leer.
+Even though the filter is configured, it has no `_method` field to read.
 
-La petición seguirá siendo `POST`.
+The request will still be `POST`.
 
 ---
 
-## Caso C
+## Case C
 
-El nombre del campo está mal.
+The field name is wrong.
 
-`HiddenHttpMethodFilter` espera un campo llamado:
+`HiddenHttpMethodFilter` expects a field called:
 
 ```text
 _method
 ```
 
-No:
+Not:
 
 ```text
 method
 ```
 
-La solución es:
+The solution is:
 
 ```html
 <input type="hidden" name="_method" value="put" />
@@ -1644,33 +1643,33 @@ La solución es:
 
 ---
 
-# Ejercicio 20 — Diagnosticar errores con rutas limpias
+# Exercise 20 — Diagnose errors with clean routes
 
-## Enunciado
+## Statement
 
-Lee los siguientes casos y explica qué ocurre.
+Read the following cases and explain what happens.
 
-## Caso A
+## Case A
 
-El controlador tiene:
+The controller has:
 
 ```java
 @GetMapping("/{id}")
 ```
 
-pero la JSP enlaza a:
+but the JSP links to:
 
 ```text
 /products/detail?id=1
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
-## Caso B
+## Case B
 
-El controlador tiene:
+The controller has:
 
 ```java
 @GetMapping("/{id}")
@@ -1679,48 +1678,47 @@ public String detail(@RequestParam("id") Long id) {
 }
 ```
 
-¿Qué está mal?
+What's wrong?
 
 ---
 
-## Caso C
+## Case C
 
-El método de edición usa:
+The editing method uses:
 
 ```java
 @PutMapping("/{id}")
 ```
 
-pero el formulario envía a:
+but the form sends to:
 
 ```text
 /products/update
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-La JSP sigue usando la ruta antigua.
-
-El controlador espera una ruta como:
+The JSP continues to use the old route.
+The controller expects a route like:
 
 ```text
 /products/1
 ```
 
-pero la JSP genera:
+but the JSP generates:
 
 ```text
 /products/detail?id=1
 ```
 
-Hay que actualizar el enlace:
+You need to update the link:
 
 ```jsp
 /products/${product.id}
@@ -1728,23 +1726,23 @@ Hay que actualizar el enlace:
 
 ---
 
-## Caso B
+## Case B
 
-La anotación no corresponde con la ruta.
+The annotation does not correspond to the route.
 
-Si la ruta es:
+If the route is:
 
 ```java
 @GetMapping("/{id}")
 ```
 
-el id debe recibirse con:
+the id must be received with:
 
 ```java
 @PathVariable Long id
 ```
 
-No con:
+Not with:
 
 ```java
 @RequestParam("id")
@@ -1752,29 +1750,29 @@ No con:
 
 ---
 
-## Caso C
+## Case C
 
-El formulario no está apuntando a la ruta correcta.
+The form is not pointing to the correct path.
 
-Si el controlador espera:
+If the driver waits:
 
 ```text
 PUT /products/{id}
 ```
 
-el formulario debe enviar a:
+The form must be sent to:
 
 ```text
 /products/ID
 ```
 
-con:
+with:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-No debe enviar a:
+You should not send to:
 
 ```text
 /products/update
@@ -1784,11 +1782,11 @@ No debe enviar a:
 
 ---
 
-# Ejercicio 21 — Reto final: mejorar el CRUD de empleados
+# Exercise 21 — Final challenge: improve employee CRUD
 
-## Enunciado
+## Statement
 
-Tienes una aplicación Spring MVC de empleados. Actualmente usa rutas antiguas:
+You have an employee Spring MVC application. Currently using old routes:
 
 ```text
 GET  /employees/detail?id=1
@@ -1797,7 +1795,7 @@ POST /employees/update
 POST /employees/delete
 ```
 
-Transforma el controlador y las vistas para usar:
+Transform the controller and views to use:
 
 ```text
 GET    /employees/{id}
@@ -1806,17 +1804,17 @@ PUT    /employees/{id}
 DELETE /employees/{id}
 ```
 
-Crea:
+Create:
 
-1. Configuración de `HiddenHttpMethodFilter`.
-2. Métodos principales de `EmployeeController`.
-3. Fragmento de formulario de edición con `_method=put`.
-4. Fragmento de listado con enlace a detalle, enlace a edición y formulario de borrado.
+1. `HiddenHttpMethodFilter` configuration.
+2. Main methods of `EmployeeController`.
+3. Edit form fragment with `_method=put`.
+4. Listing fragment with link to detail, link to edit and deletion form.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ## 1. `web.xml`
 
@@ -1832,7 +1830,7 @@ Crea:
 </filter-mapping>
 ```
 
-## 2. Métodos principales de `EmployeeController`
+## 2. Main methods of `EmployeeController`
 
 ```java
 @Controller
@@ -1943,7 +1941,7 @@ public class EmployeeController {
 }
 ```
 
-## 3. Fragmento de formulario con `_method=put`
+## 3. Form fragment with `_method=put`
 
 ```jsp
 <form:form
@@ -1977,7 +1975,7 @@ public class EmployeeController {
 </form:form>
 ```
 
-## 4. Fragmento de listado con acciones
+## 4. Listing fragment with actions
 
 ```jsp
 <td class="actions-cell">
@@ -2003,9 +2001,9 @@ public class EmployeeController {
 </td>
 ```
 
-### Explicación
+### Explanation
 
-Este reto aplica todo lo aprendido:
+This challenge applies everything learned:
 
 ```text
 @PathVariable para ids en la ruta.
@@ -2015,6 +2013,6 @@ HiddenHttpMethodFilter para interpretar _method.
 Formularios POST con _method=put o _method=delete.
 ```
 
-El resultado es un CRUD más legible y más expresivo.
+The result is a more readable and more expressive CRUD.
 
 </details>

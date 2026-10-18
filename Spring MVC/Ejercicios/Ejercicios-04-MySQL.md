@@ -1,53 +1,53 @@
-# Ejercicios Tema 4 (Opcional): Conexión con MySQL y DBeaver
+# Exercises Topic 4 (Optional): Connection with MySQL and DBeaver
 
-## Introducción
+## Introduction
 
-En este tema opcional vas a practicar cómo conectar una aplicación **Spring MVC clásica** con una base de datos **MySQL** usando **DBeaver** y **Spring JDBC**.
+In this optional topic you will practice how to connect a **Classic Spring MVC** application with a **MySQL** database using **DBeaver** and **Spring JDBC**.
 
-La idea es sustituir una lista en memoria por datos persistentes en una base de datos.
+The idea is to replace an in-memory list with persistent data in a database.
 
-En los ejercicios trabajaremos con una pequeña aplicación de **inventario de productos**, diferente al ejemplo principal del curso.
+In the exercises we will work with a small **product inventory** application, different from the main example of the course.
 
-Vas a practicar:
+You are going to practice:
 
-- Crear una base de datos desde DBeaver.
-- Crear tablas con SQL.
-- Insertar datos iniciales.
-- Añadir las dependencias necesarias al `pom.xml`.
-- Configurar un `DataSource`.
-- Configurar `JdbcTemplate`.
-- Crear una interfaz DAO.
-- Crear una implementación DAO con JDBC.
-- Convertir filas SQL en objetos Java con `RowMapper`.
-- Ejecutar consultas `SELECT`.
-- Ejecutar consultas `INSERT`.
-- Recuperar claves generadas automáticamente.
-- Conectar controlador, servicio, DAO y base de datos.
+- Create a database from DBeaver.
+- Create tables with SQL.
+- Insert initial data.
+- Add the necessary dependencies to `pom.xml`.
+- Configure an `DataSource`.
+- Configure `JdbcTemplate`.
+- Create a DAO interface.
+- Create a DAO implementation with JDBC.
+- Convert SQL rows to Java objects with `RowMapper`.
+- Execute `SELECT` queries.
+- Execute `INSERT` queries.
+- Recover automatically generated keys.
+- Connect controller, service, DAO and database.
 
-Cada solución está oculta bajo el botón **mostrar solución**.
+Each solution is hidden under the **show solution** button.
 
 ---
 
-# Ejercicio 1 — Crear la base de datos en MySQL desde DBeaver
+# Exercise 1 — Create the database in MySQL from DBeaver
 
-## Enunciado
+## Statement
 
-Crea una base de datos para una aplicación de inventario.
+Create a database for an inventory application.
 
-La base de datos debe llamarse:
+The database must be called:
 
 ```text
 spring_mvc_inventory
 ```
 
-Debe usar codificación compatible con tildes, eñes y caracteres especiales.
+You must use encoding compatible with accents, eñes and special characters.
 
-Escribe el script SQL necesario para crearla y seleccionarla.
+Write the SQL script necessary to create and select it.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_inventory
@@ -57,58 +57,58 @@ COLLATE utf8mb4_unicode_ci;
 USE spring_mvc_inventory;
 ```
 
-### Explicación
+### Explanation
 
-La instrucción:
+The instruction:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_inventory
 ```
 
-crea la base de datos solo si todavía no existe.
+creates the database only if it does not already exist.
 
-Usamos:
+We use:
 
 ```sql
 CHARACTER SET utf8mb4
 ```
 
-para permitir caracteres especiales, tildes, eñes y símbolos.
+to allow special characters, accents, eñes and symbols.
 
-Después usamos:
+Then we use:
 
 ```sql
 USE spring_mvc_inventory;
 ```
 
-para indicar que las siguientes instrucciones SQL se ejecutarán dentro de esa base de datos.
+to indicate that the following SQL statements will be executed within that database.
 
 </details>
 
 ---
 
-# Ejercicio 2 — Crear la tabla `items`
+# Exercise 2 — Create the table `items`
 
-## Enunciado
+## Statement
 
-Crea una tabla llamada `items` para guardar productos de inventario.
+Create a table named `items` to store inventory products.
 
-La tabla debe tener estas columnas:
+The table must have these columns:
 
-| Columna | Tipo | Restricción |
+| Column | Type | Restriction |
 |---|---|---|
-| `id` | `BIGINT` | Clave primaria y autoincremental |
-| `name` | `VARCHAR(80)` | Obligatoria |
-| `brand` | `VARCHAR(60)` | Obligatoria |
-| `price` | `DECIMAL(10,2)` | Obligatoria |
-| `quantity` | `INT` | Obligatoria |
+| `id` | `BIGINT` | Primary and autoincremental key |
+| `name` | `VARCHAR(80)` | Mandatory |
+| `brand` | `VARCHAR(60)` | Mandatory |
+| `price` | `DECIMAL(10,2)` | Mandatory |
+| `quantity` | `INT` | Mandatory |
 
-Escribe el SQL de creación de la tabla.
+Write the table creation SQL.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```sql
 CREATE TABLE IF NOT EXISTS items (
@@ -120,25 +120,25 @@ CREATE TABLE IF NOT EXISTS items (
 );
 ```
 
-### Explicación
+### Explanation
 
-La tabla se llama:
+The table is called:
 
 ```sql
 items
 ```
 
-La columna:
+The column:
 
 ```sql
 id BIGINT PRIMARY KEY AUTO_INCREMENT
 ```
 
-será el identificador único de cada producto.
+It will be the unique identifier of each product.
 
-`AUTO_INCREMENT` hace que MySQL genere automáticamente el siguiente identificador.
+`AUTO_INCREMENT` causes MySQL to automatically generate the following identifier.
 
-Las columnas:
+The columns:
 
 ```sql
 name
@@ -147,35 +147,35 @@ price
 quantity
 ```
 
-tienen `NOT NULL`, por lo que no pueden guardarse vacías en la base de datos.
+they have `NOT NULL`, so they cannot be saved empty in the database.
 
 </details>
 
 ---
 
-# Ejercicio 3 — Insertar datos iniciales
+# Exercise 3 — Insert initial data
 
-## Enunciado
+## Statement
 
-Inserta cuatro productos iniciales en la tabla `items`.
+Inserts four initial products into the `items` table.
 
-Los productos deben ser diferentes a los del curso principal.
+The products must be different from those of the main course.
 
-Puedes usar estos datos:
+You can use this data:
 
 | name | brand | price | quantity |
 |---|---|---|---|
-| Monitor 24 pulgadas | ViewMax | 139.99 | 8 |
-| Silla ergonómica | ComfortPro | 189.50 | 5 |
-| Lámpara LED | BrightHome | 24.90 | 20 |
-| Auriculares Bluetooth | SoundBeat | 49.99 | 14 |
+| 24 inch monitor | ViewMax | 139.99 | 8 |
+| Ergonomic chair | ComfortPro | 189.50 | 5 |
+| LED lamp | BrightHome | 24.90 | 20 |
+| Bluetooth Headphones | SoundBeat | 49.99 | 14 |
 
-Después escribe una consulta para comprobar que se han insertado correctamente.
+Then write a query to verify that they were inserted correctly.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```sql
 INSERT INTO items (name, brand, price, quantity)
@@ -188,50 +188,50 @@ VALUES
 SELECT * FROM items;
 ```
 
-### Explicación
+### Explanation
 
-No insertamos manualmente el `id` porque MySQL lo genera automáticamente.
+We do not manually insert the `id` because MySQL generates it automatically.
 
-Por eso escribimos:
+That's why we write:
 
 ```sql
 INSERT INTO items (name, brand, price, quantity)
 ```
 
-y no:
+and not:
 
 ```sql
 INSERT INTO items (id, name, brand, price, quantity)
 ```
 
-La consulta:
+The query:
 
 ```sql
 SELECT * FROM items;
 ```
 
-permite comprobar desde DBeaver que los registros se han guardado correctamente.
+allows you to check from DBeaver that the records have been saved correctly.
 
 </details>
 
 ---
 
-# Ejercicio 4 — Crear el script SQL completo
+# Exercise 4 — Create the complete SQL script
 
-## Enunciado
+## Statement
 
-Une los ejercicios anteriores en un único script SQL que:
+Join the previous exercises into a single SQL script that:
 
-1. Cree la base de datos.
-2. La seleccione.
-3. Cree la tabla.
-4. Inserte datos iniciales.
-5. Muestre los datos insertados.
+1. Create the database.
+2. Select it.
+3. Create the table.
+4. Insert initial data.
+5. Display the inserted data.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_inventory
@@ -258,39 +258,39 @@ VALUES
 SELECT * FROM items;
 ```
 
-### Explicación
+### Explanation
 
-Este script puede ejecutarse directamente desde DBeaver.
+This script can be run directly from DBeaver.
 
-Es útil para preparar rápidamente la base de datos de todos los alumnos.
+It is useful to quickly prepare the database of all students.
 
-Si se ejecuta dos veces, la base de datos y la tabla no se duplican porque usamos:
+If run twice, the database and table are not duplicated because we use:
 
 ```sql
 IF NOT EXISTS
 ```
 
-Eso sí, los `INSERT` sí se volverían a ejecutar y podrían duplicar los productos. Si quieres evitar duplicados, puedes borrar previamente la tabla o usar otro tipo de inserción más avanzada.
+Of course, the `INSERT` would be executed again and could duplicate the products. If you want to avoid duplicates, you can first delete the table or use another type of more advanced insertion.
 
 </details>
 
 ---
 
-# Ejercicio 5 — Añadir dependencias al `pom.xml`
+# Exercise 5 — Add dependencies to `pom.xml`
 
-## Enunciado
+## Statement
 
-Para conectar Spring MVC con MySQL usando JDBC, añade al `pom.xml` las dependencias necesarias para:
+To connect Spring MVC with MySQL using JDBC, add the necessary dependencies to `pom.xml` to:
 
-1. Usar `JdbcTemplate`.
-2. Usar el driver de MySQL.
+1. Use `JdbcTemplate`.
+2. Use the MySQL driver.
 
-Escribe solo las dependencias necesarias.
+Write only the necessary dependencies.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <!-- Spring JDBC -->
@@ -308,15 +308,15 @@ Escribe solo las dependencias necesarias.
 </dependency>
 ```
 
-### Explicación
+### Explanation
 
-La dependencia:
+The dependency:
 
 ```xml
 spring-jdbc
 ```
 
-nos permite usar clases como:
+allows us to use classes like:
 
 ```java
 JdbcTemplate
@@ -324,15 +324,15 @@ RowMapper
 GeneratedKeyHolder
 ```
 
-La dependencia:
+The dependency:
 
 ```xml
 mysql-connector-j
 ```
 
-es el driver que permite que Java se conecte a MySQL.
+It is the driver that allows Java to connect to MySQL.
 
-Sin el driver de MySQL, Java no sabría interpretar una URL como:
+Without the MySQL driver, Java would not know how to interpret a URL like:
 
 ```text
 jdbc:mysql://localhost:3306/spring_mvc_inventory
@@ -342,22 +342,22 @@ jdbc:mysql://localhost:3306/spring_mvc_inventory
 
 ---
 
-# Ejercicio 6 — Configurar `DataSource` y `JdbcTemplate` en XML
+# Exercise 6 — Configure `DataSource` and `JdbcTemplate` in XML
 
-## Enunciado
+## Statement
 
-Modifica el archivo:
+Modify the file:
 
 ```text
 src/main/webapp/WEB-INF/spring/app-servlet.xml
 ```
 
-para añadir:
+to add:
 
-1. Un bean `dataSource` usando `DriverManagerDataSource`.
-2. Un bean `jdbcTemplate` usando ese `dataSource`.
+1. An `dataSource` bean using `DriverManagerDataSource`.
+2. An `jdbcTemplate` bean using that `dataSource`.
 
-Usa estos datos de conexión:
+Use these connection details:
 
 ```text
 Driver: com.mysql.cj.jdbc.Driver
@@ -366,12 +366,12 @@ Usuario: root
 Contraseña: TU_PASSWORD
 ```
 
-Recuerda que en XML el carácter `&` debe escribirse como `&amp;`.
+Remember that in XML the character `&` must be written as `&amp;`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <!-- Conexión a MySQL -->
@@ -395,25 +395,25 @@ Recuerda que en XML el carácter `&` debe escribirse como `&amp;`.
 </bean>
 ```
 
-### Explicación
+### Explanation
 
-El bean:
+The bean:
 
 ```xml
 <bean id="dataSource" ...>
 ```
 
-contiene los datos necesarios para abrir una conexión con MySQL.
+contains the data necessary to open a connection with MySQL.
 
-El bean:
+The bean:
 
 ```xml
 <bean id="jdbcTemplate" ...>
 ```
 
-usa ese `dataSource` para ejecutar consultas SQL.
+use that `dataSource` to execute SQL queries.
 
-La relación es:
+The relationship is:
 
 ```text
 JdbcTemplate
@@ -423,15 +423,15 @@ DataSource
 MySQL
 ```
 
-En XML no podemos escribir directamente:
+In XML we cannot write directly:
 
 ```xml
 &serverTimezone=Europe/Madrid
 ```
 
-porque `&` tiene un significado especial.
+because `&` has a special meaning.
 
-Por eso escribimos:
+That's why we write:
 
 ```xml
 &amp;serverTimezone=Europe/Madrid
@@ -441,21 +441,21 @@ Por eso escribimos:
 
 ---
 
-# Ejercicio 7 — Crear el modelo `Item`
+# Exercise 7 — Create the `Item` model
 
-## Enunciado
+## Statement
 
-Crea una clase llamada `Item` en el paquete:
+Create a class called `Item` in the package:
 
 ```text
 com.example.inventory.model
 ```
 
-Debe representar los datos de la tabla `items`.
+It should represent the data from the `items` table.
 
-La clase debe tener:
+The class must have:
 
-| Atributo | Tipo Java |
+| Attribute | Java type |
 |---|---|
 | `id` | `Long` |
 | `name` | `String` |
@@ -463,12 +463,12 @@ La clase debe tener:
 | `price` | `Double` |
 | `quantity` | `Integer` |
 
-Añade constructor vacío, constructor con todos los campos, getters y setters.
+Add empty constructor, constructor with all fields, getters and setters.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.inventory.model;
@@ -534,11 +534,11 @@ public class Item {
 }
 ```
 
-### Explicación
+### Explanation
 
-La clase `Item` representa una fila de la tabla `items`.
+The `Item` class represents a row in the `items` table.
 
-Por ejemplo, esta fila:
+For example, this row:
 
 ```text
 id: 1
@@ -548,29 +548,29 @@ price: 139.99
 quantity: 8
 ```
 
-se convertirá en un objeto Java:
+will be converted to a Java object:
 
 ```java
 new Item(1L, "Monitor 24 pulgadas", "ViewMax", 139.99, 8);
 ```
 
-Usamos `Double` e `Integer` en lugar de `double` e `int` para poder representar valores nulos si fuera necesario.
+We use `Double` and `Integer` instead of `double` and `int` so that we can represent null values if necessary.
 
 </details>
 
 ---
 
-# Ejercicio 8 — Crear la interfaz `ItemDao`
+# Exercise 8 — Create the `ItemDao` interface
 
-## Enunciado
+## Statement
 
-Crea una interfaz llamada `ItemDao` en el paquete:
+Create an interface named `ItemDao` in the package:
 
 ```text
 com.example.inventory.dao
 ```
 
-Debe declarar estos métodos:
+You must declare these methods:
 
 ```java
 List<Item> findAll();
@@ -583,7 +583,7 @@ void save(Item item);
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.inventory.dao;
@@ -602,13 +602,13 @@ public interface ItemDao {
 }
 ```
 
-### Explicación
+### Explanation
 
-La interfaz DAO define qué operaciones de acceso a datos necesita la aplicación.
+The DAO interface defines what data access operations the application needs.
 
-No contiene SQL.
+Does not contain SQL.
 
-Solo declara operaciones:
+Just declare operations:
 
 ```java
 findAll()
@@ -616,23 +616,23 @@ findById()
 save()
 ```
 
-La ventaja de usar una interfaz es que podríamos cambiar la implementación más adelante.
+The advantage of using an interface is that we could change the implementation later.
 
-Por ejemplo, ahora usaremos JDBC, pero más adelante podríamos usar JPA o Hibernate sin cambiar el servicio.
+For example, now we will use JDBC, but later we could use JPA or Hibernate without changing the service.
 
 </details>
 
 ---
 
-# Ejercicio 9 — Crear un `RowMapper` para convertir filas en objetos
+# Exercise 9 — Create an `RowMapper` to convert rows to objects
 
-## Enunciado
+## Statement
 
-Vamos a crear la clase `JdbcItemDao`.
+Let's create the class `JdbcItemDao`.
 
-Antes de implementar todos sus métodos, escribe dentro de la clase un `RowMapper<Item>` llamado `itemRowMapper`.
+Before implementing all its methods, write an `RowMapper<Item>` called `itemRowMapper` inside the class.
 
-Debe convertir las columnas SQL:
+You must convert the SQL columns:
 
 ```text
 id
@@ -642,12 +642,12 @@ price
 quantity
 ```
 
-en un objeto `Item`.
+in an `Item` object.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 private final RowMapper<Item> itemRowMapper = (resultSet, rowNumber) ->
@@ -660,15 +660,15 @@ private final RowMapper<Item> itemRowMapper = (resultSet, rowNumber) ->
         );
 ```
 
-### Explicación
+### Explanation
 
-Una consulta SQL devuelve filas.
+An SQL query returns rows.
 
-Java trabaja con objetos.
+Java works with objects.
 
-El `RowMapper` sirve para convertir cada fila del resultado en un objeto Java.
+The `RowMapper` is used to convert each row of the result into a Java object.
 
-Por ejemplo, si MySQL devuelve:
+For example, if MySQL returns:
 
 ```text
 id = 2
@@ -678,7 +678,7 @@ price = 189.50
 quantity = 5
 ```
 
-el `RowMapper` crea:
+the `RowMapper` creates:
 
 ```java
 new Item(2L, "Silla ergonómica", "ComfortPro", 189.50, 5);
@@ -688,30 +688,30 @@ new Item(2L, "Silla ergonómica", "ComfortPro", 189.50, 5);
 
 ---
 
-# Ejercicio 10 — Crear `JdbcItemDao` con el método `findAll`
+# Exercise 10 — Create `JdbcItemDao` with the `findAll` method
 
-## Enunciado
+## Statement
 
-Crea la clase:
+Create the class:
 
 ```text
 com.example.inventory.dao.JdbcItemDao
 ```
 
-Debe:
+You must:
 
-1. Estar anotada con `@Repository`.
-2. Implementar `ItemDao`.
-3. Recibir un `JdbcTemplate` por constructor.
-4. Tener un `RowMapper<Item>`.
-5. Implementar el método `findAll()`.
+1. Be registered with `@Repository`.
+2. Implement `ItemDao`.
+3. Receive one `JdbcTemplate` per builder.
+4. Have an `RowMapper<Item>`.
+5. Implement the `findAll()` method.
 
-La consulta debe obtener todos los productos ordenados por `id`.
+The query should get all products ordered by `id`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.inventory.dao;
@@ -763,54 +763,54 @@ public class JdbcItemDao implements ItemDao {
 }
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @Repository
 ```
 
-indica que esta clase pertenece a la capa de acceso a datos.
+indicates that this class belongs to the data access layer.
 
-Spring la detectará automáticamente si el `component-scan` incluye el paquete base correcto.
+Spring will automatically detect it if the `component-scan` includes the correct base package.
 
-El método:
+The method:
 
 ```java
 jdbcTemplate.query(sql, itemRowMapper)
 ```
 
-ejecuta la consulta y convierte cada fila en un objeto `Item`.
+runs the query and converts each row to an `Item` object.
 
-El resultado es:
+The result is:
 
 ```java
 List<Item>
 ```
 
-En este ejercicio dejamos `findById` y `save` sin implementar para centrarnos primero en el listado.
+In this exercise we leave `findById` and `save` unimplemented to focus on the listing first.
 
 </details>
 
 ---
 
-# Ejercicio 11 — Implementar `findById`
+# Exercise 11 — Implement `findById`
 
-## Enunciado
+## Statement
 
-Completa el método `findById(Long id)` de `JdbcItemDao`.
+Complete the `findById(Long id)` method of `JdbcItemDao`.
 
-Debe ejecutar una consulta para buscar un producto por su identificador.
+You must run a query to search for a product by its ID.
 
-Si existe, debe devolverlo.
+If it exists, you must return it.
 
-Si no existe, debe devolver `null`.
+If it does not exist, it must return `null`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @Override
@@ -829,37 +829,36 @@ public Item findById(Long id) {
 }
 ```
 
-### Explicación
-
-La consulta usa un parámetro:
+### Explanation
+The query uses a parameter:
 
 ```sql
 WHERE id = ?
 ```
 
-Ese `?` se sustituye por el valor de `id` cuando ejecutamos:
+That `?` is replaced by the value of `id` when we execute:
 
 ```java
 jdbcTemplate.query(sql, itemRowMapper, id);
 ```
 
-Es mejor usar parámetros que concatenar texto SQL manualmente.
+It is better to use parameters than to manually concatenate SQL text.
 
-No hacemos esto:
+We don't do this:
 
 ```java
 "SELECT * FROM items WHERE id = " + id
 ```
 
-porque es menos seguro y más propenso a errores.
+because it is less secure and more prone to errors.
 
-Como la consulta puede no devolver resultados, guardamos el resultado en una lista:
+Since the query may not return results, we save the result in a list:
 
 ```java
 List<Item> items
 ```
 
-Después devolvemos el primer elemento o `null`:
+Then we return the first element or `null`:
 
 ```java
 return items.stream()
@@ -871,17 +870,17 @@ return items.stream()
 
 ---
 
-# Ejercicio 12 — Implementar `save` con `INSERT`
+# Exercise 12 — Implement `save` with `INSERT`
 
-## Enunciado
+## Statement
 
-Completa el método `save(Item item)` de `JdbcItemDao`.
+Complete the `save(Item item)` method of `JdbcItemDao`.
 
-Debe insertar un nuevo producto en la tabla `items`.
+You must insert a new product into the `items` table.
 
-No debe insertar el `id`, porque MySQL lo genera automáticamente.
+You should not insert the `id`, because MySQL generates it automatically.
 
-La consulta SQL debe insertar:
+The SQL query must insert:
 
 ```text
 name
@@ -893,7 +892,7 @@ quantity
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @Override
@@ -913,28 +912,28 @@ public void save(Item item) {
 }
 ```
 
-### Explicación
+### Explanation
 
-La consulta es:
+The query is:
 
 ```sql
 INSERT INTO items (name, brand, price, quantity)
 VALUES (?, ?, ?, ?)
 ```
 
-No insertamos el `id` porque la columna está configurada con:
+We do not insert the `id` because the column is set to:
 
 ```sql
 AUTO_INCREMENT
 ```
 
-El método:
+The method:
 
 ```java
 jdbcTemplate.update(...)
 ```
 
-sirve para ejecutar operaciones que modifican la base de datos, como:
+It is used to execute operations that modify the database, such as:
 
 ```sql
 INSERT
@@ -942,7 +941,7 @@ UPDATE
 DELETE
 ```
 
-Los valores se pasan en el mismo orden que los signos `?`:
+The values are passed in the same order as the `?` signs:
 
 ```java
 item.getName()
@@ -955,13 +954,13 @@ item.getQuantity()
 
 ---
 
-# Ejercicio 13 — Implementar `save` recuperando el id generado
+# Exercise 13 — Implement `save` by recovering the generated id
 
-## Enunciado
+## Statement
 
-Mejora el método `save(Item item)` para que, después de insertar el producto, recupere el `id` generado automáticamente por MySQL y lo asigne al objeto `item`.
+Improves the `save(Item item)` method so that after inserting the product, it retrieves the `id` automatically generated by MySQL and assigns it to the `item` object.
 
-Usa:
+Use:
 
 ```java
 GeneratedKeyHolder
@@ -972,7 +971,7 @@ Statement.RETURN_GENERATED_KEYS
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @Override
@@ -1006,7 +1005,7 @@ public void save(Item item) {
 }
 ```
 
-### Imports necesarios
+### Imports required
 
 ```java
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -1016,67 +1015,67 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 ```
 
-### Explicación
+### Explanation
 
-Cuando MySQL inserta una fila con `AUTO_INCREMENT`, genera un nuevo identificador.
+When MySQL inserts a row with `AUTO_INCREMENT`, it generates a new identifier.
 
-Si queremos recuperar ese identificador desde Java, usamos:
+If we want to retrieve that identifier from Java, we use:
 
 ```java
 KeyHolder keyHolder = new GeneratedKeyHolder();
 ```
 
-Después preparamos la consulta con:
+Then we prepare the consultation with:
 
 ```java
 Statement.RETURN_GENERATED_KEYS
 ```
 
-Eso indica que queremos recuperar la clave generada.
+This indicates that we want to recover the generated key.
 
-Finalmente obtenemos el id:
+Finally we get the id:
 
 ```java
 Number generatedId = keyHolder.getKey();
 ```
 
-y lo asignamos al objeto:
+and we assign it to the object:
 
 ```java
 item.setId(generatedId.longValue());
 ```
 
-Así el objeto Java queda sincronizado con la fila insertada en MySQL.
+Thus the Java object is synchronized with the row inserted in MySQL.
 
 </details>
 
 ---
 
-# Ejercicio 14 — Crear el servicio `ItemService`
+# Exercise 14 — Create the `ItemService` service
 
-## Enunciado
+## Statement
 
-Crea una clase llamada `ItemService` en el paquete:
+Create a class called `ItemService` in the package:
 
 ```text
 com.example.inventory.service
 ```
 
-Debe:
+You must:
 
-1. Estar anotada con `@Service`.
-2. Recibir `ItemDao` por constructor.
-3. Tener los métodos:
-   - `findAll()`
+1. Be registered with `@Service`.
+2. Receive `ItemDao` by builder.
+3. Have the methods:
+   -`findAll()`
    - `findById(Long id)`
    - `save(Item item)`
 
-Cada método debe delegar en el DAO.
+Each method must delegate to the DAO.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.inventory.service;
@@ -1110,13 +1109,13 @@ public class ItemService {
 }
 ```
 
-### Explicación
+### Explanation
 
-El servicio no contiene SQL.
+The service does not contain SQL.
 
-El servicio coordina la lógica de la aplicación y delega el acceso a datos en el DAO.
+The service coordinates application logic and delegates data access to the DAO.
 
-La cadena queda así:
+The chain looks like this:
 
 ```text
 Controller
@@ -1130,37 +1129,37 @@ JdbcTemplate
 MySQL
 ```
 
-Esta separación hace que el controlador no tenga que saber cómo se accede a la base de datos.
+This separation means that the controller does not have to know how the database is accessed.
 
 </details>
 
 ---
 
-# Ejercicio 15 — Crear un controlador para listar productos desde MySQL
+# Exercise 15 — Create a controller to list products from MySQL
 
-## Enunciado
+## Statement
 
-Crea un controlador llamado `ItemController` en el paquete:
+Create a handler named `ItemController` in the package:
 
 ```text
 com.example.inventory.controller
 ```
 
-Debe:
+You must:
 
-1. Estar anotado con `@Controller`.
-2. Tener ruta base `/items`.
-3. Recibir `ItemService` por constructor.
-4. Tener un método `GET /items`.
-5. Añadir al modelo:
-   - `pageTitle` con el valor `Inventario`
-   - `items` con los datos obtenidos desde MySQL
-6. Devolver la vista `items/list`.
+1. Be registered with `@Controller`.
+2. Have base path `/items`.
+3. Receive `ItemService` by builder.
+4. Have an `GET /items` method.
+5. Add to model:
+- `pageTitle` with the value `Inventario`
+   - `items` with the data obtained from MySQL
+6. Return the `items/list` view.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.inventory.controller;
@@ -1191,21 +1190,21 @@ public class ItemController {
 }
 ```
 
-### Explicación
+### Explanation
 
-El controlador llama al servicio:
+The controller calls the service:
 
 ```java
 itemService.findAll()
 ```
 
-El servicio llama al DAO:
+The service calls the DAO:
 
 ```java
 itemDao.findAll()
 ```
 
-El DAO ejecuta la consulta SQL:
+The DAO executes the SQL query:
 
 ```sql
 SELECT id, name, brand, price, quantity
@@ -1213,40 +1212,40 @@ FROM items
 ORDER BY id
 ```
 
-El resultado vuelve al controlador como una lista de objetos `Item`.
+The result is returned to the controller as a list of `Item` objects.
 
 </details>
 
 ---
 
-# Ejercicio 16 — Crear la vista `items/list.jsp`
+# Exercise 16 — Create the `items/list.jsp` view
 
-## Enunciado
+## Statement
 
-Crea la vista:
+Create the view:
 
 ```text
 src/main/webapp/WEB-INF/views/items/list.jsp
 ```
 
-Debe mostrar una tabla con:
+It should show a table with:
 
 ```text
 Nombre | Marca | Precio | Cantidad | Acción
 ```
 
-La columna acción debe tener un enlace al detalle:
+The action column must have a link to the detail:
 
 ```text
 /items/detail?id=ID
 ```
 
-Usa JSTL para recorrer la lista.
+Use JSTL to traverse the list.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1312,48 +1311,48 @@ Usa JSTL para recorrer la lista.
 </html>
 ```
 
-### Explicación
+### Explanation
 
-La lista `items` viene del controlador:
+The `items` list comes from the driver:
 
 ```java
 model.addAttribute("items", itemService.findAll());
 ```
 
-La vista no sabe si los datos vienen de MySQL, de una lista en memoria o de otro sistema.
+The view does not know if the data comes from MySQL, an in-memory list, or another system.
 
-Solo recibe objetos Java y los muestra.
+It only receives Java objects and displays them.
 
 </details>
 
 ---
 
-# Ejercicio 17 — Añadir detalle de producto desde MySQL
+# Exercise 17 — Add product detail from MySQL
 
-## Enunciado
+## Statement
 
-Añade a `ItemController` una ruta:
+Add `ItemController` a route:
 
 ```text
 GET /items/detail?id=1
 ```
 
-El método debe:
+The method must:
 
-1. Recibir el parámetro `id`.
-2. Buscar el producto con `itemService.findById(id)`.
-3. Si no existe, devolver `items/not-found`.
-4. Si existe, añadir `item` y `pageTitle` al modelo.
-5. Devolver `items/detail`.
+1. Receive the `id` parameter.
+2. Search for the product with `itemService.findById(id)`.
+3. If it does not exist, return `items/not-found`.
+4. If it exists, add `item` and `pageTitle` to the model.
+5. Return `items/detail`.
 
-Después crea la vista `items/detail.jsp`.
+Then create the view `items/detail.jsp`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Método en `ItemController`
+## Method in `ItemController`
 
 ```java
 @GetMapping("/detail")
@@ -1374,14 +1373,14 @@ public String itemDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-### Imports necesarios
+### Imports required
 
 ```java
 import com.example.inventory.model.Item;
 import org.springframework.web.bind.annotation.RequestParam;
 ```
 
-## Vista `items/detail.jsp`
+## View `items/detail.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1433,7 +1432,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 </html>
 ```
 
-## Vista `items/not-found.jsp`
+## View `items/not-found.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1474,47 +1473,47 @@ import org.springframework.web.bind.annotation.RequestParam;
 </html>
 ```
 
-### Explicación
+### Explanation
 
-El método de detalle llama a:
+The detail method calls:
 
 ```java
 itemService.findById(id)
 ```
 
-Ese método termina ejecutando una consulta SQL con:
+That method ends up executing a SQL query with:
 
 ```sql
 WHERE id = ?
 ```
 
-Por tanto, el detalle ya no se obtiene de una lista en memoria, sino directamente de MySQL.
+Therefore, the detail is no longer obtained from an in-memory list, but directly from MySQL.
 
 </details>
 
 ---
 
-# Ejercicio 18 — Crear formulario para insertar en MySQL
+# Exercise 18 — Create form to insert in MySQL
 
-## Enunciado
+## Statement
 
-Añade a `ItemController` dos métodos:
+Add two methods to `ItemController`:
 
 ```text
 GET  /items/new
 POST /items
 ```
 
-El método `GET` debe mostrar un formulario vacío.
+The `GET` method should return an empty form.
 
-El método `POST` debe recibir un `Item` con `@ModelAttribute`, guardarlo usando `itemService.save(item)` y redirigir a `/items`.
+The `POST` method should receive an `Item` with `@ModelAttribute`, save it using `itemService.save(item)`, and redirect to `/items`.
 
-No añadas todavía validación en este ejercicio.
+Don't add validation to this exercise yet.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @GetMapping("/new")
@@ -1533,58 +1532,58 @@ public String createItem(@ModelAttribute("item") Item item) {
 }
 ```
 
-### Imports necesarios
+### Imports required
 
 ```java
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 ```
 
-### Explicación
+### Explanation
 
-El método `GET` crea un objeto vacío:
+The `GET` method creates an empty object:
 
 ```java
 new Item()
 ```
 
-y lo envía al formulario con el nombre:
+and sends it to the form with the name:
 
 ```text
 item
 ```
 
-El método `POST` recibe el objeto ya rellenado:
+The `POST` method receives the already populated object:
 
 ```java
 @ModelAttribute("item") Item item
 ```
 
-Después llama a:
+Then call:
 
 ```java
 itemService.save(item)
 ```
 
-El servicio delega en el DAO, y el DAO ejecuta el `INSERT` en MySQL.
+The service delegates to the DAO, and the DAO executes the `INSERT` in MySQL.
 
 </details>
 
 ---
 
-# Ejercicio 19 — Crear la vista `items/form.jsp`
+# Exercise 19 — Create the `items/form.jsp` view
 
-## Enunciado
+## Statement
 
-Crea la vista:
+Create the view:
 
 ```text
 src/main/webapp/WEB-INF/views/items/form.jsp
 ```
 
-Debe tener un formulario que envíe por `POST` a `/items`.
+You must have a form that you send via `POST` to `/items`.
 
-El formulario debe estar vinculado al atributo `item` y tener campos para:
+The form must be linked to the `item` attribute and have fields for:
 
 ```text
 name
@@ -1593,12 +1592,12 @@ price
 quantity
 ```
 
-Usa etiquetas de formulario de Spring.
+Use Spring form tags.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1668,17 +1667,16 @@ Usa etiquetas de formulario de Spring.
 </html>
 ```
 
-### Explicación
+### Explanation
 
-La etiqueta:
-
+The label:
 ```jsp
 <form:form modelAttribute="item">
 ```
 
-vincula el formulario con el objeto `item` enviado desde el controlador.
+Binds the form to the `item` object sent from the controller.
 
-Cada `path` debe coincidir con una propiedad de la clase `Item`:
+Each `path` must match a property of the `Item` class:
 
 ```jsp
 <form:input path="name" />
@@ -1687,55 +1685,55 @@ Cada `path` debe coincidir con una propiedad de la clase `Item`:
 <form:input path="quantity" />
 ```
 
-Cuando el usuario envía el formulario, Spring crea un objeto `Item` y rellena sus propiedades.
+When the user submits the form, Spring creates an `Item` object and fills in its properties.
 
 </details>
 
 ---
 
-# Ejercicio 20 — Comprobar en DBeaver que el formulario inserta datos
+# Exercise 20 — Check in DBeaver that the form inserts data
 
-## Enunciado
+## Statement
 
-Después de crear un producto desde la aplicación web, escribe la consulta SQL que debes ejecutar en DBeaver para comprobar que se ha guardado realmente en MySQL.
+After creating a product from the web application, write the SQL query that you need to run in DBeaver to verify that it has actually been saved in MySQL.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```sql
 SELECT * FROM items
 ORDER BY id;
 ```
 
-### Explicación
+### Explanation
 
-Esta consulta muestra todos los productos guardados en la tabla `items`.
+This query shows all products saved in the `items` table.
 
-Si el formulario ha funcionado correctamente, aparecerá una nueva fila con el producto creado desde la aplicación web.
+If the form worked correctly, a new row will appear with the product created from the web application.
 
-Esto confirma que los datos ya no están solo en memoria.
+This confirms that the data is no longer just in memory.
 
-Están persistidos en MySQL.
+They are persisted in MySQL.
 
 </details>
 
 ---
 
-# Ejercicio 21 — Externalizar la configuración de la base de datos
+# Exercise 21 — Externalize database configuration
 
-## Enunciado
+## Statement
 
-Actualmente la configuración de MySQL está escrita directamente en `app-servlet.xml`.
+Currently the MySQL configuration is written directly to `app-servlet.xml`.
 
-Crea un archivo:
+Create a file:
 
 ```text
 src/main/resources/database.properties
 ```
 
-con estas propiedades:
+with these properties:
 
 ```text
 db.driverClassName
@@ -1744,14 +1742,14 @@ db.username
 db.password
 ```
 
-Después modifica el XML para cargar ese archivo y usar las propiedades.
+Then modify the XML to load that file and use the properties.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Archivo `database.properties`
+## File `database.properties`
 
 ```properties
 db.driverClassName=com.mysql.cj.jdbc.Driver
@@ -1760,15 +1758,15 @@ db.username=root
 db.password=TU_PASSWORD
 ```
 
-## Modificación en `app-servlet.xml`
+## Modification in `app-servlet.xml`
 
-Primero añadimos:
+First we add:
 
 ```xml
 <context:property-placeholder location="classpath:database.properties" />
 ```
 
-Después configuramos el `dataSource` así:
+Then we configure the `dataSource` like this:
 
 ```xml
 <bean id="dataSource"
@@ -1781,19 +1779,19 @@ Después configuramos el `dataSource` así:
 </bean>
 ```
 
-### Explicación
+### Explanation
 
-El archivo `.properties` permite separar datos concretos de configuración.
+The `.properties` file allows you to separate specific configuration data.
 
-Así, si cambia la contraseña de MySQL, solo modificamos:
+Thus, if the MySQL password changes, we only modify:
 
 ```properties
 db.password=...
 ```
 
-y no tenemos que tocar toda la configuración XML.
+and we don't have to touch all the XML configuration.
 
-En el archivo `.properties` usamos:
+In the `.properties` file we use:
 
 ```text
 &
@@ -1801,42 +1799,42 @@ En el archivo `.properties` usamos:
 
 normal.
 
-En XML se usa:
+In XML it is used:
 
 ```xml
 &amp;
 ```
 
-pero dentro de `.properties` no hace falta.
+but within `.properties` it is not necessary.
 
 </details>
 
 ---
 
-# Ejercicio 22 — Diagnosticar errores frecuentes
+# Exercise 22 — Diagnose frequent errors
 
-## Enunciado
+## Statement
 
-Lee cada caso y explica el error.
+Read each case and explain the error.
 
-## Caso A
+## Case A
 
-En `app-servlet.xml` aparece:
+`app-servlet.xml` shows:
 
 ```xml
 <property name="url"
           value="jdbc:mysql://localhost:3306/spring_mvc_inventory?useSSL=false&serverTimezone=Europe/Madrid" />
 ```
 
-Al arrancar la aplicación aparece un error de XML.
+When starting the application an XML error appears.
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
-## Caso B
+## Case B
 
-La tabla se creó así:
+The table was created like this:
 
 ```sql
 CREATE TABLE items (
@@ -1848,60 +1846,60 @@ CREATE TABLE items (
 );
 ```
 
-Pero en Java el `RowMapper` hace:
+But in Java the `RowMapper` does:
 
 ```java
 resultSet.getDouble("price")
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
-## Caso C
+## Case C
 
-La aplicación muestra este error:
+The app shows this error:
 
 ```text
 Communications link failure
 ```
 
-¿Qué puede estar pasando?
+What could be happening?
 
 ---
 
-## Caso D
+## Case D
 
-IntelliJ no reconoce la clase:
+IntelliJ does not recognize the class:
 
 ```java
 JdbcTemplate
 ```
 
-¿Qué falta probablemente?
+What is probably missing?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-El problema es que en XML el carácter `&` debe escaparse.
+The problem is that in XML the `&` character must be escaped.
 
-Incorrecto:
+Incorrect:
 
 ```xml
 useSSL=false&serverTimezone=Europe/Madrid
 ```
 
-Correcto:
+Correct:
 
 ```xml
 useSSL=false&amp;serverTimezone=Europe/Madrid
 ```
 
-La URL debe quedar así:
+The URL should look like this:
 
 ```xml
 <property name="url"
@@ -1910,42 +1908,41 @@ La URL debe quedar así:
 
 ---
 
-## Caso B
+## Case B
 
-El problema es que el nombre de la columna no coincide.
+The problem is that the column name does not match.
 
-La tabla tiene:
+The table has:
 
 ```sql
 unit_price
 ```
 
-pero Java intenta leer:
+but Java tries to read:
 
 ```java
 price
 ```
 
-La solución es una de estas dos:
+The solution is one of these two:
 
-Cambiar el SQL de la tabla para que la columna se llame `price`.
+Change the SQL of the table so that the column is named `price`.
 
-O cambiar el `RowMapper`:
+Or change the `RowMapper`:
 
 ```java
 resultSet.getDouble("unit_price")
 ```
 
-Los nombres de columna usados en Java deben coincidir con los nombres reales de la tabla.
+Column names used in Java must match the actual table names.
 
 ---
 
-## Caso C
+## Case C
 
-`Communications link failure` suele indicar un problema de conexión con MySQL.
+`Communications link failure` usually indicates a connection problem with MySQL.
 
-Posibles causas:
-
+Possible causes:
 ```text
 MySQL no está iniciado.
 El puerto 3306 no es correcto.
@@ -1953,19 +1950,19 @@ La URL de conexión está mal escrita.
 El servidor MySQL no acepta conexiones.
 ```
 
-Primero conviene comprobar desde DBeaver si la conexión funciona.
+First you should check from DBeaver if the connection works.
 
 ---
 
-## Caso D
+## Case D
 
-Si IntelliJ no reconoce:
+If IntelliJ does not recognize:
 
 ```java
 JdbcTemplate
 ```
 
-probablemente falta la dependencia:
+the dependency is probably missing:
 
 ```xml
 <dependency>
@@ -1975,44 +1972,44 @@ probablemente falta la dependencia:
 </dependency>
 ```
 
-Después de añadirla, hay que recargar Maven.
+After adding it, you have to reload Maven.
 
 </details>
 
 ---
 
-# Ejercicio 23 — Reto final: conectar una sección de proveedores con MySQL
+# Exercise 23 — Final challenge: connect a supplier section with MySQL
 
-## Enunciado
+## Statement
 
-Crea una nueva sección para proveedores usando MySQL.
+Create a new section for suppliers using MySQL.
 
-La tabla debe llamarse:
+The table should be called:
 
 ```text
 suppliers
 ```
 
-Debe tener:
+Must have:
 
-| Columna | Tipo |
+| Column | Type |
 |---|---|
 | `id` | `BIGINT AUTO_INCREMENT PRIMARY KEY` |
 | `name` | `VARCHAR(80)` |
 | `city` | `VARCHAR(60)` |
 | `phone` | `VARCHAR(30)` |
 
-Debes crear:
+You must create:
 
-1. Script SQL de creación de tabla e inserción de datos.
-2. Clase `Supplier`.
-3. Interfaz `SupplierDao`.
-4. Clase `JdbcSupplierDao`.
-5. Clase `SupplierService`.
-6. Clase `SupplierController`.
-7. Vista `suppliers/list.jsp`.
+1. SQL script for table creation and data insertion.
+2. `Supplier` class.
+3. `SupplierDao` interface.
+4. `JdbcSupplierDao` class.
+5. `SupplierService` class.
+6. `SupplierController` class.
+7. View `suppliers/list.jsp`.
 
-La ruta será:
+The route will be:
 
 ```text
 /suppliers
@@ -2021,9 +2018,9 @@ La ruta será:
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Script SQL
+##SQLScript
 
 ```sql
 USE spring_mvc_inventory;
@@ -2044,7 +2041,7 @@ VALUES
 SELECT * FROM suppliers;
 ```
 
-## Modelo `Supplier.java`
+## Model `Supplier.java`
 
 ```java
 package com.example.inventory.model;
@@ -2100,7 +2097,7 @@ public class Supplier {
 }
 ```
 
-## Interfaz `SupplierDao.java`
+## `SupplierDao.java` interface
 
 ```java
 package com.example.inventory.dao;
@@ -2115,7 +2112,7 @@ public interface SupplierDao {
 }
 ```
 
-## Implementación `JdbcSupplierDao.java`
+## `JdbcSupplierDao.java` implementation
 
 ```java
 package com.example.inventory.dao;
@@ -2157,7 +2154,7 @@ public class JdbcSupplierDao implements SupplierDao {
 }
 ```
 
-## Servicio `SupplierService.java`
+## `SupplierService.java` service
 
 ```java
 package com.example.inventory.service;
@@ -2183,7 +2180,7 @@ public class SupplierService {
 }
 ```
 
-## Controlador `SupplierController.java`
+##`SupplierController.java` driver
 
 ```java
 package com.example.inventory.controller;
@@ -2214,7 +2211,7 @@ public class SupplierController {
 }
 ```
 
-## Vista `suppliers/list.jsp`
+## View `suppliers/list.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -2267,9 +2264,9 @@ public class SupplierController {
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Este reto reúne todo el flujo de persistencia:
+This challenge brings together the entire persistence flow:
 
 ```text
 Vista
@@ -2285,12 +2282,12 @@ JdbcTemplate
 MySQL
 ```
 
-La vista solo recibe una lista de objetos `Supplier`.
+The view only receives a list of `Supplier` objects.
 
-El controlador no sabe cómo se obtiene esa lista.
+The controller does not know how to obtain that list.
 
-El servicio delega en el DAO.
+The service delegates to the DAO.
 
-El DAO ejecuta la consulta SQL real.
+The DAO executes the actual SQL query.
 
 </details>

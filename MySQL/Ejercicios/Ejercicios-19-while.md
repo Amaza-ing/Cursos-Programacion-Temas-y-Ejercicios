@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 19: Uso de WHILE en MySQL**
+# **Exercises - Topic 19: Using WHILE in MySQL**
 
-A continuación, encontrarás 6 ejercicios prácticos para trabajar con **bucles WHILE** en MySQL.
+Below you will find 6 practical exercises to work with **WHILE loops** in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Insertar múltiplos de 3**
+### **Exercise 1: Insert multiples of 3**
 
-Crea un procedimiento `insertar_multiplos_tres` que inserte en la tabla `numbers(value)` los números múltiplos de 3 desde 3 hasta 30.
+Create a procedure `insertar_multiplos_tres` that inserts numbers multiples of 3 from 3 to 30 into the `numbers(value)` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -30,11 +30,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 2: Rellenar tabla de fechas**
+### **Exercise 2: Fill in date table**
 
-Crea un procedimiento `rellenar_fechas` que inserte en la tabla `dates_list(fecha)` las fechas desde `'2025-01-01'` hasta `'2025-01-10'`.
+Create a procedure `rellenar_fechas` that inserts the dates from `'2025-01-01'` to `'2025-01-10'` into the table `dates_list(fecha)`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -54,11 +54,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 3: Reducir inventario paso a paso**
+### **Exercise 3: Reduce inventory step by step**
 
-Crea un procedimiento `vender_producto` que reciba `p_id INT` y `p_cantidad INT`. Reste 1 del inventario de `products_stock(product_id, quantity)` hasta vender `p_cantidad` unidades.
+Create a procedure `vender_producto` that receives `p_id INT` and `p_cantidad INT`. Subtract 1 from `products_stock(product_id, quantity)` inventory until `p_cantidad` units are sold.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -80,11 +80,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 4: Insertar potencias de 2**
+### **Exercise 4: Insert powers of 2**
 
-Crea un procedimiento `insertar_potencias_dos` que inserte en `numbers(value)` las potencias de 2 desde 1 hasta 1024.
+Create a procedure `insertar_potencias_dos` that inserts into `numbers(value)` the powers of 2 from 1 to 1024.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -104,11 +104,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 5: Aumentar sueldos hasta un tope**
+### **Exercise 5: Increase salaries up to a limit**
 
-Crea un procedimiento `incrementar_sueldos` que incremente en 50 el sueldo (`salary`) de todos los empleados en `employees` cuyo salario sea menor de 1000, repitiendo el aumento hasta que todos tengan al menos 1000.
+Create a procedure `incrementar_sueldos` that increases the salary (`salary`) by 50 of all employees in `employees` whose salary is less than 1000, repeating the increase until everyone has at least 1000.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -133,11 +133,11 @@ DELIMITER ;
 
 ---
 
-### **Ejercicio 6: Contador regresivo**
+### **Exercise 6: Countdown**
 
-Crea un procedimiento `contador_regresivo` que empiece en `p_inicio INT` y vaya insertando valores decrecientes en la tabla `numbers(value)` hasta llegar a 1.
+Create a procedure `contador_regresivo` that starts at `p_inicio INT` and inserts decreasing values into the `numbers(value)` table until it reaches 1.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$

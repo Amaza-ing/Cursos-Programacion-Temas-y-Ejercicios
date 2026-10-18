@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 8: Diseño con Flexbox en CSS**
+# **Exercises - Topic 8: Design with Flexbox in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 7 ejercicios prácticos sobre Flexbox en CSS.
+Below you will find 7 practical exercises on Flexbox in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un contenedor flexible**
+### **Exercise 1: Create a flexible container**
 
-Crea un contenedor con `display: flex` y tres elementos hijos.
+Create a container with `display: flex` and three child elements.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -27,6 +27,7 @@ Crea un contenedor con `display: flex` y tres elementos hijos.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item"></div>
@@ -35,15 +36,16 @@ Crea un contenedor con `display: flex` y tres elementos hijos.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Alinear elementos con `justify-content`**
+### **Exercise 2: Align elements with `justify-content`**
 
-Alinea los elementos del contenedor al centro horizontalmente usando `justify-content`.
+Align the container elements to the center horizontally using `justify-content`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -52,6 +54,7 @@ Alinea los elementos del contenedor al centro horizontalmente usando `justify-co
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item"></div>
@@ -60,15 +63,16 @@ Alinea los elementos del contenedor al centro horizontalmente usando `justify-co
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Alinear elementos en el eje vertical**
+### **Exercise 3: Align elements on the vertical axis**
 
-Alinea los elementos en el centro verticalmente usando `align-items`.
+Align the elements in the center vertically using `align-items`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -78,6 +82,7 @@ Alinea los elementos en el centro verticalmente usando `align-items`.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item"></div>
@@ -86,15 +91,16 @@ Alinea los elementos en el centro verticalmente usando `align-items`.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Cambiar la dirección con `flex-direction`**
+### **Exercise 4: Change the address with `flex-direction`**
 
-Cambia la dirección de los elementos para que se coloquen en una columna.
+Change the direction of the elements so that they are placed in a column.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -103,6 +109,7 @@ Cambia la dirección de los elementos para que se coloquen en una columna.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item"></div>
@@ -111,15 +118,16 @@ Cambia la dirección de los elementos para que se coloquen en una columna.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Distribuir espacio entre elementos**
+### **Exercise 5: Distribute space between elements**
 
-Usa `space-between` para distribuir los elementos con espacio entre ellos.
+Use `space-between` to distribute the elements with space between them.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -128,6 +136,7 @@ Usa `space-between` para distribuir los elementos con espacio entre ellos.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item"></div>
@@ -136,15 +145,16 @@ Usa `space-between` para distribuir los elementos con espacio entre ellos.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 6: Controlar el crecimiento de elementos con `flex-grow`**
+### **Exercise 6: Control the growth of elements with `flex-grow`**
 
-Haz que el segundo elemento crezca más que los demás usando `flex-grow`.
+Make the second element grow larger than the others using `flex-grow`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -158,6 +168,7 @@ Haz que el segundo elemento crezca más que los demás usando `flex-grow`.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item"></div>
@@ -166,15 +177,16 @@ Haz que el segundo elemento crezca más que los demás usando `flex-grow`.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 7: Cambiar el orden de los elementos con `order`**
+### **Exercise 7: Change the order of elements with `order`**
 
-Haz que el tercer elemento aparezca primero utilizando `order`.
+Make the third item appear first using `order`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -185,6 +197,7 @@ Haz que el tercer elemento aparezca primero utilizando `order`.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item">1</div>
@@ -192,5 +205,6 @@ Haz que el tercer elemento aparezca primero utilizando `order`.
   <div class="item">3</div>
 </div>
 ```
+
 
 </details>

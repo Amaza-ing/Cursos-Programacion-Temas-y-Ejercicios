@@ -1,24 +1,24 @@
-# Ejercicios - Tema 20: Clases abstractas y métodos abstractos
+# Exercises - Topic 20: Abstract classes and abstract methods
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **clases abstractas** y **métodos abstractos**: declaración `abstract`, métodos sin cuerpo, implementación obligatoria en subclases, constructores en clases abstractas, `@Override`, polimorfismo con listas, y una primera comparación con clases “normales”.
+Below you will find **10 practical exercises** on **abstract classes** and **abstract methods**: `abstract` declaration, bodyless methods, mandatory implementation in subclasses, constructors in abstract classes, `@Override`, polymorphism with lists, and a first comparison with “normal” classes.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: `Shape` abstracta con `area()`
+## Exercise 1: Abstract `Shape` with `area()`
 
-Crea una clase abstracta `Shape` con un método abstracto:
+Create an abstract class `Shape` with an abstract method:
 
 ```java
 public abstract double area();
 ```
 
-Crea una clase `Square extends Shape` con atributo `side` y que implemente `area()`.
+Create a class `Square extends Shape` with attribute `side` and that implements `area()`.
 
-En `main`, crea un `Shape` que sea un `Square` y muestra el área.
+In `main`, create an `Shape` that is an `Square` and display the area.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Shape {
@@ -54,20 +54,20 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Clase abstracta con constructor
+## Exercise 2: Abstract class with constructor
 
-Crea una clase abstracta `Animal` con:
+Create an abstract class `Animal` with:
 
 - `private String name`
-- Constructor `Animal(String name)`
-- Getter `getName()`
-- Método abstracto `sound()`
+- `Animal(String name)` Builder
+-Getter `getName()`
+- Abstract method `sound()`
 
-Crea `Dog extends Animal` e implementa `sound()` para imprimir `Woof`.
+Create `Dog extends Animal` and implement `sound()` to print `Woof`.
 
-En `main`, crea un `Dog` y muestra el nombre y el sonido.
+In `main`, create an `Dog` and display the name and sound.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Animal {
@@ -112,21 +112,21 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Método normal que llama a uno abstracto
+## Exercise 3: Normal method that calls an abstract one
 
-Crea una clase abstracta `Employee` con:
+Create an abstract class `Employee` with:
 
 - `private String name`
-- Constructor
-- Método normal `printPayslip()` que imprima:
+- Builder
+- Normal `printPayslip()` method that prints:
   - `Employee: name | Pay: X`
-- Método abstracto `calculatePay()`
+- Abstract method `calculatePay()`
 
-Crea `HourlyEmployee` con `hourlyRate` y `hoursWorked` e implementa `calculatePay()`.
+Create `HourlyEmployee` with `hourlyRate` and `hoursWorked` and deploy `calculatePay()`.
 
-En `main`, crea un `HourlyEmployee` y llama a `printPayslip()`.
+In `main`, create an `HourlyEmployee` and call `printPayslip()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Employee {
@@ -175,16 +175,16 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Subclase que no implementa un abstracto
+## Exercise 4: Subclass that does not implement an abstract
 
-Crea una clase abstracta `Device` con método abstracto `start()`.
+Creates an abstract class `Device` with abstract method `start()`.
 
-Crea una clase `SmartDevice extends Device` que NO implemente `start()`.
+Create an `SmartDevice extends Device` class that does NOT implement `start()`.
 
-¿Qué debe pasar con `SmartDevice`?  
-Haz que compile.
+What should happen to `SmartDevice`?  
+Make it compile.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Device {
@@ -202,18 +202,18 @@ public abstract class SmartDevice extends Device {
 
 ---
 
-## Ejercicio 5: Polimorfismo con `List<Shape>`
+## Exercise 5: Polymorphism with `List<Shape>`
 
-Crea una clase abstracta `Shape` con `area()`.
+Create an abstract class `Shape` with `area()`.
 
-Crea dos clases concretas:
+Create two concrete classes:
 
-- `Circle` con `radius`
-- `Rectangle` con `width` y `height`
+- `Circle` with `radius`
+- `Rectangle` with `width` and `height`
 
-En `main`, crea una lista `List<Shape>` con 3 formas (mezcla de Circle/Rectangle) y suma todas las áreas.
+In `main`, create a list `List<Shape>` with 3 shapes (mix of Circle/Rectangle) and sum all the areas.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Shape {
@@ -279,19 +279,18 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Clase abstracta con estado común y validación
+## Exercise 6: Abstract class with common state and validation
 
-Crea una clase abstracta `Document` con:
+Create an abstract class `Document` with:
 
 - `private String title`
-- Constructor `Document(String title)` que use un setter `setTitle`
+- `Document(String title)` constructor that uses an `setTitle` setter
 - `getTitle()`
-- `setTitle(String title)` que si es `null` o `isBlank()` use `"Untitled"`
-- Método abstracto `printContent()`
+- `setTitle(String title)` if it is `null` or `isBlank()` use `"Untitled"`
+- Abstract method `printContent()`
 
-Crea `Note extends Document` con atributo `text` y que imprima el contenido.
-
-<details><summary>Mostrar solución</summary>
+Create `Note extends Document` with `text` attribute and print the content.
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Document {
@@ -339,22 +338,22 @@ public class Note extends Document {
 
 ---
 
-## Ejercicio 7: Método abstracto con retorno boolean
+## Exercise 7: Abstract method with boolean return
 
-Crea una clase abstracta `Validator` con método abstracto:
+Create an abstract class `Validator` with abstract method:
 
 ```java
 public abstract boolean isValid(String value);
 ```
 
-Crea:
+Create:
 
-- `EmailValidator` que devuelva `true` si `value` contiene `"@"` y `"."`
-- `MinLengthValidator` que reciba `minLength` en el constructor y valide por longitud
+- `EmailValidator` returns `true` if `value` contains `"@"` and `"."`
+- `MinLengthValidator` that receives `minLength` in the constructor and validates by length
 
-En `main`, prueba ambos validadores.
+On `main`, try both validators.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Validator {
@@ -413,23 +412,23 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Clase abstracta con método “plantilla”
+## Exercise 8: Abstract class with “template” method
 
-Crea una clase abstracta `Report` con método normal:
+Create an abstract class `Report` with normal method:
 
 ```java
 public void printReport()
 ```
 
-Que:
+What:
 
-1. Imprima `"=== Report ==="`
-2. Llame a un método abstracto `printBody()`
-3. Imprima `"=== End ==="`
+1. Print `"=== Report ==="`
+2. Call an abstract method `printBody()`
+3. Print `"=== End ==="`
 
-Crea `SalesReport` que implemente `printBody()`.
+Create `SalesReport` that implements `printBody()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Report {
@@ -466,17 +465,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Comparar clase abstracta vs clase “normal”
+## Exercise 9: Compare abstract class vs “normal” class
 
-Crea una clase `Printer` (normal) con método `print()` que imprima `"Printing..."`.
+Create a class `Printer` (normal) with method `print()` that prints `"Printing..."`.
 
-Luego crea una clase abstracta `AbstractPrinter` con método abstracto `print()`.
+Then create an abstract class `AbstractPrinter` with abstract method `print()`.
 
-Crea una clase `ConsolePrinter extends AbstractPrinter` que implemente `print()`.
+Create a class `ConsolePrinter extends AbstractPrinter` that implements `print()`.
 
-En `main`, usa `Printer` y `AbstractPrinter` (con `ConsolePrinter`).
+In `main`, use `Printer` and `AbstractPrinter` (with `ConsolePrinter`).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Printer {
@@ -517,26 +516,26 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Jerarquía abstracta con validación en el constructor
+## Exercise 10: Abstract hierarchy with validation in the constructor
 
-Crea una clase abstracta `Payment` con:
+Create an abstract class `Payment` with:
 
 - `private double amount`
-- Constructor `Payment(double amount)` que use `setAmount`
+- `Payment(double amount)` constructor that uses `setAmount`
 - `getAmount()`
-- `setAmount(double amount)` que si es negativo use `0.0`
-- Método abstracto `process()`
+- `setAmount(double amount)` if negative use `0.0`
+- Abstract method `process()`
 
-Crea:
+Create:
 
-- `CardPayment extends Payment` con atributo `cardNumber` y `process()` imprimiendo:
+- `CardPayment extends Payment` with attribute `cardNumber` and `process()` printing:
   - `Processing card payment: amount`
-- `CashPayment extends Payment` con `process()` imprimiendo:
+- `CashPayment extends Payment` with `process()` printing:
   - `Processing cash payment: amount`
 
-En `main`, crea ambos pagos y llama a `process()` con referencias de tipo `Payment`.
+In `main`, create both payments and call `process()` with references of type `Payment`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public abstract class Payment {

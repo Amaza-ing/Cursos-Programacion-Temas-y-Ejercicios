@@ -1,20 +1,20 @@
-# **Tema 11: Creación y Validación de Formularios con `ngModel` en Angular**
+# **Topic 11: Creation and Validation of Forms with `ngModel` in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, `ngModel` permite la vinculación bidireccional de datos en formularios, lo que facilita la captura y validación de datos del usuario.
+In Angular, `ngModel` enables bidirectional binding of data in forms, making it easier to capture and validate user data.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo usar `ngModel` para la captura de datos en formularios.
-- Cómo validar formularios con validaciones integradas y personalizadas.
-- Cómo gestionar errores en formularios de manera eficiente.
+- How to use `ngModel` to capture data in forms.
+- How to validate forms with built-in and custom validations.
+- How to manage errors in forms efficiently.
 
 ---
 
-## **2. Configuración Inicial**
+## **2. Initial Configuration**
 
-Para utilizar `ngModel`, es necesario importar el módulo `FormsModule` en los imports de la aplicación.
+To use `ngModel`, it is necessary to import the `FormsModule` module in the application imports.
 
 ---
 
@@ -22,13 +22,13 @@ Para utilizar `ngModel`, es necesario importar el módulo `FormsModule` en los i
 
 ---
 
-## **3. Creación de un Formulario con `ngModel`**
+## **3. Creating a Form with `ngModel`**
 
-La directiva `ngModel` permite la vinculación bidireccional en los formularios, lo que sincroniza automáticamente el modelo con la vista.
+The `ngModel` directive allows two-way binding in forms, which automatically synchronizes the model with the view.
 
-El evento `(ngSubmit)` permite gestionar el envío de un formulario.
+The `(ngSubmit)` event allows you to manage the submission of a form.
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 import { FormsModule } from "@angular/forms";
@@ -46,7 +46,8 @@ export class FormComponent {
 }
 ```
 
-#### **Archivo: `form.component.html`**
+
+#### **File: `form.component.html`**
 
 ```html
 <form (ngSubmit)="submitForm()">
@@ -72,13 +73,14 @@ export class FormComponent {
 </form>
 ```
 
+
 ---
 
-## **4. Validación de Formularios**
+## **4. Form Validation**
 
-Se pueden definir validaciones personalizadas en un método en el componente.
+Custom validations can be defined in a method in the component.
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 export class FormComponent {
@@ -90,7 +92,8 @@ export class FormComponent {
 }
 ```
 
-#### **Archivo: `form.component.html`**
+
+#### **File: `form.component.html`**
 
 ```html
 <label for="age">Edad:</label>
@@ -101,14 +104,15 @@ export class FormComponent {
 }
 ```
 
----
-
-## **5. Conclusión**
-
-- `ngModel` permite la vinculación bidireccional en formularios.
-- Se pueden definir validaciones personalizadas para reglas específicas.
-- La gestión de errores mejora la experiencia del usuario al llenar formularios.
 
 ---
 
-En el próximo tema, exploraremos **cómo gestionar formularios reactivos con `FormGroup` y `FormControl` en Angular**.
+## **5. Conclusion**
+
+- `ngModel` allows two-way binding in forms.
+- Custom validations can be defined for specific rules.
+- Error management improves user experience when filling out forms.
+
+---
+
+In the next topic, we will explore **how to manage reactive forms with `FormGroup` and `FormControl` in Angular**.

@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 7: El Constructor y `ngOnInit` en Angular**
+# **Exercises - Topic 7: The Constructor and `ngOnInit` in Angular**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre el constructor y `ngOnInit` en Angular.
+Below you will find exercises on the builder and `ngOnInit` in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Uso del Constructor**
+### **Exercise 1: Using the Constructor**
 
-Crea un componente que inicialice una variable `message` en el constructor y la muestre en pantalla.
+Create a component that initializes an `message` variable in the constructor and displays it on the screen.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -32,23 +32,25 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p>{{ message }}</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Uso de `ngOnInit`**
+### **Exercise 2: Using `ngOnInit`**
 
-Modifica el componente para que el mensaje sea asignado en `ngOnInit` en lugar del constructor.
+Modify the component so that the message is assigned in `ngOnInit` instead of the constructor.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -70,17 +72,18 @@ export class ExampleComponent implements OnInit {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Diferenciar Constructor y `ngOnInit`**
+### **Exercise 3: Differentiate Constructor and `ngOnInit`**
 
-Agrega `console.log()` en ambos métodos y observa el orden en que se ejecutan.
+Add `console.log()` to both methods and note the order in which they are executed.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -104,17 +107,18 @@ export class ExampleComponent implements OnInit {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Prueba con un retardo en `ngOnInit`**
+### **Exercise 4: Test with a delay in `ngOnInit`**
 
-Simula una carga de datos retardada utilizando `setTimeout()` dentro de `ngOnInit`.
+Simulates delayed data loading using `setTimeout()` inside `ngOnInit`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -136,10 +140,12 @@ export class ExampleComponent implements OnInit {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p>{{ message }}</p>
 ```
+
 
 </details>

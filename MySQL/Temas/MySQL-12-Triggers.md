@@ -1,40 +1,40 @@
-# **Tema 12: Triggers (Disparadores) en MySQL**
+# **Topic 12: Triggers in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué es un trigger y cuándo usarlo.
-- Crear triggers para automatizar acciones.
-- Conocer los diferentes momentos de ejecución (`BEFORE` y `AFTER`).
-- Gestionar y eliminar triggers.
-
----
-
-## **1. ¿Qué es un trigger?**
-
-Un **trigger** (o disparador) es un objeto de base de datos que se ejecuta automáticamente cuando ocurre un evento específico (`INSERT`, `UPDATE`, `DELETE`) sobre una tabla.
-
-### **Ventajas:**
-
-- Automatiza tareas como auditoría, validaciones o cálculos.
-- Garantiza integridad de datos a nivel de base de datos.
-
-### **Desventajas:**
-
-- Puede dificultar el seguimiento del flujo de datos.
-- Un mal diseño puede afectar al rendimiento.
+- Understand what a trigger is and when to use it.
+- Create triggers to automate actions.
+- Know the different execution times (`BEFORE` and `AFTER`).
+- Manage and delete triggers.
 
 ---
 
-## **2. Tipos de triggers según el momento de ejecución**
+## **1. What is a trigger?**
 
-- **`BEFORE`**: Se ejecuta antes de que se realice la operación.
-- **`AFTER`**: Se ejecuta después de que se realice la operación.
+A **trigger** (or trigger) is a database object that is automatically executed when a specific event (`INSERT`, `UPDATE`, `DELETE`) occurs on a table.
+
+### **Advantages:**
+
+- Automate tasks such as auditing, validations or calculations.
+- Ensures data integrity at the database level.
+
+### **Disadvantages:**
+
+- Can make data flow difficult to track.
+- Bad design can affect performance.
 
 ---
 
-## **3. Crear un trigger básico**
+## **2. Types of triggers depending on the time of execution**
 
-Ejemplo: Auditar inserciones en la tabla `orders` guardando datos en una tabla `orders_log`.
+- **`BEFORE`**: Executed before the operation is performed.
+- **`AFTER`**: Executed after the operation is performed.
+
+---
+
+## **3. Create a basic trigger**
+
+Example: Audit inserts into the `orders` table by saving data to an `orders_log` table.
 
 ```sql
 DELIMITER $$
@@ -48,14 +48,14 @@ END $$
 DELIMITER ;
 ```
 
-- `NEW.columna` hace referencia al valor nuevo de la columna.
-- En triggers `BEFORE`, también se puede modificar `NEW.columna` para cambiar el valor antes de insertarlo.
+- `NEW.columna` refers to the new value of the column.
+- In `BEFORE` triggers, `NEW.columna` can also be modified to change the value before inserting it.
 
 ---
 
-## **4. Trigger BEFORE con validación**
+## **4. BEFORE trigger with validation**
 
-Ejemplo: Evitar insertar un precio negativo en `products`.
+Example: Avoid inserting a negative price in `products`.
 
 ```sql
 DELIMITER $$
@@ -73,7 +73,7 @@ DELIMITER ;
 
 ---
 
-## **5. Eliminar un trigger**
+## **5. Delete a trigger**
 
 ```sql
 DROP TRIGGER IF EXISTS log_new_order;
@@ -81,7 +81,7 @@ DROP TRIGGER IF EXISTS log_new_order;
 
 ---
 
-## **6. Ver triggers existentes**
+## **6. View existing triggers**
 
 ```sql
 SHOW TRIGGERS;
@@ -93,20 +93,20 @@ SHOW TRIGGERS;
 
 ---
 
-## **7. Buenas prácticas**
+## **7. Good practices**
 
-- Usar triggers solo cuando la lógica debe ejecutarse **siempre** junto con la operación.
-- Evitar lógica muy compleja para no afectar el rendimiento.
-- Documentar cada trigger y su propósito.
-
----
-
-## **8. Conclusión**
-
-- Los triggers permiten automatizar acciones ante cambios en una tabla.
-- Pueden ejecutarse antes o después de la operación.
-- Son útiles para auditoría, validaciones y mantenimiento automático de datos.
+- Use triggers only when the logic must **always** be executed together with the operation.
+- Avoid very complex logic so as not to affect performance.
+- Document each trigger and its purpose.
 
 ---
 
-En el próximo tema aprenderemos a **crear y usar funciones** y veremos la diferencia con los procedimientos almacenados.
+## **8. Conclusion**
+
+- Triggers allow you to automate actions when changes occur in a table.
+- They can be executed before or after the operation.
+- They are useful for auditing, validations and automatic data maintenance.
+
+---
+
+In the next topic we will learn to **create and use functions** and we will see the difference with stored procedures.

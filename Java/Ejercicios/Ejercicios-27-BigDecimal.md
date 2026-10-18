@@ -1,16 +1,16 @@
-# Ejercicios - Tema 27: `BigDecimal`
+# Exercises - Topic 27: `BigDecimal`
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **`BigDecimal`, operaciones, redondeo, inmutabilidad y `compareTo`**.
+Below you will find **10 practical exercises** to work with **`BigDecimal`, operations, rounding, immutability and `compareTo`**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear valores
+## Exercise 1: Create values
 
-Crea dos `BigDecimal` con `String`.
+Create two `BigDecimal` with `String`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -29,11 +29,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Sumar
+## Exercise 2: Add
 
-Suma tres precios.
+Add three prices.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -53,11 +53,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Restar
+## Exercise 3: Subtract
 
-Resta un descuento.
+A discount remains.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -75,11 +75,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Multiplicar
+## Exercise 4: Multiply
 
-Multiplica precio por cantidad.
+Multiply price by quantity.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -97,11 +97,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Dividir
+## Exercise 5: Divide
 
-Divide con escala y redondeo.
+Divide with scale and rounding.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -120,11 +120,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Redondear
+## Exercise 6: Rounding
 
-Usa `setScale`.
+Use `setScale`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -142,11 +142,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Inmutabilidad
+## Exercise 7: Immutability
 
-Guarda el resultado tras cada operación.
+Save the result after each operation.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -165,11 +165,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Comparar
+## Exercise 8: Compare
 
-Compara `10.0` y `10.00` con `compareTo`.
+Compare `10.0` and `10.00` with `compareTo`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -187,11 +187,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Validar precio
+## Exercise 9: Validate price
 
-Asigna cero si el precio es negativo.
+Assigns zero if the price is negative.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;
@@ -213,11 +213,11 @@ public class Product {
 
 ---
 
-## Ejercicio 10: Calcular impuesto
+## Exercise 10: Calculate tax
 
-Calcula 21% de impuesto.
+Calculate 21% tax.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.math.BigDecimal;

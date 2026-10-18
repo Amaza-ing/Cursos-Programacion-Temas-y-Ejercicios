@@ -1,24 +1,24 @@
-# **Tema 4: Funciones en JavaScript**
+# **Topic 4: Functions in JavaScript**
 
-## **1. Introducción a las funciones**
+## **1. Introduction to functions**
 
-Las funciones son bloques de código reutilizables diseñados para realizar una tarea específica. Nos ayudan a estructurar y modularizar el código, mejorando la legibilidad y el mantenimiento.
+Functions are reusable blocks of code designed to perform a specific task. They help us structure and modularize the code, improving readability and maintainability.
 
-En JavaScript, las funciones son ciudadanos de primera clase, lo que significa que pueden ser asignadas a variables, pasadas como argumentos y retornadas desde otras funciones.
+In JavaScript, functions are first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned from other functions.
 
 ---
 
-## **2. Declaración de funciones**
+## **2. Function declaration**
 
-Las funciones hay que declararlas, es decir escribir lo que hacen, en algún punto del código, pero eso no quiere decir que se vayan a ejecutar directamente.
-Cuando se declara una función se especifica el nombre de la función, los argumentos que necesita y la lógica que va a aplicar.
+Functions must be declared, that is, written what they do, at some point in the code, but that does not mean that they will be executed directly.
+When you declare a function, you specify the name of the function, the arguments it needs, and the logic it will apply.
 
-Para ejecutar una función hay que llamar a la función desde otra linea de código, que deberá estar más abajo de la declaración de la función.
-Cuando se llama a una función se le tienen que pasar los argumentos que necesita.
+To execute a function you must call the function from another line of code, which should be below the function declaration.
+When you call a function you have to pass it the arguments it needs.
 
-Cuando se le da nombre a una función este debe ser lo más explícito posible y estar en formato camelCase.
+When a function is named, it should be as explicit as possible and be in camelCase format.
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 function sayHello() {
@@ -28,7 +28,7 @@ function sayHello() {
 sayHello(); // Respuesta en consola: Hello!
 ```
 
-Las funciones pueden no recibir ningún parámetro como en el ejemplo anterior o recibir uno o más:
+Functions can receive no parameters as in the previous example or receive one or more:
 
 ```js
 function saySomething(str) {
@@ -38,7 +38,7 @@ function saySomething(str) {
 saySomething("Qué tal?"); // Respuesta en consola: Qué tal?
 ```
 
-Las funciones pueden aplicar diréctamente su lógica interna sin devolver nada como en el ejemplo anterior o también pueden devolver un valor usando la palabra reservada `return`:
+Functions can directly apply their internal logic without returning anything as in the previous example or they can also return a value using the `return` reserved word:
 
 ```js
 function sum(num1, num2) {
@@ -49,11 +49,11 @@ let sumResult = sum(2, 8);
 console.log(sumResult); // Respuesta en consola: 10
 ```
 
-### **2.1. Funciones declaradas**
+### **2.1. Declared functions**
 
-Las funciones declaradas se definen usando la palabra clave `function`.
+The declared functions are defined using the `function` keyword.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 function greet(name) {
@@ -61,27 +61,27 @@ function greet(name) {
 }
 ```
 
-Aquí la función se llama `greet` y recibe un parámetro `name`.
+Here the function is called `greet` and receives an `name` parameter.
 
-### **Ejecución de la función:**
+### **Function execution:**
 
 ```js
 greet("Ana"); // Salida: ¡Hola, Ana!
 ```
 
-Cuando se ejecuta la función `greet` se ha pasado como argumento el valor `"Ana"`, que será el valor que reciba el parámetro `name`.
+When the `greet` function is executed, the value `"Ana"` has been passed as an argument, which will be the value received by the `name` parameter.
 
-> **Nota:** Las funciones declaradas sufren "hoisting", es decir, se pueden invocar antes de ser declaradas en el código. Ya que el "hoisting" (izamiento) lo que hace es elevar la función a las primeras lineas del código antes de que se interprete. No suele ser buena idea aprovecharse de este comportamiento, debiendo declarar las funciones antes de ejecutarlas.
+> **Note:** Declared functions suffer from "hoisting", that is, they can be invoked before being declared in the code. Since what hoisting does is elevate the function to the first lines of the code before it is interpreted. It is usually not a good idea to take advantage of this behavior, and functions must be declared before executing them.
 
 ---
 
-### **2.2. Funciones expresadas**
+### **2.2. Expressed functions**
 
-Las funciones expresadas se asignan a una variable. No se elevan como las funciones declaradas.
+The expressed functions are assigned to a variable. They do not rise like the declared functions.
 
-Este tipo de funciones se declaran de forma parecida a una variable, pero mantienen la palabra reservada `function`.
+These types of functions are declared similar to a variable, but they maintain the reserved word `function`.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 const sum = function (a, b) {
@@ -89,7 +89,7 @@ const sum = function (a, b) {
 };
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 console.log(sum(3, 4)); // Salida: 7
@@ -97,15 +97,15 @@ console.log(sum(3, 4)); // Salida: 7
 
 ---
 
-[![Funciones](https://img.youtube.com/vi/cRUhXVzwkEo/0.jpg)](https://www.youtube.com/watch?v=cRUhXVzwkEo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Functions](https://img.youtube.com/vi/cRUhXVzwkEo/0.jpg)](https://www.youtube.com/watch?v=cRUhXVzwkEo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **3. Funciones Flecha (`arrow functions`)**
+## **3. Arrow Functions (`arrow functions`)**
 
-Las funciones flecha ofrecen una sintaxis más concisa para escribir funciones.
+Arrow functions offer a more concise syntax for writing functions.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```js
 const functionName = (parameters) => {
@@ -113,7 +113,7 @@ const functionName = (parameters) => {
 };
 ```
 
-### **Ejemplo**:
+### **Example**:
 
 ```js
 const square = (num) => {
@@ -123,7 +123,7 @@ const square = (num) => {
 console.log(square(5)); // Salida: 25
 ```
 
-Si la función tiene un solo parámetro se puede simplificar quitando los paréntesis:
+If the function has only one parameter it can be simplified by removing the parentheses:
 
 ```js
 const square = (num) => {
@@ -133,7 +133,7 @@ const square = (num) => {
 console.log(square(5)); // Salida: 25
 ```
 
-Si la función tiene una sola linea de código se puede simplificar quitando las llaves y el return:
+If the function has a single line of code it can be simplified by removing the braces and the return:
 
 ```js
 const square = (num) => num * num;
@@ -141,7 +141,7 @@ const square = (num) => num * num;
 console.log(square(5)); // Salida: 25
 ```
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 const greet = (name) => console.log(`¡Hola, ${name}!`);
@@ -149,7 +149,7 @@ const greet = (name) => console.log(`¡Hola, ${name}!`);
 greet("Carlos"); // Salida: ¡Hola, Carlos!
 ```
 
-> **Nota:** Las funciones flecha **no** tienen su propio `this`, lo que afecta su comportamiento en ciertos contextos. Esto se verá más tarde en el curso.
+> **Note:** Arrow functions **do not** have their own `this`, which affects their behavior in certain contexts. This will be seen later in the course.
 
 ---
 
@@ -157,11 +157,11 @@ greet("Carlos"); // Salida: ¡Hola, Carlos!
 
 ---
 
-## **4. Parámetros y argumentos**
+## **4. Parameters and arguments**
 
-### **4.1. Valores por defecto**
+### **4.1. Default values**
 
-Puedes asignar valores por defecto a los parámetros:
+You can assign default values to parameters:
 
 ```js
 function greet(name = "Invitado") {
@@ -173,9 +173,9 @@ greet(); // Salida: ¡Hola, Invitado!
 
 ---
 
-### **4.2. Parámetros rest (`...`)**
+### **4.2. Rest parameters (`...`)**
 
-Permiten pasar un número indefinido de argumentos a una función:
+They allow you to pass an indefinite number of arguments to a function:
 
 ```js
 function sumAll(...numbers) {
@@ -192,9 +192,9 @@ console.log(sumAll(1, 2, 3, 4)); // Salida: 10
 
 ---
 
-### **4.3. Operador spread (`...`)**
+### **4.3. Spread operator (`...`)**
 
-Se usa para expandir elementos de un array al llamar una función:
+Used to expand elements of an array when calling a function:
 
 ```js
 const numbers = [1, 2, 3];
@@ -208,19 +208,19 @@ console.log(sum(...numbers)); // Salida: 6
 
 ---
 
-## **5. Callbacks & Funciones anónimas**
+## **5. Callbacks & Anonymous Functions**
 
-### **5.1. ¿Qué es un Callback?**
+### **5.1. What is a Callback?**
 
-En JavaScript, un **callback** es una función que se pasa como argumento a otra función y se ejecuta después de que dicha función haya terminado su tarea. Los callbacks son una herramienta clave en JavaScript para manejar la asincronía, permitiendo que el código continúe ejecutándose sin bloquearse mientras espera que se complete una tarea.
+In JavaScript, a **callback** is a function that is passed as an argument to another function and is executed after that function has finished its task. Callbacks are a key tool in JavaScript for handling asynchrony, allowing code to continue executing without blocking while waiting for a task to complete.
 
-Los callbacks son comúnmente utilizados en operaciones asíncronas como solicitudes a servidores, temporizadores o manejo de eventos.
+Callbacks are commonly used in asynchronous operations such as server requests, timers, or event handling.
 
 ---
 
-### **5.2. Ejemplo básico de Callback**
+### **5.2. Basic Callback Example**
 
-A continuación, un ejemplo simple de cómo se usa un callback en JavaScript:
+Here is a simple example of how to use a callback in JavaScript:
 
 ```js
 // Definimos una función que acepta un callback
@@ -238,20 +238,20 @@ function sayGoodbye() {
 greetUser("Ana", sayGoodbye);
 ```
 
-**Salida:**
+**Output:**
 
 ```
 Hola, Ana!
 ¡Adiós!
 ```
 
-En este ejemplo, la función `greetUser` recibe dos argumentos: un nombre y una función callback. Después de saludar al usuario, se ejecuta el callback `sayGoodbye`.
+In this example, the `greetUser` function receives two arguments: a name and a callback function. After greeting the user, the `sayGoodbye` callback is executed.
 
 ---
 
-### **5.3. Callbacks en operaciones asíncronas**
+### **5.3. Callbacks in asynchronous operations**
 
-Un caso práctico donde los callbacks son útiles es en operaciones asíncronas como `setTimeout`:
+A use case where callbacks are useful is in asynchronous operations like `setTimeout`:
 
 ```js
 console.log("Inicio");
@@ -263,7 +263,7 @@ setTimeout(() => {
 console.log("Fin");
 ```
 
-**Salida:**
+**Output:**
 
 ```
 Inicio
@@ -271,13 +271,13 @@ Fin
 Esto se muestra después de 2 segundos
 ```
 
-Aquí, `setTimeout` acepta un callback que se ejecutará después de 2 segundos. Mientras tanto, el programa continúa su ejecución, mostrando "Fin" antes que el mensaje retrasado.
+Here, `setTimeout` accepts a callback that will be executed after 2 seconds. Meanwhile, the program continues execution, displaying "End" before the delayed message.
 
 ---
 
-### **5.4. Conclusión**
+### **5.4. Conclusion**
 
-Los callbacks son fundamentales en JavaScript para controlar el flujo del programa y se pueden utilizar para manejar tareas asíncronas.
+Callbacks are essential in JavaScript to control program flow and can be used to handle asynchronous tasks.
 
 ---
 
@@ -285,9 +285,9 @@ Los callbacks son fundamentales en JavaScript para controlar el flujo del progra
 
 ---
 
-### **5.5. ¿Qué es una función anónima?**
+### **5.5. What is an anonymous function?**
 
-Son funciones sin nombre, comúnmente usadas como callbacks:
+They are unnamed functions, commonly used as callbacks:
 
 ```js
 setTimeout(function () {
@@ -295,7 +295,7 @@ setTimeout(function () {
 }, 2000);
 ```
 
-Con función flecha:
+With arrow function:
 
 ```js
 setTimeout(() => {
@@ -305,15 +305,15 @@ setTimeout(() => {
 
 ---
 
-[![Funciones Anónimas](https://img.youtube.com/vi/0iQgTKfHO7w/0.jpg)](https://www.youtube.com/watch?v=0iQgTKfHO7w&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Anonymous Functions](https://img.youtube.com/vi/0iQgTKfHO7w/0.jpg)](https://www.youtube.com/watch?v=0iQgTKfHO7w&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **6. Funciones de orden superior**
+## **6. Higher order functions**
 
-Son funciones que reciben otras funciones como argumentos o devuelven funciones.
+They are functions that receive other functions as arguments or return functions.
 
-### **Ejemplo devolviendo una función:**
+### **Example returning a function:**
 
 ```js
 function multiplier(factor) {
@@ -328,9 +328,9 @@ console.log(double(5)); // Salida: 10
 
 ---
 
-## **7. Funciones autoinvocadas (IIFE)**
+## **7. Self-invoked functions (IIFE)**
 
-Se ejecutan inmediatamente tras su declaración.
+They are executed immediately upon declaration.
 
 ```js
 (function () {
@@ -345,11 +345,11 @@ Se ejecutan inmediatamente tras su declaración.
 
 ---
 
-## **8. Modularización con funciones**
+## **8. Modularization with functions**
 
-Usar funciones para dividir el código en piezas pequeñas mejora su mantenibilidad.
+Using functions to break code into small pieces improves its maintainability.
 
-### **Ejemplo:**
+### **Example:**
 
 ```js
 function getFullName(firstName, lastName) {
@@ -366,18 +366,17 @@ greetPerson(fullName); // Salida: ¡Hola, Laura García!
 
 ---
 
-## **9. Buenas prácticas**
+## **9. Good practices**
 
-1. Nombra las funciones de forma descriptiva en inglés.
-2. Mantén las funciones cortas y enfocadas en una única tarea.
-3. Evita efectos secundarios no deseados.
-4. Usa funciones puras siempre que sea posible.
-5. Es preferible usar funciones flecha para callbacks simples.
+1. Name the functions descriptively in English.
+2. Keep functions short and focused on a single task.
+3. Avoid unwanted side effects.
+4. Use pure functions whenever possible.
+5. It is preferable to use arrow functions for simple callbacks.
 
 ---
 
-## **10. Conclusión**
+## **10. Conclusion**
+Functions are essential in JavaScript to structure and reuse code. Mastering the different types and techniques for modularizing will improve the efficiency and readability of your projects.
 
-Las funciones son esenciales en JavaScript para estructurar y reutilizar código. Dominar los diferentes tipos y técnicas para modularizar mejorará la eficiencia y legibilidad de tus proyectos.
-
-En el próximo tema, exploraremos los **objetos** y cómo representan datos más complejos en JavaScript.
+In the next topic, we'll explore **objects** and how they represent more complex data in JavaScript.

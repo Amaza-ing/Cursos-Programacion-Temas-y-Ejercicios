@@ -1,21 +1,21 @@
-# **Ejercicios - Tema 5: Insertar, Actualizar y Eliminar Datos en MySQL**
+# **Exercises - Topic 5: Insert, Update and Delete Data in MySQL**
 
-A continuación, encontrarás 7 ejercicios prácticos para practicar la inserción, actualización y eliminación de datos con SQL.
+Below you will find 7 practical exercises to practice inserting, updating and deleting data with SQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Insertar un nuevo cliente**
+### **Exercise 1: Insert a new customer**
 
-Añade un cliente con los siguientes datos en la tabla `customers`:
+Add a customer with the following data to the `customers` table:
 
-- Nombre: Marcos
-- Apellido: Díaz
-- Fecha de registro: 2025-04-15
-- Suscripción al boletín: TRUE
+- Name: Marcos
+- Last name: Díaz
+- Registration date: 2025-04-15
+- Newsletter subscription: TRUE
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 INSERT INTO customers (first_name, last_name, signup_date, newsletter_subscribed)
@@ -26,14 +26,14 @@ VALUES ('Marcos', 'Díaz', '2025-04-15', TRUE);
 
 ---
 
-### **Ejercicio 2: Insertar múltiples clientes**
+### **Exercise 2: Insert multiple clients**
 
-Agrega los siguientes dos clientes:
+Add the following two clients:
 
 1. Julia Romero, 2025-04-16, FALSE
 2. Sergio López, 2025-04-17, TRUE
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 INSERT INTO customers (first_name, last_name, signup_date, newsletter_subscribed)
@@ -46,15 +46,15 @@ VALUES
 
 ---
 
-### **Ejercicio 3: Insertar un pedido vinculado**
+### **Exercise 3: Insert a linked order**
 
-Crea un pedido en la tabla `orders` para el `customer_id = 1` con:
+Create an order in the `orders` table for the `customer_id = 1` with:
 
 - `order_id`: 101
 - `total_amount`: 89.99
 - `created_at`: 2025-04-15 09:45:00
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 INSERT INTO orders (order_id, customer_id, total_amount, created_at)
@@ -65,11 +65,11 @@ VALUES (101, 1, 89.99, '2025-04-15 09:45:00');
 
 ---
 
-### **Ejercicio 4: Actualizar un registro existente**
+### **Exercise 4: Update an existing record**
 
-Cambia el estado de suscripción al boletín del cliente con `customer_id = 3` a `TRUE`.
+Change the client's newsletter subscription status with `customer_id = 3` to `TRUE`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 UPDATE customers
@@ -81,14 +81,14 @@ WHERE customer_id = 3;
 
 ---
 
-### **Ejercicio 5: Actualizar múltiples campos**
+### **Exercise 5: Update multiple fields**
 
-Actualiza el nombre y apellido del cliente con `customer_id = 2` a:
+Update the customer's first and last name with `customer_id = 2` to:
 
 - `first_name`: Carla
 - `last_name`: Navarro
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 UPDATE customers
@@ -100,11 +100,11 @@ WHERE customer_id = 2;
 
 ---
 
-### **Ejercicio 6: Eliminar un pedido**
+### **Exercise 6: Delete an order**
 
-Elimina el pedido con `order_id = 101`.
+Delete the order with `order_id = 101`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELETE FROM orders
@@ -115,11 +115,11 @@ WHERE order_id = 101;
 
 ---
 
-### **Ejercicio 7: Borrar todos los registros de prueba**
+### **Exercise 7: Delete all test records**
 
-Elimina todos los registros de la tabla `feedback` si existe.
+Delete all records from table `feedback` if it exists.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELETE FROM feedback;

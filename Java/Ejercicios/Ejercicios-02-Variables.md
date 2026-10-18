@@ -1,24 +1,24 @@
-# Ejercicios - Tema 2: Variables y tipos de datos (Java)
+# Exercises - Topic 2: Variables and data types (Java)
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre variables, tipos primitivos, `String`, constantes y buenas prácticas de nombrado.
+Below you will find **10 practical exercises** on variables, primitive types, `String`, constants and good naming practices.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Declaración e inicialización de variables básicas
+## Exercise 1: Declaration and initialization of basic variables
 
-Crea un programa con estas variables (elige tipos correctos):
+Create a program with these variables (choose correct types):
 
-- `userName` (nombre de usuario) con el valor `"Laura"`
-- `userAge` (edad) con el valor `28`
-- `heightMeters` (altura en metros) con el valor `1.67`
-- `hasDrivingLicense` con el valor `true`
-- `favoriteLetter` con el valor `'L'`
+- `userName` (username) with the value `"Laura"`
+- `userAge` (age) with the value `28`
+- `heightMeters` (height in meters) with the value `1.67`
+- `hasDrivingLicense` with the value `true`
+- `favoriteLetter` with the value `'L'`
 
-Imprime cada variable en una línea distinta.
+Print each variable on a separate line.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -42,18 +42,18 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Elegir el tipo correcto
+## Exercise 2: Choose the correct type
 
-Declara e inicializa variables con el tipo más adecuado:
+Declare and initialize variables with the most appropriate type:
 
-- `minutesInHour` con el valor `60`
-- `piApprox` con el valor `3.1416`
-- `isWeekend` con el valor `false`
-- `worldPopulation` con el valor `8_000_000_000`
+- `minutesInHour` with the value `60`
+- `piApprox` with the value `3.1416`
+- `isWeekend` with the value `false`
+- `worldPopulation` with the value `8_000_000_000`
 
-Imprime todas en consola.
+Print all in console.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -75,17 +75,17 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Modificar una variable paso a paso
+## Exercise 3: Modify a variable step by step
 
-Crea una variable `lives` con valor inicial `3`.
+Creates a variable `lives` with initial value `3`.
 
-- Resta 1 vida (debe quedar en 2)
-- Resta 1 vida (debe quedar en 1)
-- Suma 2 vidas (debe quedar en 3)
+- Subtract 1 life (must remain at 2)
+- Subtract 1 life (must remain at 1)
+- Add 2 lives (must remain at 3)
 
-Imprime el valor final de `lives`.
+Prints the final value of `lives`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -105,23 +105,23 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Concatenación con texto (evita resultados confusos)
+## Exercise 4: Concatenation with text (avoid confusing results)
 
-Crea estas variables:
+Create these variables:
 
-- `productName` con valor `"Keyboard"`
-- `unitPrice` con valor `29.99`
-- `quantity` con valor `2`
+- `productName` with value `"Keyboard"`
+- `unitPrice` with `29.99` value
+- `quantity` with value `2`
 
-Imprime una frase como esta (mismo formato, pero con tus variables):
+Print a sentence like this (same format, but with your variables):
 
 ```
 Product: Keyboard | Units: 2 | Total: 59.98
 ```
 
-Pista: calcula `total` antes de imprimir.
+Hint: calculate `total` before printing.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -141,9 +141,9 @@ public class Main {
 
 ---
 
-## Ejercicio 5: `char` vs `String` (corrige los tipos)
+## Exercise 5: `char` vs `String` (correct types)
 
-Este código tiene errores de tipo. Corrígelo para que compile y mantenga el mismo significado:
+This code has type errors. Fix it so it compiles and keeps the same meaning:
 
 ```java
 public class Main {
@@ -157,7 +157,7 @@ public class Main {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -175,21 +175,21 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Constantes con `final`
+## Exercise 6: Constants with `final`
 
-Crea un programa que defina:
+Create a program that defines:
 
-- Una constante `MAX_ATTEMPTS` con valor `5`
-- Una variable `attempts` con valor inicial `0`
+- A constant `MAX_ATTEMPTS` with value `5`
+- A variable `attempts` with initial value `0`
 
-Imprime:
+Print:
 
 - `MAX_ATTEMPTS`
 - `attempts`
 
-Después, incrementa `attempts` a `1` e imprime de nuevo `attempts`.
+Then, increment `attempts` to `1` and print `attempts` again.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -210,9 +210,9 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Nombres de variables (refactor para buenas prácticas)
+## Exercise 7: Variable names (refactor for good practices)
 
-Reescribe este código para que los nombres sean más claros usando **camelCase** y significado real:
+Rewrite this code to make the names clearer using **camelCase** and actual meaning:
 
 ```java
 public class Main {
@@ -228,9 +228,9 @@ public class Main {
 }
 ```
 
-Mantén los valores, pero cambia los nombres por otros más descriptivos.
+Keep the values, but change the names to more descriptive ones.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -250,13 +250,12 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Separadores numéricos para legibilidad
+## Exercise 8: Numeric separators for readability
+Declare a variable `annualBudget` with value `2500000` but written using underscores to make it more readable.
 
-Declara una variable `annualBudget` con valor `2500000` pero escrita usando guiones bajos para que sea más legible.
+Print the value to the console.
 
-Imprime el valor por consola.
-
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -272,9 +271,9 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Variable local sin inicializar (detecta y corrige el error)
+## Exercise 9: Uninitialized local variable (detect and correct the error)
 
-Este programa no compila. Corrígelo **sin cambiar el tipo** de la variable:
+This program does not compile. Fix it **without changing the type** of the variable:
 
 ```java
 public class Main {
@@ -285,9 +284,9 @@ public class Main {
 }
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-En Java, una variable local debe inicializarse antes de usarse:
+In Java, a local variable must be initialized before being used:
 
 ```java
 public class Main {
@@ -302,23 +301,23 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Crear un “perfil” con tipos variados (sin copiar el ejemplo del tema)
+## Exercise 10: Create a “profile” with varied types (without copying the topic example)
 
-Declara variables para representar un perfil sencillo:
+Declare variables to represent a simple profile:
 
-- `nickName` (texto)
-- `level` (entero)
+- `nickName` (text)
+- `level` (integer)
 - `accuracyRate` (decimal)
 - `isOnline` (boolean)
 - `rankLetter` (char)
 
-Asigna valores inventados y muestra una salida como esta (mismo estilo, con tus datos):
+Assign made-up values and show output like this (same style, with your data):
 
 ```
 Nick: Neo | Level: 12 | Accuracy: 0.83 | Online: true | Rank: S
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {

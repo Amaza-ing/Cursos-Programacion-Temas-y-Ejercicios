@@ -1,21 +1,22 @@
-# Ejercicios - Tema 05: Prompting para programadores
+# Exercises - Topic 05: Prompting for programmers
 
-A continuación, encontrarás ejercicios prácticos para aprender a escribir prompts claros, completos y útiles en tareas de programación.
+Below, you will find practical exercises to learn to write clear, complete and useful prompts in programming tasks.
 
-## Ejercicio 1: Mejorar un prompt demasiado general
+## Exercise 1: Improve a too general prompt
 
-Mejora el siguiente prompt para que Copilot pueda generar una respuesta más precisa:
+Improve the following prompt so that Copilot can generate a more accurate response:
 
 ```text
 Haz una función para usuarios.
 ```
 
-El nuevo prompt debe indicar lenguaje, objetivo, datos de entrada, salida esperada y alguna restricción.
+
+The new prompt must indicate language, objective, input data, expected output and any restrictions.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt mejorado podría ser:
+An improved prompt could be:
 
 ```text
 Crea una función en JavaScript llamada getActiveUsers que reciba un array de usuarios.
@@ -25,27 +26,28 @@ No debe modificar el array original.
 Incluye un ejemplo de uso al final.
 ```
 
-Este prompt es mejor porque indica:
 
-1. El lenguaje de programación.
-2. El nombre de la función.
-3. La estructura de los datos de entrada.
-4. La salida esperada.
-5. Una restricción importante: no modificar el array original.
-6. El formato adicional deseado: incluir un ejemplo de uso.
+This prompt is better because it indicates:
+
+1. The programming language.
+2. The name of the function.
+3. The structure of the input data.
+4. The expected output.
+5. An important restriction: do not modify the original array.
+6. Additional format desired: include an example of use.
 
 </details>
 
-## Ejercicio 2: Crear un prompt para documentar código
+## Exercise 2: Create a prompt to document code
 
-Imagina que tienes una función que calcula descuentos en una tienda online. Escribe un prompt para pedir a Copilot que documente la función con comentarios JSDoc.
+Imagine that you have a function that calculates discounts in an online store. Write a prompt to ask Copilot to document the function with JSDoc comments.
 
-El prompt debe pedir que la documentación sea clara, breve y útil para otros desarrolladores.
+The prompt should ask that the documentation be clear, brief, and useful to other developers.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado podría ser:
+A suitable prompt could be:
 
 ```text
 Documenta esta función usando JSDoc.
@@ -54,7 +56,8 @@ No cambies el código de la función.
 Usa un lenguaje claro para que otros desarrolladores puedan entenderla rápidamente.
 ```
 
-Si se quiere ser más específico, también se podría escribir:
+
+If you want to be more specific, you could also write:
 
 ```text
 Añade documentación JSDoc a la función calculateDiscount.
@@ -63,13 +66,14 @@ Indica que devuelve el precio final después de aplicar el descuento.
 No modifiques la lógica interna de la función.
 ```
 
-La clave está en separar claramente la tarea de documentación de la tarea de modificación del código.
+
+The key is to clearly separate the documentation task from the code modification task.
 
 </details>
 
-## Ejercicio 3: Pedir una refactorización sin cambiar el comportamiento
+## Exercise 3: Request a refactoring without changing the behavior
 
-Tienes este código:
+You have this code:
 
 ```javascript
 function getFinalPrice(price, discount, tax) {
@@ -81,12 +85,13 @@ function getFinalPrice(price, discount, tax) {
 }
 ```
 
-Escribe un prompt para pedir a Copilot que lo refactorice sin cambiar su comportamiento.
+
+Write a prompt to ask Copilot to refactor it without changing its behavior.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un buen prompt podría ser:
+A good prompt could be:
 
 ```text
 Refactoriza esta función para mejorar la legibilidad, pero sin cambiar su comportamiento.
@@ -96,7 +101,8 @@ No añadas dependencias externas.
 Después de refactorizar, explica brevemente qué cambios has hecho.
 ```
 
-Una posible solución refactorizada sería:
+
+A possible refactored solution would be:
 
 ```javascript
 function getFinalPrice(price, discount, tax) {
@@ -108,20 +114,21 @@ function getFinalPrice(price, discount, tax) {
 }
 ```
 
-El comportamiento se mantiene, pero los nombres de las variables son más claros y el código es más fácil de leer.
+
+The behavior is maintained, but the variable names are clearer and the code is easier to read.
 
 </details>
 
-## Ejercicio 4: Diseñar un prompt para generar tests
+## Exercise 4: Design a prompt to generate tests
 
-Crea un prompt para pedir a Copilot que genere tests unitarios para una función llamada `validatePassword`.
+Create a prompt to ask Copilot to generate unit tests for a function called `validatePassword`.
 
-La función recibe un string y debe devolver `true` si la contraseña tiene al menos 8 caracteres, una mayúscula, una minúscula y un número. En caso contrario, devuelve `false`.
+The function receives a string and should return `true` if the password has at least 8 characters, an uppercase letter, a lowercase letter, and a number. Otherwise, `false` is returned.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado podría ser:
+A suitable prompt could be:
 
 ```text
 Genera tests unitarios con Jest para una función llamada validatePassword.
@@ -131,7 +138,8 @@ Incluye casos válidos, casos inválidos y casos límite.
 No implementes la función, solo genera los tests.
 ```
 
-Una posible estructura de tests sería:
+
+A possible test structure would be:
 
 ```javascript
 describe("validatePassword", () => {
@@ -157,33 +165,35 @@ describe("validatePassword", () => {
 });
 ```
 
-El prompt es correcto porque indica herramienta de testing, comportamiento esperado y tipos de casos que deben incluirse.
+
+The prompt is correct because it indicates the testing tool, expected behavior, and types of cases that should be included.
 
 </details>
 
-## Ejercicio 5: Detectar problemas en un prompt incompleto
+## Exercise 5: Detect problems in an incomplete prompt
 
-Analiza el siguiente prompt y explica por qué puede producir una respuesta poco útil:
+Analyze the following prompt and explain why it may produce an unhelpful response:
 
 ```text
 Arregla este código.
 ```
 
-Después, escribe una versión mejorada.
+
+Then write an improved version.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-El prompt es poco útil porque no indica:
+The prompt is not very useful because it does not indicate:
 
-1. Qué error se está produciendo.
-2. Qué comportamiento se espera.
-3. En qué lenguaje o framework se está trabajando.
-4. Qué parte del código debe revisarse.
-5. Si se puede modificar toda la función o solo una parte.
-6. Si se necesita explicación, corrección o ambas cosas.
+1. What error is occurring.
+2. What behavior is expected.
+3. What language or framework are you working on.
+4. Which part of the code needs to be reviewed.
+5. Whether the entire function can be modified or just a part.
+6. Whether explanation, correction, or both are needed.
 
-Una versión mejorada podría ser:
+An improved version could be:
 
 ```text
 Revisa este código JavaScript y detecta por qué la función devuelve NaN cuando el array está vacío.
@@ -191,20 +201,21 @@ Propón una corrección mínima sin cambiar la firma de la función.
 Después, explica brevemente cuál era el problema y por qué la solución lo corrige.
 ```
 
-Esta versión ayuda mucho más porque da contexto, describe el problema y limita el tipo de cambio esperado.
+
+This version helps a lot more because it gives context, describes the problem, and limits the type of change expected.
 
 </details>
 
-## Ejercicio 6: Crear un prompt con restricciones de estilo
+## Exercise 6: Create a prompt with style restrictions
 
-Escribe un prompt para pedir a Copilot que cree un componente de React llamado `ProductCard`.
+Write a prompt to ask Copilot to create a React component called `ProductCard`.
 
-El componente debe recibir `name`, `price` y `imageUrl` como props. Debe mostrar la información del producto y no debe incluir lógica de compra ni conexión con APIs.
+The component must receive `name`, `price` and `imageUrl` as props. It should show product information and should not include purchasing logic or connection to APIs.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado podría ser:
+A suitable prompt could be:
 
 ```text
 Crea un componente de React llamado ProductCard.
@@ -216,7 +227,8 @@ Mantén el componente sencillo y fácil de reutilizar.
 Incluye también un ejemplo básico de uso.
 ```
 
-Una posible respuesta de Copilot sería:
+
+A possible response from Copilot would be:
 
 ```jsx
 function ProductCard({ name, price, imageUrl }) {
@@ -232,28 +244,30 @@ function ProductCard({ name, price, imageUrl }) {
 export default ProductCard;
 ```
 
-Ejemplo de uso:
+
+Example of use:
 
 ```jsx
 <ProductCard name="Laptop" price={899} imageUrl="/images/laptop.jpg" />
 ```
 
-El prompt incluye objetivo, props, restricciones y formato esperado.
+
+The prompt includes objective, props, restrictions and expected format.
 
 </details>
 
-## Ejercicio 7: Convertir una petición funcional en un prompt técnico
+## Exercise 7: Convert a functional request into a technical prompt
 
-Transforma esta petición en un prompt técnico adecuado para Copilot:
+Transform this request into a technical prompt suitable for Copilot:
 
-“Necesito que los productos baratos aparezcan antes que los caros”.
+“I need the cheap products to appear before the expensive ones.”
 
-El prompt debe estar pensado para JavaScript y debe pedir una función reutilizable.
+The prompt must be designed for JavaScript and must ask for a reusable function.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt técnico adecuado podría ser:
+A suitable technical prompt could be:
 
 ```text
 Crea una función en JavaScript llamada sortProductsByPrice.
@@ -264,7 +278,8 @@ No debe modificar el array original.
 Incluye un ejemplo de uso con tres productos.
 ```
 
-Una posible implementación sería:
+
+A possible implementation would be:
 
 ```javascript
 function sortProductsByPrice(products) {
@@ -272,7 +287,8 @@ function sortProductsByPrice(products) {
 }
 ```
 
-Ejemplo de uso:
+
+Example of use:
 
 ```javascript
 const products = [
@@ -284,6 +300,7 @@ const products = [
 console.log(sortProductsByPrice(products));
 ```
 
-La petición original era funcional, pero el prompt técnico indica lenguaje, nombre de función, estructura de datos, criterio de ordenación y restricción sobre no modificar el array original.
+
+The original request was functional, but the technical prompt indicates language, function name, data structure, sort order and restriction on not modifying the original array.
 
 </details>

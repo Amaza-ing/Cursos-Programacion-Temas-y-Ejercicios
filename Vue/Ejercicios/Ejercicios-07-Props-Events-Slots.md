@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 7: Comunicación entre Componentes - Props, Component Events y Slots**
+# **Exercises - Topic 7: Communication between Components - Props, Component Events and Slots**
 
-A continuación, encontrarás 7 ejercicios prácticos sobre comunicación entre componentes en Vue.
+Below you will find 7 practical exercises on communication between components in Vue.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Componente hijo con prop de título**
+## **Exercise 1: Child component with title prop**
 
-Crea un componente `TitleCard.vue` que reciba una prop `title` y la muestre como un encabezado.
+Create an `TitleCard.vue` component that receives an `title` prop and displays it as a header.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -34,11 +34,11 @@ h3 {
 
 ---
 
-## **Ejercicio 2: Enviar evento desde el hijo al padre**
+## **Exercise 2: Send event from child to parent**
 
-Crea un componente `AlertButton.vue` que emita un evento llamado `alertClicked` cuando se presione el botón.
+Create an `AlertButton.vue` component that emits an event called `alertClicked` when the button is pressed.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -66,11 +66,11 @@ button {
 
 ---
 
-## **Ejercicio 3: Componente padre mostrando el evento recibido**
+## **Exercise 3: Parent component showing the received event**
 
-Crea un componente `AlertContainer.vue` que escuche el evento `alertClicked` de un componente hijo y muestre un mensaje.
+Create an `AlertContainer.vue` component that listens to the `alertClicked` event of a child component and displays a message.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -102,11 +102,11 @@ p {
 
 ---
 
-## **Ejercicio 4: Componente hijo con contenido personalizado en slot**
+## **Exercise 4: Child component with custom content in slot**
 
-Crea un componente `CardContainer.vue` que envuelva un slot genérico.
+Create an `CardContainer.vue` component that wraps a generic slot.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <template>
@@ -128,11 +128,11 @@ Crea un componente `CardContainer.vue` que envuelva un slot genérico.
 
 ---
 
-## **Ejercicio 5: Usar un slot con nombre para un footer**
+## **Exercise 5: Using a named slot for a footer**
 
-Crea un componente `CustomCard.vue` que tenga un slot con nombre `footer`.
+Create a component `CustomCard.vue` that has a slot named `footer`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <template>
@@ -156,7 +156,7 @@ footer {
 </style>
 ```
 
-Uso:
+Usage:
 
 ```vue
 <CustomCard>
@@ -171,11 +171,11 @@ Uso:
 
 ---
 
-## **Ejercicio 6: Componente hijo que recibe dos props y las muestra**
+## **Exercise 6: Child component that receives two props and displays them**
 
-Crea un componente `ProfileCard.vue` que reciba `name` y `age` como props y las muestre.
+Create an `ProfileCard.vue` component that receives `name` and `age` as props and displays them.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>
@@ -203,11 +203,11 @@ p {
 
 ---
 
-## **Ejercicio 7: Componente hijo que emite un evento con datos**
+## **Exercise 7: Child component that emits an event with data**
 
-Crea un componente `CounterButton.vue` que tenga un contador interno y emita el valor actualizado cada vez que se presiona el botón.
+Create an `CounterButton.vue` component that has an internal counter and outputs the updated value each time the button is pressed.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```vue
 <script setup>

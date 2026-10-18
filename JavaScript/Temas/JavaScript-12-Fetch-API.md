@@ -1,18 +1,18 @@
-# **Tema 12: Peticiones a una API con `fetch()` en JavaScript**
+# **Topic 12: Requests to an API with `fetch()` in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-JavaScript permite realizar peticiones HTTP a servidores y APIs externas utilizando la función `fetch()`. Este método nos permite obtener datos de manera asincrónica y trabajar con ellos en nuestro código.
+JavaScript allows you to make HTTP requests to servers and external APIs using the `fetch()` function. This method allows us to obtain data asynchronously and work with it in our code.
 
 ---
 
-## **2. ¿Qué es `fetch()`?**
+## **2. What is `fetch()`?**
 
-`fetch()` es una función integrada en JavaScript que permite hacer peticiones HTTP de manera sencilla y devuelve una **promesa** que se resuelve con la respuesta del servidor.
+`fetch()` is a function built into JavaScript that allows you to easily make HTTP requests and returns a **promise** that is resolved with the server's response.
 
-Para poder obtener los datos que necesitamos de esta respuesta debemos transformarla a su vez con la función `.json()` que devolverá otra promesa, así que típicamente una petición a una API usando `fetch()` se verá así:
+In order to obtain the data we need from this response we must transform it with the `.json()` function that will return another promise, so typically a request to an API using `fetch()` will look like this:
 
-### **Sintaxis básica**
+### **Basic syntax**
 
 ```js
 fetch(url)
@@ -21,7 +21,7 @@ fetch(url)
   .catch((error) => console.error("Error en la petición", error));
 ```
 
-### **Ejemplo de una petición a una API pública**
+### **Example of a request to a public API**
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/users/1")
@@ -36,9 +36,9 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 
 ---
 
-## **3. Realizar una petición GET con `async/await`**
+## **3. Make a GET request with `async/await`**
 
-También podemos usar `async/await` para hacer el código más limpio y estructurado.
+We can also use `async/await` to make the code cleaner and more structured.
 
 ```js
 async function fetchPost() {
@@ -58,9 +58,9 @@ fetchPost();
 
 ---
 
-## **4. Enviar datos con una petición POST**
+## **4. Send data with a POST request**
 
-Para enviar datos a una API, podemos hacer una petición POST y agregar un cuerpo (`body`) en formato JSON.
+To send data to an API, we can make a POST request and add a body (`body`) in JSON format.
 
 ```js
 async function createUser() {
@@ -87,11 +87,11 @@ createUser();
 
 ---
 
-## **5. Otras peticiones HTTP (`PUT`, `PATCH`, `DELETE`)**
+## **5. Other HTTP requests (`PUT`, `PATCH`, `DELETE`)**
 
-### **5.1. Actualizar un post con `PUT`**
+### **5.1. Update a post with `PUT`**
 
-`PUT` reemplaza completamente un recurso existente.
+`PUT` completely replaces an existing resource.
 
 ```js
 async function updateUser() {
@@ -119,9 +119,9 @@ async function updateUser() {
 updateUser();
 ```
 
-### **5.2. Actualizar parcialmente con `PATCH`**
+### **5.2. Partially update with `PATCH`**
 
-`PATCH` permite modificar solo algunas propiedades de un recurso sin reemplazarlo por completo.
+`PATCH` allows you to modify only some properties of a resource without replacing it completely.
 
 ```js
 async function patchUser() {
@@ -148,7 +148,7 @@ async function patchUser() {
 patchUser();
 ```
 
-### **5.3. Eliminar un recurso con `DELETE`**
+### **5.3. Delete a resource with `DELETE`**
 
 ```js
 async function deleteUser() {
@@ -172,9 +172,9 @@ deleteUser();
 
 ---
 
-## **6. Manejo de Errores en `fetch()`**
+## **6. Error Handling in `fetch()`**
 
-El método `fetch()` **no lanza un error automáticamente** si la respuesta del servidor es un código de error (como 404 o 500). Es necesario manejar esto manualmente.
+The `fetch()` method **does not automatically raise an error** if the server response is an error code (such as 404 or 500). You need to handle this manually.
 
 ```js
 async function fetchWithErrorHandling() {
@@ -197,11 +197,11 @@ fetchWithErrorHandling();
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-- `fetch()` es la forma estándar de realizar peticiones HTTP en JavaScript.
-- Se pueden hacer peticiones `GET`, `POST`, `PUT`, `PATCH` y `DELETE`.
-- `async/await` permite escribir código más claro y manejable.
-- Es importante manejar errores correctamente para evitar fallos inesperados.
+- `fetch()` is the standard way to make HTTP requests in JavaScript.
+- `GET`, `POST`, `PUT`, `PATCH` and `DELETE` requests can be made.
+- `async/await` allows you to write clearer and more manageable code.
+- It is important to handle errors correctly to avoid unexpected failures.
 
-En el próximo tema, exploraremos cómo seleccionar, manipular y crear elementos en el DOM para tener páginas web dinámicas.
+In the next topic, we will explore how to select, manipulate and create elements in the DOM to have dynamic web pages.

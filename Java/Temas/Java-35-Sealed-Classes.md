@@ -1,60 +1,60 @@
-# Tema 35. Sealed Classes
+# Topic 35. Sealed Classes
 
-## 1. Introducción
+## 1. Introduction
 
-En temas anteriores has aprendido conceptos importantes de Programación Orientada a Objetos:
+In previous topics you have learned important concepts of Object-Oriented Programming:
 
-- herencia
-- clases abstractas
+- inheritance
+- abstract classes
 - interfaces
 - records
-- polimorfismo
+- polymorphism
 
-Ahora vamos a estudiar una herramienta moderna de Java que permite controlar mejor las jerarquías de clases:
+Now we are going to study a modern Java tool that allows us to better control class hierarchies:
 
 - **sealed classes**
 - **sealed interfaces**
 
-Una clase sellada permite indicar explícitamente qué clases pueden heredar de ella.
+A sealed class allows you to explicitly indicate which classes can inherit from it.
 
-Esto es muy útil cuando quieres diseñar una jerarquía cerrada y controlada.
+This is very useful when you want to design a closed and controlled hierarchy.
 
-Ejemplos típicos:
+Typical examples:
 
-- tipos de resultado: éxito o error
-- tipos de pago: tarjeta, PayPal o transferencia
-- figuras geométricas: círculo, rectángulo o triángulo
-- estados de una operación
-- respuestas posibles de una API
-- tipos de eventos
+- result types: success or error
+- payment types: card, PayPal or transfer
+- geometric figures: circle, rectangle or triangle
+- states of an operation
+- possible responses from an API
+- types of events
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es una clase sellada
-- Qué problema resuelve
-- Cómo usar `sealed`
-- Para qué sirve `permits`
-- Qué significan `final`, `sealed` y `non-sealed`
-- Cómo usar sealed classes con herencia
-- Cómo usar sealed interfaces
-- Cómo combinar sealed interfaces con records
-- Cuándo usar sealed classes y cuándo no
-- Errores típicos y buenas prácticas
+- What is a sealed class
+- What problem does it solve?
+- How to use `sealed`
+- What is `permits` for?
+- What `final`, `sealed` and `non-sealed` mean
+- How to use sealed classes with inheritance
+- How to use sealed interfaces
+- How to combine sealed interfaces with records
+- When to use sealed classes and when not to
+- Typical errors and good practices
 
 ---
 
-## 2. El problema: jerarquías demasiado abiertas
+## 2. The problem: hierarchies that are too open
 
-Cuando creas una clase normal, otras clases pueden heredar de ella si no lo impides con `final`.
+When you create a normal class, other classes can inherit from it if you don't prevent it with `final`.
 
-Ejemplo:
+Example:
 
 ```java
 public class PaymentMethod {
 }
 ```
 
-Ahora cualquier clase podría hacer esto:
+Now any class could do this:
 
 ```java
 public class CardPayment extends PaymentMethod {
@@ -66,137 +66,137 @@ public class PaypalPayment extends PaymentMethod {
 }
 ```
 
-Pero también podría aparecer una clase inesperada:
+But an unexpected class could also appear:
 
 ```java
 public class StrangePayment extends PaymentMethod {
 }
 ```
 
-En algunos casos eso está bien.  
-Pero en otros quieres controlar exactamente qué subclases son válidas.
+In some cases that is fine.  
+But in others you want to control exactly which subclasses are valid.
 
-Ahí aparecen las sealed classes.
+The sealed classes appear there.
 
 ---
 
-## 3. Qué es una sealed class
+## 3. What is a sealed class
 
-Una **sealed class** es una clase que limita qué otras clases pueden heredar de ella.
+A **sealed class** is a class that limits what other classes can inherit from it.
 
-Se declara con la palabra clave:
+It is declared with the keyword:
 
 ```java
 sealed
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public sealed class PaymentMethod permits CardPayment, PaypalPayment {
 }
 ```
 
-Esto significa:
+This means:
 
-- `PaymentMethod` es una clase sellada
-- solo `CardPayment` y `PaypalPayment` pueden heredar de ella
+- `PaymentMethod` is a sealed class
+- only `CardPayment` and `PaypalPayment` can inherit from it
 
 ---
 
-## 4. Primer ejemplo básico
+## 4. First basic example
 
-### 4.1. Clase padre sellada
+### 4.1. Sealed parent class
 
 ```java
 public sealed class PaymentMethod permits CardPayment, PaypalPayment {
 }
 ```
 
-### 4.2. Subclase permitida
+### 4.2. Allowed subclass
 
 ```java
 public final class CardPayment extends PaymentMethod {
 }
 ```
 
-### 4.3. Otra subclase permitida
+### 4.3. Other allowed subclass
 
 ```java
 public final class PaypalPayment extends PaymentMethod {
 }
 ```
 
-### 4.4. Clase no permitida
+### 4.4. Class not allowed
 
-Esto no compila:
+This doesn't compile:
 
 ```java
 // public final class CashPayment extends PaymentMethod {
 // }
 ```
 
-¿Por qué?
+Why?
 
-Porque `CashPayment` no aparece en la lista de `permits`.
+Because `CashPayment` does not appear in the list of `permits`.
 
 ---
 
-## 5. Para qué sirve `permits`
+## 5. What `permits` is for
 
-La palabra clave `permits` indica qué clases tienen permiso para heredar.
+The `permits` keyword indicates which classes are allowed to inherit.
 
 ```java
 public sealed class Shape permits Circle, Rectangle, Triangle {
 }
 ```
 
-Aquí solo pueden heredar directamente de `Shape`:
+Here they can only inherit directly from `Shape`:
 
 - `Circle`
 - `Rectangle`
 - `Triangle`
 
-Ninguna otra clase puede extender `Shape`.
+No other class can extend `Shape`.
 
 ---
 
-## 6. Las subclases deben declarar su intención
+## 6. Subclasses must declare their intent
 
-Cuando una clase hereda de una clase sellada, debe indicar una de estas tres opciones:
+When a class inherits from a sealed class, it must indicate one of three options:
 
 - `final`
 - `sealed`
 - `non-sealed`
 
-Ejemplo:
+Example:
 
 ```java
 public final class Circle extends Shape {
 }
 ```
 
-Esto es obligatorio.
+This is mandatory.
 
-Java quiere que cada subclase diga claramente si la jerarquía termina ahí o continúa.
+Java wants each subclass to clearly say whether the hierarchy ends there or continues.
 
 ---
 
-## 7. Opción 1: `final`
+## 7. Option 1: `final`
 
-Una subclase `final` no permite más herencia.
+An `final` subclass does not allow further inheritance.
 
 ```java
 public final class Circle extends Shape {
 }
 ```
 
-Esto significa:
+This means:
 
-- `Circle` hereda de `Shape`
-- nadie puede heredar de `Circle`
+- `Circle` inherits from `Shape`
+- no one can inherit from `Circle`
 
-Ejemplo inválido:
+Invalid example:
 
 ```java
 // public class SmallCircle extends Circle {
@@ -205,63 +205,62 @@ Ejemplo inválido:
 
 ---
 
-## 8. Opción 2: `sealed`
-
-Una subclase también puede ser sellada.
+## 8. Option 2: `sealed`
+A subclass can also be sealed.
 
 ```java
 public sealed class Rectangle extends Shape permits Square {
 }
 ```
 
-Esto significa:
+This means:
 
-- `Rectangle` hereda de `Shape`
-- `Rectangle` permite que herede de ella solo `Square`
+- `Rectangle` inherits from `Shape`
+- `Rectangle` allows only `Square` to inherit from it
 
-Subclase:
+Subclass:
 
 ```java
 public final class Square extends Rectangle {
 }
 ```
 
-La jerarquía sigue controlada.
+The hierarchy remains controlled.
 
 ---
 
-## 9. Opción 3: `non-sealed`
+## 9. Option 3: `non-sealed`
 
-Una subclase `non-sealed` vuelve a abrir la herencia.
+A subclass `non-sealed` reopens inheritance.
 
 ```java
 public non-sealed class Triangle extends Shape {
 }
 ```
 
-Esto significa:
+This means:
 
-- `Triangle` puede heredar de `Shape`
-- pero otras clases sí pueden heredar de `Triangle`
+- `Triangle` can inherit from `Shape`
+- but other classes can inherit from `Triangle`
 
-Ejemplo:
+Example:
 
 ```java
 public class RightTriangle extends Triangle {
 }
 ```
 
-`non-sealed` rompe la restricción a partir de esa clase.
+`non-sealed` breaks the restriction starting from that class.
 
 ---
 
-## 10. Resumen de `final`, `sealed` y `non-sealed`
+## 10. Summary of `final`, `sealed` and `non-sealed`
 
-Cuando una clase hereda de una sealed class, debe elegir:
+When a class inherits from a sealed class, you must choose:
 
 ### 10.1. `final`
 
-La herencia termina.
+The inheritance ends.
 
 ```java
 public final class Circle extends Shape {
@@ -270,7 +269,7 @@ public final class Circle extends Shape {
 
 ### 10.2. `sealed`
 
-La herencia continúa, pero sigue controlada.
+The inheritance continues, but it remains controlled.
 
 ```java
 public sealed class Rectangle extends Shape permits Square {
@@ -279,7 +278,7 @@ public sealed class Rectangle extends Shape permits Square {
 
 ### 10.3. `non-sealed`
 
-La herencia se vuelve a abrir.
+The inheritance is reopened.
 
 ```java
 public non-sealed class Triangle extends Shape {
@@ -288,7 +287,7 @@ public non-sealed class Triangle extends Shape {
 
 ---
 
-## 11. Ejemplo completo: figuras geométricas
+## 11. Complete example: geometric figures
 
 ### 11.1. `Shape.java`
 
@@ -362,20 +361,20 @@ public class Main {
 }
 ```
 
-Aquí `Shape` es una clase abstracta y sellada.
+Here `Shape` is an abstract and sealed class.
 
-Eso significa:
+That means:
 
-- no se puede instanciar directamente
-- solo pueden heredar las clases permitidas
+- cannot be instantiated directly
+- only allowed classes can inherit
 
 ---
 
-## 12. Sealed class abstracta
+## 12. Sealed abstract class
 
-Una sealed class puede ser abstracta.
+A sealed class can be abstract.
 
-Esto es muy habitual.
+This is very common.
 
 ```java
 public sealed abstract class Animal permits Dog, Cat {
@@ -393,7 +392,7 @@ public sealed abstract class Animal permits Dog, Cat {
 }
 ```
 
-Subclases:
+Subclasses:
 
 ```java
 public final class Dog extends Animal {
@@ -425,28 +424,28 @@ public final class Cat extends Animal {
 
 ## 13. Sealed interfaces
 
-No solo las clases pueden ser selladas.  
-También puedes crear interfaces selladas.
+Not only classes can be sealed.  
+You can also create sealed interfaces.
 
-Ejemplo:
+Example:
 
 ```java
 public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
 }
 ```
 
-Esto significa que solo las clases o records permitidos pueden implementar esa interfaz.
+This means that only allowed classes or records can implement that interface.
 
 ---
 
-## 14. Sealed interfaces con records
+## 14. Sealed interfaces with records
 
-Una combinación muy moderna y útil es:
+A very modern and useful combination is:
 
 - sealed interface
 - records
 
-Ejemplo:
+Example:
 
 ```java
 public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
@@ -463,24 +462,24 @@ public record PaymentError(String message) implements PaymentResult {
 }
 ```
 
-Aquí tenemos dos posibles resultados:
+Here we have two possible results:
 
-- pago exitoso
-- pago con error
+- successful payment
+- payment with error
 
-Y la jerarquía está cerrada.
+And the hierarchy is closed.
 
 ---
 
-## 15. Por qué records encajan bien con sealed interfaces
+## 15. Why records fit well with sealed interfaces
 
-Los records son inmutables y representan datos.
+Records are immutable and represent data.
 
-Las sealed interfaces permiten cerrar una familia de tipos.
+Sealed interfaces allow you to close a type family.
 
-Juntos son muy útiles para representar resultados posibles.
+Together they are very useful in representing possible outcomes.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```text
 PaymentResult
@@ -488,11 +487,11 @@ PaymentResult
     PaymentError
 ```
 
-El resultado de un pago solo puede ser uno de esos tipos.
+The result of a payment can only be one of those types.
 
 ---
 
-## 16. Ejemplo completo: resultado de pago
+## 16. Complete example: payment result
 
 ### 16.1. `PaymentResult.java`
 
@@ -543,13 +542,13 @@ public class Main {
 }
 ```
 
-Este diseño es más expresivo que devolver `null`, `boolean` o un texto suelto.
+This layout is more expressive than returning `null`, `boolean`, or single text.
 
 ---
 
-## 17. Trabajar con `instanceof`
+## 17. Working with `instanceof`
 
-Como `PaymentResult` puede ser varios tipos, puedes usar `instanceof` para distinguirlos.
+Since `PaymentResult` can be multiple types, you can use `instanceof` to distinguish them.
 
 ```java
 public class Main {
@@ -565,7 +564,7 @@ public class Main {
 }
 ```
 
-Aquí usamos pattern matching con `instanceof`, que permite declarar la variable directamente:
+Here we use pattern matching with `instanceof`, which allows you to declare the variable directly:
 
 ```java
 result instanceof PaymentSuccess success
@@ -573,11 +572,11 @@ result instanceof PaymentSuccess success
 
 ---
 
-## 18. Sealed classes y `switch`
+## 18. Sealed classes and `switch`
 
-Las sealed classes encajan muy bien con `switch`, porque Java puede conocer todos los tipos posibles de una jerarquía cerrada.
+Sealed classes fit very well with `switch`, because Java can know all possible types of a closed hierarchy.
 
-Ejemplo:
+Example:
 
 ```java
 public static String getMessage(PaymentResult result) {
@@ -588,11 +587,11 @@ public static String getMessage(PaymentResult result) {
 }
 ```
 
-Como `PaymentResult` es sellada y solo permite dos tipos, el `switch` puede cubrir todos los casos.
+As `PaymentResult` is sealed and only allows two types, the `switch` can cover all cases.
 
 ---
 
-## 19. Ejemplo completo con `switch`
+## 19. Complete example with `switch`
 
 ```java
 public class Main {
@@ -609,20 +608,20 @@ public class Main {
 }
 ```
 
-Este estilo es muy expresivo para jerarquías cerradas.
+This style is very expressive for closed hierarchies.
 
 ---
 
-## 20. Ejemplo: estados de una tarea
+## 20. Example: statuses of a task
 
-Imagina que una tarea puede estar en uno de varios estados:
+Imagine that a task can be in one of several states:
 
-- pendiente
-- en progreso
-- completada
-- cancelada
+- slope
+- in progress
+- completed
+- canceled
 
-Podemos modelarlo con una sealed interface.
+We can model it with a sealed interface.
 
 ### 20.1. `TaskStatus.java`
 
@@ -631,7 +630,7 @@ public sealed interface TaskStatus permits Pending, InProgress, Completed, Cance
 }
 ```
 
-### 20.2. Records de estado
+### 20.2. Status records
 
 ```java
 public record Pending() implements TaskStatus {
@@ -653,7 +652,7 @@ public record Cancelled(String reason) implements TaskStatus {
 }
 ```
 
-### 20.3. Uso
+### 20.3. Use
 
 ```java
 public class Main {
@@ -672,15 +671,15 @@ public class Main {
 }
 ```
 
-Este diseño permite que cada estado tenga sus propios datos.
+This design allows each state to have its own data.
 
 ---
 
-## 21. Diferencia entre enum y sealed classes
+## 21. Difference between enum and sealed classes
 
-A veces un `enum` también sirve para representar opciones cerradas.
+Sometimes an `enum` also serves to represent closed options.
 
-Ejemplo:
+Example:
 
 ```java
 public enum Status {
@@ -691,15 +690,15 @@ public enum Status {
 }
 ```
 
-Esto es sencillo y muy útil.
+This is simple and very useful.
 
-Pero un enum tiene una limitación:
+But an enum has a limitation:
 
-- cada constante no suele llevar una estructura de datos distinta de forma tan flexible
+- each constant does not usually carry a different data structure in such a flexible way
 
-Con sealed classes o sealed interfaces, cada caso puede tener sus propios datos.
+With sealed classes or sealed interfaces, each case can have its own data.
 
-Ejemplo:
+Example:
 
 ```java
 public record InProgress(String assignedTo) implements TaskStatus {
@@ -711,19 +710,19 @@ public record Cancelled(String reason) implements TaskStatus {
 }
 ```
 
-Cada estado puede tener información específica.
+Each state may have specific information.
 
 ---
 
-## 22. Cuándo usar enum
+## 22. When to use enum
 
-Usa `enum` cuando:
+Use `enum` when:
 
-- tienes un conjunto fijo de constantes simples
-- los casos no necesitan datos distintos
-- quieres algo directo y fácil de leer
+- you have a fixed set of simple constants
+- cases do not need different data
+- you want something direct and easy to read
 
-Ejemplo:
+Example:
 
 ```java
 public enum UserRole {
@@ -735,17 +734,17 @@ public enum UserRole {
 
 ---
 
-## 23. Cuándo usar sealed classes
+## 23. When to use sealed classes
 
-Usa sealed classes o sealed interfaces cuando:
+Use sealed classes or sealed interfaces when:
 
-- tienes un conjunto cerrado de tipos
-- cada tipo puede tener datos diferentes
-- quieres aprovechar polimorfismo
-- quieres controlar la jerarquía
-- quieres modelar resultados o estados complejos
+- you have a closed set of types
+- each type can have different data
+- you want to take advantage of polymorphism
+- you want to control the hierarchy
+- you want to model complex results or states
 
-Ejemplo:
+Example:
 
 ```java
 public sealed interface LoginResult permits LoginSuccess, LoginError {
@@ -764,7 +763,7 @@ public record LoginError(String message) implements LoginResult {
 
 ---
 
-## 24. Ejemplo completo: resultado de login
+## 24. Complete example: login result
 
 ### 24.1. `LoginResult.java`
 
@@ -830,9 +829,9 @@ public class Main {
 
 ---
 
-## 25. Ejemplo con clase sellada y subclase `non-sealed`
+## 25. Example with sealed class and subclass `non-sealed`
 
-A veces quieres controlar una parte de la jerarquía, pero dejar abierta una rama.
+Sometimes you want to control a part of the hierarchy, but leave a branch open.
 
 ```java
 public sealed class Notification permits EmailNotification, CustomNotification {
@@ -849,20 +848,20 @@ public non-sealed class CustomNotification extends Notification {
 }
 ```
 
-Ahora esto sí es válido:
+Now this is valid:
 
 ```java
 public class SmsNotification extends CustomNotification {
 }
 ```
 
-Porque `CustomNotification` es `non-sealed`.
+Because `CustomNotification` is `non-sealed`.
 
 ---
 
-## 26. Ejemplo con subclase sellada
+## 26. Example with sealed subclass
 
-También puedes crear una jerarquía por niveles.
+You can also create a hierarchy by levels.
 
 ```java
 public sealed class Vehicle permits Car, Motorcycle {
@@ -889,31 +888,31 @@ public final class Motorcycle extends Vehicle {
 }
 ```
 
-Aquí:
+Here:
 
-- `Vehicle` controla sus subclases directas
-- `Car` también controla sus propias subclases
-
----
-
-## 27. Reglas importantes
-
-Para trabajar con sealed classes, recuerda estas reglas:
-
-- una clase sellada usa `sealed`
-- debe indicar qué clases permite con `permits`
-- cada subclase directa debe ser `final`, `sealed` o `non-sealed`
-- una clase no permitida no puede heredar de la sellada
-- los records pueden implementar sealed interfaces
-- una sealed interface puede ser implementada por clases, records o enums permitidos
+- `Vehicle` controls its direct subclasses
+- `Car` also controls its own subclasses
 
 ---
 
-## 28. Organización de archivos
+## 27. Important rules
 
-Normalmente cada clase estará en su propio archivo.
+To work with sealed classes, remember these rules:
 
-Ejemplo:
+- a sealed class uses `sealed`
+- you must indicate which classes you allow with `permits`
+- each direct subclass must be `final`, `sealed` or `non-sealed`
+- a disallowed class cannot inherit from the sealed one
+- records can implement sealed interfaces
+- a sealed interface can be implemented by allowed classes, records or enums
+
+---
+
+## 28. File Organization
+
+Typically each class will be in its own file.
+
+Example:
 
 ```text
 PaymentResult.java
@@ -923,9 +922,9 @@ PaymentService.java
 Main.java
 ```
 
-Si usas packages, todas estas clases deberán estar correctamente organizadas e importadas.
+If you use packages, all these classes must be correctly organized and imported.
 
-Ejemplo:
+Example:
 
 ```java
 package com.amazaing.java25.payment;
@@ -933,11 +932,11 @@ package com.amazaing.java25.payment;
 
 ---
 
-## 29. Sealed classes y packages
+## 29. Sealed classes and packages
 
-Cuando trabajas sin módulos, las subclases permitidas suelen estar en el mismo paquete que la clase sellada.
+When you work without modules, the allowed subclasses are usually in the same package as the sealed class.
 
-Ejemplo:
+Example:
 
 ```java
 package com.amazaing.java25.payment;
@@ -960,25 +959,25 @@ public record PaymentError(String message) implements PaymentResult {
 }
 ```
 
-Para un curso inicial, lo importante es mantener la jerarquía clara y en el mismo paquete.
+For an initial course, the important thing is to keep the hierarchy clear and in the same package.
 
 ---
 
-## 30. Sealed classes y diseño de dominio
+## 30. Sealed classes and domain design
 
-Las sealed classes son muy útiles para modelar dominios donde conoces todos los casos posibles.
+Sealed classes are very useful for modeling domains where you know all the possible cases.
 
-Ejemplos:
+Examples:
 
-- resultado de pago
-- resultado de login
-- estados de una tarea
-- eventos de una aplicación
-- comandos de usuario
-- respuestas de validación
-- tipos de mensaje
+- payment result
+- login result
+- statuses of a task
+- events of an application
+- user commands
+- validation responses
+- message types
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```text
 ValidationResult
@@ -986,11 +985,11 @@ ValidationResult
     Invalid
 ```
 
-Esto comunica mucho mejor la intención del código.
+This communicates the intent of the code much better.
 
 ---
 
-## 31. Ejemplo completo: validación
+## 31. Complete example: validation
 
 ### 31.1. `ValidationResult.java`
 
@@ -1052,69 +1051,69 @@ public class Main {
 
 ---
 
-## 32. Ventajas de sealed classes
+## 32. Advantages of sealed classes
 
-Las principales ventajas son:
+The main advantages are:
 
-- controlas quién puede heredar
-- haces más claro el diseño
-- evitas subclases inesperadas
-- mejoras el uso de `switch`
-- modelas mejor resultados y estados
-- combinas muy bien con records
-- haces más explícita la intención del código
-
----
-
-## 33. Limitaciones de sealed classes
-
-También tienen limitaciones:
-
-- pueden añadir complejidad si se usan sin necesidad
-- requieren pensar bien la jerarquía
-- no son ideales para sistemas donde cualquiera debe poder extender
-- pueden ser excesivas para casos muy simples
-
-Como siempre, la herramienta debe usarse cuando encaja con el problema.
+- you control who can inherit
+- you make the design clearer
+- you avoid unexpected subclasses
+- improvements to the use of `switch`
+- you model better results and states
+- you combine very well with records
+- you make the intent of the code more explicit
 
 ---
 
-## 34. Sealed class vs clase abstracta normal
+## 33. Limitations of sealed classes
 
-### 34.1. Clase abstracta normal
+They also have limitations:
 
-Permite herencia abierta.
+- can add complexity if used unnecessarily
+- require careful thought about the hierarchy
+- are not ideal for systems where anyone must be able to extend
+- may be excessive for very simple cases
+
+As always, the tool should be used when it fits the problem.
+
+---
+
+## 34. Sealed class vs normal abstract class
+
+### 34.1. Normal abstract class
+
+Allows open inheritance.
 
 ```java
 public abstract class Shape {
 }
 ```
 
-Cualquier clase puede extenderla, si tiene acceso.
+Any class can extend it, if they have access.
 
 ### 34.2. Sealed abstract class
 
-Permite herencia controlada.
+Allows controlled inheritance.
 
 ```java
 public sealed abstract class Shape permits Circle, Rectangle {
 }
 ```
 
-Solo las clases permitidas pueden extenderla.
+Only allowed classes can extend it.
 
 ---
 
-## 35. Sealed interface vs interface normal
+## 35. Sealed interface vs normal interface
 
-### 35.1. Interface normal
+### 35.1. Normal interface
 
 ```java
 public interface PaymentResult {
 }
 ```
 
-Cualquier clase puede implementarla.
+Any class can implement it.
 
 ### 35.2. Sealed interface
 
@@ -1123,21 +1122,21 @@ public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
 }
 ```
 
-Solo las clases o records permitidos pueden implementarla.
+Only allowed classes or records can implement it.
 
 ---
 
-## 36. Cuándo no usar sealed classes
+## 36. When not to use sealed classes
 
-No uses sealed classes si:
+Don't use sealed classes if:
 
-- quieres que otros desarrolladores puedan extender libremente
-- la jerarquía puede crecer sin control previsto
-- un `enum` simple resuelve el problema
-- una clase normal es más clara
-- estás modelando objetos con comportamiento muy abierto
+- you want other developers to be able to freely extend
+- the hierarchy can grow without planned control
+- a simple `enum` solves the problem
+- a normal class is clearer
+- you are modeling objects with very open behavior
 
-Ejemplo:
+Example:
 
 ```java
 public interface Plugin {
@@ -1145,112 +1144,111 @@ public interface Plugin {
 }
 ```
 
-Si quieres que cualquiera pueda crear nuevos plugins, no conviene sellar la interfaz.
+If you want anyone to be able to create new plugins, you don't want to seal the interface.
 
 ---
 
-## 37. Errores típicos al empezar
+## 37. Typical mistakes when starting
 
-### 37.1. Olvidar `permits`
+### 37.1. Forget `permits`
 
 ```java
 public sealed class Shape {
 }
 ```
 
-En muchos casos deberás indicar qué subclases están permitidas.
+In many cases you must indicate which subclasses are allowed.
 
 ```java
 public sealed class Shape permits Circle, Rectangle {
 }
 ```
 
-### 37.2. Olvidar `final`, `sealed` o `non-sealed`
+### 37.2. Forget `final`, `sealed` or `non-sealed`
 
-Esto no compila:
+This doesn't compile:
 
 ```java
 public class Circle extends Shape {
 }
 ```
 
-Debe ser:
+It must be:
 
 ```java
 public final class Circle extends Shape {
 }
 ```
 
-### 37.3. Intentar extender una clase sellada sin permiso
+### 37.3. Trying to extend a sealed class without permission
 
 ```java
 // public final class Triangle extends Shape { } // error si no aparece en permits
 ```
 
-### 37.4. Usar sealed classes cuando un enum sería suficiente
+### 37.4. Use sealed classes when an enum would suffice
 
-Si solo tienes constantes simples, probablemente un `enum` sea más claro.
+If you only have simple constants, an `enum` is probably clearer.
 
-### 37.5. Confundir `sealed` con `final`
-
-- `final` no permite ninguna subclase
-- `sealed` permite solo algunas subclases
-- `non-sealed` vuelve a abrir la herencia
-
----
-
-## 38. Buenas prácticas
-
-- Usa sealed classes para jerarquías cerradas y conocidas.
-- Usa sealed interfaces con records para representar resultados o estados.
-- Mantén las subclases directas claras y bien nombradas.
-- Usa `final` cuando no quieras que la herencia continúe.
-- Usa `sealed` si quieres controlar otro nivel de herencia.
-- Usa `non-sealed` solo cuando realmente quieras abrir una rama.
-- Si los casos son simples y sin datos propios, considera usar `enum`.
-- No selles interfaces que estén pensadas para extensiones abiertas.
+### 37.5. Confusing `sealed` with `final`
+- `final` does not allow any subclasses
+- `sealed` allows only some subclasses
+- `non-sealed` reopens inheritance
 
 ---
 
-## 39. A tener en cuenta
+## 38. Good practices
 
-- `sealed` limita quién puede heredar o implementar.
-- `permits` indica las clases permitidas.
-- Las subclases directas deben ser `final`, `sealed` o `non-sealed`.
-- `final` cierra la herencia.
-- `sealed` mantiene la herencia controlada.
-- `non-sealed` vuelve a abrir la herencia.
-- Las sealed interfaces combinan muy bien con records.
-- Son útiles para resultados, estados y jerarquías cerradas.
-- Ayudan a escribir `switch` más seguros y expresivos.
+- Use sealed classes for closed and known hierarchies.
+- Use sealed interfaces with records to represent results or states.
+- Keep direct subclasses clear and well named.
+- Use `final` when you don't want the inheritance to continue.
+- Use `sealed` if you want to control another level of inheritance.
+- Use `non-sealed` only when you really want to open a branch.
+- If the cases are simple and without your own data, consider using `enum`.
+- Do not seal interfaces that are intended for open extensions.
 
 ---
 
-## 40. Resumen final
+## 39. To take into account
 
-Las sealed classes permiten controlar mejor las jerarquías de tipos en Java.
+- `sealed` limits who can inherit or deploy.
+- `permits` indicates the allowed classes.
+- Direct subclasses must be `final`, `sealed` or `non-sealed`.
+- `final` closes the inheritance.
+- `sealed` keeps inheritance in check.
+- `non-sealed` reopens inheritance.
+- Sealed interfaces combine very well with records.
+- They are useful for results, states and closed hierarchies.
+- They help to write `switch` more confident and expressive.
 
-Con una clase normal o una interfaz normal, la herencia puede quedar demasiado abierta.  
-Con `sealed`, puedes decir exactamente qué clases forman parte de la familia.
+---
 
-Ejemplo:
+## 40. Final summary
+
+Sealed classes allow you to better control type hierarchies in Java.
+
+With a normal class or a normal interface, inheritance can be left too open.  
+With `sealed`, you can tell exactly which classes are part of the family.
+
+Example:
 
 ```java
 public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
 }
 ```
 
-Esto hace que el diseño sea más claro y seguro.
+This makes the design clearer and more secure.
 
-La idea principal es:
+The main idea is:
 
-- usa `sealed` cuando conozcas todos los casos posibles
-- usa `final` para cerrar una rama
-- usa `sealed` para seguir controlando otra rama
-- usa `non-sealed` para abrir una rama concreta
+- use `sealed` when you know all possible cases
+- use `final` to close a branch
+- use `sealed` to continue controlling another branch
+- use `non-sealed` to open a specific branch
 
-Combinadas con records, las sealed interfaces son una herramienta muy potente para modelar datos modernos en Java.
+Combined with records, sealed interfaces are a very powerful tool for modeling modern data in Java.
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos **Concurrencia Básica**, una introducción a cómo ejecutar tareas de forma paralela o en segundo plano con herramientas como `Thread`, `Runnable` y `ExecutorService`.
+In the next topic we will continue advancing with modern Java and look at **Basic Concurrency**, an introduction to how to run tasks in parallel or in the background with tools like `Thread`, `Runnable` and `ExecutorService`.

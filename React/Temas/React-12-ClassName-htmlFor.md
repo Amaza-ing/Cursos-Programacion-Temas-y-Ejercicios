@@ -1,27 +1,27 @@
-# **Tema 12: className, htmlFor y otros casos similares**
+# **Topic 12: className, htmlFor and other similar cases**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Cuando vienes de HTML/CSS, hay varios atributos que en React **no se escriben igual**. Esto ocurre porque React usa JSX, y JSX está más cerca de JavaScript que del HTML tradicional.
+When you come from HTML/CSS, there are several attributes that in React are **not written the same**. This happens because React uses JSX, and JSX is closer to JavaScript than traditional HTML.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Por qué en React se usa `className` en lugar de `class`.
-- Por qué en React se usa `htmlFor` en lugar de `for`.
-- Otros atributos “especiales” o con diferencias importantes.
-- Buenas prácticas y errores típicos.
+- Why is it used in React? `className` rather `class`.
+- Why is it used in React? `htmlFor` rather `for`.
+- Other “special” attributes or with important differences.
+- Good practices and typical errors.
 
 ---
 
-## **2. `className` en React**
+## **2. `className` in React**
 
-En HTML escribimos:
+In HTML we write:
 
 ```html
 <div class="card">...</div>
 ```
 
-En React, **no se usa `class`**, porque `class` es una palabra reservada en JavaScript. En su lugar se usa **`className`**:
+In React, **not used `class`**, because `class` is a reserved word in JavaScript. ** is used instead`className`**:
 
 ```js
 function Card() {
@@ -31,9 +31,9 @@ function Card() {
 export default Card;
 ```
 
-### **2.1. `className` dinámico**
+### **2.1. `className` dynamic**
 
-`className` también puede depender de una condición (lo conectamos con lo visto en estilos y renderizado condicional).
+`className` It can also depend on a condition (we connect it with what we see in styles and conditional rendering).
 
 ```js
 function StatusPill() {
@@ -49,17 +49,17 @@ export default StatusPill;
 
 ---
 
-## **3. `htmlFor` en React**
+## **3. `htmlFor` in React**
 
-En HTML, para asociar un `label` a un `input` se usa `for`:
+In HTML, to associate a `label` still `input` is used `for`:
 
 ```html
 <label for="email">Email</label> <input id="email" />
 ```
 
-En React, **no se usa `for`** porque en JavaScript existe la palabra reservada `for`. En JSX se usa **`htmlFor`**.
+In React, **not used `for`** because the reserved word exists in JavaScript `for`. In JSX you use **`htmlFor`**.
 
-### **Ejemplo correcto en React**
+### **Correct example in React**
 
 ```js
 function EmailField() {
@@ -74,23 +74,23 @@ function EmailField() {
 export default EmailField;
 ```
 
-**Clave:**
+**Clue:**
 
-- `htmlFor` debe coincidir con el `id` del input.
+- `htmlFor` must match the `id` of the input.
 
 ---
 
-## **4. Otros atributos y diferencias importantes**
+## **4. Other important attributes and differences**
 
-### **4.1. `style` (objeto, no string)**
+### **4.1. `style` (object, not string)**
 
-En HTML:
+In HTML:
 
 ```html
 <div style="background: red; padding: 10px"></div>
 ```
 
-En React, `style` recibe un **objeto** y las propiedades van en **camelCase**:
+In React, `style` receives an **object** and the properties go in **camelCase**:
 
 ```js
 function Box() {
@@ -102,18 +102,18 @@ export default Box;
 
 ---
 
-### **4.2. `onClick`, `onChange`, etc. (camelCase + función)**
+### **4.2. `onClick`, `onChange`, etc. (camelCase + function)**
 
-En HTML:
+In HTML:
 
 ```html
 <button onclick="doSomething()">Click</button>
 ```
 
-En React:
+In React:
 
-- Se escribe en camelCase (`onClick`).
-- Se pasa una función (no un string).
+- It is written in camelCase (`onClick`).
+- A function is passed (not a string).
 
 ```js
 function Button() {
@@ -129,9 +129,9 @@ export default Button;
 
 ---
 
-### **4.3. `tabIndex` (no `tabindex`)**
+### **4.3. `tabIndex` (No `tabindex`)**
 
-En React se usa:
+In React you use:
 
 ```js
 <div tabIndex={0}>Focusable</div>
@@ -139,7 +139,7 @@ En React se usa:
 
 ---
 
-### **4.4. `readOnly` (no `readonly`)**
+### **4.4. `readOnly` (No `readonly`)**
 
 ```js
 <input value="Fixed" readOnly />
@@ -147,16 +147,16 @@ En React se usa:
 
 ---
 
-### **4.5. Atributos booleanos**
+### **4.5. Boolean attributes**
 
-En React, los booleanos se pueden escribir de forma corta:
+In React, booleans can be written short:
 
 ```js
 <input disabled />
 <input required />
 ```
 
-Y también de forma dinámica:
+And also dynamically:
 
 ```js
 <input disabled={isDisabled} />
@@ -164,25 +164,25 @@ Y también de forma dinámica:
 
 ---
 
-### **4.6. `defaultValue` y `defaultChecked`**
+### **4.6. `defaultValue` and `defaultChecked`**
 
-En inputs **no controlados**, se usan:
+In **uncontrolled** inputs, the following are used:
 
 ```js
 <input defaultValue="Hello" />
 <input type="checkbox" defaultChecked />
 ```
 
-Esto es útil cuando:
+This is useful when:
 
-- No quieres usar `useState`.
-- Solo quieres un valor inicial.
+- You don't want to use `useState`.
+- You just want an initial value.
 
 ---
 
-### **4.7. `dangerouslySetInnerHTML` (caso avanzado)**
+### **4.7. `dangerouslySetInnerHTML` (advanced case)**
 
-A veces necesitas insertar HTML que viene de fuera (por ejemplo, de una API). React lo bloquea por seguridad, y exige usar esta propiedad.
+Sometimes you need to insert HTML that comes from outside (for example, from an API). React blocks it for security, and requires using this property.
 
 ```js
 function HtmlBlock() {
@@ -194,11 +194,11 @@ function HtmlBlock() {
 export default HtmlBlock;
 ```
 
-> Nota: úsalo con cuidado, porque puede causar problemas de seguridad (XSS) si el HTML no está sanitizado.
+> Note: use with care, because it can cause security issues (XSS) if the HTML is not sanitized.
 
 ---
 
-## **5. Lista rápida de “traducciones” comunes**
+## **5. Quick list of common “translations”**
 
 - `class` → `className`
 - `for` → `htmlFor`
@@ -210,15 +210,15 @@ export default HtmlBlock;
 
 ---
 
-## **6. Errores típicos**
+## **6. Typical errors**
 
-### **6.1. Usar `class` en JSX**
+### **6.1. Wear `class` in JSX**
 
 ```js
 <div class="box">...</div>
 ```
 
-Debe ser:
+It must be:
 
 ```js
 <div className="box">...</div>
@@ -226,13 +226,13 @@ Debe ser:
 
 ---
 
-### **6.2. Usar `for` en `label`**
+### **6.2. Wear `for` in `label`**
 
 ```js
 <label for="name">Name</label>
 ```
 
-Debe ser:
+It must be:
 
 ```js
 <label htmlFor="name">Name</label>
@@ -240,13 +240,13 @@ Debe ser:
 
 ---
 
-### **6.3. Escribir `style` como string**
+### **6.3. Write `style` as string**
 
 ```js
 <div style="color: red">...</div>
 ```
 
-Debe ser un objeto:
+Must be an object:
 
 ```js
 <div style={{ color: "red" }}>...</div>
@@ -254,26 +254,26 @@ Debe ser un objeto:
 
 ---
 
-## **7. Buenas prácticas**
+## **7. Good practices**
 
-- Sé consistente con `className`.
-- Asegúrate de que `htmlFor` y `id` coinciden.
-- Prefiere estilos en CSS/CSS Modules y usa inline styles solo cuando tenga sentido.
-- Aprende la lista de atributos especiales más comunes: te ahorrará muchos errores.
-
----
-
-## **8. A tener en cuenta**
-
-- JSX no es HTML: algunos atributos cambian.
-- Los más importantes al empezar son `className` y `htmlFor`.
-- Los eventos se escriben en camelCase y reciben funciones.
-- `style` se escribe como objeto.
+- Be consistent with `className`.
+- Make sure `htmlFor` and `id` match.
+- Prefer styles in CSS/CSS Modules and use inline styles only when it makes sense.
+- Learn the list of most common special attributes: it will save you a lot of mistakes.
 
 ---
 
-[![Classname, htmlFor y otros](https://img.youtube.com/vi/CcMlJxlHno8/0.jpg)](https://www.youtube.com/watch?v=CcMlJxlHno8&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **8. To take into account**
+
+- JSX is not HTML: some attributes change.
+- The most important ones when starting out are `className` and `htmlFor`.
+- Events are written to camelCase and given functions.
+- `style` is written as an object.
 
 ---
 
-En el próximo tema veremos **Props Hijo a Padre y Elevar el Estado**, para que un componente hijo pueda comunicar información al padre mediante funciones.
+[![Classname, htmlFor and others](https://img.youtube.com/vi/CcMlJxlHno8/0.jpg)](https://www.youtube.com/watch?v=CcMlJxlHno8&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will see **Props Child to Parent and Raise State**, so that a child component can communicate information to the parent through functions.

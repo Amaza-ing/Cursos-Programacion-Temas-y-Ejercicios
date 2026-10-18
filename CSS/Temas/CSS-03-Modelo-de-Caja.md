@@ -1,23 +1,23 @@
-# **Tema 3: El Modelo de Caja en CSS**
+# **Topic 3: The Box Model in CSS**
 
-## **1. Introducción al Modelo de Caja**
+## **1. Introduction to the Box Model**
 
-El **Modelo de Caja** es un concepto fundamental en CSS que describe cómo se representan y organizan los elementos en una página web. Cada elemento HTML se considera una caja rectangular que está compuesta por cuatro áreas principales:
+The **Box Model** is a fundamental concept in CSS that describes how elements are represented and organized on a web page. Each HTML element is considered a rectangular box that is made up of four main areas:
 
-1. **Contenido (Content):** El área donde se muestra el contenido del elemento, como texto o imágenes.
-2. **Relleno (Padding):** Espacio entre el contenido y el borde del elemento.
-3. **Borde (Border):** Línea que rodea el contenido y el relleno.
-4. **Margen (Margin):** Espacio entre el borde del elemento y los elementos adyacentes.
+1. **Content:** The area where the element's content is displayed, such as text or images.
+2. **Padding:** Space between the content and the border of the element.
+3. **Border:** Line that surrounds the content and padding.
+4. **Margin:** Space between the edge of the element and adjacent elements.
 
-Representación para un elemento con un contenido de 500px de ancho y 20px de alto, 5px de padding, 2px de borde y 20px de margen superior y 0px del resto de márgenes:
+Representation for an element with a content of 500px wide and 20px high, 5px padding, 2px border and 20px top margin and 0px of the rest of the margins:
 
 ![Box Model](https://raw.githubusercontent.com/Amaza-ing/Cursos-Programacion-Temas-y-Ejercicios/master/CSS/Assets/box-model.png "Box Model")
 
 ---
 
-## **2. Partes del Modelo de Caja**
+## **2. Parts of the Box Model**
 
-Cada caja en CSS sigue esta estructura:
+Each box in CSS follows this structure:
 
 ```css
 div {
@@ -29,28 +29,31 @@ div {
 }
 ```
 
-En este caso:
 
-- **width** y **height** definen el tamaño del contenido.
-- **padding** agrega un espacio interno alrededor del contenido.
-- **border** crea un borde sólido negro de 5 píxeles.
-- **margin** separa el elemento de los demás.
+In this case:
+
+- **width** and **height** define the size of the content.
+- **padding** adds internal space around the content.
+- **border** creates a 5 pixel solid black border.
+- **margin** separates the element from the others.
 
 ---
 
-## **3. Cómo calcular el tamaño total de una caja**
+## **3. How to calculate the total size of a box**
 
-El tamaño total de un elemento se calcula sumando:
+The total size of an element is calculated by adding:
 
 ```
 Ancho total = width + padding izquierdo + padding derecho + border izquierdo + border derecho + margin izquierdo + margin derecho
 ```
 
+
 ```
 Alto total  = height + padding superior + padding inferior + border superior + border inferior + margin superior + margin inferior
 ```
 
-**Ejemplo:**
+
+**Example:**
 
 ```css
 div {
@@ -62,16 +65,17 @@ div {
 }
 ```
 
-El tamaño total sería:
 
-- **Ancho total:** 200 + 10 + 10 + 5 + 5 + 20 + 20 = 270px
-- **Alto total:** 100 + 10 + 10 + 5 + 5 + 20 + 20 = 170px
+The total size would be:
+
+- **Total width:** 200 + 10 + 10 + 5 + 5 + 20 + 20 = 270px
+- **Total height:** 100 + 10 + 10 + 5 + 5 + 20 + 20 = 170px
 
 ---
 
-## **4. `box-sizing`: Control del cálculo de la caja**
+## **4. `box-sizing`: Cash calculation control**
 
-Por defecto, CSS calcula el tamaño de los elementos sin incluir el borde y el padding. Sin embargo, con `box-sizing: border-box;`, el ancho y alto incluyen el padding y el borde.
+By default, CSS calculates the size of elements without including the border and padding. However, with `box-sizing: border-box;`, the width and height include the padding and border.
 
 ```css
 div {
@@ -83,15 +87,16 @@ div {
 }
 ```
 
-Ahora, el ancho y el alto del elemento se mantienen en 200x100 píxeles, sin aumentar con el padding y el borde.
+
+Now, the width and height of the element remain at 200x100 pixels, without increasing with padding and border.
 
 ---
 
-## **5. Propiedades de margen y padding**
+## **5. Margin and padding properties**
 
-### **Margen (`margin`)**
+### **Margin (`margin`)**
 
-Define el espacio externo entre un elemento y los elementos adyacentes.
+Defines the external space between an element and adjacent elements.
 
 ```css
 div {
@@ -99,7 +104,8 @@ div {
 }
 ```
 
-Se puede definir individualmente:
+
+It can be defined individually:
 
 ```css
 div {
@@ -110,7 +116,8 @@ div {
 }
 ```
 
-También se puede usar el atajo:
+
+You can also use the shortcut:
 
 ```css
 div {
@@ -118,9 +125,10 @@ div {
 }
 ```
 
-### **Relleno (`padding`)**
 
-Similar a `margin`, pero define el espacio interno entre el contenido y el borde del elemento.
+### **Padding (`padding`)**
+
+Similar to `margin`, but defines the internal space between the content and the element's border.
 
 ```css
 div {
@@ -128,7 +136,8 @@ div {
 }
 ```
 
-Se pueden definir valores individuales:
+
+Individual values can be defined:
 
 ```css
 div {
@@ -139,7 +148,8 @@ div {
 }
 ```
 
-o
+
+or
 
 ```css
 div {
@@ -147,13 +157,14 @@ div {
 }
 ```
 
+
 ---
 
-## **6. Colapso de márgenes**
+## **6. Margin collapse**
 
-Cuando dos elementos tienen márgenes superiores o inferiores consecutivos, se combinan en lugar de sumarse.
+When two elements have consecutive top or bottom margins, they are combined rather than added.
 
-Ejemplo:
+Example:
 
 ```css
 div {
@@ -164,21 +175,22 @@ p {
 }
 ```
 
-En este caso, el margen resultante entre los dos elementos será de 30px, no 50px.
+
+In this case, the resulting margin between the two elements will be 30px, not 50px.
 
 ---
 
-[![Modelo de Caja](https://img.youtube.com/vi/k6p6vJLQfFE/0.jpg)](https://www.youtube.com/watch?v=k6p6vJLQfFE&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+[![Box Model](https://img.youtube.com/vi/k6p6vJLQfFE/0.jpg)](https://www.youtube.com/watch?v=k6p6vJLQfFE&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **7. Buenas prácticas con el Modelo de Caja**
+## **7. Good practices with the Box Model**
 
-- Usar `box-sizing: border-box;` para evitar cálculos complicados de tamaño.
-- Mantener una estructura clara con `margin` y `padding` bien definidos.
-- Evitar márgenes negativos, ya que pueden causar problemas inesperados.
-- Revisar el colapso de márgenes para evitar errores visuales.
+- Use `box-sizing: border-box;` to avoid complicated size calculations.
+- Maintain a clear structure with well-defined `margin` and `padding`.
+- Avoid negative margins, as they can cause unexpected problems.
+- Check margin collapse to avoid visual errors.
 
 ---
 
-En el próximo tema, exploraremos **las unidades de medida en CSS**, incluyendo píxeles, porcentajes, em y rem.
+In the next topic, we will explore **units of measurement in CSS**, including pixels, percentages, em, and rem.

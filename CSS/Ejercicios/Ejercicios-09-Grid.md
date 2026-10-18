@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 9: Diseño con CSS Grid**
+# **Exercises - Topic 9: Design with CSS Grid**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre CSS Grid.
+Below you will find 5 practical exercises on CSS Grid.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una cuadrícula básica**
+### **Exercise 1: Create a basic grid**
 
-Crea un contenedor con 3 columnas de igual tamaño y 2 filas.
+Create a container with 3 columns of equal size and 2 rows.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -31,6 +31,7 @@ Crea un contenedor con 3 columnas de igual tamaño y 2 filas.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item">1</div>
@@ -42,15 +43,16 @@ Crea un contenedor con 3 columnas de igual tamaño y 2 filas.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Combinar celdas**
+### **Exercise 2: Combine cells**
 
-Crea un `div` que ocupe dos columnas en una cuadrícula de 3x2.
+Create an `div` that occupies two columns in a 3x2 grid.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -74,6 +76,7 @@ Crea un `div` que ocupe dos columnas en una cuadrícula de 3x2.
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item1">1</div>
@@ -84,15 +87,16 @@ Crea un `div` que ocupe dos columnas en una cuadrícula de 3x2.
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Usar `grid-template-areas`**
+### **Exercise 3: Use `grid-template-areas`**
 
-Crea un diseño con áreas definidas para `header`, `sidebar`, `content` y `footer`.
+Create a layout with defined areas for `header`, `sidebar`, `content`, and `footer`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -129,6 +133,7 @@ Crea un diseño con áreas definidas para `header`, `sidebar`, `content` y `foot
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="header">Header</div>
@@ -138,15 +143,16 @@ Crea un diseño con áreas definidas para `header`, `sidebar`, `content` y `foot
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Alinear elementos en la cuadrícula**
+### **Exercise 4: Align elements on the grid**
 
-Crea una cuadrícula donde los elementos estén centrados tanto horizontal como verticalmente.
+Create a grid where elements are centered both horizontally and vertically.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -167,6 +173,7 @@ Crea una cuadrícula donde los elementos estén centrados tanto horizontal como 
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item">1</div>
@@ -181,15 +188,16 @@ Crea una cuadrícula donde los elementos estén centrados tanto horizontal como 
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Crear un diseño responsivo con `auto-fit`**
+### **Exercise 5: Create a responsive design with `auto-fit`**
 
-Usa `auto-fit` para crear una cuadrícula flexible que se ajuste al tamaño de la pantalla.
+Use `auto-fit` to create a flexible grid that fits the size of the screen.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -205,6 +213,7 @@ Usa `auto-fit` para crear una cuadrícula flexible que se ajuste al tamaño de l
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="item">1</div>
@@ -215,5 +224,6 @@ Usa `auto-fit` para crear una cuadrícula flexible que se ajuste al tamaño de l
   <div class="item">6</div>
 </div>
 ```
+
 
 </details>

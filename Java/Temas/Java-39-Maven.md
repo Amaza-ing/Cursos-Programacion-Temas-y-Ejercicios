@@ -1,73 +1,73 @@
-# Tema 39. Maven
+# Topic 39. Maven
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has creado programas Java usando archivos `.java`, clases, paquetes y distintas APIs del lenguaje.
+Until now you have created Java programs using `.java` files, classes, packages and different language APIs.
 
-Pero cuando un proyecto empieza a crecer, aparecen nuevas necesidades:
+But when a project begins to grow, new needs appear:
 
-- organizar mejor el código
-- compilar el proyecto fácilmente
-- ejecutar tests
-- añadir librerías externas
-- generar un `.jar`
-- compartir el proyecto con otras personas
-- evitar configurar todo manualmente
-- mantener una estructura estándar
+- better organize the code
+- compile the project easily
+- run tests
+- add external libraries
+- generate an `.jar`
+- share the project with other people
+- avoid setting everything manually
+- maintain a standard structure
 
-Para eso existen herramientas de construcción de proyectos.
+For that there are project construction tools.
 
-Una de las más usadas en Java es:
+One of the most used in Java is:
 
 - **Maven**
 
-Maven ayuda a gestionar proyectos Java de forma estandarizada.
+Maven helps manage Java projects in a standardized way.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es Maven
-- Para qué sirve
-- Qué es un archivo `pom.xml`
-- Qué son `groupId`, `artifactId` y `version`
-- Cuál es la estructura típica de un proyecto Maven
-- Cómo añadir dependencias
-- Qué es Maven Central
-- Qué es el ciclo de vida de Maven
-- Comandos básicos como `mvn compile`, `mvn test` y `mvn package`
-- Qué son los plugins
-- Cómo configurar Java 25 en Maven
-- Qué es Maven Wrapper
-- Buenas prácticas y errores típicos
+- What is Maven
+- What is it for?
+- What is an `pom.xml` file?
+- What are `groupId`, `artifactId` and `version`
+- What is the typical structure of a Maven project
+- How to add dependencies
+- What is Maven Central
+- What is the Maven life cycle
+- Basic commands like `mvn compile`, `mvn test` and `mvn package`
+- What are plugins
+- How to configure Java 25 in Maven
+- What is Maven Wrapper
+- Good practices and typical errors
 
 ---
 
-## 2. Qué problema resuelve Maven
+## 2. What problem does Maven solve?
 
-Imagina que estás haciendo un proyecto Java y necesitas:
+Imagine that you are doing a Java project and you need:
 
-- compilar muchas clases
-- usar una librería externa
-- ejecutar pruebas
-- generar un archivo `.jar`
-- compartir el proyecto con otro ordenador
+- compile many classes
+- use an external library
+- run tests
+- generate an `.jar` file
+- share the project with another computer
 
-Sin Maven, podrías tener que:
+Without Maven, you might have to:
 
-- descargar librerías manualmente
-- configurar rutas manualmente
-- compilar con comandos largos
-- explicar a otra persona cómo montar el proyecto
-- repetir configuraciones en cada equipo
+- download libraries manually
+- configure routes manually
+- compile with long commands
+- explain to another person how to set up the project
+- repeat configurations on each computer
 
-Maven simplifica todo esto.
+Maven simplifies all this.
 
-Con Maven, gran parte de la configuración vive en un archivo:
+With Maven, much of the configuration lives in a file:
 
 ```text
 pom.xml
 ```
 
-Y puedes ejecutar comandos como:
+And you can run commands like:
 
 ```bash
 mvn compile
@@ -77,52 +77,52 @@ mvn package
 
 ---
 
-## 3. Qué es Maven
+## 3. What is Maven
 
-Maven es una herramienta de gestión y construcción de proyectos.
+Maven is a project management and construction tool.
 
-Sirve para:
+Serves for:
 
-- compilar código
-- ejecutar tests
-- gestionar dependencias
-- empaquetar aplicaciones
-- definir información del proyecto
-- aplicar una estructura estándar
-- automatizar tareas repetitivas
+- compile code
+- run tests
+- manage dependencies
+- package applications
+- define project information
+- apply a standard structure
+- automate repetitive tasks
 
-Maven no sustituye a Java.  
-Maven ayuda a trabajar mejor con proyectos Java.
+Maven is not a substitute for Java.  
+Maven helps you work better with Java projects.
 
 ---
 
-## 4. Qué es el `pom.xml`
+## 4. What is `pom.xml`
 
-El archivo principal de Maven se llama:
+The main Maven file is called:
 
 ```text
 pom.xml
 ```
 
-POM significa:
+POM means:
 
 ```text
 Project Object Model
 ```
 
-Este archivo describe el proyecto.
+This file describes the project.
 
-En él puedes indicar:
+In it you can indicate:
 
-- nombre del proyecto
-- versión
-- dependencias
+- project name
+- version
+- dependencies
 - plugins
-- versión de Java
-- configuración de compilación
-- información del empaquetado
+- Java version
+- build configuration
+- packaging information
 
-Ejemplo básico:
+Basic example:
 
 ```xml
 <project>
@@ -132,9 +132,9 @@ Ejemplo básico:
 
 ---
 
-## 5. Estructura típica de un proyecto Maven
+## 5. Typical structure of a Maven project
 
-Un proyecto Maven suele tener esta estructura:
+A Maven project usually has this structure:
 
 ```text
 my-project
@@ -154,7 +154,7 @@ my-project
                         └── MainTest.java
 ```
 
-La estructura más importante es:
+The most important structure is:
 
 ```text
 src/main/java
@@ -165,15 +165,15 @@ src/test/java
 
 ## 6. `src/main/java`
 
-Aquí va el código principal de la aplicación.
+Here goes the main code of the application.
 
-Ejemplo:
+Example:
 
 ```text
 src/main/java/com/amazaing/app/Main.java
 ```
 
-Clase:
+Class:
 
 ```java
 package com.amazaing.app;
@@ -189,53 +189,52 @@ public class Main {
 
 ## 7. `src/test/java`
 
-Aquí van los tests del proyecto.
+Here are the tests of the project.
 
-Ejemplo:
+Example:
 
 ```text
 src/test/java/com/amazaing/app/MainTest.java
 ```
 
-Los tests no forman parte del código principal de producción, pero sirven para comprobar que el proyecto funciona correctamente.
+The tests are not part of the main production code, but are used to verify that the project is working correctly.
 
 ---
 
-## 8. Ventaja de la estructura estándar
+## 8. Advantage of standard structure
 
-Maven espera esta estructura por defecto.
+Maven expects this structure by default.
 
-Eso significa que no tienes que explicarle dónde están tus clases principales si sigues la convención.
+That means you don't have to explain where your main classes are if you follow convention.
 
-Maven ya sabe que:
-
+Maven already knows that:
 ```text
 src/main/java
 ```
 
-contiene el código principal.
+contains the main code.
 
-Y que:
+And what:
 
 ```text
 src/test/java
 ```
 
-contiene los tests.
+contains the tests.
 
-Esto se conoce como:
+This is known as:
 
 > convention over configuration
 
-Es decir:
+That is to say:
 
-> seguir convenciones reduce la configuración necesaria
+> following conventions reduces the configuration needed
 
 ---
 
-## 9. Primer `pom.xml` básico
+## 9. First basic `pom.xml`
 
-Un `pom.xml` básico puede ser así:
+A basic `pom.xml` can look like this:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -252,35 +251,35 @@ Un `pom.xml` básico puede ser así:
 </project>
 ```
 
-Este archivo define un proyecto Maven mínimo.
+This file defines a minimal Maven project.
 
 ---
 
 ## 10. `modelVersion`
 
-Esta línea aparece casi siempre:
+This line appears almost always:
 
 ```xml
 <modelVersion>4.0.0</modelVersion>
 ```
 
-Indica la versión del modelo POM que usa Maven.
+Indicates the version of the POM model that Maven uses.
 
-Para la mayoría de proyectos Maven actuales, verás:
+For most current Maven projects, you will see:
 
 ```xml
 4.0.0
 ```
 
-No suele ser algo que tengas que modificar.
+It's not usually something you have to modify.
 
 ---
 
 ## 11. `groupId`
 
-`groupId` identifica normalmente la organización, empresa, autor o dominio del proyecto.
+`groupId` typically identifies the organization, company, author, or domain of the project.
 
-Ejemplos:
+Examples:
 
 ```xml
 <groupId>com.amazaing</groupId>
@@ -294,21 +293,21 @@ Ejemplos:
 <groupId>com.company</groupId>
 ```
 
-Suele seguir un formato parecido al de los paquetes Java.
+It usually follows a format similar to that of Java packages.
 
 ---
 
 ## 12. `artifactId`
 
-`artifactId` identifica el nombre del proyecto o artefacto.
+`artifactId` identifies the name of the project or artifact.
 
-Ejemplo:
+Example:
 
 ```xml
 <artifactId>maven-demo</artifactId>
 ```
 
-Otros ejemplos:
+Other examples:
 
 ```xml
 <artifactId>user-service</artifactId>
@@ -320,27 +319,27 @@ Otros ejemplos:
 
 ## 13. `version`
 
-`version` indica la versión del proyecto.
+`version` indicates the project version.
 
-Ejemplo:
+Example:
 
 ```xml
 <version>1.0.0</version>
 ```
 
-También puedes ver versiones como:
+You can also see versions like:
 
 ```xml
 <version>1.0-SNAPSHOT</version>
 ```
 
-La palabra `SNAPSHOT` suele indicar que es una versión en desarrollo.
+The word `SNAPSHOT` usually indicates that it is a development version.
 
 ---
 
-## 14. Coordenadas Maven
+## 14. Maven Coordinates
 
-La combinación de:
+The combination of:
 
 ```xml
 <groupId>...</groupId>
@@ -348,9 +347,9 @@ La combinación de:
 <version>...</version>
 ```
 
-forma las coordenadas Maven del proyecto.
+forms the Maven coordinates of the project.
 
-Ejemplo:
+Example:
 
 ```xml
 <groupId>com.amazaing</groupId>
@@ -358,33 +357,33 @@ Ejemplo:
 <version>1.0.0</version>
 ```
 
-Estas coordenadas identifican de forma única un artefacto.
+These coordinates uniquely identify an artifact.
 
 ---
 
-## 15. Qué es un artefacto
+## 15. What is an artifact
 
-Un artefacto es el resultado generado por un proyecto Maven.
+An artifact is the output generated by a Maven project.
 
-Normalmente puede ser:
+Typically it can be:
 
-- un `.jar`
-- un `.war`
-- otro tipo de paquete
+- an `.jar`
+- an `.war`
+- other type of package
 
-Para un proyecto Java básico, lo más común es generar un `.jar`.
+For a basic Java project, the most common thing to do is to generate an `.jar`.
 
 ---
 
 ## 16. `packaging`
 
-Puedes indicar el tipo de empaquetado.
+You can indicate the type of packaging.
 
 ```xml
 <packaging>jar</packaging>
 ```
 
-Ejemplo:
+Example:
 
 ```xml
 <project>
@@ -393,13 +392,13 @@ Ejemplo:
 </project>
 ```
 
-Si no lo pones, Maven suele asumir `jar` por defecto.
+If you don't set it, Maven usually assumes `jar` by default.
 
 ---
 
-## 17. Configurar Java 25
+## 17. Configure Java 25
 
-Para indicar que quieres compilar usando Java 25, puedes usar propiedades en el `pom.xml`.
+To indicate that you want to compile using Java 25, you can use properties on the `pom.xml`.
 
 ```xml
 <properties>
@@ -407,7 +406,7 @@ Para indicar que quieres compilar usando Java 25, puedes usar propiedades en el 
 </properties>
 ```
 
-Ejemplo dentro del POM:
+Example within the POM:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -428,32 +427,32 @@ Ejemplo dentro del POM:
 </project>
 ```
 
-Esto indica a Maven que el proyecto debe compilarse para Java 25.
+This tells Maven that the project should be compiled for Java 25.
 
 ---
 
-## 18. Comprobar Maven instalado
+## 18. Check Maven installed
 
-Para comprobar si Maven está instalado, puedes abrir una terminal y escribir:
+To check if Maven is installed, you can open a terminal and type:
 
 ```bash
 mvn -v
 ```
 
-o:
+or:
 
 ```bash
 mvn --version
 ```
 
-Esto muestra información como:
+This displays information such as:
 
-- versión de Maven
-- versión de Java usada por Maven
-- sistema operativo
-- ruta de Java
+- Maven version
+- Java version used by Maven
+- operating system
+- java route
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```text
 Apache Maven ...
@@ -462,9 +461,9 @@ Java version: 25
 
 ---
 
-## 19. Comandos básicos de Maven
+## 19. Basic Maven Commands
 
-Los comandos más importantes para empezar son:
+The most important commands to get started are:
 
 ```bash
 mvn compile
@@ -474,25 +473,25 @@ mvn clean
 mvn install
 ```
 
-Cada uno ejecuta una fase del ciclo de vida de Maven.
+Each executes a phase of the Maven lifecycle.
 
 ---
 
 ## 20. `mvn compile`
 
-Compila el código principal del proyecto.
+Compile the main code of the project.
 
 ```bash
 mvn compile
 ```
 
-Maven busca el código en:
+Maven looks for the code in:
 
 ```text
 src/main/java
 ```
 
-y genera archivos compilados en:
+and generates compiled files in:
 
 ```text
 target/classes
@@ -502,15 +501,15 @@ target/classes
 
 ## 21. `target`
 
-Cuando ejecutas Maven, se crea una carpeta llamada:
+When you run Maven, a folder called:
 
 ```text
 target
 ```
 
-Dentro se guardan archivos generados.
+Generated files are saved inside.
 
-Ejemplos:
+Examples:
 
 ```text
 target/classes
@@ -518,13 +517,13 @@ target/test-classes
 target/maven-demo-1.0.0.jar
 ```
 
-La carpeta `target` normalmente no se sube a Git.
+The `target` folder is not normally uploaded to Git.
 
 ---
 
 ## 22. `mvn test`
 
-Ejecuta los tests del proyecto.
+Run the project tests.
 
 ```bash
 mvn test
@@ -532,86 +531,85 @@ mvn test
 
 Maven:
 
-1. compila el código principal
-2. compila el código de test
-3. ejecuta los tests
+1. compile the main code
+2. compile the test code
+3. run the tests
 
-El código de test está normalmente en:
+The test code is normally in:
 
 ```text
 src/test/java
 ```
 
 ---
-
 ## 23. `mvn package`
 
-Genera el paquete final del proyecto.
+Generate the final package of the project.
 
 ```bash
 mvn package
 ```
 
-Para un proyecto `jar`, genera algo como:
+For an `jar` project, generate something like:
 
 ```text
 target/maven-demo-1.0.0.jar
 ```
 
-Antes de empaquetar, Maven también ejecuta fases anteriores como compilar y testear.
+Before packaging, Maven also runs previous phases like build and test.
 
 ---
 
 ## 24. `mvn clean`
 
-Elimina la carpeta `target`.
+Delete the `target` folder.
 
 ```bash
 mvn clean
 ```
 
-Es útil cuando quieres limpiar los archivos generados y empezar desde cero.
+It is useful when you want to clean the generated files and start from scratch.
 
-Muy común:
+Very common:
 
 ```bash
 mvn clean package
 ```
 
-Este comando:
+This command:
 
-1. limpia el proyecto
-2. compila
-3. ejecuta tests
-4. genera el paquete
+1. clean the project
+2. compile
+3. run tests
+4. generate the package
 
 ---
 
 ## 25. `mvn install`
 
-Instala el artefacto en tu repositorio local de Maven.
+Install the artifact in your local Maven repository.
 
 ```bash
 mvn install
 ```
 
-El repositorio local suele estar en una carpeta como:
+The local repository is usually in a folder like:
 
 ```text
 .m2/repository
 ```
 
-Esto permite que otros proyectos de tu ordenador puedan usar ese artefacto como dependencia.
+This allows other projects on your computer to use that artifact as a dependency.
 
 ---
 
-## 26. Ciclo de vida de Maven
+## 26. Maven life cycle
 
-Maven tiene ciclos de vida.
+Maven has life cycles.
 
-El más importante para empezar es el ciclo de vida por defecto.
+The most important one to start with is the default life cycle.
 
-Algunas fases comunes son:
+Some common phases are:
 
 ```text
 validate
@@ -623,15 +621,15 @@ install
 deploy
 ```
 
-Cuando ejecutas una fase, Maven ejecuta también las fases anteriores necesarias.
+When you run a phase, Maven also runs the necessary previous phases.
 
-Por ejemplo:
+For example:
 
 ```bash
 mvn package
 ```
 
-ejecuta antes:
+run before:
 
 - `validate`
 - `compile`
@@ -639,50 +637,50 @@ ejecuta antes:
 
 ---
 
-## 27. Diferencia entre fase y comando
+## 27. Difference between phase and command
 
-Cuando escribes:
+When you write:
 
 ```bash
 mvn package
 ```
 
-`package` es una fase.
+`package` is a phase.
 
-Cuando escribes:
+When you write:
 
 ```bash
 mvn clean package
 ```
 
-estás ejecutando:
+you are running:
 
-- fase `clean`
-- fase `package`
+- phase `clean`
+- phase `package`
 
-Maven se encarga de ejecutar todo lo necesario.
-
----
-
-## 28. Qué son las dependencias
-
-Una dependencia es una librería externa que tu proyecto necesita.
-
-Por ejemplo:
-
-- JUnit para tests
-- Gson o Jackson para JSON
-- MySQL Connector para conectar con MySQL
-- Lombok para reducir código repetitivo
-- Spring para aplicaciones web
-
-En Maven, las dependencias se declaran en el `pom.xml`.
+Maven is responsible for executing everything necessary.
 
 ---
 
-## 29. Añadir una dependencia
+## 28. What are dependencies
 
-Las dependencias se colocan dentro de:
+A dependency is an external library that your project needs.
+
+For example:
+
+- JUnit for tests
+- Gson or Jackson for JSON
+- MySQL Connector to connect with MySQL
+- Lombok to reduce repetitive code
+- Spring for web applications
+
+In Maven, dependencies are declared in the `pom.xml`.
+
+---
+
+## 29. Add a dependency
+
+The dependencies are placed within:
 
 ```xml
 <dependencies>
@@ -690,7 +688,7 @@ Las dependencias se colocan dentro de:
 </dependencies>
 ```
 
-Ejemplo:
+Example:
 
 ```xml
 <dependencies>
@@ -702,31 +700,31 @@ Ejemplo:
 </dependencies>
 ```
 
-Cada dependencia también tiene coordenadas Maven.
+Each dependency also has Maven coordinates.
 
 ---
 
 ## 30. Maven Central
 
-Maven descarga dependencias desde repositorios.
+Maven downloads dependencies from repositories.
 
-El repositorio público más conocido es:
+The best known public repository is:
 
 ```text
 Maven Central
 ```
 
-Cuando añades una dependencia, Maven puede descargarla automáticamente desde Maven Central y guardarla en tu repositorio local.
+When you add a dependency, Maven can automatically download it from Maven Central and save it to your local repository.
 
-Eso evita tener que descargar `.jar` manualmente.
+That avoids having to download `.jar` manually.
 
 ---
 
-## 31. Ejemplo con JUnit
+## 31. Example with JUnit
 
-JUnit es una librería muy usada para hacer tests.
+JUnit is a library widely used for testing.
 
-Ejemplo de dependencia:
+Dependency example:
 
 ```xml
 <dependencies>
@@ -739,21 +737,21 @@ Ejemplo de dependencia:
 </dependencies>
 ```
 
-Fíjate en:
+Look at:
 
 ```xml
 <scope>test</scope>
 ```
 
-Esto significa que la dependencia se usa para tests, no para el código principal.
+This means that the dependency is used for tests, not the main code.
 
 ---
 
-## 32. Qué es `scope`
+## 32. What is `scope`
 
-El `scope` indica cuándo se usa una dependencia.
+The `scope` indicates when a dependency is used.
 
-Scopes comunes:
+Common scopes:
 
 - `compile`
 - `test`
@@ -762,13 +760,13 @@ Scopes comunes:
 
 ### 32.1. `compile`
 
-Es el scope por defecto.
+It is the default scope.
 
-La dependencia se usa al compilar y ejecutar.
+The dependency is used when compiling and running.
 
 ### 32.2. `test`
 
-La dependencia solo se usa en tests.
+The dependency is only used in tests.
 
 ```xml
 <scope>test</scope>
@@ -776,15 +774,15 @@ La dependencia solo se usa en tests.
 
 ### 32.3. `provided`
 
-La dependencia se necesita para compilar, pero el entorno de ejecución la proporciona.
+The dependency is required to compile, but is provided by the runtime environment.
 
 ### 32.4. `runtime`
 
-No se necesita para compilar, pero sí para ejecutar.
+It is not needed to compile, but it is needed to run.
 
 ---
 
-## 33. Ejemplo completo de POM con JUnit
+## 33. Complete POM example with JUnit
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -816,15 +814,15 @@ No se necesita para compilar, pero sí para ejecutar.
 
 ---
 
-## 34. Crear una clase principal
+## 34. Create a main class
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/app/Calculator.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.app;
@@ -842,15 +840,14 @@ public class Calculator {
 
 ---
 
-## 35. Crear un test con JUnit
+## 35. Create a test with JUnit
 
-Ruta:
-
+Route:
 ```text
 src/test/java/com/amazaing/app/CalculatorTest.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.app;
@@ -871,7 +868,7 @@ public class CalculatorTest {
 }
 ```
 
-Ejecutar:
+Run:
 
 ```bash
 mvn test
@@ -879,13 +876,13 @@ mvn test
 
 ---
 
-## 36. Dependencias transitivas
+## 36. Transitive dependencies
 
-Una dependencia puede necesitar otras dependencias.
+A dependency may require other dependencies.
 
-Maven puede descargarlas automáticamente.
+Maven can download them automatically.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```text
 Tu proyecto
@@ -894,54 +891,54 @@ Tu proyecto
             Library B depende de Library C
 ```
 
-Maven resuelve esa cadena de dependencias.
+Maven solves that chain of dependencies.
 
-Eso se llama:
+That's called:
 
-- dependencias transitivas
+- transitive dependencies
 
 ---
 
-## 37. Ver árbol de dependencias
+## 37. View dependency tree
 
-Puedes ver las dependencias del proyecto con:
+You can see the project dependencies with:
 
 ```bash
 mvn dependency:tree
 ```
 
-Esto muestra:
+This shows:
 
-- dependencias directas
-- dependencias transitivas
-- posibles conflictos
+- direct dependencies
+- transitive dependencies
+- possible conflicts
 
-Es muy útil para entender qué librerías está usando tu proyecto.
+It is very useful to understand what libraries your project is using.
 
 ---
 
-## 38. Qué son los plugins de Maven
+## 38. What are Maven plugins
 
-Los plugins permiten a Maven realizar tareas.
+Plugins allow Maven to perform tasks.
 
-Por ejemplo:
+For example:
 
-- compilar
-- ejecutar tests
-- empaquetar
-- generar documentación
-- crear un `.jar` ejecutable
-- copiar recursos
+- compile
+- run tests
+- pack
+- generate documentation
+- create an executable `.jar`
+- copy resources
 
-Maven funciona en gran parte mediante plugins.
+Maven is largely powered by plugins.
 
 ---
 
 ## 39. Maven Compiler Plugin
 
-Uno de los plugins más importantes es el plugin de compilación.
+One of the most important plugins is the build plugin.
 
-Puedes configurarlo así:
+You can configure it like this:
 
 ```xml
 <build>
@@ -957,7 +954,7 @@ Puedes configurarlo así:
 </build>
 ```
 
-También puedes usar la propiedad:
+You can also use the property:
 
 ```xml
 <properties>
@@ -965,45 +962,45 @@ También puedes usar la propiedad:
 </properties>
 ```
 
-Para proyectos iniciales, la propiedad suele ser suficiente.
+For starter projects, property is usually sufficient.
 
 ---
 
-## 40. Crear un `.jar`
+## 40. Create an `.jar`
 
-Con:
+With:
 
 ```bash
 mvn package
 ```
 
-Maven genera un `.jar` en:
+Maven generates an `.jar` in:
 
 ```text
 target
 ```
 
-Ejemplo:
+Example:
 
 ```text
 target/maven-demo-1.0.0.jar
 ```
 
-Pero para que un `.jar` sea ejecutable con:
+But for an `.jar` to be executable with:
 
 ```bash
 java -jar archivo.jar
 ```
 
-necesita saber cuál es la clase principal.
+you need to know what the main class is.
 
 ---
 
-## 41. Configurar clase principal en el `.jar`
+## 41. Configure main class in the `.jar`
 
-Puedes configurar el plugin de empaquetado para indicar la clase principal.
+You can configure the packaging plugin to indicate the parent class.
 
-Ejemplo:
+Example:
 
 ```xml
 <build>
@@ -1023,19 +1020,19 @@ Ejemplo:
 </build>
 ```
 
-Ahora el `.jar` puede saber qué clase ejecutar.
+Now the `.jar` can know which class to run.
 
 ---
 
-## 42. Ejemplo de `Main.java`
+## 42. `Main.java` Example
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/app/Main.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.app;
@@ -1049,21 +1046,21 @@ public class Main {
 
 ---
 
-## 43. Ejecutar el `.jar`
+## 43. Run `.jar`
 
-Después de:
+After:
 
 ```bash
 mvn clean package
 ```
 
-puedes ejecutar el `.jar`:
+you can run the `.jar`:
 
 ```bash
 java -jar target/maven-demo-1.0.0.jar
 ```
 
-Si todo está bien configurado, verás:
+If everything is configured correctly, you will see:
 
 ```text
 Hello from Maven
@@ -1073,46 +1070,46 @@ Hello from Maven
 
 ## 44. Resources
 
-Maven tiene una carpeta especial para recursos.
+Maven has a special folder for resources.
 
 ```text
 src/main/resources
 ```
 
-Aquí puedes poner archivos como:
+Here you can put files like:
 
 - `.properties`
 - `.json`
 - `.xml`
-- plantillas
-- textos
-- configuraciones
+- templates
+- texts
+- settings
 
-Ejemplo:
+Example:
 
 ```text
 src/main/resources/config.properties
 ```
 
-Al empaquetar el proyecto, Maven incluye esos recursos.
+When packaging the project, Maven includes those resources.
 
 ---
 
-## 45. Leer un recurso
+## 45. Read a resource
 
-Supongamos que tienes:
+Suppose you have:
 
 ```text
 src/main/resources/message.txt
 ```
 
-Contenido:
+Content:
 
 ```text
 Hello from resources
 ```
 
-Puedes leerlo así:
+You can read it like this:
 
 ```java
 package com.amazaing.app;
@@ -1140,33 +1137,33 @@ public class Main {
 
 ## 46. Maven Wrapper
 
-Maven Wrapper permite ejecutar Maven aunque la persona no tenga Maven instalado globalmente.
+Maven Wrapper allows you to run Maven even if the person does not have Maven installed globally.
 
-En vez de:
+Instead of:
 
 ```bash
 mvn package
 ```
 
-puedes usar:
+you can use:
 
 ```bash
 ./mvnw package
 ```
 
-En Windows:
+On Windows:
 
 ```bash
 mvnw.cmd package
 ```
 
-Esto ayuda a que todos usen una versión concreta de Maven para el proyecto.
+This helps everyone use a specific version of Maven for the project.
 
 ---
 
-## 47. Archivos de Maven Wrapper
+## 47. Maven Wrapper Files
 
-Cuando un proyecto usa Maven Wrapper, suelen aparecer archivos como:
+When a project uses Maven Wrapper, files like:
 
 ```text
 mvnw
@@ -1174,36 +1171,36 @@ mvnw.cmd
 .mvn/wrapper/maven-wrapper.properties
 ```
 
-Estos archivos sí suelen subirse al repositorio.
+These files are usually uploaded to the repository.
 
-Así otra persona puede clonar el proyecto y ejecutar:
+So another person can clone the project and run:
 
 ```bash
 ./mvnw test
 ```
 
-sin instalar Maven manualmente.
+without installing Maven manually.
 
 ---
 
-## 48. Crear un proyecto Maven desde un IDE
+## 48. Create a Maven project from an IDE
 
-Muchos IDEs permiten crear proyectos Maven automáticamente.
+Many IDEs allow you to create Maven projects automatically.
 
-Por ejemplo:
+For example:
 
-- IntelliJ IDEA
-- Eclipse
+-IntelliJ IDEA
+-Eclipse
 - NetBeans
-- Visual Studio Code con extensiones Java
+- Visual Studio Code with Java extensions
 
-Normalmente eliges:
+Normally you choose:
 
 ```text
 New Project -> Maven
 ```
 
-Y el IDE crea:
+And the IDE creates:
 
 - `pom.xml`
 - `src/main/java`
@@ -1211,35 +1208,34 @@ Y el IDE crea:
 
 ---
 
-## 49. Crear un proyecto Maven desde terminal
+## 49. Create a Maven project from terminal
+You can also create a Maven project from terminal using an archetype.
 
-También puedes crear un proyecto Maven desde terminal usando un archetype.
-
-Ejemplo:
+Example:
 
 ```bash
 mvn archetype:generate
 ```
 
-Un archetype es una plantilla de proyecto.
+An archetype is a project template.
 
-Para un curso inicial, muchas veces es más cómodo crear la estructura manualmente o desde el IDE.
+For an initial course, it is often more convenient to create the structure manually or from the IDE.
 
 ---
 
-## 50. Importar un proyecto Maven
+## 50. Import a Maven project
 
-Si descargas o clonas un proyecto Maven, normalmente basta con abrir la carpeta donde está el `pom.xml`.
+If you download or clone a Maven project, usually just open the folder where the `pom.xml` is.
 
-El IDE detecta que es un proyecto Maven y descarga las dependencias.
+The IDE detects that it is a Maven project and downloads the dependencies.
 
-Si no lo hace automáticamente, suele haber una opción como:
+If it doesn't do this automatically, there is usually an option like:
 
 ```text
 Reload Maven Project
 ```
 
-o:
+or:
 
 ```text
 Update Project
@@ -1247,52 +1243,52 @@ Update Project
 
 ---
 
-## 51. Actualizar dependencias
+## 51. Update dependencies
 
-Cuando modificas el `pom.xml`, el IDE puede necesitar recargar Maven.
+When you modify the `pom.xml`, the IDE may need to reload Maven.
 
-Ejemplos de acciones:
+Examples of actions:
 
 - Reload Maven
 - Reimport Maven project
 - Update project
 - Sync project
 
-En terminal, puedes ejecutar:
+In terminal, you can run:
 
 ```bash
 mvn clean compile
 ```
 
-para comprobar que todo se descarga y compila correctamente.
+to check that everything downloads and compiles correctly.
 
 ---
 
-## 52. Repositorio local `.m2`
+## 52. `.m2` local repository
 
-Maven guarda las dependencias descargadas en tu repositorio local.
+Maven saves downloaded dependencies to your local repository.
 
-Suele estar en:
+It is usually in:
 
 ```text
 ~/.m2/repository
 ```
 
-En Windows, puede estar en una ruta como:
+On Windows, it can be in a path like:
 
 ```text
 C:\Users\YourUser\.m2\repository
 ```
 
-Esto permite que Maven no descargue la misma dependencia una y otra vez.
+This allows Maven to not download the same dependency over and over again.
 
 ---
 
-## 53. `.gitignore` en un proyecto Maven
+## 53. `.gitignore` in a Maven project
 
-Normalmente no debes subir la carpeta `target` a Git.
+Normally you should not upload the `target` folder to Git.
 
-Ejemplo de `.gitignore`:
+`.gitignore` example:
 
 ```gitignore
 target/
@@ -1300,7 +1296,7 @@ target/
 *.iml
 ```
 
-Si usas Maven Wrapper, normalmente sí se suben:
+If you use Maven Wrapper, they normally do upload:
 
 ```text
 mvnw
@@ -1310,9 +1306,9 @@ mvnw.cmd
 
 ---
 
-## 54. Ejemplo completo de proyecto Maven
+## 54. Complete Maven Project Example
 
-Estructura:
+Structure:
 
 ```text
 maven-demo
@@ -1335,7 +1331,7 @@ maven-demo
 
 ---
 
-## 55. `pom.xml` completo de ejemplo
+## 55. `pom.xml` complete example
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -1453,33 +1449,33 @@ public class CalculatorTest {
 
 ---
 
-## 59. Comandos para probar el proyecto
+## 59. Commands to test the project
 
-Compilar:
+Compile:
 
 ```bash
 mvn compile
 ```
 
-Ejecutar tests:
+Run tests:
 
 ```bash
 mvn test
 ```
 
-Crear `.jar`:
+Create `.jar`:
 
 ```bash
 mvn package
 ```
 
-Limpiar y crear paquete:
+Clean and create package:
 
 ```bash
 mvn clean package
 ```
 
-Ejecutar el `.jar`:
+Run `.jar`:
 
 ```bash
 java -jar target/maven-demo-1.0.0.jar
@@ -1487,45 +1483,45 @@ java -jar target/maven-demo-1.0.0.jar
 
 ---
 
-## 60. Maven y proyectos con módulos Java
+## 60. Maven and projects with Java modules
 
-Maven puede usarse también con el sistema de módulos de Java.
+Maven can also be used with the Java module system.
 
-En ese caso puedes tener un archivo:
+In that case you can have a file:
 
 ```text
 module-info.java
 ```
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
 }
 ```
 
-Y Maven puede compilarlo siempre que la estructura y configuración sean correctas.
+And Maven can compile it as long as the structure and configuration are correct.
 
-Para empezar, no hace falta mezclar módulos y Maven en todos los proyectos, pero es importante saber que pueden trabajar juntos.
+To begin with, there is no need to mix modules and Maven in every project, but it is important to know that they can work together.
 
 ---
 
-## 61. Maven y Java moderno
+## 61. Maven and modern Java
 
-Maven encaja muy bien con Java moderno porque permite gestionar proyectos que usan:
+Maven fits very well with modern Java because it allows you to manage projects that use:
 
 - records
 - sealed classes
 - streams
 - virtual threads
-- módulos
+- modules
 - tests
-- librerías externas
+- external libraries
 - frameworks
 
-La configuración de Java en el POM ayuda a que el proyecto sea más reproducible.
+Configuring Java in the POM helps make the project more reproducible.
 
-Ejemplo:
+Example:
 
 ```xml
 <properties>
@@ -1533,115 +1529,114 @@ Ejemplo:
 </properties>
 ```
 
-Así cualquier persona que abra el proyecto sabe para qué versión de Java está preparado.
+This way anyone who opens the project knows which version of Java it is prepared for.
 
 ---
 
 ## 62. Maven vs Gradle
 
-Otra herramienta muy conocida en Java es Gradle.
+Another well-known tool in Java is Gradle.
 
-### 62.1. Maven
+### 62.1. maven
 
-- usa principalmente XML
-- tiene una estructura muy estándar
-- es muy usado en proyectos Java empresariales
-- es fácil de reconocer
-- tiene mucha documentación y ejemplos
+- mainly uses XML
+- has a very standard structure
+- is widely used in enterprise Java projects
+- it is easy to recognize
+- has a lot of documentation and examples
 
 ### 62.2. Gradle
 
-- suele usar Groovy o Kotlin
-- es más flexible
-- se usa mucho en Android
-- puede ser más compacto
-- puede ser más complejo al principio
-
-Para aprender Java, Maven es una muy buena primera herramienta porque su estructura es clara y muy estándar.
-
----
-
-## 63. Cuándo usar Maven
-
-Usa Maven cuando quieras:
-
-- crear un proyecto Java bien organizado
-- añadir dependencias externas
-- ejecutar tests fácilmente
-- generar un `.jar`
-- compartir el proyecto
-- seguir una estructura estándar
-- trabajar con frameworks como Spring
+- usually uses Groovy or Kotlin
+- it is more flexible
+- used a lot on Android
+- can be more compact
+- may be more complex at first
+To learn Java, Maven is a very good first tool because its structure is clear and very standard.
 
 ---
 
-## 64. Cuándo puede no hacer falta Maven
+## 63. When to use Maven
 
-Puede que no necesites Maven si:
+Use Maven whenever you want:
 
-- estás haciendo un ejemplo de una sola clase
-- estás aprendiendo una sintaxis muy básica
-- no tienes dependencias externas
-- no necesitas tests ni empaquetado
-- quieres hacer pruebas rápidas
-
-Pero en cuanto el proyecto crece un poco, Maven empieza a ser muy útil.
+- create a well-organized Java project
+- add external dependencies
+- run tests easily
+- generate an `.jar`
+- share the project
+- follow a standard structure
+- work with frameworks like Spring
 
 ---
 
-## 65. Errores típicos al empezar
+## 64. When Maven may not be needed
 
-### 65.1. Poner las clases fuera de `src/main/java`
+You may not need Maven if:
 
-Maven espera el código principal en:
+- you are making an example of a single class
+- you are learning very basic syntax
+- you have no external dependencies
+- you don't need testing or packaging
+- you want to do quick tests
+
+But as soon as the project grows a little, Maven starts to be very useful.
+
+---
+
+## 65. Typical mistakes when starting
+
+### 65.1. Put classes outside of `src/main/java`
+
+Maven expects the main code at:
 
 ```text
 src/main/java
 ```
 
-### 65.2. Poner tests fuera de `src/test/java`
+### 65.2. Put tests outside of `src/test/java`
 
-Maven espera los tests en:
+Maven awaits the tests in:
 
 ```text
 src/test/java
 ```
 
-### 65.3. Modificar el `pom.xml` y no recargar Maven
+### 65.3. Modify the `pom.xml` and not reload Maven
 
-Si añades una dependencia y el IDE no la reconoce, recarga el proyecto Maven.
+If you add a dependency and the IDE does not recognize it, reload the Maven project.
 
-### 65.4. Olvidar cerrar etiquetas XML
+### 65.4. Forget to close XML tags
 
-El `pom.xml` es XML, así que todas las etiquetas deben estar correctamente cerradas.
+The `pom.xml` is XML, so all tags must be properly closed.
 
-Ejemplo incorrecto:
+Incorrect example:
 
 ```xml
 <groupId>com.amazaing</groupId
 ```
 
-Ejemplo correcto:
+Correct example:
 
 ```xml
 <groupId>com.amazaing</groupId>
 ```
 
-### 65.5. Confundir `groupId` y `artifactId`
+### 65.5. Confusing `groupId` and `artifactId`
 
-- `groupId` identifica organización o grupo
-- `artifactId` identifica el proyecto o artefacto
+- `groupId` identifies organization or group
+- `artifactId` identifies the project or artifact
 
-### 65.6. Subir `target` a Git
+### 65.6. Upload `target` to Git
 
-La carpeta `target` contiene archivos generados.  
-Normalmente debe ignorarse.
+The `target` folder contains generated files.  
+Normally it should be ignored.
 
-### 65.7. Usar una versión de Java distinta
+### 65.7. Use a different version of Java
 
-Si tu `pom.xml` indica Java 25, asegúrate de que Maven está usando un JDK compatible.
+If your `pom.xml` indicates Java 25, make sure Maven is using a supported JDK.
 
-Comprueba con:
+Check with:
 
 ```bash
 mvn -v
@@ -1649,53 +1644,52 @@ mvn -v
 
 ---
 
-## 66. Buenas prácticas
+## 66. Good practices
 
-- Sigue la estructura estándar de Maven.
-- Mantén el `pom.xml` ordenado.
-- Usa nombres claros para `groupId` y `artifactId`.
-- Configura la versión de Java con `maven.compiler.release`.
-- No subas la carpeta `target` al repositorio.
-- Usa Maven Wrapper si quieres facilitar la ejecución del proyecto en otros equipos.
-- Declara las dependencias en el `pom.xml`, no descargues `.jar` manualmente.
-- Usa `scope test` para dependencias de testing.
-- Ejecuta `mvn clean package` para comprobar que el proyecto compila desde cero.
-- Revisa `mvn dependency:tree` si tienes conflictos de dependencias.
-
----
-
-## 67. A tener en cuenta
-
-- Maven es una herramienta para construir y gestionar proyectos Java.
-- El archivo principal es `pom.xml`.
-- Maven usa una estructura estándar.
-- El código principal va en `src/main/java`.
-- Los tests van en `src/test/java`.
-- Las dependencias se declaran en `<dependencies>`.
-- Maven descarga dependencias automáticamente.
-- `mvn compile` compila.
-- `mvn test` ejecuta tests.
-- `mvn package` genera el paquete.
-- `mvn clean` limpia archivos generados.
-- `mvn install` instala el artefacto en el repositorio local.
-- La carpeta `target` contiene los archivos generados.
-- Maven Wrapper permite ejecutar Maven sin instalación global.
+- Follows the standard Maven structure.
+- Keep `pom.xml` tidy.
+- Use clear names for `groupId` and `artifactId`.
+- Configure the Java version with `maven.compiler.release`.
+- Do not upload the `target` folder to the repository.
+- Use Maven Wrapper if you want to facilitate the execution of the project on other computers.
+- Declare dependencies on `pom.xml`, do not download `.jar` manually.
+- Use `scope test` for testing dependencies.
+- Run `mvn clean package` to verify that the project compiles from scratch.
+- Check `mvn dependency:tree` if you have dependency conflicts.
 
 ---
 
-## 68. Resumen final
+## 67. To take into account
 
-Maven es una herramienta fundamental en el ecosistema Java.
+- Maven is a tool for building and managing Java projects.
+- The main file is `pom.xml`.
+- Maven uses a standard structure.
+- The main code goes in `src/main/java`.
+- The tests go in `src/test/java`.
+- Dependencies are declared in `<dependencies>`.
+- Maven downloads dependencies automatically.
+- `mvn compile` compiles.
+- `mvn test` runs tests.
+- `mvn package` generates the packet.
+- `mvn clean` cleans generated files.
+- `mvn install` installs the artifact to the local repository.
+- The `target` folder contains the generated files.
+- Maven Wrapper allows you to run Maven without a global installation.
 
-Permite organizar proyectos, gestionar dependencias, compilar, ejecutar tests y generar paquetes de forma estándar.
+---
 
-La pieza central de Maven es:
+## 68. Final summary
+Maven is a fundamental tool in the Java ecosystem.
+
+It allows you to organize projects, manage dependencies, compile, run tests and generate packages in a standard way.
+
+The centerpiece of Maven is:
 
 ```text
 pom.xml
 ```
 
-En este archivo defines información como:
+In this file you define information such as:
 
 ```xml
 <groupId>com.amazaing</groupId>
@@ -1703,7 +1697,7 @@ En este archivo defines información como:
 <version>1.0.0</version>
 ```
 
-También puedes añadir dependencias:
+You can also add dependencies:
 
 ```xml
 <dependencies>
@@ -1711,7 +1705,7 @@ También puedes añadir dependencias:
 </dependencies>
 ```
 
-Y configurar Java:
+And configure Java:
 
 ```xml
 <properties>
@@ -1719,7 +1713,7 @@ Y configurar Java:
 </properties>
 ```
 
-Los comandos más importantes son:
+The most important commands are:
 
 ```bash
 mvn compile
@@ -1728,8 +1722,8 @@ mvn package
 mvn clean package
 ```
 
-Aprender Maven te prepara para trabajar con proyectos Java reales, librerías externas, tests y frameworks modernos.
+Learning Maven prepares you to work with real Java projects, external libraries, tests and modern frameworks.
 
 ---
 
-En el siguiente tema terminaremos el curso con un **Proyecto Final**, donde podrás unir muchos de los conceptos aprendidos en una aplicación práctica.
+In the next topic we will finish the course with a **Final Project**, where you will be able to unite many of the concepts learned in a practical application.

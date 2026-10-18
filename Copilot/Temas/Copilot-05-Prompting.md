@@ -1,104 +1,104 @@
-# Tema 05 — Prompting para programadores
+# Topic 05 — Prompting for programmers
 
-## 1. Objetivos del tema
+## 1. Objectives of the topic
 
-En este tema aprenderás a comunicarte con GitHub Copilot de forma eficaz para obtener mejores resultados al programar.
+In this topic, you will learn how to communicate with GitHub Copilot effectively to get better results when programming.
 
-Al finalizar este tema deberías ser capaz de:
+By the end of this topic you should be able to:
 
-- Entender qué es un prompt técnico.
-- Diferenciar entre un prompt pobre y un prompt útil.
-- Escribir prompts con contexto, objetivo, restricciones y formato esperado.
-- Pedir a Copilot que genere funciones.
-- Pedir documentación de código.
-- Pedir refactorizaciones.
-- Pedir tests.
-- Pedir detección de bugs.
-- Iterar sobre una respuesta de Copilot.
-- Revisar críticamente el código generado.
+- Understand what a technical prompt is.
+- Differentiate between a poor prompt and a useful prompt.
+- Write prompts with context, objective, restrictions and expected format.
+- Ask Copilot to generate functions.
+- Request code documentation.
+- Request refactorings.
+- Request tests.
+- Request bug detection.
+- Iterate on a Copilot response.
+- Critically review the generated code.
 
 ---
 
-## 2. Qué es un prompt
+## 2. What is a prompt
 
-Un **prompt** es la instrucción que damos a una herramienta de inteligencia artificial para que genere una respuesta.
+A **prompt** is the instruction we give to an artificial intelligence tool to generate a response.
 
-En programación, un prompt puede servir para pedir:
+In programming, a prompt can be used to request:
 
-- Una función.
-- Una clase.
-- Una explicación.
-- Una refactorización.
-- Un test.
-- Una solución a un error.
-- Una alternativa de implementación.
-- Una documentación técnica.
+- A function.
+- A class.
+- An explanation.
+- A refactoring.
+- A test.
+- A solution to a bug.
+- An implementation alternative.
+- A technical documentation.
 
-Ejemplo de prompt sencillo:
+Simple prompt example:
 
 ```text
 Create a function to validate an email.
 ```
 
-Este prompt puede funcionar, pero es muy general.
+This prompt may work, but it is very general.
 
-Un prompt más útil sería:
+A more useful prompt would be:
 
 ```text
 Create a JavaScript function called isValidEmail that receives a string and returns true if it has a valid email format. Do not use external libraries. Add simple comments explaining the main steps.
 ```
 
-La segunda versión es mejor porque indica:
+The second version is better because it indicates:
 
-- El lenguaje.
-- El nombre de la función.
-- El parámetro de entrada.
-- El resultado esperado.
-- Una restricción.
-- El nivel de explicación deseado.
-
----
-
-## 3. Por qué el prompting es importante para programar
-
-Copilot puede generar código a partir del contexto del editor, pero no siempre sabe exactamente qué quieres.
-
-Un buen prompt ayuda a reducir:
-
-- Código incompleto.
-- Código que no sigue el estilo del proyecto.
-- Soluciones demasiado complejas.
-- Funciones que no devuelven lo esperado.
-- Tests poco útiles.
-- Explicaciones demasiado generales.
-
-El objetivo no es escribir prompts largos siempre, sino escribir prompts **suficientemente claros**.
+- The language.
+- The name of the function.
+- The input parameter.
+- The expected result.
+- A restriction.
+- The desired level of explanation.
 
 ---
 
-## 4. Estructura recomendada de un buen prompt técnico
+## 3. Why prompting is important for programming
 
-Una estructura práctica es la siguiente:
+Copilot can generate code from the editor context, but it doesn't always know exactly what you want.
+
+A good prompt helps reduce:
+
+- Incomplete code.
+- Code that does not follow the style of the project.
+- Too complex solutions.
+- Functions that do not return what is expected.
+- Tests that are not very useful.
+- Explanations that are too general.
+
+The goal is not to always write long prompts, but to write **clear enough** prompts.
+
+---
+
+## 4. Recommended structure of a good technical prompt
+
+A practical structure is the following:
 
 ```text
 Contexto + Objetivo + Restricciones + Formato esperado + Criterios de calidad
 ```
 
-No siempre necesitas incluir todos los elementos, pero es útil conocerlos.
+You don't always need to include all the elements, but it's helpful to know them.
 
 ---
 
-### 4.1. Contexto
+### 4.1. Context
 
-El contexto explica a Copilot dónde está trabajando y qué debe tener en cuenta.
+The context tells Copilot where you are working and what to consider.
 
-Ejemplo:
+Example:
 
 ```text
 This file contains utility functions for a shopping cart in a JavaScript application.
 ```
 
-Otro ejemplo:
+Another example:
 
 ```text
 We are working on a Spring MVC application using controllers, services and repositories.
@@ -106,11 +106,11 @@ We are working on a Spring MVC application using controllers, services and repos
 
 ---
 
-### 4.2. Objetivo
+### 4.2. Objective
 
-El objetivo indica qué quieres conseguir.
+The objective indicates what you want to achieve.
 
-Ejemplo:
+Example:
 
 ```text
 Create a function that calculates the total price of all products in the cart.
@@ -118,11 +118,11 @@ Create a function that calculates the total price of all products in the cart.
 
 ---
 
-### 4.3. Restricciones
+### 4.3. Restrictions
 
-Las restricciones indican límites o condiciones.
+Constraints indicate limits or conditions.
 
-Ejemplo:
+Example:
 
 ```text
 Do not use external libraries.
@@ -138,11 +138,11 @@ Use async/await instead of promises with .then().
 
 ---
 
-### 4.4. Formato esperado
+### 4.4. Expected format
 
-Indica cómo quieres recibir la respuesta.
+Indicate how you want to receive the response.
 
-Ejemplo:
+Example:
 
 ```text
 Return only the code.
@@ -158,11 +158,11 @@ Give me the answer as a Markdown table.
 
 ---
 
-### 4.5. Criterios de calidad
+### 4.5. Quality criteria
 
-Indican cómo debe ser la solución.
+They indicate what the solution should be like.
 
-Ejemplo:
+Example:
 
 ```text
 The code should be readable, simple and easy to test.
@@ -174,21 +174,21 @@ Include edge cases for empty arrays, null values and invalid input.
 
 ---
 
-## 5. Ejemplo completo de prompt técnico
+## 5. Complete technical prompt example
 
-Prompt poco preciso:
+Imprecise prompt:
 
 ```text
 Make a login function.
 ```
 
-Prompt mejorado:
+Improved Prompt:
 
 ```text
 Create a JavaScript function called loginUser. It should receive an email and a password, validate that both values are not empty, and return an object with success and message properties. Do not connect to a real database. Keep the function simple and easy to test.
 ```
 
-Una posible respuesta sería:
+A possible answer would be:
 
 ```javascript
 function loginUser(email, password) {
@@ -208,30 +208,30 @@ function loginUser(email, password) {
 
 ---
 
-## 6. Prompting para generar funciones
+## 6. Prompting to generate functions
 
-Cuando pidas una función, intenta indicar:
+When you ask for a feature, try to indicate:
 
-- Nombre de la función.
-- Lenguaje.
-- Parámetros.
-- Qué debe devolver.
-- Casos especiales.
-- Restricciones.
+- Name of the function.
+- Language.
+- Parameters.
+- What should you return?
+- Special cases.
+- Restrictions.
 
-Plantilla útil:
+Useful template:
 
 ```text
 Create a [language] function called [functionName] that receives [parameters] and returns [expected result]. It should handle [edge cases]. Do not use [restriction].
 ```
 
-Ejemplo:
+Example:
 
 ```text
 Create a JavaScript function called calculateDiscountedPrice that receives a price and a discount percentage. It should return the final price after applying the discount. If the price is negative or the discount is outside the 0-100 range, return null. Do not use external libraries.
 ```
 
-Posible resultado:
+Possible result:
 
 ```javascript
 function calculateDiscountedPrice(price, discountPercentage) {
@@ -246,19 +246,18 @@ function calculateDiscountedPrice(price, discountPercentage) {
 
 ---
 
-## 7. Prompting para documentar código
+## 7. Prompting to document code
+Copilot can help document functions, classes, or entire files.
 
-Copilot puede ayudar a documentar funciones, clases o archivos completos.
+It is important to ask for the type of documentation you need.
 
-Es importante pedir el tipo de documentación que necesitas.
-
-No es lo mismo pedir:
+It is not the same to ask:
 
 ```text
 Document this code.
 ```
 
-que pedir:
+what to ask for:
 
 ```text
 Add JSDoc comments to this function. Explain the parameters, the return value and the possible edge cases. Keep the comments concise.
@@ -266,9 +265,9 @@ Add JSDoc comments to this function. Explain the parameters, the return value an
 
 ---
 
-### 7.1. Ejemplo de documentación con JSDoc
+### 7.1. Example of documentation with JSDoc
 
-Código inicial:
+Initial code:
 
 ```javascript
 function calculateAverage(numbers) {
@@ -287,7 +286,7 @@ Prompt:
 Add JSDoc documentation to this function. Include parameter type, return type and a short description. Do not modify the function logic.
 ```
 
-Resultado esperado:
+Expected result:
 
 ```javascript
 /**
@@ -308,26 +307,26 @@ function calculateAverage(numbers) {
 
 ---
 
-## 8. Prompting para refactorizar código
+## 8. Prompting to refactor code
 
-Refactorizar significa mejorar la estructura interna del código sin cambiar su comportamiento externo.
+Refactoring means improving the internal structure of the code without changing its external behavior.
 
-Puedes pedir a Copilot que mejore:
+You can ask Copilot to improve:
 
-- Legibilidad.
-- Repetición de código.
-- Nombres de variables.
-- Separación de responsabilidades.
-- Complejidad de funciones.
-- Organización de archivos.
+- Readability.
+- Code repetition.
+- Variable names.
+- Separation of responsibilities.
+- Complexity of functions.
+- File organization.
 
-Prompt demasiado general:
+Prompt too general:
 
 ```text
 Improve this code.
 ```
 
-Prompt más útil:
+Most useful prompt:
 
 ```text
 Refactor this function to make it easier to read. Do not change its behavior. Keep the same input and output. Explain the changes after the code.
@@ -335,9 +334,9 @@ Refactor this function to make it easier to read. Do not change its behavior. Ke
 
 ---
 
-### 8.1. Ejemplo de refactorización
+### 8.1. Refactoring example
 
-Código inicial:
+Initial code:
 
 ```javascript
 function getFinalPrice(price, userType) {
@@ -361,7 +360,7 @@ Prompt:
 Refactor this function to make the discount rules easier to maintain. Do not change the behavior. Keep the same function name and parameters.
 ```
 
-Posible resultado:
+Possible result:
 
 ```javascript
 function getFinalPrice(price, userType) {
@@ -378,32 +377,32 @@ function getFinalPrice(price, userType) {
 
 ---
 
-## 9. Prompting para escribir tests
+## 9. Prompting to write tests
 
-Una de las tareas más útiles de Copilot es ayudar a crear tests.
+One of Copilot's most useful tasks is to help create tests.
 
-Para obtener buenos tests, conviene indicar:
+To obtain good tests, it is advisable to indicate:
 
-- Framework de testing.
-- Función o clase a probar.
-- Casos normales.
-- Casos límite.
-- Casos de error.
-- Formato esperado.
+- Testing framework.
+- Function or class to test.
+- Normal cases.
+- Borderline cases.
+- Error cases.
+- Expected format.
 
-Plantilla:
+Template:
 
 ```text
 Generate unit tests for [function/class] using [testing framework]. Include normal cases, edge cases and invalid input cases. Do not modify the source code.
 ```
 
-Ejemplo:
+Example:
 
 ```text
 Generate Jest unit tests for the calculateDiscountedPrice function. Include valid discounts, zero discount, 100% discount, negative price and discount values outside the 0-100 range.
 ```
 
-Posible resultado:
+Possible result:
 
 ```javascript
 const { calculateDiscountedPrice } = require("../src/prices");
@@ -431,21 +430,21 @@ describe("calculateDiscountedPrice", () => {
 });
 ```
 
-> Los tests generados por Copilot deben revisarse. Que un test exista no significa que sea suficiente ni que esté bien diseñado.
+> Tests generated by Copilot must be reviewed. Just because a test exists does not mean that it is sufficient or that it is well designed.
 
 ---
 
-## 10. Prompting para detectar bugs
+## 10. Prompting to detect bugs
 
-Copilot puede ayudar a encontrar errores, pero no debe sustituir al análisis humano.
+Copilot can help find errors, but should not replace human analysis.
 
-Prompt útil:
+Useful prompt:
 
 ```text
 Review this function and identify possible bugs or edge cases. Explain each problem and suggest a minimal fix.
 ```
 
-Ejemplo de código problemático:
+Problematic code example:
 
 ```javascript
 function divide(a, b) {
@@ -459,7 +458,7 @@ Prompt:
 Review this function and identify possible bugs or edge cases. Suggest a safer version.
 ```
 
-Posible respuesta:
+Possible answer:
 
 ```javascript
 function divide(a, b) {
@@ -471,7 +470,7 @@ function divide(a, b) {
 }
 ```
 
-Explicación esperada:
+Expected explanation:
 
 ```text
 The original function does not handle division by zero. In JavaScript, dividing by zero returns Infinity, which may cause unexpected behavior. The revised version throws an explicit error.
@@ -479,11 +478,11 @@ The original function does not handle division by zero. In JavaScript, dividing 
 
 ---
 
-## 11. Prompting para explicar código
+## 11. Prompting to explain code
 
-Copilot también puede funcionar como apoyo para entender código ajeno o heredado.
+Copilot can also function as support to understand foreign or legacy code.
 
-Prompts útiles:
+Useful prompts:
 
 ```text
 Explain this function step by step in simple language.
@@ -501,74 +500,74 @@ Summarize this code for a junior developer.
 Explain this code as if I already know JavaScript but I am new to React.
 ```
 
-La última versión es mejor porque indica el nivel del destinatario.
+The latest version is better because it indicates the level of the recipient.
 
 ---
 
-## 12. Prompting para generar alternativas
+## 12. Prompting to generate alternatives
 
-A veces no queremos una única respuesta, sino comparar enfoques.
+Sometimes we don't want a single answer, but rather to compare approaches.
 
-Ejemplo:
+Example:
 
 ```text
 Give me two different ways to implement this validation: one simple and one more scalable. Explain the pros and cons of each option.
 ```
 
-Esto puede ser útil cuando tienes que decidir entre:
+This can be useful when you have to decide between:
 
-- Código simple o código extensible.
-- Función aislada o clase.
-- Validación manual o librería externa.
-- Solución rápida o solución mantenible.
+- Simple code or extensible code.
+- Isolated function or class.
+- Manual validation or external library.
+- Quick solution or maintainable solution.
 
 ---
 
-## 13. Prompting iterativo
+## 13. Iterative Prompting
 
-Trabajar con Copilot no consiste en escribir un único prompt y aceptar la primera respuesta.
+Working with Copilot is not about writing a single prompt and accepting the first response.
 
-Lo habitual es iterar.
+The usual thing is to iterate.
 
-Ejemplo de secuencia:
+Sequence example:
 
 ```text
 Create a JavaScript function to validate a password.
 ```
 
-Después:
+After:
 
 ```text
 Modify it so the password must have at least 8 characters, one uppercase letter, one lowercase letter and one number.
 ```
 
-Después:
+After:
 
 ```text
 Return an object with isValid and errors instead of only true or false.
 ```
 
-Después:
+After:
 
 ```text
 Add unit tests using Jest.
 ```
 
-Después:
+After:
 
 ```text
 Refactor the code to make each validation rule easier to maintain.
 ```
 
-Esta forma de trabajar se parece a colaborar con un compañero de programación.
+This way of working is similar to collaborating with a programming partner.
 
 ---
 
-## 14. Prompts con restricciones de estilo
+## 14. Prompts with style restrictions
 
-Puedes pedir a Copilot que siga un estilo concreto.
+You can ask Copilot to follow a specific style.
 
-Ejemplos:
+Examples:
 
 ```text
 Use clear variable names and avoid nested if statements.
@@ -586,33 +585,33 @@ Use modern JavaScript syntax, but avoid advanced patterns that would make the co
 Follow the existing style of this file.
 ```
 
-Este tipo de instrucciones ayuda a mantener la coherencia del proyecto.
+These types of instructions help maintain project coherence.
 
 ---
 
-## 15. Prompts para trabajar con errores
+## 15. Prompts for working with errors
 
-Cuando tengas un error, evita escribir solo:
+When you have an error, avoid writing alone:
 
 ```text
 Fix this error.
 ```
 
-Es mejor incluir:
+It is better to include:
 
-- Qué estabas intentando hacer.
-- El mensaje de error.
-- El fragmento relevante de código.
-- Qué comportamiento esperabas.
-- Qué comportamiento obtuviste.
+- What were you trying to do?
+- The error message.
+- The relevant code fragment.
+- What behavior did you expect.
+- What behavior did you get.
 
-Plantilla:
+Template:
 
 ```text
 I am trying to [goal]. I get this error: [error message]. This is the relevant code: [code]. I expected [expected behavior], but I got [actual behavior]. Explain the likely cause and suggest a fix.
 ```
 
-Ejemplo:
+Example:
 
 ```text
 I am trying to run a Jest test for my calculateAverage function. I get this error: TypeError: calculateAverage is not a function. The function is defined in src/calculator.js and the test imports it from ../src/calculator. Explain the likely cause and suggest a fix.
@@ -620,37 +619,37 @@ I am trying to run a Jest test for my calculateAverage function. I get this erro
 
 ---
 
-## 16. Qué hacer cuando Copilot responde mal
+## 16. What to do when Copilot responds badly
 
-Si Copilot da una respuesta incorrecta, incompleta o demasiado general, no aceptes la respuesta sin más.
+If Copilot gives an answer that is incorrect, incomplete, or too general, do not simply accept the answer.
 
-Puedes mejorar la conversación con nuevos prompts.
+You can improve the conversation with new prompts.
 
-### 16.1. Pedir más precisión
+### 16.1. Ask for more precision
 
 ```text
 Be more specific and show the exact code changes.
 ```
 
-### 16.2. Pedir una solución más simple
+### 16.2. Ask for a simpler solution
 
 ```text
 Simplify the solution. Avoid unnecessary abstractions.
 ```
 
-### 16.3. Pedir explicación
+### 16.3. Ask for explanation
 
 ```text
 Explain why this solution works.
 ```
 
-### 16.4. Pedir revisión de problemas
+### 16.4. Request problem review
 
 ```text
 Review your previous answer and identify any possible issue or missing edge case.
 ```
 
-### 16.5. Pedir que no cambie partes del código
+### 16.5. Ask not to change parts of the code
 
 ```text
 Keep the public function names unchanged because other files depend on them.
@@ -658,17 +657,17 @@ Keep the public function names unchanged because other files depend on them.
 
 ---
 
-## 17. Errores frecuentes al escribir prompts
+## 17. Common mistakes when writing prompts
 
-### Error 1: Ser demasiado ambiguo
+### Mistake 1: Being too ambiguous
 
 ```text
 Make this better.
 ```
 
-Problema: no queda claro qué significa “mejor”.
+Problem: It is not clear what “better” means.
 
-Versión mejorada:
+Improved version:
 
 ```text
 Refactor this code to reduce duplication and improve readability. Do not change the behavior.
@@ -676,13 +675,13 @@ Refactor this code to reduce duplication and improve readability. Do not change 
 
 ---
 
-### Error 2: No indicar el lenguaje o framework
+### Error 2: Not indicating the language or framework
 
 ```text
 Create a test for this function.
 ```
 
-Versión mejorada:
+Improved version:
 
 ```text
 Create Jest unit tests for this JavaScript function.
@@ -690,13 +689,13 @@ Create Jest unit tests for this JavaScript function.
 
 ---
 
-### Error 3: No indicar restricciones
+### Error 3: Not indicating restrictions
 
 ```text
 Validate this email.
 ```
 
-Versión mejorada:
+Improved version:
 
 ```text
 Create a simple email validation function without external libraries. It should return true or false.
@@ -704,45 +703,45 @@ Create a simple email validation function without external libraries. It should 
 
 ---
 
-### Error 4: Aceptar la primera respuesta sin revisar
+### Error 4: Accepting the first answer without checking
 
-Copilot puede generar código que parece correcto, pero que:
+Copilot can generate code that looks correct, but that:
 
-- No compila.
-- No contempla casos límite.
-- No sigue el estilo del proyecto.
-- Tiene problemas de seguridad.
-- Usa dependencias que no existen.
-- Resuelve un problema distinto al planteado.
-
----
-
-## 18. Checklist para revisar código generado por Copilot
-
-Antes de aceptar código generado, revisa:
-
-- ¿Entiendo lo que hace?
-- ¿Compila o se ejecuta?
-- ¿Cumple exactamente lo que he pedido?
-- ¿Respeta el estilo del proyecto?
-- ¿Tiene nombres claros?
-- ¿Gestiona errores previsibles?
-- ¿Cubre casos límite?
-- ¿Introduce dependencias innecesarias?
-- ¿Puede tener problemas de seguridad?
-- ¿Necesita tests?
+- Does not compile.
+- Does not consider borderline cases.
+- Does not follow the style of the project.
+- You have security problems.
+- Use dependencies that do not exist.
+- Solve a problem other than the one posed.
 
 ---
 
-## 19. Guía paso a paso: flujo recomendado de prompting
+## 18. Checklist to review code generated by Copilot
 
-Cuando uses Copilot para una tarea de programación, puedes seguir este flujo:
+Before accepting generated code, review:
 
-### Paso 1: Define el objetivo
+- Do I understand what it does?
+- Does it compile or run?
+- Does it fulfill exactly what I asked for?
+- Do you respect the style of the project?
+- Do you have clear names?
+- Do you manage foreseeable errors?
+- Does it cover borderline cases?
+- Does it introduce unnecessary dependencies?
+- Could it have security problems?
+- Do you need tests?
 
-Antes de preguntar, aclara qué quieres conseguir.
+---
 
-Ejemplo:
+## 19. Step-by-step guide: recommended prompting flow
+
+When using Copilot for a scheduling task, you can follow this flow:
+
+### Step 1: Define the objective
+
+Before asking, clarify what you want to achieve.
+
+Example:
 
 ```text
 Quiero validar los datos de un formulario de registro.
@@ -750,11 +749,11 @@ Quiero validar los datos de un formulario de registro.
 
 ---
 
-### Paso 2: Da contexto
+### Step 2: Give context
 
-Indica el lenguaje, framework o archivo.
+Indicates the language, framework or file.
 
-Ejemplo:
+Example:
 
 ```text
 This is a JavaScript project using plain functions, without frameworks.
@@ -762,9 +761,9 @@ This is a JavaScript project using plain functions, without frameworks.
 
 ---
 
-### Paso 3: Especifica restricciones
+### Step 3: Specify restrictions
 
-Ejemplo:
+Example:
 
 ```text
 Do not use external libraries.
@@ -772,9 +771,9 @@ Do not use external libraries.
 
 ---
 
-### Paso 4: Pide el resultado
+### Step 4: Ask for the result
 
-Ejemplo:
+Example:
 
 ```text
 Create a function called validateRegisterForm.
@@ -782,9 +781,9 @@ Create a function called validateRegisterForm.
 
 ---
 
-### Paso 5: Pide casos límite
+### Step 5: Ask for borderline cases
 
-Ejemplo:
+Example:
 
 ```text
 Handle empty values, invalid email and password shorter than 8 characters.
@@ -792,25 +791,25 @@ Handle empty values, invalid email and password shorter than 8 characters.
 
 ---
 
-### Paso 6: Revisa la respuesta
+### Step 6: Review the answer
 
-No aceptes el código automáticamente.
+Don't accept the code automatically.
 
-Comprueba:
+Check:
 
-- Lógica.
-- Nombres.
-- Errores.
-- Seguridad.
-- Casos límite.
+- Logic.
+- Names.
+- Errors.
+- Security.
+- Borderline cases.
 
 ---
 
-### Paso 7: Itera
+### Step 7: Iterate
 
-Si falta algo, pídeselo.
+If something is missing, ask for it.
 
-Ejemplo:
+Example:
 
 ```text
 Modify the function so it returns an array of error messages instead of only true or false.
@@ -818,9 +817,9 @@ Modify the function so it returns an array of error messages instead of only tru
 
 ---
 
-### Paso 8: Pide tests
+### Step 8: Request tests
 
-Ejemplo:
+Example:
 
 ```text
 Generate Jest tests for this function, including valid data, empty fields and invalid email.
@@ -828,30 +827,29 @@ Generate Jest tests for this function, including valid data, empty fields and in
 
 ---
 
-## 20. Resumen
+## 20. Summary
 
-En este tema has aprendido a escribir mejores prompts para programar con GitHub Copilot.
+In this topic you have learned how to write better prompts for programming with GitHub Copilot.
 
-Has visto:
+Have you seen:
 
-- Qué es un prompt técnico.
-- Por qué el contexto es importante.
-- Cómo estructurar un buen prompt.
-- Cómo pedir funciones.
-- Cómo pedir documentación.
-- Cómo pedir refactorizaciones.
-- Cómo pedir tests.
-- Cómo pedir detección de bugs.
-- Cómo iterar sobre respuestas.
-- Cómo revisar críticamente el resultado.
+- What is a technical prompt.
+- Why context is important.
+- How to structure a good prompt.
+- How to request features.
+- How to request documentation.
+- How to request refactorings.
+- How to request tests.
+- How to request bug detection.
+- How to iterate on responses.
+- How to critically review the result.
 
-La idea principal es que Copilot funciona mejor cuando recibe instrucciones claras, contexto suficiente y criterios concretos.
+The main idea is that Copilot works best when given clear instructions, sufficient context, and concrete criteria.
 
-Un buen uso de Copilot no consiste en aceptar todo lo que propone, sino en usarlo como apoyo para pensar, escribir, revisar y mejorar código.
+A good use of Copilot is not to accept everything it proposes, but to use it as a support to think, write, review and improve code.
 
 ---
-
-## 21. Documentación oficial recomendada
+## 21. Recommended official documentation
 
 - GitHub Copilot documentation: `https://docs.github.com/copilot`
 - Prompt engineering for GitHub Copilot Chat: `https://docs.github.com/copilot/concepts/prompt-engineering-for-copilot-chat`

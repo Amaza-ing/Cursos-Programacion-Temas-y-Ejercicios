@@ -1,27 +1,27 @@
-# Ejercicios - Tema 14: Clases y Objetos
+# Exercises - Topic 14: Classes and Objects
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **Clases y Objetos**: definición de clases, atributos, métodos, constructores, uso de `this`, getters y setters.
+Below you will find **10 practical exercises** on **Classes and Objects**: definition of classes, attributes, methods, constructors, use of `this`, getters and setters.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear una clase simple
+## Exercise 1: Create a simple class
 
-Crea una clase `Book` con:
+Create a class `Book` with:
 
 - `title` (String)
 - `pages` (int)
 
-Crea un constructor que reciba ambos valores y un método `printInfo()` que muestre:
+Create a constructor that receives both values and an `printInfo()` method that returns:
 
 ```
 Title: X | Pages: Y
 ```
 
-En `main`, crea un objeto y llama a `printInfo()`.
+In `main`, create an object and call `printInfo()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Book {
@@ -52,18 +52,18 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Usar `this` correctamente
+## Exercise 2: Using `this` correctly
 
-Crea una clase `Car` con:
+Create a class `Car` with:
 
 - `brand`
 - `year`
 
-En el constructor, usa `this` para diferenciar atributos y parámetros.
+In the constructor, use `this` to differentiate attributes and parameters.
 
-Crea un método `printInfo()`.
+Create a method `printInfo()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Car {
@@ -85,20 +85,20 @@ public class Car {
 
 ---
 
-## Ejercicio 3: Getters y setters
+## Exercise 3: Getters and setters
 
-Crea una clase `Student` con:
+Create a class `Student` with:
 
 - `name`
 - `grade`
 
-Haz los atributos `private` y crea:
+Make the attributes `private` and create:
 
-- Constructor
-- Getter para ambos
-- Setter para `grade` que valide que esté entre 0 y 10
+- Builder
+- Getter for both
+- Setter for `grade` that validates that it is between 0 and 10
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Student {
@@ -132,19 +132,19 @@ public class Student {
 
 ---
 
-## Ejercicio 4: Método que modifica estado
+## Exercise 4: Method that modifies state
 
-Crea una clase `BankAccount` con:
+Create a class `BankAccount` with:
 
 - `balance`
 
-Incluye:
+Includes:
 
-- Constructor que inicialice el saldo
-- Método `deposit(double amount)`
-- Método `withdraw(double amount)` (no permitir saldo negativo)
+- Constructor that initializes the balance
+- `deposit(double amount)` method
+- `withdraw(double amount)` method (do not allow negative balance)
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class BankAccount {
@@ -178,16 +178,16 @@ public class BankAccount {
 
 ---
 
-## Ejercicio 5: Constructor con valores por defecto
+## Exercise 5: Constructor with default values
 
-Crea una clase `User` con:
+Create a class `User` with:
 
 - `username`
 - `active`
 
-El constructor debe recibir solo `username` y establecer `active = true` por defecto.
+The constructor should receive only `username` and set `active = true` by default.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class User {
@@ -209,20 +209,20 @@ public class User {
 
 ---
 
-## Ejercicio 6: Método que devuelve información formateada
+## Exercise 6: Method that returns formatted information
 
-Crea una clase `Product` con:
+Create a class `Product` with:
 
 - `name`
 - `price`
 
-Añade un método `getFormattedPrice()` que devuelva:
+Add an `getFormattedPrice()` method that returns:
 
 ```
 Product: X | Price: Y
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Product {
@@ -244,18 +244,18 @@ public class Product {
 
 ---
 
-## Ejercicio 7: Crear varios objetos
+## Exercise 7: Create multiple objects
 
-Crea una clase `Rectangle` con:
+Create a class `Rectangle` with:
 
 - `width`
 - `height`
 
-Incluye método `area()`.
+Includes method `area()`.
 
-En `main`, crea 3 objetos distintos y muestra sus áreas.
+In `main`, create 3 different objects and show their areas.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Rectangle {
@@ -291,19 +291,19 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Método que cambia un atributo boolean
+## Exercise 8: Method that changes a boolean attribute
 
-Crea una clase `Light` con:
+Create a class `Light` with:
 
 - `isOn` (boolean)
 
-Incluye:
+Includes:
 
-- Método `turnOn()`
-- Método `turnOff()`
-- Método `toggle()`
+- `turnOn()` method
+- `turnOff()` method
+- `toggle()` method
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Light {
@@ -331,15 +331,15 @@ public class Light {
 
 ---
 
-## Ejercicio 9: Método que usa atributos para calcular resultado
+## Exercise 9: Method that uses attributes to calculate result
 
-Crea una clase `Circle` con:
+Create a class `Circle` with:
 
 - `radius`
 
-Incluye método `area()` usando `Math.PI`.
+Includes method `area()` using `Math.PI`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Circle {
@@ -358,22 +358,21 @@ public class Circle {
 </details>
 
 ---
+## Exercise 10: Class with a method that uses another method
 
-## Ejercicio 10: Clase con método que usa otro método
-
-Crea una clase `Employee` con:
+Create a class `Employee` with:
 
 - `name`
 - `salary`
 
-Incluye:
+Includes:
 
-- Método `increaseSalary(double percentage)`
-- Método `getAnnualSalary()`
+- `increaseSalary(double percentage)` method
+- `getAnnualSalary()` method
 
-`increaseSalary` debe aumentar el salario según el porcentaje recibido.
+`increaseSalary` should increase the salary according to the percentage received.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Employee {

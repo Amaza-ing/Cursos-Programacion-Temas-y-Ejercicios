@@ -1,19 +1,19 @@
-# Ejercicios - Tema 9: Métodos de `String`
+# Exercises - Topic 9: `String` Methods
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con los métodos más usados de `String` (`length`, `charAt`, `substring`, `equals`, `contains`, `indexOf`, `replace`, `strip/trim`, `split`, `String.format`, etc.).
+Below you will find **10 practical exercises** to work with the most used methods of `String` (`length`, `charAt`, `substring`, `equals`, `contains`, `indexOf`, `replace`, `strip/trim`, `split`, `String.format`, etc.).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Longitud y primera letra
+## Exercise 1: Length and first letter
 
-Declara una variable `text` con valor `"Programming"`.
+Declare a variable `text` with value `"Programming"`.
 
-- Imprime la longitud de la cadena
-- Imprime el primer carácter
+- Print the length of the string
+- Print the first character
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -30,13 +30,13 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Obtener las 3 primeras letras
+## Exercise 2: Get the first 3 letters
 
-Declara una variable `word` con valor `"IntelliJ"`.
+Declares a variable `word` with value `"IntelliJ"`.
 
-Usa `substring` para obtener `"Int"` y muéstralo por consola.
+Use `substring` to get `"Int"` and show it in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -53,13 +53,13 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Comparación sin distinguir mayúsculas
+## Exercise 3: Case-insensitive comparison
 
-Declara una variable `input` con valor `"YeS"`.
+Declares a variable `input` with value `"YeS"`.
 
-Comprueba si el valor significa `"yes"` ignorando mayúsculas y minúsculas, e imprime el resultado.
+Checks whether the value means `"yes"`, ignoring case, and prints the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -76,15 +76,15 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Eliminar espacios y validar
+## Exercise 4: Remove spaces and validate
 
-Declara una variable `rawName` con valor `"   Laura   "`.
+Declare a variable `rawName` with value `"   Laura   "`.
 
-- Elimina los espacios de los lados
-- Comprueba si el resultado NO está vacío
-- Imprime el nombre limpio
+- Eliminates spaces on the sides
+- Check if the result is NOT empty
+- Print the name clean
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -104,18 +104,18 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Comprobar si un email contiene `@` y termina en `.com`
+## Exercise 5: Check if an email contains `@` and ends in `.com`
 
-Declara una variable `email` con valor `"user@example.com"`.
+Declare a variable `email` with value `"user@example.com"`.
 
-Crea una variable `isValid` que sea `true` si:
+Create a variable `isValid` that is `true` if:
 
-- Contiene `@`
-- Termina en `.com`
+- Contains `@`
+- Ends in `.com`
 
-Imprime `isValid`.
+Print `isValid`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -132,13 +132,13 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Encontrar la posición de un carácter
+## Exercise 6: Finding the position of a character
 
-Declara una variable `fileName` con valor `"report_2026.pdf"`.
+Declare a variable `fileName` with value `"report_2026.pdf"`.
 
-Usa `indexOf` para encontrar la posición del primer guion bajo (`_`) e imprímela.
+Use `indexOf` to find the position of the first underscore (`_`) and print it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -155,19 +155,19 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Extraer la extensión de un archivo
+## Exercise 7: Extract the extension of a file
 
-Declara `fileName` con valor `"photo.backup.png"`.
+Declare `fileName` with value `"photo.backup.png"`.
 
-Extrae la extensión usando `lastIndexOf` y `substring` e imprímela.
+Extract the extension using `lastIndexOf` and `substring` and print it.
 
-Salida esperada:
+Expected output:
 
 ```
 png
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -186,13 +186,13 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Reemplazar texto
+## Exercise 8: Replace text
 
-Declara una variable `sentence` con valor `"Java is hard"`.
+Declares a variable `sentence` with value `"Java is hard"`.
 
-Reemplaza `"hard"` por `"powerful"` e imprime el resultado.
+Replace `"hard"` with `"powerful"` and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -209,14 +209,14 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Dividir una cadena CSV
+## Exercise 9: Split a CSV String
 
-Declara una variable `line` con valor `"Laura;28;Madrid"`.
+Declares a variable `line` with value `"Laura;28;Madrid"`.
 
-- Divide la cadena por `;`
-- Imprime cada parte en una línea distinta
+- Split the chain by `;`
+- Print each part on a different line
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -236,21 +236,20 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Formatear un mensaje con `String.format`
+## Exercise 10: Format a message with `String.format`
 
-Declara:
+Declares:
+- `product` with `"Mouse"` value
+- `unitPrice` with `12.5` value
+- `quantity` with `3` value
 
-- `product` con valor `"Mouse"`
-- `unitPrice` con valor `12.5`
-- `quantity` con valor `3`
-
-Calcula el total y muestra un texto formateado con dos decimales usando `String.format`, por ejemplo:
+Calculates the total and displays text formatted with two decimal places using `String.format`, for example:
 
 ```
 Product: Mouse | Total: 37.50
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

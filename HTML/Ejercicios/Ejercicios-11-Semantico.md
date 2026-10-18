@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 11: HTML Semántico**
+# **Exercises - Topic 11: Semantic HTML**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre HTML semántico.
+Below you will find 5 practical exercises on semantic HTML.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una estructura básica con etiquetas semánticas**
+### **Exercise 1: Create a basic structure with semantic tags**
 
-Crea una página HTML que contenga un encabezado (`<header>`), un menú de navegación (`<nav>`), una sección principal (`<main>`), un artículo (`<article>`), una barra lateral (`<aside>`) y un pie de página (`<footer>`).
+Create an HTML page that contains a header (`<header>`), a navigation menu (`<nav>`), a main section (`<main>`), an article (`<article>`), a sidebar (`<aside>`), and a footer (`<footer>`).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <header>
@@ -51,9 +51,9 @@ Crea una página HTML que contenga un encabezado (`<header>`), un menú de naveg
 
 ---
 
-### **Ejercicio 2: Convertir una estructura basada en `div` en HTML semántico**
+### **Exercise 2: Convert an `div`-based structure to semantic HTML**
 
-Transforma la siguiente estructura que usa `div` en una estructura semántica adecuada.
+Transform the following structure that uses `div` into a suitable semantic structure.
 
 ```html
 <div class="container">
@@ -66,7 +66,7 @@ Transforma la siguiente estructura que usa `div` en una estructura semántica ad
 </div>
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <header>
@@ -82,11 +82,11 @@ Transforma la siguiente estructura que usa `div` en una estructura semántica ad
 
 ---
 
-### **Ejercicio 3: Crear una estructura con `<section>` y `<article>`**
+### **Exercise 3: Create a structure with `<section>` and `<article>`**
 
-Crea una página que tenga una sección (`<section>`) con dos artículos (`<article>`), cada uno con un título y un párrafo de texto.
+Create a page that has a section (`<section>`) with two articles (`<article>`), each with a title and a paragraph of text.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <section>
@@ -106,11 +106,11 @@ Crea una página que tenga una sección (`<section>`) con dos artículos (`<arti
 
 ---
 
-### **Ejercicio 4: Uso de `<figure>` y `<figcaption>`**
+### **Exercise 4: Using `<figure>` and `<figcaption>`**
 
-Crea una estructura HTML que incluya una imagen con una descripción utilizando `<figure>` y `<figcaption>`.
+Create an HTML structure that includes an image with a description using `<figure>` and `<figcaption>`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <figure>
@@ -123,11 +123,11 @@ Crea una estructura HTML que incluya una imagen con una descripción utilizando 
 
 ---
 
-### **Ejercicio 5: Crear un `<footer>` con enlaces adicionales**
+### **Exercise 5: Create an `<footer>` with additional bindings**
 
-Diseña un pie de página que contenga enlaces a una política de privacidad, términos de servicio y redes sociales.
+Design a footer that contains links to a privacy policy, terms of service, and social media.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <footer>

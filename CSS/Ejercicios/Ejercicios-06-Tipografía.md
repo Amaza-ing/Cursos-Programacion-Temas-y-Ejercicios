@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 6: Tipografía y Fuentes en CSS**
+# **Exercises - Topic 6: Typography and Fonts in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre tipografía y fuentes en CSS.
+Below you will find 5 practical exercises on typography and fonts in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Aplicar una fuente específica**
+### **Exercise 1: Apply a specific font**
 
-Define un párrafo con la fuente `Arial` y una fuente de respaldo `sans-serif`.
+Defines a paragraph with the source `Arial` and a supporting source `sans-serif`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 p {
@@ -20,19 +20,21 @@ p {
 }
 ```
 
+
 ```html
 <p>Este es un texto con fuente Arial.</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Modificar el tamaño de la fuente**
+### **Exercise 2: Modify the font size**
 
-Crea un título `<h1>` con un tamaño de fuente de `32px`.
+Creates a title `<h1>` with a font size of `32px`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 h1 {
@@ -40,19 +42,21 @@ h1 {
 }
 ```
 
+
 ```html
 <h1>Este título tiene un tamaño de 32px.</h1>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 3: Aplicar negrita y cursiva**
+### **Exercise 3: Apply bold and italics**
 
-Define un texto con negrita y otro con cursiva usando `font-weight` y `font-style`.
+Set some text to bold and some to italic using `font-weight` and `font-style`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .bold-text {
@@ -63,20 +67,22 @@ Define un texto con negrita y otro con cursiva usando `font-weight` y `font-styl
 }
 ```
 
+
 ```html
 <p class="bold-text">Este texto es en negrita.</p>
 <p class="italic-text">Este texto es en cursiva.</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Usar `letter-spacing` y `line-height`**
+### **Exercise 4: Using `letter-spacing` and `line-height`**
 
-Crea un párrafo con un espaciado entre letras de `2px` y un interlineado de `1.5`.
+Creates a paragraph with letter spacing of `2px` and line spacing of `1.5`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 p {
@@ -85,21 +91,23 @@ p {
 }
 ```
 
+
 ```html
 <p>
   Este párrafo tiene un espaciado entre letras de 2px y un interlineado de 1.5.
 </p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Importar una fuente de Google Fonts**
+### **Exercise 5: Import a font from Google Fonts**
 
-Importa la fuente `Roboto` desde Google Fonts y aplícala a todo el cuerpo del documento.
+Import the font `Roboto` from Google Fonts and apply it to the entire body of the document.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
@@ -109,8 +117,10 @@ body {
 }
 ```
 
+
 ```html
 <p>Este texto usa la fuente Roboto.</p>
 ```
+
 
 </details>

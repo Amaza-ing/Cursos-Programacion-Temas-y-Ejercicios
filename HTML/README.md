@@ -1,89 +1,89 @@
-# **Curso Completo de HTML desde Cero**
+# **Complete HTML Course from Scratch**
 
-Bienvenido al **Curso Completo de HTML**, un repositorio diseñado para ayudarte a aprender y dominar HTML, el lenguaje de marcado fundamental para la creación de páginas web. Si eres principiante, este curso te guiará paso a paso a través de la estructura y el uso correcto de HTML.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 La estructura básica de un documento HTML.<br>
-🔹 Cómo utilizar encabezados, párrafos y formato de texto.<br>
-🔹 Listas, enlaces y navegación entre páginas.<br>
-🔹 Tablas, formularios e interacción con el usuario.<br>
-🔹 Accesibilidad y buenas prácticas para una web inclusiva.<br>
-🔹 Introducción a SEO y metadatos para mejorar la indexación.<br>
-🔹 Elementos semánticos y su importancia en la organización del contenido.<br>
-
-Este curso está estructurado en **módulos prácticos**, cada uno con ejemplos y ejercicios que te ayudarán a reforzar lo aprendido.
+Welcome to the **Complete HTML Course**, a repository designed to help you learn and master HTML, the fundamental markup language for creating web pages. If you are a beginner, this course will guide you step by step through the structure and correct use of HTML.
 
 ---
 
-## 📂 **Estructura del curso**
+## 📌 **What will you learn in this course?**
 
-Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes navegar por los temas en el directorio del curso:
+🔹 The basic structure of an HTML.<br> document
+🔹 How to use headings, paragraphs and text formatting.<br>
+🔹 Lists, links and navigation between pages.<br>
+🔹 Tables, forms and user interaction.<br>
+🔹 Accessibility and good practices for an inclusive website.<br>
+🔹 Introduction to SEO and metadata to improve indexing.<br>
+🔹 Semantic elements and their importance in the organization of content.<br>
 
-| 📚 Tema                                                                 | Descripción                                                |
+This course is structured in **practical modules**, each with examples and exercises that will help you reinforce what you have learned.
+
+---
+
+## 📂 **Course structure**
+
+Each theme is located in a **Markdown (`.md`)** file within this repository. You can browse the topics in the course directory:
+
+| 📚 Theme | Description |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------- |
-| 🏗️ [Tema 1: Introducción a HTML](Temas/HTML-01-Introduccion.md)         | Conceptos básicos y estructura de un documento HTML.       |
-| 📑 [Tema 2: Estructura básica](Temas/HTML-02-Estructura.md)             | Cómo organizar correctamente el código en HTML.            |
-| 🔲 [Tema 3: Elementos en línea y en bloque](Temas/HTML-03-Elementos.md) | Diferencias entre elementos inline y block.                |
-| 📝 [Tema 4: Texto en HTML](Temas/HTML-04-Texto.md)                      | Encabezados, párrafos y otros elementos de texto.          |
-| 📋 [Tema 5: Listas en HTML](Temas/HTML-05-Listas.md)                    | Uso de listas ordenadas, desordenadas y de descripción.    |
-| 🔗 [Tema 6: Elementos y Atributos](Temas/HTML-06-Atributos.md)          | Atributos en los elementos HTML.                           |
-| 🔗 [Tema 7: Enlaces en HTML](Temas/HTML-07-Enlaces.md)                  | Creación de enlaces internos y externos.                   |
-| 🖼️ [Tema 8: Imágenes en HTML](Temas/HTML-08-Imagenes.md)                | Cómo insertar imágenes y optimizarlas para la web.         |
-| 📊 [Tema 9: Tablas en HTML](Temas/HTML-09-Tablas.md)                    | Organización de datos en tablas.                           |
-| 📝 [Tema 10: Formularios en HTML](Temas/HTML-10-Formularios.md)         | Creación de formularios e interacción con el usuario.      |
-| 🔍 [Tema 11: HTML Semántico](Temas/HTML-11-Semantico.md)                | Uso de etiquetas semánticas para estructurar el contenido. |
-| ♿ [Tema 12: Accesibilidad en HTML](Temas/HTML-12-Accesibilidad.md)     | Mejores prácticas para una web accesible.                  |
-| 🌐 [Tema 13: Metadatos y SEO básico](Temas/HTML-13-SEO.md)              | Cómo optimizar tu sitio para buscadores.                   |
+| 🏗️ [T Topic 1: Introduction to HTML](Temas/HTML-01-Introduccion.md) | Basic concepts and structure of an HTML document.       |
+| 📑 [topic 2: Basic structure](Temas/HTML-02-Estructura.md) | How to correctly organize code in HTML.            |
+| 🔲 [Topic 3: Online and block elements](Temas/HTML-03-Elementos.md) | Differences between inline and block elements.                |
+| 📝 [Tem 4: Text in HTML](Temas/HTML-04-Texto.md) | Headings, paragraphs and other text elements.          |
+| 📋 [T Topic 5: Lists in HTML](Temas/HTML-05-Listas.md) | Use of ordered, unordered and description lists.    |
+| 🔗 [Topic 6: Elements and Attributes](Temas/HTML-06-Atributos.md) | Attributes in HTML elements.                           |
+| 🔗 [ Topic 7: Links in HTML](Temas/HTML-07-Enlaces.md) | Creation of internal and external links.                   |
+| 🖼️ [T Topic 8: Images in HTML](Temas/HTML-08-Imagenes.md) | How to insert images and optimize them for the web.         |
+| 📊 [ Topic 9: Tables in HTML](Temas/HTML-09-Tablas.md) | Organization of data in tables.                           |
+| 📝 [ Topic 10: Forms in HTML](Temas/HTML-10-Formularios.md) | Creation of forms and interaction with the user.      |
+| 🔍 [topic 11: Semantic HTML](Temas/HTML-11-Semantico.md) | Use of semantic tags to structure the content. |
+| ♿ [topic 12: Accessibility in HTML](Temas/HTML-12-Accesibilidad.md) | Best practices for an accessible website.                  |
+| 🌐 [ Topic 13: Metadata and basic SEO](Temas/HTML-13-SEO.md) | How to optimize your site for search engines.                   |
 
-📌 **Para ver todos los temas disponibles, revisa este repositorio.**
+📌 **To see all available themes, check this repository.**
 
-También tienes ejercicios resueltos en la carpeta de [Ejercicios](Ejercicios).
-
----
-
-## 🎥 **Curso en Video**
-
-Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
-
-📺 **Curso Completo de HTML**
-
-[![Curso de HTML](https://img.youtube.com/vi/YDDTEQgcAPg/0.jpg)](https://www.youtube.com/watch?v=YDDTEQgcAPg&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+You also have solved exercises in the [exercises](Ejercicios) folder.
 
 ---
 
-## 🛠️ **Requisitos previos**
+## 🎥 **Video Course**
 
-Este curso empieza desde 0, así que no necesitas conocimientos previos. Sin embargo, para un mejor aprovechamiento, se recomienda:
+If you prefer to learn visually, here is the complete video course with detailed explanations and practical examples:
 
-- Un navegador web actualizado (Google Chrome, Firefox, Edge, etc.).
-- Un editor de código como Visual Studio Code o Sublime Text.
+📺 **Complete HTML Course**
 
----
-
-## 📌 **Cómo usar este repositorio**
-
-Puedes seguir el curso directamente en este repositorio de GitHub o descargarlo para estudiarlo en tu ordenador.
-
-1️⃣ **Clona el repositorio** en tu máquina local.
-
-2️⃣ **Explora los temas** y sigue las guías en cada archivo `.md`.
-
-3️⃣ **Realiza los ejercicios** y comprueba tus conocimientos con ejemplos prácticos.
+[![HTML Course](https://img.youtube.com/vi/YDDTEQgcAPg/0.jpg)](https://www.youtube.com/watch?v=YDDTEQgcAPg&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
-## 🚀 **¡Empieza a aprender HTML hoy!**
+## 🛠️ **Prerequisites**
 
-Este curso está diseñado para que puedas aprender **a tu ritmo**, con ejercicios prácticos y explicaciones sencillas.
+This course starts from 0, so you don't need prior knowledge. However, for better use, it is recommended:
+
+- An updated web browser (Google Chrome, Firefox, Edge, etc.).
+- A code editor such as Visual Studio Code or Sublime Text.
 
 ---
 
-## Hecho por Adrián Maza.
+## 📌 **How to use this repository**
 
-Espero que sea lo que buscas.
+You can follow the course directly in this GitHub repository or download it to study on your computer.
+
+1️⃣ **Clone the repository** on your local machine.
+
+2️⃣ **Explore the topics** and follow the guides in each `.md` file.
+
+3️⃣ **Do the exercises** and check your knowledge with practical examples.
+
+---
+
+## 🚀 **Start learning HTML today!**
+
+This course is designed so that you can learn **at your own pace**, with practical exercises and simple explanations.
+
+---
+
+## Made by Adrián Maza.
+
+I hope it's what you're looking for.
 
 <div>
   <h5>
@@ -96,7 +96,7 @@ Espero que sea lo que buscas.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

@@ -1,14 +1,14 @@
-# **Tema 6: Tipografía y Fuentes en CSS**
+# **Topic 6: Typography and Fonts in CSS**
 
-## **1. Introducción a la tipografía en CSS**
+## **1. Introduction to typography in CSS**
 
-La tipografía es un aspecto fundamental del diseño web, ya que afecta la legibilidad y la estética de una página. CSS permite definir fuentes, tamaños, espaciados y estilos para personalizar la apariencia del texto.
+Typography is a fundamental aspect of web design, as it affects the readability and aesthetics of a page. CSS allows you to define fonts, sizes, spacing, and styles to customize the appearance of text.
 
 ---
 
-## **2. Propiedad `font-family`**
+## **2. `font-family`** Property
 
-Define la fuente del texto. Se recomienda usar una lista de fuentes de respaldo.
+Defines the font of the text. It is recommended to use a list of backup sources.
 
 ```css
 p {
@@ -16,19 +16,20 @@ p {
 }
 ```
 
-Tipos de fuentes:
 
-- **Serif**: Con remates (Times New Roman, Georgia)
-- **Sans-serif**: Sin remates (Arial, Helvetica)
-- **Monospace**: Cada carácter tiene el mismo ancho (Courier New, Consolas)
-- **Cursive**: Estilo manuscrito (Comic Sans, Pacifico)
-- **Fantasy**: Diseños decorativos (Papyrus, Impact)
+Font types:
+
+- **Serif**: With serifs (Times New Roman, Georgia)
+- **Sans-serif**: Without serifs (Arial, Helvetica)
+- **Monospace**: Each character has the same width (Courier New, Consoles)
+- **Cursive**: Handwritten style (Comic Sans, Pacifico)
+- **Fantasy**: Decorative designs (Papyrus, Impact)
 
 ---
 
-## **3. Tamaño de fuente con `font-size`**
+## **3. Font size with `font-size`**
 
-Determina el tamaño del texto, utilizando distintas unidades.
+Determines the size of the text, using different units.
 
 ```css
 h1 {
@@ -36,13 +37,14 @@ h1 {
 }
 ```
 
-Unidades recomendadas:
 
-- `px`: Píxeles (tamaño fijo)
-- `em`: Relativo al tamaño del elemento padre
-- `rem`: Relativo al tamaño de la raíz (`html`)
+Recommended units:
 
-Ejemplo:
+- `px`: Pixels (fixed size)
+- `em`: Relative to the size of the parent element
+- `rem`: Relative to the size of the root (`html`)
+
+Example:
 
 ```css
 p {
@@ -50,13 +52,14 @@ p {
 }
 ```
 
+
 ---
 
-## **4. Estilos de fuente con `font-style` y `font-weight`**
+## **4. Font styles with `font-style` and `font-weight`**
 
 ### **`font-style`**
 
-Define si el texto es normal, cursivo o inclinado.
+Defines whether the text is normal, cursive or slanted.
 
 ```css
 p {
@@ -64,9 +67,10 @@ p {
 }
 ```
 
+
 ### **`font-weight`**
 
-Define el grosor del texto.
+Defines the thickness of the text.
 
 ```css
 h1 {
@@ -74,15 +78,16 @@ h1 {
 }
 ```
 
-Valores comunes:
+
+Common values:
 
 - `normal`
 - `bold`
 - `lighter`
 - `bolder`
-- Números (`100` a `900`)
+- Numbers (`100` to `900`)
 
-Ejemplo:
+Example:
 
 ```css
 h2 {
@@ -90,13 +95,14 @@ h2 {
 }
 ```
 
+
 ---
 
-## **5. Espaciado del texto con `letter-spacing` y `line-height`**
+## **5. Text spacing with `letter-spacing` and `line-height`**
 
 ### **`letter-spacing`**
 
-Controla el espaciado entre caracteres.
+Controls the spacing between characters.
 
 ```css
 p {
@@ -104,9 +110,10 @@ p {
 }
 ```
 
+
 ### **`line-height`**
 
-Controla el espacio entre líneas.
+Control the space between lines.
 
 ```css
 p {
@@ -114,13 +121,14 @@ p {
 }
 ```
 
+
 ---
 
-## **6. Importar fuentes externas con Google Fonts**
+## **6. Import external fonts with Google Fonts**
 
-Para usar una fuente externa, como las de [Google Fonts](https://fonts.google.com/), se debe importar en el archivo CSS.
+To use an external font, such as those from [Google Fonts](https://fonts.google.com/), it must be imported into the CSS file.
 
-Ejemplo con **Roboto**:
+Example with **Roboto**:
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
@@ -130,20 +138,21 @@ body {
 }
 ```
 
----
-
-[![Tipografía & Google Fonts](https://img.youtube.com/vi/3L7GkNa0jtc/0.jpg)](https://www.youtube.com/watch?v=3L7GkNa0jtc&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **7. Buenas prácticas con tipografía en CSS**
-
-- Utilizar `rem` o `em` en lugar de `px` para mejor accesibilidad.
-- Definir fuentes de respaldo en `font-family`.
-- Evitar el uso excesivo de fuentes decorativas.
-- Aplicar `line-height` adecuado para mejorar la legibilidad.
-- Usar **Google Fonts** o **@font-face** para fuentes personalizadas.
+[![Typography & Google Fonts](https://img.youtube.com/vi/3L7GkNa0jtc/0.jpg)](https://www.youtube.com/watch?v=3L7GkNa0jtc&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-En el próximo tema, exploraremos **el posicionamiento con CSS**, incluyendo las diferencias entre posicionamiento relativo y absoluto así como otras utilidades.
+## **7. Good practices with typography in CSS**
+
+- Use `rem` or `em` instead of `px` for better accessibility.
+- Define backup sources in `font-family`.
+- Avoid excessive use of decorative fonts.
+- Apply appropriate `line-height` to improve readability.
+- Use **Google Fonts** or **@font-face** for custom fonts.
+
+---
+
+In the next topic, we will explore **positioning with CSS**, including the differences between relative and absolute positioning as well as other uses.

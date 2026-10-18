@@ -1,40 +1,40 @@
-# **Tema 14: Almacenamiento en el Cliente con `localStorage` y `sessionStorage`**
+# **Topic 14: Client Storage with `localStorage` and `sessionStorage`**
 
-## **1. Introducción**
+## **1. Introduction**
 
-El almacenamiento web permite guardar información en el navegador del usuario de manera persistente o temporal sin necesidad de bases de datos. JavaScript ofrece dos opciones principales:
+Web storage allows information to be saved in the user's browser persistently or temporarily without the need for databases. JavaScript offers two main options:
 
-- **`localStorage`**: Guarda datos de forma persistente hasta que el usuario los elimine manualmente o el navegador los borre.
-- **`sessionStorage`**: Guarda datos temporalmente, mientras dure la sesión del navegador.
+- **`localStorage`**: Persistently saves data until the user manually deletes it or the browser deletes it.
+- **`sessionStorage`**: Saves data temporarily, for the duration of the browser session.
 
-Estos métodos son útiles para almacenar preferencias del usuario, tokens de autenticación, carritos de compra, etc.
+These methods are useful for storing user preferences, authentication tokens, shopping carts, etc.
 
 ---
 
-## **2. `localStorage`: Almacenamiento Persistente**
+## **2. `localStorage`: Persistent Storage**
 
-Si queremos observar el `localStorage` en el navegador podemos hacerlo. Por ejemplo en Chrome, debemos abrir las `Chrome Devtools` (click derecho en la página ➡ inspeccionar), después ir a ➡ Application ➡ Storage ➡ Local Storage.
+If we want to observe the `localStorage` in the browser we can do so. For example in Chrome, we must open the `Chrome Devtools` (right click on the page ➡ inspect), then go to ➡ Application ➡ Storage ➡ Local Storage.
 
-### **2.1. Guardar un dato en `localStorage`**
+### **2.1. Save a data in `localStorage`**
 
 ```js
 localStorage.setItem("username", "Carlos");
 ```
 
-### **2.2. Obtener un dato de `localStorage`**
+### **2.2. Obtain data from `localStorage`**
 
 ```js
 const username = localStorage.getItem("username");
 console.log(username); // "Carlos"
 ```
 
-### **2.3. Eliminar un dato específico**
+### **23. Delete specific data**
 
 ```js
 localStorage.removeItem("username");
 ```
 
-### **2.4. Limpiar todo el `localStorage`**
+### **2.4. Clear all `localStorage`**
 
 ```js
 localStorage.clear();
@@ -42,30 +42,30 @@ localStorage.clear();
 
 ---
 
-## **3. `sessionStorage`: Almacenamiento Temporal**
+## **3. `sessionStorage`: Temporary Storage**
 
-`sessionStorage` funciona de manera similar a `localStorage`, pero los datos se eliminan cuando se cierra la pestaña o el navegador.
+`sessionStorage` works similarly to `localStorage`, but the data is deleted when the tab or browser is closed.
 
-### **3.1. Guardar datos en `sessionStorage`**
+### **3.1. Save data to `sessionStorage`**
 
 ```js
 sessionStorage.setItem("theme", "dark");
 ```
 
-### **3.2. Obtener datos de `sessionStorage`**
+### **3.2. Get data from `sessionStorage`**
 
 ```js
 const theme = sessionStorage.getItem("theme");
 console.log(theme); // "dark"
 ```
 
-### **3.3. Eliminar un dato específico**
+### **3.3. Delete specific data**
 
 ```js
 sessionStorage.removeItem("theme");
 ```
 
-### **3.4. Limpiar todo el `sessionStorage`**
+### **3.4. Clear all `sessionStorage`**
 
 ```js
 sessionStorage.clear();
@@ -73,18 +73,18 @@ sessionStorage.clear();
 
 ---
 
-## **4. Almacenar Objetos en `localStorage` y `sessionStorage`**
+## **4. Storing Objects in `localStorage` and `sessionStorage`**
 
-`localStorage` y `sessionStorage` solo almacenan datos en formato de texto. Para guardar objetos, debemos convertirlos a JSON. Para esto podemos usar `JSON.stringify()` y para pasar de nuevo a objeto cuando queramos recoger el valor podemos usar `JSON.parse()`.
+`localStorage` and `sessionStorage` only store data in text format. To save objects, we must convert them to JSON. For this we can use `JSON.stringify()` and to go back to the object when we want to collect the value we can use `JSON.parse()`.
 
-### **4.1. Guardar un objeto**
+### **4.1. Save an object**
 
 ```js
 const user = { name: "Ana", age: 30 };
 localStorage.setItem("user", JSON.stringify(user));
 ```
 
-### **4.2. Recuperar un objeto**
+### **4.2. Retrieve an object**
 
 ```js
 const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -97,9 +97,9 @@ console.log(storedUser.name); // "Ana"
 
 ---
 
-## **5. Aplicaciones Prácticas**
+## **5. Practical Applications**
 
-### **5.1. Recordar la preferencia de un usuario**
+### **5.1. Remember a user's preference**
 
 ```js
 function saveTheme(theme) {
@@ -114,7 +114,7 @@ function loadTheme() {
 loadTheme();
 ```
 
-### **5.2. Contador de visitas con `localStorage`**
+### **5.2. Visit counter with `localStorage`**
 
 ```js
 let visits = localStorage.getItem("visits") || 0;
@@ -125,18 +125,18 @@ console.log(`Número de visitas: ${visits}`);
 
 ---
 
-## **6. Diferencias entre `localStorage` y `sessionStorage`**
+## **6. Differences between `localStorage` and `sessionStorage`**
 
-| Característica | `localStorage`     | `sessionStorage`       |
+| Feature | `localStorage` | `sessionStorage` |
 | -------------- | ------------------ | ---------------------- |
-| Persistencia   | Permanente         | Solo durante la sesión |
-| Tamaño máximo  | 5MB aprox.         | 5MB aprox.             |
-| Disponibilidad | Todas las pestañas | Solo la pestaña actual |
+| Persistence | Permanent | Only during the session |
+| Maximum size | 5MB approx.         | 5MB approx.             |
+| Availability | All tabs | Current tab only |
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-El uso de `localStorage` y `sessionStorage` permite mejorar la experiencia del usuario almacenando datos de manera rápida y sencilla sin necesidad de bases de datos. Se debe usar con precaución, ya que los datos son accesibles desde el navegador del usuario y no deben contener información sensible como contraseñas o tokens de seguridad.
+The use of `localStorage` and `sessionStorage` allows you to improve the user experience by storing data quickly and easily without the need for databases. It should be used with caution, as the data is accessible from the user's browser and should not contain sensitive information such as passwords or security tokens.
 
-En el próximo tema veremos algunas curiosidades y comportamientos extraños en JavaScript.
+In the next topic we will see some curiosities and strange behaviors in JavaScript.

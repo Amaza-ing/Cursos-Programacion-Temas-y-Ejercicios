@@ -1,16 +1,16 @@
-# **Tema 6: Estilo y Clases Dinámicas en Vue.js**
+# **Topic 6: Style and Dynamic Classes in Vue.js**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Vue.js podemos aplicar clases CSS y estilos inline de forma dinámica. Esto permite que los estilos cambien en función de los datos reactivos, lo que es especialmente útil para resaltar elementos, mostrar estados o realizar adaptaciones visuales según la interacción del usuario.
+In Vue.js we can apply CSS classes and inline styles dynamically. This allows styles to change based on reactive data, which is especially useful for highlighting elements, displaying states, or making visual adaptations based on user interaction.
 
 ---
 
-## **2. Aplicar clases dinámicas con v-bind:class**
+## **2. Apply dynamic classes with v-bind:class**
 
-La directiva `v-bind:class` (o su forma corta `:class`) permite asociar una o varias clases en función de variables reactivas.
+The `v-bind:class` directive (or its short form `:class`) allows one or more classes to be associated based on reactive variables.
 
-### Ejemplo básico
+### Basic example
 
 ```vue
 <script setup>
@@ -31,15 +31,15 @@ const isActive = ref(true);
 </style>
 ```
 
-Aquí se aplicará la clase `active` al elemento `<p>` si la propiedad `isActive` es truthy.
+Here the `active` class will be applied to the `<p>` element if the `isActive` property is truthy.
 
 ---
 
-## **3. Aplicar múltiples clases condicionales**
+## **3. Apply multiple conditional classes**
 
-Puedes combinar varias clases dinámicas en un mismo `:class`, utilizando un objeto o array.
+You can combine several dynamic classes in the same `:class`, using an object or array.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -67,15 +67,15 @@ const isHighlighted = ref(false);
 
 ---
 
-[![Clases dinámicas](https://img.youtube.com/vi/8iLO9gra6RQ/0.jpg)](https://www.youtube.com/watch?v=8iLO9gra6RQ&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Dynamic classes](https://img.youtube.com/vi/8iLO9gra6RQ/0.jpg)](https://www.youtube.com/watch?v=8iLO9gra6RQ&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **4. Aplicar estilos inline dinámicos con v-bind:style**
+## **4. Apply dynamic inline styles with v-bind:style**
 
-Además de las clases, también se pueden definir estilos CSS directamente desde variables reactivas.
+In addition to classes, CSS styles can also be defined directly from reactive variables.
 
-### Ejemplo básico
+### Basic example
 
 ```vue
 <script setup>
@@ -100,11 +100,11 @@ p {
 
 ---
 
-## **5. Cambiar clases y estilos desde eventos**
+## **5. Change classes and styles from events**
 
-Es muy común cambiar clases o estilos directamente tras alguna interacción.
+It is very common to change classes or styles directly after some interaction.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -134,11 +134,11 @@ button {
 
 ---
 
-## **6. Combinar clases dinámicas y estilos inline**
+## **6. Combine dynamic classes and inline styles**
 
-Vue permite mezclar ambas técnicas en un mismo elemento.
+Vue allows you to mix both techniques in the same element.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -163,13 +163,13 @@ const customColor = ref("purple");
 
 ---
 
-## Resumen
+## Summary
 
-| Directiva | Uso                                 |
+| Directive | Usage |
 | --------- | ----------------------------------- |
-| `:class`  | Añadir clases dinámicas             |
-| `:style`  | Añadir estilos CSS inline dinámicos |
+| `:class` | Add dynamic classes |
+| `:style` | Add dynamic inline CSS styles |
 
 ---
 
-En el próximo tema exploraremos **la Comunicación entre Componentes: Props, Component Events y Slots en Vue.js**, para aprender a pasar datos, emitir eventos y crear componentes flexibles.
+In the next topic we will explore **Communication between Components: Props, Component Events and Slots in Vue.js**, to learn how to pass data, emit events and create flexible components.

@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 25: Lazy Loading en React**
+# **Exercises - Topic 25: Lazy Loading in React**
 
-A continuación, encontrarás **10 ejercicios prácticos** para aprender a aplicar Lazy Loading usando `React.lazy` y `Suspense`, especialmente en combinación con React Router.
+Below you will find **10 practical exercises** to learn how to apply Lazy Loading using `React.lazy` and `Suspense`, especially in combination with React Router.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Importar un componente de forma lazy**
+## **Exercise 1: Import a component lazy**
 
-Convierte este import normal en un import lazy:
+Convert this normal import into a lazy import:
 
 ```js
 import Profile from "./pages/Profile";
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { lazy } from "react";
@@ -26,11 +26,11 @@ const Profile = lazy(() => import("./pages/Profile"));
 
 ---
 
-## **Ejercicio 2: Usar `Suspense` correctamente**
+## **Exercise 2: Using `Suspense` correctly**
 
-Envuelve un componente lazy con `Suspense` y muestra un texto **"Loading..."** mientras se carga.
+Wraps a lazy component with `Suspense` and displays a **"Loading..."** text while it loads.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { Suspense } from "react";
@@ -44,23 +44,23 @@ import { Suspense } from "react";
 
 ---
 
-## **Ejercicio 3: Error típico sin `Suspense`**
+## **Exercise 3: Typical error without `Suspense`**
 
-¿Qué ocurre si intentas renderizar un componente lazy sin `Suspense`?
+What happens if you try to render a lazy component without `Suspense`?
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Se produce un error en tiempo de ejecución indicando que falta un `Suspense`.
+An error occurs at run time indicating that an `Suspense` is missing.
 
 </details>
 
 ---
 
-## **Ejercicio 4: Lazy Loading con React Router**
+## **Exercise 4: Lazy Loading with React Router**
 
-Crea una ruta `/settings` que cargue el componente `Settings` de forma lazy.
+Create an `/settings` route that loads the `Settings` component lazy.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const Settings = lazy(() => import("./pages/Settings"));
@@ -76,23 +76,23 @@ const Settings = lazy(() => import("./pages/Settings"));
 
 ---
 
-## **Ejercicio 5: Lazy Loading solo en páginas**
+## **Exercise 5: Lazy Loading only on pages**
 
-Explica por qué es buena práctica aplicar lazy principalmente a páginas y no a componentes pequeños.
+Explain why it is good practice to apply lazy primarily to pages and not to small components.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Porque las páginas suelen ser más pesadas y no siempre se visitan, mientras que los componentes pequeños suelen renderizarse siempre.
+Because pages are usually heavier and are not always visited, while small components are usually always rendered.
 
 </details>
 
 ---
 
-## **Ejercicio 6: Fallback personalizado**
+## **Exercise 6: Custom Fallback**
 
-Cambia el `fallback` de `Suspense` para mostrar un componente `Spinner`.
+Change the `fallback` to `Suspense` to display an `Spinner` component.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <Suspense fallback={<Spinner />}>
@@ -104,52 +104,52 @@ Cambia el `fallback` de `Suspense` para mostrar un componente `Spinner`.
 
 ---
 
-## **Ejercicio 7: Lazy Loading innecesario**
+## **Exercise 7: Unnecessary Lazy Loading**
 
-Da un ejemplo de un componente donde **no** tendría sentido usar Lazy Loading.
+Give an example of a component where it would **not** make sense to use Lazy Loading.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Un botón, un input o un header que se muestra siempre.
-
-</details>
-
----
-
-## **Ejercicio 8: Lazy Loading vs React.memo**
-
-Indica qué técnica usarías en cada caso:
-
-- Evitar descargar código innecesario.
-- Evitar renderizados innecesarios.
-
-<details><summary>Mostrar Solución</summary>
-
-- Lazy Loading → evitar descargar código innecesario.
-- React.memo → evitar renderizados innecesarios.
+A button, input or header that is always displayed.
 
 </details>
 
 ---
 
-## **Ejercicio 9: Suspense a nivel de App**
+## **Exercise 8: Lazy Loading vs React.memo**
 
-¿Por qué suele ser buena idea colocar `Suspense` envolviendo las rutas y no cada componente individual?
+Indicate which technique you would use in each case:
 
-<details><summary>Mostrar Solución</summary>
+- Avoid downloading unnecessary code.
+- Avoid unnecessary renderings.
 
-Porque centraliza la gestión de carga de páginas y evita duplicar código.
+<details><summary>Show Solution</summary>
+
+- Lazy Loading → avoid downloading unnecessary code.
+- React.memo → avoid unnecessary rendering.
 
 </details>
 
 ---
 
-## **Ejercicio 10: Lazy Loading como optimización**
+## **Exercise 9: App-level suspense**
 
-Explica por qué Lazy Loading es una optimización que se aplica cuando la app empieza a crecer.
+Why is it usually a good idea to place `Suspense` wrapping the routes and not each individual component?
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Porque en apps pequeñas el coste de dividir el código no compensa, pero en apps grandes mejora claramente el rendimiento inicial.
+Because it centralizes page loading management and avoids duplicating code.
+
+</details>
+
+---
+
+## **Exercise 10: Lazy Loading as optimization**
+
+Explain why Lazy Loading is an optimization that is applied when the app starts to grow.
+
+<details><summary>Show Solution</summary>
+
+Because in small apps the cost of splitting the code is not worth it, but in large apps it clearly improves initial performance.
 
 </details>

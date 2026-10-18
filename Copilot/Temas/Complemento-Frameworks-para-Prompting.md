@@ -1,36 +1,36 @@
-# Frameworks de Prompting con Copilot
+# Prompting Frameworks with Copilot
 
-## IA con Copilot
+## AI with Copilot
 
-Este material está pensado perfiles de desarrollo como en perfiles administrativos, de gestión, soporte, documentación o coordinación interna.
+This material is designed for development profiles such as administrative, management, support, documentation or internal coordination profiles.
 
-La idea principal es aprender a pedir mejor a Copilot. Un buen prompt no consiste en escribir mucho, sino en dar a la IA la información adecuada: qué necesitas, para qué lo necesitas, en qué contexto trabajas, con qué formato debe responder y qué límites debe respetar.
-
----
-
-## Objetivos de aprendizaje
-
-Al final de esta clase, serás capaz de:
-
-- Comprender para qué sirven los frameworks de prompting en un entorno profesional.
-- Elegir el framework adecuado según el tipo de tarea.
-- Aplicar frameworks de prompting a tareas de desarrollo, documentación, análisis, comunicación y administración.
-- Crear prompts más claros, reutilizables y fáciles de mejorar.
-- Revisar críticamente las respuestas de Copilot antes de usarlas en el trabajo.
+The main idea is to learn to ask Copilot better. A good prompt does not consist of writing a lot, but rather giving the AI ​​the appropriate information: what you need, why you need it, in what context you work, with what format it should respond and what limits it should respect.
 
 ---
 
-## 1) ¿Qué es un framework de prompting?
+## Learning objectives
 
-Un framework de prompting es una estructura que nos ayuda a escribir instrucciones más claras para una IA.
+At the end of this class, you will be able to:
 
-En lugar de escribir una petición vaga como:
+- Understand what prompting frameworks are for in a professional environment.
+- Choose the appropriate framework according to the type of task.
+- Apply prompting frameworks to development, documentation, analysis, communication and administration tasks.
+- Create clearer, reusable and easy to improve prompts.
+- Critically review Copilot's responses before using them at work.
+
+---
+
+## 1) What is a prompting framework?
+
+A prompting framework is a structure that helps us write clearer instructions for an AI.
+
+Instead of writing a vague request like:
 
 ```text
 Hazme un resumen de esto.
 ```
 
-podemos escribir una petición más útil:
+we can write a more useful request:
 
 ```text
 Actúa como asistente de documentación interna.
@@ -40,57 +40,56 @@ Usa un tono profesional, claro y directo.
 Devuelve la respuesta en formato de lista.
 ```
 
-La segunda opción funciona mejor porque incluye contexto, objetivo, rol, formato y criterios de calidad.
+The second option works better because it includes context, objective, role, format and quality criteria.
 
 ---
 
-## 2) ¿Por qué usar frameworks en una consultora?
+## 2) Why use frameworks in a consulting firm?
 
-En una consultora, las tareas suelen ser variadas: desarrollo de software, soporte a clientes, documentación, preparación de informes, reuniones, seguimiento de proyectos, análisis de datos, propuestas comerciales o tareas administrativas.
+In a consulting firm, the tasks are usually varied: software development, customer support, documentation, preparation of reports, meetings, project monitoring, data analysis, commercial proposals or administrative tasks.
 
-Los frameworks de prompting ayudan a:
+Prompting frameworks help:
 
-- **Ahorrar tiempo:** Reducen el ensayo y error al pedir tareas a Copilot.
-- **Mejorar la calidad:** Las respuestas son más completas y ajustadas a lo que necesitamos.
-- **Estandarizar el trabajo:** Varias personas pueden usar estructuras parecidas para tareas similares.
-- **Reducir ambigüedad:** Copilot entiende mejor el contexto y el formato esperado.
-- **Mejorar la revisión:** Es más fácil detectar si la respuesta cumple o no con el objetivo.
-- **Trabajar mejor con clientes:** Ayudan a preparar comunicaciones, documentación y entregables más claros.
-
----
-
-## 3) Buenas prácticas antes de usar Copilot
-
-Antes de pegar información en Copilot, recuerda estas recomendaciones:
-
-1. **No compartas información confidencial si no tienes autorización.** Evita datos reales de clientes, credenciales, contratos, información económica sensible o datos personales.
-2. **Anonimiza los ejemplos.** Usa nombres ficticios como `Cliente A`, `Proyecto X`, `Usuario 1` o `Empresa Demo`.
-3. **Revisa siempre la respuesta.** Copilot puede equivocarse, inventar datos o interpretar mal la petición.
-4. **No copies código sin entenderlo.** Pide explicaciones si algo no está claro.
-5. **Indica el formato de salida.** Tabla, lista, pasos, email, checklist, resumen ejecutivo, código comentado, etc.
-6. **Da contexto suficiente.** Cuanto más clara sea la situación, mejor será la respuesta.
-7. **Pide una segunda versión si hace falta.** Puedes solicitar que sea más breve, más formal, más técnico o más sencillo.
+- **Save time:** Reduce trial and error when requesting tasks from Copilot.
+- **Improve quality:** The responses are more complete and adjusted to what we need.
+- **Standardize work:** Several people can use similar structures for similar tasks.
+- **Reduce ambiguity:** Copilot better understands the context and expected format.
+- **Improve the review:** It is easier to detect if the answer meets the objective or not.
+- **Work better with clients:** They help prepare clearer communications, documentation and deliverables.
 
 ---
 
-## 4) Cómo seleccionar el framework adecuado
+## 3) Good practices before using Copilot
 
-No todos los frameworks sirven para lo mismo. Puedes elegirlos según la tarea que tengas delante.
+Before pasting information into Copilot, remember these recommendations:
 
-| Necesidad                                                   | Framework recomendado |
+1. **Do not share confidential information if you do not have authorization.** Avoid real customer data, credentials, contracts, sensitive financial information or personal data.
+2. **Anonymize examples.** Use fictitious names such as `Cliente A`, `Proyecto X`, `Usuario 1` or `Empresa Demo`.
+3. **Always check the response.** Copilot may make mistakes, invent data or misinterpret the request.
+4. **Do not copy code without understanding it.** Ask for explanations if something is not clear.
+5. **Indicates the output format.** Table, list, steps, email, checklist, executive summary, commented code, etc.
+6. **Give sufficient context.** The clearer the situation, the better the response.
+7. **Ask for a second version if necessary.** You can request that it be shorter, more formal, more technical or simpler.
+
+---
+## 4) How to select the right framework
+
+Not all frameworks serve the same purpose. You can choose them depending on the task in front of you.
+
+| Need | Recommended Framework |
 | ----------------------------------------------------------- | --------------------- |
-| Explicar un concepto técnico o funcional                    | RACE, CREO            |
-| Pedir una tarea rápida y directa                            | TAG                   |
-| Generar documentación, emails o materiales con ejemplo      | CARE                  |
-| Crear una actividad, procedimiento o entregable paso a paso | APE, RISE             |
-| Diseñar un prompt más completo y ajustado                   | CREATE                |
-| Analizar un problema o bloqueo                              | PAIN                  |
-| Planificar una tarea, reunión, entrega o mini-proyecto      | COAST                 |
-| Pedir una solución completa y estructurada                  | ROSES                 |
+| Explain a technical or functional concept | RACE, I BELIEVE |
+| Request a quick and direct task | TAG |
+| Generate documentation, emails or materials with example | CARE |
+| Create an activity, procedure or deliverable step by step | APE, RISE |
+| Design a more complete and adjusted prompt | CREATE |
+| Analyze a problem or blockage | PAIN |
+| Plan a task, meeting, delivery or mini-project | COAST |
+| Request a complete and structured solution | ROSES |
 
 ---
 
-# 5) Frameworks de prompting con ejemplos profesionales
+#5) Prompting Frameworks with Professional Examples
 
 ---
 
@@ -98,16 +97,16 @@ No todos los frameworks sirven para lo mismo. Puedes elegirlos según la tarea q
 
 **RACE = Role – Action – Context – Explanation**
 
-- **Role:** Qué papel debe adoptar Copilot.
-- **Action:** Qué debe hacer.
-- **Context:** En qué situación se va a usar la respuesta.
-- **Explanation:** Cómo debe explicar o justificar la respuesta.
+- **Role:** What role should Copilot adopt.
+- **Action:** What you should do.
+- **Context:** In what situation the response is going to be used.
+- **Explanation:** How you should explain or justify the answer.
 
-### Cuándo usarlo
+### When to use it
 
-Usa RACE cuando necesites una explicación clara, especialmente si quieres que Copilot adapte el nivel técnico al público.
+Use RACE when you need a clear explanation, especially if you want Copilot to adapt the technical level to the audience.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Role: Actúa como un desarrollador senior especializado en JavaScript.
@@ -119,7 +118,7 @@ Código:
 [Pega aquí el código, eliminando datos sensibles]
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Role: Actúa como asistente administrativo de una consultora.
@@ -131,7 +130,7 @@ Procedimiento:
 [Pega aquí el texto del procedimiento]
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Role: Actúa como [rol].
@@ -146,16 +145,16 @@ Explanation: Explica la respuesta de forma [nivel de detalle, tono o formato].
 
 **CARE = Context – Action – Result – Example**
 
-- **Context:** Situación de partida.
-- **Action:** Tarea concreta.
-- **Result:** Resultado esperado.
-- **Example:** Ejemplo o referencia del tipo de respuesta que quieres.
+- **Context:** Starting situation.
+- **Action:** Specific task.
+- **Result:** Expected result.
+- **Example:** Example or reference of the type of response you want.
 
-### Cuándo usarlo
+### When to use it
 
-Usa CARE cuando quieras que Copilot genere un resultado práctico con un ejemplo claro del estilo esperado.
+Use CARE when you want Copilot to generate a practical result with a clear example of the expected style.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Context: Estoy documentando una API interna para que otros desarrolladores puedan usarla.
@@ -170,7 +169,7 @@ Información del endpoint:
 - Respuesta: id, status, createdAt
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Context: Tengo que enviar un correo a un cliente para solicitar documentación pendiente.
@@ -185,7 +184,7 @@ Documentos pendientes:
 Fecha límite: viernes 15
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Context: [Situación].
@@ -200,15 +199,15 @@ Example: [Ejemplo de estilo, estructura o contenido].
 
 **APE = Action – Purpose – Execution**
 
-- **Action:** Qué quieres que haga.
-- **Purpose:** Para qué lo necesitas.
-- **Execution:** Cómo debe entregarlo.
+- **Action:** What do you want it to do.
+- **Purpose:** What do you need it for.
+- **Execution:** How you should deliver it.
 
-### Cuándo usarlo
+### When to use it
 
-Usa APE cuando tienes clara la tarea y quieres definir también su finalidad y el formato de ejecución.
+Use APE when you are clear about the task and also want to define its purpose and execution format.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Action: Crea una lista de pruebas manuales para validar un formulario de registro.
@@ -221,7 +220,7 @@ Contexto del formulario:
 - La contraseña debe tener mínimo 8 caracteres
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Action: Prepara una checklist para organizar una reunión de seguimiento con un cliente.
@@ -229,7 +228,7 @@ Purpose: Quiero asegurarme de que no se olvida ninguna tarea antes, durante y de
 Execution: Divide la checklist en tres apartados: antes de la reunión, durante la reunión y después de la reunión.
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Action: [Tarea].
@@ -243,18 +242,18 @@ Execution: [Formato, estructura o pasos que debe seguir].
 
 **CREATE = Character – Request – Examples – Adjustment – Type – Extras**
 
-- **Character:** Rol que debe asumir Copilot.
-- **Request:** Petición principal.
-- **Examples:** Ejemplos o referencias.
-- **Adjustment:** Ajustes de tono, nivel o criterios.
-- **Type:** Tipo de salida.
-- **Extras:** Elementos adicionales.
+- **Character:** Role that Copilot must assume.
+- **Request:** Main request.
+- **Examples:** Examples or references.
+- **Adjustment:** Tone, level or criteria adjustments.
+- **Type:** Type of output.
+- **Extras:** Additional elements.
 
-### Cuándo usarlo
+### When to use it
 
-Usa CREATE cuando necesites una respuesta más completa, cuidada y adaptada a un contexto concreto.
+Use CREATE when you need a more complete, careful and adapted response to a specific context.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Character: Eres un mentor técnico de una consultora.
@@ -265,7 +264,7 @@ Type: Devuelve la explicación en formato markdown.
 Extras: Añade una analogía, un ejemplo de carpetas y tres preguntas de repaso.
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Character: Eres un consultor especializado en mejora de procesos administrativos.
@@ -279,7 +278,7 @@ Procedimiento actual:
 [Pega aquí el procedimiento]
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Character: Eres [rol].
@@ -291,20 +290,19 @@ Extras: Añade [elementos adicionales].
 ```
 
 ---
-
 ## 5.5 TAG Framework
 
 **TAG = Task – Action – Goal**
 
-- **Task:** Tarea general.
-- **Action:** Acción concreta.
-- **Goal:** Objetivo final.
+- **Task:** General task.
+- **Action:** Concrete action.
+- **Goal:** Final objective.
 
-### Cuándo usarlo
+### When to use it
 
-Usa TAG para peticiones rápidas y directas. Es útil cuando la tarea no necesita mucho contexto.
+Use TAG for quick and direct requests. It is useful when the task does not need much context.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Task: Revisión rápida de código.
@@ -315,7 +313,7 @@ Código:
 [Pega aquí el código]
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Task: Resumen de reunión.
@@ -326,7 +324,7 @@ Notas:
 [Pega aquí las notas de la reunión]
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Task: [Tarea general].
@@ -338,18 +336,18 @@ Goal: [Objetivo final].
 
 ## 5.6 CREO Framework
 
-**CREO = Context – Request – Explanation – Outcome**
+**I BELIEVE = Context – Request – Explanation – Outcome**
 
-- **Context:** Situación.
-- **Request:** Petición.
-- **Explanation:** Tipo de explicación que necesitas.
-- **Outcome:** Resultado final esperado.
+- **Context:** Situation.
+- **Request:** Request.
+- **Explanation:** Type of explanation you need.
+- **Outcome:** Expected final result.
 
-### Cuándo usarlo
+### When to use it
 
-Usa CREO cuando quieres que Copilot no solo genere una respuesta, sino que también explique por qué propone esa respuesta.
+Use CREO when you want Copilot to not only generate an answer, but also explain why it is proposing that answer.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Context: Estoy aprendiendo a usar Git en un equipo de desarrollo.
@@ -358,7 +356,7 @@ Explanation: Usa un lenguaje sencillo, con un ejemplo práctico y sin asumir con
 Outcome: Al final, añade una recomendación sobre cuándo usar cada opción en un proyecto de consultora.
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Context: Estoy revisando una hoja de cálculo con tareas de varios proyectos.
@@ -367,7 +365,7 @@ Explanation: Explica por qué cada columna sería útil.
 Outcome: Devuelve una tabla con las columnas recomendadas y una breve descripción de cada una.
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Context: [Situación].
@@ -382,16 +380,16 @@ Outcome: [Resultado final esperado].
 
 **RISE = Role – Input – Steps – Execution**
 
-- **Role:** Rol que debe adoptar Copilot.
-- **Input:** Información de entrada.
-- **Steps:** Pasos que debe seguir.
-- **Execution:** Cómo debe entregar la respuesta.
+- **Role:** Role that Copilot must adopt.
+- **Input:** Input information.
+- **Steps:** Steps you must follow.
+- **Execution:** How the response should be delivered.
 
-### Cuándo usarlo
+### When to use it
 
-Usa RISE para procesos paso a paso, especialmente cuando quieres que Copilot trabaje de forma ordenada.
+Use RISE for step-by-step processes, especially when you want Copilot to work in an orderly manner.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Role: Actúa como un desarrollador senior revisando una incidencia.
@@ -404,7 +402,7 @@ Steps:
 Execution: Devuelve la respuesta como una guía de diagnóstico paso a paso.
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Role: Actúa como coordinador de operaciones de una consultora.
@@ -417,7 +415,7 @@ Steps:
 Execution: Presenta la respuesta en formato tabla.
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Role: Actúa como [rol].
@@ -432,16 +430,16 @@ Execution: Devuelve la respuesta en formato [formato].
 
 **PAIN = Problem – Action – Information – Next Steps**
 
-- **Problem:** Problema o bloqueo.
-- **Action:** Qué debe hacer Copilot.
-- **Information:** Información disponible o información que falta.
-- **Next Steps:** Próximas acciones recomendadas.
+- **Problem:** Problem or blockage.
+- **Action:** What Copilot should do.
+- **Information:** Available information or missing information.
+- **Next Steps:** Recommended next actions.
 
-### Cuándo usarlo
+### When to use it
 
-Usa PAIN cuando hay un problema que necesitas analizar, desbloquear o convertir en un plan de acción.
+Use PAIN when there is a problem that you need to analyze, unlock or turn into an action plan.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Problem: El equipo tarda demasiado en revisar pull requests y se acumulan cambios pendientes.
@@ -450,7 +448,7 @@ Information: Somos 5 desarrolladores, usamos GitHub y solemos revisar los PR al 
 Next Steps: Dame un plan de mejora con acciones concretas para la próxima semana.
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Problem: Se están retrasando varias facturas porque la información llega incompleta.
@@ -459,7 +457,7 @@ Information: Los datos suelen llegar por email, cada proyecto usa un formato dis
 Next Steps: Propón un procedimiento sencillo para reducir errores y una plantilla de solicitud de datos.
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Problem: [Problema].
@@ -474,17 +472,17 @@ Next Steps: [Qué tipo de próximos pasos necesitas].
 
 **COAST = Context – Objective – Actions – Scenario – Task**
 
-- **Context:** Situación general.
-- **Objective:** Objetivo que quieres conseguir.
-- **Actions:** Acciones que deben contemplarse.
-- **Scenario:** Escenario o condiciones.
-- **Task:** Tarea final para Copilot.
+- **Context:** General situation.
+- **Objective:** Objective you want to achieve.
+- **Actions:** Actions that must be considered.
+- **Scenario:** Scenario or conditions.
+- **Task:** Final task for Copilot.
 
-### Cuándo usarlo
+### When to use it
 
-Usa COAST para planificar tareas, reuniones, entregas, procesos o pequeños proyectos.
+Use COAST to plan tasks, meetings, deliveries, processes or small projects.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Context: Tenemos que preparar la entrega de una nueva funcionalidad para un cliente.
@@ -494,7 +492,7 @@ Scenario: El equipo tiene tres días y participan desarrollo, QA y responsable f
 Task: Crea un plan de trabajo dividido por días, responsables y entregables.
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Context: La consultora va a organizar una sesión interna de formación sobre Copilot.
@@ -504,7 +502,7 @@ Scenario: La sesión dura 2 horas y los asistentes tienen niveles muy distintos.
 Task: Diseña una agenda de la sesión con tiempos, actividades y materiales necesarios.
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Context: [Situación general].
@@ -520,17 +518,17 @@ Task: [Tarea concreta que debe realizar Copilot].
 
 **ROSES = Role – Objective – Scenario – Expected solution – Steps**
 
-- **Role:** Rol que adopta Copilot.
-- **Objective:** Objetivo principal.
-- **Scenario:** Escenario concreto.
-- **Expected solution:** Tipo de solución esperada.
-- **Steps:** Pasos que debe seguir o incluir.
+- **Role:** Role that Copilot adopts.
+- **Objective:** Main objective.
+- **Scenario:** Specific scenario.
+- **Expected solution:** Type of expected solution.
+- **Steps:** Steps that you must follow or include.
 
-### Cuándo usarlo
+### When to use it
 
-Usa ROSES para pedir soluciones más completas, estructuradas y profesionales.
+Use ROSES to ask for more complete, structured and professional solutions.
 
-### Ejemplo para desarrollo
+### Example for development
 
 ```text
 Role: Actúa como arquitecto de software en una consultora.
@@ -544,7 +542,7 @@ Steps:
 4. Añade riesgos habituales en proyectos junior.
 ```
 
-### Ejemplo para administración
+### Example for administration
 
 ```text
 Role: Actúa como responsable de operaciones de una consultora.
@@ -558,7 +556,7 @@ Steps:
 4. Añade una plantilla breve para informar avances.
 ```
 
-### Plantilla reutilizable
+### Reusable template
 
 ```text
 Role: Actúa como [rol].
@@ -570,32 +568,32 @@ Steps: Incluye estos pasos: [pasos].
 
 ---
 
-# 6) Checklist para escribir mejores prompts
+#6) Checklist to write better prompts
 
-Antes de enviar un prompt a Copilot, revisa si has incluido:
+Before sending a prompt to Copilot, check if you have included:
 
-- [ ] Qué quieres que haga.
-- [ ] Para qué lo necesitas.
-- [ ] Qué rol debe asumir.
-- [ ] Qué contexto debe conocer.
-- [ ] Qué formato de salida quieres.
-- [ ] Qué nivel de detalle necesitas.
-- [ ] Qué tono debe usar.
-- [ ] Qué información debe evitar o proteger.
-- [ ] Qué ejemplos puede seguir.
-- [ ] Cómo sabrás si la respuesta es útil.
+- [ ] What do you want me to do.
+- [ ] What do you need it for.
+- [ ] What role should you assume.
+- [ ] What context you should know.
+- [ ] What output format do you want.
+- [ ] What level of detail do you need.
+- [ ] What tone should you use.
+- [ ] What information you should avoid or protect.
+- [ ] What examples can you follow.
+- [ ] How will you know if the answer is useful.
 
 ---
 
-# 7) Errores comunes al usar Copilot
+#7) Common mistakes when using Copilot
 
-## Error 1: Pedir algo demasiado genérico
+## Mistake 1: Asking for something too generic
 
 ```text
 Explícame Git.
 ```
 
-Mejor:
+Better:
 
 ```text
 Explícame Git para una persona que empieza a trabajar en una consultora tecnológica.
@@ -603,38 +601,38 @@ Céntrate en commit, branch, merge y pull request.
 Usa ejemplos sencillos y termina con una tabla resumen.
 ```
 
-## Error 2: No indicar el formato
+## Error 2: Not indicating the format
 
 ```text
 Organiza estas tareas.
 ```
 
-Mejor:
+Better:
 
 ```text
 Organiza estas tareas en una tabla con las columnas: tarea, responsable, prioridad, fecha límite y estado.
 ```
 
-## Error 3: No indicar el público
+## Error 3: Not indicating the audience
 
 ```text
 Redacta una explicación sobre este proyecto.
 ```
 
-Mejor:
+Better:
 
 ```text
 Redacta una explicación sobre este proyecto para una persona del área administrativa que no tiene conocimientos técnicos.
 Usa lenguaje claro y evita jerga de programación.
 ```
 
-## Error 4: No pedir revisión crítica
+## Mistake 4: Not asking for critical review
 
 ```text
 Crea este procedimiento.
 ```
 
-Mejor:
+Better:
 
 ```text
 Crea este procedimiento y después añade una sección final con posibles riesgos, puntos ambiguos y mejoras recomendadas.
@@ -642,34 +640,34 @@ Crea este procedimiento y después añade una sección final con posibles riesgo
 
 ---
 
-# 8) Conclusiones clave
+#8) Key Takeaways
 
-- Un buen prompt da contexto, objetivo, formato y límites.
-- Los frameworks ayudan a convertir peticiones vagas en instrucciones claras.
-- No hace falta usar siempre el framework más largo: elige según la tarea.
-- Copilot es útil para generar borradores, ideas, explicaciones, documentación y planes de trabajo.
-- Las respuestas de Copilot siempre deben revisarse antes de usarse profesionalmente.
-- En una consultora, la confidencialidad y la calidad de la información son tan importantes como la rapidez.
+- A good prompt gives context, objective, format and limits.
+- Frameworks help turn vague requests into clear instructions.
+- It is not necessary to always use the longest framework: choose according to the task.
+- Copilot is useful for generating drafts, ideas, explanations, documentation and work plans.
+- Copilot responses should always be reviewed before being used professionally.
+- In a consulting firm, confidentiality and quality of information are as important as speed.
 
 ---
 
-# 9) Resumen rápido de frameworks
+#9) Quick overview of frameworks
 
-| Framework | Significado                                            | Mejor para                         |
+| Framework | Meaning | Best for |
 | --------- | ------------------------------------------------------ | ---------------------------------- |
-| RACE      | Role, Action, Context, Explanation                     | Explicaciones claras               |
-| CARE      | Context, Action, Result, Example                       | Resultados prácticos con ejemplo   |
-| APE       | Action, Purpose, Execution                             | Tareas con objetivo y formato      |
-| CREATE    | Character, Request, Examples, Adjustment, Type, Extras | Prompts completos y personalizados |
-| TAG       | Task, Action, Goal                                     | Peticiones rápidas                 |
-| CREO      | Context, Request, Explanation, Outcome                 | Explicaciones con resultado final  |
-| RISE      | Role, Input, Steps, Execution                          | Procesos paso a paso               |
-| PAIN      | Problem, Action, Information, Next Steps               | Análisis de problemas              |
-| COAST     | Context, Objective, Actions, Scenario, Task            | Planificación                      |
-| ROSES     | Role, Objective, Scenario, Expected solution, Steps    | Soluciones estructuradas           |
+| RACE | Role, Action, Context, Explanation | Clear explanations |
+| CARE | Context, Action, Result, Example | Practical results with example |
+| APE | Action, Purpose, Execution | Tasks with objective and format |
+| CREATE | Character, Request, Examples, Adjustment, Type, Extras | Complete and personalized prompts |
+| TAG | Task, Action, Goal | Quick Requests |
+| I BELIEVE | Context, Request, Explanation, Outcome | Explanations with final result |
+| RISE | Role, Input, Steps, Execution | Step-by-step processes |
+| PAIN | Problem, Action, Information, Next Steps | Problem analysis |
+| COAST | Context, Objective, Actions, Scenario, Task | Planning |
+| ROSES | Role, Objective, Scenario, Expected solution, Steps | Structured solutions |
 
 ---
 
-## Cierre
+## Closing
 
-La mejor forma de aprender prompting es practicar. Empieza con prompts sencillos, revisa la respuesta de Copilot y mejora poco a poco tus instrucciones. Si la respuesta no es útil, no significa necesariamente que Copilot no pueda ayudarte: muchas veces significa que el prompt necesita más contexto, más límites o un formato más claro.
+The best way to learn prompting is to practice. Start with simple prompts, review Copilot's response, and gradually improve your instructions. If the answer is not helpful, it doesn't necessarily mean that Copilot can't help you: it often means that the prompt needs more context, more boundaries, or clearer formatting.

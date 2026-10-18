@@ -1,21 +1,21 @@
-# Ejercicios - Tema 5: Condicionales (if y switch)
+# Exercises - Topic 5: Conditionals (if and switch)
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre condicionales en Java: `if`, `else if`, `else` y `switch` (clásico y moderno).
+Below you will find **10 practical exercises** on conditionals in Java: `if`, `else if`, `else` and `switch` (classic and modern).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Comprobar si un número es positivo
+## Exercise 1: Check if a number is positive
 
-Declara una variable `number` con valor `-3`.
+Declares a variable `number` with value `-3`.
 
-Muestra por consola:
+Sample per console:
 
-- `"Positive number"` si el número es mayor que 0
-- `"Not positive"` en caso contrario
+- `"Positive number"` if the number is greater than 0
+- `"Not positive"` otherwise
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -35,17 +35,17 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Mayor, menor o igual a cero
+## Exercise 2: Greater than, less than or equal to zero
 
-Declara una variable `value` con valor `0`.
+Declare a variable `value` with value `0`.
 
-Usa `if`, `else if` y `else` para mostrar:
+Use `if`, `else if` and `else` to display:
 
 - `"Greater than zero"`
 - `"Less than zero"`
 - `"Equal to zero"`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -67,16 +67,16 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Acceso con edad y documento
+## Exercise 3: Access with age and document
 
-Declara:
+Declares:
 
-- `age` con valor `17`
-- `hasId` con valor `true`
+- `age` with `17` value
+- `hasId` with `true` value
 
-Muestra `"Access granted"` solo si es mayor o igual a 18 **y** tiene documento.
+Displays `"Access granted"` only if it is greater than or equal to 18 **and** it has a document.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -97,13 +97,13 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Usuario bloqueado
+## Exercise 4: Blocked user
 
-Declara una variable `isBlocked` con valor `true`.
+Declare a variable `isBlocked` with value `true`.
 
-Si el usuario **no** está bloqueado, muestra `"User can log in"`.
+If the user is **not** blocked, it displays `"User can log in"`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -121,17 +121,17 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Clasificar una nota numérica
+## Exercise 5: Classify a numerical note
 
-Declara una variable `score` con valor `74`.
+Declares a variable `score` with value `74`.
 
-Muestra:
+Sample:
 
-- `"Excellent"` si es mayor o igual a 90
-- `"Good"` si es mayor o igual a 70
-- `"Fail"` en cualquier otro caso
+- `"Excellent"` if greater than or equal to 90
+- `"Good"` if greater than or equal to 70
+- `"Fail"` in any other case
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -153,13 +153,13 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Comparar texto correctamente
+## Exercise 6: Compare text correctly
 
-Declara una variable `role` con valor `"admin"`.
+Declares a variable `role` with value `"admin"`.
 
-Muestra `"Administrator access"` solo si el rol es `"admin"`.
+Displays `"Administrator access"` only if the role is `"admin"`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -177,18 +177,18 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Switch clásico con opciones numéricas
+## Exercise 7: Classic switch with numerical options
 
-Declara una variable `option` con valor `3`.
+Declares a variable `option` with value `3`.
 
-Usa `switch` para mostrar:
+Use `switch` to display:
 
 - `1` → `"Start"`
 - `2` → `"Settings"`
 - `3` → `"Exit"`
-- Cualquier otro valor → `"Invalid option"`
+- Any other value → `"Invalid option"`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -216,17 +216,17 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Switch moderno con texto
+## Exercise 8: Modern switch with text
 
-Declara una variable `day` con valor `"SUN"`.
+Declare a variable `day` with value `"SUN"`.
 
-Usa `switch` moderno para mostrar:
+Use modern `switch` to display:
 
-- `"Weekday"` si es `"MON"`, `"TUE"`, `"WED"`, `"THU"` o `"FRI"`
-- `"Weekend"` si es `"SAT"` o `"SUN"`
-- `"Unknown"` en otro caso
+- `"Weekday"` if it is `"MON"`, `"TUE"`, `"WED"`, `"THU"` or `"FRI"`
+- `"Weekend"` if it is `"SAT"` or `"SUN"`
+- `"Unknown"` otherwise
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -248,18 +248,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Switch como expresión con `yield`
+## Exercise 9: Switch as an expression with `yield`
 
-Declara una variable `points` con valor `85`.
+Declares a variable `points` with value `85`.
 
-Usa `switch` para asignar una letra:
+Use `switch` to assign a letter:
 
-- 90 o más → `"A"`
-- 80 a 89 → `"B"`
-- 70 a 79 → `"C"`
-- Menos de 70 → `"D"`
-
-<details><summary>Mostrar Solución</summary>
+- 90 or more → `"A"`
+- 80 to 89 → `"B"`
+- 70 to 79 → `"C"`
+- Less than 70 → `"D"`
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -284,18 +283,18 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Elegir entre if y switch
+## Exercise 10: Choose between if and switch
 
-Declara una variable `statusCode` con valor `404`.
+Declares a variable `statusCode` with value `404`.
 
-Usa la estructura que consideres más adecuada para mostrar:
+Use the structure that you consider most appropriate to show:
 
 - `200` → `"OK"`
 - `404` → `"Not Found"`
 - `500` → `"Server Error"`
-- Otro valor → `"Unknown status"`
+- Other value → `"Unknown status"`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {

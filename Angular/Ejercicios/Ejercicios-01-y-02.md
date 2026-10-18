@@ -1,126 +1,132 @@
-# **Ejercicios - Temas 1 y 2**
+# **Exercises - Topics 1 and 2**
 
-## **Ejercicios del Tema 1: Introducción a Angular y Configuración del Entorno**
+## **Exercises from Topic 1: Introduction to Angular and Environment Configuration**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre los aspectos básicos de Angular.
+Below you will find 10 practical exercises on the basics of Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
-### **Ejercicio 1: Instalación de Angular CLI**
+### **Exercise 1: Installing Angular CLI**
 
-Instala Angular CLI en tu sistema y verifica la instalación con los comandos adecuados.
+Install Angular CLI on your system and verify the installation with the appropriate commands.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 npm install -g @angular/cli
 ng version
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Creación de un nuevo proyecto Angular**
+### **Exercise 2: Creating a new Angular project**
 
-Crea un nuevo proyecto en Angular llamado `mi-proyecto-angular` utilizando Angular CLI.
+Create a new project in Angular called `mi-proyecto-angular` using Angular CLI.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 ng new mi-proyecto-angular
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Estructura del proyecto**
+### **Exercise 3: Project structure**
 
-Explica brevemente la función de los siguientes archivos:
+Briefly explain the function of the following files:
 
 - `src/app/app.component.ts`
 - `src/main.ts`
 - `angular.json`
 - `package.json`
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-- `src/app/app.component.ts`: Define la lógica del componente principal de la aplicación.
-- `src/main.ts`: Punto de entrada de la aplicación.
-- `angular.json`: Configuración del proyecto Angular.
-- `package.json`: Lista de dependencias y scripts del proyecto.
+- `src/app/app.component.ts`: Defines the logic of the main component of the application.
+- `src/main.ts`: Application entry point.
+- `angular.json`: Angular project configuration.
+- `package.json`: List of project dependencies and scripts.
 
 </details>
 
 ---
 
-### **Ejercicio 4: Servidor de desarrollo**
+### **Exercise 4: Development Server**
 
-Inicia el servidor de desarrollo y explica qué ocurre cuando cambias `app.component.html`.
+Start the development server and explain what happens when you change `app.component.html`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 ng serve
 ```
 
-Cualquier cambio en `app.component.html` se reflejará automáticamente en el navegador sin necesidad de recargar la página.
+
+Any changes to `app.component.html` will be automatically reflected in the browser without the need to reload the page.
 
 </details>
 
 ---
 
-### **Ejercicio 5: Modificación del template inicial**
+### **Exercise 5: Modification of the initial template**
 
-Modifica `app.component.html` para mostrar un mensaje personalizado.
+Modify `app.component.html` to display a custom message.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <h1>Bienvenido a mi aplicación en Angular</h1>
 ```
 
+
 </details>
 
 ---
 
-## **Ejercicios del Tema 2: Componentes en Angular**
+## **Exercises from Topic 2: Components in Angular**
 
-### **Ejercicio 6: Creación de un componente**
+### **Exercise 6: Creating a component**
 
-Crea un componente `header` dentro de la carpeta `components`.
+Create an `header` component inside the `components` folder.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 ng generate component components/header
 ```
 
-Este comando genera los archivos necesarios: `.ts`, `.html`, `.css` y `.spec.ts`.
+
+This command generates the necessary files: `.ts`, `.html`, `.css` and `.spec.ts`.
 
 </details>
 
 ---
 
-### **Ejercicio 7: Uso de un componente**
+### **Exercise 7: Using a component**
 
-Añade el componente `header` dentro de `app.component.html`.
+Add the `header` component inside `app.component.html`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <app-header></app-header>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 8: Interpolación**
+### **Exercise 8: Interpolation**
 
-Define una variable `title` en el componente `header` y muéstrala en su plantilla.
+Define a variable `title` in the `header` component and display it in its template.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class HeaderComponent {
@@ -128,19 +134,21 @@ export class HeaderComponent {
 }
 ```
 
+
 ```html
 <h1>{{ title }}</h1>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 9: Binding de propiedades**
+### **Exercise 9: Property Binding**
 
-Crea un input con `placeholder` dinámico basado en una variable.
+Creates an entry with dynamic `placeholder` based on a variable.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```ts
 export class HeaderComponent {
@@ -148,19 +156,21 @@ export class HeaderComponent {
 }
 ```
 
+
 ```html
 <input [placeholder]="placeholderText" />
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 10: Componentes dentro de componentes**
+### **Exercise 10: Components within components**
 
-Crea un componente `footer` que contenga otros tres componentes internos.
+Create an `footer` component that contains three other internal components.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 ng generate component components/footer
@@ -169,10 +179,12 @@ ng generate component components/footer/social
 ng generate component components/footer/contact
 ```
 
+
 ```html
 <app-info></app-info>
 <app-social></app-social>
 <app-contact></app-contact>
 ```
+
 
 </details>

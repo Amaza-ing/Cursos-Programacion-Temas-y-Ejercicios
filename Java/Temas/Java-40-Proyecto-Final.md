@@ -1,95 +1,95 @@
-# Tema 40. Proyecto Final
+# Topic 40. Final Project
 
-## 1. Introducción
+## 1. Introduction
 
-Llegamos al último tema del curso.
+We come to the last topic of the course.
 
-A lo largo del curso has aprendido muchas piezas importantes de Java:
+Throughout the course you have learned many important pieces of Java:
 
 - variables
-- operadores
-- condicionales
-- bucles
-- métodos
+- operators
+- conditionals
+- loops
+- methods
 - arrays
 - `ArrayList`
-- clases y objetos
-- encapsulación
-- constructores
-- métodos estáticos
-- herencia
-- polimorfismo
+- classes and objects
+- encapsulation
+- builders
+- static methods
+- inheritance
+- polymorphism
 - packages
-- clases abstractas
+- abstract classes
 - interfaces
 - `equals`
-- excepciones
+- exceptions
 - enums
 - `HashMap`
-- otras colecciones
+- other collections
 - `BigDecimal`
 - generics
 - lambdas
-- interfaces funcionales
+- functional interfaces
 - `Stream API`
 - `Optional`
 - Date/Time API
-- `Files` y `Path`
+- `Files` and `Path`
 - records
 - sealed classes
-- concurrencia básica
-- anotaciones
-- Maven
+- basic concurrency
+- annotations
+-Maven
 
-Ahora vamos a unir muchos de esos conceptos en un proyecto final.
+Now we are going to combine many of those concepts into a final project.
 
-El objetivo no es hacer una aplicación enorme, sino crear un proyecto suficientemente completo para practicar Java moderno con una estructura parecida a la que podrías encontrar en un proyecto real.
+The goal is not to make a huge application, but to create a project complete enough to practice modern Java with a structure similar to what you would find in a real project.
 
 ---
 
-## 2. Proyecto final: gestor de tareas por consola
+## 2. Final project: console task manager
 
-Vamos a crear una aplicación de consola llamada:
+Let's create a console application called:
 
 ```text
 Task Manager
 ```
 
-La aplicación permitirá gestionar tareas.
+The application will allow you to manage tasks.
 
-Cada tarea tendrá:
+Each task will have:
 
-- id
-- título
-- descripción
-- prioridad
-- estado
-- fecha límite
-- fecha de creación
+- go
+- title
+- description
+- priority
+- status
+- deadline
+- creation date
 
-El usuario podrá:
+The user will be able to:
 
-- crear tareas
-- listar tareas
-- buscar tareas por id
-- marcar tareas como completadas
-- eliminar tareas
-- filtrar tareas por estado
-- guardar las tareas en un archivo
-- cargar las tareas desde un archivo
+- create tasks
+- list tasks
+- search tasks by id
+- mark tasks as completed
+- delete tasks
+- filter tasks by status
+- save tasks to a file
+- load tasks from a file
 
 ---
 
-## 3. Conceptos del curso que se van a practicar
+## 3. Course concepts to be practiced
 
-En este proyecto usaremos:
+In this project we will use:
 
-- clases
+- classes
 - records
 - enums
 - interfaces
 - sealed classes
-- excepciones personalizadas
+- custom exceptions
 - `ArrayList`
 - `HashMap`
 - `Optional`
@@ -98,18 +98,18 @@ En este proyecto usaremos:
 - `LocalDateTime`
 - `Files`
 - `Path`
-- `BigDecimal` de forma opcional
-- Maven
-- paquetes
-- métodos estáticos
-- encapsulación
-- separación por responsabilidades
+- `BigDecimal` optionally
+-Maven
+- packages
+- static methods
+- encapsulation
+- separation of responsibilities
 
 ---
 
-## 4. Resultado esperado
+## 4. Expected result
 
-La aplicación mostrará un menú como este:
+The app will display a menu like this:
 
 ```text
 ==== Task Manager ====
@@ -125,13 +125,13 @@ La aplicación mostrará un menú como este:
 Choose an option:
 ```
 
-El usuario podrá interactuar desde la consola escribiendo números y textos.
+The user will be able to interact from the console by writing numbers and texts.
 
 ---
 
-## 5. Crear el proyecto Maven
+## 5. Create the Maven project
 
-La estructura del proyecto será:
+The structure of the project will be:
 
 ```text
 java-task-manager
@@ -165,17 +165,17 @@ java-task-manager
                             └── DateUtils.java
 ```
 
-Esta estructura separa el código por responsabilidades.
+This structure separates the code by responsibilities.
 
 ---
 
-## 6. Responsabilidades de cada paquete
+## 6. Responsibilities of each package
 
 ### 6.1. `model`
 
-Contiene las clases o records que representan datos principales del proyecto.
+Contains the classes or records that represent the main data of the project.
 
-Ejemplo:
+Example:
 
 ```text
 Task
@@ -185,9 +185,9 @@ Priority
 
 ### 6.2. `service`
 
-Contiene la lógica de negocio.
+Contains the business logic.
 
-Ejemplo:
+Example:
 
 ```text
 TaskService
@@ -195,9 +195,9 @@ TaskService
 
 ### 6.3. `repository`
 
-Contiene la lógica para guardar y cargar datos.
+Contains the logic to save and load data.
 
-Ejemplo:
+Example:
 
 ```text
 TaskRepository
@@ -206,9 +206,9 @@ FileTaskRepository
 
 ### 6.4. `app`
 
-Contiene la lógica de interacción de la aplicación.
+Contains the interaction logic of the application.
 
-Ejemplo:
+Example:
 
 ```text
 TaskApplication
@@ -216,9 +216,9 @@ TaskApplication
 
 ### 6.5. `exception`
 
-Contiene excepciones propias.
+Contains its own exceptions.
 
-Ejemplo:
+Example:
 
 ```text
 TaskNotFoundException
@@ -226,9 +226,9 @@ TaskNotFoundException
 
 ### 6.6. `result`
 
-Contiene sealed interfaces y records para representar resultados.
+Contains sealed interfaces and records to represent results.
 
-Ejemplo:
+Example:
 
 ```text
 DeleteResult
@@ -238,9 +238,9 @@ DeleteError
 
 ### 6.7. `util`
 
-Contiene clases de utilidad.
+Contains utility classes.
 
-Ejemplo:
+Example:
 
 ```text
 ConsoleReader
@@ -251,7 +251,7 @@ DateUtils
 
 ## 7. `pom.xml`
 
-Primero creamos el archivo `pom.xml`.
+First we create the file `pom.xml`.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -290,23 +290,22 @@ Primero creamos el archivo `pom.xml`.
 </project>
 ```
 
-Este proyecto no necesita dependencias externas.
+This project does not need external dependencies.
 
-Usaremos solo Java estándar.
+We will use only standard Java.
 
 ---
 
-## 8. Modelo principal: `Task`
+## 8. Main model: `Task`
 
-Vamos a representar una tarea con un `record`.
+Let's represent a task with an `record`.
 
-Ruta:
-
+Route:
 ```text
 src/main/java/com/amazaing/taskmanager/model/Task.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.model;
@@ -371,31 +370,31 @@ public record Task(
 
 ---
 
-## 9. Por qué usamos un record para `Task`
+## 9. Why we use a record for `Task`
 
-Usamos un record porque una tarea, en este diseño, se trata como un dato inmutable.
+We use a record because a task, in this design, is treated as immutable data.
 
-Si queremos modificar una tarea, no cambiamos la instancia original.
+If we want to modify a task, we do not change the original instance.
 
-Creamos una nueva:
+We create a new one:
 
 ```java
 Task completedTask = task.complete();
 ```
 
-Esto reduce errores y hace el código más predecible.
+This reduces errors and makes the code more predictable.
 
 ---
 
 ## 10. Enum `Priority`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/model/Priority.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.model;
@@ -407,19 +406,19 @@ public enum Priority {
 }
 ```
 
-Usamos un enum porque la prioridad solo puede tener un conjunto cerrado de valores.
+We use an enum because priority can only have a closed set of values.
 
 ---
 
 ## 11. Enum `TaskStatus`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/model/TaskStatus.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.model;
@@ -431,21 +430,21 @@ public enum TaskStatus {
 }
 ```
 
-También usamos un enum para el estado de la tarea.
+We also use an enum for the task status.
 
 ---
 
-## 12. Excepción personalizada
+## 12. Custom exception
 
-Vamos a crear una excepción propia para cuando no se encuentra una tarea.
+Let's create our own exception for when a task is not found.
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/exception/TaskNotFoundException.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.exception;
@@ -457,21 +456,21 @@ public class TaskNotFoundException extends RuntimeException {
 }
 ```
 
-Usamos una excepción personalizada para que el error sea más expresivo.
+We use a custom exception to make the error more expressive.
 
 ---
 
-## 13. Interfaz `TaskRepository`
+## 13. `TaskRepository` interface
 
-El repositorio será responsable de guardar y cargar tareas.
+The repository will be responsible for saving and loading tasks.
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/repository/TaskRepository.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.repository;
@@ -487,19 +486,19 @@ public interface TaskRepository {
 }
 ```
 
-Esto permite que la aplicación no dependa directamente de cómo se guardan los datos.
+This allows the application to not depend directly on how the data is saved.
 
 ---
 
-## 14. Implementación con archivos: `FileTaskRepository`
+## 14. Implementation with files: `FileTaskRepository`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/repository/FileTaskRepository.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.repository;
@@ -601,45 +600,45 @@ public class FileTaskRepository implements TaskRepository {
 }
 ```
 
-Este repositorio guarda cada tarea en una línea de texto separando los campos con `;`.
+This repository saves each task on a line of text separating the fields with `;`.
 
 ---
 
-## 15. Nota sobre el guardado en archivo
+## 15. Note on saving to file
 
-Este sistema de guardado es sencillo.
+This save system is simple.
 
-No es perfecto, pero es suficiente para practicar:
+It's not perfect, but it's enough to practice:
 
 - `Files`
 - `Path`
-- listas
-- conversión de texto a objetos
-- conversión de objetos a texto
-- excepciones
+- lists
+- text to object conversion
+- object to text conversion
+- exceptions
 
-En una aplicación real podrías usar:
+In a real application you could use:
 
-- JSON
-- XML
-- una base de datos
-- una API externa
+-JSON
+-XML
+- a database
+- an external API
 
-Pero para un proyecto final de Java básico, este sistema es muy útil.
+But for a basic Java capstone project, this system is very useful.
 
 ---
 
-## 16. Sealed interface para resultados de eliminación
+## 16. Sealed interface for removal results
 
-Vamos a usar una sealed interface para representar el resultado de borrar una tarea.
+We are going to use a sealed interface to represent the result of deleting a task.
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/result/DeleteResult.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.result;
@@ -652,13 +651,13 @@ public sealed interface DeleteResult permits DeleteSuccess, DeleteError {
 
 ## 17. Record `DeleteSuccess`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/result/DeleteSuccess.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.result;
@@ -671,13 +670,13 @@ public record DeleteSuccess(int id) implements DeleteResult {
 
 ## 18. Record `DeleteError`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/result/DeleteError.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.result;
@@ -686,19 +685,19 @@ public record DeleteError(String message) implements DeleteResult {
 }
 ```
 
-Esto nos permite devolver un resultado claro sin usar solo `boolean`.
+This allows us to return a clear result without using only `boolean`.
 
 ---
 
-## 19. Servicio principal: `TaskService`
+## 19. Main service: `TaskService`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/service/TaskService.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.service;
@@ -816,35 +815,35 @@ public class TaskService {
 
 ---
 
-## 20. Conceptos usados en `TaskService`
+## 20. Concepts used in `TaskService`
 
-En esta clase practicamos:
+In this class we practice:
 
-- encapsulación
-- listas
+- encapsulation
+- lists
 - `Optional`
 - streams
 - lambdas
 - method references
 - sealed result
 - records
-- excepciones
+- exceptions
 - enums
 - Date/Time API
 
-Este servicio contiene la lógica principal del proyecto.
+This service contains the main logic of the project.
 
 ---
 
-## 21. Clase de utilidad `DateUtils`
+## 21. `DateUtils` utility class
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/util/DateUtils.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.util;
@@ -881,19 +880,19 @@ public class DateUtils {
 }
 ```
 
-Esta clase usa métodos estáticos porque son utilidades puras.
+This class uses static methods because they are pure utilities.
 
 ---
 
-## 22. Clase de utilidad `ConsoleReader`
+## 22. `ConsoleReader` utility class
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/util/ConsoleReader.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.util;
@@ -973,19 +972,19 @@ public class ConsoleReader {
 }
 ```
 
-Esta clase centraliza la lectura desde consola.
+This class centralizes reading from the console.
 
 ---
 
-## 23. Aplicación principal: `TaskApplication`
+## 23. Main application: `TaskApplication`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/app/TaskApplication.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager.app;
@@ -1172,15 +1171,15 @@ public class TaskApplication {
 
 ---
 
-## 24. Clase `Main`
+## 24. `Main` class
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/amazaing/taskmanager/Main.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.amazaing.taskmanager;
@@ -1205,37 +1204,37 @@ public class Main {
 }
 ```
 
-Esta clase conecta las piezas principales.
+This class connects the main pieces.
 
 ---
 
-## 25. Ejecutar el proyecto desde el IDE
+## 25. Run the project from the IDE
 
-Si usas un IDE, puedes ejecutar directamente la clase:
+If you use an IDE, you can directly run the class:
 
 ```text
 Main.java
 ```
 
-El programa abrirá el menú en la consola integrada.
+The program will open the menu on the integrated console.
 
 ---
 
-## 26. Ejecutar el proyecto con Maven
+## 26. Run the project with Maven
 
-Desde la terminal, puedes compilar con:
+From the terminal, you can compile with:
 
 ```bash
 mvn compile
 ```
 
-Crear el `.jar`:
+Create the `.jar`:
 
 ```bash
 mvn package
 ```
 
-Ejecutar el `.jar`:
+Run `.jar`:
 
 ```bash
 java -jar target/java-task-manager-1.0.0.jar
@@ -1243,9 +1242,9 @@ java -jar target/java-task-manager-1.0.0.jar
 
 ---
 
-## 27. Probar la aplicación
+## 27. Test the app
 
-Una posible prueba sería:
+A possible test would be:
 
 ```text
 1. Create task
@@ -1255,21 +1254,21 @@ Priority: MEDIUM
 Due date: 30/06/2026
 ```
 
-Después:
+After:
 
 ```text
 2. List tasks
 ```
 
-Deberías ver la tarea creada.
+You should see the task created.
 
-Luego:
+Then:
 
 ```text
 7. Save tasks
 ```
 
-Después puedes cerrar, volver a abrir y usar:
+Then you can close, reopen and use:
 
 ```text
 8. Load tasks
@@ -1277,52 +1276,52 @@ Después puedes cerrar, volver a abrir y usar:
 
 ---
 
-## 28. Archivo generado
+## 28. Generated file
 
-Cuando guardes las tareas, se creará un archivo:
+When you save tasks, a file will be created:
 
 ```text
 data/tasks.txt
 ```
 
-Con contenido parecido a:
+With content similar to:
 
 ```text
 1;Study Java;Review final project;MEDIUM;PENDING;2026-06-30;2026-06-21T12:30:10.123
 ```
 
-Cada línea representa una tarea.
+Each line represents a task.
 
 ---
 
-## 29. Mejoras posibles
+## 29. Possible improvements
 
-Este proyecto es funcional, pero se puede mejorar.
+This project is functional, but it can be improved.
 
-Algunas mejoras posibles:
+Some possible improvements:
 
-- editar una tarea
-- cambiar el estado a `IN_PROGRESS`
-- filtrar por prioridad
-- ordenar por fecha límite
-- buscar por texto
-- guardar en JSON
-- añadir tests con JUnit
-- usar una base de datos
-- crear una interfaz gráfica
-- convertirlo en una API REST con Spring
-- añadir usuarios
-- añadir categorías
-- añadir etiquetas
-- añadir exportación CSV
+- edit a task
+- change status to `IN_PROGRESS`
+- filter by priority
+- sort by deadline
+- search by text
+- save to JSON
+- add tests with JUnit
+- use a database
+- create a graphical interface
+- convert it to a REST API with Spring
+- add users
+- add categories
+- add tags
+- add CSV export
 
 ---
 
-## 30. Mejora 1: cambiar estado a `IN_PROGRESS`
+## 30. Improvement 1: Change status to `IN_PROGRESS`
 
-Ahora mismo solo completamos tareas.
+Right now we only complete tasks.
 
-Podrías añadir un método:
+You could add a method:
 
 ```java
 public Task startTask(int id) {
@@ -1346,13 +1345,13 @@ public Task startTask(int id) {
 }
 ```
 
-Después podrías añadir una opción nueva al menú.
+You could then add a new option to the menu.
 
 ---
 
-## 31. Mejora 2: filtrar por prioridad
+## 31. Improvement 2: Filter by priority
 
-Puedes añadir en `TaskService`:
+You can add in `TaskService`:
 
 ```java
 public List<Task> findByPriority(Priority priority) {
@@ -1363,18 +1362,18 @@ public List<Task> findByPriority(Priority priority) {
 }
 ```
 
-Esto practica:
+This practices:
 
 - enums
 - streams
 - lambdas
-- listas
+- lists
 
 ---
 
-## 32. Mejora 3: ordenar por fecha límite
+## 32. Improvement 3: Sort by deadline
 
-Puedes crear un método:
+You can create a method:
 
 ```java
 public List<Task> findAllSortedByDueDate() {
@@ -1385,7 +1384,7 @@ public List<Task> findAllSortedByDueDate() {
 }
 ```
 
-Esto practica:
+This practices:
 
 - `LocalDate`
 - `Comparator`
@@ -1394,9 +1393,9 @@ Esto practica:
 
 ---
 
-## 33. Mejora 4: buscar por texto
+## 33. Improvement 4: Search by text
 
-Puedes buscar tareas que contengan una palabra en el título o descripción.
+You can search for tasks that contain a word in the title or description.
 
 ```java
 public List<Task> searchByText(String text) {
@@ -1412,13 +1411,13 @@ public List<Task> searchByText(String text) {
 
 ---
 
-## 34. Mejora 5: guardar automáticamente al salir
+## 34. Improvement 5: Auto save on exit
 
-Ahora mismo el usuario debe elegir la opción de guardar.
+Right now the user must choose the save option.
 
-Podrías modificar el método `run` para guardar antes de salir.
+You could modify the `run` method to save before exiting.
 
-Ejemplo:
+Example:
 
 ```java
 case 0:
@@ -1427,26 +1426,26 @@ case 0:
     break;
 ```
 
-Así reduces el riesgo de perder información.
+This way you reduce the risk of losing information.
 
 ---
 
-## 35. Mejora 6: cargar automáticamente al iniciar
+## 35. Improvement 6: Automatically load on startup
 
-En `Main`, después de crear el servicio, podrías cargar las tareas.
+In `Main`, after creating the service, you could upload the tasks.
 
 ```java
 TaskService service = new TaskService(repository);
 service.loadTasks();
 ```
 
-Así la aplicación recupera los datos automáticamente al empezar.
+Thus the application recovers the data automatically when it starts.
 
 ---
 
-## 36. Mejora 7: añadir tests
+## 36. Improvement 7: add tests
 
-Podrías añadir JUnit al `pom.xml`.
+You could add JUnit to the `pom.xml`.
 
 ```xml
 <dependencies>
@@ -1459,11 +1458,11 @@ Podrías añadir JUnit al `pom.xml`.
 </dependencies>
 ```
 
-Después puedes crear tests para `TaskService`.
+Then you can create tests for `TaskService`.
 
 ---
 
-## 37. Ejemplo de test para `TaskService`
+## 37. Test example for `TaskService`
 
 ```java
 package com.amazaing.taskmanager.service;
@@ -1490,11 +1489,11 @@ public class TaskServiceTest {
 }
 ```
 
-Para este test necesitarías crear un repositorio en memoria.
+For this test you would need to create an in-memory repository.
 
 ---
 
-## 38. Repositorio en memoria para tests
+## 38. In-memory repository for tests
 
 ```java
 package com.amazaing.taskmanager.service;
@@ -1520,15 +1519,15 @@ public class InMemoryTaskRepository implements TaskRepository {
 }
 ```
 
-Esto evita depender de archivos reales durante los tests.
+This avoids depending on real files during testing.
 
 ---
 
-## 39. Mejora 8: usar anotaciones propias
+## 39. Improvement 8: Use your own annotations
 
-Podrías crear una anotación para marcar opciones del menú.
+You could create an annotation to mark menu options.
 
-Ejemplo:
+Example:
 
 ```java
 public @interface MenuOption {
@@ -1537,22 +1536,22 @@ public @interface MenuOption {
 }
 ```
 
-Aunque no es necesario para este proyecto, sería una forma interesante de practicar anotaciones.
+Although not necessary for this project, it would be an interesting way to practice annotations.
 
 ---
 
-## 40. Mejora 9: añadir concurrencia
+## 40. Improvement 9: Add concurrency
 
-Podrías guardar las tareas en segundo plano.
+You could save tasks in the background.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 Thread saveThread = new Thread(() -> taskService.saveTasks());
 saveThread.start();
 ```
 
-O con `ExecutorService`:
+Or with `ExecutorService`:
 
 ```java
 ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -1562,17 +1561,16 @@ executor.execute(() -> taskService.saveTasks());
 executor.shutdown();
 ```
 
-Para este proyecto no es obligatorio, pero sirve para practicar concurrencia básica.
+For this project it is not mandatory, but it is used to practice basic concurrency.
 
 ---
 
-## 41. Mejora 10: usar JSON
+## 41. Improvement 10: Use JSON
 
-El sistema actual guarda texto separado por `;`.
+The current system saves text separated by `;`.
+A more professional improvement would be to save tasks in JSON.
 
-Una mejora más profesional sería guardar las tareas en JSON.
-
-Ejemplo conceptual:
+Conceptual example:
 
 ```json
 [
@@ -1584,20 +1582,20 @@ Ejemplo conceptual:
 ]
 ```
 
-Para esto podrías usar librerías como:
+For this you could use libraries like:
 
-- Jackson
-- Gson
+-Jackson
+-Gson
 
-Y gestionarlas con Maven.
+And manage them with Maven.
 
 ---
 
-## 42. Repaso de conceptos aplicados
+## 42. Review of applied concepts
 
-Este proyecto aplica muchos conceptos del curso.
+This project applies many concepts from the course.
 
-### 42.1. Clases
+### 42.1. Classes
 
 ```java
 public class TaskService {
@@ -1657,20 +1655,20 @@ LocalDate.now()
 LocalDateTime.now()
 ```
 
-### 42.9. Files y Path
+### 42.9. Files and Path
 
 ```java
 Path.of("data", "tasks.txt")
 Files.write(filePath, lines)
 ```
 
-### 42.10. Excepciones
+### 42.10. Exceptions
 
 ```java
 throw new TaskNotFoundException(id);
 ```
 
-### 42.11. Maven
+### 42.11. maven
 
 ```bash
 mvn clean package
@@ -1678,69 +1676,69 @@ mvn clean package
 
 ---
 
-## 43. Por qué separar por capas
+## 43. Why separate by layers
 
-Este proyecto separa:
+This project separates:
 
-- modelo
-- servicio
-- repositorio
-- aplicación
-- utilidades
+- model
+- service
+- repository
+- application
+- utilities
 
-Esto evita que todo el código esté mezclado en `Main`.
+This prevents all the code from being mixed up in `Main`.
 
-Por ejemplo, `Main` solo arranca la aplicación:
+For example, `Main` just boots the application:
 
 ```java
 application.run();
 ```
 
-La lógica de tareas está en:
+The task logic is in:
 
 ```java
 TaskService
 ```
 
-La persistencia está en:
+Persistence is in:
 
 ```java
 FileTaskRepository
 ```
 
-La consola está en:
+The console is at:
 
 ```java
 TaskApplication
 ```
 
-Esta separación hace el proyecto más fácil de mantener.
+This separation makes the project easier to maintain.
 
 ---
 
-## 44. Qué podría ir mal
+## 44. What could go wrong
 
-Algunos errores posibles:
+Some possible errors:
 
-- escribir una fecha con formato incorrecto
-- intentar completar una tarea inexistente
-- borrar una tarea inexistente
-- no guardar antes de salir
-- modificar manualmente el archivo y romper el formato
-- no tener permisos para escribir en la carpeta
-- ejecutar desde una ruta inesperada
+- write a date with incorrect format
+- try to complete a non-existent task
+- delete a non-existent task
+- do not save before exit
+- manually modify the file and break the format
+- do not have permissions to write to the folder
+- run from an unexpected path
 
-Parte de programar consiste en pensar en estos casos.
+Part of programming is thinking about these cases.
 
 ---
 
-## 45. Posible mejora de validación de fecha
+## 45. Possible date validation improvement
 
-Ahora, si la fecha no se puede parsear, devolvemos `null`.
+Now, if the date cannot be parsed, we return `null`.
 
-Podrías mejorar esto preguntando hasta que el usuario escriba una fecha válida.
+You could improve this by asking until the user enters a valid date.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 LocalDate dueDate = null;
@@ -1751,16 +1749,16 @@ while (dueDate == null) {
 }
 ```
 
-Pero recuerda que también quieres permitir fechas vacías, así que tendrías que distinguir entre:
+But remember that you also want to allow empty dates, so you would have to distinguish between:
 
-- vacío permitido
-- texto incorrecto
+- vacuum allowed
+- incorrect text
 
 ---
 
-## 46. Posible mejora del modelo
+## 46. Possible improvement of the model
 
-Ahora `TaskStatus` tiene tres valores:
+Now `TaskStatus` has three values:
 
 ```java
 PENDING
@@ -1768,47 +1766,47 @@ IN_PROGRESS
 COMPLETED
 ```
 
-Podrías añadir:
+You could add:
 
 ```java
 CANCELLED
 ```
 
-Y después añadir una opción para cancelar tareas.
+And then add an option to cancel tasks.
 
 ---
 
-## 47. Posible mejora con `BigDecimal`
+## 47. Possible improvement with `BigDecimal`
 
-Si quisieras convertir el proyecto en un gestor de tareas profesionales, podrías añadir un coste estimado.
+If you wanted to turn the project into a professional task manager, you could add an estimated cost.
 
-Ejemplo:
+Example:
 
 ```java
 BigDecimal estimatedCost
 ```
 
-Así practicarías:
+This is how you would practice:
 
 - `BigDecimal`
-- validación
-- sumas
-- filtros
-- reportes
+- validation
+- sums
+- filters
+- reports
 
 ---
 
-## 48. Posible mejora con reportes
+## 48. Possible improvement with reports
 
-Puedes crear un reporte de tareas:
+You can create a task report:
 
-- total de tareas
-- tareas pendientes
-- tareas completadas
-- tareas vencidas
-- tareas por prioridad
+- total tasks
+- pending tasks
+- completed tasks
+- overdue tasks
+- tasks by priority
 
-Ejemplo:
+Example:
 
 ```java
 long completed = tasks.stream()
@@ -1816,40 +1814,40 @@ long completed = tasks.stream()
         .count();
 ```
 
-Esto refuerza `Stream API`.
+This reinforces `Stream API`.
 
 ---
 
-## 49. Posible mejora con `HashMap`
+## 49. Possible improvement with `HashMap`
 
-Ahora buscamos por id usando streams.
+Now we search by id using streams.
 
-Podrías usar un `HashMap<Integer, Task>` para optimizar búsquedas.
+You could use an `HashMap<Integer, Task>` to optimize searches.
 
-Ejemplo:
+Example:
 
 ```java
 private final Map<Integer, Task> tasksById = new HashMap<>();
 ```
 
-Esto practicaría:
+This would practice:
 
-- mapas
-- claves
-- valores
-- actualización de datos
+- maps
+- keys
+- values
+- data update
 
 ---
 
-## 50. Posible mejora con packages y módulos
+## 50. Possible improvement with packages and modules
 
-Podrías convertir el proyecto en un proyecto modular añadiendo:
+You could turn the project into a modular project by adding:
 
 ```text
 module-info.java
 ```
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.taskmanager {
@@ -1858,51 +1856,50 @@ module com.amazaing.taskmanager {
 }
 ```
 
-Para un primer proyecto no es obligatorio, pero sería una forma de practicar el tema de módulos.
+For a first project it is not mandatory, but it would be a way to practice the topic of modules.
 
 ---
 
-## 51. Checklist para completar el proyecto
+## 51. Checklist to complete the project
 
-Antes de dar el proyecto por terminado, comprueba:
-
-- el proyecto compila con `mvn compile`
-- el `.jar` se genera con `mvn package`
-- la aplicación arranca
-- puedes crear tareas
-- puedes listar tareas
-- puedes buscar por id
-- puedes completar tareas
-- puedes borrar tareas
-- puedes guardar tareas
-- puedes cargar tareas
-- el archivo se crea en `data/tasks.txt`
-- el código está organizado por paquetes
-- los nombres de clases y métodos son claros
-
----
-
-## 52. Ejercicio final propuesto
-
-Completa las siguientes mejoras:
-
-1. Añade una opción para marcar una tarea como `IN_PROGRESS`.
-2. Añade una opción para filtrar por prioridad.
-3. Haz que las tareas se carguen automáticamente al iniciar.
-4. Haz que las tareas se guarden automáticamente al salir.
-5. Añade una opción para listar tareas vencidas.
-6. Añade un reporte con número total de tareas por estado.
-7. Añade tests para `TaskService`.
-
-Con estas mejoras, el proyecto quedaría mucho más completo.
+Before finishing the project, check:
+- the project compiles with `mvn compile`
+- the `.jar` is generated with `mvn package`
+- the application starts
+- you can create tasks
+- you can list tasks
+- you can search by id
+- you can complete tasks
+- you can delete tasks
+- you can save tasks
+- you can upload tasks
+- the file is created in `data/tasks.txt`
+- the code is organized by packages
+- class and method names are clear
 
 ---
 
-## 53. Cómo presentar este proyecto en GitHub
+## 52. Proposed final exercise
 
-Si subes este proyecto a GitHub, podrías añadir un `README.md`.
+Complete the following upgrades:
 
-Ejemplo de secciones:
+1. Add an option to mark a task as `IN_PROGRESS`.
+2. Add an option to filter by priority.
+3. Have tasks load automatically on startup.
+4. Have tasks automatically saved when you exit.
+5. Add an option to list overdue tasks.
+6. Add a report with the total number of tasks by status.
+7. Add tests for `TaskService`.
+
+With these improvements, the project would be much more complete.
+
+---
+
+## 53. How to submit this project on GitHub
+
+If you upload this project to GitHub, you could add an `README.md`.
+
+Example of sections:
 
 ````markdown
 # Java Task Manager
@@ -1970,60 +1967,60 @@ Si una clase tiene:
 package com.amazaing.taskmanager.model;
 ````
 
-debe estar en la carpeta correcta:
+It should be in the correct folder:
 
 ```text
 com/amazaing/taskmanager/model
 ```
 
-### 55.2. Olvidar imports
+### 55.2. Forget imports
 
-Por ejemplo:
+For example:
 
 ```java
 import java.time.LocalDate;
 import java.util.List;
 ```
 
-### 55.3. Ejecutar desde una ruta inesperada
+### 55.3. Run from an unexpected path
 
-El archivo se guarda en:
+The file is saved in:
 
 ```text
 data/tasks.txt
 ```
 
-relativo a la carpeta desde la que se ejecuta la aplicación.
+relative to the folder from which the application is run.
 
-### 55.4. No guardar después de crear tareas
+### 55.4. Don't save after creating tasks
 
-Si no guardas, se pierden al cerrar.
+If you don't save, they are lost when you close.
 
-### 55.5. Romper el formato del archivo manualmente
+### 55.5. Break file format manually
 
-Si editas `tasks.txt` a mano y quitas campos, la carga puede fallar.
+If you edit `tasks.txt` by hand and remove fields, the upload may fail.
 
-### 55.6. Copiar clases sin actualizar paquetes
+### 55.6. Copy classes without updating packages
 
-Cada archivo debe tener el `package` correcto.
+Each file must have the correct `package`.
 
 ---
 
-## 56. Resumen final del proyecto
+## 56. Final project summary
 
-En este proyecto has creado una aplicación de consola completa para gestionar tareas.
+In this project you have created a complete console application to manage tasks.
 
-La aplicación permite:
+The application allows:
 
-- crear tareas
-- listar tareas
-- buscar tareas
-- completar tareas
-- borrar tareas
-- filtrar tareas
-- guardar y cargar datos
+- create tasks
+- list tasks
+- search for tasks
+- complete tasks
+- delete tasks
+- filter tasks
+- save and load data
 
-Y has practicado muchas herramientas de Java moderno:
+And you have practiced many modern Java tools:
 
 ```java
 record
@@ -2039,100 +2036,99 @@ Path
 Maven
 ```
 
-Lo más importante no es memorizar todo el código, sino entender cómo se conectan las piezas.
+The most important thing is not to memorize all the code, but to understand how the pieces connect.
 
-Un proyecto real no es solo una clase con un `main`.
+A real project is not just a class with an `main`.
 
-Un proyecto real suele tener:
+A real project usually has:
 
-- modelos
-- servicios
-- repositorios
-- utilidades
-- control de errores
-- persistencia
-- estructura de carpetas
-- herramienta de construcción
+- models
+- services
+- repositories
+- utilities
+- error control
+- persistence
+- folder structure
+- construction tool
 
-Este proyecto final te da una base muy buena para seguir avanzando hacia aplicaciones más profesionales.
+This final project gives you a very good foundation to continue moving towards more professional applications.
 
 ---
 
-## 57. Siguientes pasos después del curso
+## 57. Next steps after the course
 
-Después de terminar este curso, podrías continuar con:
+After finishing this course, you could continue with:
 
-- testing con JUnit
-- bases de datos con JDBC
-- MySQL desde Java
-- Spring Boot
-- APIs REST
-- programación web con Java
-- persistencia con JPA e Hibernate
+- testing with JUnit
+- databases with JDBC
+- MySQL from Java
+-SpringBoot
+- REST APIs
+- web programming with Java
+- persistence with JPA and Hibernate
 - Gradle
-- diseño de patrones
-- arquitectura por capas
-- aplicaciones con interfaz gráfica
-- despliegue de aplicaciones Java
+- pattern design
+- layered architecture
+- applications with graphical interface
+- Java application deployment
 
-Java es un ecosistema muy amplio, y este curso te da la base para seguir creciendo.
-
----
-
-## 58. Cierre del curso
-
-Has llegado al final del curso de Java.
-
-Empezaste con los conceptos básicos del lenguaje y has terminado creando un proyecto organizado con muchas herramientas modernas.
-
-La clave ahora es practicar.
-
-No basta con leer código: hay que escribirlo, romperlo, arreglarlo y mejorarlo.
-
-Este proyecto final es un buen punto de partida para experimentar, añadir funciones y convertirlo en algo propio.
+Java is a very broad ecosystem, and this course gives you the foundation to continue growing.
 
 ---
 
-## 59. Reto final
+## 58. Closing of the course
 
-Intenta hacer una versión ampliada del proyecto con estas características:
+You have reached the end of the Java course.
 
-- menú más limpio
-- carga automática
-- guardado automático
-- edición de tareas
-- búsqueda por texto
-- filtro por prioridad
-- listado de tareas vencidas
-- estadísticas por estado
-- tests unitarios
-- README completo
-- repositorio GitHub
+You started with the basics of the language and have ended up creating an organized project with many modern tools.
 
-Cuando termines, tendrás un proyecto de Java muy completo para enseñar como práctica final.
+The key now is to practice.
+It's not enough to read code: you have to write it, break it, fix it and improve it.
+
+This final project is a good starting point to experiment, add features, and make it your own.
 
 ---
 
-## 60. Resumen final
+## 59. Final challenge
 
-Este tema cierra el curso con una aplicación práctica.
+Try making an expanded version of the project with these features:
 
-El objetivo ha sido unir los conceptos principales en un proyecto con sentido.
+- cleaner menu
+- automatic loading
+- auto save
+- task editing
+- text search
+- filter by priority
+- list of overdue tasks
+- statistics by state
+- unit tests
+- Complete README
+- GitHub repository
 
-Has visto cómo:
-
-- organizar un proyecto Maven
-- crear modelos con records
-- usar enums para opciones cerradas
-- aplicar `Optional` en búsquedas
-- usar `Stream API` para filtrar y ordenar
-- trabajar con fechas
-- guardar datos en archivos
-- separar responsabilidades
-- crear una pequeña arquitectura por capas
-
-A partir de aquí, el siguiente paso natural es crear proyectos cada vez más grandes y conectarlos con tecnologías como bases de datos, APIs y frameworks como Spring MVC o Spring Boot.
+When you finish, you will have a very complete Java project to teach as a final practice.
 
 ---
 
-¡Enhorabuena por llegar al final del curso!
+## 60. Final summary
+
+This topic closes the course with a practical application.
+
+The objective has been to unite the main concepts in a meaningful project.
+
+Have you seen how:
+
+- organize a Maven project
+- create models with records
+- use enums for closed options
+- apply `Optional` in searches
+- use `Stream API` to filter and sort
+- work with dates
+- save data to files
+- separate responsibilities
+- create a small layered architecture
+
+From here, the next natural step is to create increasingly larger projects and connect them with technologies such as databases, APIs and frameworks such as Spring MVC or Spring Boot.
+
+---
+
+Congratulations on reaching the end of the course!

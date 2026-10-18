@@ -1,215 +1,214 @@
-# Ejercicios - Tema 13: Buenas prácticas profesionales y estrategia de adopción de Copilot
+# Exercises - Topic 13: Good professional practices and Copilot adoption strategy
 
-A continuación, encontrarás ejercicios prácticos para aplicar Copilot de forma profesional, segura y útil. Intenta resolverlos antes de consultar la solución.
+Below, you will find practical exercises to apply Copilot in a professional, safe and useful way. Try to solve them before consulting the solution.
 
-## Ejercicio 1: Clasificar tareas según el nivel de riesgo
+## Exercise 1: Classify tasks according to risk level
 
-Clasifica las siguientes tareas en tres grupos: bajo riesgo, riesgo medio o alto riesgo.
+Classify the following tasks into three groups: low risk, medium risk or high risk.
 
-1. Pedir a Copilot que explique un concepto técnico general.
-2. Pedir a Copilot que redacte un contrato legal definitivo.
-3. Pedir a Copilot que genere una función sencilla para ordenar una lista.
-4. Pedir a Copilot que analice datos personales de clientes.
-5. Pedir a Copilot que proponga una estructura para una presentación interna.
+1. Ask Copilot to explain a general technical concept.
+2. Ask Copilot to draft a final legal contract.
+3. Ask Copilot to generate a simple function to sort a list.
+4. Ask Copilot to analyze personal customer data.
+5. Ask Copilot to propose a structure for an internal presentation.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible clasificación sería:
+A possible classification would be:
 
-**Bajo riesgo:**
+**Low risk:**
 
-- Explicar un concepto técnico general.
-- Proponer una estructura para una presentación interna.
+- Explain a general technical concept.
+- Propose a structure for an internal presentation.
 
-**Riesgo medio:**
+**Medium risk:**
 
-- Generar una función sencilla para ordenar una lista.
+- Generate a simple function to sort a list.
 
-Aunque sea una tarea técnica común, el código debe revisarse y probarse antes de usarlo.
+Although it is a common technical task, the code should be reviewed and tested before using it.
 
-**Alto riesgo:**
+**High risk:**
 
-- Redactar un contrato legal definitivo.
-- Analizar datos personales de clientes.
+- Write a definitive legal contract.
+- Analyze personal data of clients.
 
-Estas tareas pueden implicar consecuencias legales, privacidad o decisiones sensibles. No deberían delegarse completamente en Copilot.
+These tasks may involve legal consequences, privacy, or sensitive decisions. They should not be delegated entirely to Copilot.
 
 </details>
 
-## Ejercicio 2: Crear una checklist de revisión
+## Exercise 2: Create a review checklist
 
-Imagina que Copilot ha generado una función para validar formularios en una aplicación web. Crea una checklist breve para revisar el código antes de aceptarlo.
+Imagine that Copilot has generated a function to validate forms in a web application. Create a short checklist to review the code before accepting it.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible checklist sería:
+A possible checklist would be:
 
-- ¿Entiendo qué hace cada parte del código?
-- ¿Cumple exactamente con el objetivo pedido?
-- ¿Respeta el estilo del proyecto?
-- ¿Gestiona errores o casos límite?
-- ¿Evita duplicación innecesaria?
-- ¿No introduce datos sensibles ni valores secretos?
-- ¿Es fácil de mantener?
-- ¿Se han creado o actualizado tests?
-- ¿Los tests pasan correctamente?
-- ¿El código ha sido revisado por una persona si afecta a una parte importante del proyecto?
+- Do I understand what each part of the code does?
+- Does it exactly meet the requested objective?
+- Do you respect the style of the project?
+- Do you manage errors or edge cases?
+- Do you avoid unnecessary duplication?
+- Do you not enter sensitive data or secret values?
+- Is it easy to maintain?
+- Have tests been created or updated?
+- Do the tests pass correctly?
+- Has the code been reviewed by a person if it affects an important part of the project?
 
-Esta checklist ayuda a recordar que Copilot puede acelerar el trabajo, pero no sustituye la revisión técnica.
+This checklist helps remember that Copilot can speed up work, but it is not a substitute for technical review.
 
 </details>
 
-## Ejercicio 3: Mejorar una política de uso demasiado vaga
+## Exercise 3: Improve a usage policy that is too vague
 
-Una empresa ha escrito esta norma:
+A company has written this standard:
 
 ```text
 Se puede usar IA siempre que se use bien.
 ```
 
-Reescribe la norma para que sea más clara y profesional.
+Rewrite the rule to make it clearer and more professional.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una versión más adecuada sería:
+A more suitable version would be:
 
 ```text
 Las herramientas de inteligencia artificial podrán utilizarse como apoyo en tareas de redacción, análisis, programación, documentación y productividad, siempre que estén autorizadas por la empresa. No se deberá introducir información confidencial, datos personales, credenciales, código privado sensible ni documentación interna restringida en herramientas no aprobadas. Todo resultado generado por IA deberá ser revisado por una persona antes de utilizarse, publicarse o compartirse.
 ```
 
-Esta versión es mejor porque indica:
+This version is better because it indicates:
 
-- Cuándo puede usarse la IA.
-- Qué límites existen.
-- Qué tipo de información no debe introducirse.
-- Que la revisión humana es obligatoria.
-
-</details>
-
-## Ejercicio 4: Diseñar un flujo profesional de trabajo con Copilot
-
-Describe un flujo de trabajo profesional para usar Copilot al crear una nueva funcionalidad en una aplicación.
-
-<details>
-<summary>Mostrar solución</summary>
-
-Un flujo adecuado podría ser:
-
-1. Definir claramente la funcionalidad que se quiere crear.
-2. Revisar la arquitectura del proyecto antes de pedir código.
-3. Escribir un prompt con contexto, objetivo, restricciones y formato esperado.
-4. Pedir a Copilot una primera propuesta.
-5. Revisar si la propuesta encaja con el proyecto.
-6. Modificar manualmente lo necesario.
-7. Pedir a Copilot que proponga tests.
-8. Ejecutar los tests.
-9. Revisar seguridad, legibilidad y mantenimiento.
-10. Documentar los cambios importantes.
-11. Crear un commit claro.
-12. Solicitar revisión si el cambio es relevante.
-
-Copilot debe integrarse en el flujo de desarrollo, no reemplazarlo.
+- When AI can be used.
+- What limits exist.
+- What type of information should not be entered.
+- That human review is mandatory.
 
 </details>
 
-## Ejercicio 5: Detectar un mal uso de Copilot
+## Exercise 4: Design a professional workflow with Copilot
 
-Lee el siguiente caso:
-
-> Un desarrollador copia una función generada por Copilot directamente en producción. No la revisa, no la prueba y tampoco entiende completamente cómo funciona. La función procesa pagos de clientes.
-
-Explica qué errores se están cometiendo.
+Describes a professional workflow for using Copilot when creating new functionality in an application.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Los principales errores son:
+A suitable flow could be:
 
-- Usar código generado sin revisión.
-- No ejecutar pruebas.
-- No entender el código antes de incorporarlo.
-- Aplicarlo directamente en producción.
-- Usarlo en una parte crítica del sistema.
-- No revisar posibles problemas de seguridad.
-- No comprobar casos límite.
-- No seguir un proceso de revisión por pares.
+1. Clearly define the functionality you want to create.
+2. Review the project architecture before requesting code.
+3. Write a prompt with context, objective, restrictions and expected format.
+4. Ask Copilot for a first proposal.
+5. Check if the proposal fits with the project.
+6. Manually modify what is necessary.
+7. Ask Copilot to propose tests.
+8. Run the tests.
+9. Review security, readability and maintenance.
+10. Document important changes.
+11. Create a clear commit.
+12. Request review if the change is relevant.
 
-Este es un mal uso de Copilot porque se está delegando una decisión crítica en una herramienta que puede equivocarse.
+Copilot should be integrated into the development flow, not replace it.
 
 </details>
 
-## Ejercicio 6: Elegir tareas adecuadas para Copilot
+## Exercise 5: Detect misuse of Copilot
 
-Indica cuáles de estas tareas son adecuadas para Copilot y cuáles requieren mucha supervisión humana:
+Read the following case:
 
-1. Generar ideas para nombres de variables.
-2. Explicar un error de consola.
-3. Decidir si se despide a un empleado.
-4. Crear un primer borrador de documentación técnica.
-5. Revisar una cláusula legal compleja.
-6. Proponer tests unitarios para una función.
+> A developer copies a Copilot-generated feature directly into production. He doesn't review it, he doesn't test it, and he doesn't fully understand how it works. The function processes customer payments.
+
+Explain what mistakes are being made.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-**Adecuadas para Copilot:**
+The main errors are:
 
-- Generar ideas para nombres de variables.
-- Explicar un error de consola.
-- Crear un primer borrador de documentación técnica.
-- Proponer tests unitarios para una función.
+- Use code generated without review.
+- Do not run tests.
+- Not understanding the code before incorporating it.
+- Apply it directly in production.
+- Use it in a critical part of the system.
+- Not reviewing possible security problems.
+- Do not check borderline cases.
+- Not following a peer review process.
 
-Estas tareas siguen necesitando revisión, pero son usos razonables de Copilot.
-
-**Requieren mucha supervisión humana o no deberían delegarse:**
-
-- Decidir si se despide a un empleado.
-- Revisar una cláusula legal compleja.
-
-Estas tareas tienen implicaciones personales, legales o éticas importantes.
+This is a misuse of Copilot because you are delegating a critical decision to a tool that can make mistakes.
 
 </details>
 
-## Ejercicio 7: Crear una guía breve para un equipo
+## Exercise 6: Choose suitable tasks for Copilot
 
-Redacta una guía de 5 normas para que un equipo empiece a usar Copilot de forma responsable.
+Indicate which of these tasks are suitable for Copilot and which require a lot of human supervision:
+
+1. Generate ideas for variable names.
+2. Explain a console error.
+3. Decide whether to fire an employee.
+4. Create a first draft of technical documentation.
+5. Review a complex legal clause.
+6. Propose unit tests for a function.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible guía sería:
+**Suitable for Copilot:**
 
-1. Usa Copilot como apoyo, no como sustituto de tu criterio profesional.
-2. No introduzcas datos personales, credenciales, secretos, información de clientes ni documentación confidencial en herramientas no autorizadas.
-3. Revisa siempre el contenido generado antes de usarlo.
-4. Comprueba el código con pruebas y revisiones antes de incorporarlo al proyecto.
-5. Si una respuesta afecta a decisiones legales, económicas, médicas, laborales o de seguridad, consulta con una persona responsable.
+- Generate ideas for variable names.
+- Explain a console error.
+- Create a first draft of technical documentation.
+- Propose unit tests for a function.
 
-Estas normas son sencillas y pueden servir como punto de partida para una política interna más completa.
+These tasks still need review, but are reasonable uses of Copilot.
+
+**Requires a lot of human supervision or should not be delegated:**
+
+- Decide whether to fire an employee.
+- Review a complex legal clause.
+
+These tasks have important personal, legal, or ethical implications.
 
 </details>
 
-## Ejercicio 8: Evaluar la calidad de una respuesta de Copilot
+## Exercise 7: Create a brief guide for a team
 
-Imagina que Copilot responde a una pregunta técnica con una explicación aparentemente correcta, pero no cita fuentes, no indica limitaciones y propone un comando que no entiendes. ¿Qué deberías hacer antes de usar esa respuesta?
+Write a guide of 5 rules for a team to start using Copilot responsibly.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Antes de usar la respuesta deberías:
+A possible guide would be:
 
-- Leer con calma la explicación.
-- No ejecutar comandos que no entiendas.
-- Pedir a Copilot que explique el comando paso a paso.
-- Consultar documentación oficial.
-- Probar primero en un entorno seguro.
-- Comprobar si el comando puede modificar, borrar o exponer información.
-- Pedir revisión a otra persona si afecta a un sistema importante.
+1. Use Copilot as a support, not a substitute for your professional judgment.
+2. Do not enter personal data, credentials, secrets, customer information or confidential documentation in unauthorized tools.
+3. Always review generated content before using it.
+4. Test the code with tests and reviews before incorporating it into the project.
+5. If a response affects legal, economic, medical, employment or safety decisions, consult with a responsible person.
 
-Un prompt útil sería:
+These rules are simple and can serve as a starting point for a more complete internal policy.
+
+</details>
+## Exercise 8: Evaluate the quality of a Copilot response
+
+Imagine that Copilot answers a technical question with an apparently correct explanation, but does not cite sources, does not indicate limitations, and proposes a command that you do not understand. What should you do before using that answer?
+
+<details>
+<summary>Show solution</summary>
+
+Before using the answer you should:
+
+- Read the explanation calmly.
+- Do not execute commands that you do not understand.
+- Ask Copilot to explain the command step by step.
+- Consult official documentation.
+- Test first in a safe environment.
+- Check if the command can modify, delete or expose information.
+- Ask another person for review if it affects an important system.
+
+A useful prompt would be:
 
 ```text
 Explica este comando paso a paso. Indica qué modifica, qué riesgos tiene, si puede borrar datos y cómo podría probarlo de forma segura antes de ejecutarlo en un entorno real.

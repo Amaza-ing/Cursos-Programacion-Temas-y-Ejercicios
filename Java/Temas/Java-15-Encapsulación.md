@@ -1,51 +1,51 @@
-# Tema 15. Encapsulación, getters & setters y modificadores de acceso
+# Topic 15. Encapsulation, getters & setters and access modifiers
 
-## 1. Introducción
+## 1. Introduction
 
-En el tema anterior aprendiste a crear **clases y objetos** con:
+In the previous topic you learned how to create **classes and objects** with:
 
-- Atributos (estado)
-- Métodos (comportamiento)
-- Constructores
-- Getters y setters
+- Attributes (state)
+- Methods (behavior)
+- Builders
+- Getters and setters
 
-Ahora vamos a profundizar en una idea clave de la POO en Java:
+Now let's delve into a key idea of OOP in Java:
 
-- **Encapsulación**
+- **Encapsulation**
 
-La encapsulación es lo que hace que una clase sea “segura” y fácil de mantener:  
-evita que el estado interno del objeto se modifique de forma incorrecta desde fuera.
+Encapsulation is what makes a class “safe” and easy to maintain:  
+prevents the internal state of the object from being incorrectly modified from the outside.
 
-Para conseguir encapsulación, Java nos da dos herramientas principales:
+To achieve encapsulation, Java gives us two main tools:
 
-- **Modificadores de acceso** (`public`, `private`, `protected`, sin modificador)
-- **Getters y setters** (acceso controlado a atributos)
+- **Access modifiers** (`public`, `private`, `protected`, no modifier)
+- **Getters and setters** (controlled access to attributes)
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es la encapsulación y por qué importa
-- Qué modificadores de acceso existen y qué significan
-- Cómo diseñar getters y setters con validación
-- Cuándo NO deberías crear setters
-- Cómo exponer comportamiento con métodos en vez de “exponer datos”
-- Errores típicos al empezar
-
----
-
-[![Encapsulación](https://img.youtube.com/vi/Pnv8Bidh-vY/0.jpg)](https://www.youtube.com/watch?v=Pnv8Bidh-vY&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is encapsulation and why does it matter?
+- What access modifiers exist and what they mean
+- How to design getters and setters with validation
+- When you should NOT create setters
+- How to expose behavior with methods instead of “exposing data”
+- Typical mistakes when starting
 
 ---
 
-## 2. Qué es la encapsulación
+[![Encapsulation](https://img.youtube.com/vi/Pnv8Bidh-vY/0.jpg)](https://www.youtube.com/watch?v=Pnv8Bidh-vY&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-Encapsular significa:
+---
 
-- Ocultar el estado interno (atributos) de una clase
-- Permitir acceso/control mediante métodos (getters, setters u otros métodos)
+## 2. What is encapsulation
 
-**Objetivo:** proteger la coherencia del objeto.
+Encapsulate means:
 
-### 2.1. Ejemplo: clase sin encapsulación (mala práctica)
+- Hide the internal state (attributes) of a class
+- Allow access/control through methods (getters, setters or other methods)
+
+**Goal:** protect the consistency of the object.
+
+### 2.1. Example: class without encapsulation (bad practice)
 
 ```java
 public class BankAccount {
@@ -53,16 +53,16 @@ public class BankAccount {
 }
 ```
 
-Desde cualquier sitio podrías hacer:
+From anywhere you could do:
 
 ```java
 BankAccount account = new BankAccount();
 account.balance = -5000; // estado inválido
 ```
 
-Esto rompe las reglas del dominio (un saldo no debería hacerse negativo “por magia” en muchos casos).
+This breaks the rules of the domain (a balance should not become negative “by magic” in many cases).
 
-### 2.2. Clase encapsulada (buena práctica)
+### 2.2. Encapsulated class (good practice)
 
 ```java
 public class BankAccount {
@@ -95,24 +95,24 @@ public class BankAccount {
 }
 ```
 
-Aquí el saldo solo cambia de formas controladas (`deposit`, `withdraw`).
+Here the balance only changes in controlled ways (`deposit`, `withdraw`).
 
 ---
 
-## 3. Modificadores de acceso en Java
+## 3. Access modifiers in Java
 
-Un modificador de acceso determina **desde dónde** se puede acceder a una clase, atributo o método.
+An access modifier determines **from where** a class, attribute, or method can be accessed.
 
-Los principales son:
+The main ones are:
 
 - `public`
 - `private`
 - `protected`
-- sin modificador (_package-private_)
+- no modifier (_package-private_)
 
 ### 3.1. `public`
 
-Accesible desde cualquier clase, en cualquier paquete.
+Accessible from any class, in any package.
 
 ```java
 public class User {
@@ -122,7 +122,7 @@ public class User {
 
 ### 3.2. `private`
 
-Solo accesible desde la **misma clase**.
+Only accessible from the **same class**.
 
 ```java
 public class User {
@@ -130,16 +130,16 @@ public class User {
 }
 ```
 
-Desde fuera no se puede hacer:
+From the outside you cannot do:
 
 ```java
 // user.name = "Laura"; // error
 ```
 
-### 3.3. Sin modificador (package-private)
+### 3.3. No modifier (package-private)
 
-Si no pones nada, el acceso es “por paquete”:  
-solo se puede acceder desde clases dentro del mismo paquete.
+If you do not enter anything, access is “per package”:  
+can only be accessed from classes within the same package.
 
 ```java
 class Helper {
@@ -149,34 +149,34 @@ class Helper {
 
 ### 3.4. `protected`
 
-Accesible desde:
+Accessible from:
 
-- El mismo paquete
-- Subclases (aunque estén en otro paquete)
+- The same package
+- Subclasses (even if they are in another package)
 
-`protected` se usa mucho cuando trabajas con herencia (lo verás más adelante).
-
----
-
-## 4. Tabla de accesos (resumen)
-
-De forma simplificada:
-
-- `private` → solo dentro de la clase
-- sin modificador → dentro del paquete
-- `protected` → paquete + subclases
-- `public` → desde cualquier sitio
+`protected` is used a lot when working with inheritance (you'll see this later).
 
 ---
 
-## 5. Encapsulación aplicada: atributos `private`
+## 4. Access table (summary)
 
-La regla típica en Java es:
+In simplified form:
 
-- Atributos casi siempre `private`
-- Se accede/modifica con métodos
+- `private` → only within class
+- no modifier → inside the package
+- `protected` → package + subclasses
+- `public` → from anywhere
 
-Ejemplo:
+---
+
+## 5. Encapsulation applied: `private` attributes
+
+The typical rule in Java is:
+
+- Attributes almost always `private`
+- Accessed/modified with methods
+
+Example:
 
 ```java
 public class User {
@@ -187,17 +187,16 @@ public class User {
 
 ---
 
-## 6. Getters: leer el estado de forma controlada
+## 6. Getters: read state in a controlled way
 
-Un **getter** devuelve el valor de un atributo.
+A **getter** returns the value of an attribute.
 
-Convención de nombre:
+Naming convention:
 
-- `getName()` para `name`
-- `getAge()` para `age`
-- `isActive()` para `boolean active`
-
-Ejemplo:
+- `getName()` for `name`
+- `getAge()` for `age`
+- `isActive()` for `boolean active`
+Example:
 
 ```java
 public class User {
@@ -216,16 +215,16 @@ public class User {
 
 ---
 
-## 7. Setters: modificar el estado de forma controlada
+## 7. Setters: modify the state in a controlled way
 
-Un **setter** modifica el valor de un atributo.
+A **setter** modifies the value of an attribute.
 
-Convención:
+Convention:
 
 - `setName(String name)`
 - `setAge(int age)`
 
-Ejemplo básico:
+Basic example:
 
 ```java
 public void setAge(int age) {
@@ -233,15 +232,15 @@ public void setAge(int age) {
 }
 ```
 
-Pero lo importante es que el setter puede incluir **validación**.
+But the important thing is that the setter can include **validation**.
 
 ---
 
-## 8. Setters con validación
+## 8. Setters with validation
 
-Un setter debería evitar que el objeto quede en un estado incoherente.
+A setter should prevent the object from being left in an inconsistent state.
 
-### 8.1. Validar edad
+### 8.1. Validate age
 
 ```java
 public void setAge(int age) {
@@ -253,7 +252,7 @@ public void setAge(int age) {
 }
 ```
 
-### 8.2. Validar nombre
+### 8.2. Validate name
 
 ```java
 public void setName(String name) {
@@ -267,16 +266,16 @@ public void setName(String name) {
 
 ---
 
-## 9. Cuándo NO crear setters
+## 9. When NOT to create setters
 
-No siempre necesitas setters.
+You don't always need setters.
 
-Si un atributo no debería cambiar, puedes:
+If an attribute should not change, you can:
 
-- No crear setter (solo getter)
-- Hacer el atributo `final`
+- Do not create setter (only getter)
+- Make the `final` attribute
 
-Ejemplo: un `id` que no debe cambiar:
+Example: an `id` that should not change:
 
 ```java
 public class User {
@@ -308,18 +307,18 @@ public class User {
 
 ---
 
-## 10. Mejor que un setter: métodos con intención
+## 10. Better than a setter: methods with intent
 
-A veces es mejor crear métodos que expresen la intención del cambio, en vez de exponer setters genéricos.
+Sometimes it is better to create methods that express the intent of the change, rather than exposing generic setters.
 
-Ejemplo:
+Example:
 
-- En vez de `setBalance(...)` (peligroso)
-- Mejor `deposit(...)` y `withdraw(...)`
+- Instead of `setBalance(...)` (dangerous)
+- Better `deposit(...)` and `withdraw(...)`
 
 ---
 
-## 11. Ejemplo completo: `User` con encapsulación y validación
+## 11. Complete example: `User` with encapsulation and validation
 
 ### 11.1. `User.java`
 
@@ -395,7 +394,7 @@ public class Main {
 
 ---
 
-## 12. Ejemplo completo: `BankAccount` sin setters peligrosos
+## 12. Complete example: `BankAccount` without dangerous setters
 
 ```java
 public class BankAccount {
@@ -432,7 +431,7 @@ public class BankAccount {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -455,24 +454,24 @@ public class Main {
 
 ---
 
-## 13. Errores típicos
+## 13. Typical errors
 
-- Usar atributos `public` “por comodidad”
-- Crear setters sin validación cuando el dominio lo requiere
-- Validar solo en el constructor y no en setters (o al revés)
+- Use `public` attributes “for convenience”
+- Create setters without validation when the domain requires it
+- Validate only in the constructor and not in setters (or the other way around)
 
-Patrón recomendado: el constructor puede llamar a los setters para reutilizar validación.
-
----
-
-## 14. A tener en cuenta
-
-- Encapsulación = atributos privados + acceso controlado por métodos.
-- `public`, `private`, `protected` y package-private determinan desde dónde puedes acceder.
-- Getters se usan para leer el estado; setters para modificarlo con validación.
-- No siempre necesitas setters.
-- Muchas veces es mejor un método con intención (`deposit`, `withdraw`) que un setter genérico (`setBalance`).
+Recommended pattern: The constructor can call setters to reuse validation.
 
 ---
 
-En el siguiente tema avanzaremos con constructores más completos, sobrecarga de constructores y patrones típicos de creación de objetos.
+## 14. To take into account
+
+- Encapsulation = private attributes + method controlled access.
+- `public`, `private`, `protected` and package-private determine where you can access it from.
+- Getters are used to read the state; setters to modify it with validation.
+- You don't always need setters.
+- Many times a method with intent (`deposit`, `withdraw`) is better than a generic setter (`setBalance`).
+
+---
+
+In the next topic we will advance with more complete constructors, constructor overloading and typical object creation patterns.

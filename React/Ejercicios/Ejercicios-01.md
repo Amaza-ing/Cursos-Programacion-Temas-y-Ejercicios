@@ -1,22 +1,22 @@
-# **Ejercicios - Tema 1: Empezar con React**
+# **Exercises - Topic 1: Getting started with React**
 
-A continuación, encontrarás **5 ejercicios prácticos** sobre los contenidos del Tema 1.
+Below, you will find **5 practical exercises** on the contents of Topic 1.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Crear un proyecto con Vite**
+## **Exercise 1: Create a project with Vite**
 
-Crea un proyecto de React con Vite llamado `react-starter`.
+Create a React project with Vite called `react-starter`.
 
-**Requisitos:**
+**Requirements:**
 
-- Usa Vite para generar el proyecto.
-- Entra en la carpeta.
-- Instala dependencias.
+- Use Vite to generate the project.
+- Enter the folder.
+- Install dependencies.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sh
 npm create vite@latest react-starter
@@ -28,19 +28,19 @@ npm install
 
 ---
 
-## **Ejercicio 2: Levantar el servidor y localizar la URL**
+## **Exercise 2: Raise the server and locate the URL**
 
-Levanta el servidor de desarrollo del proyecto y escribe la URL local donde se verá la app.
+Raise the project's development server and write the local URL where the app will be seen.
 
-**Pista:** el comando es el script de desarrollo y Vite suele usar el puerto `5173`.
+**Hint:** the command is the development script and Vite usually uses the `5173` port.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sh
 npm run dev
 ```
 
-La app se verá normalmente en:
+The app will normally be seen in:
 
 ```
 http://localhost:5173
@@ -50,14 +50,14 @@ http://localhost:5173
 
 ---
 
-## **Ejercicio 3: Modificar `App.jsx` para mostrar datos dinámicos**
+## **Exercise 3: Modify `App.jsx` to display dynamic data**
 
-Edita `src/App.jsx` para que:
+Edit `src/App.jsx` so that:
 
-- Muestre un título con el texto **"React Starter"**.
-- Muestre un párrafo con el año actual (por ejemplo: `2025`) usando una variable llamada `currentYear`.
+- Display a title with the text **"React Starter"**.
+- Display a paragraph with the current year (for example: `2025`) using a variable called `currentYear`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {
@@ -78,33 +78,33 @@ export default App;
 
 ---
 
-## **Ejercicio 4: Entender el punto de entrada (`main.jsx`)**
+## **Exercise 4: Understanding the entry point (`main.jsx`)**
 
-Responde:
+Answer:
 
-1. ¿En qué archivo se “monta” React en el DOM?
-2. ¿Qué id tiene el elemento del HTML donde se renderiza la aplicación?
-3. ¿Qué componente se renderiza como raíz?
+1. What file is React “mounted” in the DOM?
+2. What id does the HTML element have where the application is rendered?
+3. Which component is rendered as root?
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. En `src/main.jsx`.
-2. El id es `root` (está en `index.html`).
-3. El componente raíz es `App`.
+1. In `src/main.jsx`.
+2. The id is `root` (it is in `index.html`).
+3. The root component is `App`.
 
 </details>
 
 ---
 
-## **Ejercicio 5: JSX con condiciones simples (sin renderizado condicional avanzado)**
+## **Exercise 5: JSX with simple conditions (without advanced conditional rendering)**
 
-Sin usar todavía renderizado condicional (eso se verá más adelante), crea en `App.jsx` lo siguiente:
+Without using conditional rendering yet (more on that later), create the following in `App.jsx`:
 
-- Una variable `userName` con tu nombre.
-- Un `h2` que diga: **"Hola, {userName}"**.
-- Un `p` que muestre el resultado de `2 + 3` dentro de JSX.
+- An `userName` variable with your name.
+- An `h2` that says: **"Hello, {userName}"**.
+- An `p` that displays the result of `2 + 3` within JSX.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {

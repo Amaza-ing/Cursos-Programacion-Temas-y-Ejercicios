@@ -1,51 +1,51 @@
-# Ejercicios resueltos — Tema 5: Excepciones, internacionalización y temas visuales en Spring MVC
+# Solved exercises — Topic 5: Exceptions, internationalization and visual themes in Spring MVC
 
-## Introducción
+## Introduction
 
-En estos ejercicios vas a practicar los contenidos del tema dedicado a:
+In these exercises you will practice the contents of the topic dedicated to:
 
-- Gestión de excepciones en Spring MVC.
-- Creación de excepciones personalizadas.
-- Uso de `@ControllerAdvice`.
-- Uso de `@ExceptionHandler`.
-- Creación de páginas de error personalizadas.
-- Configuración de páginas 404 y 500.
-- Internacionalización con archivos `messages`.
-- Uso de `MessageSource`.
-- Cambio de idioma con `LocaleResolver` y `LocaleChangeInterceptor`.
-- Uso de `<spring:message>` en JSP.
-- Internacionalización de mensajes de validación.
-- Cambio de tema visual claro/oscuro mediante sesión y CSS.
+- Exception management in Spring MVC.
+- Creation of custom exceptions.
+- Use of `@ControllerAdvice`.
+- Use of `@ExceptionHandler`.
+- Creation of custom error pages.
+- Configuration of 404 and 500 pages.
+- Internationalization with `messages` files.
+- Use of `MessageSource`.
+- Language change with `LocaleResolver` and `LocaleChangeInterceptor`.
+- Use of `<spring:message>` in JSP.
+- Internationalization of validation messages.
+- Light/dark visual theme change via session and CSS.
 
-Los ejercicios son parecidos a los del curso, pero usan una aplicación distinta: una pequeña aplicación de gestión de **eventos**.
+The exercises are similar to those in the course, but use a different application: a small **events** management application.
 
-Cada solución está oculta bajo el botón **mostrar solución**.
+Each solution is hidden under the **show solution** button.
 
 ---
 
-# Ejercicio 1 — Crear una excepción personalizada
+# Exercise 1 — Create a custom exception
 
-## Enunciado
+## Statement
 
-Crea una excepción personalizada llamada `EventNotFoundException`.
+Create a custom exception called `EventNotFoundException`.
 
-Debe estar en el paquete:
+It should be in the package:
 
 ```text
 com.example.events.exception
 ```
 
-La excepción debe:
+The exception must:
 
-1. Extender de `RuntimeException`.
-2. Guardar el identificador del evento que no se ha encontrado.
-3. Tener un constructor que reciba `Long eventId`.
-4. Tener un getter para `eventId`.
+1. Extend `RuntimeException`.
+2. Save the event identifier that was not found.
+3. Have a constructor that receives `Long eventId`.
+4. Have a getter for `eventId`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.events.exception;
@@ -65,39 +65,39 @@ public class EventNotFoundException extends RuntimeException {
 }
 ```
 
-### Explicación
+### Explanation
 
-Esta excepción representa un error concreto de la aplicación:
+This exception represents a specific error in the application:
 
 ```text
 El usuario ha pedido un evento que no existe.
 ```
 
-Extendemos de:
+We extend from:
 
 ```java
 RuntimeException
 ```
 
-porque no queremos obligar a capturarla con `try-catch` en todos los métodos.
+because we don't want to force capturing it with `try-catch` in all methods.
 
-Guardamos el identificador:
+We save the identifier:
 
 ```java
 private final Long eventId;
 ```
 
-para poder mostrarlo después en una página de error.
+to be able to display it later on an error page.
 
 </details>
 
 ---
 
-# Ejercicio 2 — Lanzar una excepción desde el servicio
+# Exercise 2 — Throw an exception from the service
 
-## Enunciado
+## Statement
 
-Tienes este servicio de eventos:
+You have this event service:
 
 ```java
 package com.example.events.service;
@@ -129,18 +129,18 @@ public class EventService {
 }
 ```
 
-Añade un método llamado:
+Add a method called:
 
 ```java
 findByIdOrThrow(Long id)
 ```
 
-Este método debe devolver el evento si existe. Si no existe, debe lanzar `EventNotFoundException`.
+This method should return the event if it exists. If it does not exist, you must cast `EventNotFoundException`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.events.service;
@@ -183,15 +183,15 @@ public class EventService {
 }
 ```
 
-### Explicación
+### Explanation
 
-El método:
+The method:
 
 ```java
 findByIdOrThrow(Long id)
 ```
 
-tiene una intención clara:
+has a clear intention:
 
 ```text
 Busca un evento.
@@ -199,7 +199,7 @@ Si existe, lo devuelve.
 Si no existe, lanza una excepción.
 ```
 
-Así evitamos repetir esta comprobación en todos los controladores:
+This way we avoid repeating this check on all controllers:
 
 ```java
 if (event == null) {
@@ -207,17 +207,17 @@ if (event == null) {
 }
 ```
 
-La lógica queda centralizada en el servicio.
+The logic remains centralized in the service.
 
 </details>
 
 ---
 
-# Ejercicio 3 — Simplificar el controlador usando la excepción
+# Exercise 3 — Simplify the handler using the exception
 
-## Enunciado
+## Statement
 
-Tienes este método en `EventController`:
+You have this method in `EventController`:
 
 ```java
 @GetMapping("/detail")
@@ -238,18 +238,18 @@ public String eventDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-Modifícalo para usar:
+Modify it to use:
 
 ```java
 eventService.findByIdOrThrow(id)
 ```
 
-El método ya no debe comprobar manualmente si el evento es `null`.
+The method no longer needs to manually check if the event is `null`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 @GetMapping("/detail")
@@ -263,53 +263,52 @@ public String eventDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-### Explicación
+### Explanation
 
-Antes el controlador hacía dos cosas:
+Before the controller did two things:
 
 ```text
 1. Buscaba el evento.
 2. Decidía qué hacer si no existía.
 ```
 
-Ahora el controlador solo se ocupa del caso correcto:
+Now the driver only handles the correct case:
 
 ```text
 Si el evento existe, prepara la vista de detalle.
 ```
 
-Si el evento no existe, el servicio lanza:
+If the event does not exist, the service throws:
 
 ```java
 EventNotFoundException
 ```
 
-y esa excepción se gestionará en una clase global.
+and that exception will be handled in a global class.
 
 </details>
 
 ---
 
-# Ejercicio 4 — Crear un manejador global de excepciones
+# Exercise 4 — Create a global exception handler
 
-## Enunciado
+## Statement
 
-Crea una clase llamada `GlobalExceptionHandler` en el paquete:
+Create a class called `GlobalExceptionHandler` in the package:
 
 ```text
 com.example.events.exception
 ```
 
-Debe:
+You must:
 
-1. Estar anotada con `@ControllerAdvice`.
-2. Tener un método para capturar `EventNotFoundException`.
-3. Añadir al modelo:
+1. Be registered with `@ControllerAdvice`.
+2. Have a method to capture `EventNotFoundException`.
+3. Add to model:
    - `pageTitle`
    - `eventId`
    - `errorMessage`
-4. Devolver la vista:
-
+4. Return the view:
 ```text
 error/event-not-found
 ```
@@ -317,7 +316,7 @@ error/event-not-found
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.events.exception;
@@ -343,31 +342,31 @@ public class GlobalExceptionHandler {
 }
 ```
 
-### Explicación
+### Explanation
 
-La anotación:
+The annotation:
 
 ```java
 @ControllerAdvice
 ```
 
-permite definir lógica común para varios controladores.
+allows you to define common logic for several controllers.
 
-La anotación:
+The annotation:
 
 ```java
 @ExceptionHandler(EventNotFoundException.class)
 ```
 
-indica que este método se ejecutará cuando se lance una excepción de tipo `EventNotFoundException`.
+indicates that this method will be executed when an exception of type `EventNotFoundException` is thrown.
 
-La vista devuelta:
+The returned view:
 
 ```java
 return "error/event-not-found";
 ```
 
-se convertirá en:
+will become:
 
 ```text
 /WEB-INF/views/error/event-not-found.jsp
@@ -377,27 +376,27 @@ se convertirá en:
 
 ---
 
-# Ejercicio 5 — Crear la vista `event-not-found.jsp`
+# Exercise 5 — Create the `event-not-found.jsp` view
 
-## Enunciado
+## Statement
 
-Crea la vista:
+Create the view:
 
 ```text
 src/main/webapp/WEB-INF/views/error/event-not-found.jsp
 ```
 
-La vista debe mostrar:
+The view should show:
 
-1. El título recibido en `${pageTitle}`.
-2. El identificador del evento recibido en `${eventId}`.
-3. El mensaje de error recibido en `${errorMessage}`.
-4. Un enlace para volver al listado de eventos.
+1. The title received in `${pageTitle}`.
+2. The event identifier received in `${eventId}`.
+3. The error message received in `${errorMessage}`.
+4. A link to return to the list of events.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -442,45 +441,45 @@ La vista debe mostrar:
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Esta vista no la devuelve directamente `EventController`.
+This view is not returned directly by `EventController`.
 
-La devuelve el manejador global:
+Returned by the global handler:
 
 ```java
 GlobalExceptionHandler
 ```
 
-cuando captura:
+when capture:
 
 ```java
 EventNotFoundException
 ```
 
-Eso permite separar la lógica normal del controlador de la lógica de errores.
+This allows the normal controller logic to be separated from the error logic.
 
 </details>
 
 ---
 
-# Ejercicio 6 — Añadir un manejador general de errores
+# Exercise 6 — Add a general error handler
 
-## Enunciado
+## Statement
 
-Amplía `GlobalExceptionHandler` para capturar cualquier excepción no prevista.
+Extends `GlobalExceptionHandler` to catch any unforeseen exceptions.
 
-Debe capturar:
+You must capture:
 
 ```java
 Exception.class
 ```
 
-El método debe:
+The method must:
 
-1. Añadir `pageTitle` con el valor `Error inesperado`.
-2. Añadir `errorMessage` con el mensaje de la excepción.
-3. Devolver la vista:
+1. Add `pageTitle` with the value `Error inesperado`.
+2. Add `errorMessage` with the exception message.
+3. Return the view:
 
 ```text
 error/general-error
@@ -489,7 +488,7 @@ error/general-error
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.events.exception;
@@ -526,45 +525,45 @@ public class GlobalExceptionHandler {
 }
 ```
 
-### Explicación
+### Explanation
 
-El método:
+The method:
 
 ```java
 @ExceptionHandler(Exception.class)
 ```
 
-funciona como red de seguridad.
+It works as a safety net.
 
-Captura errores que no tengan un manejador más específico.
+Catch errors that do not have a more specific handler.
 
-No sustituye a una buena gestión de errores, pero evita que el usuario vea una página técnica del servidor.
+It is not a substitute for good error handling, but it prevents the user from seeing a technical page from the server.
 
 </details>
 
 ---
 
-# Ejercicio 7 — Crear la vista de error general
+# Exercise 7 — Create the general error view
 
-## Enunciado
+## Statement
 
-Crea la vista:
+Create the view:
 
 ```text
 src/main/webapp/WEB-INF/views/error/general-error.jsp
 ```
 
-Debe mostrar:
+Must show:
 
-1. El título recibido en `${pageTitle}`.
-2. Un mensaje indicando que ha ocurrido un error inesperado.
-3. El mensaje técnico recibido en `${errorMessage}`.
-4. Un enlace para volver al inicio.
+1. The title received in `${pageTitle}`.
+2. A message indicating that an unexpected error has occurred.
+3. The technical message received in `${errorMessage}`.
+4. A link to return to the beginning.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -609,31 +608,31 @@ Debe mostrar:
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Esta vista se usa cuando ocurre una excepción no prevista.
+This view is used when an unforeseen exception occurs.
 
-En una aplicación real, no siempre conviene mostrar el mensaje técnico al usuario final. Para un curso, sí puede ser útil para entender qué está pasando.
+In a real application, it is not always convenient to show the technical message to the end user. For a course, it can be useful to understand what is happening.
 
 </details>
 
 ---
 
-# Ejercicio 8 — Configurar páginas 404 y 500 en `web.xml`
+# Exercise 8 — Configure pages 404 and 500 in `web.xml`
 
-## Enunciado
+## Statement
 
-Modifica `web.xml` para que:
+Modify `web.xml` so that:
 
-1. Los errores 404 redirijan a `/error/404`.
-2. Los errores 500 redirijan a `/error/500`.
+1. 404 errors redirect to `/error/404`.
+2. 500 errors redirect to `/error/500`.
 
-Escribe solo el bloque XML necesario.
+Write only the necessary XML block.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <error-page>
@@ -647,48 +646,48 @@ Escribe solo el bloque XML necesario.
 </error-page>
 ```
 
-### Explicación
+### Explanation
 
-El error 404 se produce cuando el usuario intenta acceder a una URL que no existe.
+The 404 error occurs when the user tries to access a URL that does not exist.
 
-Por ejemplo:
+For example:
 
 ```text
 /pagina-inventada
 ```
 
-El error 500 se produce cuando hay un error interno en el servidor.
+Error 500 occurs when there is an internal error on the server.
 
-Con esta configuración, el servidor redirige esos errores a rutas controladas por Spring MVC.
+With this configuration, the server redirects those errors to routes controlled by Spring MVC.
 
 </details>
 
 ---
 
-# Ejercicio 9 — Crear `ErrorPageController`
+# Exercise 9 — Create `ErrorPageController`
 
-## Enunciado
+## Statement
 
-Crea un controlador llamado `ErrorPageController` en el paquete:
+Create a handler named `ErrorPageController` in the package:
 
 ```text
 com.example.events.controller
 ```
 
-Debe tener dos métodos:
+You should have two methods:
 
 ```text
 GET /error/404
 GET /error/500
 ```
 
-El primer método debe devolver la vista:
+The first method should return the view:
 
 ```text
 error/not-found
 ```
 
-El segundo debe devolver:
+The second should return:
 
 ```text
 error/general-error
@@ -697,7 +696,7 @@ error/general-error
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.events.controller;
@@ -724,46 +723,46 @@ public class ErrorPageController {
 }
 ```
 
-### Explicación
+### Explanation
 
-Cuando el servidor detecta un 404, envía al usuario a:
+When the server detects a 404, it sends the user to:
 
 ```text
 /error/404
 ```
 
-Spring ejecuta este método:
+Spring executes this method:
 
 ```java
 @GetMapping("/error/404")
 ```
 
-y muestra una JSP personalizada.
+and displays a custom JSP.
 
 </details>
 
 ---
 
-# Ejercicio 10 — Crear la vista 404 personalizada
+# Exercise 10 — Create custom 404 view
 
-## Enunciado
+## Statement
 
-Crea la vista:
+Create the view:
 
 ```text
 src/main/webapp/WEB-INF/views/error/not-found.jsp
 ```
 
-Debe mostrar:
+Must show:
 
-1. El título recibido en `${pageTitle}`.
-2. Un mensaje indicando que la página no existe.
-3. Un enlace para volver al inicio.
+1. The title received in `${pageTitle}`.
+2. A message indicating that the page does not exist.
+3. A link to return to the beginning.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -808,32 +807,32 @@ Debe mostrar:
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Esta vista se muestra cuando el usuario entra en una URL que no existe.
+This view is displayed when the user enters a URL that does not exist.
 
-Es más agradable que mostrar la página de error por defecto de Tomcat.
+It's nicer than showing the default Tomcat error page.
 
 </details>
 
 ---
 
-# Ejercicio 11 — Configurar internacionalización en `app-servlet.xml`
+# Exercise 11 — Configure internationalization in `app-servlet.xml`
 
-## Enunciado
+## Statement
 
-Modifica `app-servlet.xml` para añadir internacionalización.
+Modify `app-servlet.xml` to add internationalization.
 
-Debes configurar:
+You must configure:
 
-1. Un `messageSource`.
-2. Un `SessionLocaleResolver` con español como idioma por defecto.
-3. Un `LocaleChangeInterceptor` que cambie el idioma usando el parámetro `lang`.
+1. An `messageSource`.
+2. An `SessionLocaleResolver` with Spanish as the default language.
+3. An `LocaleChangeInterceptor` that changes the language using the `lang` parameter.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```xml
 <!-- Internacionalización: archivos messages.properties -->
@@ -857,52 +856,52 @@ Debes configurar:
 </mvc:interceptors>
 ```
 
-### Explicación
+### Explanation
 
-El bean:
+The bean:
 
 ```xml
 messageSource
 ```
 
-permite que Spring busque textos en archivos como:
+allows Spring to search for texts in files like:
 
 ```text
 messages_es.properties
 messages_en.properties
 ```
 
-El bean:
+The bean:
 
 ```xml
 localeResolver
 ```
 
-guarda el idioma activo del usuario en sesión.
+saves the active language of the user in session.
 
-El interceptor:
+The interceptor:
 
 ```xml
 LocaleChangeInterceptor
 ```
 
-detecta URLs como:
+detects URLs like:
 
 ```text
 /home?lang=en
 ```
 
-y cambia el idioma activo.
+and change the active language.
 
 </details>
 
 ---
 
-# Ejercicio 12 — Crear archivos de mensajes
+# Exercise 12 — Create message files
 
-## Enunciado
+## Statement
 
-Crea estos archivos en:
+Create these files in:
 
 ```text
 src/main/resources
@@ -914,40 +913,21 @@ messages_es.properties
 messages_en.properties
 ```
 
-Deben incluir mensajes para:
+They must include messages to:
 
-- Navegación.
-- Página de inicio.
-- Listado de eventos.
-- Errores.
+- Navigation.
+- Home page.
+- List of events.
+- Errors.
 
-Crea al menos cinco claves.
+Create at least five keys.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## `messages.properties`
-
-```properties
-nav.home=Inicio
-nav.events=Eventos
-language.spanish=Español
-language.english=Inglés
-
-home.title=Bienvenida a la aplicación de eventos
-home.message=Gestiona eventos con Spring MVC.
-
-events.list.title=Listado de eventos
-events.detail=Ver detalle
-events.back=Volver
-
-error.notFound.title=Página no encontrada
-error.general.title=Error inesperado
-```
-
-## `messages_es.properties`
+##`messages.properties`
 
 ```properties
 nav.home=Inicio
@@ -966,7 +946,26 @@ error.notFound.title=Página no encontrada
 error.general.title=Error inesperado
 ```
 
-## `messages_en.properties`
+##`messages_es.properties`
+
+```properties
+nav.home=Inicio
+nav.events=Eventos
+language.spanish=Español
+language.english=Inglés
+
+home.title=Bienvenida a la aplicación de eventos
+home.message=Gestiona eventos con Spring MVC.
+
+events.list.title=Listado de eventos
+events.detail=Ver detalle
+events.back=Volver
+
+error.notFound.title=Página no encontrada
+error.general.title=Error inesperado
+```
+
+##`messages_en.properties`
 
 ```properties
 nav.home=Home
@@ -985,53 +984,53 @@ error.notFound.title=Page not found
 error.general.title=Unexpected error
 ```
 
-### Explicación
+### Explanation
 
-Las claves deben llamarse igual en todos los archivos.
+The keys must be named the same in all files.
 
-Lo que cambia es el valor.
+What changes is the value.
 
-Por ejemplo:
+For example:
 
 ```properties
 nav.home=Inicio
 ```
 
-en español y:
+in Spanish and:
 
 ```properties
 nav.home=Home
 ```
 
-en inglés.
+in English.
 
 </details>
 
 ---
 
-# Ejercicio 13 — Usar `<spring:message>` en una JSP
+# Exercise 13 — Use `<spring:message>` in a JSP
 
-## Enunciado
+## Statement
 
-Modifica una vista `home.jsp` para que no tenga los textos escritos directamente.
+Modifies an `home.jsp` view so that it does not have the texts written directly.
 
-Debe usar:
+You must use:
 
 ```jsp
 <spring:message code="..." />
 ```
 
-La página debe mostrar:
+The page should display:
 
-1. El título `home.title`.
-2. El mensaje `home.message`.
-3. Un enlace a eventos usando `nav.events`.
-4. Enlaces para cambiar idioma a español e inglés.
+1. The title `home.title`.
+2. The message `home.message`.
+3. A link to events using `nav.events`.
+4. Links to change language to Spanish and English.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1090,31 +1089,31 @@ La página debe mostrar:
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Para usar etiquetas de Spring en JSP necesitamos:
+To use Spring tags in JSP we need:
 
 ```jsp
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 ```
 
-Después podemos mostrar mensajes así:
+Then we can display messages like this:
 
 ```jsp
 <spring:message code="home.title" />
 ```
 
-Spring buscará esa clave en el archivo correspondiente al idioma activo.
+Spring will look for that key in the file corresponding to the active language.
 
 </details>
 
 ---
 
-# Ejercicio 14 — Internacionalizar el listado de eventos
+# Exercise 14 — Internationalize the list of events
 
-## Enunciado
+## Statement
 
-Tienes esta tabla en `events/list.jsp`:
+You have this table in `events/list.jsp`:
 
 ```jsp
 <table>
@@ -1129,14 +1128,14 @@ Tienes esta tabla en `events/list.jsp`:
 </table>
 ```
 
-Crea las claves necesarias en los archivos de mensajes y modifica la JSP para usar `<spring:message>`.
+Create the necessary keys in the message files and modify the JSP to use `<spring:message>`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Claves en `messages_es.properties`
+## Keys in `messages_es.properties`
 
 ```properties
 events.title=Título
@@ -1146,7 +1145,7 @@ events.action=Acción
 events.detail=Ver detalle
 ```
 
-## Claves en `messages_en.properties`
+## Keys in `messages_en.properties`
 
 ```properties
 events.title=Title
@@ -1156,7 +1155,7 @@ events.action=Action
 events.detail=View detail
 ```
 
-## JSP modificada
+## Modified JSP
 
 ```jsp
 <table class="table">
@@ -1186,56 +1185,56 @@ events.detail=View detail
 </table>
 ```
 
-### Explicación
+### Explanation
 
-Los textos fijos desaparecen de la vista.
+Fixed texts disappear from view.
 
-Ahora la vista solo tiene claves:
+Now the view only has keys:
 
 ```jsp
 <spring:message code="events.title" />
 ```
 
-El texto real se obtiene del archivo de idioma activo.
+The actual text is obtained from the active language file.
 
 </details>
 
 ---
 
-# Ejercicio 15 — Obtener un mensaje internacionalizado desde el controlador
+# Exercise 15 — Get an internationalized message from the controller
 
-## Enunciado
+## Statement
 
-En un controlador, después de crear un evento, queremos mostrar un mensaje de éxito internacionalizado.
+In a controller, after creating an event, we want to display an internationalized success message.
 
-Crea una clave llamada:
+Create a key called:
 
 ```text
 success.event.created
 ```
 
-en español e inglés.
+in Spanish and English.
 
-Después modifica el controlador para obtener ese mensaje con `MessageSource` y enviarlo como atributo flash llamado `successMessage`.
+Then modify the driver to get that message with `MessageSource` and send it as a flash attribute called `successMessage`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## `messages_es.properties`
+##`messages_es.properties`
 
 ```properties
 success.event.created=El evento se ha creado correctamente.
 ```
 
-## `messages_en.properties`
+##`messages_en.properties`
 
 ```properties
 success.event.created=The event has been created successfully.
 ```
 
-## Controlador
+## Controller
 
 ```java
 package com.example.events.controller;
@@ -1286,37 +1285,37 @@ public class EventController {
 }
 ```
 
-### Explicación
+### Explanation
 
-Primero inyectamos:
+First we inject:
 
 ```java
 MessageSource
 ```
 
-Después obtenemos el idioma actual:
+Then we get the current language:
 
 ```java
 Locale locale = LocaleContextHolder.getLocale();
 ```
 
-Luego buscamos el mensaje:
+Then we look for the message:
 
 ```java
 messageSource.getMessage("success.event.created", null, locale)
 ```
 
-Así el mensaje cambia según el idioma activo del usuario.
+Thus the message changes according to the user's active language.
 
 </details>
 
 ---
 
-# Ejercicio 16 — Internacionalizar mensajes de validación
+# Exercise 16 — Internationalize validation messages
 
-## Enunciado
+## Statement
 
-Tienes este modelo:
+You have this model:
 
 ```java
 public class Event {
@@ -1329,16 +1328,16 @@ public class Event {
 }
 ```
 
-Modifícalo para que los mensajes salgan de los archivos `messages`.
+Modify it so that messages come out of `messages` files.
 
-Crea también las claves en español e inglés.
+Also create the keys in Spanish and English.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Modelo `Event.java`
+## Model `Event.java`
 
 ```java
 package com.example.events.model;
@@ -1401,70 +1400,70 @@ public class Event {
 }
 ```
 
-## `messages_es.properties`
+##`messages_es.properties`
 
 ```properties
 event.title.notBlank=El título es obligatorio.
 event.city.notBlank=La ciudad es obligatoria.
 ```
 
-## `messages_en.properties`
+##`messages_en.properties`
 
 ```properties
 event.title.notBlank=The title is required.
 event.city.notBlank=The city is required.
 ```
 
-### Explicación
+### Explanation
 
-En lugar de escribir el mensaje directamente:
+Instead of typing the message directly:
 
 ```java
 @NotBlank(message = "El título es obligatorio.")
 ```
 
-usamos una clave:
+we use a key:
 
 ```java
 @NotBlank(message = "{event.title.notBlank}")
 ```
 
-Spring buscará esa clave en el archivo de mensajes correspondiente.
+Spring will look for that key in the corresponding message file.
 
 </details>
 
 ---
 
-# Ejercicio 17 — Crear un controlador para cambiar el tema visual
+# Exercise 17 — Create a controller to change the visual theme
 
-## Enunciado
+## Statement
 
-Crea un controlador llamado `ThemeController`.
+Create a driver called `ThemeController`.
 
-Debe estar en el paquete:
+It should be in the package:
 
 ```text
 com.example.events.controller
 ```
 
-Debe responder a:
+You must respond to:
 
 ```text
 /theme/change?theme=dark
 /theme/change?theme=light
 ```
 
-El controlador debe:
+The controller must:
 
-1. Leer el parámetro `theme`.
-2. Guardar el tema en sesión.
-3. Si el tema no es `dark`, usar `light`.
-4. Redirigir a `/home`.
+1. Read the `theme` parameter.
+2. Save the topic in session.
+3. If the topic is not `dark`, use `light`.
+4. Redirect to `/home`.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```java
 package com.example.events.controller;
@@ -1495,54 +1494,54 @@ public class ThemeController {
 }
 ```
 
-### Explicación
+### Explanation
 
-El parámetro se recibe con:
+The parameter is received with:
 
 ```java
 @RequestParam(defaultValue = "light") String theme
 ```
 
-Si el usuario entra en:
+If the user enters:
 
 ```text
 /theme/change?theme=dark
 ```
 
-el valor será:
+the value will be:
 
 ```text
 dark
 ```
 
-Guardamos el tema en sesión:
+We save the topic in session:
 
 ```java
 session.setAttribute("theme", theme);
 ```
 
-Así la elección se mantiene mientras dure la sesión del usuario.
+Thus the choice is maintained for the duration of the user's session.
 
 </details>
 
 ---
 
-# Ejercicio 18 — Cargar CSS oscuro solo si el tema es `dark`
+# Exercise 18 — Load dark CSS only if the theme is `dark`
 
-## Enunciado
+## Statement
 
-Modifica una JSP para que:
+Modify a JSP so that:
 
-1. Siempre cargue `styles.css`.
-2. Lea el tema desde `sessionScope.theme`.
-3. Si el tema es `dark`, cargue también `styles-dark.css`.
+1. Always load `styles.css`.
+2. Read the topic from `sessionScope.theme`.
+3. If the topic is `dark`, also upload `styles-dark.css`.
 
-Usa JSTL.
+Use JSTL.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```jsp
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -1556,57 +1555,56 @@ Usa JSTL.
 </c:if>
 ```
 
-### Explicación
+### Explanation
 
-Primero calculamos el tema actual:
+First we calculate the current topic:
 
 ```jsp
 <c:set var="currentTheme" value="${empty sessionScope.theme ? 'light' : sessionScope.theme}" />
 ```
 
-Si no hay tema en sesión, usamos:
+If there is no topic in session, we use:
 
 ```text
 light
 ```
 
-Después siempre cargamos el CSS principal:
+Then we always load the main CSS:
 
 ```jsp
 styles.css
 ```
 
-Y solo si el tema es oscuro cargamos:
+And only if the theme is dark do we load:
 
 ```jsp
 styles-dark.css
 ```
 
-El segundo archivo sobrescribe algunos estilos del primero.
+The second file overwrites some styles from the first.
 
 </details>
 
 ---
 
-# Ejercicio 19 — Crear `styles-dark.css`
+# Exercise 19 — Create `styles-dark.css`
+## Statement
 
-## Enunciado
-
-Crea un archivo:
+Create a file:
 
 ```text
 src/main/webapp/resources/css/styles-dark.css
 ```
 
-Debe cambiar los colores principales de la aplicación a un tema oscuro.
+You should change the main colors of the app to a dark theme.
 
-Incluye estilos para:
+Includes styles for:
 
 - `body`
 - `.header`
 - `.card`
 - `h1`
-- `.table`
+-`.table`
 - `.input`
 - `.button`
 - `.error`
@@ -1614,7 +1612,7 @@ Incluye estilos para:
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
 ```css
 body {
@@ -1661,39 +1659,39 @@ h1 {
 }
 ```
 
-### Explicación
+### Explanation
 
-Este archivo no sustituye a `styles.css`.
+This file does not replace `styles.css`.
 
-Se carga después, solo si el usuario ha elegido el tema oscuro.
+It loads afterwards, only if the user has chosen the dark theme.
 
-Por eso puede sobrescribir colores sin repetir todo el diseño.
+That's why you can overwrite colors without repeating the entire design.
 
 </details>
 
 ---
 
-# Ejercicio 20 — Añadir enlaces de idioma y tema al menú
+# Exercise 20 — Add language and theme links to the menu
 
-## Enunciado
+## Statement
 
-Modifica el encabezado de una JSP para que incluya:
+Modify the header of a JSP to include:
 
-1. Enlace a inicio.
-2. Enlace a eventos.
-3. Cambio de idioma a español.
-4. Cambio de idioma a inglés.
-5. Cambio a tema claro.
-6. Cambio a tema oscuro.
+1. Link to home.
+2. Link to events.
+3. Language change to Spanish.
+4. Language change to English.
+5. Change to light theme.
+6. Switch to dark theme.
 
-Usa mensajes internacionalizados para los textos.
+Use internationalized messages for texts.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Claves necesarias
+## Required keys
 
 ```properties
 nav.home=Inicio
@@ -1704,7 +1702,7 @@ theme.light=Tema claro
 theme.dark=Tema oscuro
 ```
 
-## JSP
+##JSP
 
 ```jsp
 <header class="header">
@@ -1738,114 +1736,114 @@ theme.dark=Tema oscuro
 </header>
 ```
 
-### Explicación
+### Explanation
 
-Los enlaces:
+The links:
 
 ```text
 /home?lang=es
 /home?lang=en
 ```
 
-son detectados por `LocaleChangeInterceptor`.
+are detected by `LocaleChangeInterceptor`.
 
-Los enlaces:
+The links:
 
 ```text
 /theme/change?theme=light
 /theme/change?theme=dark
 ```
 
-son gestionados por `ThemeController`.
+They are managed by `ThemeController`.
 
 </details>
 
 ---
 
-# Ejercicio 21 — Diagnosticar errores frecuentes
+# Exercise 21 — Diagnose frequent errors
 
-## Enunciado
+## Statement
 
-Lee cada caso y explica cuál es el problema.
+Read each case and explain what the problem is.
 
-## Caso A
+## Case A
 
-Se lanza esta excepción:
+This exception is thrown:
 
 ```java
 throw new EventNotFoundException(id);
 ```
 
-pero el manejador tiene:
+but the handler has:
 
 ```java
 @ExceptionHandler(NullPointerException.class)
 ```
 
-¿Por qué no se muestra la página de error esperada?
+Why isn't the expected error page displayed?
 
 ---
 
-## Caso B
+## Case B
 
-En la JSP se usa:
+In the JSP it is used:
 
 ```jsp
 <spring:message code="events.list.title" />
 ```
 
-pero en `messages_es.properties` aparece:
+but in `messages_es.properties` it appears:
 
 ```properties
 event.list.title=Listado de eventos
 ```
 
-¿Qué ocurre?
+What's happening?
 
 ---
 
-## Caso C
+## Case C
 
-Se entra en:
+You enter:
 
 ```text
 /home?lang=en
 ```
 
-pero la página sigue en español.
+but the page is still in Spanish.
 
-¿Qué puede faltar en la configuración?
+What might be missing from the setup?
 
 ---
 
-## Caso D
+## Case D
 
-El usuario pulsa “Tema oscuro”, pero al cambiar de página vuelve al tema claro.
+The user presses “Dark theme”, but when changing the page they return to the light theme.
 
-¿Qué puede estar ocurriendo?
+What could be happening?
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Caso A
+## Case A
 
-El tipo de excepción no coincide.
+The exception type does not match.
 
-Se lanza:
+It is launched:
 
 ```java
 EventNotFoundException
 ```
 
-pero el manejador captura:
+but the handler captures:
 
 ```java
 NullPointerException
 ```
 
-Debe existir un método con:
+There must be a method with:
 
 ```java
 @ExceptionHandler(EventNotFoundException.class)
@@ -1853,27 +1851,27 @@ Debe existir un método con:
 
 ---
 
-## Caso B
+## Case B
 
-La clave no coincide.
+The key does not match.
 
-La JSP busca:
+The JSP seeks:
 
 ```text
 events.list.title
 ```
 
-pero el archivo tiene:
+but the file has:
 
 ```text
 event.list.title
 ```
 
-Spring no encontrará la clave esperada.
+Spring will not find the expected key.
 
-La solución es que ambos nombres coincidan exactamente.
+The solution is for both names to match exactly.
 
-Por ejemplo:
+For example:
 
 ```properties
 events.list.title=Listado de eventos
@@ -1881,11 +1879,11 @@ events.list.title=Listado de eventos
 
 ---
 
-## Caso C
+## Case C
 
-Puede faltar el `LocaleChangeInterceptor`.
+The `LocaleChangeInterceptor` may be missing.
 
-Debe existir algo parecido a esto en `app-servlet.xml`:
+There should be something like this in `app-servlet.xml`:
 
 ```xml
 <mvc:interceptors>
@@ -1895,60 +1893,60 @@ Debe existir algo parecido a esto en `app-servlet.xml`:
 </mvc:interceptors>
 ```
 
-También debe existir un `localeResolver`.
+An `localeResolver` must also exist.
 
 ---
 
-## Caso D
+## Case D
 
-Puede que el tema no se esté guardando en sesión.
+The topic may not be saving in session.
 
-El controlador debe hacer:
+The controller must do:
 
 ```java
 session.setAttribute("theme", theme);
 ```
 
-Y las JSP deben leer:
+And the JSPs should read:
 
 ```jsp
 sessionScope.theme
 ```
 
-Si el tema se guarda solo como atributo del modelo, se perderá al cambiar de página.
+If the theme is saved only as a model attribute, it will be lost when changing pages.
 
 </details>
 
 ---
 
-# Ejercicio 22 — Reto final: añadir errores, idioma y tema a una sección de reservas
+# Exercise 22 — Final challenge: add errors, language and theme to a reservations section
 
-## Enunciado
+## Statement
 
-Crea una pequeña sección de reservas usando lo aprendido en el Tema 5.
+Create a small reservations section using what you learned in Topic 5.
 
-Debes crear:
+You must create:
 
-1. Una excepción `ReservationNotFoundException`.
-2. Un método `findByIdOrThrow` en `ReservationService`.
-3. Un manejador en `GlobalExceptionHandler`.
-4. Una vista `error/reservation-not-found.jsp`.
-5. Mensajes internacionalizados para:
+1. An `ReservationNotFoundException` exception.
+2. An `findByIdOrThrow` method on `ReservationService`.
+3. A handler in `GlobalExceptionHandler`.
+4. An `error/reservation-not-found.jsp` view.
+5. Internationalized messages for:
    - `reservations.list.title`
    - `reservations.detail`
    - `error.reservationNotFound.title`
    - `error.reservationNotFound.message`
-6. Enlaces para cambiar idioma.
-7. Soporte para tema claro/oscuro en la vista.
+6. Links to change language.
+7. Support for light/dark theme in view.
 
-No hace falta crear persistencia con MySQL.
+There is no need to create persistence with MySQL.
 
 ---
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Excepción `ReservationNotFoundException.java`
+##`ReservationNotFoundException.java`Exception
 
 ```java
 package com.example.events.exception;
@@ -1968,7 +1966,7 @@ public class ReservationNotFoundException extends RuntimeException {
 }
 ```
 
-## Método en `ReservationService`
+## Method in `ReservationService`
 
 ```java
 public Reservation findByIdOrThrow(Long id) {
@@ -1982,7 +1980,7 @@ public Reservation findByIdOrThrow(Long id) {
 }
 ```
 
-## Manejador en `GlobalExceptionHandler`
+## Handler in `GlobalExceptionHandler`
 
 ```java
 @ExceptionHandler(ReservationNotFoundException.class)
@@ -1997,7 +1995,7 @@ public String handleReservationNotFound(
 }
 ```
 
-## Mensajes en `messages_es.properties`
+## Messages in `messages_es.properties`
 
 ```properties
 reservations.list.title=Listado de reservas
@@ -2006,7 +2004,7 @@ error.reservationNotFound.title=Reserva no encontrada
 error.reservationNotFound.message=No se ha encontrado ninguna reserva con el identificador {0}.
 ```
 
-## Mensajes en `messages_en.properties`
+## Messages in `messages_en.properties`
 
 ```properties
 reservations.list.title=Reservation list
@@ -2015,7 +2013,7 @@ error.reservationNotFound.title=Reservation not found
 error.reservationNotFound.message=No reservation was found with id {0}.
 ```
 
-## Vista `reservation-not-found.jsp`
+## View `reservation-not-found.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -2091,9 +2089,9 @@ error.reservationNotFound.message=No reservation was found with id {0}.
 </html>
 ```
 
-### Explicación
+### Explanation
 
-Este reto reúne los tres grandes bloques del tema:
+This challenge brings together the three main blocks of the topic:
 
 ```text
 Excepciones
@@ -2101,10 +2099,10 @@ Internacionalización
 Tema visual
 ```
 
-La excepción permite separar el error del controlador.
+The exception allows the error to be separated from the driver.
 
-Los mensajes permiten cambiar el idioma de la interfaz.
+Messages allow you to change the interface language.
 
-La sesión permite guardar el tema elegido por el usuario.
+The session allows you to save the topic chosen by the user.
 
 </details>

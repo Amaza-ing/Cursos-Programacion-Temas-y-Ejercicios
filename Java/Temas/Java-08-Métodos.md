@@ -1,60 +1,60 @@
-# Tema 8. Métodos: definición y uso (parámetros, argumentos y return)
+# Topic 8. Methods: definition and use (parameters, arguments and returns)
 
-## 1. Introducción
+## 1. Introduction
 
-A medida que un programa crece, un problema aparece muy rápido: el código se vuelve largo, repetitivo y difícil de mantener.
+As a program grows, a problem appears very quickly: the code becomes long, repetitive and difficult to maintain.
 
-Los **métodos** resuelven esto porque te permiten:
+The **methods** solve this because they allow you to:
 
-- Reutilizar lógica sin copiar y pegar
-- Dividir el programa en partes pequeñas y comprensibles
-- Dar nombres claros a acciones (“calcular”, “validar”, “mostrar”)
-- Organizar el código para que sea más fácil de leer y modificar
+- Reuse logic without copy and paste
+- Divide the program into small and understandable parts
+- Give clear names to actions (“calculate”, “validate”, “show”)
+- Organize code to make it easier to read and modify
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un método y por qué es una pieza básica en Java
-- Cómo se define un método (firma, parámetros, cuerpo, retorno)
-- Diferencia entre **parámetros** y **argumentos**
-- Métodos con `return` y métodos `void`
-- Cómo llamar a métodos y usar su resultado
-- Errores típicos y buenas prácticas
-
----
-
-[![Métodos](https://img.youtube.com/vi/i7Ewxu-9BcI/0.jpg)](https://www.youtube.com/watch?v=i7Ewxu-9BcI&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is a method and why is it a basic piece in Java
+- How a method is defined (signature, parameters, body, return)
+- Difference between **parameters** and **arguments**
+- Methods with `return` and `void` methods
+- How to call methods and use their result
+- Typical errors and good practices
 
 ---
 
-## 2. Qué es un método
-
-Un **método** es un bloque de código con un nombre que:
-
-- Puede recibir datos (parámetros)
-- Realiza una tarea concreta
-- Puede devolver un resultado (`return`)
-
-Piensa en un método como en una “mini herramienta” dentro de tu programa.
-
-Ejemplo mental:
-
-- `sum(2, 3)` devuelve 5
-- `printWelcomeMessage()` muestra un mensaje
-- `isEven(10)` devuelve `true`
+[![](https://img.youtube.com/vi/i7Ewxu-9BcI/0.jpg) Methods](https://www.youtube.com/watch?v=i7Ewxu-9BcI&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 3. Dónde se colocan los métodos en Java
+## 2. What is a method
 
-En Java, los métodos viven **dentro de clases**.
+A **method** is a block of code with a name that:
 
-En un programa básico (un solo archivo), lo más común es:
+- Can receive data (parameters)
+- Perform a specific task
+- Can return a result (`return`)
 
-- La clase `Main`
-- El método `main`
-- Y otros métodos auxiliares dentro de la misma clase
+Think of a method as a “mini tool” within your program.
 
-Ejemplo de estructura:
+Mental example:
+
+- `sum(2, 3)` returns 5
+- `printWelcomeMessage()` displays a message
+- `isEven(10)` returns `true`
+
+---
+
+## 3. Where are methods placed in Java
+
+In Java, methods live **within classes**.
+
+In a basic program (single file), the most common is:
+
+- The `Main` class
+- The `main` method
+- And other auxiliary methods within the same class
+
+Structure example:
 
 ```java
 public class Main {
@@ -68,18 +68,18 @@ public class Main {
 
 ---
 
-## 4. Partes de un método (firma y cuerpo)
+## 4. Parts of a method (signature and body)
 
-Un método tiene:
+One method has:
 
-- **Modificadores** (por ejemplo `public`, `private`)
-- **static** (lo usaremos por ahora)
-- **Tipo de retorno** (`int`, `double`, `boolean`, `String`, `void`, etc.)
-- **Nombre del método**
-- **Parámetros** (opcionales)
-- **Cuerpo** (bloque entre `{}`)
+- **Modifiers** (e.g. `public`, `private`)
+- **static** (we will use it for now)
+- **Return type** (`int`, `double`, `boolean`, `String`, `void`, etc.)
+- **Method name**
+- **Parameters** (optional)
+- **Body** (block between `{}`)
 
-Sintaxis general:
+General syntax:
 
 ```java
 modifier static returnType methodName(parameterList) {
@@ -87,7 +87,7 @@ modifier static returnType methodName(parameterList) {
 }
 ```
 
-Ejemplo real:
+Real example:
 
 ```java
 public static int sum(int a, int b) {
@@ -97,9 +97,9 @@ public static int sum(int a, int b) {
 
 ---
 
-## 5. El método `main` y por qué es especial
+## 5. The `main` method and why it is special
 
-El método `main` es el punto de entrada del programa:
+The `main` method is the entry point of the program:
 
 ```java
 public static void main(String[] args) {
@@ -107,30 +107,30 @@ public static void main(String[] args) {
 }
 ```
 
-Características:
+Features:
 
-- Siempre es `public static void`
-- Se llama exactamente `main`
-- Recibe un `String[] args` (lo verás con más profundidad más adelante)
+- It is always `public static void`
+- It's called exactly `main`
+- Receive an `String[] args` (you will see it in more depth later)
 
-Dentro de `main` normalmente:
+Inside `main` normally:
 
-- Declaras variables
-- Llamas a métodos
-- Muestras resultados
-- Controlas el flujo del programa
+- You declare variables
+- Calls to methods
+- Show results
+- You control the flow of the program
 
 ---
 
-## 6. Crear tu primer método (sin parámetros y sin return)
+## 6. Create your first method (without parameters and without return)
 
-Un método puede no recibir nada y no devolver nada.
+A method can receive nothing and return nothing.
 
-### 6.1. Método `void`
+### 6.1. `void` method
 
-Si un método no devuelve nada, su tipo de retorno es `void`.
+If a method returns nothing, its return type is `void`.
 
-Ejemplo:
+Example:
 
 ```java
 public static void printWelcomeMessage() {
@@ -138,7 +138,7 @@ public static void printWelcomeMessage() {
 }
 ```
 
-### 6.2. Llamar al método desde `main`
+### 6.2. Call method from `main`
 
 ```java
 public class Main {
@@ -153,20 +153,20 @@ public class Main {
 }
 ```
 
-Esto imprime el mensaje dos veces sin repetir el `System.out.println` en `main`.
+This prints the message twice without repeating the `System.out.println` in `main`.
 
 ---
 
-## 7. Parámetros y argumentos (diferencia clara)
+## 7. Parameters and arguments (clear difference)
 
-Esta diferencia es fundamental.
+This difference is fundamental.
 
-- **Parámetros**: variables que aparecen en la definición del método
-- **Argumentos**: valores reales que pasas al llamar al método
+- **Parameters**: variables that appear in the method definition
+- **Arguments**: real values that you pass when calling the method
 
-### 7.1. Ejemplo guiado
+### 7.1. Guided example
 
-Definición (parámetros):
+Definition (parameters):
 
 ```java
 public static void greetUser(String userName) {
@@ -174,20 +174,19 @@ public static void greetUser(String userName) {
 }
 ```
 
-Llamada (argumento):
+Call (argument):
 
 ```java
 greetUser("Laura");
 ```
 
-Aquí:
-
-- `userName` es un parámetro
-- `"Laura"` es un argumento
+Here:
+- `userName` is a parameter
+- `"Laura"` is an argument
 
 ---
 
-### 7.2. Método con varios parámetros
+### 7.2. Method with multiple parameters
 
 ```java
 public static void printProfile(String userName, int userAge) {
@@ -195,29 +194,29 @@ public static void printProfile(String userName, int userAge) {
 }
 ```
 
-Llamada:
+Call:
 
 ```java
 printProfile("Alex", 25);
 ```
 
-El orden importa:
+The order matters:
 
-- Primer argumento → primer parámetro
-- Segundo argumento → segundo parámetro
+- First argument → first parameter
+- Second argument → second parameter
 
 ---
 
-## 8. Métodos con return (devolver un valor)
+## 8. Methods with return (return a value)
 
-Un método puede devolver un valor usando `return`.
+A method can return a value using `return`.
 
-Cuando un método devuelve un valor:
+When a method returns a value:
 
-- El tipo de retorno no puede ser `void`
-- Debe devolver un valor compatible con el tipo declarado
+- Return type cannot be `void`
+- Must return a value compatible with the declared type
 
-### 8.1. Ejemplo: sumar dos números
+### 8.1. Example: adding two numbers
 
 ```java
 public static int sum(int a, int b) {
@@ -225,7 +224,7 @@ public static int sum(int a, int b) {
 }
 ```
 
-Llamada:
+Call:
 
 ```java
 int result = sum(5, 3);
@@ -234,11 +233,11 @@ System.out.println(result);
 
 ---
 
-### 8.2. `return` termina el método
+### 8.2. `return` ends method
 
-Cuando Java encuentra `return`, el método se detiene y devuelve el valor.
+When Java encounters `return`, the method stops and returns the value.
 
-Ejemplo:
+Example:
 
 ```java
 public static int clampToZero(int value) {
@@ -250,22 +249,22 @@ public static int clampToZero(int value) {
 }
 ```
 
-Qué hace:
+What it does:
 
-- Si `value` es negativo, devuelve 0 inmediatamente
-- Si no, devuelve `value`
+- If `value` is negative, return 0 immediately
+- If not, return `value`
 
 ---
 
-## 9. Métodos que devuelven `boolean` (muy comunes)
+## 9. Methods that return `boolean` (very common)
 
-Estos métodos suelen empezar por:
+These methods usually start with:
 
 - `is...`
 - `has...`
 - `can...`
 
-Ejemplo: comprobar si un número es par
+Example: Check if a number is even
 
 ```java
 public static boolean isEven(int number) {
@@ -273,7 +272,7 @@ public static boolean isEven(int number) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 boolean result = isEven(10);
@@ -282,9 +281,9 @@ System.out.println(result);
 
 ---
 
-## 10. Métodos que devuelven `String`
+## 10. Methods that return `String`
 
-Ejemplo: construir un mensaje
+Example: construct a message
 
 ```java
 public static String buildGreeting(String userName) {
@@ -292,7 +291,7 @@ public static String buildGreeting(String userName) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 String message = buildGreeting("Sara");
@@ -301,14 +300,14 @@ System.out.println(message);
 
 ---
 
-## 11. Tipos de parámetros (primitivos y `String`)
+## 11. Parameter types (primitives and `String`)
 
-Por ahora trabajaremos sobre todo con:
+For now we will work mainly with:
 
-- Primitivos (`int`, `double`, `boolean`, `char`)
+- Primitives (`int`, `double`, `boolean`, `char`)
 - `String`
 
-Ejemplo con `double`:
+Example with `double`:
 
 ```java
 public static double calculateTotal(double unitPrice, int quantity) {
@@ -316,7 +315,7 @@ public static double calculateTotal(double unitPrice, int quantity) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 double total = calculateTotal(19.99, 3);
@@ -325,11 +324,11 @@ System.out.println(total);
 
 ---
 
-## 12. Scope (alcance) de variables en métodos
+## 12. Scope (scope) of variables in methods
 
-Las variables declaradas dentro de un método existen **solo dentro de ese método**.
+Variables declared within a method exist **only within that method**.
 
-Ejemplo:
+Example:
 
 ```java
 public static void example() {
@@ -338,17 +337,17 @@ public static void example() {
 }
 ```
 
-Fuera del método, `value` no existe.
+Outside of the method, `value` does not exist.
 
-Esto ayuda a evitar conflictos y a mantener el código organizado.
+This helps avoid conflicts and keep code organized.
 
 ---
 
-## 13. Métodos que llaman a otros métodos
+## 13. Methods that call other methods
 
-Es muy común construir métodos pequeños y combinarlos.
+It is very common to build small methods and combine them.
 
-Ejemplo: total con descuento
+Example: total with discount
 
 ```java
 public static double calculateDiscount(double basePrice, double discountRate) {
@@ -361,7 +360,7 @@ public static double calculateFinalPrice(double basePrice, double discountRate) 
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 double finalPrice = calculateFinalPrice(120.0, 0.15);
@@ -370,11 +369,11 @@ System.out.println(finalPrice);
 
 ---
 
-## 14. Buenas prácticas al diseñar métodos
+## 14. Good practices when designing methods
 
-### 14.1. Un método debe hacer una cosa
+### 14.1. A method must do one thing
 
-Mal: hace demasiadas cosas a la vez
+Bad: does too many things at once
 
 ```java
 public static void processUser() {
@@ -382,7 +381,7 @@ public static void processUser() {
 }
 ```
 
-Mejor: dividir responsabilidades
+Better: divide responsibilities
 
 - `isValidUser(...)`
 - `calculateScore(...)`
@@ -390,38 +389,38 @@ Mejor: dividir responsabilidades
 
 ---
 
-### 14.2. Nombres claros y verbos
+### 14.2. Clear nouns and verbs
 
-Buenas ideas:
+Good ideas:
 
 - `calculateTotal`
 - `printReport`
 - `isAdult`
 - `buildMessage`
 
-Evita nombres genéricos como `doStuff` o `test`.
+Avoid generic names like `doStuff` or `test`.
 
 ---
 
-### 14.3. Evita depender de variables globales (por ahora)
+### 14.3. Avoid depending on global variables (for now)
 
-Al principio, es mejor que el método reciba lo que necesita por parámetros y devuelva un resultado.
+At first, it is better for the method to receive what it needs by parameters and return a result.
 
-Esto hace el método más reutilizable y fácil de probar.
+This makes the method more reusable and easier to test.
 
 ---
 
-## 15. Errores comunes al empezar (y cómo evitarlos)
+## 15. Common mistakes when starting out (and how to avoid them)
 
-### 15.1. Olvidar usar el resultado del método
+### 15.1. Forget to use method result
 
-Esto compila, pero no aprovecha el `return`:
+This compiles, but does not take advantage of the `return`:
 
 ```java
 sum(2, 3);
 ```
 
-Mejor:
+Better:
 
 ```java
 int result = sum(2, 3);
@@ -430,9 +429,9 @@ System.out.println(result);
 
 ---
 
-### 15.2. Tipo de retorno incorrecto
+### 15.2. Incorrect return type
 
-Esto no compila:
+This doesn't compile:
 
 ```java
 public static int getName() {
@@ -440,7 +439,7 @@ public static int getName() {
 }
 ```
 
-Solución: el tipo debe coincidir
+Solution: type must match
 
 ```java
 public static String getName() {
@@ -450,11 +449,11 @@ public static String getName() {
 
 ---
 
-### 15.3. `return` faltante
+### 15.3. `return` missing
 
-Si un método declara un tipo de retorno, debe devolverlo en todos los caminos posibles.
+If a method declares a return type, it must return it in all possible paths.
 
-Esto falla:
+This fails:
 
 ```java
 public static int getScore(boolean isPremium) {
@@ -464,7 +463,7 @@ public static int getScore(boolean isPremium) {
 }
 ```
 
-Solución:
+Solution:
 
 ```java
 public static int getScore(boolean isPremium) {
@@ -478,12 +477,12 @@ public static int getScore(boolean isPremium) {
 
 ---
 
-### 15.4. Confundir parámetros con argumentos
+### 15.4. Confuse parameters with arguments
 
-- Parámetro: `int age`
-- Argumento: `25`
+- Parameter: `int age`
+- Argument: `25`
 
-Ejemplo:
+Example:
 
 ```java
 public static boolean isAdult(int age) {
@@ -494,10 +493,9 @@ boolean result = isAdult(25);
 ```
 
 ---
+## 16. Complete example (organized program with methods)
 
-## 16. Ejemplo completo (programa organizado con métodos)
-
-Este ejemplo muestra cómo usar varios métodos para que `main` sea más limpio.
+This example shows how to use several methods to make `main` cleaner.
 
 ```java
 public class Main {
@@ -527,23 +525,23 @@ public class Main {
 }
 ```
 
-Qué aporta este enfoque:
+What this approach brings:
 
-- `main` se convierte en una lectura “de alto nivel” del programa
-- Cada método tiene una responsabilidad clara
-- Puedes cambiar el formato del resumen sin tocar la lógica de `main`
-
----
-
-## 17. A tener en cuenta
-
-- Un método es una pieza reutilizable de código con nombre.
-- Los métodos ayudan a organizar, reutilizar y mantener programas.
-- Parámetros = definición, argumentos = valores al llamar.
-- `void` significa que el método no devuelve nada.
-- `return` devuelve un valor y termina el método.
-- Diseñar métodos pequeños y con nombres claros mejora muchísimo la calidad del código.
+- `main` becomes a “high level” read of the program
+- Each method has a clear responsibility
+- You can change the summary format without touching the `main` logic
 
 ---
 
-En el próximo tema aprenderemos sobre los **métodos de los String**, y veremos como sacarle el máximo partido a este tipo de dato.
+## 17. To take into account
+
+- A method is a reusable piece of named code.
+- Methods help organize, reuse and maintain programs.
+- Parameters = definition, arguments = values ​​when calling.
+- `void` means that the method does not return anything.
+- `return` returns a value and terminates the method.
+- Designing small methods with clear names greatly improves the quality of the code.
+
+---
+
+In the next topic we will learn about **String methods**, and we will see how to get the most out of this type of data.

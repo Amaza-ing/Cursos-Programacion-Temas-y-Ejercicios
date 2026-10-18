@@ -1,37 +1,37 @@
-# **Tema 17: Formularios en React**
+# **Topic 17: Forms in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Los formularios son una parte fundamental de cualquier aplicación web: login, registro, búsqueda, envío de datos… En React, los formularios se gestionan de una forma ligeramente distinta al HTML tradicional, porque el estado del formulario suele vivir dentro del componente.
+Forms are a fundamental part of any web application: login, registration, search, data submission... In React, forms are managed in a slightly different way than traditional HTML, because the state of the form usually lives within the component.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es un formulario controlado.
-- Cómo manejar inputs con `useState`.
-- Cómo trabajar con distintos tipos de campos.
-- Cómo manejar el evento `onSubmit`.
-- Buenas prácticas al trabajar con formularios en React.
-
----
-
-## **2. Formularios en React: idea clave**
-
-En React, lo habitual es que:
-
-- El valor del input venga del **estado**.
-- Cada cambio del input actualice ese estado.
-
-A esto se le llama **componente controlado**.
-
-Regla mental:
-
-> El estado es la fuente de la verdad.
+- What is a controlled form.
+- How to manage inputs with `useState`.
+- How to work with different types of fields.
+- How to handle the `onSubmit` event.
+- Good practices when working with forms in React.
 
 ---
 
-## **3. Input controlado básico**
+## **2. Forms in React: key idea**
 
-Ejemplo de un input de texto controlado:
+In React, the usual thing is that:
+
+- The value of the input comes from **state**.
+- Each input change updates that state.
+
+This is called **controlled component**.
+
+Mental rule:
+
+> The state is the source of truth.
+
+---
+
+## **3. Basic controlled input**
+
+Example of a controlled text input:
 
 ```js
 import { useState } from "react";
@@ -54,17 +54,17 @@ function NameForm() {
 export default NameForm;
 ```
 
-Claves importantes:
+Important keys:
 
-- `value` conecta el input con el estado.
-- `onChange` actualiza el estado.
-- Sin `onChange`, el input sería de solo lectura.
+- `value` connects the input to the state.
+- `onChange` updates status.
+- Without `onChange`, the input would be read-only.
 
 ---
 
-## **4. Manejar el envío del formulario (`onSubmit`)**
+## **4. Handle form submission (`onSubmit`)**
 
-En React no se suele usar el evento `onClick` del botón para enviar formularios, sino `onSubmit` del `<form>`.
+In React, the `onClick` event of the button to submit forms is not usually used, but `onSubmit` of the `<form>`.
 
 ```js
 function LoginForm() {
@@ -91,15 +91,15 @@ function LoginForm() {
 export default LoginForm;
 ```
 
-Importante:
+Important:
 
-- `event.preventDefault()` evita que el navegador recargue la página.
+- `event.preventDefault()` prevents the browser from reloading the page.
 
 ---
 
-## **5. Formularios con varios campos**
+## **5. Forms with multiple fields**
 
-Cuando hay varios inputs, lo normal es tener un estado por campo:
+When there are several inputs, it is normal to have one state per field:
 
 ```js
 import { useState } from "react";
@@ -136,9 +136,9 @@ export default RegisterForm;
 
 ---
 
-## **6. Checkbox controlado**
+## **6. Controlled checkbox**
 
-Los checkbox se controlan con la propiedad `checked`:
+Checkboxes are controlled with the `checked` property:
 
 ```js
 import { useState } from "react";
@@ -163,7 +163,7 @@ export default TermsCheckbox;
 
 ---
 
-## **7. Select controlado**
+## **7. Select controlled**
 
 ```js
 import { useState } from "react";
@@ -184,9 +184,9 @@ export default RoleSelect;
 
 ---
 
-## **8. Limpiar el formulario tras enviar**
+## **8. Clear the form after submit**
 
-Después de enviar un formulario, es común resetear los campos:
+After submitting a form, it is common to reset the fields:
 
 ```js
 const handleSubmit = (event) => {
@@ -201,37 +201,37 @@ const handleSubmit = (event) => {
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Olvidar `preventDefault`**
+### **9.1. Forget `preventDefault`**
 
-Provoca recarga de página.
+Causes page reload.
 
-### **9.2. No controlar el input**
+### **9.2. Not controlling the input**
 
 ```js
 <input />
 ```
 
-No es un input controlado.
+It is not a controlled input.
 
-### **9.3. Usar `onClick` en lugar de `onSubmit`**
+### **9.3. Use `onClick` instead of `onSubmit`**
 
-Hace el formulario menos accesible.
-
----
-
-## **10. Buenas prácticas**
-
-- Usa siempre formularios controlados.
-- Centraliza la lógica en `onSubmit`.
-- Mantén los componentes simples.
-- Valida antes de enviar (lo verás más adelante).
+Makes the form less accessible.
 
 ---
 
-[![Formularios](https://img.youtube.com/vi/8OQHGp6peSY/0.jpg)](https://www.youtube.com/watch?v=8OQHGp6peSY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **10. Good practices**
+
+- Always use controlled forms.
+- Centralize the logic in `onSubmit`.
+- Keep the components simple.
+- Validate before sending (you will see it later).
 
 ---
 
-En el siguiente tema aprenderás a trabajar con **React Router** para crear aplicaciones con múltiples páginas.
+[![Forms](https://img.youtube.com/vi/8OQHGp6peSY/0.jpg)](https://www.youtube.com/watch?v=8OQHGp6peSY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic you will learn how to work with **React Router** to create applications with multiple pages.

@@ -1,36 +1,36 @@
-# **Tema 7: Funciones de Agregación y Agrupaciones en MySQL**
+# **Topic 7: Aggregation and Grouping Functions in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Utilizar funciones de agregación (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`).
-- Agrupar datos con `GROUP BY`.
-- Filtrar agrupaciones con `HAVING`.
+- Use aggregation functions (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`).
+- Group data with `GROUP BY`.
+- Filter groupings with `HAVING`.
 
 ---
 
-## **1. ¿Qué son las funciones de agregación?**
+## **1. What are aggregation functions?**
 
-Son funciones que operan sobre un conjunto de valores y devuelven un único resultado.
+They are functions that operate on a set of values and return a single result.
 
-| Función   | Descripción               |
+| Function | Description |
 | --------- | ------------------------- |
-| `SUM()`   | Suma de valores numéricos |
-| `COUNT()` | Cuenta de registros       |
-| `AVG()`   | Promedio                  |
-| `MAX()`   | Valor máximo              |
-| `MIN()`   | Valor mínimo              |
+| `SUM()` | Sum of numerical values ​​|
+| `COUNT()` | Record Account |
+| `AVG()` | Average |
+| `MAX()` | Maximum value |
+| `MIN()` | Minimum value |
 
 ---
 
-## **2. Ejemplos de funciones de agregación**
+## **2. Examples of aggregation functions**
 
-Supongamos que tenemos la tabla `orders`:
+Suppose we have the table `orders`:
 
 | order_id | customer_id | total_amount |
 | -------- | ----------- | ------------ |
-| 1        | 1           | 50.00        |
-| 2        | 2           | 120.00       |
-| 3        | 1           | 80.00        |
+| 1 | 1 | 50.00 |
+| 2 | 2 | 120.00 |
+| 3 | 1 | 80.00 |
 
 ### **SUM**
 
@@ -59,11 +59,11 @@ SELECT MIN(total_amount) AS venta_minima FROM orders;
 
 ---
 
-## **3. Agrupar datos con `GROUP BY`**
+## **3. Group data with `GROUP BY`**
 
-El `GROUP BY` permite aplicar funciones de agregación por grupos de una columna específica.
+The `GROUP BY` allows you to apply aggregation functions by groups of a specific column.
 
-### **Ejemplo: total gastado por cliente**
+### **Example: total spent per customer**
 
 ```sql
 SELECT customer_id, SUM(total_amount) AS total_gastado
@@ -71,7 +71,7 @@ FROM orders
 GROUP BY customer_id;
 ```
 
-### **Ejemplo: número de pedidos por cliente**
+### **Example: number of orders per customer**
 
 ```sql
 SELECT customer_id, COUNT(*) AS cantidad_pedidos
@@ -81,11 +81,11 @@ GROUP BY customer_id;
 
 ---
 
-## **4. Filtrar grupos con `HAVING`**
+## **4. Filter groups with `HAVING`**
 
-La cláusula `HAVING` se utiliza para aplicar condiciones después de agrupar los datos (a diferencia de `WHERE`, que se usa antes del agrupamiento).
+The `HAVING` clause is used to apply conditions after data is grouped (unlike `WHERE`, which is used before grouping).
 
-### **Ejemplo: clientes que gastaron más de 100€**
+### **Example: customers who spent more than €100**
 
 ```sql
 SELECT customer_id, SUM(total_amount) AS total_gastado
@@ -96,11 +96,11 @@ HAVING total_gastado > 100;
 
 ---
 
-## **5. Agrupar por varias columnas**
+## **5. Group by multiple columns**
 
-También es posible agrupar por más de una columna:
+It is also possible to group by more than one column:
 
-### **Ejemplo: número de pedidos por cliente y por fecha**
+### **Example: number of orders per customer and per date**
 
 ```sql
 SELECT customer_id, DATE(created_at) AS fecha, COUNT(*) AS pedidos
@@ -110,17 +110,17 @@ GROUP BY customer_id, fecha;
 
 ---
 
-[![Consultas de Agregación | COUNT | SUM | AVG | MIN | MAX](https://img.youtube.com/vi/hMI1WZ-9LhQ/0.jpg)](https://www.youtube.com/watch?v=hMI1WZ-9LhQ&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Aggregation Queries | COUNT | SUM | AVG | MIN | MAX](https://img.youtube.com/vi/hMI1WZ-9LhQ/0.jpg)](https://www.youtube.com/watch?v=hMI1WZ-9LhQ&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-- Las funciones de agregación permiten resumir datos.
-- `GROUP BY` agrupa los registros para aplicar funciones como `SUM` o `COUNT`.
-- `HAVING` permite filtrar agrupaciones según condiciones.
-- Estas herramientas son muy útiles para generar reportes, estadísticas y resúmenes.
+- Aggregation functions allow data to be summarized.
+- `GROUP BY` groups the registers to apply functions like `SUM` or `COUNT`.
+- `HAVING` allows filtering groups according to conditions.
+- These tools are very useful for generating reports, statistics and summaries.
 
 ---
 
-En el siguiente tema aprenderemos a **unir varias tablas con `JOIN` para consultar datos relacionados.**
+In the next topic we will learn how to join multiple tables with `JOIN` to query related data.**

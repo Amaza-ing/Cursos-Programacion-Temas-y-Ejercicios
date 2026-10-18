@@ -1,20 +1,20 @@
-# **Ejercicios - Temas 4 y 5: Texto y Listas en HTML**
+# **Exercises - Topics 4 and 5: Text and Lists in HTML**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre el uso de encabezados, párrafos y listas en HTML. Realiza cada uno de ellos en un editor de código y visualiza los resultados en tu navegador.
+Below you will find 10 practical exercises on using headings, paragraphs and lists in HTML. Perform each of them in a code editor and view the results in your browser.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicios sobre encabezados y párrafos**
+## **Exercises on headings and paragraphs**
 
-### **Ejercicio 1: Estructura de un artículo con encabezados**
+### **Exercise 1: Structure of an article with headings**
 
-Crea un documento HTML con una estructura de artículo que incluya un título principal (`h1`), un subtítulo (`h2`), y tres secciones (`h3`). Agrega contenido en párrafos (`p`).
+Create an HTML document with an article structure that includes a main heading (`h1`), a subheading (`h2`), and three sections (`h3`). Add content in paragraphs (`p`).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <h1>Título del Artículo</h1>
@@ -34,9 +34,9 @@ Crea un documento HTML con una estructura de artículo que incluya un título pr
 
 ---
 
-### **Ejercicio 2: Uso correcto de los encabezados**
+### **Exercise 2: Correct use of headers**
 
-Analiza el siguiente código y corrige cualquier mal uso de los encabezados:
+Analyze the following code and correct any misuse of headers:
 
 ```html
 <h3>Título principal</h3>
@@ -44,11 +44,11 @@ Analiza el siguiente código y corrige cualquier mal uso de los encabezados:
 <h4>Sección del contenido</h4>
 ```
 
-Explica por qué los encabezados deben seguir una jerarquía lógica.
+Explain why headings should follow a logical hierarchy.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-**Corrección:**
+**Correction:**
 
 ```html
 <h1>Título principal</h1>
@@ -56,17 +56,17 @@ Explica por qué los encabezados deben seguir una jerarquía lógica.
 <h3>Sección del contenido</h3>
 ```
 
-**Explicación:** Los encabezados deben seguir una jerarquía lógica, empezando desde `<h1>`, seguido por `<h2>`, `<h3>`, etc. No se debe usar un `<h3>` como título principal, ni un `<h1>` como subtítulo.
+**Explanation:** Headers should follow a logical hierarchy, starting from `<h1>`, followed by `<h2>`, `<h3>`, etc. An `<h3>` should not be used as a main title, nor an `<h1>` as a subtitle.
 
 </details>
 
 ---
 
-### **Ejercicio 3: Uso del salto de línea**
+### **Exercise 3: Using line breaks**
 
-Crea un párrafo en HTML donde uses la etiqueta `<br>` para separar líneas dentro del mismo párrafo sin crear nuevos bloques.
+Create a paragraph in HTML where you use the `<br>` tag to separate lines within the same paragraph without creating new blocks.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <p>
@@ -80,11 +80,11 @@ Crea un párrafo en HTML donde uses la etiqueta `<br>` para separar líneas dent
 
 ---
 
-### **Ejercicio 4: Cita y texto preformateado**
+### **Exercise 4: Quote and preformatted text**
 
-Escribe un documento HTML que incluya un bloque de cita (`<blockquote>`) con una frase famosa y un bloque de código preformateado (`<pre>`) con un fragmento de texto representando un poema o un mensaje de varias líneas.
+Write an HTML document that includes a quote block (`<blockquote>`) with a famous phrase and a preformatted code block (`<pre>`) with a fragment of text representing a poem or a multi-line message.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <blockquote>
@@ -104,13 +104,13 @@ Y tú también.
 
 ---
 
-## **Ejercicios sobre listas**
+## **Exercises on lists**
 
-### **Ejercicio 5: Lista desordenada de elementos favoritos**
+### **Exercise 5: Unordered list of favorite items**
 
-Crea una lista desordenada (`<ul>`) con al menos cinco elementos que representen tus comidas, películas o libros favoritos.
+Create an unordered list (`<ul>`) with at least five items that represent your favorite foods, movies, or books.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -124,11 +124,11 @@ Crea una lista desordenada (`<ul>`) con al menos cinco elementos que representen
 
 ---
 
-### **Ejercicio 6: Lista ordenada de pasos en un proceso**
+### **Exercise 6: Ordered list of steps in a process**
 
-Crea una lista ordenada (`<ol>`) que describa los pasos para hacer una receta sencilla (por ejemplo, preparar un café o una ensalada).
+Create an ordered list (`<ol>`) that describes the steps to make a simple recipe (for example, making coffee or making a salad).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ol>
@@ -144,12 +144,12 @@ Crea una lista ordenada (`<ol>`) que describa los pasos para hacer una receta se
 
 ---
 
-### **Ejercicio 7: Lista anidada de categorías y subcategorías**
+### **Exercise 7: Nested list of categories and subcategories**
 
-Crea una lista anidada en la que haya categorías principales (`<ul>`) y subcategorías (`<li>` con listas internas).
-Ejemplo: Lista de géneros musicales y algunos artistas dentro de cada género.
+Creates a nested list containing main categories (`<ul>`) and subcategories (`<li>` with internal lists).
+Example: List of musical genres and some artists within each genre.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -174,9 +174,9 @@ Ejemplo: Lista de géneros musicales y algunos artistas dentro de cada género.
 
 ---
 
-### **Ejercicio 8: Corrección de una lista mal estructurada**
+### **Exercise 8: Correcting a poorly structured list**
 
-Corrige el siguiente código para que la estructura de la lista sea válida:
+Correct the following code to make the list structure valid:
 
 ```html
 <ol>
@@ -188,11 +188,10 @@ Corrige el siguiente código para que la estructura de la lista sea válida:
 </ol>
 ```
 
-Explica qué estaba mal y cómo lo corregiste.
+Explain what was wrong and how you corrected it.
+<details><summary>Show solution</summary>
 
-<details><summary>Mostrar solución</summary>
-
-**Corrección:**
+**Correction:**
 
 ```html
 <ol>
@@ -206,17 +205,17 @@ Explica qué estaba mal y cómo lo corregiste.
 </ol>
 ```
 
-**Explicación:** Las listas deben seguir una estructura adecuada, evitando que una `<ul>` esté directamente dentro de un `<ol>` sin estar dentro de un `<li>`.
+**Explanation:** The lists must follow an appropriate structure, preventing an `<ul>` from being directly inside an `<ol>` without being inside an `<li>`.
 
 </details>
 
 ---
 
-### **Ejercicio 9: Lista de descripción con términos y definiciones**
+### **Exercise 9: Description list with terms and definitions**
 
-Crea una lista de descripción (`<dl>`) donde definas al menos tres términos y sus respectivas explicaciones.
+Create a description list (`<dl>`) where you define at least three terms and their respective explanations.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <dl>
@@ -235,11 +234,11 @@ Crea una lista de descripción (`<dl>`) donde definas al menos tres términos y 
 
 ---
 
-### **Ejercicio 10: Crear una lista combinada**
+### **Exercise 10: Create a combined list**
 
-Crea una estructura de lista que combine listas ordenadas, desordenadas y de descripción dentro de un mismo documento HTML.
+Create a list structure that combines ordered, unordered, and description lists within a single HTML document.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>

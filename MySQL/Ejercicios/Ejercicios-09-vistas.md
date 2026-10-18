@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 9: Crear y Gestionar Vistas (VIEW)**
+# **Exercises - Topic 9: Create and Manage Views (VIEW)**
 
-A continuación, encontrarás 5 ejercicios prácticos para trabajar con vistas en MySQL. Estos ejercicios te ayudarán a simplificar consultas complejas y reutilizarlas de forma eficiente.
+Below, you will find 5 practical exercises to work with views in MySQL. These exercises will help you simplify complex queries and reuse them efficiently.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una vista con datos filtrados**
+### **Exercise 1: Create a view with filtered data**
 
-Crea una vista llamada `clientes_suscritos` que muestre únicamente los clientes que están suscritos al boletín (`newsletter_subscribed = TRUE`), incluyendo sus nombres y fechas de registro.
+Create a view called `clientes_suscritos` that shows only the customers who are subscribed to the newsletter (`newsletter_subscribed = TRUE`), including their names and registration dates.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE VIEW clientes_suscritos AS
@@ -23,11 +23,11 @@ WHERE newsletter_subscribed = TRUE;
 
 ---
 
-### **Ejercicio 2: Crear una vista con datos combinados**
+### **Exercise 2: Create a view with combined data**
 
-Crea una vista llamada `resumen_pedidos` que muestre para cada pedido el ID del pedido, el nombre del cliente y la fecha del pedido.
+Create a view called `resumen_pedidos` that shows for each order the order ID, customer name, and order date.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE VIEW resumen_pedidos AS
@@ -40,11 +40,11 @@ JOIN customers c ON o.customer_id = c.id;
 
 ---
 
-### **Ejercicio 3: Consultar una vista con condiciones adicionales**
+### **Exercise 3: Query a view with additional conditions**
 
-Utiliza la vista `resumen_pedidos` para obtener los pedidos realizados a partir del 1 de abril de 2025.
+Use the `resumen_pedidos` view to get orders placed on or after April 1, 2025.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM resumen_pedidos
@@ -55,11 +55,11 @@ WHERE created_at >= '2025-04-01';
 
 ---
 
-### **Ejercicio 4: Modificar una vista existente**
+### **Exercise 4: Modify an existing view**
 
-Actualiza la vista `clientes_suscritos` para que además muestre la ciudad del cliente (campo `city`).
+Updates the `clientes_suscritos` view to also show the customer's city (`city` field).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE OR REPLACE VIEW clientes_suscritos AS
@@ -72,11 +72,11 @@ WHERE newsletter_subscribed = TRUE;
 
 ---
 
-### **Ejercicio 5: Eliminar una vista**
+### **Exercise 5: Delete a view**
 
-Elimina la vista `resumen_pedidos` de la base de datos.
+Removes the `resumen_pedidos` view from the database.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DROP VIEW resumen_pedidos;

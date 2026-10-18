@@ -1,27 +1,27 @@
-# Ejercicios - Tema 3: Operadores y expresiones (Java)
+# Exercises - Topic 3: Operators and expressions (Java)
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre operadores aritméticos, relacionales, lógicos, de asignación y prioridad de operadores.
+Below, you will find **10 practical exercises** on arithmetic, relational, logical, assignment and operator priority operators.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Operaciones aritméticas básicas
+## Exercise 1: Basic arithmetic operations
 
-Declara dos variables:
+Declare two variables:
 
-- `a` con valor `14`
-- `b` con valor `4`
+- `a` with value `14`
+- `b` with value `4`
 
-Calcula y muestra por consola:
+Calculates and displays by console:
 
-- La suma
-- La resta
-- La multiplicación
-- La división
-- El resto
+- The sum
+- The subtraction
+- Multiplication
+- The division
+- The rest
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -42,16 +42,16 @@ public class Main {
 
 ---
 
-## Ejercicio 2: División con decimales
+## Exercise 2: Division with decimals
 
-Declara:
+Declares:
 
-- `totalPoints` con valor `9`
-- `numberOfPlayers` con valor `2`
+- `totalPoints` with `9` value
+- `numberOfPlayers` with `2` value
 
-Calcula la media correcta usando `double`.
+Calculate the correct mean using `double`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -69,13 +69,13 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Par o impar
+## Exercise 3: Even or Odd
 
-Declara una variable `number` con valor `21`.
+Declares a variable `number` with value `21`.
 
-Comprueba si el número es par y muestra el resultado (`true` o `false`).
+Checks if the number is even and displays the result (`true` or `false`).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -92,21 +92,21 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Comparaciones relacionales
+## Exercise 4: Relational comparisons
 
-Declara:
+Declares:
 
-- `age` con valor `16`
+- `age` with `16` value
 
-Crea variables booleanas que indiquen si:
+Create boolean variables that indicate whether:
 
-- Es mayor de edad
-- Es menor de edad
-- Tiene exactamente 18 años
+- He is of legal age
+- He is a minor
+- He is exactly 18 years old
 
-Imprime los resultados.
+Print the results.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -128,16 +128,16 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Operadores lógicos AND (`&&`)
+## Exercise 5: Logical AND operators (`&&`)
 
-Declara:
+Declares:
 
-- `age` con valor `22`
-- `hasId` con valor `true`
+- `age` with `22` value
+- `hasId` with `true` value
 
-Crea una variable `canEnter` que sea `true` solo si cumple ambas condiciones.
+Create a variable `canEnter` that is `true` only if it meets both conditions.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -155,16 +155,16 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Operadores lógicos OR (`||`)
+## Exercise 6: Logical OR operators (`||`)
 
-Declara:
+Declares:
 
-- `isVip` con valor `false`
-- `hasInvitation` con valor `true`
+- `isVip` with value `false`
+- `hasInvitation` with `true` value
 
-Crea una variable `hasAccess` que sea `true` si cumple al menos una condición.
+Create a variable `hasAccess` that is `true` if it meets at least one condition.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -182,13 +182,13 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Operador NOT (`!`)
+## Exercise 7: NOT Operator (`!`)
 
-Declara una variable `isBlocked` con valor `true`.
+Declare a variable `isBlocked` with value `true`.
 
-Crea una variable `canLogin` que sea el valor contrario.
+Create a variable `canLogin` that is the opposite value.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -205,17 +205,17 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Operadores de asignación compuesta
+## Exercise 8: Composite assignment operators
 
-Declara una variable `score` con valor `10`.
+Declare a variable `score` with value `10`.
 
-- Suma 5 usando `+=`
-- Resta 3 usando `-=`
-- Multiplica por 2 usando `*=`
+- Add 5 using `+=`
+- Subtract 3 using `-=`
+- Multiply by 2 using `*=`
 
-Imprime el valor final.
+Print the final value.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -235,17 +235,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Incremento y decremento
+## Exercise 9: Increment and decrement
 
-Declara una variable `counter` con valor `0`.
+Declare a variable `counter` with value `0`.
 
-- Incrementa una vez
-- Incrementa otra vez
-- Decrementa una vez
+- Increase once
+- Increase again
+- Decrements once
 
-Imprime el resultado final.
+Print the final result.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```java
 public class Main {
@@ -265,26 +265,26 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Prioridad de operadores
+## Exercise 10: Operator priority
 
-Sin ejecutar el código, piensa cuál será el resultado:
+Without running the code, think about what the result will be:
 
 ```java
 int result = 4 + 2 * 5;
 System.out.println(result);
 ```
 
-Después, modifica la expresión para que el resultado sea `30`.
+Then modify the expression so that the result is `30`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Resultado original:
+Original result:
 
 ```
 14
 ```
 
-Versión modificada:
+Modified version:
 
 ```java
 int result = (4 + 2) * 5;

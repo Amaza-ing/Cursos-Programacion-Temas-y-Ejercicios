@@ -1,32 +1,32 @@
-# **Tema 8: Consultas con JOIN en MySQL**
+# **Topic 8: Queries with JOIN in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué es un `JOIN` y para qué se usa.
-- Utilizar distintos tipos de `JOIN` para combinar información de múltiples tablas.
-- Consultar datos relacionados entre tablas.
+- Understand what an `JOIN` is and what it is used for.
+- Use different types of `JOIN` to combine information from multiple tables.
+- Consult related data between tables.
 
 ---
 
-## **1. ¿Qué es un JOIN?**
+## **1. What is a JOIN?**
 
-`JOIN` permite combinar filas de dos o más tablas según una relación lógica entre ellas, normalmente a través de claves foráneas.
+`JOIN` allows you to combine rows from two or more tables according to a logical relationship between them, usually through foreign keys.
 
-### **Ejemplo básico:**
+### **Basic example:**
 
-Supongamos las siguientes tablas:
+Let's assume the following tables:
 
-**Tabla `customers`**
+**`customers` table**
 | id | first_name |
 |----|-------------|
 | 1 | Laura |
 
-**Tabla `orders`**
+**`orders` table**
 | id | customer_id | total_amount |
 |----|-------------|---------------|
 | 1 | 1 | 89.99 |
 
-Queremos saber qué cliente hizo qué pedido. Usamos un `JOIN`:
+We want to know which customer placed which order. We use an `JOIN`:
 
 ```sql
 SELECT customers.first_name, orders.total_amount
@@ -36,11 +36,11 @@ JOIN orders ON customers.id = orders.customer_id;
 
 ---
 
-## **2. Tipos de JOIN**
+## **2. JOIN Types**
 
 ### **INNER JOIN**
 
-Devuelve solo las filas que tienen coincidencia en ambas tablas.
+Returns only rows that have a match in both tables.
 
 ```sql
 SELECT *
@@ -50,7 +50,7 @@ INNER JOIN orders ON customers.id = orders.customer_id;
 
 ### **LEFT JOIN**
 
-Devuelve todas las filas de la tabla izquierda, y las coincidentes de la tabla derecha (si hay).
+Returns all rows from the left table, and the matching rows from the right table (if any).
 
 ```sql
 SELECT *
@@ -60,7 +60,7 @@ LEFT JOIN orders ON customers.id = orders.customer_id;
 
 ### **RIGHT JOIN**
 
-Devuelve todas las filas de la tabla derecha, y las coincidentes de la izquierda.
+Returns all rows from the right table, and the matching rows from the left.
 
 ```sql
 SELECT *
@@ -70,9 +70,9 @@ RIGHT JOIN customers ON customers.id = orders.customer_id;
 
 ---
 
-## **3. JOIN con alias**
+## **3. JOIN with alias**
 
-Usar alias hace más legibles las consultas:
+Using aliases makes queries more readable:
 
 ```sql
 SELECT c.first_name, o.total_amount
@@ -82,9 +82,9 @@ JOIN orders o ON c.id = o.customer_id;
 
 ---
 
-## **4. JOIN con más de dos tablas**
+## **4. JOIN with more than two tables**
 
-También podemos unir más de dos tablas en una misma consulta:
+We can also join more than two tables in the same query:
 
 ```sql
 SELECT c.first_name, o.id AS order_id, p.name AS product_name
@@ -96,12 +96,12 @@ JOIN products p ON d.product_id = p.id;
 
 ---
 
-## **5. Consultas comunes con JOIN**
+## **5. Common queries with JOIN**
 
-- Pedidos de cada cliente
-- Productos incluidos en cada pedido
-- Total gastado por cliente
-- Historial de compras con nombres de productos
+- Orders from each client
+- Products included in each order
+- Total spent per customer
+- Purchase history with product names
 
 ---
 
@@ -109,13 +109,13 @@ JOIN products p ON d.product_id = p.id;
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-- `JOIN` permite unir tablas relacionadas a través de claves.
-- `INNER`, `LEFT`, `RIGHT` ofrecen diferentes formas de obtener los datos.
-- Alias (`AS`) facilitan la lectura.
-- Las consultas complejas a menudo implican múltiples `JOIN`.
+- `JOIN` allows joining related tables through keys.
+- `INNER`, `LEFT`, `RIGHT` offer different ways to obtain the data.
+- Aliases (`AS`) make it easier to read.
+- Complex queries often involve multiple `JOIN`.
 
 ---
 
-En el siguiente tema aprenderemos a **crear y gestionar vistas (`VIEW`) para simplificar y reutilizar consultas complejas.**
+In the next topic we will learn how to **create and manage views (`VIEW`) to simplify and reuse complex queries.**

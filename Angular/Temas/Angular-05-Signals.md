@@ -1,27 +1,27 @@
-# **Tema 5: Signals y Reactividad en Angular 19**
+# **Topic 5: Signals and Reactivity in Angular 19**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular 19, se introduce un nuevo mecanismo de reactividad basado en **Signals**. Las Signals permiten gestionar el estado de manera más eficiente y predecible en comparación con los enfoques tradicionales como `RxJS` y `ChangeDetectionStrategy.OnPush`.
+In Angular 19, a new reactivity mechanism based on **Signals** is introduced. Signals allow for more efficient and predictable state management compared to traditional approaches such as `RxJS` and `ChangeDetectionStrategy.OnPush`.
 
-En este tema, aprenderás:
+In this topic, you will learn:
 
-- Qué son las Signals y por qué se han introducido.
-- Cómo utilizarlas para gestionar el estado en Angular.
-- Comparación entre Signals y otros métodos de reactividad.
-- Casos de uso y buenas prácticas.
+- What are Signals and why have they been introduced.
+- How to use them to manage state in Angular.
+- Comparison between Signals and other reactivity methods.
+- Use cases and good practices.
 
 ---
 
-## **2. ¿Qué son las Signals en Angular?**
+## **2. What are Signals in Angular?**
 
-Las **Signals** son un nuevo modelo de reactividad en Angular que permiten un control más granular sobre el flujo de datos en la aplicación. Son funciones puras que permiten:
+**Signals** are a new reactivity model in Angular that allows more granular control over the flow of data in the application. They are pure functions that allow:
 
-- **Propagar cambios automáticamente** sin necesidad de `ChangeDetection` manual.
-- **Minimizar el impacto en el rendimiento** evitando cambios innecesarios en la UI.
-- **Simplificar la gestión del estado** sin necesidad de suscripciones complejas.
+- **Automatically propagate changes** without the need for manual `ChangeDetection`.
+- **Minimize performance impact** by avoiding unnecessary UI changes.
+- **Simplify state management** without the need for complex subscriptions.
 
-Ejemplo básico de Signal en Angular:
+Basic Signal example in Angular:
 
 ```ts
 import { signal } from "@angular/core";
@@ -35,38 +35,41 @@ export class CounterComponent {
 }
 ```
 
+
 ```html
 <p>{{ count() }}</p>
 ```
 
-En este ejemplo:
 
-- `signal(0)` crea un valor reactivo con un estado inicial de `0`.
-- `.set()` actualiza el valor de la Signal.
-- `this.count()` permite acceder al valor actual de la Signal.
-- `{{ count() }}` muestra el valor en el documento HTML
+In this example:
+
+- `signal(0)` creates a reactive value with an initial state of `0`.
+- `.set()` updates the Signal value.
+- `this.count()` allows access to the current value of the Signal.
+- `{{ count() }}` displays the value in the HTML document
 
 ---
 
-## **3. Operaciones con Signals**
+## **3. Operations with Signals**
 
-### **3.1. Lectura y Escritura**
+### **3.1. Reading and Writing**
 
-- **Lectura**: Se accede al valor de una Signal llamándola como una función `count()`.
-- **Escritura**: Se puede actualizar el valor con `.set(nuevoValor)` o modificarlo con `.update(fn)`.
+- **Reading**: The value of a Signal is accessed by calling it as an `count()` function.
+- **Write**: The value can be updated with `.set(nuevoValor)` or modified with `.update(fn)`.
 
-Ejemplo de actualización:
+Update example:
 
 ```ts
 this.count.set(10); // Fija el valor en 10
 this.count.update((value) => value + 1); // Incrementa en 1
 ```
 
+
 ### **3.2. Computed Signals**
 
-Las **Computed Signals** permiten definir valores derivados que se recalculan automáticamente cuando cambian sus dependencias.
+**Computed Signals** allow you to define derived values that are automatically recalculated when their dependencies change.
 
-Ejemplo:
+Example:
 
 ```ts
 import { signal, computed } from "@angular/core";
@@ -78,13 +81,14 @@ export class CartComponent {
 }
 ```
 
-En este caso, `total()` siempre reflejará la multiplicación de `price` y `quantity`, sin necesidad de lógica adicional.
 
-### **3.3. Effects en Signals**
+In this case, `total()` will always reflect the multiplication of `price` and `quantity`, without the need for additional logic.
 
-Los **Effects** permiten ejecutar código cuando una Signal cambia de valor. Son útiles para efectos secundarios como peticiones HTTP o manipulación del DOM.
+### **3.3. Effects in Signals**
 
-Ejemplo:
+**Effects** allow you to execute code when a Signal changes its value. They are useful for side effects such as HTTP requests or DOM manipulation.
+
+Example:
 
 ```ts
 import { effect, signal } from "@angular/core";
@@ -100,37 +104,38 @@ export class LoggerComponent {
 }
 ```
 
-Cada vez que `message` cambia, el efecto se ejecuta automáticamente.
+
+Every time `message` changes, the effect runs automatically.
 
 ---
 
-## **4. Comparación: Signals vs. RxJS vs. ChangeDetection**
+## **4. Comparison: Signals vs. RxJS vs. ChangeDetection**
 
-| **Característica**     | **Signals** | **RxJS (BehaviorSubject)** | **ChangeDetectionStrategy.OnPush** |
+| **Feature** | **Signals** | **RxJS (BehaviorSubject)** | **ChangeDetectionStrategy.OnPush** |
 | ---------------------- | ----------- | -------------------------- | ---------------------------------- |
-| Reactividad            | Automática  | Basada en observables      | Basada en detección de cambios     |
-| Simplicidad            | Alta        | Media                      | Media                              |
-| Rendimiento            | Muy alto    | Depende de suscripciones   | Alto                               |
-| Necesita suscripciones | No          | Sí                         | No                                 |
+| Reactivity | Automatic | Based on observables | Based on change detection |
+| Simplicity | High | Medium | Medium |
+| Performance | Very high | Depends on subscriptions | High |
+| Subscriptions needed | No | Yes | No |
 
 ---
 
-## **5. Buenas prácticas y recomendaciones**
+## **5. Good practices and recommendations**
 
-1. **Usar Signals para datos que cambian frecuentemente** en la UI (por ejemplo, contadores, formularios dinámicos).
-2. **No mezclar Signals y RxJS sin necesidad**. Usa uno u otro dependiendo del caso de uso.
-3. **Optimizar con `computed()`** para evitar cálculos innecesarios.
-4. **Evitar efectos secundarios dentro de Computed Signals**. Usa `effect()` para lógica derivada.
-
----
-
-## **6. Conclusión**
-
-- Las **Signals** en Angular 19 ofrecen un modelo de reactividad más eficiente y claro.
-- Son una alternativa ligera a `RxJS` para gestionar el estado.
-- Reducen la necesidad de `ChangeDetectionStrategy.OnPush`, mejorando el rendimiento.
-- Facilitan la gestión del estado sin necesidad de suscripciones manuales.
+1. **Use Signals for frequently changing data** in the UI (e.g. counters, dynamic forms).
+2. **Do not mix Signals and RxJS unnecessarily**. Use one or the other depending on the use case.
+3. **Optimize with `computed()`** to avoid unnecessary calculations.
+4. **Avoid side effects within Computed Signals**. Use `effect()` for derived logic.
 
 ---
 
-En el próximo tema, exploraremos **la comunicación entre componentes padre-hijo con input y output**.
+## **6. Conclusion**
+
+- **Signals** in Angular 19 offer a more efficient and clear reactivity model.
+- They are a lightweight alternative to `RxJS` for managing state.
+- Reduce the need for `ChangeDetectionStrategy.OnPush`, improving performance.
+- They facilitate state management without the need for manual subscriptions.
+
+---
+
+In the next topic, we will explore **communication between parent-child components with input and output**.

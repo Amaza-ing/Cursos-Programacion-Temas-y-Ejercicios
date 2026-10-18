@@ -1,20 +1,20 @@
-# Ejercicios - Tema 31: Optional
+# Exercises - Topic 31: Optional
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **Optional**: `ofNullable`, `empty`, `isPresent`, `ifPresent`, `orElse`, `orElseGet`, `orElseThrow`, `map`, `filter` y búsquedas que pueden no devolver resultado.
+Below you will find **10 practical exercises** to work with **Optional**: `ofNullable`, `empty`, `isPresent`, `ifPresent`, `orElse`, `orElseGet`, `orElseThrow`, `map`, `filter` and searches that may not return results.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un `Optional` con `ofNullable`
+## Exercise 1: Create an `Optional` with `ofNullable`
 
-Declara una variable `String username = null`.
+Declare an `String username = null` variable.
 
-Crea un `Optional<String>` usando `Optional.ofNullable(username)` e imprime un valor por defecto usando `orElse`.
+Create an `Optional<String>` using `Optional.ofNullable(username)` and print a default value using `orElse`.
 
-El valor por defecto debe ser `"Guest"`.
+The default value should be `"Guest"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -34,17 +34,17 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Usar `ifPresent`
+## Exercise 2: Use `ifPresent`
 
-Crea un `Optional<String>` con el valor `"Java"`.
+Create an `Optional<String>` with the value `"Java"`.
 
-Usa `ifPresent` para imprimir:
+Use `ifPresent` to print:
 
 ```text
 Course: Java
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -62,22 +62,22 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Método que devuelve `Optional`
+## Exercise 3: Method that returns `Optional`
 
-Crea un método:
+Create a method:
 
 ```java
 public static Optional<String> findEmail(String username)
 ```
 
-Debe devolver:
+You must return:
 
-- `Optional.of("admin@example.com")` si `username` es `"admin"`
-- `Optional.empty()` en cualquier otro caso
+- `Optional.of("admin@example.com")` if `username` is `"admin"`
+- `Optional.empty()` in any other case
 
-Prueba el método desde `main`.
+Try the method from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -103,13 +103,13 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Transformar un valor con `map`
+## Exercise 4: Transform a value with `map`
 
-Crea un `Optional<String>` con el valor `"java"`.
+Create an `Optional<String>` with the value `"java"`.
 
-Usa `map` para convertir el texto a mayúsculas e imprime el resultado con `orElse`.
+Use `map` to convert the text to uppercase and print the result with `orElse`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -130,18 +130,18 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Filtrar un `Optional<Integer>`
+## Exercise 5: Filter an `Optional<Integer>`
 
-Crea un `Optional<Integer>` con el valor `17`.
+Create an `Optional<Integer>` with the value `17`.
 
-Usa `filter` para quedarte solo con el valor si es mayor o igual que `18`.
+Use `filter` to only keep the value if it is greater than or equal to `18`.
 
-Después imprime:
+Then print:
 
-- `"Adult"` si queda valor
-- `"Minor"` si queda vacío
+- `"Adult"` if value left
+- `"Minor"` if empty
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -163,13 +163,13 @@ public class Main {
 
 ---
 
-## Ejercicio 6: `orElseGet`
+## Exercise 6: `orElseGet`
 
-Crea un `Optional<String>` vacío.
+Create an empty `Optional<String>`.
 
-Usa `orElseGet` para devolver `"Generated value"` como valor por defecto.
+Use `orElseGet` to return `"Generated value"` as the default value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -189,19 +189,19 @@ public class Main {
 
 ---
 
-## Ejercicio 7: `orElseThrow`
+## Exercise 7: `orElseThrow`
 
-Crea un método:
+Create a method:
 
 ```java
 public static Optional<String> findToken()
 ```
 
-Debe devolver `Optional.empty()`.
+It should return `Optional.empty()`.
 
-Desde `main`, llama al método y usa `orElseThrow` para lanzar una excepción con el mensaje `"Token not found"`.
+From `main`, call the method and use `orElseThrow` to throw an exception with message `"Token not found"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;
@@ -224,22 +224,22 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Buscar producto por código
+## Exercise 8: Search product by code
 
-Crea una clase `Product` con:
+Create a class `Product` with:
 
 - `code`
 - `name`
 
-Crea una lista de productos y un método:
+Create a list of products and a method:
 
 ```java
 public static Optional<Product> findByCode(List<Product> products, String code)
 ```
 
-Debe devolver el primer producto con ese código.
+You must return the first product with that code.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Product {
@@ -289,17 +289,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Encadenar `map`
+## Exercise 9: Chain `map`
 
-Crea una clase `User` con:
+Create a class `User` with:
 
 - `name`
 - `email`
 
-Crea un `Optional<User>` con un usuario.  
-Usa `map` para obtener el email en minúsculas.
+Create an `Optional<User>` with a user.  
+Use `map` to get the email in lowercase.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class User {
@@ -337,17 +337,16 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Evitar `get()` inseguro
+## Exercise 10: Avoid unsafe `get()`
+Create an empty `Optional<String>`.
 
-Crea un `Optional<String>` vacío.
+Do not use `get()` directly.  
+Check if it has value with `isPresent()` and:
 
-No uses `get()` directamente.  
-Comprueba si tiene valor con `isPresent()` y:
+- if it has value, print it
+- if it has no value, print `"No value"`
 
-- si tiene valor, imprímelo
-- si no tiene valor, imprime `"No value"`
-
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Optional;

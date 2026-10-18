@@ -1,20 +1,20 @@
-# **Tema 12: Gestión de Formularios Reactivos con `FormGroup` y `FormControl`**
+# **Topic 12: Management of Reactive Forms with `FormGroup` and `FormControl`**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, los **formularios reactivos** permiten un control avanzado de los datos de entrada, validaciones y eventos sin depender del modelo de datos directamente en la plantilla. Se construyen utilizando `FormGroup` y `FormControl`, lo que facilita su manipulación y validación programática.
+In Angular, **reactive forms** allow advanced control of input data, validations, and events without relying on the data model directly in the template. They are built using `FormGroup` and `FormControl`, making them easy to programmatically manipulate and validate.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo crear y gestionar formularios reactivos con `FormGroup` y `FormControl`.
-- Cómo añadir validaciones sin necesidad de atributos HTML.
-- Cómo reaccionar a cambios en los formularios dinámicamente.
+- How to create and manage reactive forms with `FormGroup` and `FormControl`.
+- How to add validations without the need for HTML attributes.
+- How to react to changes in forms dynamically.
 
 ---
 
-## **2. Configuración Inicial**
+## **2. Initial Configuration**
 
-Para usar formularios reactivos en Angular 19, es necesario importar `ReactiveFormsModule` en el Componente en el que lo vayamos a utilizar.
+To use reactive forms in Angular 19, it is necessary to import `ReactiveFormsModule` in the Component in which we are going to use it.
 
 ```ts
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,13 +27,14 @@ export class ReactiveFormComponent {
 }
 ```
 
+
 ---
 
-## **3. Creación de un Formulario Reactivo Básico**
+## **3. Creating a Basic Reactive Form**
 
-La clave de los formularios reactivos en Angular está en `FormGroup` y `FormControl`.
+The key to reactive forms in Angular is in `FormGroup` and `FormControl`.
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -54,7 +55,8 @@ export class FormComponent {
 }
 ```
 
-#### **Archivo: `form.component.html`**
+
+#### **File: `form.component.html`**
 
 ```html
 <form [formGroup]="userForm" (ngSubmit)="submitForm()">
@@ -68,11 +70,12 @@ export class FormComponent {
 </form>
 ```
 
-### **3.1. Limpiar los campos al enviar el formulario**
 
-Para reestablecer los campos podemos usar el método `reset()` de los formularios reactivos. De este modo, cuando se envíe el formulario desaparecerá lo que el usuario haya escrito.
+### **3.1. Clear fields when submitting form**
 
-> Nota: Si reseteas el formulario hazlo en último lugar, después de aplicar el resto de la lógica o perderás los datos.
+To reset the fields we can use the `reset()` method of the reactive forms. This way, when the form is submitted, whatever the user has written will disappear.
+
+> Note: If you reset the form, do it last, after applying the rest of the logic or you will lose the data.
 
 ```ts
   submitForm() {
@@ -82,17 +85,18 @@ Para reestablecer los campos podemos usar el método `reset()` de los formulario
   }
 ```
 
----
-
-[![Formularios Reactivos](https://img.youtube.com/vi/YhmdLiX1RE8/0.jpg)](https://www.youtube.com/watch?v=YhmdLiX1RE8&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **4. Validaciones en Formularios Reactivos**
+[![Reactive Forms](https://img.youtube.com/vi/YhmdLiX1RE8/0.jpg)](https://www.youtube.com/watch?v=YhmdLiX1RE8&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
-En los formularios reactivos, las validaciones se agregan en el constructor del `FormControl`.
+---
 
-#### **Archivo: `form.component.ts`**
+## **4. Validations in Reactive Forms**
+
+In reactive forms, validations are added in the `FormControl` constructor.
+
+#### **File: `form.component.ts`**
 
 ```ts
 import { Validators } from "@angular/forms";
@@ -105,7 +109,8 @@ export class FormComponent {
 }
 ```
 
-#### **Archivo: `form.component.html`**
+
+#### **File: `form.component.html`**
 
 ```html
 <form [formGroup]="userForm" (ngSubmit)="submitForm()">
@@ -126,7 +131,8 @@ export class FormComponent {
 </form>
 ```
 
-#### **Archivo: `form.component.css`**
+
+#### **File: `form.component.css`**
 
 ```css
 .field-error {
@@ -134,17 +140,18 @@ export class FormComponent {
 }
 ```
 
+
 ---
 
 [![Validators](https://img.youtube.com/vi/U1zcI4JqNpw/0.jpg)](https://www.youtube.com/watch?v=U1zcI4JqNpw&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **5. Detectar Cambios en Tiempo Real**
+## **5. Detect Changes in Real Time**
 
-Se pueden suscribir a los cambios en los valores de los formularios utilizando `valueChanges`.
+Changes to form values can be subscribed to using `valueChanges`.
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 export class FormComponent {
@@ -161,14 +168,15 @@ export class FormComponent {
 }
 ```
 
----
-
-## **6. Conclusión**
-
-- `FormGroup` y `FormControl` permiten crear formularios altamente estructurados.
-- Las validaciones se manejan en el código TypeScript en lugar de en la plantilla.
-- `valueChanges` permite detectar cambios en tiempo real.
 
 ---
 
-En el próximo tema, exploraremos **qué son los servicios y cómo podemos utilizarlos para gestionar el estado global de nuestra aplicación**.
+## **6. Conclusion**
+
+- `FormGroup` and `FormControl` allow you to create highly structured forms.
+- Validations are handled in the TypeScript code instead of the template.
+- `valueChanges` allows you to detect changes in real time.
+
+---
+
+In the next topic, we will explore **what services are and how we can use them to manage the global state of our application**.

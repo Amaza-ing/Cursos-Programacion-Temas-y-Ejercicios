@@ -1,89 +1,89 @@
-# Tema 20. Clases abstractas y métodos abstractos
+# Topic 20. Abstract classes and abstract methods
 
-## 1. Introducción
+## 1. Introduction
 
-En el tema de herencia aprendiste que puedes crear jerarquías como:
+In the inheritance topic you learned that you can create hierarchies like:
 
 - `Person` → `Student`
 - `Employee` → `Manager`
 
-Eso te permite reutilizar código y crear clases hijas especializadas.
+That allows you to reuse code and create specialized child classes.
 
-Ahora aparece una necesidad muy común:
+Now a very common need appears:
 
-> ¿Qué pasa si quiero una clase “base” que **no debería poder instanciarse**, pero que quiero usar como plantilla para sus hijas?
+> What if I want a “base” class that **should not be instantiable**, but that I want to use as a template for its children?
 
-Ejemplos típicos:
+Typical examples:
 
-- `Shape` (forma) → `Circle`, `Rectangle`
+- `Shape` (form) → `Circle`, `Rectangle`
 - `Animal` → `Dog`, `Cat`
 - `PaymentMethod` → `CardPayment`, `PaypalPayment`
 
-En estos casos, la clase base es una idea general, pero:
+In these cases, the base class is a general idea, but:
 
-- No tiene sentido crear un objeto `Shape` “genérico”
-- No tiene sentido crear un objeto `Animal` “sin tipo”
+- There is no point in creating a “generic” `Shape` object
+- There is no point in creating an “untyped” `Animal` object.
 
-Para eso existen:
+For that there are:
 
-- **Clases abstractas**
-- **Métodos abstractos**
+- **Abstract classes**
+- **Abstract methods**
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es una clase abstracta
-- Qué es un método abstracto
-- Cuándo usarlos y por qué son útiles
-- Cómo combinar código común + comportamiento obligatorio
-- `abstract` vs herencia normal
-- Polimorfismo con clases abstractas
-- Errores típicos y buenas prácticas
-
----
-
-[![Clases y Métodos Abstractos](https://img.youtube.com/vi/do2XG0T4mR8/0.jpg)](https://www.youtube.com/watch?v=do2XG0T4mR8&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is an abstract class
+- What is an abstract method
+- When to use them and why they are useful
+- How to combine common code + mandatory behavior
+- `abstract` vs normal inheritance
+- Polymorphism with abstract classes
+- Typical errors and good practices
 
 ---
 
-## 2. Qué es una clase abstracta
+[![Abstract Classes and Methods](https://img.youtube.com/vi/do2XG0T4mR8/0.jpg)](https://www.youtube.com/watch?v=do2XG0T4mR8&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-Una **clase abstracta** es una clase que:
+---
 
-- No se puede instanciar (`new`)
-- Se usa como base para otras clases
+## 2. What is an abstract class
 
-Se declara con `abstract`:
+An **abstract class** is a class that:
+
+- Cannot instantiate (`new`)
+- Used as a base for other classes
+
+It is declared with `abstract`:
 
 ```java
 public abstract class Shape {
 }
 ```
 
-Esto NO compila:
+This DOES NOT compile:
 
 ```java
 // Shape shape = new Shape(); // error
 ```
 
-Pero sí puedes hacer:
+But you can do:
 
 ```java
 Shape shape = new Circle(3.0);
 ```
 
-Porque `Circle` es una subclase concreta.
+Because `Circle` is a concrete subclass.
 
 ---
 
-## 3. Qué es un método abstracto
+## 3. What is an abstract method
 
-Un **método abstracto** es un método que:
+An **abstract method** is a method that:
 
-- Se declara en la clase abstracta
-- No tiene cuerpo (`{}`)
-- Obliga a las clases hijas a implementarlo
+- It is declared in the abstract class
+- Has no body (`{}`)
+- Forces child classes to implement it
 
-Ejemplo:
+Example:
 
 ```java
 public abstract class Shape {
@@ -91,7 +91,7 @@ public abstract class Shape {
 }
 ```
 
-Ese método se tiene que implementar en cada clase hija:
+That method has to be implemented in each child class:
 
 ```java
 public class Circle extends Shape {
@@ -104,47 +104,47 @@ public class Circle extends Shape {
 
 ---
 
-## 4. ¿Para qué sirve todo esto?
+## 4. What is all this for?
 
-Las clases abstractas sirven para:
+Abstract classes are used to:
 
-1. Definir un **contrato parcial** (qué deben hacer las hijas)
-2. Reutilizar **código común** en la clase base
-3. Forzar que cada subclase implemente lo que es específico
+1. Define a **partial contract** (what daughters should do)
+2. Reuse **common code** in the base class
+3. Force each subclass to implement what is specific
 
-En resumen:
+In summary:
 
-- Código común en el padre
-- Implementación específica en el hijo
-
----
-
-## 5. Reglas importantes
-
-### 5.1. Una clase abstracta puede tener:
-
-- Atributos
-- Métodos normales (con cuerpo)
-- Métodos abstractos (sin cuerpo)
-- Constructores (sí, también)
-
-### 5.2. Un método abstracto:
-
-- No puede ser `private` (porque la subclase debe sobrescribirlo)
-- Debe implementarse en la subclase, o la subclase también será abstracta
-
-### 5.3. Una clase abstracta:
-
-- Puede extender otra clase abstracta o concreta
-- Puede tener métodos `static` (pero esos no se heredan como abstractos)
+- Common code in the parent
+- Specific implementation in the child
 
 ---
 
-## 6. Ejemplo 1: `Shape`, `Circle` y `Rectangle`
+## 5. Important rules
 
-Este es el ejemplo clásico y el más claro para entender el concepto.
+### 5.1. An abstract class can have:
 
-### 6.1. `Shape.java` (abstracta)
+- Attributes
+- Normal methods (with body)
+- Abstract methods (without body)
+- Builders (yes, too)
+
+### 5.2. An abstract method:
+
+- Cannot be `private` (because the subclass must override it)
+- It must be implemented in the subclass, or the subclass will also be abstract
+
+### 5.3. An abstract class:
+
+- Can extend another abstract or concrete class
+- You can have `static` methods (but those are not inherited as abstracts)
+
+---
+
+## 6. Example 1: `Shape`, `Circle` and `Rectangle`
+
+This is the classic example and the clearest to understand the concept.
+
+### 6.1. `Shape.java` (abstract)
 
 ```java
 public abstract class Shape {
@@ -175,13 +175,13 @@ public abstract class Shape {
 }
 ```
 
-Observa:
+Observe:
 
-- `Shape` tiene atributo `color` y métodos normales (`getColor`, `setColor`, `printInfo`)
-- `area()` es abstracto: cada forma calcula el área de manera distinta
-- `printInfo` usa `area()` sin saber cuál será la forma concreta → esto es polimorfismo
+- `Shape` has `color` attribute and normal methods (`getColor`, `setColor`, `printInfo`)
+- `area()` is abstract: each shape calculates the area differently
+- `printInfo` uses `area()` without knowing what the concrete form will be → this is polymorphism
 
-### 6.2. `Circle.java` (concreta)
+### 6.2. `Circle.java` (specific)
 
 ```java
 public class Circle extends Shape {
@@ -212,7 +212,7 @@ public class Circle extends Shape {
 }
 ```
 
-### 6.3. `Rectangle.java` (concreta)
+### 6.3. `Rectangle.java` (specific)
 
 ```java
 public class Rectangle extends Shape {
@@ -250,7 +250,7 @@ public class Rectangle extends Shape {
 }
 ```
 
-### 6.4. `Main.java` (polimorfismo)
+### 6.4. `Main.java` (polymorphism)
 
 ```java
 import java.util.ArrayList;
@@ -271,51 +271,51 @@ public class Main {
 }
 ```
 
-Aquí pasa algo muy importante:
+Something very important happens here:
 
-- La lista es de `Shape`
-- Pero dentro guardas `Circle` y `Rectangle`
-- Cuando llamas a `shape.area()` se ejecuta la versión correcta según el objeto real
-
----
-
-## 7. Constructores en clases abstractas
-
-Aunque no puedas instanciar una abstracta directamente, **sí puede tener constructor**.
-
-¿Para qué?
-
-- Para inicializar la parte común del objeto que pertenece a la clase base
-
-Ejemplo: en `Shape`, el constructor inicializa `color` y se llama desde `Circle` y `Rectangle` con `super(color)`.
+- The list is from `Shape`
+- But inside you keep `Circle` and `Rectangle`
+- When you call `shape.area()` the correct version is executed based on the real object
 
 ---
 
-## 8. Métodos abstractos vs métodos “normales” en el padre
+## 7. Constructors in abstract classes
 
-Un patrón muy común es:
+Although you cannot instantiate an abstract directly, it **can have a constructor**.
 
-- El padre define un método normal que llama a uno abstracto
+So that?
 
-Ejemplo: `printInfo()` en `Shape` llama a `area()`.
+- To initialize the common part of the object that belongs to the base class
 
-Esto permite:
-
-- Código común en el padre
-- Personalización obligatoria en el hijo
+Example: In `Shape`, the constructor initializes `color` and is called from `Circle` and `Rectangle` with `super(color)`.
 
 ---
 
-## 9. Ejemplo 2: plantilla de “empleado” con cálculo de salario
+## 8. Abstract methods vs “normal” methods in the parent
 
-Vamos a usar un ejemplo más cercano a un caso real.
+A very common pattern is:
 
-Objetivo:
+- The parent defines a normal method that calls an abstract one
 
-- `Employee` es una idea general, no tiene sentido crear un `Employee` sin tipo
-- Cada tipo de empleado calcula su pago de forma distinta
+Example: `printInfo()` in `Shape` calls `area()`.
 
-### 9.1. `Employee.java` (abstracta)
+This allows:
+
+- Common code in the parent
+- Mandatory personalization in the son
+
+---
+
+## 9. Example 2: “employee” template with salary calculation
+
+Let's use an example closer to a real case.
+
+Objective:
+
+- `Employee` is a general idea, there is no point in creating an untyped `Employee`
+- Each type of employee calculates their payment differently
+
+### 9.1. `Employee.java` (abstract)
 
 ```java
 public abstract class Employee {
@@ -346,7 +346,7 @@ public abstract class Employee {
 }
 ```
 
-### 9.2. `SalariedEmployee.java` (salario fijo)
+### 9.2. `SalariedEmployee.java` (fixed salary)
 
 ```java
 public class SalariedEmployee extends Employee {
@@ -373,7 +373,7 @@ public class SalariedEmployee extends Employee {
 }
 ```
 
-### 9.3. `HourlyEmployee.java` (pago por horas)
+### 9.3. `HourlyEmployee.java` (hourly payment)
 
 ```java
 public class HourlyEmployee extends Employee {
@@ -434,13 +434,13 @@ public class Main {
 
 ---
 
-## 10. ¿Qué pasa si una subclase NO implementa un método abstracto?
+## 10. What happens if a subclass does NOT implement an abstract method?
 
-Si una subclase no implementa todos los métodos abstractos del padre, entonces:
+If a subclass does not implement all of the parent's abstract methods, then:
 
-- La subclase debe ser `abstract` también
+- The subclass should be `abstract` as well
 
-Ejemplo:
+Example:
 
 ```java
 public abstract class SpecialShape extends Shape {
@@ -454,42 +454,41 @@ public abstract class SpecialShape extends Shape {
 
 ---
 
-## 11. Errores típicos al empezar
+## 11. Typical mistakes when starting
 
-### 11.1. Intentar instanciar una clase abstracta
+### 11.1. Try to instantiate an abstract class
 
 ```java
 // Employee e = new Employee("Laura"); // error
 ```
 
-### 11.2. Olvidar `@Override`
+### 11.2. Forget `@Override`
 
-No es obligatorio, pero te ayuda a detectar errores si te equivocas con la firma.
+It is not mandatory, but it helps you detect errors if you make a mistake with the signature.
 
-### 11.3. Declarar métodos abstractos como `private`
+### 11.3. Declare abstract methods like `private`
 
-No se puede, porque una subclase no puede sobrescribir algo privado.
-
----
-
-## 12. Buenas prácticas
-
-- Usa clases abstractas cuando tengas una base común y quieras evitar instancias genéricas.
-- Coloca en la clase base lo que todas las subclases comparten (atributos, métodos comunes).
-- Declara como abstracto lo que es obligatorio implementar.
-- Usa métodos normales en el padre que llamen a métodos abstractos para reutilizar comportamiento.
-- Mantén las clases pequeñas y con responsabilidad clara.
+You can't, because a subclass cannot override something private.
 
 ---
 
-## 13. A tener en cuenta
+## 12. Good practices
 
-- Una clase abstracta **no se puede instanciar**.
-- Puede tener atributos, métodos normales, métodos abstractos y constructores.
-- Un método abstracto **no tiene cuerpo** y obliga a las subclases a implementarlo.
-- Si una subclase no implementa todos los abstractos, también debe ser abstracta.
-- Permite polimorfismo limpio: `List<Shape>` puede contener `Circle`, `Rectangle`, etc.
+- Use abstract classes when you have a common base and want to avoid generic instances.
+- Places in the base class what all subclasses share (attributes, common methods).
+- Declares as abstract what is mandatory to implement.
+- Use normal methods on the parent that call abstract methods to reuse behavior.
+- Keep classes small and with clear responsibility.
 
 ---
 
-En el siguiente tema veremos **interfaces**, que son otra forma (muy común en Java) de definir contratos, y compararemos cuándo conviene usar interfaces vs clases abstractas.
+## 13. To take into account
+
+- An abstract class **cannot be instantiated**.
+- It can have attributes, normal methods, abstract methods and constructors.
+- An abstract method **has no body** and forces subclasses to implement it.
+- If a subclass does not implement all abstracts, it must also be abstract.
+- Allows clean polymorphism: `List<Shape>` can contain `Circle`, `Rectangle`, etc.
+
+---
+In the next topic we will see **interfaces**, which are another way (very common in Java) of defining contracts, and we will compare when it is convenient to use interfaces vs abstract classes.

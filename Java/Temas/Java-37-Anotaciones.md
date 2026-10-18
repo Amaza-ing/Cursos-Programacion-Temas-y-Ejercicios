@@ -1,82 +1,82 @@
-# Tema 37. Anotaciones
+# Topic 37. Annotations
 
-## 1. Introducción
+## 1. Introduction
 
-En Java has visto muchas veces símbolos que empiezan por `@`.
+In Java you have often seen symbols that begin with `@`.
 
-Por ejemplo:
+For example:
 
 ```java
 @Override
 ```
 
-o:
+or:
 
 ```java
 @FunctionalInterface
 ```
 
-Estos elementos se llaman **anotaciones**.
+These elements are called **annotations**.
 
-Las anotaciones permiten añadir información extra al código.
+Annotations allow you to add extra information to the code.
 
-Esa información puede ser usada por:
+This information can be used by:
 
-- el compilador
-- el IDE
-- herramientas externas
+- the compiler
+- the IDE
+- external tools
 - frameworks
-- librerías
-- el propio programa en tiempo de ejecución
+- bookstores
+- the program itself at runtime
 
-En Java moderno, las anotaciones aparecen constantemente.
+In modern Java, annotations appear constantly.
 
-Por ejemplo, se usan mucho en:
+For example, they are widely used in:
 
-- Spring
+-Spring
 - Jakarta EE
 - JUnit
 - Hibernate
-- Lombok
-- validaciones
-- serialización JSON
-- documentación
-- análisis de código
+-Lombok
+- validations
+- JSON serialization
+- documentation
+- code analysis
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es una anotación
-- Para qué sirven las anotaciones
-- Anotaciones habituales de Java
+- What is an annotation
+- What are annotations for?
+- Common Java annotations
 - `@Override`
 - `@Deprecated`
 - `@SuppressWarnings`
 - `@FunctionalInterface`
-- Cómo crear anotaciones propias
-- Qué son `@Retention` y `@Target`
-- Cómo usar anotaciones con clases, métodos y atributos
-- Introducción básica a leer anotaciones con reflexión
-- Errores típicos y buenas prácticas
+- How to create your own annotations
+- What are `@Retention` and `@Target`
+- How to use annotations with classes, methods and attributes
+- Basic introduction to reading notes with reflection
+- Typical errors and good practices
 
 ---
 
-## 2. Qué es una anotación
+## 2. What is an annotation
 
-Una anotación es una forma de añadir metadatos al código.
+An annotation is a way to add metadata to code.
 
-La palabra **metadatos** significa:
+The word **metadata** means:
 
-> información sobre otra información
+> information about other information
 
-Por ejemplo, esta anotación:
+For example, this annotation:
 
 ```java
 @Override
 ```
 
-indica que un método está sobrescribiendo un método de una superclase o interfaz.
+indicates that a method is overriding a method of a superclass or interface.
 
-Ejemplo:
+Example:
 
 ```java
 public class Dog extends Animal {
@@ -87,28 +87,28 @@ public class Dog extends Animal {
 }
 ```
 
-La anotación no es una instrucción normal como un `if` o un `for`.  
-Es información extra que Java o una herramienta pueden interpretar.
+The annotation is not a normal instruction like an `if` or an `for`.  
+It is extra information that Java or a tool can interpret.
 
 ---
 
-## 3. Para qué sirven las anotaciones
+## 3. What are annotations for?
 
-Las anotaciones pueden servir para muchas cosas.
+Annotations can be used for many things.
 
-Algunos usos habituales son:
+Some common uses are:
 
-- avisar al compilador
-- generar advertencias
-- marcar código obsoleto
-- configurar frameworks
-- validar datos
-- definir rutas web
-- indicar pruebas automatizadas
-- mapear clases a tablas de base de datos
-- reducir código repetitivo
+- notify the compiler
+- generate warnings
+- mark obsolete code
+- configure frameworks
+- validate data
+- define web routes
+- indicate automated tests
+- map classes to database tables
+- reduce repetitive code
 
-Ejemplo típico en frameworks:
+Typical example in frameworks:
 
 ```java
 @RestController
@@ -116,15 +116,15 @@ public class ProductController {
 }
 ```
 
-Aquí la anotación le indica a un framework que esta clase tiene un papel especial.
+Here the annotation tells a framework that this class has a special role.
 
 ---
 
-## 4. Anotaciones integradas en Java
+## 4. Built-in annotations in Java
 
-Java incluye varias anotaciones de uso común.
+Java includes several commonly used annotations.
 
-Algunas de las más importantes son:
+Some of the most important are:
 
 - `@Override`
 - `@Deprecated`
@@ -132,15 +132,15 @@ Algunas de las más importantes son:
 - `@FunctionalInterface`
 - `@SafeVarargs`
 
-En este tema veremos las más útiles para empezar.
+In this topic we will see the most useful ones to start with.
 
 ---
 
 ## 5. `@Override`
 
-`@Override` indica que un método sobrescribe otro método heredado.
+`@Override` indicates that a method overrides another inherited method.
 
-Ejemplo:
+Example:
 
 ```java
 public class Animal {
@@ -159,13 +159,13 @@ public class Dog extends Animal {
 }
 ```
 
-La anotación ayuda a detectar errores.
+Annotation helps detect errors.
 
 ---
 
-## 6. Por qué `@Override` es útil
+## 6. Why `@Override` is useful
 
-Imagina que escribes mal el nombre del método.
+Imagine that you misspell the method name.
 
 ```java
 public class Dog extends Animal {
@@ -176,17 +176,17 @@ public class Dog extends Animal {
 }
 ```
 
-Como `makeSond` no existe en la clase padre, Java marca error.
+Since `makeSond` does not exist in the parent class, Java flags an error.
 
-Sin `@Override`, Java podría interpretarlo como un método nuevo y el error sería más difícil de detectar.
+Without `@Override`, Java could interpret it as a new method and the error would be more difficult to detect.
 
-Por eso es buena práctica usar `@Override` siempre que sobrescribas un método.
+That's why it's good practice to use `@Override` whenever you override a method.
 
 ---
 
-## 7. `@Override` con interfaces
+## 7. `@Override` with interfaces
 
-También se usa al implementar métodos de una interfaz.
+It is also used when implementing methods of an interface.
 
 ```java
 public interface Printable {
@@ -203,23 +203,22 @@ public class Report implements Printable {
 }
 ```
 
-Esto deja claro que `print` viene de la interfaz.
+This makes it clear that `print` comes from the interface.
 
 ---
 
 ## 8. `@Deprecated`
 
-`@Deprecated` indica que un elemento ya no se recomienda.
+`@Deprecated` indicates that an item is no longer recommended.
 
-Puede aplicarse a:
+Can be applied to:
 
-- clases
-- métodos
-- constructores
-- atributos
+- classes
+- methods
+- builders
+- attributes
 
-Ejemplo:
-
+Example:
 ```java
 public class UserService {
     @Deprecated
@@ -233,7 +232,7 @@ public class UserService {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -246,17 +245,17 @@ public class Main {
 }
 ```
 
-El IDE normalmente mostrará una advertencia al usar `oldMethod`.
+The IDE will normally display a warning when using `oldMethod`.
 
 ---
 
-## 9. Para qué sirve `@Deprecated`
+## 9. What `@Deprecated` is for
 
-Sirve para avisar de que algo sigue existiendo, pero no debería usarse en código nuevo.
+It is used to warn that something still exists, but should not be used in new code.
 
-Esto es muy común cuando una API evoluciona.
+This is very common when an API evolves.
 
-Ejemplo:
+Example:
 
 ```java
 @Deprecated
@@ -264,20 +263,20 @@ public void loginWithUsername(String username) {
 }
 ```
 
-Quizá ahora se prefiere:
+Maybe now you prefer:
 
 ```java
 public void loginWithEmail(String email) {
 }
 ```
 
-La anotación permite mantener compatibilidad sin eliminar el método de golpe.
+The annotation allows compatibility to be maintained without removing the bash method.
 
 ---
 
-## 10. `@Deprecated` con información adicional
+## 10. `@Deprecated` with additional information
 
-Puedes añadir información con `since` y `forRemoval`.
+You can add information with `since` and `forRemoval`.
 
 ```java
 @Deprecated(since = "2.0", forRemoval = true)
@@ -285,12 +284,12 @@ public void oldMethod() {
 }
 ```
 
-Esto indica:
+This indicates:
 
-- desde qué versión está obsoleto
-- si está previsto eliminarlo
+- since which version is it obsolete
+- if it is planned to be removed
 
-Ejemplo:
+Example:
 
 ```java
 public class PaymentService {
@@ -309,9 +308,9 @@ public class PaymentService {
 
 ## 11. `@SuppressWarnings`
 
-`@SuppressWarnings` sirve para ocultar advertencias del compilador.
+`@SuppressWarnings` is used to hide compiler warnings.
 
-Ejemplo:
+Example:
 
 ```java
 @SuppressWarnings("unused")
@@ -320,9 +319,9 @@ public class Main {
 }
 ```
 
-Aquí se está indicando que se ignore la advertencia de que `message` no se usa.
+Here you are saying to ignore the warning that `message` is not used.
 
-Otro ejemplo:
+Another example:
 
 ```java
 @SuppressWarnings("deprecation")
@@ -334,21 +333,21 @@ public class Main {
 }
 ```
 
-Esto suprime la advertencia por usar un método obsoleto.
+This suppresses the warning for using a deprecated method.
 
 ---
 
-## 12. Usar `@SuppressWarnings` con cuidado
+## 12. Use `@SuppressWarnings` carefully
 
-`@SuppressWarnings` puede ser útil, pero no conviene abusar.
+`@SuppressWarnings` can be useful, but it should not be abused.
 
-Si una advertencia aparece, normalmente conviene preguntarse:
+If a warning appears, it's usually a good idea to ask yourself:
 
-- ¿hay un problema real?
-- ¿puedo mejorar el código?
-- ¿estoy ocultando algo importante?
+- is there a real problem?
+- can I improve the code?
+- Am I hiding something important?
 
-Ejemplo poco recomendable:
+Not recommended example:
 
 ```java
 @SuppressWarnings("all")
@@ -356,9 +355,9 @@ public class Main {
 }
 ```
 
-Esto puede ocultar demasiadas advertencias.
+This can hide too many warnings.
 
-Es mejor ser específico:
+It is better to be specific:
 
 ```java
 @SuppressWarnings("unused")
@@ -368,11 +367,11 @@ Es mejor ser específico:
 
 ## 13. `@FunctionalInterface`
 
-Ya has visto esta anotación en el tema de lambdas.
+You have already seen this annotation in the lambdas topic.
 
-Sirve para marcar una interfaz como interfaz funcional.
+It is used to mark an interface as a functional interface.
 
-Ejemplo:
+Example:
 
 ```java
 @FunctionalInterface
@@ -381,9 +380,9 @@ public interface TextValidator {
 }
 ```
 
-Una interfaz funcional debe tener un único método abstracto.
+A functional interface must have a single abstract method.
 
-Si añades otro método abstracto, Java marcará error.
+If you add another abstract method, Java will flag an error.
 
 ```java
 @FunctionalInterface
@@ -396,15 +395,15 @@ public interface TextValidator {
 
 ---
 
-## 14. Por qué `@FunctionalInterface` es útil
+## 14. Why `@FunctionalInterface` is useful
 
-Esta anotación:
+This annotation:
 
-- documenta la intención
-- ayuda al compilador a detectar errores
-- deja claro que la interfaz está pensada para lambdas
+- documents the intention
+- helps the compiler detect errors
+- makes it clear that the interface is intended for lambdas
 
-Ejemplo de uso:
+Example of use:
 
 ```java
 @FunctionalInterface
@@ -425,13 +424,13 @@ public class Main {
 
 ---
 
-## 15. Dónde se pueden colocar anotaciones
+## 15. Where annotations can be placed
 
-Las anotaciones pueden colocarse en diferentes elementos del código.
+Annotations can be placed on different elements of the code.
 
-Por ejemplo:
+For example:
 
-### 15.1. En una clase
+### 15.1. in a class
 
 ```java
 @Deprecated
@@ -439,7 +438,7 @@ public class OldService {
 }
 ```
 
-### 15.2. En un método
+### 15.2. in a method
 
 ```java
 @Override
@@ -448,14 +447,14 @@ public String toString() {
 }
 ```
 
-### 15.3. En un atributo
+### 15.3. in an attribute
 
 ```java
 @Deprecated
 private String oldField;
 ```
 
-### 15.4. En una interfaz
+### 15.4. in an interface
 
 ```java
 @FunctionalInterface
@@ -464,22 +463,22 @@ public interface Action {
 }
 ```
 
-### 15.5. En parámetros
+### 15.5. In parameters
 
 ```java
 public void print(@Deprecated String text) {
 }
 ```
 
-Que una anotación pueda usarse en un sitio u otro depende de cómo esté definida.
+Whether an annotation can be used in one place or another depends on how it is defined.
 
 ---
 
-## 16. Anotaciones en frameworks
+## 16. Annotations in frameworks
 
-Muchas veces verás anotaciones en frameworks.
+Many times you will see annotations in frameworks.
 
-Por ejemplo, en Spring:
+For example, in Spring:
 
 ```java
 @Service
@@ -494,7 +493,7 @@ public List<Product> getProducts() {
 }
 ```
 
-En JUnit:
+In JUnit:
 
 ```java
 @Test
@@ -502,7 +501,7 @@ void shouldAddTwoNumbers() {
 }
 ```
 
-En Lombok:
+In Lombok:
 
 ```java
 @Getter
@@ -512,48 +511,48 @@ public class User {
 }
 ```
 
-Cada framework interpreta sus propias anotaciones.
+Each framework interprets its own annotations.
 
 ---
 
-## 17. Idea importante: una anotación no hace magia por sí sola
+## 17. Important idea: an annotation does not do magic on its own
 
-Una anotación solo añade información.
+An annotation only adds information.
 
-Para que tenga efecto, alguien debe leer esa información.
+For it to take effect, someone must read that information.
 
-Puede leerla:
+You can read it:
 
-- el compilador
-- el IDE
-- un framework
-- una librería
-- código propio mediante reflexión
+- the compiler
+- the IDE
+- a framework
+- a bookstore
+- own code through reflection
 
-Ejemplo:
+Example:
 
 ```java
 @Test
 ```
 
-Esta anotación funciona porque JUnit la busca y ejecuta ese método como prueba.
+This annotation works because JUnit looks for it and runs that method as a test.
 
-Si no hubiera una herramienta que leyera `@Test`, la anotación no haría nada útil por sí sola.
+If there wasn't a tool that read `@Test`, the annotation wouldn't do anything useful on its own.
 
 ---
 
-## 18. Crear una anotación propia
+## 18. Create your own annotation
 
-Puedes crear tus propias anotaciones usando `@interface`.
+You can create your own annotations using `@interface`.
 
-Ejemplo:
+Example:
 
 ```java
 public @interface Important {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 @Important
@@ -561,25 +560,25 @@ public class UserService {
 }
 ```
 
-Aquí hemos creado una anotación llamada `Important`.
+Here we have created an annotation called `Important`.
 
 ---
 
-## 19. Sintaxis básica de una anotación propia
+## 19. Basic syntax of an own annotation
 
 ```java
 public @interface AnnotationName {
 }
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public @interface Review {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 @Review
@@ -587,15 +586,15 @@ public class ProductService {
 }
 ```
 
-De momento, esta anotación solo marca algo como revisable.
+For now, this annotation only marks something as reviewable.
 
 ---
 
-## 20. Anotaciones con valores
+## 20. Annotations with values
 
-Una anotación puede tener elementos.
+An annotation can have elements.
 
-Ejemplo:
+Example:
 
 ```java
 public @interface Author {
@@ -603,7 +602,7 @@ public @interface Author {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 @Author(name = "Laura")
@@ -611,15 +610,15 @@ public class Report {
 }
 ```
 
-Aquí `name` es un elemento de la anotación.
+Here `name` is an element of the annotation.
 
 ---
 
-## 21. Elemento llamado `value`
+## 21. Element named `value`
 
-Si una anotación tiene un elemento llamado `value`, puedes usar una sintaxis más corta.
+If an annotation has an element called `value`, you can use shorter syntax.
 
-Definición:
+Definition:
 
 ```java
 public @interface Version {
@@ -627,7 +626,7 @@ public @interface Version {
 }
 ```
 
-Uso completo:
+Full use:
 
 ```java
 @Version(value = "1.0")
@@ -635,7 +634,7 @@ public class ProductService {
 }
 ```
 
-Uso abreviado:
+Abbreviated use:
 
 ```java
 @Version("1.0")
@@ -643,13 +642,13 @@ public class ProductService {
 }
 ```
 
-Esto solo funciona de forma especial con el elemento llamado `value`.
+This only works especially with the item called `value`.
 
 ---
 
-## 22. Valores por defecto
+## 22. Default values
 
-Puedes definir valores por defecto.
+You can define default values.
 
 ```java
 public @interface TaskInfo {
@@ -658,7 +657,7 @@ public @interface TaskInfo {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 @TaskInfo(author = "Laura")
@@ -666,9 +665,9 @@ public class TaskService {
 }
 ```
 
-Aquí `priority` vale `1` porque tiene valor por defecto.
+Here `priority` is `1` because it has a default value.
 
-También puedes indicar otro valor:
+You can also indicate another value:
 
 ```java
 @TaskInfo(author = "Laura", priority = 3)
@@ -678,20 +677,20 @@ public class TaskService {
 
 ---
 
-## 23. Tipos permitidos en elementos de anotaciones
+## 23. Types allowed in annotation elements
 
-Los elementos de una anotación no pueden ser cualquier tipo.
+The elements of an annotation cannot be any type.
 
-Pueden ser, entre otros:
+They can be, among others:
 
-- tipos primitivos
+- primitive types
 - `String`
 - `Class`
 - enums
-- otras anotaciones
-- arrays de los tipos anteriores
+- other notes
+- arrays of the above types
 
-Ejemplo:
+Example:
 
 ```java
 public @interface Info {
@@ -705,16 +704,16 @@ public @interface Info {
 
 ## 24. `@Retention`
 
-`@Retention` indica hasta cuándo se conserva una anotación.
+`@Retention` indicates how long an annotation is kept.
 
-Importación:
+Import:
 
 ```java
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 ```
 
-Ejemplo:
+Example:
 
 ```java
 import java.lang.annotation.Retention;
@@ -725,30 +724,30 @@ public @interface Important {
 }
 ```
 
-`RetentionPolicy.RUNTIME` significa que la anotación estará disponible en tiempo de ejecución.
+`RetentionPolicy.RUNTIME` means that the annotation will be available at runtime.
 
 ---
 
-## 25. Tipos de `RetentionPolicy`
+## 25. Types of `RetentionPolicy`
 
-Hay tres políticas principales:
+There are three main policies:
 
 ### 25.1. `SOURCE`
 
-La anotación solo existe en el código fuente.
+The annotation only exists in the source code.
 
 ```java
 @Retention(RetentionPolicy.SOURCE)
 ```
 
-Ejemplo típico:
+Typical example:
 
-- herramientas de análisis
-- anotaciones que solo importan durante compilación
+- analysis tools
+- annotations that only matter during compilation
 
 ### 25.2. `CLASS`
 
-La anotación se guarda en el `.class`, pero no está disponible normalmente en tiempo de ejecución por reflexión.
+The annotation is saved in the `.class`, but is not normally available at runtime by reflection.
 
 ```java
 @Retention(RetentionPolicy.CLASS)
@@ -756,28 +755,28 @@ La anotación se guarda en el `.class`, pero no está disponible normalmente en 
 
 ### 25.3. `RUNTIME`
 
-La anotación se conserva en tiempo de ejecución y puede leerse con reflexión.
+The annotation is persisted at runtime and can be read with reflection.
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
 ```
 
-Es la opción que usarás si quieres que tu programa lea la anotación mientras se ejecuta.
+This is the option you will use if you want your program to read the annotation while it is running.
 
 ---
 
 ## 26. `@Target`
 
-`@Target` indica dónde puede usarse una anotación.
+`@Target` indicates where an annotation can be used.
 
-Importación:
+Import:
 
 ```java
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 ```
 
-Ejemplo:
+Example:
 
 ```java
 import java.lang.annotation.ElementType;
@@ -788,23 +787,23 @@ public @interface Run {
 }
 ```
 
-Esto significa que `@Run` solo puede aplicarse a métodos.
+This means that `@Run` can only be applied to methods.
 
 ---
 
-## 27. Valores habituales de `ElementType`
+## 27. Typical values of `ElementType`
 
-Algunos valores comunes son:
+Some common values are:
 
-- `TYPE` → clases, interfaces, records, enums
-- `METHOD` → métodos
-- `FIELD` → atributos
-- `PARAMETER` → parámetros
-- `CONSTRUCTOR` → constructores
-- `LOCAL_VARIABLE` → variables locales
-- `PACKAGE` → paquetes
+- `TYPE` → classes, interfaces, records, enums
+- `METHOD` → methods
+- `FIELD` → attributes
+- `PARAMETER` → parameters
+- `CONSTRUCTOR` → builders
+- `LOCAL_VARIABLE` → local variables
+- `PACKAGE` → packages
 
-Ejemplo:
+Example:
 
 ```java
 @Target(ElementType.TYPE)
@@ -812,13 +811,13 @@ public @interface Entity {
 }
 ```
 
-Esta anotación solo puede usarse sobre clases, interfaces, records o enums.
+This annotation can only be used on classes, interfaces, records or enums.
 
 ---
 
-## 28. Anotación con `@Retention` y `@Target`
+## 28. Annotation with `@Retention` and `@Target`
 
-Ejemplo completo:
+Complete example:
 
 ```java
 import java.lang.annotation.ElementType;
@@ -832,7 +831,7 @@ public @interface Important {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 @Important
@@ -840,16 +839,16 @@ public class UserService {
 }
 ```
 
-Esta anotación:
+This annotation:
 
-- se conserva en tiempo de ejecución
-- solo puede aplicarse a tipos como clases o interfaces
+- preserved at runtime
+- can only be applied to types such as classes or interfaces
 
 ---
 
-## 29. Aplicar una anotación a varios tipos de elementos
+## 29. Apply an annotation to multiple element types
 
-Puedes permitir varios destinos.
+You can allow multiple destinations.
 
 ```java
 import java.lang.annotation.ElementType;
@@ -860,7 +859,7 @@ public @interface Review {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 @Review
@@ -873,9 +872,8 @@ public class ProductService {
 
 ---
 
-## 30. Ejemplo guiado: anotación `@Todo`
-
-Vamos a crear una anotación para marcar partes del código pendientes.
+## 30. Guided Example: `@Todo` Annotation
+Let's create an annotation to mark pending parts of the code.
 
 ### 30.1. `Todo.java`
 
@@ -893,7 +891,7 @@ public @interface Todo {
 }
 ```
 
-### 30.2. Uso
+### 30.2. Use
 
 ```java
 @Todo(value = "Review validation rules", author = "Laura")
@@ -907,30 +905,30 @@ public class UserService {
 
 ---
 
-## 31. Introducción a reflexión
+## 31. Introduction to reflection
 
-La **reflexión** permite inspeccionar clases, métodos y atributos en tiempo de ejecución.
+**Reflection** allows classes, methods, and attributes to be inspected at runtime.
 
-Con reflexión puedes preguntar cosas como:
+With reflection you can ask things like:
 
-- qué métodos tiene una clase
-- qué atributos tiene
-- qué anotaciones tiene
-- qué constructores existen
+- what methods does a class have
+- what attributes does it have
+- what notes does it have
+- what constructors exist
 
-Las anotaciones con:
+The annotations with:
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
 ```
 
-pueden leerse mediante reflexión.
+They can be read by reflection.
 
 ---
 
-## 32. Leer una anotación de una clase
+## 32. Read a class annotation
 
-Supongamos esta anotación:
+Let's assume this annotation:
 
 ```java
 import java.lang.annotation.Retention;
@@ -941,7 +939,7 @@ public @interface Important {
 }
 ```
 
-Clase anotada:
+Annotated class:
 
 ```java
 @Important
@@ -949,7 +947,7 @@ public class UserService {
 }
 ```
 
-Lectura:
+Reading:
 
 ```java
 public class Main {
@@ -963,7 +961,7 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 true
@@ -971,9 +969,9 @@ true
 
 ---
 
-## 33. Leer valores de una anotación
+## 33. Read values from an annotation
 
-Anotación:
+Annotation:
 
 ```java
 import java.lang.annotation.Retention;
@@ -985,7 +983,7 @@ public @interface Author {
 }
 ```
 
-Clase:
+Class:
 
 ```java
 @Author(name = "Laura")
@@ -993,7 +991,7 @@ public class Report {
 }
 ```
 
-Lectura:
+Reading:
 
 ```java
 public class Main {
@@ -1009,7 +1007,7 @@ public class Main {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Laura
@@ -1017,9 +1015,9 @@ Laura
 
 ---
 
-## 34. Leer anotaciones de métodos
+## 34. Read method annotations
 
-Anotación:
+Annotation:
 
 ```java
 import java.lang.annotation.ElementType;
@@ -1033,7 +1031,7 @@ public @interface Run {
 }
 ```
 
-Clase:
+Class:
 
 ```java
 public class TaskService {
@@ -1048,7 +1046,7 @@ public class TaskService {
 }
 ```
 
-Lectura:
+Reading:
 
 ```java
 import java.lang.reflect.Method;
@@ -1066,7 +1064,7 @@ public class Main {
 }
 ```
 
-Resultado aproximado:
+Approximate result:
 
 ```text
 Method with @Run: task1
@@ -1074,9 +1072,9 @@ Method with @Run: task1
 
 ---
 
-## 35. Ejecutar métodos marcados con una anotación
+## 35. Execute methods marked with an annotation
 
-Este ejemplo es más avanzado, pero ayuda a entender cómo funcionan herramientas como JUnit.
+This example is more advanced, but it helps understand how tools like JUnit work.
 
 ```java
 import java.lang.reflect.Method;
@@ -1100,7 +1098,7 @@ public class Main {
 }
 ```
 
-Clase:
+Class:
 
 ```java
 public class TaskService {
@@ -1115,27 +1113,27 @@ public class TaskService {
 }
 ```
 
-Resultado:
+Result:
 
 ```text
 Running task 1
 ```
 
-Este es un ejemplo muy sencillo de cómo una herramienta puede buscar anotaciones y actuar según ellas.
+This is a very simple example of how a tool can search for annotations and act on them.
 
 ---
 
-## 36. Anotaciones repetibles
+## 36. Repeatable annotations
 
-Java permite que una misma anotación pueda repetirse sobre el mismo elemento si está preparada para ello.
+Java allows the same annotation to be repeated on the same element if it is prepared for it.
 
-Esto se hace con:
+This is done with:
 
 ```java
 @Repeatable
 ```
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 @Tag("java")
@@ -1144,24 +1142,24 @@ public class Course {
 }
 ```
 
-Este tema es más avanzado, pero conviene saber que existe.
+This topic is more advanced, but it is worth knowing that it exists.
 
 ---
 
-## 37. Meta-anotaciones
+## 37. Meta-annotations
 
-Una meta-anotación es una anotación aplicada a otra anotación.
+A meta-annotation is an annotation applied to another annotation.
 
-Ya has visto dos:
+You have already seen two:
 
 ```java
 @Retention(...)
 @Target(...)
 ```
 
-Estas no anotan clases de negocio directamente, sino que configuran cómo funciona una anotación propia.
+These do not annotate business classes directly, but rather configure how their own annotation works.
 
-Ejemplo:
+Example:
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
@@ -1170,15 +1168,15 @@ public @interface Entity {
 }
 ```
 
-Aquí `@Retention` y `@Target` son meta-anotaciones.
+Here `@Retention` and `@Target` are meta-annotations.
 
 ---
 
-## 38. Anotaciones y records
+## 38. Annotations and records
 
-También puedes usar anotaciones con records.
+You can also use annotations with records.
 
-Ejemplo:
+Example:
 
 ```java
 @Deprecated
@@ -1186,16 +1184,16 @@ public record OldUser(String name, String email) {
 }
 ```
 
-También puedes anotar componentes:
+You can also write down components:
 
 ```java
 public record User(@Deprecated String name, String email) {
 }
 ```
 
-En frameworks, esto puede ser muy útil para validaciones o serialización.
+In frameworks, this can be very useful for validations or serialization.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 public record UserRequest(
@@ -1207,11 +1205,11 @@ public record UserRequest(
 
 ---
 
-## 39. Anotaciones y módulos
+## 39. Annotations and modules
 
-En proyectos modulares, algunas herramientas que leen anotaciones mediante reflexión pueden necesitar que abras paquetes con `opens`.
+In modular projects, some tools that read annotations using reflection may require you to open packages with `opens`.
 
-Ejemplo:
+Example:
 
 ```java
 module com.amazaing.app {
@@ -1219,17 +1217,17 @@ module com.amazaing.app {
 }
 ```
 
-Esto permite que ciertos frameworks puedan inspeccionar clases y anotaciones en tiempo de ejecución.
+This allows certain frameworks to inspect classes and annotations at runtime.
 
-A nivel inicial, recuerda esta idea:
+At an initial level, remember this idea:
 
-- si un framework usa reflexión, puede necesitar acceso especial en proyectos modulares
+- if a framework uses reflection, it may need special access in modular projects
 
 ---
 
-## 40. Ejemplo completo: mini sistema de tareas
+## 40. Complete example: mini task system
 
-Vamos a crear una anotación para marcar métodos que deben ejecutarse.
+Let's create an annotation to mark methods that need to be executed.
 
 ### 40.1. `RunTask.java`
 
@@ -1294,7 +1292,7 @@ public class Main {
 }
 ```
 
-Resultado aproximado:
+Approximate result:
 
 ```text
 Running: Clean temporary files
@@ -1305,7 +1303,7 @@ Sending report...
 
 ---
 
-## 41. Ejemplo completo: anotación para roles
+## 41. Complete example: annotation for roles
 
 ### 41.1. `RequiresRole.java`
 
@@ -1338,7 +1336,7 @@ public class AdminService {
 }
 ```
 
-### 41.3. Lectura simple
+### 41.3. Simple reading
 
 ```java
 import java.lang.reflect.Method;
@@ -1358,22 +1356,21 @@ public class Main {
 }
 ```
 
-Este ejemplo no implementa seguridad real, pero muestra cómo una anotación puede describir requisitos.
+This example does not implement actual security, but shows how an annotation can describe requirements.
 
 ---
 
-## 42. Cuándo crear anotaciones propias
+## 42. When to create your own annotations
+Creating your own annotations can make sense when you want to:
 
-Crear anotaciones propias puede tener sentido cuando quieres:
+- mark classes or methods
+- add readable metadata
+- create internal mini tools
+- configure behavior
+- avoid repetitive code
+- design a small declarative API
 
-- marcar clases o métodos
-- añadir metadatos legibles
-- crear mini herramientas internas
-- configurar comportamiento
-- evitar código repetitivo
-- diseñar una pequeña API declarativa
-
-Ejemplo:
+Example:
 
 ```java
 @RequiresRole("ADMIN")
@@ -1381,31 +1378,31 @@ public void deleteUser() {
 }
 ```
 
-Esto comunica intención de forma clara.
+This communicates intent clearly.
 
 ---
 
-## 43. Cuándo no crear anotaciones propias
+## 43. When not to create your own annotations
 
-No siempre necesitas anotaciones propias.
+You don't always need your own notes.
 
-Evítalas si:
+Avoid them if:
 
-- una interfaz normal sería más clara
-- un método normal sería suficiente
-- solo vas a usarlas una vez
-- complican el código sin aportar valor
-- no hay ninguna herramienta o código que las lea
+- a normal interface would be clearer
+- a normal method would be sufficient
+- you're only going to use them once
+- they complicate the code without adding value
+- there is no tool or code that reads them
 
-Recuerda:
+Remember:
 
-> una anotación solo es útil si alguien la interpreta.
+> an annotation is only useful if someone interprets it.
 
 ---
 
-## 44. Anotaciones vs comentarios
+## 44. Annotations vs comments
 
-Un comentario es solo texto para humanos.
+A comment is just text for humans.
 
 ```java
 // This method requires admin role
@@ -1413,7 +1410,7 @@ public void deleteUser() {
 }
 ```
 
-Una anotación puede ser leída por herramientas o por el programa.
+An annotation can be read by tools or by the program.
 
 ```java
 @RequiresRole("ADMIN")
@@ -1421,85 +1418,85 @@ public void deleteUser() {
 }
 ```
 
-La diferencia clave es:
+The key difference is:
 
-- comentario → información informal
-- anotación → metadato estructurado
+- comment → informal information
+- annotation → structured metadata
 
 ---
 
-## 45. Errores típicos al empezar
+## 45. Typical mistakes when starting
 
-### 45.1. Pensar que una anotación ejecuta código por sí sola
+### 45.1. Thinking that an annotation executes code on its own
 
-No lo hace.  
-Alguien debe leerla e interpretarla.
+It doesn't.  
+Someone must read it and interpret it.
 
-### 45.2. Olvidar `@Retention(RetentionPolicy.RUNTIME)`
+### 45.2. Forget `@Retention(RetentionPolicy.RUNTIME)`
 
-Si quieres leer la anotación con reflexión en ejecución, necesitas:
+If you want to read the annotation with reflection running, you need:
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
 ```
 
-### 45.3. Usar mal `@Target`
+### 45.3. Misuse `@Target`
 
-Si defines:
+If you define:
 
 ```java
 @Target(ElementType.METHOD)
 ```
 
-no podrás aplicar esa anotación a una clase.
+you will not be able to apply that annotation to a class.
 
-### 45.4. Abusar de `@SuppressWarnings`
+### 45.4. Abuse `@SuppressWarnings`
 
-Puede ocultar problemas reales.
+It can hide real problems.
 
-### 45.5. Crear anotaciones innecesarias
+### 45.5. Create unnecessary annotations
 
-No todo necesita una anotación propia.
-
----
-
-## 46. Buenas prácticas
-
-- Usa `@Override` siempre que sobrescribas métodos.
-- Usa `@FunctionalInterface` en interfaces pensadas para lambdas.
-- Usa `@Deprecated` para marcar código que no debería usarse en nuevas versiones.
-- Usa `@SuppressWarnings` solo cuando entiendas la advertencia.
-- Define `@Retention` y `@Target` en tus anotaciones propias.
-- Usa `RetentionPolicy.RUNTIME` solo si necesitas leer la anotación en ejecución.
-- Elige nombres claros para tus anotaciones.
-- Crea anotaciones propias solo si aportan claridad o funcionalidad real.
-- Recuerda que las anotaciones son metadatos, no lógica de negocio por sí solas.
+Not everything needs its own annotation.
 
 ---
 
-## 47. A tener en cuenta
+## 46. Good practices
 
-- Las anotaciones empiezan por `@`.
-- Añaden metadatos al código.
-- Pueden ser leídas por Java, herramientas, frameworks o reflexión.
-- `@Override` ayuda a evitar errores al sobrescribir métodos.
-- `@Deprecated` marca código obsoleto.
-- `@SuppressWarnings` oculta advertencias concretas.
-- `@FunctionalInterface` marca interfaces funcionales.
-- Puedes crear anotaciones propias con `@interface`.
-- `@Retention` indica cuánto tiempo se conserva una anotación.
-- `@Target` indica dónde puede usarse.
-- Para leer anotaciones en ejecución necesitas reflexión y `RetentionPolicy.RUNTIME`.
+- Use `@Override` whenever you override methods.
+- Use `@FunctionalInterface` in interfaces designed for lambdas.
+- Use `@Deprecated` to mark code that should not be used in new versions.
+- Use `@SuppressWarnings` only when you understand the warning.
+- Define `@Retention` and `@Target` in your own annotations.
+- Use `RetentionPolicy.RUNTIME` only if you need to read the running annotation.
+- Choose clear names for your annotations.
+- Create your own annotations only if they provide clarity or real functionality.
+- Remember that annotations are metadata, not business logic alone.
 
 ---
 
-## 48. Resumen final
+## 47. To take into account
 
-Las anotaciones son una herramienta muy importante en Java moderno.
+- The annotations begin with `@`.
+- Add metadata to the code.
+- They can be read by Java, tools, frameworks or reflection.
+- `@Override` helps avoid errors when overriding methods.
+- `@Deprecated` marks obsolete code.
+- `@SuppressWarnings` hides specific warnings.
+- `@FunctionalInterface` marks functional interfaces.
+- You can create your own annotations with `@interface`.
+- `@Retention` indicates how long an annotation is kept.
+- `@Target` indicates where it can be used.
+- To read running notes you need reflection and `RetentionPolicy.RUNTIME`.
 
-Permiten añadir información extra al código de una forma estructurada.
+---
 
-Algunas anotaciones ayudan al compilador:
+## 48. Final summary
+
+Annotations are a very important tool in modern Java.
+
+They allow extra information to be added to the code in a structured way.
+
+Some annotations help the compiler:
 
 ```java
 @Override
@@ -1508,7 +1505,7 @@ Algunas anotaciones ayudan al compilador:
 @FunctionalInterface
 ```
 
-Otras son usadas por frameworks:
+Others are used by frameworks:
 
 ```java
 @Test
@@ -1517,19 +1514,18 @@ Otras son usadas por frameworks:
 @Entity
 ```
 
-Y también puedes crear tus propias anotaciones:
+And you can also create your own annotations:
 
 ```java
 public @interface Important {
 }
 ```
 
-La idea principal es:
+The main idea is:
+> an annotation describes something about the code, but needs some tool or logic to interpret it.
 
-> una anotación describe algo sobre el código, pero necesita que alguna herramienta o lógica la interprete.
-
-Dominar las anotaciones te ayudará a entender mejor muchas librerías y frameworks de Java, además de permitirte crear código más expresivo cuando tenga sentido.
+Mastering annotations will help you better understand many Java libraries and frameworks, as well as allowing you to create more expressive code when it makes sense.
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos **Módulos y Java Moderno**, donde aprenderás cómo organizar proyectos con el sistema de módulos y conocerás algunas ideas actuales del ecosistema Java.
+In the next topic we will continue advancing with modern Java and we will see **Modules and Modern Java**, where you will learn how to organize projects with the module system and you will learn about some current ideas of the Java ecosystem.

@@ -1,21 +1,21 @@
-# **Ejercicios - Tema 15: Fetch API**
+# **Exercises - Topic 15: Fetch API**
 
-A continuación, encontrarás **10 ejercicios prácticos** para trabajar con **Fetch API** en React, combinándolo con `useEffect` y manejo de estados (`loading`, `error`, `data`).
+Below you will find **10 practical exercises** to work with **Fetch API** in React, combining it with `useEffect` and state management (`loading`, `error`, `data`).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: GET básico con estados (lista de títulos)**
+## **Exercise 1: Basic GET with states (list of titles)**
 
-Crea un componente `PostsTitles.jsx` que:
+Create an `PostsTitles.jsx` component that:
 
-- Haga un GET a: `https://jsonplaceholder.typicode.com/posts`
-- Guarde la respuesta en estado `posts`.
-- Use `isLoading` y `error`.
-- Renderice solo los **primeros 5 títulos** (`post.title`) en una lista.
+- Make a GET to: `https://jsonplaceholder.typicode.com/posts`
+- Save the response in state `posts`.
+- Use `isLoading` and `error`.
+- Render only the **first 5 titles** (`post.title`) in a list.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -67,9 +67,9 @@ export default PostsTitles;
 
 ---
 
-## **Ejercicio 2: `response.ok` obligatorio**
+## **Exercise 2: `response.ok` required**
 
-Completa este componente para que lance error si la respuesta no es OK:
+Complete this component so that it throws an error if the response is not OK:
 
 ```js
 import { useEffect, useState } from "react";
@@ -96,7 +96,7 @@ function UsersLoader() {
 export default UsersLoader;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -131,14 +131,14 @@ export default UsersLoader;
 
 ---
 
-## **Ejercicio 3: Manejo de error (simular 404)**
+## **Exercise 3: Error handling (simulate 404)**
 
-Crea un componente `BrokenRequest.jsx` que haga un fetch a una URL incorrecta (por ejemplo: `https://jsonplaceholder.typicode.com/invalid-route`).
+Create an `BrokenRequest.jsx` component that fetches an incorrect URL (for example: `https://jsonplaceholder.typicode.com/invalid-route`).
 
-- Debe mostrar `Loading...` mientras carga.
-- Si falla, debe mostrar: `Error: ...`.
+- Should show `Loading...` while charging.
+- If it fails, it should display: `Error: ...`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -182,9 +182,9 @@ export default BrokenRequest;
 
 ---
 
-## **Ejercicio 4: Convertir `.then()` a `async/await`**
+## **Exercise 4: Convert `.then()` to `async/await`**
 
-Reescribe este código usando `async/await` dentro de `useEffect`:
+Rewrite this code using `async/await` inside `useEffect`:
 
 ```js
 useEffect(() => {
@@ -194,7 +194,7 @@ useEffect(() => {
 }, []);
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 useEffect(() => {
@@ -212,15 +212,15 @@ useEffect(() => {
 
 ---
 
-## **Ejercicio 5: Evitar `setState` si se desmonta (ignore flag)**
+## **Exercise 5: Avoid `setState` if it is unmounted (ignore flag)**
 
-Crea un componente `SafeAlbums.jsx` que:
+Create an `SafeAlbums.jsx` component that:
 
-- Haga fetch a `https://jsonplaceholder.typicode.com/albums`.
-- Use un flag `shouldIgnore` para evitar `setAlbums(data)` si el componente se desmonta.
-- Renderice `p` con: `Albums: X`.
+- Fetch `https://jsonplaceholder.typicode.com/albums`.
+- Use an `shouldIgnore` flag to avoid `setAlbums(data)` if the component is unmounted.
+- Render `p` with: `Albums: X`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -259,16 +259,16 @@ export default SafeAlbums;
 
 ---
 
-## **Ejercicio 6: `finally` para asegurar que loading se apaga**
+## **Exercise 6: `finally` to ensure loading is turned off**
 
-Crea un componente `TodosCount.jsx` que:
+Create an `TodosCount.jsx` component that:
 
-- Haga GET a `https://jsonplaceholder.typicode.com/todos`.
-- Muestre `Loading...` mientras carga.
-- Use `try/catch/finally` para garantizar `setIsLoading(false)`.
-- Al terminar, muestre `Todos: X`.
+- GET `https://jsonplaceholder.typicode.com/todos`.
+- Show `Loading...` while charging.
+- Use `try/catch/finally` to guarantee `setIsLoading(false)`.
+- When finished, display `Todos: X`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -314,19 +314,19 @@ export default TodosCount;
 
 ---
 
-## **Ejercicio 7: Fetch dependiente de estado (cambia el id)**
+## **Exercise 7: State-dependent Fetch (change the id)**
 
-Crea un componente `UserById.jsx` con:
+Create an `UserById.jsx` component with:
 
-- Estado `userId` inicial `1`.
-- Un botón **Next** que aumente `userId`.
-- Un `useEffect` que haga fetch a:
+- Initial `userId` state `1`.
+- A **Next** button that increases `userId`.
+- An `useEffect` that fetches:
 
   - `https://jsonplaceholder.typicode.com/users/{userId}`
 
-- Renderiza el nombre del usuario.
+- Renders the user's name.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -378,25 +378,25 @@ export default UserById;
 
 ---
 
-## **Ejercicio 8: POST (simulación) con JSON**
+## **Exercise 8: POST (simulation) with JSON**
 
-Crea una función `createPost` que haga un POST a:
+Create a function `createPost` that makes a POST to:
 
 - `https://jsonplaceholder.typicode.com/posts`
 
-Enviando:
+Sending:
 
 ```js
 { title: "Hello", body: "World", userId: 1 }
 ```
 
-Debes incluir:
+You must include:
 
 - `method: "POST"`
-- `headers` con `Content-Type`
-- `body` con `JSON.stringify(...)`
+- `headers` with `Content-Type`
+- `body` with `JSON.stringify(...)`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const createPost = async () => {
@@ -423,17 +423,16 @@ const createPost = async () => {
 
 ---
 
-## **Ejercicio 9: Mostrar estados en el JSX (3 casos)**
+## **Exercise 9: Show states in JSX (3 cases)**
 
-Escribe el patrón de renderizado para:
+Write the rendering pattern for:
 
 - loading
 - error
-- success
+-success
 
-En este orden, usando returns tempranos.
-
-<details><summary>Mostrar Solución</summary>
+In this order, using early returns.
+<details><summary>Show Solution</summary>
 
 ```js
 if (isLoading) {
@@ -451,9 +450,9 @@ return <div>Success</div>;
 
 ---
 
-## **Ejercicio 10: Corregir `useEffect` con async directo**
+## **Exercise 10: Correct `useEffect` with direct async**
 
-Este código es una mala práctica. Reescríbelo con el patrón recomendado:
+This code is bad practice. Rewrite it with the recommended pattern:
 
 ```js
 useEffect(async () => {
@@ -463,7 +462,7 @@ useEffect(async () => {
 }, []);
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 useEffect(() => {

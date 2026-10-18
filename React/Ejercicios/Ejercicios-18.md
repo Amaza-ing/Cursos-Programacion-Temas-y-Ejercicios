@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 18: React Router**
+# **Exercises - Topic 18: React Router**
 
-A continuación, encontrarás **10 ejercicios prácticos** para aprender a trabajar con **React Router v6**, definiendo rutas, páginas y navegación.
+Below, you will find **10 practical exercises** to learn how to work with **React Router v6**, defining routes, pages and navigation.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Instalar y configurar React Router**
+## **Exercise 1: Install and configure React Router**
 
-Instala React Router en tu proyecto y configura `BrowserRouter` envolviendo la app en `main.jsx` o `index.jsx`.
+Install React Router in your project and configure `BrowserRouter` by wrapping the app in `main.jsx` or `index.jsx`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```bash
 npm install react-router-dom
@@ -33,14 +33,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 ---
 
-## **Ejercicio 2: Crear dos páginas**
+## **Exercise 2: Create two pages**
 
-Crea una carpeta `pages` con dos componentes:
+Create an `pages` folder with two components:
 
-- `Home.jsx` → muestra `Home page`
-- `About.jsx` → muestra `About page`
+- `Home.jsx` → shows `Home page`
+- `About.jsx` → shows `About page`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Home() {
@@ -62,14 +62,14 @@ export default About;
 
 ---
 
-## **Ejercicio 3: Definir rutas básicas**
+## **Exercise 3: Define basic routes**
 
-Configura las rutas en `App.jsx`:
+Configure the routes in `App.jsx`:
 
 - `/` → `Home`
 - `/about` → `About`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -92,14 +92,14 @@ export default App;
 
 ---
 
-## **Ejercicio 4: Navegar con `Link`**
+## **Exercise 4: Browse with `Link`**
 
-Crea un componente `Nav.jsx` que:
+Create an `Nav.jsx` component that:
 
-- Tenga dos enlaces: **Home** y **About**.
-- Use `Link` (no `<a>`).
+- Have two links: **Home** and **About**.
+- Use `Link` (not `<a>`).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { Link } from "react-router-dom";
@@ -120,11 +120,11 @@ export default Nav;
 
 ---
 
-## **Ejercicio 5: Mostrar la navegación en todas las páginas**
+## **Exercise 5: Show navigation on all pages**
 
-Incluye `Nav` en `App.jsx` para que se muestre siempre, independientemente de la ruta.
+Include `Nav` in `App.jsx` so that it is always displayed, regardless of the path.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function App() {
@@ -144,11 +144,11 @@ function App() {
 
 ---
 
-## **Ejercicio 6: Ruta 404**
+## **Exercise 6: Route 404**
 
-Crea un componente `NotFound.jsx` y configúralo para que se muestre cuando la ruta no exista.
+Create an `NotFound.jsx` component and configure it to display when the route does not exist.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function NotFound() {
@@ -166,11 +166,11 @@ export default NotFound;
 
 ---
 
-## **Ejercicio 7: Navegación programática con `useNavigate`**
+## **Exercise 7: Programmatic navigation with `useNavigate`**
 
-Crea un componente `Login.jsx` con un botón **Login** que, al hacer click, redirija a `/`.
+Create an `Login.jsx` component with a **Login** button that, when clicked, redirects to `/`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useNavigate } from "react-router-dom";
@@ -192,11 +192,11 @@ export default Login;
 
 ---
 
-## **Ejercicio 8: Añadir una nueva ruta**
+## **Exercise 8: Add a new route**
 
-Añade una página `Profile.jsx` y crea la ruta `/profile`.
+Add an `Profile.jsx` page and create the route `/profile`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Profile() {
@@ -214,11 +214,11 @@ export default Profile;
 
 ---
 
-## **Ejercicio 9: Redirigir tras una acción**
+## **Exercise 9: Redirect after an action**
 
-Modifica el componente `Login.jsx` para que, tras hacer login, redirija a `/profile`.
+Modify the `Login.jsx` component so that, after login, it redirects to `/profile`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const handleLogin = () => {
@@ -230,16 +230,16 @@ const handleLogin = () => {
 
 ---
 
-## **Ejercicio 10: Mini‑estructura de una app con rutas**
+## **Exercise 10: Mini-structure of an app with routes**
 
-Describe la estructura de carpetas de una app con React Router que tenga:
+Describes the folder structure of a React Router app that has:
 
 - `Home`
 - `Login`
 - `Profile`
 - `NotFound`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```
 src/

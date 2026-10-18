@@ -1,40 +1,40 @@
-# **Tema 6: Uso de `git stash` para gestionar cambios temporales**
+# **Topic 6: Using `git stash` to manage temporary changes**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Durante el desarrollo, es común realizar cambios en el código antes de estar listos para un commit. Sin embargo, a veces es necesario cambiar de rama o actualizar el código sin perder el trabajo en curso. En estos casos, Git proporciona el comando `git stash` para guardar temporalmente los cambios sin comprometerlos.
+During development, it is common to make changes to the code before it is ready for a commit. However, sometimes it is necessary to switch branches or update code without losing work in progress. In these cases, Git provides the `git stash` command to temporarily save the changes without committing them.
 
-### **Beneficios de `git stash`**
+### **Benefits of `git stash`**
 
-- Permite guardar cambios temporalmente sin necesidad de un commit.
-- Facilita el cambio entre ramas sin perder modificaciones no confirmadas.
-- Evita la creación de commits innecesarios en la historia del repositorio.
+- Allows you to save changes temporarily without the need for a commit.
+- Facilitates switching between branches without losing uncommitted modifications.
+- Avoid creating unnecessary commits in the history of the repository.
 
 ---
 
-## **2. Guardar cambios con `git stash`**
+## **2. Save changes with `git stash`**
 
-Para almacenar los cambios actuales en la pila de `stash`:
+To store the current changes to the `stash` stack:
 
 ```bash
 git stash
 ```
 
-Esto guarda los archivos modificados y los restaura al último commit limpio.
+This saves the modified files and restores them to the last clean commit.
 
-Si se quiere añadir una descripción para recordar los cambios guardados:
+If you want to add a description to remember the saved changes:
 
 ```bash
 git stash push -m "Descripción de los cambios"
 ```
 
-Para verificar la lista de stashes almacenados:
+To check the list of stored stashes:
 
 ```bash
 git stash list
 ```
 
-Ejemplo de salida:
+Output example:
 
 ```
 stash@{0}: On master: Corrección de bug en la API
@@ -43,31 +43,31 @@ stash@{1}: On master: Inicio de nueva funcionalidad
 
 ---
 
-## **3. Recuperar cambios de `git stash`**
+## **3. Recover changes from `git stash`**
 
-### **Aplicar los últimos cambios guardados**
+### **Apply last saved changes**
 
 ```bash
 git stash apply
 ```
 
-Esto recupera los cambios del último `stash`, pero no los elimina de la lista.
+This recovers the changes from the last `stash`, but does not remove them from the list.
 
-Para aplicar un `stash` específico:
+To apply a specific `stash`:
 
 ```bash
 git stash apply stash@{1}
 ```
 
-### **Aplicar y eliminar un stash**
+### **Apply and remove a stash**
 
-Si se desea recuperar los cambios y eliminarlos de la lista automáticamente:
+If you want to recover the changes and remove them from the list automatically:
 
 ```bash
 git stash pop
 ```
 
-Esto es equivalente a `apply` seguido de `drop`.
+This is equivalent to `apply` followed by `drop`.
 
 ---
 
@@ -75,43 +75,43 @@ Esto es equivalente a `apply` seguido de `drop`.
 
 ---
 
-## **4. Eliminar un `stash` específico o todos los guardados**
+## **4. Delete a specific `stash` or all saved ones**
 
-Si un `stash` ya no es necesario, se puede eliminar con:
+If an `stash` is no longer needed, it can be removed with:
 
 ```bash
 git stash drop stash@{0}
 ```
 
-Para eliminar todos los stashes almacenados:
+To delete all stored stashes:
 
 ```bash
 git stash clear
 ```
 
-> **Nota:** Esta operación no se puede deshacer.
+> **Note:** This operation cannot be undone.
 
 ---
 
-## **5. Crear una nueva rama a partir de un `stash`**
+## **5. Create a new branch from an `stash`**
 
-Si los cambios guardados necesitan una nueva rama:
+If your saved changes need a new branch:
 
 ```bash
 git stash branch nueva-rama stash@{0}
 ```
 
-Esto crea `nueva-rama` con los cambios almacenados en `stash@{0}` y cambia automáticamente a esta nueva rama.
+This creates `nueva-rama` with the changes stored in `stash@{0}` and automatically switches to this new branch.
 
 ---
 
-## **6. Buenas prácticas al usar `git stash`**
+## **6. Good practices when using `git stash`**
 
-- Usar `git stash push -m "Descripción"` para documentar los cambios guardados.
-- Antes de aplicar un `stash`, verificar su contenido con `git stash show -p`.
-- Evitar acumular demasiados `stash` sin gestionarlos adecuadamente.
-- Usar `git stash pop` solo si se está seguro de que los cambios aplicados no generarán conflictos.
+- Use `git stash push -m "Descripción"` to document saved changes.
+- Before applying an `stash`, verify its content with `git stash show -p`.
+- Avoid accumulating too many `stash` without managing them properly.
+- Use `git stash pop` only if you are sure that the changes applied will not generate conflicts.
 
 ---
 
-En el próximo tema, exploraremos **cómo usar `git rebase` para mantener un historial de commits limpio y organizado**.
+In the next topic, we will explore **how to use `git rebase` to maintain a clean and organized commit history**.

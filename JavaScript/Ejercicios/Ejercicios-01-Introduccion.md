@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 1: Introducción a JavaScript**
+# **Exercises - Topic 1: Introduction to JavaScript**
 
-A continuación, encontrarás 4 ejercicios prácticos sobre los fundamentos de JavaScript.
+Below you will find 4 practical exercises on the fundamentals of JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Hola Mundo**
+### **Exercise 1: Hello World**
 
-Crea un programa que muestre el mensaje "¡Hola, mundo!" en la consola.
+Create a program that displays the message "Hello, world!" on the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 console.log("¡Hola, mundo!");
@@ -20,11 +20,11 @@ console.log("¡Hola, mundo!");
 
 ---
 
-### **Ejercicio 2: Declaración de Variables**
+### **Exercise 2: Declaration of Variables**
 
-Declara dos variables llamadas `firstName` y `lastName`, asígnales tus nombres y apellidos, y muestra el mensaje "Hola, [firstName] [lastName]!" en la consola.
+Declare two variables named `firstName` and `lastName`, give them your first and last names, and display the message "Hello, [firstName] [lastName]!" on the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const firstName = "Sara";
@@ -37,11 +37,11 @@ console.log("Hola " + firstName + lastName");
 
 ---
 
-### **Ejercicio 3: Condicionales**
+### **Exercise 3: Conditionals**
 
-Crea un programa que verifique si una persona es mayor de edad. Pide al usuario su edad (usa `prompt`) y muestra un mensaje indicando si es mayor o menor de edad.
+Create a program that verifies if a person is of legal age. Asks the user for their age (use `prompt`) and displays a message indicating whether they are older or younger.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const age = prompt("Introduce tu edad:");
@@ -57,11 +57,11 @@ if (age >= 18) {
 
 ---
 
-### **Ejercicio 4: Bucle For**
+### **Exercise 4: For Loop**
 
-Muestra en la consola los números del 1 al 10 utilizando un bucle `for`.
+Display the numbers 1 to 10 on the console using an `for` loop.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 for (let i = 1; i <= 10; i++) {

@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 15: Realización de Peticiones HTTP con `HttpClient`**
+# **Exercises - Topic 15: Making HTTP Requests with `HttpClient`**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre cómo realizar peticiones HTTP en Angular usando `HttpClient`.
+Below you will find exercises on how to make HTTP requests in Angular using `HttpClient`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Realizar una Petición GET**
+### **Exercise 1: Make a GET Request**
 
-Crea un servicio `UserService` que realice una petición GET para obtener una lista de usuarios desde `https://jsonplaceholder.typicode.com/users`.
+Create an `UserService` service that performs a GET request to obtain a list of users from `https://jsonplaceholder.typicode.com/users`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `user.service.ts`**
+#### **File: `user.service.ts`**
 
 ```ts
 import { Injectable } from "@angular/core";
@@ -34,7 +34,8 @@ export class UserService {
 }
 ```
 
-#### **Archivo: `user.component.ts`**
+
+#### **File: `user.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -65,7 +66,8 @@ export class UserComponent implements OnInit {
 }
 ```
 
-#### **Archivo: `user.component.html`**
+
+#### **File: `user.component.html`**
 
 ```html
 <h2>Usuarios</h2>
@@ -76,17 +78,18 @@ export class UserComponent implements OnInit {
 </ul>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Realizar una Petición POST**
+### **Exercise 2: Make a POST Request**
 
-Crea un formulario para agregar un nuevo usuario usando una petición POST.
+Create a form to add a new user using a POST request.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `user.service.ts`**
+#### **File: `user.service.ts`**
 
 ```ts
 addUser(user: { name: string; email: string }): Observable<any> {
@@ -94,7 +97,8 @@ addUser(user: { name: string; email: string }): Observable<any> {
 }
 ```
 
-#### **Archivo: `user.component.ts`**
+
+#### **File: `user.component.ts`**
 
 ```ts
 newUser = { name: '', email: '' };
@@ -112,7 +116,8 @@ addNewUser() {
 }
 ```
 
-#### **Archivo: `user.component.html`**
+
+#### **File: `user.component.html`**
 
 ```html
 <h2>Añadir Nuevo Usuario</h2>
@@ -121,17 +126,18 @@ addNewUser() {
 <button (click)="addNewUser()">Agregar</button>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Realizar una Petición PUT**
+### **Exercise 3: Make a PUT Request**
 
-Actualiza un usuario existente usando una petición PUT.
+Updates an existing user using a PUT request.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `user.service.ts`**
+#### **File: `user.service.ts`**
 
 ```ts
 updateUser(id: number, user: { name: string; email: string }): Observable<any> {
@@ -139,7 +145,8 @@ updateUser(id: number, user: { name: string; email: string }): Observable<any> {
 }
 ```
 
-#### **Archivo: `user.component.ts`**
+
+#### **File: `user.component.ts`**
 
 ```ts
 updateExistingUser() {
@@ -155,23 +162,25 @@ updateExistingUser() {
 }
 ```
 
-#### **Archivo: `user.component.html`**
+
+#### **File: `user.component.html`**
 
 ```html
 <button (click)="updateExistingUser()">Actualizar Usuario</button>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Realizar una Petición DELETE**
+### **Exercise 4: Make a DELETE Request**
 
-Elimina un usuario existente usando una petición DELETE.
+Delete an existing user using a DELETE request.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `user.service.ts`**
+#### **File: `user.service.ts`**
 
 ```ts
 deleteUser(id: number): Observable<any> {
@@ -179,7 +188,8 @@ deleteUser(id: number): Observable<any> {
 }
 ```
 
-#### **Archivo: `user.component.ts`**
+
+#### **File: `user.component.ts`**
 
 ```ts
 deleteUser(id: number) {
@@ -195,7 +205,8 @@ deleteUser(id: number) {
 }
 ```
 
-#### **Archivo: `user.component.html`**
+
+#### **File: `user.component.html`**
 
 ```html
 <ul>
@@ -207,5 +218,6 @@ deleteUser(id: number) {
   }
 </ul>
 ```
+
 
 </details>

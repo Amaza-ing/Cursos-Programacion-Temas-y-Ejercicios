@@ -1,22 +1,22 @@
-# **Tema 19: Uso de WHILE en MySQL**
+# **Topic 19: Using WHILE in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué es un bucle `WHILE` en MySQL.
-- Utilizar `WHILE` dentro de procedimientos almacenados.
-- Controlar la ejecución repetitiva de instrucciones hasta que se cumpla una condición.
-
----
-
-## **1. ¿Qué es WHILE en MySQL?**
-
-`WHILE` es una estructura de control que permite ejecutar un bloque de instrucciones repetidamente mientras una condición sea verdadera.
-
-Se usa principalmente **dentro de procedimientos almacenados o funciones**.
+- Understand what an `WHILE` loop is in MySQL.
+- Use `WHILE` within stored procedures.
+- Control the repetitive execution of instructions until a condition is met.
 
 ---
 
-## **2. Sintaxis básica**
+## **1. What is WHILE in MySQL?**
+
+`WHILE` is a control structure that allows a block of instructions to be executed repeatedly as long as a condition is true.
+
+It is primarily used **within stored procedures or functions**.
+
+---
+
+## **2. Basic syntax**
 
 ```sql
 [etiqueta:] WHILE condición DO
@@ -24,15 +24,15 @@ Se usa principalmente **dentro de procedimientos almacenados o funciones**.
 END WHILE [etiqueta];
 ```
 
-- **condición**: Expresión lógica que se evalúa antes de cada iteración.
-- Si la condición es verdadera, se ejecuta el bloque de instrucciones.
-- Si es falsa, se sale del bucle.
+- **condition**: Logical expression that is evaluated before each iteration.
+- If the condition is true, the statement block is executed.
+- If it is false, the loop is exited.
 
 ---
 
-## **3. Ejemplo básico**
+## **3. Basic example**
 
-Contar de 1 a 5 e insertar los valores en una tabla `numbers`.
+Count from 1 to 5 and insert the values into an `numbers` table.
 
 ```sql
 DELIMITER $$
@@ -50,9 +50,9 @@ DELIMITER ;
 
 ---
 
-## **4. WHILE con condición dependiente de datos**
+## **4. WHILE with data dependent condition**
 
-Podemos usar `WHILE` para procesar registros mientras haya datos que cumplan ciertas condiciones.
+We may use `WHILE` to process records as long as there is data that meets certain conditions.
 
 ```sql
 DELIMITER $$
@@ -72,9 +72,9 @@ DELIMITER ;
 
 ---
 
-## **5. WHILE con etiqueta y LEAVE**
+## **5. WHILE with label and LEAVE**
 
-Podemos etiquetar un bucle para salir de él con `LEAVE`.
+We can tag a loop to exit it with `LEAVE`.
 
 ```sql
 DELIMITER $$
@@ -95,34 +95,34 @@ DELIMITER ;
 
 ---
 
-## **6. Diferencias con otros bucles**
+## **6. Differences from other loops**
 
-| Bucle    | Evaluación de condición   | Uso común                                              |
+| Loop | Condition Assessment | Common use |
 | -------- | ------------------------- | ------------------------------------------------------ |
-| `WHILE`  | Antes de cada iteración   | Cuando sabemos la condición de parada antes de empezar |
-| `REPEAT` | Después de cada iteración | Cuando necesitamos ejecutar al menos una vez           |
-| `LOOP`   | Manual (con `LEAVE`)      | Casos donde el fin no está definido de antemano        |
+| `WHILE` | Before each iteration | When we know the stopping condition before starting |
+| `REPEAT` | After each iteration | When we need to run at least once |
+| `LOOP` | Manual (with `LEAVE`) | Cases where the purpose is not defined in advance |
 
 ---
 
-[![Bucle WHILE](https://img.youtube.com/vi/0-bLHp3q1vw/0.jpg)](https://www.youtube.com/watch?v=0-bLHp3q1vw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![WHILE](https://img.youtube.com/vi/0-bLHp3q1vw/0.jpg) loop](https://www.youtube.com/watch?v=0-bLHp3q1vw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **7. Buenas prácticas**
+## **7. Good practices**
 
-- Evitar bucles infinitos asegurando que la condición cambie en cada iteración.
-- Usar variables para llevar control del bucle.
-- Mantener el número de iteraciones lo más bajo posible para no afectar el rendimiento.
-
----
-
-## **8. Conclusión**
-
-- `WHILE` permite ejecutar un bloque repetidamente mientras la condición sea verdadera.
-- Es útil para tareas repetitivas como insertar múltiples registros o procesar datos por lotes.
-- Controlar el flujo con `LEAVE` y etiquetas evita bucles infinitos.
+- Avoid infinite loops by ensuring that the condition changes in each iteration.
+- Use variables to control the loop.
+- Keep the number of iterations as low as possible so as not to affect performance.
 
 ---
 
-En el próximo tema aprenderemos a **usar bucles REPEAT y LOOP para iteraciones más flexibles en MySQL**.
+## **8. Conclusion**
+
+- `WHILE` allows a block to be executed repeatedly as long as the condition is true.
+- It is useful for repetitive tasks such as inserting multiple records or processing data in batches.
+- Controlling the flow with `LEAVE` and tags prevents infinite loops.
+
+---
+
+In the next topic we will learn how to **use REPEAT and LOOP loops for more flexible iterations in MySQL**.

@@ -1,35 +1,35 @@
-# **Creación de un Página Completa con React**
+# **Creating a Full Page with React**
 
-## **App de Notas**
+## **Notes App**
 
-En los siguientes videos crearemos una página web completa para una App de notas usando todo lo aprendido en este curso de React
+In the following videos we will create a complete web page for a Notes App using everything learned in this React course
 
-### Parte 1. Cómo empezar una web.
-
----
-
-[![App de Notas 1/3](https://img.youtube.com/vi/R3FDD8LNtPs/0.jpg)](https://www.youtube.com/watch?v=R3FDD8LNtPs&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+### Part 1. How to start a website.
 
 ---
 
-### Parte 2. Usando Context.
+[![Notes App 1/3](https://img.youtube.com/vi/R3FDD8LNtPs/0.jpg)](https://www.youtube.com/watch?v=R3FDD8LNtPs&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-[![App de Notas 2/3](https://img.youtube.com/vi/sqL8AVE-NTU/0.jpg)](https://www.youtube.com/watch?v=sqL8AVE-NTU&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+### Part 2. Using Context.
 
 ---
 
-### Parte 3. Conexión a una API.
+[![Notes App 2/3](https://img.youtube.com/vi/sqL8AVE-NTU/0.jpg)](https://www.youtube.com/watch?v=sqL8AVE-NTU&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-[![App de Notas 3/3](https://img.youtube.com/vi/5b-pOQxvppg/0.jpg)](https://www.youtube.com/watch?v=5b-pOQxvppg&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+### Part 3. Connecting to an API.
 
 ---
 
-### Fin de Curso y Próximos Pasos.
+[![Notes App 3/3](https://img.youtube.com/vi/5b-pOQxvppg/0.jpg)](https://www.youtube.com/watch?v=5b-pOQxvppg&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-[![Fin de Curso](https://img.youtube.com/vi/8ZxeySKICro/0.jpg)](https://www.youtube.com/watch?v=8ZxeySKICro&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+### End of Course and Next Steps.
+
+---
+
+[![End of Course](https://img.youtube.com/vi/8ZxeySKICro/0.jpg)](https://www.youtube.com/watch?v=8ZxeySKICro&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)

@@ -1,84 +1,84 @@
-# **Curso Completo de Spring MVC desde Cero**
+# **Complete Spring MVC Course from Scratch**
 
-Bienvenido al **Curso Completo de Spring MVC**, un curso diseñado para aprender a crear aplicaciones web Java paso a paso usando **Spring MVC**, **JSP**, **Tomcat**, **Maven**, **IntelliJ**, **MySQL** y **DBeaver**.
+Welcome to **Complete Spring MVC Course**, a course designed to learn how to create Java web applications step by step using **Spring MVC**, **JSP**, **Tomcat**, **Maven**, **IntelliJ**, **MySQL** and **DBeaver**.
 
-Este curso está pensado para alumnos que ya tienen una base de Java y quieren entender cómo funciona una aplicación web tradicional con Spring MVC: desde la configuración inicial hasta los controladores, vistas, formularios, validación, conexión con base de datos, gestión de errores, internacionalización y pequeñas mejoras de mantenimiento.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 La arquitectura básica de una aplicación web con Spring MVC.<br>
-🔹 El papel de `DispatcherServlet`, `web.xml` y la configuración XML.<br>
-🔹 Cómo desplegar una aplicación en Tomcat.<br>
-🔹 Cómo crear controladores con anotaciones como `@Controller`, `@GetMapping` y `@RequestMapping`.<br>
-🔹 Cómo enviar datos desde el controlador a las vistas usando `Model`.<br>
-🔹 Cómo crear vistas JSP protegidas dentro de `WEB-INF`.<br>
-🔹 Cómo procesar formularios con `@ModelAttribute`.<br>
-🔹 Cómo validar datos con `@Valid`, `BindingResult` y Jakarta Bean Validation.<br>
-🔹 Cómo conectar la aplicación con MySQL usando DBeaver, JDBC y `JdbcTemplate`.<br>
-🔹 Cómo organizar el acceso a datos mediante una capa DAO.<br>
-🔹 Cómo gestionar excepciones con `@ControllerAdvice` y `@ExceptionHandler`.<br>
-🔹 Cómo crear páginas de error personalizadas.<br>
-🔹 Cómo internacionalizar una aplicación con archivos `messages.properties`.<br>
-🔹 Cómo cambiar el idioma de la aplicación con `LocaleResolver` y `LocaleChangeInterceptor`.<br>
-🔹 Cómo añadir temas visuales claro/oscuro mediante CSS y sesión.<br>
-🔹 Cómo mejorar el proyecto con Lombok, archivos `.properties`, fragmentos JSP y atributos globales.<br>
-
-Este curso está estructurado en **temas prácticos**, con explicaciones paso a paso, código comentado y ejercicios resueltos para reforzar lo aprendido.
+This course is designed for students who already have a foundation in Java and want to understand how a traditional web application works with Spring MVC: from initial configuration to controllers, views, forms, validation, database connection, error management, internationalization and small maintenance improvements.
 
 ---
 
-## 📂 **Estructura del curso**
+## 📌 **What will you learn in this course?**
 
-Cada tema está en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes explorar los temas en la carpeta correspondiente:
+🔹 The basic architecture of a web application with Spring MVC.<br>
+🔹 The role of `DispatcherServlet`, `web.xml` and XML.<br> configuration
+🔹 How to deploy an application in Tomcat.<br>
+🔹 How to create drivers with annotations like `@Controller`, `@GetMapping` and `@RequestMapping`.<br>
+🔹 How to send data from controller to views using `Model`.<br>
+🔹 How to create protected JSP views inside `WEB-INF`.<br>
+🔹 How to process forms with `@ModelAttribute`.<br>
+🔹 How to validate data with `@Valid`, `BindingResult` and Jakarta Bean Validation.<br>
+🔹 How to connect application with MySQL using DBeaver, JDBC and `JdbcTemplate`.<br>
+🔹 How to organize data access using a DAO.<br> layer
+🔹 How to handle exceptions with `@ControllerAdvice` and `@ExceptionHandler`.<br>
+🔹 How to create custom error pages.<br>
+🔹 How to internationalize an application with `messages.properties`.<br> files
+🔹 How to change app language with `LocaleResolver` and `LocaleChangeInterceptor`.<br>
+🔹 How to add light/dark visual themes using CSS and session.<br>
+🔹 How to enhance project with Lombok, `.properties` files, JSP fragments and global.<br> attributes
 
-| 📚 Tema                                                                                              | Descripción                                                                                                                                             |
+This course is structured in **practical topics**, with step-by-step explanations, commented code and solved exercises to reinforce what has been learned.
+
+---
+
+## 📂 **Course structure**
+
+Each theme is in a **Markdown (`.md`)** file within this repository. You can explore the topics in the corresponding folder:
+
+| 📚 Theme | Description |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🚀 [Tema 1: Introducción](Temas/Tema-01-Introducción.md)                                             | Arquitectura de una aplicación web con Spring MVC, estructura del proyecto, `web.xml`, `DispatcherServlet`, configuración XML y primera vista JSP.      |
-| 🐱‍🏍 [Tema 1B: Anexo Tomcat](Temas/Tema-01b-Anexo-Tomcat.md)                                        | Instalación, configuración y uso de Tomcat para desplegar la aplicación, especialmente si se trabaja con IntelliJ Community.                            |
-| 🎛️ [Tema 2: Vistas y Controladores](Temas/Tema-02-Vistas-y-Controladores.md)                         | Creación de controladores con anotaciones, rutas, servicios, modelos, vistas JSP, `Model`, `@RequestParam` y JSTL.                                      |
-| 📝 [Tema 3: Formularios](Temas/Tema-03-Formularios.md)                                               | Procesamiento de formularios con `@ModelAttribute`, validación con `@Valid`, uso de `BindingResult`, etiquetas `<form:...>` y patrón Post-Redirect-Get. |
-| 🗄️ [Tema 4: MySQL](Temas/Tema-04-MySQL.md)                                                           | Persistencia de datos usando MySQL, DBeaver, `DataSource`, `JdbcTemplate`, DAO, consultas SQL y recuperación de claves generadas.                       |
-| 🌍 [Tema 5: Excepciones e Internacionalización](Temas/Tema-05-Excepciones-y-Internacionalización.md) | Gestión global de errores, excepciones personalizadas, páginas 404/500, internacionalización, cambio de idioma y temas visuales.                        |
-| 🛠️ [Tema 6: Mejoras](Temas/Tema-06-Mejoras.md)                                                       | Mejoras sencillas para limpiar el proyecto: Lombok, `database.properties`, fragmentos JSP reutilizables y atributos globales.                           |
+| 🚀 [topic 1: Introduction](Temas/Tema-01-Introducción.md) | Architecture of a web application with Spring MVC, project structure, `web.xml`, `DispatcherServlet`, XML configuration and JSP first view.      |
+| 🐱‍🏍 [Tem 1B: Tomcat Annex](Temas/Tema-01b-Anexo-Tomcat.md) | Installation, configuration and use of Tomcat to deploy the application, especially if working with IntelliJ Community.                            |
+| 🎛️ [Topic 2: Views and Controllers](Temas/Tema-02-Vistas-y-Controladores.md) | Creating controllers with annotations, routes, services, models, JSP views, `Model`, `@RequestParam` and JSTL.                                      |
+| 📝 [topic 3: Forms](Temas/Tema-03-Formularios.md) | Form processing with `@ModelAttribute`, validation with `@Valid`, use of `BindingResult`, `<form:...>` tags and Post-Redirect-Get pattern. |
+| 🗄️ [topic 4: MySQL](Temas/Tema-04-MySQL.md) | Data persistence using MySQL, DBeaver, `DataSource`, `JdbcTemplate`, DAO, SQL queries and recovery of generated keys.                       |
+| 🌍 [Topic 5: Exceptions and Internationalization](Temas/Tema-05-Excepciones-y-Internacionalización.md) | Global error handling, custom exceptions, 404/500 pages, internationalization, language change and visual themes.                        |
+| 🛠️ [Topic 6: Improvements](Temas/Tema-06-Mejoras.md) | Simple improvements to clean up the project: Lombok, `database.properties`, reusable JSP fragments and global attributes.                           |
 
-📌 **Para ver todos los temas disponibles, revisa la carpeta [`Temas`](Temas).**
+📌 **To see all available themes, check the [`Themes`](Temas) folder.**
 
-También puedes encontrar ejercicios resueltos en la carpeta de [`Ejercicios`](Ejercicios), si el repositorio incluye materiales prácticos.
-
----
-
-## 🧭 **Orden recomendado para seguir el curso**
-
-Se recomienda seguir los temas en este orden:
-
-1. **Tema 1: Introducción**  
-   Para entender la arquitectura base de Spring MVC y la estructura del proyecto.
-
-2. **Tema 1B: Anexo Tomcat**  
-   Para preparar el entorno de ejecución y saber cómo desplegar el proyecto.
-
-3. **Tema 2: Vistas y Controladores**  
-   Para empezar a crear rutas, controladores, modelos, servicios y vistas.
-
-4. **Tema 3: Formularios**  
-   Para aprender a recibir datos del usuario, validarlos y procesarlos correctamente.
-
-5. **Tema 4: MySQL**  
-   Para sustituir los datos en memoria por datos persistentes en una base de datos.
-
-6. **Tema 5: Excepciones e Internacionalización**  
-   Para hacer la aplicación más robusta, usable y preparada para varios idiomas.
-
-7. **Tema 6: Mejoras**  
-   Para limpiar el código y aplicar buenas prácticas sencillas de mantenimiento.
+You can also find solved exercises in the [`Exercises`](Ejercicios) folder, if the repository includes practical materials.
 
 ---
 
-## 🛠️ **Tecnologías utilizadas**
+## 🧭 **Recommended order to follow the course**
 
-Durante el curso trabajaremos con:
+It is recommended to follow the topics in this order:
+
+1. **Topic 1: Introduction**  
+   To understand the base architecture of Spring MVC and the project structure.
+
+2. **Topic 1B: Tomcat Annex**  
+   To prepare the execution environment and know how to deploy the project.
+
+3. **Topic 2: Views and Controllers**  
+   To start creating routes, controllers, models, services and views.
+
+4. **Topic 3: Forms**  
+   To learn how to receive user data, validate it and process it correctly.
+
+5. **Topic 4: MySQL**  
+   To replace in-memory data with persistent data in a database.
+
+6. **Topic 5: Exceptions and Internationalization**  
+   To make the application more robust, usable and ready for multiple languages.
+
+7. **Topic 6: Improvements**  
+   To clean up the code and apply simple good maintenance practices.
+
+---
+
+## 🛠️ **Technologies used**
+
+During the course we will work with:
 
 - **Java**
 - **Spring MVC**
@@ -100,130 +100,130 @@ Durante el curso trabajaremos con:
 
 ---
 
-## ✅ **Requisitos previos**
+## ✅ **Prerequisites**
 
-Este curso no parte desde cero absoluto en programación. Es recomendable tener:
+This course does not start from absolute zero in programming. It is advisable to have:
 
-- Conocimientos básicos de **Java**.
-- Saber crear clases, atributos, métodos, constructores, getters y setters.
-- Conocer conceptos básicos de programación orientada a objetos.
-- Saber usar HTML básico.
-- Conocer de forma general qué es una aplicación web.
-- Tener instalado un JDK compatible.
-- Tener instalado Maven o usar Maven desde IntelliJ.
-- Tener instalado Tomcat para desplegar la aplicación.
-- Tener MySQL y DBeaver si se va a realizar el tema de base de datos.
+- Basic knowledge of **Java**.
+- Know how to create classes, attributes, methods, constructors, getters and setters.
+- Know basic concepts of object-oriented programming.
+- Know how to use basic HTML.
+- Know in general terms what a web application is.
+- Have a compatible JDK installed.
+- Have Maven installed or use Maven from IntelliJ.
+- Have Tomcat installed to deploy the application.
+- Have MySQL and DBeaver if the database topic is going to be carried out.
 
-No es necesario tener experiencia previa con Spring MVC, ya que el curso explica la estructura paso a paso.
-
----
-
-## 💻 **Herramientas recomendadas**
-
-Para seguir el curso se recomienda usar:
-
-- **IntelliJ IDEA** como IDE.
-- **Apache Tomcat** como servidor.
-- **MySQL** como base de datos.
-- **DBeaver** para gestionar la base de datos.
-- **Git y GitHub** para guardar el progreso del proyecto.
-- Un navegador actualizado como Chrome, Edge o Firefox.
+It is not necessary to have previous experience with Spring MVC, as the course explains the structure step by step.
 
 ---
 
-## 📌 **Cómo usar este repositorio**
+## 💻 **Recommended tools**
 
-Puedes seguir el curso directamente desde esta página o descargar el código de GitHub en tu ordenador.
+To follow the course it is recommended to use:
 
-Este Repositorio está separado por ramas, paso a paso.
+- **IntelliJ IDEA** as IDE.
+- **Apache Tomcat** as server.
+- **MySQL** as database.
+- **DBeaver** to manage the database.
+- **Git and GitHub** to save project progress.
+- An updated browser such as Chrome, Edge or Firefox.
 
-1️⃣ **Clona el repositorio** en tu máquina local:
+---
+
+## 📌 **How to use this repository**
+
+You can follow the course directly from this page or download the code from GitHub to your computer.
+
+This Repository is separated by branches, step by step.
+
+1️⃣ **Clone the repository** on your local machine:
 
 ```bash
 git clone https://github.com/Amaza-ing/AMazaing-Spring-MVC
 ```
 
-2️⃣ **Abre el proyecto en IntelliJ**.
+2️⃣ **Open the project in IntelliJ**.
 
-3️⃣ **Revisa la carpeta `Temas`** y sigue los archivos `.md` en orden.
+3️⃣ **Check the `Temas` folder** and follow the `.md` files in order.
 
-4️⃣ **Crea el proyecto Spring MVC paso a paso** siguiendo las explicaciones.
+4️⃣ **Create the Spring MVC project step by step** following the explanations.
 
-5️⃣ **Ejecuta la aplicación con Tomcat**.
+5️⃣ **Run the application with Tomcat**.
 
-6️⃣ **Realiza los ejercicios** de cada tema para practicar.
+6️⃣ **Do the exercises** of each topic to practice.
 
-7️⃣ **Consulta las soluciones** solo después de intentar resolver los ejercicios por tu cuenta.
-
----
-
-## 🧪 **Ejercicios**
-
-El curso está pensado para combinar teoría y práctica.
-
-Cada bloque de teoría puede acompañarse de ejercicios sobre:
-
-- Crear configuraciones XML.
-- Crear controladores.
-- Crear vistas JSP.
-- Enviar datos con `Model`.
-- Crear modelos y servicios.
-- Procesar formularios.
-- Validar datos.
-- Conectar con MySQL.
-- Crear DAOs.
-- Gestionar errores.
-- Internacionalizar vistas.
-- Aplicar mejoras al proyecto.
-
-Los ejercicios resueltos están pensados para consultarse como apoyo, pero es recomendable intentar resolverlos primero sin mirar la solución.
+7️⃣ **Consult the solutions** only after trying to solve the exercises on your own.
 
 ---
 
-## 📚 **Qué deberías saber al terminar**
+## 🧪 **Exercises**
 
-Al finalizar el curso deberías ser capaz de:
+The course is designed to combine theory and practice.
 
-- Explicar qué es Spring MVC y cómo funciona su arquitectura básica.
-- Configurar una aplicación web Java con `web.xml` y `DispatcherServlet`.
-- Crear controladores con anotaciones.
-- Crear vistas JSP dentro de `WEB-INF`.
-- Enviar datos a las vistas usando `Model`.
-- Procesar formularios con Spring MVC.
-- Validar datos con Jakarta Bean Validation.
-- Redirigir correctamente después de un `POST`.
-- Conectar una aplicación con MySQL.
-- Usar `JdbcTemplate` para ejecutar consultas SQL.
-- Organizar el acceso a datos mediante DAOs.
-- Crear excepciones personalizadas.
-- Gestionar errores de forma global.
-- Internacionalizar una aplicación.
-- Cambiar el idioma desde la interfaz.
-- Aplicar un tema visual claro u oscuro.
-- Mejorar el mantenimiento del proyecto con Lombok, fragmentos JSP y archivos `.properties`.
+Each theory block can be accompanied by exercises on:
 
----
+- Create XML configurations.
+- Create drivers.
+- Create JSP views.
+- Send data with `Model`.
+- Create models and services.
+- Process forms.
+- Validate data.
+- Connect with MySQL.
+- Create DAOs.
+- Manage errors.
+- Internationalize views.
+- Apply improvements to the project.
 
-## 🧩 **Recomendaciones para estudiar**
-
-Para aprovechar mejor el curso:
-
-- No copies el código sin entenderlo.
-- Ejecuta el proyecto después de cada bloque importante.
-- Cuando aparezca un error, lee con calma la traza.
-- Comprueba rutas, nombres de vistas y nombres de paquetes.
-- Revisa que las dependencias estén en el `pom.xml`.
-- Practica creando ejemplos parecidos, no idénticos.
-- Usa DBeaver para comprobar qué ocurre realmente en la base de datos.
-- Consulta los ejercicios resueltos solo después de intentarlo.
+The solved exercises are intended to be consulted as support, but it is advisable to try to solve them first without looking at the solution.
 
 ---
 
-## 🚀 **¡Empieza a aprender Spring MVC!**
+## 📚 **What you should know when you finish**
 
-Este curso está diseñado para que puedas aprender Spring MVC **paso a paso**, entendiendo cada archivo, cada clase y cada configuración.
+Upon completion of the course you should be able to:
 
-Spring MVC puede parecer complejo al principio porque combina muchas piezas:
+- Explain what Spring MVC is and how its basic architecture works.
+- Configure a Java web application with `web.xml` and `DispatcherServlet`.
+- Create controllers with annotations.
+- Create JSP views within `WEB-INF`.
+- Send data to views using `Model`.
+- Process forms with Spring MVC.
+- Validate data with Jakarta Bean Validation.
+- Redirect correctly after an `POST`.
+- Connect an application with MySQL.
+- Use `JdbcTemplate` to execute SQL queries.
+- Organize data access through DAOs.
+- Create custom exceptions.
+- Manage errors globally.
+- Internationalize an application.
+- Change the language from the interface.
+- Apply a light or dark visual theme.
+- Improve project maintenance with Lombok, JSP fragments and `.properties` files.
+
+---
+
+## 🧩 **Recommendations for studying**
+
+To make the most of the course:
+
+- Do not copy the code without understanding it.
+- Run the project after each important block.
+- When an error appears, read the trace calmly.
+- Check paths, view names and package names.
+- Check that the dependencies are in the `pom.xml`.
+- Practice creating similar examples, not identical ones.
+- Use DBeaver to check what is really happening in the database.
+- Consult the solved exercises only after trying them.
+
+---
+
+## 🚀 **Start learning Spring MVC!**
+
+This course is designed so that you can learn Spring MVC **step by step**, understanding each file, each class and each configuration.
+
+Spring MVC may seem complex at first because it combines many pieces:
 
 ```text
 Servlets
@@ -239,13 +239,13 @@ Errores
 Internacionalización
 ```
 
-Pero si avanzas tema a tema, verás que cada parte tiene una responsabilidad clara dentro de la aplicación.
+But if you go topic by topic, you will see that each part has a clear responsibility within the application.
 
 ---
 
-## Hecho por Adrián Maza.
+## Made by Adrián Maza.
 
-Espero que este curso te ayude a entender Spring MVC de forma clara, práctica y ordenada.
+I hope this course helps you understand Spring MVC in a clear, practical and orderly way.
 
 <div>
   <h5>
@@ -258,7 +258,7 @@ Espero que este curso te ayude a entender Spring MVC de forma clara, práctica y
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

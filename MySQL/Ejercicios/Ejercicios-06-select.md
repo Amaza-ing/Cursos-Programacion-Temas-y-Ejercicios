@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 6: Consultas Avanzadas con SELECT y Condiciones**
+# **Exercises - Topic 6: Advanced Queries with SELECT and Conditions**
 
-A continuación, encontrarás 10 ejercicios prácticos para practicar el uso de `SELECT`, `WHERE`, `ORDER BY`, `LIMIT` y operadores lógicos en MySQL.
+Below you will find 10 practical exercises to practice using `SELECT`, `WHERE`, `ORDER BY`, `LIMIT` and logical operators in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Consultar nombres y correos de los clientes**
+### **Exercise 1: Check customer names and emails**
 
-Obtén solo los campos `first_name` y `email` de todos los registros en la tabla `customers`.
+Get only the `first_name` and `email` fields from all records in the `customers` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT first_name, email FROM customers;
@@ -20,11 +20,11 @@ SELECT first_name, email FROM customers;
 
 ---
 
-### **Ejercicio 2: Filtrar clientes por ciudad**
+### **Exercise 2: Filter clients by city**
 
-Muestra todos los datos de los clientes cuya ciudad sea 'Valencia'.
+Shows all the data of customers whose city is 'Valencia'.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM customers
@@ -35,11 +35,11 @@ WHERE city = 'Valencia';
 
 ---
 
-### **Ejercicio 3: Buscar por coincidencia parcial**
+### **Exercise 3: Search by partial match**
 
-Busca los clientes cuyo apellido comience por 'Lo'.
+Look for customers whose last name begins with 'Lo'.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM customers
@@ -50,11 +50,11 @@ WHERE last_name LIKE 'Lo%';
 
 ---
 
-### **Ejercicio 4: Filtrar por valores múltiples**
+### **Exercise 4: Filter by multiple values**
 
-Consulta los pedidos donde el `customer_id` sea 1, 3 o 5.
+See orders where the `customer_id` is 1, 3 or 5.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM orders
@@ -65,11 +65,11 @@ WHERE customer_id IN (1, 3, 5);
 
 ---
 
-### **Ejercicio 5: Filtrar por rango de valores**
+### **Exercise 5: Filter by value range**
 
-Muestra los pedidos cuyo `total_amount` esté entre 50 y 200 euros.
+Shows orders whose `total_amount` is between 50 and 200 euros.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM orders
@@ -80,11 +80,11 @@ WHERE total_amount BETWEEN 50 AND 200;
 
 ---
 
-### **Ejercicio 6: Usar operadores lógicos**
+### **Exercise 6: Using logical operators**
 
-Obtén los clientes que están suscritos al boletín **y** se registraron después del 1 de abril de 2025.
+Get customers who are subscribed to the newsletter **and** registered after April 1, 2025.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM customers
@@ -96,11 +96,11 @@ AND signup_date > '2025-04-01';
 
 ---
 
-### **Ejercicio 7: Ordenar resultados**
+### **Exercise 7: Sort results**
 
-Lista todos los pedidos ordenados por `total_amount` de mayor a menor.
+Lists all orders sorted by `total_amount` from highest to lowest.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM orders
@@ -111,11 +111,11 @@ ORDER BY total_amount DESC;
 
 ---
 
-### **Ejercicio 8: Ordenar con múltiples criterios**
+### **Exercise 8: Sort with multiple criteria**
 
-Muestra los clientes ordenados primero por ciudad (ascendente) y luego por apellido (descendente).
+Shows customers sorted first by city (ascending) and then by last name (descending).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM customers
@@ -126,11 +126,11 @@ ORDER BY city ASC, last_name DESC;
 
 ---
 
-### **Ejercicio 9: Limitar el número de resultados**
+### **Exercise 9: Limit the number of results**
 
-Obtén los 4 primeros registros de la tabla `customers`.
+Get the first 4 records from the `customers` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM customers
@@ -141,11 +141,11 @@ LIMIT 4;
 
 ---
 
-### **Ejercicio 10: Combinar filtros, orden y límite**
+### **Exercise 10: Combine filters, order and limit**
 
-Consulta los 2 pedidos más antiguos cuyo monto supere los 100 euros.
+Check the 2 oldest orders whose amount exceeds 100 euros.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT * FROM orders

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 12: Fetch a una API usando async/await**
+# **Exercises - Topic 12: Fetch an API using async/await**
 
-A continuación, encontrarás 4 ejercicios prácticos sobre cómo hacer peticiones a una API externa usando `fetch` y `async/await` en Vue.
+Below you will find 4 practical exercises on how to make requests to an external API using `fetch` and `async/await` in Vue.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Obtener y mostrar una lista de usuarios**
+## **Exercise 1: Get and display a list of users**
 
-Crea un componente `UserList.vue` que haga una petición a `https://jsonplaceholder.typicode.com/users` al montarse, y muestre el nombre de cada usuario en una lista.
+Create an `UserList.vue` component that makes a request to `https://jsonplaceholder.typicode.com/users` upon mounting, and displays each user's name in a list.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `UserList.vue`
 
@@ -48,11 +48,11 @@ ul {
 
 ---
 
-## **Ejercicio 2: Mostrar estado de carga mientras se obtienen posts**
+## **Exercise 2: Show loading status while fetching messages**
 
-Crea un componente `PostLoader.vue` que haga un fetch a `https://jsonplaceholder.typicode.com/posts`, y mientras carga, muestre el mensaje "Cargando posts...".
+Create an `PostLoader.vue` component that fetches `https://jsonplaceholder.typicode.com/posts`, and while loading, displays the message "Loading posts...".
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `PostLoader.vue`
 
@@ -93,11 +93,11 @@ ul {
 
 ---
 
-## **Ejercicio 3: Manejar errores al obtener datos de una API**
+## **Exercise 3: Handling errors when getting data from an API**
 
-Crea un componente `ErrorHandler.vue` que intente hacer fetch a `https://api.fakeurl.com/data`, y si falla, muestre un mensaje de error.
+Create an `ErrorHandler.vue` component that attempts to fetch `https://api.fakeurl.com/data`, and if it fails, displays an error message.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `ErrorHandler.vue`
 
@@ -141,11 +141,11 @@ onMounted(fetchData);
 
 ---
 
-## **Ejercicio 4: Botón para refrescar datos manualmente**
+## **Exercise 4: Button to manually refresh data**
 
-Crea un componente `RefreshableList.vue` que obtenga una lista de posts al montarse y tenga un botón para volver a hacer el fetch.
+Create an `RefreshableList.vue` component that gets a list of posts upon mounting and has a button to refetch.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `RefreshableList.vue`
 

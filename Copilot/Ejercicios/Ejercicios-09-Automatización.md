@@ -1,28 +1,29 @@
-# Ejercicios - Tema 09: Copilot con APIs, Docker, infraestructura y GitHub Actions
+# Exercises - Topic 09: Copilot with APIs, Docker, infrastructure and GitHub Actions
 
-A continuación, encontrarás ejercicios prácticos para usar Copilot como apoyo en integración con APIs, creación de contenedores, configuración de infraestructura y automatización con GitHub Actions.
+Below, you will find practical exercises to use Copilot to support integration with APIs, creation of containers, configuration of infrastructure and automation with GitHub Actions.
 
-## Ejercicio 1: Crear un prompt para consumir una API REST
+## Exercise 1: Create a prompt to consume a REST API
 
-Tienes que crear una función JavaScript que consulte una API de productos en esta URL:
+You have to create a JavaScript function that queries a Product API at this URL:
 
 ```text
 https://api.example.com/products
 ```
 
-La función debe:
 
-- Usar `fetch`.
-- Controlar errores HTTP.
-- Devolver un array de productos.
-- Devolver un array vacío si ocurre un error.
+The function must:
 
-Escribe un prompt adecuado para pedir esta función a Copilot.
+- Use `fetch`.
+- Control HTTP errors.
+- Return an array of products.
+- Return an empty array if an error occurs.
+
+Write a suitable prompt to request this feature from Copilot.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Crea una función JavaScript llamada getProducts que consulte la URL https://api.example.com/products usando fetch.
@@ -33,7 +34,8 @@ Si ocurre un error de red o una respuesta HTTP incorrecta, debe devolver un arra
 Incluye comentarios breves en español solo donde aporten claridad.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 async function getProducts() {
@@ -52,22 +54,23 @@ async function getProducts() {
 }
 ```
 
-La función controla tanto errores HTTP como errores de red. Además, comprueba que el resultado sea realmente un array antes de devolverlo.
+
+The feature handles both HTTP errors and network errors. Also, check that the result is actually an array before returning it.
 
 </details>
 
-## Ejercicio 2: Pedir a Copilot un endpoint con Express
+## Exercise 2: Ask Copilot for an endpoint with Express
 
-Quieres crear un endpoint `GET /products/:id` en Express. El endpoint debe buscar un producto por su `id` en un array local llamado `products`.
+You want to create an `GET /products/:id` endpoint in Express. The endpoint must search for a product by its `id` in a local array called `products`.
 
-Si el producto existe, debe devolverlo con estado `200`. Si no existe, debe devolver un error `404` con un mensaje claro.
+If the product exists, you must return it with status `200`. If it does not exist, it should return an `404` error with a clear message.
 
-Escribe un prompt adecuado para Copilot.
+Write a suitable prompt for Copilot.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Crea un endpoint GET /products/:id con Express.
@@ -77,7 +80,8 @@ Si no existe, debe devolver status 404 con un JSON que contenga el mensaje "Prod
 No uses base de datos ni librerías adicionales.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```javascript
 app.get("/products/:id", (req, res) => {
@@ -92,26 +96,28 @@ app.get("/products/:id", (req, res) => {
 });
 ```
 
-Es importante convertir `req.params.id` a número si los identificadores del array están guardados como números. Si los identificadores fueran strings, no haría falta `Number()`.
+
+It is important to convert `req.params.id` to number if the array identifiers are saved as numbers. If the identifiers were strings, `Number()` would not be needed.
 
 </details>
 
-## Ejercicio 3: Crear un Dockerfile con ayuda de Copilot
+## Exercise 3: Create a Dockerfile with the help of Copilot
 
-Tienes una aplicación Node.js sencilla. El archivo principal es `server.js` y el proyecto se ejecuta con:
+You have a simple Node.js application. The main file is `server.js` and the project is run with:
 
 ```bash
 npm start
 ```
 
-La aplicación escucha en el puerto `3000`.
 
-Escribe un prompt para pedir a Copilot que genere un `Dockerfile` básico.
+The application listens on the `3000` port.
+
+Write a prompt to ask Copilot to generate a basic `Dockerfile`.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Genera un Dockerfile básico para una aplicación Node.js.
@@ -122,7 +128,8 @@ Usa una imagen ligera de Node.
 No añadas configuraciones avanzadas innecesarias.
 ```
 
-Una posible solución sería:
+
+A possible solution would be:
 
 ```dockerfile
 FROM node:20-alpine
@@ -139,33 +146,34 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-Este `Dockerfile` crea una imagen sencilla para ejecutar la aplicación. Primero copia los archivos de dependencias, instala los paquetes y después copia el resto del proyecto.
+
+This `Dockerfile` creates a simple image to run the application. First copy the dependencies files, install the packages, and then copy the rest of the project.
 
 </details>
 
-## Ejercicio 4: Crear un archivo docker-compose.yml
+## Exercise 4: Create a docker-compose.yml file
 
-Quieres levantar una API Node.js y una base de datos PostgreSQL con Docker Compose.
+You want to build a Node.js API and a PostgreSQL database with Docker Compose.
 
-La API debe:
+The API must:
 
-- Construirse desde el directorio actual.
-- Usar el puerto `3000`.
-- Recibir la variable de entorno `DATABASE_URL`.
+- Build from the current directory.
+- Use the `3000` port.
+- Receive the `DATABASE_URL` environment variable.
 
-PostgreSQL debe:
+PostgreSQL must:
 
-- Usar la imagen `postgres:16`.
-- Tener usuario `app_user`.
-- Tener contraseña `app_password`.
-- Crear una base de datos llamada `app_db`.
+- Use the `postgres:16` image.
+- Have user `app_user`.
+- Have password `app_password`.
+- Create a database called `app_db`.
 
-Escribe una posible solución de `docker-compose.yml`.
+Write a possible solution for `docker-compose.yml`.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible solución sería:
+A possible solution would be:
 
 ```yaml
 services:
@@ -188,7 +196,8 @@ services:
       - "5432:5432"
 ```
 
-Un prompt adecuado para pedirlo a Copilot sería:
+
+A suitable prompt to ask Copilot would be:
 
 ```text
 Crea un archivo docker-compose.yml para levantar una API Node.js y una base de datos PostgreSQL.
@@ -197,27 +206,28 @@ La base de datos debe usar postgres:16, usuario app_user, contraseña app_passwo
 Mantén la configuración simple para un entorno de desarrollo.
 ```
 
-En un proyecto real, las contraseñas no deberían dejarse directamente en el archivo si se va a compartir el repositorio. Sería mejor usar variables de entorno o un archivo `.env` excluido del control de versiones.
+In a real project, passwords should not be left directly in the file if the repository is to be shared. It would be better to use environment variables or an `.env` file excluded from version control.
 
 </details>
 
-## Ejercicio 5: Crear un workflow de GitHub Actions para ejecutar tests
+## Exercise 5: Create a GitHub Actions workflow to run tests
 
-Tienes un proyecto Node.js. Quieres que GitHub Actions ejecute los tests cada vez que se haga `push` o `pull request` sobre la rama `main`.
+You have a Node.js project. You want GitHub Actions to run the tests every time `push` or `pull request` is done on the `main` branch.
 
-El proyecto usa:
+The project uses:
 
 ```bash
 npm install
 npm test
 ```
 
-Escribe un workflow válido.
+
+Write a valid workflow.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Una posible solución sería:
+A possible solution would be:
 
 ```yaml
 name: Run tests
@@ -250,7 +260,8 @@ jobs:
         run: npm test
 ```
 
-Un prompt adecuado para pedirlo a Copilot sería:
+
+A suitable prompt to ask Copilot would be:
 
 ```text
 Crea un workflow de GitHub Actions para un proyecto Node.js.
@@ -259,13 +270,14 @@ Debe usar ubuntu-latest, instalar dependencias con npm install y ejecutar los te
 Usa versiones actuales de las acciones oficiales de checkout y setup-node.
 ```
 
-Este workflow automatiza la comprobación básica del proyecto antes de integrar cambios en la rama principal.
+
+This workflow automates basic project checking before integrating changes into the master branch.
 
 </details>
 
-## Ejercicio 6: Revisar un workflow generado por Copilot
+## Exercise 6: Review a workflow generated by Copilot
 
-Copilot ha generado este workflow:
+Copilot has generated this workflow:
 
 ```yaml
 name: Deploy app
@@ -284,20 +296,21 @@ jobs:
         run: curl -X POST https://deploy.example.com?token=123456
 ```
 
-Indica qué problemas tiene y cómo lo mejorarías.
+
+Indicate what problems it has and how you would improve it.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Problemas principales:
+Main problems:
 
-1. El token aparece escrito directamente en el workflow.
-2. No se descarga el repositorio con `actions/checkout`.
-3. No hay fase de instalación, build o tests antes del despliegue.
-4. El despliegue se lanza directamente en cada `push` a `main`.
-5. No hay separación clara entre validación y despliegue.
+1. The token appears written directly in the workflow.
+2. The repository with `actions/checkout` is not downloaded.
+3. There is no installation, build or testing phase before deployment.
+4. The deployment is launched directly on each `push` to `main`.
+5. There is no clear separation between validation and deployment.
 
-Una versión mejorada podría ser:
+An improved version could be:
 
 ```yaml
 name: Test and deploy app
@@ -335,20 +348,21 @@ jobs:
         run: curl -X POST "https://deploy.example.com?token=${{ secrets.DEPLOY_TOKEN }}"
 ```
 
-La mejora principal es que el token se guarda como secreto de GitHub Actions y el despliegue solo se ejecuta si antes han pasado los tests.
+
+The main improvement is that the token is saved as a GitHub Actions secret and the deployment is only executed if the tests have passed before.
 
 </details>
 
-## Ejercicio 7: Pedir ayuda para crear infraestructura como código
+## Exercise 7: Ask for help creating infrastructure as code
 
-Quieres pedir a Copilot una plantilla sencilla de Terraform para crear un recurso, pero no quieres que invente nombres de servicios ni configuraciones avanzadas.
+You want to ask Copilot for a simple Terraform template to create a resource, but you don't want it to come up with service names or advanced settings.
 
-Escribe un prompt que obligue a Copilot a pedir aclaraciones si falta información importante.
+Write a prompt that forces Copilot to ask for clarification if important information is missing.
 
 <details>
-<summary>Mostrar solución</summary>
+<summary>Show solution</summary>
 
-Un prompt adecuado sería:
+A suitable prompt would be:
 
 ```text
 Quiero crear una plantilla sencilla de Terraform, pero antes de escribir código necesito que me preguntes cualquier dato imprescindible que falte.
@@ -357,6 +371,7 @@ Primero dime qué información necesitas para generar una configuración mínima
 Después, cuando tenga esos datos, generaremos el archivo main.tf paso a paso.
 ```
 
-Este prompt es útil porque evita que Copilot genere infraestructura inventada o demasiado genérica. En infraestructura como código, una configuración incorrecta puede tener consecuencias importantes, por lo que conviene empezar pidiendo aclaraciones.
+
+This prompt is useful because it prevents Copilot from generating invented or overly generic infrastructure. In infrastructure as code, incorrect configuration can have significant consequences, so start by asking for clarification.
 
 </details>

@@ -1,16 +1,16 @@
-# **Tema 10: Introducción a los formularios en HTML**
+# **Topic 10: Introduction to HTML forms**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Los formularios en HTML permiten la interacción del usuario con la página web, capturando información que puede enviarse a un servidor para su procesamiento. Se utilizan en registros, encuestas, búsquedas, entre otros.
+HTML forms allow user interaction with the web page, capturing information that can be sent to a server for processing. They are used in records, surveys, searches, among others.
 
 ---
 
-## **2. Estructura de un formulario con `<form>`**
+## **2. Structure of a form with `<form>`**
 
-Un formulario en HTML se define con la etiqueta `<form>` y contiene diferentes elementos para ingresar información.
+An HTML form is defined with the `<form>` tag and contains different elements to enter information.
 
-### **Ejemplo básico de un formulario:**
+### **Basic example of a form:**
 
 ```html
 <form>
@@ -21,21 +21,21 @@ Un formulario en HTML se define con la etiqueta `<form>` y contiene diferentes e
 </form>
 ```
 
-### **Explicación:**
+### **Explanation:**
 
-- `input type="text"`: Campo de texto para ingresar información.
-- `button type="submit"`: Botón para enviar el formulario.
+- `input type="text"`: Text field to enter information.
+- `button type="submit"`: Button to send the form.
 
 ---
 
-## **3. Métodos GET vs POST y cuándo usarlos**
+## **3. GET vs POST methods and when to use them**
 
-Los formularios pueden enviar datos mediante dos métodos:
+Forms can submit data using two methods:
 
-- **GET**: Envía los datos en la URL. Se usa para formularios de búsqueda o datos no sensibles.
-- **POST**: Envía los datos de forma oculta en el cuerpo de la solicitud. Se usa para datos sensibles o formularios grandes.
+- **GET**: Send the data in the URL. Used for search forms or non-sensitive data.
+- **POST**: Sends the data hidden in the body of the request. Used for sensitive data or large forms.
 
-### **Ejemplo de un formulario con GET:**
+### **Example of a form with GET:**
 
 ```html
 <form action="buscar.php" method="GET">
@@ -44,10 +44,10 @@ Los formularios pueden enviar datos mediante dos métodos:
 </form>
 ```
 
-- `action`: Especifica la URL donde se enviarán los datos.
-- `method`: Define el método de envío (GET o POST).
+- `action`: Specifies the URL where the data will be sent.
+- `method`: Defines the sending method (GET or POST).
 
-### **Ejemplo de un formulario con POST:**
+### **Example of a form with POST:**
 
 ```html
 <form action="registro.php" method="POST">
@@ -59,22 +59,22 @@ Los formularios pueden enviar datos mediante dos métodos:
 
 ---
 
-## **4. Campos básicos en formularios**
+## **4. Basic fields in forms**
 
-Los formularios pueden contener diversos tipos de campos para capturar información.
+Forms can contain various types of fields to capture information.
 
-Se puede utilizar el elemento `<label>` para crear una etiqueta que identifique al campo haciendo coincidir el atributo `for` del `<label>` con el `id` del campo. Esto mejora la experiencia de usuario, ya que al hacer click en la etiqueta se podrá editar el campo.
+The `<label>` element can be used to create a label that identifies the field by matching the `for` attribute of the `<label>` with the `id` of the field. This improves the user experience, since clicking on the label allows you to edit the field.
 
-También se pueden envolver un conjunto `<label>`-campo en un `<fieldset>` para estructurar mejor las etiquetas y los campos.
+You can also wrap an `<label>`-field set into an `<fieldset>` to better structure the tags and fields.
 
-### Atributos importantes:
+### Important attributes:
 
-- `id` identifica de forma única a un campo.
-- `name` es el nombre de un campo concreto cuando se envíe el formulario.
-- `value` es el valor de ese campo.
-- `placeholder` muestra un texto mientras el campo está vacío.
+- `id` uniquely identifies a field.
+- `name` is the name of a specific field when the form is submitted.
+- `value` is the value of that field.
+- `placeholder` displays a text while the field is empty.
 
-### **Ejemplo de campos básicos:**
+### **Example of basic fields:**
 
 ```html
 <form>
@@ -97,9 +97,9 @@ También se pueden envolver un conjunto `<label>`-campo en un `<fieldset>` para 
 </form>
 ```
 
-### **Tipos de entrada en formularios y validaciones**
+### **Input types in forms and validations**
 
-Además de los campos de texto, existen otros tipos de entradas con validaciones integradas.
+In addition to text fields, there are other types of entries with built-in validations.
 
 ```html
 <form>
@@ -121,11 +121,11 @@ Además de los campos de texto, existen otros tipos de entradas con validaciones
 
 ---
 
-## **5. Uso de selectores (`<select>`, `<option>`), checkboxes y radio buttons**
+## **5. Use of selectors (`<select>`, `<option>`), checkboxes and radio buttons**
 
-Los formularios permiten seleccionar opciones predefinidas mediante listas desplegables, checkboxes y botones de opción.
+Forms allow you to select predefined options using drop-down lists, checkboxes, and radio buttons.
 
-### **Ejemplo de `select` con opciones:**
+### **`select` example with options:**
 
 ```html
 <form>
@@ -139,7 +139,7 @@ Los formularios permiten seleccionar opciones predefinidas mediante listas despl
 </form>
 ```
 
-### **Ejemplo de checkboxes:**
+### **Example of checkboxes:**
 
 ```html
 <form>
@@ -155,7 +155,7 @@ Los formularios permiten seleccionar opciones predefinidas mediante listas despl
 </form>
 ```
 
-### **Ejemplo de radio buttons:**
+### **Radio buttons example:**
 
 ```html
 <form>
@@ -168,13 +168,13 @@ Los formularios permiten seleccionar opciones predefinidas mediante listas despl
 
 ---
 
-[![Formularios en HTML](https://img.youtube.com/vi/nEW11p_-gMo/0.jpg)](https://www.youtube.com/watch?v=nEW11p_-gMo&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![HTML forms](https://img.youtube.com/vi/nEW11p_-gMo/0.jpg)](https://www.youtube.com/watch?v=nEW11p_-gMo&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **6. Validaciones básicas en formularios**
+## **6. Basic validations in forms**
 
-HTML ofrece validaciones automáticas mediante atributos como `required`, `pattern`, `minlength` y `maxlength`.
+HTML provides automatic validations using attributes such as `required`, `pattern`, `minlength`, and `maxlength`.
 
 ```html
 <form>
@@ -198,9 +198,9 @@ HTML ofrece validaciones automáticas mediante atributos como `required`, `patte
 
 ---
 
-## **7. Buenas prácticas en formularios HTML**
+## **7. Good practices in HTML forms**
 
-- Usar etiquetas `<label>` para mejorar la accesibilidad.
-- Aplicar validaciones HTML antes de depender de validaciones en JavaScript.
-- Utilizar `placeholder` solo como complemento, no como reemplazo de etiquetas `<label>`.
-- Emplear `fieldset` para agrupar campos relacionados.
+- Use `<label>` tags to improve accessibility.
+- Apply HTML validations before relying on JavaScript validations.
+- Use `placeholder` only as a complement, not as a replacement for `<label>` tags.
+- Use `fieldset` to group related fields.

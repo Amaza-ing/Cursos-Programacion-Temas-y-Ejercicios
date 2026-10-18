@@ -1,22 +1,22 @@
-# **Tema 8: Operadores Avanzados en JavaScript**
+# **Topic 8: Advanced Operators in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-JavaScript incluye una serie de operadores menos conocidos pero muy útiles para escribir código más limpio y eficiente. En este tema, exploraremos algunos de los más importantes:
+JavaScript includes a series of lesser-known but very useful operators for writing cleaner and more efficient code. In this topic, we will explore some of the most important ones:
 
 - Spread Operator (`...`)
 - Rest Operator (`...`)
 - Optional Chaining (`?.`)
 - Nullish Coalescing (`??`)
-- Operador Ternario (`? :`)
+- Ternary Operator (`? :`)
 
 ---
 
 ## **2. Spread Operator (`...`)**
 
-El **spread operator** permite expandir elementos de un iterable (arrays, objetos, strings) en otro lugar donde se esperan valores individuales.
+The **spread operator** allows you to expand elements of an iterable (arrays, objects, strings) elsewhere where individual values are expected.
 
-### **Ejemplo con Arrays**
+### **Example with Arrays**
 
 ```js
 const numbers = [1, 2, 3];
@@ -24,7 +24,7 @@ const newNumbers = [...numbers, 4, 5];
 console.log(newNumbers); // Salida: [1, 2, 3, 4, 5]
 ```
 
-### **Ejemplo con Objetos**
+### **Example with Objects**
 
 ```js
 const user = { name: "Ana", age: 25 };
@@ -32,7 +32,7 @@ const newUser = { ...user, city: "Madrid" };
 console.log(newUser); // Salida: { name: "Ana", age: 25, city: "Madrid" }
 ```
 
-### **Ejemplo con Strings**
+### **Example with Strings**
 
 ```js
 const word = "Hola";
@@ -48,7 +48,7 @@ console.log(letters); // Salida: ["H", "o", "l", "a"]
 
 ## **3. Rest Operator (`...`)**
 
-El operador **rest** se usa en funciones para agrupar múltiples argumentos en un array.
+The **rest** operator is used in functions to group multiple arguments into an array.
 
 ```js
 function sum(...numbers) {
@@ -58,7 +58,7 @@ function sum(...numbers) {
 console.log(sum(1, 2, 3, 4)); // Salida: 10
 ```
 
-También se usa para extraer elementos de un array u objeto.
+It is also used to extract elements from an array or object.
 
 ```js
 const [first, ...rest] = [10, 20, 30, 40];
@@ -70,22 +70,22 @@ console.log(rest); // [20, 30, 40]
 
 ## **4. Optional Chaining (`?.`)**
 
-El operador **Optional Chaining** (`?.`) permite acceder a propiedades de un objeto sin causar errores si alguna propiedad intermedia es `null` o `undefined`.
+The **Optional Chaining** (`?.`) operator allows you to access properties of an object without causing errors if any intermediate property is `null` or `undefined`.
 
-### **Ejemplo sin Optional Chaining**
+### **Example without Optional Chaining**
 
 ```js
 const person = { name: "Carlos", address: null };
 // console.log(person.address.street); // Error: No se puede leer 'street' de null
 ```
 
-### **Ejemplo con Optional Chaining**
+### **Example with Optional Chaining**
 
 ```js
 console.log(person.address?.street); // Salida: undefined (sin error)
 ```
 
-También funciona con llamadas a métodos:
+It also works with method calls:
 
 ```js
 const user = {
@@ -103,7 +103,7 @@ console.log(user.getAge?.()); // Salida: undefined
 
 ## **5. Nullish Coalescing (`??`)**
 
-El operador **Nullish Coalescing** (`??`) devuelve el primer operando si **no es `null` ni `undefined`**, de lo contrario devuelve el segundo.
+The **Nullish Coalescing** (`??`) operator returns the first operand if it is **neither `null` nor `undefined`**, otherwise it returns the second.
 
 ```js
 const name = null;
@@ -111,7 +111,7 @@ const defaultName = name ?? "Invitado";
 console.log(defaultName); // Salida: "Invitado"
 ```
 
-Diferencia con `||` (OR lógico):
+Difference with `||` (logical OR):
 
 ```js
 const age = 0;
@@ -125,9 +125,9 @@ console.log(age ?? 18); // Salida: 0 (porque no es null ni undefined)
 
 ---
 
-## **6. Operador Ternario (`? :`)**
+## **6. Ternary Operator (`? :`)**
 
-El operador **ternario** permite escribir una estructura condicional de forma compacta.
+The **ternary** operator allows you to write a conditional structure in a compact way.
 
 ```js
 const age = 20;
@@ -135,7 +135,7 @@ const message = age >= 18 ? "Mayor de edad" : "Menor de edad";
 console.log(message); // Salida: "Mayor de edad"
 ```
 
-Se pueden anidar operadores ternarios:
+Ternary operators can be nested:
 
 ```js
 const score = 85;
@@ -143,16 +143,16 @@ const grade = score >= 90 ? "A" : score >= 80 ? "B" : "C";
 console.log(grade); // Salida: "B"
 ```
 
-> **Nota:** Evita anidar ternarios para no perder legibilidad.
+> **Note:** Avoid nesting ternaries to avoid losing readability.
 
 ---
 
-[![Operador Ternario](https://img.youtube.com/vi/CAFZ1y4Dzvo/0.jpg)](https://www.youtube.com/watch?v=CAFZ1y4Dzvo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![](https://img.youtube.com/vi/CAFZ1y4Dzvo/0.jpg) Ternary Operator](https://www.youtube.com/watch?v=CAFZ1y4Dzvo&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-Estos operadores avanzados permiten escribir código más conciso y eficiente en JavaScript. Usarlos correctamente puede mejorar la legibilidad y reducir la necesidad de estructuras más largas y complejas.
+These advanced operators allow you to write more concise and efficient code in JavaScript. Using them correctly can improve readability and reduce the need for longer, more complex structures.
 
-En el próximo tema, profundizaremos en el manejo de **funciones avanzadas** y técnicas para escribir código más limpio y modular.
+In the next topic, we will delve into using **advanced features** and techniques to write cleaner and more modular code.

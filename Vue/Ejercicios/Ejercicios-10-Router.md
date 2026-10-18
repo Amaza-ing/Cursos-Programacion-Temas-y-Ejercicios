@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 10: Vue Router y Router Links**
+# **Exercises - Topic 10: Vue Router and Router Links**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre Vue Router y Router Links.
+Below you will find 5 practical exercises on Vue Router and Router Links.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Crear un router con tres rutas básicas**
+## **Exercise 1: Create a router with three basic routes**
 
-Crea un archivo `router.js` que defina tres rutas: `/`, `/services` y `/contact`, cada una apuntando a un componente diferente.
+Create an `router.js` file that defines three paths: `/`, `/services`, and `/contact`, each pointing to a different component.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `router.js`
 
@@ -38,11 +38,11 @@ export default router;
 
 ---
 
-## **Ejercicio 2: Crear un menú de navegación con RouterLink**
+## **Exercise 2: Create a navigation menu with RouterLink**
 
-Crea un componente `MainMenu.vue` que contenga tres enlaces de navegación a las rutas `/`, `/services` y `/contact`.
+Create an `MainMenu.vue` component that contains three navigation links to the routes `/`, `/services`, and `/contact`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `MainMenu.vue`
 
@@ -68,11 +68,11 @@ nav {
 
 ---
 
-## **Ejercicio 3: Crear un botón que navegue a otra ruta programáticamente**
+## **Exercise 3: Create a button that navigates to another route programmatically**
 
-Crea un componente `GoToContact.vue` con un botón que redirija al usuario a `/contact` al hacer clic.
+Create an `GoToContact.vue` component with a button that redirects the user to `/contact` when clicked.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `GoToContact.vue`
 
@@ -106,11 +106,11 @@ button {
 
 ---
 
-## **Ejercicio 4: Crear una ruta con parámetro dinámico**
+## **Exercise 4: Create a route with dynamic parameter**
 
-Crea una ruta `/product/:id` y un componente `ProductDetail.vue` que muestre el ID del producto recibido como parámetro.
+Create an `/product/:id` route and an `ProductDetail.vue` component that displays the ID of the product received as a parameter.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `ProductDetail.vue`
 
@@ -143,11 +143,11 @@ p {
 
 ---
 
-## **Ejercicio 5: Mostrar el componente RouterView dentro de App.vue**
+## **Exercise 5: Show RouterView component inside App.vue**
 
-Modifica `App.vue` para incluir el componente `RouterView`, que mostrará el componente asociado a la ruta actual.
+Modify `App.vue` to include the `RouterView` component, which will display the component associated with the current route.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 `App.vue`
 

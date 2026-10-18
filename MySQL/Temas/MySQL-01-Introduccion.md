@@ -1,155 +1,154 @@
-# Tema 1: Introducción a MySQL
+# Topic 1: Introduction to MySQL
 
-En este primer tema vamos a conocer qué es MySQL, para qué sirve y cómo se utiliza dentro del desarrollo de aplicaciones. Si partes de cero, no te preocupes: iremos paso a paso.
-
----
-
-## **1. ¿Qué es MySQL?**
-
-MySQL es un **sistema de gestión de bases de datos relacional (RDBMS)**. Permite almacenar, organizar y acceder a grandes cantidades de información de forma rápida y estructurada.
-
-Está basado en el lenguaje **SQL (Structured Query Language)**, un lenguaje estándar utilizado para trabajar con bases de datos.
+In this first topic we are going to learn what MySQL is, what it is for and how it is used in application development. If you're starting from scratch, don't worry: we'll go step by step.
 
 ---
 
-## **2. ¿Para qué se utiliza MySQL?**
+## **1. What is MySQL?**
 
-MySQL se usa en muchos contextos:
+MySQL is a **relational database management system (RDBMS)**. It allows you to store, organize and access large amounts of information in a quick and structured way.
 
-· Sitios web que necesitan guardar usuarios, productos, pedidos, etc.  
-· Aplicaciones móviles con registros y datos dinámicos.  
-· Sistemas empresariales de gestión.  
-· Proyectos de análisis de datos y ciencia de datos.
-
-Al estar basado en SQL, es compatible con muchas tecnologías y lenguajes de programación (como PHP, Java, Python o Node.js).
+It is based on the **SQL (Structured Query Language)** language, a standard language used to work with databases.
 
 ---
 
-## **3. Ventajas de MySQL**
+## **2. What is MySQL used for?**
 
-· Es gratuito y de código abierto.  
-· Tiene un alto rendimiento y escalabilidad.  
-· Se utiliza ampliamente, por lo que hay mucha documentación y soporte.  
-· Compatible con múltiples plataformas (Windows, Linux, macOS).
+MySQL is used in many contexts:
 
----
+· Websites that need to save users, products, orders, etc.  
+· Mobile applications with records and dynamic data.  
+· Business management systems.  
+· Data analysis and data science projects.
 
-## **4.Diferencia entre MySQL y SQL**
-
-| Concepto  | Descripción                                                                    |
-| --------- | ------------------------------------------------------------------------------ |
-| **SQL**   | Lenguaje de consulta estructurado. Es un estándar.                             |
-| **MySQL** | Programa (software) que implementa ese lenguaje para gestionar bases de datos. |
+Being based on SQL, it is compatible with many technologies and programming languages ​​(such as PHP, Java, Python or Node.js).
 
 ---
 
-## **5.¿Qué es una base de datos?**
+## **3. Advantages of MySQL**
 
-Una base de datos es una colección organizada de datos. Por ejemplo, una tienda online podría tener:
-
-· Una tabla `products` con la lista de productos.  
-· Una tabla `users` con la información de los clientes.  
-· Una tabla `orders` con los pedidos realizados.
-
-Cada tabla contiene filas (registros) y columnas (campos).
+· It is free and open source.  
+· It has high performance and scalability.  
+· It is widely used, so there is a lot of documentation and support.  
+· Compatible with multiple platforms (Windows, Linux, macOS).
 
 ---
 
-[![Qué es SQL](https://img.youtube.com/vi/8LQUlshIdqw/0.jpg)](https://www.youtube.com/watch?v=8LQUlshIdqw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+## **4.Difference between MySQL and SQL**
+
+| Concept | Description |
+| --------- | --------------------------------------------------------------------------- |
+| **SQL** | Structured query language. It is a standard.                             |
+| **MySQL** | Program (software) that implements that language to manage databases. |
 
 ---
 
-## **6. ¿Qué es una tabla?**
+## **5.What is a database?**
 
-Una tabla es como una hoja de cálculo con filas y columnas.
+A database is an organized collection of data. For example, an online store could have:
 
-Ejemplo de tabla `products`:
+· An `products` table with the list of products.  
+· An `users` table with customer information.  
+· An `orders` table with the orders placed.
 
-| id  | name     | price | stock |
+Each table contains rows (records) and columns (fields).
+
+---
+
+[![What is SQL](https://img.youtube.com/vi/8LQUlshIdqw/0.jpg)](https://www.youtube.com/watch?v=8LQUlshIdqw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
+## **6. What is a table?**
+
+A table is like a spreadsheet with rows and columns.
+
+`products` table example:
+
+| id | name | price | stock |
 | --- | -------- | ----- | ----- |
-| 1   | T-shirt  | 19.99 | 50    |
-| 2   | Sneakers | 49.99 | 20    |
-| 3   | Jacket   | 89.99 | 15    |
+| 1 | T-shirt | 19.99 | 50 |
+| 2 | Sneakers | 49.99 | 20 |
+| 3 | Jacket | 89.99 | 15 |
 
-- Cada **fila** es un producto.
-- Cada **columna** es una característica del producto.
-
----
-
-## **7. Instalación de MySQL**
-
-### Opción 1: Instalar MySQL Server
-
-1. Visita la página oficial: https://dev.mysql.com/downloads/
-2. Descarga el instalador de MySQL para tu sistema operativo.
-3. Durante la instalación, lo más sencillo es hacer la instalación completa, o elige:
-   - MySQL Server.
-   - Command Line Client.
-   - MySQL Workbench (opcional pero muy útil para gestionar bases de datos visualmente).
-   - Ejemplos (opcional pero útiles para empezar).
-4. Crea una contraseña para el usuario `root`.
-
-> Recuerda esta contraseña: la necesitarás más adelante.
-
-Si queremos usar otra interfaz visual para gestionar bases de datos podemos instalar la que prefiramos. En los ejemplos en video se utilizará DBeaver en lugar de MySQL Workbench.
-
-Para instalar DBeaver puedes acceder aquí: https://dbeaver.io/download/
+- Each **row** is a product.
+- Each **column** is a product characteristic.
 
 ---
 
-[![Cómo instalar MySQL](https://img.youtube.com/vi/yHWJ3nc6Vk4/0.jpg)](https://www.youtube.com/watch?v=yHWJ3nc6Vk4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+## **7. Installing MySQL**
+
+### Option 1: Install MySQL Server
+
+1. Visit the official website: https://dev.mysql.com/downloads/
+2. Download the MySQL installer for your operating system.
+3. During installation, it is easiest to do the full installation, or choose:
+   -MySQL Server.
+   -Command Line Client.
+   - MySQL Workbench (optional but very useful for managing databases visually).
+   - Examples (optional but useful to get started).
+4. Create a password for the user `root`.
+
+> Remember this password: you will need it later.
+If we want to use another visual interface to manage databases, we can install the one we prefer. In the video examples DBeaver will be used instead of MySQL Workbench.
+
+To install DBeaver you can access here: https://dbeaver.io/download/
 
 ---
 
-### Opción 2: Usar un servicio online
-
-Si no puedes instalar nada, puedes usar servicios como:
-
-· https://www.db-fiddle.com/  
-· https://sqlize.online/  
-· https://onecompiler.com/mysql
+[![How to install MySQL](https://img.youtube.com/vi/yHWJ3nc6Vk4/0.jpg)](https://www.youtube.com/watch?v=yHWJ3nc6Vk4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **8. Verificar la instalación**
+### Option 2: Use an online service
 
-### **Usando la línea de comandos**
+If you can't install anything, you can use services like:
 
-En la terminal o consola, escribe:
+https://www.db-fiddle.com/  
+https://sqlize.online/  
+https://onecompiler.com/mysql
+
+---
+
+## **8. Verify installation**
+
+### **Using the command line**
+
+In the terminal or console, type:
 
 ```sh
 mysql -u root -p
 ```
 
-Introduce la contraseña y deberías acceder al prompt de MySQL:
+Enter the password and you should access the MySQL prompt:
 
 ```sql
 mysql>
 ```
 
-### **Usando MySQL Workbench**
+### **Using MySQL Workbench**
 
-1. Abre MySQL Workbench.
-2. Crea una nueva conexión con el usuario `root`.
-3. Ingresa la contraseña que configuraste.
-4. Haz clic en "Test Connection" para verificar que todo funcione.
+1. Open MySQL Workbench.
+2. Create a new connection with the user `root`.
+3. Enter the password you set.
+4. Click "Test Connection" to verify that everything works.
 
-### **Errores de Conexión**
+### **Connection Errors**
 
-Es posible que a veces ocurran algunos errores que impidan la conexión a la base de datos, estos son algunos de los más comunes y son facilmente solucionables:
+It is possible that sometimes some errors occur that prevent the connection to the database, these are some of the most common and are easily solvable:
 
 - "Public Key Retrieval is not allowed"
 - "Connection refused: getsockopt"
 
 ---
 
-[![Error de Conexión](https://img.youtube.com/vi/5IYm-B2ptkI/0.jpg)](https://www.youtube.com/watch?v=5IYm-B2ptkI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![](https://img.youtube.com/vi/5IYm-B2ptkI/0.jpg) Connection Error](https://www.youtube.com/watch?v=5IYm-B2ptkI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **9. Primer contacto con SQL**
+## **9. First contact with SQL**
 
-Una vez tengas acceso a un entorno MySQL, puedes comenzar a ejecutar comandos.
+Once you have access to a MySQL environment, you can start executing commands.
 
 ```sql
 SELECT 'Hello, world!';
@@ -157,17 +156,17 @@ SELECT 'Hello, world!';
 
 ---
 
-## **10. Estructura de una base de datos MySQL**
+## **10. Structure of a MySQL database**
 
-Una base de datos MySQL está formada por:
+A MySQL database is made up of:
 
-- **Tablas**: Estructuras donde se almacenan los datos.
-- **Filas (rows)**: Cada registro dentro de una tabla.
-- **Columnas (columns)**: Cada campo dentro de una tabla.
-- **Claves primarias**: Identificadores únicos para cada fila.
-- **Claves foráneas**: Relacionan datos entre diferentes tablas.
+- **Tables**: Structures where data is stored.
+- **Rows**: Each record within a table.
+- **Columns**: Each field within a table.
+- **Primary keys**: Unique identifiers for each row.
+- **Foreign keys**: They relate data between different tables.
 
-Ejemplo:
+Example:
 
 ```sql
 CREATE TABLE orders (
@@ -180,11 +179,11 @@ CREATE TABLE orders (
 
 ---
 
-## **11. Conclusión**
+## **11. Conclusion**
 
-- MySQL es un sistema de bases de datos poderoso y ampliamente utilizado.
-- SQL es el lenguaje que nos permite interactuar con bases de datos.
+- MySQL is a powerful and widely used database system.
+- SQL is the language that allows us to interact with databases.
 
 ---
 
-En el siguiente tema, aprenderemos a **crear y modificar tablas en MySQL** en profundidad, y a trabajar con los diferentes tipos de datos disponibles.
+In the next topic, we will learn how to create and modify tables in MySQL in depth, and how to work with the different types of data available.

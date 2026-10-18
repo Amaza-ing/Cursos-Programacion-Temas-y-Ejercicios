@@ -1,98 +1,98 @@
-# Tema 04 — Instalación y configuración de GitHub Copilot en VS Code y JetBrains
+# Topic 04 — Installing and configuring GitHub Copilot in VS Code and JetBrains
 
-## 1. Objetivos del tema
+## 1. Objectives of the topic
 
-En este tema aprenderás a preparar el entorno de trabajo para utilizar **GitHub Copilot** en un proyecto real de desarrollo.
+In this topic you will learn how to prepare the work environment to use **GitHub Copilot** in a real development project.
 
-Al finalizar este tema deberías ser capaz de:
+By the end of this topic you should be able to:
 
-- Entender qué necesitas para usar GitHub Copilot.
-- Instalar GitHub Copilot en **Visual Studio Code**.
-- Instalar GitHub Copilot en **JetBrains**.
-- Iniciar sesión con tu cuenta de GitHub.
-- Comprobar si Copilot está funcionando correctamente.
-- Activar y desactivar sugerencias automáticas.
-- Identificar la diferencia entre las sugerencias inline y Copilot Chat.
-- Aplicar una configuración básica segura y cómoda para trabajar.
+- Understand what you need to use GitHub Copilot.
+- Install GitHub Copilot in **Visual Studio Code**.
+- Install GitHub Copilot on **JetBrains**.
+- Sign in with your GitHub account.
+- Check if Copilot is working correctly.
+- Activate and deactivate automatic suggestions.
+- Identify the difference between inline suggestions and Copilot Chat.
+- Apply a safe and comfortable basic configuration to work.
 
-> En este tema no se busca todavía dominar los prompts ni Copilot Chat. El objetivo es dejar el entorno preparado para los temas siguientes.
-
----
-
-## 2. Qué es GitHub Copilot dentro del entorno de desarrollo
-
-**GitHub Copilot** es un asistente de programación basado en inteligencia artificial que se integra dentro del editor o IDE.
-
-Puede ayudarte a:
-
-- Completar líneas de código.
-- Generar funciones.
-- Sugerir fragmentos de código.
-- Explicar código existente.
-- Proponer refactorizaciones.
-- Ayudar a escribir tests.
-- Resolver dudas técnicas desde el propio editor.
-- Detectar errores o posibles mejoras.
-
-La idea principal es que Copilot actúa como un **asistente de desarrollo**, no como un sustituto del programador.
-
-Tú sigues siendo responsable de:
-
-- Entender el código.
-- Revisar lo que se genera.
-- Probar que funciona.
-- Comprobar que cumple los requisitos.
-- Mantener la calidad y seguridad del proyecto.
+> In this topic we are not yet looking to master the prompts or Copilot Chat. The goal is to leave the environment prepared for the following topics.
 
 ---
 
-## 3. Requisitos previos
+## 2. What is GitHub Copilot within the development environment
 
-Antes de instalar GitHub Copilot, conviene comprobar que tienes lo siguiente:
+**GitHub Copilot** is an artificial intelligence-based programming assistant that is integrated within the editor or IDE.
 
-### 3.1. Cuenta de GitHub
+It can help you:
 
-Necesitas una cuenta de GitHub.
+- Complete lines of code.
+- Generate functions.
+- Suggest code snippets.
+- Explain existing code.
+- Propose refactorings.
+- Help write tests.
+- Resolve technical doubts from the editor itself.
+- Detect errors or possible improvements.
 
-Si no tienes una, puedes crearla desde:
+The main idea is that Copilot acts as a **development assistant**, not a substitute for the programmer.
+
+You are still responsible for:
+
+- Understand the code.
+- Review what is generated.
+- Test that it works.
+- Check that you meet the requirements.
+- Maintain the quality and safety of the project.
+
+---
+
+## 3. Prerequisites
+
+Before installing GitHub Copilot, make sure you have the following:
+
+### 3.1. GitHub account
+
+You need a GitHub account.
+
+If you don't have one, you can create it from:
 
 ```text
 https://github.com/
 ```
 
-### 3.2. Acceso a GitHub Copilot
+### 3.2. Access to GitHub Copilot
 
-GitHub Copilot requiere acceso mediante una suscripción, licencia educativa, licencia de empresa o activación dentro de una organización.
+GitHub Copilot requires access through a subscription, educational license, enterprise license, or activation within an organization.
 
-Dependiendo del contexto del curso, puede ocurrir una de estas situaciones:
+Depending on the context of the course, one of these situations may occur:
 
-- Tienes una suscripción individual.
-- Tu empresa o centro de formación te ha asignado una licencia.
-- Usas una cuenta educativa con acceso a Copilot.
-- El profesor proporciona instrucciones concretas para acceder durante la formación.
+- You have an individual subscription.
+- Your company or training center has assigned you a license.
+- You use an educational account with access to Copilot.
+- The teacher provides specific instructions for access during training.
 
-### 3.3. Editor o IDE compatible
+### 3.3. Editor or IDE supported
 
-En este curso trabajaremos principalmente con:
+In this course we will work mainly with:
 
 - **Visual Studio Code**.
-- **JetBrains IDEs**, como IntelliJ IDEA, WebStorm, PyCharm o PhpStorm.
+- **JetBrains IDEs**, such as IntelliJ IDEA, WebStorm, PyCharm or PhpStorm.
 
-También existen integraciones para otros entornos, pero no serán el foco principal de este tema.
+There are also integrations for other environments, but they will not be the main focus of this topic.
 
-### 3.4. Git instalado
+### 3.4. Git installed
 
-Aunque GitHub Copilot puede usarse para escribir código sin Git, en un curso de desarrollo profesional es recomendable tener Git instalado.
+Although GitHub Copilot can be used to write code without Git, in a professional development course it is recommended to have Git installed.
 
-Para comprobarlo, abre una terminal y ejecuta:
+To check this, open a terminal and run:
 
 ```bash
 git --version
 ```
 
-Si aparece una versión, Git está instalado correctamente.
+If a version appears, Git is installed correctly.
 
-Ejemplo:
+Example:
 
 ```bash
 git version 2.45.0
@@ -100,15 +100,14 @@ git version 2.45.0
 
 ---
 
-## 4. Instalación de GitHub Copilot en Visual Studio Code
+## 4. Installing GitHub Copilot in Visual Studio Code
 
-Visual Studio Code es uno de los entornos más cómodos para comenzar con GitHub Copilot.
+Visual Studio Code is one of the most convenient environments to get started with GitHub Copilot.
 
-### 4.1. Paso 1: Abrir Visual Studio Code
+### 4.1. Step 1: Open Visual Studio Code
 
-Abre Visual Studio Code desde tu ordenador.
-
-Si todavía no lo tienes instalado, puedes descargarlo desde:
+Open Visual Studio Code from your computer.
+If you don't have it installed yet, you can download it from:
 
 ```text
 https://code.visualstudio.com/
@@ -116,17 +115,17 @@ https://code.visualstudio.com/
 
 ---
 
-### 4.2. Paso 2: Abrir el panel de extensiones
+### 4.2. Step 2: Open the extensions panel
 
-En la barra lateral izquierda, haz clic en el icono de **Extensions**.
+In the left sidebar, click the **Extensions** icon.
 
-También puedes abrirlo con el atajo:
+You can also open it with the shortcut:
 
 ```text
 Ctrl + Shift + X
 ```
 
-En macOS:
+On macOS:
 
 ```text
 Cmd + Shift + X
@@ -134,30 +133,30 @@ Cmd + Shift + X
 
 ---
 
-### 4.3. Paso 3: Buscar GitHub Copilot
+### 4.3. Step 3: Search GitHub Copilot
 
-En el buscador de extensiones, escribe:
+In the extension search, type:
 
 ```text
 GitHub Copilot
 ```
 
-Deberías encontrar extensiones relacionadas con:
+You should find extensions related to:
 
 - GitHub Copilot.
 - GitHub Copilot Chat.
 
-En versiones recientes de Visual Studio Code, la experiencia de Copilot puede estar integrada o agruparse dentro de las extensiones oficiales de GitHub.
+In recent versions of Visual Studio Code, the Copilot experience may be integrated or bundled within the official GitHub extensions.
 
 ---
 
-### 4.4. Paso 4: Instalar la extensión
+### 4.4. Step 4: Install the extension
 
-Haz clic en **Install**.
+Click **Install**.
 
-Es importante instalar la extensión oficial de GitHub.
+It is important to install the official GitHub extension.
 
-Comprueba que el publicador sea:
+Check that the publisher is:
 
 ```text
 GitHub
@@ -165,76 +164,76 @@ GitHub
 
 ---
 
-### 4.5. Paso 5: Iniciar sesión con GitHub
+### 4.5. Step 5: Sign in with GitHub
 
-Después de instalar la extensión, Visual Studio Code puede pedirte iniciar sesión.
+After you install the extension, Visual Studio Code may ask you to sign in.
 
-Haz clic en:
+Click:
 
 ```text
 Sign in to GitHub
 ```
 
-Se abrirá una ventana del navegador.
+A browser window will open.
 
-Sigue los pasos:
+Follow the steps:
 
-1. Inicia sesión con tu cuenta de GitHub.
-2. Autoriza Visual Studio Code.
-3. Vuelve al editor.
-4. Comprueba que Copilot aparece como activo.
-
----
-
-### 4.6. Paso 6: Comprobar el estado de Copilot
-
-En Visual Studio Code suele aparecer un icono de Copilot en la zona inferior o superior del editor, dependiendo de la versión.
-
-Desde ese icono puedes comprobar si Copilot está:
-
-- Activado.
-- Desactivado.
-- Esperando inicio de sesión.
-- Sin acceso por licencia.
-- Bloqueado por la organización.
-
-Si Copilot no funciona, revisa:
-
-- Que has iniciado sesión con la cuenta correcta.
-- Que tu cuenta tiene acceso a Copilot.
-- Que la extensión está instalada y habilitada.
-- Que no hay restricciones de red o proxy.
-- Que Visual Studio Code está actualizado.
+1. Sign in with your GitHub account.
+2. Authorize Visual Studio Code.
+3. Return to the editor.
+4. Check that Copilot appears as active.
 
 ---
 
-## 5. Primera prueba en Visual Studio Code
+### 4.6. Step 6: Check Copilot Status
 
-Para comprobar que Copilot funciona, crea una carpeta de prueba.
+In Visual Studio Code, a Copilot icon usually appears at the bottom or top of the editor, depending on the version.
 
-Por ejemplo:
+From that icon you can check if Copilot is:
+
+- Activated.
+- Disabled.
+- Waiting for login.
+- Without license access.
+- Blocked by the organization.
+
+If Copilot doesn't work, check:
+
+- That you have logged in with the correct account.
+- That your account has access to Copilot.
+- That the extension is installed and enabled.
+- There are no network or proxy restrictions.
+- That Visual Studio Code is up to date.
+
+---
+
+## 5. First test in Visual Studio Code
+
+To test that Copilot works, create a test folder.
+
+For example:
 
 ```text
 copilot-demo
 ```
 
-Dentro de esa carpeta, crea un archivo llamado:
+Inside that folder, create a file called:
 
 ```text
 main.js
 ```
 
-Escribe el siguiente comentario:
+Write the following comment:
 
 ```javascript
 // Create a function that receives an array of numbers and returns the average
 ```
 
-Espera unos segundos.
+Wait a few seconds.
 
-Copilot debería sugerir una posible función.
+Copilot should suggest a possible feature.
 
-Una sugerencia posible sería:
+A possible suggestion would be:
 
 ```javascript
 function calculateAverage(numbers) {
@@ -247,93 +246,92 @@ function calculateAverage(numbers) {
 }
 ```
 
-> El código exacto puede variar. Copilot no siempre genera la misma respuesta.
+> The exact code may vary. Copilot doesn't always generate the same response.
 
 ---
 
-## 6. Cómo aceptar, rechazar o cambiar sugerencias
+## 6. How to accept, reject or change suggestions
 
-Cuando Copilot muestra una sugerencia, normalmente aparece en gris claro dentro del editor.
+When Copilot displays a suggestion, it typically appears in light gray within the editor.
 
-### Aceptar una sugerencia
+### Accept a suggestion
 
-En Visual Studio Code, normalmente puedes aceptar la sugerencia con:
+In Visual Studio Code, you can usually accept the suggestion with:
 
 ```text
 Tab
 ```
 
-### Rechazar una sugerencia
+### Reject a suggestion
 
-Puedes seguir escribiendo o pulsar:
+You can continue typing or press:
 
 ```text
 Esc
 ```
 
-### Ver otra sugerencia
+### See another suggestion
 
-Según la configuración del editor, puedes moverte entre sugerencias con atajos de teclado.
+Depending on your editor settings, you can move between suggestions with keyboard shortcuts.
 
-También puedes abrir el panel de comandos:
+You can also open the command panel:
 
 ```text
 Ctrl + Shift + P
 ```
 
-En macOS:
+On macOS:
 
 ```text
 Cmd + Shift + P
 ```
 
-Y buscar comandos relacionados con Copilot.
+And search for commands related to Copilot.
 
 ---
 
-## 7. Activar y desactivar Copilot en VS Code
+## 7. Turn Copilot on and off in VS Code
 
-Hay momentos en los que puede interesarte desactivar Copilot temporalmente.
+There are times when you may want to temporarily disable Copilot.
 
-Por ejemplo:
+For example:
 
-- Cuando estás haciendo una prueba sin ayuda.
-- Cuando estás trabajando con información sensible.
-- Cuando las sugerencias te distraen.
-- Cuando quieres escribir manualmente una solución.
+- When you are doing a test without help.
+- When you are working with sensitive information.
+- When suggestions distract you.
+- When you want to manually write a solution.
 
-### Desde el icono de Copilot
+### From the Copilot icon
+1. Click the Copilot icon.
+2. Select the option to turn Copilot on or off.
+3. Choose if you want to disable it globally or only for a specific language.
 
-1. Haz clic en el icono de Copilot.
-2. Selecciona la opción para activar o desactivar Copilot.
-3. Elige si quieres desactivarlo globalmente o solo para un lenguaje concreto.
+### From configuration
 
-### Desde configuración
-
-También puedes abrir la configuración de VS Code y buscar:
+You can also open VS Code settings and search for:
 
 ```text
 Copilot
 ```
 
-Desde ahí puedes modificar opciones relacionadas con:
+From there you can modify options related to:
 
-- Sugerencias inline.
-- Activación por lenguajes.
-- Comportamiento de Chat.
-- Accesos directos.
+- Inline suggestions.
+- Activation by languages.
+- Chat Behavior.
+- Shortcuts.
 
 ---
 
-## 8. Activar o desactivar Copilot por lenguaje
+## 8. Activate or deactivate Copilot by language
 
-A veces no quieres que Copilot funcione en todos los lenguajes.
+Sometimes you don't want Copilot to work in all languages.
 
-Por ejemplo, puedes querer usarlo en JavaScript, Java o Python, pero desactivarlo en Markdown, JSON o archivos de configuración sensibles.
+For example, you may want to use it in JavaScript, Java, or Python, but disable it in Markdown, JSON, or sensitive configuration files.
 
-En VS Code puedes acceder a la configuración de Copilot y modificar los lenguajes permitidos.
+In VS Code you can access the Copilot settings and modify the allowed languages.
 
-Un ejemplo de configuración podría ser:
+An example configuration could be:
 
 ```json
 {
@@ -345,36 +343,36 @@ Un ejemplo de configuración podría ser:
 }
 ```
 
-Este ejemplo indica:
+This example indicates:
 
-- Copilot está activado por defecto.
-- Copilot está desactivado en Markdown.
-- Copilot está desactivado en texto plano.
+- Copilot is activated by default.
+- Copilot is disabled in Markdown.
+- Copilot is disabled in plain text.
 
-> La configuración exacta puede variar según la versión de la extensión y del editor.
+> The exact settings may vary depending on the version of the extension and the editor.
 
 ---
 
-## 9. Instalación de GitHub Copilot en JetBrains
+## 9. Installing GitHub Copilot on JetBrains
 
-GitHub Copilot también puede instalarse en IDEs de JetBrains.
+GitHub Copilot can also be installed on JetBrains IDEs.
 
-Algunos ejemplos son:
+Some examples are:
 
 - IntelliJ IDEA.
 - WebStorm.
 - PyCharm.
 - PhpStorm.
-- RubyMine.
+-RubyMine.
 - GoLand.
 
 ---
 
-### 9.1. Paso 1: Abrir el IDE
+### 9.1. Step 1: Open the IDE
 
-Abre tu IDE de JetBrains.
+Open your JetBrains IDE.
 
-Por ejemplo:
+For example:
 
 ```text
 IntelliJ IDEA
@@ -382,15 +380,15 @@ IntelliJ IDEA
 
 ---
 
-### 9.2. Paso 2: Abrir configuración de plugins
+### 9.2. Step 2: Open plugin settings
 
-En Windows o Linux:
+On Windows or Linux:
 
 ```text
 File > Settings > Plugins
 ```
 
-En macOS:
+On macOS:
 
 ```text
 IntelliJ IDEA > Settings > Plugins
@@ -398,65 +396,65 @@ IntelliJ IDEA > Settings > Plugins
 
 ---
 
-### 9.3. Paso 3: Buscar GitHub Copilot
+### 9.3. Step 3: Search GitHub Copilot
 
-En la pestaña de Marketplace, busca:
+Under the Marketplace tab, look for:
 
 ```text
 GitHub Copilot
 ```
 
-Comprueba que el plugin corresponde a GitHub.
+Check that the plugin corresponds to GitHub.
 
 ---
 
-### 9.4. Paso 4: Instalar el plugin
+### 9.4. Step 4: Install the plugin
 
-Haz clic en:
+Click:
 
 ```text
 Install
 ```
 
-Después de instalarlo, puede que el IDE te pida reiniciar.
+After installing it, the IDE may ask you to restart.
 
-Si aparece ese mensaje, reinicia el IDE.
-
----
-
-### 9.5. Paso 5: Iniciar sesión
-
-Después de reiniciar, el IDE puede pedirte iniciar sesión en GitHub.
-
-Sigue estos pasos:
-
-1. Haz clic en la opción de iniciar sesión.
-2. Se abrirá el navegador.
-3. Accede con tu cuenta de GitHub.
-4. Autoriza el plugin.
-5. Vuelve al IDE.
+If that message appears, restart the IDE.
 
 ---
 
-### 9.6. Paso 6: Comprobar funcionamiento
+### 9.5. Step 5: Sign in
 
-Crea un archivo de prueba.
+After rebooting, the IDE may ask you to sign in to GitHub.
 
-Por ejemplo:
+Follow these steps:
+
+1. Click on the login option.
+2. The browser will open.
+3. Sign in with your GitHub account.
+4. Authorize the plugin.
+5. Return to the IDE.
+
+---
+
+### 9.6. Step 6: Check operation
+
+Create a test file.
+
+For example:
 
 ```text
 Main.java
 ```
 
-Escribe este comentario:
+Write this comment:
 
 ```java
 // Create a method that receives a list of integers and returns the highest value
 ```
 
-Copilot debería sugerir una posible implementación.
+Copilot should suggest a possible implementation.
 
-Ejemplo:
+Example:
 
 ```java
 public static int getHighestValue(List<Integer> numbers) {
@@ -478,47 +476,47 @@ public static int getHighestValue(List<Integer> numbers) {
 
 ---
 
-## 10. Diferencia entre sugerencias inline y Copilot Chat
+## 10. Difference between inline suggestions and Copilot Chat
 
-GitHub Copilot puede ayudarte de dos formas principales dentro del editor.
+GitHub Copilot can help you in two main ways within the editor.
 
-### 10.1. Sugerencias inline
+### 10.1. Inline suggestions
 
-Son sugerencias que aparecen mientras escribes código.
+They are suggestions that appear while you write code.
 
-Sirven para:
+They serve for:
 
-- Completar una línea.
-- Generar una función.
-- Continuar un patrón.
-- Rellenar código repetitivo.
-- Sugerir una implementación.
+- Complete a line.
+- Generate a function.
+- Continue a pattern.
+- Fill repetitive code.
+- Suggest an implementation.
 
-Ejemplo:
+Example:
 
 ```javascript
 function formatPrice(price) {
 ```
 
-Copilot puede sugerir el resto de la función.
+Copilot can suggest the rest of the function.
 
 ---
 
 ### 10.2. Copilot Chat
 
-Copilot Chat permite escribir preguntas o instrucciones en lenguaje natural.
+Copilot Chat allows you to write questions or instructions in natural language.
 
-Sirve para:
+Serves for:
 
-- Preguntar qué hace un archivo.
-- Pedir que explique una función.
-- Solicitar una refactorización.
-- Pedir tests.
-- Analizar errores.
-- Generar documentación.
-- Comparar alternativas.
+- Ask what a file does.
+- Ask them to explain a function.
+- Request a refactoring.
+- Request tests.
+- Analyze errors.
+- Generate documentation.
+- Compare alternatives.
 
-Ejemplo de prompt:
+Prompt example:
 
 ```text
 Explain what this function does and suggest how to make it easier to read.
@@ -526,60 +524,59 @@ Explain what this function does and suggest how to make it easier to read.
 
 ---
 
-## 11. Cuándo usar sugerencias inline y cuándo usar Chat
+## 11. When to use inline suggestions and when to use Chat
 
-Usa **sugerencias inline** cuando:
+Use **inline hints** when:
+- You already know what you want to write.
+- You are completing repetitive code.
+- You want to speed up a simple implementation.
+- The close context of the file is sufficient.
 
-- Ya sabes lo que quieres escribir.
-- Estás completando código repetitivo.
-- Quieres acelerar una implementación sencilla.
-- El contexto cercano del archivo es suficiente.
+Use **Copilot Chat** when:
 
-Usa **Copilot Chat** cuando:
-
-- Necesitas explicar una duda.
-- Quieres analizar un error.
-- Necesitas comparar alternativas.
-- Quieres modificar varias partes del código.
-- Necesitas una explicación antes de aceptar el código.
-- Quieres generar tests o documentación con instrucciones concretas.
-
----
-
-## 12. Configuración recomendada para clase
-
-Para este curso, se recomienda trabajar con la siguiente configuración inicial:
-
-### En VS Code
-
-- Tener instalada la extensión oficial de GitHub Copilot.
-- Tener Copilot Chat disponible.
-- Tener Git instalado.
-- Tener un proyecto de prueba abierto como carpeta.
-- Tener activadas las sugerencias inline.
-- Tener visible el panel de Chat.
-
-### En JetBrains
-
-- Tener instalado el plugin oficial de GitHub Copilot.
-- Haber iniciado sesión con GitHub.
-- Haber probado una sugerencia inline.
-- Tener abierto un proyecto de prueba.
-- Tener localizadas las opciones de Copilot en Settings.
+- You need to explain a doubt.
+- You want to analyze an error.
+- You need to compare alternatives.
+- You want to modify several parts of the code.
+- You need an explanation before accepting the code.
+- You want to generate tests or documentation with specific instructions.
 
 ---
 
-## 13. Proyecto de ejemplo para las pruebas del curso
+## 12. Recommended configuration for class
 
-Durante los temas siguientes puedes usar un proyecto sencillo.
+For this course, it is recommended to work with the following initial configuration:
 
-Crea una carpeta llamada:
+### In VS Code
+
+- Have the official GitHub Copilot extension installed.
+- Have Copilot Chat available.
+- Have Git installed.
+- Have a test project open as a folder.
+- Have inline suggestions activated.
+- Have the Chat panel visible.
+
+### At JetBrains
+
+- Have the official GitHub Copilot plugin installed.
+- Have logged in with GitHub.
+- Have tried an inline suggestion.
+- Have a test project open.
+- Have the Copilot options located in Settings.
+
+---
+
+## 13. Example project for course tests
+
+During the following topics you can use a simple project.
+
+Create a folder called:
 
 ```text
 copilot-course-demo
 ```
 
-Dentro, crea esta estructura:
+Inside, create this structure:
 
 ```text
 copilot-course-demo/
@@ -592,28 +589,28 @@ copilot-course-demo/
     └── calculator.test.js
 ```
 
-No hace falta que el proyecto sea complejo.
+The project does not have to be complex.
 
-La idea es tener archivos suficientes para probar:
+The idea is to have enough files to test:
 
-- Generación de funciones.
-- Refactorización.
-- Documentación.
+- Generation of functions.
+- Refactoring.
+- Documentation.
 - Tests.
-- Explicación de código.
-- Detección de errores.
+- Code explanation.
+- Error detection.
 
 ---
 
-## 14. Archivo inicial de ejemplo
+## 14. Example initial file
 
-En el archivo:
+In the file:
 
 ```text
 src/calculator.js
 ```
 
-puedes escribir:
+you can write:
 
 ```javascript
 function add(a, b) {
@@ -640,146 +637,145 @@ module.exports = {
 };
 ```
 
-Este código nos permitirá pedir a Copilot que:
+This code will allow us to ask Copilot to:
 
-- Añada validaciones.
-- Documente funciones.
-- Genere tests.
-- Detecte errores.
-- Proponga mejoras.
-
----
-
-## 15. Errores habituales al configurar Copilot
-
-### Error 1: No aparece ninguna sugerencia
-
-Posibles causas:
-
-- No has iniciado sesión.
-- La extensión no está instalada.
-- Copilot está desactivado.
-- Tu cuenta no tiene acceso a Copilot.
-- El archivo está vacío o no tiene suficiente contexto.
-- Hay problemas de conexión.
-
-Solución recomendada:
-
-1. Comprueba el estado de Copilot en el editor.
-2. Revisa que la cuenta de GitHub sea la correcta.
-3. Cierra y vuelve a abrir el editor.
-4. Actualiza la extensión.
-5. Prueba en un archivo sencillo.
+- Add validations.
+- Document functions.
+- Generate tests.
+- Detect errors.
+- Suggest improvements.
 
 ---
 
-### Error 2: Copilot genera código que no encaja con el proyecto
+## 15. Common mistakes when configuring Copilot
 
-Posibles causas:
+### Error 1: No suggestions appear
 
-- El proyecto no tiene una estructura clara.
-- El prompt es demasiado ambiguo.
-- El archivo no contiene suficiente contexto.
-- El código existente no sigue patrones consistentes.
+Possible causes:
 
-Solución recomendada:
+- You are not logged in.
+- The extension is not installed.
+- Copilot is disabled.
+- Your account does not have access to Copilot.
+- The file is empty or does not have enough context.
+- There are connection problems.
 
-- Añade nombres de funciones claros.
-- Escribe comentarios específicos.
-- Abre archivos relacionados.
-- Usa Copilot Chat para dar más contexto.
-- Revisa y adapta siempre el resultado.
+Recommended solution:
 
----
-
-### Error 3: Copilot sugiere código incorrecto
-
-Esto puede ocurrir.
-
-Copilot no garantiza que el código sea correcto.
-
-Solución recomendada:
-
-- Lee el código antes de aceptarlo.
-- Ejecuta el proyecto.
-- Añade tests.
-- Comprueba casos límite.
-- No aceptes código que no entiendes.
+1. Check the status of Copilot in the editor.
+2. Check that the GitHub account is correct.
+3. Close and reopen the editor.
+4. Update the extension.
+5. Test on a simple file.
 
 ---
 
-### Error 4: Copilot no responde en Chat
+### Error 2: Copilot generates code that does not fit the project
 
-Posibles causas:
+Possible causes:
 
-- No tienes acceso a Copilot Chat.
-- Hay un problema de sesión.
-- El IDE no está actualizado.
-- Hay restricciones de red.
+- The project does not have a clear structure.
+- The prompt is too ambiguous.
+- The file does not contain enough context.
+- Existing code does not follow consistent patterns.
 
-Solución recomendada:
+Recommended solution:
 
-- Cierra sesión y vuelve a iniciarla.
-- Actualiza el IDE.
-- Actualiza la extensión.
-- Comprueba la documentación oficial.
-- Revisa si tu organización ha limitado alguna función.
-
----
-
-## 16. Buenas prácticas de configuración
-
-Para trabajar mejor con Copilot:
-
-- Mantén el editor actualizado.
-- Usa la extensión oficial.
-- Inicia sesión con la cuenta correcta.
-- Trabaja con proyectos bien organizados.
-- Usa nombres claros para archivos, funciones y variables.
-- No pegues datos sensibles en prompts.
-- Revisa siempre el código generado.
-- Desactiva Copilot en archivos sensibles si es necesario.
-- Usa Chat para tareas complejas y sugerencias inline para tareas pequeñas.
+- Add clear function names.
+- Write specific comments.
+- Open related files.
+- Use Copilot Chat to give more context.
+- Always review and adapt the result.
 
 ---
 
-## 17. Checklist final del tema
+### Error 3: Copilot suggests wrong code
 
-Antes de pasar al siguiente tema, comprueba que puedes responder afirmativamente a estas preguntas:
+This can happen.
 
-- ¿Tengo una cuenta de GitHub activa?
-- ¿Tengo acceso a GitHub Copilot?
-- ¿He instalado Copilot en VS Code o JetBrains?
-- ¿He iniciado sesión correctamente?
-- ¿He probado una sugerencia inline?
-- ¿Sé aceptar o rechazar una sugerencia?
-- ¿Sé abrir Copilot Chat?
-- ¿Sé activar o desactivar Copilot si lo necesito?
-- ¿Entiendo que el código generado debe revisarse?
+Copilot does not guarantee that the code is correct.
 
----
+Recommended solution:
 
-## 18. Resumen
-
-En este tema has preparado tu entorno para trabajar con GitHub Copilot.
-
-Has visto:
-
-- Qué necesitas para usar Copilot.
-- Cómo instalarlo en VS Code.
-- Cómo instalarlo en JetBrains.
-- Cómo comprobar que funciona.
-- Qué son las sugerencias inline.
-- Qué es Copilot Chat.
-- Cuándo usar cada modalidad.
-- Qué errores de configuración pueden aparecer.
-- Qué buenas prácticas aplicar desde el principio.
-
-A partir del siguiente tema empezaremos a trabajar con una de las partes más importantes del curso: **cómo escribir buenos prompts para programar con Copilot**.
+- Read the code before accepting it.
+- Execute the project.
+- Add tests.
+- Check borderline cases.
+- Don't accept code you don't understand.
 
 ---
 
-## 19. Documentación oficial recomendada
+### Error 4: Copilot does not respond in Chat
+
+Possible causes:
+- You do not have access to Copilot Chat.
+- There is a session problem.
+- The IDE is not updated.
+- There are network restrictions.
+
+Recommended solution:
+
+- Log out and log in again.
+- Update the IDE.
+- Update the extension.
+- Check the official documentation.
+- Check if your organization has limited any functions.
+
+---
+
+## 16. Good configuration practices
+
+To work better with Copilot:
+
+- Keep the editor updated.
+- Use the official extension.
+- Sign in with the correct account.
+- Work with well-organized projects.
+- Use clear names for files, functions and variables.
+- Do not paste sensitive data in prompts.
+- Always review the generated code.
+- Disable Copilot on sensitive files if necessary.
+- Use Chat for complex tasks and inline suggestions for small tasks.
+
+---
+
+## 17. Final topic checklist
+
+Before moving on to the next topic, check that you can answer yes to these questions:
+
+- Do I have an active GitHub account?
+- Do I have access to GitHub Copilot?
+- Have I installed Copilot in VS Code or JetBrains?
+- Have I logged in correctly?
+- Have I tried an inline suggestion?
+- Do I know how to accept or reject a suggestion?
+- Do I know how to open Copilot Chat?
+- Do I know how to activate or deactivate Copilot if I need to?
+- Do I understand that the generated code needs to be reviewed?
+
+---
+
+## 18. Summary
+
+In this topic you have prepared your environment to work with GitHub Copilot.
+
+Have you seen:
+
+- What you need to use Copilot.
+- How to install it in VS Code.
+- How to install it in JetBrains.
+- How to check that it works.
+- What are inline suggestions.
+- What is Copilot Chat.
+- When to use each modality.
+- What configuration errors may appear.
+- What good practices to apply from the beginning.
+
+From the next topic we will begin to work with one of the most important parts of the course: **how to write good prompts to program with Copilot**.
+
+---
+
+## 19. Recommended official documentation
 
 - GitHub Copilot documentation: `https://docs.github.com/copilot`
 - Installing the GitHub Copilot extension: `https://docs.github.com/copilot/managing-copilot/configure-personal-settings/installing-the-github-copilot-extension-in-your-environment`

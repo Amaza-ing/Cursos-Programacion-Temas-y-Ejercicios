@@ -1,16 +1,16 @@
-# **Curso Completo de TypeScript desde Cero**
+# **Complete TypeScript Course from Scratch**
 
-Bienvenido al **Curso Completo de TypeScript**, un curso diseñado para que aprendas TypeScript desde cero y domines uno de los lenguajes más utilizados en el desarrollo web.
+Welcome to **Complete TypeScript Course**, a course designed for you to learn TypeScript from scratch and master one of the most used languages in web development.
 
 ---
 
-## 🎥 **Curso en Video**
+## 🎥 **Video Course**
 
-Dentro de poco se añadirán la teoría escrita y ejercicios resueltos.
-De momento puedes ver el curso completo en el siguiente video:
+Written theory and solved exercises will soon be added.
+For now you can see the complete course in the following video:
 
-📺 **Curso Completo de TypeScript**
+📺 **Complete TypeScript Course**
 
-[![Curso de TypeScript](https://img.youtube.com/vi/sBgcHD1JsL4/0.jpg)](https://www.youtube.com/watch?v=sBgcHD1JsL4&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+[![TypeScript Course](https://img.youtube.com/vi/sBgcHD1JsL4/0.jpg)](https://www.youtube.com/watch?v=sBgcHD1JsL4&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---

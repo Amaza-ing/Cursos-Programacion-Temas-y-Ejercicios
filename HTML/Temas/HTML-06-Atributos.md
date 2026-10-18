@@ -1,140 +1,156 @@
-# **Tema 6: Elementos, etiquetas y atributos en HTML**
+# **Topic 6: Elements, tags and attributes in HTML**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En HTML, la estructura de una página web está compuesta por **elementos**, que se definen mediante **etiquetas** y pueden contener atributos que añaden información o funcionalidad. Comprender estas diferencias es fundamental para escribir código HTML limpio y estructurado.
+In HTML, the structure of a web page is made up of **elements**, which are defined by **tags** and may contain attributes that add information or functionality. Understanding these differences is essential for writing clean and structured HTML code.
 
 ---
 
-## **2. Diferencia entre elementos y etiquetas**
+## **2. Difference between elements and labels**
 
-### **¿Qué es una etiqueta en HTML?**
+### **What is a tag in HTML?**
 
-Una **etiqueta** en HTML es un identificador que define el inicio y/o final de un elemento. Se escriben entre `< >` y pueden ser de apertura, cierre o autoconclusivas.
+A **tag** in HTML is an identifier that defines the start and/or end of an element. They are written between `< >` and can be opening, closing or self-concluding.
 
-**Ejemplo:**
+**Example:**
 
 ```HTML
 <p>Este es un párrafo.</p>
 ```
 
-- `<p>` es una etiqueta de apertura.
-- `</p>` es una etiqueta de cierre.
-- Todo el contenido dentro de `<p>...</p>` es un **elemento**.
 
-### **¿Qué es un elemento en HTML?**
+- `<p>` is an opening tag.
+- `</p>` is a closing tag.
+- All content within `<p>...</p>` is an **item**.
 
-Un **elemento** en HTML es la combinación de una etiqueta de apertura, su contenido y, en algunos casos, una etiqueta de cierre.
+### **What is an element in HTML?**
 
-**Ejemplo:**
+An **element** in HTML is the combination of an opening tag, its content, and, in some cases, a closing tag.
+
+**Example:**
 
 ```HTML
 <h1>Título principal</h1>
 ```
 
-En este caso, `<h1>` y `</h1>` forman un **elemento de encabezado**.
+
+In this case, `<h1>` and `</h1>` form a **header element**.
 
 ---
 
-## **3. ¿Qué son los atributos en HTML?**
+## **3. What are attributes in HTML?**
 
-Los atributos proporcionan información adicional sobre un elemento. Se incluyen en la etiqueta de apertura y siguen la sintaxis `nombre="valor"`.
+Attributes provide additional information about an element. They are included in the opening tag and follow the `nombre="valor"` syntax.
 
-### **Ejemplo de atributos en una imagen:**
+### **Example of attributes in an image:**
 
 ```HTML
 <img src="imagen.jpg" alt="Descripción de la imagen">
 ```
 
-En este caso:
 
-- `src` define la fuente de la imagen.
-- `alt` proporciona un texto alternativo en caso de que la imagen no se cargue.
+In this case:
+
+- `src` defines the source of the image.
+- `alt` provides alternative text in case the image fails to load.
 
 ---
 
-## **4. Atributos comunes en HTML**
+## **4. Common attributes in HTML**
 
-- **lang**: Define el idioma del contenido.
+- **lang**: Defines the language of the content.
 
   ```HTML
   <html lang="es">
   ```
 
-- **id**: Asigna un identificador único a un elemento.
+
+- **id**: Assigns a unique identifier to an element.
   ```HTML
   <p id="intro">Este es un párrafo con un ID.</p>
   ```
-- **class**: Permite agrupar varios elementos bajo una misma categoría.
+
+- **class**: Allows you to group several elements under the same category.
   ```HTML
   <p class="destacado">Texto destacado.</p>
   ```
-- **data-\***: Permite almacenar información personalizada.
+
+- **data-\***: Allows you to store personalized information.
   ```HTML
   <div data-usuario="123">Perfil del usuario</div>
   ```
-- **src**: Especifica la URL de una imagen, video o script.
+
+- **src**: Specifies the URL of an image, video or script.
   ```HTML
   <img src="logo.png" alt="Logo del sitio">
   ```
-- **alt**: Texto alternativo para imágenes.
+
+- **alt**: Alternative text for images.
   ```HTML
   <img src="foto.jpg" alt="Fotografía de un paisaje">
   ```
-- **href**: Define la URL de un enlace.
+
+- **href**: Defines the URL of a link.
 
   ```HTML
   <a href="https://www.ejemplo.com">Visitar sitio</a>
   ```
 
-- **title**: Muestra un texto emergente al pasar el cursor.
+
+- **title**: Shows a pop-up text on hover.
   ```HTML
   <p title="Información adicional">Coloca el cursor aquí.</p>
   ```
 
----
-
-[![Enlaces y Atributos](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **5. Otros atributos importantes**
+[![Links and Attributes](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
-### **Atributos en formularios**
+---
 
-- **placeholder**: Texto de referencia en un campo de entrada.
+## **5. Other important attributes**
+
+### **Attributes in forms**
+
+- **placeholder**: Reference text in an input field.
   ```HTML
   <input type="text" placeholder="Escribe tu nombre">
   ```
-- **disabled**: Desactiva un campo.
+
+- **disabled**: Disables a field.
   ```HTML
   <input type="text" disabled>
   ```
-- **required**: Hace obligatorio un campo.
+
+- **required**: Makes a field mandatory.
   ```HTML
   <input type="email" required>
   ```
 
-### **Atributos en multimedia**
 
-- **controls**: Agrega controles a un audio o video.
+### **Attributes in multimedia**
+
+- **controls**: Add controls to an audio or video.
   ```HTML
   <video src="video.mp4" controls></video>
   ```
-- **autoplay**: Reproduce un contenido automáticamente.
+
+- **autoplay**: Play content automatically.
   ```HTML
   <audio src="musica.mp3" autoplay></audio>
   ```
 
----
-
-## **6. Buenas prácticas al usar atributos en HTML**
-
-- Usa **nombres descriptivos** en los atributos `id` y `class`.
-- No repitas **valores de `id`**, ya que deben ser únicos.
-- Usa **`alt` en imágenes** para mejorar la accesibilidad.
-- Evita **atributos innecesarios** si no aportan valor al código.
 
 ---
 
-En el próximo tema, exploraremos **los enlaces en HTML**, su sintaxis, atributos y cómo crear vínculos dentro y fuera de una página web.
+## **6. Good practices when using attributes in HTML**
+
+- Use **friendly names** on the `id` and `class` attributes.
+- Do not repeat **`id` values**, as they must be unique.
+- Use **`alt` on images** to improve accessibility.
+- Avoid **unnecessary attributes** if they do not add value to the code.
+
+---
+
+In the next topic, we will explore **links in HTML**, their syntax, attributes, and how to create links inside and outside of a web page.

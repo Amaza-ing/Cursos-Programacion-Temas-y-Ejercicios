@@ -1,45 +1,45 @@
-# **Tema 13: Props Hijo a Padre y Elevar el Estado**
+# **Topic 13: Props Son to Father and Raising the State**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Hasta ahora hemos visto cómo los datos bajan de un componente padre a un hijo mediante **props**. Pero en una app real también necesitas el camino contrario:
+So far we have seen how data is moved down from a parent component to a child using **props**. But in a real app you also need the opposite way:
 
-- El usuario interactúa en un componente hijo (por ejemplo, escribe en un input o pulsa un botón).
-- Esa acción debe **afectar al estado** que vive en el padre.
+- The user interacts in a child component (for example, writes in an input or presses a button).
+- That action must **affect the state** that the father lives in.
 
-En React, esto se consigue con un patrón muy común:
+In React, this is achieved with a very common pattern:
 
-- El padre crea una **función**.
-- Se la pasa al hijo como prop.
-- El hijo la ejecuta para “avisar” al padre.
+- The parent creates a **function**.
+- Passes it to the son as a prop.
+- The son executes it to “warn” the father.
 
-Cuando un estado se mueve hacia arriba para que lo compartan varios componentes, lo llamamos **elevar el estado** (_lifting state up_).
+When a state is moved up to be shared by multiple components, we call it **lifting state up_.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo comunicar datos de **hijo → padre**.
-- Cómo pasar funciones como props.
-- Qué significa **elevar el estado** y cuándo hacerlo.
-- Ejemplos típicos: botón que notifica, input que actualiza, lista con selección.
-
----
-
-## **2. Idea clave: las props no suben, suben las funciones**
-
-Las props son de **solo lectura** en el hijo. El hijo no puede “cambiar” el estado del padre directamente.
-
-La forma correcta es:
-
-1. El padre guarda el estado con `useState`.
-2. El padre define una función que actualiza ese estado.
-3. El padre pasa esa función al hijo.
-4. El hijo llama a esa función cuando ocurra un evento.
+- How to communicate data from **child → father**.
+- How to pass functions as props.
+- What does **raise status** mean and when to do it.
+- Typical examples: button that notifies, input that updates, list with selection.
 
 ---
 
-## **3. Pasar una función del padre al hijo**
+## **2. Key idea: props don't rise, functions rise**
 
-### **3.1. Ejemplo simple: el hijo avisa al padre**
+Props are **read-only** in the child. The child cannot “change” the parent's status directly.
+
+The correct way is:
+
+1. The parent saves the state with `useState`.
+2. The parent defines a function that updates that state.
+3. The father passes that function to the son.
+4. The child calls that function when an event occurs.
+
+---
+
+## **3. Pass a function from parent to child**
+
+### **3.1. Simple example: son notifies father**
 
 **`ChildButton.jsx`**
 
@@ -75,21 +75,21 @@ function App() {
 export default App;
 ```
 
-Observa:
+Observe:
 
-- El padre pasa `handleNotify` como `onNotify`.
-- El hijo ejecuta `onNotify(...)` cuando el usuario hace click.
+- The parent passes `handleNotify` as `onNotify`.
+- The child executes `onNotify(...)` when the user clicks.
 
 ---
 
-## **4. Patrón típico: input en el hijo, estado en el padre**
+## **4. Typical pattern: input in child, state in parent**
 
-Una situación muy habitual:
+A very common situation:
 
-- El input está en un componente hijo.
-- El valor debe guardarse en el padre (porque otros componentes lo necesitan).
+- The input is in a child component.
+- The value must be saved in the parent (because other components need it).
 
-### **4.1. Padre con estado**
+### **4.1. Father with status**
 
 **`App.jsx`**
 
@@ -115,7 +115,7 @@ function App() {
 export default App;
 ```
 
-### **4.2. Hijo que notifica cambios**
+### **4.2. Child reporting changes**
 
 **`SearchInput.jsx`**
 
@@ -131,34 +131,34 @@ function SearchInput({ value, onValueChange }) {
 export default SearchInput;
 ```
 
-Aquí el estado vive en el padre, pero el input está en el hijo:
+Here the state lives in the parent, but the input is in the child:
 
-- El padre controla el valor (`value`).
-- El hijo avisa al padre (`onValueChange`).
-
----
-
-[![Props Hijo a Padre](https://img.youtube.com/vi/A2hRoqV3z84/0.jpg)](https://www.youtube.com/watch?v=A2hRoqV3z84&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+- The parent controls the value (`value`).
+- The son notifies the father (`onValueChange`).
 
 ---
 
-## **5. Elevar el estado: cuándo tiene sentido**
-
-Elevar el estado significa **mover el estado al componente padre común** cuando:
-
-- Dos (o más) componentes hermanos necesitan los mismos datos.
-- Un componente debe actualizar algo que otro componente muestra.
-
-Ejemplo típico:
-
-- `SearchInput` (hijo 1) actualiza la búsqueda.
-- `ResultsList` (hijo 2) muestra resultados filtrados.
-
-Ambos dependen de `query`, así que `query` debe estar en el padre.
+[![Props Son to Father](https://img.youtube.com/vi/A2hRoqV3z84/0.jpg)](https://www.youtube.com/watch?v=A2hRoqV3z84&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-## **6. Ejemplo completo: input + lista filtrada (estado elevado)**
+## **5. Raising Status: When It Makes Sense**
+
+Raising state means **moving state to the common parent component** when:
+
+- Two (or more) sibling components need the same data.
+- A component must update something that another component displays.
+
+Typical example:
+
+- `SearchInput` (child 1) updates search.
+- `ResultsList` (child 2) shows filtered results.
+
+They both depend on `query`, so `query` must be in the parent.
+
+---
+
+## **6. Complete example: input + filtered list (elevated state)**
 
 **`App.jsx`**
 
@@ -203,16 +203,16 @@ function ResultsList({ items }) {
 export default ResultsList;
 ```
 
-Detalles:
+Details:
 
-- `SearchInput` y `ResultsList` son hermanos.
-- Comparten el estado `query` que vive en el padre.
+- `SearchInput` and `ResultsList` are brothers.
+- They share the state `query` that lives on the parent.
 
 ---
 
-## **7. Enviar “selecciones” al padre (clic en un item)**
+## **7. Send “selections” to the parent (click on an item)**
 
-Otro caso muy común: el hijo muestra una lista y, al hacer click, debe decirle al padre qué elemento se ha seleccionado.
+Another very common case: the child displays a list and, upon clicking, must tell the parent which item has been selected.
 
 **`ItemList.jsx`**
 
@@ -233,7 +233,6 @@ export default ItemList;
 ```
 
 **`App.jsx`**
-
 ```js
 import { useState } from "react";
 import ItemList from "./components/ItemList";
@@ -259,29 +258,29 @@ export default App;
 
 ---
 
-## **8. Buenas prácticas**
+## **8. Good practices**
 
-- Nombra las props de función con intención:
+- Name function props with intent:
 
   - `onSelect`, `onChange`, `onSubmit`, `onClose`.
 
-- En el hijo, no “inventes” estado si ese dato se necesita fuera.
-- Si el estado se usa en un solo componente, mantenlo local.
-- Si se comparte entre hermanos, **súbelo** al padre común.
+- In the child, do not “invent” state if that data is needed outside.
+- If state is used in a single component, keep it local.
+- If shared between siblings, **upload** it to the common parent.
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Llamar a la función en vez de pasarla**
+### **9.1. Call function instead of passing it**
 
-Incorrecto:
+Incorrect:
 
 ```js
 <ItemList onSelect={handleSelect()} />
 ```
 
-Correcto:
+Correct:
 
 ```js
 <ItemList onSelect={handleSelect} />
@@ -289,27 +288,27 @@ Correcto:
 
 ---
 
-### **9.2. Mutar props**
+### **9.2. Mutate props**
 
-Las props no se modifican en el hijo.
+The props are not modified in the child.
 
-Si el hijo necesita cambiar algo, debe:
+If the child needs to change something, he must:
 
-- Tener estado propio (si es local), o
-- Avisar al padre con una función.
-
----
-
-## **10. A tener en cuenta**
-
-- Comunicación hijo → padre: el padre pasa una función y el hijo la ejecuta.
-- Elevar el estado: mover el estado al padre común cuando varios componentes lo necesitan.
-- Patrón típico: `value` + `onValueChange` para inputs.
+- Have its own state (if local), or
+- Notify the parent with a function.
 
 ---
 
-[![Elevar el Estado](https://img.youtube.com/vi/tLOeGTJudd4/0.jpg)](https://www.youtube.com/watch?v=tLOeGTJudd4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **10. To take into account**
+
+- Child → parent communication: the parent passes a function and the child executes it.
+- Raise state: move state to the common parent when multiple components need it.
+- Typical pattern: `value` + `onValueChange` for inputs.
 
 ---
 
-En el próximo tema veremos **useEffect()**, para reaccionar a cambios de estado y ejecutar efectos (fetch, timers, etc.).
+[![Raise Status](https://img.youtube.com/vi/tLOeGTJudd4/0.jpg)](https://www.youtube.com/watch?v=tLOeGTJudd4&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will see **useEffect()**, to react to state changes and execute effects (fetch, timers, etc.).

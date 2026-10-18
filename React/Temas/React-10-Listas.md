@@ -1,29 +1,29 @@
-# **Tema 10: Listas, Index y Listas de Objetos**
+# **Topic 10: Lists, Index and Object Lists**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En una aplicación real, rara vez renderizas elementos “a mano” uno por uno. Lo habitual es tener una colección de datos (array) y generar la interfaz dinámicamente.
+In a real application, you rarely render elements “by hand” one by one. The usual thing is to have a collection of data (array) and generate the interface dynamically.
 
-En React, esto se hace renderizando **listas** con `.map()`.
+In React, this is done by rendering **lists** with `.map()`.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo renderizar listas con `.map()`.
-- Qué es la prop `key` y por qué es importante.
-- Cuándo usar el **index** como `key` y cuándo evitarlo.
-- Cómo renderizar **listas de objetos**.
+- How to render lists with `.map()`.
+- What is the `key` prop and why is it important.
+- When to use **index** like `key` and when to avoid it.
+- How to render **lists of objects**.
 
 ---
 
-## **2. Renderizar una lista simple con `.map()`**
+## **2. Render a simple list with `.map()`**
 
-Un patrón típico:
+A typical pattern:
 
-- Tienes un array.
-- Lo recorres con `.map()`.
-- Devuelves JSX por cada elemento.
+- You have an array.
+- You go through it with `.map()`.
+- You return JSX for each element.
 
-Ejemplo con una lista de strings:
+Example with a list of strings:
 
 ```js
 function FruitsList() {
@@ -41,21 +41,21 @@ function FruitsList() {
 export default FruitsList;
 ```
 
-Detalles importantes:
+Important details:
 
-- `.map()` devuelve un **nuevo array**.
-- Cada elemento de la lista en React debe tener una `key`.
+- `.map()` returns a **new array**.
+- Each list item in React must have an `key`.
 
 ---
 
-## **3. La prop `key` (muy importante)**
+## **3. The `key` prop (very important)**
 
-Cuando React renderiza una lista, necesita una forma estable de identificar cada elemento. Para eso sirve `key`.
+When React renders a list, it needs a stable way to identify each element. That's what `key` is for.
 
-- `key` debe ser **única** dentro de esa lista.
-- Debe ser **estable** (idealmente no cambia entre renders).
+- `key` must be **unique** within that list.
+- It must be **stable** (ideally it does not change between renders).
 
-Ejemplo recomendado:
+Recommended example:
 
 ```js
 <li key={fruit}>{fruit}</li>
@@ -63,13 +63,13 @@ Ejemplo recomendado:
 
 ---
 
-[![Listas](https://img.youtube.com/vi/c8j6TtAqTYQ/0.jpg)](https://www.youtube.com/watch?v=c8j6TtAqTYQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Lists](https://img.youtube.com/vi/c8j6TtAqTYQ/0.jpg)](https://www.youtube.com/watch?v=c8j6TtAqTYQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-## **4. Listas con `index` (Listas Index)**
+## **4. Lists with `index` (Index Lists)**
 
-A veces se usa el **index** del `.map()` como `key`:
+Sometimes the **index** of `.map()` is used as `key`:
 
 ```js
 function ColorsList() {
@@ -87,41 +87,41 @@ function ColorsList() {
 export default ColorsList;
 ```
 
-### **4.1. ¿Cuándo se puede usar el index como `key`?**
+### **4.1. When can you use the index like `key`?**
 
-Puedes usar `index` si se cumplen estas condiciones:
+You can use `index` if these conditions are met:
 
-- La lista es **estática** (no se reordena).
-- No se eliminan ni insertan elementos en medio.
-- Cada elemento no tiene un id estable.
+- The list is **static** (it is not reordered).
+- No elements are deleted or inserted in between.
+- Each element does not have a stable id.
 
-Ejemplo típico: una lista fija de pasos de un tutorial.
+Typical example: a fixed list of steps in a tutorial.
 
-### **4.2. ¿Cuándo NO deberías usar el index como `key`?**
+### **4.2. When should you NOT use index like `key`?**
 
-Evítalo si:
+Avoid it if:
 
-- Puedes reordenar la lista.
-- Puedes eliminar/añadir elementos.
-- Los elementos tienen estado o inputs asociados.
+- You can reorder the list.
+- You can delete/add elements.
+- Elements have associated status or inputs.
 
-Si React identifica mal los elementos, puede:
+If React misidentifies elements, you can:
 
-- Reutilizar un elemento donde no toca.
-- Mostrar datos “cambiados de sitio”.
-- Mantener estados en el item equivocado.
-
----
-
-[![Listas Index](https://img.youtube.com/vi/HFp69Sp1bR0/0.jpg)](https://www.youtube.com/watch?v=HFp69Sp1bR0&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+- Reuse an element where it does not belong.
+- Show “changed location” data.
+- Keep states on the wrong item.
 
 ---
 
-## **5. Renderizar listas de objetos (Listas de Objetos)**
+[![Index Lists](https://img.youtube.com/vi/HFp69Sp1bR0/0.jpg)](https://www.youtube.com/watch?v=HFp69Sp1bR0&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
-Lo más común es que tu lista sea un array de objetos.
+---
 
-Ejemplo:
+## **5. Render lists of objects (Object Lists)**
+
+The most common thing is that your list is an array of objects.
+
+Example:
 
 ```js
 function UsersList() {
@@ -145,21 +145,21 @@ function UsersList() {
 export default UsersList;
 ```
 
-Aquí la `key` ideal es `user.id` porque:
+Here the ideal `key` is `user.id` because:
 
-- Es única.
-- No cambia.
-- React puede identificar cada item correctamente.
-
----
-
-[![Listas de Objetos](https://img.youtube.com/vi/RxJ-8PTAuBY/0.jpg)](https://www.youtube.com/watch?v=RxJ-8PTAuBY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+- It's unique.
+- Doesn't change.
+- React can identify each item correctly.
 
 ---
 
-## **6. Renderizar componentes dentro de una lista**
+[![Item Lists](https://img.youtube.com/vi/RxJ-8PTAuBY/0.jpg)](https://www.youtube.com/watch?v=RxJ-8PTAuBY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
-Un patrón muy común es tener un componente “item” y renderizarlo en el `.map()`.
+---
+
+## **6. Render components within a list**
+
+A very common pattern is to have an “item” component and render it in the `.map()`.
 
 ### **6.1. `UserItem.jsx`**
 
@@ -198,27 +198,27 @@ function UsersList() {
 export default UsersList;
 ```
 
-Observa que:
+Note that:
 
-- La `key` se pone en el **componente que se repite** (`UserItem`).
-- `UserItem` recibe datos por props.
-
----
-
-## **7. Buenas prácticas con listas**
-
-- Usa una `key` estable (idealmente un `id`).
-- Evita usar `index` como `key` si la lista puede cambiar.
-- Si el JSX dentro del `.map()` se vuelve grande, crea un componente para cada item.
-- Mantén las listas simples y legibles.
+- The `key` is put in the **repeating component** (`UserItem`).
+- `UserItem` receives data by props.
 
 ---
 
-## **8. A tener en cuenta**
+## **7. Good practices with lists**
 
-- Para renderizar listas en React se usa `.map()`.
-- Cada item debe tener una `key`.
-- `index` como `key` solo en listas estáticas.
-- En listas de objetos, usa `id` como `key`.
+- Use a stable `key` (ideally an `id`).
+- Avoid using `index` as `key` if the list may change.
+- If the JSX inside `.map()` becomes large, create a component for each item.
+- Keep lists simple and readable.
 
-En el próximo tema veremos **Props Padre a Hijo** para compartir información dinámica entre componentes.
+---
+
+## **8. To take into account**
+
+- To render lists in React, `.map()` is used.
+- Each item must have an `key`.
+- `index` as `key` only in static lists.
+- In item lists, use `id` as `key`.
+
+In the next topic we will see **Parent to Child Props** to share dynamic information between components.

@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 12: Media Queries y Diseño Responsivo**
+# **Exercises - Topic 12: Media Queries and Responsive Design**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre media queries y diseño responsivo en CSS.
+Below, you will find 5 practical exercises on media queries and responsive design in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Cambiar el color de fondo en pantallas pequeñas**
+### **Exercise 1: Change the background color on small screens**
 
-Crea una media query que cambie el color de fondo del `<body>` a azul cuando el ancho de la pantalla sea menor a 600 píxeles.
+Create a media query that changes the background color of `<body>` to blue when the screen width is less than 600 pixels.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 @media (max-width: 600px) {
@@ -22,15 +22,16 @@ Crea una media query que cambie el color de fondo del `<body>` a azul cuando el 
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Adaptar el tamaño de fuente en diferentes dispositivos**
+### **Exercise 2: Adapt the font size on different devices**
 
-Haz que los párrafos tengan un tamaño de fuente de 14px en móviles (menos de 600px), 16px en tabletas (entre 600px y 1024px) y 18px en pantallas grandes (más de 1024px).
+Make paragraphs a font size of 14px on mobile (less than 600px), 16px on tablets (between 600px and 1024px), and 18px on large screens (more than 1024px).
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 /* Móviles */
@@ -55,15 +56,16 @@ Haz que los párrafos tengan un tamaño de fuente de 14px en móviles (menos de 
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Ocultar un elemento en dispositivos móviles**
+### **Exercise 3: Hide an element on mobile devices**
 
-Crea una media query que oculte un menú de navegación (`.nav`) en pantallas menores a 768 píxeles.
+Create a media query that hides a navigation menu (`.nav`) on screens smaller than 768 pixels.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 @media (max-width: 768px) {
@@ -73,15 +75,16 @@ Crea una media query que oculte un menú de navegación (`.nav`) en pantallas me
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Cambiar el diseño de una galería de imágenes**
+### **Exercise 4: Change the layout of an image gallery**
 
-Crea una galería de imágenes que muestre las imágenes en una sola columna en dispositivos móviles y en tres columnas en pantallas grandes.
+Create an image gallery that displays images in a single column on mobile devices and in three columns on large screens.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .gallery {
@@ -97,6 +100,7 @@ Crea una galería de imágenes que muestre las imágenes en una sola columna en 
 }
 ```
 
+
 ```html
 <div class="gallery">
   <img src="img1.jpg" alt="Imagen 1" />
@@ -105,15 +109,16 @@ Crea una galería de imágenes que muestre las imágenes en una sola columna en 
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Cambiar la orientación del texto en modo horizontal**
+### **Exercise 5: Change the orientation of text in landscape mode**
 
-Usa media queries para que el texto de un párrafo esté alineado al centro en orientación vertical y alineado a la izquierda en orientación horizontal.
+Use media queries to make the text in a paragraph center-aligned in portrait orientation and left-aligned in landscape orientation.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 /* Orientación vertical */
@@ -130,5 +135,6 @@ Usa media queries para que el texto de un párrafo esté alineado al centro en o
   }
 }
 ```
+
 
 </details>

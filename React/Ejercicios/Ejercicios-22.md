@@ -1,19 +1,19 @@
-# **Ejercicios - Tema 22: Context en React**
+# **Exercises - Topic 22: Context in React**
 
-A continuación, encontrarás **10 ejercicios prácticos** para aprender a crear, proveer y consumir Context usando `createContext`, `useContext` y Providers personalizados.
+Below you will find **10 practical exercises** to learn how to create, provide and consume Context using `createContext`, `useContext` and custom Providers.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Crear un Context**
+## **Exercise 1: Create a Context**
 
-Crea un archivo `ThemeContext.js` que:
+Create an `ThemeContext.js` file that:
 
 - Use `createContext`.
-- Exporte el contexto.
+- Export the context.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { createContext } from "react";
@@ -27,15 +27,15 @@ export default ThemeContext;
 
 ---
 
-## **Ejercicio 2: Proveer un valor con Provider**
+## **Exercise 2: Provide a value with Provider**
 
-En `App.jsx`:
+In `App.jsx`:
 
-- Crea estado `theme` con valor inicial `"light"`.
-- Envuelve la app con `ThemeContext.Provider`.
-- Pasa `{ theme }` como `value`.
+- Create state `theme` with initial value `"light"`.
+- Wrap the app with `ThemeContext.Provider`.
+- Passes `{ theme }` as `value`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -58,15 +58,15 @@ export default App;
 
 ---
 
-## **Ejercicio 3: Consumir Context con `useContext`**
+## **Exercise 3: Consume Context with `useContext`**
 
-Crea un componente `Header.jsx` que:
+Create an `Header.jsx` component that:
 
 - Use `useContext`.
-- Lea `theme` del `ThemeContext`.
-- Muestre `Theme: light/dark`.
+- Read `theme` from `ThemeContext`.
+- Show `Theme: light/dark`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useContext } from "react";
@@ -85,14 +85,14 @@ export default Header;
 
 ---
 
-## **Ejercicio 4: Context con estado y función**
+## **Exercise 4: Context with state and function**
 
-Amplía el contexto para que incluya:
+Expand the context to include:
 
 - `theme`
 - `setTheme`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -104,14 +104,14 @@ Amplía el contexto para que incluya:
 
 ---
 
-## **Ejercicio 5: Cambiar el valor del Context**
+## **Exercise 5: Change the Context value**
 
-En `Header.jsx`:
+In `Header.jsx`:
 
-- Añade un botón **Toggle theme**.
-- Cambia entre `"light"` y `"dark"`.
+- Add a **Toggle theme** button.
+- Switch between `"light"` and `"dark"`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
@@ -123,15 +123,15 @@ En `Header.jsx`:
 
 ---
 
-## **Ejercicio 6: Crear un Provider personalizado**
+## **Exercise 6: Create a custom Provider**
 
-Crea `ThemeProvider.jsx` que:
+Create `ThemeProvider.jsx` that:
 
-- Tenga el estado `theme`.
-- Provea `{ theme, setTheme }`.
-- Renderice `{children}`.
+- Have the status `theme`.
+- Provide `{ theme, setTheme }`.
+- Render `{children}`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { createContext, useState } from "react";
@@ -155,11 +155,11 @@ export default ThemeProvider;
 
 ---
 
-## **Ejercicio 7: Usar el Provider personalizado**
+## **Exercise 7: Using the Custom Provider**
 
-Envuelve la app con `ThemeProvider`.
+Wrap the app with `ThemeProvider`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <ThemeProvider>
@@ -171,35 +171,35 @@ Envuelve la app con `ThemeProvider`.
 
 ---
 
-## **Ejercicio 8: Error típico — olvidar el Provider**
+## **Exercise 8: Typical error — forgetting the Provider**
 
-¿Qué ocurre si usas `useContext(ThemeContext)` sin envolver con el Provider?
+What happens if you use `useContext(ThemeContext)` unwrapped with the Provider?
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-El valor del contexto será `undefined` y puede provocar errores en tiempo de ejecución.
-
-</details>
-
----
-
-## **Ejercicio 9: Context vs estado local**
-
-Explica cuándo **NO** deberías usar Context.
-
-<details><summary>Mostrar Solución</summary>
-
-Cuando el estado solo lo necesita un componente o un número muy reducido de ellos.
+The context value will be `undefined` and may cause runtime errors.
 
 </details>
 
 ---
 
-## **Ejercicio 10: Context para autenticación**
+## **Exercise 9: Context vs local state**
 
-Describe qué valores tendría un `AuthContext` básico.
+Explain when you should **NOT** use Context.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
+
+When the state only needs one component or a very small number of them.
+
+</details>
+
+---
+
+## **Exercise 10: Context for authentication**
+
+Describes what values a basic `AuthContext` would have.
+
+<details><summary>Show Solution</summary>
 
 ```js
 {

@@ -1,24 +1,24 @@
-# **Tema 4: Control de Flujo en Angular (@if y @for)**
+# **Topic 4: Flow Control in Angular (@if and @for)**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, el control de flujo nos permite gestionar la lógica de visualización de los elementos en el DOM. A partir de Angular 17, se introdujeron las directivas `@if` y `@for`, que permiten mejorar la legibilidad y eficiencia del código.
+In Angular, flow control allows us to manage the display logic of elements in the DOM. Starting with Angular 17, the `@if` and `@for` directives were introduced, which improve the readability and efficiency of the code.
 
-Este tema cubrirá:
+This topic will cover:
 
-- La directiva `@if` para renderizar condicionalmente elementos en la vista.
-- La directiva `@for` para iterar sobre listas de elementos.
-- Comparación con las directivas `*ngIf` y `*ngFor` tradicionales.
+- The `@if` directive to conditionally render elements in the view.
+- The `@for` directive to iterate over lists of elements.
+- Comparison with the traditional `*ngIf` and `*ngFor` directives.
 
 ---
 
-## **2. La Directiva `@if`**
+## **2. The `@if`** Directive
 
-La directiva `@if` permite mostrar u ocultar elementos en función de una condición. Reemplaza a `*ngIf`, mejorando la estructura y claridad del código.
+The `@if` directive allows you to show or hide elements based on a condition. Replaces `*ngIf`, improving code structure and clarity.
 
-### **2.1. Uso básico de `@if`**
+### **2.1. Basic use of `@if`**
 
-Ejemplo en `control-flujo.component.html`:
+Example in `control-flujo.component.html`:
 
 ```html
 @if (isLoggedIn) {
@@ -28,7 +28,8 @@ Ejemplo en `control-flujo.component.html`:
 }
 ```
 
-Ejemplo en `control-flujo.component.ts`:
+
+Example in `control-flujo.component.ts`:
 
 ```ts
 import { Component } from "@angular/core";
@@ -43,10 +44,11 @@ export class ControlFlujoComponent {
 }
 ```
 
-En este caso:
 
-- Si `isLoggedIn` es `true`, se mostrará el mensaje "Bienvenido, usuario.".
-- Si `isLoggedIn` es `false`, se mostrará "Por favor, inicia sesión.".
+In this case:
+
+- If `isLoggedIn` is `true`, the message "Welcome, user." will be displayed.
+- If `isLoggedIn` is `false`, "Please log in." will be displayed.
 
 ---
 
@@ -54,13 +56,13 @@ En este caso:
 
 ---
 
-## **3. La Directiva `@for`**
+## **3. The `@for`** Directive
 
-La directiva `@for` permite iterar sobre una lista y generar dinámicamente elementos en la vista, reemplaza a `*ngFor`, mejorando la estructura y claridad del código.
+The `@for` directive allows iterating over a list and dynamically generating elements in the view, it replaces `*ngFor`, improving the structure and clarity of the code.
 
-### **3.1. Uso básico de `@for`**
+### **3.1. Basic use of `@for`**
 
-Ejemplo en `control-flujo.component.html`:
+Example in `control-flujo.component.html`:
 
 ```html
 <ul>
@@ -70,7 +72,8 @@ Ejemplo en `control-flujo.component.html`:
 </ul>
 ```
 
-Ejemplo en `control-flujo.component.ts`:
+
+Example in `control-flujo.component.ts`:
 
 ```ts
 import { Component } from "@angular/core";
@@ -85,10 +88,11 @@ export class ControlFlujoComponent {
 }
 ```
 
-En este caso:
 
-- Se genera dinámicamente una lista `ul` con los elementos de `items`.
-- Se usa `track` para optimizar la actualización del DOM haciendo que Angular identifique claramente a cada elemento de la lista.
+In this case:
+
+- An `ul` list is dynamically generated with the elements of `items`.
+- `track` is used to optimize DOM updating by making Angular clearly identify each element in the list.
 
 ---
 
@@ -96,27 +100,27 @@ En este caso:
 
 ---
 
-## **4. Comparación entre `@if`/`@for` y `*ngIf`/`*ngFor`**
+## **4. Comparison between `@if`/`@for` and `*ngIf`/`*ngFor`**
 
-| **Directiva** | **Nueva Sintaxis**                         | **Sintaxis Anterior**                                                 |
+| **Directive** | **New Syntax** | **Previous Syntax** |
 | ------------- | ------------------------------------------ | --------------------------------------------------------------------- |
-| Condicional   | `@if (condición) { ... } @else { ... }`    | `<ng-container *ngIf="condición; else otraPlantilla"></ng-container>` |
-| Iteración     | `@for (item of items; track item) { ... }` | `<div *ngFor="let item of items">{{ item }}</div>`                    |
+| Conditional | `@if (condición) { ... } @else { ... }` | `<ng-container *ngIf="condición; else otraPlantilla"></ng-container>` |
+| Iteration | `@for (item of items; track item) { ... }` | `<div *ngFor="let item of items">{{ item }}</div>` |
 
-### **4.1. Ventajas de `@if` y `@for`**
+### **4.1. Advantages of `@if` and `@for`**
 
-- **Mayor legibilidad**: Se parece más a la sintaxis de JavaScript.
-- **Mejor rendimiento**: Reduce cálculos innecesarios en el DOM.
-- **Estructura más clara**: Evita el uso de `<ng-container>` y plantillas auxiliares.
-
----
-
-## **5. Conclusión**
-
-- `@if` permite mostrar u ocultar contenido dependiendo de la condición que elijamos.
-- `@for` facilita la iteración sobre listas de forma eficiente.
-- Estas nuevas directivas simplifican el código y mejoran la organización de la vista.
+- **Greater readability**: More like JavaScript syntax.
+- **Better performance**: Reduces unnecessary calculations in the DOM.
+- **Clearer structure**: Avoid the use of `<ng-container>` and auxiliary templates.
 
 ---
 
-En el siguiente tema, exploraremos las signals y las nuevas formas de gestionar la reactividad en Angular.
+## **5. Conclusion**
+
+- `@if` allows you to show or hide content depending on the condition we choose.
+- `@for` makes iterating over lists efficiently.
+- These new directives simplify the code and improve the organization of the view.
+
+---
+
+In the next topic, we will explore signals and new ways to manage reactivity in Angular.

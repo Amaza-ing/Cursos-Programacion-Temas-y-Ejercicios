@@ -1,21 +1,21 @@
-# **Ejercicios - Tema 3: Componentes en React**
+# **Exercises - Topic 3: Components in React**
 
-A continuación, encontrarás **8 ejercicios prácticos** sobre componentes en React.
+Below you will find **8 practical exercises** on components in React.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Crear un componente `Logo`**
+## **Exercise 1: Create an `Logo` component**
 
-Crea un componente llamado `Logo.jsx` dentro de `src/components/` que muestre:
+Create a component called `Logo.jsx` inside `src/components/` that displays:
 
-- Un `h2` con el texto: **"MyCompany"**
-- Un `p` con el texto: **"Building UI with React"**
+- An `h2` with the text: **"MyCompany"**
+- An `p` with the text: **"Building UI with React"**
 
-Después, úsalo dentro de `App.jsx`.
+Then use it inside `App.jsx`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/Logo.jsx`**
 
@@ -52,9 +52,9 @@ export default App;
 
 ---
 
-## **Ejercicio 2: Corregir el error del “único elemento padre”**
+## **Exercise 2: Correct the “only parent element” error**
 
-Este componente da error. Arréglalo para que funcione:
+This component gives an error. Fix it to work:
 
 ```js
 function Greeting() {
@@ -67,7 +67,7 @@ function Greeting() {
 export default Greeting;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Greeting() {
@@ -86,20 +86,20 @@ export default Greeting;
 
 ---
 
-## **Ejercicio 3: Crear `UserBadge` con variables dentro de JSX**
+## **Exercise 3: Create `UserBadge` with variables within JSX**
 
-Crea un componente `UserBadge.jsx` en `src/components/` que:
+Create an `UserBadge.jsx` component in `src/components/` that:
 
-- Declare una variable `userName` con el valor `"Alex"`.
-- Declare una variable `userRole` con el valor `"Admin"`.
-- Muestre en JSX:
+- Declare a variable `userName` with the value `"Alex"`.
+- Declare a variable `userRole` with the value `"Admin"`.
+- Show in JSX:
 
   - `h3`: **"User: Alex"**
   - `p`: **"Role: Admin"**
 
-Luego úsalo en `App.jsx`.
+Then use it on `App.jsx`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/UserBadge.jsx`**
 
@@ -139,17 +139,17 @@ export default App;
 
 ---
 
-## **Ejercicio 4: Composición - `Layout` con `Header` y `Footer`**
+## **Exercise 4: Composition - `Layout` with `Header` and `Footer`**
 
-Crea estos componentes en `src/components/`:
+Create these components in `src/components/`:
 
-- `Header.jsx` con un `header` y un `h1` que diga **"Dashboard"**.
-- `Footer.jsx` con un `footer` y un `small` que diga **"All rights reserved"**.
-- `Layout.jsx` que use `Header` y `Footer` y además incluya un `main` con un `p` que diga: **"Content goes here"**.
+- `Header.jsx` with an `header` and an `h1` that says **"Dashboard"**.
+- `Footer.jsx` with an `footer` and an `small` that says **"All rights reserved"**.
+- `Layout.jsx` that uses `Header` and `Footer` and also includes an `main` with an `p` that says: **"Content goes here"**.
 
-Por último, renderiza `Layout` en `App.jsx`.
+Finally, render `Layout` to `App.jsx`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/Header.jsx`**
 
@@ -220,9 +220,9 @@ export default App;
 
 ---
 
-## **Ejercicio 5: Importación correcta (detecta el problema)**
+## **Exercise 5: Successful import (detect the problem)**
 
-Tienes este componente:
+You have this component:
 
 ```js
 function Card() {
@@ -232,17 +232,17 @@ function Card() {
 export default Card;
 ```
 
-Y lo estás importando así en `App.jsx`:
+And you are importing it like this in `App.jsx`:
 
 ```js
 import { Card } from "./components/Card";
 ```
 
-Corrige la importación para que funcione.
+Fix the import so it works.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Como el componente se exporta con `export default`, la importación debe ser sin llaves:
+Since the component is exported with `export default`, the import must be keyless:
 
 ```js
 import Card from "./components/Card";
@@ -252,15 +252,15 @@ import Card from "./components/Card";
 
 ---
 
-## **Ejercicio 6: Crear un componente `Stats` con cálculo simple**
+## **Exercise 6: Create an `Stats` component with simple calculation**
 
-Crea un componente `Stats.jsx` que:
+Create an `Stats.jsx` component that:
 
-- Declare dos variables: `visits = 120` y `signups = 45`.
-- Muestre ambas en JSX.
-- Calcule y muestre en un `p` la suma: **"Total: 165"** usando `{}`.
+- Declare two variables: `visits = 120` and `signups = 45`.
+- Show both in JSX.
+- Calculate and display in an `p` the sum: **"Total: 165"** using `{}`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Stats() {
@@ -283,16 +283,15 @@ export default Stats;
 
 ---
 
-## **Ejercicio 7: Reutilizar un componente varias veces**
+## **Exercise 7: Reuse a component multiple times**
 
-Crea un componente `Tag.jsx` que muestre un `span` con el texto **"New"**.
+Create an `Tag.jsx` component that displays an `span` with the text **"New"**.
 
-Después, en `App.jsx` úsalo **tres veces** seguidas.
+Then on `App.jsx` use it **three times** in a row.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/Tag.jsx`**
-
 ```js
 function Tag() {
   return <span>New</span>;
@@ -323,32 +322,32 @@ export default App;
 
 ---
 
-## **Ejercicio 8: Buenas prácticas (elige la opción correcta)**
+## **Exercise 8: Good practices (choose the correct option)**
 
-Marca la opción más recomendable en cada caso:
+Mark the most recommended option in each case:
 
-1. Nombre de componente:
+1. Component name:
 
    - a) `navbar.jsx`
    - b) `Navbar.jsx`
    - c) `navBar.jsx`
 
-2. ¿Cuántos componentes por archivo es lo recomendable al empezar?
+2. How many components per file is recommended when starting out?
 
-   - a) Muchos, para tener menos archivos
-   - b) Uno por archivo
-   - c) Da igual
+   - a) Many, to have fewer files
+   - b) One per file
+   - c) It doesn't matter
 
-3. Un componente debería:
+3. A component should:
 
-   - a) Tener muchas responsabilidades para ahorrar código
-   - b) Ser pequeño y con una responsabilidad clara
-   - c) No importar otros componentes
+   - a) Have many responsibilities to save code
+   - b) Be small and with a clear responsibility
+   - c) Do not import other components
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 1. b) `Navbar.jsx` (PascalCase).
-2. b) Uno por archivo.
-3. b) Ser pequeño y con una responsabilidad clara.
+2. b) One per file.
+3. b) Be small and with clear responsibility.
 
 </details>

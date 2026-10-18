@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 4: Funciones en JavaScript**
+# **Exercises - Topic 4: Functions in JavaScript**
 
-A continuación, encontrarás 6 ejercicios prácticos sobre el uso de funciones en JavaScript.
+Below you will find 6 practical exercises on using functions in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una función simple**
+### **Exercise 1: Create a simple function**
 
-Crea una función llamada `showMsg` que reciba un parámetro `msg` y muestre por consola el mensaje "Mensaje: [msg]!".
+Create a function called `showMsg` that receives an `msg` parameter and displays the message "Message: [msg]!" in the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function showMsg(msg) {
@@ -24,11 +24,11 @@ showMsg("Hola a todos"); // Salida: Mensaje: Hola a todos!
 
 ---
 
-### **Ejercicio 2: Función que retorne un valor**
+### **Exercise 2: Function that returns a value**
 
-Crea una función llamada `sum` que reciba dos números como parámetros y retorne su suma.
+Create a function called `sum` that takes two numbers as parameters and returns their sum.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function sum(a, b) {
@@ -43,11 +43,11 @@ console.log(result); // Salida: 12
 
 ---
 
-### **Ejercicio 3: Función con valores por defecto**
+### **Exercise 3: Function with default values**
 
-Crea una función llamada `greetUser` que reciba un parámetro `name` y tenga un valor por defecto de "Invitado" si no se proporciona ningún nombre.
+Create a function called `greetUser` that receives an `name` parameter and has a default value of "Guest" if no name is provided.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function greetUser(name = "Invitado") {
@@ -62,9 +62,9 @@ greetUser("Carlos"); // Salida: ¡Hola, Carlos!
 
 ---
 
-### **Ejercicio 4: Función flecha**
+### **Exercise 4: Arrow function**
 
-Convierte la siguiente función en una función flecha:
+Convert the following function to an arrow function:
 
 ```js
 function multiply(a, b) {
@@ -72,7 +72,7 @@ function multiply(a, b) {
 }
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const multiply = (a, b) => {
@@ -90,11 +90,11 @@ console.log(multiply(3, 4)); // Salida: 12
 
 ---
 
-### **Ejercicio 5: Función que use parámetros rest**
+### **Exercise 5: Function that uses rest parameters**
 
-Crea una función llamada `multiplyAll` que acepte un número indefinido de argumentos y retorne su multiplicación.
+Create a function called `multiplyAll` that accepts an indefinite number of arguments and returns their multiplication.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function multiplyAll(...numbers) {
@@ -113,11 +113,11 @@ console.log(multiplyAll(1, 2, 3, 4)); // Salida: 24
 
 ---
 
-### **Ejercicio 6: Función de orden superior**
+### **Exercise 6: Higher order function**
 
-Crea una función llamada `applyOperation` que reciba dos números y una función callback. La función debe aplicar el callback a los dos números.
+Create a function called `applyOperation` that receives two numbers and a callback function. The function must apply the callback to both numbers.
 
-**Ejemplo:**
+**Example:**
 
 ```js
 function add(a, b) {
@@ -132,7 +132,7 @@ applyOperation(5, 3, add); // Salida: 8
 applyOperation(5, 3, subtract); // Salida: 2
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function applyOperation(a, b, operation) {

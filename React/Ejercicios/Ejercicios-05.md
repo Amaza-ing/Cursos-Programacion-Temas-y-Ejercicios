@@ -1,14 +1,14 @@
-# **Ejercicios - Tema 5: Componentes en una línea**
+# **Exercises - Topic 5: Components in a line**
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre componentes en una línea (arrow functions, retorno implícito y legibilidad).
+Below you will find **10 practical exercises** on components in a line (arrow functions, implicit return and readability).
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Convertir a componente en una línea**
+## **Exercise 1: Convert to component in a line**
 
-Convierte este componente a una versión en una línea usando arrow function y retorno implícito:
+Convert this component to a one-line version using arrow function and implicit return:
 
 ```js
 function Title() {
@@ -18,7 +18,7 @@ function Title() {
 export default Title;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const Title = () => <h1>Welcome</h1>;
@@ -30,16 +30,16 @@ export default Title;
 
 ---
 
-## **Ejercicio 2: JSX en varias líneas con paréntesis**
+## **Exercise 2: JSX on multiple lines with parentheses**
 
-Crea un componente `EmptyMessage.jsx` en una sola declaración con arrow function que renderice:
+Create an `EmptyMessage.jsx` component in a single declaration with arrow function that renders:
 
-- `h3` con el texto: **"No results"**
-- `p` con el texto: **"Try a different search"**
+- `h3` with the text: **"No results"**
+- `p` with the text: **"Try a different search"**
 
-El JSX debe estar en varias líneas usando paréntesis.
+The JSX should be on multiple lines using parentheses.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const EmptyMessage = () => (
@@ -56,9 +56,9 @@ export default EmptyMessage;
 
 ---
 
-## **Ejercicio 3: Detectar el error del retorno implícito**
+## **Exercise 3: Detect the implicit return error**
 
-Este componente no muestra nada. Corrígelo:
+This component does not show anything. Correct it:
 
 ```js
 const Badge = () => {
@@ -68,9 +68,9 @@ const Badge = () => {
 export default Badge;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Al usar llaves `{}`, necesitas `return`:
+When using `{}` keys, you need `return`:
 
 ```js
 const Badge = () => {
@@ -80,7 +80,7 @@ const Badge = () => {
 export default Badge;
 ```
 
-Alternativa con retorno implícito (sin llaves):
+Alternative with implicit return (without braces):
 
 ```js
 const Badge = () => <span>New</span>;
@@ -92,11 +92,11 @@ export default Badge;
 
 ---
 
-## **Ejercicio 4: Crear un componente “visual” simple**
+## **Exercise 4: Create a simple “visual” component**
 
-Crea un componente `Separator.jsx` en una línea que devuelva un `hr` con `className="separator"`.
+Create an `Separator.jsx` component on a line that returns an `hr` with `className="separator"`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const Separator = () => <hr className="separator" />;
@@ -108,9 +108,9 @@ export default Separator;
 
 ---
 
-## **Ejercicio 5: Refactorizar para mejorar legibilidad**
+## **Exercise 5: Refactor to improve readability**
 
-Tienes este componente en una línea, pero es poco legible. Reescríbelo usando paréntesis y varias líneas:
+You have this component on one line, but it is poorly readable. Rewrite it using parentheses and several lines:
 
 ```js
 const Info = () => (
@@ -121,7 +121,7 @@ const Info = () => (
 );
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const Info = () => (
@@ -138,47 +138,47 @@ export default Info;
 
 ---
 
-## **Ejercicio 6: Cuándo NO usar componente en una línea (elige la opción correcta)**
+## **Exercise 6: When NOT to use component in a line (choose the correct option)**
 
-Elige la opción más recomendable:
+Choose the most recommended option:
 
-1. Un componente con 2 etiquetas y sin lógica
+1. A component with 2 labels and no logic
 
-   - a) En una línea
-   - b) Forma clásica
+   - a) In a line
+   - b) Classic form
 
-2. Un componente con JSX largo (muchos elementos)
+2. A component with long JSX (many elements)
 
-   - a) En una línea
-   - b) Forma clásica o varias líneas con paréntesis
+   - a) In a line
+   - b) Classic form or several lines with parentheses
 
-3. Un componente con varias variables y cálculos
+3. A component with several variables and calculations
 
-   - a) En una línea
-   - b) Forma clásica
+   - a) In a line
+   - b) Classic form
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. a) En una línea (si es realmente corto y legible).
-2. b) Forma clásica o varias líneas con paréntesis.
-3. b) Forma clásica.
+1. a) On one line (if it's really short and readable).
+2. b) Classic form or several lines with parentheses.
+3. b) Classic form.
 
 </details>
 
 ---
 
-## **Ejercicio 7: Comparar `function` vs arrow function**
+## **Exercise 7: Compare `function` vs arrow function**
 
-Escribe el componente `FooterNote` de dos formas:
+Write the `FooterNote` component in two ways:
 
-- Forma clásica con `function`.
-- Forma compacta con arrow function en una línea.
+- Classic shape with `function`.
+- Compact shape with arrow function in one line.
 
-Debe renderizar: `small` con el texto **"Built with React"**.
+Should render: `small` with the text **"Built with React"**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Forma clásica:
+Classic shape:
 
 ```js
 function FooterNote() {
@@ -188,7 +188,7 @@ function FooterNote() {
 export default FooterNote;
 ```
 
-Forma en una línea:
+Form in one line:
 
 ```js
 const FooterNote = () => <small>Built with React</small>;
@@ -200,13 +200,13 @@ export default FooterNote;
 
 ---
 
-## **Ejercicio 8: Componentes en una línea dentro de `App.jsx`**
+## **Exercise 8: Components on a line within `App.jsx`**
 
-En `App.jsx`, crea un componente `Label` en una línea y úsalo dos veces. Debe renderizar:
+In `App.jsx`, create an `Label` component on one line and use it twice. You must render:
 
-- `span` con el texto: **"Featured"**
+- `span` with the text: **"Featured"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const Label = () => <span>Featured</span>;
@@ -226,10 +226,9 @@ export default App;
 </details>
 
 ---
+## **Exercise 9: Use parentheses correctly (typical bug)**
 
-## **Ejercicio 9: Usar paréntesis correctamente (bug típico)**
-
-Este componente intenta devolver JSX en varias líneas, pero no funciona. Arréglalo:
+This component tries to return JSX on multiple lines, but it doesn't work. Fix it:
 
 ```js
 const Tip = () => <p>Remember to save your work</p>;
@@ -237,9 +236,9 @@ const Tip = () => <p>Remember to save your work</p>;
 export default Tip;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-En retornos implícitos con varias líneas, usa paréntesis:
+On implicit returns with multiple lines, use parentheses:
 
 ```js
 const Tip = () => <p>Remember to save your work</p>;
@@ -251,19 +250,19 @@ export default Tip;
 
 ---
 
-## **Ejercicio 10: Decidir el estilo adecuado (mini-casos)**
+## **Exercise 10: Decide on the appropriate style (mini-cases)**
 
-Indica cuál elegirías y por qué (una frase por caso):
+Indicate which one you would choose and why (one sentence per case):
 
-1. Componente `Dot` que solo renderiza un `span` con un punto (`•`).
-2. Componente `UserProfile` con varias variables, JSX largo y estructura compleja.
-3. Componente `LoadingText` que renderiza un `p` muy corto.
+1. `Dot` component that only renders an `span` with a dot (`•`).
+2. `UserProfile` component with multiple variables, long JSX and complex structure.
+3. `LoadingText` component that renders a very short `p`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. Componente en una línea: es muy pequeño y visual.
-2. Forma clásica: necesita legibilidad y probablemente lógica.
-3. En una línea si es corto y legible; si crece, cambiaría a forma clásica.
+1. Component in a line: it is very small and visual.
+2. Classic form: needs readability and probably logic.
+3. On one line if it is short and legible; If it grows, it would change to classical form.
 
 </details>
 

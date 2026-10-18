@@ -1,20 +1,20 @@
-# **Tema 2: Esquema de Ficheros en React**
+# **Topic 2: File Schema in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Una buena **organización de ficheros** es clave para que un proyecto React sea **legible**, **escalable** y **fácil de mantener**. Aunque React no impone una estructura rígida, existen convenciones ampliamente utilizadas que facilitan el trabajo individual y en equipo.
+Good **file organization** is key for a React project to be **readable**, **scalable** and **easy to maintain**. Although React does not impose a rigid structure, there are widely used conventions that facilitate individual and team work.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo es la estructura básica de un proyecto React.
-- Qué responsabilidad tiene cada carpeta y archivo.
-- Una propuesta de estructura recomendada para proyectos pequeños y medianos.
+- What is the basic structure of a React project.
+- What responsibility does each folder and file have?
+- A recommended structure proposal for small and medium projects.
 
 ---
 
-## **2. Estructura inicial de un proyecto React (Vite)**
+## **2. Initial structure of a React project (Vite)**
 
-Al crear un proyecto con Vite, obtendrás una estructura similar a la siguiente:
+When you create a project with Vite, you'll get a structure similar to the following:
 
 ```
 my-react-app/
@@ -30,29 +30,29 @@ my-react-app/
 │── vite.config.js
 ```
 
-Esta estructura es mínima pero suficiente para comenzar a trabajar.
+This structure is minimal but enough to start working.
 
 ---
 
-## **3. Explicación de carpetas y archivos principales**
+## **3. Explanation of main folders and files**
 
 ### **3.1. `node_modules/`**
 
-Contiene todas las dependencias del proyecto instaladas con npm. No se debe modificar manualmente ni subir a repositorios como GitHub.
+Contains all project dependencies installed with npm. It should not be modified manually or uploaded to repositories such as GitHub.
 
 ---
 
 ### **3.2. `public/`**
 
-Contiene archivos estáticos que no pasan por el proceso de compilación.
+It contains static files that do not go through the compilation process.
 
-Ejemplos de uso:
+Examples of use:
 
-- Imágenes públicas
-- Iconos
-- Archivos estáticos accesibles por URL directa
+- Public images
+- Icons
+- Static files accessible by direct URL
 
-Los archivos de esta carpeta se referencian desde la raíz:
+The files in this folder are referenced from the root:
 
 ```html
 <img src="/logo.png" />
@@ -62,18 +62,18 @@ Los archivos de esta carpeta se referencian desde la raíz:
 
 ### **3.3. `src/`**
 
-Es la carpeta más importante del proyecto. Aquí vive **todo el código de React**.
+It is the most important folder in the project. This is where **all of the React code** lives.
 
 ---
 
 #### **3.3.1. `main.jsx`**
 
-Es el **punto de entrada** de la aplicación.
+It is the **entry point** of the application.
 
-Su función es:
+Its function is:
 
-- Crear la raíz de React.
-- Renderizar el componente principal.
+- Create the React root.
+- Render the main component.
 
 ```js
 import React from "react";
@@ -92,10 +92,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 #### **3.3.2. `App.jsx`**
 
-Es el **componente raíz** de la aplicación.
+It is the **root component** of the application.
 
-- A partir de aquí se construye el resto de componentes.
-- Suele contener la estructura principal de la interfaz.
+- From here the rest of the components are built.
+- Usually contains the main structure of the interface.
 
 ```js
 function App() {
@@ -109,25 +109,25 @@ export default App;
 
 #### **3.3.3. `index.css`**
 
-Archivo de **estilos globales** de la aplicación.
+Application **global styles** file.
 
-Aquí se suelen definir:
+Here they are usually defined:
 
-- Estilos base
-- Tipografías
-- Reset de CSS
+- Base styles
+- Fonts
+- CSS reset
 
 ---
 
 ### **3.4. `assets/`**
 
-Se utiliza para almacenar recursos que **sí pasan por el bundler**:
+It is used to store resources that **do pass through the bundler**:
 
-- Imágenes
-- Iconos
-- Fuentes
+- Images
+- Icons
+- Sources
 
-Ejemplo de uso:
+Example of use:
 
 ```js
 import logo from "./assets/react.svg";
@@ -137,19 +137,19 @@ import logo from "./assets/react.svg";
 
 ### **3.5. `index.html`**
 
-Es el archivo HTML principal. Contiene el elemento donde se monta React:
+It is the main HTML file. Contains the element where React is mounted:
 
 ```html
 <div id="root"></div>
 ```
 
-React no genera múltiples HTML, sino que trabaja como una **Single Page Application (SPA)**.
+React does not generate multiple HTML, but rather works as a **Single Page Application (SPA)**.
 
 ---
 
-## **4. Propuesta de estructura recomendada**
+## **4. Recommended structure proposal**
 
-A medida que el proyecto crece, es recomendable organizar mejor los archivos:
+As the project grows, it is advisable to better organize the files:
 
 ```
 src/
@@ -169,44 +169,43 @@ src/
 │── index.css
 ```
 
-Esta estructura ayuda a:
+This structure helps:
 
-- Separar responsabilidades.
-- Evitar archivos gigantes.
-- Facilitar la reutilización de código.
+- Separate responsibilities.
+- Avoid giant files.
+- Facilitate code reuse.
 
 ---
 
-## **5. Convenciones de nombres**
+## **5. Naming conventions**
 
-- Componentes: **PascalCase**
+- Components: **PascalCase**
 
   - `Header.jsx`
   - `UserCard.jsx`
 
-- Variables y funciones: **camelCase**
+- Variables and functions: **camelCase**
 
   - `userName`
   - `handleClick`
 
-- Carpetas: minúsculas
+- Folders: lowercase
 
   - `components`
   - `pages`
 
 ---
 
-## **6. A tener en cuenta**
+## **6. To take into account**
 
-- React no obliga a una estructura concreta, pero seguir convenciones es una buena práctica.
-- `App.jsx` actúa como punto central de la aplicación.
-- Separar componentes y páginas mejora la escalabilidad.
-- Una buena organización ahorra tiempo y errores a largo plazo.
+- React does not force a specific structure, but following conventions is good practice.
+- `App.jsx` acts as the central point of the application.
+- Separating components and pages improves scalability.
+- Good organization saves time and errors in the long term.
+
+---
+[![File and Folder Scheme](https://img.youtube.com/vi/TCfSknh03Lc/0.jpg)](https://www.youtube.com/watch?v=TCfSknh03Lc&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-[![Esquema de Ficheros y Carpetas](https://img.youtube.com/vi/TCfSknh03Lc/0.jpg)](https://www.youtube.com/watch?v=TCfSknh03Lc&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
-
----
-
-En el próximo tema comenzaremos a trabajar con **componentes en React** y entenderemos cómo crearlos y reutilizarlos correctamente.
+In the next topic we will start working with **components in React** and understand how to create and reuse them correctly.

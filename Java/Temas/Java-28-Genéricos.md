@@ -1,15 +1,15 @@
-# Tema 28. Generics
+# Topic 28. Generics
 
-## 1. Introducción
+## 1. Introduction
 
-En temas anteriores has trabajado con colecciones como:
+In previous topics you have worked with collections such as:
 
 - `ArrayList`
 - `HashMap`
 - `Set`
 - `TreeMap`
 
-Y seguramente ya has visto sintaxis como esta:
+And you've probably already seen syntax like this:
 
 ```java
 List<String> names = new ArrayList<>();
@@ -17,40 +17,40 @@ Map<String, Integer> ages = new HashMap<>();
 Set<Double> prices = new HashSet<>();
 ```
 
-Ese `<String>`, `<Integer>` o `<Double>` forma parte de una característica muy importante de Java:
+That `<String>`, `<Integer>` or `<Double>` is part of a very important feature of Java:
 
 - **Generics**
 
-Los **generics** permiten escribir clases, interfaces y métodos que trabajan con **tipos parametrizados**, es decir, con un tipo que se indica más tarde.
+**generics** allow you to write classes, interfaces and methods that work with **parameterized types**, that is, with a type that is indicated later.
 
-La gran ventaja es que permiten:
+The great advantage is that they allow:
 
-- reutilizar código
-- trabajar con tipos de forma segura
-- evitar muchos errores en tiempo de ejecución
-- escribir APIs más limpias y expresivas
+- reuse code
+- work with types safely
+- avoid many runtime errors
+- write cleaner and more expressive APIs
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué son los generics
-- Por qué son útiles
-- Qué problema resuelven
-- Cómo usar generics en colecciones
-- Cómo crear clases genéricas
-- Cómo crear métodos genéricos
-- Qué son los comodines (`?`, `? extends`, `? super`)
-- Qué limitaciones tienen los generics en Java
-- Errores típicos y buenas prácticas
+- What are generics?
+- Why they are useful
+- What problem do they solve?
+- How to use generics in collections
+- How to create generic classes
+- How to create generic methods
+- What are wildcards (`?`, `? extends`, `? super`)
+- What limitations do generics have in Java?
+- Typical errors and good practices
 
 ---
 
-## 2. El problema antes de los generics
+## 2. The problem before generics
 
-Para entender por qué existen los generics, primero hay que ver el problema que resuelven.
+To understand why generics exist, you first have to look at the problem they solve.
 
-Antes de usar generics, una colección podía almacenar elementos como `Object`.
+Before using generics, a collection could store elements like `Object`.
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 List values = new ArrayList();
@@ -59,19 +59,19 @@ values.add(28);
 values.add(true);
 ```
 
-Aquí puede entrar de todo:
+Here you can enter everything:
 
 - `String`
 - `Integer`
 - `Boolean`
 
-Eso parece flexible, pero tiene varios problemas:
+That seems flexible, but it has several problems:
 
-- pierdes seguridad de tipos
-- necesitas conversiones manuales (_casting_)
-- es más fácil cometer errores
+- you lose type safety
+- you need manual conversions (_casting_)
+- it is easier to make mistakes
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.ArrayList;
@@ -90,30 +90,30 @@ public class Main {
 }
 ```
 
-El problema es que Java permite compilar ese código, pero falla en tiempo de ejecución con una excepción.
+The problem is that Java allows that code to be compiled, but it fails at runtime with an exception.
 
-Los generics evitan precisamente este tipo de situaciones.
+Generics avoid precisely this type of situation.
 
 ---
 
-## 3. Qué son los generics
+## 3. What are generics
 
-Los generics permiten definir tipos usando un parámetro de tipo.
+Generics allow types to be defined using a type parameter.
 
-Ejemplo:
+Example:
 
 ```java
 List<String> names = new ArrayList<>();
 ```
 
-Aquí `String` es el tipo concreto que has indicado.
+Here `String` is the specific type that you have indicated.
 
-Eso significa:
+That means:
 
-- esta lista solo puede guardar `String`
-- si intentas meter otro tipo, Java marcará error de compilación
+- this list can only save `String`
+- if you try to enter another type, Java will flag a compilation error
 
-Ejemplo:
+Example:
 
 ```java
 List<String> names = new ArrayList<>();
@@ -123,41 +123,41 @@ names.add("Alex");
 // names.add(25); // error
 ```
 
-Esto hace el código mucho más seguro.
+This makes the code much more secure.
 
 ---
 
-## 4. Ventajas principales de los generics
+## 4. Main advantages of generics
 
-Las ventajas más importantes son estas:
+The most important advantages are these:
 
-### 4.1. Seguridad de tipos
+### 4.1. Type Safety
 
-Evitas mezclar tipos incorrectos en una estructura.
+You avoid mixing incorrect types in a structure.
 
-### 4.2. Menos casting
+### 4.2. Less casting
 
-No necesitas hacer conversiones manuales constantemente.
+You don't need to constantly do manual conversions.
 
-### 4.3. Código más claro
+### 4.3. Clearer code
 
-Cuando ves esto:
+When you see this:
 
 ```java
 List<String> names
 ```
 
-ya sabes que ahí solo hay `String`.
+You already know that there is only `String` there.
 
-### 4.4. Reutilización
+### 4.4. Reuse
 
-Puedes crear clases y métodos que funcionen con distintos tipos sin duplicar código.
+You can create classes and methods that work with different types without duplicating code.
 
 ---
 
-## 5. Generics en colecciones
+## 5. Generics in collections
 
-La mayoría de usos iniciales de generics aparecen en colecciones.
+Most early uses of generics appear in collections.
 
 ### 5.1. `List<String>`
 
@@ -178,8 +178,8 @@ public class Main {
 }
 ```
 
-Fíjate en que `get(0)` ya devuelve un `String`.  
-No hace falta hacer casting.
+Notice that `get(0)` already returns an `String`.  
+There is no need to cast.
 
 ---
 
@@ -203,7 +203,7 @@ public class Main {
 }
 ```
 
-Aquí se usan wrappers (`Integer`) en lugar de `int`, porque los generics trabajan con objetos, no con tipos primitivos.
+Wrappers (`Integer`) are used here instead of `int`, because generics work with objects, not primitive types.
 
 ---
 
@@ -228,26 +228,26 @@ public class Main {
 
 ---
 
-## 6. Sintaxis general de los parámetros de tipo
+## 6. General syntax of type parameters
 
-Los parámetros de tipo suelen escribirse entre `< >`.
+Type parameters are usually written between `< >`.
 
-Ejemplo simple:
+Simple example:
 
 ```java
 ClassName<T>
 ```
 
-Puedes ver nombres como:
+You can see names like:
 
 - `T` → Type
 - `E` → Element
 - `K` → Key
 - `V` → Value
 
-Son convenciones muy habituales en Java.
+They are very common conventions in Java.
 
-Ejemplos:
+Examples:
 
 ```java
 List<E>
@@ -257,21 +257,21 @@ Optional<T>
 
 ---
 
-## 7. Crear una clase genérica
+## 7. Create a generic class
 
-Ahora vamos a dar el paso importante: no solo usar generics, sino crear una clase genérica.
+Now we are going to take the important step: not only use generics, but create a generic class.
 
-Imagina una clase que guarda un único valor.
+Imagine a class that holds a single value.
 
-Sin generics, tendrías que hacer versiones separadas:
+Without generics, you would have to make separate versions:
 
 - `StringBox`
 - `IntegerBox`
 - `DoubleBox`
 
-Con generics, puedes hacer una sola clase.
+With generics, you can make a single class.
 
-### 7.1. Ejemplo básico: `Box<T>`
+### 7.1. Basic example: `Box<T>`
 
 ```java
 public class Box<T> {
@@ -291,9 +291,9 @@ public class Box<T> {
 }
 ```
 
-Aquí `T` representa “el tipo que se decidirá al usar la clase”.
+Here `T` represents “the type that will be decided when using the class”.
 
-### 7.2. Uso de la clase
+### 7.2. Class usage
 
 ```java
 public class Main {
@@ -307,16 +307,16 @@ public class Main {
 }
 ```
 
-Ahora la misma clase sirve para distintos tipos.
+Now the same class serves different types.
 
 ---
 
-## 8. Qué significa `T`
+## 8. What does `T` mean
 
-`T` no es una palabra reservada especial.  
-Es solo una letra elegida por convención.
+`T` is not a special reserved word.  
+It's just a letter chosen by convention.
 
-Podrías escribir:
+You could write:
 
 ```java
 public class Box<ValueType> {
@@ -332,23 +332,23 @@ public class Box<ValueType> {
 }
 ```
 
-Esto funciona, pero normalmente en Java se usan letras cortas porque son una convención muy extendida.
+This works, but normally in Java short letters are used because they are a very widespread convention.
 
-Las más habituales son:
+The most common are:
 
-- `T` → tipo genérico
-- `E` → elemento
-- `K` → clave
-- `V` → valor
-- `R` → resultado
+- `T` → generic type
+- `E` → item
+- `K` → key
+- `V` → value
+- `R` → result
 
 ---
 
-## 9. Clase genérica con dos parámetros
+## 9. Generic class with two parameters
 
-Una clase puede tener más de un parámetro de tipo.
+A class can have more than one type parameter.
 
-Ejemplo:
+Example:
 
 ```java
 public class Pair<K, V> {
@@ -370,7 +370,7 @@ public class Pair<K, V> {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -385,13 +385,13 @@ public class Main {
 
 ---
 
-## 10. Métodos genéricos
+## 10. Generic methods
 
-No solo las clases pueden ser genéricas. También los métodos.
+Not only classes can be generic. Also the methods.
 
-Un método genérico define su propio parámetro de tipo.
+A generic method defines its own type parameter.
 
-### 10.1. Ejemplo: imprimir cualquier valor
+### 10.1. Example: print any value
 
 ```java
 public class Printer {
@@ -401,7 +401,7 @@ public class Printer {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -413,13 +413,13 @@ public class Main {
 }
 ```
 
-Aquí el método funciona con distintos tipos sin necesidad de sobrecargarlo varias veces.
+Here the method works with different types without the need to overload it several times.
 
 ---
 
-## 11. Sintaxis de un método genérico
+## 11. Syntax of a generic method
 
-La sintaxis general es esta:
+The general syntax is this:
 
 ```java
 public static <T> ReturnType methodName(T param) {
@@ -427,7 +427,7 @@ public static <T> ReturnType methodName(T param) {
 }
 ```
 
-Ejemplo:
+Example:
 
 ```java
 public static <T> T getFirst(T first, T second) {
@@ -435,7 +435,7 @@ public static <T> T getFirst(T first, T second) {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -455,7 +455,7 @@ public class Main {
 
 ---
 
-## 12. Ejemplo útil: intercambiar dos valores en un array
+## 12. Useful example: swapping two values in an array
 
 ```java
 public class ArrayUtils {
@@ -467,7 +467,7 @@ public class ArrayUtils {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 import java.util.Arrays;
@@ -483,7 +483,7 @@ public class Main {
 }
 ```
 
-Este método funciona para cualquier tipo de array de objetos:
+This method works for any type of array of objects:
 
 - `String[]`
 - `Integer[]`
@@ -491,31 +491,31 @@ Este método funciona para cualquier tipo de array de objetos:
 
 ---
 
-## 13. Restricciones: los generics no aceptan tipos primitivos
+## 13. Restrictions: generics do not accept primitive types
 
-Esto es muy importante.
+This is very important.
 
-Esto no es válido:
+This is not valid:
 
 ```java
 // Box<int> numberBox = new Box<>(10); // NO
 ```
 
-La forma correcta es:
+The correct way is:
 
 ```java
 Box<Integer> numberBox = new Box<>(10);
 ```
 
-Lo mismo ocurre con colecciones:
+The same goes for collections:
 
 ```java
 List<Integer> numbers = new ArrayList<>();
 ```
 
-No puede ser `List<int>`.
+It cannot be `List<int>`.
 
-Debes usar wrappers:
+You must use wrappers:
 
 - `Integer`
 - `Double`
@@ -525,43 +525,43 @@ Debes usar wrappers:
 
 ---
 
-## 14. Inferencia de tipos y operador diamante `<>`
+## 14. Type inference and diamond operator `<>`
 
-Desde Java 7, cuando el tipo ya está claro a la izquierda, puedes usar el operador diamante.
+Since Java 7, when the type is already clear on the left, you can use the diamond operator.
 
-Ejemplo:
+Example:
 
 ```java
 List<String> names = new ArrayList<>();
 ```
 
-En lugar de escribir:
+Instead of writing:
 
 ```java
 List<String> names = new ArrayList<String>();
 ```
 
-Java puede inferir el tipo.
+Java can infer the type.
 
-Lo mismo aquí:
+Same here:
 
 ```java
 Box<String> nameBox = new Box<>("Laura");
 ```
 
-Esto hace el código más limpio.
+This makes the code cleaner.
 
 ---
 
-## 15. `Object` no es lo mismo que generic
+## 15. `Object` is not the same as generic
 
-A veces alguien piensa:
+Sometimes someone thinks:
 
-> “Si todo hereda de `Object`, ¿para qué necesito generics?”
+> “If everything inherits from `Object`, why do I need generics?”
 
-La diferencia es enorme.
+The difference is enormous.
 
-### 15.1. Con `Object`
+### 15.1. With `Object`
 
 ```java
 public class Box {
@@ -577,16 +577,16 @@ public class Box {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 Box box = new Box("Laura");
 String name = (String) box.getValue();
 ```
 
-Necesitas casting.
+You need casting.
 
-### 15.2. Con generics
+### 15.2. With generics
 
 ```java
 public class Box<T> {
@@ -602,38 +602,37 @@ public class Box<T> {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 Box<String> box = new Box<>("Laura");
 String name = box.getValue();
 ```
 
-Ahora no necesitas casting y el compilador protege mejor tu código.
+Now you don't need casting and the compiler protects your code better.
 
 ---
 
 ## 16. Wildcards: `?`
 
-Ahora vamos a ver una parte muy importante: los comodines.
+Now we are going to see a very important part: the wildcards.
+The `?` symbol means:
 
-El símbolo `?` significa:
+- “some kind”
+- “an unknown guy”
 
-- “algún tipo”
-- “un tipo desconocido”
-
-Ejemplo:
+Example:
 
 ```java
 List<?> values
 ```
 
-Esto significa:
+This means:
 
-- una lista de algún tipo
-- no sabemos cuál exactamente
+- a list of some kind
+- we don't know which one exactly
 
-Puede ser:
+It can be:
 
 - `List<String>`
 - `List<Integer>`
@@ -641,11 +640,11 @@ Puede ser:
 
 ---
 
-## 17. Cuándo usar `List<?>`
+## 17. When to use `List<?>`
 
-Es útil cuando solo necesitas leer o trabajar de forma general con una colección sin importar el tipo concreto.
+It is useful when you just need to read or generally work with a collection regardless of the specific type.
 
-Ejemplo:
+Example:
 
 ```java
 import java.util.List;
@@ -659,7 +658,7 @@ public class Main {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 import java.util.List;
@@ -681,29 +680,29 @@ public class Main {
 }
 ```
 
-Aquí `printList` sirve para listas de cualquier tipo.
+Here `printList` is used for lists of any type.
 
 ---
 
 ## 18. `? extends T`
 
-Este comodín se usa cuando quieres aceptar un tipo o cualquiera de sus subtipos.
+This wildcard is used when you want to accept a type or any of its subtypes.
 
-Ejemplo:
+Example:
 
 ```java
 List<? extends Number>
 ```
 
-Esto puede aceptar:
+This can accept:
 
 - `List<Integer>`
 - `List<Double>`
 - `List<Long>`
 
-porque todos esos tipos heredan de `Number`.
+because all those types inherit from `Number`.
 
-### 18.1. Ejemplo: sumar números
+### 18.1. Example: adding numbers
 
 ```java
 import java.util.List;
@@ -729,43 +728,43 @@ public class Main {
 }
 ```
 
-Aquí el método acepta distintas listas numéricas.
+Here the method accepts different numerical lists.
 
 ---
 
-## 19. Idea mental de `extends`
+## 19. Mind idea of `extends`
 
-Cuando ves esto:
+When you see this:
 
 ```java
 <? extends Number>
 ```
 
-léelo así:
+read it like this:
 
-- “algún tipo que es `Number` o hereda de `Number`”
+- “some type that is `Number` or inherits from `Number`”
 
-Es muy útil para **leer** datos de una estructura.
+It is very useful for **reading** data from a structure.
 
 ---
 
 ## 20. `? super T`
 
-Este comodín se usa cuando quieres aceptar un tipo o cualquiera de sus supertipos.
+This wildcard is used when you want to accept a type or any of its supertypes.
 
-Ejemplo:
+Example:
 
 ```java
 List<? super Integer>
 ```
 
-Esto puede aceptar:
+This can accept:
 
 - `List<Integer>`
 - `List<Number>`
 - `List<Object>`
 
-### 20.1. Ejemplo conceptual
+### 20.1. Conceptual example
 
 ```java
 import java.util.ArrayList;
@@ -787,51 +786,51 @@ public class Main {
 }
 ```
 
-Aquí puedes añadir `Integer` porque la lista acepta `Integer` o un supertipo suyo.
+Here you can add `Integer` because the list accepts `Integer` or a supertype of it.
 
 ---
 
-## 21. Regla práctica muy útil: PECS
+## 21. Very useful rule of thumb: PECS
 
-Hay una regla famosa para recordar `extends` y `super`:
+There is a famous rule to remember `extends` and `super`:
 
 - **Producer Extends**
 - **Consumer Super**
 
 Idea:
 
-- si una estructura **produce** datos para leer → `extends`
-- si una estructura **consume** datos para escribir → `super`
+- if a structure **produces** data to read → `extends`
+- if a structure **consumes** data to write → `super`
 
-No hace falta memorizarla todavía a la perfección, pero sí entender la idea general.
+It is not necessary to memorize it perfectly yet, but you do need to understand the general idea.
 
 ---
 
-## 22. Ejemplo comparando `extends` y `super`
+## 22. Example comparing `extends` and `super`
 
-### 22.1. Leer números con `extends`
+### 22.1. Read numbers with `extends`
 
 ```java
 public static double sumNumbers(List<? extends Number> numbers)
 ```
 
-Esta firma es buena para leer números.
+This signature is good for reading numbers.
 
-### 22.2. Escribir enteros con `super`
+### 22.2. Writing integers with `super`
 
 ```java
 public static void addNumbers(List<? super Integer> values)
 ```
 
-Esta firma es buena para añadir enteros.
+This signature is good for adding integers.
 
 ---
 
-## 23. Clases genéricas con límites
+## 23. Generic classes with limits
 
-También puedes limitar qué tipos son válidos en un generic.
+You can also limit which types are valid in a generic.
 
-Ejemplo:
+Example:
 
 ```java
 public class NumericBox<T extends Number> {
@@ -847,16 +846,16 @@ public class NumericBox<T extends Number> {
 }
 ```
 
-Aquí `T` debe ser `Number` o un subtipo.
+Here `T` must be `Number` or a subtype.
 
-Uso válido:
+Valid use:
 
 ```java
 NumericBox<Integer> intBox = new NumericBox<>(10);
 NumericBox<Double> doubleBox = new NumericBox<>(5.5);
 ```
 
-Uso no válido:
+Invalid use:
 
 ```java
 // NumericBox<String> textBox = new NumericBox<>("Hello"); // error
@@ -864,7 +863,7 @@ Uso no válido:
 
 ---
 
-## 24. Ejemplo completo: `NumericBox<T extends Number>`
+## 24. Complete example: `NumericBox<T extends Number>`
 
 ```java
 public class NumericBox<T extends Number> {
@@ -885,7 +884,7 @@ public class NumericBox<T extends Number> {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -901,131 +900,130 @@ public class Main {
 
 ---
 
-## 25. Generics e herencia
+## 25. Generics and inheritance
 
-Esta parte suele confundir bastante al empezar.
+This part is usually quite confusing when starting out.
 
-Aunque `Integer` herede de `Number`, eso **no** significa que:
+Even though `Integer` inherits from `Number`, that does **not** mean that:
 
 ```java
 List<Integer>
 ```
 
-sea subtipo de:
+be subtype of:
 
 ```java
 List<Number>
 ```
 
-Esto es incorrecto:
+This is incorrect:
 
 ```java
 // List<Number> numbers = new ArrayList<Integer>(); // NO
 ```
 
-Y esto sorprende al principio.
+And this surprises at first.
 
-La razón es que, si eso se permitiera, podrías romper la seguridad de tipos.
+The reason is that if that were allowed, you could break type safety.
 
-Por eso existen los comodines (`? extends Number`).
+That's why wildcards exist (`? extends Number`).
 
 ---
 
-## 26. Ejemplo para entender por qué `List<Integer>` no es `List<Number>`
+## 26. Example to understand why `List<Integer>` is not `List<Number>`
 
-Imagina que esto fuera válido:
+Imagine if this were valid:
 
 ```java
 List<Number> numbers = new ArrayList<Integer>();
 numbers.add(3.14);
 ```
 
-Entonces estarías metiendo un `Double` dentro de una lista que en realidad era de `Integer`.
+Then you would be putting an `Double` into a list that was actually `Integer`.
 
-Eso rompería completamente la seguridad de tipos.
+That would completely break type safety.
 
-Por eso Java no lo permite.
+That's why Java doesn't allow it.
 
 ---
 
-## 27. Borrado de tipos (_type erasure_)
-
-Los generics en Java funcionan mediante una técnica llamada:
+## 27. Type erasure
+Generics in Java work using a technique called:
 
 - **type erasure**
 
-Eso significa que, en tiempo de compilación, Java usa la información genérica para comprobar tipos, pero en tiempo de ejecución esa información no se conserva igual que en otros lenguajes.
+That means that at compile time, Java uses generic information to check types, but at run time that information is not preserved the same as in other languages.
 
-A nivel inicial, lo importante es entender dos ideas:
+At an initial level, the important thing is to understand two ideas:
 
-- los generics ayudan sobre todo en compilación
-- tienen ciertas limitaciones por cómo están implementados
+- generics help especially in compilation
+- have certain limitations due to how they are implemented
 
-No hace falta profundizar mucho más por ahora, pero sí conocer el concepto.
+It is not necessary to go much deeper for now, but you do need to know the concept.
 
 ---
 
-## 28. Limitaciones típicas de los generics
+## 28. Typical limitations of generics
 
-### 28.1. No puedes crear arrays de tipo genérico directamente
+### 28.1. You cannot create generic type arrays directly
 
-Esto no está permitido:
+This is not allowed:
 
 ```java
 // T[] values = new T[10]; // NO
 ```
 
-### 28.2. No puedes usar tipos primitivos
+### 28.2. You can't use primitive types
 
-Esto tampoco:
+This neither:
 
 ```java
 // Box<int> box = new Box<>(10); // NO
 ```
 
-### 28.3. No puedes usar `instanceof` con el tipo parametrizado concreto de esa forma
+### 28.3. You can't use `instanceof` with the particular parameterized type like that
 
-Por ejemplo, esto no se usa así:
+For example, this is not used like this:
 
 ```java
 // if (value instanceof T) { ... } // NO
 ```
 
-### 28.4. No puedes crear objetos del tipo genérico con `new T()`
+### 28.4. You cannot create objects of the generic type with `new T()`
 
-Esto tampoco:
+This neither:
 
 ```java
 // T value = new T(); // NO
 ```
 
-Estas limitaciones son consecuencia del _type erasure_.
+These limitations are a consequence of _type erasure_.
 
 ---
 
-## 29. Raw types: por qué evitarlos
+## 29. Raw types: why avoid them
 
-Una **raw type** es usar una clase genérica sin indicar el tipo.
+A **raw type** is using a generic class without indicating the type.
 
-Ejemplo:
+Example:
 
 ```java
 List values = new ArrayList();
 ```
 
-Esto compila en muchos casos, pero es una mala práctica porque pierdes todas las ventajas de los generics.
+This compiles in many cases, but it is bad practice because you lose all the advantages of generics.
 
-Lo correcto es:
+The correct thing is:
 
 ```java
 List<String> values = new ArrayList<>();
 ```
 
-Evita las raw types salvo en contextos muy concretos o legado.
+Avoid raw types except in very specific or legacy contexts.
 
 ---
 
-## 30. Ejemplo guiado: clase genérica para almacenar dos valores del mismo tipo
+## 30. Guided Example: Generic class to store two values of the same type
 
 ```java
 public class DoubleBox<T> {
@@ -1052,7 +1050,7 @@ public class DoubleBox<T> {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -1068,7 +1066,7 @@ public class Main {
 
 ---
 
-## 31. Ejemplo guiado: método genérico para comparar igualdad
+## 31. Guided example: generic method to compare equality
 
 ```java
 public class CompareUtils {
@@ -1082,7 +1080,7 @@ public class CompareUtils {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -1096,7 +1094,7 @@ public class Main {
 
 ---
 
-## 32. Ejemplo guiado: imprimir cualquier colección
+## 32. Guided Example: Print Any Collection
 
 ```java
 import java.util.List;
@@ -1110,7 +1108,7 @@ public class CollectionPrinter {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 import java.util.List;
@@ -1128,16 +1126,16 @@ public class Main {
 
 ---
 
-## 33. Cuándo usar generics
+## 33. When to use generics
 
-Usa generics cuando quieras:
+Use generics whenever you want:
 
-- crear estructuras reutilizables para varios tipos
-- trabajar con colecciones de forma segura
-- evitar casting manual
-- expresar claramente qué tipo maneja una clase o método
+- create reusable structures for various types
+- work with collections securely
+- avoid manual casting
+- clearly express what type a class or method handles
 
-Ejemplos claros:
+Clear examples:
 
 - `List<String>`
 - `Map<String, Integer>`
@@ -1146,94 +1144,93 @@ Ejemplos claros:
 
 ---
 
-## 34. Errores típicos al empezar
+## 34. Typical mistakes when starting
 
-### 34.1. Pensar que generics acepta primitivos
+### 34.1. Thinking that generics accept primitives
 
-No:
+Not:
 
 ```java
 // List<int> numbers = new ArrayList<>(); // error
 ```
 
-Debe ser:
+It must be:
 
 ```java
 List<Integer> numbers = new ArrayList<>();
 ```
 
-### 34.2. Pensar que `List<Integer>` es subtipo de `List<Number>`
+### 34.2. Thinking that `List<Integer>` is a subtype of `List<Number>`
 
-No lo es.
+It is not.
 
-### 34.3. Usar raw types por comodidad
+### 34.3. Use raw types for convenience
 
-Esto hace el código menos seguro:
+This makes the code less secure:
 
 ```java
 List values = new ArrayList();
 ```
 
-### 34.4. Confundir `Object` con generic
+### 34.4. Confusing `Object` with generic
 
-No es lo mismo.  
-Con `Object` pierdes seguridad de tipos y necesitas casting.
+It's not the same.  
+With `Object` you lose type safety and need casting.
 
-### 34.5. Querer escribir y leer igual con `extends` y `super`
+### 34.5. Wanting to write and read the same with `extends` and `super`
 
-Cada uno tiene un propósito distinto:
+Each one has a different purpose:
 
-- `extends` → leer
-- `super` → escribir
-
----
-
-## 35. Buenas prácticas
-
-- Usa generics siempre que trabajes con colecciones.
-- Evita raw types.
-- Usa nombres claros en clases genéricas cuando sea necesario, pero respeta las convenciones habituales (`T`, `E`, `K`, `V`).
-- Usa límites (`extends`) cuando un tipo deba pertenecer a una jerarquía concreta.
-- Usa comodines cuando un método deba aceptar familias de tipos relacionadas.
-- No compliques la API si no hace falta: a veces un tipo concreto es mejor que una firma genérica excesiva.
+- `extends` → read
+- `super` → write
 
 ---
 
-## 36. A tener en cuenta
+## 35. Good practices
 
-- Los generics permiten trabajar con tipos parametrizados.
-- Mejoran la seguridad de tipos y evitan muchos errores.
-- Se usan muchísimo en colecciones.
-- Puedes crear clases genéricas y métodos genéricos.
-- `?` representa un tipo desconocido.
-- `? extends T` sirve para leer de una jerarquía de tipos.
-- `? super T` sirve para escribir en una jerarquía de tipos.
-- Los generics no aceptan tipos primitivos.
-- En Java existen limitaciones por el _type erasure_.
+- Use generics whenever you work with collections.
+- Avoid raw types.
+- Use clear names in generic classes when necessary, but respect the usual conventions (`T`, `E`, `K`, `V`).
+- Use limits (`extends`) when a type must belong to a specific hierarchy.
+- Use wildcards when a method must accept related type families.
+- Don't complicate the API if you don't have to: sometimes a specific type is better than an excessive generic signature.
+
+---
+## 36. To take into account
+
+- Generics allow working with parameterized types.
+- They improve type safety and avoid many errors.
+- They are used a lot in collections.
+- You can create generic classes and generic methods.
+- `?` represents an unknown type.
+- `? extends T` is used to read from a type hierarchy.
+- `? super T` is used to write to a type hierarchy.
+- Generics do not accept primitive types.
+- In Java there are limitations due to the _type erasure_.
 
 ---
 
-## 37. Resumen final
+## 37. Final summary
 
-Los generics son una de las herramientas más importantes de Java porque permiten escribir código:
+Generics are one of the most important Java tools because they allow you to write code:
 
-- más seguro
-- más reutilizable
-- más claro
-- más profesional
+- safer
+- more reusable
+- clearer
+- more professional
 
-Al principio los verás sobre todo en colecciones como `List<String>` o `Map<String, Integer>`, pero su utilidad va mucho más allá.
+At first you will see them mainly in collections like `List<String>` or `Map<String, Integer>`, but their usefulness goes much further.
 
-Gracias a los generics puedes crear clases y métodos que funcionan con muchos tipos sin perder control ni claridad.
+Thanks to generics you can create classes and methods that work with many types without losing control or clarity.
 
-Dominar esta parte te ayudará muchísimo a entender mejor:
+Mastering this part will help you greatly to understand better:
 
-- colecciones
-- comparadores
+- collections
+- comparators
 - streams
-- optional
-- APIs modernas de Java en general
+-optional
+- Modern Java APIs in general
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos las **expresiones lambda** y las **interfaces funcionales**, que están muy relacionadas con generics y se usan constantemente junto a `Stream API`.
+In the next topic we will continue advancing with modern Java and we will see **lambda expressions** and **functional interfaces**, which are closely related to generics and are constantly used together with `Stream API`.

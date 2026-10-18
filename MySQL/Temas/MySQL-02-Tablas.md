@@ -1,17 +1,17 @@
-# **Tema 2: Creación y Modificación de Tablas en MySQL**
+# **Topic 2: Creating and Modifying Tables in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Crear tablas con distintos tipos de datos.
-- Modificar tablas ya existentes.
-- Comprender las claves primarias y foráneas.
-- Utilizar los tipos de datos más comunes en MySQL.
+- Create tables with different types of data.
+- Modify existing tables.
+- Understand primary and foreign keys.
+- Use the most common data types in MySQL.
 
 ---
 
-## **1. Crear tablas en MySQL**
+## **1. Create tables in MySQL**
 
-Para crear una tabla, se usa la instrucción `CREATE TABLE`. Por ejemplo, vamos a crear una tabla `users` con varios campos:
+To create a table, the `CREATE TABLE` statement is used. For example, let's create a table `users` with several fields:
 
 ```sql
 CREATE TABLE users (
@@ -23,52 +23,52 @@ CREATE TABLE users (
 );
 ```
 
-### **Explicación de los campos:**
+### **Explanation of the fields:**
 
-- `id`: número entero que se incrementa automáticamente. Es la clave primaria (`PRIMARY KEY`).
-- `name`: texto corto de hasta 50 caracteres.
-- `email`: texto más largo de hasta 100 caracteres.
-- `birth_date`: una fecha (`YYYY-MM-DD`).
-- `is_active`: valor verdadero/falso.
+- `id`: integer that increments automatically. It is the primary key (`PRIMARY KEY`).
+- `name`: short text of up to 50 characters.
+- `email`: longer text up to 100 characters.
+- `birth_date`: a date (`YYYY-MM-DD`).
+- `is_active`: true/false value.
 
 ---
 
-## **2. Tipos de datos en MySQL**
+## **2. Data types in MySQL**
 
-### **Numéricos**
+### **Numerics**
 
-| Tipo      | Descripción                     |
-| --------- | ------------------------------- |
-| `INT`     | Entero (4 bytes)                |
-| `TINYINT` | Entero pequeño (1 byte)         |
-| `BIGINT`  | Entero grande (8 bytes)         |
-| `DECIMAL` | Números con decimales exactos   |
-| `FLOAT`   | Números con decimales inexactos |
+| Type | Description |
+| --------- | ---------------------------- |
+| `INT` | Integer (4 bytes) |
+| `TINYINT` | Small integer (1 byte) |
+| `BIGINT` | Large integer (8 bytes) |
+| `DECIMAL` | Numbers with exact decimals |
+| `FLOAT` | Numbers with inaccurate decimals |
 
-### **Cadenas de texto**
+### **Text Strings**
 
-| Tipo         | Descripción                             |
+| Type | Description |
 | ------------ | --------------------------------------- |
-| `CHAR(n)`    | Cadena fija de longitud `n`             |
-| `VARCHAR(n)` | Cadena variable de hasta `n` caracteres |
-| `TEXT`       | Texto largo (hasta 65,535 caracteres)   |
+| `CHAR(n)` | Fixed length chain `n` |
+| `VARCHAR(n)` | Variable string of up to `n` characters |
+| `TEXT` | Long text (up to 65,535 characters) |
 
-### **Fechas y tiempos**
+### **Dates and times**
 
-| Tipo       | Descripción                          |
+| Type | Description |
 | ---------- | ------------------------------------ |
-| `DATE`     | Fecha (`YYYY-MM-DD`)                 |
-| `TIME`     | Hora (`HH:MM:SS`)                    |
-| `DATETIME` | Fecha y hora (`YYYY-MM-DD HH:MM:SS`) |
+| `DATE` | Date (`YYYY-MM-DD`) |
+| `TIME` | Time (`HH:MM:SS`) |
+| `DATETIME` | Date and time (`YYYY-MM-DD HH:MM:SS`) |
 
-### **Otros**
+### **Others**
 
-| Tipo      | Descripción               |
+| Type | Description |
 | --------- | ------------------------- |
-| `BOOLEAN` | `TRUE` o `FALSE`          |
-| `ENUM`    | Lista de valores posibles |
+| `BOOLEAN` | `TRUE` or `FALSE` |
+| `ENUM` | List of possible values ​​|
 
-Ejemplo de uso de `ENUM`:
+Example of using `ENUM`:
 
 ```sql
 CREATE TABLE products (
@@ -80,15 +80,15 @@ CREATE TABLE products (
 
 ---
 
-[![Cómo crear una base de datos y tablas](https://img.youtube.com/vi/kZ42WlV-Ufs/0.jpg)](https://www.youtube.com/watch?v=kZ42WlV-Ufs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![How to create a database and tables](https://img.youtube.com/vi/kZ42WlV-Ufs/0.jpg)](https://www.youtube.com/watch?v=kZ42WlV-Ufs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **3. Claves primarias y foráneas**
+## **3. Primary and foreign keys**
 
-### **Clave primaria**
+### **Primary key**
 
-Identifica de forma única cada fila de una tabla.
+Uniquely identifies each row in a table.
 
 ```sql
 CREATE TABLE categories (
@@ -97,9 +97,9 @@ CREATE TABLE categories (
 );
 ```
 
-### **Clave foránea**
+### **Foreign key**
 
-Relaciona datos entre dos tablas.
+Relates data between two tables.
 
 ```sql
 CREATE TABLE products (
@@ -112,27 +112,27 @@ CREATE TABLE products (
 
 ---
 
-[![Claves primarias y foraneas](https://img.youtube.com/vi/2FF8n4hXcSs/0.jpg)](https://www.youtube.com/watch?v=2FF8n4hXcSs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Primary and foreign keys](https://img.youtube.com/vi/2FF8n4hXcSs/0.jpg)](https://www.youtube.com/watch?v=2FF8n4hXcSs&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **4. Modificar tablas con `ALTER TABLE`**
+## **4. Modify tables with `ALTER TABLE`**
 
-Puedes modificar una tabla existente con el comando `ALTER TABLE`.
+You can modify an existing table with the `ALTER TABLE` command.
 
-### **Agregar una columna**
+### **Add a column**
 
 ```sql
 ALTER TABLE users ADD COLUMN phone VARCHAR(20);
 ```
 
-### **Eliminar una columna**
+### **Delete a column**
 
 ```sql
 ALTER TABLE users DROP COLUMN phone;
 ```
 
-### **Modificar una columna**
+### **Modify a column**
 
 ```sql
 ALTER TABLE users MODIFY COLUMN name VARCHAR(100);
@@ -140,24 +140,23 @@ ALTER TABLE users MODIFY COLUMN name VARCHAR(100);
 
 ---
 
-## **5. Eliminar una tabla**
+## **5. Delete a table**
 
-Para eliminar una tabla completamente:
+To delete a table completely:
 
 ```sql
 DROP TABLE users;
 ```
 
-> ⚠️ Precaución: esta acción es irreversible y elimina todos los datos de la tabla.
+> ⚠️ Caution: This action is irreversible and deletes all data from the table.
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-- Hemos aprendido a crear tablas usando tipos de datos apropiados.
-- Sabemos cómo modificar su estructura con `ALTER TABLE`.
-- Entendemos la importancia de las claves primarias y foráneas.
+- We have learned how to create tables using appropriate data types.
+- We know how to modify its structure with `ALTER TABLE`.
+- We understand the importance of primary and foreign keys.
 
 ---
-
-En el siguiente tema aprenderemos a **crear relaciones entre tablas y aplicar restricciones de integridad con claves primarias y foráneas.**
+In the next topic we will learn to **create relationships between tables and apply integrity constraints with primary and foreign keys.**

@@ -1,19 +1,19 @@
-# **Ejercicios - Tema 3: Claves Primarias y Foráneas**
+# **Exercises - Topic 3: Primary and Foreign Keys**
 
-A continuación, encontrarás 6 ejercicios prácticos para crear relaciones entre tablas y aplicar restricciones de integridad con claves primarias y foráneas en MySQL.
+Below you will find 6 practical exercises to create relationships between tables and apply integrity constraints with primary and foreign keys in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una tabla con clave primaria simple**
+### **Exercise 1: Create a table with a simple primary key**
 
-Crea una tabla llamada `categories` con los campos:
+Create a table called `categories` with the fields:
 
-- `id`: entero, clave primaria.
-- `name`: texto de hasta 40 caracteres.
+- `id`: integer, primary key.
+- `name`: text of up to 40 characters.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE categories (
@@ -26,15 +26,15 @@ CREATE TABLE categories (
 
 ---
 
-### **Ejercicio 2: Crear una tabla con clave foránea**
+### **Exercise 2: Create a table with foreign key**
 
-Crea una tabla `products` con los siguientes campos:
+Create a table `products` with the following fields:
 
-- `id`: entero, clave primaria.
-- `name`: texto de hasta 100 caracteres.
-- `category_id`: entero, clave foránea hacia `categories(id)`.
+- `id`: integer, primary key.
+- `name`: text up to 100 characters.
+- `category_id`: integer, foreign key to `categories(id)`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE products (
@@ -49,15 +49,15 @@ CREATE TABLE products (
 
 ---
 
-### **Ejercicio 3: Crear clave primaria compuesta**
+### **Exercise 3: Create composite primary key**
 
-Crea una tabla `student_courses` que almacene la relación entre estudiantes y cursos, con los siguientes campos:
+Create a table `student_courses` that stores the relationship between students and courses, with the following fields:
 
-- `student_id`: entero.
-- `course_id`: entero.
-- Clave primaria compuesta entre `student_id` y `course_id`.
+- `student_id`: integer.
+- `course_id`: integer.
+- Primary key composed between `student_id` and `course_id`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE student_courses (
@@ -71,11 +71,11 @@ CREATE TABLE student_courses (
 
 ---
 
-### **Ejercicio 4: Definir múltiples claves foráneas**
+### **Exercise 4: Define multiple foreign keys**
 
-Añade claves foráneas a la tabla `student_courses` creada en el ejercicio anterior, apuntando a `students(id)` y `courses(id)`.
+Add foreign keys to the `student_courses` table created in the previous exercise, pointing to `students(id)` and `courses(id)`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 ALTER TABLE student_courses
@@ -87,14 +87,14 @@ ADD CONSTRAINT fk_course FOREIGN KEY (course_id) REFERENCES courses(id);
 
 ---
 
-### **Ejercicio 5: Aplicar restricción ON DELETE SET NULL**
+### **Exercise 5: Apply ON DELETE SET NULL constraint**
 
-Crea una tabla `posts` con los campos:
+Create a table `posts` with the fields:
 
-- `id`: entero, clave primaria.
-- `author_id`: entero, clave foránea hacia `users(id)` con la condición de que si el usuario se elimina, `author_id` quede en `NULL`.
+- `id`: integer, primary key.
+- `author_id`: integer, foreign key to `users(id)` with the condition that if the user is deleted, `author_id` remains in `NULL`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 CREATE TABLE posts (
@@ -108,11 +108,11 @@ CREATE TABLE posts (
 
 ---
 
-### **Ejercicio 6: Ver claves de una tabla**
+### **Exercise 6: View keys of a table**
 
-Consulta las claves y restricciones definidas en la tabla `products`.
+Queries the keys and restrictions defined in the `products` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SHOW CREATE TABLE products;

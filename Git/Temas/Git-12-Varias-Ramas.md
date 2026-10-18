@@ -1,14 +1,14 @@
-# **Tema 12: Clonar todas las ramas de un repositorio y actualizar un archivo en todas las ramas**
+# **Topic 12: Clone all branches of a repository and update a file in all branches**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Cuando trabajamos con múltiples ramas en un repositorio, es posible que necesitemos clonar todas las ramas o realizar actualizaciones en un archivo específico, como el `README.md`, en todas ellas. Git ofrece comandos para facilitar ambas tareas.
+When working with multiple branches in a repository, we may need to clone all branches or make updates to a specific file, such as `README.md`, across all of them. Git offers commands to make both tasks easier.
 
 ---
 
-## **2. Clonar todas las ramas de un repositorio remoto**
+## **2. Clone all branches from a remote repository**
 
-Por defecto, cuando se clona un repositorio con `git clone`, solo se obtiene la rama predeterminada (`master`). Para clonar todas las ramas podemos clonar normalmente y después ejecutar este script:
+By default, when you clone a repository with `git clone`, you only get the default branch (`master`). To clone all branches we can clone normally and then run this script:
 
 ```bash
 for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
@@ -16,30 +16,30 @@ for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:
 done
 ```
 
-Esto crea un clon exacto del repositorio, incluyendo todas las ramas.
+This creates an exact clone of the repository, including all branches.
 
 ---
 
-[![Clonar todas las Ramas](https://img.youtube.com/vi/WxJ8JDsjy24/0.jpg)](https://www.youtube.com/watch?v=WxJ8JDsjy24&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+[![Clone all Branches](https://img.youtube.com/vi/WxJ8JDsjy24/0.jpg)](https://www.youtube.com/watch?v=WxJ8JDsjy24&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
 ---
 
-## **3. Actualizar el `README.md` (o cualquier otro archivo) en todas las ramas**
+## **3. Update `README.md` (or any other file) in all branches**
 
-Si queremos realizar una actualización en todas las ramas, podemos automatizar el proceso con un script de Git.
+If we want to perform an update on all branches, we can automate the process with a Git script.
 
-### **Actualizar manualmente en una rama y aplicar a todas**
+### **Update manually on one branch and apply to all**
 
-Supongamos que queremos actualizar el README.md en todas las ramas, primero tendremos que abrir el fichero y modificarlo.
+Suppose we want to update the README.md in all branches, first we will have to open the file and modify it.
 
-Despues guardar los cambios y hacer commit:
+Then save the changes and commit:
 
 ```bash
 git add README.md
 git commit -m "Actualización del README.md"
 ```
 
-Luego, para aplicar el cambio en todas las ramas podemos ejecutar este script:
+Then, to apply the change to all branches we can run this script:
 
 ```bash
 # Asegúrate de estar en la rama master con el README.md actualizado
@@ -66,20 +66,20 @@ done
 git checkout master
 ```
 
-Esto recorre todas las ramas y aplica el cambio de `master` en ellas.
+This loops through all branches and applies the `master` change to them.
 
 ---
 
-[![Actualizar un archivo en Todas las Ramas](https://img.youtube.com/vi/Bn1h8oDIwGU/0.jpg)](https://www.youtube.com/watch?v=Bn1h8oDIwGU&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
+[![Update a file in All Branches](https://img.youtube.com/vi/Bn1h8oDIwGU/0.jpg)](https://www.youtube.com/watch?v=Bn1h8oDIwGU&list=PLzA2VyZwsq_8nVw1G6L9PehvqSoGjTjsX)
 
 ---
 
-## **4. Buenas prácticas**
+## **4. Good practices**
 
-- Antes de aplicar cambios en todas las ramas, asegurarse de que no hay conflictos importantes.
-- Probar los cambios primero en una rama de prueba antes de aplicarlos globalmente.
-- Mantener el `README.md` actualizado en `master` y propagarlo regularmente.
+- Before applying changes to all branches, make sure there are no major conflicts.
+- Test changes first on a test branch before applying them globally.
+- Keep the `README.md` updated in `master` and propagate it regularly.
 
 ---
 
-En el próximo tema, exploraremos **cómo trabajar con diferentes workflows y estrategias de ramas en Git**.
+In the next topic, we will explore **how to work with different workflows and branching strategies in Git**.

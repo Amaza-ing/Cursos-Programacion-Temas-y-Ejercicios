@@ -1,16 +1,16 @@
-# Ejercicios - Tema 21: Interfaces
+# Exercises - Topic 21: Interfaces
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **interfaces, contratos, `implements`, métodos `default`, métodos `static` y polimorfismo**.
+Below you will find **10 practical exercises** to work with **interfaces, contracts, `implements`, `default` methods, `static` methods and polymorphism**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear una interfaz `Notifiable`
+## Exercise 1: Create an `Notifiable` interface
 
-Crea una interfaz `Notifiable` con un método `sendNotification(String message)`. Después crea una clase `EmailNotifier` que implemente la interfaz.
+Creates an `Notifiable` interface with an `sendNotification(String message)` method. Then create an `EmailNotifier` class that implements the interface.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface Notifiable {
@@ -36,11 +36,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Interfaz como tipo de referencia
+## Exercise 2: Interface as a reference type
 
-Crea una interfaz `ReadableItem` con `read()`. Crea una clase `BlogPost` y guárdala en una variable de tipo `ReadableItem`.
+Create an `ReadableItem` interface with `read()`. Create a class `BlogPost` and save it in a variable of type `ReadableItem`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface ReadableItem {
@@ -66,11 +66,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Lista polimórfica
+## Exercise 3: Polymorphic list
 
-Crea una interfaz `Downloadable` con `download()`. Crea `ImageResource` y `AudioResource`, guárdalos en una lista y recórrela.
+Create an `Downloadable` interface with `download()`. Create `ImageResource` and `AudioResource`, save them in a list and loop through it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.ArrayList;
@@ -111,11 +111,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Implementar varias interfaces
+## Exercise 4: Implement multiple interfaces
 
-Crea `Startable` con `start()` y `Pausable` con `pause()`. Crea una clase `VideoPlayer` que implemente ambas.
+Create `Startable` with `start()` and `Pausable` with `pause()`. Create an `VideoPlayer` class that implements both.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface Startable {
@@ -143,11 +143,11 @@ public class VideoPlayer implements Startable, Pausable {
 
 ---
 
-## Ejercicio 5: Método `default`
+## Exercise 5: `default` Method
 
-Crea una interfaz `Loggable` con `log(String message)` y un método `default logError(String message)` que use `log`.
+Create an interface `Loggable` with `log(String message)` and a method `default logError(String message)` that uses `log`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface Loggable {
@@ -170,11 +170,11 @@ public class ConsoleLogger implements Loggable {
 
 ---
 
-## Ejercicio 6: Sobrescribir un método `default`
+## Exercise 6: Overriding an `default` method
 
-Crea una interfaz `Describable` con `describe()` por defecto. Crea una clase `Game` que sobrescriba ese método.
+Create an `Describable` interface with `describe()` by default. Create an `Game` class that overrides that method.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface Describable {
@@ -195,11 +195,11 @@ public class Game implements Describable {
 
 ---
 
-## Ejercicio 7: Método `static` en una interfaz
+## Exercise 7: `static` method in an interface
 
-Crea una interfaz `PasswordRules` con un método estático `isLongEnough` que valide si una contraseña tiene al menos 8 caracteres.
+Create an `PasswordRules` interface with a static method `isLongEnough` that validates whether a password is at least 8 characters long.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface PasswordRules {
@@ -220,11 +220,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Interfaz que extiende otra interfaz
+## Exercise 8: Interface that extends another interface
 
-Crea `BasicPrinter` con `print()` y `AdvancedPrinter extends BasicPrinter` con `scan()`. Implementa ambas en `OfficePrinter`.
+Create `BasicPrinter` with `print()` and `AdvancedPrinter extends BasicPrinter` with `scan()`. Implement both in `OfficePrinter`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface BasicPrinter {
@@ -252,11 +252,11 @@ public class OfficePrinter implements AdvancedPrinter {
 
 ---
 
-## Ejercicio 9: Interfaz con constante
+## Exercise 9: Interface with constant
 
-Crea una interfaz `UploadConfig` con una constante `MAX_FILE_SIZE = 10`. Imprime su valor desde `main`.
+Creates an interface `UploadConfig` with a constant `MAX_FILE_SIZE = 10`. Prints its value from `main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface UploadConfig {
@@ -274,11 +274,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Método que recibe una interfaz
+## Exercise 10: Method that receives an interface
 
-Crea una interfaz `Compressible` y una clase `VideoFile`. Después crea un método `compressFile(Compressible file)`.
+Create an `Compressible` interface and an `VideoFile` class. Then create a method `compressFile(Compressible file)`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public interface Compressible {

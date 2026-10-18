@@ -1,44 +1,45 @@
-# Ejercicios - Tema 01: Introducción a la IA generativa y Copilot
+# Exercises - Topic 01: Introduction to Generative AI and Copilot
 
-A continuación, encontrarás ejercicios prácticos sobre IA generativa, prompts, límites de Copilot y formas de utilizar la herramienta de manera eficaz.
+Below, you'll find hands-on exercises on generative AI, prompts, Copilot limits, and ways to use the tool effectively.
 
-## Ejercicio 1: Identificar tareas adecuadas para IA generativa
+## Exercise 1: Identify tasks suitable for generative AI
 
-Lee las siguientes tareas e indica cuáles son adecuadas para pedir ayuda a Copilot o a una IA generativa y cuáles deberían hacerse con especial supervisión humana.
+Read the following tasks and indicate which ones are appropriate to ask Copilot or a generative AI for help and which ones should be done with special human supervision.
 
-1. Resumir un documento largo para obtener sus ideas principales.
-2. Decidir automáticamente si una persona debe ser contratada o no.
-3. Generar una primera versión de un correo profesional.
-4. Inventar datos de ventas para completar un informe real.
-5. Proponer una estructura inicial para una presentación.
-6. Sustituir completamente la revisión de seguridad de una aplicación.
+1. Summarize a long document to get its main ideas.
+2. Automatically decide whether a person should be hired or not.
+3. Generate a first version of a professional email.
+4. Make up sales data to complete a real report.
+5. Propose an initial structure for a presentation.
+6. Completely replace the security patch of an application.
 
 <details>
-<summary><strong>Mostrar solución</strong></summary>
+<summary><strong>Show solution</strong></summary>
 
-1. **Adecuada**, siempre que se revise el resumen y se compruebe que no omite información importante.
-2. **No adecuada como decisión automática**, porque implica una decisión sensible sobre una persona. La IA podría ayudar a ordenar información, pero la decisión debe ser humana.
-3. **Adecuada**, porque puede ayudar a crear un borrador que después se revise.
-4. **No adecuada**, porque inventar datos para un informe real sería incorrecto y poco ético.
-5. **Adecuada**, porque puede servir como punto de partida.
-6. **No adecuada como sustitución completa**, porque la revisión de seguridad requiere comprobaciones técnicas, pruebas y supervisión profesional.
+1. **Adequate**, as long as the summary is reviewed and it is verified that it does not omit important information.
+2. **Not suitable as an automatic decision**, because it implies a sensitive decision about a person. AI could help sort information, but the decision must be human.
+3. **Appropriate**, because it can help create a draft that is later revised.
+4. **Not appropriate**, because inventing data for a real report would be incorrect and unethical.
+5. **Appropriate**, because it can serve as a starting point.
+6. **Not suitable as a complete replacement**, because safety review requires technical checks, testing and professional supervision.
 
 </details>
 
-## Ejercicio 2: Mejorar un prompt demasiado general
+## Exercise 2: Improve a too general prompt
 
-Observa este prompt:
+Look at this prompt:
 
 ```text
 Hazme una explicación sobre Copilot.
 ```
 
-Reescríbelo para que sea más útil en un contexto de formación para alumnos que están empezando.
+
+Rewrite it to make it more useful in a training context for beginners.
 
 <details>
-<summary><strong>Mostrar solución</strong></summary>
+<summary><strong>Show solution</strong></summary>
 
-Una versión mejorada podría ser:
+An improved version could be:
 
 ```text
 Explícame qué es Copilot para alumnos que están empezando en el uso de herramientas de IA.
@@ -46,55 +47,56 @@ Incluye una definición sencilla, tres casos de uso habituales, dos limitaciones
 Usa un tono claro y evita tecnicismos innecesarios.
 ```
 
-Este prompt es mejor porque incluye:
 
-- Público destinatario.
-- Nivel de dificultad.
-- Estructura esperada.
-- Tipo de lenguaje.
-- Contenido concreto que debe aparecer.
+This prompt is better because it includes:
+
+- Target audience.
+- Difficulty level.
+- Expected structure.
+- Type of language.
+- Specific content that must appear.
 
 </details>
 
-## Ejercicio 3: Distinguir entre búsqueda y generación
+## Exercise 3: Distinguish between search and generation
 
-Indica si en cada caso sería más apropiado usar una búsqueda tradicional, una IA generativa o ambas opciones.
+Indicate whether in each case it would be more appropriate to use a traditional search, a generative AI or both options.
 
-1. Comprobar la fecha oficial de lanzamiento de una herramienta.
-2. Pedir una explicación sencilla de qué es un modelo de lenguaje.
-3. Crear una primera versión de una guía de uso interno.
-4. Verificar si una función concreta está disponible actualmente en una aplicación.
-5. Reformular un texto para hacerlo más claro.
+1. Check the official release date of a tool.
+2. Ask for a simple explanation of what a language model is.
+3. Create a first version of an internal use guide.
+4. Check if a particular feature is currently available in an application.
+5. Rephrase a text to make it clearer.
 
 <details>
-<summary><strong>Mostrar solución</strong></summary>
+<summary><strong>Show solution</strong></summary>
 
-1. **Búsqueda tradicional o fuente oficial**, porque se necesita un dato verificable y actualizado.
-2. **IA generativa**, porque se busca una explicación adaptada al nivel del usuario.
-3. **IA generativa**, aunque después conviene revisar y contrastar la información.
-4. **Búsqueda tradicional o documentación oficial**, porque las funciones pueden cambiar con el tiempo.
-5. **IA generativa**, porque es una tarea de transformación de texto.
-
-En muchos casos se pueden combinar ambas opciones: buscar primero la información fiable y después usar IA generativa para resumirla, organizarla o adaptarla.
+1. **Traditional search or official source**, because verifiable and updated data is needed.
+2. **Generative AI**, because an explanation adapted to the user level is sought.
+3. **Generative AI**, although it is advisable to review and compare the information afterwards.
+4. **Traditional search or official documentation**, because features may change over time.
+5. **Generative AI**, because it is a text transformation task.
+In many cases, both options can be combined: first search for reliable information and then use generative AI to summarize, organize or adapt it.
 
 </details>
 
-## Ejercicio 4: Detectar posibles riesgos en una respuesta de IA
+## Exercise 4: Detect possible risks in an AI response
 
-Una persona pide a Copilot:
+A person asks Copilot:
 
 ```text
 Escribe una política de privacidad completa para mi empresa. La voy a publicar directamente en la web.
 ```
 
-Explica qué problema tiene esta petición y cómo debería reformularse.
+
+Explain what the problem is with this request and how it should be rephrased.
 
 <details>
-<summary><strong>Mostrar solución</strong></summary>
+<summary><strong>Show solution</strong></summary>
 
-El problema principal es que se está pidiendo a la IA que genere un documento legal para publicarlo directamente, sin revisión profesional. Una política de privacidad depende de la legislación aplicable, del tipo de datos recogidos, de los servicios usados, de la ubicación de la empresa y de otros factores específicos.
+The main problem is that the AI is being asked to generate a legal document to publish directly, without professional review. A privacy policy depends on the applicable legislation, the type of data collected, the services used, the location of the company and other specific factors.
 
-Una versión más adecuada sería:
+A more suitable version would be:
 
 ```text
 Ayúdame a preparar un borrador inicial de política de privacidad para una web educativa.
@@ -102,33 +104,34 @@ Hazme primero una lista de apartados habituales que debería revisar con un prof
 No inventes datos de la empresa y señala qué información tendría que completar manualmente.
 ```
 
-Así la IA se usa como apoyo inicial, no como sustituto de una revisión legal.
+
+Thus AI is used as initial support, not as a substitute for a legal review.
 
 </details>
 
-## Ejercicio 5: Crear un flujo de trabajo con IA
+## Exercise 5: Create an AI workflow
 
-Imagina que tienes que preparar una breve presentación sobre los usos de la IA generativa en una empresa. Ordena los siguientes pasos en un flujo lógico:
+Imagine that you have to prepare a short presentation on the uses of generative AI in a company. Order the following steps in a logical flow:
 
-- Revisar manualmente el contenido generado.
-- Pedir a Copilot una primera estructura.
-- Comprobar los datos importantes en fuentes fiables.
-- Preparar la versión final.
-- Dar a Copilot el contexto y el público destinatario.
-- Pedir mejoras de claridad y estilo.
+- Manually review the generated content.
+- Ask Copilot for a first structure.
+- Check important data in reliable sources.
+- Prepare the final version.
+- Give Copilot the context and the target audience.
+- Ask for clarity and style improvements.
 
 <details>
-<summary><strong>Mostrar solución</strong></summary>
+<summary><strong>Show solution</strong></summary>
 
-Un orden lógico sería:
+A logical order would be:
 
-1. Dar a Copilot el contexto y el público destinatario.
-2. Pedir a Copilot una primera estructura.
-3. Revisar manualmente el contenido generado.
-4. Comprobar los datos importantes en fuentes fiables.
-5. Pedir mejoras de claridad y estilo.
-6. Preparar la versión final.
+1. Give Copilot the context and target audience.
+2. Ask Copilot for a first structure.
+3. Manually review the generated content.
+4. Check important data from reliable sources.
+5. Ask for clarity and style improvements.
+6. Prepare the final version.
 
-La idea importante es que Copilot puede ayudar durante el proceso, pero no debe sustituir la revisión, la verificación ni la decisión final de la persona.
+The important idea is that Copilot can help during the process, but should not replace the person's review, verification, or final decision.
 
 </details>

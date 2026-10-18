@@ -1,14 +1,14 @@
-# **Tema 9: Diseño con CSS Grid**
+# **Topic 9: Design with CSS Grid**
 
-## **1. Introducción a CSS Grid**
+## **1. Introduction to CSS Grid**
 
-CSS Grid es un sistema de diseño en CSS que permite organizar elementos en una cuadrícula bidimensional, con filas y columnas. Es útil para crear estructuras de diseño complejas de manera flexible y sencilla.
+CSS Grid is a CSS design system that allows you to organize elements in a two-dimensional grid, with rows and columns. It is useful for creating complex design structures flexibly and easily.
 
 ---
 
-## **2. Propiedad `display: grid`**
+## **2. `display: grid`** Property
 
-Para activar CSS Grid en un contenedor, se usa la propiedad `display: grid`.
+To enable CSS Grid on a container, the `display: grid` property is used.
 
 ```css
 .container {
@@ -16,13 +16,14 @@ Para activar CSS Grid en un contenedor, se usa la propiedad `display: grid`.
 }
 ```
 
-Esto convierte a los elementos hijos en **grid items**, que pueden distribuirse en filas y columnas.
+
+This turns the child elements into **grid items**, which can be arranged across rows and columns.
 
 ---
 
-## **3. Definir columnas y filas con `grid-template-columns` y `grid-template-rows`**
+## **3. Define columns and rows with `grid-template-columns` and `grid-template-rows`**
 
-Estas propiedades permiten definir el tamaño y número de columnas y filas en la cuadrícula.
+These properties allow you to define the size and number of columns and rows in the grid.
 
 ```css
 .container {
@@ -32,13 +33,14 @@ Estas propiedades permiten definir el tamaño y número de columnas y filas en l
 }
 ```
 
-Valores comunes:
 
-- Tamaños fijos (`px`, `em`, `rem`, `%`, etc.)
-- Automático (`auto`)
-- Fracciones (`fr`), que dividen el espacio restante proporcionalmente
+Common values:
 
-Ejemplo con fracciones:
+- Fixed sizes (`px`, `em`, `rem`, `%`, etc.)
+- Automatic (`auto`)
+- Fractions (`fr`), which divide the remaining space proportionally
+
+Example with fractions:
 
 ```css
 .container {
@@ -46,13 +48,14 @@ Ejemplo con fracciones:
 }
 ```
 
+
 ---
 
-## **4. Repeat y espaciado entre elementos (`gap`)**
+## **4. Repeat and spacing between elements (`gap`)**
 
-También se pueden describir el número de filas y columnas usando `repeat(número, tamaño)`.
+You can also describe the number of rows and columns using `repeat(número, tamaño)`.
 
-La propiedad `gap` define el espacio entre filas y columnas.
+The `gap` property defines the spacing between rows and columns.
 
 ```css
 .container {
@@ -62,17 +65,18 @@ La propiedad `gap` define el espacio entre filas y columnas.
 }
 ```
 
-Valores disponibles:
 
-- `row-gap`: Espaciado entre filas
-- `column-gap`: Espaciado entre columnas
-- `gap`: Espaciado en ambas direcciones
+Available values:
+
+- `row-gap`: Row spacing
+- `column-gap`: Column spacing
+- `gap`: Spacing in both directions
 
 ---
 
-## **5. Ubicar elementos en la cuadrícula (`grid-column` y `grid-row`)**
+## **5. Locate elements on the grid (`grid-column` and `grid-row`)**
 
-Los elementos pueden ocupar varias columnas o filas utilizando `grid-column` y `grid-row`.
+Elements can span multiple columns or rows using `grid-column` and `grid-row`.
 
 ```css
 .item {
@@ -81,7 +85,8 @@ Los elementos pueden ocupar varias columnas o filas utilizando `grid-column` y `
 }
 ```
 
-Atajos:
+
+Shortcuts:
 
 ```css
 .item {
@@ -89,15 +94,16 @@ Atajos:
 }
 ```
 
+
 ---
 
-## **6. Alineación en CSS Grid**
+## **6. CSS Grid Alignment**
 
-CSS Grid permite alinear elementos dentro de sus celdas con las propiedades (Los elementos deben tener algún tamaño para poder observar el posicionamiento):
+CSS Grid allows you to align elements within their cells with the properties (Elements must have some size to be able to observe the positioning):
 
-- `justify-items`: Alinea los elementos en el eje horizontal
-- `align-items`: Alinea los elementos en el eje vertical
-- `place-items`: Combina ambas propiedades
+- `justify-items`: Aligns elements on the horizontal axis
+- `align-items`: Aligns elements on the vertical axis
+- `place-items`: Combine both properties
 
 ```css
 .container {
@@ -106,7 +112,8 @@ CSS Grid permite alinear elementos dentro de sus celdas con las propiedades (Los
 }
 ```
 
-También se pueden alinear celdas específicas con `justify-self` y `align-self`:
+
+Specific cells can also be aligned with `justify-self` and `align-self`:
 
 ```css
 .item {
@@ -115,11 +122,12 @@ También se pueden alinear celdas específicas con `justify-self` y `align-self`
 }
 ```
 
+
 ---
 
-## **7. Áreas de la cuadrícula (`grid-template-areas`)**
+## **7. Grid areas (`grid-template-areas`)**
 
-Permite definir áreas dentro de la cuadrícula y asignar elementos a ellas.
+Allows you to define areas within the grid and assign elements to them.
 
 ```css
 .container {
@@ -144,26 +152,27 @@ Permite definir áreas dentro de la cuadrícula y asignar elementos a ellas.
 }
 ```
 
+
 ---
 
 [![Grid](https://img.youtube.com/vi/Kl-W-vZOVZM/0.jpg)](https://www.youtube.com/watch?v=Kl-W-vZOVZM&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **8. Buenas prácticas con CSS Grid**
+## **8. Good practices with CSS Grid**
 
-- Usar `fr` para crear diseños flexibles sin necesidad de píxeles fijos.
-- Evitar el uso excesivo de `grid-template-areas` para estructuras sencillas.
-- Aplicar `gap` en lugar de márgenes para espaciar elementos.
-- Usar `repeat()` cuando se requieran múltiples columnas o filas de igual tamaño.
-- Combinar CSS Grid con Flexbox según la necesidad del diseño.
-
----
-
-## **Enlaces de Interés.**
-
-- Juego para practicar con CSS Grid: [Grid Garden](https://cssgridgarden.com/#es).
+- Use `fr` to create flexible layouts without the need for fixed pixels.
+- Avoid excessive use of `grid-template-areas` for simple structures.
+- Apply `gap` instead of margins to space elements.
+- Use `repeat()` when multiple columns or rows of equal size are required.
+- Combine CSS Grid with Flexbox according to the need of the design.
 
 ---
 
-En el próximo tema, exploraremos **pseudoelementos y pseudoclases en CSS**, para tener una mayor flexibilidad a la hora de jugar con los elementos de una página web.
+## **Links of Interest.**
+
+- Game to practice with CSS Grid: [Grid Garden](https://cssgridgarden.com/#es).
+
+---
+
+In the next topic, we will explore **pseudo elements and pseudo classes in CSS**, to have greater flexibility when playing with the elements of a web page.

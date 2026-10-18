@@ -1,72 +1,72 @@
-# Tema 4. Conversión de tipos
+# Topic 4. Type conversion
 
-## 1. Introducción
+## 1. Introduction
 
-En Java, **cada variable tiene un tipo**, y ese tipo determina:
+In Java, **every variable has a type**, and that type determines:
 
-- Qué valores puede almacenar
-- Qué operaciones puedes hacer con ella
-- Cómo se interpreta ese valor en memoria
+- What values can be stored
+- What operations can you do with it
+- How that value is interpreted in memory
 
-A medida que programes, te encontrarás con situaciones típicas como:
+As you program, you will encounter typical situations such as:
 
-- Quieres guardar un `int` dentro de un `double`
-- Estás dividiendo números enteros y necesitas decimales
-- Estás leyendo datos como texto (`String`) y necesitas convertirlos a número
-- Estás mezclando `char`, `int` y `double` en una misma expresión
+- You want to store an `int` inside an `double`
+- You are dividing whole numbers and need decimals
+- You are reading data as text (`String`) and need to convert it to number
+- You are mixing `char`, `int` and `double` in the same expression
 
-Para resolver todo eso necesitas dominar la **conversión de tipos**.
+To solve all that you need to master **type conversion**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es la **conversión implícita** (widening)
-- Qué es la **conversión explícita** o **casting** (narrowing)
-- Qué errores son los más comunes
-- Cómo convertir entre `String` y tipos numéricos (muy usado en entrada por consola)
-
----
-
-[![Conversión de Tipos de Datos](https://img.youtube.com/vi/AHVLPDTGGqc/0.jpg)](https://www.youtube.com/watch?v=AHVLPDTGGqc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- What is **implicit conversion** (widening)
+- What is **explicit conversion** or **casting** (narrowing)
+- What errors are the most common
+- How to convert between `String` and numeric types (widely used in console input)
 
 ---
 
-## 2. Idea clave: convertir significa “cambiar la forma de interpretar un valor”
-
-Cuando conviertes tipos, no “cambias” el valor mágico del universo, sino cómo Java lo interpreta y lo maneja.
-
-Ejemplo rápido:
-
-- Un `int` almacena números enteros.
-- Un `double` almacena números con decimales.
-
-Si conviertes un `int` a `double`, el número sigue siendo el mismo, pero ahora tiene capacidad de decimales.
+[![Data Type Conversion](https://img.youtube.com/vi/AHVLPDTGGqc/0.jpg)](https://www.youtube.com/watch?v=AHVLPDTGGqc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 3. Conversión implícita (widening conversion)
+## 2. Key idea: convert means “change the way a value is interpreted”
 
-La **conversión implícita** sucede cuando Java puede convertir un valor **sin riesgo de perder información**.
+When you convert types, you don't "change" the magic value of the universe, but rather how Java interprets and handles it.
 
-Esto suele ocurrir cuando pasas de un tipo “más pequeño” a uno “más grande”, por ejemplo:
+Quick example:
+
+- An `int` stores integers.
+- An `double` stores numbers with decimals.
+
+If you convert an `int` to `double`, the number remains the same, but now has decimal capability.
+
+---
+
+## 3. Implicit conversion (widening conversion)
+
+**Implicit conversion** happens when Java can convert a value **without risk of losing information**.
+
+This usually happens when you go from a “smaller” type to a “larger” type, for example:
 
 - `int` -> `double`
 - `byte` -> `int`
 - `char` -> `int`
 - `int` -> `long`
 
-### 3.1. Tabla mental simple (de menor a mayor capacidad)
+### 3.1. Simple mental table (from lowest to highest capacity)
 
-Una forma práctica de recordarlo:
+A practical way to remember it:
 
 ```
 byte -> short -> int -> long -> float -> double
 ```
 
-> Nota: `char` va por su cuenta, pero puede convertirse a `int` porque internamente es un número (código Unicode).
+> Note: `char` is on its own, but can be converted to `int` because internally it is a number (Unicode code).
 
 ---
 
-### 3.2. Ejemplo: `int` a `double`
+### 3.2. Example: `int` to `double`
 
 ```java
 int number = 7;
@@ -75,13 +75,13 @@ double result = number;
 System.out.println(result); // 7.0
 ```
 
-Aquí Java convierte automáticamente `7` en `7.0`.
+Here Java automatically converts `7` to `7.0`.
 
 ---
 
-### 3.3. Ejemplo: mezclar tipos en expresiones
+### 3.3. Example: Mixing Types in Expressions
 
-Cuando mezclas tipos en una operación, Java suele “promocionar” el tipo a uno más grande para poder operar.
+When you mix types in an operation, Java often “promotes” the type to a larger one in order to operate.
 
 ```java
 int a = 5;
@@ -91,12 +91,12 @@ double total = a + b;
 System.out.println(total); // 7.0
 ```
 
-- `a` (int) se convierte implícitamente a `double`
-- el resultado es `double`
+- `a` (int) is implicitly converted to `double`
+- the result is `double`
 
 ---
 
-### 3.4. Ejemplo: `char` a `int` (código Unicode)
+### 3.4. Example: `char` to `int` (Unicode code)
 
 ```java
 char letter = 'A';
@@ -105,9 +105,9 @@ int code = letter;
 System.out.println(code); // 65
 ```
 
-`'A'` se convierte al número que representa ese carácter en Unicode.
+`'A'` is converted to the number that represents that character in Unicode.
 
-Otro ejemplo:
+Another example:
 
 ```java
 char letter = 'ñ';
@@ -116,23 +116,22 @@ int code = letter;
 System.out.println(code);
 ```
 
-Esto imprime el número asociado a ese carácter.
+This prints the number associated with that character.
 
 ---
 
-## 4. Conversión explícita (casting / narrowing conversion)
+## 4. Explicit conversion (casting / narrowing conversion)
 
-La **conversión explícita** es necesaria cuando hay **riesgo de perder información**.
+**Explicit conversion** is necessary when there is **risk of losing information**.
 
-Esto ocurre cuando vas de un tipo con más capacidad a uno con menos, por ejemplo:
+This happens when you go from a type with more capacity to one with less, for example:
 
 - `double` -> `int`
 - `long` -> `int`
 - `int` -> `short`
 
-En estos casos, Java te obliga a indicar que **asumes el riesgo**, usando un _cast_.
-
-### 4.1. Sintaxis del casting
+In these cases, Java forces you to indicate that you **assume the risk**, using a _cast_.
+### 4.1. Casting syntax
 
 ```java
 targetType newValue = (targetType) oldValue;
@@ -140,7 +139,7 @@ targetType newValue = (targetType) oldValue;
 
 ---
 
-### 4.2. Ejemplo: `double` a `int` (se pierde el decimal)
+### 4.2. Example: `double` to `int` (decimal is lost)
 
 ```java
 double price = 19.99;
@@ -149,13 +148,13 @@ int intPrice = (int) price;
 System.out.println(intPrice); // 19
 ```
 
-Importante:
+Important:
 
-- Esto **no redondea**, simplemente **corta** (trunca) la parte decimal.
+- This **does not round**, it simply **cuts** (truncates) the decimal part.
 
 ---
 
-### 4.3. Ejemplo: `long` a `int` (posible pérdida por tamaño)
+### 4.3. Example: `long` to `int` (possible size loss)
 
 ```java
 long bigNumber = 3_000_000_000L;
@@ -164,15 +163,15 @@ int smallNumber = (int) bigNumber;
 System.out.println(smallNumber);
 ```
 
-Aquí puede ocurrir algo muy peligroso: el resultado **no será correcto**, porque `int` no puede representar ese valor.
+Something very dangerous can happen here: the result will **not be correct**, because `int` cannot represent that value.
 
-Este es un ejemplo típico de por qué el casting puede ser peligroso.
+This is a typical example of why casting can be dangerous.
 
 ---
 
-### 4.4. Ejemplo: `int` a `byte` (pérdida por rango)
+### 4.4. Example: `int` to `byte` (range loss)
 
-`byte` solo puede almacenar valores entre **-128 y 127**.
+`byte` can only store values between **-128 and 127**.
 
 ```java
 int value = 130;
@@ -181,17 +180,17 @@ byte smallValue = (byte) value;
 System.out.println(smallValue);
 ```
 
-El resultado puede ser inesperado (por overflow).
+The result may be unexpected (due to overflow).
 
-> Regla práctica: si haces cast a tipos pequeños, asegúrate de que el valor cabe en ese tipo.
+> Rule of thumb: if you cast small types, make sure the value fits in that type.
 
 ---
 
-## 5. El caso más importante: división entre enteros
+## 5. The most important case: division by integers
 
-Este es, probablemente, el error más común cuando empiezas.
+This is probably the most common mistake when you start.
 
-### 5.1. División entre `int` da `int`
+### 5.1. Division between `int` gives `int`
 
 ```java
 int a = 5;
@@ -201,13 +200,13 @@ int result = a / b;
 System.out.println(result); // 2
 ```
 
-¿Por qué? Porque al dividir dos enteros, Java produce un entero, y descarta la parte decimal.
+Why? Because when dividing two integers, Java produces an integer, and discards the decimal part.
 
 ---
 
-### 5.2. Solución: convertir antes de dividir
+### 5.2. Solution: convert before split
 
-Puedes convertir uno de los operandos a `double`:
+You can convert one of the operands to `double`:
 
 ```java
 int a = 5;
@@ -217,7 +216,7 @@ double result = (double) a / b;
 System.out.println(result); // 2.5
 ```
 
-También valdría esto:
+This would also work:
 
 ```java
 double result = a / 2.0;
@@ -226,9 +225,9 @@ System.out.println(result); // 2.5
 
 ---
 
-### 5.3. Ejemplo práctico: calcular una media
+### 5.3. Practical example: calculating an average
 
-Si haces esto, te equivocas:
+If you do this, you are wrong:
 
 ```java
 int total = 7;
@@ -238,9 +237,9 @@ double average = total / count;
 System.out.println(average); // 3.0 (incorrecto)
 ```
 
-La división se hace como `int` antes de guardarse.
+The split is done as `int` before saving.
 
-La forma correcta:
+The correct way:
 
 ```java
 int total = 7;
@@ -252,11 +251,11 @@ System.out.println(average); // 3.5
 
 ---
 
-## 6. Conversión entre `String` y tipos numéricos
+## 6. Conversion between `String` and numeric types
 
-Aunque esto lo usarás aún más en el tema de entrada por consola, es imprescindible entenderlo aquí porque es una conversión muy frecuente en Java.
+Although you will use this even more in the topic of console input, it is essential to understand it here because it is a very common conversion in Java.
 
-### 6.1. Convertir `String` a `int`
+### 6.1. Convert `String` to `int`
 
 ```java
 String text = "42";
@@ -265,9 +264,9 @@ int number = Integer.parseInt(text);
 System.out.println(number + 1); // 43
 ```
 
-Si `text` no contiene un número válido, Java lanzará un error (excepción).
+If `text` does not contain a valid number, Java will throw an error (exception).
 
-Ejemplo problemático:
+Problematic example:
 
 ```java
 String text = "42a";
@@ -276,7 +275,7 @@ int number = Integer.parseInt(text); // error
 
 ---
 
-### 6.2. Convertir `String` a `double`
+### 6.2. Convert `String` to `double`
 
 ```java
 String text = "19.99";
@@ -285,9 +284,9 @@ double price = Double.parseDouble(text);
 System.out.println(price);
 ```
 
-Ojo con esto: en Java, el separador decimal es `.` (punto), no coma.
+Be careful with this: in Java, the decimal separator is `.` (period), not a comma.
 
-Esto fallaría:
+This would fail:
 
 ```java
 String text = "19,99";
@@ -296,9 +295,9 @@ double price = Double.parseDouble(text); // error
 
 ---
 
-### 6.3. Convertir números a `String`
+### 6.3. Convert numbers to `String`
 
-Una forma muy común es usar `String.valueOf(...)`:
+A very common way is to use `String.valueOf(...)`:
 
 ```java
 int age = 30;
@@ -307,7 +306,7 @@ String ageText = String.valueOf(age);
 System.out.println(ageText);
 ```
 
-También puedes concatenar con una cadena vacía:
+You can also concatenate with an empty string:
 
 ```java
 int age = 30;
@@ -316,19 +315,19 @@ String ageText = age + "";
 System.out.println(ageText);
 ```
 
-> Recomendación: usa `String.valueOf(...)` por claridad.
+> Recommendation: Use `String.valueOf(...)` for clarity.
 
 ---
 
-## 7. Promoción de tipos en operaciones (por qué cambian los resultados)
+## 7. Promotion of rates in operations (why the results change)
 
-Java aplica reglas automáticas en expresiones. En general:
+Java applies automatic rules on expressions. In general:
 
-- Si hay un `double` en la operación, el resultado tiende a ser `double`
-- Si hay un `long` y un `int`, el resultado tiende a ser `long`
-- Si hay tipos pequeños (`byte`, `short`), Java suele promoverlos a `int`
+- If there is an `double` in the operation, the result tends to be `double`
+- If there is an `long` and an `int`, the result tends to be `long`
+- If there are small types (`byte`, `short`), Java usually promotes them to `int`
 
-### 7.1. Ejemplo: `int` + `double`
+### 7.1. Example: `int` + `double`
 
 ```java
 int a = 10;
@@ -340,9 +339,9 @@ System.out.println(total); // 10.5
 
 ---
 
-### 7.2. Ejemplo: `byte` en operaciones se promociona a `int`
+### 7.2. Example: `byte` in trading is promoted to `int`
 
-Esto puede sorprender al principio:
+This may surprise you at first:
 
 ```java
 byte a = 10;
@@ -353,10 +352,10 @@ int c = a + b;
 System.out.println(c); // 30
 ```
 
-¿Por qué falla `byte c = a + b;`?  
-Porque `a + b` se convierte a `int` internamente.
+Why does `byte c = a + b;` fail?  
+Because `a + b` is converted to `int` internally.
 
-Si de verdad quieres `byte`, necesitarías un cast:
+If you really want `byte`, you would need a cast:
 
 ```java
 byte a = 10;
@@ -368,11 +367,10 @@ System.out.println(c);
 
 ---
 
-## 8. Errores comunes (y cómo evitarlos)
+## 8. Common mistakes (and how to avoid them)
 
-### 8.1. Creer que un cast “redondea”
-
-Cast de `double` a `int` **no redondea**, trunca.
+### 8.1. Believing that a cast “rounds”
+Cast from `double` to `int` **does not round**, truncates.
 
 ```java
 double value = 9.99;
@@ -381,13 +379,13 @@ int result = (int) value;
 System.out.println(result); // 9
 ```
 
-Si quisieras redondear, tendrías que usar `Math.round`, que verás más adelante.
+If you wanted to round up, you would have to use `Math.round`, which you will see later.
 
 ---
 
-### 8.2. Hacer casting tarde (en lugar de antes de la operación)
+### 8.2. Casting late (instead of before the operation)
 
-Incorrecto:
+Incorrect:
 
 ```java
 int a = 5;
@@ -397,9 +395,9 @@ double result = (double) (a / b);
 System.out.println(result); // 2.0
 ```
 
-Aquí primero ocurre `a / b` como entero (2), y luego lo conviertes a `double` (2.0).
+Here you first occur `a / b` as an integer (2), and then you convert it to `double` (2.0).
 
-Correcto:
+Correct:
 
 ```java
 double result = (double) a / b;
@@ -408,14 +406,14 @@ System.out.println(result); // 2.5
 
 ---
 
-### 8.3. Convertir `String` con comas decimales
+### 8.3. Convert `String` with decimal points
 
 ```java
 String text = "10,5";
 double value = Double.parseDouble(text); // error
 ```
 
-Solución típica si el texto viene con coma:
+Typical solution if the text comes with a comma:
 
 ```java
 String text = "10,5";
@@ -427,7 +425,7 @@ System.out.println(value); // 10.5
 
 ---
 
-### 8.4. Overflow al convertir a tipos más pequeños
+### 8.4. Overflow when converting to smaller types
 
 ```java
 int value = 1000;
@@ -436,18 +434,18 @@ byte smallValue = (byte) value;
 System.out.println(smallValue); // resultado inesperado
 ```
 
-Solución:
+Solution:
 
-- No hagas cast a tipos pequeños si no es estrictamente necesario.
-- Si lo haces, asegúrate de que el rango es correcto.
+- Don't cast small guys if it's not strictly necessary.
+- If you do, make sure the range is correct.
 
 ---
 
-## 9. Ejemplos guiados (paso a paso)
+## 9. Guided examples (step by step)
 
-### 9.1. Ejemplo 1: calcular el total con IVA
+### 9.1. Example 1: calculate the total with VAT
 
-Queremos sumar un precio base y aplicarle un IVA. Si trabajas con enteros, puedes perder precisión.
+We want to add a base price and apply VAT to it. If you work with integers, you can lose precision.
 
 ```java
 public class Main {
@@ -462,11 +460,11 @@ public class Main {
 }
 ```
 
-Aquí ocurre conversión implícita porque `vatRate` es `double`.
+Implicit conversion occurs here because `vatRate` is `double`.
 
 ---
 
-### 9.2. Ejemplo 2: media de dos notas
+### 9.2. Example 2: average of two notes
 
 ```java
 public class Main {
@@ -481,16 +479,16 @@ public class Main {
 }
 ```
 
-Fíjate en el orden:
+Look at the order:
 
-- `grade1 + grade2` se hace como `int`
-- luego convertimos a `double` antes de dividir
+- `grade1 + grade2` is made as `int`
+- then we convert to `double` before splitting
 
-Esto funciona porque el cast ocurre **antes** de la división.
+This works because the cast happens **before** the split.
 
 ---
 
-### 9.3. Ejemplo 3: convertir un texto a número y operar
+### 9.3. Example 3: Convert a text to a number and operate
 
 ```java
 public class Main {
@@ -505,18 +503,18 @@ public class Main {
 }
 ```
 
-Sin conversión, `"10" + 5` no hace una suma numérica, hace concatenación.
+Without conversion, `"10" + 5` doesn't do numerical addition, it does concatenation.
 
 ---
 
-## 10. A tener en cuenta
+## 10. To take into account
 
-- La conversión implícita ocurre cuando no hay riesgo de pérdida.
-- La conversión explícita (casting) puede perder información.
-- La división entre enteros es una fuente clásica de errores.
-- Convertir entre `String` y números es esencial en Java.
-- Usa paréntesis y casts con intención: mejor claridad que “magia”.
+- Implicit conversion occurs when there is no risk of loss.
+- Explicit conversion (casting) may lose information.
+- Division by integers is a classic source of errors.
+- Converting between `String` and numbers is essential in Java.
+- Use parentheses and casts with intention: better clarity than “magic”.
 
 ---
 
-En el próximo tema veremos **condicionales** (`if` y `switch`), donde estas conversiones serán muy útiles para comparar valores y tomar decisiones en nuestros programas.
+In the next topic we will see **conditionals** (`if` and `switch`), where these conversions will be very useful to compare values and make decisions in our programs.

@@ -1,52 +1,52 @@
-# Tema 3. Operadores y expresiones
+# Topic 3. Operators and expressions
 
-## 1. Introducción
+## 1. Introduction
 
-Ya sabes crear variables y guardar valores. Ahora toca lo que de verdad hace útil un programa: **hacer cosas con esos valores**.
+You already know how to create variables and save values. Now it's time to do what really makes a program useful: **doing things with those values**.
 
-En Java, para trabajar con valores usamos:
+In Java, to work with values we use:
 
-- **Operadores**: símbolos como `+`, `-`, `==`, `&&`...
-- **Expresiones**: combinaciones de valores, variables y operadores que producen un resultado
+- **Operators**: symbols such as `+`, `-`, `==`, `&&`...
+- **Expressions**: combinations of values, variables and operators that produce a result
 
-Por ejemplo:
+For example:
 
 ```java
 int total = 5 + 3;          // expresión aritmética
 boolean isAdult = age >= 18; // expresión relacional
 ```
 
-En este tema aprenderás, con ejemplos claros y guiados:
+In this topic you will learn, with clear and guided examples:
 
-- Operadores aritméticos
-- Operadores relacionales (comparaciones)
-- Operadores lógicos (combinar condiciones)
-- Operadores de asignación (incluyendo compuestos)
-- Incremento y decremento (`++` y `--`)
-- Prioridad de operadores y uso de paréntesis
-- Errores típicos (muy comunes al empezar)
-
----
-
-[![Operadores](https://img.youtube.com/vi/72ushurVPRQ/0.jpg)](https://www.youtube.com/watch?v=72ushurVPRQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- Arithmetic operators
+- Relational operators (comparisons)
+- Logical operators (combine conditions)
+- Assignment operators (including compounds)
+- Increment and decrement (`++` and `--`)
+- Priority of operators and use of parentheses
+- Typical errors (very common when starting out)
 
 ---
 
-## 2. Qué es un operador y qué es una expresión
+[![Operators](https://img.youtube.com/vi/72ushurVPRQ/0.jpg)](https://www.youtube.com/watch?v=72ushurVPRQ&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
-### 2.1. Operador
+---
 
-Un **operador** es un símbolo que indica una operación:
+## 2. What is an operator and what is an expression
 
-- `+` suma
-- `==` compara igualdad
-- `&&` combina condiciones
+### 2.1. Operator
 
-### 2.2. Expresión
+An **operator** is a symbol that indicates an operation:
 
-Una **expresión** es algo que se puede evaluar y produce un valor.
+- `+` sum
+- `==` compares equality
+- `&&` combine conditions
 
-Ejemplos de expresiones:
+### 2.2. Expression
+
+An **expression** is something that can be evaluated and produces a value.
+
+Examples of expressions:
 
 ```java
 10 + 5
@@ -54,7 +54,7 @@ age >= 18
 isPremium && hasPermission
 ```
 
-Y normalmente guardas el resultado en una variable:
+And normally you save the result in a variable:
 
 ```java
 int result = 10 + 5;
@@ -63,23 +63,23 @@ boolean isValid = age >= 18;
 
 ---
 
-## 3. Operadores aritméticos
+## 3. Arithmetic operators
 
-Los operadores aritméticos se usan para cálculos matemáticos.
+Arithmetic operators are used for mathematical calculations.
 
-### 3.1. Operadores aritméticos disponibles
+### 3.1. Available Arithmetic Operators
 
-| Operador | Nombre         | Ejemplo |
+| Operator | Name | Example |
 | -------- | -------------- | ------- |
-| `+`      | Suma           | `a + b` |
-| `-`      | Resta          | `a - b` |
-| `*`      | Multiplicación | `a * b` |
-| `/`      | División       | `a / b` |
-| `%`      | Módulo (resto) | `a % b` |
+| `+` | Sum | `a + b` |
+| `-` | Subtraction | `a - b` |
+| `*` | Multiplication | `a * b` |
+| `/` | Division | `a / b` |
+| `%` | Module (rest) | `a % b` |
 
 ---
 
-### 3.2. Ejemplo guiado: operaciones básicas
+### 3.2. Guided Example: Basic Operations
 
 ```java
 int a = 10;
@@ -100,23 +100,23 @@ System.out.println("remainder: " + remainder);   // 1
 
 ---
 
-### 3.3. División entre enteros (error típico)
+### 3.3. Division by integers (typical error)
 
-Cuando divides dos `int`, el resultado es `int` y se pierden los decimales:
+When you divide two `int`, the result is `int` and the decimals are lost:
 
 ```java
 int result = 5 / 2;
 System.out.println(result); // 2
 ```
 
-Si necesitas decimales, al menos uno debe ser `double`:
+If you need decimals, at least one must be `double`:
 
 ```java
 double result = 5 / 2.0;
 System.out.println(result); // 2.5
 ```
 
-O usando cast:
+Or using cast:
 
 ```java
 int a = 5;
@@ -128,24 +128,24 @@ System.out.println(result); // 2.5
 
 ---
 
-### 3.4. Módulo `%` (muy útil)
+### 3.4. `%` module (very useful)
 
-El módulo devuelve el resto de una división.
+The module returns the remainder of a division.
 
-Ejemplo:
+Example:
 
 ```java
 int remainder = 10 % 3;
 System.out.println(remainder); // 1
 ```
 
-Casos típicos:
+Typical cases:
 
-- Comprobar si un número es par o impar
-- Ejecutar algo “cada N” veces
-- Ciclos
+- Check if a number is even or odd
+- Run something “every N” times
+- Cycles
 
-Ejemplo: par o impar
+Example: even or odd
 
 ```java
 int number = 7;
@@ -156,11 +156,11 @@ System.out.println(isEven); // false
 
 ---
 
-## 4. Operadores de asignación
+## 4. Assignment operators
 
-### 4.1. Asignación básica `=`
+### 4.1. `=` Base Allocation
 
-El operador `=` asigna un valor a una variable.
+The `=` operator assigns a value to a variable.
 
 ```java
 int age = 25;
@@ -168,19 +168,19 @@ int age = 25;
 
 ---
 
-### 4.2. Asignación compuesta (`+=`, `-=`, `*=`, `/=`, `%=`)
+### 4.2. Composite allocation (`+=`, `-=`, `*=`, `/=`, `%=`)
 
-Permiten actualizar una variable de forma más compacta.
+They allow a variable to be updated in a more compact way.
 
-| Operador | Ejemplo  | Equivale a  |
+| Operator | Example | Equivalent to |
 | -------- | -------- | ----------- |
-| `+=`     | `a += 2` | `a = a + 2` |
-| `-=`     | `a -= 2` | `a = a - 2` |
-| `*=`     | `a *= 2` | `a = a * 2` |
-| `/=`     | `a /= 2` | `a = a / 2` |
-| `%=`     | `a %= 2` | `a = a % 2` |
+| `+=` | `a += 2` | `a = a + 2` |
+| `-=` | `a -= 2` | `a = a - 2` |
+| `*=` | `a *= 2` | `a = a * 2` |
+| `/=` | `a /= 2` | `a = a / 2` |
+| `%=` | `a %= 2` | `a = a % 2` |
 
-Ejemplo:
+Example:
 
 ```java
 int score = 10;
@@ -195,9 +195,8 @@ System.out.println(score);
 
 ---
 
-## 5. Incremento y decremento (`++` y `--`)
-
-Estos operadores suman o restan 1.
+## 5. Increment and decrement (`++` and `--`)
+These operators add or subtract 1.
 
 ```java
 int count = 0;
@@ -208,12 +207,12 @@ count--; // vuelve a 0
 
 ---
 
-### 5.1. Pre-incremento vs post-incremento (muy importante)
+### 5.1. Pre-increment vs post-increment (very important)
 
-- `count++` (post): primero usa el valor, luego incrementa
-- `++count` (pre): primero incrementa, luego usa el valor
+- `count++` (post): first use value, then increment
+- `++count` (pre): first increment, then use the value
 
-Ejemplo guiado:
+Guided example:
 
 ```java
 int count = 5;
@@ -222,7 +221,7 @@ System.out.println(count++); // imprime 5, luego count pasa a 6
 System.out.println(count);   // imprime 6
 ```
 
-Ahora con pre-incremento:
+Now with pre-increment:
 
 ```java
 int count = 5;
@@ -231,28 +230,28 @@ System.out.println(++count); // count pasa a 6 y luego imprime 6
 System.out.println(count);   // imprime 6
 ```
 
-> Recomendación para principiantes: usa `count++` en líneas separadas para evitar confusiones.
+> Beginner Recommendation: Use `count++` on separate lines to avoid confusion.
 
 ---
 
-## 6. Operadores relacionales (comparaciones)
+## 6. Relational operators (comparisons)
 
-Los operadores relacionales comparan valores y el resultado siempre es un `boolean`.
+Relational operators compare values and the result is always an `boolean`.
 
-### 6.1. Operadores relacionales
+### 6.1. Relational operators
 
-| Operador | Significado       | Ejemplo  |
+| Operator | Meaning | Example |
 | -------- | ----------------- | -------- |
-| `==`     | Igual a           | `a == b` |
-| `!=`     | Distinto de       | `a != b` |
-| `>`      | Mayor que         | `a > b`  |
-| `<`      | Menor que         | `a < b`  |
-| `>=`     | Mayor o igual que | `a >= b` |
-| `<=`     | Menor o igual que | `a <= b` |
+| `==` | Equals | `a == b` |
+| `!=` | Other than | `a != b` |
+| `>` | Greater than | `a > b` |
+| `<` | Less than | `a < b` |
+| `>=` | Greater than or equal to | `a >= b` |
+| `<=` | Less than or equal to | `a <= b` |
 
 ---
 
-### 6.2. Ejemplo guiado: comparación de edad
+### 6.2. Guided Example: Age Comparison
 
 ```java
 int age = 17;
@@ -266,37 +265,37 @@ System.out.println(isMinor); // true
 
 ---
 
-### 6.3. Comparaciones con `double` (precaución)
+### 6.3. Comparisons to `double` (Caution)
 
-Comparar decimales exactos puede fallar por representación interna, aunque en ejemplos simples suele funcionar.
+Comparing exact decimals can fail due to internal representation, although in simple examples it usually works.
 
 ```java
 double a = 0.1 + 0.2;
 System.out.println(a); // puede mostrar 0.30000000000000004
 ```
 
-Para principiantes, quédate con esta idea:
+For beginners, stick with this idea:
 
-- Para dinero, suele usarse `BigDecimal` (lo verás mucho más adelante)
-- Para ejercicios básicos, `double` está bien, pero sé consciente de esto
+- For money, `BigDecimal` is usually used (you will see it much later)
+- For basic exercises, `double` is fine, but be aware of this
 
 ---
 
-## 7. Operadores lógicos
+## 7. Logical operators
 
-Los operadores lógicos combinan valores booleanos.
+Logical operators combine boolean values.
 
-### 7.1. Operadores lógicos principales
+### 7.1. Main logical operators
 
-| Operador | Nombre | Significado            |
+| Operator | Name | Meaning |
 | -------- | ------ | ---------------------- | --- | ---------------------------- |
-| `&&`     | AND    | true si ambos son true |
-| `        |        | `                      | OR  | true si al menos uno es true |
-| `!`      | NOT    | invierte el booleano   |
+| `&&` | AND | true if both are true |
+| `        |        | ` | OR | true if at least one is true |
+| `!` | NOT | inverts the boolean |
 
 ---
 
-### 7.2. Ejemplo: AND (`&&`)
+### 7.2. Example: AND (`&&`)
 
 ```java
 int age = 20;
@@ -308,7 +307,7 @@ System.out.println(canEnter); // true
 
 ---
 
-### 7.3. Ejemplo: OR (`||`)
+### 7.3. Example: OR (`||`)
 
 ```java
 boolean isVip = true;
@@ -320,7 +319,7 @@ System.out.println(canAccess); // true
 
 ---
 
-### 7.4. Ejemplo: NOT (`!`)
+### 7.4. Example: NOT (`!`)
 
 ```java
 boolean isBlocked = false;
@@ -331,14 +330,14 @@ System.out.println(canLogin); // true
 
 ---
 
-## 8. Cortocircuito (short-circuit) en `&&` y `||`
+## 8. Short-circuit in `&&` and `||`
 
-Esto es importante porque afecta al comportamiento del programa.
+This is important because it affects the behavior of the program.
 
-- En `&&`, si la primera condición es `false`, Java no evalúa la segunda.
-- En `||`, si la primera condición es `true`, Java no evalúa la segunda.
+- In `&&`, if the first condition is `false`, Java does not evaluate the second.
+- In `||`, if the first condition is `true`, Java does not evaluate the second.
 
-Ejemplo:
+Example:
 
 ```java
 int value = 0;
@@ -347,17 +346,17 @@ boolean result = (value != 0) && (10 / value > 1);
 System.out.println(result); // false
 ```
 
-Aquí no hay error, porque `value != 0` es `false` y Java no evalúa `10 / value`.
+There is no error here, because `value != 0` is `false` and Java does not evaluate `10 / value`.
 
-Si no existiera cortocircuito, este código lanzaría un error por división entre cero.
+If there was no short circuit, this code would throw a division by zero error.
 
 ---
 
-## 9. Operadores con `String` (muy importante)
+## 9. Operators with `String` (very important)
 
-### 9.1. Concatenación con `+`
+### 9.1. Concatenation with `+`
 
-Puedes unir texto con variables usando `+`.
+You can join text with variables using `+`.
 
 ```java
 String name = "Alex";
@@ -369,29 +368,29 @@ System.out.println(message);
 
 ---
 
-### 9.2. Error típico: concatenación vs suma
+### 9.2. Typical error: concatenation vs addition
 
-Mira esto:
+Look at this:
 
 ```java
 System.out.println("Result: " + 2 + 3);
 ```
 
-Salida:
+Output:
 
 ```
 Result: 23
 ```
 
-Porque se interpreta como concatenación: `"Result: " + 2` y luego `+ 3`.
+Because it is interpreted as concatenation: `"Result: " + 2` and then `+ 3`.
 
-Si quieres suma real, usa paréntesis:
+If you want real sum, use parentheses:
 
 ```java
 System.out.println("Result: " + (2 + 3));
 ```
 
-Salida:
+Output:
 
 ```
 Result: 5
@@ -399,11 +398,10 @@ Result: 5
 
 ---
 
-### 9.3. Comparar `String`: usa `.equals(...)`
+### 9.3. Compare `String`: use `.equals(...)`
+This is a classic Java error.
 
-Este es un error clásico de Java.
-
-Incorrecto:
+Incorrect:
 
 ```java
 String role = "admin";
@@ -413,7 +411,7 @@ if (role == "admin") {
 }
 ```
 
-Correcto:
+Correct:
 
 ```java
 String role = "admin";
@@ -423,37 +421,37 @@ if (role.equals("admin")) {
 }
 ```
 
-Más adelante verás por qué (objetos vs referencias), pero por ahora quédate con la regla:
+Later you will see why (objects vs references), but for now stick with the rule:
 
-> Para comparar texto en Java, usa `.equals(...)`.
+> To compare text in Java, use `.equals(...)`.
 
 ---
 
-## 10. Prioridad de operadores y paréntesis
+## 10. Priority of operators and parentheses
 
-Java evalúa expresiones siguiendo un orden de prioridad.
+Java evaluates expressions following an order of priority.
 
-Regla práctica rápida:
+Quick rule of thumb:
 
-1. Paréntesis `( )`
-2. Multiplicación/División/Módulo `* / %`
-3. Suma/Resta `+ -`
-4. Comparaciones `> < >= <=`
-5. Igualdad `== !=`
+1. `( )` parentheses
+2. Multiplication/Division/`* / %` Module
+3. Addition/Subtraction `+ -`
+4. `> < >= <=` Comparisons
+5. Equality `== !=`
 6. AND `&&`
 7. OR `||`
-8. Asignación `=`
+8. `=` allocation
 
 ---
 
-### 10.1. Ejemplo: prioridad en aritmética
+### 10.1. Example: priority in arithmetic
 
 ```java
 int result = 5 + 2 * 3;
 System.out.println(result); // 11
 ```
 
-Si quieres cambiar el orden:
+If you want to change the order:
 
 ```java
 int result = (5 + 2) * 3;
@@ -462,19 +460,19 @@ System.out.println(result); // 21
 
 ---
 
-### 10.2. Ejemplo: prioridad en condiciones
+### 10.2. Example: priority in conditions
 
 ```java
 boolean result = true || false && false;
 System.out.println(result); // true
 ```
 
-Porque `&&` tiene más prioridad que `||`, se evalúa así:
+Because `&&` has higher priority than `||`, it is evaluated like this:
 
 - `false && false` -> `false`
 - `true || false` -> `true`
 
-Si quisieras otra lógica:
+If you wanted another logic:
 
 ```java
 boolean result = (true || false) && false;
@@ -483,11 +481,11 @@ System.out.println(result); // false
 
 ---
 
-## 11. Ejemplos guiados (para practicar de verdad)
+## 11. Guided Examples (for real practice)
 
-### 11.1. Ejemplo 1: calcular el precio final con descuento
+### 11.1. Example 1: calculate the final price with discount
 
-Queremos:
+We want:
 
 - `basePrice` (double)
 - `discountRate` (double)
@@ -509,19 +507,19 @@ public class Main {
 }
 ```
 
-Puntos clave:
+Key points:
 
-- Separar el cálculo en pasos mejora legibilidad
-- Evitas errores al encadenar operaciones
+- Separating the calculation into steps improves readability
+- You avoid errors when chaining operations
 
 ---
 
-### 11.2. Ejemplo 2: validar acceso con condiciones lógicas
+### 11.2. Example 2: Validate access with logical conditions
 
-Queremos permitir acceso si:
+We want to allow access if:
 
-- es mayor de edad **y**
-- tiene entrada **o** es VIP
+- is of legal age **and**
+- has entrance **or** is VIP
 
 ```java
 public class Main {
@@ -538,14 +536,14 @@ public class Main {
 }
 ```
 
-Fíjate en los paréntesis:
+Look at the parentheses:
 
-- Sin paréntesis la condición puede interpretarse distinto
-- Los paréntesis dejan clara la intención
+- Without parentheses the condition can be interpreted differently
+- Parentheses make the intention clear
 
 ---
 
-### 11.3. Ejemplo 3: par o impar y múltiplos
+### 11.3. Example 3: even or odd and multiples
 
 ```java
 public class Main {
@@ -563,17 +561,17 @@ public class Main {
 
 ---
 
-## 12. Errores comunes (y cómo evitarlos)
+## 12. Common mistakes (and how to avoid them)
 
-### 12.1. Usar `=` en vez de `==`
+### 12.1. Use `=` instead of `==`
 
-Incorrecto (no compila en condiciones):
+Incorrect (does not compile correctly):
 
 ```java
 // if (age = 18) { ... } // error
 ```
 
-Correcto:
+Correct:
 
 ```java
 if (age == 18) {
@@ -583,7 +581,7 @@ if (age == 18) {
 
 ---
 
-### 12.2. Olvidar paréntesis en concatenación
+### 12.2. Forget parentheses in concatenation
 
 ```java
 System.out.println("Total: " + 2 + 3); // "Total: 23"
@@ -592,7 +590,7 @@ System.out.println("Total: " + (2 + 3)); // "Total: 5"
 
 ---
 
-### 12.3. Dividir enteros esperando decimales
+### 12.3. Divide integers expecting decimals
 
 ```java
 int a = 7;
@@ -601,7 +599,7 @@ int b = 2;
 double average = a / b; // 3.0 (incorrecto)
 ```
 
-Solución:
+Solution:
 
 ```java
 double average = (double) a / b; // 3.5
@@ -609,14 +607,14 @@ double average = (double) a / b; // 3.5
 
 ---
 
-## 13. A tener en cuenta
+## 13. To take into account
 
-- Un operador es un símbolo; una expresión combina operadores y valores.
-- La división entre enteros es una fuente típica de errores.
-- `&&` y `||` usan cortocircuito (a veces evita errores).
-- Para `String`, concatena con `+` y compara con `.equals(...)`.
-- Usa paréntesis para claridad y para controlar la prioridad.
+- An operator is a symbol; An expression combines operators and values.
+- Division by integers is a typical source of errors.
+- `&&` and `||` use short circuit (sometimes prevents errors).
+- For `String`, concatenate with `+` and compare with `.equals(...)`.
+- Use parentheses for clarity and to control priority.
 
 ---
 
-En el próximo tema aprenderás **conversión de tipos**, donde verás cómo pasar de `int` a `double`, de `String` a número, y por qué algunas operaciones dan resultados inesperados si no conviertes correctamente.
+In the next topic you will learn **type conversion**, where you will see how to go from `int` to `double`, from `String` to number, and why some operations give unexpected results if you don't convert correctly.

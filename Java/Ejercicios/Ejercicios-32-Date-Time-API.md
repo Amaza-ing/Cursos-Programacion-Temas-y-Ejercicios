@@ -1,16 +1,16 @@
-# Ejercicios - Tema 32: Date/Time API
+# Exercises - Topic 32: Date/Time API
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **Date/Time API**: `LocalDate`, `LocalTime`, `LocalDateTime`, `DateTimeFormatter`, `Period`, `Duration`, comparación de fechas y operaciones con días, meses y años.
+Below you will find **10 practical exercises** to work with **Date/Time API**: `LocalDate`, `LocalTime`, `LocalDateTime`, `DateTimeFormatter`, `Period`, `Duration`, comparison of dates and operations with days, months and years.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Mostrar la fecha actual
+## Exercise 1: Show the current date
 
-Usa `LocalDate.now()` para obtener la fecha actual e imprímela por consola.
+Use `LocalDate.now()` to get the current date and print it to the console.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -28,17 +28,17 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Crear una fecha concreta
+## Exercise 2: Create a specific date
 
-Crea una fecha con:
+Create a date with:
 
-- año: `2026`
-- mes: `7`
-- día: `15`
+- year: `2026`
+- month: `7`
+- day: `15`
 
-Usa `LocalDate.of` e imprime el resultado.
+Use `LocalDate.of` and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -56,13 +56,13 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Sumar días a una fecha
+## Exercise 3: Add days to a date
 
-Crea una variable `LocalDate startDate` con el valor `2026-06-01`.
+Create a variable `LocalDate startDate` with the value `2026-06-01`.
 
-Suma 10 días usando `plusDays` e imprime la fecha final.
+Add 10 days using `plusDays` and print the end date.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -82,13 +82,13 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Restar meses
+## Exercise 4: Subtract months
 
-Crea una fecha `LocalDate paymentDate = LocalDate.of(2026, 12, 5)`.
+Create a date `LocalDate paymentDate = LocalDate.of(2026, 12, 5)`.
 
-Resta 2 meses usando `minusMonths` e imprime el resultado.
+Subtract 2 months using `minusMonths` and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -108,19 +108,19 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Formatear una fecha
+## Exercise 5: Format a date
 
-Crea una fecha `LocalDate date = LocalDate.of(2026, 9, 30)`.
+Create a date `LocalDate date = LocalDate.of(2026, 9, 30)`.
 
-Formatea la fecha con el patrón:
+Format the date with the pattern:
 
 ```text
 dd/MM/yyyy
 ```
 
-e imprime el resultado.
+and print the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -143,17 +143,17 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Parsear texto a fecha
+## Exercise 6: Parse text to date
 
-Declara:
+Declares:
 
 ```java
 String text = "25/12/2026";
 ```
 
-Convierte ese texto a `LocalDate` usando `DateTimeFormatter` con patrón `dd/MM/yyyy`.
+Convert that text to `LocalDate` using `DateTimeFormatter` with pattern `dd/MM/yyyy`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -176,17 +176,17 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Calcular edad con `Period`
+## Exercise 7: Calculate age with `Period`
 
-Crea una fecha de nacimiento:
+Create a date of birth:
 
 ```java
 LocalDate birthDate = LocalDate.of(2000, 3, 20);
 ```
 
-Calcula la edad en años usando `Period.between`.
+Calculate age in years using `Period.between`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -208,20 +208,20 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Comparar fechas
+## Exercise 8: Compare dates
 
-Crea dos fechas:
+Create two dates:
 
 ```java
 LocalDate deadline = LocalDate.of(2026, 8, 1);
 LocalDate currentDate = LocalDate.of(2026, 8, 10);
 ```
 
-Comprueba si `currentDate` es posterior a `deadline` usando `isAfter`.
+Checks if `currentDate` is later than `deadline` using `isAfter`.
 
-Si lo es, imprime `"Expired"`.
+If it is, print `"Expired"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;
@@ -242,18 +242,18 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Duración entre dos horas
+## Exercise 9: Duration between two hours
 
-Crea dos horas:
+Create two hours:
 
 ```java
 LocalTime start = LocalTime.of(9, 30);
 LocalTime end = LocalTime.of(11, 15);
 ```
 
-Calcula la duración entre ambas usando `Duration.between` e imprime los minutos totales.
+Calculate the duration between the two using `Duration.between` and print the total minutes.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.Duration;
@@ -275,19 +275,19 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Crear un método para comprobar vencimiento
+## Exercise 10: Create a method to check expiration
 
-Crea un método:
+Create a method:
 
 ```java
 public static boolean isExpired(LocalDate dueDate)
 ```
 
-Debe devolver `true` si `dueDate` es anterior a la fecha actual.
+Should return `true` if `dueDate` is older than the current date.
 
-Prueba el método desde `main` con una fecha pasada y una fecha futura.
+Try the method from `main` with a past date and a future date.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.time.LocalDate;

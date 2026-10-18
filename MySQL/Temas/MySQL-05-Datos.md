@@ -1,35 +1,35 @@
-# **Tema 5: Insertar, Actualizar y Eliminar Datos en MySQL**
+# **Topic 5: Insert, Update and Delete Data in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Insertar registros en una tabla con `INSERT`.
-- Modificar registros existentes con `UPDATE`.
-- Eliminar registros con `DELETE`.
-- Usar condiciones para modificar o eliminar registros específicos.
+- Insert records into a table with `INSERT`.
+- Modify existing records with `UPDATE`.
+- Delete records with `DELETE`.
+- Use conditions to modify or delete specific records.
 
 ---
 
-## **1. Insertar datos con `INSERT`**
+## **1. Insert data with `INSERT`**
 
-La sentencia `INSERT` se utiliza para añadir nuevas filas a una tabla.
+The `INSERT` statement is used to add new rows to a table.
 
-### **Sintaxis básica**
+### **Basic syntax**
 
 ```sql
 INSERT INTO nombre_tabla (columna1, columna2, ...)
 VALUES (valor1, valor2, ...);
 ```
 
-### **Ejemplo**
+### **Example**
 
-Insertar un nuevo cliente en la tabla `customers`:
+Insert a new client into the `customers` table:
 
 ```sql
 INSERT INTO customers (first_name, last_name, signup_date, newsletter_subscribed)
 VALUES ('Laura', 'Gómez', '2025-04-01', TRUE);
 ```
 
-También es posible insertar múltiples registros a la vez:
+It is also possible to insert multiple records at once:
 
 ```sql
 INSERT INTO customers (first_name, last_name, signup_date, newsletter_subscribed)
@@ -38,7 +38,7 @@ VALUES
 ('Ana', 'Pérez', '2025-04-12', TRUE);
 ```
 
-Para realizar una consulta y observar todos los datos de una tabla, por ejemplo de `customers` puedes hacer:
+To perform a query and observe all the data in a table, for example from `customers`, you can do:
 
 ```sql
 SELECT * FROM customers;
@@ -46,15 +46,15 @@ SELECT * FROM customers;
 
 ---
 
-[![Cómo Insertar Datos en una Tabla](https://img.youtube.com/vi/qJQqFKdLYyg/0.jpg)](https://www.youtube.com/watch?v=qJQqFKdLYyg&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![How to Insert Data into a Table](https://img.youtube.com/vi/qJQqFKdLYyg/0.jpg)](https://www.youtube.com/watch?v=qJQqFKdLYyg&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **2. Actualizar datos con `UPDATE`**
+## **2. Update data with `UPDATE`**
 
-La sentencia `UPDATE` se utiliza para modificar uno o varios registros existentes.
+The `UPDATE` statement is used to modify one or more existing records.
 
-### **Sintaxis básica**
+### **Basic syntax**
 
 ```sql
 UPDATE nombre_tabla
@@ -62,11 +62,11 @@ SET columna1 = nuevo_valor1, columna2 = nuevo_valor2, ...
 WHERE condición;
 ```
 
-> ⚠️ Hay que usar siempre `WHERE` para evitar actualizar todos los registros por error.
+> ⚠️ You must always use `WHERE` to avoid updating all records by mistake.
 
-### **Ejemplo**
+### **Example**
 
-Actualizar el estado de subscripción a la newsletter de un cliente específico:
+Update the newsletter subscription status of a specific customer:
 
 ```sql
 UPDATE customers
@@ -74,7 +74,7 @@ SET newsletter_subscribed = FALSE
 WHERE customer_id = 3;
 ```
 
-Actualizar varios campos a la vez:
+Update multiple fields at once:
 
 ```sql
 UPDATE customers
@@ -84,29 +84,29 @@ WHERE customer_id = 4;
 
 ---
 
-## **3. Eliminar datos con `DELETE`**
+## **3. Delete data with `DELETE`**
 
-La sentencia `DELETE` permite eliminar registros de una tabla.
+The `DELETE` statement allows you to delete records from a table.
 
-### **Sintaxis básica**
+### **Basic syntax**
 
 ```sql
 DELETE FROM nombre_tabla
 WHERE condición;
 ```
 
-> ⚠️ Si no incluyes `WHERE`, se eliminarán **todos los registros**.
+> ⚠️ If you do not include `WHERE`, **all records** will be deleted.
 
-### **Ejemplo**
+### **Example**
 
-Eliminar un cliente por su ID:
+Delete a customer by ID:
 
 ```sql
 DELETE FROM customers
 WHERE customer_id = 2;
 ```
 
-Eliminar todos los registros de una tabla (con cuidado):
+Delete all records from a table (carefully):
 
 ```sql
 DELETE FROM customers;
@@ -114,30 +114,30 @@ DELETE FROM customers;
 
 ---
 
-## **4. Insertar datos con claves foráneas**
+## **4. Insert data with foreign keys**
 
-Al insertar datos en tablas que contienen claves foráneas, asegúrate de que el valor referenciado exista en la tabla padre.
+When inserting data into tables that contain foreign keys, ensure that the referenced value exists in the parent table.
 
-Ejemplo: insertar un nuevo pedido en la tabla `orders`:
+Example: insert a new order into the `orders` table:
 
 ```sql
 INSERT INTO orders (order_id, customer_id, total_amount, created_at)
 VALUES (1, 1, 150.00, '2025-04-14 12:30:00');
 ```
 
-> El valor `customer_id = 1` debe existir en la tabla `customers`.
+> The `customer_id = 1` value must exist in the `customers` table.
 
 ---
 
-[![Modificación de tablas](https://img.youtube.com/vi/mYsI8AwooG4/0.jpg)](https://www.youtube.com/watch?v=mYsI8AwooG4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Table modification](https://img.youtube.com/vi/mYsI8AwooG4/0.jpg)](https://www.youtube.com/watch?v=mYsI8AwooG4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **5. Consideraciones importantes**
+## **5. Important Considerations**
 
-- Las operaciones de modificación y eliminación pueden afectar muchos datos si no se usan condiciones específicas.
-- Asegúrate de hacer copias de seguridad antes de ejecutar sentencias destructivas.
-- Usa `SELECT` con la misma condición que piensas usar en `UPDATE` o `DELETE` para revisar los datos antes:
+- Modify and delete operations can affect a lot of data if specific conditions are not used.
+- Make sure to make backup copies before executing destructive statements.
+- Use `SELECT` with the same condition that you plan to use in `UPDATE` or `DELETE` to review the data before:
 
 ```sql
 SELECT * FROM customers WHERE customer_id = 5;
@@ -145,13 +145,13 @@ SELECT * FROM customers WHERE customer_id = 5;
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-- `INSERT` se usa para añadir registros nuevos.
-- `UPDATE` modifica campos existentes en registros específicos.
-- `DELETE` elimina registros según una condición.
-- Las operaciones sin condiciones (`WHERE`) afectan a todos los registros.
+- `INSERT` is used to add new records.
+- `UPDATE` modifies existing fields in specific records.
+- `DELETE` deletes records based on a condition.
+- Operations without conditions (`WHERE`) affect all records.
 
 ---
 
-En el próximo tema aprenderemos a realizar **consultas avanzadas con SELECT y condiciones usando WHERE, ORDER BY, LIMIT y operadores lógicos.**
+In the next topic we will learn to perform **advanced queries with SELECT and conditions using WHERE, ORDER BY, LIMIT and logical operators.**

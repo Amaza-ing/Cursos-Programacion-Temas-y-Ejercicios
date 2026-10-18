@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 8: Ciclo de Vida Completo de los Componentes en Angular**
+# **Exercises - Topic 8: Complete Life Cycle of Components in Angular**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre los hooks del ciclo de vida en Angular.
+Below you will find exercises on lifecycle hooks in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Uso de `ngOnChanges()`**
+### **Exercise 1: Using `ngOnChanges()`**
 
-Crea un componente hijo que detecte cambios en una propiedad recibida del componente padre.
+Create a child component that detects changes to a property received from the parent component.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
@@ -32,24 +32,26 @@ export class ChildComponent implements OnChanges {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <input [(ngModel)]="message" placeholder="Escribe algo" />
 <app-child [data]="message"></app-child>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Uso de `ngOnInit()`**
+### **Exercise 2: Using `ngOnInit()`**
 
-Inicializa un valor en `ngOnInit()` y muéstralo en la plantilla.
+Initialize a value in `ngOnInit()` and display it in the template.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -67,23 +69,25 @@ export class ExampleComponent implements OnInit {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p>{{ message }}</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Uso de `ngDoCheck()`**
+### **Exercise 3: Using `ngDoCheck()`**
 
-Implementa `ngDoCheck()` para detectar cambios manualmente.
+Implement `ngDoCheck()` to detect changes manually.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, DoCheck } from "@angular/core";
@@ -101,17 +105,18 @@ export class ExampleComponent implements DoCheck {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Uso de `ngAfterViewInit()`**
+### **Exercise 4: Using `ngAfterViewInit()`**
 
-Modifica el color de un elemento HTML usando `ngAfterViewInit()`.
+Modifies the color of an HTML element using `ngAfterViewInit()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
@@ -129,23 +134,25 @@ export class ExampleComponent implements AfterViewInit {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <h1 #title>Título modificado en AfterViewInit</h1>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Uso de `ngOnDestroy()`**
+### **Exercise 5: Using `ngOnDestroy()`**
 
-Ejecuta una acción antes de que el componente sea destruido.
+Execute an action before the component is destroyed.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnDestroy } from "@angular/core";
@@ -160,5 +167,6 @@ export class ExampleComponent implements OnDestroy {
   }
 }
 ```
+
 
 </details>

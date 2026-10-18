@@ -1,21 +1,21 @@
-# **Tema 10: Vue Router y Router Links - Creación de Views y Rutas en un Proyecto SPA**
+# **Topic 10: Vue Router and Router Links - Creating Views and Routes in a SPA Project**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Vue Router es la librería oficial de enrutamiento para Vue.js. Permite gestionar la navegación en aplicaciones **SPA** (Single Page Application), donde las páginas se cargan dinámicamente sin necesidad de recargar el navegador.
+Vue Router is the official routing library for Vue.js. It allows you to manage navigation in **SPA** (Single Page Application) applications, where pages are loaded dynamically without the need to reload the browser.
 
-Con Vue Router, podemos:
+With Vue Router, we can:
 
-- Definir rutas y asociarlas a componentes (views).
-- Crear enlaces navegables con `RouterLink`.
-- Controlar el historial de navegación.
-- Aplicar rutas anidadas y dinámicas.
+- Define routes and associate them with components (views).
+- Create navigable links with `RouterLink`.
+- Control browsing history.
+- Apply nested and dynamic routes.
 
 ---
 
-## **2. Instalación de Vue Router**
+## **2. Installing Vue Router**
 
-Si no has creado el proyecto con la opción de router habilitada, puedes añadir Vue Router manualmente:
+If you have not created the project with the router option enabled, you can add Vue Router manually:
 
 ```sh
 npm install vue-router@4
@@ -23,9 +23,9 @@ npm install vue-router@4
 
 ---
 
-## **3. Crear vistas (views)**
+## **3. Create views (views)**
 
-Crea una carpeta `views` dentro de `src` y añade un par de componentes que representarán páginas completas:
+Create a folder `views` inside `src` and add a couple of components that will render entire pages:
 
 `HomeView.vue`
 
@@ -61,11 +61,11 @@ h1 {
 
 ---
 
-## **4. Configuración básica de rutas**
+## **4. Basic route configuration**
 
-### Crear el archivo de rutas
+### Create the routes file
 
-Dentro de la carpeta `src`, crea un archivo llamado `router.js` o `router/index.js`.
+Inside the `src` folder, create a file called `router.js` or `router/index.js`.
 
 ```javascript
 import { createRouter, createWebHistory } from "vue-router";
@@ -87,9 +87,9 @@ export default router;
 
 ---
 
-## **5. Integrar el router en la aplicación**
+## **5. Integrate the router into the application**
 
-En `main.js`, importa el router y añádelo a la app.
+In `main.js`, import the router and add it to the app.
 
 ```javascript
 import { createApp } from "vue";
@@ -103,9 +103,9 @@ app.mount("#app");
 
 ---
 
-## **6. Mostrar las vistas en App.vue**
+## **6. Show views in App.vue**
 
-Vue Router utiliza un componente especial llamado `RouterView` para renderizar el componente de la ruta actual.
+Vue Router uses a special component called `RouterView` to render the current route component.
 
 `App.vue`
 
@@ -136,11 +136,11 @@ nav {
 
 ---
 
-## **7. Navegación declarativa con RouterLink**
+## **7. Declarative navigation with RouterLink**
 
-`RouterLink` es el componente de Vue Router para crear enlaces de navegación reactivos. Es una alternativa mejor que `a href` porque evita la recarga completa de la página.
+`RouterLink` is the Vue Router component for creating reactive navigation links. It is a better alternative than `a href` because it avoids the entire page reload.
 
-Ejemplo:
+Example:
 
 ```vue
 <RouterLink to="/about">Ir a Sobre Nosotros</RouterLink>
@@ -152,9 +152,9 @@ Ejemplo:
 
 ---
 
-## **8. Navegación programática (desde la lógica)**
+## **8. Programmatic navigation (from logic)**
 
-Puedes redirigir al usuario programáticamente usando el objeto `router`.
+You can redirect the user programmatically using the `router` object.
 
 ```vue
 <script setup>
@@ -174,19 +174,19 @@ function goToHome() {
 
 ---
 
-[![Navegación Programática](https://img.youtube.com/vi/BwvnFHQukag/0.jpg)](https://www.youtube.com/watch?v=BwvnFHQukag&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Programmatic Navigation](https://img.youtube.com/vi/BwvnFHQukag/0.jpg)](https://www.youtube.com/watch?v=BwvnFHQukag&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **9. Parámetros dinámicos en las rutas**
+## **9. Dynamic parameters in routes**
 
-Vue Router permite definir rutas dinámicas para aceptar parámetros variables:
+Vue Router allows you to define dynamic routes to accept variable parameters:
 
 ```javascript
 { path: '/user/:id', component: UserProfile }
 ```
 
-Para acceder al parámetro `id`:
+To access the `id` parameter:
 
 ```vue
 <script setup>
@@ -201,23 +201,23 @@ const userId = route.params.id;
 </template>
 ```
 
-> Nota: No confundir `useRoute` con `useRouter`
+> Note: Do not confuse `useRoute` with `useRouter`
 
 ---
 
-[![Rutas Paramétricas](https://img.youtube.com/vi/R1YyM6jvBjk/0.jpg)](https://www.youtube.com/watch?v=R1YyM6jvBjk&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Parametric Routes](https://img.youtube.com/vi/R1YyM6jvBjk/0.jpg)](https://www.youtube.com/watch?v=R1YyM6jvBjk&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## Resumen
+## Summary
 
-| Elemento     | Función                                 |
+| Element | Function |
 | ------------ | --------------------------------------- |
-| `RouterLink` | Crear enlaces internos                  |
-| `RouterView` | Mostrar el componente de la ruta actual |
-| `useRouter`  | Navegar programáticamente               |
-| `useRoute`   | Obtener información de la ruta actual   |
+| `RouterLink` | Create internal links |
+| `RouterView` | Show current route component |
+| `useRouter` | Browse programmatically |
+| `useRoute` | Get current route information |
 
 ---
 
-En el próximo tema exploraremos **Cómo gestionar el Estado Global con Pinia**, la librería de gestión de estado recomendada en Vue 3.
+In the next topic we will explore **How to manage Global State with Pinia**, the recommended state management library in Vue 3.

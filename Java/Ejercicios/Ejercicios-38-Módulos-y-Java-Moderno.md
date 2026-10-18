@@ -1,18 +1,18 @@
-# Ejercicios - Tema 38: Anotaciones
+# Exercises - Topic 38: Notes
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **anotaciones**: `@Override`, `@Deprecated`, `@SuppressWarnings`, `@FunctionalInterface`, creación de anotaciones propias, `@Retention`, `@Target` y lectura básica con reflexión.
+Below you will find **10 practical exercises** to work with **annotations**: `@Override`, `@Deprecated`, `@SuppressWarnings`, `@FunctionalInterface`, creating your own annotations, `@Retention`, `@Target` and basic reading with reflection.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Usar `@Override`
+## Exercise 1: Use `@Override`
 
-Crea una clase `BasePrinter` con un método `print()`.
+Create an `BasePrinter` class with an `print()` method.
 
-Crea una clase `ConsolePrinter` que herede de `BasePrinter` y sobrescriba `print()` usando `@Override`.
+Create a class `ConsolePrinter` that inherits from `BasePrinter` and overrides `print()` using `@Override`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class BasePrinter {
@@ -45,16 +45,16 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Marcar un método como `@Deprecated`
+## Exercise 2: Mark a method as `@Deprecated`
 
-Crea una clase `ReportService` con:
+Create a class `ReportService` with:
 
-- método `generateOldReport()` marcado como `@Deprecated`
-- método `generateNewReport()`
+- method `generateOldReport()` marked as `@Deprecated`
+- `generateNewReport()` method
 
-Desde `main`, llama a ambos métodos.
+From `main`, call both methods.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class ReportService {
@@ -84,13 +84,13 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Usar `@SuppressWarnings`
+## Exercise 3: Use `@SuppressWarnings`
 
-Crea una clase `Main` con una variable local que no se use.
+Create a class `Main` with an unused local variable.
 
-Aplica `@SuppressWarnings("unused")` al método `main`.
+Applies `@SuppressWarnings("unused")` to the `main` method.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -107,19 +107,19 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Crear una interfaz funcional
+## Exercise 4: Create a functional interface
 
-Crea una interfaz `TextFormatter` marcada con `@FunctionalInterface`.
+Creates an `TextFormatter` interface marked `@FunctionalInterface`.
 
-Debe tener un único método abstracto:
+You must have a single abstract method:
 
 ```java
 String format(String text);
 ```
 
-En `main`, crea una lambda que convierta el texto a mayúsculas.
+In `main`, create a lambda that converts the text to uppercase.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 @FunctionalInterface
@@ -142,13 +142,13 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Crear una anotación simple
+## Exercise 5: Create a simple annotation
 
-Crea una anotación propia llamada `Important`.
+Create your own annotation called `Important`.
 
-Después úsala sobre una clase `PaymentService`.
+Then use it on an `PaymentService` class.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public @interface Important {
@@ -165,17 +165,17 @@ public class PaymentService {
 
 ---
 
-## Ejercicio 6: Anotación con un valor
+## Exercise 6: Annotation with a value
 
-Crea una anotación `Author` con un elemento:
+Create an `Author` annotation with an element:
 
 ```java
 String name();
 ```
 
-Úsala sobre una clase `Article`.
+Use it on an `Article` class.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public @interface Author {
@@ -193,13 +193,13 @@ public class Article {
 
 ---
 
-## Ejercicio 7: Anotación con `value`
+## Exercise 7: Annotation with `value`
 
-Crea una anotación `Version` con un elemento llamado `value`.
+Create an `Version` annotation with an element named `value`.
 
-Úsala de forma abreviada sobre una clase `ApiClient`.
+Use it as a shorthand on an `ApiClient` class.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public @interface Version {
@@ -217,14 +217,14 @@ public class ApiClient {
 
 ---
 
-## Ejercicio 8: Usar `@Retention` y `@Target`
+## Exercise 8: Using `@Retention` and `@Target`
 
-Crea una anotación `RunNow` que:
+Create an `RunNow` annotation that:
 
-- se conserve en tiempo de ejecución
-- solo pueda aplicarse a métodos
+- is preserved at runtime
+- can only be applied to methods
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.lang.annotation.ElementType;
@@ -242,18 +242,18 @@ public @interface RunNow {
 
 ---
 
-## Ejercicio 9: Leer una anotación de una clase
+## Exercise 9: Read an annotation of a class
 
-Crea una anotación `Category` con:
+Create an `Category` annotation with:
 
 - `RetentionPolicy.RUNTIME`
-- un valor `String value()`
+- an `String value()` value
 
-Anota una clase `BookService` con `@Category("books")`.
+Annotate a class `BookService` with `@Category("books")`.
 
-Desde `main`, lee la anotación con reflexión e imprime su valor.
+From `main`, read the annotation with reflection and print its value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.lang.annotation.Retention;
@@ -287,18 +287,17 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Ejecutar métodos anotados
+## Exercise 10: Execute annotated methods
 
-Crea una anotación `Execute` para métodos en tiempo de ejecución.
+Creates an `Execute` annotation for methods at runtime.
+Create a class `JobService` with two methods:
 
-Crea una clase `JobService` con dos métodos:
+- `clean()` annotated with `@Execute`
+- `helper()` without annotation
 
-- `clean()` anotado con `@Execute`
-- `helper()` sin anotación
+From `main`, use reflection to execute only the annotated methods.
 
-Desde `main`, usa reflexión para ejecutar solo los métodos anotados.
-
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.lang.annotation.ElementType;

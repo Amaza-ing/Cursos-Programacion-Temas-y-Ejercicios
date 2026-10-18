@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 4: Estilos en React**
+# **Exercises - Topic 4: Styles in React**
 
-A continuación, encontrarás **10 ejercicios prácticos** sobre estilos en React.
+Below you will find **10 practical exercises** on styles in React.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Estilo global para toda la app**
+## **Exercise 1: Global style for the entire app**
 
-En `src/index.css`, añade estilos globales para que:
+In `src/index.css`, add global styles so that:
 
-- El `body` tenga `margin: 0`.
-- La fuente sea `system-ui`.
-- El fondo tenga un color claro (elige uno).
+- The `body` has `margin: 0`.
+- The source is `system-ui`.
+- The background has a light color (choose one).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```css
 body {
@@ -28,19 +28,19 @@ body {
 
 ---
 
-## **Ejercicio 2: Importar un CSS desde un componente**
+## **Exercise 2: Import CSS from a component**
 
-Crea un componente `Notice.jsx` en `src/components/` que muestre:
+Create an `Notice.jsx` component in `src/components/` that displays:
 
-- Un `div` con un `p` que diga: **"This is a notice"**
+- An `div` with an `p` that says: **"This is a notice"**
 
-Crea su CSS asociado `Notice.css` y aplícale una clase para que el `div`:
+Create its associated CSS `Notice.css` and apply a class to it so that the `div`:
 
-- Tenga `padding: 12px`
-- Tenga `border-radius: 10px`
-- Tenga un borde fino
+- Have `padding: 12px`
+- Have `border-radius: 10px`
+- Have a fine edge
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/Notice.css`**
 
@@ -72,9 +72,9 @@ export default Notice;
 
 ---
 
-## **Ejercicio 3: Corregir `class` por `className`**
+## **Exercise 3: Correct `class` by `className`**
 
-Este componente no aplica la clase en React. Corrígelo:
+This component does not implement the class in React. Correct it:
 
 ```js
 function Banner() {
@@ -84,7 +84,7 @@ function Banner() {
 export default Banner;
 ```
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Banner() {
@@ -98,18 +98,18 @@ export default Banner;
 
 ---
 
-## **Ejercicio 4: Inline styles con camelCase**
+## **Exercise 4: Inline styles with camelCase**
 
-Crea un componente `InlineBox.jsx` que:
+Create an `InlineBox.jsx` component that:
 
-- Renderice un `div` con el texto **"Inline"**.
-- Use `style` con estas propiedades:
+- Render an `div` with the text **"Inline"**.
+- Use `style` with these properties:
 
   - `padding: 14px`
   - `borderRadius: 12px`
   - `border: 1px solid #ddd`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function InlineBox() {
@@ -133,15 +133,15 @@ export default InlineBox;
 
 ---
 
-## **Ejercicio 5: Estilos inline con objeto reutilizable**
+## **Exercise 5: Inline styles with reusable object**
 
-Crea un componente `Panel.jsx` que:
+Create an `Panel.jsx` component that:
 
-- Defina un objeto `panelStyle` fuera del JSX.
-- Lo use en un `section` con `style={panelStyle}`.
-- Dentro muestre un `h3` que diga: **"Panel"**.
+- Define an `panelStyle` object outside of the JSX.
+- I used it on an `section` with `style={panelStyle}`.
+- Inside show an `h3` that says: **"Panel"**.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 function Panel() {
@@ -165,16 +165,16 @@ export default Panel;
 
 ---
 
-## **Ejercicio 6: `className` dinámico con ternario**
+## **Exercise 6: Dynamic `className` with ternary**
 
-Crea un componente `PriorityTag.jsx` con una variable `isHighPriority` (en `true`).
+Creates an `PriorityTag.jsx` component with an `isHighPriority` variable (in `true`).
 
-- Si es `true`, aplica la clase `priorityHigh`.
-- Si es `false`, aplica `priorityLow`.
+- If it is `true`, the `priorityHigh` class applies.
+- If it is `false`, apply `priorityLow`.
 
-Crea el CSS `PriorityTag.css` con ambas clases (puedes dar estilos simples).
+Create the `PriorityTag.css` CSS with both classes (you can give simple styles).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/PriorityTag.css`**
 
@@ -213,17 +213,17 @@ export default PriorityTag;
 
 ---
 
-## **Ejercicio 7: `className` dinámico con array de clases**
+## **Exercise 7: Dynamic `className` with array of classes**
 
-Crea un componente `Chip.jsx` que:
+Create an `Chip.jsx` component that:
 
-- Tenga `isSelected = true`.
-- Siempre aplique la clase `chip`.
-- Si `isSelected` es `true`, añada también la clase `chipSelected`.
+- Have `isSelected = true`.
+- Always apply the `chip` class.
+- If `isSelected` is `true`, also add class `chipSelected`.
 
-Pista: puedes construir un array de clases y unirlo con `.join(" ")`.
+Hint: you can build an array of classes and join it with `.join(" ")`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/Chip.css`**
 
@@ -261,19 +261,19 @@ export default Chip;
 
 ---
 
-## **Ejercicio 8: Crear y usar un CSS Module**
+## **Exercise 8: Create and use a CSS Module**
 
-Crea un componente `MiniCard.jsx` usando CSS Modules:
+Create an `MiniCard.jsx` component using CSS Modules:
 
-- Archivo CSS: `MiniCard.module.css`
-- Clases: `card` y `title`
+- CSS file: `MiniCard.module.css`
+- Classes: `card` and `title`
 
-El componente debe renderizar:
+The component must render:
 
-- Un `div` con clase `card`
-- Un `h4` con clase `title` y texto **"Mini Card"**
+- A classy `div` `card`
+- An `h4` with class `title` and text **"Mini Card"**
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 **`src/components/MiniCard.module.css`**
 
@@ -309,47 +309,47 @@ export default MiniCard;
 
 ---
 
-## **Ejercicio 9: Decidir entre `assets` y `public` (caso práctico)**
+## **Exercise 9: Decide between `assets` and `public` (practical case)**
 
-Decide dónde guardarías cada archivo y por qué:
+Decide where you would save each file and why:
 
-1. `brand.svg` que quieres importar en un componente con `import brand from ...`.
-2. `terms.pdf` que quieres abrir con un link directo `/terms.pdf`.
+1. `brand.svg` that you want to import into a component with `import brand from ...`.
+2. `terms.pdf` that you want to open with a direct `/terms.pdf` link.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. `src/assets/` porque se importará desde el código y pasa por el bundler.
-2. `public/` porque quieres acceso directo por URL (`/terms.pdf`).
+1. `src/assets/` because it will be imported from the code and goes through the bundler.
+2. `public/` because you want direct access by URL (`/terms.pdf`).
 
 </details>
 
 ---
 
-## **Ejercicio 10: Organización de estilos (elige la opción más recomendada)**
+## **Exercise 10: Organization of styles (choose the most recommended option)**
 
-Elige la opción más recomendable:
+Choose the most recommended option:
 
-1. ¿Dónde pondrías un reset básico (por ejemplo `body { margin: 0 }`)?
+1. Where would you put a basic reset (for example `body { margin: 0 }`)?
 
-   - a) En un CSS Module
-   - b) En `index.css`
-   - c) Dentro de `style={{...}}` en `App.jsx`
+   - a) In a CSS Module
+   - b) In `index.css`
+   - c) Inside `style={{...}}` in `App.jsx`
 
-2. Si un componente crece y empieza a tener muchas clases, ¿qué opción suele ser más sólida?
+2. If a component grows and begins to have many classes, which option is typically more robust?
 
-   - a) Mantener todo inline
+   - a) Keep everything inline
    - b) CSS Modules
-   - c) Poner todas las clases en `index.css`
+   - c) Put all classes in `index.css`
 
-3. En React, para aplicar una clase se usa:
+3. In React, to apply a class you use:
 
    - a) `class`
    - b) `className`
    - c) `cssClass`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. b) En `index.css`.
+1. b) In `index.css`.
 2. b) CSS Modules.
 3. b) `className`.
 

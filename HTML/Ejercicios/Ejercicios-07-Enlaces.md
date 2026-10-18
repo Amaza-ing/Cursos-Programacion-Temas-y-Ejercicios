@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 7: Enlaces en HTML**
+# **Exercises - Topic 7: Links in HTML**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre enlaces en HTML. Realiza cada uno en un editor de código y visualiza los resultados en tu navegador.
+Below you will find 5 practical exercises on links in HTML. Perform each one in a code editor and view the results in your browser.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Enlace básico**
+### **Exercise 1: Basic Link**
 
-Crea un documento HTML que incluya un enlace a un sitio web externo como Google o Wikipedia.
+Create an HTML document that includes a link to an external website such as Google or Wikipedia.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <a href="https://www.google.com">Visitar Google</a>
@@ -22,11 +22,11 @@ Crea un documento HTML que incluya un enlace a un sitio web externo como Google 
 
 ---
 
-### **Ejercicio 2: Enlace que se abre en una nueva pestaña**
+### **Exercise 2: Link that opens in a new tab**
 
-Modifica el enlace del ejercicio anterior para que se abra en una nueva pestaña utilizando el atributo `target` de manera segura con `rel="noopener noreferrer"`.
+Modify the link from the previous exercise to open in a new tab using the `target` attribute safely with `rel="noopener noreferrer"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
@@ -38,11 +38,11 @@ Modifica el enlace del ejercicio anterior para que se abra en una nueva pestaña
 
 ---
 
-### **Ejercicio 3: Enlace interno dentro de una página**
+### **Exercise 3: Internal link within a page**
 
-Crea una página HTML con dos secciones. Agrega un enlace en la parte superior que al hacer clic lleve al usuario a la segunda sección usando un `id`.
+Create an HTML page with two sections. Add a link at the top that when clicked takes the user to the second section using an `id`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <a href="#seccion2">Ir a la Sección 2</a>
@@ -55,11 +55,11 @@ Crea una página HTML con dos secciones. Agrega un enlace en la parte superior q
 
 ---
 
-### **Ejercicio 4: Enlace relativo a otra página interna**
+### **Exercise 4: Relative link to another internal page**
 
-Crea un enlace que dirija al usuario a otra página HTML dentro del mismo proyecto.
+Create a link that directs the user to another HTML page within the same project.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <a href="contacto.html">Ir a la página de contacto</a>
@@ -69,11 +69,11 @@ Crea un enlace que dirija al usuario a otra página HTML dentro del mismo proyec
 
 ---
 
-### **Ejercicio 5: Enlace de correo electrónico y teléfono**
+### **Exercise 5: Email and Phone Link**
 
-Crea enlaces que permitan enviar un correo electrónico y realizar una llamada telefónica desde la página web.
+Create links that allow you to send an email and make a phone call from the website.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <a href="mailto:correo@ejemplo.com">Enviar un correo</a>

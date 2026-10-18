@@ -1,24 +1,24 @@
-# **Tema 9: Creación y Validación de Formularios en Vue.js**
+# **Topic 9: Creating and Validating Forms in Vue.js**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Los formularios son un elemento fundamental en cualquier aplicación web, y en Vue.js podemos gestionarlos de forma reactiva y sencilla. Usando la directiva `v-model`, podemos conectar cada campo de un formulario directamente con una propiedad reactiva. Además, con el evento `@submit.prevent`, controlamos el envío del formulario evitando el comportamiento por defecto.
+Forms are a fundamental element in any web application, and in Vue.js we can manage them reactively and easily. Using the `v-model` directive, we can connect each field of a form directly to a reactive property. Additionally, with the `@submit.prevent` event, we control the submission of the form avoiding the default behavior.
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Crear formularios con `v-model`
-- Validar formularios de forma sencilla
-- Mostrar mensajes de error reactivos
+- Create forms with `v-model`
+- Validate forms easily
+- Show reactive error messages
 
 ---
 
-## **2. Creación de formularios con v-model**
+## **2. Creating forms with v-model**
 
-`v-model` crea un **binding bidireccional**, lo que significa que el valor del input siempre reflejará el valor de la variable, y cualquier cambio en el input actualizará automáticamente la variable.
+`v-model` creates **bidirectional binding**, which means that the value of the input will always reflect the value of the variable, and any change to the input will automatically update the variable.
 
-Como el comportamiento por defecto del evento `submit` es recargar la página debemos prevenirlo. Esto se puede conseguir añadiendo `.prevent` al event listener. Quedando así: `@submit.prevent`.
+Since the default behavior of the `submit` event is to reload the page, we must prevent this. This can be achieved by adding `.prevent` to the event listener. Leaving like this: `@submit.prevent`.
 
-### Ejemplo básico
+### Basic example
 
 ```vue
 <script setup>
@@ -61,11 +61,11 @@ button {
 
 ---
 
-## **3. Validación de formularios básica**
+## **3. Basic Form Validation**
 
-En Vue podemos validar los formularios directamente en el método `handleSubmit`, o incluso con propiedades computadas.
+In Vue we can validate forms directly in the `handleSubmit` method, or even with computed properties.
 
-### Ejemplo con validación manual
+### Example with manual validation
 
 ```vue
 <script setup>
@@ -136,15 +136,15 @@ ul {
 
 ---
 
-[![Formularios](https://img.youtube.com/vi/_Ynr8bntF7A/0.jpg)](https://www.youtube.com/watch?v=_Ynr8bntF7A&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Forms](https://img.youtube.com/vi/_Ynr8bntF7A/0.jpg)](https://www.youtube.com/watch?v=_Ynr8bntF7A&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **4. Manejar el estado de envío**
+## **4. Manage shipping status**
 
-Es habitual deshabilitar el botón de enviar mientras el formulario es inválido o está procesando.
+It is common to disable the submit button while the form is invalid or processing.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -186,11 +186,11 @@ button:disabled {
 
 ---
 
-## **5. Validación en tiempo real**
+## **5. Real-time validation**
 
-Podemos observar los cambios de los campos y validar automáticamente con `watch`.
+We can observe the changes in the fields and automatically validate with `watch`.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -225,15 +225,15 @@ watch(email, (newValue) => {
 
 ---
 
-## Resumen
+## Summary
 
-| Técnica           | Propósito                                                          |
+| Technique | Purpose |
 | ----------------- | ------------------------------------------------------------------ |
-| `v-model`         | Conectar inputs con variables reactivas                            |
-| `@submit.prevent` | Controlar el envío manualmente previniendo la recarga de la página |
-| `computed`        | Calcular validez de formulario                                     |
-| `watch`           | Validar en tiempo real                                             |
+| `v-model` | Connect inputs with reactive variables |
+| `@submit.prevent` | Control sending manually preventing page reload |
+| `computed` | Calculate form validity |
+| `watch` | Validate in real time |
 
 ---
 
-En el próximo tema exploraremos **Vue Router y Router Links**, para la creación de **views** y rutas en un proyecto SPA.
+In the next topic we will explore **Vue Router and Router Links**, for creating **views** and routes in a SPA project.

@@ -1,43 +1,43 @@
-# **Tema 18: React Router**
+# **Topic 18: React Router**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Hasta ahora todas las apps que has creado tenían una sola pantalla. En aplicaciones reales necesitas **navegar entre páginas**: home, login, perfil, detalle, etc.
+Until now all the apps you have created have had a single screen. In real applications you need to **navigate between pages**: home, login, profile, details, etc.
 
-En React, esta navegación se gestiona con **React Router**, una librería que permite crear aplicaciones de una sola página (SPA) con múltiples rutas.
+In React, this navigation is managed with **React Router**, a library that allows you to create single page applications (SPA) with multiple routes.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es React Router y para qué sirve.
-- Cómo instalarlo.
-- Cómo definir rutas.
-- Cómo crear páginas.
-- Cómo navegar entre rutas.
-- Conceptos clave como `BrowserRouter`, `Routes` y `Route`.
+- What is React Router and what is it for?
+- How to install it.
+- How to define routes.
+- How to create pages.
+- How to navigate between routes.
+- Key concepts such as `BrowserRouter`, `Routes` and `Route`.
 
 ---
 
-## **2. ¿Qué es React Router?**
+## **2. What is React Router?**
 
-React Router es una librería que permite:
+React Router is a library that allows:
 
-- Asociar una **URL** a un **componente**.
-- Cambiar de página sin recargar el navegador.
-- Mantener una experiencia fluida de SPA.
+- Associate a **URL** to a **component**.
+- Change pages without reloading the browser.
+- Maintain a smooth SPA experience.
 
-Ejemplo mental:
+Mental example:
 
 - `/` → Home
 - `/login` → Login
 - `/profile` → Profile
 
-Cada ruta renderiza un componente distinto.
+Each path renders a different component.
 
 ---
 
-## **3. Instalación**
+## **3. Installation**
 
-En un proyecto React:
+In a React project:
 
 ```bash
 npm install react-router-dom
@@ -45,11 +45,11 @@ npm install react-router-dom
 
 ---
 
-## **4. Configuración básica**
+## **4. Basic configuration**
 
-Lo primero es envolver la aplicación con `BrowserRouter`.
+The first thing is to wrap the application with `BrowserRouter`.
 
-Normalmente se hace en `main.jsx` o `index.jsx`.
+It is usually done in `main.jsx` or `index.jsx`.
 
 ```js
 import React from "react";
@@ -66,9 +66,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 ---
 
-## **5. Definir rutas con `Routes` y `Route`**
+## **5. Define routes with `Routes` and `Route`**
 
-Las rutas se definen normalmente en `App.jsx`.
+Routes are typically defined in `App.jsx`.
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -87,21 +87,21 @@ function App() {
 export default App;
 ```
 
-Claves:
+Keys:
 
-- `Routes` agrupa las rutas.
-- Cada `Route` tiene:
+- `Routes` groups the routes.
+- Each `Route` has:
 
-  - `path`: la URL.
-  - `element`: el componente a renderizar.
+  - `path`: the URL.
+  - `element`: the component to render.
 
 ---
 
-## **6. Crear páginas (carpeta `pages`)**
+## **6. Create pages (`pages` folder)**
 
-Una práctica habitual es crear una carpeta `pages`.
+A common practice is to create an `pages` folder.
 
-Ejemplo:
+Example:
 
 ```
 src/
@@ -126,9 +126,9 @@ export default Home;
 
 ---
 
-## **7. Navegar entre páginas con `Link`**
+## **7. Navigate between pages with `Link`**
 
-Para cambiar de ruta **no se usan `<a>`**, sino el componente `Link`.
+To change routes **`<a>` is not used**, but rather the `Link` component.
 
 ```js
 import { Link } from "react-router-dom";
@@ -145,10 +145,10 @@ function Nav() {
 export default Nav;
 ```
 
-Ventajas de `Link`:
+Advantages of `Link`:
 
-- No recarga la página.
-- Mantiene el estado de la app.
+- Does not reload the page.
+- Maintains the state of the app.
 
 ---
 
@@ -156,9 +156,9 @@ Ventajas de `Link`:
 
 ---
 
-## **8. Ruta por defecto (404)**
+## **8. Default route (404)**
 
-Puedes crear una ruta para páginas inexistentes:
+You can create a route for non-existent pages:
 
 ```js
 <Route path="*" element={<NotFound />} />
@@ -176,9 +176,9 @@ export default NotFound;
 
 ---
 
-## **9. `useNavigate`: navegación por código**
+## **9. `useNavigate`: code navigation**
 
-A veces necesitas navegar tras una acción (login, submit…).
+Sometimes you need to navigate after an action (login, submit...).
 
 ```js
 import { useNavigate } from "react-router-dom";
@@ -198,19 +198,19 @@ export default Login;
 
 ---
 
-## **10. Errores típicos**
+## **10. Typical errors**
 
-### **10.1. Usar `<a>` en lugar de `Link`**
+### **10.1. Use `<a>` instead of `Link`**
 
-Provoca recarga de página.
+Causes page reload.
 
-### **10.2. Olvidar `BrowserRouter`**
+### **10.2. Forget `BrowserRouter`**
 
-Las rutas no funcionarán.
+The routes will not work.
 
-### **10.3. Usar `component` en lugar de `element`**
+### **10.3. Use `component` instead of `element`**
 
-En React Router v6 se usa:
+In React Router v6 it is used:
 
 ```js
 element={<Home />}
@@ -218,17 +218,17 @@ element={<Home />}
 
 ---
 
-## **11. Buenas prácticas**
+## **11. Good practices**
 
-- Separa rutas y páginas.
-- Usa `Link` para navegación.
-- Mantén rutas simples y claras.
-- Centraliza la navegación en `App.jsx`.
-
----
-
-[![Páginas y APIs](https://img.youtube.com/vi/u-axNHE7bPQ/0.jpg)](https://www.youtube.com/watch?v=u-axNHE7bPQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+- Separate routes and pages.
+- Use `Link` for navigation.
+- Keep routes simple and clear.
+- Centralize navigation in `App.jsx`.
 
 ---
 
-En el siguiente tema aprenderás a trabajar con **rutas paramétricas**.
+[![Pages and APIs](https://img.youtube.com/vi/u-axNHE7bPQ/0.jpg)](https://www.youtube.com/watch?v=u-axNHE7bPQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic you will learn how to work with **parametric routes**.

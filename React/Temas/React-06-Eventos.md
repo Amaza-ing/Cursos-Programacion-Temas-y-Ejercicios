@@ -1,34 +1,34 @@
-# **Tema 6: Eventos en React**
+# **Topic 6: Events in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En una aplicación real, el usuario interactúa continuamente con la interfaz:
+In a real application, the user continuously interacts with the interface:
 
-- Hace clic en botones
-- Escribe en inputs
-- Envía formularios
-- Pasa el ratón por encima de elementos
+- Clicks buttons
+- Write in inputs
+- Submit forms
+- Mouse over elements
 
-En React, estas interacciones se gestionan con **eventos**. Aprender a manejar eventos es el primer paso para que tus componentes pasen de ser “estáticos” a ser **interactivos**.
+In React, these interactions are managed with **events**. Learning to handle events is the first step for your components to go from being “static” to being **interactive**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo se escriben los eventos en React.
-- Cómo crear funciones manejadoras.
-- Cómo usar parámetros.
-- Cómo usar el objeto del evento.
-- Diferencias importantes con HTML.
+- How events are written in React.
+- How to create handler functions.
+- How to use parameters.
+- How to use the event object.
+- Important differences with HTML.
 
 ---
 
-## **2. ¿Cómo se escriben los eventos en React?**
+## **2. How are events written in React?**
 
-En React, los eventos se escriben usando:
+In React, events are written using:
 
-- Propiedades en **camelCase**: `onClick`, `onChange`, `onSubmit`, etc.
-- Se les pasa una **función**, no un string.
+- Properties in **camelCase**: `onClick`, `onChange`, `onSubmit`, etc.
+- They are passed a **function**, not a string.
 
-Ejemplo:
+Example:
 
 ```js
 function App() {
@@ -42,22 +42,22 @@ function App() {
 export default App;
 ```
 
-Aquí:
+Here:
 
-- `onClick={handleClick}` le pasa una función a React.
-- La función se ejecuta cuando el usuario hace clic.
+- `onClick={handleClick}` passes a function to React.
+- The function is executed when the user clicks.
 
 ---
 
-## **3. Funciones manejadoras (handlers)**
+## **3. Handler functions**
 
-La convención más común es nombrarlas con `handle...`:
+The most common convention is to name them `handle...`:
 
 - `handleClick`
 - `handleChange`
 - `handleSubmit`
 
-Ejemplo:
+Example:
 
 ```js
 function LikeButton() {
@@ -73,23 +73,23 @@ export default LikeButton;
 
 ---
 
-## **4. Pasar parámetros a una función en un evento**
+## **4. Pass parameters to a function in an event**
 
-Si quieres pasar parámetros, no debes llamar a la función directamente.
+If you want to pass parameters, you should not call the function directly.
 
-Incorrecto (se ejecuta al renderizar):
+Incorrect (runs when rendering):
 
 ```js
 <button onClick={handleMessage("Hello")}>Send</button>
 ```
 
-Correcto (se ejecuta al hacer click):
+Correct (executes when clicked):
 
 ```js
 <button onClick={() => handleMessage("Hello")}>Send</button>
 ```
 
-Ejemplo completo:
+Complete example:
 
 ```js
 function MessageButton() {
@@ -105,11 +105,11 @@ export default MessageButton;
 
 ---
 
-## **5. El objeto del evento (`event`)**
+## **5. The event object (`event`)**
 
-React te pasa automáticamente el objeto del evento al handler.
+React automatically passes the event object to the handler.
 
-Ejemplo con `onChange` en un input:
+Example with `onChange` in an input:
 
 ```js
 function Search() {
@@ -123,23 +123,23 @@ function Search() {
 export default Search;
 ```
 
-Aquí:
+Here:
 
-- `event.target.value` contiene lo que el usuario está escribiendo.
+- `event.target.value` contains what the user is typing.
 
 ---
 
-## **6. Eventos comunes en React**
+## **6. Common events in React**
 
-Algunos de los más utilizados:
+Some of the most used:
 
-- `onClick`: clic
-- `onChange`: cambio en inputs, selects y textareas
-- `onSubmit`: envío de formularios
-- `onMouseEnter`: el ratón entra en un elemento
-- `onMouseLeave`: el ratón sale
+- `onClick`: click
+- `onChange`: change in inputs, selects and textareas
+- `onSubmit`: form submission
+- `onMouseEnter`: mouse enters an element
+- `onMouseLeave`: mouse exits
 
-Ejemplo rápido con `onMouseEnter`:
+Quick example with `onMouseEnter`:
 
 ```js
 function HoverBox() {
@@ -155,11 +155,11 @@ export default HoverBox;
 
 ---
 
-## **7. Prevenir el comportamiento por defecto (`preventDefault`)**
+## **7. Prevent default behavior (`preventDefault`)**
 
-En formularios, el navegador intenta recargar la página al enviar.
+In forms, the browser tries to reload the page upon submission.
 
-En React, normalmente se evita usando `event.preventDefault()`:
+In React, this is usually avoided by using `event.preventDefault()`:
 
 ```js
 function SimpleForm() {
@@ -180,21 +180,21 @@ export default SimpleForm;
 
 ---
 
-## **8. Diferencias importantes con HTML**
+## **8. Important differences with HTML**
 
-En HTML tradicional podrías ver:
+In traditional HTML you could see:
 
 ```html
 <button onclick="doSomething()">Click</button>
 ```
 
-En React no se hace así. En React:
+In React it is not done like that. In React:
 
-- No usas strings.
-- No escribes `onclick` en minúsculas.
-- Usas `onClick` y pasas una función.
+- You don't use strings.
+- You do not write `onclick` in lowercase.
+- You use `onClick` and pass a function.
 
-Ejemplo correcto:
+Correct example:
 
 ```js
 <button onClick={doSomething}>Click</button>
@@ -202,26 +202,26 @@ Ejemplo correcto:
 
 ---
 
-## **9. Buenas prácticas**
+## **9. Good practices**
 
-- Nombra handlers con `handle...`.
-- Si pasas parámetros, usa una arrow function.
-- Usa `preventDefault()` en `onSubmit`.
-- Mantén la lógica del handler simple (ya la complejidad se organizará más adelante con estado y hooks).
-
----
-
-## **10. A tener en cuenta**
-
-- Los eventos en React se escriben en camelCase.
-- Los handlers reciben el objeto `event`.
-- Para pasar parámetros, usa `() => ...`.
-- Para formularios, recuerda `preventDefault()`.
+- Name handlers with `handle...`.
+- If you pass parameters, use an arrow function.
+- Use `preventDefault()` in `onSubmit`.
+- Keep the handler logic simple (the complexity will be organized later with state and hooks).
 
 ---
 
-[![Eventos](https://img.youtube.com/vi/t-L_Lo8XduQ/0.jpg)](https://www.youtube.com/watch?v=t-L_Lo8XduQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **10. To take into account**
+
+- Events in React are written to camelCase.
+- Handlers receive the `event` object.
+- To pass parameters, use `() => ...`.
+- For forms, remember `preventDefault()`.
 
 ---
 
-En el próximo tema veremos **useState**, que nos permitirá guardar información en el componente y actualizar la UI cuando cambie.
+[![Events](https://img.youtube.com/vi/t-L_Lo8XduQ/0.jpg)](https://www.youtube.com/watch?v=t-L_Lo8XduQ&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will look at **useState**, which will allow us to save information in the component and update the UI when it changes.

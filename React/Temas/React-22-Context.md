@@ -1,56 +1,56 @@
-# **Tema 22: Context en React**
+# **Topic 22: Context in React**
 
-## **1. Introducción**
+## **1. Introduction**
 
-A medida que una aplicación crece, aparece un problema habitual: **pasar props a través de muchos componentes intermedios** aunque estos no las necesiten directamente. A este problema se le llama **prop drilling**.
+As an application grows, a common problem arises: passing props through many intermediate components even though they don't need them directly. This problem is called **prop drilling**.
 
-React ofrece una solución nativa para compartir estado y lógica de forma global: **Context**.
+React offers a native solution for sharing state and logic globally: **Context**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es Context y cuándo usarlo.
-- Cómo crear un Context.
-- Cómo proveer valores con un Provider.
-- Cómo consumir Context con `useContext`.
-- Buenas prácticas y errores comunes.
-
----
-
-## **2. ¿Qué problema resuelve Context?**
-
-Ejemplo típico:
-
-- `App` tiene el estado `user`.
-- `Header` y `Profile` necesitan `user`.
-- Entre medias hay varios componentes que **solo pasan props**.
-
-Esto provoca:
-
-- Código más verboso.
-- Componentes menos claros.
-- Dificultad para mantener el árbol.
-
-Context permite **compartir datos sin pasar props manualmente**.
+- What is Context and when to use it.
+- How to create a Context.
+- How to provide values ​​with a Provider.
+- How to consume Context with `useContext`.
+- Good practices and common mistakes.
 
 ---
 
-## **3. Idea clave de Context**
+## **2. What problem does Context solve?**
 
-Context se basa en tres piezas:
+Typical example:
 
-1. **Crear el contexto** (`createContext`).
-2. **Proveer un valor** (`Provider`).
-3. **Consumir el valor** (`useContext`).
+- `App` has status `user`.
+- `Header` and `Profile` need `user`.
+- In between there are several components that **only pass props**.
 
-Regla mental:
+This causes:
 
-> Context es como una “caja global” a la que pueden acceder ciertos componentes.
+- More verbose code.
+- Less clear components.
+- Difficulty maintaining the tree.
+
+Context allows **sharing data without manually passing props**.
 
 ---
 
-## **4. Crear un Context**
+## **3. Context Key Idea**
 
-Primero, se crea el contexto.
+Context is based on three pieces:
+
+1. **Create the context** (`createContext`).
+2. **Provide a value** (`Provider`).
+3. **Consume value** (`useContext`).
+
+Mental rule:
+
+> Context is like a “global box” that can be accessed by certain components.
+
+---
+
+## **4. Create a Context**
+
+First, the context is created.
 
 ```js
 import { createContext } from "react";
@@ -60,7 +60,7 @@ const ThemeContext = createContext();
 export default ThemeContext;
 ```
 
-Normalmente este archivo se guarda en:
+Typically this file is saved in:
 
 ```txt
 src/context/ThemeContext.js
@@ -68,9 +68,9 @@ src/context/ThemeContext.js
 
 ---
 
-## **5. Proveer el Context (`Provider`)**
+## **5. Provide the Context (`Provider`)**
 
-El `Provider` envuelve a los componentes que necesitan acceso al contexto.
+The `Provider` wraps the components that need access to the context.
 
 ```js
 import { useState } from "react";
@@ -89,16 +89,16 @@ function App() {
 export default App;
 ```
 
-Claves:
+Keys:
 
-- `value` es el dato compartido.
-- Puede ser un valor simple o un objeto.
+- `value` is the shared data.
+- It can be a simple value or an object.
 
 ---
 
-## **6. Consumir Context con `useContext`**
+## **6. Consume Context with `useContext`**
 
-Para acceder al contexto desde cualquier componente hijo:
+To access the context from any child component:
 
 ```js
 import { useContext } from "react";
@@ -118,32 +118,32 @@ function Header() {
 export default Header;
 ```
 
-No necesitas pasar props desde el padre.
+You don't need to pass props from the parent.
 
 ---
 
-## **7. Context + estado**
+## **7. Context + state**
 
-Un patrón muy común es:
+A very common pattern is:
 
-- El estado vive en el componente que provee el contexto.
-- El contexto expone **estado + funciones**.
+- The state lives in the component that provides the context.
+- The context exposes **state + functions**.
 
 ```js
 value={{ user, login, logout }}
 ```
 
-Esto se usa mucho para:
+This is widely used for:
 
-- Autenticación.
-- Tema (light / dark).
-- Idioma.
+- Authentication.
+- Theme (light / dark).
+- Language.
 
 ---
 
-## **8. Crear un Provider personalizado**
+## **8. Create a custom Provider**
 
-Para mantener el código limpio, es habitual crear un Provider propio.
+To keep the code clean, it is common to create your own Provider.
 
 ```js
 import { createContext, useState } from "react";
@@ -166,7 +166,7 @@ function AuthProvider({ children }) {
 export { AuthProvider, AuthContext };
 ```
 
-Uso:
+Usage:
 
 ```js
 <AuthProvider>
@@ -176,28 +176,28 @@ Uso:
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Usar Context para todo**
+### **9.1. Use Context for everything**
 
-Context **no sustituye** a `useState` local.
+Context **does not replace** the local `useState`.
 
-### **9.2. Olvidar envolver con el Provider**
+### **9.2. Forget to wrap with the Provider**
 
-`useContext` devolverá `undefined`.
+`useContext` will return `undefined`.
 
-### **9.3. Meter lógica compleja sin control**
+### **9.3. Insert complex logic without control**
 
-Context debe ser claro y predecible.
+Context must be clear and predictable.
 
 ---
 
-## **10. Buenas prácticas**
+## **10. Good practices**
 
-- Usa Context solo cuando el estado se comparta entre muchos componentes.
-- Crea un Context por responsabilidad (auth, theme, settings…).
-- Extrae Providers a archivos separados.
-- Mantén los valores del contexto simples.
+- Use Context only when state is shared between many components.
+- Create a Context for responsibility (auth, theme, settings...).
+- Extract Providers to separate files.
+- Keep context values ​​simple.
 
 ---
 
@@ -205,4 +205,4 @@ Context debe ser claro y predecible.
 
 ---
 
-En el siguiente tema aprenderás a combinar **Context con usuarios** para gestionar autenticación global.
+In the next topic you will learn how to combine **Context with users** to manage global authentication.

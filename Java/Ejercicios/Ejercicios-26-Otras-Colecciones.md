@@ -1,16 +1,16 @@
-# Ejercicios - Tema 26: Otras colecciones
+# Exercises - Topic 26: Other collections
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **`Set`, `HashSet`, `LinkedHashMap`, `TreeMap`, unicidad y orden**.
+Below you will find **10 practical exercises** to work with **`Set`, `HashSet`, `LinkedHashMap`, `TreeMap`, uniqueness and order**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear `HashSet`
+## Exercise 1: Create `HashSet`
 
-Añade elementos repetidos y comprueba el tamaño.
+Add repeating elements and check the size.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashSet;
@@ -31,11 +31,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Detectar duplicado
+## Exercise 2: Detect duplicate
 
-Usa el boolean devuelto por `add`.
+Use the boolean returned by `add`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashSet;
@@ -54,11 +54,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Usar `contains`
+## Exercise 3: Use `contains`
 
-Comprueba si un set contiene un id.
+Checks if a set contains an id.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashSet;
@@ -78,11 +78,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Eliminar duplicados
+## Exercise 4: Remove duplicates
 
-Convierte una lista en `HashSet`.
+Converts a list to `HashSet`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashSet;
@@ -102,11 +102,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Crear `LinkedHashMap`
+## Exercise 5: Create `LinkedHashMap`
 
-Mantén orden de inserción.
+Maintain insertion order.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.LinkedHashMap;
@@ -126,11 +126,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Actualizar `LinkedHashMap`
+## Exercise 6: Update `LinkedHashMap`
 
-Actualiza un valor existente.
+Updates an existing value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.LinkedHashMap;
@@ -150,11 +150,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Crear `TreeMap`
+## Exercise 7: Create `TreeMap`
 
-Ordena automáticamente por clave.
+Automatically sort by key.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Map;
@@ -175,11 +175,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: `TreeMap` numérico
+## Exercise 8: Numeric `TreeMap`
 
-Ordena ids de tareas.
+Sort task ids.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.Map;
@@ -200,11 +200,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Códigos únicos
+## Exercise 9: Unique codes
 
-Usa `Set` para códigos de descuento.
+Use `Set` for discount codes.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashSet;
@@ -225,11 +225,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Comparar mapas
+## Exercise 10: Compare maps
 
-Compara `LinkedHashMap` y `TreeMap`.
+Compare `LinkedHashMap` and `TreeMap`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.LinkedHashMap;

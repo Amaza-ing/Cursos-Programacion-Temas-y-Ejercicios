@@ -1,57 +1,57 @@
-# Tema 23. Excepciones en Java: `try`, `catch`, `finally`, `throw` y `throws`
+# Topic 23. Exceptions in Java: `try`, `catch`, `finally`, `throw` and `throws`
 
-## 1. Introducción
+## 1. Introduction
 
-Cuando un programa Java se ejecuta, no todo sale siempre bien.
+When a Java program runs, not everything always goes well.
 
-Pueden ocurrir problemas como:
+Problems may occur such as:
 
-- dividir entre cero
-- acceder a una posición inválida de un array
-- convertir un texto no numérico a entero
-- trabajar con un valor `null`
-- intentar leer un archivo que no existe
+- divide by zero
+- access an invalid position in an array
+- convert non-numeric text to integer
+- work with an `null` value
+- try to read a file that does not exist
 
-A estos problemas Java los representa con **excepciones**.
+Java represents these problems with **exceptions**.
 
-Las excepciones permiten:
+Exceptions allow:
 
-- detectar errores en tiempo de ejecución
-- separar la lógica normal de la lógica de error
-- reaccionar de forma controlada ante problemas
-- evitar que el programa falle de forma brusca sin explicación
+- detect runtime errors
+- separate normal logic from error logic
+- react in a controlled way to problems
+- prevent the program from crashing suddenly without explanation
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- qué es una excepción
-- qué diferencia hay entre error y excepción
-- cómo usar `try`, `catch` y `finally`
-- qué hacen `throw` y `throws`
-- qué son las excepciones comprobadas y no comprobadas
-- cómo crear tus propias excepciones
-- buenas prácticas y errores típicos
-
----
-
-[![Excepciones](https://img.youtube.com/vi/GEq5_Uuza_8/0.jpg)](https://www.youtube.com/watch?v=GEq5_Uuza_8&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+- what is an exception
+- what is the difference between error and exception
+- how to use `try`, `catch` and `finally`
+- what `throw` and `throws` do
+- what are checked and unchecked exceptions
+- how to create your own exceptions
+- good practices and typical mistakes
 
 ---
 
-## 2. Qué es una excepción
-
-Una **excepción** es un objeto que representa una situación anómala o un error que ocurre durante la ejecución del programa.
-
-En lugar de seguir ejecutándose normalmente, Java:
-
-1. crea una excepción
-2. “lanza” esa excepción
-3. busca un lugar donde capturarla y gestionarla
-
-Si nadie la captura, el programa termina con error.
+[![Exceptions](https://img.youtube.com/vi/GEq5_Uuza_8/0.jpg)](https://www.youtube.com/watch?v=GEq5_Uuza_8&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 3. Ejemplo simple de excepción
+## 2. What is an exception
+
+An **exception** is an object that represents an abnormal situation or an error that occurs during program execution.
+
+Instead of continuing to run normally, Java:
+
+1. create an exception
+2. “throw” that exception
+3. Find a place to capture and manage it
+
+If no one catches it, the program ends with an error.
+
+---
+
+## 3. Simple exception example
 
 ```java
 public class Main {
@@ -62,23 +62,23 @@ public class Main {
 }
 ```
 
-Esto produce una excepción:
+This throws an exception:
 
 ```java
 ArithmeticException
 ```
 
-¿Por qué?
+Why?
 
-Porque no se puede dividir entre cero.
+Because it cannot be divided by zero.
 
 ---
 
-## 4. Jerarquía básica de excepciones
+## 4. Basic hierarchy of exceptions
 
-En Java, las excepciones forman parte de una jerarquía de clases.
+In Java, exceptions are part of a class hierarchy.
 
-A muy alto nivel:
+At a very high level:
 
 - `Throwable`
   - `Error`
@@ -87,20 +87,20 @@ A muy alto nivel:
 
 ### 4.1. `Error`
 
-Representa problemas graves del sistema o de la JVM.
+Represents serious system or JVM problems.
 
-Ejemplos:
+Examples:
 
 - `OutOfMemoryError`
 - `StackOverflowError`
 
-Normalmente no se capturan ni se intentan manejar como parte normal del programa.
+They are not normally captured or attempted to be handled as a normal part of the program.
 
 ### 4.2. `Exception`
 
-Representa problemas que una aplicación puede manejar.
+Represents problems that an application can handle.
 
-Dentro de `Exception`, las más importantes son:
+Within `Exception`, the most important ones are:
 
 - **checked exceptions**
 - **unchecked exceptions** (`RuntimeException`)
@@ -109,22 +109,22 @@ Dentro de `Exception`, las más importantes son:
 
 ## 5. Checked vs unchecked exceptions
 
-Esta diferencia es muy importante.
+This difference is very important.
 
 ### 5.1. Unchecked exceptions
 
-Son excepciones que heredan de `RuntimeException`.
+They are exceptions that inherit from `RuntimeException`.
 
-Ejemplos:
+Examples:
 
 - `ArithmeticException`
 - `NullPointerException`
 - `ArrayIndexOutOfBoundsException`
 - `NumberFormatException`
 
-Java **no obliga** a capturarlas o declararlas.
+Java **does not force** you to capture or declare them.
 
-Ejemplo:
+Example:
 
 ```java
 int value = Integer.parseInt("abc"); // NumberFormatException
@@ -132,26 +132,26 @@ int value = Integer.parseInt("abc"); // NumberFormatException
 
 ### 5.2. Checked exceptions
 
-Son excepciones que heredan de `Exception`, pero no de `RuntimeException`.
+These are exceptions that inherit from `Exception`, but not from `RuntimeException`.
 
-Ejemplos típicos:
+Typical examples:
 
 - `IOException`
 - `SQLException`
 - `FileNotFoundException`
 
-Java **sí obliga** a:
+Java **does require**:
 
-- capturarlas con `try-catch`
-- o declararlas con `throws`
+- capture them with `try-catch`
+- or declare them with `throws`
 
 ---
 
-## 6. `try` y `catch`
+## 6. `try` and `catch`
 
-La forma básica de manejar excepciones es con `try-catch`.
+The basic way to handle exceptions is with `try-catch`.
 
-Sintaxis:
+Syntax:
 
 ```java
 try {
@@ -161,7 +161,7 @@ try {
 }
 ```
 
-### 6.1. Ejemplo: capturar división entre cero
+### 6.1. Example: capture division by zero
 
 ```java
 public class Main {
@@ -176,36 +176,35 @@ public class Main {
 }
 ```
 
-Salida:
+Output:
 
 ```java
 Cannot divide by zero
 ```
 
-El programa no se rompe abruptamente, porque hemos manejado la excepción.
+The program does not break abruptly, because we have handled the exception.
 
 ---
 
-## 7. Qué hace exactamente `catch`
+## 7. What exactly `catch` does
 
-El bloque `catch`:
+The `catch` block:
+- receives the thrown exception
+- allows you to react to it
+- prevents execution from ending uncontrollably
 
-- recibe la excepción lanzada
-- permite reaccionar ante ella
-- evita que la ejecución termine de forma descontrolada
-
-En:
+In:
 
 ```java
 catch (ArithmeticException e)
 ```
 
-- `ArithmeticException` es el tipo de excepción que quieres capturar
-- `e` es la variable que contiene la excepción
+- `ArithmeticException` is the type of exception you want to catch
+- `e` is the variable that contains the exception
 
-Puedes usar `e` para obtener información adicional.
+You can use `e` to get additional information.
 
-Ejemplo:
+Example:
 
 ```java
 catch (ArithmeticException e) {
@@ -215,16 +214,16 @@ catch (ArithmeticException e) {
 
 ---
 
-## 8. `getMessage()` y otras utilidades
+## 8. `getMessage()` and other utilities
 
-Una excepción tiene métodos útiles, por ejemplo:
+An exception has useful methods, for example:
 
 - `getMessage()`
 - `printStackTrace()`
 
 ### 8.1. `getMessage()`
 
-Devuelve un mensaje descriptivo.
+Returns a descriptive message.
 
 ```java
 try {
@@ -236,7 +235,7 @@ try {
 
 ### 8.2. `printStackTrace()`
 
-Imprime la traza del error, muy útil al depurar.
+Prints the error trace, very useful when debugging.
 
 ```java
 catch (NumberFormatException e) {
@@ -244,15 +243,15 @@ catch (NumberFormatException e) {
 }
 ```
 
-En aplicaciones reales se usa mucho para investigar problemas.
+In real applications it is widely used to investigate problems.
 
 ---
 
-## 9. Varios `catch`
+## 9. Various `catch`
 
-Un bloque `try` puede tener varios `catch`.
+An `try` block can have multiple `catch`s.
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -269,15 +268,15 @@ public class Main {
 }
 ```
 
-Java ejecutará solo el `catch` que corresponda a la excepción real.
+Java will execute only the `catch` that corresponds to the actual exception.
 
 ---
 
-## 10. Orden de los `catch`
+## 10. Order of `catch`
 
-Si capturas tipos relacionados por herencia, debes poner primero los más específicos.
+If you capture types related by inheritance, you should put the most specific ones first.
 
-Incorrecto:
+Incorrect:
 
 ```java
 try {
@@ -289,9 +288,9 @@ try {
 }
 ```
 
-Esto no compila, porque `Exception` capturaría también `NumberFormatException`.
+This does not compile, because `Exception` would also capture `NumberFormatException`.
 
-Correcto:
+Correct:
 
 ```java
 try {
@@ -307,9 +306,9 @@ try {
 
 ## 11. `finally`
 
-El bloque `finally` se ejecuta siempre, ocurra o no una excepción.
+The `finally` block is always executed whether an exception occurs or not.
 
-Sintaxis:
+Syntax:
 
 ```java
 try {
@@ -321,7 +320,7 @@ try {
 }
 ```
 
-### 11.1. Ejemplo simple
+### 11.1. Simple example
 
 ```java
 public class Main {
@@ -338,7 +337,7 @@ public class Main {
 }
 ```
 
-Salida:
+Output:
 
 ```java
 Inside try
@@ -346,18 +345,18 @@ Caught exception
 Finally always runs
 ```
 
-### 11.2. ¿Para qué se usa `finally`?
+### 11.2. What is `finally` used for?
 
-Se usa mucho para:
+It is widely used for:
 
-- cerrar recursos
-- liberar conexiones
-- dejar el programa en un estado consistente
-- registrar que una operación terminó
+- close resources
+- release connections
+- leave the program in a consistent state
+- record that an operation finished
 
 ---
 
-## 12. `try-catch-finally` completo
+## 12. `try-catch-finally` complete
 
 ```java
 public class Main {
@@ -377,20 +376,20 @@ public class Main {
 
 ---
 
-## 13. `throw`: lanzar una excepción manualmente
+## 13. `throw`: Throw an exception manually
 
-A veces no quieres esperar a que Java lance la excepción automáticamente.  
-Quieres lanzarla tú cuando detectas una situación inválida.
+Sometimes you don't want to wait for Java to throw the exception automatically.  
+You want to launch it when you detect an invalid situation.
 
-Para eso se usa `throw`.
+`throw` is used for that.
 
-Sintaxis:
+Syntax:
 
 ```java
 throw new ExceptionType("message");
 ```
 
-### 13.1. Ejemplo con `IllegalArgumentException`
+### 13.1. Example with `IllegalArgumentException`
 
 ```java
 public class Main {
@@ -408,34 +407,34 @@ public class Main {
 }
 ```
 
-Aquí la excepción la lanza el propio programador.
+Here the exception is thrown by the programmer himself.
 
 ---
 
-## 14. Cuándo usar `throw`
+## 14. When to use `throw`
 
-Usa `throw` cuando detectas que:
+Use `throw` when you detect that:
 
-- un argumento es inválido
-- el estado de un objeto es incoherente
-- se ha producido una situación que no debería continuar
+- an argument is invalid
+- the state of an object is inconsistent
+- a situation has occurred that should not continue
 
-Ejemplos comunes:
+Common examples:
 
-- edad negativa
-- precio negativo
-- nombre vacío
-- operación no permitida
+- negative age
+- negative price
+- empty name
+- operation not allowed
 
 ---
 
-## 15. `throws`: declarar que un método puede lanzar una excepción
+## 15. `throws`: declare that a method can throw an exception
 
-`throws` se pone en la firma del método y sirve para decir:
+`throws` is placed in the method signature and serves to say:
 
-> “Este método puede lanzar esta excepción”.
+> “This method may throw this exception.”
 
-Sintaxis:
+Syntax:
 
 ```java
 public void method() throws ExceptionType {
@@ -443,7 +442,7 @@ public void method() throws ExceptionType {
 }
 ```
 
-### 15.1. Ejemplo simple
+### 15.1. Simple example
 
 ```java
 public class Main {
@@ -463,21 +462,21 @@ public class Main {
 }
 ```
 
-En este ejemplo:
+In this example:
 
-- `validateAge` declara `throws Exception`
-- quien lo llama debe manejar esa posibilidad
+- `validateAge` declares `throws Exception`
+- whoever calls you must handle that possibility
 
 ---
 
-## 16. Diferencia entre `throw` y `throws`
+## 16. Difference between `throw` and `throws`
 
-Esta diferencia es clave:
+This difference is key:
 
-- `throw` → lanza una excepción concreta dentro del método
-- `throws` → declara en la firma que el método puede lanzar excepciones
+- `throw` → throws a specific exception inside the method
+- `throws` → declares in the signature that the method can throw exceptions
 
-Ejemplo:
+Example:
 
 ```java
 public void example() throws Exception {
@@ -485,16 +484,16 @@ public void example() throws Exception {
 }
 ```
 
-Aquí aparecen los dos:
+Here they both appear:
 
-- `throws Exception` en la firma
-- `throw new Exception(...)` dentro del método
+- `throws Exception` in the signature
+- `throw new Exception(...)` inside the method
 
 ---
 
-## 17. Ejemplo con checked exception
+## 17. Example with checked exception
 
-Vamos a simular un método que puede lanzar una excepción comprobada.
+Let's simulate a method that can throw a checked exception.
 
 ```java
 public class Main {
@@ -518,13 +517,12 @@ public class Main {
 
 ---
 
-## 18. Crear tus propias excepciones
+## 18. Create your own exceptions
 
-También puedes crear excepciones personalizadas.
+You can also create custom exceptions.
+This is useful when you want to represent errors specific to your domain.
 
-Esto es útil cuando quieres representar errores específicos de tu dominio.
-
-Ejemplo: `InvalidAgeException`
+Example: `InvalidAgeException`
 
 ```java
 public class InvalidAgeException extends Exception {
@@ -534,7 +532,7 @@ public class InvalidAgeException extends Exception {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Main {
@@ -558,11 +556,11 @@ public class Main {
 
 ---
 
-## 19. Excepciones de tipo `RuntimeException`
+## 19. Exceptions of type `RuntimeException`
 
-Si quieres crear una excepción que no obligue a usar `throws` o `try-catch`, puedes extender `RuntimeException`.
+If you want to create an exception that does not force `throws` or `try-catch`, you can extend `RuntimeException`.
 
-Ejemplo:
+Example:
 
 ```java
 public class InvalidPriceException extends RuntimeException {
@@ -572,7 +570,7 @@ public class InvalidPriceException extends RuntimeException {
 }
 ```
 
-Uso:
+Usage:
 
 ```java
 public class Product {
@@ -590,11 +588,11 @@ public class Product {
 
 ---
 
-## 20. `throw` en getters, setters y métodos de negocio
+## 20. `throw` in getters, setters and business methods
 
-Las excepciones son muy útiles para proteger el estado de los objetos.
+Exceptions are very useful to protect the state of objects.
 
-Ejemplo:
+Example:
 
 ```java
 public class BankAccount {
@@ -622,18 +620,18 @@ public class BankAccount {
 }
 ```
 
-Aquí usamos distintas excepciones según el tipo de problema:
+Here we use different exceptions depending on the type of problem:
 
-- `IllegalArgumentException` → argumento inválido
-- `IllegalStateException` → estado del objeto no permite la operación
+- `IllegalArgumentException` → invalid argument
+- `IllegalStateException` → object state does not allow operation
 
 ---
 
-## 21. Capturar varias excepciones en una sola línea
+## 21. Catch multiple exceptions on a single line
 
-Java permite capturar varias excepciones en el mismo `catch` si quieres tratarlas igual.
+Java allows you to catch multiple exceptions in the same `catch` if you want to treat them the same.
 
-Ejemplo:
+Example:
 
 ```java
 public class Main {
@@ -649,13 +647,13 @@ public class Main {
 }
 ```
 
-Esto simplifica el código cuando la reacción es la misma.
+This simplifies the code when the reaction is the same.
 
 ---
 
-## 22. Ejemplo completo: validación de edad y saldo
+## 22. Complete example: age and balance validation
 
-### 22.1. Excepción personalizada
+### 22.1. Custom exception
 
 ```java
 public class InvalidBalanceException extends Exception {
@@ -665,7 +663,7 @@ public class InvalidBalanceException extends Exception {
 }
 ```
 
-### 22.2. Clase `BankAccount`
+### 22.2. `BankAccount` class
 
 ```java
 public class BankAccount {
@@ -732,32 +730,32 @@ public class Main {
 
 ---
 
-## 23. Cuándo capturar y cuándo propagar
+## 23. When to capture and when to propagate
 
-No siempre debes capturar una excepción justo donde ocurre.
+You shouldn't always catch an exception right where it occurs.
 
-A veces es mejor:
+Sometimes it is better:
 
-- dejar que suba a un nivel superior con `throws`
-- y capturarla donde realmente tenga sentido decidir qué hacer
+- let it rise to a higher level with `throws`
+- and capture it where it really makes sense to decide what to do
 
-Regla práctica:
+Rule of thumb:
 
-- **captura** donde puedas gestionar el problema de forma útil
-- **propaga** cuando ese nivel no sabe resolverlo
+- **capture** where you can usefully manage the problem
+- **propagates** when that level does not know how to solve it
 
 ---
 
-## 24. Buenas prácticas
+## 24. Good practices
 
-- No uses excepciones para lógica normal del programa.
-- Captura excepciones específicas antes que generales.
-- Si sobrescribes `throws`, sé claro con qué puede lanzar el método.
-- Usa mensajes de error claros.
-- Crea excepciones personalizadas cuando el dominio lo justifique.
-- No captures excepciones para ignorarlas silenciosamente.
+- Do not use exceptions for normal program logic.
+- Catch specific exceptions before general ones.
+- If you override `throws`, be clear with what you can launch the method with.
+- Use clear error messages.
+- Create custom exceptions when the domain warrants it.
+- Don't catch exceptions to silently ignore them.
 
-Ejemplo malo:
+Bad example:
 
 ```java
 try {
@@ -766,58 +764,58 @@ try {
 }
 ```
 
-Eso oculta errores y dificulta muchísimo el mantenimiento.
+This hides errors and makes maintenance very difficult.
 
 ---
 
-## 25. Errores típicos al empezar
+## 25. Typical mistakes when starting
 
-### 25.1. Confundir `throw` con `throws`
+### 25.1. Confusing `throw` with `throws`
 
-- `throw` lanza
-- `throws` declara
+- `throw` launches
+- `throws` declares
 
-### 25.2. Capturar `Exception` siempre
+### 25.2. Capture `Exception` always
 
-A veces es válido, pero si puedes capturar una excepción concreta, mejor.
+Sometimes it is valid, but if you can catch a specific exception, the better.
 
-### 25.3. Usar excepciones para controlar casos normales
+### 25.3. Use exceptions to control normal cases
 
-Ejemplo malo: usar una excepción para salir de un bucle o para comprobar si un dato existe cuando podrías validarlo antes.
+Bad example: using an exception to break out of a loop or to check if data exists when you could validate it first.
 
-### 25.4. Ignorar excepciones vaciando el `catch`
+### 25.4. Ignore exceptions by emptying the `catch`
 
-Eso hace el programa más difícil de depurar.
-
----
-
-## 26. A tener en cuenta
-
-- Una excepción representa un problema en tiempo de ejecución.
-- `try` contiene el código que puede fallar.
-- `catch` captura y maneja la excepción.
-- `finally` se ejecuta siempre.
-- `throw` lanza una excepción manualmente.
-- `throws` declara que un método puede lanzar excepciones.
-- Las checked exceptions obligan a capturar o declarar.
-- Las unchecked exceptions no obligan, pero siguen siendo importantes.
-- Puedes crear tus propias excepciones.
+That makes the program more difficult to debug.
 
 ---
 
-## 27. Resumen final
+## 26. To take into account
 
-- **`try`**: zona donde puede ocurrir un error
-- **`catch`**: manejo del error
-- **`finally`**: limpieza o cierre garantizado
-- **`throw`**: lanzar una excepción concreta
-- **`throws`**: anunciar que el método puede lanzar excepciones
-- **checked**: Java obliga a gestionarlas
-- **unchecked**: Java no obliga, pero debes usarlas bien
-- **personalizadas**: muy útiles para representar errores del dominio
-
-Las excepciones son una herramienta fundamental para escribir programas robustos y mantener una separación clara entre la lógica normal y la lógica de error.
+- An exception represents a runtime problem.
+- `try` contains the code that may fail.
+- `catch` catches and handles the exception.
+- `finally` is always executed.
+- `throw` throws an exception manually.
+- `throws` declares that a method can throw exceptions.
+- Checked exceptions require capture or declaration.
+- Unchecked exceptions are not mandatory, but they are still important.
+- You can create your own exceptions.
 
 ---
 
-En el siguiente tema seguiremos profundizando en Java con nuevas estructuras como los `enum`.
+## 27. Final summary
+
+- **`try`**: area where an error can occur
+- **`catch`**: error handling
+- **`finally`**: guaranteed cleanup or shutdown
+- **`throw`**: throw a specific exception
+- **`throws`**: announce that the method can throw exceptions
+- **checked**: Java forces you to manage them
+- **unchecked**: Java does not require, but you must use them well
+- **custom**: very useful for representing domain errors
+
+Exceptions are a fundamental tool for writing robust programs and maintaining a clear separation between normal logic and error logic.
+
+---
+
+In the next topic we will continue delving into Java with new structures such as `enum`.

@@ -1,18 +1,18 @@
-# **Tema 20: Uso de REPEAT y LOOP en MySQL**
+# **Topic 20: Using REPEAT and LOOP in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Entender qué son los bucles `REPEAT` y `LOOP`.
-- Usarlos dentro de procedimientos almacenados.
-- Diferenciar su comportamiento respecto a `WHILE`.
+- Understand what the `REPEAT` and `LOOP` loops are.
+- Use them within stored procedures.
+- Differentiate its behavior with respect to `WHILE`.
 
 ---
 
-## **1. Bucle REPEAT**
+## **1. REPEAT Loop**
 
-`REPEAT` ejecuta un bloque de instrucciones **al menos una vez** y luego evalúa la condición de parada.
+`REPEAT` executes a block of statements **at least once** and then evaluates the stop condition.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```sql
 [etiqueta:] REPEAT
@@ -21,9 +21,9 @@ UNTIL condición
 END REPEAT [etiqueta];
 ```
 
-### **Ejemplo:**
+### **Example:**
 
-Insertar números del 1 al 5 en una tabla `numbers`.
+Insert numbers from 1 to 5 into an `numbers` table.
 
 ```sql
 DELIMITER $$
@@ -40,18 +40,18 @@ END $$
 DELIMITER ;
 ```
 
-**Características:**
+**Features:**
 
-- Siempre se ejecuta al menos una vez.
-- La condición se evalúa al final.
+- Always runs at least once.
+- The condition is evaluated at the end.
 
 ---
 
-## **2. Bucle LOOP**
+## **2. LOOP**
 
-`LOOP` repite instrucciones hasta que se interrumpe explícitamente con `LEAVE`.
+`LOOP` repeats instructions until explicitly interrupted with `LEAVE`.
 
-### **Sintaxis:**
+### **Syntax:**
 
 ```sql
 [etiqueta:] LOOP
@@ -60,9 +60,9 @@ DELIMITER ;
 END LOOP [etiqueta];
 ```
 
-### **Ejemplo:**
+### **Example:**
 
-Insertar números pares del 2 al 10.
+Insert even numbers from 2 to 10.
 
 ```sql
 DELIMITER $$
@@ -81,30 +81,30 @@ END $$
 DELIMITER ;
 ```
 
-**Características:**
+**Features:**
 
-- No evalúa condición automáticamente.
-- Necesita `LEAVE` para terminar.
-
----
-
-[![Bucle LOOP](https://img.youtube.com/vi/F3lHxZ5jDa4/0.jpg)](https://www.youtube.com/watch?v=F3lHxZ5jDa4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+- Does not evaluate condition automatically.
+- You need `LEAVE` to finish.
 
 ---
 
-## **3. Diferencias entre WHILE, REPEAT y LOOP**
+[![LOOP](https://img.youtube.com/vi/F3lHxZ5jDa4/0.jpg)](https://www.youtube.com/watch?v=F3lHxZ5jDa4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
-| Bucle  | Evaluación de condición | Ejecución mínima           |
+---
+
+## **3. Differences between WHILE, REPEAT and LOOP**
+
+| Loop | Condition Assessment | Minimum execution |
 | ------ | ----------------------- | -------------------------- |
-| WHILE  | Antes de entrar         | 0 veces                    |
-| REPEAT | Después de ejecutar     | 1 vez                      |
-| LOOP   | Manual (con LEAVE)      | Depende de control interno |
+| WHILE | Before entering | 0 times |
+| REPEAT | After running | 1 time |
+| LOOP | Manual (with LEAVE) | Depends on internal control |
 
 ---
 
-## **4. Uso combinado de etiquetas y LEAVE**
+## **4. Combined use of tags and LEAVE**
 
-Podemos usar etiquetas para controlar múltiples bucles anidados.
+We can use tags to control multiple nested loops.
 
 ```sql
 DELIMITER $$
@@ -135,17 +135,17 @@ DELIMITER ;
 
 ---
 
-## **5. Buenas prácticas**
+## **5. Good practices**
 
-- Usar `REPEAT` cuando necesites ejecutar el bloque al menos una vez.
-- Usar `LOOP` para casos donde la condición de salida no es fija desde el inicio.
-- Evitar bucles infinitos asegurando una condición de salida clara.
-- Utilizar etiquetas descriptivas para mejorar la legibilidad.
+- Use `REPEAT` when you need to execute the block at least once.
+- Use `LOOP` for cases where the exit condition is not fixed from the beginning.
+- Avoid infinite loops by ensuring a clear exit condition.
+- Use descriptive labels to improve readability.
 
 ---
 
-## **6. Conclusión**
+## **6. Conclusion**
 
-- `REPEAT` evalúa la condición al final, garantizando al menos una ejecución.
-- `LOOP` requiere `LEAVE` para salir, ofreciendo flexibilidad total.
-- Elegir entre ellos depende de la lógica de control necesaria.
+- `REPEAT` evaluates the condition at the end, guaranteeing at least one execution.
+- `LOOP` requires `LEAVE` to exit, offering full flexibility.
+- Choosing between them depends on the control logic needed.

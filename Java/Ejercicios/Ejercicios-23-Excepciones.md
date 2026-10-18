@@ -1,16 +1,16 @@
-# Ejercicios - Tema 23: Excepciones
+# Exercises - Topic 23: Exceptions
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **`try`, `catch`, `finally`, `throw`, `throws` y excepciones personalizadas**.
+Below you will find **10 practical exercises** to work with **`try`, `catch`, `finally`, `throw`, `throws` and custom exceptions**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Capturar `NumberFormatException`
+## Exercise 1: Capture `NumberFormatException`
 
-Convierte el texto `"12x"` a entero y captura el error.
+Converts the text `"12x"` to integer and captures the error.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -31,11 +31,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Capturar división entre cero
+## Exercise 2: Capture division by zero
 
-Divide `20 / 0` dentro de un `try` y captura `ArithmeticException`.
+Splits `20 / 0` inside an `try` and captures `ArithmeticException`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -54,11 +54,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Varios `catch`
+## Exercise 3: Various `catch`
 
-Accede a una posición inválida de un array y usa varios bloques `catch`.
+Accesses an invalid position in an array and uses several `catch` blocks.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -79,11 +79,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Usar `finally`
+## Exercise 4: Use `finally`
 
-Intenta convertir `"abc"` a entero. En `finally`, imprime `"Validation finished"`.
+Try converting `"abc"` to integer. In `finally`, print `"Validation finished"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -104,11 +104,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Lanzar con `throw`
+## Exercise 5: Launch with `throw`
 
-Crea `validateUsername` y lanza `IllegalArgumentException` si el usuario está vacío.
+Create `validateUsername` and cast `IllegalArgumentException` if the user is empty.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -130,11 +130,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Declarar `throws`
+## Exercise 6: Declare `throws`
 
-Crea `readConfig(String fileName) throws Exception` y lanza excepción si el nombre está vacío.
+Create `readConfig(String fileName) throws Exception` and throw exception if name is empty.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -160,11 +160,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Excepción checked personalizada
+## Exercise 7: Custom checked exception
 
-Crea `InvalidCodeException extends Exception` y úsala para validar códigos que deben empezar por `A-`.
+Create `InvalidCodeException extends Exception` and use it to validate codes that must start with `A-`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class InvalidCodeException extends Exception {
@@ -196,11 +196,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Excepción unchecked personalizada
+## Exercise 8: Custom unchecked exception
 
-Crea `InvalidStockException extends RuntimeException` y úsala para impedir stock negativo.
+Create `InvalidStockException extends RuntimeException` and use it to prevent negative stock.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class InvalidStockException extends RuntimeException {
@@ -226,11 +226,11 @@ public class Product {
 
 ---
 
-## Ejercicio 9: Multi-catch
+## Exercise 9: Multi-catch
 
-Captura `NullPointerException` y `NumberFormatException` en un mismo `catch`.
+Captures `NullPointerException` and `NumberFormatException` in the same `catch`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -250,11 +250,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Validar retirada
+## Exercise 10: Validate withdrawal
 
-Crea una clase `Wallet` y lanza excepciones si la retirada no es válida.
+Create a class `Wallet` and throw exceptions if the withdrawal is invalid.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Wallet {

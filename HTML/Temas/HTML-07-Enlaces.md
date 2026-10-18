@@ -1,38 +1,38 @@
-# **Tema 7: Enlaces en HTML y navegación entre páginas**
+# **Topic 7: Links in HTML and navigation between pages**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Los enlaces en HTML permiten conectar páginas web entre sí, facilitando la navegación dentro de un sitio web o hacia otros sitios externos. Se crean con la etiqueta `<a>` y pueden contener distintos atributos para definir su comportamiento.
+HTML links allow you to connect web pages to each other, facilitating navigation within a website or to other external sites. They are created with the `<a>` tag and can contain different attributes to define their behavior.
 
 ---
 
-## **2. Creación de enlaces con `<a href="">`**
+## **2. Creating links with `<a href="">`**
 
-El atributo `href` dentro de la etiqueta `<a>` define la URL o dirección a la que apunta el enlace.
+The `href` attribute within the `<a>` tag defines the URL or address that the link points to.
 
-### **Ejemplo básico de un enlace externo:**
+### **Basic example of an external link:**
 
 ```HTML
 <a href="https://www.ejemplo.com">Visita Ejemplo</a>
 ```
 
-En este caso, al hacer clic en el enlace, el usuario será dirigido al sitio web indicado en `href`.
+In this case, by clicking on the link, the user will be directed to the website indicated in `href`.
 
 ---
 
-## **3. Atributos importantes en enlaces**
+## **3. Important attributes in links**
 
 ### **3.1. `target="_blank"`**
 
-Este atributo indica que el enlace se abrirá en una nueva pestaña del navegador.
+This attribute indicates that the link will open in a new browser tab.
 
 ```HTML
 <a href="https://www.ejemplo.com" target="_blank">Abrir en nueva pestaña</a>
 ```
 
-### **3.2. `rel="noopener"` y `rel="noreferrer"`**
+### **3.2. `rel="noopener"` and `rel="noreferrer"`**
 
-Cuando se usa `target="_blank"`, es recomendable agregar `rel="noopener noreferrer"` para mejorar la seguridad y evitar que la página de destino acceda al `window.opener` del sitio de origen.
+When using `target="_blank"`, it is recommended to add `rel="noopener noreferrer"` to improve security and prevent the destination page from accessing the `window.opener` of the source site.
 
 ```HTML
 <a href="https://www.ejemplo.com" target="_blank" rel="noopener noreferrer">Abrir con seguridad</a>
@@ -40,11 +40,11 @@ Cuando se usa `target="_blank"`, es recomendable agregar `rel="noopener noreferr
 
 ---
 
-## **4. Enlaces internos y navegación dentro de una misma página**
+## **4. Internal links and navigation within the same page**
 
-En un sitio web, podemos enlazar diferentes secciones dentro de la misma página utilizando identificadores (`id`).
+On a website, we can link different sections within the same page using identifiers (`id`).
 
-### **Ejemplo de navegación interna:**
+### **Internal navigation example:**
 
 ```HTML
 <a href="#seccion1">Ir a la sección 1</a>
@@ -57,25 +57,25 @@ En un sitio web, podemos enlazar diferentes secciones dentro de la misma página
 <p>Contenido de la segunda sección.</p>
 ```
 
-En este caso, al hacer clic en los enlaces, el navegador desplazará la vista hasta la sección correspondiente.
+In this case, when you click on the links, the browser will scroll to the corresponding section.
 
 ---
 
-## **5. Enlaces relativos y absolutos**
+## **5. Relative and absolute links**
 
-Existen dos tipos de enlaces en HTML:
+There are two types of links in HTML:
 
-### **5.1. Enlace absoluto**
+### **5.1. Absolute link**
 
-Un enlace absoluto apunta a una URL completa de otro sitio web.
+An absolute link points to a full URL of another website.
 
 ```HTML
 <a href="https://www.ejemplo.com">Sitio externo</a>
 ```
 
-### **5.2. Enlace relativo**
+### **5.2. Relative link**
 
-Un enlace relativo apunta a una página dentro del mismo sitio web sin necesidad de incluir el dominio completo.
+A relative link points to a page within the same website without including the full domain.
 
 ```HTML
 <a href="/contacto.html">Página de contacto</a>
@@ -83,21 +83,21 @@ Un enlace relativo apunta a una página dentro del mismo sitio web sin necesidad
 
 ---
 
-[![Enlaces y Atributos](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Links and Attributes](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **6. Enlaces de correo electrónico y teléfono**
+## **6. Email and phone links**
 
-También es posible crear enlaces que abran aplicaciones de correo o llamen a un número de teléfono.
+It is also possible to create links that open email applications or call a phone number.
 
-### **6.1. Enlace para enviar un correo electrónico**
+### **6.1. Link to send an email**
 
 ```HTML
 <a href="mailto:correo@ejemplo.com">Enviar correo</a>
 ```
 
-### **6.2. Enlace para realizar una llamada**
+### **6.2. Link to make a call**
 
 ```HTML
 <a href="tel:+123456789">Llamar al 123456789</a>
@@ -105,13 +105,13 @@ También es posible crear enlaces que abran aplicaciones de correo o llamen a un
 
 ---
 
-## **7. Buenas prácticas al usar enlaces en HTML**
+## **7. Good practices when using links in HTML**
 
-- Utilizar `rel="noopener noreferrer"` cuando se usa `target="_blank"`.
-- Preferir enlaces relativos para la navegación dentro del mismo sitio web.
-- Usar descripciones claras en los enlaces para mejorar la accesibilidad.
-- Evitar el uso excesivo de enlaces en blanco (`#`), ya que pueden confundir a los usuarios.
+- Use `rel="noopener noreferrer"` when using `target="_blank"`.
+- Prefer relative links for navigation within the same website.
+- Use clear descriptions on links to improve accessibility.
+- Avoid excessive use of blank links (`#`), as they can confuse users.
 
 ---
 
-En el próximo tema, exploraremos **las imágenes en HTML**, su sintaxis, atributos y cómo optimizar su uso en una página web.
+In the next topic, we will explore HTML images, their syntax, attributes, and how to optimize their use on a web page.

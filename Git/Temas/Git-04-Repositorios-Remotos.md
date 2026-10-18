@@ -1,32 +1,32 @@
-# **Tema 4: Repositorios remotos, `git push`, `git pull` y colaboración en GitHub**
+# **Topic 4: Remote repositories, `git push`, `git pull` and collaboration on GitHub**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Git permite trabajar con **repositorios remotos**, lo que facilita la colaboración entre varios desarrolladores. Los repositorios remotos almacenan una copia del proyecto en la nube, permitiendo compartir y sincronizar cambios con otros colaboradores a través de comandos como `git push`, `git pull` y `git fetch`.
+Git allows you to work with **remote repositories**, which makes collaboration between multiple developers easier. Remote repositories store a copy of the project in the cloud, allowing you to share and synchronize changes with other collaborators through commands such as `git push`, `git pull` and `git fetch`.
 
-### **Beneficios de los repositorios remotos**
+### **Benefits of remote repositories**
 
-- Facilitan el trabajo en equipo y la colaboración en proyectos.
-- Permiten mantener copias de seguridad del código en servidores remotos.
-- Posibilitan el seguimiento de cambios y versiones en equipo.
-- Ayudan a gestionar el código de manera eficiente con GitHub, GitLab o Bitbucket.
+- They facilitate teamwork and collaboration on projects.
+- They allow you to keep backup copies of the code on remote servers.
+- They make it possible to track changes and versions as a team.
+- They help manage code efficiently with GitHub, GitLab or Bitbucket.
 
 ---
 
-## **2. Agregar un repositorio remoto**
+## **2. Add a remote repository**
 
-Para conectar un repositorio local con un remoto, se usa el comando `git remote add`.
+To connect a local repository to a remote one, the `git remote add` command is used.
 
-### **Ejemplo:**
+### **Example:**
 
 ```bash
 git remote add origin https://github.com/usuario/nombre-del-repo.git
 ```
 
-- `origin` es el nombre por defecto que Git asigna al repositorio remoto.
-- La URL indica la ubicación del repositorio en GitHub.
+- `origin` is the default name that Git assigns to the remote repository.
+- The URL indicates the location of the repository on GitHub.
 
-Para verificar que el repositorio remoto se ha agregado correctamente:
+To verify that the remote repository was added correctly:
 
 ```bash
 git remote -v
@@ -34,25 +34,25 @@ git remote -v
 
 ---
 
-## **3. Subir cambios con `git push`**
+## **3. Upload changes with `git push`**
 
-Después de realizar cambios en el repositorio local, se pueden subir al repositorio remoto con `git push`.
+After making changes to the local repository, they can be pushed to the remote repository with `git push`.
 
-### **Ejemplo de `git push`:**
+### **`git push` example:**
 
 ```bash
 git push origin master
 ```
 
-Este comando sube los cambios de la rama `master` al repositorio remoto `origin`.
+This command pushes changes from the `master` branch to the remote `origin` repository.
 
-Si es la primera vez que se suben cambios a un repositorio remoto, se debe usar:
+If it is the first time that changes are uploaded to a remote repository, you should use:
 
 ```bash
 git push -u origin master
 ```
 
-La opción `-u` establece la rama remota predeterminada, permitiendo que futuros `git push` no requieran especificar `origin master`.
+The `-u` option sets the default remote branch, allowing future `git push` to not require specifying `origin master`.
 
 ---
 
@@ -60,19 +60,19 @@ La opción `-u` establece la rama remota predeterminada, permitiendo que futuros
 
 ---
 
-## **4. Descargar cambios con `git pull`**
+## **4. Download changes with `git pull`**
 
-Cuando otros colaboradores han subido cambios al repositorio remoto, es necesario sincronizar los archivos con el repositorio local usando `git pull`.
+When other collaborators have uploaded changes to the remote repository, it is necessary to synchronize the files with the local repository using `git pull`.
 
-### **Ejemplo de `git pull`:**
+### **`git pull` example:**
 
 ```bash
 git pull origin master
 ```
 
-Esto descarga y fusiona los cambios de la rama `master` en el repositorio local.
+This downloads and merges the changes from the `master` branch to the local repository.
 
-Si hay conflictos, Git solicitará que se resuelvan antes de continuar.
+If there are conflicts, Git will request that they be resolved before continuing.
 
 ---
 
@@ -80,17 +80,17 @@ Si hay conflictos, Git solicitará que se resuelvan antes de continuar.
 
 ---
 
-## **5. Obtener información sin fusionar con `git fetch`**
+## **5. Get information without merging with `git fetch`**
 
-A diferencia de `git pull`, el comando `git fetch` solo descarga los cambios del repositorio remoto sin fusionarlos en la rama actual.
+Unlike `git pull`, the `git fetch` command only downloads changes from the remote repository without merging them into the current branch.
 
-### **Ejemplo de `git fetch`:**
+### **`git fetch` example:**
 
 ```bash
 git fetch origin
 ```
 
-Esto permite revisar los cambios antes de integrarlos manualmente con `git merge`.
+This allows you to review your changes before manually integrating them with `git merge`.
 
 ---
 
@@ -98,17 +98,17 @@ Esto permite revisar los cambios antes de integrarlos manualmente con `git merge
 
 ---
 
-## **6. Clonar un repositorio con `git clone`**
+## **6. Clone a repository with `git clone`**
 
-Para obtener una copia de un repositorio remoto en la máquina local, se usa `git clone`.
+To get a copy of a remote repository on the local machine, `git clone` is used.
 
-### **Ejemplo de `git clone`:**
+### **`git clone` example:**
 
 ```bash
 git clone https://github.com/usuario/nombre-del-repo.git
 ```
 
-Esto descargará todo el historial del proyecto en una nueva carpeta con el nombre del repositorio.
+This will download all project history to a new folder with the repository name.
 
 ---
 
@@ -116,13 +116,12 @@ Esto descargará todo el historial del proyecto en una nueva carpeta con el nomb
 
 ---
 
-## **7. Trabajar en equipo con GitHub**
+## **7. Teamwork with GitHub**
 
-GitHub permite colaborar en proyectos mediante diversas herramientas como **forks**, **pull requests** y **issues**.
+GitHub allows you to collaborate on projects using various tools such as **forks**, **pull requests** and **issues**.
+### **Fork and Pull Request**
 
-### **Fork y Pull Request**
-
-- Un **fork** es una copia de un repositorio en una cuenta personal, que permite experimentar sin afectar el original.
+- A **fork** is a copy of a repository in a personal account, which allows experimentation without affecting the original.
 
 ---
 
@@ -130,7 +129,7 @@ GitHub permite colaborar en proyectos mediante diversas herramientas como **fork
 
 ---
 
-- Un **pull request (PR)** es una solicitud para fusionar cambios en el repositorio original.
+- A **pull request (PR)** is a request to merge changes to the original repository.
 
 ---
 
@@ -138,22 +137,22 @@ GitHub permite colaborar en proyectos mediante diversas herramientas como **fork
 
 ---
 
-### **Cómo crear un Pull Request desde un Fork:**
+### **How to create a Pull Request from a Fork:**
 
-1. Hacer un fork del repositorio en GitHub.
-2. Clonar el fork en la máquina local.
-3. Crear una nueva rama y hacer cambios.
-4. Subir los cambios con `git push`.
-5. En GitHub, abrir un Pull Request hacia el repositorio original.
+1. Fork the repository on GitHub.
+2. Clone the fork to the local machine.
+3. Create a new branch and make changes.
+4. Upload the changes with `git push`.
+5. In GitHub, open a Pull Request towards the original repository.
 
-## **8. Buenas prácticas en la colaboración con Git**
+## **8. Good practices in collaboration with Git**
 
-- Mantener la rama `master` siempre actualizada con `git pull` antes de hacer cambios.
-- Usar ramas separadas para cada nueva funcionalidad o corrección.
-- Escribir mensajes de commit descriptivos.
-- Hacer revisiones de código en los Pull Requests antes de fusionarlos.
-- Resolver conflictos con cuidado y verificar antes de hacer `git push`.
+- Keep the `master` branch always updated with `git pull` before making changes.
+- Use separate branches for each new feature or fix.
+- Write descriptive commit messages.
+- Do code reviews on Pull Requests before merging them.
+- Resolve conflicts carefully and verify before making `git push`.
 
 ---
 
-En el próximo tema, exploraremos **cómo trabajar con etiquetas (tags) y releases en Git para gestionar versiones del código de manera eficiente**.
+In the next topic, we will explore **how to work with tags and releases in Git to manage code versions efficiently**.

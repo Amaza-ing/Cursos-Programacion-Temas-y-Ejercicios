@@ -1,16 +1,16 @@
-# **Tema 4: Encabezados, párrafos y texto en HTML**
+# **Topic 4: Headings, paragraphs and text in HTML**
 
-## **1. Introducción**
+## **1. Introduction**
 
-El texto es uno de los elementos más importantes en cualquier página web. HTML proporciona varias etiquetas para estructurar el contenido textual de manera adecuada. En este tema, exploraremos los encabezados, párrafos y otros elementos relacionados con el texto en HTML.
+Text is one of the most important elements on any web page. HTML provides various tags to structure textual content appropriately. In this topic, we will explore headings, paragraphs, and other text-related elements in HTML.
 
 ---
 
-## **2. Encabezados en HTML**
+## **2. HTML headers**
 
-Los encabezados (`h1` a `h6`) se utilizan para definir títulos y subtítulos en una página web. Son elementos en bloque y juegan un papel fundamental en la jerarquía del contenido.
+Headers (`h1` to `h6`) are used to define titles and subtitles on a web page. They are block elements and play a fundamental role in the content hierarchy.
 
-### **Ejemplo de uso de encabezados:**
+### **Example of using headers:**
 
 ```HTML
 <h1>Título Principal</h1>
@@ -21,39 +21,39 @@ Los encabezados (`h1` a `h6`) se utilizan para definir títulos y subtítulos en
 <h6>Subtítulo Nivel 6</h6>
 ```
 
-### **Características de los encabezados:**
+### **Header characteristics:**
 
-- `h1` es el título principal de la página y debe utilizarse solo una vez.
-- `h2` a `h6` representan subtítulos con menor importancia.
-- Mejoran la accesibilidad y el SEO (optimización en motores de búsqueda).
+- `h1` is the main title of the page and should be used only once.
+- `h2` to `h6` represent subtitles with lower importance.
+- They improve accessibility and SEO (search engine optimization).
 
 ---
 
-## **3. Párrafos y saltos de línea**
+## **3. Paragraphs and line breaks**
 
-El texto dentro de una página web se agrupa en párrafos usando la etiqueta `<p>`. Si se necesita un salto de línea sin iniciar un nuevo párrafo, se usa `<br>`.
+Text within a web page is grouped into paragraphs using the `<p>` tag. If a line break is needed without starting a new paragraph, `<br>` is used.
 
-### **Ejemplo de párrafos y saltos de línea:**
+### **Example of paragraphs and line breaks:**
 
 ```HTML
 <p>Este es un párrafo de ejemplo. Se usa para organizar el texto en bloques.</p>
 <p>Este es otro párrafo. <br> Aquí se usa un salto de línea dentro del mismo párrafo.</p>
 ```
 
-### **Características:**
+### **Features:**
 
-- `<p>` genera un nuevo bloque de texto.
-- `<br>` no genera un nuevo bloque, solo un salto de línea dentro del mismo texto.
+- `<p>` generates a new text block.
+- `<br>` does not generate a new block, only a line break within the same text.
 
 ---
 
-## **4. Otros elementos en bloque relacionados con texto**
+## **4. Other text-related block elements**
 
-Además de los encabezados y párrafos, existen otros elementos en bloque útiles para estructurar contenido textual:
+In addition to headings and paragraphs, there are other useful block elements for structuring textual content:
 
-### **Bloques de cita (`<blockquote>`)**
+### **Appointment Blocks (`<blockquote>`)**
 
-Se utiliza para resaltar citas largas de texto.
+Used to highlight long text quotes.
 
 ```HTML
 <blockquote>
@@ -61,9 +61,9 @@ Se utiliza para resaltar citas largas de texto.
 </blockquote>
 ```
 
-### **Preformateado (`<pre>`)**
+### **Preformatted (`<pre>`)**
 
-Muestra texto con formato predefinido, respetando espacios y saltos de línea.
+Displays text with predefined format, respecting spaces and line breaks.
 
 ```HTML
 <pre>
@@ -72,9 +72,9 @@ Texto con espacios y saltos de línea
 </pre>
 ```
 
-### **Divisiones de contenido (`<div>`)**
+### **Content divisions (`<div>`)**
 
-Se usa para agrupar contenido en bloques sin un significado semántico específico.
+It is used to group content into blocks without a specific semantic meaning.
 
 ```HTML
 <div>
@@ -85,17 +85,17 @@ Se usa para agrupar contenido en bloques sin un significado semántico específi
 
 ---
 
-[![Texto y Elementos en Linea y en Bloque](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Text and Elements in Line and in Block](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **5. Buenas prácticas al trabajar con texto en HTML**
+## **5. Best practices when working with HTML text**
 
-- Utilizar **encabezados correctamente** para jerarquizar la información.
-- No abusar de los **saltos de línea (`<br>`)**, es mejor usar párrafos cuando sea necesario.
-- Usar **etiquetas semánticas** como `<blockquote>` y `<pre>` en lugar de `<div>` cuando el contenido lo requiera.
-- Mantener una estructura clara y ordenada en el código.
+- Use **headers correctly** to prioritize the information.
+- Do not abuse **line breaks (`<br>`)**, it is better to use paragraphs when necessary.
+- Use **semantic tags** such as `<blockquote>` and `<pre>` instead of `<div>` when the content requires it.
+- Maintain a clear and orderly structure in the code.
 
 ---
 
-En el próximo tema, exploraremos **las listas en HTML**, tanto ordenadas como desordenadas, y su importancia en la organización de la información en una página web.
+In the next topic, we will explore HTML lists, both ordered and unordered, and their importance in organizing information on a web page.

@@ -1,10 +1,10 @@
-# Ejercicios Tema 1: Arquitectura y configuración inicial de Spring MVC
+# Exercises Topic 1: Spring MVC architecture and initial configuration
 
-# Ejercicio 1 - Identificar las partes de una aplicación Spring MVC
+# Exercise 1 - Identify the parts of a Spring MVC application
 
-## Enunciado
+## Statement
 
-Observa esta estructura de proyecto:
+Look at this project structure:
 
 ```text
 spring-mvc-books
@@ -34,7 +34,7 @@ spring-mvc-books
                     └── welcome.jsp
 ```
 
-Indica qué función tiene cada uno de estos archivos o carpetas:
+Indicate what function each of these files or folders has:
 
 ```text
 pom.xml
@@ -47,15 +47,15 @@ WEB-INF/views
 ```
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```text
 pom.xml
 ```
 
-Es el archivo de configuración de Maven. Define el nombre del proyecto, la versión de Java, el empaquetado de la aplicación y las dependencias necesarias, como `spring-webmvc` o `jakarta.servlet-api`.
+It is the Maven configuration file. Defines the project name, Java version, application packaging, and required dependencies, such as `spring-webmvc` or `jakarta.servlet-api`.
 
 ---
 
@@ -63,7 +63,7 @@ Es el archivo de configuración de Maven. Define el nombre del proyecto, la vers
 web.xml
 ```
 
-Es el descriptor de despliegue de la aplicación web. En él se configura el `DispatcherServlet`, que será el servlet principal de Spring MVC.
+It is the deployment descriptor of the web application. In it, the `DispatcherServlet` is configured, which will be the main Spring MVC servlet.
 
 ---
 
@@ -71,7 +71,7 @@ Es el descriptor de despliegue de la aplicación web. En él se configura el `Di
 app-servlet.xml
 ```
 
-Es el archivo de configuración de Spring MVC. Aquí se pueden registrar controladores, mapeos de URL, el `ViewResolver` y la configuración de recursos estáticos.
+It is the Spring MVC configuration file. Drivers, URL mappings, the `ViewResolver` and static resource configuration can be registered here.
 
 ---
 
@@ -79,7 +79,7 @@ Es el archivo de configuración de Spring MVC. Aquí se pueden registrar control
 WelcomeController.java
 ```
 
-Es el controlador. Su función es recibir una petición, preparar los datos necesarios y devolver un `ModelAndView` indicando qué vista debe mostrarse.
+It's the controller. Its function is to receive a request, prepare the necessary data and return an `ModelAndView` indicating which view should be shown.
 
 ---
 
@@ -87,7 +87,7 @@ Es el controlador. Su función es recibir una petición, preparar los datos nece
 welcome.jsp
 ```
 
-Es la vista JSP. Recibe los datos enviados por el controlador y genera el HTML final que verá el usuario.
+It is the JSP view. Receives the data sent by the controller and generates the final HTML that the user will see.
 
 ---
 
@@ -95,7 +95,7 @@ Es la vista JSP. Recibe los datos enviados por el controlador y genera el HTML f
 resources/css/styles.css
 ```
 
-Es un recurso estático. Contiene estilos CSS para dar formato visual a las páginas.
+It is a static resource. Contains CSS styles to visually format pages.
 
 ---
 
@@ -103,27 +103,27 @@ Es un recurso estático. Contiene estilos CSS para dar formato visual a las pág
 WEB-INF/views
 ```
 
-Es la carpeta donde guardamos las vistas JSP. Al estar dentro de `WEB-INF`, el usuario no puede acceder directamente a esos archivos desde el navegador. Solo pueden mostrarse a través de Spring MVC.
+It is the folder where we save the JSP views. Being inside `WEB-INF`, the user cannot directly access those files from the browser. They can only be displayed through Spring MVC.
 
 </details>
 
 ---
 
-# Ejercicio 2 - Completar el `pom.xml` de una aplicación Spring MVC
+# Exercise 2 - Complete the `pom.xml` of a Spring MVC application
 
-## Enunciado
+## Statement
 
-Queremos crear una aplicación llamada `spring-mvc-library` empaquetada como archivo `.war`.
+We want to create an application called `spring-mvc-library` packaged as `.war` file.
 
-Completa el siguiente `pom.xml` para que incluya:
+Complete the following `pom.xml` to include:
 
-1. Java versión 17 o superior.
-2. Spring MVC.
-3. Servlet API de Jakarta.
-4. Empaquetado tipo `war`.
-5. Nombre final del archivo: `spring-mvc-library`.
+1. Java version 17 or higher.
+2.SpringMVC.
+3. Jakarta Servlet API.
+4. `war` type packaging.
+5. Final file name: `spring-mvc-library`.
 
-Código incompleto:
+Incomplete code:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -144,9 +144,9 @@ Código incompleto:
 ```
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -203,52 +203,52 @@ Código incompleto:
 </project>
 ```
 
-## Explicación
+## Explanation
 
-La línea:
+The line:
 
 ```xml
 <packaging>war</packaging>
 ```
 
-indica que el proyecto se empaquetará como aplicación web.
+indicates that the project will be packaged as a web application.
 
-La dependencia:
+The dependency:
 
 ```xml
 <artifactId>spring-webmvc</artifactId>
 ```
 
-incluye las clases principales de Spring MVC.
+includes the core Spring MVC classes.
 
-La dependencia:
+The dependency:
 
 ```xml
 <artifactId>jakarta.servlet-api</artifactId>
 ```
 
-permite compilar clases que usan la Servlet API. El `scope` es `provided` porque Tomcat ya proporciona esa API al ejecutar la aplicación.
+allows you to compile classes that use the Servlet API. The `scope` is `provided` because Tomcat already provides that API when running the application.
 
 </details>
 
 ---
 
-# Ejercicio 3 - Configurar `DispatcherServlet` en `web.xml`
+# Exercise 3 – Set `DispatcherServlet` to `web.xml`
 
-## Enunciado
+## Statement
 
-Crea el archivo `web.xml` para una aplicación Spring MVC con estas condiciones:
+Create the `web.xml` file for a Spring MVC application with these conditions:
 
-1. El servlet de Spring MVC se llamará `library`.
-2. La clase del servlet será `org.springframework.web.servlet.DispatcherServlet`.
-3. El servlet cargará su configuración desde `/WEB-INF/spring/library-servlet.xml`.
-4. El servlet debe cargarse al arrancar la aplicación.
-5. Todas las peticiones deben pasar por el servlet.
+1. The Spring MVC servlet will be named `library`.
+2. The servlet class will be `org.springframework.web.servlet.DispatcherServlet`.
+3. The servlet will load its configuration from `/WEB-INF/spring/library-servlet.xml`.
+4. The servlet must be loaded when the application starts.
+5. All requests must go through the servlet.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```xml
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
@@ -280,9 +280,9 @@ Crea el archivo `web.xml` para una aplicación Spring MVC con estas condiciones:
 </web-app>
 ```
 
-## Explicación
+## Explanation
 
-Este bloque registra el servlet principal de Spring MVC:
+This block registers the main Spring MVC servlet:
 
 ```xml
 <servlet>
@@ -291,14 +291,13 @@ Este bloque registra el servlet principal de Spring MVC:
 </servlet>
 ```
 
-El parámetro:
+The parameter:
 
 ```xml
 <contextConfigLocation>
 ```
 
-no se escribe directamente como etiqueta, sino dentro de `init-param`:
-
+It is not written directly as a tag, but inside `init-param`:
 ```xml
 <init-param>
     <param-name>contextConfigLocation</param-name>
@@ -306,30 +305,30 @@ no se escribe directamente como etiqueta, sino dentro de `init-param`:
 </init-param>
 ```
 
-Esta parte indica dónde está el archivo XML de configuración de Spring MVC.
+This part indicates where the Spring MVC configuration XML file is.
 
-Finalmente, el mapeo:
+Finally, the mapping:
 
 ```xml
 <url-pattern>/</url-pattern>
 ```
 
-hace que las peticiones entren por `DispatcherServlet`.
+makes requests come in through `DispatcherServlet`.
 
 </details>
 
 ---
 
-# Ejercicio 4 - Crear un controlador clásico con `ModelAndView`
+# Exercise 4 – Create a classic controller with `ModelAndView`
 
-## Enunciado
+## Statement
 
-Crea un controlador llamado `LibraryHomeController` que cumpla estas condiciones:
+Create a driver named `LibraryHomeController` that meets these conditions:
 
-1. Debe estar en el paquete `com.example.springmvclibrary.controller`.
-2. Debe implementar la interfaz `Controller` de Spring MVC.
-3. Debe devolver la vista lógica `library-home`.
-4. Debe enviar a la vista tres datos:
+1. It must be in the `com.example.springmvclibrary.controller` package.
+2. You must implement Spring MVC's `Controller` interface.
+3. It should return the logical view `library-home`.
+4. You must send three pieces of information to the view:
 
 ```text
 pageTitle = Biblioteca Spring MVC
@@ -338,9 +337,9 @@ sectionName = Inicio de la biblioteca
 ```
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```java
 package com.example.springmvclibrary.controller;
@@ -368,48 +367,48 @@ public class LibraryHomeController implements Controller {
 }
 ```
 
-## Explicación
+## Explanation
 
-La clase implementa:
+The class implements:
 
 ```java
 Controller
 ```
 
-por eso debe sobrescribir el método:
+that's why you must override the method:
 
 ```java
 handleRequest(HttpServletRequest request, HttpServletResponse response)
 ```
 
-Dentro del método creamos:
+Inside the method we create:
 
 ```java
 ModelAndView modelAndView = new ModelAndView("library-home");
 ```
 
-El texto `library-home` es el nombre lógico de la vista.
+The text `library-home` is the logical name of the view.
 
-Si el `ViewResolver` está configurado con:
+If the `ViewResolver` is configured with:
 
 ```xml
 <property name="prefix" value="/WEB-INF/views/" />
 <property name="suffix" value=".jsp" />
 ```
 
-Spring buscará:
+Spring will look for:
 
 ```text
 /WEB-INF/views/library-home.jsp
 ```
 
-Los datos se envían a la JSP mediante:
+Data is sent to the JSP using:
 
 ```java
 modelAndView.addObject("pageTitle", "Biblioteca Spring MVC");
 ```
 
-Después, en la JSP podremos escribir:
+Then, in the JSP we can write:
 
 ```jsp
 ${pageTitle}
@@ -419,23 +418,23 @@ ${pageTitle}
 
 ---
 
-# Ejercicio 5 - Configurar mapeos y vistas en XML
+# Exercise 5 - Configure mappings and views in XML
 
-## Enunciado
+## Statement
 
-Crea el archivo `library-servlet.xml` para que:
+Create the file `library-servlet.xml` so that:
 
-1. Registre como bean el controlador `LibraryHomeController`.
-2. La URL `/` apunte a ese controlador.
-3. La URL `/library` también apunte a ese controlador.
-4. Las vistas JSP estén dentro de `/WEB-INF/views/`.
-5. Las vistas tengan extensión `.jsp`.
-6. Los recursos estáticos estén dentro de `/resources/`.
+1. Register the `LibraryHomeController` driver as a bean.
+2. The `/` URL points to that controller.
+3. The URL `/library` also points to that controller.
+4. JSP views are inside `/WEB-INF/views/`.
+5. The views have extension `.jsp`.
+6. Static resources are inside `/resources/`.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -475,71 +474,71 @@ Crea el archivo `library-servlet.xml` para que:
 </beans>
 ```
 
-## Explicación
+## Explanation
 
-Primero registramos el controlador:
+First we register the controller:
 
 ```xml
 <bean id="libraryHomeController"
       class="com.example.springmvclibrary.controller.LibraryHomeController" />
 ```
 
-Después asociamos URLs con ese controlador:
+Then we associate URLs with that controller:
 
 ```xml
 <prop key="/">libraryHomeController</prop>
 <prop key="/library">libraryHomeController</prop>
 ```
 
-Esto significa que tanto `/` como `/library` ejecutarán el mismo controlador.
+This means that both `/` and `/library` will run the same driver.
 
-El `ViewResolver` convierte un nombre lógico como:
+The `ViewResolver` converts a logical name like:
 
 ```text
 library-home
 ```
 
-en esta ruta real:
+on this actual route:
 
 ```text
 /WEB-INF/views/library-home.jsp
 ```
 
-La línea:
+The line:
 
 ```xml
 <mvc:resources mapping="/resources/**" location="/resources/" />
 ```
 
-permite cargar CSS, JavaScript o imágenes desde la carpeta `resources`.
+allows you to load CSS, JavaScript or images from the `resources` folder.
 
 </details>
 
 ---
 
-# Ejercicio 6 - Crear una vista JSP que reciba datos del controlador
+# Exercise 6 - Create a JSP view that receives data from the controller
 
-## Enunciado
+## Statement
 
-Crea una vista llamada:
+Create a view called:
 
 ```text
 src/main/webapp/WEB-INF/views/library-home.jsp
 ```
 
-La vista debe:
+The view must:
 
-1. Usar codificación UTF-8.
-2. Mostrar el valor de `pageTitle` en el `<title>` y en un `<h1>`.
-3. Mostrar el valor de `mainMessage` en un párrafo.
-4. Mostrar el valor de `sectionName` en negrita.
-5. Cargar un archivo CSS desde `/resources/css/library.css`.
-6. Incluir un enlace a `/library` usando `pageContext.request.contextPath`.
+1. Use UTF-8 encoding.
+2. Display the value of `pageTitle` in the `<title>` and in an `<h1>`.
+3. Display the value of `mainMessage` in a paragraph.
+4. Display the value of `sectionName` in bold.
+5. Load a CSS file from `/resources/css/library.css`.
+6. Include a link to `/library` using `pageContext.request.contextPath`.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -578,17 +577,17 @@ La vista debe:
 </html>
 ```
 
-## Explicación
+## Explanation
 
-La línea:
+The line:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 ```
 
-hace que la página use UTF-8.
+causes the page to use UTF-8.
 
-Los valores:
+The values:
 
 ```jsp
 ${pageTitle}
@@ -596,55 +595,55 @@ ${mainMessage}
 ${sectionName}
 ```
 
-vienen del controlador.
+They come from the controller.
 
-Por ejemplo, este dato del controlador:
+For example, this controller data:
 
 ```java
 modelAndView.addObject("pageTitle", "Biblioteca Spring MVC");
 ```
 
-se muestra en JSP así:
+It is displayed in JSP like this:
 
 ```jsp
 ${pageTitle}
 ```
 
-La ruta del CSS usa:
+The CSS path uses:
 
 ```jsp
 ${pageContext.request.contextPath}
 ```
 
-para que funcione aunque la aplicación se despliegue con otro nombre de contexto.
+so that it works even if the application is deployed with another context name.
 
 </details>
 
 ---
 
-# Ejercicio 7 - Crear un recurso CSS y configurarlo correctamente
+# Exercise 7 – Create a CSS resource and configure it correctly
 
-## Enunciado
+## Statement
 
-Crea un archivo CSS llamado:
+Create a CSS file called:
 
 ```text
 src/main/webapp/resources/css/library.css
 ```
 
-Debe aplicar estos estilos:
+You should apply these styles:
 
-1. El `body` no debe tener margen.
-2. La fuente debe ser Arial o sans-serif.
-3. El fondo debe ser claro.
-4. La tarjeta principal debe estar centrada.
-5. La tarjeta debe tener fondo blanco, bordes redondeados y sombra.
-6. El mensaje debe tener un tamaño de fuente algo mayor.
+1. The `body` must not have margin.
+2. The font must be Arial or sans-serif.
+3. The background must be clear.
+4. The main card must be centered.
+5. The card must have a white background, rounded edges and shadow.
+6. The message should have a slightly larger font size.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ```css
 body {
@@ -689,23 +688,23 @@ a:hover {
 }
 ```
 
-## Explicación
+## Explanation
 
-El archivo debe estar en:
+The file must be in:
 
 ```text
 src/main/webapp/resources/css/library.css
 ```
 
-Y en el XML debe existir esta configuración:
+And in the XML this configuration must exist:
 
 ```xml
 <mvc:resources mapping="/resources/**" location="/resources/" />
 ```
 
-Si falta esa línea, puede que la JSP cargue, pero el CSS no se aplique.
+If that line is missing, the JSP may load, but the CSS may not be applied.
 
-En la JSP lo cargamos con:
+In the JSP we load it with:
 
 ```jsp
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/library.css">
@@ -715,17 +714,17 @@ En la JSP lo cargamos con:
 
 ---
 
-# Ejercicio 8 - Explicar el flujo completo de una petición
+# Exercise 8 - Explain the complete flow of a request
 
-## Enunciado
+## Statement
 
-Explica paso a paso qué ocurre cuando el usuario entra en esta URL:
+Explain step by step what happens when the user enters this URL:
 
 ```text
 http://localhost:8080/spring-mvc-library/library
 ```
 
-Usa estos elementos en tu explicación:
+Use these elements in your explanation:
 
 ```text
 Tomcat
@@ -740,17 +739,17 @@ HTML final
 ```
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
-Cuando el usuario entra en:
+When the user enters:
 
 ```text
 http://localhost:8080/spring-mvc-library/library
 ```
 
-ocurre este flujo:
+this flow occurs:
 
 ```text
 1. El navegador envía una petición HTTP GET a /spring-mvc-library/library.
@@ -760,13 +759,13 @@ ocurre este flujo:
 2. Tomcat recibe la petición.
 ```
 
-Tomcat comprueba el `web.xml` de la aplicación y ve que las peticiones pasan por el servlet llamado `library`.
+Tomcat checks the `web.xml` of the application and sees that the requests go through the servlet named `library`.
 
 ```text
 3. La petición entra en DispatcherServlet.
 ```
 
-El servlet configurado es:
+The configured servlet is:
 
 ```xml
 <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -776,7 +775,7 @@ El servlet configurado es:
 4. DispatcherServlet carga la configuración de library-servlet.xml.
 ```
 
-Esa configuración se indicó en `web.xml`:
+That setting was indicated in `web.xml`:
 
 ```xml
 <param-value>/WEB-INF/spring/library-servlet.xml</param-value>
@@ -786,25 +785,25 @@ Esa configuración se indicó en `web.xml`:
 5. Spring consulta SimpleUrlHandlerMapping.
 ```
 
-En `library-servlet.xml` existe este mapeo:
+In `library-servlet.xml` there is this mapping:
 
 ```xml
 <prop key="/library">libraryHomeController</prop>
 ```
 
-Por tanto, Spring sabe que debe ejecutar el controlador llamado `libraryHomeController`.
+Therefore, Spring knows to run the handler called `libraryHomeController`.
 
 ```text
 6. Spring ejecuta LibraryHomeController.
 ```
 
-El método `handleRequest` crea un `ModelAndView`:
+The `handleRequest` method creates an `ModelAndView`:
 
 ```java
 ModelAndView modelAndView = new ModelAndView("library-home");
 ```
 
-También añade datos al modelo:
+It also adds data to the model:
 
 ```java
 modelAndView.addObject("pageTitle", "Biblioteca Spring MVC");
@@ -820,20 +819,20 @@ modelAndView.addObject("sectionName", "Inicio de la biblioteca");
 8. DispatcherServlet usa InternalResourceViewResolver.
 ```
 
-El `ViewResolver` tiene esta configuración:
+The `ViewResolver` has this configuration:
 
 ```xml
 <property name="prefix" value="/WEB-INF/views/" />
 <property name="suffix" value=".jsp" />
 ```
 
-Por eso convierte:
+That's why it converts:
 
 ```text
 library-home
 ```
 
-en:
+in:
 
 ```text
 /WEB-INF/views/library-home.jsp
@@ -843,7 +842,7 @@ en:
 9. Se procesa la JSP.
 ```
 
-La JSP usa los datos recibidos:
+The JSP uses the data received:
 
 ```jsp
 ${pageTitle}
@@ -855,47 +854,47 @@ ${sectionName}
 10. Tomcat devuelve el HTML final al navegador.
 ```
 
-El usuario no ve el archivo JSP directamente. Ve el HTML generado a partir de la JSP.
+The user does not see the JSP file directly. View the HTML generated from the JSP.
 
 </details>
 
 ---
 
-# Ejercicio 9 - Añadir una segunda página con otro controlador
+# Exercise 9 - Add a second page with another controller
 
-## Enunciado
+## Statement
 
-Amplía la aplicación de biblioteca creando una segunda página llamada `/info`.
+Extend the library application by creating a second page called `/info`.
 
-Debe cumplir estas condiciones:
+You must meet these conditions:
 
-1. Crear un controlador llamado `LibraryInfoController`.
-2. El controlador debe devolver la vista lógica `library-info`.
-3. Debe enviar estos datos al modelo:
+1. Create a driver called `LibraryInfoController`.
+2. The controller should return the logical view `library-info`.
+3. You must send this data to the model:
 
 ```text
 pageTitle = Información de la biblioteca
 mainMessage = Esta biblioteca permite consultar libros y autores.
 ```
 
-4. Registrar el controlador en `library-servlet.xml`.
-5. Mapear la URL `/info` a ese controlador.
-6. Crear la vista `library-info.jsp`.
+4. Register the driver in `library-servlet.xml`.
+5. Map the `/info` URL to that controller.
+6. Create the `library-info.jsp` view.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
-### 1. Crear `LibraryInfoController.java`
+### 1. Create `LibraryInfoController.java`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/example/springmvclibrary/controller/LibraryInfoController.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.example.springmvclibrary.controller;
@@ -924,9 +923,9 @@ public class LibraryInfoController implements Controller {
 
 ---
 
-### 2. Registrar el controlador en `library-servlet.xml`
+### 2. Register the driver in `library-servlet.xml`
 
-Añadimos este bean:
+We add this bean:
 
 ```xml
 <bean id="libraryInfoController"
@@ -935,15 +934,15 @@ Añadimos este bean:
 
 ---
 
-### 3. Añadir el mapeo `/info`
+### 3. Add `/info` mapping
 
-Dentro de `SimpleUrlHandlerMapping`, añadimos:
+Inside `SimpleUrlHandlerMapping`, we add:
 
 ```xml
 <prop key="/info">libraryInfoController</prop>
 ```
 
-El bloque completo de mapeos puede quedar así:
+The complete block of mappings can look like this:
 
 ```xml
 <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -959,15 +958,15 @@ El bloque completo de mapeos puede quedar así:
 
 ---
 
-### 4. Crear `library-info.jsp`
+### 4. Create `library-info.jsp`
 
-Ruta:
+Route:
 
 ```text
 src/main/webapp/WEB-INF/views/library-info.jsp
 ```
 
-Código:
+Code:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1005,16 +1004,16 @@ Código:
 </html>
 ```
 
-## Explicación
+## Explanation
 
-Ahora la aplicación tiene dos controladores clásicos:
+Now the application has two classic controllers:
 
 ```text
 /library → LibraryHomeController
 /info    → LibraryInfoController
 ```
 
-Cada controlador devuelve una vista diferente:
+Each controller returns a different view:
 
 ```text
 LibraryHomeController → library-home.jsp
@@ -1025,11 +1024,11 @@ LibraryInfoController → library-info.jsp
 
 ---
 
-# Ejercicio 10 - Corregir errores habituales de configuración
+# Exercise 10 - Correct common configuration errors
 
-## Enunciado
+## Statement
 
-Un alumno tiene esta configuración en `library-servlet.xml`:
+A student has this configuration in `library-servlet.xml`:
 
 ```xml
 <bean id="libraryHomeController"
@@ -1049,57 +1048,56 @@ Un alumno tiene esta configuración en `library-servlet.xml`:
 </bean>
 ```
 
-Y su controlador devuelve:
-
+And your controller returns:
 ```java
 return new ModelAndView("library-home");
 ```
 
-La JSP está en:
+The JSP is at:
 
 ```text
 /WEB-INF/views/library-home.jsp
 ```
 
-Explica qué errores hay y corrige la configuración.
+Explain what errors there are and correct the configuration.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
-Hay dos errores principales.
+There are two main errors.
 
 ---
 
-## Error 1: el mapeo apunta a un bean que no existe
+## Error 1: Mapping points to a bean that does not exist
 
-En XML aparece:
+In XML it appears:
 
 ```xml
 <prop key="/library">homeController</prop>
 ```
 
-Pero el bean registrado se llama:
+But the registered bean is called:
 
 ```xml
 <bean id="libraryHomeController"
       class="com.example.springmvclibrary.controller.LibraryHomeController" />
 ```
 
-Por tanto, el mapeo debería apuntar a:
+Therefore, the mapping should point to:
 
 ```text
 libraryHomeController
 ```
 
-No a:
+Not to:
 
 ```text
 homeController
 ```
 
-Corrección:
+Correction:
 
 ```xml
 <prop key="/library">libraryHomeController</prop>
@@ -1107,27 +1105,27 @@ Corrección:
 
 ---
 
-## Error 2: el `ViewResolver` busca en una carpeta incorrecta
+## Error 2: `ViewResolver` looks in the wrong folder
 
-El `ViewResolver` tiene:
+The `ViewResolver` has:
 
 ```xml
 <property name="prefix" value="/WEB-INF/pages/" />
 ```
 
-Eso significa que Spring buscará:
+That means Spring will look for:
 
 ```text
 /WEB-INF/pages/library-home.jsp
 ```
 
-Pero la JSP está realmente en:
+But the JSP is actually in:
 
 ```text
 /WEB-INF/views/library-home.jsp
 ```
 
-Por tanto, el `prefix` correcto es:
+Therefore, the correct `prefix` is:
 
 ```xml
 <property name="prefix" value="/WEB-INF/views/" />
@@ -1135,7 +1133,7 @@ Por tanto, el `prefix` correcto es:
 
 ---
 
-## Configuración corregida
+## Fixed configuration
 
 ```xml
 <bean id="libraryHomeController"
@@ -1155,22 +1153,22 @@ Por tanto, el `prefix` correcto es:
 </bean>
 ```
 
-## Explicación final
+## Final explanation
 
-El controlador devuelve:
+The controller returns:
 
 ```java
 new ModelAndView("library-home");
 ```
 
-Con esta configuración:
+With this configuration:
 
 ```xml
 <property name="prefix" value="/WEB-INF/views/" />
 <property name="suffix" value=".jsp" />
 ```
 
-Spring buscará correctamente:
+Spring will correctly search for:
 
 ```text
 /WEB-INF/views/library-home.jsp
@@ -1180,20 +1178,20 @@ Spring buscará correctamente:
 
 ---
 
-# Ejercicio 11 - Crear una miniaplicación completa desde cero
+# Exercise 11 – Create a complete applet from scratch
 
-## Enunciado
+## Statement
 
-Crea una miniaplicación Spring MVC llamada `spring-mvc-events`.
+Create a Spring MVC applet called `spring-mvc-events`.
 
-La aplicación tendrá una única página accesible desde:
+The application will have a single page accessible from:
 
 ```text
 /
 /events
 ```
 
-La página debe mostrar:
+The page should display:
 
 ```text
 Título: Gestión de eventos
@@ -1201,7 +1199,7 @@ Mensaje: Bienvenido al panel de eventos.
 Categoría: Eventos académicos
 ```
 
-Debes crear:
+You must create:
 
 1. `pom.xml`.
 2. `web.xml`.
@@ -1211,9 +1209,9 @@ Debes crear:
 6. `events.css`.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
 ## 1. `pom.xml`
 
@@ -1271,13 +1269,13 @@ Debes crear:
 
 ## 2. `web.xml`
 
-Ruta:
+Route:
 
 ```text
 src/main/webapp/WEB-INF/web.xml
 ```
 
-Código:
+Code:
 
 ```xml
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
@@ -1313,13 +1311,13 @@ Código:
 
 ## 3. `events-servlet.xml`
 
-Ruta:
+Route:
 
 ```text
 src/main/webapp/WEB-INF/spring/events-servlet.xml
 ```
 
-Código:
+Code:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1359,13 +1357,13 @@ Código:
 
 ## 4. `EventsHomeController.java`
 
-Ruta:
+Route:
 
 ```text
 src/main/java/com/example/springmvcevents/controller/EventsHomeController.java
 ```
 
-Código:
+Code:
 
 ```java
 package com.example.springmvcevents.controller;
@@ -1397,13 +1395,13 @@ public class EventsHomeController implements Controller {
 
 ## 5. `events-home.jsp`
 
-Ruta:
+Route:
 
 ```text
 src/main/webapp/WEB-INF/views/events-home.jsp
 ```
 
-Código:
+Code:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1446,13 +1444,13 @@ Código:
 
 ## 6. `events.css`
 
-Ruta:
+Route:
 
 ```text
 src/main/webapp/resources/css/events.css
 ```
 
-Código:
+Code:
 
 ```css
 body {
@@ -1489,33 +1487,33 @@ a {
 
 ---
 
-## Resultado esperado
+## Expected result
 
-Al entrar en:
+Upon entering:
 
 ```text
 http://localhost:8080/spring-mvc-events/events
 ```
 
-el usuario debería ver la página de inicio del panel de eventos.
+The user should see the event panel home page.
 
 </details>
 
 ---
 
-# Ejercicio 12 - Diagnóstico final: encontrar por qué aparece un 404
+# Exercise 12 - Final diagnosis: find why a 404 appears
 
-## Enunciado
+## Statement
 
-Una aplicación Spring MVC arranca correctamente en Tomcat, pero al entrar en:
+A Spring MVC application boots correctly in Tomcat, but upon entering:
 
 ```text
 http://localhost:8080/spring-mvc-events/events
 ```
 
-aparece un error 404.
+a 404 error appears.
 
-El proyecto tiene estos archivos:
+The project has these files:
 
 ```text
 src/main/webapp/WEB-INF/web.xml
@@ -1524,7 +1522,7 @@ src/main/java/com/example/springmvcevents/controller/EventsHomeController.java
 src/main/webapp/WEB-INF/views/events-home.jsp
 ```
 
-El archivo `web.xml` contiene:
+The `web.xml` file contains:
 
 ```xml
 <servlet>
@@ -1545,7 +1543,7 @@ El archivo `web.xml` contiene:
 </servlet-mapping>
 ```
 
-El archivo `events-servlet.xml` contiene:
+The `events-servlet.xml` file contains:
 
 ```xml
 <bean id="eventsHomeController"
@@ -1560,34 +1558,34 @@ El archivo `events-servlet.xml` contiene:
 </bean>
 ```
 
-Detecta los errores y corrígelos.
+Detect errors and correct them.
 
 <details>
-<summary>mostrar solución</summary>
+<summary>show solution</summary>
 
-## Solución
+## Solution
 
-Hay dos errores principales.
+There are two main errors.
 
 ---
 
-## Error 1: el nombre del servlet no coincide
+##Error 1: servlet name does not match
 
-En la declaración del servlet aparece:
+In the servlet declaration it appears:
 
 ```xml
 <servlet-name>event</servlet-name>
 ```
 
-Pero en el mapeo aparece:
+But in the mapping it appears:
 
 ```xml
 <servlet-name>events</servlet-name>
 ```
 
-Deben llamarse exactamente igual.
+They must be called exactly the same.
 
-Podemos corregirlo usando `events` en ambos lugares:
+We can fix it by using `events` in both places:
 
 ```xml
 <servlet>
@@ -1610,29 +1608,29 @@ Podemos corregirlo usando `events` en ambos lugares:
 
 ---
 
-## Error 2: la URL configurada no coincide con la URL que visita el usuario
+## Error 2: The configured URL does not match the URL the user visits
 
-El usuario entra en:
+The user enters:
 
 ```text
 /events
 ```
 
-Pero en `events-servlet.xml` está configurado:
+But in `events-servlet.xml` it is set:
 
 ```xml
 <prop key="/event">eventsHomeController</prop>
 ```
 
-Falta la `s` final.
+The final `s` is missing.
 
-La corrección es:
+The correction is:
 
 ```xml
 <prop key="/events">eventsHomeController</prop>
 ```
 
-También podemos añadir `/` como ruta alternativa:
+We can also add `/` as an alternative route:
 
 ```xml
 <prop key="/">eventsHomeController</prop>
@@ -1641,7 +1639,7 @@ También podemos añadir `/` como ruta alternativa:
 
 ---
 
-## Configuración corregida completa del mapeo
+## Complete corrected mapping configuration
 
 ```xml
 <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -1654,9 +1652,8 @@ También podemos añadir `/` como ruta alternativa:
 </bean>
 ```
 
-## Conclusión
-
-El error 404 no se debía a que faltara la JSP. Se debía a dos problemas de configuración:
+## Conclusion
+The 404 error was not due to the JSP being missing. It was due to two configuration problems:
 
 ```text
 1. El servlet declarado y el servlet mapeado no tenían el mismo nombre.

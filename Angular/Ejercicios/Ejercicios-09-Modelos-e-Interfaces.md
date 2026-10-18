@@ -1,25 +1,25 @@
-# **Ejercicios - Tema 9: Modelos e Interfaces en Angular**
+# **Exercises - Topic 9: Models and Interfaces in Angular**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre el uso de interfaces y modelos en Angular.
+Below you will find exercises on using interfaces and models in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un Modelos para un objeto que represente a un Producto**
+### **Exercise 1: Create a Model for an object that represents a Product**
 
-Define una interfaz `Product` con los siguientes atributos:
+Defines an `Product` interface with the following attributes:
 
 - `id: number`
 - `name: string`
 - `price: number`
 - `isAvailable: boolean`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `Product.ts`**
+#### **File: `Product.ts`**
 
 ```ts
 export interface Product {
@@ -30,17 +30,18 @@ export interface Product {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Usar una Interface en un Componente**
+### **Exercise 2: Using an Interface in a Component**
 
-Crea un método en un componente que retorne un producto basado en la interfaz `Product`.
+Create a method on a component that returns a product based on the `Product` interface.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `product.component.ts`**
+#### **File: `product.component.ts`**
 
 ```ts
 import { Product } from "../models/Product";
@@ -56,5 +57,6 @@ export class ProductComponent {
   }
 }
 ```
+
 
 </details>

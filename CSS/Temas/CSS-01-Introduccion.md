@@ -1,24 +1,24 @@
-# **Tema 1: Introducción a CSS**
+# **Topic 1: Introduction to CSS**
 
-## **1. ¿Qué es CSS y para qué sirve?**
+## **1. What is CSS and what is it for?**
 
-CSS (_Cascading Style Sheets_ o Hojas de Estilo en Cascada) es un lenguaje utilizado para definir el diseño y la presentación de documentos HTML. Permite mejorar la apariencia de una página web, separando la estructura del contenido del diseño visual.
+CSS (Cascading Style Sheets) is a language used to define the design and presentation of HTML documents. It allows you to improve the appearance of a web page, separating the structure of the content from the visual design.
 
-### **Características clave de CSS:**
+### **CSS Key Features:**
 
-- Permite personalizar el estilo de una página web.
-- Separa el contenido (HTML) de la presentación.
-- Facilita el mantenimiento y la reutilización de estilos.
-- Mejora la accesibilidad y la experiencia del usuario.
-- Compatible con todos los navegadores modernos.
+- Allows you to customize the style of a web page.
+- Separates the content (HTML) from the presentation.
+- Facilitates maintenance and reuse of styles.
+- Improves accessibility and user experience.
+- Compatible with all modern browsers.
 
 ---
 
-## **2. ¿Cómo funciona CSS?**
+## **2. How does CSS work?**
 
-CSS trabaja aplicando reglas de estilo a los elementos HTML. Estas reglas pueden definirse de distintas formas y en diferentes ubicaciones dentro del código.
+CSS works by applying style rules to HTML elements. These rules can be defined in different ways and in different locations within the code.
 
-### **Estructura de una regla CSS:**
+### **Structure of a CSS rule:**
 
 ```css
 selector {
@@ -26,7 +26,8 @@ selector {
 }
 ```
 
-### **Ejemplo de una regla CSS:**
+
+### **Example of a CSS rule:**
 
 ```css
 p {
@@ -35,21 +36,22 @@ p {
 }
 ```
 
-En este caso:
 
-- `p` es el **selector**, que indica que se aplicará el estilo a todos los párrafos (`<p>`).
-- `color` y `font-size` son **propiedades**.
-- `blue` y `16px` son los **valores** de esas propiedades.
+In this case:
+
+- `p` is the **selector**, which indicates that the style will be applied to all paragraphs (`<p>`).
+- `color` and `font-size` are **properties**.
+- `blue` and `16px` are the **values** of those properties.
 
 ---
 
-## **3. Formas de aplicar CSS**
+## **3. Ways to apply CSS**
 
-Existen tres maneras principales de incluir CSS en un documento HTML:
+There are three main ways to include CSS in an HTML document:
 
-### **1. CSS en línea (inline CSS)**
+### **1. Inline CSS**
 
-Se aplica directamente en la etiqueta HTML mediante el atributo `style`.
+It is applied directly in the HTML tag using the `style` attribute.
 
 ```html
 <p style="color: red; font-size: 18px;">
@@ -57,11 +59,12 @@ Se aplica directamente en la etiqueta HTML mediante el atributo `style`.
 </p>
 ```
 
-✔ Rápido para pequeños cambios, pero difícil de mantener en proyectos grandes. No está recomendado usarlo si hay alternativa.
 
-### **2. CSS interno (internal CSS)**
+✔ Fast for small changes, but difficult to maintain on large projects. It is not recommended to use it if there is an alternative.
 
-Se coloca dentro de la etiqueta `<style>` en el `<head>` del documento HTML.
+### **2. Internal CSS (internal CSS)**
+
+It is placed inside the `<style>` tag in the `<head>` of the HTML document.
 
 ```html
 <!DOCTYPE html>
@@ -80,13 +83,14 @@ Se coloca dentro de la etiqueta `<style>` en el `<head>` del documento HTML.
 </html>
 ```
 
-✔ Útil para páginas pequeñas sin necesidad de múltiples archivos CSS.
 
-### **3. CSS externo (external CSS)**
+✔ Useful for small pages without the need for multiple CSS files.
 
-Se guarda en un archivo separado (`.css`) y se enlaza desde el HTML con `<link>`.
+### **3. External CSS (external CSS)**
 
-**Archivo `styles.css`**:
+It is saved in a separate file (`.css`) and linked from the HTML with `<link>`.
+
+**`styles.css` file**:
 
 ```css
 h1 {
@@ -95,7 +99,8 @@ h1 {
 }
 ```
 
-**Archivo `index.html`**:
+
+**`index.html` file**:
 
 ```html
 <!DOCTYPE html>
@@ -109,23 +114,24 @@ h1 {
 </html>
 ```
 
-✔ La mejor práctica para proyectos grandes y escalables.
+
+✔ Best practice for large, scalable projects.
 
 ---
 
-## **4. Cascada y especificidad en CSS**
+## **4. Cascade and specificity in CSS**
 
-El nombre "Cascading Style Sheets" proviene del concepto de **cascada**, que determina el orden de prioridad de las reglas de estilo.
+The name "Cascading Style Sheets" comes from the concept of **cascading**, which determines the order of priority of style rules.
 
-### **Orden de aplicación de estilos:**
+### **Order of applying styles:**
 
-1. Estilos del navegador (por defecto).
-2. Estilos externos (`.css`).
-3. Estilos internos (`<style>` en HTML).
-4. Estilos en línea (`style=""` en la etiqueta HTML).
-5. Reglas con `!important` (tienen la mayor prioridad).
+1. Browser styles (default).
+2. External styles (`.css`).
+3. Internal styles (`<style>` in HTML).
+4. Inline styles (`style=""` in the HTML tag).
+5. Rules with `!important` (they have the highest priority).
 
-### **Ejemplo de prioridad:**
+### **Priority example:**
 
 ```css
 p {
@@ -137,22 +143,22 @@ p {
 }
 ```
 
-📌 **Las reglas con `!important`** sobrescriben cualquier otro estilo, incluso si proviene de un archivo externo. El uso de `!important` está completamente desaconsejado.
+
+📌 **Rules with `!important`** overwrite any other style, even if it comes from an external file. The use of `!important` is completely discouraged.
 
 ---
 
-[![Cómo empezar con CSS](https://img.youtube.com/vi/4SHxtVj5NL4/0.jpg)](https://www.youtube.com/watch?v=4SHxtVj5NL4&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+[![How to get started with CSS](https://img.youtube.com/vi/4SHxtVj5NL4/0.jpg)](https://www.youtube.com/watch?v=4SHxtVj5NL4&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **5. Buenas prácticas en CSS**
+## **5. Good practices in CSS**
 
-- Usar archivos CSS externos para mantener el código organizado.
-- Evitar el uso excesivo de estilos en línea.
-- Mantener una estructura clara con comentarios en el código.
-- Reutilizar clases y evitar IDs cuando sea posible.
-- Optimizar el código evitando reglas innecesarias.
+- Use external CSS files to keep code organized.
+- Avoid excessive use of inline styles.
+- Maintain a clear structure with comments in the code.
+- Reuse classes and avoid IDs when possible.
+- Optimize the code avoiding unnecessary rules.
 
 ---
-
-En el próximo tema, exploraremos **selectores y especificidad en CSS**, fundamentales para aplicar estilos de manera efectiva en una página web.
+In the next topic, we will explore **selectors and specificity in CSS**, essential for effectively applying styles to a web page.

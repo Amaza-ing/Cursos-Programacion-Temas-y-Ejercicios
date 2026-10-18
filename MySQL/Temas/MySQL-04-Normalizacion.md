@@ -1,176 +1,175 @@
-# **Tema 4: Normalización de Tablas en MySQL**
+# **Topic 4: Table Normalization in MySQL**
 
-En este tema aprenderemos:
+In this topic we will learn:
 
-- Qué es la normalización de bases de datos.
-- Cuáles son las formas normales más importantes.
-- Cómo aplicar normalización a nuestras tablas para evitar redundancias y mejorar la integridad de los datos.
-
----
-
-## **1. ¿Qué es la normalización?**
-
-La **normalización** es un proceso que se aplica al diseño de bases de datos para:
-
-- Reducir la **redundancia de datos**.
-- Evitar **anomalías** en las operaciones de inserción, actualización y eliminación.
-- Mejorar la **integridad de los datos**.
-
-Normalizar una base de datos significa **dividir los datos en varias tablas relacionadas** correctamente.
+- What is database normalization.
+- What are the most important normal forms.
+- How to apply normalization to our tables to avoid redundancies and improve data integrity.
 
 ---
 
-## **2. Formas Normales**
+## **1. What is normalization?**
 
-Las formas normales son reglas o niveles que nos ayudan a decidir si una base de datos está bien estructurada. A continuación veremos las tres más utilizadas:
+**Normalization** is a process that is applied to database design to:
 
-### **1ª Forma Normal (1NF)**
+- Reduce **data redundancy**.
+- Avoid **anomalies** in insert, update and delete operations.
+- Improve **data integrity**.
 
-- Cada celda debe contener un único valor (no listas o arrays).
-- Cada fila debe ser única.
-- Las columnas deben tener el mismo tipo de datos en todas las filas.
+Normalizing a database means **splitting the data into several related tables** correctly.
 
-**Ejemplo incorrecto (no está en 1NF):**
+---
 
-| id  | nombre | teléfonos         |
+## **2. Normal Forms**
+
+Normal forms are rules or levels that help us decide if a database is well structured. Below we will see the three most used:
+
+### **1st Normal Form (1NF)**
+
+- Each cell must contain a single value (not lists or arrays).
+- Each row must be unique.
+- Columns must have the same data type in all rows.
+
+**Incorrect example (not in 1NF):**
+
+| id | name | phones |
 | --- | ------ | ----------------- |
-| 1   | Laura  | 123456, 789101112 |
+| 1 | Laura | 123456, 789101112 |
 
-**Solución (en 1NF):**
+**Solution (in 1NF):**
 
-| id  | nombre | teléfono  |
+| id | name | phone |
 | --- | ------ | --------- |
-| 1   | Laura  | 123456    |
-| 1   | Laura  | 789101112 |
+| 1 | Laura | 123456 |
+| 1 | Laura | 789101112 |
 
 ---
 
-### **2ª Forma Normal (2NF)**
+### **2nd Normal Form (2NF)**
 
-- Debe cumplir la 1NF.
-- Todos los atributos no clave deben depender de **toda** la clave primaria (no sólo de una parte).
+- Must comply with 1NF.
+- All non-key attributes must depend on **the entire** primary key (not just part of it).
 
-**Ejemplo incorrecto:**
+**Incorrect example:**
 
-| curso_id | estudiante_id | estudiante_nombre |
+| course_id | student_id | student_name |
 | -------- | ------------- | ----------------- |
-| 1        | 10            | Ana Fernández     |
+| 1 | 10 | Ana Fernandez |
 
-`estudiante_nombre` depende solo de `estudiante_id`, no del conjunto `(curso_id, estudiante_id)`.
+`estudiante_nombre` depends only on `estudiante_id`, not on the `(curso_id, estudiante_id)` set.
 
-**Solución:**
-Separar en dos tablas:
+**Solution:**
+Separate into two tables:
 
-**Tabla `enrollments`:**
-| curso_id | estudiante_id |
+**`enrollments` table:**
+| course_id | student_id |
 |----------|----------------|
 | 1 | 10 |
 
-**Tabla `students`:**
-| estudiante_id | estudiante_nombre |
+**`students` table:**
+| student_id | student_name |
 |----------------|-------------------|
-| 10 | Ana Fernández |
+| 10 | Ana Fernandez |
 
 ---
 
-### **3ª Forma Normal (3NF)**
+### **3rd Normal Form (3NF)**
 
-- Debe cumplir la 2NF.
-- No debe haber **dependencias transitivas**, es decir, los atributos no clave no deben depender entre sí.
+- Must comply with 2NF.
+- There should be no **transitive dependencies**, that is, non-key attributes should not depend on each other.
 
-**Ejemplo incorrecto:**
+**Incorrect example:**
 
-| id  | nombre_cliente | ciudad  | código_postal |
+| id | customer_name | city ​​| postal_code |
 | --- | -------------- | ------- | ------------- |
-| 1   | Raúl Pérez     | Sevilla | 41001         |
+| 1 | Raúl Pérez | Seville | 41001 |
 
-`código_postal` depende de `ciudad`, no directamente de `id`.
+`código_postal` depends on `ciudad`, not directly on `id`.
 
-**Solución:** Separar en dos tablas:
+**Solution:** Separate into two tables:
 
-**Tabla `customers`:**
-| id | nombre_cliente | ciudad_id |
+**`customers` table:**
+| id | customer_name | city_id |
 |----|----------------|-----------|
 | 1 | Raúl Pérez | 3 |
 
-**Tabla `cities`:**
-| ciudad_id | ciudad | código_postal |
+**`cities` table:**
+| city_id | city ​​| postal_code |
 |-----------|---------|----------------|
-| 3 | Sevilla | 41001 |
+| 3 | Seville | 41001 |
 
 ---
 
-## **3. Ejemplo de Normalización paso a paso**
+## **3. Step-by-step Normalization Example**
 
-Supongamos que tenemos esta tabla inicial:
+Suppose we have this initial table:
 
-| pedido_id | cliente_nombre | producto | cantidad | precio_total |
+| order_id | client_name | product | quantity | total_price |
 | --------- | -------------- | -------- | -------- | ------------ |
-| 1         | Ana Gómez      | Lápiz    | 2        | 1.00         |
-| 2         | Ana Gómez      | Cuaderno | 1        | 2.00         |
+| 1 | Ana Gomez | Pencil | 2 | 1.00 |
+| 2 | Ana Gomez | Notebook | 1 | 2.00 |
 
-Esta tabla mezcla información de clientes, pedidos y productos.
+This table mixes customer, order and product information.
+### **Step 1: separate products**
 
-### **Paso 1: separar productos**
-
-**Tabla `products`:**
-| id | nombre | precio_unitario |
+**`products` table:**
+| id | name | unit_price |
 |----|-----------|-----------------|
-| 1 | Lápiz | 0.50 |
-| 2 | Cuaderno | 2.00 |
+| 1 | Pencil | 0.50 |
+| 2 | Notebook | 2.00 |
 
-### **Paso 2: separar clientes**
+### **Step 2: Separate clients**
 
-**Tabla `customers`:**
-| id | nombre |
+**`customers` table:**
+| id | name |
 |----|-------------|
-| 1 | Ana Gómez |
+| 1 | Ana Gomez |
 
-### **Paso 3: registrar pedidos y detalles**
+### **Step 3: Record orders and details**
 
-**Tabla `orders`:**
+**`orders` table:**
 | id | customer_id |
 |----|-------------|
 | 1 | 1 |
 | 2 | 1 |
 
-**Tabla `order_details`:**
-| order_id | product_id | cantidad |
+**`order_details` table:**
+| order_id | product_id | quantity |
 |----------|------------|----------|
 | 1 | 1 | 2 |
 | 2 | 2 | 1 |
 
 ---
 
-[![Normalización de Tablas](https://img.youtube.com/vi/w0olqd2CxJI/0.jpg)](https://www.youtube.com/watch?v=w0olqd2CxJI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Table Normalization](https://img.youtube.com/vi/w0olqd2CxJI/0.jpg)](https://www.youtube.com/watch?v=w0olqd2CxJI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **4. Ventajas de la normalización**
+## **4. Advantages of standardization**
 
-- Evita la repetición innecesaria de datos.
-- Reduce el tamaño de la base de datos.
-- Facilita la modificación y actualización.
-- Mejora la consistencia de los datos.
-
----
-
-## **5. Cuándo no normalizar en exceso**
-
-Aunque la normalización es útil, **una base de datos demasiado fragmentada puede afectar al rendimiento**.
-
-En sistemas con muchas consultas de lectura, a veces se opta por una **desnormalización controlada** para reducir la cantidad de `JOIN` necesarios.
-
-Existen hasta una cuarta y quinta formas normales, pero no suelen ser necesarias salvo en casos muy concretos.
+- Avoid unnecessary repetition of data.
+- Reduces the size of the database.
+- Facilitates modification and updating.
+- Improves data consistency.
 
 ---
 
-## **6. Conclusión**
+## **5. When not to overnormalize**
 
-- La normalización organiza la información en varias tablas bien estructuradas.
-- Las tres primeras formas normales (1NF, 2NF y 3NF) cubren la mayoría de los casos prácticos.
-- Un buen diseño de base de datos comienza con una buena normalización.
+Although normalization is useful, **a database that is too fragmented can affect performance**.
+
+On systems with many read queries, **controlled denormalization** is sometimes chosen to reduce the number of `JOIN` required.
+
+There are even a fourth and fifth normal forms, but they are not usually necessary except in very specific cases.
 
 ---
 
-En el próximo tema aprenderemos a **insertar, actualizar y eliminar datos** usando sentencias SQL como `INSERT`, `UPDATE` y `DELETE`.
+## **6. Conclusion**
+
+- Normalization organizes information into several well-structured tables.
+- The first three normal forms (1NF, 2NF and 3NF) cover most practical cases.
+- Good database design starts with good normalization.
+
+---
+
+In the next topic we will learn how to **insert, update and delete data** using SQL statements like `INSERT`, `UPDATE` and `DELETE`.

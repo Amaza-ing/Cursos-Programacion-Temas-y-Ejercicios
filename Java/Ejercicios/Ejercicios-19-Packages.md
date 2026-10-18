@@ -1,25 +1,25 @@
-# Ejercicios - Tema 19: Packages
+# Exercises - Topic 19: Packages
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **packages**: crear estructura de carpetas, declaración `package`, uso de `import`, evitar _default package_, `package-private`, y un primer contacto con `static import`.
+Below you will find **10 practical exercises** on **packages**: creating folder structure, `package` declaration, use of `import`, avoiding _default package_, `package-private`, and a first contact with `static import`.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un package principal y un `Main`
+## Exercise 1: Create a main package and an `Main`
 
-Crea un proyecto con este package principal:
+Create a project with this main package:
 
 ```
 app
 ```
 
-Dentro, crea `Main.java` con:
+Inside, create `Main.java` with:
 
 - `package app;`
-- Un `main` que imprima `Hello packages`.
+- An `main` that prints `Hello packages`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app;
@@ -35,21 +35,21 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Crear `model` y una clase `User`
+## Exercise 2: Create `model` and an `User` class
 
-Crea el package:
+Create the package:
 
 ```
 app.model
 ```
 
-Dentro, crea `User.java` con:
+Inside, create `User.java` with:
 
 - `private String name`
-- Constructor `User(String name)`
-- Método `printInfo()` que imprima `User: name`
+- `User(String name)` Builder
+- `printInfo()` method that prints `User: name`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app.model;
@@ -71,13 +71,13 @@ public class User {
 
 ---
 
-## Ejercicio 3: Importar `User` desde `Main`
+## Exercise 3: Import `User` from `Main`
 
-Usando lo del ejercicio 2, en `Main.java` (package `app`) crea un `User` e imprime su info.
+Using exercise 2, in `Main.java` (package `app`) create an `User` and print its information.
 
-Debes usar `import`.
+You must use `import`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app;
@@ -96,12 +96,12 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Usar nombre completo sin `import`
+## Exercise 4: Use full name without `import`
 
-Repite el ejercicio 3, pero esta vez **no** uses `import`.  
-Crea el `User` usando el nombre completo de la clase (_fully qualified name_).
+Repeat exercise 3, but this time **do not** use `import`.  
+Create the `User` using the fully qualified name of the class.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app;
@@ -118,22 +118,22 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Dos clases con el mismo nombre en packages distintos
+## Exercise 5: Two classes with the same name in different packages
 
-Crea dos clases llamadas `Logger` en:
+Create two classes called `Logger` in:
 
 - `app.utils.Logger`
 - `app.service.Logger`
 
-Cada una debe tener un método `log(String message)` que imprima:
+Each must have an `log(String message)` method that prints:
 
 - `UTILS: message`
 - `SERVICE: message`
 
-En `Main`, crea una instancia de cada `Logger`.  
-Para evitar confusión, importa una y usa el nombre completo para la otra.
+In `Main`, create an instance of each `Logger`.  
+To avoid confusion, import one and use the full name for the other.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app.utils;
@@ -175,18 +175,18 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Clase `package-private` (sin modificador)
+## Exercise 6: `package-private` class (without modifier)
 
-Crea una clase `InternalValidator` en `app.model` sin `public` (package-private).
+Create a class `InternalValidator` in `app.model` without `public` (package-private).
 
-Debe tener un método `isValidName(String name)` que devuelva `true` si:
+You must have a method `isValidName(String name)` that returns `true` if:
 
-- no es `null`
-- no es blanca (`isBlank()`)
+- it is not `null`
+- it is not white (`isBlank()`)
 
-Luego, en `User` (mismo package `app.model`), crea un método `setName(String name)` que use `InternalValidator`.
+Then, in `User` (same package `app.model`), create a method `setName(String name)` that uses `InternalValidator`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app.model;
@@ -229,12 +229,12 @@ public class User {
 
 ---
 
-## Ejercicio 7: Probar que `package-private` no es accesible desde otro package
+## Exercise 7: Test that `package-private` is not accessible from another package
 
-Con el ejercicio 6 hecho, en `Main` (package `app`) intenta crear `InternalValidator`.  
-Debe fallar (no compila). Deja el código comentado.
+With exercise 6 done, in `Main` (package `app`) try to create `InternalValidator`.  
+It should fail (does not compile). Leave the code commented.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app;
@@ -255,22 +255,22 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Reorganizar estructura con `Refactor > Move` (teórico-práctico)
+## Exercise 8: Reorganize structure with `Refactor > Move` (theoretical-practical)
 
-Imagina que tienes una clase `Order` en `app.model`, pero quieres moverla a:
+Imagine you have a class `Order` in `app.model`, but you want to move it to:
 
 ```
 app.domain
 ```
 
-Escribe los cambios que deben ocurrir en el archivo `Order.java`:
+Write the changes that must occur to the `Order.java` file:
 
-1. Línea `package ...;` correcta
-2. Imports que cambian en las clases que usan `Order`
+1. Correct `package ...;` line
+2. Imports that change in classes that use `Order`
 
-No necesitas ejecutar nada: solo escribe el ejemplo de cómo quedaría.
+You don't need to execute anything: just write the example of how it would look.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 // Antes (en app.model)
@@ -300,22 +300,22 @@ import app.domain.Order;
 
 ---
 
-## Ejercicio 9: `import *` vs imports explícitos
+## Exercise 9: `import *` vs explicit imports
 
-Crea tres clases en `app.model`:
+Create three classes in `app.model`:
 
 - `User`
 - `Product`
 - `Order`
 
-En `Main`, escribe dos versiones:
+In `Main`, write two versions:
 
-1. Import explícito de las tres clases
-2. Import con comodín `import app.model.*;`
+1. Explicit import of the three classes
+2. Import with `import app.model.*;` wildcard
 
-No necesitas instanciar nada, solo mostrar cómo serían los imports.
+You don't need to instantiate anything, just show what the imports would be like.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 // Versión 1: imports explícitos
@@ -333,16 +333,16 @@ import app.model.*;
 
 ---
 
-## Ejercicio 10: `static import` con `Math`
+## Exercise 10: `static import` with `Math`
 
-En `Main`, calcula:
+In `Main`, calculate:
 
-- Área de un círculo de radio `r = 3` con `PI`
-- Raíz cuadrada de `81` con `sqrt`
+- Area of a circle of radius `r = 3` with `PI`
+- Square root of `81` with `sqrt`
 
-Usa `static import` para poder escribir `PI` y `sqrt(...)` sin `Math.`.
+Use `static import` to be able to write `PI` and `sqrt(...)` without `Math.`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 package app;

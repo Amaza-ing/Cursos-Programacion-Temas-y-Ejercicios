@@ -1,19 +1,19 @@
-# **Ejercicios - Tema 23: Users, Fetch y Context**
+# **Exercises - Topic 23: Users, Fetch and Context**
 
-A continuación, encontrarás **10 ejercicios prácticos** para trabajar la gestión de usuarios combinando **Context**, **Fetch** y consumo global de datos.
+Below, you will find **10 practical exercises** to work on user management combining **Context**, **Fetch** and global data consumption.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Crear `UsersContext`**
+## **Exercise 1: Create `UsersContext`**
 
-Crea un archivo `UsersContext.jsx` que:
+Create an `UsersContext.jsx` file that:
 
 - Use `createContext`.
-- Exporte el contexto por defecto.
+- Export the default context.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { createContext } from "react";
@@ -27,15 +27,15 @@ export default UsersContext;
 
 ---
 
-## **Ejercicio 2: Crear `UsersProvider` con estado**
+## **Exercise 2: Create `UsersProvider` with state**
 
-Crea `UsersProvider.jsx` que tenga:
+Create `UsersProvider.jsx` that has:
 
-- Estado `users` inicial `[]`.
-- Estado `isLoading`.
-- Estado `error`.
+- Initial `users` state `[]`.
+- `isLoading` status.
+- `error` status.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useState } from "react";
@@ -60,15 +60,15 @@ export default UsersProvider;
 
 ---
 
-## **Ejercicio 3: Fetch de usuarios en el Provider**
+## **Exercise 3: Fetch users in the Provider**
 
-Amplía `UsersProvider` para que:
+Extends `UsersProvider` so that:
 
-- Haga fetch a `https://jsonplaceholder.typicode.com/users`.
-- Se ejecute al montar.
-- Guarde los usuarios en estado.
+- Fetch `https://jsonplaceholder.typicode.com/users`.
+- Run when mounting.
+- Save users in status.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 useEffect(() => {
@@ -90,11 +90,11 @@ useEffect(() => {
 
 ---
 
-## **Ejercicio 4: Manejar errores en el fetch**
+## **Exercise 4: Handle errors in the fetch**
 
-Añade manejo de errores al fetch usando `try/catch`.
+Add error handling to the fetch using `try/catch`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 try {
@@ -111,11 +111,11 @@ try {
 
 ---
 
-## **Ejercicio 5: Envolver la app con `UsersProvider`**
+## **Exercise 5: Wrap the app with `UsersProvider`**
 
-Envuelve tu aplicación con `UsersProvider` en `App.jsx` o `main.jsx`.
+Wrap your application with `UsersProvider` in `App.jsx` or `main.jsx`.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 <UsersProvider>
@@ -127,14 +127,14 @@ Envuelve tu aplicación con `UsersProvider` en `App.jsx` o `main.jsx`.
 
 ---
 
-## **Ejercicio 6: Consumir usuarios desde Context**
+## **Exercise 6: Consume users from Context**
 
-Crea `UsersList.jsx` que:
+Create `UsersList.jsx` that:
 
 - Use `useContext(UsersContext)`.
-- Muestre `Loading...`, `Error` o la lista de usuarios.
+- Show `Loading...`, `Error` or the user list.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 import { useContext } from "react";
@@ -162,11 +162,11 @@ export default UsersList;
 
 ---
 
-## **Ejercicio 7: Añadir una función al Context**
+## **Exercise 7: Add a function to the Context**
 
-Amplía el Context para incluir una función `addUser`.
+Extends the Context to include an `addUser` function.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const addUser = (newUser) => {
@@ -180,14 +180,14 @@ const addUser = (newUser) => {
 
 ---
 
-## **Ejercicio 8: Usar la función del Context**
+## **Exercise 8: Use the Context function**
 
-Crea un componente `AddUser.jsx` que:
+Create an `AddUser.jsx` component that:
 
-- Use `addUser` desde el Context.
-- Añada un usuario ficticio al pulsar un botón.
+- Use `addUser` from the Context.
+- Add a dummy user when you press a button.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const newUser = { id: Date.now(), name: "New user" };
@@ -198,15 +198,15 @@ addUser(newUser);
 
 ---
 
-## **Ejercicio 9: Detalle de usuario sin nuevo fetch**
+## **Exercise 9: User detail without new fetch**
 
-Crea `UserDetail.jsx` que:
+Create `UserDetail.jsx` that:
 
-- Lea `id` desde `useParams`.
-- Busque el usuario en `users` del Context.
-- Muestre su nombre.
+- Read `id` from `useParams`.
+- Find the user in `users` of the Context.
+- Show your name.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```js
 const user = users.find((u) => u.id === Number(id));
@@ -216,13 +216,13 @@ const user = users.find((u) => u.id === Number(id));
 
 ---
 
-## **Ejercicio 10: Ventajas de Fetch + Context**
+## **Exercise 10: Advantages of Fetch + Context**
 
-Explica dos ventajas de hacer el fetch dentro del Provider.
+Explain two advantages of doing the fetch within the Provider.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-- El fetch se realiza una sola vez.
-- Los datos se comparten globalmente sin repetir lógica.
+- The fetch is done only once.
+- Data is shared globally without repeating logic.
 
 </details>

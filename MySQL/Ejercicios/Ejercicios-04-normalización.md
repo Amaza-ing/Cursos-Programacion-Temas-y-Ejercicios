@@ -1,56 +1,56 @@
-# **Ejercicios - Tema 4: Normalización de Tablas en MySQL**
+# **Exercises - Topic 4: Normalization of Tables in MySQL**
 
-A continuación, encontrarás 4 ejercicios prácticos sobre normalización de bases de datos. Intenta resolverlos antes de consultar la solución.
+Below you will find 4 practical exercises on database normalization. Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Detectar violaciones de 1NF**
+### **Exercise 1: Detect 1NF violations**
 
-Analiza la siguiente tabla y explica por qué no está en Primera Forma Normal (1NF). Luego, propón una versión normalizada.
+Analyze the following table and explain why it is not in First Normal Form (1NF). Then, propose a standardized version.
 
-| id  | nombre | correos                 |
+| id | name | emails |
 | --- | ------ | ----------------------- |
-| 1   | Elena  | elena@mail.com; e@x.com |
+| 1 | Elena | elena@mail.com; e@x.com |
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-La columna `correos` contiene múltiples valores en una sola celda, lo cual viola la 1NF.
+The `correos` column contains multiple values in a single cell, which violates 1NF.
 
-**Solución (normalizada):**
+**Solution (normalized):**
 
-| id  | nombre | correo         |
+| id | name | mail |
 | --- | ------ | -------------- |
-| 1   | Elena  | elena@mail.com |
-| 1   | Elena  | e@x.com        |
+| 1 | Elena | elena@mail.com |
+| 1 | Elena | e@x.com |
 
 </details>
 
 ---
 
-### **Ejercicio 2: Separar datos según 2NF**
+### **Exercise 2: Separate data according to 2NF**
 
-Observa la siguiente tabla:
+Observe the following table:
 
-| profesor_id | curso_id | profesor_nombre |
+| teacher_id | course_id | teacher_name |
 | ----------- | -------- | --------------- |
-| 1           | 101      | Juan Ortega     |
-| 1           | 102      | Juan Ortega     |
+| 1 | 101 | Juan Ortega |
+| 1 | 102 | Juan Ortega |
 
-¿Viola la Segunda Forma Normal? Si es así, normaliza la estructura.
+Does it violate Second Normal Form? If so, normalize the structure.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Sí. `profesor_nombre` depende solo de `profesor_id`, no del conjunto `(profesor_id, curso_id)`.
+Yes. `profesor_nombre` depends only on `profesor_id`, not on the `(profesor_id, curso_id)` set.
 
-**Solución:**
+**Solution:**
 
-**Tabla `teachers`:**
-| profesor_id | profesor_nombre |
+**`teachers` table:**
+| teacher_id | teacher_name |
 |-------------|------------------|
 | 1 | Juan Ortega |
 
-**Tabla `teaching`:**
-| profesor_id | curso_id |
+**`teaching` table:**
+| teacher_id | course_id |
 |-------------|-----------|
 | 1 | 101 |
 | 1 | 102 |
@@ -59,71 +59,71 @@ Sí. `profesor_nombre` depende solo de `profesor_id`, no del conjunto `(profesor
 
 ---
 
-### **Ejercicio 3: Eliminar dependencia transitiva (3NF)**
+### **Exercise 3: Eliminate transitive dependency (3NF)**
 
-Analiza esta tabla:
+Analyze this table:
 
-| cliente_id | nombre_cliente | ciudad    | país   |
+| client_id | customer_name | city ​​| country |
 | ---------- | -------------- | --------- | ------ |
-| 1          | Ana Rivas      | Madrid    | España |
-| 2          | Laura Vázquez  | Barcelona | España |
+| 1 | Ana Rivas | Madrid | Spain |
+| 2 | Laura Vazquez | Barcelona | Spain |
 
-¿Qué problema de 3NF puedes identificar? Propón la normalización.
+What 3NF problem can you identify? Propose normalization.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-`país` depende de `ciudad`, no directamente de `cliente_id`. Esto es una dependencia transitiva.
+`país` depends on `ciudad`, not directly on `cliente_id`. This is a transitive dependency.
 
-**Solución:**
+**Solution:**
 
-**Tabla `cities`:**
-| ciudad_id | ciudad | país |
-|-----------|-----------|---------|
-| 1 | Madrid | España |
-| 2 | Barcelona | España |
+**`cities` table:**
+| city_id | city ​​| country |
+|-----------|------------|---------|
+| 1 | Madrid | Spain |
+| 2 | Barcelona | Spain |
 
-**Tabla `customers`:**
-| cliente_id | nombre_cliente | ciudad_id |
+**`customers` table:**
+| client_id | customer_name | city_id |
 |------------|----------------|-----------|
 | 1 | Ana Rivas | 1 |
-| 2 | Laura Vázquez | 2 |
+| 2 | Laura Vazquez | 2 |
 
 </details>
 
 ---
 
-### **Ejercicio 4: Normalizar una tabla de pedidos**
+### **Exercise 4: Normalize an order table**
 
-Dada la siguiente tabla:
+Given the following table:
 
-| pedido_id | cliente     | producto   | cantidad | precio_unitario |
+| order_id | client | product | quantity | unit_price |
 | --------- | ----------- | ---------- | -------- | --------------- |
-| 1         | Pedro Núñez | Bolígrafo  | 3        | 0.75            |
-| 2         | Pedro Núñez | Carpeta A4 | 2        | 1.50            |
+| 1 | Pedro Núñez | Pen | 3 | 0.75 |
+| 2 | Pedro Núñez | A4 folder | 2 | 1.50 |
 
-Diseña un modelo normalizado en al menos tres tablas.
+Design a normalized model in at least three tables.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-**Tabla `customers`:**
-| id | nombre |
+**`customers` table:**
+| id | name |
 |----|--------------|
 | 1 | Pedro Núñez |
 
-**Tabla `products`:**
-| id | nombre | precio_unitario |
+**`products` table:**
+| id | name | unit_price |
 |----|--------------|------------------|
-| 1 | Bolígrafo | 0.75 |
-| 2 | Carpeta A4 | 1.50 |
+| 1 | Pen | 0.75 |
+| 2 | A4 folder | 1.50 |
 
-**Tabla `orders`:**
+**`orders` table:**
 | id | customer_id |
 |----|-------------|
 | 1 | 1 |
 | 2 | 1 |
 
-**Tabla `order_details`:**
-| order_id | product_id | cantidad |
+**`order_details` table:**
+| order_id | product_id | quantity |
 |----------|------------|----------|
 | 1 | 1 | 3 |
 | 2 | 2 | 2 |

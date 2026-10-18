@@ -1,34 +1,36 @@
-# **Tema 2: Componentes en Angular**
+# **Topic 2: Components in Angular**
 
-## **1. ¿Qué es un componente en Angular?**
+## **1. What is a component in Angular?**
 
-Un componente es la unidad fundamental de una aplicación Angular. Cada componente define una parte de la interfaz de usuario y su comportamiento.
+A component is the fundamental unit of an Angular application. Each component defines a part of the user interface and its behavior.
 
-### **Estructura de un componente**
+### **Structure of a component**
 
-Un componente en Angular está compuesto por tres partes principales:
+A component in Angular is made up of three main parts:
 
-- **Template (`.html`)**: Define la estructura visual del componente.
-- **Estilos (`.css` o `.scss`)**: Contiene las reglas de diseño del componente.
-- **Clase TypeScript (`.ts`)**: Contiene la lógica y comportamiento del componente.
+- **Template (`.html`)**: Defines the visual structure of the component.
+- **Styles (`.css` or `.scss`)**: Contains the design rules of the component.
+- **TypeScript class (`.ts`)**: Contains the logic and behavior of the component.
 
 ---
 
-## **2. Creación de un componente**
+## **2. Creating a component**
 
-Para crear un nuevo componente en Angular, por ejemplo un componente para un menú que se llame menu, usa el siguiente comando:
+To create a new component in Angular, for example a component for a menu called menu, use the following command:
 
 ```sh
 ng generate component components/menu
 ```
 
-O en su versión abreviada:
+
+Or in its abbreviated version:
 
 ```sh
 ng g c components/menu
 ```
 
-Este comando generará una nueva carpeta dentro de `src/app/components` con los siguientes archivos (y otros que no son importantes para empezar):
+
+This command will generate a new folder inside `src/app/components` with the following files (and others that are not important to begin with):
 
 ```
 menu/
@@ -38,17 +40,19 @@ menu/
 │── menu.component.spec.ts # Pruebas unitarias del componente
 ```
 
+
 ---
 
-## **3. Uso de un componente**
+## **3. Using a component**
 
-Para usar un componente en otro lugar de la aplicación, agrégalo en la plantilla HTML de otro componente de la siguiente manera:
+To use a component elsewhere in the application, add it in the HTML template of another component as follows:
 
 ```html
 <app-menu></app-menu>
 ```
 
-Y asegúrate de que se ha importado en el .ts del componente padre:
+
+And make sure it has been imported into the parent component's .ts:
 
 ```ts
 import { MenuComponent } from "./components/menu/menu.component";
@@ -60,7 +64,8 @@ import { MenuComponent } from "./components/menu/menu.component";
 })
 ```
 
-El selector del componente está definido en el archivo `menu.component.ts`
+
+The component selector is defined in the file `menu.component.ts`
 
 ```ts
 @Component({
@@ -69,23 +74,24 @@ El selector del componente está definido en el archivo `menu.component.ts`
 })
 ```
 
----
-
-[![Componentes](https://img.youtube.com/vi/K_6ixeC7GbM/0.jpg)](https://www.youtube.com/watch?v=K_6ixeC7GbM&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-## **4. Uso de variables y data-binding en Angular**
+[![Components](https://img.youtube.com/vi/K_6ixeC7GbM/0.jpg)](https://www.youtube.com/watch?v=K_6ixeC7GbM&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
-### **Variables en un componente**
+---
 
-En Angular, podemos definir variables dentro de la clase del componente para almacenar y manipular datos. Estas variables pueden ser utilizadas en la plantilla para mostrar información o reaccionar a eventos.
+## **4. Using variables and data-binding in Angular**
 
-Como en Angular trabajamos con TypeScript, todas las variables tienen que estar correctamente tipadas.
+### **Variables in a component**
 
-[![Tipado de Datos en TypeScript](https://img.youtube.com/vi/r7HrKb2-nDk/0.jpg)](https://www.youtube.com/watch?v=r7HrKb2-nDk&list=PLzA2VyZwsq__tcg5_rW6Ozp4hLYzrtXGX)
+In Angular, we can define variables inside the component class to store and manipulate data. These variables can be used in the template to display information or react to events.
 
-Ejemplo de definición de variables en el archivo `menu.component.ts`:
+Since in Angular we work with TypeScript, all variables have to be correctly typed.
+
+[![Data Typing in TypeScript](https://img.youtube.com/vi/r7HrKb2-nDk/0.jpg)](https://www.youtube.com/watch?v=r7HrKb2-nDk&list=PLzA2VyZwsq__tcg5_rW6Ozp4hLYzrtXGX)
+
+Example of defining variables in the `menu.component.ts` file:
 
 ```ts
 import { Component } from "@angular/core";
@@ -101,43 +107,46 @@ export class MenuComponent {
 }
 ```
 
----
-
-### **Data Binding en Angular**
-
-El data-binding en Angular permite sincronizar los datos entre el modelo (clase TypeScript) y la vista (template HTML). Hay cuatro tipos principales de data-binding:
-
-1. **Interpolación (`{{ }}`)**: Se utiliza para mostrar valores dentro de la plantilla HTML.
-2. **Binding de propiedad (`[property]`)**: Permite asignar valores a los atributos HTML desde el componente.
 
 ---
 
-### **1. Interpolación**
+### **Data Binding in Angular**
 
-La interpolación permite mostrar valores de variables en el HTML utilizando `{{ }}`.
+Data-binding in Angular allows data to be synchronized between the model (TypeScript class) and the view (HTML template). There are four main types of data-binding:
 
-Ejemplo en `menu.component.html`:
+1. **Interpolation (`{{ }}`)**: Used to display values within the HTML template.
+2. **Property binding (`[property]`)**: Allows you to assign values to HTML attributes from the component.
+
+---
+
+### **1. Interpolation**
+
+Interpolation allows you to display variable values in the HTML using `{{ }}`.
+
+Example in `menu.component.html`:
 
 ```html
 <h1>{{ title }}</h1>
 ```
 
-En este ejemplo:
-`{{ title }}` muestra el valor de la variable `title`.
+
+In this example:
+`{{ title }}` displays the value of the `title` variable.
 
 ---
 
-### **2. Binding de propiedad (`[property]`)**
+### **2. Property Binding (`[property]`)**
 
-Permite asignar valores dinámicos a propiedades HTML.
+Allows you to assign dynamic values to HTML properties.
 
-Ejemplo en `menu.component.html`:
+Example in `menu.component.html`:
 
 ```html
 <img [src]="image" alt="Menú" />
 ```
 
-Ejemplo en `menu.component.ts`:
+
+Example in `menu.component.ts`:
 
 ```ts
 export class MenuComponent {
@@ -145,14 +154,14 @@ export class MenuComponent {
 }
 ```
 
-Aquí, el valor de `src` en la imagen se obtiene desde la variable `image` del componente.
 
-> Nota: Las imágenes y otros assets se suelen guardar en la carpeta `public` así que las rutas empiezan desde esta carpeta. No es correcto escribir la ruta como `public/assets/imagen.png` hay que escribirla como `assets/imagen.png`.
+Here, the value of `src` in the image is obtained from the variable `image` of the component.
+
+> Note: Images and other assets are usually saved in the `public` folder so the paths start from this folder. It is not correct to write the path as `public/assets/imagen.png`, you must write it as `assets/imagen.png`.
+
+---
+[![Variables in Angular](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-[![Variables en Angular](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
-
----
-
-En el siguiente tema veremos cómo trabajar con eventos y con data binding bidireccional usando `ngModel`.
+In the next topic we will see how to work with events and bidirectional data binding using `ngModel`.

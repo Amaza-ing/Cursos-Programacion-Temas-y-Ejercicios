@@ -1,59 +1,59 @@
-# **Tema 11: Props Padre a Hijo**
+# **Topic 11: Props Father to Son**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Hasta ahora hemos creado componentes y hemos renderizado listas, pero todavía falta algo esencial para construir interfaces reales: **pasar datos entre componentes**.
+So far we've created components and rendered lists, but we're still missing something essential to building real interfaces: **passing data between components**.
 
-En React, los datos normalmente “bajan” desde componentes padres hacia componentes hijos. Esta comunicación se hace mediante **props**.
+In React, data typically “flows down” from parent components to child components. This communication is done through **props**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué son las props y para qué sirven.
-- Cómo pasar props de un componente padre a uno hijo.
-- Cómo leer props en el componente hijo.
-- Cómo usar `props` con destructuring.
-- Buenas prácticas y errores típicos.
-
----
-
-## **2. ¿Qué son las props?**
-
-**Props** (properties) son valores que un componente recibe desde fuera.
-
-- Un componente **padre** envía datos.
-- Un componente **hijo** los recibe.
-- El hijo no debería modificar esas props.
-
-Piensa en un componente como una función:
-
-- Le pasas argumentos.
-- Devuelve un resultado.
-
-En React:
-
-- Le pasas props.
-- Devuelve JSX.
+- What props are and what they are for.
+- How to pass props from a parent component to a child component.
+- How to read props in the child component.
+- How to use `props` with destructuring.
+- Good practices and typical errors.
 
 ---
 
-## **3. Pasar props desde el padre**
+## **2. What are props?**
 
-Para pasar props, escribes atributos en el componente hijo:
+**Props** (properties) are values that a component receives from outside.
+
+- A **parent** component sends data.
+- A **child** component receives them.
+- The son should not modify those props.
+
+Think of a component as a function:
+
+- You pass him arguments.
+- Returns a result.
+
+In React:
+
+- You pass him props.
+- Returns JSX.
+
+---
+
+## **3. Pass props from parent**
+
+To pass props, you write attributes to the child component:
 
 ```js
 <UserCard name="Alex" role="Admin" />
 ```
 
-Aquí:
+Here:
 
-- `name` y `role` son props.
-- Sus valores se envían desde el padre.
+- `name` and `role` are props.
+- Its values ​​are sent from the parent.
 
 ---
 
-## **4. Recibir props en el hijo**
+## **4. Receive props on child**
 
-### **4.1. Forma 1: Recibir `props` como objeto**
+### **4.1. Way 1: Receive `props` as an object**
 
 ```js
 function UserCard(props) {
@@ -68,11 +68,11 @@ function UserCard(props) {
 export default UserCard;
 ```
 
-Esta forma funciona, pero cuando hay muchas props puede ser menos cómoda.
+This way works, but when there are many props it can be less comfortable.
 
 ---
 
-### **4.2. Forma 2: Destructuring (recomendado)**
+### **4.2. Way 2: Destructuring (recommended)**
 
 ```js
 function UserCard({ name, role }) {
@@ -87,14 +87,14 @@ function UserCard({ name, role }) {
 export default UserCard;
 ```
 
-Ventajas:
+Advantages:
 
-- Código más limpio.
-- No repites `props.`.
+- Cleaner code.
+- Do not repeat `props.`.
 
 ---
 
-## **5. Ejemplo completo: Padre → Hijo**
+## **5. Complete example: Father → Son**
 
 ### **5.1. `UserCard.jsx`**
 
@@ -128,19 +128,19 @@ function App() {
 export default App;
 ```
 
-Observa que:
+Note that:
 
-- `App` es el padre.
-- `UserCard` es el hijo.
-- El padre reutiliza el mismo componente con distintos valores.
+- `App` is the parent.
+- `UserCard` is the son.
+- The parent reuses the same component with different values.
 
 ---
 
-## **6. Pasar valores dinámicos (variables) como props**
+## **6. Pass dynamic values (variables) as props**
 
-No siempre pasarás strings “a mano”. Lo normal es pasar variables.
+You will not always pass strings “by hand”. The normal thing is to pass variables.
 
-Ejemplo:
+Example:
 
 ```js
 function App() {
@@ -151,36 +151,36 @@ function App() {
 }
 ```
 
-Aquí:
+Here:
 
-- Las llaves `{}` indican que estás pasando una **expresión JavaScript**.
-- No se ponen comillas.
+- The `{}` braces indicate that you are passing a **JavaScript expression**.
+- There are no quotes.
 
 ---
 
-## **7. Pasar números, booleanos y objetos**
+## **7. Pass numbers, booleans and objects**
 
-Las props pueden ser de cualquier tipo.
+Props can be of any type.
 
-### **7.1. Número**
+### **7.1. Number**
 
 ```js
 <ProductPrice price={19} />
 ```
 
-### **7.2. Booleano**
+### **7.2. Boolean**
 
 ```js
 <Badge isNew={true} />
 ```
 
-En booleanos, puedes usar la versión corta:
+In booleans, you can use the short version:
 
 ```js
 <Badge isNew />
 ```
 
-### **7.3. Objeto**
+### **7.3. Object**
 
 ```js
 const user = { name: "Leo", role: "User" };
@@ -190,11 +190,11 @@ const user = { name: "Leo", role: "User" };
 
 ---
 
-## **8. Props y listas (patrón muy común)**
+## **8. Props and lists (very common pattern)**
 
-Un caso típico: renderizas una lista y pasas cada item como props a un componente.
+A typical case: you render a list and pass each item as props to a component.
 
-### **8.1. Componente hijo `TaskItem.jsx`**
+### **8.1. Child component `TaskItem.jsx`**
 
 ```js
 function TaskItem({ text, done }) {
@@ -208,7 +208,7 @@ function TaskItem({ text, done }) {
 export default TaskItem;
 ```
 
-### **8.2. Componente padre `TasksList.jsx`**
+### **8.2. Parent component `TasksList.jsx`**
 
 ```js
 import TaskItem from "./TaskItem";
@@ -231,24 +231,24 @@ function TasksList() {
 export default TasksList;
 ```
 
-Aquí:
+Here:
 
-- El `key` va en el componente que se repite.
-- El resto de datos se pasan como props.
+- The `key` goes in the repeating component.
+- The rest of the data is passed as props.
 
 ---
 
-## **9. Errores típicos**
+## **9. Typical errors**
 
-### **9.1. Olvidar las llaves en valores dinámicos**
+### **9.1. Forgetting braces in dynamic values**
 
-Incorrecto:
+Incorrect:
 
 ```js
 <UserCard name=userName />
 ```
 
-Correcto:
+Correct:
 
 ```js
 <UserCard name={userName} />
@@ -256,11 +256,11 @@ Correcto:
 
 ---
 
-### **9.2. Intentar modificar props en el hijo**
+### **9.2. Try to modify props in the child**
 
-Las props son de solo lectura.
+Props are read-only.
 
-Incorrecto:
+Incorrect:
 
 ```js
 function UserCard({ name }) {
@@ -269,30 +269,30 @@ function UserCard({ name }) {
 }
 ```
 
-Si necesitas cambiar algo, eso suele indicar que debe ser **estado** (useState) o que el padre debe enviar valores distintos.
+If you need to change something, that usually indicates that it should be **state** (useState) or that the parent should send different values.
 
 ---
 
-## **10. Buenas prácticas**
+## **10. Good practices**
 
-- Nombra props con intención: `title`, `isOpen`, `price`.
-- Mantén los componentes hijos lo más “presentacionales” posible.
-- Usa destructuring cuando el componente reciba varias props.
-- Si pasas muchas props, quizá necesites reorganizar componentes (o usar Context más adelante).
-
----
-
-## **11. A tener en cuenta**
-
-- Props = datos que un padre envía a un hijo.
-- El flujo habitual es de arriba a abajo.
-- Las props no se modifican en el hijo.
-- Puedes pasar cualquier tipo de dato.
+- Name props with intention: `title`, `isOpen`, `price`.
+- Keep child components as “presentational” as possible.
+- Use destructuring when the component receives multiple props.
+- If you pass a lot of props, you may need to reorganize components (or use Context later).
 
 ---
 
-[![Props Padre a Hijo](https://img.youtube.com/vi/N-uDcR4t9Yk/0.jpg)](https://www.youtube.com/watch?v=N-uDcR4t9Yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+## **11. To take into account**
+
+- Props = data that a parent sends to a child.
+- The usual flow is from top to bottom.
+- The props are not modified in the child.
+- You can pass any type of data.
 
 ---
 
-En el próximo tema veremos **`className` y `htmlFor`**, dos atributos clave en React cuando trabajas con CSS y formularios.
+[![Props Father to Son](https://img.youtube.com/vi/N-uDcR4t9Yk/0.jpg)](https://www.youtube.com/watch?v=N-uDcR4t9Yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we will look at **`className` and `htmlFor`**, two key attributes in React when working with CSS and forms.

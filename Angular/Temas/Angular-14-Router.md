@@ -1,25 +1,25 @@
-# **Tema 14: Uso del Router en Angular para Crear Rutas en una SPA**
+# **Topic 14: Using the Router in Angular to Create Routes in a SPA**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, el **Router** permite gestionar la navegación dentro de una aplicación de una sola página (**SPA**, _Single Page Application_). En lugar de recargar la página, Angular cambia dinámicamente los componentes según la URL.
+In Angular, the **Router** allows you to manage navigation within a single page application (**SPA**, _Single Page Application_). Instead of reloading the page, Angular dynamically changes components based on the URL.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo configurar el `Router` en Angular.
-- Cómo definir rutas y navegar entre ellas.
-- Cómo usar `RouterLink` para crear enlaces dinámicos.
-- Cómo manejar rutas dinámicas con parámetros.
+- How to configure `Router` in Angular.
+- How to define routes and navigate between them.
+- How to use `RouterLink` to create dynamic links.
+- How to handle dynamic routes with parameters.
 
 ---
 
-## **2. Configuración del Router en Angular**
+## **2. Router Configuration in Angular**
 
-### **2.1. Abrir `app.routes.ts` y Definir Rutas**
+### **2.1. Open `app.routes.ts` and Define Routes**
 
-Angular permite definir rutas en el archivo `app.routes.ts` sin necesidad de un módulo separado.
+Angular allows you to define routes in the `app.routes.ts` file without needing a separate module.
 
-#### **Archivo: `app.routes.ts`**
+#### **File: `app.routes.ts`**
 
 ```ts
 import { Routes } from "@angular/router";
@@ -33,19 +33,20 @@ export const routes = [
 ];
 ```
 
-Aquí:
 
-- Se definen rutas para `/` (Home) y `/about` (About).
-- Para que esto funcione los componentes Home y About deben existir.
-- Una manera de organizar estos componentes es crearlos en la carpeta `app/pages` en lugar de en `app/components`.
+Here:
+
+- Routes are defined for `/` (Home) and `/about` (About).
+- For this to work the Home and About components must exist.
+- One way to organize these components is to create them in the `app/pages` folder instead of `app/components`.
 
 ---
 
-## **3. Creación de Componentes para las Rutas**
+## **3. Creation of Components for Routes**
 
-Cada ruta debe estar asociada a un componente. Cada ruta representará una página de nuestra web, y cada componente se renderizará en la ruta adecuada.
+Each route must be associated with a component. Each route will represent a page on our website, and each component will be rendered in the appropriate route.
 
-#### **Archivo: `home.component.ts`**
+#### **File: `home.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -56,7 +57,8 @@ import { Component } from "@angular/core";
 export class HomeComponent {}
 ```
 
-#### **Archivo: `about.component.ts`**
+
+#### **File: `about.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -67,13 +69,14 @@ import { Component } from "@angular/core";
 export class AboutComponent {}
 ```
 
+
 ## **4. Router Outlet**
 
-Para que estas páginas se rendericen necesitamos usar el componente `<router-outlet>` y añadir `RouterOutlet` a los imports.
+For these pages to render we need to use the `<router-outlet>` component and add `RouterOutlet` to the imports.
 
-Este se encontrará habitualmente en el componente raíz `app.component.html`. Y normalmente es lo único que hay en el html del componente raíz.
+This will usually be found in the `app.component.html` root component. And usually it's the only thing in the html of the root component.
 
-#### **Archivo: `app.component.ts`**
+#### **File: `app.component.ts`**
 
 ```ts
 @Component({
@@ -82,13 +85,15 @@ Este se encontrará habitualmente en el componente raíz `app.component.html`. Y
 })
 ```
 
-#### **Archivo: `app.component.html`**
+
+#### **File: `app.component.html`**
 
 ```html
 <router-outlet></router-outlet>
 ```
 
-Podemos pensar en el `<router-outlet>` como en una especie de televisión, que muestra una imagen u otra al cambiar de canal, sólo que aquí renderizará una página u otra al cambiar de ruta.
+
+We can think of the `<router-outlet>` as a kind of television, which shows one image or another when changing channels, only here it will render one page or another when changing routes.
 
 ---
 
@@ -96,15 +101,15 @@ Podemos pensar en el `<router-outlet>` como en una especie de televisión, que m
 
 ---
 
-## **5. Navegación con `RouterLink`**
+## **5. Navigation with `RouterLink`**
 
-Como nuestra web puede tener varias páginas, necesitamos enlaces internos para navegar entre ellas y no depender de escribir la ruta en la barra de direcciones del navegador.
+As our website can have several pages, we need internal links to navigate between them and not depend on typing the path in the browser's address bar.
 
-Angular proporciona `RouterLink` para crear estos enlaces y navegar entre páginas sin recargar la aplicación.
+Angular provides `RouterLink` to create these links and navigate between pages without reloading the application.
 
-Para usar `RouterLink` tenemos que importarlo en el componente donde queramos usarlo.
+To use `RouterLink` we have to import it into the component where we want to use it.
 
-#### **Archivo: `header.component.ts`**
+#### **File: `header.component.ts`**
 
 ```ts
 import { RouterLink } from '@angular/router';
@@ -117,7 +122,8 @@ export class HeaderComponent {
 }
 ```
 
-#### **Archivo: `header.component.html`**
+
+#### **File: `header.component.html`**
 
 ```html
 <header>
@@ -128,7 +134,8 @@ export class HeaderComponent {
 </header>
 ```
 
-Aquí `routerLink` define enlaces internos sin recargar la página.
+
+Here `routerLink` defines internal links without reloading the page.
 
 ---
 
@@ -136,31 +143,31 @@ Aquí `routerLink` define enlaces internos sin recargar la página.
 
 ---
 
-## **6. Rutas con Parámetros Dinámicos**
+## **6. Routes with Dynamic Parameters**
 
-Es posible definir rutas con parámetros para mostrar información dinámica. Así se puede reutilizar un componente con distinta información muchas veces.
+It is possible to define routes with parameters to display dynamic information. This way a component with different information can be reused many times.
 
-Imagina que quieres crear una galería de imágenes o una red social, no querrías crear un componente para cada imagen individual ni tampoco un componente para cada usuario. Lo ideal es crear un sólo componente y a partir de un parámetro (id de una foto, o el nombre de usuario) obtener toda la información necesaria para mostrarla en la página.
+Imagine you want to create an image gallery or a social network, you wouldn't want to create a component for each individual image nor a component for each user. The ideal is to create a single component and from a parameter (id of a photo, or username) obtain all the necessary information to display it on the page.
+### **6.1. Define a Route with Parameters**
 
-### **6.1. Definir una Ruta con Parámetros**
+To define a parametric route we must do the same as before, add a route to the `app.routes.ts` file and specify a parameter in that route.
 
-Para definir una ruta paramétrica debemos hacer lo mismo que antes, añadir una ruta en el fichero `app.routes.ts` y especificar un parámetro en esa ruta.
-
-#### **Archivo: `app.routes.ts` (Añadir una Ruta con Parámetro)**
+#### **File: `app.routes.ts` (Add a Route with Parameter)**
 
 ```ts
 const routes = [{ path: "profile/:id", component: ProfileComponent }];
 ```
 
-Aquí `:id` representa a una variable `id` que puede obtener cualquier valor en la ruta. Se deben poner los dos puntos (:) para especificar el parámetro de ruta.
 
-### **6.2. Capturar Parámetros en un Componente**
+Here `:id` represents an `id` variable that can get any value in the path. A colon (:) must be used to specify the route parameter.
 
-Una vez tenemos una ruta paramétrica podemos obtener el parámetro de ruta para después utilizarlo para buscar la información que queremos (por ejemplo obtener la información de un usuario a partir de su nombre de usuario haciendo una consulta en una base de datos o una API).
+### **6.2. Capture Parameters in a Component**
 
-Para eso tenemos que importar `ActivatedRoute` y utilizar `this.route.snapshot.paramMap.get("id")` donde `id` puede ser cualquier nombre que hayamos puesto al parámetro y `route` el nombre de la variable que contiene toda la información de la ruta. Esta variable hay que inyectarla en el constructor.
+Once we have a parametric route we can obtain the route parameter and then use it to search for the information we want (for example, obtain a user's information from their username by making a query in a database or an API).
 
-#### **Archivo: `profile.component.ts`**
+For that we have to import `ActivatedRoute` and use `this.route.snapshot.paramMap.get("id")` where `id` can be any name that we have given to the parameter and `route` the name of the variable that contains all the route information. This variable must be injected into the constructor.
+
+#### **File: `profile.component.ts`**
 
 ```ts
 import { ActivatedRoute } from "@angular/router";
@@ -178,50 +185,54 @@ export class ProfileComponent {
 }
 ```
 
----
-
-[![Rutas Paramétricas](https://img.youtube.com/vi/tAa4P8a__uQ/0.jpg)](https://www.youtube.com/watch?v=tAa4P8a__uQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-### **6.3. Enlazar a una Ruta con Parámetros**
+[![Parametric Routes](https://img.youtube.com/vi/tAa4P8a__uQ/0.jpg)](https://www.youtube.com/watch?v=tAa4P8a__uQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
-#### **Archivo: `app.component.html`**
+---
+
+### **6.3. Link to a Route with Parameters**
+
+#### **File: `app.component.html`**
 
 ```html
 <a routerLink="/profile/1">Ver Perfil de Usuario 1</a>
 ```
 
-**O usando variables:**
+
+**Or using variables:**
 
 ```html
 <a [routerLink]="routePath">Ver Perfil de Usuario 1</a>
 ```
 
-**O sin usar '/' desde una ruta específica:**
 
-Si añadimos un enlace desde un componente que se está renderizando en una ruta concreta, al añadir `[routerLink]` con cualquier valor sin usar "/" iremos a la ruta en la que estuviéramos / el valor que añadamos.
+**Or without using '/' from a specific path:**
 
-Por ejemplo, desde un componente que se renderiza en la ruta `/profile`.
+If we add a link from a component that is being rendered in a specific path, adding `[routerLink]` with any value without using "/" will go to the path we were on / the value we added.
+
+For example, from a component that renders to path `/profile`.
 
 ```html
 <a [routerLink]="user.id">Ver Perfil de Usuario 1</a>
 ```
 
-Si `user.id` es igual a 1, esto nos llevaría a `/profile/1`.
 
-**Aquí:**
+If `user.id` is equal to 1, this would take us to `/profile/1`.
 
-- `:id` es un parámetro dinámico que se captura en `ProfileComponent`.
-- `routerLink="/profile/1"` crea un enlace dinámico a `/profile/1`.
+**Here:**
+
+- `:id` is a dynamic parameter that is captured in `ProfileComponent`.
+- `routerLink="/profile/1"` creates a dynamic link to `/profile/1`.
 
 ---
 
-## **7. Redirecciones y Rutas 404**
+## **7. Redirects and 404 Routes**
 
-Podemos definir rutas por defecto y manejar rutas inexistentes.
+We can define default routes and handle non-existent routes.
 
-#### **Archivo: `main.ts`**
+#### **File: `main.ts`**
 
 ```ts
 const routes = [
@@ -231,30 +242,31 @@ const routes = [
 ];
 ```
 
-Aquí:
 
-- `redirectTo: ''` redirige cualquier ruta inexistente a `/` (Home).
-- Podemos crear cualquier otro componente, como una página de Error, para redirgir allí en lugar de a la Home.
+Here:
 
----
-
-## **8. Rutas y servicios**
-
-Si mezclamos las rutas con los servicios podemos compartir información entre páginas (componentes) de una manera sencilla.
+- `redirectTo: ''` redirects any non-existent routes to `/` (Home).
+- We can create any other component, such as an Error page, to redirect there instead of to the Home.
 
 ---
 
-[![Rutas y Servicios](https://img.youtube.com/vi/QBLDZE0nzng/0.jpg)](https://www.youtube.com/watch?v=QBLDZE0nzng&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+## **8. Routes and services**
+
+If we mix routes with services we can share information between pages (components) in a simple way.
 
 ---
 
-## **9. Conclusión**
-
-- **El Router de Angular** permite gestionar la navegación en una SPA sin recargar la página.
-- **`RouterLink`** facilita la navegación interna sin necesidad de `href`.
-- **Las rutas con parámetros** permiten mostrar contenido dinámico.
-- **`router-outlet`** define el área donde se mostrarán los componentes según la ruta activa.
+[![Routes and Services](https://img.youtube.com/vi/QBLDZE0nzng/0.jpg)](https://www.youtube.com/watch?v=QBLDZE0nzng&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-En el próximo tema, exploraremos **cómo realizar peticiones a una API utilizando HttpClient**.
+## **9. Conclusion**
+
+- **The Angular Router** allows you to manage navigation in a SPA without reloading the page.
+- **`RouterLink`** facilitates internal navigation without the need for `href`.
+- **Routes with parameters** allow you to display dynamic content.
+- **`router-outlet`** defines the area where components will be displayed based on the active route.
+
+---
+
+In the next topic, we will explore **how to make requests to an API using HttpClient**.

@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 3: Elementos en línea y elementos en bloque**
+# **Exercises - Topic 3: Inline elements and block elements**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 7 ejercicios prácticos sobre elementos en línea y en bloque en HTML. Realiza cada uno de ellos en un editor de código y visualiza los resultados en tu navegador.
+Below you will find 7 practical exercises on inline and block elements in HTML. Perform each of them in a code editor and view the results in your browser.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Identificar elementos en bloque e inline**
+## **Exercise 1: Identify block and inline elements**
 
-Observa el siguiente código y responde:
+Look at the following code and answer:
 
 ```html
 <h1>Bienvenido a mi Blog</h1>
@@ -19,29 +19,29 @@ Observa el siguiente código y responde:
 </p>
 ```
 
-¿Cuáles de estos elementos son de tipo bloque y cuáles son de tipo inline?
+Which of these elements are block type and which are inline type?
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-- **Elementos en bloque:** `<h1>`, `<p>`
-- **Elementos en línea:** `<strong>`, `<a>`
+- **Block elements:** `<h1>`, `<p>`
+- **Online items:** `<strong>`, `<a>`
 
 </details>
 
 ---
 
-## **Ejercicio 2: Crear un diseño con elementos en bloque**
+## **Exercise 2: Create a layout with block elements**
 
-Crea una estructura de página básica usando los siguientes elementos en bloque:
+Create a basic page structure using the following block elements:
 
 - `header`
 - `nav`
 - `section`
 - `footer`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-Posible ejemplo:
+Possible example:
 
 ```html
 <header>
@@ -66,11 +66,11 @@ Posible ejemplo:
 
 ---
 
-## **Ejercicio 3: Combinar elementos en línea y en bloque**
+## **Exercise 3: Combine inline and block elements**
 
-Escribe un párrafo donde incluyas un **texto en negrita**, un **enlace** y un **span**.
+Write a paragraph where you include **bold text**, a **link** and a **span**.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <p>
@@ -84,9 +84,9 @@ Escribe un párrafo donde incluyas un **texto en negrita**, un **enlace** y un *
 
 ---
 
-## **Ejercicio 4: Evitar anidar elementos incorrectamente**
+## **Exercise 4: Avoid nesting elements incorrectly**
 
-¿Por qué el siguiente código es incorrecto? Corrígelo.
+Why is the following code incorrect? Correct it.
 
 ```html
 <span>
@@ -94,9 +94,9 @@ Escribe un párrafo donde incluyas un **texto en negrita**, un **enlace** y un *
 </span>
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-El problema en el código es que `<span>` es un elemento en línea y no puede contener un elemento en bloque como `<h2>`. La corrección sería:
+The problem in the code is that `<span>` is an inline element and cannot contain a block element like `<h2>`. The correction would be:
 
 ```html
 <div>
@@ -108,11 +108,11 @@ El problema en el código es que `<span>` es un elemento en línea y no puede co
 
 ---
 
-## **Ejercicio 5: Uso de `span` y `div` en un texto**
+## **Exercise 5: Using `span` and `div` in a text**
 
-Escribe un párrafo donde uses `em` para resaltar una frase y un `div` para encerrar un conjunto de frases en un bloque separado.
+Write a paragraph where you use `em` to highlight a phrase and an `div` to enclose a set of phrases in a separate block.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <p>
@@ -128,11 +128,11 @@ Escribe un párrafo donde uses `em` para resaltar una frase y un `div` para ence
 
 ---
 
-## **Ejercicio 6: Crear una lista de elementos**
+## **Exercise 6: Create a list of items**
 
-Usa una lista (`ul` o `ol`) y asegúrate de que usas los elementos `li`. Puede ser una lista de la compra, lista de idiomas o cualquier otra cosa.
+Use a list (`ul` or `ol`) and make sure you use the `li` elements. It can be a shopping list, language list or anything else.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <ul>
@@ -147,11 +147,11 @@ Usa una lista (`ul` o `ol`) y asegúrate de que usas los elementos `li`. Puede s
 
 ---
 
-## **Ejercicio 7: Crear una barra de navegación horizontal**
+## **Exercise 7: Create a horizontal navigation bar**
 
-Usa solo elementos en línea para crear un menú de navegación horizontal con enlaces.
+Use only inline elements to create a horizontal navigation menu with links.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <nav>

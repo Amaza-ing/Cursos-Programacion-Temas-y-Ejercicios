@@ -1,22 +1,22 @@
-# Ejercicios - Tema 37: Módulos y Java Moderno
+# Exercises - Topic 37: Modules and Modern Java
 
-A continuación encontrarás **10 ejercicios prácticos** sobre **módulos y Java moderno**: `module-info.java`, `requires`, `exports`, `opens`, estructura modular, compact source files, `switch` moderno, text blocks, `var` y pattern matching.
+Below you will find **10 practical exercises** on **modules and modern Java**: `module-info.java`, `requires`, `exports`, `opens`, modular structure, compact source files, modern `switch`, text blocks, `var` and pattern matching.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un módulo vacío
+## Exercise 1: Create an empty module
 
-Crea un archivo `module-info.java` para un módulo llamado:
+Create an `module-info.java` file for a module called:
 
 ```text
 com.amazaing.notes
 ```
 
-No exportes ningún paquete todavía.
+Don't export any packages yet.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 module com.amazaing.notes {
@@ -27,15 +27,15 @@ module com.amazaing.notes {
 
 ---
 
-## Ejercicio 2: Exportar un paquete
+## Exercise 2: Export a package
 
-Modifica el módulo `com.amazaing.notes` para exportar el paquete:
+Modify the `com.amazaing.notes` module to export the package:
 
 ```text
 com.amazaing.notes.api
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 module com.amazaing.notes {
@@ -47,21 +47,21 @@ module com.amazaing.notes {
 
 ---
 
-## Ejercicio 3: Requerir otro módulo
+## Exercise 3: Require another module
 
-Crea un `module-info.java` para un módulo llamado:
+Create an `module-info.java` for a module called:
 
 ```text
 com.amazaing.app
 ```
 
-Debe requerir el módulo:
+You must require the module:
 
 ```text
 com.amazaing.notes
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 module com.amazaing.app {
@@ -73,17 +73,17 @@ module com.amazaing.app {
 
 ---
 
-## Ejercicio 4: Usar `requires java.sql`
+## Exercise 4: Use `requires java.sql`
 
-Crea un `module-info.java` para un módulo llamado:
+Create an `module-info.java` for a module called:
 
 ```text
 com.amazaing.database
 ```
 
-Debe declarar que necesita `java.sql`.
+You must declare that you need `java.sql`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 module com.amazaing.database {
@@ -95,23 +95,23 @@ module com.amazaing.database {
 
 ---
 
-## Ejercicio 5: Abrir un paquete con `opens`
+## Exercise 5: Open a package with `opens`
 
-Crea un `module-info.java` para un módulo llamado:
+Create an `module-info.java` for a module called:
 
 ```text
 com.amazaing.users
 ```
 
-Debe abrir el paquete:
+You must open the package:
 
 ```text
 com.amazaing.users.model
 ```
 
-para permitir reflexión.
+to allow reflection.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 module com.amazaing.users {
@@ -123,23 +123,23 @@ module com.amazaing.users {
 
 ---
 
-## Ejercicio 6: Escribir una estructura modular
+## Exercise 6: Writing a modular structure
 
-Escribe la estructura de carpetas para un módulo llamado:
+Write the folder structure for a module called:
 
 ```text
 com.amazaing.shop
 ```
 
-Con una clase principal:
+With a main class:
 
 ```text
 com.amazaing.shop.Main
 ```
 
-No necesitas crear código completo, solo la estructura.
+You don't need to create complete code, just the structure.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```text
 src
@@ -155,17 +155,17 @@ src
 
 ---
 
-## Ejercicio 7: Compact source file
+## Exercise 7: Compact source file
 
-Escribe un programa sencillo usando la forma compacta de Java moderno para imprimir:
+Write a simple program using the modern Java compact form for printing:
 
 ```text
 Hello modern Java
 ```
 
-No uses `public class Main`.
+Do not use `public class Main`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 void main() {
@@ -177,23 +177,23 @@ void main() {
 
 ---
 
-## Ejercicio 8: `switch` moderno
+## Exercise 8: modern `switch`
 
-Declara una variable:
+Declare a variable:
 
 ```java
 String role = "admin";
 ```
 
-Usa un `switch` moderno para asignar a una variable `message`:
+Use a modern `switch` to assign to an `message` variable:
 
-- `"Full access"` si el rol es `"admin"`
-- `"Limited access"` si el rol es `"user"`
-- `"No access"` en cualquier otro caso
+- `"Full access"` if the role is `"admin"`
+- `"Limited access"` if the role is `"user"`
+- `"No access"` in any other case
 
-Imprime el mensaje.
+Print the message.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -215,17 +215,17 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Pattern matching con `instanceof`
+## Exercise 9: Pattern matching with `instanceof`
 
-Declara una variable:
+Declare a variable:
 
 ```java
 Object value = "Java";
 ```
 
-Usa pattern matching con `instanceof` para comprobar si es `String` e imprimir su longitud.
+Use pattern matching with `instanceof` to check if it is `String` and print its length.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -243,9 +243,9 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Text block para JSON
+## Exercise 10: Text block for JSON
 
-Crea un `String json` usando text block con este contenido:
+Create an `String json` using text block with this content:
 
 ```json
 {
@@ -254,9 +254,9 @@ Crea un `String json` usando text block con este contenido:
 }
 ```
 
-Imprime el texto.
+Print the text.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

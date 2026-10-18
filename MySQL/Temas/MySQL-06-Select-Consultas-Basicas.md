@@ -1,19 +1,19 @@
-# **Tema 6: Consultas Avanzadas con SELECT y Condiciones**
+# **Topic 6: Advanced Queries with SELECT and Conditions**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Usar `SELECT` para extraer información específica de una tabla.
-- Aplicar filtros con `WHERE` y operadores lógicos.
-- Ordenar resultados con `ORDER BY`.
-- Limitar la cantidad de filas con `LIMIT`.
+- Use `SELECT` to extract specific information from a table.
+- Apply filters with `WHERE` and logical operators.
+- Sort results with `ORDER BY`.
+- Limit the number of rows with `LIMIT`.
 
 ---
 
-## **1. SELECT: Consultas básicas**
+## **1. SELECT: Basic queries**
 
-La sentencia `SELECT` permite consultar datos de una o varias columnas.
+The `SELECT` statement allows you to query data from one or more columns.
 
-### **Ejemplos:**
+### **Examples:**
 
 ```sql
 SELECT * FROM customers; -- Todas las columnas
@@ -22,11 +22,11 @@ SELECT first_name, last_name FROM customers; -- Sólo algunas columnas
 
 ---
 
-## **2. WHERE: Filtrar resultados**
+## **2. WHERE: Filter results**
 
-La cláusula `WHERE` permite mostrar sólo las filas que cumplan una condición.
+The `WHERE` clause allows you to display only rows that meet a condition.
 
-### **Ejemplos:**
+### **Examples:**
 
 ```sql
 SELECT * FROM customers
@@ -36,15 +36,15 @@ SELECT * FROM orders
 WHERE total_amount > 100;
 ```
 
-### **Operadores comunes:**
+### **Common operators:**
 
-- `=`: igual a
-- `!=` o `<>`: distinto de
-- `>` / `<`: mayor / menor que
-- `>=` / `<=`: mayor o igual / menor o igual
-- `BETWEEN`: entre dos valores
-- `IN`: en una lista
-- `LIKE`: coincidencia parcial con comodines
+- `=`: equal to
+- `!=` or `<>`: different from
+- `>` / `<`: greater than / less than
+- `>=` / `<=`: greater than or equal / less than or equal
+- `BETWEEN`: between two values
+- `IN`: in a list
+- `LIKE`: partial match with wildcards
 
 ```sql
 SELECT * FROM customers WHERE first_name = 'Ana';
@@ -55,23 +55,23 @@ SELECT * FROM customers WHERE email LIKE '%@gmail.com';
 
 ---
 
-## **3. Operadores lógicos**
+## **3. Logical operators**
 
-### **AND**: ambas condiciones deben cumplirse
+### **AND**: both conditions must be met
 
 ```sql
 SELECT * FROM orders
 WHERE total_amount > 100 AND customer_id = 2;
 ```
 
-### **OR**: al menos una condición debe cumplirse
+### **OR**: at least one condition must be met
 
 ```sql
 SELECT * FROM customers
 WHERE city = 'Madrid' OR city = 'Barcelona';
 ```
 
-### **NOT**: niega la condición
+### **NOT**: negate the condition
 
 ```sql
 SELECT * FROM customers
@@ -80,9 +80,9 @@ WHERE NOT newsletter_subscribed;
 
 ---
 
-## **4. ORDER BY: Ordenar resultados**
+## **4. ORDER BY: Sort results**
 
-Ordena las filas según una o varias columnas.
+Sort the rows according to one or more columns.
 
 ```sql
 SELECT * FROM customers
@@ -92,7 +92,7 @@ SELECT * FROM orders
 ORDER BY total_amount DESC; -- Orden descendente
 ```
 
-Se puede ordenar por múltiples columnas:
+You can sort by multiple columns:
 
 ```sql
 SELECT * FROM customers
@@ -101,16 +101,16 @@ ORDER BY city ASC, last_name ASC;
 
 ---
 
-## **5. LIMIT: Limitar resultados**
+## **5. LIMIT: Limit results**
 
-Muestra sólo una cantidad específica de filas.
+Displays only a specific number of rows.
 
 ```sql
 SELECT * FROM customers
 LIMIT 5; -- Solo las primeras 5 filas
 ```
 
-También puedes especificar un **desplazamiento**:
+You can also specify an **offset**:
 
 ```sql
 SELECT * FROM customers
@@ -119,7 +119,7 @@ LIMIT 5 OFFSET 10; -- Desde la fila 11 hasta la 15
 
 ---
 
-## **6. Combinando WHERE, ORDER BY y LIMIT**
+## **6. Combining WHERE, ORDER BY and LIMIT**
 
 ```sql
 SELECT * FROM orders
@@ -128,22 +128,22 @@ ORDER BY created_at DESC
 LIMIT 3;
 ```
 
-Esta consulta muestra los 3 pedidos más recientes con total mayor a 50.
+This query shows the 3 most recent orders with total greater than 50.
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-- `SELECT` permite consultar datos específicos.
-- `WHERE` filtra resultados según condiciones.
-- `ORDER BY` organiza los resultados.
-- `LIMIT` restringe la cantidad de filas mostradas.
-- Combinando estas herramientas puedes obtener consultas muy potentes y específicas.
-
----
-
-[![Consultas básicas | SELECT | ORDER BY | WHERE](https://img.youtube.com/vi/AzHlT1fHuN8/0.jpg)](https://www.youtube.com/watch?v=AzHlT1fHuN8&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+- `SELECT` allows you to consult specific data.
+- `WHERE` filters results according to conditions.
+- `ORDER BY` organizes the results.
+- `LIMIT` restricts the number of rows displayed.
+- By combining these tools you can obtain very powerful and specific queries.
 
 ---
 
-En el siguiente tema aprenderemos a trabajar con **funciones de agregación (SUM, COUNT, AVG, MAX, MIN) y agrupaciones con `GROUP BY`.**
+[![Basic queries | SELECT | ORDER BY | WHERE](https://img.youtube.com/vi/AzHlT1fHuN8/0.jpg)](https://www.youtube.com/watch?v=AzHlT1fHuN8&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+
+---
+
+In the next topic we will learn to work with **aggregation functions (SUM, COUNT, AVG, MAX, MIN) and groupings with `GROUP BY`.**

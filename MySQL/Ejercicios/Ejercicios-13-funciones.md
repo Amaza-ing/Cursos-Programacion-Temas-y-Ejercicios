@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 13: Funciones en MySQL**
+# **Exercises - Topic 13: Functions in MySQL**
 
-A continuación, encontrarás 5 ejercicios prácticos para crear y usar **funciones** en MySQL, aplicando también la comparación con procedimientos almacenados.
+Below, you will find 5 practical exercises to create and use **functions** in MySQL, also applying the comparison with stored procedures.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Función para calcular el doble de un número**
+### **Exercise 1: Function to calculate double a number**
 
-Crea una función `doble_valor` que reciba un número y devuelva su valor multiplicado por 2.
+Create a function `doble_valor` that takes a number and returns its value multiplied by 2.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -29,11 +29,11 @@ SELECT doble_valor(15.50) AS resultado;
 
 ---
 
-### **Ejercicio 2: Función para calcular el descuento**
+### **Exercise 2: Function to calculate the discount**
 
-Crea una función `precio_con_descuento` que reciba el precio y un porcentaje de descuento, y devuelva el precio final.
+Create a function `precio_con_descuento` that receives the price and a discount percentage, and returns the final price.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -52,11 +52,11 @@ SELECT precio_con_descuento(200, 15) AS precio_final;
 
 ---
 
-### **Ejercicio 3: Función con validación de texto**
+### **Exercise 3: Function with text validation**
 
-Crea una función `formatear_nombre` que reciba un nombre y lo devuelva en mayúsculas con espacios eliminados al inicio y al final.
+Create a function `formatear_nombre` that takes a name and returns it in uppercase with leading and trailing spaces removed.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -75,15 +75,15 @@ SELECT formatear_nombre('  maria lopez  ') AS nombre_formateado;
 
 ---
 
-### **Ejercicio 4: Función para clasificar clientes por gasto**
+### **Exercise 4: Function to classify customers by expense**
 
-Crea una función `clasificar_cliente` que reciba el total gastado y devuelva 'ALTO', 'MEDIO' o 'BAJO' según:
+Create a function `clasificar_cliente` that receives the total spent and returns 'HIGH', 'MEDIUM' or 'LOW' depending on:
 
-- `>= 1000` → ALTO
-- `>= 500 y < 1000` → MEDIO
-- `< 500` → BAJO
+- `>= 1000` → HIGH
+- `>= 500 y < 1000` → MEDIUM
+- `< 500` → LOW
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$
@@ -108,11 +108,11 @@ SELECT clasificar_cliente(750) AS categoria;
 
 ---
 
-### **Ejercicio 5: Función en combinación con una consulta**
+### **Exercise 5: Function in combination with a query**
 
-Crea una función `edad_en_meses` que reciba una edad en años y devuelva la edad en meses. Úsala para mostrar el nombre y la edad en meses de los clientes.
+Create a function `edad_en_meses` that receives an age in years and returns the age in months. Use it to display customers' name and age in months.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 DELIMITER $$

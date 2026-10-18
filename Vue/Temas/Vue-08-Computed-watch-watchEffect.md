@@ -1,22 +1,22 @@
-# **Tema 8: Propiedades Computadas, watch y watchEffect en Vue.js**
+# **Topic 8: Computed Properties, watch and watchEffect in Vue.js**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Vue 3, la reactividad es uno de los pilares clave. Además de las variables reactivas normales (`ref` o `reactive`), Vue nos proporciona herramientas avanzadas para manejar cambios:
+In Vue 3, reactivity is one of the key pillars. In addition to the normal reactive variables (`ref` or `reactive`), Vue provides us with advanced tools to handle changes:
 
-- **Propiedades Computadas (`computed`)**: Derivan valores en función de otras variables reactivas.
-- **watch**: Observa cambios específicos y ejecuta lógica cuando esos cambios ocurren.
-- **watchEffect**: Reacciona automáticamente a cualquier dato reactivo utilizado dentro de su función.
+- **Computed Properties (`computed`)**: Derived values based on other reactive variables.
+- **watch**: Observe specific changes and execute logic when those changes occur.
+- **watchEffect**: Automatically react to any reactive data used within your function.
 
 ---
 
-## **2. Propiedades Computadas**
+## **2. Computed Properties**
 
-### ¿Qué es una propiedad computada?
+### What is a computed property?
 
-Es un valor calculado automáticamente a partir de otras variables reactivas. Vue se encarga de actualizar el valor computado cuando cambian sus dependencias.
+It is a value calculated automatically from other reactive variables. Vue takes care of updating the computed value when its dependencies change.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -39,21 +39,21 @@ p {
 </style>
 ```
 
-Cuando alguna de las variables `firstName` o `lastName` cambien de valor, la propiedad `fullName` cambiará también de valor automáticamente.
+When any of the `firstName` or `lastName` variables change their value, the `fullName` property will also change its value automatically.
 
 ---
 
-[![Propiedades Computadas](https://img.youtube.com/vi/jeMaoz9-_tM/0.jpg)](https://www.youtube.com/watch?v=jeMaoz9-_tM&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Computed Properties](https://img.youtube.com/vi/jeMaoz9-_tM/0.jpg)](https://www.youtube.com/watch?v=jeMaoz9-_tM&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **3. Observadores (`watch`)**
+## **3. Observers (`watch`)**
 
-### ¿Qué es un watch?
+### What is a watch?
 
-`watch` permite ejecutar una función personalizada cada vez que cambia una variable reactiva concreta.
+`watch` allows you to run a custom function every time a specific reactive variable changes.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -78,21 +78,21 @@ button {
 </style>
 ```
 
-En este caso se está vigilando a la variable `age`;
+In this case the variable `age` is being monitored;
 
 ---
 
-[![watch en Vue.js](https://img.youtube.com/vi/WE9en_bio90/0.jpg)](https://www.youtube.com/watch?v=WE9en_bio90&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![watch in Vue.js](https://img.youtube.com/vi/WE9en_bio90/0.jpg)](https://www.youtube.com/watch?v=WE9en_bio90&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **4. Efectos Reactivos (`watchEffect`)**
+## **4. Reactive Effects (`watchEffect`)**
 
-### ¿Qué es watchEffect?
+### What is watchEffect?
 
-`watchEffect` es una función que se ejecuta inmediatamente y reacciona automáticamente a cualquier dato reactivo que use dentro de ella, sin necesidad de declararlos explícitamente.
+`watchEffect` is a function that runs immediately and automatically reacts to any reactive data you use within it, without needing to explicitly declare it.
 
-### Ejemplo
+### Example
 
 ```vue
 <script setup>
@@ -118,28 +118,28 @@ input {
 
 ---
 
-[![watchEffect vs watch en Vue.js](https://img.youtube.com/vi/FLoweJBBbjs/0.jpg)](https://www.youtube.com/watch?v=FLoweJBBbjs&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![watchEffect vs watch in Vue.js](https://img.youtube.com/vi/FLoweJBBbjs/0.jpg)](https://www.youtube.com/watch?v=FLoweJBBbjs&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **5. Diferencias entre computed, watch y watchEffect**
+## **5. Differences between computed, watch and watchEffect**
 
-| Herramienta | Uso principal                                   | Reacciona a                |
-| ----------- | ----------------------------------------------- | -------------------------- |
-| computed    | Calcular un valor derivado                      | Dependencias específicas   |
-| watch       | Ejecutar lógica cuando cambie un valor concreto | Variables observadas       |
-| watchEffect | Ejecutar lógica al usar cualquier dato reactivo | Todas las reactivas usadas |
+| Tool | Main use | React to |
+| ----------- | -------------------------------------------- | -------------------------- |
+| computed | Calculate a derived value | Specific dependencies |
+| watch | Run logic when a specific value changes | Observed variables |
+| watchEffect | Execute logic when using any reactive data | All reagents used |
 
 ---
 
-## Resumen práctico
+## Practical summary
 
-| Caso                                                     | Recomendación |
+| Case | Recommendation |
 | -------------------------------------------------------- | ------------- |
-| Mostrar un valor calculado en el template                | computed      |
-| Ejecutar un proceso tras un cambio concreto              | watch         |
-| Sincronizar automáticamente con cualquier reactivo usado | watchEffect   |
+| Show a calculated value in the template | computed |
+| Run a process after a specific change | watch |
+| Automatically sync with any used reagent | watchEffect |
 
 ---
 
-En el próximo tema exploraremos cómo **Crear y Validar Formularios** de forma sencilla usando objetos, la directiva `v-model` y el evento `@submit.prevent`.
+In the next topic we will explore how to **Create and Validate Forms** in a simple way using objects, the `v-model` directive and the `@submit.prevent` event.

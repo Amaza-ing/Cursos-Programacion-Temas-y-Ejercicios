@@ -1,22 +1,22 @@
-# **Tema 5: Listas en HTML**
+# **Topic 5: Lists in HTML**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Las listas en HTML permiten organizar información en una estructura ordenada o desordenada. Son muy utilizadas para menús de navegación, listas de tareas, categorías y otros elementos organizativos en una página web.
+HTML lists allow you to organize information in an ordered or unordered structure. They are widely used for navigation menus, to-do lists, categories and other organizational elements on a web page.
 
-En HTML existen tres tipos de listas:
+In HTML there are three types of lists:
 
-- **Listas desordenadas (`<ul>`)**
-- **Listas ordenadas (`<ol>`)**
-- **Listas de descripción (`<dl>`)**
+- **Unordered lists (`<ul>`)**
+- **Ordered lists (`<ol>`)**
+- **Description Lists (`<dl>`)**
 
 ---
 
-## **2. Listas desordenadas (`<ul>`)**
+## **2. Unordered lists (`<ul>`)**
 
-Las listas desordenadas presentan los elementos sin un orden específico, utilizando viñetas o marcadores por defecto.
+Unordered lists present items in no specific order, using bullets or bookmarks by default.
 
-### **Ejemplo de lista desordenada:**
+### **Example of unordered list:**
 
 ```HTML
 <ul>
@@ -26,19 +26,19 @@ Las listas desordenadas presentan los elementos sin un orden específico, utiliz
 </ul>
 ```
 
-### **Características:**
+### **Features:**
 
-- Se define con `<ul>` (unordered list).
-- Cada elemento de la lista se define con `<li>` (list item).
-- El estilo de los marcadores puede cambiarse con CSS.
+- Defined with `<ul>` (unordered list).
+- Each list item is defined with `<li>` (list item).
+- Bookmark style can be changed with CSS.
 
 ---
 
-## **3. Listas ordenadas (`<ol>`)**
+## **3. Sorted lists (`<ol>`)**
 
-Las listas ordenadas muestran los elementos siguiendo un orden numérico o alfabético.
+Sorted lists display items in numerical or alphabetical order.
 
-### **Ejemplo de lista ordenada:**
+### **Example of ordered list:**
 
 ```HTML
 <ol>
@@ -48,13 +48,13 @@ Las listas ordenadas muestran los elementos siguiendo un orden numérico o alfab
 </ol>
 ```
 
-### **Características:**
+### **Features:**
 
-- Se define con `<ol>` (ordered list).
-- Cada elemento se representa con `<li>`.
-- El tipo de numeración puede cambiarse con el atributo `type` (`1`, `A`, `a`, `I`, `i`).
+- Defined with `<ol>` (ordered list).
+- Each item is represented with `<li>`.
+- The numbering type can be changed with the `type` attribute (`1`, `A`, `a`, `I`, `i`).
 
-### **Ejemplo con diferentes tipos de numeración:**
+### **Example with different types of numbering:**
 
 ```HTML
 <ol type="A">
@@ -66,11 +66,11 @@ Las listas ordenadas muestran los elementos siguiendo un orden numérico o alfab
 
 ---
 
-## **4. Listas anidadas**
+## **4. Nested lists**
 
-Las listas pueden contener otras listas dentro de sus elementos, permitiendo crear estructuras más complejas.
+Lists can contain other lists within their elements, allowing more complex structures to be created.
 
-### **Ejemplo de lista anidada:**
+### **Nested list example:**
 
 ```HTML
 <ul>
@@ -90,18 +90,18 @@ Las listas pueden contener otras listas dentro de sus elementos, permitiendo cre
 </ul>
 ```
 
-### **Características:**
+### **Features:**
 
-- Se pueden anidar listas dentro de `<li>`.
-- Puede combinarse `<ul>` con `<ol>` según sea necesario.
+- Lists can be nested within `<li>`.
+- `<ul>` can be combined with `<ol>` as needed.
 
 ---
 
-## **5. Listas de descripción (`<dl>`, `<dt>`, `<dd>`)**
+## **5. Description Lists (`<dl>`, `<dt>`, `<dd>`)**
 
-Las listas de descripción se utilizan para definir términos y sus respectivas descripciones.
+Description lists are used to define terms and their respective descriptions.
 
-### **Ejemplo de lista de descripción:**
+### **Example description list:**
 
 ```HTML
 <dl>
@@ -113,26 +113,26 @@ Las listas de descripción se utilizan para definir términos y sus respectivas 
 </dl>
 ```
 
-### **Características:**
+### **Features:**
 
-- Se define con `<dl>` (description list).
-- `<dt>` representa el término.
-- `<dd>` es la descripción asociada al término.
-
----
-
-[![Listas en HTML](https://img.youtube.com/vi/_eyqw1twuP0/0.jpg)](https://www.youtube.com/watch?v=_eyqw1twuP0&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+- Defined with `<dl>` (description list).
+- `<dt>` represents the term.
+- `<dd>` is the description associated with the term.
 
 ---
 
-## **6. Buenas prácticas al trabajar con listas**
-
-- Utilizar **listas ordenadas** cuando el orden de los elementos es importante.
-- Utilizar **listas desordenadas** para agrupar elementos sin jerarquía específica.
-- Aplicar **listas de descripción** cuando se necesiten definir términos.
-- Evitar listas demasiado profundas o anidadas para mejorar la legibilidad.
-- Utilizar **CSS** para personalizar la apariencia de las listas.
+[![HTML lists](https://img.youtube.com/vi/_eyqw1twuP0/0.jpg)](https://www.youtube.com/watch?v=_eyqw1twuP0&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-En el próximo tema, aprenderemos sobre **Elementos, etiquetas y atributos en HTML**.
+## **6. Good practices when working with lists**
+
+- Use **ordered lists** when the order of the elements is important.
+- Use **unordered lists** to group elements without a specific hierarchy.
+- Apply **description lists** when terms need to be defined.
+- Avoid lists that are too deep or nested to improve readability.
+- Use **CSS** to customize the appearance of the lists.
+
+---
+
+In the next topic, we will learn about **Elements, tags and attributes in HTML**.

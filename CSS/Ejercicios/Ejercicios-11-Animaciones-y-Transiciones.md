@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 11: Animaciones y Transiciones en CSS**
+# **Exercises - Topic 11: Animations and Transitions in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre animaciones y transiciones en CSS.
+Below you will find 5 practical exercises on animations and transitions in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una transición de color**
+### **Exercise 1: Create a color transition**
 
-Crea un botón que cambie su color de fondo de azul a rojo al pasar el cursor por encima con una transición suave de 0.5 segundos.
+Create a button that changes its background color from blue to red on hover with a smooth 0.5 second transition.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .button {
@@ -29,19 +29,21 @@ Crea un botón que cambie su color de fondo de azul a rojo al pasar el cursor po
 }
 ```
 
+
 ```html
 <button class="button">Pasa el cursor</button>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Animar un cuadro en movimiento**
+### **Exercise 2: Animate a moving frame**
 
-Crea un cuadro que se desplace de izquierda a derecha utilizando `@keyframes`.
+Create a box that scrolls from left to right using `@keyframes`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 @keyframes move {
@@ -61,19 +63,21 @@ Crea un cuadro que se desplace de izquierda a derecha utilizando `@keyframes`.
 }
 ```
 
+
 ```html
 <div class="box"></div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 3: Crear un efecto de escala al pasar el cursor**
+### **Exercise 3: Create a scale effect on hover**
 
-Haz que un elemento se agrande al 120% de su tamaño original cuando el cursor pase por encima.
+Make an element enlarge to 120% of its original size when the cursor hovers over it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .scale-box {
@@ -88,19 +92,21 @@ Haz que un elemento se agrande al 120% de su tamaño original cuando el cursor p
 }
 ```
 
+
 ```html
 <div class="scale-box"></div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 4: Crear un efecto de desvanecimiento**
+### **Exercise 4: Create a Fade Effect**
 
-Crea un texto que aparezca gradualmente al cargar la página usando `opacity`.
+Create text that fades in on page load using `opacity`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 @keyframes fadeIn {
@@ -118,19 +124,21 @@ Crea un texto que aparezca gradualmente al cargar la página usando `opacity`.
 }
 ```
 
+
 ```html
 <p class="text">Texto que aparece gradualmente</p>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 5: Crear un spinner animado**
+### **Exercise 5: Create an animated spinner**
 
-Crea un círculo que gire continuamente simulando un spinner de carga.
+Create a circle that rotates continuously simulating a cargo spinner.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 @keyframes spin {
@@ -152,8 +160,10 @@ Crea un círculo que gire continuamente simulando un spinner de carga.
 }
 ```
 
+
 ```html
 <div class="spinner"></div>
 ```
+
 
 </details>

@@ -1,92 +1,92 @@
-# **Curso Completo de Git y GitHub**
+# **Complete Git and GitHub Course**
 
-Bienvenido al **Curso Completo de Git y GitHub**, un repositorio diseñado para ayudarte a dominar el control de versiones y la colaboración en proyectos de desarrollo. Si eres principiante, este curso te guiará paso a paso para entender y aplicar Git de manera efectiva.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 Cómo instalar y configurar Git en tu sistema.<br>
-🔹 Entender la diferencia entre `git init`, `git clone`, `git add`, `git commit` y `git push`.<br>
-🔹 Flujo de trabajo en Git y las estrategias de ramas más utilizadas.<br>
-🔹 Cómo trabajar en equipo con GitHub: forks, pull requests y merges.<br>
-🔹 Solución de conflictos y cómo deshacer cambios en Git.<br>
-🔹 Creación y gestión de versiones con etiquetas (`tags`) y releases.<br>
-🔹 Personalización de Git y automatización.<br>
-
-Este curso está estructurado en **módulos prácticos**, cada uno con ejemplos y ejercicios que te ayudarán a reforzar lo aprendido.
+Welcome to the **Complete Git and GitHub Course**, a repository designed to help you master version control and collaboration in development projects. If you are a beginner, this course will guide you step by step to understand and apply Git effectively.
 
 ---
 
-## 📂 **Estructura del curso**
+## 📌 **What will you learn in this course?**
 
-Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este repositorio. Puedes navegar por los temas en el directorio del curso:
+🔹 How to install and configure Git on your system.<br>
+🔹 Understand the difference between `git init`, `git clone`, `git add`, `git commit` and `git push`.<br>
+🔹 Workflow in Git and the most used branching strategies.<br>
+🔹 How to work as a team with GitHub: forks, pull requests and merges.<br>
+🔹 Troubleshooting and how to undo changes in Git.<br>
+🔹 Creating and managing versions with tags (`tags`) and releases.<br>
+🔹 Git customization and automation.<br>
 
-| 📚 Tema                                                                                               | Descripción                                             |
+This course is structured in **practical modules**, each with examples and exercises that will help you reinforce what you have learned.
+
+---
+
+## 📂 **Course structure**
+
+Each theme is located in a **Markdown (`.md`)** file within this repository. You can browse the topics in the course directory:
+
+| 📚 Theme | Description |
 | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| 📝 [Tema 1: Introducción a Git y GitHub](Temas/Git-01-Introducción.md)                                | Conceptos básicos y primeros pasos.                     |
-| 🌱 [Tema 2: Flujo de trabajo en Git](Temas/Git-02-Flujo-de-Trabajo.md)                                | Cómo funciona Git y su ciclo de vida.                   |
-| 🌿 [Tema 3: Ramas en Git](Temas/Git-03-Ramas.md)                                                      | Creación, fusión y gestión de ramas.                    |
-| 🔄 [Tema 4: Repositorios remotos](Temas/Git-04-Repositorios-Remotos.md)                               | Uso de `git push`, `git pull` y colaboración en GitHub. |
-| 🏷️ [Tema 5: Etiquetas y versiones](Temas/Git-05-Tags.md)                                              | Cómo gestionar versiones con `git tag`.                 |
-| 📌 [Tema 6: Guardar cambios temporales](Temas/Git-06-Stash.md)                                        | Uso de `git stash` para cambios temporales.             |
-| 🏗️ [Tema 7: Rebase y organización del historial](Temas/Git-07-Rebase.md)                              | Uso avanzado de `git rebase`.                           |
-| 🍒 [Tema 8: Aplicar commits específicos](Temas/Git-08-Cherry-Pick.md)                                 | Uso de `git cherry-pick` para seleccionar cambios.      |
-| ⏪ [Tema 9: Deshacer cambios](Temas/Git-09-Restore-Revert.md)                                         | Uso de `git restore` y `git revert`.                    |
-| 🔐 [Tema 10: Repositorios públicos y privados](Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md) | Cómo administrar repositorios y borrar ramas.           |
-| 📜 [Tema 11: Creación de README.md](Temas/Git-11-Readme.md)                                           | Uso de Markdown para documentar proyectos.              |
-| 🌳 [Tema 12: Trabajar en varias ramas a lavez](Temas/Git-12-Varias-Ramas.md)                          | Cómo trabajar con varias ramas a la vez.                |
-| 💠 [Tema 13: Workflows en Git](Temas/Git-13-Workflows.md)                                             | Estrategias de ramas y flujos de trabajo.               |
+| 📝 [Topic 1: Introduction to Git and GitHub](Temas/Git-01-Introducción.md) | Basic concepts and first steps.                     |
+| 🌱 [Topic 2: Workflow in Git](Temas/Git-02-Flujo-de-Trabajo.md) | How Git works and its life cycle.                   |
+| 🌿 [Topic 3: Branches in Git](Temas/Git-03-Ramas.md) | Creation, merging and management of branches.                    |
+| 🔄 [Topic 4: Remote repositories](Temas/Git-04-Repositorios-Remotos.md) | Use of `git push`, `git pull` and collaboration on GitHub. |
+| 🏷️ [ Topic 5: Tags and versions](Temas/Git-05-Tags.md) | How to manage versions with `git tag`.                 |
+| 📌 [Topic 6: Save temporary changes](Temas/Git-06-Stash.md) | Using `git stash` for temporary changes.             |
+| 🏗️ [topic 7: Rebase and organization of history](Temas/Git-07-Rebase.md) | Advanced use of `git rebase`.                           |
+| 🍒 [topic 8: Apply specific commits](Temas/Git-08-Cherry-Pick.md) | Using `git cherry-pick` to select changes.      |
+| ⏪ [Topic 9: Undo changes](Temas/Git-09-Restore-Revert.md) | Use of `git restore` and `git revert`.                    |
+| 🔐 [ Topic 10: Public and private repositories](Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md) | How to manage repositories and delete branches.           |
+| 📜 [Tem 11: Creation of README.md](Temas/Git-11-Readme.md) | Using Markdown to document projects.              |
+| 🌳 [ Topic 12: Work on several branches at the same time](Temas/Git-12-Varias-Ramas.md) | How to work with multiple branches at the same time.                |
+| 💠 [ Topic 13: Workflows in Git](Temas/Git-13-Workflows.md) | Branch and workflow strategies.               |
 
-📌 **Para ver todos los temas disponibles, revisa este repositorio.**
-
----
-
-## 🎥 **Curso en Video**
-
-Si prefieres aprender de forma visual, aquí tienes un video donde se explica todo el curso con ejemplos prácticos:
-
-📺 **Curso Completo de Git & Github**
-
-[![Curso de Git y Github completo](https://img.youtube.com/vi/yKMzq9VhmXo/0.jpg)](https://www.youtube.com/watch?v=yKMzq9VhmXo&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+📌 **To see all available themes, check this repository.**
 
 ---
 
-## 🛠️ **Requisitos previos**
+## 🎥 **Video Course**
 
-Este curso empieza desde 0, así que no tienes que partir con ningún conocimiento previo.
+If you prefer to learn visually, here is a video where the entire course is explained with practical examples:
 
-Antes de empezar, asegúrate de tener:
+📺 **Complete Git & Github Course**
 
-- Git instalado en tu sistema ([Guía de instalación](https://git-scm.com/downloads)).
-- Una cuenta en GitHub ([Crear cuenta](https://github.com/)).
-- Un editor de código recomendado (VS Code, Sublime Text, etc.).
-
-Aunque esto se explica en los primeros apartados del curso.
+[![Complete Git and Github course](https://img.youtube.com/vi/yKMzq9VhmXo/0.jpg)](https://www.youtube.com/watch?v=yKMzq9VhmXo&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
-## 📌 **Cómo usar este repositorio**
+## 🛠️ **Prerequisites**
 
-Puedes seguir el curso directamente en este repositorio de Github, pero si lo prefieres, lo puedes descargar.
+This course starts from 0, so you don't have to start with any prior knowledge.
 
-1️⃣ **Clonar el repositorio** en tu máquina local.
+Before you start, make sure you have:
 
-2️⃣ **Explorar los temas** y seguir las guías en cada archivo `.md`.
+- Git installed on your system ([installation guide](https://git-scm.com/downloads)).
+- A GitHub account ([Create account](https://github.com/)).
+- A recommended code editor (VS Code, Sublime Text, etc.).
 
-3️⃣ **Realizar los ejercicios y pruebas** en tu propio entorno de desarrollo.
-
----
-
-## 🚀 **¡Empieza a aprender Git hoy!**
-
-Este curso está diseñado para que puedas aprender **a tu ritmo**, con ejercicios prácticos y explicaciones sencillas.
+Although this is explained in the first sections of the course.
 
 ---
 
-## Hecho por Adrián Maza.
+## 📌 **How to use this repository**
 
-Espero que sea lo que buscas.
+You can follow the course directly in this Github repository, but if you prefer, you can download it.
+
+1️⃣ **Clone the repository** on your local machine.
+
+2️⃣ **Explore the topics** and follow the guides in each `.md` file.
+
+3️⃣ **Perform the exercises and tests** in your own development environment.
+
+---
+
+## 🚀 **Start learning Git today!**
+
+This course is designed so that you can learn **at your own pace**, with practical exercises and simple explanations.
+
+---
+
+## Made by Adrián Maza.
+
+I hope it's what you're looking for.
 
 <div>
   <h5>
@@ -99,7 +99,7 @@ Espero que sea lo que buscas.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

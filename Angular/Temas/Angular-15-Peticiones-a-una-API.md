@@ -1,23 +1,23 @@
-# **Tema 15: Realización de Peticiones HTTP con `HttpClient` en Angular**
+# **Topic 15: Making HTTP Requests with `HttpClient` in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-En Angular, el servicio `HttpClient` permite realizar peticiones HTTP para comunicarse con APIs externas. Es una herramienta esencial para recuperar y enviar datos entre el cliente y el servidor.
+In Angular, the `HttpClient` service allows you to make HTTP requests to communicate with external APIs. It is an essential tool for retrieving and sending data between the client and the server.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cómo configurar y usar `HttpClient`.
-- Realizar peticiones GET, POST, PUT y DELETE.
-- Manejar errores en las peticiones.
-- Usar observables y suscripciones para gestionar respuestas asíncronas.
+- How to configure and use `HttpClient`.
+- Make GET, POST, PUT and DELETE requests.
+- Handle errors in requests.
+- Use observables and subscriptions to manage asynchronous responses.
 
 ---
 
-## **2. Configuración Inicial**
+## **2. Initial Configuration**
 
-Para usar `HttpClient`, es necesario añadir el provider `provideHttpClient()` en el fichero `app.config.ts`.
+To use `HttpClient`, it is necessary to add the `provideHttpClient()` provider to the `app.config.ts` file.
 
-#### **Archivo: `app.config.ts`**
+#### **File: `app.config.ts`**
 
 ```ts
 import { provideHttpClient } from '@angular/common/http';
@@ -25,17 +25,18 @@ import { provideHttpClient } from '@angular/common/http';
 providers: [provideRouter(routes), provideHttpClient()],
 ```
 
+
 ---
 
-## **3. Realizar una Petición GET**
+## **3. Make a GET Request**
 
-La petición GET se utiliza para recuperar datos desde una API. Podemos acceder a cualquier API pública, para este ejemplo usaremos una API de [jsonplaceholder](https://jsonplaceholder.typicode.com/), que es una web que nos permite hacer peticiones a algunos datos.
+The GET request is used to retrieve data from an API. We can access any public API, for this example we will use an [jsonplaceholder](https://jsonplaceholder.typicode.com/) API, which is a website that allows us to make requests for some data.
 
-Para gestionar mejor todas las llamadas a las APIs se debe crear un servicio y gestionar todas las peticiones desde ahí mediante funciones.
+To better manage all calls to APIs, you must create a service and manage all requests from there using functions.
 
-Los servicios en este caso recibirán el nombre del recurso que estemos gestionando, habitualmente escrito en singular. Por ejemplo `user.service.ts` para usuarios o `photo.service.ts` para fotos. Podemos (y debemos) crear tantos servicios como sea necesario, y dejar que cada servicio gestione únicamente un tipo de recurso para una mejor organización.
+The services in this case will receive the name of the resource that we are managing, usually written in the singular. For example `user.service.ts` for users or `photo.service.ts` for photos. We can (and should) create as many services as necessary, and let each service manage only one type of resource for better organization.
 
-#### **Archivo: `comment.service.ts`**
+#### **File: `comment.service.ts`**
 
 ```ts
 import { Injectable } from "@angular/core";
@@ -58,7 +59,8 @@ export class CommentService {
 }
 ```
 
-#### **Archivo: `app.component.ts`**
+
+#### **File: `app.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -91,7 +93,8 @@ export class AppComponent implements OnInit {
 }
 ```
 
-#### **Archivo: `app.component.html`**
+
+#### **File: `app.component.html`**
 
 ```html
 <h1>Lista de Publicaciones</h1>
@@ -102,25 +105,26 @@ export class AppComponent implements OnInit {
 </ul>
 ```
 
-Cuando hacemos una petición `GET` usando `httpClient` mediante `this.http.get<any[]>(this.API_URL)` estamos obteniendo un `Observable`, y para utilizar los observables debemos suscribirnos a ellos mediante el método `subscribe` para ejecutar la petición, que es lo que hemos hecho en el ejemplo en el fichero `app.component.ts`.
 
-Las peticiones a las APIs pueden fallar, por eso es necesario tener esto en cuenta cuando usamos un `subscribe`.
+When we make an `GET` request using `httpClient` through `this.http.get<any[]>(this.API_URL)` we are obtaining an `Observable`, and to use the observables we must subscribe to them using the `subscribe` method to execute the request, which is what we have done in the example in the file `app.component.ts`.
 
-- Si todo va bien se ejecutará la función que hay en el `next`, que recibirá los datos de la petición.
+Requests to APIs can fail, so it is necessary to take this into account when using an `subscribe`.
 
-- Si algo va mal se ejecutará la función que hay en el `error`, que recibirá los datos de error.
+- If everything goes well, the function in `next` will be executed, which will receive the request data.
 
----
-
-[![Peticiones GET a una API](https://img.youtube.com/vi/UV_anqLaBko/0.jpg)](https://www.youtube.com/watch?v=UV_anqLaBko&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+- If something goes wrong, the function in `error` will be executed, which will receive the error data.
 
 ---
 
-## **4. Realizar una Petición POST**
+[![GET requests to an API](https://img.youtube.com/vi/UV_anqLaBko/0.jpg)](https://www.youtube.com/watch?v=UV_anqLaBko&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
-La petición POST se utiliza para enviar nuevos datos a la API.
+---
 
-#### **Archivo: `comment.service.ts`**
+## **4. Make a POST Request**
+
+The POST request is used to send new data to the API.
+
+#### **File: `comment.service.ts`**
 
 ```ts
 addComment(comment: { name: string, body: string }): Observable<any> {
@@ -128,7 +132,8 @@ addComment(comment: { name: string, body: string }): Observable<any> {
 }
 ```
 
-#### **Archivo: `app.component.ts`**
+
+#### **File: `app.component.ts`**
 
 ```ts
 newComment = { name: '', body: '' };
@@ -145,7 +150,8 @@ addNewComment() {
 }
 ```
 
-#### **Archivo: `app.component.html`**
+
+#### **File: `app.component.html`**
 
 ```html
 <h2>Añadir Nueva Publicación</h2>
@@ -154,13 +160,14 @@ addNewComment() {
 <button (click)="addNewComment()">Agregar</button>
 ```
 
+
 ---
 
-## **5. Realizar una Petición PUT**
+## **5. Make a PUT Request**
 
-La petición PUT se usa para actualizar un recurso existente.
+The PUT request is used to update an existing resource.
 
-#### **Archivo: `comment.service.ts`**
+#### **File: `comment.service.ts`**
 
 ```ts
 updateComment(id: number, comment: { name: string, body: string }): Observable<any> {
@@ -168,7 +175,8 @@ updateComment(id: number, comment: { name: string, body: string }): Observable<a
 }
 ```
 
-#### **Archivo: `app.component.ts`**
+
+#### **File: `app.component.ts`**
 
 ```ts
 updateExistingComment() {
@@ -184,19 +192,21 @@ updateExistingComment() {
 }
 ```
 
-#### **Archivo: `app.component.html`**
+
+#### **File: `app.component.html`**
 
 ```html
 <button (click)="updateExistingComment()">Actualizar Comentario</button>
 ```
 
+
 ---
 
-## **6. Realizar una Petición DELETE**
+## **6. Make a DELETE Request**
 
-La petición DELETE elimina un recurso de la API.
+The DELETE request deletes a resource from the API.
 
-#### **Archivo: `comment.service.ts`**
+#### **File: `comment.service.ts`**
 
 ```ts
 deleteComment(id: number): Observable<any> {
@@ -204,7 +214,8 @@ deleteComment(id: number): Observable<any> {
 }
 ```
 
-#### **Archivo: `app.component.ts`**
+
+#### **File: `app.component.ts`**
 
 ```ts
 deleteComment(id: number) {
@@ -219,7 +230,8 @@ deleteComment(id: number) {
 }
 ```
 
-#### **Archivo: `app.component.html`**
+
+#### **File: `app.component.html`**
 
 ```html
 <ul>
@@ -232,17 +244,17 @@ deleteComment(id: number) {
 </ul>
 ```
 
----
-
-[![Peticiones POST y DELETE](https://img.youtube.com/vi/puuGP0iq5Zk/0.jpg)](https://www.youtube.com/watch?v=puuGP0iq5Zk&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
+[![POST and DELETE requests](https://img.youtube.com/vi/puuGP0iq5Zk/0.jpg)](https://www.youtube.com/watch?v=puuGP0iq5Zk&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
-## **7. Manejo de Errores en Peticiones HTTP**
+---
 
-También se pueden manejar errores usando el operador `catchError` de RxJS.
+## **7. Error Handling in HTTP Requests**
 
-#### **Archivo: `comment.service.ts`**
+Errors can also be handled using RxJS's `catchError` operator.
+
+#### **File: `comment.service.ts`**
 
 ```ts
 import { catchError, throwError } from 'rxjs';
@@ -257,15 +269,16 @@ getComments(): Observable<any[]> {
 }
 ```
 
----
-
-## **8. Conclusión**
-
-- **`HttpClient`** permite realizar peticiones HTTP de forma sencilla.
-- **GET, POST, PUT y DELETE** son los métodos más utilizados.
-- Se deben gestionar los posibles errores.
-- Angular ofrece una integración eficiente y moderna para consumir APIs.
 
 ---
 
-En el próximo tema, exploraremos **cómo realizar tests unitarios usando Jasmine y Karma**.
+## **8. Conclusion**
+
+- **`HttpClient`** allows you to make HTTP requests easily.
+- **GET, POST, PUT and DELETE** are the most used methods.
+- Possible errors must be managed.
+- Angular offers an efficient and modern integration to consume APIs.
+
+---
+
+In the next topic, we will explore **how to perform unit tests using Jasmine and Karma**.

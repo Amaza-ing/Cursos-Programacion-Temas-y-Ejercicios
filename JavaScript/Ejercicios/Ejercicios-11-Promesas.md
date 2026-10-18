@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 11: Asincronía en JavaScript**
+# **Exercises - Topic 11: Asynchrony in JavaScript**
 
-A continuación, encontrarás 6 ejercicios prácticos sobre la asincronía en JavaScript.
+Below you will find 6 practical exercises on asynchrony in JavaScript.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear y Consumir una Promesa**
+### **Exercise 1: Create and Consume a Promise**
 
-Crea una promesa llamada `checkWeather` que simule una verificación del clima después de 2 segundos. Si el clima es "soleado", resuelve la promesa con el mensaje "Día perfecto". Si es "lluvioso", recházala con el mensaje "Lleva paraguas".
+Create a promise called `checkWeather` that simulates a weather check after 2 seconds. If the weather is "sunny," resolve the promise with the message "Perfect day." If it's "rainy," reject it with the message "Bring an umbrella."
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const checkWeather = new Promise((resolve, reject) => {
@@ -29,11 +29,11 @@ checkWeather
 
 ---
 
-### **Ejercicio 2: Gestionar una Promesa con `async/await`**
+### **Exercise 2: Manage a Promise with `async/await`**
 
-Convierte el código de la resolución del ejercicio anterior para que use `async/await` en lugar de `.then()` y `.catch()`.
+Convert the code from the previous exercise's solver to use `async/await` instead of `.then()` and `.catch()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 async function getWeather() {
@@ -52,11 +52,11 @@ getWeather();
 
 ---
 
-### **Ejercicio 3: Usar `Promise.all()` para varias Promesas**
+### **Exercise 3: Use `Promise.all()` for multiple Promises**
 
-Crea dos promesas: `fetchUserData` que se resuelve en 1 segundo y `fetchPosts` que se resuelve en 2 segundos. Usa `Promise.all()` para ejecutarlas en paralelo y mostrar los resultados juntos.
+Create two promises: `fetchUserData` which resolves in 1 second and `fetchPosts` which resolves in 2 seconds. Use `Promise.all()` to run them in parallel and display the results together.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const fetchUserData = new Promise((resolve) =>
@@ -78,11 +78,11 @@ loadData();
 
 ---
 
-### **Ejercicio 4: Manejar Errores con `Promise.allSettled()`**
+### **Exercise 4: Handling Errors with `Promise.allSettled()`**
 
-Crea tres promesas: una que se resuelva en 1 segundo, otra que falle en 2 segundos y otra que se resuelva en 3 segundos. Usa `Promise.allSettled()` para manejarlas sin que el fallo detenga la ejecución.
+Create three promises: one that resolves in 1 second, one that fails in 2 seconds, and one that resolves in 3 seconds. Use `Promise.allSettled()` to handle them without the failure stopping execution.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const success1 = new Promise((resolve) =>
@@ -107,11 +107,11 @@ handlePromises();
 
 ---
 
-### **Ejercicio 5: `setTimeout()` dentro de una Promesa**
+### **Exercise 5: `setTimeout()` inside a Promise**
 
-Crea una función `delayedMessage` que devuelva una promesa que muestre un mensaje después de 3 segundos.
+Create a function `delayedMessage` that returns a promise that displays a message after 3 seconds.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function delayedMessage() {
@@ -134,11 +134,11 @@ showMessage();
 
 ---
 
-### **Ejercicio 6: `async/await` con `try/catch`**
+### **Exercise 6: `async/await` with `try/catch`**
 
-Crea una función `fetchData` que simule una llamada a una API. Si el parámetro `error` es `true`, debe lanzar un error. Usa `async/await` con `try/catch` para manejar el resultado.
+Create a function `fetchData` that simulates an API call. If the `error` parameter is `true`, it should throw an error. Use `async/await` with `try/catch` to handle the result.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```js
 async function fetchData(error) {

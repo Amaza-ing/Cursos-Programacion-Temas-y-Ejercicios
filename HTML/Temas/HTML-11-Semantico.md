@@ -1,25 +1,25 @@
-# **Tema 11: HTML semántico - Estructurando correctamente el contenido**
+# **Topic 11: Semantic HTML - Correctly structuring the content**
 
-## **1. ¿Qué es HTML semántico y por qué es importante?**
+## **1. What is semantic HTML and why is it important?**
 
-HTML semántico se refiere al uso de etiquetas con significado propio que describen el contenido de una página web de manera clara y estructurada. Estas etiquetas permiten mejorar la accesibilidad, la optimización en motores de búsqueda (SEO) y la mantenibilidad del código.
+Semantic HTML refers to the use of tags with their own meaning that describe the content of a web page in a clear and structured way. These tags help improve accessibility, search engine optimization (SEO), and code maintainability.
 
-### **Beneficios del HTML semántico:**
+### **Benefits of semantic HTML:**
 
-- Facilita la comprensión del código tanto para desarrolladores como para navegadores.
-- Mejora la accesibilidad para personas con discapacidad que utilizan lectores de pantalla.
-- Mejora el posicionamiento en buscadores como Google.
-- Proporciona una estructura lógica al contenido.
+- Makes code easier to understand for both developers and browsers.
+- Improves accessibility for people with disabilities who use screen readers.
+- Improves positioning in search engines like Google.
+- Provides a logical structure to the content.
 
 ---
 
-## **2. Uso de `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`**
+## **2. Using `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`**
 
-### **2.1. `<header>` - Encabezado de la página o sección**
+### **2.1. `<header>` - Page or section header**
 
-El elemento `<header>` representa la cabecera de un documento o una sección.
+The `<header>` element represents the header of a document or section.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <header>
@@ -28,11 +28,11 @@ El elemento `<header>` representa la cabecera de un documento o una sección.
 </header>
 ```
 
-### **2.2. `<nav>` - Menú de navegación**
+### **2.2. `<nav>` - Navigation Menu**
 
-El elemento `<nav>` define una sección que contiene enlaces de navegación.
+The `<nav>` element defines a section containing navigation links.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <nav>
@@ -44,11 +44,11 @@ El elemento `<nav>` define una sección que contiene enlaces de navegación.
 </nav>
 ```
 
-### **2.3. `<main>` - Contenido principal de la página**
+### **23. `<main>` - Main page content**
 
-El elemento `<main>` contiene el contenido principal del documento, excluyendo encabezados, menús y pie de página.
+The `<main>` element contains the main content of the document, excluding headers, menus, and footers.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <main>
@@ -57,11 +57,11 @@ El elemento `<main>` contiene el contenido principal del documento, excluyendo e
 </main>
 ```
 
-### **2.4. `<section>` - Una Sección independiente de la página**
+### **2.4. `<section>` - An independent Section of the page**
 
-El elemento `<section>` representa una sección independiente, como el tablón de comentarios o una galería de imágenes.
+The `<section>` element represents a separate section, such as a comment board or an image gallery.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <section>
@@ -74,11 +74,11 @@ El elemento `<section>` representa una sección independiente, como el tablón d
 </section>
 ```
 
-### **2.5. `<article>` - Contenido independiente y reutilizable**
+### **2.5. `<article>` - Independent and reusable content**
 
-El elemento `<article>` representa contenido independiente, como un artículo de blog o una noticia.
+The `<article>` element represents stand-alone content, such as a blog article or news story.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <article>
@@ -89,11 +89,11 @@ El elemento `<article>` representa contenido independiente, como un artículo de
 </article>
 ```
 
-### **2.6. `<aside>` - Contenido relacionado o complementario**
+### **2.6. `<aside>` - Related or complementary content**
 
-El elemento `<aside>` se usa para información relacionada, como barras laterales o anuncios.
+The `<aside>` element is used for related information, such as sidebars or advertisements.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <aside>
@@ -102,11 +102,11 @@ El elemento `<aside>` se usa para información relacionada, como barras laterale
 </aside>
 ```
 
-### **2.6. `<footer>` - Pie de página**
+### **2.6. `<footer>` - Footer**
 
-El elemento `<footer>` representa el pie de página de un documento o sección.
+The `<footer>` element represents the footer of a document or section.
 
-**Ejemplo:**
+**Example:**
 
 ```html
 <footer>
@@ -116,11 +116,11 @@ El elemento `<footer>` representa el pie de página de un documento o sección.
 
 ---
 
-## **3. Diferencia entre `<div>` y elementos semánticos**
+## **3. Difference between `<div>` and semantic elements**
 
-El elemento `<div>` se utiliza como un contenedor genérico sin significado semántico, mientras que los elementos semánticos proporcionan contexto sobre su contenido.
+The `<div>` element is used as a generic container with no semantic meaning, while semantic elements provide context about its content.
 
-### **Ejemplo de `<div>` sin semántica:**
+### **`<div>` example without semantics:**
 
 ```html
 <div class="cabecera">
@@ -128,7 +128,7 @@ El elemento `<div>` se utiliza como un contenedor genérico sin significado sem�
 </div>
 ```
 
-### **Ejemplo con `<header>` semántico:**
+### **Example with semantic `<header>`:**
 
 ```html
 <header>
@@ -136,20 +136,19 @@ El elemento `<div>` se utiliza como un contenedor genérico sin significado sem�
 </header>
 ```
 
-**Conclusión:** Se recomienda usar elementos semánticos en lugar de `<div>` siempre que sea posible para mejorar la estructura y accesibilidad del contenido.
+**Conclusion:** It is recommended to use semantic elements instead of `<div>` whenever possible to improve the structure and accessibility of the content.
 
 ---
 
-[![HTML Semántico](https://img.youtube.com/vi/easFWSS1Tqw/0.jpg)](https://www.youtube.com/watch?v=easFWSS1Tqw&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Semantic HTML](https://img.youtube.com/vi/easFWSS1Tqw/0.jpg)](https://www.youtube.com/watch?v=easFWSS1Tqw&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **4. Otros aspectos importantes del HTML semántico**
+## **4. Other important aspects of semantic HTML**
 
-- **Etiquetas semánticas adicionales:** `<figure>`, `<figcaption>`, ...
-- **Mejorar el SEO con HTML semántico.**
-- **Uso correcto de etiquetas anidadas para una estructura clara y ordenada.**
+- **Additional semantic tags:** `<figure>`, `<figcaption>`, ...
+- **Improve SEO with semantic HTML.**
+- **Correct use of nested tags for a clear and orderly structure.**
 
 ---
-
-En el próximo tema, exploraremos **el uso de accesibilidad en HTML**, incluyendo atributos como `aria-label` y buenas prácticas para mejorar la experiencia de usuario.
+In the next topic, we will explore **the use of accessibility in HTML**, including attributes like `aria-label` and best practices to improve the user experience.

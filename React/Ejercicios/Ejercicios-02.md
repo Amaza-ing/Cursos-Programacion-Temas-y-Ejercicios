@@ -1,24 +1,24 @@
-# **Ejercicios - Tema 2: Esquema de Ficheros en React**
+# **Exercises - Topic 2: File Schema in React**
 
-A continuación, encontrarás **5 ejercicios prácticos** sobre el esquema de ficheros y organización de un proyecto React.
+Below, you will find **5 practical exercises** on the file schema and organization of a React project.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## **Ejercicio 1: Identificar responsabilidades**
+## **Exercise 1: Identify responsibilities**
 
-En un proyecto React con Vite, indica **qué archivo o carpeta** usarías para cada caso:
+In a React project with Vite, indicate **which file or folder** you would use for each case:
 
-1. Guardar una imagen que quieres importar en un componente (`import logo from ...`).
-2. Definir estilos globales para toda la aplicación.
-3. Montar React en el DOM.
-4. Guardar un archivo estático accesible por URL directa (por ejemplo `/robots.txt`).
+1. Save an image that you want to import in a component (`import logo from ...`).
+2. Define global styles for the entire application.
+3. Mount React on the DOM.
+4. Save a static file accessible by direct URL (for example `/robots.txt`).
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. `src/assets/` (o `src/assets/...`) porque el archivo pasa por el bundler y se importa desde el código.
-2. `src/index.css` (o el archivo global que importes desde `main.jsx`).
+1. `src/assets/` (or `src/assets/...`) because the file goes through the bundler and is imported from the code.
+2. `src/index.css` (or the global file you import from `main.jsx`).
 3. `src/main.jsx`.
 4. `public/`.
 
@@ -26,20 +26,20 @@ En un proyecto React con Vite, indica **qué archivo o carpeta** usarías para c
 
 ---
 
-## **Ejercicio 2: Crear una estructura recomendada**
+## **Exercise 2: Create a recommended structure**
 
-Dentro de `src/`, crea (en papel o en tu editor) una estructura recomendada que incluya:
+Within `src/`, create (on paper or in your editor) a recommended structure that includes:
 
-- Una carpeta para componentes reutilizables.
-- Una carpeta para páginas.
-- Una carpeta para servicios.
-- Una carpeta para hooks.
+- A folder for reusable components.
+- A folder for pages.
+- A folder for services.
+- A folder for hooks.
 
-Después, añade dentro de cada carpeta **un archivo de ejemplo** con un nombre correcto.
+Then, add **an example file** with a correct name inside each folder.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Ejemplo válido:
+Valid example:
 
 ```
 src/
@@ -61,9 +61,9 @@ src/
 
 ---
 
-## **Ejercicio 3: Corregir una estructura desordenada**
+## **Exercise 3: Correct a messy structure**
 
-Tienes esta estructura (mal organizada):
+You have this (poorly organized) structure:
 
 ```
 src/
@@ -77,11 +77,11 @@ src/
 │── main.jsx
 ```
 
-Reorganízala usando la estructura recomendada del tema (sin cambiar el contenido de los archivos, solo su ubicación). Mantén los nombres en inglés.
+Reorganize it using the theme's recommended structure (without changing the content of the files, just their location). Keep names in English.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-Una reorganización correcta podría ser:
+A correct reorganization could be:
 
 ```
 src/
@@ -99,64 +99,63 @@ src/
 │── main.jsx
 ```
 
-Notas:
+Notes:
 
-- `Header.jsx` es un componente reutilizable.
-- `Home.jsx` es una página.
-- `fetchUsers.js` es lógica de API (servicio).
-- `useCounter.js` es un hook.
-- La imagen puede ir en `assets/` (si se importará desde código).
+- `Header.jsx` is a reusable component.
+- `Home.jsx` is a page.
+- `fetchUsers.js` is API (service) logic.
+- `useCounter.js` is a hook.
+- The image can go in `assets/` (if it will be imported from code).
 
 </details>
 
 ---
 
-## **Ejercicio 4: Convenciones de nombres (elige la opción correcta)**
+## **Exercise 4: Naming Conventions (choose the correct option)**
 
-Selecciona el nombre más correcto en cada caso según las convenciones del tema:
+Select the most correct name in each case according to the conventions of the theme:
 
-1. Componente de tarjeta de usuario:
+1. User card component:
 
    - a) `usercard.jsx`
    - b) `UserCard.jsx`
    - c) `userCard.jsx`
 
-2. Función que maneja un click:
+2. Function that handles one click:
 
    - a) `Handle_Click()`
    - b) `handleClick`
    - c) `handle_click`
 
-3. Hook personalizado para tema oscuro:
+3. Custom hook for dark theme:
 
    - a) `UseDarkMode.js`
    - b) `useDarkMode.js`
    - c) `use-dark-mode.js`
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
-1. b) `UserCard.jsx` (componentes en PascalCase).
-2. b) `handleClick` (funciones en camelCase).
-3. b) `useDarkMode.js` (hooks en camelCase empezando por `use`).
+1. b) `UserCard.jsx` (components in PascalCase).
+2. b) `handleClick` (functions in camelCase).
+3. b) `useDarkMode.js` (hooks in camelCase starting with `use`).
 
 </details>
 
 ---
 
-## **Ejercicio 5: Elegir bien entre `public` y `assets`**
+## **Exercise 5: Choose carefully between `public` and `assets`**
 
-Tienes estos casos. Indica si lo guardarías en `public/` o en `src/assets/` y explica por qué:
+You have these cases. Indicate whether you would save it in `public/` or `src/assets/` and explain why:
 
-1. Un `favicon.ico`.
-2. Una imagen `banner.png` que usarás dentro de un componente con `import banner from ...`.
-3. Un archivo `robots.txt`.
-4. Un archivo `terms.pdf` que quieres abrir con un enlace directo `/terms.pdf`.
+1. An `favicon.ico`.
+2. An `banner.png` image that you will use inside a component with `import banner from ...`.
+3. An `robots.txt` file.
+4. An `terms.pdf` file that you want to open with a direct `/terms.pdf` link.
+<details><summary>Show Solution</summary>
 
-<details><summary>Mostrar Solución</summary>
-
-1. `public/` (recurso estático que debe estar accesible directamente y sin importación).
-2. `src/assets/` (se importará desde JavaScript y pasa por el bundler).
-3. `public/` (debe estar accesible como `/robots.txt`).
-4. `public/` (si quieres acceso directo por URL: `/terms.pdf`).
+1. `public/` (static resource that must be accessible directly and without import).
+2. `src/assets/` (will be imported from JavaScript and goes through the bundler).
+3. `public/` (must be accessible as `/robots.txt`).
+4. `public/` (if you want direct access by URL: `/terms.pdf`).
 
 </details>

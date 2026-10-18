@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 9: Tablas en HTML**
+# **Exercises - Topic 9: Tables in HTML**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre tablas en HTML.
+Below you will find 5 practical exercises on tables in HTML.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear una tabla simple**
+### **Exercise 1: Create a simple table**
 
-Crea una tabla con 3 columnas: "Nombre", "Edad" y "Ciudad". Agrega al menos dos filas de datos.
+Create a table with 3 columns: "Name", "Age" and "City". Add at least two rows of data.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <table>
@@ -38,9 +38,9 @@ Crea una tabla con 3 columnas: "Nombre", "Edad" y "Ciudad". Agrega al menos dos 
 
 ---
 
-### **Ejercicio 2: Agregar encabezados a una tabla**
+### **Exercise 2: Add headers to a table**
 
-Modifica la siguiente tabla para que los títulos "Producto", "Precio" y "Cantidad" sean encabezados (`<th>` en la primera fila).
+Modify the following table so that the titles "Product", "Price", and "Quantity" are headings (`<th>` in the first row).
 
 ```html
 <table border="1">
@@ -57,7 +57,7 @@ Modifica la siguiente tabla para que los títulos "Producto", "Precio" y "Cantid
 </table>
 ```
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <table border="1">
@@ -83,11 +83,11 @@ Modifica la siguiente tabla para que los títulos "Producto", "Precio" y "Cantid
 
 ---
 
-### **Ejercicio 3: Fusionar celdas con `colspan`**
+### **Exercise 3: Merge cells with `colspan`**
 
-Crea una tabla con una fila de encabezado y tres columnas. Luego, en la segunda fila, usa `colspan="2"` para fusionar dos celdas.
+Create a table with one header row and three columns. Then, in the second row, use `colspan="2"` to merge two cells.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <table border="1">
@@ -107,11 +107,11 @@ Crea una tabla con una fila de encabezado y tres columnas. Luego, en la segunda 
 
 ---
 
-### **Ejercicio 4: Fusionar celdas con `rowspan`**
+### **Exercise 4: Merge cells with `rowspan`**
 
-Crea una tabla donde una celda ocupe dos filas usando `rowspan="2"`.
+Create a table where one cell occupies two rows using `rowspan="2"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <table border="1">
@@ -133,11 +133,11 @@ Crea una tabla donde una celda ocupe dos filas usando `rowspan="2"`.
 
 ---
 
-### **Ejercicio 5: Crear una tabla con múltiples filas y columnas**
+### **Exercise 5: Create a table with multiple rows and columns**
 
-Diseña una tabla que tenga al menos 3 filas y 4 columnas con información ficticia de clientes.
+Design a table that has at least 3 rows and 4 columns with fictitious customer information.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```html
 <table border="1">

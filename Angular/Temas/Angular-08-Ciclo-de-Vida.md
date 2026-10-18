@@ -1,39 +1,39 @@
-# **Tema 8: Ciclo de Vida Completo de los Componentes en Angular**
+# **Topic 8: Complete Life Cycle of Components in Angular**
 
-## **1. Introducción**
+## **1. Introduction**
 
-Los componentes en Angular tienen un ciclo de vida definido por una serie de métodos (hooks) que permiten ejecutar lógica en diferentes momentos de la existencia del componente.
+Components in Angular have a life cycle defined by a series of methods (hooks) that allow logic to be executed at different times during the component's existence.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Cuáles son los hooks del ciclo de vida de Angular.
-- Cuándo se ejecutan y cómo utilizarlos correctamente.
-- Ejemplos prácticos de cada hook.
+- What are the hooks of the Angular life cycle.
+- When they are executed and how to use them correctly.
+- Practical examples of each hook.
 
 ---
 
-## **2. Hooks del Ciclo de Vida en Angular**
+## **2. Lifecycle Hooks in Angular**
 
-| **Hook**                  | **Cuándo se ejecuta**                                      | **Uso principal**                                   |
+| **Hook** | **When is it executed** | **Primary use** |
 | ------------------------- | ---------------------------------------------------------- | --------------------------------------------------- |
-| `ngOnChanges()`           | Cuando un `@Input()` cambia de valor                       | Detectar cambios en propiedades recibidas del padre |
-| `ngOnInit()`              | Después de que Angular inicializa el componente            | Configuración inicial, llamadas a servicios         |
-| `ngDoCheck()`             | En cada ciclo de detección de cambios                      | Detectar cambios manualmente en variables           |
-| `ngAfterContentInit()`    | Después de insertar contenido en `<ng-content>`            | Detectar cambios en contenido proyectado            |
-| `ngAfterContentChecked()` | Después de cada detección de cambios en `<ng-content>`     | Responder a cambios en contenido proyectado         |
-| `ngAfterViewInit()`       | Después de que la vista y los hijos han sido inicializados | Acceder a elementos de la vista con `ViewChild`     |
-| `ngAfterViewChecked()`    | Después de cada detección de cambios en la vista           | Ajustar elementos visuales dinámicos                |
-| `ngOnDestroy()`           | Antes de destruir el componente                            | Limpiar suscripciones y liberar recursos            |
+| `ngOnChanges()` | When an `@Input()` changes value | Detect changes in properties received from the parent |
+| `ngOnInit()` | After Angular initializes the | Initial configuration, calls to services |
+| `ngDoCheck()` | In each change detection cycle | Manually detect changes in variables |
+| `ngAfterContentInit()` | After inserting content into `<ng-content>` | Detect changes in projected content |
+| `ngAfterContentChecked()` | After each detection of changes in `<ng-content>` | Respond to changes in projected content |
+| `ngAfterViewInit()` | After the view and children have been initialized | Access view elements with `ViewChild` |
+| `ngAfterViewChecked()` | After each view change detection | Adjust dynamic visual elements |
+| `ngOnDestroy()` | Before destroying the component | Clean subscriptions and release resources |
 
 ---
 
-## **3. Explicación y Ejemplos de los Hooks**
+## **3. Explanation and Examples of Hooks**
 
 ### **3.1. `ngOnChanges()`**
 
-Se ejecuta cuando uno o más valores de `@Input()` cambian en el componente hijo.
+Executed when one or more `@Input()` values change in the child component.
 
-#### **Archivo: `child.component.ts`**
+#### **File: `child.component.ts`**
 
 ```ts
 import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
@@ -51,20 +51,22 @@ export class ChildComponent implements OnChanges {
 }
 ```
 
-#### **Archivo: `parent.component.html`**
+
+#### **File: `parent.component.html`**
 
 ```html
 <input [(ngModel)]="message" placeholder="Escribe algo" />
 <app-child [data]="message"></app-child>
 ```
 
+
 ---
 
 ### **3.2. `ngOnInit()`**
 
-Se ejecuta una sola vez, después del constructor. Ideal para inicializar datos o hacer llamadas a servicios.
+It is executed only once, after the constructor. Ideal for initializing data or making calls to services.
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -82,19 +84,21 @@ export class ExampleComponent implements OnInit {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p>{{ message }}</p>
 ```
 
+
 ---
 
 ### **3.3. `ngDoCheck()`**
 
-Se ejecuta en cada ciclo de detección de cambios. Útil cuando Angular no detecta cambios automáticamente.
+It runs every change detection cycle. Useful when Angular doesn't detect changes automatically.
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, DoCheck } from "@angular/core";
@@ -112,19 +116,21 @@ export class ExampleComponent implements DoCheck {
 }
 ```
 
+
 ---
 
-### **3.4. `ngAfterContentInit()` y `ngAfterContentChecked()`**
+### **3.4. `ngAfterContentInit()` and `ngAfterContentChecked()`**
 
-Estos hooks permiten detectar cambios en contenido proyectado dentro de `<ng-content>`.
+These hooks allow detecting changes in projected content within `<ng-content>`.
 
-#### **Archivo: `child.component.html`**
+#### **File: `child.component.html`**
 
 ```html
 <ng-content></ng-content>
 ```
 
-#### **Archivo: `child.component.ts`**
+
+#### **File: `child.component.ts`**
 
 ```ts
 import {
@@ -148,13 +154,14 @@ export class ChildComponent implements AfterContentInit, AfterContentChecked {
 }
 ```
 
+
 ---
 
-### **3.5. `ngAfterViewInit()` y `ngAfterViewChecked()`**
+### **3.5. `ngAfterViewInit()` and `ngAfterViewChecked()`**
 
-Se usan para interactuar con elementos de la vista tras su renderización.
+They are used to interact with elements of the view after rendering.
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
@@ -173,19 +180,20 @@ export class ExampleComponent implements AfterViewInit {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <h1 #title>Título modificado en AfterViewInit</h1>
 ```
 
+
 ---
 
 ### **3.6. `ngOnDestroy()`**
+It is executed before destroying the component. Used to clean up subscriptions and release resources.
 
-Se ejecuta antes de destruir el componente. Se usa para limpiar suscripciones y liberar recursos.
-
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component, OnDestroy } from "@angular/core";
@@ -201,17 +209,18 @@ export class ExampleComponent implements OnDestroy {
 }
 ```
 
----
-
-## **4. Conclusión**
-
-- Angular proporciona **hooks de ciclo de vida** que permiten ejecutar lógica en diferentes momentos de la existencia de un componente.
-- `ngOnInit()` es el más usado para la inicialización del componente.
-- `ngOnChanges()` detecta cambios en `@Input()`.
-- `ngDoCheck()` es útil cuando Angular no detecta cambios automáticamente.
-- `ngAfterViewInit()` y `ngAfterViewChecked()` permiten manipular la vista tras su carga.
-- `ngOnDestroy()` se usa para liberar recursos antes de eliminar un componente.
 
 ---
 
-En el próximo tema, exploraremos **los Modelos e Interfaces para el tipado de Objetos**.
+## **4. Conclusion**
+
+- Angular provides **lifecycle hooks** that allow logic to be executed at different times during a component's existence.
+- `ngOnInit()` is the most used for component initialization.
+- `ngOnChanges()` detects changes to `@Input()`.
+- `ngDoCheck()` is useful when Angular does not detect changes automatically.
+- `ngAfterViewInit()` and `ngAfterViewChecked()` allow you to manipulate the view after loading.
+- `ngOnDestroy()` is used to free resources before removing a component.
+
+---
+
+In the next topic, we will explore **Models and Interfaces for Object typing**.

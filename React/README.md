@@ -1,119 +1,118 @@
-# **Curso Completo de React desde Cero**
+# **Complete React Course from Scratch**
 
-Bienvenido al **Curso Completo de React**, un repositorio diseñado para aprender React paso a paso desde cero, con un enfoque totalmente práctico. Si ya tienes conocimientos básicos de HTML, CSS y JavaScript, este curso te permitirá crear aplicaciones web modernas, escalables y profesionales utilizando React.
-
----
-
-## 📌 **¿Qué aprenderás en este curso?**
-
-🔹 Crear un proyecto React desde cero.<br>
-🔹 Entender la estructura de ficheros de una aplicación React.<br>
-🔹 Crear y reutilizar componentes.<br>
-🔹 Aplicar estilos en React de diferentes formas.<br>
-🔹 Manejar eventos y estado con `useState`.<br>
-🔹 Renderizar contenido de forma condicional.<br>
-🔹 Trabajar con listas y claves (`key`).<br>
-🔹 Comunicación entre componentes (props, elevación de estado).<br>
-🔹 Uso correcto de `className` y `htmlFor`.<br>
-🔹 Ciclo de vida con `useEffect`.<br>
-🔹 Consumo de APIs con Fetch y Axios.<br>
-🔹 Formularios controlados.<br>
-🔹 Navegación con React Router (rutas normales, paramétricas y protegidas).<br>
-🔹 Gestión de estado global con Context.<br>
-🔹 Optimización con `memo` y lazy loading.<br>
-🔹 Testing en React.<br>
-🔹 Buenas prácticas y patrones habituales en React.<br>
-
-El curso está organizado en **temas progresivos**, cada uno acompañado de ejercicios prácticos para afianzar los conceptos.
+Welcome to the **Complete React Course**, a repository designed to learn React step by step from scratch, with a totally practical approach. If you already have basic knowledge of HTML, CSS and JavaScript, this course will allow you to create modern, scalable and professional web applications using React.
 
 ---
 
-## 📂 **Estructura del curso**
+## 📌 **What will you learn in this course?**
 
-Cada tema se encuentra en un archivo **Markdown (**``**)** dentro de la carpeta `Temas`:
+🔹 Create a React project from scratch.<br>
+🔹 Understand the file structure of a React.<br> application
+🔹 Create and reuse components.<br>
+🔹 Apply styles in React in different ways.<br>
+🔹 Manage events and status with `useState`.<br>
+🔹 Render content conditionally.<br>
+🔹 Working with lists and keys (`key`).<br>
+🔹 Communication between components (props, status elevation).<br>
+🔹 Correct use of `className` and `htmlFor`.<br>
+🔹 Lifecycle with `useEffect`.<br>
+🔹 Consumption of APIs with Fetch and Axios.<br>
+🔹 Controlled forms.<br>
+🔹 Navigation with React Router (normal, parametric and protected routes).<br>
+🔹 Global state management with Context.<br>
+🔹 Optimization with `memo` and lazy loading.<br>
+🔹 Testing in React.<br>
+🔹 Good practices and common patterns in React.<br>
 
-| 📚 Tema                                                                                    | Contenido                                |
+The course is organized into **progressive topics**, each accompanied by practical exercises to strengthen the concepts.
+
+---
+
+## 📂 **Course structure**
+
+Each topic is located in a **Markdown file (**``**)** dentro de la carpeta `TEmes`:
+
+| 📚 Theme | Content |
 | ------------------------------------------------------------------------------------------ | ---------------------------------------- |
-| ⚛️ [React 01: Empezar con React](Temas/React-01-Empezar-con-React.md)                      | Introducción y primeros pasos.           |
-| 📁 [React 02: Esquema de Ficheros](Temas/React-02-Esquema-de-Ficheros.md)                  | Organización de un proyecto React.       |
-| 🧩 [React 03: Componentes](Temas/React-03-Componentes.md)                                  | Creación y reutilización de componentes. |
-| 🎨 [React 04: Estilos](Temas/React-04-Estilos.md)                                          | Estilos en React.                        |
-| ➖ [React 05: Componentes en una Línea](Temas/React-05-Componentes-en-una-Linea.md)        | Componentes inline.                      |
-| 🎯 [React 06: Eventos](Temas/React-06-Eventos.md)                                          | Manejo de eventos.                       |
-| 🔁 [React 07: useState](Temas/React-07-useState.md)                                        | Estado en React.                         |
-| 🔗 [React 08: Atributos Reactivos](Temas/React-08-Atributos-Reactivos.md)                  | Atributos dinámicos.                     |
-| ❓ [React 09: Renderizado Condicional](Temas/React-09-Renderizado-Condicional.md)          | Mostrar contenido según condiciones.     |
-| 📋 [React 10: Listas](Temas/React-10-Listas.md)                                            | Renderizado de listas.                   |
-| 👨‍👧 [React 11: Props Padre a Hijo](Temas/React-11-Props-Padre-a-Hijo.md)                    | Comunicación descendente.                |
-| 🏷️ [React 12: className y htmlFor](Temas/React-12-ClassName-htmlFor.md)                    | Sintaxis específica de React.            |
-| 🔄 [React 13: Props Hijo a Padre](Temas/React-13-Props-Hijo-a-Padre-y-Elevar-el-Estado.md) | Elevación de estado.                     |
-| ⏱️ [React 14: useEffect](Temas/React-14-useEffect.md)                                      | Ciclo de vida.                           |
-| 🌐 [React 15: Fetch API](Temas/React-15-Fetch-API.md)                                      | Peticiones HTTP con Fetch.               |
-| 🔌 [React 16: Axios](Temas/React-16-Axios.md)                                              | Peticiones HTTP con Axios.               |
-| 📝 [React 17: Formularios](Temas/React-17-Formularios.md)                                  | Formularios controlados.                 |
-| 🧭 [React 18: Router](Temas/React-18-Router.md)                                            | Navegación SPA.                          |
-| 🧩 [React 19: Rutas Paramétricas](Temas/React-19-Rutas-Paramétricas.md)                    | Parámetros en rutas.                     |
-| 🔐 [React 20: Rutas Protegidas](Temas/React-20-Rutas-Protegidas.md)                        | Control de acceso.                       |
-| 📦 [React 21: Gestión de Estado](Temas/React-21-Gestion-de-Estado.md)                      | Estado global.                           |
-| 🌍 [React 22: Context](Temas/React-22-Context.md)                                          | Context API.                             |
-| 👥 [React 23: Context + Fetch](Temas/React-23-Context-Users-Fetch.md)                      | Context con datos externos.              |
-| 🚀 [React 24: Memo](Temas/React-24-Memo.md)                                                | Optimización de rendimiento.             |
-| ⚡ [React 25: Lazy Loading](Temas/React-25-Lazy-Loading.md)                                | Carga diferida.                          |
-| 🧪 [React 26: Testing](Temas/React-26-Testing.md)                                          | Pruebas en React.                        |
-| 🏁 [React Web Completa](Temas/React-Web-Completa-&-Fin-de-Curso.md)                        | Proyecto final.                          |
+| ⚛️ [React 01: Getting started with React](Temas/React-01-Empezar-con-React.md) | Introduction and first steps.           |
+| 📁 [React 02: File Scheme](Temas/React-02-Esquema-de-Ficheros.md) | Organization of a React project.       |
+| 🧩 [React 03: Components](Temas/React-03-Componentes.md) | Creation and reuse of components. |
+| 🎨 [React 04: Styles](Temas/React-04-Estilos.md) | Styles in React.                        |
+| ➖ [React 05: Components in a Line](Temas/React-05-Componentes-en-una-Linea.md) | Inline components.                      |
+| 🎯 [React 06: Events](Temas/React-06-Eventos.md) | Event management.                       |
+| 🔁 [React 07: useState](Temas/React-07-useState.md) | State in React.                         |
+| 🔗 [React 08: Reactive Attributes](Temas/React-08-Atributos-Reactivos.md) | Dynamic attributes.                     |
+| ❓ [React 09: Conditional Rendering](Temas/React-09-Renderizado-Condicional.md) | Show content according to conditions.     |
+| 📋 [React 10: Lists](Temas/React-10-Listas.md) | List rendering.                   |
+| 👨‍👧 [React 11: Props Father to Son](Temas/React-11-Props-Padre-a-Hijo.md) | Descending communication.                |
+| 🏷️ [React 12: className and htmlFor](Temas/React-12-ClassName-htmlFor.md) | React-specific syntax.            |
+| 🔄 [React 13: Props Son to Father](Temas/React-13-Props-Hijo-a-Padre-y-Elevar-el-Estado.md) | Elevation of status.                     |
+| ⏱️ [React 14: useEffect](Temas/React-14-useEffect.md) | Life cycle.                           |
+| 🌐 [React 15: Fetch API](Temas/React-15-Fetch-API.md) | HTTP requests with Fetch.               |
+| 🔌 [React 16: Axios](Temas/React-16-Axios.md) | HTTP requests with Axios.               |
+| 📝 [React 17: Forms](Temas/React-17-Formularios.md) | Controlled forms.                 |
+| 🧭 [React 18: Router](Temas/React-18-Router.md) | SPA navigation.                          |
+| 🧩 [React 19: Parametric Routes](Temas/React-19-Rutas-Paramétricas.md) | Parameters in routes.                     |
+| 🔐 [React 20: Protected Routes](Temas/React-20-Rutas-Protegidas.md) | Access control.                       |
+| 📦 [React 21: State Management](Temas/React-21-Gestion-de-Estado.md) | Global status.                           |
+| 🌍 [React 22: Context](Temas/React-22-Context.md) | Context API.                             |
+| 👥 [React 23: Context + Fetch](Temas/React-23-Context-Users-Fetch.md) | Context with external data.              |
+| 🚀 [React 24: Memo](Temas/React-24-Memo.md) | Performance optimization.             |
+| ⚡ [React 25: Lazy Loading](Temas/React-25-Lazy-Loading.md) | Lazy loading.                          |
+| 🧪 [React 26: Testing](Temas/React-26-Testing.md) | Testing in React.                        |
+| 🏁 [React Complete Web](Temas/React-Web-Completa-&-Fin-de-Curso.md) | Final project.                          |
 
-📌 Además, cada tema tiene su correspondiente archivo de ejercicios en la carpeta [Ejercicios](Ejercicios).
-
----
-
-## 🎥 **Curso en Video**
-
-Si prefieres aprender visualmente, aquí tienes el curso completo en video con explicaciones detalladas y ejemplos prácticos:
-
-📺 **Curso Completo de React**
-
-[![Curso de React](https://img.youtube.com/vi/vH1u6Xv6oXw/0.jpg)](https://www.youtube.com/watch?v=vH1u6Xv6oXw&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+📌 In addition, each topic has its corresponding exercise file in the [Eexercises](Ejercicios) folder.
 
 ---
 
-## 🛠️ **Requisitos previos**
+## 🎥 **Video Course**
 
-Este curso está orientado a personas con conocimientos básicos de:
+If you prefer to learn visually, here is the complete video course with detailed explanations and practical examples:
 
-- HTML
-- CSS
-- JavaScript (variables, funciones, arrays, objetos y promesas)
+📺 **Complete React Course**
 
-Además, necesitarás:
-
-- Node.js (v18 o superior recomendado)
-- Un editor de código (Visual Studio Code recomendado)
+[![React course](https://img.youtube.com/vi/vH1u6Xv6oXw/0.jpg)](https://www.youtube.com/watch?v=vH1u6Xv6oXw&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
-## 📌 **Cómo usar este repositorio**
+## 🛠️ **Prerequisites**
 
-1️⃣ Clona el repositorio.
+This course is aimed at people with basic knowledge of:
+
+-HTML
+-CSS
+- JavaScript (variables, functions, arrays, objects and promises)
+
+Additionally, you will need:
+
+- Node.js (v18 or higher recommended)
+- A code editor (Visual Studio Code recommended)
+
+---
+
+## 📌 **How to use this repository**
+
+1️⃣ Clone the repository.
 
 ```bash
 git clone https://github.com/Amaza-ing/Cursos-Programacion-Temas-y-Ejercicios/
 ```
 
-2️⃣ Accede a la carpeta de React.
-
-3️⃣ Lee cada tema en orden y realiza los ejercicios asociados.
-
----
-
-## **¡Al finalizar este curso serás capaz de crear aplicaciones completas con React!**
-
-Aprenderás React de forma progresiva, práctica y con una base sólida para seguir creciendo como desarrollador frontend.
+2️⃣ Access the React folder.
+3️⃣ Read each topic in order and do the associated exercises.
 
 ---
 
-## Hecho por Adrián Maza.
+## **At the end of this course you will be able to create complete applications with React!**
 
-Espero que sea lo que buscas.
+You will learn React progressively, practically and with a solid foundation to continue growing as a frontend developer.
+
+---
+
+## Made by Adrián Maza.
+
+I hope it's what you're looking for.
 
 <div>
   <h5>
@@ -126,7 +125,7 @@ Espero que sea lo que buscas.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrián-Maza
+      LinkedIn/Adrian-Maza
     </a>
   </h5>
   <h5>

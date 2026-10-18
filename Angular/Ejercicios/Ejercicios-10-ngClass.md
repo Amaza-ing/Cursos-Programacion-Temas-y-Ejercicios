@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 10: Uso de Clases y Estilos Dinámicos con `ngClass`**
+# **Exercises - Topic 10: Using Dynamic Classes and Styles with `ngClass`**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre cómo aplicar clases y estilos dinámicos con `ngClass` en Angular.
+Below you will find exercises on how to apply dynamic classes and styles with `ngClass` in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Aplicar una clase dinámica con `ngClass`**
+### **Exercise 1: Apply a dynamic class with `ngClass`**
 
-Crea un componente que aplique una clase CSS definida en función de una variable.
+Create a component that applies a CSS class defined based on a variable.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 import { Component } from "@angular/core";
@@ -29,13 +29,15 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p [ngClass]="pageTheme">Este texto tiene una clase dinámica</p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .dark {
@@ -44,17 +46,18 @@ export class ExampleComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Aplicar múltiples clases con `ngClass`**
+### **Exercise 2: Apply multiple classes with `ngClass`**
 
-Define una lista de clases y aplícalas al mismo elemento con `ngClass`.
+Define a list of classes and apply them to the same element with `ngClass`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -62,13 +65,15 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p [ngClass]="pageStyles">Este texto tiene múltiples clases</p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .bold-text {
@@ -76,17 +81,18 @@ export class ExampleComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Aplicar clases condicionales con `ngClass`**
+### **Exercise 3: Apply conditional classes with `ngClass`**
 
-Utiliza un objeto para asignar clases de forma condicional.
+Uses an object to conditionally assign classes.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -95,7 +101,8 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <p [ngClass]="{ 'active': isActive, 'highlight': isHighlighted }">
@@ -103,7 +110,8 @@ export class ExampleComponent {
 </p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .active {
@@ -111,17 +119,18 @@ export class ExampleComponent {
 }
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 4: Alternar Clases con un Botón**
+### **Exercise 4: Toggle Classes with a Button**
 
-Crea un botón que permita alternar la aplicación de una clase en un párrafo.
+Create a button that allows you to toggle the application of a class in a paragraph.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -133,24 +142,26 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <button (click)="toggleDark()">Alternar Clase</button>
 <p [ngClass]="{ 'dark': isDark }">Texto con clase condicional</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Aplicar múltiples clases con un array dinámico**
+### **Exercise 5: Apply multiple classes with a dynamic array**
 
-Usa un array que cambie dinámicamente para modificar las clases de un elemento.
+Use a dynamically changing array to modify the classes of an element.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `example.component.ts`**
+#### **File: `example.component.ts`**
 
 ```ts
 export class ExampleComponent {
@@ -162,14 +173,16 @@ export class ExampleComponent {
 }
 ```
 
-#### **Archivo: `example.component.html`**
+
+#### **File: `example.component.html`**
 
 ```html
 <button (click)="addClass()">Añadir Clase</button>
 <p [ngClass]="classes">Texto con clases dinámicas</p>
 ```
 
-#### **Archivo: `example.component.css`**
+
+#### **File: `example.component.css`**
 
 ```css
 .highlight {
@@ -180,5 +193,6 @@ export class ExampleComponent {
   font-size: 20px;
 }
 ```
+
 
 </details>

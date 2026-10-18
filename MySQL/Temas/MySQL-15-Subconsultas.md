@@ -1,18 +1,18 @@
-# **Tema 15: Subconsultas y Consultas con WITH en MySQL**
+# **Topic 15: Subqueries and Queries with WITH in MySQL**
 
-En este tema aprenderemos a:
+In this topic we will learn to:
 
-- Utilizar subconsultas para construir consultas más complejas.
-- Comprender las subconsultas en cláusulas `SELECT`, `FROM` y `WHERE`.
-- Emplear expresiones comunes de tabla (`WITH`) para organizar consultas temporales reutilizables.
+- Use subqueries to build more complex queries.
+- Understand subqueries in `SELECT`, `FROM` and `WHERE` clauses.
+- Employ common table expressions (`WITH`) to organize reusable temporary queries.
 
 ---
 
-## **1. ¿Qué es una subconsulta?**
+## **1. What is a subquery?**
 
-Una **subconsulta** es una consulta dentro de otra consulta. Permite obtener datos intermedios que se usan como entrada en la consulta principal.
+A **subquery** is a query within another query. It allows obtaining intermediate data that is used as input in the main query.
 
-### **Ejemplo básico:**
+### **Basic example:**
 
 ```sql
 SELECT *
@@ -24,9 +24,9 @@ WHERE id IN (
 
 ---
 
-## **2. Subconsultas en la cláusula WHERE**
+## **2. Subqueries in the WHERE** clause
 
-Usadas para filtrar resultados según una condición que depende de otra tabla.
+Used to filter results based on a condition that depends on another table.
 
 ```sql
 SELECT name
@@ -38,9 +38,9 @@ WHERE id IN (
 
 ---
 
-## **3. Subconsultas en la cláusula FROM**
+## **3. Subqueries in the FROM** clause
 
-Permiten crear tablas temporales que luego pueden ser consultadas.
+They allow you to create temporary tables that can later be consulted.
 
 ```sql
 SELECT customer_id, total
@@ -54,9 +54,9 @@ WHERE total > 200;
 
 ---
 
-## **4. Subconsultas en la cláusula SELECT**
+## **4. Subqueries in the SELECT clause**
 
-Permiten mostrar valores adicionales calculados para cada fila.
+They allow you to display additional values calculated for each row.
 
 ```sql
 SELECT c.first_name,
@@ -66,11 +66,11 @@ FROM customers c;
 
 ---
 
-## **5. Consultas con WITH (Common Table Expressions)**
+## **5. Queries with WITH (Common Table Expressions)**
 
-La cláusula `WITH` permite definir subconsultas temporales con nombre, facilitando la lectura y reutilización de código.
+The `WITH` clause allows you to define named temporary subqueries, making it easier to read and reuse code.
 
-### **Ejemplo:**
+### **Example:**
 
 ```sql
 WITH ventas_por_cliente AS (
@@ -84,9 +84,9 @@ WHERE total > 150;
 
 ---
 
-## **6. Múltiples subconsultas con WITH**
+## **6. Multiple subqueries with WITH**
 
-Puedes definir varias subconsultas separadas por comas.
+You can define multiple subqueries separated by commas.
 
 ```sql
 WITH clientes_activos AS (
@@ -102,24 +102,24 @@ JOIN pedidos_totales pt ON ca.id = pt.customer_id;
 
 ---
 
-## **7. Ventajas de usar WITH**
+## **7. Advantages of using WITH**
 
-- Mejora la legibilidad.
-- Permite evitar repetir subconsultas.
-- Ideal para consultas complejas divididas en pasos.
-
----
-
-[![Subconsultas con WITH](https://img.youtube.com/vi/q4xodEiY8B8/0.jpg)](https://www.youtube.com/watch?v=q4xodEiY8B8&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+- Improves readability.
+- Allows you to avoid repeating subqueries.
+- Ideal for complex queries divided into steps.
 
 ---
 
-## **8. Conclusión**
-
-- Las subconsultas permiten incorporar resultados intermedios.
-- Pueden usarse en `WHERE`, `FROM`, `SELECT`.
-- `WITH` (CTE) ofrece una forma clara de definir consultas auxiliares reutilizables.
+[![Subqueries with WITH](https://img.youtube.com/vi/q4xodEiY8B8/0.jpg)](https://www.youtube.com/watch?v=q4xodEiY8B8&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-En el siguiente tema aprenderemos a **utilizar PARTITION BY**.
+## **8. Conclusion**
+
+- Subqueries allow intermediate results to be incorporated.
+- They can be used in `WHERE`, `FROM`, `SELECT`.
+- `WITH` (CTE) provides a clean way to define reusable helper queries.
+
+---
+
+In the next topic we will learn how to **use PARTITION BY**.

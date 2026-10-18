@@ -1,16 +1,16 @@
-# Ejercicios - Tema 25: `Map` y `HashMap`
+# Exercises - Topic 25: `Map` and `HashMap`
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **`Map`, `HashMap`, `put`, `get`, `remove`, `containsKey`, `getOrDefault`, `putIfAbsent` y `entrySet`**.
+Below you will find **10 practical exercises** to work with **`Map`, `HashMap`, `put`, `get`, `remove`, `containsKey`, `getOrDefault`, `putIfAbsent` and `entrySet`**.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear mapa
+## Exercise 1: Create map
 
-Crea un mapa de países y capitales.
+Create a map of countries and capitals.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -31,11 +31,11 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Leer con `get`
+## Exercise 2: Read with `get`
 
-Recupera el precio de `P02`.
+Retrieves the price of `P02`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -55,11 +55,11 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Actualizar valor
+## Exercise 3: Update value
 
-Actualiza el stock de `Mouse`.
+Update the stock of `Mouse`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -79,11 +79,11 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Usar `containsKey`
+## Exercise 4: Use `containsKey`
 
-Comprueba si existe `admin`.
+Checks if `admin` exists.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -102,11 +102,11 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Usar `getOrDefault`
+## Exercise 5: Use `getOrDefault`
 
-Obtén puntuación por defecto si no existe.
+Get default score if it doesn't exist.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -125,11 +125,11 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Usar `putIfAbsent`
+## Exercise 6: Use `putIfAbsent`
 
-Intenta cambiar `theme` sin sobrescribirlo.
+Try changing `theme` without overwriting it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -149,11 +149,11 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Eliminar entrada
+## Exercise 7: Delete entry
 
-Elimina `Cable` del mapa.
+Remove `Cable` from the map.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -174,11 +174,11 @@ public class Main {
 
 ---
 
-## Ejercicio 8: Recorrer `entrySet`
+## Exercise 8: Loop through `entrySet`
 
-Imprime alumnos y notas.
+Print students and notes.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -200,11 +200,11 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Contar repeticiones
+## Exercise 9: Count repetitions
 
-Cuenta letras repetidas.
+Count repeated letters.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;
@@ -226,11 +226,11 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Mapa con objetos
+## Exercise 10: Map with objects
 
-Guarda estudiantes por id.
+Save students by ID.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.HashMap;

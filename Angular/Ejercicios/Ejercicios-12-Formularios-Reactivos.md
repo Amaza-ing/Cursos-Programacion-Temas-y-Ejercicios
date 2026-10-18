@@ -1,20 +1,20 @@
-# **Ejercicios - Tema 12: Gestión de Formularios Reactivos con `FormGroup` y `FormControl`**
+# **Exercises - Topic 12: Management of Reactive Forms with `FormGroup` and `FormControl`**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás ejercicios sobre cómo gestionar formularios reactivos en Angular.
+Below you will find exercises on how to manage reactive forms in Angular.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un Formulario Reactivo con `FormGroup`**
+### **Exercise 1: Create a Reactive Form with `FormGroup`**
 
-Crea un formulario reactivo con los campos `name` y `email` y muestra los datos ingresados en la consola al enviar el formulario.
+Creates a reactive form with the fields `name` and `email` and displays the data entered in the console when submitting the form.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 import { ReactiveFormsModule, FormGroup, FormControl } from "@angular/forms";
@@ -34,7 +34,8 @@ export class FormComponent {
 }
 ```
 
-#### **Archivo: `form.component.html`**
+
+#### **File: `form.component.html`**
 
 ```html
 <form [formGroup]="userForm" (ngSubmit)="submitForm()">
@@ -48,17 +49,18 @@ export class FormComponent {
 </form>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 2: Agregar Validaciones a un Formulario**
+### **Exercise 2: Add Validations to a Form**
 
-Añade validaciones para que el campo `name` sea obligatorio y tenga al menos 3 caracteres, y para que el campo `email` sea obligatorio y tenga formato de correo.
+Add validations so that the `name` field is required and has at least 3 characters, and so that the `email` field is required and has email format.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 import { Validators } from "@angular/forms";
@@ -71,7 +73,8 @@ export class FormComponent {
 }
 ```
 
-#### **Archivo: `form.component.html`**
+
+#### **File: `form.component.html`**
 
 ```html
 <form [formGroup]="userForm" (ngSubmit)="submitForm()">
@@ -92,17 +95,18 @@ export class FormComponent {
 </form>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Detectar Cambios en Tiempo Real**
+### **Exercise 3: Detect Changes in Real Time**
 
-Muestra en la consola los valores del formulario cada vez que el usuario realice un cambio.
+Displays the form values in the console every time the user makes a change.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
-#### **Archivo: `form.component.ts`**
+#### **File: `form.component.ts`**
 
 ```ts
 export class FormComponent {
@@ -118,5 +122,6 @@ export class FormComponent {
   }
 }
 ```
+
 
 </details>

@@ -1,22 +1,22 @@
-# **Tema 10: Funciones Especiales en JavaScript**
+# **Topic 10: Special Functions in JavaScript**
 
-## **1. Introducción**
+## **1. Introduction**
 
-JavaScript proporciona una serie de funciones especiales que permiten ejecutar código de manera diferida, repetitiva o en contextos específicos. En este tema exploraremos algunas de las más útiles:
+JavaScript provides a series of special functions that allow code to be executed lazily, repetitively, or in specific contexts. In this topic we will explore some of the most useful:
 
 - `setTimeout()`
 - `setInterval()`
-- `clearTimeout()` y `clearInterval()`
+- `clearTimeout()` and `clearInterval()`
 - `requestAnimationFrame()`
-- `debounce()` y `throttle()`
+- `debounce()` and `throttle()`
 
 ---
 
-## **2. `setTimeout()` - Ejecutar código después de un tiempo**
+## **2. `setTimeout()` - Execute code after a while**
 
-`setTimeout()` permite ejecutar una función después de un tiempo específico (en milisegundos).
+`setTimeout()` allows a function to be executed after a specific time (in milliseconds).
 
-### **Ejemplo**
+### **Example**
 
 ```js
 console.log("Inicio");
@@ -26,7 +26,7 @@ setTimeout(() => {
 console.log("Fin");
 ```
 
-**Salida esperada:**
+**Expected output:**
 
 ```
 Inicio
@@ -34,7 +34,7 @@ Fin
 Esto aparece después de 2 segundos
 ```
 
-> **Nota:** La ejecución del script no se detiene mientras se espera el `setTimeout()`.
+> **Note:** The script execution does not stop while waiting for the `setTimeout()`.
 
 ---
 
@@ -42,11 +42,11 @@ Esto aparece después de 2 segundos
 
 ---
 
-## **3. `setInterval()` - Ejecutar código repetidamente**
+## **3. `setInterval()` - Execute code repeatedly**
 
-`setInterval()` permite ejecutar una función de manera repetitiva en un intervalo de tiempo definido.
+`setInterval()` allows you to execute a function repetitively in a defined time interval.
 
-### **Ejemplo**
+### **Example**
 
 ```js
 let count = 0;
@@ -56,7 +56,7 @@ setInterval(() => {
 }, 1000);
 ```
 
-**Salida esperada:**
+**Expected output:**
 
 ```
 Contador: 1
@@ -73,14 +73,14 @@ Contador: 5
 
 ---
 
-## **4. `clearTimeout()` y `clearInterval()`**
+## **4. `clearTimeout()` and `clearInterval()`**
 
-Tanto `setTimeout()` como `setInterval()` devuelven un identificador que podemos usar para cancelar su ejecución.
+Both `setTimeout()` and `setInterval()` return an identifier that we can use to cancel their execution.
 
-- `clearTimeout(id)` cancela la ejecución de un `setTimeout()`.
-- `clearInterval(id)` detiene un `setInterval()`.
+- `clearTimeout(id)` cancels the execution of an `setTimeout()`.
+- `clearInterval(id)` stops an `setInterval()`.
 
-### **Ejemplo de `clearTimeout()`**
+### **`clearTimeout()` example**
 
 ```js
 const timeoutId = setTimeout(() => {
@@ -90,7 +90,7 @@ const timeoutId = setTimeout(() => {
 clearTimeout(timeoutId); // Cancela la ejecución antes de que ocurra
 ```
 
-### **Ejemplo de `clearInterval()`**
+### **`clearInterval()` example**
 
 ```js
 const interval = setInterval(() => {
@@ -105,11 +105,11 @@ setTimeout(() => {
 
 ---
 
-## **5. `requestAnimationFrame()` - Optimizar animaciones**
+## **5. `requestAnimationFrame()` - Optimize animations**
 
-`requestAnimationFrame()` permite ejecutar una función antes del próximo repintado del navegador, optimizando animaciones.
+`requestAnimationFrame()` allows you to run a function before the next browser repaint, optimizing animations.
 
-### **Ejemplo**
+### **Example**
 
 ```js
 function animate() {
@@ -120,9 +120,9 @@ function animate() {
 requestAnimationFrame(animate); // Llama a la animación continuamente
 ```
 
-> **Nota:** A diferencia de `setInterval()`, este método se sincroniza con la velocidad de actualización del monitor, evitando renderizados innecesarios.
+> **Note:** Unlike `setInterval()`, this method synchronizes with the monitor's refresh rate, avoiding unnecessary rendering.
 
-### **Ejemplo de "videojuego"**
+### **Example of "video game"**
 
 ```html
 <!DOCTYPE html>
@@ -199,13 +199,13 @@ requestAnimationFrame(animate);
 
 ---
 
-## **6. `debounce()` y `throttle()` - Controlar la ejecución de funciones**
+## **6. `debounce()` and `throttle()` - Control the execution of functions**
 
-### **6.1. `debounce()` - Ejecutar una función después de un tiempo sin eventos**
+### **6.1. `debounce()` - Execute a function after a period of time without events**
 
-Se usa para evitar múltiples ejecuciones de una función mientras el usuario sigue interactuando (por ejemplo, escribir en un buscador).
+It is used to prevent multiple executions of a function while the user is still interacting (for example, typing in a search engine).
 
-### **Ejemplo**
+### **Example**
 
 ```js
 function debounce(func, delay) {
@@ -225,11 +225,11 @@ const logMessage = debounce(
 document.addEventListener("keydown", logMessage);
 ```
 
-### **6.2. `throttle()` - Limitar la ejecución de una función en intervalos de tiempo**
+### **6.2. `throttle()` - Limit the execution of a function in time intervals**
 
-Se usa para limitar la frecuencia de ejecución de una función (por ejemplo, eventos `scroll`).
+Used to limit the frequency of execution of a function (for example, `scroll` events).
 
-### **Ejemplo**
+### **Example**
 
 ```js
 function throttle(func, limit) {
@@ -279,8 +279,8 @@ button.addEventListener(
 
 ---
 
-## **7. Conclusión**
+## **7. Conclusion**
 
-Estas funciones especiales permiten manejar tiempos de ejecución de código de manera eficiente, desde temporizadores simples hasta optimización de rendimiento en eventos frecuentes.
+These special functions allow you to handle code execution times efficiently, from simple timers to performance optimization on frequent events.
 
-En el próximo tema definiremos qué es la asincronía y cómo podemos gestionarla usando promesas tanto con la sintaxis clásica como con async/await.
+In the next topic we will define what asynchrony is and how we can manage it using promises with both the classic syntax and async/await.

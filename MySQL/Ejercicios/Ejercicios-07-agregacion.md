@@ -1,16 +1,16 @@
-# **Ejercicios - Tema 7: Funciones de Agregación y Agrupaciones**
+# **Exercises - Topic 7: Aggregation Functions and Groupings**
 
-A continuación, encontrarás 10 ejercicios prácticos para practicar funciones de agregación (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`), agrupaciones con `GROUP BY` y filtros con `HAVING` en MySQL.
+Below you will find 10 practical exercises to practice aggregation functions (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`), grouping with `GROUP BY` and filters with `HAVING` in MySQL.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Calcular el total de pedidos registrados**
+### **Exercise 1: Calculate the total registered orders**
 
-Consulta el número total de pedidos en la tabla `orders`.
+Check the total number of orders in the `orders` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT COUNT(*) AS total_pedidos FROM orders;
@@ -20,11 +20,11 @@ SELECT COUNT(*) AS total_pedidos FROM orders;
 
 ---
 
-### **Ejercicio 2: Calcular la suma total de ventas**
+### **Exercise 2: Calculate the total amount of sales**
 
-Calcula la suma de todos los montos (`total_amount`) en la tabla `orders`.
+Calculates the sum of all amounts (`total_amount`) in the `orders` table.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT SUM(total_amount) AS total_ventas FROM orders;
@@ -34,11 +34,11 @@ SELECT SUM(total_amount) AS total_ventas FROM orders;
 
 ---
 
-### **Ejercicio 3: Calcular el importe promedio de los pedidos**
+### **Exercise 3: Calculate the average order amount**
 
-Muestra el importe medio (`AVG`) de los pedidos.
+Shows the average amount (`AVG`) of the orders.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT AVG(total_amount) AS promedio_pedidos FROM orders;
@@ -48,11 +48,11 @@ SELECT AVG(total_amount) AS promedio_pedidos FROM orders;
 
 ---
 
-### **Ejercicio 4: Buscar el pedido de mayor importe**
+### **Exercise 4: Find the order with the largest amount**
 
-Consulta cuál fue el pedido más caro registrado.
+See which was the most expensive order recorded.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT MAX(total_amount) AS pedido_mas_caro FROM orders;
@@ -62,11 +62,11 @@ SELECT MAX(total_amount) AS pedido_mas_caro FROM orders;
 
 ---
 
-### **Ejercicio 5: Obtener el pedido más barato**
+### **Exercise 5: Obtain the cheapest order**
 
-Consulta el valor mínimo del campo `total_amount`.
+Queries the minimum value of the `total_amount` field.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT MIN(total_amount) AS pedido_mas_barato FROM orders;
@@ -76,11 +76,11 @@ SELECT MIN(total_amount) AS pedido_mas_barato FROM orders;
 
 ---
 
-### **Ejercicio 6: Agrupar pedidos por cliente**
+### **Exercise 6: Group orders by customer**
 
-Muestra cuántos pedidos ha hecho cada cliente.
+Shows how many orders each customer has placed.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT customer_id, COUNT(*) AS cantidad_pedidos
@@ -92,11 +92,11 @@ GROUP BY customer_id;
 
 ---
 
-### **Ejercicio 7: Total gastado por cliente**
+### **Exercise 7: Total spent per customer**
 
-Consulta cuánto ha gastado cada cliente sumando el campo `total_amount`.
+See how much each customer has spent by adding the `total_amount` field.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT customer_id, SUM(total_amount) AS total_gastado
@@ -108,11 +108,11 @@ GROUP BY customer_id;
 
 ---
 
-### **Ejercicio 8: Clientes con más de 2 pedidos**
+### **Exercise 8: Customers with more than 2 orders**
 
-Filtra solo los clientes que tengan más de dos pedidos registrados.
+Filter only customers who have more than two registered orders.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT customer_id, COUNT(*) AS total_pedidos
@@ -125,11 +125,11 @@ HAVING total_pedidos > 2;
 
 ---
 
-### **Ejercicio 9: Media de gasto por cliente con más de 100€ gastados**
+### **Exercise 9: Average spending per customer with more than €100 spent**
 
-Obtén el promedio de gasto por cliente y filtra aquellos que hayan gastado más de 100€.
+Obtain the average spending per customer and filter those who have spent more than €100.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT customer_id, AVG(total_amount) AS media_gasto
@@ -142,11 +142,11 @@ HAVING media_gasto > 100;
 
 ---
 
-### **Ejercicio 10: Agrupar por cliente y día**
+### **Exercise 10: Group by client and day**
 
-Muestra cuántos pedidos ha hecho cada cliente por día.
+Shows how many orders each customer has placed per day.
 
-<details><summary>Mostrar Solución</summary>
+<details><summary>Show Solution</summary>
 
 ```sql
 SELECT customer_id, DATE(created_at) AS fecha, COUNT(*) AS pedidos_dia

@@ -1,22 +1,22 @@
-# Ejercicios - Tema 36: Concurrencia Básica
+# Exercises - Topic 36: Basic Concurrency
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **concurrencia básica**: `Thread`, `Runnable`, `sleep`, `join`, `synchronized`, `ExecutorService`, `Callable`, `Future`, interrupciones y virtual threads.
+Below you will find **10 practical exercises** to work with **basic concurrency**: `Thread`, `Runnable`, `sleep`, `join`, `synchronized`, `ExecutorService`, `Callable`, `Future`, interruptions and virtual threads.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear un hilo con `Thread`
+## Exercise 1: Create a thread with `Thread`
 
-Crea un hilo que imprima:
+Create a thread that prints:
 
 ```text
 Running task
 ```
 
-Inícialo usando `start()`.
+Start it using `start()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -34,19 +34,19 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Crear una clase que implemente `Runnable`
+## Exercise 2: Create a class that implements `Runnable`
 
-Crea una clase `DownloadTask` que implemente `Runnable`.
+Create a class `DownloadTask` that implements `Runnable`.
 
-Su método `run()` debe imprimir:
+Your `run()` method should print:
 
 ```text
 Downloading file...
 ```
 
-Desde `main`, crea un hilo con esa tarea y ejecútalo.
+From `main`, create a thread with that task and run it.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class DownloadTask implements Runnable {
@@ -71,23 +71,23 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Usar `Thread.sleep`
+## Exercise 3: Use `Thread.sleep`
 
-Crea un programa que imprima:
+Create a program that prints:
 
 ```text
 Start
 ```
 
-espere 1 segundo con `Thread.sleep(1000)` y después imprima:
+wait 1 second with `Thread.sleep(1000)` and then print:
 
 ```text
 End
 ```
 
-Maneja `InterruptedException`.
+Manages `InterruptedException`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -109,13 +109,13 @@ public class Main {
 
 ---
 
-## Ejercicio 4: Esperar a un hilo con `join`
+## Exercise 4: Wait for a thread with `join`
 
-Crea un hilo que espere 500 ms y después imprima `"Worker finished"`.
+Create a thread that waits 500 ms and then prints `"Worker finished"`.
 
-En `main`, espera a que termine con `join()` y luego imprime `"Main finished"`.
+In `main`, wait for it to finish with `join()` and then print `"Main finished"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -148,18 +148,18 @@ public class Main {
 
 ---
 
-## Ejercicio 5: Lanzar varios hilos
+## Exercise 5: Launch multiple threads
 
-Crea 3 hilos.  
-Cada uno debe imprimir:
+Create 3 threads.  
+Each one must print:
 
 ```text
 Task X
 ```
 
-donde `X` sea el número de la tarea.
+where `X` is the task number.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -181,18 +181,18 @@ public class Main {
 
 ---
 
-## Ejercicio 6: Contador con `synchronized`
+## Exercise 6: Counter with `synchronized`
 
-Crea una clase `SafeCounter` con:
+Create a class `SafeCounter` with:
 
-- atributo `value`
-- método `increment()` sincronizado
-- método `getValue()` sincronizado
+- `value` attribute
+- synchronized `increment()` method
+- synchronized `getValue()` method
 
-Desde `main`, crea dos hilos que incrementen el contador 1000 veces cada uno.  
-Al final, imprime el valor.
+From `main`, create two threads that increment the counter 1000 times each.  
+At the end, print the value.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class SafeCounter {
@@ -244,19 +244,19 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Usar `ExecutorService`
+## Exercise 7: Use `ExecutorService`
 
-Crea un `ExecutorService` con un pool de 2 hilos.
+Create an `ExecutorService` with a 2-thread pool.
 
-Envía 4 tareas que impriman:
+Submit 4 tasks that print:
 
 ```text
 Processing task X
 ```
 
-Cierra el executor con `shutdown()`.
+Close the executor with `shutdown()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -283,13 +283,13 @@ public class Main {
 
 ---
 
-## Ejercicio 8: `Callable` y `Future`
+## Exercise 8: `Callable` and `Future`
 
-Crea un `Callable<Integer>` que devuelva la suma de `15 + 25`.
+Create an `Callable<Integer>` that returns the sum of `15 + 25`.
 
-Envíalo a un executor con `submit` y obtén el resultado con `future.get()`.
+Send it to an executor with `submit` and get the result with `future.get()`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 import java.util.concurrent.Callable;
@@ -321,14 +321,14 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Interrumpir un hilo
+## Exercise 9: Interrupt a thread
 
-Crea un hilo que intente dormir 5 segundos.
+Create a thread that tries to sleep for 5 seconds.
 
-Desde `main`, inicia el hilo e interrúmpelo inmediatamente.  
-El hilo debe imprimir `"Interrupted"` si recibe la interrupción.
+From `main`, start the thread and interrupt it immediately.  
+The thread should print `"Interrupted"` if it receives the interrupt.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -352,17 +352,16 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Crear un virtual thread
+## Exercise 10: Create a virtual thread
 
-Crea un virtual thread que imprima:
+Create a virtual thread that prints:
 
 ```text
 Running in virtual thread
 ```
 
-Espera a que termine usando `join()`.
-
-<details><summary>Mostrar solución</summary>
+Wait for it to finish using `join()`.
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

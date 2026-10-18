@@ -1,21 +1,21 @@
-# Ejercicios - Tema 35: Sealed Classes
+# Exercises - Topic 35: Sealed Classes
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **sealed classes** y **sealed interfaces**: `sealed`, `permits`, `final`, `non-sealed`, records, `switch`, `instanceof` y jerarquías cerradas.
+Below you will find **10 practical exercises** to work with **sealed classes** and **sealed interfaces**: `sealed`, `permits`, `final`, `non-sealed`, records, `switch`, `instanceof` and closed hierarchies.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-## Ejercicio 1: Crear una sealed interface básica
+## Exercise 1: Create a basic sealed interface
 
-Crea una sealed interface `Notification` que solo permita estas implementaciones:
+Create a sealed interface `Notification` that only allows these implementations:
 
 - `EmailNotification`
 - `SmsNotification`
 
-Haz que ambas implementaciones sean records.
+Make both implementations records.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed interface Notification permits EmailNotification, SmsNotification {
@@ -36,19 +36,19 @@ public record SmsNotification(String phoneNumber, String message) implements Not
 
 ---
 
-## Ejercicio 2: Procesar una sealed interface con `instanceof`
+## Exercise 2: Process a sealed interface with `instanceof`
 
-Usa la sealed interface `Notification` del ejercicio anterior.
+Use the sealed interface `Notification` from the previous exercise.
 
-Crea un método:
+Create a method:
 
 ```java
 public static void printNotification(Notification notification)
 ```
 
-Debe imprimir información diferente si recibe un `EmailNotification` o un `SmsNotification`.
+You must print different information if you receive an `EmailNotification` or an `SmsNotification`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -74,16 +74,16 @@ public class Main {
 
 ---
 
-## Ejercicio 3: Sealed class con subclases `final`
+## Exercise 3: Sealed class with subclasses `final`
 
-Crea una clase abstracta sellada `Document` que permita:
+Create a sealed abstract class `Document` that allows:
 
 - `PdfDocument`
 - `WordDocument`
 
-Cada subclase debe ser `final` y tener un método `printType()`.
+Each subclass must be `final` and have an `printType()` method.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed abstract class Document permits PdfDocument, WordDocument {
@@ -113,19 +113,19 @@ public final class WordDocument extends Document {
 
 ---
 
-## Ejercicio 4: Usar `non-sealed`
+## Exercise 4: Use `non-sealed`
 
-Crea una sealed class `Device` que permita:
+Create a sealed class `Device` that allows:
 
 - `Computer`
 - `CustomDevice`
 
-`Computer` debe ser `final`.  
-`CustomDevice` debe ser `non-sealed`.
+`Computer` must be `final`.  
+`CustomDevice` must be `non-sealed`.
 
-Después crea una clase `SmartWatch` que herede de `CustomDevice`.
+Then create a class `SmartWatch` that inherits from `CustomDevice`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed class Device permits Computer, CustomDevice {
@@ -151,19 +151,19 @@ public class SmartWatch extends CustomDevice {
 
 ---
 
-## Ejercicio 5: Resultado de búsqueda con records
+## Exercise 5: Search result with records
 
-Crea una sealed interface `SearchResult` que permita:
+Create a sealed interface `SearchResult` that allows:
 
 - `Found`
 - `NotFound`
 
-`Found` debe guardar `title`.  
-`NotFound` debe guardar `query`.
+`Found` must save `title`.  
+`NotFound` should save `query`.
 
-Crea un método que devuelva `Found` si la búsqueda es `"java"` y `NotFound` en otro caso.
+Create a method that returns `Found` if the search is `"java"` and `NotFound` otherwise.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed interface SearchResult permits Found, NotFound {
@@ -196,16 +196,16 @@ public class SearchService {
 
 ---
 
-## Ejercicio 6: Usar `switch` con sealed interface
+## Exercise 6: Use `switch` with sealed interface
 
-Usa `SearchResult` del ejercicio anterior.
+Use `SearchResult` from the previous exercise.
 
-En `main`, crea un resultado y usa `switch` para generar un mensaje:
+In `main`, create a result and use `switch` to generate a message:
 
-- si es `Found`: `"Found: title"`
-- si es `NotFound`: `"No results for: query"`
+- if it is `Found`: `"Found: title"`
+- if it is `NotFound`: `"No results for: query"`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -228,21 +228,21 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Jerarquía de pagos
+## Exercise 7: Payment hierarchy
 
-Crea una sealed interface `PaymentMethod` que permita:
+Create a sealed interface `PaymentMethod` that allows:
 
 - `Card`
 - `BankTransfer`
 - `Cash`
 
-Cada una debe ser un record con datos diferentes:
+Each one must be a record with different data:
 
 - `Card(String lastDigits)`
 - `BankTransfer(String iban)`
 - `Cash()`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed interface PaymentMethod permits Card, BankTransfer, Cash {
@@ -268,19 +268,19 @@ public record Cash() implements PaymentMethod {
 
 ---
 
-## Ejercicio 8: Método para describir pagos
+## Exercise 8: Method for describing payments
 
-Usa la jerarquía del ejercicio anterior.
+Use the hierarchy from the previous exercise.
 
-Crea un método:
+Create a method:
 
 ```java
 public static String describe(PaymentMethod method)
 ```
 
-Debe devolver un texto diferente para cada tipo de pago usando `switch`.
+You should return different text for each payment type using `switch`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -304,20 +304,20 @@ public class Main {
 
 ---
 
-## Ejercicio 9: Sealed class con segundo nivel sellado
+## Exercise 9: Sealed class with second sealed level
 
-Crea una sealed class `Vehicle` que permita:
+Create a sealed class `Vehicle` that allows:
 
 - `Car`
 - `Bike`
 
-`Bike` debe ser `final`.  
-`Car` debe ser sealed y permitir:
+`Bike` must be `final`.  
+`Car` must be sealed and allow:
 
 - `ElectricCar`
 - `GasCar`
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed class Vehicle permits Car, Bike {
@@ -348,16 +348,16 @@ public final class Bike extends Vehicle {
 
 ---
 
-## Ejercicio 10: Elegir entre enum y sealed interface
+## Exercise 10: Choose between enum and sealed interface
 
-Crea una sealed interface `UploadResult` con:
+Create a sealed interface `UploadResult` with:
 
 - `UploadSuccess(String fileName)`
 - `UploadError(String reason)`
 
-Después, en `main`, crea un resultado de error y usa `switch` para imprimir el mensaje.
+Then, in `main`, create an error output and use `switch` to print the message.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public sealed interface UploadResult permits UploadSuccess, UploadError {

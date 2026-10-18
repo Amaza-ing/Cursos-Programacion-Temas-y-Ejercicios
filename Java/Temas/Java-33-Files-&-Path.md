@@ -1,53 +1,53 @@
-# Tema 33. `Files` y `Path`
+# Topic 33. `Files` and `Path`
 
-## 1. Introducción
+## 1. Introduction
 
-En muchos programas necesitas trabajar con archivos y carpetas.
+In many programs you need to work with files and folders.
 
-Por ejemplo:
+For example:
 
-- leer un archivo de texto
-- guardar información en un archivo
-- crear una carpeta
-- comprobar si un archivo existe
-- copiar un archivo
-- mover o renombrar un archivo
-- borrar archivos
-- listar el contenido de una carpeta
+- read a text file
+- save information to a file
+- create a folder
+- check if a file exists
+- copy a file
+- move or rename a file
+- delete files
+- list the contents of a folder
 
-Java tiene varias formas de trabajar con archivos, pero en código moderno se recomienda usar principalmente:
+Java has several ways to work with files, but in modern code it is recommended to mainly use:
 
 - `Path`
 - `Files`
 
-Estas clases forman parte de la API moderna de entrada/salida de Java, conocida como **NIO.2**.
+These classes are part of the modern Java input/output API, known as **NIO.2**.
 
-En este tema aprenderás:
+In this topic you will learn:
 
-- Qué es `Path`
-- Qué es `Files`
-- Cómo crear rutas
-- Cómo comprobar si existen archivos o carpetas
-- Cómo leer archivos de texto
-- Cómo escribir archivos
-- Cómo añadir contenido a un archivo
-- Cómo crear carpetas
-- Cómo copiar, mover y borrar archivos
-- Cómo listar una carpeta
-- Cómo manejar excepciones con `IOException`
-- Buenas prácticas al trabajar con archivos
+- What is `Path`
+- What is `Files`
+- How to create routes
+- How to check if files or folders exist
+- How to read text files
+- How to write files
+- How to add content to a file
+- How to create folders
+- How to copy, move and delete files
+- How to list a folder
+- How to handle exceptions with `IOException`
+- Good practices when working with files
 
 ---
 
-## 2. Archivos y rutas
+## 2. Files and paths
 
-Antes de escribir código, conviene diferenciar dos conceptos.
+Before writing code, it is worth differentiating two concepts.
 
-### 2.1. Archivo
+### 2.1. File
 
-Un archivo es un elemento que contiene información.
+A file is an element that contains information.
 
-Ejemplos:
+Examples:
 
 ```text
 notes.txt
@@ -56,43 +56,43 @@ config.json
 image.png
 ```
 
-### 2.2. Ruta
+### 2.2. Route
 
-Una ruta indica dónde está un archivo o una carpeta.
+A path indicates where a file or folder is.
 
-Ejemplo en Windows:
+Example on Windows:
 
 ```text
 C:\Users\Laura\Documents\notes.txt
 ```
 
-Ejemplo en macOS o Linux:
+Example on macOS or Linux:
 
 ```text
 /home/laura/documents/notes.txt
 ```
 
-En Java moderno, las rutas se representan con la clase `Path`.
+In modern Java, routes are represented with the `Path` class.
 
 ---
 
-## 3. Qué es `Path`
+## 3. What is `Path`
 
-`Path` representa una ruta del sistema de archivos.
+`Path` represents a file system path.
 
-Puede apuntar a:
+You can target:
 
-- un archivo
-- una carpeta
-- una ruta que todavía no existe
+- a file
+- a folder
+- a route that does not yet exist
 
-Importación:
+Import:
 
 ```java
 import java.nio.file.Path;
 ```
 
-Ejemplo:
+Example:
 
 ```java
 import java.nio.file.Path;
@@ -106,21 +106,21 @@ public class Main {
 }
 ```
 
-Aquí `path` representa el archivo `notes.txt` en la carpeta actual del proyecto.
+Here `path` represents the `notes.txt` file in the current project folder.
 
 ---
 
-## 4. Qué es `Files`
+## 4. What is `Files`
 
-`Files` es una clase de utilidad con métodos estáticos para trabajar con archivos y carpetas.
+`Files` is a utility class with static methods for working with files and folders.
 
-Importación:
+Import:
 
 ```java
 import java.nio.file.Files;
 ```
 
-Ejemplos de operaciones:
+Examples of operations:
 
 ```java
 Files.exists(path);
@@ -130,96 +130,96 @@ Files.createDirectory(path);
 Files.deleteIfExists(path);
 ```
 
-Idea clave:
+Key idea:
 
-- `Path` representa la ruta
-- `Files` realiza operaciones sobre esa ruta
+- `Path` represents the route
+- `Files` performs operations on that route
 
 ---
 
-## 5. Crear rutas con `Path.of`
+## 5. Create routes with `Path.of`
 
-La forma moderna y sencilla de crear rutas es usar `Path.of`.
+The modern and simple way to create routes is to use `Path.of`.
 
 ```java
 Path path = Path.of("notes.txt");
 ```
 
-También puedes crear rutas por partes:
+You can also create routes in parts:
 
 ```java
 Path path = Path.of("data", "notes.txt");
 ```
 
-Esto representa:
+This represents:
 
 ```text
 data/notes.txt
 ```
 
-o en Windows:
+or on Windows:
 
 ```text
 data\notes.txt
 ```
 
-Java adapta el separador según el sistema operativo.
+Java adapts the separator depending on the operating system.
 
 ---
 
-## 6. Evitar escribir separadores manualmente
+## 6. Avoid writing separators manually
 
-Puedes escribir esto:
+You can write this:
 
 ```java
 Path path = Path.of("data/notes.txt");
 ```
 
-Pero suele ser más recomendable escribir la ruta por partes:
+But it is usually more advisable to write the route in parts:
 
 ```java
 Path path = Path.of("data", "notes.txt");
 ```
 
-Así el código es más portable entre sistemas operativos.
+This way the code is more portable between operating systems.
 
 ---
 
-## 7. Rutas relativas y absolutas
+## 7. Relative and absolute paths
 
-### 7.1. Ruta relativa
+### 7.1. Relative path
 
-Una ruta relativa depende de la carpeta desde la que se ejecuta el programa.
+A relative path depends on the folder from which the program is run.
 
 ```java
 Path path = Path.of("notes.txt");
 ```
 
-Esto apunta a `notes.txt` en la carpeta actual.
+This points to `notes.txt` in the current folder.
 
-### 7.2. Ruta absoluta
+### 7.2. absolute path
 
-Una ruta absoluta empieza desde la raíz del sistema.
+An absolute path starts from the root of the system.
 
-Ejemplo en Windows:
+Example on Windows:
 
 ```java
 Path path = Path.of("C:", "Users", "Laura", "Documents", "notes.txt");
 ```
 
-Ejemplo en macOS o Linux:
+Example on macOS or Linux:
 
 ```java
 Path path = Path.of("/home/laura/documents/notes.txt");
 ```
 
-En proyectos de aprendizaje, normalmente empezaremos con rutas relativas.
+In learning projects, we will usually start with relative paths.
 
 ---
 
-## 8. Obtener información de una ruta
+## 8. Obtain information about a route
 
-`Path` tiene métodos útiles para analizar una ruta.
+`Path` has useful methods for analyzing a route.
 
 ```java
 import java.nio.file.Path;
@@ -236,7 +236,7 @@ public class Main {
 }
 ```
 
-Resultado aproximado:
+Approximate result:
 
 ```text
 Path: data/notes.txt
@@ -246,10 +246,9 @@ Absolute path: ...
 ```
 
 ---
+## 9. Check if a file exists
 
-## 9. Comprobar si un archivo existe
-
-Para comprobar si una ruta existe, usamos `Files.exists`.
+To check if a route exists, we use `Files.exists`.
 
 ```java
 import java.nio.file.Files;
@@ -270,7 +269,7 @@ public class Main {
 
 ---
 
-## 10. Comprobar si es archivo o carpeta
+## 10. Check if it is a file or folder
 
 ```java
 import java.nio.file.Files;
@@ -286,16 +285,16 @@ public class Main {
 }
 ```
 
-- `isRegularFile` comprueba si es un archivo normal
-- `isDirectory` comprueba si es una carpeta
+- `isRegularFile` checks if it is a normal file
+- `isDirectory` checks if it is a folder
 
 ---
 
-## 11. Crear un archivo
+## 11. Create a file
 
-Puedes crear un archivo vacío con `Files.createFile`.
+You can create an empty file with `Files.createFile`.
 
-Este método puede lanzar `IOException`, así que debes manejarla.
+This method may throw `IOException`, so you must handle it.
 
 ```java
 import java.io.IOException;
@@ -317,13 +316,13 @@ public class Main {
 }
 ```
 
-Si el archivo ya existe, puede producirse una excepción.
+If the file already exists, an exception may occur.
 
 ---
 
-## 12. Crear una carpeta
+## 12. Create a folder
 
-Para crear una carpeta usamos `Files.createDirectory`.
+To create a folder we use `Files.createDirectory`.
 
 ```java
 import java.io.IOException;
@@ -347,9 +346,9 @@ public class Main {
 
 ---
 
-## 13. Crear carpetas anidadas con `createDirectories`
+## 13. Create nested folders with `createDirectories`
 
-Si quieres crear varias carpetas a la vez, usa `createDirectories`.
+If you want to create multiple folders at once, use `createDirectories`.
 
 ```java
 import java.io.IOException;
@@ -371,16 +370,16 @@ public class Main {
 }
 ```
 
-Diferencia importante:
+Important difference:
 
-- `createDirectory` crea una sola carpeta
-- `createDirectories` crea toda la estructura necesaria
+- `createDirectory` creates a single folder
+- `createDirectories` creates all the necessary structure
 
 ---
 
-## 14. Escribir texto en un archivo con `writeString`
+## 14. Write text to a file with `writeString`
 
-Una forma sencilla de escribir texto es usar `Files.writeString`.
+An easy way to enter text is to use `Files.writeString`.
 
 ```java
 import java.io.IOException;
@@ -402,14 +401,14 @@ public class Main {
 }
 ```
 
-Si el archivo no existe, se crea.  
-Si el archivo existe, se reemplaza su contenido.
+If the file does not exist, it is created.  
+If the file exists, its contents are replaced.
 
 ---
 
-## 15. Leer texto de un archivo con `readString`
+## 15. Read text from a file with `readString`
 
-Para leer todo el contenido de un archivo de texto, puedes usar `Files.readString`.
+To read the entire contents of a text file, you can use `Files.readString`.
 
 ```java
 import java.io.IOException;
@@ -433,7 +432,7 @@ public class Main {
 
 ---
 
-## 16. Ejemplo guiado: escribir y leer un archivo
+## 16. Guided Example: Writing and Reading a File
 
 ```java
 import java.io.IOException;
@@ -458,18 +457,18 @@ public class Main {
 }
 ```
 
-Este ejemplo:
+This example:
 
-1. crea o sobrescribe `message.txt`
-2. escribe texto
-3. lee el contenido
-4. lo imprime
+1. creates or overwrites `message.txt`
+2. write text
+3. read the content
+4. print it
 
 ---
 
-## 17. Escribir varias líneas
+## 17. Write multiple lines
 
-Puedes escribir una lista de líneas con `Files.write`.
+You can write a list of lines with `Files.write`.
 
 ```java
 import java.io.IOException;
@@ -498,11 +497,11 @@ public class Main {
 }
 ```
 
-Cada elemento de la lista se escribe como una línea.
+Each list item is written as one line.
 
 ---
 
-## 18. Leer todas las líneas con `readAllLines`
+## 18. Read all lines with `readAllLines`
 
 ```java
 import java.io.IOException;
@@ -530,11 +529,11 @@ public class Main {
 
 ---
 
-## 19. Añadir contenido a un archivo
+## 19. Add content to a file
 
-Por defecto, `writeString` reemplaza el contenido.
+By default, `writeString` replaces the content.
 
-Si quieres añadir contenido al final, puedes usar `StandardOpenOption.APPEND`.
+If you want to add content at the end, you can use `StandardOpenOption.APPEND`.
 
 ```java
 import java.io.IOException;
@@ -563,16 +562,16 @@ public class Main {
 }
 ```
 
-Aquí:
+Here:
 
-- `CREATE` crea el archivo si no existe
-- `APPEND` añade el texto al final
+- `CREATE` creates the file if it does not exist
+- `APPEND` adds the text at the end
 
 ---
 
-## 20. Copiar un archivo
+## 20. Copy a file
 
-Para copiar archivos usamos `Files.copy`.
+To copy files we use `Files.copy`.
 
 ```java
 import java.io.IOException;
@@ -595,13 +594,13 @@ public class Main {
 }
 ```
 
-Si el archivo destino ya existe, puede producirse una excepción.
+If the destination file already exists, an exception may occur.
 
 ---
 
-## 21. Copiar reemplazando si ya existe
+## 21. Copy replacing if already exists
 
-Para reemplazar el destino, usa `StandardCopyOption.REPLACE_EXISTING`.
+To replace the destination, use `StandardCopyOption.REPLACE_EXISTING`.
 
 ```java
 import java.io.IOException;
@@ -630,11 +629,11 @@ public class Main {
 
 ---
 
-## 22. Mover o renombrar un archivo
+## 22. Move or rename a file
 
-Para mover o renombrar, usa `Files.move`.
+To move or rename, use `Files.move`.
 
-### 22.1. Renombrar
+### 22.1. Rename
 
 ```java
 import java.io.IOException;
@@ -657,7 +656,7 @@ public class Main {
 }
 ```
 
-### 22.2. Mover a otra carpeta
+### 22.2. Move to another folder
 
 ```java
 Path source = Path.of("renamed-notes.txt");
@@ -666,9 +665,9 @@ Path target = Path.of("data", "renamed-notes.txt");
 
 ---
 
-## 23. Borrar un archivo
+## 23. Delete a file
 
-Puedes borrar un archivo con `Files.delete`.
+You can delete a file with `Files.delete`.
 
 ```java
 import java.io.IOException;
@@ -690,13 +689,13 @@ public class Main {
 }
 ```
 
-Si el archivo no existe, puede lanzar una excepción.
+If the file does not exist, it may throw an exception.
 
 ---
 
-## 24. Borrar si existe: `deleteIfExists`
+## 24. Delete if exists: `deleteIfExists`
 
-Una opción más cómoda es `deleteIfExists`.
+A more convenient option is `deleteIfExists`.
 
 ```java
 import java.io.IOException;
@@ -725,11 +724,11 @@ public class Main {
 
 ---
 
-## 25. Listar archivos de una carpeta
+## 25. List files in a folder
 
-Para listar el contenido de una carpeta puedes usar `Files.list`.
+To list the contents of a folder you can use `Files.list`.
 
-Este método devuelve un `Stream<Path>`, por eso es importante cerrarlo con `try-with-resources`.
+This method returns an `Stream<Path>`, so it is important to close it with `try-with-resources`.
 
 ```java
 import java.io.IOException;
@@ -753,7 +752,7 @@ public class Main {
 
 ---
 
-## 26. Listar solo archivos
+## 26. List only files
 
 ```java
 import java.io.IOException;
@@ -779,9 +778,9 @@ public class Main {
 
 ---
 
-## 27. Recorrer carpetas con `walk`
+## 27. Loop through folders with `walk`
 
-`Files.walk` permite recorrer una carpeta y sus subcarpetas.
+`Files.walk` allows you to cycle through a folder and its subfolders.
 
 ```java
 import java.io.IOException;
@@ -803,11 +802,11 @@ public class Main {
 }
 ```
 
-Esto es útil para buscar archivos dentro de una estructura de carpetas.
+This is useful for searching for files within a folder structure.
 
 ---
 
-## 28. Buscar archivos por extensión
+## 28. Search files by extension
 
 ```java
 import java.io.IOException;
@@ -835,17 +834,16 @@ public class Main {
 ---
 
 ## 29. `try-with-resources`
+Some operations open resources that must be closed.
 
-Algunas operaciones abren recursos que deben cerrarse.
-
-Por ejemplo:
+For example:
 
 ```java
 Files.list(folder)
 Files.walk(folder)
 ```
 
-Por eso se usa esta estructura:
+That is why this structure is used:
 
 ```java
 try (Stream<Path> paths = Files.list(folder)) {
@@ -853,17 +851,17 @@ try (Stream<Path> paths = Files.list(folder)) {
 }
 ```
 
-Cuando termina el bloque, Java cierra el recurso automáticamente.
+When the block ends, Java automatically closes the resource.
 
 ---
 
-## 30. Leer archivos grandes línea a línea
+## 30. Read large files line by line
 
-`Files.readAllLines` carga todas las líneas en memoria.
+`Files.readAllLines` loads all lines into memory.
 
-Para archivos pequeños está bien, pero si el archivo es grande puede no ser buena idea.
+For small files it is fine, but if the file is large it may not be a good idea.
 
-Una alternativa es `Files.lines`, que devuelve un stream de líneas.
+An alternative is `Files.lines`, which returns a stream of lines.
 
 ```java
 import java.io.IOException;
@@ -887,7 +885,7 @@ public class Main {
 
 ---
 
-## 31. Ejemplo guiado: contar líneas de un archivo
+## 31. Guided Example: Count Lines in a File
 
 ```java
 import java.io.IOException;
@@ -913,7 +911,7 @@ public class Main {
 
 ---
 
-## 32. Ejemplo guiado: guardar una lista de usuarios
+## 32. Guided Example: Saving a List of Users
 
 ```java
 import java.io.IOException;
@@ -944,7 +942,7 @@ public class Main {
 
 ---
 
-## 33. Ejemplo guiado: cargar usuarios desde archivo
+## 33. Guided Example: Load Users from File
 
 ```java
 import java.io.IOException;
@@ -972,9 +970,9 @@ public class Main {
 
 ---
 
-## 34. Ejemplo completo: gestor simple de tareas
+## 34. Complete example: simple task manager
 
-Este ejemplo guarda tareas en un archivo de texto y luego las lee.
+This example saves tasks to a text file and then reads them.
 
 ```java
 import java.io.IOException;
@@ -1020,22 +1018,22 @@ public class Main {
 
 ---
 
-## 35. `resolve`: construir rutas desde otra ruta
+## 35. `resolve`: build routes from another route
 
-`resolve` permite crear una ruta a partir de otra.
+`resolve` allows creating a route from another.
 
 ```java
 Path folder = Path.of("data");
 Path file = folder.resolve("notes.txt");
 ```
 
-Esto produce:
+This produces:
 
 ```text
 data/notes.txt
 ```
 
-Ejemplo:
+Example:
 
 ```java
 import java.nio.file.Path;
@@ -1052,9 +1050,9 @@ public class Main {
 
 ---
 
-## 36. `normalize`: limpiar una ruta
+## 36. `normalize`: clear a route
 
-A veces una ruta puede contener partes redundantes como `..` o `.`.
+Sometimes a route may contain redundant parts such as `..` or `.`.
 
 ```java
 Path path = Path.of("data", "users", "..", "notes.txt");
@@ -1063,21 +1061,21 @@ System.out.println(path);
 System.out.println(path.normalize());
 ```
 
-Resultado aproximado:
+Approximate result:
 
 ```text
 data/users/../notes.txt
 data/notes.txt
 ```
 
-`normalize` no accede al sistema de archivos.  
-Solo limpia la ruta a nivel lógico.
+`normalize` does not access the file system.  
+It only clears the path at the logical level.
 
 ---
 
 ## 37. `toAbsolutePath`
 
-Para convertir una ruta relativa en absoluta:
+To convert a relative path to absolute:
 
 ```java
 import java.nio.file.Path;
@@ -1091,21 +1089,21 @@ public class Main {
 }
 ```
 
-Esto es muy útil para depurar y saber dónde está buscando realmente Java el archivo.
+This is very useful for debugging and knowing where Java is actually looking for the file.
 
 ---
 
-## 38. Codificación de caracteres
+## 38. Character encoding
 
-Cuando trabajas con texto, existe la codificación.
+When you work with text, there is coding.
 
-Una codificación habitual es:
+A common encoding is:
 
 ```java
 UTF-8
 ```
 
-Puedes indicarla explícitamente.
+You can indicate it explicitly.
 
 ```java
 import java.io.IOException;
@@ -1131,19 +1129,19 @@ public class Main {
 }
 ```
 
-En muchos casos Java usará una codificación por defecto, pero para proyectos reales suele ser buena idea ser explícito.
+In many cases Java will use a default encoding, but for real projects it is usually a good idea to be explicit.
 
 ---
 
 ## 39. `File` vs `Path`
 
-Antes era muy común usar:
+Before it was very common to use:
 
 ```java
 java.io.File
 ```
 
-En Java moderno, suele preferirse:
+In modern Java, it is usually preferred:
 
 ```java
 java.nio.file.Path
@@ -1152,22 +1150,22 @@ java.nio.file.Files
 
 ### 39.1. `File`
 
-Representa archivos y carpetas con una API más antigua.
+Represents files and folders with an older API.
 
 ### 39.2. `Path`
 
-Representa rutas de forma moderna y trabaja muy bien con `Files`.
+It represents routes in a modern way and works very well with `Files`.
 
-Regla práctica:
+Rule of thumb:
 
-- código nuevo → usa `Path` y `Files`
-- APIs antiguas → puede que todavía usen `File`
+- new code → use `Path` and `Files`
+- Older APIs → may still use `File`
 
 ---
 
-## 40. Convertir entre `File` y `Path`
+## 40. Convert between `File` and `Path`
 
-A veces puedes necesitar convertir entre ambos.
+Sometimes you may need to convert between the two.
 
 ```java
 import java.io.File;
@@ -1191,19 +1189,19 @@ public class Main {
 
 ## 41. `IOException`
 
-Muchas operaciones con archivos pueden fallar.
+Many file operations can fail.
 
-Por ejemplo:
+For example:
 
-- el archivo no existe
-- no tienes permisos
-- la carpeta no existe
-- el archivo está bloqueado
-- hay un error de lectura o escritura
+- the file does not exist
+- you don't have permissions
+- the folder does not exist
+- the file is locked
+- there is a read or write error
 
-Por eso muchos métodos de `Files` lanzan `IOException`.
+That's why many `Files` methods throw `IOException`.
 
-Ejemplo:
+Example:
 
 ```java
 try {
@@ -1216,108 +1214,107 @@ try {
 
 ---
 
-## 42. Errores típicos al empezar
+## 42. Typical mistakes when starting
 
-### 42.1. No saber dónde se crea el archivo
+### 42.1. Not knowing where the file is created
 
-Si usas una ruta relativa:
+If you use a relative path:
 
 ```java
 Path path = Path.of("notes.txt");
 ```
 
-el archivo se crea en la carpeta desde la que se ejecuta el programa.
+The file is created in the folder from which the program is run.
 
-Para depurar:
+To debug:
 
 ```java
 System.out.println(path.toAbsolutePath());
 ```
 
-### 42.2. Olvidar manejar `IOException`
+### 42.2. Forget to handle `IOException`
 
-Muchas operaciones requieren `try-catch`.
+Many operations require `try-catch`.
 
-### 42.3. Usar barras manuales de forma poco portable
+### 42.3. Using manual bars in a non-portable way
 
-Mejor:
+Better:
 
 ```java
 Path path = Path.of("data", "notes.txt");
 ```
 
-que:
+that:
 
 ```java
 Path path = Path.of("data\\notes.txt");
 ```
 
-### 42.4. Leer archivos grandes enteros en memoria
+### 42.4. Read entire large files into memory
+For large files, consider `Files.lines`.
 
-Para archivos grandes, considera `Files.lines`.
+### 42.5. Don't close file streams
 
-### 42.5. No cerrar streams de archivos
-
-Usa `try-with-resources` con `Files.list`, `Files.walk` y `Files.lines`.
-
----
-
-## 43. Buenas prácticas
-
-- Usa `Path` para representar rutas.
-- Usa `Files` para operar sobre archivos y carpetas.
-- Usa `Path.of("folder", "file.txt")` para rutas portables.
-- Usa `createDirectories` si necesitas crear carpetas anidadas.
-- Usa `deleteIfExists` si no quieres error cuando no existe.
-- Usa `try-with-resources` con streams de archivos.
-- Usa `toAbsolutePath` para depurar rutas.
-- Maneja `IOException` correctamente.
-- Para texto, considera usar `StandardCharsets.UTF_8`.
+Use `try-with-resources` with `Files.list`, `Files.walk` and `Files.lines`.
 
 ---
 
-## 44. A tener en cuenta
+## 43. Good practices
 
-- `Path` representa una ruta.
-- `Files` permite leer, escribir, copiar, mover y borrar.
-- `Files.writeString` escribe texto.
-- `Files.readString` lee texto.
-- `Files.write` puede escribir varias líneas.
-- `Files.readAllLines` lee todas las líneas.
-- `Files.list` lista una carpeta.
-- `Files.walk` recorre subcarpetas.
-- Muchas operaciones pueden lanzar `IOException`.
-- Las rutas relativas dependen de la carpeta de ejecución.
+- Use `Path` to represent routes.
+- Use `Files` to operate on files and folders.
+- Use `Path.of("folder", "file.txt")` for portable routes.
+- Use `createDirectories` if you need to create nested folders.
+- Use `deleteIfExists` if you don't want error when it doesn't exist.
+- Use `try-with-resources` with file streams.
+- Use `toAbsolutePath` to debug routes.
+- Handle `IOException` correctly.
+- For text, consider using `StandardCharsets.UTF_8`.
 
 ---
 
-## 45. Resumen final
+## 44. To take into account
 
-`Files` y `Path` son herramientas fundamentales para trabajar con archivos en Java moderno.
+- `Path` represents a route.
+- `Files` allows reading, writing, copying, moving and deleting.
+- `Files.writeString` writes text.
+- `Files.readString` reads text.
+- `Files.write` can write multiple lines.
+- `Files.readAllLines` reads all lines.
+- `Files.list` lists a folder.
+- `Files.walk` loops through subfolders.
+- Many operations can release `IOException`.
+- Relative paths depend on the execution folder.
 
-La idea principal es sencilla:
+---
+
+## 45. Final summary
+
+`Files` and `Path` are essential tools for working with files in modern Java.
+
+The main idea is simple:
 
 ```java
 Path path = Path.of("notes.txt");
 Files.writeString(path, "Hello");
 ```
 
-`Path` dice dónde está el archivo.  
-`Files` hace la operación.
+`Path` tells where the file is.  
+`Files` does the operation.
 
-Con estas clases puedes:
+With these classes you can:
 
-- crear archivos
-- crear carpetas
-- escribir texto
-- leer texto
-- listar carpetas
-- copiar archivos
-- mover archivos
-- borrar archivos
+- create files
+- create folders
+- write text
+- read text
+- list folders
+- copy files
+- move files
+- delete files
 
-Dominar esta parte es muy importante porque muchísimas aplicaciones necesitan guardar o leer información del sistema de archivos.
+Mastering this part is very important because many applications need to save or read information from the file system.
 
 ---
 
-En el siguiente tema seguiremos avanzando con Java moderno y veremos **Records**, una forma compacta de crear clases pensadas principalmente para almacenar datos.
+In the next topic we will continue advancing with modern Java and look at **Records**, a compact way to create classes designed primarily to store data.

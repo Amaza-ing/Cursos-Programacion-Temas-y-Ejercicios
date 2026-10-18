@@ -1,18 +1,18 @@
-# **Ejercicios - Tema 7: Posicionamiento en CSS**
+# **Exercises - Topic 7: Positioning in CSS**
 
-## **Instrucciones:**
+## **Instructions:**
 
-A continuación, encontrarás 5 ejercicios prácticos sobre el posicionamiento en CSS.
+Below, you will find 5 practical exercises on positioning in CSS.
 
-Intenta resolverlos antes de consultar la solución.
+Try to solve them before consulting the solution.
 
 ---
 
-### **Ejercicio 1: Crear un elemento con `position: relative`**
+### **Exercise 1: Create an item with `position: relative`**
 
-Crea un `div` con un ancho de 150px, un alto de 100px y color de fondo verde. Luego, desplázalo 30px hacia abajo y 40px hacia la derecha usando `position: relative`.
+Create an `div` with a width of 150px, a height of 100px and a green background color. Then, shift it 30px down and 40px to the right using `position: relative`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .box {
@@ -25,19 +25,21 @@ Crea un `div` con un ancho de 150px, un alto de 100px y color de fondo verde. Lu
 }
 ```
 
+
 ```html
 <div class="box"></div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 2: Crear un contenedor con un elemento `absolute`**
+### **Exercise 2: Create a container with an `absolute` element**
 
-Define un `div` padre con `position: relative` y dentro de él coloca otro `div` con `position: absolute`, que se posicione en la esquina inferior derecha del contenedor.
+Define a parent `div` with `position: relative` and inside it place another `div` with `position: absolute`, which is positioned in the lower right corner of the container.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .container {
@@ -57,21 +59,23 @@ Define un `div` padre con `position: relative` y dentro de él coloca otro `div`
 }
 ```
 
+
 ```html
 <div class="container">
   <div class="child"></div>
 </div>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 3: Crear un menú de navegación fijo (`fixed`)**
+### **Exercise 3: Create a sticky navigation menu (`fixed`)**
 
-Crea una barra de navegación de 100% de ancho con color de fondo azul y posición fija en la parte superior de la página.
+Creates a 100% width navigation bar with blue background color and fixed position at the top of the page.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .navbar {
@@ -87,19 +91,21 @@ Crea una barra de navegación de 100% de ancho con color de fondo azul y posici�
 }
 ```
 
+
 ```html
 <div class="navbar">Menú de navegación</div>
 ```
+
 
 </details>
 
 ---
 
-### **Ejercicio 4: Crear un elemento con `sticky`**
+### **Exercise 4: Create an item with `sticky`**
 
-Crea un encabezado `<h2>` que permanezca pegado en la parte superior de la página cuando el usuario haga scroll.
+Create an `<h2>` header that stays stuck to the top of the page when the user scrolls.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .header {
@@ -110,20 +116,22 @@ Crea un encabezado `<h2>` que permanezca pegado en la parte superior de la pági
 }
 ```
 
+
 ```html
 <h2 class="header">Encabezado adhesivo</h2>
 <p>Texto de prueba para hacer scroll...</p>
 ```
 
+
 </details>
 
 ---
 
-### **Ejercicio 5: Centrar un elemento con `absolute` y `transform`**
+### **Exercise 5: Center an element with `absolute` and `transform`**
 
-Crea un `div` de 100x100px con fondo naranja y posiciónalo en el centro exacto de la pantalla usando `position: absolute` y `transform`.
+Create a 100x100px `div` with an orange background and position it in the exact center of the screen using `position: absolute` and `transform`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```css
 .center-box {
@@ -137,8 +145,10 @@ Crea un `div` de 100x100px con fondo naranja y posiciónalo en el centro exacto 
 }
 ```
 
+
 ```html
 <div class="center-box"></div>
 ```
+
 
 </details>

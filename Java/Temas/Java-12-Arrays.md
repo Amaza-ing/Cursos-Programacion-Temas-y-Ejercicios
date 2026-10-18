@@ -1,23 +1,23 @@
-# Tema 12. Arrays
+# Topic 12. Arrays
 
-## 1. Introducción
+## 1. Introduction
 
-Hasta ahora has trabajado con variables que guardan **un único valor**:
+Until now you have worked with variables that hold **a single value**:
 
-- Un `int` guarda un número
-- Un `double` guarda un decimal
-- Un `String` guarda un texto
-- Un `boolean` guarda `true` o `false`
+- An `int` stores a number
+- An `double` stores a decimal
+- An `String` saves a text
+- An `boolean` stores `true` or `false`
 
-Pero en programación es muy habitual necesitar **varios valores del mismo tipo**:
+But in programming it is very common to need **several values of the same type**:
 
-- Las notas de un alumno
-- Los precios de un carrito
-- Los intentos de una partida
-- Los días de la semana
-- Las puntuaciones de varios jugadores
+- A student's notes
+- The prices of a cart
+- The attempts of a game
+- The days of the week
+- Multiplayer scores
 
-Podrías crear muchas variables:
+You could create many variables:
 
 ```java
 int score1 = 10;
@@ -25,9 +25,9 @@ int score2 = 15;
 int score3 = 8;
 ```
 
-Pero esto no escala. Por eso existen los **arrays**.
+But this doesn't scale. That's why **arrays** exist.
 
-Un **array** es una estructura que permite almacenar **varios valores del mismo tipo** dentro de una única variable.
+An **array** is a structure that allows storing **several values ​​of the same type** within a single variable.
 
 ---
 
@@ -35,16 +35,16 @@ Un **array** es una estructura que permite almacenar **varios valores del mismo 
 
 ---
 
-## 2. Qué es un array
+## 2. What is an array
 
-Un array:
+An array:
 
-- Guarda una colección de elementos del **mismo tipo**
-- Tiene un tamaño fijo (se decide al crearlo)
-- Permite acceder a cada elemento por su **índice** (posición)
-- Empieza siempre en índice **0**
+- Saves a collection of items of the **same type**
+- It has a fixed size (decided when creating it)
+- Allows access to each element by its **index** (position)
+- Always starts at index **0**
 
-Si tienes un array de 5 elementos, sus índices son:
+If you have an array of 5 elements, its indexes are:
 
 ```
 0  1  2  3  4
@@ -52,53 +52,53 @@ Si tienes un array de 5 elementos, sus índices son:
 
 ---
 
-## 3. Declarar un array
+## 3. Declare an array
 
-Para declarar un array, se usa `[]` después del tipo:
+To declare an array, use `[]` after the type:
 
 ```java
 int[] scores;
 ```
 
-Esto solo declara la variable. Todavía no hay array creado (no hay memoria reservada para los elementos).
+This just declares the variable. There is still no array created (there is no memory reserved for the elements).
 
 ---
 
-## 4. Crear un array (reservar memoria)
+## 4. Create an array (reserve memory)
 
-Para crear un array se usa `new` y se indica el tamaño.
+To create an array, `new` is used and the size is indicated.
 
 ```java
 int[] scores = new int[5];
 ```
 
-Aquí:
+Here:
 
-- Se crea un array de `int`
-- Con tamaño 5
-- Todos los elementos se inicializan con el valor por defecto de `int`, que es `0`
+- An array of `int` is created
+- With size 5
+- All elements are initialized with the default value of `int`, which is `0`
 
 ---
 
-## 5. Tamaño del array: `length`
+## 5. Array size: `length`
 
-Los arrays tienen una propiedad llamada `length` que indica cuántos elementos tienen.
+Arrays have a property called `length` that indicates how many elements they have.
 
 ```java
 int[] scores = new int[5];
 System.out.println(scores.length); // 5
 ```
 
-Importante:
+Important:
 
-- En arrays se usa `length` (sin paréntesis)
-- En `String` se usa `length()` (con paréntesis)
+- In arrays `length` is used (without parentheses)
+- In `String` `length()` is used (with parentheses)
 
 ---
 
-## 6. Índices: acceder a un elemento
+## 6. Indexes: access an element
 
-Para acceder a una posición se usa `[]` con el índice.
+To access a position, use `[]` with the index.
 
 ```java
 int[] scores = new int[5];
@@ -107,16 +107,16 @@ System.out.println(scores[0]); // primer elemento
 System.out.println(scores[4]); // último elemento
 ```
 
-Recuerda:
+Remember:
 
-- Primer elemento → índice 0
-- Último elemento → índice `length - 1`
+- First element → index 0
+- Last item → index `length - 1`
 
 ---
 
-## 7. Asignar valores a un array
+## 7. Assign values to an array
 
-Puedes asignar valores a posiciones concretas usando el índice.
+You can assign values to specific positions using the index.
 
 ```java
 int[] scores = new int[5];
@@ -132,23 +132,23 @@ System.out.println(scores[3]); // 20
 
 ---
 
-## 8. Inicializar un array con valores (forma rápida)
+## 8. Initialize an array with values (quick way)
 
-A veces ya sabes los valores al crear el array. En ese caso puedes usar una inicialización literal:
+Sometimes you already know the values when creating the array. In that case you can use a literal initialization:
 
 ```java
 int[] scores = {10, 15, 8, 20, 12};
 ```
 
-Aquí Java:
+Here Java:
 
-- Crea el array automáticamente
-- Le asigna tamaño 5
-- Mete los valores en orden
+- Create the array automatically
+- Assigns size 5
+- Put the values in order
 
 ---
 
-## 9. Arrays de otros tipos
+## 9. Arrays of other types
 
 ### 9.1. `double[]`
 
@@ -170,17 +170,17 @@ String[] names = {"Laura", "Alex", "Sara"};
 
 ---
 
-## 10. Valores por defecto en arrays
+## 10. Default values in arrays
 
-Cuando creas un array con `new`, Java inicializa automáticamente sus elementos:
+When you create an array with `new`, Java automatically initializes its elements:
 
 - `int` → 0
 - `double` → 0.0
 - `boolean` → false
-- `char` → '\u0000' (carácter “vacío”)
-- `String` (y otros objetos) → `null`
+- `char` → '\u0000' (“empty” character)
+- `String` (and other items) → `null`
 
-Ejemplo:
+Example:
 
 ```java
 String[] names = new String[3];
@@ -188,54 +188,53 @@ String[] names = new String[3];
 System.out.println(names[0]); // null
 ```
 
-`null` significa “no hay objeto” o “no hay valor asignado”.
+`null` means “no object” or “no value assigned”.
 
 ---
 
-## 11. Errores comunes con arrays
+## 11. Common mistakes with arrays
 
-### 11.1. `ArrayIndexOutOfBoundsException` (índice fuera de rango)
+### 11.1. `ArrayIndexOutOfBoundsException` (index out of range)
 
-Este es el error más típico:
+This is the most typical error:
 
 ```java
 int[] scores = new int[3];
 scores[3] = 10; // error
 ```
 
-¿Por qué?
+Why?
+- If size is 3, valid indices are 0, 1 and 2.
+- Index 3 is out of range.
 
-- Si el tamaño es 3, los índices válidos son 0, 1 y 2.
-- El índice 3 está fuera del rango.
+Rule of thumb:
 
-Regla práctica:
-
-- Nunca uses un índice mayor o igual que `length`.
-
----
-
-### 11.2. Olvidar que empieza en 0
-
-Si tienes un array de 5:
-
-- Primer índice: 0
-- Último índice: 4
-
-Esto es clave para evitar errores.
+- Never use an index greater than or equal to `length`.
 
 ---
 
-### 11.3. Confundir declaración con creación
+### 11.2. Forget that it starts at 0
 
-Esto declara un array, pero NO lo crea:
+If you have an array of 5:
+
+- First index: 0
+- Last index: 4
+
+This is key to avoid errors.
+
+---
+
+### 11.3. Confuse declaration with creation
+
+This declares an array, but does NOT create it:
 
 ```java
 int[] scores;
 ```
 
-Si intentas usarlo así, dará error de compilación porque no está inicializado.
+If you try to use it like this, it will give a compile error because it is not initialized.
 
-Lo correcto es crearlo:
+The correct thing is to create it:
 
 ```java
 int[] scores = new int[5];
@@ -243,9 +242,9 @@ int[] scores = new int[5];
 
 ---
 
-## 12. Ejemplos guiados (para entender el uso real)
+## 12. Guided Examples (to understand actual usage)
 
-### 12.1. Ejemplo: guardar y mostrar datos
+### 12.1. Example: save and display data
 
 ```java
 public class Main {
@@ -261,7 +260,7 @@ public class Main {
 
 ---
 
-### 12.2. Ejemplo: actualizar un valor del array
+### 12.2. Example: update an array value
 
 ```java
 public class Main {
@@ -279,7 +278,7 @@ public class Main {
 
 ---
 
-### 12.3. Ejemplo: usar `length` para acceder al último elemento
+### 12.3. Example: Use `length` to access the last item
 
 ```java
 public class Main {
@@ -294,11 +293,11 @@ public class Main {
 
 ---
 
-## 13. Arrays y métodos
+## 13. Arrays and methods
 
-Es muy común pasar arrays a métodos para procesarlos.
+It is very common to pass arrays to methods to process them.
 
-### 13.1. Método que imprime el primer y último elemento
+### 13.1. Method that prints the first and last element
 
 ```java
 public class Main {
@@ -317,16 +316,16 @@ public class Main {
 }
 ```
 
-Fíjate en:
+Look at:
 
-- El parámetro `int[] values` indica que el método recibe un array de int.
-- Dentro del método, `values` se usa igual que cualquier array.
+- The `int[] values` parameter indicates that the method receives an array of int.
+- Within the method, `values` is used the same as any array.
 
 ---
 
-### 13.2. Método que modifica un array
+### 13.2. Method that modifies an array
 
-En Java, cuando pasas un array a un método, el método puede modificar su contenido.
+In Java, when you pass an array to a method, the method can modify its contents.
 
 ```java
 public class Main {
@@ -344,24 +343,24 @@ public class Main {
 }
 ```
 
-Esto ocurre porque el array es un objeto y el método recibe una referencia al mismo array.
+This occurs because the array is an object and the method receives a reference to the same array.
 
 ---
 
-[![Arrays y Bucles](https://img.youtube.com/vi/Hcln7CzL4Dc/0.jpg)](https://www.youtube.com/watch?v=Hcln7CzL4Dc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Arrays and Loops](https://img.youtube.com/vi/Hcln7CzL4Dc/0.jpg)](https://www.youtube.com/watch?v=Hcln7CzL4Dc&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 14. Arrays y bucles (vista previa)
+## 14. Arrays and loops (preview)
 
-En el siguiente tema verás el recorrido de arrays con bucles, pero es útil entender ya la idea básica.
+In the next topic you will see the traversal of arrays with loops, but it is useful to already understand the basic idea.
 
-Para recorrer un array de tamaño `n`, normalmente haces:
+To loop through an array of size `n`, you typically do:
 
-- Desde índice 0
-- Hasta índice `length - 1`
+- From index 0
+- Up to index `length - 1`
 
-Ejemplo conceptual:
+Conceptual example:
 
 ```java
 int[] numbers = {10, 20, 30};
@@ -371,29 +370,29 @@ for (int i = 0; i < numbers.length; i++) {
 }
 ```
 
-No necesitas memorizarlo aún, pero fíjate en:
+You don't need to memorize it yet, but look at:
 
-- El bucle empieza en 0
-- La condición es `i < numbers.length` (no `<=`)
+- The loop starts at 0
+- Condition is `i < numbers.length` (not `<=`)
 
 ---
 
-## 15. Arrays de dos dimensiones (introducción)
+## 15. Two-dimensional arrays (introduction)
 
-Un array también puede ser “de arrays”, creando una estructura en forma de tabla.
+An array can also be “of arrays”, creating a structure in the form of a table.
 
-Ejemplo de una matriz 2x3 (2 filas, 3 columnas):
+Example of a 2x3 matrix (2 rows, 3 columns):
 
 ```java
 int[][] grid = new int[2][3];
 ```
 
-Acceso:
+Access:
 
-- `grid[0][0]` → primera fila, primera columna
-- `grid[1][2]` → segunda fila, tercera columna
+- `grid[0][0]` → first row, first column
+- `grid[1][2]` → second row, third column
 
-Inicialización rápida:
+Quick initialization:
 
 ```java
 int[][] grid = {
@@ -402,19 +401,19 @@ int[][] grid = {
 };
 ```
 
-En cursos iniciales, lo más importante es dominar primero los arrays de una dimensión.
+In initial courses, the most important thing is to first master one-dimensional arrays.
 
 ---
 
-## 16. A tener en cuenta
+## 16. To take into account
 
-- Un array guarda múltiples valores del mismo tipo.
-- Los índices empiezan en 0.
-- El tamaño es fijo y se consulta con `length`.
-- Se crean con `new` o con inicialización literal `{...}`.
-- Los errores más comunes son los índices fuera de rango.
-- Los arrays se usan muchísimo junto a bucles y métodos.
+- An array stores multiple values of the same type.
+- The indices start at 0.
+- The size is fixed and is consulted with `length`.
+- They are created with `new` or with `{...}` literal initialization.
+- The most common errors are indexes out of range.
+- Arrays are used a lot along with loops and methods.
 
 ---
 
-En el próximo tema aprenderás a **recorrer arrays** con bucles, y a leer/modificar sus valores de forma eficiente.
+In the next topic you will learn to **loop through arrays**, and to read/modify their values efficiently.
