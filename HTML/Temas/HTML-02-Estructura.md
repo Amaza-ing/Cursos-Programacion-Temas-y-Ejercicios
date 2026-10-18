@@ -112,4 +112,4 @@ Para crear un archivo HTML en tu computadora:
 
 ---
 
-En el próximo tema, aprenderemos sobre **Elementos, etiquetas y atributos en HTML**, fundamentales para el desarrollo web.
+En el próximo tema, aprenderemos sobre **los elementos en línea y en bloque en HTML**, fundamentales para el desarrollo web.

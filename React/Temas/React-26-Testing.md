@@ -637,4 +637,4 @@ test("renders users", () => {
 
 ---
 
-En el siguiente tema trabajarás verás **Cómo crear una web completa desde 0** (Una aplicación de notas).
+En el siguiente tema verás **Cómo crear una web completa desde 0** (Una aplicación de notas).

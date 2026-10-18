@@ -76,6 +76,7 @@ Al finalizar el curso, serás capaz de:
     </tr>
   </tbody>
 </table>
+
 ---
 
 ## Estructura del repositorio

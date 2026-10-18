@@ -248,7 +248,6 @@ Devuelve la lista de productos disponibles.
   }
 ]
 ```
-````
 
 ### Errores posibles
 
@@ -277,7 +276,7 @@ El archivo principal suele llamarse:
 
 ```text
 Dockerfile
-````
+```
 
 ---
 

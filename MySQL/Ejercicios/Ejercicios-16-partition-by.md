@@ -1,4 +1,4 @@
-# **Ejercicios - Tema 15: Uso de PARTITION BY en MySQL**
+# **Ejercicios - Tema 16: Uso de PARTITION BY en MySQL**
 
 A continuación, encontrarás 5 ejercicios prácticos para trabajar con **PARTITION BY** y funciones de ventana en MySQL.
 

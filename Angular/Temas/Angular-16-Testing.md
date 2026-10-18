@@ -217,4 +217,4 @@ El reporte estará disponible en `coverage/index.html`.
 - Las pruebas aseguran la estabilidad y calidad del código.
 - Simular dependencias es clave para aislar el código en las pruebas.
 
-En el próximo tema, exploraremos **pruebas de integración y de extremo a extremo (E2E) usando Cypress en Angular**.
+Con este tema llegas al final del curso de Angular. ¡Enhorabuena! Ya tienes una buena base para crear y probar tus propias aplicaciones con Angular.

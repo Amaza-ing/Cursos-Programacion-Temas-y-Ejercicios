@@ -288,11 +288,11 @@ Los operadores lógicos combinan valores booleanos.
 
 ### 7.1. Operadores lógicos principales
 
-| Operador | Nombre | Significado            |
-| -------- | ------ | ---------------------- | --- | ---------------------------- |
-| `&&`     | AND    | true si ambos son true |
-| `        |        | `                      | OR  | true si al menos uno es true |
-| `!`      | NOT    | invierte el booleano   |
+| Operador | Nombre | Significado                  |
+| -------- | ------ | ---------------------------- |
+| `&&`     | AND    | true si ambos son true       |
+| `\|\|`   | OR     | true si al menos uno es true |
+| `!`      | NOT    | invierte el booleano         |
 
 ---
 

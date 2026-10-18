@@ -126,7 +126,7 @@ console.log(square(5)); // Salida: 25
 Si la función tiene un solo parámetro se puede simplificar quitando los paréntesis:
 
 ```js
-const square = (num) => {
+const square = num => {
   return num * num;
 };
 
@@ -181,7 +181,7 @@ Permiten pasar un número indefinido de argumentos a una función:
 function sumAll(...numbers) {
   let result = 0;
 
-  for (number of numbers) {
+  for (const number of numbers) {
     result += number;
   }
   return result;

@@ -1,4 +1,4 @@
-**Ejercicios - Tema 11: Props Padre a Hijo**
+# **Ejercicios - Tema 11: Props Padre a Hijo**
 
 A continuación, encontrarás **10 ejercicios prácticos** para aprender a pasar datos desde un componente padre a un componente hijo usando **props**.
 

@@ -845,6 +845,6 @@ Copilot es más potente cuando se le dirige con claridad.
 - GitHub Docs — GitHub Copilot.
 - GitHub Docs — Custom instructions.
 - GitHub Docs — Copilot CLI.
-- GitHub Docs — Copilot coding agent.
+- GitHub Docs — Copilot cloud agent.
 - GitHub Docs — Pull request summaries.
 - GitHub Docs — Copilot code review.

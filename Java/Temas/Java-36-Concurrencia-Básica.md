@@ -808,9 +808,9 @@ executor.execute(() -> {
 });
 ```
 
-Se usa cuando la tarea:
+Se usa cuando:
 
-- no devuelve resultado
+- la tarea no devuelve resultado
 - no necesitas recoger un valor final
 
 ---

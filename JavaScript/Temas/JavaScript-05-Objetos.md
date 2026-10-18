@@ -7,7 +7,7 @@ En JavaScript, un **objeto** es una colección de pares clave-valor donde las cl
 Esta es la estructura de un objeto:
 
 ```js
-const myObject {
+const myObject = {
   property1: "algún valor",
   property2: 1234,
 }

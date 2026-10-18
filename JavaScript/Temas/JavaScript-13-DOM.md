@@ -117,12 +117,12 @@ Esto puede venir bien para pequeños cambios de estilo, pero suele ser más reco
 document.body.style.backgroundColor = "lightblue";
 ```
 
-### **3.4. Añadir o elminar clases**
+### **3.4. Añadir o eliminar clases**
 
 Se pueden añadir o eliminar clases de los diferentes elementos del DOM dinámicamente, esto se puede utilizar para cambiar los estilos de una manera elegante.
 
 ```js
-const container = document.querySelector(".container") as HTMLElement;
+const container = document.querySelector(".container");
 
 container.classList.add("big");
 container.classList.remove("red");
@@ -136,7 +136,7 @@ container.classList.remove("red");
 
 ## **4. Crear y Eliminar Elementos**
 
-Se pueden crear y elminar elementos del DOM usando JavaScript con los siguientes métodos:
+Se pueden crear y eliminar elementos del DOM usando JavaScript con los siguientes métodos:
 
 - `createElement()`: Crea un nuevo elemento.
 - `appendChild()`: Añade un elemento creado a otro que tengamos seleccionado en una variable.
@@ -168,7 +168,7 @@ const oldHeading = document.querySelector("#main-title");
 oldHeading.replaceWith(newHeading);
 ```
 
-### **4.2. Modificar elementos del usando `innerHTML`**
+### **4.4. Modificar elementos del DOM usando `innerHTML`**
 
 ```js
 const container = document.querySelector("#container");
@@ -231,4 +231,4 @@ document.querySelector("#form").addEventListener("submit", (event) => {
 
 JavaScript permite una manipulación dinámica del DOM, haciendo que las páginas sean interactivas y dinámicas. Con estas técnicas, podemos modificar elementos, agregar eventos y crear nuevas estructuras dentro del documento.
 
-En el siguiente tema veremos como podemos utilizar el **localStorage** y el **sessionStorage** para almacenar información en el cliente.
+En el siguiente tema veremos cómo podemos utilizar el **localStorage** y el **sessionStorage** para almacenar información en el cliente.

@@ -297,7 +297,7 @@ for (int i = 0; i < 10; i++) {
 ### 6.2. Usa `while` cuando
 
 - No sabes cuántas repeticiones habrá
-- Dependende de una condición externa
+- Depende de una condición externa
 - Estás esperando que ocurra algo
 
 Ejemplo típico: repetir hasta que un valor alcance un estado

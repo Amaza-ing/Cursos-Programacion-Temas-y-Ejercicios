@@ -146,7 +146,7 @@ En este ejemplo no se ejecutará la linea `console.log(result);` hasta que la li
 
 ---
 
-[![Consumir una Promesa con .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Consumir una Promesa con async/await](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -174,7 +174,7 @@ En este ejemplo sólo se tardaría 2 segundos en resolver todas las promesas, mi
 
 ---
 
-## **6. Ejecutar Promesas en Secuencia con `Promise.allSettled()`**
+## **6. Esperar a Todas las Promesas con `Promise.allSettled()`**
 
 A diferencia de `Promise.all()`, `Promise.allSettled()` espera que todas las promesas finalicen, sin importar si fueron resueltas o rechazadas.
 

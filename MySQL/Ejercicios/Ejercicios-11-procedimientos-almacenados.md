@@ -206,7 +206,7 @@ CALL search_customers('an', NULL);
 ### **Ejercicio 8: Reemplazar y eliminar procedimientos**
 
 1. Crea `get_last_orders` que reciba `p_limit INT` y devuelva los últimos `p_limit` pedidos.
-2. Modifícalo para que también devuelva `customer_id` y renómbralo.
+2. Modifícalo para que también devuelva `customer_id`, reemplazándolo por uno nuevo con el mismo nombre.
 3. Elimínalo.
 
 <details><summary>Mostrar Solución</summary>

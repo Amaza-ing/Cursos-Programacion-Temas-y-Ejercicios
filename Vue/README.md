@@ -33,13 +33,13 @@ Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este reposit
 | 🎛️ [Tema 3: Variables Reactivas, Eventos y Binding](Temas/Vue-03-Variables-y-Eventos.md)             | Manejo de datos y eventos.                    |
 | 🔗 [Tema 4: Composition API vs Options API](Temas/Vue-04-Composition-y-Option-API.md)                | Diferencias clave entre ambos enfoques.       |
 | 📋 [Tema 5: Control de flujo y listas dinámicas](Temas/Vue-05-v-if-v-for.md)                         | v-if, v-for y control condicional.            |
-| 🎨 [Tema 6: Estilo y clases dinámicas](Temas/Vue-06-Clases-Dinamicas.md)                             | Aplicación de estilos dinámicos.              |
+| 🎨 [Tema 6: Estilo y clases dinámicas](Temas/Vue-06-Clases-dinamicas.md)                             | Aplicación de estilos dinámicos.              |
 | 📡 [Tema 7: Comunicación entre componentes](Temas/Vue-07-Props-Events-Slots.md)                      | Props, Emits y Slots.                         |
 | 📊 [Tema 8: Propiedades Computadas, watch y watchEffect](Temas/Vue-08-Computed-watch-watchEffect.md) | Reactividad avanzada.                         |
 | 📝 [Tema 9: Formularios y validación](Temas/Vue-09-Formularios.md)                                   | Creación y validación de formularios.         |
 | 🌍 [Tema 10: Vue Router](Temas/Vue-10-Router.md)                                                     | Creación de rutas y navegación SPA.           |
 | 📦 [Tema 11: Estado Global con Pinia](Temas/Vue-11-Pinia.md)                                         | Gestión centralizada de estado.               |
-| 🔗 [Tema 12: Fetch a una API](Temas/Vue-12-Fetch-API.md)                                             | Consumo de datos desde una API.               |
+| 🔗 [Tema 12: Fetch a una API](Temas/Vue-12-fetch-API.md)                                             | Consumo de datos desde una API.               |
 | 🔄 [Tema 13: Ciclo de Vida](Temas/Vue-13-Ciclo-de-Vida.md)                                           | Hooks del ciclo de vida.                      |
 | 🧪 [Tema 14: Tests Unitarios con Vitest](Temas/Vue-14-Tests-Unitarios.md)                            | Crear tests para componentes.                 |
 | 👨‍🎓 [Página Completa con Vue](Temas/Vue-Pagina-Completa.md)                                           | Creación de una App de notas desde cero.      |

@@ -676,4 +676,4 @@ Eso no aporta casi información.
 
 ---
 
-En el siguiente tema seguiremos avanzando con herramientas para dar robustez a nuestros programas y veremos como **gestionar excepciones** en Java.
+En el siguiente tema seguiremos avanzando con herramientas para dar robustez a nuestros programas y veremos cómo **gestionar excepciones** en Java.

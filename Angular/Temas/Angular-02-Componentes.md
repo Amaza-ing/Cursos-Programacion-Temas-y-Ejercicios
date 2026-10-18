@@ -109,6 +109,10 @@ El data-binding en Angular permite sincronizar los datos entre el modelo (clase 
 
 1. **Interpolación (`{{ }}`)**: Se utiliza para mostrar valores dentro de la plantilla HTML.
 2. **Binding de propiedad (`[property]`)**: Permite asignar valores a los atributos HTML desde el componente.
+3. **Binding de eventos (`(event)`)**: Permite ejecutar funciones del componente cuando el usuario interactúa con la vista, por ejemplo al hacer clic.
+4. **Binding bidireccional (`[(ngModel)]`)**: Mantiene sincronizados en ambos sentidos una variable del componente y un campo de la vista.
+
+En este tema veremos los dos primeros, y los otros dos, en el siguiente tema.
 
 ---
 

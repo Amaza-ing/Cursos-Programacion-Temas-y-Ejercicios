@@ -109,7 +109,7 @@ Crea una galería de imágenes que muestre las imágenes en una sola columna en 
 
 ---
 
-### **Ejercicio 5: Cambiar la orientación del texto en modo horizontal**
+### **Ejercicio 5: Cambiar la alineación del texto en modo horizontal**
 
 Usa media queries para que el texto de un párrafo esté alineado al centro en orientación vertical y alineado a la izquierda en orientación horizontal.
 

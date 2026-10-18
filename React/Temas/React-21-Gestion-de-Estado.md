@@ -187,7 +187,7 @@ Se resolverá más adelante con **Context**.
 
 ## **10. Buenas prácticas**
 
-- Mantén el estado lo más arriba posible, pero no más.
+- Mantén el estado lo más abajo posible y elévalo solo hasta donde haga falta.
 - Usa estado local cuando solo lo necesite un componente.
 - Eleva el estado cuando se comparta.
 - Evita duplicar información.

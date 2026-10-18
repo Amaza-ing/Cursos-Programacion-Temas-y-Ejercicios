@@ -122,4 +122,4 @@ DROP INDEX idx_nombre ON customers;
 
 ---
 
-En el próximo tema aprenderemos a **crear y utlizar procedimientos almacenados para reutilizar el código**
+En el próximo tema aprenderemos a **crear y utilizar procedimientos almacenados para reutilizar el código**

@@ -41,7 +41,7 @@ Este selector aplica el color azul a todos los párrafos (`<p>`) de la página.
 
 ### **2. Selectores combinadores**
 
-- **Selectores unidos**: selecciona elementos que tengan los selectores (etiqueta, cases, id, etc) utilizados a la vez.
+- **Selectores unidos**: selecciona elementos que tengan los selectores (etiqueta, clases, id, etc) utilizados a la vez.
 
   ```css
   div.box.green {

@@ -781,4 +781,4 @@ Este estilo hace el código más mantenible y extensible.
 
 ---
 
-En el siguiente tema seguiremos avanzando en Java con nuevas herramientas del lenguaje y veremos como comparar objetos correctamente con `equals`.
+En el siguiente tema seguiremos avanzando en Java con nuevas herramientas del lenguaje y veremos cómo comparar objetos correctamente con `equals`.

@@ -1936,8 +1936,6 @@ java -jar target/java-task-manager-1.0.0.jar
 ```
 ````
 
-````
-
 Un buen README ayuda a que otras personas entiendan tu proyecto.
 
 ---
@@ -1968,7 +1966,7 @@ Si una clase tiene:
 
 ```java
 package com.amazaing.taskmanager.model;
-````
+```
 
 debe estar en la carpeta correcta:
 

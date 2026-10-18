@@ -108,7 +108,7 @@ El problema en el código es que `<span>` es un elemento en línea y no puede co
 
 ---
 
-## **Ejercicio 5: Uso de `span` y `div` en un texto**
+## **Ejercicio 5: Uso de `em` y `div` en un texto**
 
 Escribe un párrafo donde uses `em` para resaltar una frase y un `div` para encerrar un conjunto de frases en un bloque separado.
 

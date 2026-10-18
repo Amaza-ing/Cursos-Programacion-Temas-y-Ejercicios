@@ -470,4 +470,4 @@ En Java, no es solo “una carpeta bonita”:
 
 ---
 
-En el siguiente tema seguiremos avanzando con conceptos más avanzadas de Programación Orientada a Objetos en Java con **Clases Abstractas y Métodos Abstractos**.
+En el siguiente tema seguiremos avanzando con conceptos más avanzados de Programación Orientada a Objetos en Java con **Clases Abstractas y Métodos Abstractos**.

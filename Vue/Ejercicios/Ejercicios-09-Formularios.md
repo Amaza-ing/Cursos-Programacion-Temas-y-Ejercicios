@@ -8,7 +8,7 @@ Intenta resolverlos antes de consultar la solución.
 
 ## **Ejercicio 1: Formulario de contacto con v-model**
 
-Crea un componente `ContactForm.vue` con un formulario de contacto que tenga los campos `nombre`, `email` y `mensaje`, todos conectados con `v-model`.
+Crea un componente `ContactForm.vue` con un formulario de contacto que tenga los campos `name`, `email` y `message`, todos conectados con `v-model`.
 
 <details><summary>Mostrar Solución</summary>
 
@@ -146,7 +146,7 @@ p {
 
 ## **Ejercicio 4: Deshabilitar botón si el formulario es inválido**
 
-Crea un componente `LoginForm.vue` que solo permita enviar si `usuario` y `contraseña` no están vacíos.
+Crea un componente `LoginForm.vue` que solo permita enviar si `username` y `password` no están vacíos.
 
 <details><summary>Mostrar Solución</summary>
 
@@ -187,7 +187,7 @@ button:disabled {
 
 ## **Ejercicio 5: Validar que los campos estén completos antes de enviar**
 
-Crea un componente `ProfileForm.vue` que valide que `nombre`, `apellido` y `edad` estén completos antes de enviar.
+Crea un componente `ProfileForm.vue` que valide que `firstName`, `lastName` y `age` estén completos antes de enviar.
 
 <details><summary>Mostrar Solución</summary>
 

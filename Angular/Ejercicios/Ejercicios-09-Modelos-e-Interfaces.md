@@ -8,7 +8,7 @@ Intenta resolverlos antes de consultar la solución.
 
 ---
 
-### **Ejercicio 1: Crear un Modelos para un objeto que represente a un Producto**
+### **Ejercicio 1: Crear un Modelo para un objeto que represente a un Producto**
 
 Define una interfaz `Product` con los siguientes atributos:
 

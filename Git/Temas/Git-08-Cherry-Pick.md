@@ -52,13 +52,13 @@ Si se desean traer varios commits a la vez, se pueden especificar múltiples has
 git cherry-pick 3f4d2e5 b8a1c9d
 ```
 
-O para un rango de commits consecutivos:
+O para un rango de commits consecutivos, del más antiguo al más reciente:
 
 ```bash
-git cherry-pick 3f4d2e5..b8a1c9d
+git cherry-pick b8a1c9d^..3f4d2e5
 ```
 
-Esto aplicará todos los commits en el rango seleccionado.
+Esto aplicará todos los commits del rango, de `b8a1c9d` a `3f4d2e5`, ambos incluidos. El `^` hace que se incluya también el primero: sin él, `b8a1c9d..3f4d2e5` lo dejaría fuera.
 
 ---
 

@@ -30,7 +30,7 @@ El curso está organizado en **temas progresivos**, cada uno acompañado de ejer
 
 ## 📂 **Estructura del curso**
 
-Cada tema se encuentra en un archivo **Markdown (**``**)** dentro de la carpeta `Temas`:
+Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de la carpeta `Temas`:
 
 | 📚 Tema                                                                                    | Contenido                                |
 | ------------------------------------------------------------------------------------------ | ---------------------------------------- |

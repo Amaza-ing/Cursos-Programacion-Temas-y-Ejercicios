@@ -354,7 +354,7 @@ Esto ocurre porque el array es un objeto y el método recibe una referencia al m
 
 ## 14. Arrays y bucles (vista previa)
 
-En el siguiente tema verás el recorrido de arrays con bucles, pero es útil entender ya la idea básica.
+En los ejercicios de este tema practicarás el recorrido de arrays con bucles, pero es útil entender ya la idea básica.
 
 Para recorrer un array de tamaño `n`, normalmente haces:
 
@@ -417,4 +417,4 @@ En cursos iniciales, lo más importante es dominar primero los arrays de una dim
 
 ---
 
-En el próximo tema aprenderás a **recorrer arrays** con bucles, y a leer/modificar sus valores de forma eficiente.
+En el próximo tema aprenderás a usar **`List` y `ArrayList`**, colecciones que, a diferencia de los arrays, pueden crecer y reducirse, y verás cómo recorrerlas con bucles.

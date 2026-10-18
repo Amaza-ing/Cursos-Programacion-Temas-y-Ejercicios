@@ -546,4 +546,4 @@ Qué aporta este enfoque:
 
 ---
 
-En el próximo tema aprenderemos sobre los **métodos de los String**, y veremos como sacarle el máximo partido a este tipo de dato.
+En el próximo tema aprenderemos sobre los **métodos de los String**, y veremos cómo sacarle el máximo partido a este tipo de dato.

@@ -125,9 +125,9 @@ HAVING total_pedidos > 2;
 
 ---
 
-### **Ejercicio 9: Media de gasto por cliente con más de 100€ gastados**
+### **Ejercicio 9: Clientes con una media de gasto superior a 100€**
 
-Obtén el promedio de gasto por cliente y filtra aquellos que hayan gastado más de 100€.
+Obtén el promedio de gasto por cliente y filtra aquellos cuya media de gasto sea superior a 100€.
 
 <details><summary>Mostrar Solución</summary>
 

@@ -1078,7 +1078,7 @@ Si no estás usando MySQL, puedes usar esta versión:
 </beans>
 ```
 
-Si estás usando MySQL, mantén también los beans `dataSource` y `jdbcTemplate` que configuraste en la ampliación del tema 3.
+Si estás usando MySQL, mantén también los beans `dataSource` y `jdbcTemplate` que configuraste en el Tema 4.
 
 ### Explicación de `messageSource`
 

@@ -30,7 +30,7 @@ Declara dos variables llamadas `firstName` y `lastName`, asígnales tus nombres 
 const firstName = "Sara";
 const lastName = "Martín";
 
-console.log("Hola " + firstName + lastName");
+console.log("Hola, " + firstName + " " + lastName + "!");
 ```
 
 </details>

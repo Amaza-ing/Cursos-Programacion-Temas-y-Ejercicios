@@ -8,7 +8,7 @@ Intenta resolverlos antes de consultar la solución.
 
 ### **Ejercicio 1: REPEAT para insertar números impares**
 
-Crea un procedimiento `insertar_impares_repeat` que inserte en `numbers(value)` los **impares** desde 1 hasta nine (1, 3, 5, 7, 9) usando `REPEAT`.
+Crea un procedimiento `insertar_impares_repeat` que inserte en `numbers(value)` los **impares** desde 1 hasta 9 (1, 3, 5, 7, 9) usando `REPEAT`.
 
 <details><summary>Mostrar Solución</summary>
 

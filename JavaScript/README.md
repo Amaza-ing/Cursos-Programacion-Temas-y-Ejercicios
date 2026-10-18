@@ -36,8 +36,8 @@ Cada tema está en un archivo **Markdown (`.md`)** dentro de este repositorio. P
 | 🎭 [Tema 5: Objetos](Temas/JavaScript-05-Objetos.md)                                | Creación, manipulación y uso de objetos en JavaScript.      |
 | 📦 [Tema 6: Arrays](Temas/JavaScript-06-Arrays.md)                                  | Métodos y operaciones con listas de datos.                  |
 | 🏗️ [Tema 7: Paso por Valor y Referencia](Temas/JavaScript-07-Valor-y-Referencia.md) | Diferencias y efectos en variables, objetos y arrays.       |
-| 🎯 [Tema 8: Funciones Avanzadas](Temas/JavaScript-08-Funciones-Avanzadas.md)        | Closures, funciones de orden superior y más.                |
-| ✨ [Tema 9: Operadores Avanzados](Temas/JavaScript-09-Operadores-Avanzados.md)      | `spread`, `rest`, `optional chaining` y otros.              |
+| ✨ [Tema 8: Operadores Avanzados](Temas/JavaScript-08-Operadores-Avanzados.md)      | `spread`, `rest`, `optional chaining` y otros.              |
+| 🎯 [Tema 9: Funciones Avanzadas](Temas/JavaScript-09-Funciones-Avanzadas.md)        | Closures, funciones de orden superior y más.                |
 | ⏳ [Tema 10: Funciones Especiales](Temas/JavaScript-10-Funciones-Especiales.md)     | `setTimeout`, `setInterval`, `debounce`, `throttle`, etc.   |
 | ⚡ [Tema 11: Asincronía y Promesas](Temas/JavaScript-11-Promesas.md)                | Promesas, `async/await` y `fetch()`.                        |
 | 🔗 [Tema 12: Peticiones a una API](Temas/JavaScript-12-Fetch-API.md)                | Cómo consumir datos de APIs con JavaScript.                 |

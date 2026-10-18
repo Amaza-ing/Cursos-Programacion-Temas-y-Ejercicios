@@ -27,7 +27,7 @@ npm -v
 
 ## **3. Crear un nuevo proyecto Vue con Vite**
 
-**Vite** es un gestor de proyectos. Vue recomienda utilizar **Vite** como herramienta de desarrollo por su rapidez y configuración sencilla.
+**Vite** es una herramienta de construcción (*build tool*) con un servidor de desarrollo muy rápido. Vue recomienda utilizar **Vite** como herramienta de desarrollo por su rapidez y configuración sencilla.
 
 Para crear un nuevo proyecto Vue con Vite, ejecuta:
 

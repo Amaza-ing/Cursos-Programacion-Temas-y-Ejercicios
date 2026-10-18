@@ -95,7 +95,7 @@ Dependiendo de la necesidad, podemos usar distintos formatos de imagen en la web
 
 - **Reducir el tamaño de las imágenes** antes de subirlas a la web.
 - Usar **formatos optimizados** como WebP cuando sea posible.
-- Aplicar **compresión sin pérdida** con herramientas como TinyPNG o Squoosh.
+- Aplicar **compresión** con herramientas como TinyPNG (con pérdida) o Squoosh (con o sin pérdida).
 - Implementar `loading="lazy"` para mejorar el rendimiento en páginas con muchas imágenes.
 - Definir correctamente el `alt` para mejorar la accesibilidad y SEO.
 

@@ -176,7 +176,7 @@ Y explicarlos así:
 
 ## Ejercicio 5: Revisar una propuesta de agente antes de aceptar cambios
 
-Imagina que Copilot Agent propone resolver una issue con estos cambios:
+Imagina que el agente en la nube de Copilot (Copilot cloud agent) propone resolver una issue con estos cambios:
 
 - Crear un nuevo componente `UserCard`.
 - Cambiar el nombre de la propiedad `username` por `name` en toda la aplicación.

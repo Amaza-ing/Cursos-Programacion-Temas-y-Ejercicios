@@ -45,6 +45,8 @@ Crea un componente llamado `BaseButton.vue` que reciba un texto como una variabl
 
 ```vue
 <script setup>
+import { ref } from "vue";
+
 const label = ref("Click me!");
 </script>
 

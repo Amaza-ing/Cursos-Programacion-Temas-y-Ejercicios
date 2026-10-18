@@ -1,42 +1,212 @@
-# Ejercicios - Tema 38: Anotaciones
+# Ejercicios - Tema 38: Módulos y Java Moderno
 
-A continuación encontrarás **10 ejercicios prácticos** para trabajar con **anotaciones**: `@Override`, `@Deprecated`, `@SuppressWarnings`, `@FunctionalInterface`, creación de anotaciones propias, `@Retention`, `@Target` y lectura básica con reflexión.
+A continuación encontrarás **10 ejercicios prácticos** sobre **módulos y Java moderno**: `module-info.java`, `requires`, `exports`, `opens`, estructura modular, compact source files, `switch` moderno, text blocks, `var` y pattern matching.
 
 Intenta resolverlos antes de consultar la solución.
 
 ---
 
-## Ejercicio 1: Usar `@Override`
+## Ejercicio 1: Crear un módulo vacío
 
-Crea una clase `BasePrinter` con un método `print()`.
+Crea un archivo `module-info.java` para un módulo llamado:
 
-Crea una clase `ConsolePrinter` que herede de `BasePrinter` y sobrescriba `print()` usando `@Override`.
+```text
+com.amazaing.notes
+```
+
+No exportes ningún paquete todavía.
 
 <details><summary>Mostrar solución</summary>
 
 ```java
-public class BasePrinter {
-    public void print() {
-        System.out.println("Base print");
-    }
+module com.amazaing.notes {
 }
 ```
 
+</details>
+
+---
+
+## Ejercicio 2: Exportar un paquete
+
+Modifica el módulo `com.amazaing.notes` para exportar el paquete:
+
+```text
+com.amazaing.notes.api
+```
+
+<details><summary>Mostrar solución</summary>
+
 ```java
-public class ConsolePrinter extends BasePrinter {
-    @Override
-    public void print() {
-        System.out.println("Console print");
-    }
+module com.amazaing.notes {
+    exports com.amazaing.notes.api;
 }
 ```
+
+</details>
+
+---
+
+## Ejercicio 3: Requerir otro módulo
+
+Crea un `module-info.java` para un módulo llamado:
+
+```text
+com.amazaing.app
+```
+
+Debe requerir el módulo:
+
+```text
+com.amazaing.notes
+```
+
+<details><summary>Mostrar solución</summary>
+
+```java
+module com.amazaing.app {
+    requires com.amazaing.notes;
+}
+```
+
+</details>
+
+---
+
+## Ejercicio 4: Usar `requires java.sql`
+
+Crea un `module-info.java` para un módulo llamado:
+
+```text
+com.amazaing.database
+```
+
+Debe declarar que necesita `java.sql`.
+
+<details><summary>Mostrar solución</summary>
+
+```java
+module com.amazaing.database {
+    requires java.sql;
+}
+```
+
+</details>
+
+---
+
+## Ejercicio 5: Abrir un paquete con `opens`
+
+Crea un `module-info.java` para un módulo llamado:
+
+```text
+com.amazaing.users
+```
+
+Debe abrir el paquete:
+
+```text
+com.amazaing.users.model
+```
+
+para permitir reflexión.
+
+<details><summary>Mostrar solución</summary>
+
+```java
+module com.amazaing.users {
+    opens com.amazaing.users.model;
+}
+```
+
+</details>
+
+---
+
+## Ejercicio 6: Escribir una estructura modular
+
+Escribe la estructura de carpetas para un módulo llamado:
+
+```text
+com.amazaing.shop
+```
+
+Con una clase principal:
+
+```text
+com.amazaing.shop.Main
+```
+
+No necesitas crear código completo, solo la estructura.
+
+<details><summary>Mostrar solución</summary>
+
+```text
+src
+└── com.amazaing.shop
+    ├── module-info.java
+    └── com
+        └── amazaing
+            └── shop
+                └── Main.java
+```
+
+</details>
+
+---
+
+## Ejercicio 7: Compact source file
+
+Escribe un programa sencillo usando la forma compacta de Java moderno para imprimir:
+
+```text
+Hello modern Java
+```
+
+No uses `public class Main`.
+
+<details><summary>Mostrar solución</summary>
+
+```java
+void main() {
+    System.out.println("Hello modern Java");
+}
+```
+
+</details>
+
+---
+
+## Ejercicio 8: `switch` moderno
+
+Declara una variable:
+
+```java
+String role = "admin";
+```
+
+Usa un `switch` moderno para asignar a una variable `message`:
+
+- `"Full access"` si el rol es `"admin"`
+- `"Limited access"` si el rol es `"user"`
+- `"No access"` en cualquier otro caso
+
+Imprime el mensaje.
+
+<details><summary>Mostrar solución</summary>
 
 ```java
 public class Main {
     public static void main(String[] args) {
-        BasePrinter printer = new ConsolePrinter();
+        String role = "admin";
 
-        printer.print();
+        String message = switch (role) {
+            case "admin" -> "Full access";
+            case "user" -> "Limited access";
+            default -> "No access";
+        };
+
+        System.out.println(message);
     }
 }
 ```
@@ -45,239 +215,25 @@ public class Main {
 
 ---
 
-## Ejercicio 2: Marcar un método como `@Deprecated`
+## Ejercicio 9: Pattern matching con `instanceof`
 
-Crea una clase `ReportService` con:
-
-- método `generateOldReport()` marcado como `@Deprecated`
-- método `generateNewReport()`
-
-Desde `main`, llama a ambos métodos.
-
-<details><summary>Mostrar solución</summary>
+Declara una variable:
 
 ```java
-public class ReportService {
-    @Deprecated
-    public void generateOldReport() {
-        System.out.println("Old report");
-    }
-
-    public void generateNewReport() {
-        System.out.println("New report");
-    }
-}
+Object value = "Java";
 ```
 
-```java
-public class Main {
-    public static void main(String[] args) {
-        ReportService service = new ReportService();
-
-        service.generateOldReport();
-        service.generateNewReport();
-    }
-}
-```
-
-</details>
-
----
-
-## Ejercicio 3: Usar `@SuppressWarnings`
-
-Crea una clase `Main` con una variable local que no se use.
-
-Aplica `@SuppressWarnings("unused")` al método `main`.
+Usa pattern matching con `instanceof` para comprobar si es `String` e imprimir su longitud.
 
 <details><summary>Mostrar solución</summary>
 
 ```java
 public class Main {
-    @SuppressWarnings("unused")
     public static void main(String[] args) {
-        String message = "This variable is not used";
+        Object value = "Java";
 
-        System.out.println("Program running");
-    }
-}
-```
-
-</details>
-
----
-
-## Ejercicio 4: Crear una interfaz funcional
-
-Crea una interfaz `TextFormatter` marcada con `@FunctionalInterface`.
-
-Debe tener un único método abstracto:
-
-```java
-String format(String text);
-```
-
-En `main`, crea una lambda que convierta el texto a mayúsculas.
-
-<details><summary>Mostrar solución</summary>
-
-```java
-@FunctionalInterface
-public interface TextFormatter {
-    String format(String text);
-}
-```
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        TextFormatter formatter = text -> text.toUpperCase();
-
-        System.out.println(formatter.format("java"));
-    }
-}
-```
-
-</details>
-
----
-
-## Ejercicio 5: Crear una anotación simple
-
-Crea una anotación propia llamada `Important`.
-
-Después úsala sobre una clase `PaymentService`.
-
-<details><summary>Mostrar solución</summary>
-
-```java
-public @interface Important {
-}
-```
-
-```java
-@Important
-public class PaymentService {
-}
-```
-
-</details>
-
----
-
-## Ejercicio 6: Anotación con un valor
-
-Crea una anotación `Author` con un elemento:
-
-```java
-String name();
-```
-
-Úsala sobre una clase `Article`.
-
-<details><summary>Mostrar solución</summary>
-
-```java
-public @interface Author {
-    String name();
-}
-```
-
-```java
-@Author(name = "Laura")
-public class Article {
-}
-```
-
-</details>
-
----
-
-## Ejercicio 7: Anotación con `value`
-
-Crea una anotación `Version` con un elemento llamado `value`.
-
-Úsala de forma abreviada sobre una clase `ApiClient`.
-
-<details><summary>Mostrar solución</summary>
-
-```java
-public @interface Version {
-    String value();
-}
-```
-
-```java
-@Version("1.0")
-public class ApiClient {
-}
-```
-
-</details>
-
----
-
-## Ejercicio 8: Usar `@Retention` y `@Target`
-
-Crea una anotación `RunNow` que:
-
-- se conserve en tiempo de ejecución
-- solo pueda aplicarse a métodos
-
-<details><summary>Mostrar solución</summary>
-
-```java
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface RunNow {
-}
-```
-
-</details>
-
----
-
-## Ejercicio 9: Leer una anotación de una clase
-
-Crea una anotación `Category` con:
-
-- `RetentionPolicy.RUNTIME`
-- un valor `String value()`
-
-Anota una clase `BookService` con `@Category("books")`.
-
-Desde `main`, lee la anotación con reflexión e imprime su valor.
-
-<details><summary>Mostrar solución</summary>
-
-```java
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-@Retention(RetentionPolicy.RUNTIME)
-public @interface Category {
-    String value();
-}
-```
-
-```java
-@Category("books")
-public class BookService {
-}
-```
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        Category category = BookService.class.getAnnotation(Category.class);
-
-        if (category != null) {
-            System.out.println(category.value());
+        if (value instanceof String text) {
+            System.out.println(text.length());
         }
     }
 }
@@ -287,60 +243,32 @@ public class Main {
 
 ---
 
-## Ejercicio 10: Ejecutar métodos anotados
+## Ejercicio 10: Text block para JSON
 
-Crea una anotación `Execute` para métodos en tiempo de ejecución.
+Crea un `String json` usando text block con este contenido:
 
-Crea una clase `JobService` con dos métodos:
+```json
+{
+  "name": "Laura",
+  "active": true
+}
+```
 
-- `clean()` anotado con `@Execute`
-- `helper()` sin anotación
-
-Desde `main`, usa reflexión para ejecutar solo los métodos anotados.
+Imprime el texto.
 
 <details><summary>Mostrar solución</summary>
 
 ```java
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface Execute {
-}
-```
-
-```java
-public class JobService {
-    @Execute
-    public void clean() {
-        System.out.println("Cleaning...");
-    }
-
-    public void helper() {
-        System.out.println("Helper...");
-    }
-}
-```
-
-```java
-import java.lang.reflect.Method;
-
 public class Main {
     public static void main(String[] args) {
-        JobService service = new JobService();
-
-        for (Method method : JobService.class.getDeclaredMethods()) {
-            if (method.isAnnotationPresent(Execute.class)) {
-                try {
-                    method.invoke(service);
-                } catch (Exception e) {
-                    System.out.println("Could not execute method");
+        String json = """
+                {
+                  "name": "Laura",
+                  "active": true
                 }
-            }
-        }
+                """;
+
+        System.out.println(json);
     }
 }
 ```

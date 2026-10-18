@@ -173,7 +173,7 @@ Por defecto, todos los elementos tienen `order: 0`. Un número menor se posicion
 
 ---
 
-## **9. Buenas prácticas con Flexbox**
+## **10. Buenas prácticas con Flexbox**
 
 - Usar `flex-wrap` cuando los elementos no deben encogerse demasiado.
 - Evitar establecer valores arbitrarios en `flex-grow` sin considerar la distribución.

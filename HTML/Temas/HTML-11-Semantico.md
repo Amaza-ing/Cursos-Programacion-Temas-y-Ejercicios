@@ -102,7 +102,7 @@ El elemento `<aside>` se usa para información relacionada, como barras laterale
 </aside>
 ```
 
-### **2.6. `<footer>` - Pie de página**
+### **2.7. `<footer>` - Pie de página**
 
 El elemento `<footer>` representa el pie de página de un documento o sección.
 

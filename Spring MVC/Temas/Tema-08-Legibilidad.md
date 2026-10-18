@@ -1876,7 +1876,7 @@ Ahora el controlador comunica mucho mejor la intención de cada operación.
 
 ---
 
-# 39. Comparación final
+# 29. Comparación final
 
 ## Tema 7
 

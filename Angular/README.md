@@ -38,7 +38,7 @@ Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este reposit
 | 🌈 [Tema 10: ngClass para clases dinámicas](Temas/Angular-10-ngClass.md)          | ngClass para dar clases y estilos dinámicos.                |
 | 📝 [Tema 11: Formularios con ngModel](Temas/Angular-11-Formularios-ngModel.md)    | Creación y validación de formularios.                       |
 | 🧮 [Tema 12: Formularios Reactivos](Temas/Angular-12-Formularios-Reactivos.md)    | Uso de `FormGroup` y `FormControl`.                         |
-| 🌍 [Tema 13: Servicios](Temas/Angular-13-Servicios.md)                            | Creación y uso de Servicios para gestinar el estado global. |
+| 🌍 [Tema 13: Servicios](Temas/Angular-13-Servicios.md)                            | Creación y uso de Servicios para gestionar el estado global. |
 | 🗺️ [Tema 14: Enrutamiento](Temas/Angular-14-Router.md)                            | Configuración del `Router` y navegación SPA.                |
 | 🌐 [Tema 15: Consumo de APIs](Temas/Angular-15-Peticiones-a-una-API.md)           | Uso de `HttpClient` para hacer peticiones HTTP a una API.   |
 | 🧪 [Tema 16: Testing Unitario](Temas/Angular-16-Testing.md)                       | Pruebas con Jasmine y Karma.                                |

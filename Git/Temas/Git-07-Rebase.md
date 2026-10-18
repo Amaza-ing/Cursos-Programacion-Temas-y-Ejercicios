@@ -35,8 +35,8 @@ Este comando abre un editor de texto con los últimos 3 commits listados, donde 
 Se usa para actualizar una rama con los cambios de otra sin crear un commit de merge.
 
 ```bash
-git checkout master
-git rebase feature-branch
+git checkout feature-branch
+git rebase master
 ```
 
 Esto mueve todos los commits de `feature-branch` sobre la versión más reciente de `master`.

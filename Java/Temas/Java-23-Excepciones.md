@@ -752,7 +752,7 @@ Regla práctica:
 
 - No uses excepciones para lógica normal del programa.
 - Captura excepciones específicas antes que generales.
-- Si sobrescribes `throws`, sé claro con qué puede lanzar el método.
+- Si declaras `throws`, sé claro con qué puede lanzar el método.
 - Usa mensajes de error claros.
 - Crea excepciones personalizadas cuando el dominio lo justifique.
 - No captures excepciones para ignorarlas silenciosamente.

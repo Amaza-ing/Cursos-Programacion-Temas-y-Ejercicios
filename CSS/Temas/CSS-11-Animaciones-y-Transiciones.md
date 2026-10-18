@@ -200,7 +200,7 @@ Aquí, el botón crece y se reduce mientras cambia de color al pasar el cursor.
 
 ---
 
-[![Animaciones & Transiciones](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+[![Animaciones & Transiciones](https://img.youtube.com/vi/sTh7iZyxHrw/0.jpg)](https://www.youtube.com/watch?v=sTh7iZyxHrw&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 

@@ -42,7 +42,7 @@ Las unidades relativas dependen del tamaño de otros elementos o de la pantalla.
 | Unidad | Descripción                                                       |
 | ------ | ----------------------------------------------------------------- |
 | `%`    | Relativo al tamaño del contenedor padre                           |
-| `em`   | Relativo al tamaño de la fuente del elemento                      |
+| `em`   | Relativo al tamaño de la fuente del elemento (en `font-size`, al del padre) |
 | `rem`  | Relativo al tamaño de la fuente del elemento raíz (`html`)        |
 | `vw`   | Relativo al ancho del viewport (1vw = 1% del ancho de la ventana) |
 | `vh`   | Relativo al alto del viewport (1vh = 1% del alto de la ventana)   |
@@ -54,7 +54,7 @@ Las unidades relativas dependen del tamaño de otros elementos o de la pantalla.
 ```css
 .container {
   width: 50%; /* 50% del contenedor padre */
-  font-size: 2em; /* Doble del tamaño de fuente del elemento */
+  font-size: 2em; /* Doble del tamaño de fuente del padre */
 }
 ```
 
@@ -62,7 +62,7 @@ Las unidades relativas dependen del tamaño de otros elementos o de la pantalla.
 
 ## **4. Diferencia entre `em` y `rem`**
 
-- `em` se basa en el tamaño de la fuente del elemento padre.
+- `em` se basa en el tamaño de la fuente del propio elemento (si lo usas en `font-size`, en el del elemento padre).
 - `rem` se basa en el tamaño de la fuente del `html`.
 
 **Ejemplo:**

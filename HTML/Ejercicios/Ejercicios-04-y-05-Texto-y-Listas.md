@@ -108,7 +108,7 @@ Y tú también.
 
 ### **Ejercicio 5: Lista desordenada de elementos favoritos**
 
-Crea una lista desordenada (`<ul>`) con al menos cinco elementos que representen tus comidas, películas o libros favoritos.
+Crea una lista desordenada (`<ul>`) con al menos tres elementos que representen tus comidas, películas o libros favoritos.
 
 <details><summary>Mostrar solución</summary>
 

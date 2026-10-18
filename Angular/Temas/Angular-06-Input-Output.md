@@ -5,7 +5,7 @@
 En Angular, la comunicación entre componentes es clave para la construcción de aplicaciones escalables. Existen varias formas de pasar datos entre componentes, pero las más comunes son:
 
 - `@Input()` y `@Output()`, que permiten la comunicación entre un componente padre y un componente hijo.
-- Las **Signals** `input` y `output`, que son una alternativa más eficiente introducida en Angular 16.
+- Las **Signals** `input` y `output`, que son una alternativa más eficiente introducida en Angular 17 y estable desde Angular 19.
 
 En este tema, exploraremos cómo utilizar estas técnicas para la comunicación entre componentes.
 
@@ -129,7 +129,7 @@ export class ParentComponent {
 
 ## **4. Comunicación con Signals `input` y `output`**
 
-En Angular 16, se introdujeron `input()` y `output()`, una alternativa más optimizada a `@Input()` y `@Output()`.
+En Angular 17.1 y 17.3 se introdujeron, respectivamente, `input()` y `output()` (estables desde Angular 19), una alternativa más optimizada a `@Input()` y `@Output()`.
 
 ### **Ejemplo de `input()`**
 

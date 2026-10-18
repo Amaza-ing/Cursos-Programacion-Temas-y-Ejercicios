@@ -2,7 +2,7 @@
 
 ## **Instrucciones:**
 
-A continuación, encontrarás 10 ejercicios prácticos sobre la comunicación entre componentes en Angular.
+A continuación, encontrarás 5 ejercicios prácticos sobre la comunicación entre componentes en Angular.
 
 Intenta resolverlos antes de consultar la solución.
 

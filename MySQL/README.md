@@ -48,7 +48,7 @@ Cada tema se encuentra en un archivo **Markdown (`.md`)** dentro de este reposit
 | 🔍 [Tema 15: Subconsultas y WITH](Temas/MySQL-15-Subconsultas.md)                      | Consultas avanzadas con subconsultas y CTEs.                  |
 | 📊 [Tema 16: PARTITION BY](Temas/MySQL-16-Partition-By.md)                             | Uso de funciones de ventana y particionamiento de resultados. |
 | 💾 [Tema 17: Transacciones](Temas/MySQL-17-Transacciones.md)                           | Manejo de transacciones y propiedades ACID.                   |
-| 🔀 [Tema 18: IF](Temas/MySQL-18-IF.md)                                                 | Uso de condicionales en consultas y procedimientos.           |
+| 🔀 [Tema 18: IF](Temas/MySQL-18-If.md)                                                 | Uso de condicionales en consultas y procedimientos.           |
 | 🔄 [Tema 19: WHILE](Temas/MySQL-19-While.md)                                           | Iteraciones con bucles WHILE.                                 |
 | 🔁 [Tema 20: REPEAT y LOOP](Temas/MySQL-20-Repeat-Loop.md)                             | Iteraciones flexibles con bucles REPEAT y LOOP.               |
 

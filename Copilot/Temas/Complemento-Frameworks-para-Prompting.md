@@ -2,7 +2,7 @@
 
 ## IA con Copilot
 
-Este material está pensado perfiles de desarrollo como en perfiles administrativos, de gestión, soporte, documentación o coordinación interna.
+Este material está pensado tanto para perfiles de desarrollo como para perfiles administrativos, de gestión, soporte, documentación o coordinación interna.
 
 La idea principal es aprender a pedir mejor a Copilot. Un buen prompt no consiste en escribir mucho, sino en dar a la IA la información adecuada: qué necesitas, para qué lo necesitas, en qué contexto trabajas, con qué formato debe responder y qué límites debe respetar.
 

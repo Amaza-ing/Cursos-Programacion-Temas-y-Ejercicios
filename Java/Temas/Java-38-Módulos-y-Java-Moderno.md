@@ -1586,4 +1586,4 @@ Lo importante es entender qué problema resuelve cada una y aplicarla cuando mej
 
 ---
 
-En el siguiente tema veremos como trabajar con **Maven**.
+En el siguiente tema veremos cómo trabajar con **Maven**.
