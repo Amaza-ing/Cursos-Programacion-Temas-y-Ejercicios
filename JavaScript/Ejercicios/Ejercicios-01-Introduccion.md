@@ -30,7 +30,7 @@ Declare two variables named `firstName` and `lastName`, assign them your first n
 const firstName = "Sara";
 const lastName = "Martín";
 
-console.log("Hola " + firstName + lastName");
+console.log("Hola, " + firstName + " " + lastName + "!");
 ```
 
 </details>

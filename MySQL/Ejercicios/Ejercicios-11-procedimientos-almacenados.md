@@ -206,7 +206,7 @@ CALL search_customers('an', NULL);
 ### **Exercise 8: Replace and delete procedures**
 
 1. Create `get_last_orders`, which takes `p_limit INT` and returns the latest `p_limit` orders.
-2. Modify it to also return `customer_id` and rename it.
+2. Modify it to also return `customer_id`, replacing it with a new one that has the same name.
 3. Delete it.
 
 <details><summary>Show solution</summary>

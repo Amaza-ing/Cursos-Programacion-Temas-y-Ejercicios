@@ -187,7 +187,7 @@ We'll solve this later with **Context**.
 
 ## **10. Best practices**
 
-- Keep the state as high as possible, but no higher.
+- Keep the state as low as possible, and lift it only as high as needed.
 - Use local state when only one component needs it.
 - Lift the state up when it's shared.
 - Avoid duplicating information.

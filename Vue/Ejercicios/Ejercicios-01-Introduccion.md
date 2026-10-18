@@ -92,7 +92,7 @@ Create the `src/components/HelloWorld.vue` file with the following content:
 
 ```vue
 <script setup>
-const message: '¡Bienvenido a mi aplicación Vue!'
+const message = '¡Bienvenido a mi aplicación Vue!'
 </script>
 
 <template>

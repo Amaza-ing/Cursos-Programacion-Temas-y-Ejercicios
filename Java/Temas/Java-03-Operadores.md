@@ -288,9 +288,9 @@ Logical operators combine boolean values.
 ### 7.1. Main logical operators
 
 | Operator | Name | Meaning |
-| -------- | ------ | ---------------------- | --- | ---------------------------- |
+| -------- | ------ | ---------------------------- |
 | `&&` | AND | true if both are true |
-| `        |        | ` | OR | true if at least one is true |
+| `\|\|` | OR | true if at least one is true |
 | `!` | NOT | inverts the boolean |
 
 ---

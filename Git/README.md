@@ -99,7 +99,7 @@ I hope it's what you're looking for.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrian-Maza
+      LinkedIn/Adrián-Maza
     </a>
   </h5>
   <h5>

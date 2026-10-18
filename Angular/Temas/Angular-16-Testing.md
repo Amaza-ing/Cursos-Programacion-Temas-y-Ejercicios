@@ -225,4 +225,4 @@ The report will be available at `coverage/index.html`.
 - Tests ensure the stability and quality of the code.
 - Mocking dependencies is key to isolating code in tests.
 
-In the next topic, we will explore **integration and end-to-end (E2E) testing using Cypress in Angular**.
+With this topic you reach the end of the Angular course. Congratulations! You now have a solid foundation to build and test your own Angular applications.

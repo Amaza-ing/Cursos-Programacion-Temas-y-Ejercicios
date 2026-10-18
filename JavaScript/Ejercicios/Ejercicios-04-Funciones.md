@@ -100,7 +100,7 @@ Create a function called `multiplyAll` that accepts an indefinite number of argu
 function multiplyAll(...numbers) {
   let result = 1;
 
-  for (number of numbers) {
+  for (const number of numbers) {
     result *= number;
   }
   return result;

@@ -116,6 +116,10 @@ Data binding in Angular keeps the data in sync between the model (TypeScript cla
 
 1. **Interpolation (`{{ }}`)**: Used to display values within the HTML template.
 2. **Property binding (`[property]`)**: Allows you to assign values to HTML attributes from the component.
+3. **Event binding (`(event)`)**: Lets you run component functions when the user interacts with the view, for example by clicking.
+4. **Two-way binding (`[(ngModel)]`)**: Keeps a component variable and a field in the view in sync in both directions.
+
+In this topic we will look at the first two, and at the other two in the next topic.
 
 ---
 

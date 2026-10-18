@@ -27,7 +27,7 @@ npm -v
 
 ## **3. Creating a new Vue project with Vite**
 
-**Vite** is a project manager. Vue recommends using **Vite** as a development tool because it's fast and easy to configure.
+**Vite** is a build tool with a very fast development server. Vue recommends using **Vite** as a development tool because it's fast and easy to configure.
 
 To create a new Vue project with Vite, run:
 

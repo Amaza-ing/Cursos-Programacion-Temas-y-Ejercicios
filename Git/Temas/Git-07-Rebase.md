@@ -36,8 +36,8 @@ This command opens a text editor listing the last 3 commits, where you can apply
 It's used to update a branch with the changes from another one without creating a merge commit.
 
 ```bash
-git checkout master
-git rebase feature-branch
+git checkout feature-branch
+git rebase master
 ```
 
 

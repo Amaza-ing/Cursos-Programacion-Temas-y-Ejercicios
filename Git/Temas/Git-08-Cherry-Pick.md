@@ -56,14 +56,14 @@ git cherry-pick 3f4d2e5 b8a1c9d
 ```
 
 
-Or for a range of consecutive commits:
+Or for a range of consecutive commits, from the oldest to the newest:
 
 ```bash
-git cherry-pick 3f4d2e5..b8a1c9d
+git cherry-pick b8a1c9d^..3f4d2e5
 ```
 
 
-This will apply all commits in the selected range.
+This will apply all the commits in the range, from `b8a1c9d` to `3f4d2e5`, both included. The `^` makes it include the first one too: without it, `b8a1c9d..3f4d2e5` would leave it out.
 
 ---
 

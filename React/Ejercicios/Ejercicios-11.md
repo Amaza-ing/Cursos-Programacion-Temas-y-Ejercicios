@@ -1,4 +1,4 @@
-**Exercises - Topic 11: Props from Parent to Child**
+# **Exercises - Topic 11: Props from Parent to Child**
 
 Below you will find **10 practical exercises** to learn how to pass data from a parent component to a child component using **props**.
 

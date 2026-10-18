@@ -58,7 +58,7 @@ This selector applies the color blue to all paragraphs (`<p>`) on the page.
 
   It will only apply to a `<div>` with the classes `box` and `green`.
 
-- **Descendant selector (`espacio`)**: selects elements inside a container.
+- **Descendant selector (a space)**: selects elements inside a container.
   ```css
   div p {
     color: green;

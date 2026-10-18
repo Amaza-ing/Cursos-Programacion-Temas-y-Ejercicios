@@ -76,6 +76,7 @@ By the end of the course, you'll be able to:
     </tr>
   </tbody>
 </table>
+
 ---
 
 ## Repository structure

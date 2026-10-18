@@ -182,7 +182,7 @@ By default, all elements have `order: 0`. A lower number is placed before a high
 
 ---
 
-## **9. Best practices with Flexbox**
+## **10. Best practices with Flexbox**
 
 - Use `flex-wrap` when elements should not shrink too much.
 - Avoid setting arbitrary `flex-grow` values without thinking about the distribution.

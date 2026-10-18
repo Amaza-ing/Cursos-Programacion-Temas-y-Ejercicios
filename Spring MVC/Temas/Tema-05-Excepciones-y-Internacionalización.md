@@ -1078,7 +1078,7 @@ If you are not using MySQL, you can use this version:
 </beans>
 ```
 
-If you are using MySQL, also keep the `dataSource` and `jdbcTemplate` beans that you configured in the Topic 3 extension.
+If you are using MySQL, also keep the `dataSource` and `jdbcTemplate` beans that you configured in Topic 4.
 
 ### Explanation of `messageSource`
 

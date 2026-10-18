@@ -33,13 +33,13 @@ Each topic is in a **Markdown (`.md`)** file within this repository. You can bro
 | 🎛️ [Topic 3: Reactive Variables, Events and Binding](Temas/Vue-03-Variables-y-Eventos.md)             | Handling data and events.                     |
 | 🔗 [Topic 4: Composition API vs Options API](Temas/Vue-04-Composition-y-Option-API.md)                | Key differences between the two approaches.   |
 | 📋 [Topic 5: Control Flow and Dynamic Lists](Temas/Vue-05-v-if-v-for.md)                              | v-if, v-for and conditional rendering.        |
-| 🎨 [Topic 6: Style and Dynamic Classes](Temas/Vue-06-Clases-Dinamicas.md)                             | Applying dynamic styles.                      |
+| 🎨 [Topic 6: Style and Dynamic Classes](Temas/Vue-06-Clases-dinamicas.md)                             | Applying dynamic styles.                      |
 | 📡 [Topic 7: Communication between Components](Temas/Vue-07-Props-Events-Slots.md)                    | Props, Emits and Slots.                       |
 | 📊 [Topic 8: Computed Properties, watch and watchEffect](Temas/Vue-08-Computed-watch-watchEffect.md)  | Advanced reactivity.                          |
 | 📝 [Topic 9: Forms and Validation](Temas/Vue-09-Formularios.md)                                       | Creating and validating forms.                |
 | 🌍 [Topic 10: Vue Router](Temas/Vue-10-Router.md)                                                     | Creating routes and SPA navigation.           |
 | 📦 [Topic 11: Global State with Pinia](Temas/Vue-11-Pinia.md)                                         | Centralized state management.                 |
-| 🔗 [Topic 12: Fetch an API](Temas/Vue-12-Fetch-API.md)                                                | Consuming data from an API.                   |
+| 🔗 [Topic 12: Fetch an API](Temas/Vue-12-fetch-API.md)                                                | Consuming data from an API.                   |
 | 🔄 [Topic 13: Lifecycle](Temas/Vue-13-Ciclo-de-Vida.md)                                               | Lifecycle hooks.                              |
 | 🧪 [Topic 14: Unit Tests with Vitest](Temas/Vue-14-Tests-Unitarios.md)                                | Writing tests for components.                 |
 | 👨‍🎓 [Complete Website with Vue](Temas/Vue-Pagina-Completa.md)                                          | Building a notes app from scratch.            |

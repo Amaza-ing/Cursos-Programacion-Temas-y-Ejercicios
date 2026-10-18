@@ -122,7 +122,7 @@ document.body.style.backgroundColor = "lightblue";
 You can add or remove classes on different DOM elements dynamically, which is an elegant way to change styles.
 
 ```js
-const container = document.querySelector(".container") as HTMLElement;
+const container = document.querySelector(".container");
 
 container.classList.add("big");
 container.classList.remove("red");
@@ -168,7 +168,7 @@ const oldHeading = document.querySelector("#main-title");
 oldHeading.replaceWith(newHeading);
 ```
 
-### **4.4. Modifying elements using `innerHTML`**
+### **4.4. Modifying DOM elements using `innerHTML`**
 
 ```js
 const container = document.querySelector("#container");

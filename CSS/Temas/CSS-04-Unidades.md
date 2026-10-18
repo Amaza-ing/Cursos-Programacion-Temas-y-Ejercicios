@@ -43,7 +43,7 @@ Relative units depend on the size of other elements or the screen.
 | Unit | Description |
 | ------ | ----------------------------------------------------------------- |
 | `%` | Relative to the size of the parent container |
-| `em` | Relative to the element's font size |
+| `em` | Relative to the element's font size (in `font-size`, to the parent's) |
 | `rem` | Relative to the root element's font size (`html`) |
 | `vw` | Relative to the viewport width (1vw = 1% of the window width) |
 | `vh` | Relative to the viewport height (1vh = 1% of the window height) |
@@ -55,7 +55,7 @@ Relative units depend on the size of other elements or the screen.
 ```css
 .container {
   width: 50%; /* 50% del contenedor padre */
-  font-size: 2em; /* Doble del tamaño de fuente del elemento */
+  font-size: 2em; /* Doble del tamaño de fuente del padre */
 }
 ```
 
@@ -64,7 +64,7 @@ Relative units depend on the size of other elements or the screen.
 
 ## **4. Difference between `em` and `rem`**
 
-- `em` is based on the font size of the parent element.
+- `em` is based on the element's own font size (when you use it in `font-size`, on the parent element's).
 - `rem` is based on the `html` font size.
 
 **Example:**

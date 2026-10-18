@@ -2,7 +2,7 @@
 
 ## **1. Introduction**
 
-Angular 19 introduces a new reactivity mechanism based on **Signals**. Signals make state management more efficient and predictable compared to traditional approaches such as `RxJS` and `ChangeDetectionStrategy.OnPush`.
+Angular has a reactivity mechanism based on **Signals**, which arrived in Angular 16 as a *developer preview* and has been stable since Angular 17. Signals make state management more efficient and predictable compared to traditional approaches such as `RxJS` and `ChangeDetectionStrategy.OnPush`.
 
 In this topic, you will learn:
 

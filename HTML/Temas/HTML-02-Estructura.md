@@ -112,4 +112,4 @@ To create an HTML file on your computer:
 
 ---
 
-In the next topic, we'll learn about **elements, tags and attributes in HTML**, which are fundamental for web development.
+In the next topic, we'll learn about **inline and block elements in HTML**, which are fundamental for web development.

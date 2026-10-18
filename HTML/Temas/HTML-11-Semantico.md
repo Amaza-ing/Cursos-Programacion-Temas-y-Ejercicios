@@ -102,7 +102,7 @@ The `<aside>` element is used for related information, such as sidebars or adver
 </aside>
 ```
 
-### **2.6. `<footer>` - Footer**
+### **2.7. `<footer>` - Footer**
 
 The `<footer>` element represents the footer of a document or section.
 

@@ -108,7 +108,7 @@ Y tú también.
 
 ### **Exercise 5: Unordered list of favorite items**
 
-Create an unordered list (`<ul>`) with at least five items representing your favorite foods, movies or books.
+Create an unordered list (`<ul>`) with at least three items representing your favorite foods, movies or books.
 
 <details><summary>Show solution</summary>
 

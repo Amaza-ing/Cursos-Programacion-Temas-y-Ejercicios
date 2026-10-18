@@ -145,7 +145,7 @@ In this example, the line `console.log(result);` won't run until the previous li
 
 ---
 
-[![Consuming a promise with .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Consuming a promise with async/await](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -173,7 +173,7 @@ In this example, it would take only 2 seconds to resolve all the promises, where
 
 ---
 
-## **6. Running promises in sequence with `Promise.allSettled()`**
+## **6. Waiting for all promises with `Promise.allSettled()`**
 
 Unlike `Promise.all()`, `Promise.allSettled()` waits for all the promises to finish, regardless of whether they were resolved or rejected.
 

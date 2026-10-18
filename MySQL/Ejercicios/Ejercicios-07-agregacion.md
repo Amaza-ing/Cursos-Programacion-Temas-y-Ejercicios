@@ -125,9 +125,9 @@ HAVING total_pedidos > 2;
 
 ---
 
-### **Exercise 9: Average spending per customer with more than €100 spent**
+### **Exercise 9: Customers with an average spending above €100**
 
-Get the average spending per customer and keep only those who have spent more than €100.
+Get the average spending per customer and keep only those whose average spending is above €100.
 
 <details><summary>Show solution</summary>
 

@@ -95,7 +95,7 @@ Depending on what we need, we can use different image formats on the web:
 
 - **Reduce the size of your images** before uploading them to the website.
 - Use **optimized formats** such as WebP when possible.
-- Apply **lossless compression** with tools like TinyPNG or Squoosh.
+- Apply **compression** with tools like TinyPNG (lossy) or Squoosh (lossy or lossless).
 - Use `loading="lazy"` to improve performance on image-heavy pages.
 - Write a proper `alt` text to improve accessibility and SEO.
 

@@ -108,7 +108,7 @@ The problem with the code is that `<span>` is an inline element and can't contai
 
 ---
 
-## **Exercise 5: Using `span` and `div` in text**
+## **Exercise 5: Using `em` and `div` in text**
 
 Write a paragraph where you use `em` to highlight a phrase, and a `div` to wrap a group of sentences in a separate block.
 

@@ -114,7 +114,7 @@ Create an image gallery that displays images in a single column on mobile device
 
 ---
 
-### **Exercise 5: Change the orientation of text in landscape mode**
+### **Exercise 5: Change the alignment of text in landscape mode**
 
 Use media queries to make the text in a paragraph center-aligned in portrait orientation and left-aligned in landscape orientation.
 

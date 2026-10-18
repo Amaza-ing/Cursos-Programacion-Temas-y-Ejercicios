@@ -30,7 +30,7 @@ The course is organized into **progressive topics**, each one with practical exe
 
 ## 📂 **Course structure**
 
-Each topic is in a **Markdown file (**``**)** inside the `Temas` folder:
+Each topic is in a **Markdown (`.md`)** file inside the `Temas` folder:
 
 | 📚 Topic | Content |
 | ------------------------------------------------------------------------------------------ | ---------------------------------------- |

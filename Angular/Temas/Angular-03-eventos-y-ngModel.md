@@ -175,21 +175,21 @@ In this case:
 
 For `ngModel` to work, we need to import `FormsModule` into the component where it is used.
 
-Example in `app.module.ts`:
+Example in `ngmodel.component.ts`:
 
 ```ts
-import { NgModule } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms"; // Importar FormsModule
 
-import { AppComponent } from "./app.component";
-import { NgModelComponent } from "./ngmodel/ngmodel.component";
-
-@NgModule({
-  declarations: [AppComponent, NgModelComponent],
+@Component({
+  selector: "app-ngmodel",
   imports: [FormsModule], // Agregar FormsModule aquí
-  bootstrap: [AppComponent],
+  templateUrl: "./ngmodel.component.html",
+  styleUrls: ["./ngmodel.component.css"],
 })
-export class AppModule {}
+export class NgModelComponent {
+  userName: string = "";
+}
 ```
 
 

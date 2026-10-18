@@ -391,7 +391,7 @@ The constructor of the `enum`:
 
 - is not called with `new`
 - is used internally by Java to create each constant
-- is usually implicitly `private`
+- is always `private` (implicitly, even if you don't write it)
 
 You can't do this:
 

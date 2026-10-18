@@ -750,7 +750,7 @@ Rule of thumb:
 
 - Do not use exceptions for normal program logic.
 - Catch specific exceptions before general ones.
-- If you override `throws`, be clear about what the method can throw.
+- If you declare `throws`, be clear about what the method can throw.
 - Use clear error messages.
 - Create custom exceptions when the domain justifies it.
 - Don't catch exceptions just to silently ignore them.

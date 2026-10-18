@@ -205,7 +205,7 @@ You can combine both effects to get more dynamic results.
 Here, the button grows and shrinks while changing color on hover.
 
 ---
-[![Animations & Transitions](https://img.youtube.com/vi/D9DoH8gLsXY/0.jpg)](https://www.youtube.com/watch?v=D9DoH8gLsXY&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+[![Animations & Transitions](https://img.youtube.com/vi/sTh7iZyxHrw/0.jpg)](https://www.youtube.com/watch?v=sTh7iZyxHrw&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 

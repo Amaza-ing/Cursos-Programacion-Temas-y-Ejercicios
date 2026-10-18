@@ -353,7 +353,7 @@ This happens because the array is an object and the method receives a reference 
 
 ## 14. Arrays and loops (preview)
 
-In the next topic you'll see how to loop through arrays, but it's useful to understand the basic idea now.
+In this topic's exercises you'll practice looping through arrays, but it's useful to understand the basic idea now.
 
 To loop through an array of size `n`, you typically go:
 
@@ -416,4 +416,4 @@ In beginner courses, the most important thing is to master one-dimensional array
 
 ---
 
-In the next topic you'll learn to **loop through arrays**, and to read/modify their values efficiently.
+In the next topic you'll learn to use **`List` and `ArrayList`**, collections that, unlike arrays, can grow and shrink, and you'll see how to loop through them.

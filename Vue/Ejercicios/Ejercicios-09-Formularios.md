@@ -8,7 +8,7 @@ Try to solve them before looking at the solution.
 
 ## **Exercise 1: Contact form with v-model**
 
-Create a `ContactForm.vue` component with a contact form that has the fields `nombre`, `email` and `mensaje`, all bound with `v-model`.
+Create a `ContactForm.vue` component with a contact form that has the fields `name`, `email` and `message`, all bound with `v-model`.
 
 <details><summary>Show solution</summary>
 
@@ -146,7 +146,7 @@ p {
 
 ## **Exercise 4: Disable the button if the form is invalid**
 
-Create a `LoginForm.vue` component that only allows submitting if `usuario` and `contraseña` aren't empty.
+Create a `LoginForm.vue` component that only allows submitting if `username` and `password` aren't empty.
 
 <details><summary>Show solution</summary>
 
@@ -187,7 +187,7 @@ button:disabled {
 
 ## **Exercise 5: Check that the fields are filled in before submitting**
 
-Create a `ProfileForm.vue` component that checks that `nombre`, `apellido` and `edad` are filled in before submitting.
+Create a `ProfileForm.vue` component that checks that `firstName`, `lastName` and `age` are filled in before submitting.
 
 <details><summary>Show solution</summary>
 

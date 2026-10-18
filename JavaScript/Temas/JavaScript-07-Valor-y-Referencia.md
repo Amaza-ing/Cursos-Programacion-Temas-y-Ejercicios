@@ -111,13 +111,15 @@ console.log(nestedObject.details.age); // Salida: 30 (no se modifica)
 
 > **Note:** `JSON.stringify()` doesn't work well with functions or `undefined` values.
 
-### **4.4. Deep copy with `structuredClone()` (ES2021)**
+### **4.4. Deep copy with `structuredClone()`**
 
 ```js
 const deepClone = structuredClone(nestedObject);
 deepClone.details.age = 40;
 console.log(nestedObject.details.age); // Salida: 30
 ```
+
+> **Note:** `structuredClone()` isn't part of ECMAScript (the language standard): it's a global function provided by browsers, and also by Node.js since version 17.
 
 ---
 
@@ -163,7 +165,7 @@ deepArrayCopy[0][0] = 99;
 console.log(nestedArray[0][0]); // Salida: 1 (no se modifica)
 ```
 
-### **5.5. Deep copy with `structuredClone()` (ES2021)**
+### **5.5. Deep copy with `structuredClone()`**
 
 ```js
 const originalArray = [

@@ -36,8 +36,8 @@ Each topic is in a **Markdown (`.md`)** file in this repository. You can explore
 | 🎭 [Topic 5: Objects](Temas/JavaScript-05-Objetos.md) | Creating, manipulating and using objects in JavaScript.      |
 | 📦 [Topic 6: Arrays](Temas/JavaScript-06-Arrays.md) | Methods and operations with lists of data.                  |
 | 🏗️ [Topic 7: Pass by Value and Reference](Temas/JavaScript-07-Valor-y-Referencia.md) | Differences and effects on variables, objects and arrays.       |
-| 🎯 [Topic 8: Advanced Functions](Temas/JavaScript-08-Funciones-Avanzadas.md) | Closures, higher-order functions and more.                |
-| ✨ [Topic 9: Advanced Operators](Temas/JavaScript-09-Operadores-Avanzados.md) | `spread`, `rest`, `optional chaining` and others.              |
+| ✨ [Topic 8: Advanced Operators](Temas/JavaScript-08-Operadores-Avanzados.md) | `spread`, `rest`, `optional chaining` and others.              |
+| 🎯 [Topic 9: Advanced Functions](Temas/JavaScript-09-Funciones-Avanzadas.md) | Closures, higher-order functions and more.                |
 | ⏳ [Topic 10: Special Functions](Temas/JavaScript-10-Funciones-Especiales.md) | `setTimeout`, `setInterval`, `debounce`, `throttle`, etc.   |
 | ⚡ [Topic 11: Asynchrony and Promises](Temas/JavaScript-11-Promesas.md) | Promises, `async/await` and `fetch()`.                        |
 | 🔗 [Topic 12: API Requests](Temas/JavaScript-12-Fetch-API.md) | How to consume data from APIs with JavaScript.                 |

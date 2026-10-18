@@ -31,7 +31,7 @@ Each topic is in a **Markdown (`.md`)** file in this repository. You can explore
 | 🎨 [Topic 4: Units of Measurement](Temas/CSS-04-Unidades.md) | Using absolute and relative units.                     |
 | 🌈 [Topic 5: Colors and Backgrounds](Temas/CSS-05-Colores-y-Background.md) | Applying custom colors, gradients and backgrounds. |
 | ✍️ [Topic 6: Typography and Fonts](Temas/CSS-06-Tipografia.md) | Customizing text and using external fonts.       |
-| 🗺 [Topic 7: Positioning](Temas/CSS-07-Posicionamiento.md) | Customizing text and using external fonts.       |
+| 🗺 [Topic 7: Positioning](Temas/CSS-07-Posicionamiento.md) | Controlling where elements are placed on the page.       |
 | 📐 [Topic 8: Flexbox](Temas/CSS-08-Flexbox.md) | Flexible layout of elements in a single dimension.        |
 | 🗂️ [Topic 9: CSS Grid](Temas/CSS-09-Grid.md) | Layout in two-dimensional grids.                     |
 | 👁‍🗨️ [Topic 10: Pseudo-classes and Pseudo-elements](Temas/CSS-10-Pseudoclases-y-Pseudoelementos.md) | More flexibility and control over elements.             |
@@ -87,7 +87,7 @@ I hope you enjoy the course.
       href="https://www.linkedin.com/in/adrian-maza-vazquez/"
       target="_blank"
     >
-      LinkedIn/Adrian-Maza
+      LinkedIn/Adrián-Maza
     </a>
   </h5>
   <h5>
