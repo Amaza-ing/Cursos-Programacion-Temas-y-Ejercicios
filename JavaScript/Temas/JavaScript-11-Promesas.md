@@ -1,38 +1,38 @@
-# **Topic 11: Asynchrony in JavaScript**
+# **Topic 11: Asynchronous JavaScript**
 
-## **1. Introduction to Asynchrony**
+## **1. Introduction to asynchrony**
 
-JavaScript is a **single-threaded** programming language, which means that it can only execute one task at a time in its main thread. However, many times we need to execute tasks that take time, such as requesting data from an API or reading files. To handle these situations without blocking code execution, we use asynchronous techniques.
+JavaScript is a **single-threaded** programming language, which means it can only run one task at a time on its main thread. However, we often need to run tasks that take time, such as requesting data from an API or reading files. To handle these situations without blocking the execution of the code, we use asynchronous techniques.
 
 ---
 
-## **2. Handling Asynchrony in JavaScript**
+## **2. Handling asynchrony in JavaScript**
 
 In JavaScript, we can handle asynchrony in several ways:
 
-1. **Callbacks** (first way to handle asynchronous operations)
-2. **Promises** (introduced in ES6, allow better flow control)
+1. **Callbacks** (the first way of handling asynchronous operations)
+2. **Promises** (introduced in ES6, they allow better control flow)
 3. **Async/Await** (cleaner syntax for handling promises, introduced in ES8)
 
 ---
 
-[![What is Asynchrony](https://img.youtube.com/vi/LZhXXiccCXQ/0.jpg)](https://www.youtube.com/watch?v=LZhXXiccCXQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![What is asynchrony](https://img.youtube.com/vi/LZhXXiccCXQ/0.jpg)](https://www.youtube.com/watch?v=LZhXXiccCXQ&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **3. Use of Promises**
+## **3. Using promises**
 
-**Promises** are objects that represent value that may be available now, in the future, or never. A promise has three possible states:
+**Promises** are objects that represent a value that may be available now, in the future or never. A promise has three possible states:
 
-- **Pending**: The operation has not finished yet.
+- **Pending**: The operation hasn't finished yet.
 - **Fulfilled** (resolved): The operation was completed successfully.
 - **Rejected**: The operation failed.
 
-### **3.1. Creating a Promise**
+### **3.1. Creating a promise**
 
-To create a promise we can use `new Promise()` and add the logic we need within the callback that it receives as a parameter.
+To create a promise, we can use `new Promise()` and add the logic we need inside the callback it receives as a parameter.
 
-Although usually we will not need to create any promise, only consume it, it is good to have an idea of how it is made inside.
+Although we usually won't need to create a promise, only consume it, it's good to have an idea of how it's built inside.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -47,19 +47,19 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-This example simulates the asynchrony with an `setTimeout()` making it take 2 seconds to resolve. In a real case it would not have a stipulated time, but would be resolved as soon as it finished executing its processes, such as a request to an API or a query to a database.
+This example simulates asynchrony with a `setTimeout()` that makes it take 2 seconds to resolve. In a real case, it wouldn't have a set time: it would resolve as soon as it finished running its processes, such as a request to an API or a database query.
 
 ---
 
-[![What is a Promise](https://img.youtube.com/vi/VcO04YuoglM/0.jpg)](https://www.youtube.com/watch?v=VcO04YuoglM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![What is a promise](https://img.youtube.com/vi/VcO04YuoglM/0.jpg)](https://www.youtube.com/watch?v=VcO04YuoglM&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-### **3.2. Consume a Promise with `.then()` and `.catch()`**
+### **3.2. Consuming a promise with `.then()` and `.catch()`**
 
-Consuming a promise is what is truly important. There are several syntaxes for this.
+Consuming a promise is what really matters. There are several syntaxes for this.
 
-In the `.then()` syntax we need to pass a callback that will be executed when the promise resolves, and another callback to the `.catch()` method that will be executed only if the promise fails.
+With the `.then()` syntax, we need to pass it a callback that will run when the promise resolves, and pass another callback to the `.catch()` method that will run only if the promise fails.
 
 ```js
 myPromise
@@ -71,7 +71,7 @@ myPromise
   });
 ```
 
-If the `.then()` returns a promise, we can nest as many as necessary. In these cases you would only need a single `.catch()` that can catch an error in any of the above promises.
+If the `.then()` returns a promise in turn, we can chain as many as we need. In these cases, you'd only need a single `.catch()`, which can catch an error in any of the previous promises.
 
 ```js
 myPromise
@@ -90,9 +90,9 @@ myPromise
   });
 ```
 
-### **3.3. `finally()` in Promises**
+### **3.3. `finally()` in promises**
 
-The `.finally()` method is always executed, regardless of the result of the promise.
+The `.finally()` method always runs, regardless of the result of the promise.
 
 ```js
 myPromise
@@ -103,15 +103,15 @@ myPromise
 
 ---
 
-[![Consume a Promise with .then](https://img.youtube.com/vi/-Ax2L0YzT4I/0.jpg)](https://www.youtube.com/watch?v=-Ax2L0YzT4I&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Consuming a promise with .then](https://img.youtube.com/vi/-Ax2L0YzT4I/0.jpg)](https://www.youtube.com/watch?v=-Ax2L0YzT4I&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
 ## **4. Using `async/await`**
 
-The `async/await` syntax allows you to handle promises in a clearer and more structured way, as if they were synchronous code.
+The `async/await` syntax lets you handle promises in a clearer, more structured way, as if they were synchronous code.
 
-### **4.1. Define an asynchronous function**
+### **4.1. Defining an asynchronous function**
 
 To use `await`, the function must be declared with `async`.
 
@@ -123,8 +123,8 @@ async function fetchData() {
 
 This function automatically returns a promise.
 
-### **4.2. Wait for the resolution of a Promise with `await`**
-As a security measure we must enclose our code in a "try/catch" block where everything inside the `try{}` will be executed as long as there are no problems and only the `catch(error){}` will be executed if something fails.
+### **4.2. Waiting for a promise to resolve with `await`**
+As a safety measure, we should wrap our code in a "try/catch" block: everything inside the `try{}` will run as long as there are no problems, and the `catch(error){}` will run only if something fails.
 
 ```js
 async function getData() {
@@ -141,17 +141,17 @@ async function getData() {
 getData();
 ```
 
-In this example, the `console.log(result);` line will not be executed until the previous line has finished resolving its execution, since it has an await.
+In this example, the line `console.log(result);` won't run until the previous line has finished resolving, since it has an await.
 
 ---
 
-[![Consume a Promise with .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Consuming a promise with .then](https://img.youtube.com/vi/o1bvYWMmrCI/0.jpg)](https://www.youtube.com/watch?v=o1bvYWMmrCI&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. Execute Promises in Parallel with `Promise.all()`**
+## **5. Running promises in parallel with `Promise.all()`**
 
-`Promise.all()` allows you to execute multiple promises simultaneously and wait for them all to resolve.
+`Promise.all()` lets you run several promises simultaneously and wait for all of them to resolve.
 
 ```js
 const promise1 = new Promise((resolve) =>
@@ -169,13 +169,13 @@ async function executePromises() {
 executePromises();
 ```
 
-In this example it would only take 2 seconds to resolve all the promises, while if we did not use the `Promise.all()` and did it one after the other it would take 3 seconds, because the second promise would not be started until the first had been resolved.
+In this example, it would take only 2 seconds to resolve all the promises, whereas if we didn't use `Promise.all()` and ran them one after the other, it would take 3 seconds, because the second promise wouldn't start until the first one had resolved.
 
 ---
 
-## **6. Execute Promises in Sequence with `Promise.allSettled()`**
+## **6. Running promises in sequence with `Promise.allSettled()`**
 
-Unlike `Promise.all()`, `Promise.allSettled()` waits for all promises to finish, regardless of whether they were resolved or rejected.
+Unlike `Promise.all()`, `Promise.allSettled()` waits for all the promises to finish, regardless of whether they were resolved or rejected.
 
 ```js
 const failingPromise = new Promise((_, reject) =>
@@ -194,10 +194,10 @@ executeAllSettled();
 
 ## **7. Conclusion**
 
-- **Promises** allow asynchronous operations to be handled without excessive nesting.
-- **Async/Await** simplifies reading and writing asynchronous code.
-- **Methods like `Promise.all()` and `Promise.allSettled()`** allow multiple promises to be managed efficiently.
+- **Promises** let you handle asynchronous operations without excessive nesting.
+- **Async/Await** makes asynchronous code easier to read and write.
+- **Methods like `Promise.all()` and `Promise.allSettled()`** let you manage multiple promises efficiently.
 
-Handling asynchrony correctly in JavaScript is key to improving performance and avoiding code execution crashes.
+Handling asynchrony correctly in JavaScript is key to improving performance and keeping your code from blocking.
 
-In the next topic we will see how we can make requests to an API using the fetch method and promises.
+In the next topic, we'll see how to make requests to an API using the fetch method and promises.

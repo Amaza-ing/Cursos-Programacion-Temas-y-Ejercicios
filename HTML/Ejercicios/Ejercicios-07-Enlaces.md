@@ -2,13 +2,13 @@
 
 ## **Instructions:**
 
-Below you will find 5 practical exercises on links in HTML. Perform each one in a code editor and view the results in your browser.
+Below you'll find 5 practical exercises on links in HTML. Do each one in a code editor and check the results in your browser.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Basic Link**
+### **Exercise 1: Basic link**
 
 Create an HTML document that includes a link to an external website such as Google or Wikipedia.
 
@@ -24,7 +24,7 @@ Create an HTML document that includes a link to an external website such as Goog
 
 ### **Exercise 2: Link that opens in a new tab**
 
-Modify the link from the previous exercise to open in a new tab using the `target` attribute safely with `rel="noopener noreferrer"`.
+Modify the link from the previous exercise so that it opens in a new tab, using the `target` attribute safely with `rel="noopener noreferrer"`.
 
 <details><summary>Show solution</summary>
 
@@ -40,7 +40,7 @@ Modify the link from the previous exercise to open in a new tab using the `targe
 
 ### **Exercise 3: Internal link within a page**
 
-Create an HTML page with two sections. Add a link at the top that when clicked takes the user to the second section using an `id`.
+Create an HTML page with two sections. Add a link at the top that, when clicked, takes the user to the second section using an `id`.
 
 <details><summary>Show solution</summary>
 
@@ -57,7 +57,7 @@ Create an HTML page with two sections. Add a link at the top that when clicked t
 
 ### **Exercise 4: Relative link to another internal page**
 
-Create a link that directs the user to another HTML page within the same project.
+Create a link that takes the user to another HTML page in the same project.
 
 <details><summary>Show solution</summary>
 
@@ -69,9 +69,9 @@ Create a link that directs the user to another HTML page within the same project
 
 ---
 
-### **Exercise 5: Email and Phone Link**
+### **Exercise 5: Email and phone links**
 
-Create links that allow you to send an email and make a phone call from the website.
+Create links that let you send an email and make a phone call from the web page.
 
 <details><summary>Show solution</summary>
 

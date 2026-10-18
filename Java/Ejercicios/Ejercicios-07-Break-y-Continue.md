@@ -1,14 +1,14 @@
-# Exercises - Topic 7: Flow control in loops (`break` and `continue`)
+# Exercises - Topic 7: Flow control in loops (break and continue)
 
 Below you will find **10 practical exercises** to learn how to use `break` and `continue` within `for` and `while` loops.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Stop a loop when reaching a value
 
-Use an `for` loop from 1 to 20.  
+Use a `for` loop from 1 to 20.  
 When the counter reaches `13`, display `"Found 13"` and stop the loop.
 
 <details><summary>Show solution</summary>
@@ -30,10 +30,10 @@ public class Main {
 
 ---
 
-## Exercise 2: Skip numbers multiples of 4
+## Exercise 2: Skip multiples of 4
 
-Use an `for` loop from 1 to 30.  
-You should not print numbers that are multiples of `4`.
+Use a `for` loop from 1 to 30.  
+Don't print the numbers that are multiples of `4`.
 
 <details><summary>Show solution</summary>
 
@@ -57,7 +57,7 @@ public class Main {
 
 ## Exercise 3: Find the first multiple of 7
 
-Use an `for` loop from 1 to 100.  
+Use a `for` loop from 1 to 100.  
 Find the **first** multiple of `7`, print it and exit the loop.
 
 <details><summary>Show solution</summary>
@@ -81,8 +81,8 @@ public class Main {
 
 ## Exercise 4: Ignore zero to avoid division by zero
 
-Use an `for` loop from `-5` to `5`.  
-Print the result of `50 / i`, but you **do not** divide by 0.
+Use a `for` loop from `-5` to `5`.  
+Print the result of `50 / i`, but you **must not** divide by 0.
 
 <details><summary>Show solution</summary>
 
@@ -104,9 +104,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Count only numbers that meet condition (using `continue`)
+## Exercise 5: Count only the numbers that meet a condition (using `continue`)
 
-Use a loop from 1 to 50 and count how many numbers there are:
+Use a loop from 1 to 50 and count how many numbers are:
 
 - multiples of 3
 - but NOT multiples of 6
@@ -143,8 +143,8 @@ public class Main {
 
 ## Exercise 6: `while (true)` loop with controlled output
 
-Create an infinite loop (`while (true)`) that increments an `attempts` variable from 1.  
-When `attempts` reaches `5`, it displays `"Stop"` and ends the loop.
+Create an infinite loop (`while (true)`) that increments an `attempts` variable starting from 1.  
+When `attempts` reaches `5`, print `"Stop"` and end the loop.
 
 <details><summary>Show solution</summary>
 
@@ -171,7 +171,7 @@ public class Main {
 
 ## Exercise 7: Skip an iteration with `continue` in `while`
 
-Use an `while` loop to count from 1 to 15.  
+Use a `while` loop to count from 1 to 15.  
 Do not print odd numbers (only even numbers should be displayed).
 
 <details><summary>Show solution</summary>
@@ -198,11 +198,11 @@ public class Main {
 
 ---
 
-## Exercise 8: Stop when encountering a character
+## Exercise 8: Stop when you find a character
 
 Declare a variable `text` with value `"java_programming"`.  
-It loops through its characters and stops when it finds the character `'_'`.  
-Print `"Underscore found"` just before leaving.
+Loop through its characters and stop when you find the character `'_'`.  
+Print `"Underscore found"` just before exiting the loop.
 
 <details><summary>Show solution</summary>
 
@@ -273,9 +273,9 @@ Declare an array:
 int[] values = {10, 20, 15, 30, 5};
 ```
 
-It goes through the array adding values in order.
+Loop through the array, adding up the values in order.  
 When the sum is **greater than 40**, stop the loop with `break`.  
-Prints the sum reached.
+Print the sum reached.
 
 <details><summary>Show solution</summary>
 

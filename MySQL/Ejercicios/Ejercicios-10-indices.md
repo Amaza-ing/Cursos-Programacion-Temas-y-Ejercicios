@@ -2,15 +2,15 @@
 
 Below you will find 5 practical exercises to create, manage and delete indexes in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Create a simple index on a frequently searched column**
 
-Creates an index named `idx_city` on column `city` of table `customers`.
+Create an index named `idx_city` on the `city` column of the `customers` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 CREATE INDEX idx_city ON customers(city);
@@ -22,9 +22,9 @@ CREATE INDEX idx_city ON customers(city);
 
 ### **Exercise 2: Create a unique index to ensure duplicate-free data**
 
-On the `suppliers` table, create a unique index on the `tax_id` column so that it is not repeated.
+In the `suppliers` table, create a unique index on the `tax_id` column so that its values can't be repeated.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 CREATE UNIQUE INDEX idx_tax_id ON suppliers(tax_id);
@@ -36,9 +36,9 @@ CREATE UNIQUE INDEX idx_tax_id ON suppliers(tax_id);
 
 ### **Exercise 3: Create a composite index**
 
-On the table `orders`, create an index named `idx_customer_date` that includes the columns `customer_id` and `created_at`.
+In the `orders` table, create an index named `idx_customer_date` that includes the `customer_id` and `created_at` columns.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 CREATE INDEX idx_customer_date ON orders(customer_id, created_at);
@@ -48,11 +48,11 @@ CREATE INDEX idx_customer_date ON orders(customer_id, created_at);
 
 ---
 
-### **Exercise 4: View existing indexes on a table**
+### **Exercise 4: View the existing indexes on a table**
 
-Queries all indexes created on the `products` table.
+List all the indexes created on the `products` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SHOW INDEX FROM products;
@@ -64,9 +64,9 @@ SHOW INDEX FROM products;
 
 ### **Exercise 5: Delete an existing index**
 
-Removes index `idx_city` from table `customers`.
+Remove the `idx_city` index from the `customers` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DROP INDEX idx_city ON customers;

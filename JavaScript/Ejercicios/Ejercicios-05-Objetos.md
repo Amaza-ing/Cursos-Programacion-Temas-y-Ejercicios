@@ -1,14 +1,14 @@
 # **Exercises - Topic 5: Objects in JavaScript**
 
-Below you will find 5 practical exercises on using objects in JavaScript.
+Below you'll find 5 practical exercises on using objects in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Create a simple object**
 
-Create an object named `book` that has the following properties: `title`, `author`, and `year`. Display the object in the console.
+Create an object named `book` that has the following properties: `title`, `author` and `year`. Display the object in the console.
 
 <details><summary>Show solution</summary>
 
@@ -26,7 +26,7 @@ console.log(book);
 
 ---
 
-### **Exercise 2: Access to properties**
+### **Exercise 2: Accessing properties**
 
 Using the `book` object from the previous exercise, display the title and author in the console using both dot notation and square bracket notation.
 
@@ -66,7 +66,7 @@ console.log(book.getSummary()); // Salida: Cien años de soledad fue escrito por
 
 ### **Exercise 4: Create an object constructor**
 
-Create a constructor function called `Movie` that takes `title`, `director`, and `year` as parameters and creates an object with those properties. Next, create an instance called `myMovie`.
+Create a constructor function called `Movie` that takes `title`, `director` and `year` as parameters and creates an object with those properties. Then, create an instance called `myMovie`.
 
 <details><summary>Show solution</summary>
 
@@ -85,7 +85,7 @@ console.log(myMovie);
 
 ---
 
-### **Exercise 5: Destructuring objects**
+### **Exercise 5: Object destructuring**
 
 Use destructuring to extract the `title` and `author` properties from the `book` object and display them in the console.
 

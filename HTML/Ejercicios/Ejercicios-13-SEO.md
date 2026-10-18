@@ -2,9 +2,9 @@
 
 ## **Instructions:**
 
-Below you will find 5 practical exercises on metadata in HTML and basic SEO.
+Below you'll find 5 practical exercises on metadata in HTML and basic SEO.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -25,9 +25,9 @@ Add an appropriate meta description for a web page about web development.
 
 ---
 
-### **Exercise 2: Configure Open Graph for Social Preview**
+### **Exercise 2: Set up Open Graph for social media previews**
 
-Write the necessary Open Graph tags to improve the appearance of a blog page on social networks.
+Write the Open Graph tags needed to improve how a blog page looks on social networks.
 
 <details><summary>Show solution</summary>
 
@@ -46,7 +46,7 @@ Write the necessary Open Graph tags to improve the appearance of a blog page on 
 
 ---
 
-### **Exercise 3: Define an `robots` tag**
+### **Exercise 3: Define a `robots` tag**
 
 Specify a meta tag that prevents search engines from indexing the page.
 
@@ -76,7 +76,7 @@ Write an effective `<title>` tag for an online sportswear store.
 
 ---
 
-### **Exercise 5: Set mobile viewport settings**
+### **Exercise 5: Set up the viewport for mobile devices**
 
 Add the appropriate meta tag to make a web page responsive on mobile devices.
 

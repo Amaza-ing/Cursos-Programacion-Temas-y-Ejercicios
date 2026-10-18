@@ -5,7 +5,7 @@
 In Angular, communication between components is key to building scalable applications. There are several ways to pass data between components, but the most common are:
 
 - `@Input()` and `@Output()`, which allow communication between a parent component and a child component.
-- The **Signals** `input` and `output`, which are a more efficient alternative introduced in Angular 16.
+- The `input` and `output` **Signals**, which are a more efficient alternative introduced in Angular 16.
 
 In this topic, we will explore how to use these techniques for communication between components.
 
@@ -13,7 +13,7 @@ In this topic, we will explore how to use these techniques for communication bet
 
 ## **2. Communication with `@Input()`**
 
-The `@Input()` directive allows a child component to receive data from its parent component.
+The `@Input()` directive lets a child component receive data from its parent component.
 
 ### **`@Input()` example**
 
@@ -62,7 +62,7 @@ export class ParentComponent {
 ```
 
 
-Of course, any type of data can be passed, not just strings. Objects and any other type of data can also be passed.
+Of course, you can pass any type of data, not just strings. You can also pass objects and any other data type.
 
 ---
 
@@ -72,7 +72,7 @@ Of course, any type of data can be passed, not just strings. Objects and any oth
 
 ## **3. Communication with `@Output()`**
 
-The `@Output()` directive allows a child component to send data to the parent component using events.
+The `@Output()` directive lets a child component send data to its parent component through events.
 
 ### **`@Output()` example**
 
@@ -135,9 +135,9 @@ export class ParentComponent {
 
 ---
 
-## **4. Communication with Signals `input` and `output`**
+## **4. Communication with the `input` and `output` Signals**
 
-In Angular 16, `input()` and `output()` were introduced, a more optimized alternative to `@Input()` and `@Output()`.
+Angular 16 introduced `input()` and `output()`, a more optimized alternative to `@Input()` and `@Output()`.
 
 ### **`input()` example**
 
@@ -223,23 +223,23 @@ export class ParentComponent {
 
 ---
 
-## **5. Comparison between `@Input/@Output` and `input()/output()`**
+## **5. Comparing `@Input/@Output` and `input()/output()`**
 
 | **Feature** | **@Input/@Output** | **input()/output()** |
 | ----------------------- | ------------------------- | ---------------------------- |
-| Form of declaration | Decorators in class | Variables within the class |
-| Reactivity | Non-reactive by default | Automatically reactive |
-| Ease of use | Best known and compatible | More efficient in performance |
+| How they are declared | Decorators in the class | Variables inside the class |
+| Reactivity | Not reactive by default | Automatically reactive |
+| Ease of use | Better known and more compatible | Better performance |
 | Requires `EventEmitter` | Yes | No |
 
 ---
 
 ## **6. Conclusion**
 
-- `@Input()` and `@Output()` are the classic way of communication between components in Angular.
+- `@Input()` and `@Output()` are the classic way for components to communicate in Angular.
 - `input()` and `output()` introduce a more efficient and reactive way of handling data flow.
 - Choosing between the two depends on backward compatibility and performance optimization.
 
 ---
 
-In the next topic, we will explore the **constructor and ngOnInit** and how they influence the component lifecycle
+In the next topic, we will explore the **constructor and ngOnInit** and how they affect the component lifecycle

@@ -1,14 +1,14 @@
-# **Exercises - Topic 12: Requests to an API with `fetch()`**
+# **Exercises - Topic 12: API requests with `fetch()`**
 
-Below you will find 5 practical exercises on how to make HTTP requests using `fetch()` in JavaScript.
+Below you'll find 5 practical exercises on how to make HTTP requests using `fetch()` in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Make an `GET` request to a public API**
+### **Exercise 1: Make a `GET` request to a public API**
 
-Make an `GET` request to the `https://jsonplaceholder.typicode.com/users/3` API and display the user name in the console.
+Make a `GET` request to the `https://jsonplaceholder.typicode.com/users/3` API and display the user's name in the console.
 
 <details><summary>Show solution</summary>
 
@@ -23,9 +23,9 @@ fetch("https://jsonplaceholder.typicode.com/users/3")
 
 ---
 
-### **Exercise 2: Make an `POST` request to create a new user**
+### **Exercise 2: Make a `POST` request to create a new user**
 
-Create a function `createUser` that makes an `POST` request to `https://jsonplaceholder.typicode.com/users` by sending an object with `name` and `email`. Display the response in the console.
+Create a function `createUser` that makes a `POST` request to `https://jsonplaceholder.typicode.com/users`, sending an object with `name` and `email`. Display the response in the console.
 
 <details><summary>Show solution</summary>
 
@@ -54,9 +54,9 @@ createUser();
 
 ---
 
-### **Exercise 3: Update post information with `PUT`**
+### **Exercise 3: Update a post's information with `PUT`**
 
-Create a function `updatePost` that makes an `PUT` request to `https://jsonplaceholder.typicode.com/posts/2`, modifying the title and content of the post.
+Create a function `updatePost` that makes a `PUT` request to `https://jsonplaceholder.typicode.com/posts/2`, modifying the title and content of the post.
 
 <details><summary>Show solution</summary>
 
@@ -91,7 +91,7 @@ updatePost();
 
 ### **Exercise 4: Partially modify a post with `PATCH`**
 
-Create a function `modifyPostTitle` that makes an `PATCH` request to `https://jsonplaceholder.typicode.com/posts/3`, modifying only the title.
+Create a function `modifyPostTitle` that makes a `PATCH` request to `https://jsonplaceholder.typicode.com/posts/3`, modifying only the title.
 
 <details><summary>Show solution</summary>
 
@@ -122,7 +122,7 @@ modifyPostTitle();
 
 ### **Exercise 5: Delete a user with `DELETE`**
 
-Create a function `deleteUser` that makes an `DELETE` request to `https://jsonplaceholder.typicode.com/users/5` and displays a message in the console confirming the deletion.
+Create a function `deleteUser` that makes a `DELETE` request to `https://jsonplaceholder.typicode.com/users/5` and displays a message in the console confirming the deletion.
 
 <details><summary>Show solution</summary>
 

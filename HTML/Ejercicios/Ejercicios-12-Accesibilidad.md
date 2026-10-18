@@ -2,15 +2,15 @@
 
 ## **Instructions:**
 
-Below you will find 5 practical exercises on accessibility in HTML.
+Below you'll find 5 practical exercises on accessibility in HTML.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Add `aria-label` to a button with an icon**
+### **Exercise 1: Add `aria-label` to an icon button**
 
-Create a button that contains only one icon (for example, a mail envelope) and use `aria-label` to describe its function.
+Create a button that contains only an icon (for example, an envelope) and use `aria-label` to describe what it does.
 
 <details><summary>Show solution</summary>
 
@@ -24,7 +24,7 @@ Create a button that contains only one icon (for example, a mail envelope) and u
 
 ### **Exercise 2: Improve accessibility with `aria-labelledby`**
 
-Correct the following code so that the input field is correctly labeled with `aria-labelledby`.
+Fix the following code so that the input field is correctly labeled with `aria-labelledby`.
 
 ```html
 <input type="text" id="username" /> <label for="username">Nombre</label>
@@ -61,7 +61,7 @@ Fix the following code so that the image has proper alt text.
 
 ### **Exercise 4: Make a keyboard-navigable list using `tabindex`**
 
-Add `tabindex` to the links in the list below to define the browsing order.
+Add `tabindex` to the links in the list below to define the navigation order.
 
 ```html
 <ul>

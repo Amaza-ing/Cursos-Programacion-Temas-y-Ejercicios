@@ -1,20 +1,20 @@
-# **Exercises - Topic 13: Props Son to Father and Elevate the Status**
+# **Exercises - Topic 13: Props from Child to Parent and Lifting State Up**
 
-Below you will find **10 practical exercises** to learn how to communicate data from a **child → parent** component by passing **functions as props**, and how to **raise state** when multiple components need it.
+Below you will find **10 practical exercises** to learn how to send data from a **child → parent** component by passing **functions as props**, and how to **lift state up** when several components need it.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: The son notifies the father with a button**
+## **Exercise 1: The child notifies the parent with a button**
 
-Create an `NotifyButton.jsx` component that receives an `onNotify` prop.
+Create a `NotifyButton.jsx` component that receives an `onNotify` prop.
 
-- When you click, you must call `onNotify("Clicked from child")`.
+- When clicked, it must call `onNotify("Clicked from child")`.
 
-In `App.jsx`, create `handleNotify(message)` that makes `console.log(message)` and pass it to the child.
+In `App.jsx`, create `handleNotify(message)` that does `console.log(message)` and pass it to the child.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`NotifyButton.jsx`**
 
@@ -54,19 +54,19 @@ export default App;
 
 ---
 
-## **Exercise 2: Pass data from the child to the parent (with parameter)**
+## **Exercise 2: Pass data from the child to the parent (with a parameter)**
 
-Create an `ColorPicker.jsx` component that receives `onPick`.
+Create a `ColorPicker.jsx` component that receives `onPick`.
 
-- Renders two buttons: **Blue** and **Purple**.
-- When you click, it calls `onPick("blue")` or `onPick("purple")`.
+- It renders two buttons: **Blue** and **Purple**.
+- When clicked, it calls `onPick("blue")` or `onPick("purple")`.
 
-On the father:
+In the parent:
 
-- Save `selectedColor` in state (initial `"blue"`).
-- Displays `p` with: **"Selected: ..."**.
+- Store `selectedColor` in state (initial value `"blue"`).
+- Display a `p` with: **"Selected: ..."**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`ColorPicker.jsx`**
 
@@ -113,21 +113,21 @@ export default App;
 
 ## **Exercise 3: Input in the child, state in the parent**
 
-Create an `NameField.jsx` component that receives:
+Create a `NameField.jsx` component that receives:
 
 - `value`
 - `onValueChange`
 
 It must render a controlled input.
 
-On the father:
+In the parent:
 
-- Save `name` in status.
+- Store `name` in state.
 - Pass `value={name}`.
-- Pass `onValueChange` to update the status.
-- Shows an `p` with: **"Hello, {name}"**.
+- Pass `onValueChange` to update the state.
+- Show a `p` with: **"Hello, {name}"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`NameField.jsx`**
 
@@ -167,20 +167,20 @@ export default App;
 
 ---
 
-## **Exercise 4: Raise state to share between two components**
+## **Exercise 4: Lift state up to share it between two components**
 
 Create these components:
 
 - `TextInput.jsx` (child): receives `value` and `onValueChange`.
-- `TextPreview.jsx` (child): receives `text` and displays it inside an `p`.
+- `TextPreview.jsx` (child): receives `text` and displays it inside a `p`.
 
 In `App.jsx`:
 
-- Save `text` in status.
+- Store `text` in state.
 - Pass the value and the handler to the input.
 - Pass the text to `TextPreview`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`TextInput.jsx`**
 
@@ -231,22 +231,22 @@ export default App;
 
 ---
 
-## **Exercise 5: List in the child and selection towards the parent**
+## **Exercise 5: List in the child, selection sent to the parent**
 
-Create an `SizeList.jsx` component that receives:
+Create a `SizeList.jsx` component that receives:
 
 - `sizes` (array of strings)
 - `onSelect`
 
-You must render an `ul` where each item is a button. When you click, it calls `onSelect(size)`.
+It must render a `ul` where each item is a button. When clicked, it calls `onSelect(size)`.
 
 In `App.jsx`:
 
 - Use `const sizes = ["S", "M", "L"];`
-- Save `selectedSize` in state (initial `"M"`).
-- Displays `p` with: **"Size: {selectedSize}"**.
+- Store `selectedSize` in state (initial value `"M"`).
+- Display a `p` with: **"Size: {selectedSize}"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`SizeList.jsx`**
 
@@ -291,9 +291,9 @@ export default App;
 
 ---
 
-## **Exercise 6: Correct the error of “calling” the function**
+## **Exercise 6: Fix the mistake of “calling” the function**
 
-This code runs the handler when rendering. Correct it:
+This code runs the handler on render. Fix it:
 
 ```js
 function App() {
@@ -303,7 +303,7 @@ function App() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 In React you must pass the function, not call it. If you want to pass a fixed value, use an arrow function:
 
 ```js
@@ -320,16 +320,16 @@ export default App;
 
 ---
 
-## **Exercise 7: Raise the state to filter a list**
+## **Exercise 7: Lift state up to filter a list**
 
 Create these components:
 
-- `FilterInput.jsx`: receive `value` and `onValueChange`.
-- `ItemsList.jsx`: Receives `items` and renders an `ul`.
+- `FilterInput.jsx`: receives `value` and `onValueChange`.
+- `ItemsList.jsx`: receives `items` and renders a `ul`.
 
 In `App.jsx`:
 
-- Save `query` in status.
+- Store `query` in state.
 - Use this array:
 
 ```js
@@ -340,7 +340,7 @@ const tools = ["React", "Vite", "ESLint", "Prettier"];
 - Pass `query` to the input and `setQuery` as `onValueChange`.
 - Pass the filtered list to `ItemsList`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`FilterInput.jsx`**
 
@@ -402,21 +402,21 @@ export default App;
 
 ---
 
-## **Exercise 8: Son “closes” a panel (callback)**
+## **Exercise 8: The child “closes” a panel (callback)**
 
-Create an `Modal.jsx` component that receives `onClose`.
+Create a `Modal.jsx` component that receives `onClose`.
 
-- Renders an `div` with a text `p`: **"Modal content"**.
-- Renders a **Close** button.
-- When you click, it calls `onClose()`.
+- It renders a `div` with a text `p`: **"Modal content"**.
+- It renders a **Close** button.
+- When clicked, it calls `onClose()`.
 
-On the father:
+In the parent:
 
-- Save `isOpen` in state (initial `true`).
+- Store `isOpen` in state (initial value `true`).
 - Render the modal only if `isOpen` is true.
-- Pass `onClose` to make `setIsOpen(false)`.
+- Pass `onClose` so that it does `setIsOpen(false)`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`Modal.jsx`**
 
@@ -456,7 +456,7 @@ export default App;
 
 ---
 
-## **Exercise 9: Passing a function with a semantic name**
+## **Exercise 9: Pass a function with a semantic name**
 
 Rewrite this code using a more semantic prop name.
 
@@ -464,9 +464,9 @@ Rewrite this code using a more semantic prop name.
 <Child onData={handleChange} />
 ```
 
-The child represents an input, so the name should suggest value change.
+The child represents an input, so the name should suggest a change of value.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 A typical option:
 
@@ -483,27 +483,27 @@ Other valid names depending on the context:
 
 ---
 
-## **Exercise 10: Mini-case (deciding whether to raise the status)**
+## **Exercise 10: Mini-case (deciding whether to lift state up)**
 
 You have:
 
 - `SearchBar` (input)
-- `Results` (leaked list)
+- `Results` (filtered list)
 
 Both need `query`.
 
-Where should `query` status live?
+Where should the `query` state live?
 
 - a) Inside `SearchBar`
 - b) Inside `Results`
-- c) In the common father
+- c) In the common parent
 
 Explain in one sentence.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-The correct option is **c) on the common parent**.
+The correct option is **c) in the common parent**.
 
-Reason: `query` affects two sibling components, so it must be on the parent to share it and maintain a single source of truth.
+Reason: `query` affects two sibling components, so it must live in the parent to share it and keep a single source of truth.
 
 </details>

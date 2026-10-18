@@ -2,31 +2,31 @@
 
 ## 1. Introduction
 
-In the previous topics you learned how to create and use methods with parameters and with `return`. Now let's take it one step further: **use the same method name for different “versions”**.
+In the previous topics you learned how to create and use methods with parameters and with `return`. Now let's take it one step further: **using the same method name for different “versions”**.
 
-This is called method overloading.
+This is called **method overloading**.
 
-Overloading is a very common technique in Java because it allows:
+Overloading is a very common technique in Java because it lets you:
 
 - Have a consistent method name for the same action
-- Adapt that action to different types of data or quantities of parameters
+- Adapt that action to different data types or numbers of parameters
 - Keep code cleaner and easier to read
 
-Idea example:
+An example of the idea:
 
 - `sum(2, 3)`
 - `sum(2, 3, 4)`
 - `sum(2.5, 3.1)`
 
-They all do “add”, but with different signatures.
+They all “add”, but with different signatures.
 
 ---
 
-[![Method Overload](https://img.youtube.com/vi/RPVgs7bGaso/0.jpg)](https://www.youtube.com/watch?v=RPVgs7bGaso&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Method overloading](https://img.youtube.com/vi/RPVgs7bGaso/0.jpg)](https://www.youtube.com/watch?v=RPVgs7bGaso&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. What is method overloading
+## 2. What method overloading is
 
 Two methods are **overloaded** if:
 
@@ -34,17 +34,17 @@ Two methods are **overloaded** if:
 - They are in the same **class**
 - But they have a **different parameter list**
 
-The parameter list may be different because:
+The parameter list can differ in:
 
 - Number of parameters
 - Type of parameters
-- Order of types in parameters
+- Order of types in the parameters
 
-That combination is called the method signature.
+That combination is called the **method signature**.
 
 ---
 
-## 3. The signature of a method (what Java uses to differentiate them)
+## 3. A method's signature (what Java uses to tell them apart)
 
 Java identifies a method by:
 
@@ -66,7 +66,7 @@ sum(String, String)
 
 ## 4. Overloading by number of parameters
 
-This is the easiest way to understand.
+This is the easiest one to understand.
 
 ### 4.1. Example: `sum` with 2 and with 3 values
 
@@ -99,7 +99,7 @@ Java automatically chooses the correct version.
 
 ---
 
-## 5. Overloading by type of parameters
+## 5. Overloading by parameter type
 
 You can have methods with the same name and the same number of parameters, but with **different types**.
 
@@ -162,9 +162,9 @@ This works because the signature is different:
 
 ---
 
-## 7. What is NOT overload
+## 7. What is NOT overloading
 
-### 7.1. It is not overhead to change only the return type
+### 7.1. Changing only the return type is not overloading
 
 This DOES NOT compile:
 
@@ -182,7 +182,7 @@ Java can't tell it apart because the parameters are identical (there are no para
 
 ---
 
-### 7.2. It is not overhead to change only the parameter names
+### 7.2. Changing only the parameter names is not overloading
 
 This is NOT overloading, because the type and number are the same:
 
@@ -234,9 +234,9 @@ public class Main {
 
 In `sum(2, 3.5)`:
 
-- `3.5` is now `double`
+- `3.5` is already a `double`
 - Java converts `2` to `double`
-- Choose `sum(double, double)`
+- It chooses `sum(double, double)`
 
 ---
 
@@ -248,14 +248,14 @@ A typical example is when there are several possible conversions and none is cle
 
 The rule of thumb to avoid it:
 
-- Do not create overloads that depend on “dodgy” conversions
-- Keep very clear and different signatures
+- Don't create overloads that depend on “questionable” conversions
+- Keep signatures very clear and distinct
 
 ---
 
-## 10. Real case: “build” type methods with variants
+## 10. A real case: “build”-style methods with variants
 
-A common use of overloading is to allow multiple ways of using a method to generate output or construct a value.
+A common use of overloading is to allow several ways of using a method to generate output or build a value.
 
 ### 10.1. Example: `buildMessage` with variants
 
@@ -285,22 +285,22 @@ public class Main {
 
 ## 11. Good practices when overloading
 
-### 11.1. Keep the intention consistent
+### 11.1. Keep the intent consistent
 
-If the method is called `sum`, all versions must “sum up”.  
-If the method is called `calculateTotal`, all versions must calculate a total.
-
----
-
-### 11.2. Avoid overloads that confuse
-
-Changing the order of parameters may be legal, but it can lead to calls that are difficult to read if you are not consistent.
+If the method is called `sum`, all versions should “add”.  
+If the method is called `calculateTotal`, all versions should calculate a total.
 
 ---
 
-### 11.3. Use overloading to simplify use
+### 11.2. Avoid confusing overloads
 
-A common pattern is that a “simple” version calls for a more complete one.
+Changing the order of parameters may be legal, but it can lead to calls that are hard to read if you're not consistent.
+
+---
+
+### 11.3. Use overloading to make methods simpler to use
+
+A common pattern is for a “simple” version to call a more complete one.
 
 ```java
 public static int sum(int x, int y) {
@@ -344,13 +344,13 @@ public class Main {
 
 ## 13. Common mistakes when starting out
 
-- Thinking that the return creates overload (no).
-- Create overloads that are too similar.
-- Duplicate logic in each version (better to reuse).
+- Thinking that the return type creates an overload (it doesn't).
+- Creating overloads that are too similar.
+- Duplicating logic in each version (it's better to reuse it).
 
 ---
 
-## 14. To take into account
+## 14. Things to keep in mind
 
 - Overloading allows multiple methods with the same name and different signatures.
 - The signature depends on the name and parameters (not the return).
@@ -360,4 +360,4 @@ public class Main {
 
 ---
 
-In the next topic we will continue working on good practices and code organization, preparing the ground for **arrays** and data structures.
+In the next topic we'll keep working on good practices and code organization, laying the groundwork for **arrays** and data structures.

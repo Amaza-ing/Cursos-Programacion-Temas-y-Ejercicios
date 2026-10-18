@@ -2,14 +2,14 @@
 
 ## 1. Introduction
 
-Until now you have mainly worked with:
+So far you've mainly worked with:
 
 - Variables and types
 - Methods
-- Classes and objects (POO)
+- Classes and objects (OOP)
 - Constructors and overloading
 
-At this point a very common question appears:
+At this point a very common question comes up:
 
 > Why do we sometimes call methods with an object, and other times call them directly with the name of a class?
 
@@ -24,32 +24,32 @@ System.out.println(text.length()); // método de instancia (necesita un objeto)
 System.out.println(Math.sqrt(9));   // método estático (se llama con la clase)
 ```
 
-The difference is in **static**.
+The difference lies in **static**.
 
 In this topic you will learn:
 
-- What is a static method and how does it differ from an instance method?
+- What a static method is and how it differs from an instance method
 - When to use `static` and when not to
-- What is a static attribute (`static`) and what is it for?
-- How to use the `Math` library: basic operations, rounding, powers, roots, random
-- Typical errors and good practices
+- What a static attribute (`static`) is and what it's for
+- How to use the `Math` library: basic operations, rounding, powers, roots, random numbers
+- Typical mistakes and good practices
 
 ---
 
-[![Methods and Static Variables](https://img.youtube.com/vi/KIGT1UcAv9Q/0.jpg)](https://www.youtube.com/watch?v=KIGT1UcAv9Q&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Static methods and variables](https://img.youtube.com/vi/KIGT1UcAv9Q/0.jpg)](https://www.youtube.com/watch?v=KIGT1UcAv9Q&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. What does `static` mean in Java
+## 2. What `static` means in Java
 
 `static` indicates that a member (method or attribute) belongs to the **class**, not to a specific object.
 
-- **instance** member: belongs to each object
-- **static** member: belongs to the class and is shared
+- **Instance** member: belongs to each object
+- **Static** member: belongs to the class and is shared
 
 ### 2.1. Quick example
 
-Imagine an `Counter` class that counts created objects:
+Imagine a `Counter` class that counts the objects created:
 
 ```java
 public class Counter {
@@ -80,13 +80,13 @@ public class Main {
 ```
 
 - `total` is shared by everyone.
-- `getTotal()` is static, so it is called with `Counter.getTotal()`.
+- `getTotal()` is static, so it's called with `Counter.getTotal()`.
 
 ---
 
 ## 3. Instance methods vs static methods
 
-### 3.1. instance method
+### 3.1. Instance method
 
 An instance method needs an object to exist and usually works with the state of that object.
 
@@ -97,7 +97,7 @@ int size = name.length();
 
 Here `length()` works with the characters of the `name` object.
 
-### 3.2. static method
+### 3.2. Static method
 
 A static method does not need an object. It is called with the name of the class.
 
@@ -105,11 +105,11 @@ A static method does not need an object. It is called with the name of the class
 double root = Math.sqrt(25);
 ```
 
-Here `sqrt` is a general calculation, it does not depend on the state of an `Math` object.
+Here `sqrt` is a general calculation; it doesn't depend on the state of a `Math` object.
 
 ---
 
-## 4. Why `main` is `static`?
+## 4. Why is `main` `static`?
 
 The `main` method is the entry point of a Java program.
 
@@ -117,12 +117,12 @@ The `main` method is the entry point of a Java program.
 public static void main(String[] args) { ... }
 ```
 
-Java calls it without creating an `Main` object.  
+Java calls it without creating a `Main` object.  
 That's why it needs to be `static`.
 
 ---
 
-## 5. Important rules of `static`
+## 5. Important rules about `static`
 
 ### 5.1. A static method CANNOT access instance attributes directly
 
@@ -140,7 +140,7 @@ public class User {
 
 Why? Because `name` belongs to concrete objects, and in a static context there is no “current” object.
 
-To access, you need an object:
+To access it, you need an object:
 
 ```java
 public static void printUserName(User user) {
@@ -148,11 +148,11 @@ public static void printUserName(User user) {
 }
 ```
 
-> In practice, it is common to avoid this pattern and use instance methods to print instance data.
+> In practice, the usual thing is to avoid this pattern and use instance methods to print instance data.
 
-### 5.2. An instance method can use static members
+### 5.2. An instance method can indeed use static members
 
-Because statics always exist at the class level.
+Because static members always exist at the class level.
 
 ---
 
@@ -160,10 +160,10 @@ Because statics always exist at the class level.
 
 Use `static` when the method:
 
-- Does not depend on the state of an object
-- Makes a calculation or a general utility
-- It is a “pure” function (same input → same output)
-- It is a helper to reuse logic
+- Doesn't depend on the state of an object
+- Performs a calculation or a general utility task
+- Is a “pure” function (same input → same output)
+- Is a helper for reusing logic
 
 Typical examples:
 
@@ -203,17 +203,17 @@ public class Main {
 }
 ```
 
-Note that you do not need to create `new Calculator()`.
+Notice that you don't need to create a `new Calculator()`.
 
 ---
 
 ## 8. Static attributes (`static`) and constants (`static final`)
 
-### 8.1. static attribute
+### 8.1. Static attribute
 
 A static attribute is shared among all objects.
 
-Example: a counter of created users.
+Example: a counter of the users created.
 
 ```java
 public class User {
@@ -247,9 +247,9 @@ public class Main {
 
 ### 8.2. Constants: `static final`
 
-For values that do not change.
+For values that don't change.
 
-Convention: name in CAPITAL LETTERS.
+Convention: the name goes in UPPERCASE.
 
 ```java
 public class AppConfig {
@@ -267,9 +267,9 @@ int attempts = AppConfig.MAX_ATTEMPTS;
 
 ## 9. The `Math` library
 
-`Math` is a class in `java.lang`, you don't need to import it.
+`Math` is a class in `java.lang`, so you don't need to import it.
 
-Its most used methods are **static**, that's why they are called with `Math.`
+Its most used methods are **static**, which is why you call them with `Math.`
 
 ---
 
@@ -312,7 +312,7 @@ double root = Math.sqrt(81);
 System.out.println(root); // 9.0
 ```
 
-### 11.3. `Math.cbrt` (cubic root)
+### 11.3. `Math.cbrt` (cube root)
 
 ```java
 double value = Math.cbrt(27);
@@ -321,7 +321,7 @@ System.out.println(value); // 3.0
 
 ---
 
-## 12. Roundings
+## 12. Rounding
 
 ### 12.1. `Math.round`
 
@@ -334,8 +334,8 @@ System.out.println(Math.round(value)); // 5
 
 ### 12.2. `Math.floor` and `Math.ceil`
 
-- `floor`: down
-- `ceil`: up
+- `floor`: rounds down
+- `ceil`: rounds up
 
 ```java
 double value = 4.2;
@@ -350,7 +350,7 @@ System.out.println(Math.ceil(value));  // 5.0
 
 ### 13.1. `Math.random()`
 
-`Math.random()` returns an `double` between:
+`Math.random()` returns a `double` between:
 
 - 0.0 (included)
 - 1.0 (excluded)
@@ -407,11 +407,11 @@ System.out.println(Math.E);
 
 ---
 
-## 15. Complete Guided Examples
+## 15. Complete guided examples
 
-### 15.1. Calculate distance on a line (absolute value)
+### 15.1. Calculating the distance on a line (absolute value)
 
-Objective: given two points on a line, calculate the distance.
+Goal: given two points on a line, calculate the distance between them.
 
 ```java
 public class Main {
@@ -427,7 +427,7 @@ public class Main {
 
 ---
 
-### 15.2. Round a price to 2 decimal places (simple approach)
+### 15.2. Rounding a price to 2 decimal places (simple approach)
 
 Sometimes you want to round to 2 decimal places. A typical approach is:
 
@@ -448,9 +448,9 @@ public class Main {
 
 ---
 
-### 15.3. Generate a 4-digit numeric password
+### 15.3. Generating a 4-digit numeric password
 
-Generate a random number between 1000 and 9999:
+Generating a random number between 1000 and 9999:
 
 ```java
 public class Main {
@@ -466,13 +466,13 @@ public class Main {
 
 ---
 
-## 16. Typical errors with `Math` and `static`
+## 16. Common mistakes with `Math` and `static`
 
 ### 16.1. Thinking that `Math.random()` includes 1.0
 
-It does not include it, it can get close but it does not reach 1.0.
+It doesn't: it can get close, but it never reaches 1.0.
 
-### 16.2. Forget `+ 1` in inclusive ranges
+### 16.2. Forgetting the `+ 1` in inclusive ranges
 
 For ranges that include `max`, you need `(max - min + 1)`.
 
@@ -490,9 +490,9 @@ This is incorrect:
 double x = Math.sqrt(9);
 ```
 
-### 16.4. Use `Math.pow` and wait for an `int`
+### 16.4. Using `Math.pow` and expecting an `int`
 
-`Math.pow` returns `double`. If you need `int`, please convert carefully:
+`Math.pow` returns `double`. If you need an `int`, convert it carefully:
 
 ```java
 int value = (int) Math.pow(2, 3); // 8
@@ -504,21 +504,21 @@ int value = (int) Math.pow(2, 3); // 8
 
 - Use static methods when you don't need object state.
 - Centralize utilities in static methods (if it makes sense).
-- Avoid huge “Utils” classes: they have a clear purpose.
-- For randoms, remember the formula for ranges.
-- To round with decimals, use clear techniques (such as multiplying and dividing).
+- Avoid huge “Utils” classes: give each one a clear purpose.
+- For random numbers, remember the formula for ranges.
+- To round to a number of decimals, use clear techniques (such as multiplying and dividing).
 
 ---
 
-## 18. To take into account
+## 18. Things to keep in mind
 
 - `static` means “belongs to the class”.
 - Static methods are called with `ClassName.method()`.
 - Instance methods are called with `object.method()`.
-- `main` is static because Java executes it without creating objects.
-- `Math` is a class of utilities with static methods: `sqrt`, `pow`, `max`, `round`, etc.
-- `Math.random()` generates an `double` between 0.0 and 1.0 (not including 1.0).
+- `main` is static because Java runs it without creating objects.
+- `Math` is a utility class with static methods: `sqrt`, `pow`, `max`, `round`, etc.
+- `Math.random()` generates a `double` between 0.0 and 1.0 (not including 1.0).
 
 ---
 
-In the next topic we will continue with the important concepts of Object-Oriented Programming **Inheritance and Polymorphism**.
+In the next topic we'll continue with two important Object-Oriented Programming concepts: **Inheritance and Polymorphism**.

@@ -1,16 +1,16 @@
 # **Topic 15: Subqueries and Queries with WITH in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Use subqueries to build more complex queries.
 - Understand subqueries in `SELECT`, `FROM` and `WHERE` clauses.
-- Employ common table expressions (`WITH`) to organize reusable temporary queries.
+- Use common table expressions (`WITH`) to organize reusable temporary queries.
 
 ---
 
 ## **1. What is a subquery?**
 
-A **subquery** is a query within another query. It allows obtaining intermediate data that is used as input in the main query.
+A **subquery** is a query inside another query. It lets you get intermediate data that is used as input for the main query.
 
 ### **Basic example:**
 
@@ -24,9 +24,9 @@ WHERE id IN (
 
 ---
 
-## **2. Subqueries in the WHERE** clause
+## **2. Subqueries in the WHERE clause**
 
-Used to filter results based on a condition that depends on another table.
+They are used to filter results based on a condition that depends on another table.
 
 ```sql
 SELECT name
@@ -38,9 +38,9 @@ WHERE id IN (
 
 ---
 
-## **3. Subqueries in the FROM** clause
+## **3. Subqueries in the FROM clause**
 
-They allow you to create temporary tables that can later be consulted.
+They let you create temporary tables that can then be queried.
 
 ```sql
 SELECT customer_id, total
@@ -56,7 +56,7 @@ WHERE total > 200;
 
 ## **4. Subqueries in the SELECT clause**
 
-They allow you to display additional values calculated for each row.
+They let you display additional values calculated for each row.
 
 ```sql
 SELECT c.first_name,
@@ -68,7 +68,7 @@ FROM customers c;
 
 ## **5. Queries with WITH (Common Table Expressions)**
 
-The `WITH` clause allows you to define named temporary subqueries, making it easier to read and reuse code.
+The `WITH` clause lets you define named temporary subqueries, which makes code easier to read and reuse.
 
 ### **Example:**
 
@@ -104,9 +104,9 @@ JOIN pedidos_totales pt ON ca.id = pt.customer_id;
 
 ## **7. Advantages of using WITH**
 
-- Improves readability.
-- Allows you to avoid repeating subqueries.
-- Ideal for complex queries divided into steps.
+- It improves readability.
+- It lets you avoid repeating subqueries.
+- It is ideal for complex queries broken down into steps.
 
 ---
 
@@ -116,8 +116,8 @@ JOIN pedidos_totales pt ON ca.id = pt.customer_id;
 
 ## **8. Conclusion**
 
-- Subqueries allow intermediate results to be incorporated.
-- They can be used in `WHERE`, `FROM`, `SELECT`.
+- Subqueries let you bring intermediate results into a query.
+- They can be used in `WHERE`, `FROM` and `SELECT`.
 - `WITH` (CTE) provides a clean way to define reusable helper queries.
 
 ---

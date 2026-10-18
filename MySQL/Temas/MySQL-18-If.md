@@ -1,16 +1,16 @@
-# **Topic 18: Use of IF in Queries and Stored Procedures in MySQL**
+# **Topic 18: Using IF in Queries and Stored Procedures in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Use `IF()` in queries to make conditional decisions.
-- Use `IF ... THEN ... ELSE` structures within stored procedures.
-- Differentiate between `IF()` as a function and `IF` as a control structure.
+- Use `IF ... THEN ... ELSE` structures inside stored procedures.
+- Tell the difference between `IF()` as a function and `IF` as a control structure.
 
 ---
 
 ## **1. IF() in queries**
 
-In MySQL, `IF()` is a **function** that allows you to evaluate a condition and return one value if it is true and another if it is false.
+In MySQL, `IF()` is a **function** that lets you evaluate a condition and return one value if it is true and another if it is false.
 
 ### **Syntax:**
 
@@ -20,7 +20,7 @@ IF(condición, valor_si_verdadero, valor_si_falso)
 
 ### **Example:**
 
-Show the status of a client based on the `is_active` field:
+Show a customer's status based on the `is_active` field:
 
 ```sql
 SELECT first_name,
@@ -32,7 +32,7 @@ FROM customers;
 
 ## **2. Using CASE as an alternative**
 
-Although not part of the main topic, it is useful to know that `CASE` also allows conditionals and is more flexible:
+Although it is not part of the main topic, it is useful to know that `CASE` also handles conditionals and is more flexible:
 
 ```sql
 SELECT first_name,
@@ -47,7 +47,7 @@ FROM customers;
 
 ## **3. IF in stored procedures**
 
-Within stored procedures, `IF` is used as a **control structure**.
+Inside stored procedures, `IF` is used as a **control structure**.
 
 ### **Syntax:**
 
@@ -85,7 +85,7 @@ DELIMITER ;
 
 ---
 
-## **4. IF within SET or SELECT in procedures**
+## **4. IF inside SET or SELECT in procedures**
 
 We can use `IF()` as a function in procedures:
 
@@ -104,7 +104,7 @@ DELIMITER ;
 
 ---
 
-[![Conditional IF ELSE](https://img.youtube.com/vi/DFZmMB7DO_E/0.jpg)](https://www.youtube.com/watch?v=DFZmMB7DO_E&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![IF ELSE conditionals](https://img.youtube.com/vi/DFZmMB7DO_E/0.jpg)](https://www.youtube.com/watch?v=DFZmMB7DO_E&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
@@ -119,7 +119,7 @@ DELIMITER ;
 ## **6. Conclusion**
 
 - `IF()` in queries returns conditional values without modifying the structure of the rows.
-- `IF ... THEN` in procedures allows different instructions to be executed according to conditions.
+- `IF ... THEN` in procedures lets you run different statements depending on conditions.
 - They are key tools for applying conditional logic in SQL.
 
 ---

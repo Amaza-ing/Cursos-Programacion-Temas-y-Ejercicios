@@ -1,10 +1,10 @@
-# **Exercises - Topic 4: Flow Control in Angular (@if and @for)**
+# **Exercises - Topic 4: Control Flow in Angular (@if and @for)**
 
 ## **Instructions:**
 
-Below you will find 10 practical exercises on flow control in Angular using `@if` and `@for`.
+Below you will find 10 practical exercises on control flow in Angular using `@if` and `@for`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -88,9 +88,9 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 4: Iterate over an array of objects**
+### **Exercise 4: Iterating over an array of objects**
 
-Displays a list of products with name and price using `@for`.
+Display a list of products with their name and price using `@for`.
 
 <details><summary>Show solution</summary>
 
@@ -117,9 +117,9 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 5: Switch between two views with `@if`**
+### **Exercise 5: Toggling between two views with `@if`**
 
-Create a button that toggles between "Show More" and "Show Less."
+Create a button that toggles between "Mostrar más" and "Mostrar menos".
 
 <details><summary>Show solution</summary>
 
@@ -141,9 +141,9 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 6: Combined use of `@if` and `@for`**
+### **Exercise 6: Using `@if` and `@for` together**
 
-Displays a list of tasks if there are elements in the array, and a message if it is empty.
+Display a list of tasks if there are elements in the array, and a message if it is empty.
 
 <details><summary>Show solution</summary>
 
@@ -171,9 +171,9 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 7: Using `@for` with index**
+### **Exercise 7: Using `@for` with an index**
 
-Displays a numbered list of items with their index.
+Display a numbered list of items with their index.
 
 <details><summary>Show solution</summary>
 
@@ -197,9 +197,9 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 8: Switch between two lists with `@if`**
+### **Exercise 8: Switching between two lists with `@if`**
 
-Displays a different list based on a boolean variable.
+Display a different list depending on a boolean variable.
 
 <details><summary>Show solution</summary>
 
@@ -233,9 +233,9 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 9: Hide list elements with `@if`**
+### **Exercise 9: Hiding list elements with `@if`**
 
-Hides elements of a list if they meet a certain condition.
+Hide elements of a list if they meet a certain condition.
 
 <details><summary>Show solution</summary>
 
@@ -262,7 +262,7 @@ export class SomeComponent {
 
 ---
 
-### **Exercise 10: Show a table with `@for`**
+### **Exercise 10: Displaying a table with `@for`**
 
 Create a table with user data using `@for`.
 

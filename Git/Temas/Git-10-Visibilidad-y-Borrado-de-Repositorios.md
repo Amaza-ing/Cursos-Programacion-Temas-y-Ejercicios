@@ -2,7 +2,7 @@
 
 ## **1. Introduction**
 
-When working with Git and platforms like GitHub, GitLab or Bitbucket, it is important to know the difference between public and private repositories. Additionally, it is sometimes necessary to delete branches or repositories when they are no longer needed.
+When working with Git and platforms like GitHub, GitLab or Bitbucket, it's important to know the difference between public and private repositories. Also, you'll sometimes need to delete branches or repositories when they're no longer needed.
 
 ---
 
@@ -13,14 +13,14 @@ When working with Git and platforms like GitHub, GitLab or Bitbucket, it is impo
 - They are accessible to anyone on the internet.
 - Any user can view the source code and commit history.
 - They are commonly used in open source projects and collaborations.
-- They can be forked by other users to make contributions.
+- They can be **forked** by other users to make contributions.
 
 ### **Private repositories**
 
 - They can only be accessed by users with specific permissions.
-- Ideal for personal or business projects that should not be public.
+- They're ideal for personal or business projects that shouldn't be public.
 - They cannot be forked by other users without authorization.
-- Require payment plans on some platforms for certain equipment and advanced functionalities.
+- On some platforms, they require paid plans for certain teams and advanced features.
 
 ---
 
@@ -30,7 +30,7 @@ When working with Git and platforms like GitHub, GitLab or Bitbucket, it is impo
 
 ## **3. How to delete branches in Git**
 
-As you work on a project, it is common to delete obsolete branches, both in the local and remote repository.
+As you work on a project, it's common to delete obsolete branches, both in the local repository and in the remote one.
 
 ### **Delete a local branch**
 
@@ -40,7 +40,7 @@ To delete a branch in the local repository:
 git branch -d nombre-de-la-rama
 ```
 
-If the branch has not been merged and you want to force its removal:
+If the branch hasn't been merged and you want to force its deletion:
 
 ```bash
 git branch -D nombre-de-la-rama
@@ -54,7 +54,7 @@ To delete a branch in a remote repository such as GitHub:
 git push origin --delete nombre-de-la-rama
 ```
 
-If using GitHub, it can also be removed manually from the **Branches** tab in the repository web interface.
+If you're using GitHub, you can also delete it manually from the **Branches** tab in the repository's web interface.
 
 ---
 
@@ -64,11 +64,11 @@ If using GitHub, it can also be removed manually from the **Branches** tab in th
 
 ## **4. How to delete a repository in Git**
 
-If a repository is no longer needed, it can be deleted locally or remotely.
+If you no longer need a repository, you can delete it locally or remotely.
 
 ### **Delete a local repository**
 
-To delete a repository on the local machine, simply delete the folder containing the repository:
+To delete a repository on your local machine, simply delete the folder that contains it:
 
 ```bash
 rm -rf nombre-del-repositorio
@@ -77,11 +77,11 @@ rm -rf nombre-del-repositorio
 ### **Delete a remote repository (GitHub, GitLab, etc.)**
 
 1. Go to the repository on the platform (GitHub, GitLab, etc.).
-2. Navigate to the repository settings (**Settings**).
+2. Open the repository's settings (**Settings**).
 3. Look for the **Delete this repository** option.
 4. Confirm the deletion by following the instructions.
 
-> **Note:** Once a repository is deleted remotely, it cannot be recovered unless a previous copy has been made.
+> **Note:** Once a repository has been deleted remotely, it can't be recovered unless you made a copy beforehand.
 
 ---
 
@@ -89,14 +89,14 @@ rm -rf nombre-del-repositorio
 
 ---
 
-## **5. Good practices when managing repositories and branches**
+## **5. Best practices when managing repositories and branches**
 
 - Keep repositories **public** only if you want to share the code openly.
 - Use **private repositories** for projects in development or with sensitive information.
-- Delete branches that are no longer necessary to maintain a clean repository.
-- Before deleting a remote repository, make sure to make a backup if necessary.
-- Avoid deleting active branches in use by other collaborators without prior notice.
+- Delete branches you no longer need to keep the repository clean.
+- Before deleting a remote repository, make sure you have a backup if you need one.
+- Avoid deleting active branches that other collaborators are using without warning them first.
 
 ---
 
-In the next topic, we will explore **What is the README.md and how to work with markdown**.
+In the next topic, we'll explore **what the README.md is and how to work with Markdown**.

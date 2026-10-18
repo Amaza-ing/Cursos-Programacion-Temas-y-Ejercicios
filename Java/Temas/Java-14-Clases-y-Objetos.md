@@ -1,35 +1,35 @@
-# Topic 14. Classes and Objects (OPO): attributes, methods, constructors, getters and setters
+# Topic 14. Classes and Objects (OOP): attributes, methods, constructors, getters and setters
 
 ## 1. Introduction
 
-So far you have programmed using:
+So far you've been programming with:
 
 - Variables and types
 - Conditionals and loops
 - Methods
 - Arrays, lists and basic collections
 
-With that you can do a lot of things, but as your programs grow a problem appears:
+With that you can do loads of things, but as your programs grow, a problem shows up:
 
 - You need to organize code and data in a more structured way
-- You want to represent “things from the real world” within the program (a user, a product, a task, a car…)
+- You want to represent “things from the real world” inside the program (a user, a product, a task, a car…)
 - You want to group data and actions that are related
 
-This is where **Object Oriented Programming** (OOP) comes in.
+This is where **Object-Oriented Programming** (OOP) comes in.
 
-The OOP is based on two main concepts:
+OOP is based on two main concepts:
 
 - **Class**: the “mold” or template
 - **Object**: an “instance” created from that mold
 
 In this topic you will learn:
 
-- What is a class and what is an object
+- What a class is and what an object is
 - How to create attributes (state) and methods (behavior)
 - How to create constructors (initialization)
-- What is encapsulation and why use `private`
+- What encapsulation is and why to use `private`
 - How to create getters and setters correctly
-- Complete examples and good initial practices
+- Complete examples and some first good practices
 
 ---
 
@@ -41,16 +41,16 @@ In this topic you will learn:
 
 ---
 
-## 2. What is a class and what is an object
+## 2. What a class is and what an object is
 
 ### 2.1. Class
 
 A **class** is a template that describes:
 
-- What data does something have (attributes)
+- What data something has (attributes)
 - What it can do (methods)
 
-Example: `User` class can have:
+Example: the `User` class can have:
 
 - Attributes: `name`, `age`, `email`
 - Methods: `printInfo()`, `isAdult()`
@@ -59,9 +59,9 @@ Example: `User` class can have:
 
 An **object** is a concrete instance of a class.
 
-Example: If `User` is the template, then:
+Example: if `User` is the template, then:
 
-- `User laura = new User(...);` is a real item.
+- `User laura = new User(...);` is a real object.
 
 You can create multiple objects from the same class, each with its own data.
 
@@ -72,7 +72,7 @@ You can create multiple objects from the same class, each with its own data.
 A class in Java typically has this structure:
 
 - Attributes (fields)
-- Builders
+- Constructors
 - Methods
 - Getters and setters (if applicable)
 
@@ -98,7 +98,7 @@ public class User {
 
 ## 4. Attributes (state of an object)
 
-An **attribute** (also called a _field_ or _property_) is a variable declared within a class.
+An **attribute** (also called a _field_ or _property_) is a variable declared inside a class.
 
 Example:
 
@@ -113,7 +113,7 @@ Each `Product` object has its own `name` and `price`.
 
 ### 4.1. `private` and encapsulation
 
-In Java, it is good practice for the attributes to be `private`:
+In Java, it's good practice to make attributes `private`:
 
 - To protect the state of the object
 - To control how it is modified
@@ -127,19 +127,19 @@ public class Product {
 }
 ```
 
-If `price` is public, any part of the program could put invalid values:
+If `price` is public, any part of the program could set invalid values:
 
 ```java
 product.price = -999; // mal
 ```
 
-With `private`, you control it with specific setters or methods.
+With `private`, you control it with setters or specific methods.
 
 ---
 
 ## 5. Methods (behavior of an object)
 
-A method within a class represents what the object “can do.”
+A method inside a class represents what the object “can do.”
 
 Example in `Product`:
 
@@ -155,11 +155,11 @@ public class Product {
 ```
 
 - The method uses and modifies attributes of the object (`price`).
-- Each object applies the discount on **its own status**.
+- Each object applies the discount to **its own state**.
 
 ---
 
-## 6. Create objects with `new`
+## 6. Creating objects with `new`
 
 To use a class, you must create objects.
 
@@ -175,15 +175,15 @@ In practice, to properly initialize an object, we use constructors.
 
 ---
 
-## 7. Builders
+## 7. Constructors
 
-A **constructor** is a special method that is executed when creating an object with `new`.
+A **constructor** is a special method that runs when you create an object with `new`.
 
-Features:
+Characteristics:
 
-- Has the same name as the class
-- It has no return type (nor `void`)
-- Used to initialize attributes
+- It has the same name as the class
+- It has no return type (not even `void`)
+- It's used to initialize attributes
 
 ### 7.1. Constructor with parameters
 
@@ -199,7 +199,7 @@ public class User {
 }
 ```
 
-### 7.2. What is `this`
+### 7.2. What `this` is
 
 `this` refers to the current object (the current instance).
 
@@ -212,7 +212,7 @@ In the constructor:
 this.name = name;
 ```
 
-### 7.3. Use the constructor from `main`
+### 7.3. Using the constructor from `main`
 
 ```java
 public class Main {
@@ -231,7 +231,7 @@ public class Main {
 
 If you don't define any constructor, Java creates an “empty” one automatically.
 
-But if you define at least one constructor, the default constructor ceases to exist, and if you need it you must create it yourself.
+But if you define at least one constructor, the default constructor no longer exists, and if you need it you have to create it yourself.
 
 Example:
 
@@ -298,7 +298,7 @@ public class User {
 }
 ```
 
-### 9.2. Use them from `main`
+### 9.2. Using them from `main`
 
 ```java
 public class Main {
@@ -319,11 +319,11 @@ public class Main {
 
 ---
 
-## 10. Validation within setters (good practice)
+## 10. Validation inside setters (good practice)
 
-A setter does not have to accept any value. You can validate.
+A setter doesn't have to accept just any value. You can validate it.
 
-Example: avoid negative age
+Example: preventing a negative age
 
 ```java
 public void setAge(int age) {
@@ -354,7 +354,7 @@ This protects the consistency of the object.
 
 ## 11. Methods that use attributes (useful examples)
 
-### 11.1. `isAdult()` method
+### 11.1. The `isAdult()` method
 
 ```java
 public boolean isAdult() {
@@ -362,7 +362,7 @@ public boolean isAdult() {
 }
 ```
 
-### 11.2. `printInfo()` method
+### 11.2. The `printInfo()` method
 
 ```java
 public void printInfo() {
@@ -453,7 +453,7 @@ public class Main {
 
 ## 13. Complete example: `Product` class
 
-A different example to see that the idea applies to any “thing”.
+A different example, so you can see that the idea applies to any “thing”.
 
 ### 13.1. `Product.java`
 
@@ -517,11 +517,11 @@ public class Main {
 
 ---
 
-## 14. Typical mistakes when starting classes
+## 14. Common mistakes when starting out with classes
 
 ### 14.1. Trying to access `private` attributes from outside
 
-If an attribute is `private`, you cannot do this:
+If an attribute is `private`, you can't do this:
 
 ```java
 // user.age = 30; // error
@@ -533,34 +533,34 @@ You must use a setter or a method:
 user.setAge(30);
 ```
 
-### 14.2. Forget to initialize attributes
+### 14.2. Forgetting to initialize attributes
 
-If you do not initialize, you will have default values:
+If you don't initialize them, you'll get default values:
 
 - `int` → 0
 - `double` → 0.0
 - `boolean` → false
 - `String` → null
 
-That's why builders are important.
+That's why constructors are important.
 
-### 14.3. Confuse class with object
+### 14.3. Confusing a class with an object
 
 - Class: `User`
 - Object: `User laura = new User("Laura", 28);`
 
 ---
 
-## 15. To take into account
+## 15. Things to keep in mind
 
 - A **class** is a template; an **object** is an instance.
-- **attributes** represent the state of the object.
-- The **methods** represent its behavior.
-- **Constructors** initialize the object when creating it.
+- **Attributes** represent the state of the object.
+- **Methods** represent its behavior.
+- **Constructors** initialize the object when it's created.
 - `this` refers to the current object.
 - Using `private` attributes + getters/setters improves state control and security.
-- Setters can and should validate values ​​when it makes sense.
+- Setters can and should validate values when it makes sense.
 
 ---
 
-In the next topic we will delve into fundamental OOP concepts like **encapsulation**, **access modifiers**, `this` in more detail and how to better organize classes for real projects.
+In the next topic we'll dive deeper into fundamental OOP concepts such as **encapsulation**, **access modifiers**, `this` in more detail, and how to organize classes better for real projects.

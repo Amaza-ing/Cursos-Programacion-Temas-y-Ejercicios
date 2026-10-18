@@ -2,15 +2,15 @@
 
 Below you will find 7 practical exercises to work with subqueries and queries with `WITH` in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Subquery in WHERE with IN**
 
-Shows the names of the products that have been purchased in orders whose amount exceeds €150.
+Show the names of the products that have been purchased in orders whose amount is over €150.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT name
@@ -30,9 +30,9 @@ WHERE id IN (
 
 ### **Exercise 2: Subquery in SELECT**
 
-Shows the name of each customer and the total number of different products they have purchased.
+Show the name of each customer and the total number of different products they have purchased.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT c.first_name,
@@ -49,9 +49,9 @@ FROM customers c;
 
 ### **Exercise 3: Subquery in FROM with aliases**
 
-Create a query that shows customers who have spent more than €300, using a subquery in the `FROM` clause.
+Write a query that shows the customers who have spent more than €300, using a subquery in the `FROM` clause.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT t.customer_id, t.total_gastado
@@ -67,11 +67,11 @@ WHERE t.total_gastado > 300;
 
 ---
 
-### **Exercise 4: Query WITH for recent orders**
+### **Exercise 4: Query with WITH for recent orders**
 
-It uses `WITH` to define a temporary table `pedidos_recientes` with orders placed in April 2025, and queries its `order_id` and `customer_id`.
+Use `WITH` to define a temporary table `pedidos_recientes` with the orders placed in April 2025, and query its `order_id` and `customer_id`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 WITH pedidos_recientes AS (
@@ -88,9 +88,9 @@ SELECT * FROM pedidos_recientes;
 
 ### **Exercise 5: WITH + JOIN**
 
-Define two subqueries with `WITH`: one for customers who have placed orders, another for products sold more than once. Join the two to show the customer and product IDs.
+Define two subqueries with `WITH`: one for the customers who have placed orders, and another for the products sold more than once. Join them to show the customer and product IDs.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 WITH clientes_con_pedidos AS (
@@ -110,9 +110,9 @@ JOIN productos_vendidos pv;
 
 ### **Exercise 6: Subquery with scalar comparison**
 
-Shows the name of the customer who placed the most expensive order of all.
+Show the name of the customer who placed the most expensive order of all.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT first_name
@@ -131,9 +131,9 @@ WHERE id = (
 
 ### **Exercise 7: Correlated subquery**
 
-Shows each customer's name and the total amount of their most recent order.
+Show each customer's name and the total amount of their most recent order.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT c.first_name,

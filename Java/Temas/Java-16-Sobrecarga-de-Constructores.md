@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-In previous topics you have already used **constructors** to initialize objects when creating them with `new`.
+In earlier topics you've already used **constructors** to initialize objects when you create them with `new`.
 
 Example:
 
@@ -10,9 +10,9 @@ Example:
 User user = new User("Laura", 28);
 ```
 
-But in real projects it is common that an object can be created in **several ways**.
+But in real projects it's common to be able to create an object in **several ways**.
 
-For example, imagine a class `User`:
+For example, imagine a `User` class:
 
 - Sometimes you have a name and age
 - Sometimes you only have the name
@@ -21,28 +21,28 @@ For example, imagine a class `User`:
 
 In Java, this is solved with:
 
-- **Constructor overload**
+- **Constructor overloading**
 
 The idea is the same as in method overloading:
 
-- Same name (that of the class)
+- Same name (the class's name)
 - Different parameters (number and/or types)
 
 In this topic you will learn:
 
-- What is constructor overloading and why is it used?
+- What constructor overloading is and why it's used
 - How to create multiple constructors in one class
-- What is `this(...)` and why is it key to not duplicate code?
+- What `this(...)` is and why it's key to avoid duplicating code
 - Good initialization and validation practices
 - Complete examples ready to copy and run
 
 ---
 
-[![Builder Overload](https://img.youtube.com/vi/sfm4Cu2Q1fw/0.jpg)](https://www.youtube.com/watch?v=sfm4Cu2Q1fw&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Constructor overloading](https://img.youtube.com/vi/sfm4Cu2Q1fw/0.jpg)](https://www.youtube.com/watch?v=sfm4Cu2Q1fw&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. What is constructor overloading
+## 2. What constructor overloading is
 
 A class can have **multiple constructors**, as long as their parameters are different.
 
@@ -66,22 +66,22 @@ User u4 = new User("Laura", 28, "laura@example.com");
 
 ---
 
-## 3. Defaults and consistency
+## 3. Default values and consistency
 
-When you have multiple constructors, you must ensure that the object is always left in a consistent state.
+When you have multiple constructors, you have to make sure the object is always left in a consistent state.
 
 Example of typical default values:
 
 - `name` → `"Unknown"`
 - `age` → `0`
-- `email` → `null` (depending on design)
+- `email` → `null` (depending on your design)
 - `active` → `true`
 
 ---
 
 ## 4. Typical problem: code duplication
 
-An early (but bad) way to do overloading is to repeat the same code in each constructor.
+A first (but bad) approach to overloading is to repeat the same code in each constructor.
 
 Example to avoid:
 
@@ -110,21 +110,21 @@ public class User {
 This works, but:
 
 - If you change the logic (e.g. validation), you have to change it in multiple places
-- It's easy to forget to update a builder
+- It's easy to forget to update a constructor
 - Over time, it becomes a source of errors
 
-To fix this, `this(...)` is used.
+To fix this, you use `this(...)`.
 
 ---
 
-## 5. `this(...)`: Call another constructor
+## 5. `this(...)`: calling another constructor
 
-`this(...)` allows calling another constructor **within the same class**.
+`this(...)` lets you call another constructor **inside the same class**.
 
 Important rules:
 
 1. `this(...)` must be **the first line** of the constructor
-2. It serves to reuse code and centralize initialization
+2. It's used to reuse code and centralize initialization
 
 Example:
 
@@ -145,13 +145,13 @@ public User(String name, int age) {
 
 Here:
 
-- The parameterless constructor delegates to the more complete constructor
-- The builder with `name` delegates to the most complete builder
+- The parameterless constructor delegates to the most complete constructor
+- The constructor with `name` delegates to the most complete constructor
 - The actual initialization logic is in one place
 
 ---
 
-## 6. Complete Example 1: `User` with constructor overloading
+## 6. Complete example 1: `User` with constructor overloading
 
 ### 6.1. Objective
 
@@ -251,9 +251,9 @@ public class User {
 
 Key points from the example:
 
-- The “small” builders call the “big” one (`this(...)`).
+- The “small” constructors call the “big” one (`this(...)`).
 - The main constructor reuses setters to validate.
-- The object always remains with coherent values.
+- The object always ends up with consistent values.
 
 ### 6.3. `Main.java`
 
@@ -276,14 +276,14 @@ public class Main {
 ```
 
 ---
-## 7. Complete example 2: `Order` with overload and initial state
+## 7. Complete example 2: `Order` with overloading and initial state
 
 ### 7.1. Objective
 
-Create orders in several ways:
+Creating orders in several ways:
 
 - `new Order()` → id + status `"CREATED"` + total 0
-- `new Order(String customer)` → the same but with a client
+- `new Order(String customer)` → the same but with a customer
 - `new Order(String customer, double total)` → customer and total
 
 ### 7.2. `Order.java`
@@ -388,14 +388,14 @@ public class Main {
 Key points:
 
 - `nextId` is `static`: it belongs to the class, not to each object.
-- Builders delegate to a main one.
+- The constructors delegate to a main one.
 - The default state (`status`) is initialized consistently.
 
 ---
 
-## 8. Typical errors in constructor overloading
+## 8. Common mistakes in constructor overloading
 
-### 8.1. Call `this(...)` after other lines
+### 8.1. Calling `this(...)` after other lines
 
 This is invalid:
 
@@ -406,9 +406,9 @@ public User() {
 }
 ```
 
-### 8.2. Create constructors that are called in a loop
+### 8.2. Creating constructors that call each other in a loop
 
-Error example (infinite loop):
+Example of the mistake (infinite loop):
 
 ```java
 public User() {
@@ -423,10 +423,10 @@ public User(String name) {
 ### 8.3. Leaving attributes uninitialized in some overloads
 
 If one constructor doesn't initialize the same thing as the others, you can end up with inconsistent states.  
-That is why the recommended pattern is:
+That's why the recommended pattern is:
 
 - A “main” constructor
-- The rest delegate to him
+- The rest delegate to it
 
 ---
 
@@ -434,20 +434,20 @@ That is why the recommended pattern is:
 
 - Use overloading to provide different ways to create objects.
 - Centralize initialization with `this(...)` to avoid duplicating logic.
-- The most complete builder is usually the one who does the actual work.
-- Reuse setters with validation if they already exist and make sense.
-- Define consistent default values ​​(and keep them in one place).
+- The most complete constructor is usually the one that does the real work.
+- Reuse setters with validation if they already exist and it makes sense.
+- Define consistent default values (and keep them in one place).
 
 ---
 
-## 10. To take into account
+## 10. Things to keep in mind
 
 - Constructor overloading = multiple constructors with different parameters.
 - `this(...)` calls another constructor of the same class.
-- `this(...)` should always be the first instruction in the constructor.
+- `this(...)` must always be the first statement in the constructor.
 - Avoid duplicating logic: always delegate to a “main” constructor.
 - Design consistent defaults to avoid “half-baked” objects.
 
 ---
 
-In the next topic we will continue delving into OOP with concepts such as **`static`**, class members vs instance, and common patterns for organizing models in real projects.
+In the next topic we'll keep digging into OOP with concepts such as **`static`**, class vs instance members, and common patterns for organizing models in real projects.

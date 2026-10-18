@@ -2,34 +2,34 @@
 
 ## **1. Introduction**
 
-As an application grows, so does the amount of data it needs to handle: inputs, results from an API, authentication status, filters, user preferences, etc.
+As an application grows, so does the amount of data it needs to handle: inputs, API results, authentication state, filters, user preferences, etc.
 
-In React, **properly managing state** is key to making the application clear, predictable, and easy to maintain.
+In React, **managing state properly** is key to keeping the application clear, predictable and easy to maintain.
 
 In this topic you will learn:
 
-- What is the state and why is it important.
+- What state is and why it's important.
 - Local state vs shared state.
-- When to raise the status.
+- When to lift state up.
 - Common state management patterns.
-- Typical errors and good practices.
+- Common mistakes and best practices.
 
 ---
 
-## **2. What is the state?**
+## **2. What is state?**
 
-The **status** is the information that:
+**State** is the information that:
 
-- May change over time.
-- Affects what is rendered on screen.
+- Can change over time.
+- Affects what's rendered on screen.
 - Belongs to a component.
 
-State examples:
+Examples of state:
 
 - The text of an input.
 - Whether a modal is open or closed.
-- Data obtained from an API.
-- If a user is authenticated.
+- The data fetched from an API.
+- Whether a user is authenticated.
 
 In React, state is mainly managed with the `useState` hook.
 
@@ -37,7 +37,7 @@ In React, state is mainly managed with the `useState` hook.
 
 ## **3. Local state with `useState`**
 
-The local state belongs to **a single component**.
+Local state belongs to **a single component**.
 
 ```js
 import { useState } from "react";
@@ -58,30 +58,30 @@ export default Counter;
 
 This state:
 
-- Only used by `Counter`.
-- It is not shared with other components.
+- Is only used by `Counter`.
+- Isn't shared with other components.
 
 ---
 
 ## **4. Shared state: the problem**
 
-Typical problem:
+A typical problem:
 
-- Two components need the same data.
+- Two components need the same piece of data.
 - One modifies it and the other shows it.
 
 Example:
 
-- `SearchInput` updates a text.
+- `SearchInput` updates some text.
 - `ResultsList` filters results with that text.
 
-If each has its own state, they **do not sync**.
+If each one has its own state, they **don't stay in sync**.
 
 ---
 
 ## **5. Lifting state up**
 
-The solution is to **raise the status** to the common parent component.
+The solution is to **lift the state up** to the common parent component.
 
 ```js
 import { useState } from "react";
@@ -100,8 +100,8 @@ function App() {
 
 Here:
 
-- The state lives in the father.
-- Children receive data and functions.
+- The state lives in the parent.
+- The children receive data and functions.
 
 ---
 
@@ -109,13 +109,13 @@ Here:
 
 React follows a **one-way** flow:
 
-- Low status (props).
-- Shares rise (callbacks).
+- State flows down (props).
+- Actions flow up (callbacks).
 
-This makes:
+This means:
 
 - Behavior is predictable.
-- Be easier to debug errors.
+- Errors are easier to debug.
 
 ---
 
@@ -150,16 +150,16 @@ Data that is calculated from another state:
 const filteredItems = items.filter((item) => item.includes(query));
 ```
 
-You do not need `useState`.
+It doesn't need `useState`.
 
 ---
 
-## **8. Status and effects**
+## **8. State and effects**
 
 When the state changes:
 
-- The component is re-rendered.
-- The `useEffect` that depend on that state are executed.
+- The component re-renders.
+- Any `useEffect` that depends on that state runs.
 
 ```js
 useEffect(() => {
@@ -169,29 +169,29 @@ useEffect(() => {
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Duplicate status**
+### **9.1. Duplicating state**
 
-Save the same data in multiple places.
+Storing the same data in several places.
 
 ### **9.2. Unnecessary state**
 
-Use `useState` for derived data.
+Using `useState` for derived data.
 
 ### **9.3. Passing too many props (prop drilling)**
 
-Will be resolved later with **Context**.
+We'll solve this later with **Context**.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
-- Keep the status as high as possible, but no higher.
+- Keep the state as high as possible, but no higher.
 - Use local state when only one component needs it.
-- Raise status when shared.
+- Lift the state up when it's shared.
 - Avoid duplicating information.
 
 ---
 
-In the next topic you will learn how to use **Context** to share state without manually passing props.
+In the next topic you'll learn how to use **Context** to share state without passing props manually.

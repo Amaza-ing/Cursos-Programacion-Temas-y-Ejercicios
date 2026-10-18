@@ -1,16 +1,16 @@
-# **Exercises - Topic 1: Introduction to Vue.js and Environment Configuration**
+# **Exercises - Topic 1: Introduction to Vue.js and Environment Setup**
 
-Below you will find 5 practical exercises on the basics of Vue.
+Below you'll find 5 practical exercises on the basics of Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ## **Exercise 1: Installing Node.js**
 
-Install Node.js on your system and verify that it is installed correctly.
+Install Node.js on your system and check that it's installed correctly.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-Download Node.js from [https://nodejs.org](https://nodejs.org) and install it. Then, verify the installation by running:
+Download Node.js from [https://nodejs.org](https://nodejs.org) and install it. Then check the installation by running:
 
 ```sh
 node -v
@@ -25,7 +25,7 @@ npm -v
 
 Create a project called `my-blog` using Vite.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Run the following command:
 
@@ -44,31 +44,31 @@ npm install
 
 ---
 
-## **Exercise 3: Explanation of the structure of a Vue project**
+## **Exercise 3: Explaining the structure of a Vue project**
 
-Briefly explain the function of the following files or folders:
+Briefly explain the purpose of the following files or folders:
 
 - `src/main.js`
 - `src/App.vue`
 - `vite.config.js`
 - `package.json`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-- `src/main.js`: It is the entry point where the Vue application is created and mounted on the DOM.
-- `src/App.vue`: It is the root component of the application.
+- `src/main.js`: The entry point, where the Vue application is created and mounted on the DOM.
+- `src/App.vue`: The root component of the application.
 - `vite.config.js`: Custom configuration for Vite (server, aliases, plugins, etc.).
-- `package.json`: Defines the dependencies, scripts and metadata of the project.
+- `package.json`: Defines the project's dependencies, scripts and metadata.
 
 </details>
 
 ---
 
-## **Exercise 4: Stand up the development server**
+## **Exercise 4: Start the development server**
 
 Start the development server and explain what happens when you modify `App.vue`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 To start the server:
 
@@ -76,7 +76,7 @@ To start the server:
 npm run dev
 ```
 
-When modifying `App.vue`, the changes are automatically reflected in the browser without the need to refresh manually, thanks to Hot Module Replacement (HMR).
+When you modify `App.vue`, the changes show up in the browser automatically, without having to refresh manually, thanks to Hot Module Replacement (HMR).
 
 </details>
 
@@ -86,7 +86,7 @@ When modifying `App.vue`, the changes are automatically reflected in the browser
 
 Create a component called `HelloWorld.vue` inside the `src/components` folder that displays a welcome message.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Create the `src/components/HelloWorld.vue` file with the following content:
 

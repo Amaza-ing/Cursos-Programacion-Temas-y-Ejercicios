@@ -1,20 +1,20 @@
 # **Topic 8: Queries with JOIN in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
-- Understand what an `JOIN` is and what it is used for.
+- Understand what a `JOIN` is and what it is used for.
 - Use different types of `JOIN` to combine information from multiple tables.
-- Consult related data between tables.
+- Query related data across tables.
 
 ---
 
 ## **1. What is a JOIN?**
 
-`JOIN` allows you to combine rows from two or more tables according to a logical relationship between them, usually through foreign keys.
+`JOIN` lets you combine rows from two or more tables based on a logical relationship between them, usually through foreign keys.
 
 ### **Basic example:**
 
-Let's assume the following tables:
+Suppose we have the following tables:
 
 **`customers` table**
 | id | first_name |
@@ -26,7 +26,7 @@ Let's assume the following tables:
 |----|-------------|---------------|
 | 1 | 1 | 89.99 |
 
-We want to know which customer placed which order. We use an `JOIN`:
+We want to know which customer placed which order. We use a `JOIN`:
 
 ```sql
 SELECT customers.first_name, orders.total_amount
@@ -36,11 +36,11 @@ JOIN orders ON customers.id = orders.customer_id;
 
 ---
 
-## **2. JOIN Types**
+## **2. Types of JOIN**
 
 ### **INNER JOIN**
 
-Returns only rows that have a match in both tables.
+Returns only the rows that have a match in both tables.
 
 ```sql
 SELECT *
@@ -60,7 +60,7 @@ LEFT JOIN orders ON customers.id = orders.customer_id;
 
 ### **RIGHT JOIN**
 
-Returns all rows from the right table, and the matching rows from the left.
+Returns all rows from the right table, and the matching rows from the left table.
 
 ```sql
 SELECT *
@@ -70,7 +70,7 @@ RIGHT JOIN customers ON customers.id = orders.customer_id;
 
 ---
 
-## **3. JOIN with alias**
+## **3. JOIN with aliases**
 
 Using aliases makes queries more readable:
 
@@ -98,7 +98,7 @@ JOIN products p ON d.product_id = p.id;
 
 ## **5. Common queries with JOIN**
 
-- Orders from each client
+- Orders from each customer
 - Products included in each order
 - Total spent per customer
 - Purchase history with product names
@@ -111,10 +111,10 @@ JOIN products p ON d.product_id = p.id;
 
 ## **6. Conclusion**
 
-- `JOIN` allows joining related tables through keys.
-- `INNER`, `LEFT`, `RIGHT` offer different ways to obtain the data.
-- Aliases (`AS`) make it easier to read.
-- Complex queries often involve multiple `JOIN`.
+- `JOIN` lets you join related tables through keys.
+- `INNER`, `LEFT` and `RIGHT` offer different ways to get the data.
+- Aliases (`AS`) make queries easier to read.
+- Complex queries often involve multiple `JOIN`s.
 
 ---
 

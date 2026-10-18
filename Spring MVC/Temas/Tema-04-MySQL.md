@@ -1,6 +1,6 @@
 # Topic 4 — (Optional) Data Persistence with MySQL and DBeaver in Spring MVC
 
-##Purpose of this optional topic
+## Objective of this optional topic
 
 In Topic 3 we learned how to create and process forms in Spring MVC. Until now, courses were stored in an in-memory list within Java:
 
@@ -10,7 +10,7 @@ private final List<Course> courses = new ArrayList<>();
 
 This was enough to learn the flow of a form, but it has an important limitation: when we restart the application, the added data disappears.
 
-In this topic we are going to change that list for a MySQL database. We will use DBeaver to create and query the database, and Spring JDBC to connect our Spring MVC application with MySQL.
+In this topic we are going to replace that list with a MySQL database. We will use DBeaver to create and query the database, and Spring JDBC to connect our Spring MVC application with MySQL.
 
 At the end of this optional topic, the flow will be as follows:
 
@@ -30,11 +30,11 @@ JdbcTemplate
 MySQL
 ```
 
-The user will continue using the application the same as before: they will see a list of courses, they will be able to enter the details of a course and they will be able to create a new course using a form. The difference will be that the data will be saved persistently in MySQL.
+The user will continue using the application the same as before: they will see a list of courses, they will be able to open the details of a course and they will be able to create a new course using a form. The difference will be that the data will be saved persistently in MySQL.
 
 ---
 
-## 1. What are we going to modify
+## 1. What we are going to modify
 
 We start from the project that we already had in Topic 3.
 
@@ -49,9 +49,9 @@ POST /courses             → procesa el formulario y crea un curso
 
 These routes will not change.
 
-What changes is the way of obtaining and saving the data.
+What changes is how the data is retrieved and saved.
 
-Before we had this internal structure:
+Before, we had this internal structure:
 
 ```text
 CourseController
@@ -75,7 +75,7 @@ JdbcCourseDao
 MySQL
 ```
 
-The controller will continue to call the service. The service will continue to offer methods such as `findAll()`, `findById()` and `save()`. But inside, those methods will no longer work with an in-memory list, but with a database.
+The controller will continue to call the service. The service will continue to offer methods such as `findAll()`, `findById()` and `save()`. But internally, those methods will no longer work with an in-memory list but with a database.
 
 ---
 
@@ -83,7 +83,7 @@ The controller will continue to call the service. The service will continue to o
 
 We will add a new package called `dao`.
 
-The structure of the project will be like this:
+The project structure will look like this:
 
 ```text
 spring-mvc-day1
@@ -138,7 +138,7 @@ CourseDao.java
 JdbcCourseDao.java
 ```
 
-The files that we will modify will be:
+The files we will modify are:
 
 ```text
 pom.xml
@@ -150,7 +150,7 @@ The controller and views don't need any major changes, because they were already
 
 ---
 
-[![Connection with MySQL](https://img.youtube.com/vi/ulrXpghgoqM/0.jpg)](https://www.youtube.com/watch?v=ulrXpghgoqM&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Connecting to MySQL](https://img.youtube.com/vi/ulrXpghgoqM/0.jpg)](https://www.youtube.com/watch?v=ulrXpghgoqM&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
@@ -169,7 +169,7 @@ Password: la contraseña de MySQL de cada alumno
 
 If DBeaver asks to download the MySQL driver, we accept.
 
-Then we open a SQL editor and execute the following script.
+Then we open a SQL editor and run the following script.
 
 ---
 
@@ -200,7 +200,7 @@ SELECT * FROM courses;
 
 ---
 
-## 5. SQL script explanation
+## 5. Explanation of the SQL script
 
 We create the database with:
 
@@ -216,7 +216,7 @@ The database name will be:
 spring_mvc_courses
 ```
 
-We use `utf8mb4` so that the database correctly accepts characters such as accents, eñes and other symbols.
+We use `utf8mb4` so that the database correctly accepts characters such as accented letters, the ñ and other symbols.
 
 Then we select that database:
 
@@ -243,6 +243,7 @@ The table is called `courses` and will have these columns:
 | `title` | `VARCHAR(80)` | Course title |
 | `level` | `VARCHAR(30)` | Course level |
 | `duration_in_hours` | `INT` | Duration in hours |
+
 The `id` column has:
 
 ```sql
@@ -280,7 +281,7 @@ id | title                         | level      | duration_in_hours
 
 ---
 
-## 6. Update `pom.xml` file
+## 6. Update the `pom.xml` file
 
 Now we have to add the necessary dependencies to connect Java with MySQL.
 
@@ -291,7 +292,7 @@ spring-jdbc
 mysql-connector-j
 ```
 
-The first allows us to use `JdbcTemplate`, a Spring class that simplifies working with SQL.
+The first one lets us use `JdbcTemplate`, a Spring class that simplifies working with SQL.
 
 The second is the driver that allows Java to communicate with MySQL.
 
@@ -313,7 +314,7 @@ Inside `<dependencies>`, we add:
 </dependency>
 ```
 
-The complete block of dependencies can look like this:
+The complete dependencies block can look like this:
 
 ```xml
 <dependencies>
@@ -373,11 +374,11 @@ The complete block of dependencies can look like this:
 
 After modifying the `pom.xml`, in IntelliJ we must reload Maven so that it downloads the new dependencies.
 
-Normally IntelliJ displays an icon or message to make `Reload Maven Project`. We can also open the Maven window and press the reload icon.
+IntelliJ usually shows an icon or a message to run `Reload Maven Project`. We can also open the Maven window and click the reload icon.
 
 ---
 
-## 7. Set the connection to `app-servlet.xml`
+## 7. Configure the connection in `app-servlet.xml`
 
 Now we have to tell Spring how to connect to MySQL.
 
@@ -460,7 +461,7 @@ The `dataSource` bean represents the connection to MySQL:
       class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 ```
 
-Inside we indicate the driver:
+Inside, we specify the driver:
 
 ```xml
 <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
@@ -473,7 +474,7 @@ Then we configure the connection URL:
           value="jdbc:mysql://localhost:3306/spring_mvc_courses?useSSL=false&amp;serverTimezone=Europe/Madrid" />
 ```
 
-The URL can be split like this:
+The URL can be broken down like this:
 
 ```text
 jdbc:mysql://localhost:3306/spring_mvc_courses
@@ -505,7 +506,7 @@ Therefore, the URL looks like this:
 ?useSSL=false&amp;serverTimezone=Europe/Madrid
 ```
 
-We also indicate username and password:
+We also specify the username and password:
 
 ```xml
 <property name="username" value="root" />
@@ -518,9 +519,9 @@ Each student must replace:
 TU_PASSWORD
 ```
 
-by the actual password of your MySQL.
+with their actual MySQL password.
 
-In a real application it is not advisable to leave passwords written directly in an XML, but for this introductory course it allows us to understand the process in a simple way.
+In a real application it is not advisable to leave passwords written directly in an XML file, but for this introductory course it allows us to understand the process in a simple way.
 
 ---
 
@@ -536,9 +537,9 @@ The second bean is:
 </bean>
 ```
 
-`JdbcTemplate` is the object we will use to execute SQL queries from Java.
+`JdbcTemplate` is the object we will use to run SQL queries from Java.
 
-You need an `DataSource` to know which database to connect to.
+It needs a `DataSource` to know which database to connect to.
 
 The relationship is this:
 
@@ -589,7 +590,8 @@ public interface CourseDao {
 
 ---
 
-## 11. `CourseDao` Explanation
+## 11. Explanation of `CourseDao`
+
 DAO means:
 
 ```text
@@ -604,13 +606,13 @@ In this case, our interface defines three operations:
 List<Course> findAll();
 ```
 
-It is used to obtain all the courses.
+It is used to get all the courses.
 
 ```java
 Course findById(Long id);
 ```
 
-Used to search for a course by its identifier.
+It is used to search for a course by its identifier.
 
 ```java
 void save(Course course);
@@ -618,7 +620,7 @@ void save(Course course);
 
 It is used to save a new course.
 
-This interface does not have SQL. It just says what operations we need.
+This interface contains no SQL. It only states which operations we need.
 
 We will do the actual implementation in another class called `JdbcCourseDao`.
 
@@ -730,7 +732,7 @@ public class JdbcCourseDao implements CourseDao {
 
 ---
 
-## 13. `JdbcCourseDao` Explanation
+## 13. Explanation of `JdbcCourseDao`
 
 The class starts with:
 
@@ -741,13 +743,13 @@ public class JdbcCourseDao implements CourseDao {
 
 The `@Repository` annotation tells Spring that this class belongs to the data access layer.
 
-As in `app-servlet.xml` we have this line:
+Since we have this line in `app-servlet.xml`:
 
 ```xml
 <context:component-scan base-package="com.example.springmvcday1" />
 ```
 
-Spring will look for classes annotated within the `com.example.springmvcday1` package and automatically register `JdbcCourseDao` as a bean.
+Spring will look for annotated classes inside the `com.example.springmvcday1` package and automatically register `JdbcCourseDao` as a bean.
 
 The class implements the interface:
 
@@ -755,7 +757,7 @@ The class implements the interface:
 implements CourseDao
 ```
 
-This means that you must implement the methods defined in `CourseDao`:
+This means that it must implement the methods defined in `CourseDao`:
 
 ```java
 findAll()
@@ -765,7 +767,7 @@ save(Course course)
 
 ---
 
-## 14. `JdbcTemplate` injection
+## 14. Injecting `JdbcTemplate`
 
 Inside `JdbcCourseDao` we have:
 
@@ -781,7 +783,7 @@ public JdbcCourseDao(JdbcTemplate jdbcTemplate) {
 }
 ```
 
-This means that `JdbcCourseDao` needs an `JdbcTemplate` object to work.
+This means that `JdbcCourseDao` needs a `JdbcTemplate` object to work.
 
 Spring will automatically inject it using the bean we had configured in XML:
 
@@ -790,7 +792,7 @@ Spring will automatically inject it using the bean we had configured in XML:
       class="org.springframework.jdbc.core.JdbcTemplate">
 ```
 
-The chain of dependencies looks like this:
+The dependency chain looks like this:
 
 ```text
 JdbcCourseDao necesita JdbcTemplate
@@ -806,9 +808,9 @@ A database returns rows and columns.
 
 Java works with objects.
 
-That's why we need to convert each row of the `courses` table into an `Course` object.
+That's why we need to convert each row of the `courses` table into a `Course` object.
 
-We do that with an `RowMapper`:
+We do that with a `RowMapper`:
 
 ```java
 private final RowMapper<Course> courseRowMapper = (resultSet, rowNumber) ->
@@ -873,7 +875,7 @@ ORDER BY id
 
 This query asks for all courses sorted by their identifier.
 
-Then we execute:
+Then we run:
 
 ```java
 jdbcTemplate.query(sql, courseRowMapper);
@@ -887,7 +889,7 @@ Por cada fila devuelta, usa courseRowMapper.
 Devuelve una lista de objetos Course.
 ```
 
-The final result will be an `List<Course>`.
+The final result will be a `List<Course>`.
 
 ---
 
@@ -920,7 +922,7 @@ FROM courses
 WHERE id = ?
 ```
 
-The sign `?` is a parameter.
+The `?` sign is a parameter.
 
 We don't do this:
 
@@ -936,11 +938,11 @@ Instead we do:
 jdbcTemplate.query(sql, courseRowMapper, id);
 ```
 
-So `JdbcTemplate` passes the value of `id` as a query parameter.
+This way `JdbcTemplate` passes the value of `id` as a query parameter.
 
-The result will be a list. It may contain a course or it may be empty.
+The result will be a list. It may contain one course or be empty.
 
-That's why in the end we write:
+That's why at the end we write:
 
 ```java
 return courses.stream()
@@ -1000,7 +1002,8 @@ VALUES (?, ?, ?)
 ```
 
 We do not insert the `id`, because MySQL generates it automatically.
-The three signs `?` represent:
+
+The three `?` signs represent:
 
 | Position | Value |
 | -------- | ------------------ |
@@ -1008,7 +1011,7 @@ The three signs `?` represent:
 | `2` | course level |
 | `3` | course duration |
 
-Then we create an `KeyHolder`:
+Then we create a `KeyHolder`:
 
 ```java
 KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -1033,7 +1036,7 @@ Statement.RETURN_GENERATED_KEYS
 
 This tells JDBC that we want to retrieve the automatically generated key.
 
-Then we put the values:
+Then we set the values:
 
 ```java
 preparedStatement.setString(1, course.getTitle());
@@ -1051,7 +1054,7 @@ Duración: 12
 
 the final query will insert those values into the table.
 
-Then we recover the generated id:
+Then we retrieve the generated id:
 
 ```java
 Number generatedId = keyHolder.getKey();
@@ -1065,7 +1068,7 @@ if (generatedId != null) {
 }
 ```
 
-Thus the `Course` object also knows its new identifier.
+This way the `Course` object also knows its new identifier.
 
 ---
 
@@ -1073,7 +1076,7 @@ Thus the `Course` object also knows its new identifier.
 
 Now the service should no longer work with an in-memory list.
 
-Before we had something similar to this:
+Before, we had something like this:
 
 ```java
 private final List<Course> courses = new ArrayList<>();
@@ -1123,7 +1126,7 @@ public class CourseService {
 
 ---
 
-## 20. `CourseService` Explanation
+## 20. Explanation of `CourseService`
 
 The service now has this dependency:
 
@@ -1131,7 +1134,7 @@ The service now has this dependency:
 private final CourseDao courseDao;
 ```
 
-And receives it by constructor:
+And it receives it through the constructor:
 
 ```java
 public CourseService(CourseDao courseDao) {
@@ -1141,7 +1144,7 @@ public CourseService(CourseDao courseDao) {
 
 This means that `CourseService` does not know exactly how the data is saved.
 
-It only knows that there is an `CourseDao` object capable of doing this:
+It only knows that there is a `CourseDao` object capable of doing this:
 
 ```java
 findAll()
@@ -1155,16 +1158,16 @@ This leaves us with a cleaner architecture:
 
 | Class | Responsibility |
 | ------------------ | ----------------------------------------- |
-| `CourseController` | Receive web requests |
+| `CourseController` | Receives web requests |
 | `CourseService` | Coordinates logic related to courses |
 | `CourseDao` | Defines data access operations |
-| `JdbcCourseDao` | Run SQL against MySQL |
+| `JdbcCourseDao` | Runs SQL against MySQL |
 | `JdbcTemplate` | Makes JDBC easy to use |
 | `DataSource` | Defines the connection to the database |
 
 ---
 
-## 21. Should the driver be changed?
+## 21. Do we have to change the controller?
 
 In principle, no.
 
@@ -1176,7 +1179,7 @@ courseService.findById(id);
 courseService.save(course);
 ```
 
-That means the driver doesn't know if the data is coming from an in-memory list or from MySQL.
+That means the controller doesn't know whether the data comes from an in-memory list or from MySQL.
 
 That's an advantage of separating the application into layers.
 
@@ -1214,13 +1217,13 @@ courseService.save(course);
 
 added the course to a list.
 
-Now that same line ends up executing an `INSERT` in MySQL.
+Now that same line ends up running an `INSERT` in MySQL.
 
 ---
 
-## 22. Do I have to change JSP views?
+## 22. Do we have to change the JSP views?
 
-Neither.
+Not those either.
 
 The views still receive the same data:
 
@@ -1248,15 +1251,15 @@ For example, `list.jsp` can continue looping through the list like this:
 </c:forEach>
 ```
 
-The eye does not need to know where the courses come from.
+The view does not need to know where the courses come from.
 
-You only need to receive a list of `Course` objects.
+It only needs to receive a list of `Course` objects.
 
 ---
 
 ## 23. Complete flow when listing courses
 
-When the user enters:
+When the user goes to:
 
 ```text
 /courses
@@ -1292,9 +1295,10 @@ public List<Course> findAll() {
 ```
 
 ---
+
 ## 24. Complete flow when creating a course
 
-When the user enters:
+When the user goes to:
 
 ```text
 /courses/new
@@ -1365,7 +1369,7 @@ After creating a course from the web application, we return to DBeaver and run:
 SELECT * FROM courses;
 ```
 
-If everything has worked well, the new course will appear in the table.
+If everything worked, the new course will appear in the table.
 
 For example:
 
@@ -1377,11 +1381,11 @@ id | title                   | level      | duration_in_hours
 4  | Java Web con Spring      | Inicial    | 12
 ```
 
-This confirms that the course has no longer been saved just in memory, but in MySQL.
+This confirms that the course is no longer saved only in memory, but in MySQL.
 
 ---
 
-## 26. Comparison: in-memory version and version with MySQL
+## 26. Comparison: in-memory version vs. MySQL version
 
 ### Before
 
@@ -1446,9 +1450,9 @@ Pueden aparecer errores de conexión si los datos no son correctos.
 
 ## 27. Common mistakes and how to solve them
 
-### Error 1: Do not change `TU_PASSWORD`
+### Error 1: Not changing `TU_PASSWORD`
 
-`app-servlet.xml` appears:
+In `app-servlet.xml` we have:
 
 ```xml
 <property name="password" value="TU_PASSWORD" />
@@ -1458,7 +1462,7 @@ You must replace `TU_PASSWORD` with the real MySQL password.
 
 ---
 
-### Error 2: MySQL is not started
+### Error 2: MySQL is not running
 
 If MySQL is not running, the application will not be able to connect.
 
@@ -1474,13 +1478,13 @@ or:
 Connection refused
 ```
 
-Solution: Start the MySQL service and check that DBeaver can connect.
+Solution: start the MySQL service and check that DBeaver can connect.
 
 ---
 
-### Error 3: Database does not exist
+### Error 3: The database does not exist
 
-If in the URL we write:
+If we write this in the URL:
 
 ```text
 spring_mvc_courses
@@ -1488,7 +1492,7 @@ spring_mvc_courses
 
 but we have not created that database, the application will fail.
 
-Solution: Run in DBeaver:
+Solution: run this in DBeaver:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_courses;
@@ -1496,7 +1500,7 @@ CREATE DATABASE IF NOT EXISTS spring_mvc_courses;
 
 ---
 
-### Error 4: `courses` table does not exist
+### Error 4: The `courses` table does not exist
 
 If the database exists but the table does not, queries will fail.
 
@@ -1529,7 +1533,7 @@ After adding it, you have to reload Maven.
 
 ---
 
-### Error 6: MySQL driver is missing
+### Error 6: The MySQL driver is missing
 
 If this dependency is missing:
 
@@ -1551,7 +1555,7 @@ Solution: add the dependency and reload Maven.
 
 ---
 
-### Error 7: misspelling a column name
+### Error 7: Misspelling a column name
 
 In Java we use:
 
@@ -1569,7 +1573,7 @@ If the column is named `duration`, `durationInHours`, or anything else, the quer
 
 ---
 
-### Error 8: Using `&` instead of `&amp;` within the XML
+### Error 8: Using `&` instead of `&amp;` inside the XML
 
 Incorrect:
 
@@ -1591,15 +1595,15 @@ In XML, the character `&` must be written as `&amp;`.
 
 After adding dependencies, IntelliJ needs to download them.
 
-If Maven is not reloaded, it may appear as if the classes do not exist.
+If Maven is not reloaded, it may look as if the classes don't exist.
 
 Solution: use `Reload Maven Project`.
 
 ---
 
-### Error 10: inserting duplicate data when running the script multiple times
+### Error 10: Inserting duplicate data when running the script multiple times
 
-If we execute this block several times:
+If we run this block several times:
 
 ```sql
 INSERT INTO courses (title, level, duration_in_hours)
@@ -1628,6 +1632,7 @@ Then we can reinsert the initial data.
 ---
 
 ## 28. Final checklist
+
 Before trying the app, check this:
 
 ```text
@@ -1668,7 +1673,7 @@ Now they are here:
 Tabla courses en MySQL
 ```
 
-The application maintains the same visual part:
+The application keeps the same visual part:
 
 ```text
 list.jsp
@@ -1696,12 +1701,12 @@ JdbcTemplate
 MySQL
 ```
 
-The most important idea is that persistence should not be mixed with controller.
+The most important idea is that persistence should not be mixed with the controller.
 
 The controller takes care of the web part.
 
 The DAO takes care of the database.
 
-The service remains in the middle, coordinating the operations of the application.
+The service sits in the middle, coordinating the application's operations.
 
-With this extension, the form in Topic 3 no longer just creates objects in memory: it now creates actual records in a MySQL table that can be queried from DBeaver.
+With this extension, the form from Topic 3 no longer just creates objects in memory: it now creates real records in a MySQL table that can be queried from DBeaver.

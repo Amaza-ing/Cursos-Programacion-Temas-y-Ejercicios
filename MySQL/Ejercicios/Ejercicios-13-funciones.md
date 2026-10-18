@@ -1,16 +1,16 @@
 # **Exercises - Topic 13: Functions in MySQL**
 
-Below, you will find 5 practical exercises to create and use **functions** in MySQL, also applying the comparison with stored procedures.
+Below you will find 5 practical exercises to create and use **functions** in MySQL, also putting into practice how they compare with stored procedures.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Function to calculate double a number**
+### **Exercise 1: Function that doubles a number**
 
-Create a function `doble_valor` that takes a number and returns its value multiplied by 2.
+Create a `doble_valor` function that takes a number and returns its value multiplied by 2.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -29,11 +29,11 @@ SELECT doble_valor(15.50) AS resultado;
 
 ---
 
-### **Exercise 2: Function to calculate the discount**
+### **Exercise 2: Function that calculates the discount**
 
-Create a function `precio_con_descuento` that receives the price and a discount percentage, and returns the final price.
+Create a `precio_con_descuento` function that takes the price and a discount percentage, and returns the final price.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -54,9 +54,9 @@ SELECT precio_con_descuento(200, 15) AS precio_final;
 
 ### **Exercise 3: Function with text validation**
 
-Create a function `formatear_nombre` that takes a name and returns it in uppercase with leading and trailing spaces removed.
+Create a `formatear_nombre` function that takes a name and returns it in uppercase, with leading and trailing spaces removed.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -75,15 +75,15 @@ SELECT formatear_nombre('  maria lopez  ') AS nombre_formateado;
 
 ---
 
-### **Exercise 4: Function to classify customers by expense**
+### **Exercise 4: Function that classifies customers by spending**
 
-Create a function `clasificar_cliente` that receives the total spent and returns 'HIGH', 'MEDIUM' or 'LOW' depending on:
+Create a `clasificar_cliente` function that takes the total spent and returns 'ALTO', 'MEDIO' or 'BAJO' according to:
 
-- `>= 1000` → HIGH
-- `>= 500 y < 1000` → MEDIUM
-- `< 500` → LOW
+- `>= 1000` → ALTO
+- `>= 500 y < 1000` → MEDIO
+- `< 500` → BAJO
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -108,11 +108,11 @@ SELECT clasificar_cliente(750) AS categoria;
 
 ---
 
-### **Exercise 5: Function in combination with a query**
+### **Exercise 5: Function combined with a query**
 
-Create a function `edad_en_meses` that receives an age in years and returns the age in months. Use it to display customers' name and age in months.
+Create an `edad_en_meses` function that takes an age in years and returns the age in months. Use it to display the customers' names and their ages in months.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$

@@ -2,22 +2,22 @@
 
 ## Introduction
 
-In these exercises you will practice the contents of the topic dedicated to:
+In these exercises you'll practice the contents of the topic about:
 
-- Exception management in Spring MVC.
-- Creation of custom exceptions.
-- Use of `@ControllerAdvice`.
-- Use of `@ExceptionHandler`.
-- Creation of custom error pages.
-- Configuration of 404 and 500 pages.
+- Exception handling in Spring MVC.
+- Creating custom exceptions.
+- Using `@ControllerAdvice`.
+- Using `@ExceptionHandler`.
+- Creating custom error pages.
+- Configuring 404 and 500 pages.
 - Internationalization with `messages` files.
-- Use of `MessageSource`.
-- Language change with `LocaleResolver` and `LocaleChangeInterceptor`.
-- Use of `<spring:message>` in JSP.
-- Internationalization of validation messages.
-- Light/dark visual theme change via session and CSS.
+- Using `MessageSource`.
+- Changing the language with `LocaleResolver` and `LocaleChangeInterceptor`.
+- Using `<spring:message>` in JSP.
+- Internationalizing validation messages.
+- Switching between a light and a dark visual theme with the session and CSS.
 
-The exercises are similar to those in the course, but use a different application: a small **events** management application.
+The exercises are similar to the ones in the course, but they use a different application: a small **event** management application.
 
 Each solution is hidden under the **show solution** button.
 
@@ -29,7 +29,7 @@ Each solution is hidden under the **show solution** button.
 
 Create a custom exception called `EventNotFoundException`.
 
-It should be in the package:
+It must be in the package:
 
 ```text
 com.example.events.exception
@@ -38,14 +38,14 @@ com.example.events.exception
 The exception must:
 
 1. Extend `RuntimeException`.
-2. Save the event identifier that was not found.
+2. Store the identifier of the event that wasn't found.
 3. Have a constructor that receives `Long eventId`.
 4. Have a getter for `eventId`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.events.exception;
@@ -73,13 +73,13 @@ This exception represents a specific error in the application:
 El usuario ha pedido un evento que no existe.
 ```
 
-We extend from:
+We extend:
 
 ```java
 RuntimeException
 ```
 
-because we don't want to force capturing it with `try-catch` in all methods.
+because we don't want to force every method to catch it with `try-catch`.
 
 We save the identifier:
 
@@ -87,7 +87,7 @@ We save the identifier:
 private final Long eventId;
 ```
 
-to be able to display it later on an error page.
+so we can display it later on an error page.
 
 </details>
 
@@ -135,12 +135,12 @@ Add a method called:
 findByIdOrThrow(Long id)
 ```
 
-This method should return the event if it exists. If it does not exist, you must cast `EventNotFoundException`.
+This method must return the event if it exists. If it doesn't exist, it must throw `EventNotFoundException`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.events.service;
@@ -199,7 +199,7 @@ Si existe, lo devuelve.
 Si no existe, lanza una excepción.
 ```
 
-This way we avoid repeating this check on all controllers:
+This way we avoid repeating this check in every controller:
 
 ```java
 if (event == null) {
@@ -213,7 +213,7 @@ The logic remains centralized in the service.
 
 ---
 
-# Exercise 3 — Simplify the handler using the exception
+# Exercise 3 — Simplify the controller using the exception
 
 ## Statement
 
@@ -244,12 +244,12 @@ Modify it to use:
 eventService.findByIdOrThrow(id)
 ```
 
-The method no longer needs to manually check if the event is `null`.
+The method should no longer check manually whether the event is `null`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @GetMapping("/detail")
@@ -265,14 +265,14 @@ public String eventDetail(@RequestParam("id") Long id, Model model) {
 
 ### Explanation
 
-Before the controller did two things:
+Before, the controller did two things:
 
 ```text
 1. Buscaba el evento.
 2. Decidía qué hacer si no existía.
 ```
 
-Now the driver only handles the correct case:
+Now the controller only handles the successful case:
 
 ```text
 Si el evento existe, prepara la vista de detalle.
@@ -300,11 +300,11 @@ Create a class called `GlobalExceptionHandler` in the package:
 com.example.events.exception
 ```
 
-You must:
+It must:
 
-1. Be registered with `@ControllerAdvice`.
-2. Have a method to capture `EventNotFoundException`.
-3. Add to model:
+1. Be annotated with `@ControllerAdvice`.
+2. Have a method to catch `EventNotFoundException`.
+3. Add to the model:
    - `pageTitle`
    - `eventId`
    - `errorMessage`
@@ -316,7 +316,7 @@ error/event-not-found
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.events.exception;
@@ -358,7 +358,7 @@ The annotation:
 @ExceptionHandler(EventNotFoundException.class)
 ```
 
-indicates that this method will be executed when an exception of type `EventNotFoundException` is thrown.
+indicates that this method will run when an exception of type `EventNotFoundException` is thrown.
 
 The returned view:
 
@@ -386,17 +386,17 @@ Create the view:
 src/main/webapp/WEB-INF/views/error/event-not-found.jsp
 ```
 
-The view should show:
+The view must show:
 
 1. The title received in `${pageTitle}`.
 2. The event identifier received in `${eventId}`.
 3. The error message received in `${errorMessage}`.
-4. A link to return to the list of events.
+4. A link to go back to the list of events.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -445,19 +445,19 @@ The view should show:
 
 This view is not returned directly by `EventController`.
 
-Returned by the global handler:
+It's returned by the global handler:
 
 ```java
 GlobalExceptionHandler
 ```
 
-when capture:
+when it catches:
 
 ```java
 EventNotFoundException
 ```
 
-This allows the normal controller logic to be separated from the error logic.
+This lets us separate the controller's normal logic from the error logic.
 
 </details>
 
@@ -467,9 +467,9 @@ This allows the normal controller logic to be separated from the error logic.
 
 ## Statement
 
-Extends `GlobalExceptionHandler` to catch any unforeseen exceptions.
+Extend `GlobalExceptionHandler` to catch any unexpected exception.
 
-You must capture:
+It must catch:
 
 ```java
 Exception.class
@@ -488,7 +488,7 @@ error/general-error
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.events.exception;
@@ -533,9 +533,9 @@ The method:
 @ExceptionHandler(Exception.class)
 ```
 
-It works as a safety net.
+works as a safety net.
 
-Catch errors that do not have a more specific handler.
+It catches errors that don't have a more specific handler.
 
 It is not a substitute for good error handling, but it prevents the user from seeing a technical page from the server.
 
@@ -553,17 +553,17 @@ Create the view:
 src/main/webapp/WEB-INF/views/error/general-error.jsp
 ```
 
-Must show:
+It must show:
 
 1. The title received in `${pageTitle}`.
-2. A message indicating that an unexpected error has occurred.
+2. A message saying that an unexpected error has occurred.
 3. The technical message received in `${errorMessage}`.
-4. A link to return to the beginning.
+4. A link to go back to the home page.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -610,15 +610,15 @@ Must show:
 
 ### Explanation
 
-This view is used when an unforeseen exception occurs.
+This view is used when an unexpected exception occurs.
 
-In a real application, it is not always convenient to show the technical message to the end user. For a course, it can be useful to understand what is happening.
+In a real application, it's not always a good idea to show the technical message to the end user. In a course, though, it can help you understand what's going on.
 
 </details>
 
 ---
 
-# Exercise 8 — Configure pages 404 and 500 in `web.xml`
+# Exercise 8 — Configure the 404 and 500 pages in `web.xml`
 
 ## Statement
 
@@ -632,7 +632,7 @@ Write only the necessary XML block.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```xml
 <error-page>
@@ -656,7 +656,7 @@ For example:
 /pagina-inventada
 ```
 
-Error 500 occurs when there is an internal error on the server.
+The 500 error occurs when there is an internal error on the server.
 
 With this configuration, the server redirects those errors to routes controlled by Spring MVC.
 
@@ -668,26 +668,26 @@ With this configuration, the server redirects those errors to routes controlled 
 
 ## Statement
 
-Create a handler named `ErrorPageController` in the package:
+Create a controller named `ErrorPageController` in the package:
 
 ```text
 com.example.events.controller
 ```
 
-You should have two methods:
+It must have two methods:
 
 ```text
 GET /error/404
 GET /error/500
 ```
 
-The first method should return the view:
+The first method must return the view:
 
 ```text
 error/not-found
 ```
 
-The second should return:
+The second one must return:
 
 ```text
 error/general-error
@@ -696,7 +696,7 @@ error/general-error
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.events.controller;
@@ -731,7 +731,7 @@ When the server detects a 404, it sends the user to:
 /error/404
 ```
 
-Spring executes this method:
+Spring runs this method:
 
 ```java
 @GetMapping("/error/404")
@@ -743,7 +743,7 @@ and displays a custom JSP.
 
 ---
 
-# Exercise 10 — Create custom 404 view
+# Exercise 10 — Create the custom 404 view
 
 ## Statement
 
@@ -753,16 +753,16 @@ Create the view:
 src/main/webapp/WEB-INF/views/error/not-found.jsp
 ```
 
-Must show:
+It must show:
 
 1. The title received in `${pageTitle}`.
-2. A message indicating that the page does not exist.
-3. A link to return to the beginning.
+2. A message saying that the page does not exist.
+3. A link to go back to the home page.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -825,14 +825,14 @@ Modify `app-servlet.xml` to add internationalization.
 
 You must configure:
 
-1. An `messageSource`.
-2. An `SessionLocaleResolver` with Spanish as the default language.
-3. An `LocaleChangeInterceptor` that changes the language using the `lang` parameter.
+1. A `messageSource`.
+2. A `SessionLocaleResolver` with Spanish as the default language.
+3. A `LocaleChangeInterceptor` that changes the language using the `lang` parameter.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```xml
 <!-- Internacionalización: archivos messages.properties -->
@@ -864,7 +864,7 @@ The bean:
 messageSource
 ```
 
-allows Spring to search for texts in files like:
+lets Spring look up texts in files like:
 
 ```text
 messages_es.properties
@@ -877,7 +877,7 @@ The bean:
 localeResolver
 ```
 
-saves the active language of the user in session.
+saves the user's active language in the session.
 
 The interceptor:
 
@@ -891,13 +891,13 @@ detects URLs like:
 /home?lang=en
 ```
 
-and change the active language.
+and changes the active language.
 
 </details>
 
 ---
 
-# Exercise 12 — Create message files
+# Exercise 12 — Create the message files
 
 ## Statement
 
@@ -913,7 +913,7 @@ messages_es.properties
 messages_en.properties
 ```
 
-They must include messages to:
+They must include messages for:
 
 - Navigation.
 - Home page.
@@ -925,28 +925,9 @@ Create at least five keys.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-##`messages.properties`
-
-```properties
-nav.home=Inicio
-nav.events=Eventos
-language.spanish=Español
-language.english=Inglés
-
-home.title=Bienvenida a la aplicación de eventos
-home.message=Gestiona eventos con Spring MVC.
-
-events.list.title=Listado de eventos
-events.detail=Ver detalle
-events.back=Volver
-
-error.notFound.title=Página no encontrada
-error.general.title=Error inesperado
-```
-
-##`messages_es.properties`
+## `messages.properties`
 
 ```properties
 nav.home=Inicio
@@ -965,7 +946,26 @@ error.notFound.title=Página no encontrada
 error.general.title=Error inesperado
 ```
 
-##`messages_en.properties`
+## `messages_es.properties`
+
+```properties
+nav.home=Inicio
+nav.events=Eventos
+language.spanish=Español
+language.english=Inglés
+
+home.title=Bienvenida a la aplicación de eventos
+home.message=Gestiona eventos con Spring MVC.
+
+events.list.title=Listado de eventos
+events.detail=Ver detalle
+events.back=Volver
+
+error.notFound.title=Página no encontrada
+error.general.title=Error inesperado
+```
+
+## `messages_en.properties`
 
 ```properties
 nav.home=Home
@@ -986,7 +986,7 @@ error.general.title=Unexpected error
 
 ### Explanation
 
-The keys must be named the same in all files.
+The keys must have the same name in every file.
 
 What changes is the value.
 
@@ -1012,25 +1012,25 @@ in English.
 
 ## Statement
 
-Modifies an `home.jsp` view so that it does not have the texts written directly.
+Modify a `home.jsp` view so that its texts aren't written directly in it.
 
-You must use:
+It must use:
 
 ```jsp
 <spring:message code="..." />
 ```
 
-The page should display:
+The page must display:
 
 1. The title `home.title`.
 2. The message `home.message`.
 3. A link to events using `nav.events`.
-4. Links to change language to Spanish and English.
+4. Links to change the language to Spanish and English.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1133,7 +1133,7 @@ Create the necessary keys in the message files and modify the JSP to use `<sprin
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Keys in `messages_es.properties`
 
@@ -1187,7 +1187,7 @@ events.detail=View detail
 
 ### Explanation
 
-Fixed texts disappear from view.
+The hard-coded texts disappear from the view.
 
 Now the view only has keys:
 
@@ -1215,20 +1215,20 @@ success.event.created
 
 in Spanish and English.
 
-Then modify the driver to get that message with `MessageSource` and send it as a flash attribute called `successMessage`.
+Then modify the controller to get that message with `MessageSource` and send it as a flash attribute called `successMessage`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-##`messages_es.properties`
+## `messages_es.properties`
 
 ```properties
 success.event.created=El evento se ha creado correctamente.
 ```
 
-##`messages_en.properties`
+## `messages_en.properties`
 
 ```properties
 success.event.created=The event has been created successfully.
@@ -1305,7 +1305,7 @@ Then we look for the message:
 messageSource.getMessage("success.event.created", null, locale)
 ```
 
-Thus the message changes according to the user's active language.
+This way, the message changes depending on the user's active language.
 
 </details>
 
@@ -1328,14 +1328,14 @@ public class Event {
 }
 ```
 
-Modify it so that messages come out of `messages` files.
+Modify it so that the messages come from the `messages` files.
 
 Also create the keys in Spanish and English.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Model `Event.java`
 
@@ -1400,14 +1400,14 @@ public class Event {
 }
 ```
 
-##`messages_es.properties`
+## `messages_es.properties`
 
 ```properties
 event.title.notBlank=El título es obligatorio.
 event.city.notBlank=La ciudad es obligatoria.
 ```
 
-##`messages_en.properties`
+## `messages_en.properties`
 
 ```properties
 event.title.notBlank=The title is required.
@@ -1438,15 +1438,15 @@ Spring will look for that key in the corresponding message file.
 
 ## Statement
 
-Create a driver called `ThemeController`.
+Create a controller called `ThemeController`.
 
-It should be in the package:
+It must be in the package:
 
 ```text
 com.example.events.controller
 ```
 
-You must respond to:
+It must respond to:
 
 ```text
 /theme/change?theme=dark
@@ -1456,14 +1456,14 @@ You must respond to:
 The controller must:
 
 1. Read the `theme` parameter.
-2. Save the topic in session.
-3. If the topic is not `dark`, use `light`.
+2. Save the theme in the session.
+3. If the theme is not `dark`, use `light`.
 4. Redirect to `/home`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.events.controller;
@@ -1502,7 +1502,7 @@ The parameter is received with:
 @RequestParam(defaultValue = "light") String theme
 ```
 
-If the user enters:
+If the user goes to:
 
 ```text
 /theme/change?theme=dark
@@ -1514,13 +1514,13 @@ the value will be:
 dark
 ```
 
-We save the topic in session:
+We save the theme in the session:
 
 ```java
 session.setAttribute("theme", theme);
 ```
 
-Thus the choice is maintained for the duration of the user's session.
+This way, the choice is kept for as long as the user's session lasts.
 
 </details>
 
@@ -1532,16 +1532,16 @@ Thus the choice is maintained for the duration of the user's session.
 
 Modify a JSP so that:
 
-1. Always load `styles.css`.
-2. Read the topic from `sessionScope.theme`.
-3. If the topic is `dark`, also upload `styles-dark.css`.
+1. It always loads `styles.css`.
+2. It reads the theme from `sessionScope.theme`.
+3. If the theme is `dark`, it also loads `styles-dark.css`.
 
 Use JSTL.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -1557,13 +1557,13 @@ Use JSTL.
 
 ### Explanation
 
-First we calculate the current topic:
+First we work out the current theme:
 
 ```jsp
 <c:set var="currentTheme" value="${empty sessionScope.theme ? 'light' : sessionScope.theme}" />
 ```
 
-If there is no topic in session, we use:
+If there's no theme in the session, we use:
 
 ```text
 light
@@ -1581,7 +1581,7 @@ And only if the theme is dark do we load:
 styles-dark.css
 ```
 
-The second file overwrites some styles from the first.
+The second file overrides some of the first one's styles.
 
 </details>
 
@@ -1596,15 +1596,15 @@ Create a file:
 src/main/webapp/resources/css/styles-dark.css
 ```
 
-You should change the main colors of the app to a dark theme.
+It must change the app's main colors to a dark theme.
 
-Includes styles for:
+Include styles for:
 
 - `body`
 - `.header`
 - `.card`
 - `h1`
--`.table`
+- `.table`
 - `.input`
 - `.button`
 - `.error`
@@ -1612,7 +1612,7 @@ Includes styles for:
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```css
 body {
@@ -1663,9 +1663,9 @@ h1 {
 
 This file does not replace `styles.css`.
 
-It loads afterwards, only if the user has chosen the dark theme.
+It's loaded afterwards, only if the user has chosen the dark theme.
 
-That's why you can overwrite colors without repeating the entire design.
+That's why it can override colors without repeating the whole design.
 
 </details>
 
@@ -1677,19 +1677,19 @@ That's why you can overwrite colors without repeating the entire design.
 
 Modify the header of a JSP to include:
 
-1. Link to home.
-2. Link to events.
-3. Language change to Spanish.
-4. Language change to English.
-5. Change to light theme.
-6. Switch to dark theme.
+1. A link to the home page.
+2. A link to the events.
+3. Switching the language to Spanish.
+4. Switching the language to English.
+5. Switching to the light theme.
+6. Switching to the dark theme.
 
-Use internationalized messages for texts.
+Use internationalized messages for the texts.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Required keys
 
@@ -1702,7 +1702,7 @@ theme.light=Tema claro
 theme.dark=Tema oscuro
 ```
 
-##JSP
+## JSP
 
 ```jsp
 <header class="header">
@@ -1754,13 +1754,13 @@ The links:
 /theme/change?theme=dark
 ```
 
-They are managed by `ThemeController`.
+are handled by `ThemeController`.
 
 </details>
 
 ---
 
-# Exercise 21 — Diagnose frequent errors
+# Exercise 21 — Diagnose common errors
 
 ## Statement
 
@@ -1786,13 +1786,13 @@ Why isn't the expected error page displayed?
 
 ## Case B
 
-In the JSP it is used:
+The JSP uses:
 
 ```jsp
 <spring:message code="events.list.title" />
 ```
 
-but in `messages_es.properties` it appears:
+but `messages_es.properties` has:
 
 ```properties
 event.list.title=Listado de eventos
@@ -1804,7 +1804,7 @@ What's happening?
 
 ## Case C
 
-You enter:
+You go to:
 
 ```text
 /home?lang=en
@@ -1818,26 +1818,26 @@ What might be missing from the setup?
 
 ## Case D
 
-The user presses “Dark theme”, but when changing the page they return to the light theme.
+The user clicks “Dark theme”, but when they go to another page, the light theme comes back.
 
 What could be happening?
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Case A
 
 The exception type does not match.
 
-It is launched:
+This is thrown:
 
 ```java
 EventNotFoundException
 ```
 
-but the handler captures:
+but the handler catches:
 
 ```java
 NullPointerException
@@ -1855,7 +1855,7 @@ There must be a method with:
 
 The key does not match.
 
-The JSP seeks:
+The JSP looks for:
 
 ```text
 events.list.title
@@ -1893,13 +1893,13 @@ There should be something like this in `app-servlet.xml`:
 </mvc:interceptors>
 ```
 
-An `localeResolver` must also exist.
+There must also be a `localeResolver`.
 
 ---
 
 ## Case D
 
-The topic may not be saving in session.
+Maybe the theme isn't being saved in the session.
 
 The controller must do:
 
@@ -1913,7 +1913,7 @@ And the JSPs should read:
 sessionScope.theme
 ```
 
-If the theme is saved only as a model attribute, it will be lost when changing pages.
+If the theme is saved only as a model attribute, it will be lost when the user goes to another page.
 
 </details>
 
@@ -1927,8 +1927,8 @@ Create a small reservations section using what you learned in Topic 5.
 
 You must create:
 
-1. An `ReservationNotFoundException` exception.
-2. An `findByIdOrThrow` method on `ReservationService`.
+1. A `ReservationNotFoundException` exception.
+2. A `findByIdOrThrow` method in `ReservationService`.
 3. A handler in `GlobalExceptionHandler`.
 4. An `error/reservation-not-found.jsp` view.
 5. Internationalized messages for:
@@ -1936,17 +1936,17 @@ You must create:
    - `reservations.detail`
    - `error.reservationNotFound.title`
    - `error.reservationNotFound.message`
-6. Links to change language.
-7. Support for light/dark theme in view.
+6. Links to change the language.
+7. Support for a light/dark theme in the view.
 
-There is no need to create persistence with MySQL.
+You don't need to add persistence with MySQL.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-##`ReservationNotFoundException.java`Exception
+## `ReservationNotFoundException.java` exception
 
 ```java
 package com.example.events.exception;
@@ -2099,10 +2099,10 @@ Internacionalización
 Tema visual
 ```
 
-The exception allows the error to be separated from the driver.
+The exception lets us separate the error from the controller.
 
-Messages allow you to change the interface language.
+The messages let you change the interface language.
 
-The session allows you to save the topic chosen by the user.
+The session lets you save the theme chosen by the user.
 
 </details>

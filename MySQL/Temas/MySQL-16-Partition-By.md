@@ -1,18 +1,18 @@
 # **Topic 16: Using PARTITION BY in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Understand what `PARTITION BY` is and when to use it.
 - Apply it with window functions (`window functions`).
-- Differentiate `PARTITION BY` from `GROUP BY`.
+- Tell `PARTITION BY` apart from `GROUP BY`.
 
 ---
 
 ## **1. What is PARTITION BY?**
 
-`PARTITION BY` is a clause used in conjunction with **window functions** to divide a result set into groups (partitions) and apply a function on each group **without collapsing the rows** as `GROUP BY` would do.
+`PARTITION BY` is a clause used together with **window functions** to divide a result set into groups (partitions) and apply a function to each group **without collapsing the rows**, as `GROUP BY` would.
 
-It is executed after the `FROM` and `WHERE` clause, but before `ORDER BY`.
+It is evaluated after the `FROM` and `WHERE` clauses, but before `ORDER BY`.
 
 ---
 
@@ -22,7 +22,7 @@ It is executed after the `FROM` and `WHERE` clause, but before `ORDER BY`.
 funcion_ventana(...) OVER (PARTITION BY columna)
 ```
 
-You can combine it with `ORDER BY` within the same `OVER`:
+You can combine it with `ORDER BY` inside the same `OVER`:
 
 ```sql
 funcion_ventana(...) OVER (PARTITION BY columna ORDER BY otra_columna)
@@ -32,9 +32,9 @@ funcion_ventana(...) OVER (PARTITION BY columna ORDER BY otra_columna)
 
 ## **3. Basic example**
 
-Let's assume the table `orders(id, customer_id, total_amount, created_at)`.
+Suppose we have the table `orders(id, customer_id, total_amount, created_at)`.
 
-We want to know the **total orders** per customer, showing all rows:
+We want to know the **total number of orders** per customer, while showing all the rows:
 
 ```sql
 SELECT id,
@@ -48,13 +48,13 @@ FROM orders;
 
 ---
 
-## **4. Use PARTITION BY with common window functions**
+## **4. Using PARTITION BY with common window functions**
 
-- `ROW_NUMBER()`: Number rows in each partition.
-- `RANK()` and `DENSE_RANK()`: Assign ranges per partition.
-- `SUM()`, `AVG()`, `COUNT()`: Add data within each partition.
+- `ROW_NUMBER()`: numbers the rows in each partition.
+- `RANK()` and `DENSE_RANK()`: assign ranks within each partition.
+- `SUM()`, `AVG()`, `COUNT()`: aggregate data within each partition.
 
-**Example:** Ranking of orders by amount within each client.
+**Example:** ranking each customer's orders by amount.
 
 ```sql
 SELECT customer_id,
@@ -68,17 +68,17 @@ FROM orders;
 
 ## **5. Differences between PARTITION BY and GROUP BY**
 
-| Feature | PARTITION BY | GROUP BY |
+| Characteristic | PARTITION BY | GROUP BY |
 | ----------------------------------- | ------------ | ----------------------------------- |
-| Keeps all original rows | Yes | No (collapses into one per group) |
+| Keeps all the original rows | Yes | No (collapses them into one per group) |
 | Used with window functions | Yes | No |
-| Returns ungrouped columns | Yes | Only aggregated or grouped columns |
+| Returns non-grouped columns | Yes | Only aggregated or grouped columns |
 
 ---
 
-## **6. Combine PARTITION BY and ORDER BY**
+## **6. Combining PARTITION BY and ORDER BY**
 
-We can obtain accumulated accumulated within each partition:
+We can get ordered running totals within each partition:
 
 ```sql
 SELECT customer_id,
@@ -96,18 +96,18 @@ FROM orders;
 
 ## **7. Good practices**
 
-- Use `PARTITION BY` when you need group calculations without losing row detail.
-- Combine it with `ORDER BY` to obtain cumulative results or rankings.
-- Do not abuse window functions on very large tables without appropriate indexes.
+- Use `PARTITION BY` when you need per-group calculations without losing the detail of each row.
+- Combine it with `ORDER BY` to get cumulative results or rankings.
+- Don't overuse window functions on very large tables without appropriate indexes.
 
 ---
 
 ## **8. Conclusion**
 
-- `PARTITION BY` divides results into groups to apply window functions.
+- `PARTITION BY` divides the results into groups to apply window functions.
 - Unlike `GROUP BY`, it keeps all the original rows.
-- It is useful to obtain metrics by group while preserving the detail of each row.
+- It is useful for getting per-group metrics while preserving the detail of each row.
 
 ---
 
-In the next topic we will see **What they are and how to use transactions**.
+In the next topic we will see **what transactions are and how to use them**.

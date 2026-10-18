@@ -1,16 +1,16 @@
 # **Exercises - Topic 12: Fetch an API using async/await**
 
-Below you will find 4 practical exercises on how to make requests to an external API using `fetch` and `async/await` in Vue.
+Below you'll find 4 practical exercises on making requests to an external API using `fetch` and `async/await` in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Get and display a list of users**
 
-Create an `UserList.vue` component that makes a request to `https://jsonplaceholder.typicode.com/users` upon mounting, and displays each user's name in a list.
+Create a `UserList.vue` component that makes a request to `https://jsonplaceholder.typicode.com/users` when it's mounted, and displays each user's name in a list.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `UserList.vue`
 
@@ -48,11 +48,11 @@ ul {
 
 ---
 
-## **Exercise 2: Show loading status while fetching messages**
+## **Exercise 2: Show a loading state while fetching posts**
 
-Create an `PostLoader.vue` component that fetches `https://jsonplaceholder.typicode.com/posts`, and while loading, displays the message "Loading posts...".
+Create a `PostLoader.vue` component that fetches `https://jsonplaceholder.typicode.com/posts` and, while it's loading, displays the message "Cargando posts..." ("Loading posts...").
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `PostLoader.vue`
 
@@ -93,11 +93,11 @@ ul {
 
 ---
 
-## **Exercise 3: Handling errors when getting data from an API**
+## **Exercise 3: Handle errors when getting data from an API**
 
-Create an `ErrorHandler.vue` component that attempts to fetch `https://api.fakeurl.com/data`, and if it fails, displays an error message.
+Create an `ErrorHandler.vue` component that tries to fetch `https://api.fakeurl.com/data` and, if it fails, displays an error message.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `ErrorHandler.vue`
 
@@ -141,11 +141,11 @@ onMounted(fetchData);
 
 ---
 
-## **Exercise 4: Button to manually refresh data**
+## **Exercise 4: A button to refresh the data manually**
 
-Create an `RefreshableList.vue` component that gets a list of posts upon mounting and has a button to refetch.
+Create a `RefreshableList.vue` component that gets a list of posts when it's mounted and has a button to fetch them again.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `RefreshableList.vue`
 

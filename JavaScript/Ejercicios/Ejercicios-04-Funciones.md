@@ -1,14 +1,14 @@
 # **Exercises - Topic 4: Functions in JavaScript**
 
-Below you will find 6 practical exercises on using functions in JavaScript.
+Below you'll find 6 practical exercises on using functions in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Create a simple function**
 
-Create a function called `showMsg` that receives an `msg` parameter and displays the message "Message: [msg]!" in the console.
+Create a function called `showMsg` that receives a `msg` parameter and displays the message "Message: [msg]!" in the console.
 
 <details><summary>Show solution</summary>
 
@@ -45,7 +45,7 @@ console.log(result); // Salida: 12
 
 ### **Exercise 3: Function with default values**
 
-Create a function called `greetUser` that receives an `name` parameter and has a default value of "Guest" if no name is provided.
+Create a function called `greetUser` that receives a `name` parameter with a default value of "Guest" in case no name is provided.
 
 <details><summary>Show solution</summary>
 
@@ -92,7 +92,7 @@ console.log(multiply(3, 4)); // Salida: 12
 
 ### **Exercise 5: Function that uses rest parameters**
 
-Create a function called `multiplyAll` that accepts an indefinite number of arguments and returns their multiplication.
+Create a function called `multiplyAll` that accepts an indefinite number of arguments and returns their product.
 
 <details><summary>Show solution</summary>
 
@@ -113,7 +113,7 @@ console.log(multiplyAll(1, 2, 3, 4)); // Salida: 24
 
 ---
 
-### **Exercise 6: Higher order function**
+### **Exercise 6: Higher-order function**
 
 Create a function called `applyOperation` that receives two numbers and a callback function. The function must apply the callback to both numbers.
 

@@ -1,8 +1,8 @@
 # **Exercises - Topic 10: Special Functions in JavaScript**
 
-Below you will find 5 practical exercises on special functions in JavaScript.
+Below you'll find 5 practical exercises on special functions in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -28,7 +28,7 @@ delayedMessage();
 
 ### **Exercise 2: Counter with `setInterval()`**
 
-Create a function that starts a counter in the console that displays "Counter: X" every second, and stops after 5 seconds.
+Create a function that starts a counter in the console, which displays "Counter: X" every second and stops after 5 seconds.
 
 <details><summary>Show solution</summary>
 
@@ -52,9 +52,9 @@ startCounter();
 
 ---
 
-### **Exercise 3: Cancel an `setTimeout()` before it occurs**
+### **Exercise 3: Cancel a `setTimeout()` before it fires**
 
-Write code that starts an `setTimeout()` to display a message after 4 seconds, but cancels it after 2 seconds.
+Write code that starts a `setTimeout()` to display a message after 4 seconds, but cancels it after 2 seconds.
 
 <details><summary>Show solution</summary>
 
@@ -99,7 +99,7 @@ animateCounter();
 
 ### **Exercise 5: `debounce()` to avoid multiple calls in a row**
 
-Create a function `debounce()` that prevents a function from being executed multiple times in a short period of time. Use it with a function that prints a message when the user "types".
+Create a function `debounce()` that prevents a function from running multiple times within a short period of time. Use it with a function that prints a message when the user "types".
 
 <details><summary>Show solution</summary>
 

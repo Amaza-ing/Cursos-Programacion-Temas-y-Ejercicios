@@ -2,9 +2,9 @@
 
 ## 1. Introduction
 
-Until now you have written programs that normally execute sequentially.
+So far you have written programs that normally run sequentially.
 
-That means that Java executes the instructions one after another:
+That means Java runs the instructions one after another:
 
 ```java
 System.out.println("Step 1");
@@ -18,41 +18,41 @@ But in many real programs we need several tasks to be able to progress at the sa
 
 Examples:
 
-- download a file while the app is still running
-- respond to various user requests
-- process data in the background
-- execute scheduled tasks
-- do long calculations without blocking the entire program
-- read multiple files
-- consult various external services
+- downloading a file while the app keeps running
+- handling requests from several users
+- processing data in the background
+- running scheduled tasks
+- doing long calculations without blocking the entire program
+- reading multiple files
+- querying several external services
 
 For that we use **concurrency**.
 
 In this topic you will learn:
 
-- What is concurrency?
-- What is a thread of execution (_thread_)
+- What concurrency is
+- What a thread of execution (_thread_) is
 - How to create tasks with `Thread`
 - How to use `Runnable`
 - How to pause a thread with `sleep`
 - How to wait for a thread to end with `join`
-- What problems may appear with shared data
-- What is a race condition
+- What problems can come up with shared data
+- What a race condition is
 - How to use `synchronized` in a basic way
-- What is `ExecutorService`
+- What `ExecutorService` is
 - How to use `Callable` and `Future`
-- What are virtual threads as a modern idea?
-- Typical errors and good practices
+- What virtual threads are, as a modern idea
+- Common mistakes and best practices
 
 ---
 
-## 2. What is concurrency
+## 2. What is concurrency?
 
-**Concurrency** consists of organizing a program so that it can manage several tasks during the same period of time.
+**Concurrency** means organizing a program so that it can handle several tasks during the same period of time.
 
 It doesn't always mean that everything runs literally at the same instant.
 
-It means that the program can advance various tasks in a coordinated manner.
+It means the program can make progress on several tasks in a coordinated way.
 
 Conceptual example:
 
@@ -62,7 +62,7 @@ Tarea 2: mostrar progreso
 Tarea 3: responder al usuario
 ```
 
-Instead of blocking everything until a task is finished, the program can be organized to address multiple things.
+Instead of blocking everything until a task is finished, the program can be organized to handle several things.
 
 ---
 
@@ -86,16 +86,16 @@ Example:
 
 - a computer with multiple cores executes several calculations simultaneously
 
-### 3.3. simple rule
+### 3.3. A simple rule
 
-- Concurrency: organize multiple tasks
-- Parallelism: execute several tasks at the same time
+- Concurrency: organizing multiple tasks
+- Parallelism: running several tasks at the same time
 
-In this topic we will focus on the basis of concurrency.
+In this topic we'll focus on the basics of concurrency.
 
 ---
 
-## 4. What is a thread
+## 4. What is a thread?
 
 A **thread** is a thread of execution.
 
@@ -113,7 +113,7 @@ public class Main {
 }
 ```
 
-But Java allows creating more threads to execute tasks independently.
+But Java lets you create more threads to run tasks independently.
 
 ---
 
@@ -140,7 +140,7 @@ Two things happen here:
 - `thread.start()` starts a new thread
 - `main` continues to run
 
-Print order may vary.
+The order of the output may vary.
 
 ---
 
@@ -154,14 +154,14 @@ To start a thread, you must call:
 thread.start();
 ```
 
-Not to:
+Not:
 
 ```java
 thread.run();
 ```
 
 ### 6.1. `start()`
-Create a new thread of execution.
+Creates a new thread of execution.
 
 ```java
 thread.start();
@@ -224,7 +224,7 @@ Since `Runnable` is a functional interface, we can use a lambda.
 
 ---
 
-## 8. Create a class that implements `Runnable`
+## 8. Creating a class that implements `Runnable`
 
 You can also create your own class.
 
@@ -259,11 +259,11 @@ public class Main {
 }
 ```
 
-This form is useful when the task has more logic or needs attributes.
+This approach is useful when the task has more logic or needs attributes.
 
 ---
 
-## 9. Create multiple threads
+## 9. Creating multiple threads
 
 ```java
 public class Main {
@@ -281,9 +281,9 @@ public class Main {
 }
 ```
 
-The order of departure is not guaranteed.
+The output order is not guaranteed.
 
-You could see:
+You might see:
 
 ```text
 Thread 2
@@ -316,7 +316,7 @@ public class Main {
 }
 ```
 
-You could see:
+You might see:
 
 ```text
 Main thread
@@ -334,11 +334,11 @@ It depends on how the system schedules the threads.
 
 ---
 
-## 11. Pause a thread with `Thread.sleep`
+## 11. Pausing a thread with `Thread.sleep`
 
 `Thread.sleep` pauses the current thread for a while.
 
-The time is indicated in milliseconds.
+The time is given in milliseconds.
 
 ```java
 public class Main {
@@ -362,7 +362,7 @@ Here the program waits approximately 1 second.
 
 ## 12. `InterruptedException`
 
-`Thread.sleep` can launch `InterruptedException`.
+`Thread.sleep` can throw `InterruptedException`.
 
 That means that the thread can be interrupted while it is waiting.
 
@@ -382,7 +382,7 @@ This line is good practice:
 Thread.currentThread().interrupt();
 ```
 
-It is used to restore the interrupt state of the thread.
+It restores the thread's interrupt status.
 
 ---
 
@@ -411,11 +411,11 @@ public class Main {
 }
 ```
 
-Here the counter is executed in another thread while the main thread continues.
+Here the counter runs in another thread while the main thread carries on.
 
 ---
 
-## 14. Wait for a thread to end with `join`
+## 14. Waiting for a thread to finish with `join`
 
 Sometimes you want the main thread to wait for another thread to finish.
 
@@ -523,7 +523,7 @@ It seems simple, but if multiple threads call `increment` at the same time, the 
 
 ---
 
-## 17. What is a race condition
+## 17. What is a race condition?
 
 A **race condition** occurs when the result depends on the exact order in which multiple threads execute.
 
@@ -537,13 +537,13 @@ It looks like a single operation, but internally it involves several steps:
 
 1. read `value`
 2. add 1
-3. save the result
+3. store the result
 
-If two threads do this at the same time, they can step on each other.
+If two threads do this at the same time, they can overwrite each other's changes.
 
 ---
 
-## 18. Example of problem with shared counter
+## 18. Example of a problem with a shared counter
 
 ```java
 public class Main {
@@ -593,13 +593,13 @@ public class Counter {
 }
 ```
 
-You could expect:
+You might expect:
 
 ```text
 2000
 ```
 
-But a smaller number may come out.
+But you may get a smaller number.
 
 ---
 
@@ -636,7 +636,7 @@ public synchronized void increment() {
 }
 ```
 
-This blocks concurrent method access for the same object.
+This blocks concurrent access to the method for the same object.
 
 You could also synchronize the getter if you need maximum consistency:
 
@@ -706,9 +706,9 @@ Now the result should be:
 
 ---
 
-## 22. `synchronized` Blocks
+## 22. `synchronized` blocks
 
-You can also sync just part of the code.
+You can also synchronize just part of the code.
 
 ```java
 public class Counter {
@@ -732,7 +732,7 @@ This allows you to control exactly which part needs to be protected.
 
 ---
 
-## 23. Be careful with sharing mutable data
+## 23. Be careful when sharing mutable data
 
 Concurrency becomes more complex when multiple threads modify the same data.
 
@@ -744,7 +744,7 @@ Example of shared data:
 - balances
 - object states
 
-Initial rule of thumb:
+A first rule of thumb:
 
 > The less data shared between threads, the better.
 
@@ -752,11 +752,11 @@ Initial rule of thumb:
 
 ## 24. `ExecutorService`
 
-Creating threads manually with `new Thread(...)` is fine for learning, but in real applications a higher level tool is usually used:
+Creating threads manually with `new Thread(...)` is fine for learning, but in real applications a higher-level tool is usually used:
 
 - `ExecutorService`
 
-`ExecutorService` allows you to manage a set of threads and send tasks to be executed.
+`ExecutorService` lets you manage a set of threads and submit tasks for them to run.
 
 Imports:
 
@@ -767,9 +767,9 @@ import java.util.concurrent.Executors;
 
 ---
 
-## 25. Create an `ExecutorService`
+## 25. Creating an `ExecutorService`
 
-Example with a 2-wire pool:
+Example with a pool of 2 threads:
 
 ```java
 import java.util.concurrent.ExecutorService;
@@ -792,13 +792,13 @@ Here:
 
 - the pool has 2 threads
 - you can submit multiple tasks
-- the executor decides when to execute them
+- the executor decides when to run them
 
 ---
 
 ## 26. `execute`
 
-`execute` receives an `Runnable`.
+`execute` takes a `Runnable`.
 
 ```java
 executor.execute(() -> {
@@ -806,16 +806,16 @@ executor.execute(() -> {
 });
 ```
 
-Used when the task:
+Use it when:
 
-- does not return result
-- you do not need to collect a final value
+- the task doesn't return a result
+- you don't need to collect a final value
 
 ---
 
 ## 27. `shutdown`
 
-When you finish submitting tasks, you must close the executor.
+When you finish submitting tasks, you must shut down the executor.
 
 ```java
 executor.shutdown();
@@ -823,10 +823,10 @@ executor.shutdown();
 
 This means:
 
-- does not accept new tasks
-- let tasks already sent finish
+- it doesn't accept new tasks
+- it lets the tasks already submitted finish
 
-You must not forget to call `shutdown`.
+Don't forget to call `shutdown`.
 
 ---
 
@@ -869,7 +869,7 @@ We create a local variable to use within the lambda.
 
 But sometimes you want a task to return a value.
 
-That's why `Callable` exists.
+That's what `Callable` is for.
 
 Import:
 
@@ -891,9 +891,9 @@ Callable<Integer> task = () -> {
 
 ## 30. `Future`
 
-When you send an `Callable` to an executor, you receive an `Future`.
+When you submit a `Callable` to an executor, you get back a `Future`.
 
-An `Future` represents a result that will be available in the future.
+A `Future` represents a result that will be available in the future.
 
 Import:
 
@@ -952,7 +952,7 @@ public class Main {
 
 ## 32. `submit` with `Runnable`
 
-`submit` may also receive an `Runnable`.
+`submit` can also take a `Runnable`.
 
 ```java
 Future<?> future = executor.submit(() -> {
@@ -967,9 +967,9 @@ But if you just need to run a task with no result, `execute` is usually enough.
 
 ### 33.1. `execute`
 
-- receive `Runnable`
-- does not return result
-- used to execute simple tasks
+- takes a `Runnable`
+- doesn't return a result
+- is used to run simple tasks
 
 ```java
 executor.execute(() -> System.out.println("Hello"));
@@ -977,9 +977,9 @@ executor.execute(() -> System.out.println("Hello"));
 
 ### 33.2. `submit`
 
-- receive `Runnable` or `Callable`
-- returns an `Future`
-- allows you to check the result or completion
+- takes a `Runnable` or a `Callable`
+- returns a `Future`
+- lets you check the result or whether the task has finished
 
 ```java
 Future<Integer> future = executor.submit(() -> 42);
@@ -987,7 +987,7 @@ Future<Integer> future = executor.submit(() -> 42);
 
 ---
 
-## 34. Complete example: calculate sum in the background
+## 34. Complete example: calculating a sum in the background
 
 ```java
 import java.util.List;
@@ -1031,9 +1031,9 @@ public class Main {
 
 ## 35. Exceptions in concurrent tasks
 
-Exceptions in concurrent tasks require attention.
+Exceptions in concurrent tasks need special attention.
 
-If a task submitted with `Callable` fails, the exception is raised when calling:
+If a task submitted as a `Callable` fails, the exception shows up when you call:
 
 ```java
 future.get();
@@ -1047,21 +1047,21 @@ Callable<Integer> task = () -> {
 };
 ```
 
-When doing:
+When you do:
 
 ```java
 future.get();
 ```
 
-An exception will be thrown surrounding the original problem.
+an exception will be thrown that wraps the original problem.
 
 ---
 
-## 36. Interrupt a thread
+## 36. Interrupting a thread
 
 A thread can be interrupted.
 
-Interrupt is a way of asking a thread to stop or react.
+An interrupt is a way of asking a thread to stop or react.
 
 Example:
 
@@ -1079,7 +1079,7 @@ worker.start();
 worker.interrupt();
 ```
 
-The interruption does not magically kill the thread.  
+An interrupt doesn't magically kill the thread.  
 It is a signal that the thread must handle correctly.
 
 ---
@@ -1112,7 +1112,7 @@ This can help you understand which thread is executing which piece of code.
 
 ---
 
-## 38. Name a thread
+## 38. Naming a thread
 
 You can assign a name to a thread.
 
@@ -1128,7 +1128,7 @@ Names are useful for debugging.
 
 ---
 
-## 39. Collections and attendance
+## 39. Collections and concurrency
 
 Normal collections like `ArrayList` or `HashMap` are not intended to be modified by multiple threads at once without protection.
 
@@ -1141,7 +1141,7 @@ Thread thread1 = new Thread(() -> names.add("Laura"));
 Thread thread2 = new Thread(() -> names.add("Alex"));
 ```
 
-In real programs, to work with collections shared between threads there are specific tools in:
+In real programs, there are specific tools for working with collections shared between threads in:
 
 ```java
 java.util.concurrent
@@ -1153,7 +1153,7 @@ For example:
 - `CopyOnWriteArrayList`
 - `BlockingQueue`
 
-In this topic you just need to know the idea: sharing mutable collections between threads requires care.
+In this topic you only need the general idea: sharing mutable collections between threads requires care.
 
 ---
 
@@ -1165,8 +1165,8 @@ A virtual thread is a lightweight thread managed by the JVM.
 
 The main idea is:
 
-- create many concurrent tasks with lower cost than traditional threads
-- simplify certain types of applications, especially when there are many waiting operations
+- creating many concurrent tasks at a lower cost than traditional threads
+- simplifying certain types of applications, especially when there are lots of operations that wait
 
 Basic example:
 
@@ -1205,7 +1205,7 @@ public class Main {
 }
 ```
 
-This approach is modern, but to get started it is better to first understand:
+This approach is modern, but when you're starting out it's better to understand these first:
 
 - `Thread`
 - `Runnable`
@@ -1220,7 +1220,7 @@ This approach is modern, but to get started it is better to first understand:
 Concurrency can be useful when:
 
 - a task takes a long time
-- you need not to block the main program
+- you need to avoid blocking the main program
 - there are several independent operations
 - you work with input/output
 - you process many requests
@@ -1242,8 +1242,8 @@ Don't use concurrency if:
 
 - the program is very simple
 - a sequential solution is sufficient
-- no independent tasks
-- increases complexity without adding value
+- there are no independent tasks
+- it adds complexity without adding value
 - you don't know how to protect shared data
 
 Concurrency can improve a program, but it can also make it more difficult to understand.
@@ -1284,7 +1284,7 @@ public class Main {
 ```
 
 Here there are 4 tasks, but only 2 threads in the pool.  
-The executor organizes the execution.
+The executor organizes the execution as it goes.
 
 ---
 
@@ -1337,13 +1337,13 @@ public class Main {
 }
 ```
 
-This example simulates concurrent sending of notifications.
+This example simulates sending notifications concurrently.
 
 ---
 
-## 46. Typical mistakes when starting
+## 46. Common beginner mistakes
 
-### 46.1. Call `run()` instead of `start()`
+### 46.1. Calling `run()` instead of `start()`
 
 ```java
 thread.run(); // no crea un hilo nuevo
@@ -1355,15 +1355,15 @@ You must use:
 thread.start();
 ```
 
-### 46.2. Assume a fixed order of execution
+### 46.2. Assuming a fixed order of execution
 
-In concurrence, the order may vary.
+With concurrency, the order may vary.
 
 ### 46.3. Sharing unprotected mutable data
 
 This can produce race conditions.
 
-### 46.4. Forget `shutdown`
+### 46.4. Forgetting `shutdown`
 
 If you use `ExecutorService`, remember to close it.
 
@@ -1371,9 +1371,9 @@ If you use `ExecutorService`, remember to close it.
 executor.shutdown();
 ```
 
-### 46.5. Ignore `InterruptedException`
+### 46.5. Ignoring `InterruptedException`
 
-It is not advisable to leave the `catch` empty.
+It's not a good idea to leave the `catch` empty.
 
 Better:
 
@@ -1381,15 +1381,15 @@ Better:
 Thread.currentThread().interrupt();
 ```
 
-### 46.6. Create too many threads manually
+### 46.6. Creating too many threads manually
 
 For many tasks, it is best to use `ExecutorService`.
 
 ---
 
-## 47. Good practices
+## 47. Best practices
 
-- Start using concurrency only when it is really necessary.
+- At first, use concurrency only when it's really necessary.
 - Use `Runnable` for tasks without results.
 - Use `Callable` for tasks with results.
 - Use `ExecutorService` instead of creating many threads manually.
@@ -1402,18 +1402,18 @@ For many tasks, it is best to use `ExecutorService`.
 
 ---
 
-## 48. To take into account
+## 48. Things to keep in mind
 
 - A thread is a thread of execution.
 - `main` runs in the main thread.
 - `Thread.start()` creates a new thread.
 - `Runnable` represents a task with no result.
 - `Thread.sleep` pauses the current thread.
-- `join` allows waiting for a thread to finish.
+- `join` lets you wait for a thread to finish.
 - Shared data can cause race conditions.
 - `synchronized` allows you to protect critical sections.
 - `ExecutorService` manages thread pools.
-- `Callable` allows returning results.
+- `Callable` lets you return results.
 - `Future` represents a result that will come later.
 - Virtual threads are a modern tool for lightweight concurrency.
 
@@ -1423,14 +1423,14 @@ For many tasks, it is best to use `ExecutorService`.
 
 Concurrency allows a program to manage multiple tasks during the same period of time.
 
-In Java, the basis of concurrency starts with:
+In Java, the basics of concurrency start with:
 
 ```java
 Thread
 Runnable
 ```
 
-But in more realistic code you usually work with higher level tools:
+But in more realistic code you usually work with higher-level tools:
 
 ```java
 ExecutorService
@@ -1442,13 +1442,13 @@ You've also seen that concurrency introduces new problems, especially when multi
 
 That is why it is important to understand ideas like:
 
-- order not guaranteed
+- execution order is not guaranteed
 - race conditions
 - synchronization
-- interruptions
-- correct closure of executors
+- interrupts
+- shutting down executors properly
 
 Concurrency is a broad topic, but with this foundation you can already understand how Java executes tasks in parallel or in the background in a controlled way.
 
 ---
-In the next topic we will see what they are and how you can work with **Annotations**.
+In the next topic we'll look at **Annotations**: what they are and how you can work with them.

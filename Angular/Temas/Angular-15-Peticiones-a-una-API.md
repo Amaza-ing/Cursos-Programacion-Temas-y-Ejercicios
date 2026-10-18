@@ -2,20 +2,20 @@
 
 ## **1. Introduction**
 
-In Angular, the `HttpClient` service allows you to make HTTP requests to communicate with external APIs. It is an essential tool for retrieving and sending data between the client and the server.
+In Angular, the `HttpClient` service lets you make HTTP requests to communicate with external APIs. It is an essential tool for retrieving and sending data between the client and the server.
 
-In this topic you will learn:
+In this topic, you will learn:
 
 - How to configure and use `HttpClient`.
-- Make GET, POST, PUT and DELETE requests.
-- Handle errors in requests.
-- Use observables and subscriptions to manage asynchronous responses.
+- How to make GET, POST, PUT and DELETE requests.
+- How to handle errors in requests.
+- How to use observables and subscriptions to handle asynchronous responses.
 
 ---
 
-## **2. Initial Configuration**
+## **2. Initial setup**
 
-To use `HttpClient`, it is necessary to add the `provideHttpClient()` provider to the `app.config.ts` file.
+To use `HttpClient`, you need to add the `provideHttpClient()` provider to the `app.config.ts` file.
 
 #### **File: `app.config.ts`**
 
@@ -28,13 +28,13 @@ providers: [provideRouter(routes), provideHttpClient()],
 
 ---
 
-## **3. Make a GET Request**
+## **3. Making a GET request**
 
-The GET request is used to retrieve data from an API. We can access any public API, for this example we will use an [jsonplaceholder](https://jsonplaceholder.typicode.com/) API, which is a website that allows us to make requests for some data.
+The GET request is used to retrieve data from an API. We can access any public API; for this example, we will use an API from [jsonplaceholder](https://jsonplaceholder.typicode.com/), a website that lets us make requests for some sample data.
 
-To better manage all calls to APIs, you must create a service and manage all requests from there using functions.
+To manage all the API calls better, you should create a service and handle all the requests from there through functions.
 
-The services in this case will receive the name of the resource that we are managing, usually written in the singular. For example `user.service.ts` for users or `photo.service.ts` for photos. We can (and should) create as many services as necessary, and let each service manage only one type of resource for better organization.
+In this case, the services will be named after the resource we are managing, usually in the singular. For example, `user.service.ts` for users or `photo.service.ts` for photos. We can (and should) create as many services as necessary, and let each service manage only one type of resource for better organization.
 
 #### **File: `comment.service.ts`**
 
@@ -106,13 +106,13 @@ export class AppComponent implements OnInit {
 ```
 
 
-When we make an `GET` request using `httpClient` through `this.http.get<any[]>(this.API_URL)` we are obtaining an `Observable`, and to use the observables we must subscribe to them using the `subscribe` method to execute the request, which is what we have done in the example in the file `app.component.ts`.
+When we make a `GET` request with `httpClient` through `this.http.get<any[]>(this.API_URL)`, we get an `Observable`, and to use observables we must subscribe to them with the `subscribe` method so that the request runs, which is what we did in the example in the `app.component.ts` file.
 
-Requests to APIs can fail, so it is necessary to take this into account when using an `subscribe`.
+API requests can fail, so you need to take this into account when you use `subscribe`.
 
-- If everything goes well, the function in `next` will be executed, which will receive the request data.
+- If everything goes well, the function in `next` will run and receive the data from the request.
 
-- If something goes wrong, the function in `error` will be executed, which will receive the error data.
+- If something goes wrong, the function in `error` will run and receive the error data.
 
 ---
 
@@ -120,7 +120,7 @@ Requests to APIs can fail, so it is necessary to take this into account when usi
 
 ---
 
-## **4. Make a POST Request**
+## **4. Making a POST request**
 
 The POST request is used to send new data to the API.
 
@@ -163,7 +163,7 @@ addNewComment() {
 
 ---
 
-## **5. Make a PUT Request**
+## **5. Making a PUT request**
 
 The PUT request is used to update an existing resource.
 
@@ -202,7 +202,7 @@ updateExistingComment() {
 
 ---
 
-## **6. Make a DELETE Request**
+## **6. Making a DELETE request**
 
 The DELETE request deletes a resource from the API.
 
@@ -250,9 +250,9 @@ deleteComment(id: number) {
 
 ---
 
-## **7. Error Handling in HTTP Requests**
+## **7. Error handling in HTTP requests**
 
-Errors can also be handled using RxJS's `catchError` operator.
+You can also handle errors with the RxJS `catchError` operator.
 
 #### **File: `comment.service.ts`**
 
@@ -274,11 +274,11 @@ getComments(): Observable<any[]> {
 
 ## **8. Conclusion**
 
-- **`HttpClient`** allows you to make HTTP requests easily.
-- **GET, POST, PUT and DELETE** are the most used methods.
-- Possible errors must be managed.
-- Angular offers an efficient and modern integration to consume APIs.
+- **`HttpClient`** lets you make HTTP requests easily.
+- **GET, POST, PUT and DELETE** are the most commonly used methods.
+- Possible errors must be handled.
+- Angular offers an efficient, modern integration for consuming APIs.
 
 ---
 
-In the next topic, we will explore **how to perform unit tests using Jasmine and Karma**.
+In the next topic, we will explore **how to write unit tests using Jasmine and Karma**.

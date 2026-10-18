@@ -1,21 +1,21 @@
 # **Exercises - Topic 8: Queries with JOIN in MySQL**
 
-Below you will find 6 practical exercises to apply different types of `JOIN` and consult related data between several tables.
+Below you will find 6 practical exercises to apply different types of `JOIN` and query related data across several tables.
 
-All exercises use the following tables:
+All the exercises use the following tables:
 
 - `customers(id, first_name, last_name)`
--`orders(id, customer_id, created_at)`
+- `orders(id, customer_id, created_at)`
 - `order_details(order_id, product_id, quantity)`
 - `products(id, name, price)`
 
 ---
 
-### **Exercise 1: Show customers' full name along with their order IDs**
+### **Exercise 1: Show customers' full names along with their order IDs**
 
-Displays the `first_name`, `last_name`, and `id` of the order for each customer who placed an order.
+Display the `first_name`, `last_name` and the order `id` for each customer who has placed an order.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT c.first_name, c.last_name, o.id AS order_id
@@ -29,9 +29,9 @@ JOIN orders o ON c.id = o.customer_id;
 
 ### **Exercise 2: Get all orders (even if they do not have details)**
 
-Shows the order ID and the total quantity of products purchased. Also includes orders without details.
+Show the order ID and the total quantity of products purchased. Include the orders without details too.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT o.id AS order_id, SUM(od.quantity) AS total_items
@@ -44,11 +44,11 @@ GROUP BY o.id;
 
 ---
 
-### **Exercise 3: View products that appear in an order**
+### **Exercise 3: View the products that appear in an order**
 
-Lists the name of all products that have been included in at least one order.
+List the names of all the products that have been included in at least one order.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT DISTINCT p.name
@@ -60,11 +60,11 @@ JOIN order_details od ON p.id = od.product_id;
 
 ---
 
-### **Exercise 4: Show order history for a specific customer**
+### **Exercise 4: Show the order history of a specific customer**
 
-Displays customer orders with `id = 2`, indicating the date of the order and the name of each product included.
+Display the orders of the customer with `id = 2`, showing the order date and the name of each product included.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT o.created_at, p.name AS product_name
@@ -80,9 +80,9 @@ WHERE o.customer_id = 2;
 
 ### **Exercise 5: View all products, even those that have never been sold**
 
-Shows all products along with the total quantity sold. If a product has not been sold, it must appear with a null or 0 quantity.
+Show all the products along with the total quantity sold. If a product has not been sold, it must appear with a null or 0 quantity.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT p.name, SUM(od.quantity) AS total_vendida
@@ -95,11 +95,11 @@ GROUP BY p.id;
 
 ---
 
-### **Exercise 6: Obtain the total spending per customer**
+### **Exercise 6: Get the total spending per customer**
 
-Shows the name of each customer and the total amount spent, multiplying quantity by price of each product.
+Show the name of each customer and the total amount spent, multiplying the quantity by the price of each product.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT c.first_name, c.last_name, SUM(od.quantity * p.price) AS total_gastado

@@ -2,15 +2,15 @@
 
 ## **Instructions:**
 
-Below you will find exercises on the builder and `ngOnInit` in Angular.
+Below you will find exercises on the constructor and `ngOnInit` in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Using the Constructor**
+### **Exercise 1: Using the constructor**
 
-Create a component that initializes an `message` variable in the constructor and displays it on the screen.
+Create a component that initializes a `message` variable in the constructor and displays it on the screen.
 
 <details><summary>Show solution</summary>
 
@@ -77,9 +77,9 @@ export class ExampleComponent implements OnInit {
 
 ---
 
-### **Exercise 3: Differentiate Constructor and `ngOnInit`**
+### **Exercise 3: Telling the constructor and `ngOnInit` apart**
 
-Add `console.log()` to both methods and note the order in which they are executed.
+Add `console.log()` to both methods and observe the order in which they run.
 
 <details><summary>Show solution</summary>
 
@@ -112,9 +112,9 @@ export class ExampleComponent implements OnInit {
 
 ---
 
-### **Exercise 4: Test with a delay in `ngOnInit`**
+### **Exercise 4: Testing with a delay in `ngOnInit`**
 
-Simulates delayed data loading using `setTimeout()` inside `ngOnInit`.
+Simulate delayed data loading using `setTimeout()` inside `ngOnInit`.
 
 <details><summary>Show solution</summary>
 

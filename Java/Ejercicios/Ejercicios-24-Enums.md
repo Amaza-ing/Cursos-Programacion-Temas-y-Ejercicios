@@ -1,8 +1,8 @@
 # Exercises - Topic 24: Enums
 
-Below you will find **10 practical exercises** to work with **`enum`, `switch`, `values`, `valueOf`, attributes and own methods**.
+Below you will find **10 practical exercises** to work with **`enum`, `switch`, `values`, `valueOf`, attributes and custom methods**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -45,7 +45,7 @@ public class Main {
 
 ---
 
-## Exercise 3: Switch with enum
+## Exercise 3: Switch with an enum
 
 Use `switch` with `Weather`.
 
@@ -73,7 +73,7 @@ public class Main {
 
 ## Exercise 4: Loop through `values()`
 
-Iterates through all values of `Language`.
+Loop through all the values of `Language`.
 
 <details><summary>Show solution</summary>
 
@@ -95,7 +95,7 @@ public class Main {
 
 ## Exercise 5: Use `valueOf`
 
-Converts the text `LARGE` to `Size`.
+Convert the text `LARGE` to `Size`.
 
 <details><summary>Show solution</summary>
 
@@ -114,9 +114,9 @@ public class Main {
 
 ---
 
-## Exercise 6: Enum with attribute
+## Exercise 6: Enum with an attribute
 
-Create `ShippingMethod` with price.
+Create `ShippingMethod` with a price.
 
 <details><summary>Show solution</summary>
 
@@ -140,7 +140,7 @@ public enum ShippingMethod {
 
 ---
 
-## Exercise 7: Enum with method
+## Exercise 7: Enum with a method
 
 Create `AccountRole` with `canPublish()`.
 
@@ -160,7 +160,7 @@ public enum AccountRole {
 
 ---
 
-## Exercise 8: Overwrite `toString`
+## Exercise 8: Override `toString`
 
 Create `TicketStatus` with readable texts.
 
@@ -205,9 +205,9 @@ public class Main {
 
 ---
 
-## Exercise 10: Enum in class
+## Exercise 10: Enum in a class
 
-Creates `Task` with an `TaskPriority` attribute.
+Create `Task` with a `TaskPriority` attribute.
 
 <details><summary>Show solution</summary>
 

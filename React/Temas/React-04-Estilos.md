@@ -2,7 +2,7 @@
 
 ## **1. Introduction**
 
-In React, styles can be applied in several ways. Choosing the right approach from the start helps you keep your code more **tidy**, **scalable** and easier to work with.
+In React, styles can be applied in several ways. Choosing the right approach from the start helps you keep your code **tidier**, more **scalable** and easier to work with.
 
 In this topic you will learn:
 
@@ -10,13 +10,13 @@ In this topic you will learn:
 - How to use CSS per component.
 - How to write inline styles.
 - How to use dynamic classes with `className`.
-- Basic good practices for organizing styles.
+- Basic best practices for organizing styles.
 
 ---
 
-## **2. Global Styles (`index.css`)**
+## **2. Global styles (`index.css`)**
 
-Global styles affect the entire application. In Vite projects, they are typically loaded from `main.jsx`:
+Global styles affect the entire application. In Vite projects, they're usually loaded from `main.jsx`:
 
 ```js
 import "./index.css";
@@ -37,17 +37,17 @@ h1 {
 }
 ```
 
-This type of styles is useful for:
+These kinds of styles are useful for:
 
-- Reset or normalization
+- Resets or normalization
 - Fonts
-- Base styles of the application
+- The application's base styles
 
 ---
 
 ## **3. CSS per component (`.css` file + import)**
 
-A very common way to work in React is to create component-specific CSS and **import it** into the component file.
+A very common way to work in React is to create a specific CSS file for each component and **import it** into the component's file.
 
 ### **Example: component with its own CSS**
 
@@ -87,21 +87,21 @@ This approach is:
 
 - Simple to understand
 - Compatible with any project
-- Easy to scale if you are consistent with names
+- Easy to scale if you're consistent with naming
 
-> Note: This CSS is still global (classes exist throughout the project), but is **organized by component**.
+> Note: This CSS is still global (the classes exist throughout the project), but it's **organized by component**.
 
 ---
 
 ## **4. Inline styles (JavaScript object)**
 
-React allows you to apply inline styles using an object in the `style` property.
+React lets you apply inline styles using an object in the `style` prop.
 
-### **Key Features**
+### **Key features**
 
-- `style` receives an **item**.
-- CSS properties are written to **camelCase**.
-- Numeric values ​​are interpreted as `px` (in many cases).
+- `style` receives an **object**.
+- CSS properties are written in **camelCase**.
+- Numeric values are interpreted as `px` (in many cases).
 
 Example:
 
@@ -121,7 +121,7 @@ export default Card;
 
 ### **When to use inline styles**
 
-- For very specific styles
+- For one-off styles
 - For values calculated in real time
 - For prototypes
 
@@ -134,7 +134,7 @@ export default Card;
 
 ## **5. `className` in React (very important)**
 
-In React `class` is not used, `className` is used.
+In React you don't use `class`: you use `className`.
 
 This is required:
 
@@ -148,7 +148,7 @@ function Alert() {
 
 ## **6. Dynamic classes with `className`**
 
-Many times, we want to change the class based on a condition.
+We often want to change the class based on a condition.
 
 Example:
 
@@ -181,11 +181,11 @@ export default StatusBadge;
 
 ---
 
-## **7. CSS Modules (isolate styles per component)**
+## **7. CSS Modules (isolating styles per component)**
 
-**CSS Modules** allow classes to be **isolated** per file, avoiding name collisions.
+**CSS Modules** keep classes **isolated** per file, avoiding name collisions.
 
-In Vite (and in many environments), they work by creating the file with extension:
+In Vite (and in many other environments), you use them by creating the file with the extension:
 
 - `Component.module.css`
 
@@ -223,21 +223,21 @@ export default ProfileCard;
 
 Advantages:
 
-- There are no class collisions.
-- Really “per component” styles.
-- Makes it easier to maintain large projects.
+- No class collisions.
+- Truly “per-component” styles.
+- Makes large projects easier to maintain.
 
 ---
 
-## **8. Good practices for organizing styles**
+## **8. Best practices for organizing styles**
 
-- Maintain global styles only for the essentials.
+- Keep global styles for the essentials only.
 - For reusable components, use CSS per component or CSS Modules.
 - Avoid mixing many inline styles with traditional CSS.
 - Name classes with intent: `primaryButton`, `errorText`, `cardHeader`.
 
 ---
-## **9. To take into account**
+## **9. Things to keep in mind**
 
 - In React, `className` replaces `class`.
 - You can apply styles in many ways: global, per component, inline or CSS Modules.
@@ -249,4 +249,4 @@ Advantages:
 
 ---
 
-In the next topic we will look at **components on a line** and how to write small, reusable components in a clean way.
+In the next topic we'll look at **one-line components** and how to write small, reusable components cleanly.

@@ -1,14 +1,14 @@
-# **Topic 1: Introduction to Angular and Environment Configuration**
+# **Topic 1: Introduction to Angular and Environment Setup**
 
 ## **1. What is Angular?**
 
 Angular is a web development framework created by Google, based on TypeScript. It allows you to build scalable, modular and maintainable web applications.
 
-### **Key Features of Angular:**
+### **Key features of Angular:**
 
-- Based on **TypeScript**, a JavaScript superset.
+- Based on **TypeScript**, a superset of JavaScript.
 - Uses a system of **components** to build interfaces.
-- Offers **bi-directional data linking**.
+- Offers **two-way data binding**.
 - Supports **routing** and **state management**.
 - It has a modular architecture based on **modules and services**.
 
@@ -27,9 +27,9 @@ npm install -g @angular/cli
 ```
 
 
-> Note: It is required to have Node.js and npm installed. You can download it from [nodejs.org](https://nodejs.org/).
+> Note: You need to have Node.js and npm installed. You can download them from [nodejs.org](https://nodejs.org/).
 
-## **3. Installation Verification**
+## **3. Verifying the installation**
 
 Once Angular CLI is installed, verify that the installation was successful by running the following command in the terminal:
 
@@ -55,16 +55,16 @@ ng new my-project
 
 - `my-project`: Project name (you can change it to whatever you prefer).
 - During creation, you will be asked:
-  - The type of styles to use (**CSS, SCSS, SASS, LESS**), you can select `CSS` to start.
-  - If you want to include **SSR** (choose `No` unless you want Server Side Rendering).
+  - Which style format to use (**CSS, SCSS, SASS, LESS**): you can select `CSS` to start.
+  - Whether you want to include **SSR** (choose `No` unless you want Server-Side Rendering).
 
 This command will generate the base structure of an Angular project in the `my-project` folder.
 
 ---
 
-## **5. Raise the development server**
+## **5. Starting the development server**
 
-Once the project is created, navigate inside the project folder and run:
+Once the project is created, go into the project folder and run:
 
 ```sh
 cd my-project
@@ -107,12 +107,12 @@ my-project/
 ```
 
 
-### **Brief explanation of key files:**
+### **A brief explanation of the key files:**
 
 - **`src/app/`**: Contains the components, modules and services of the application.
 - **`main.ts`**: Application startup file.
 - **`index.html`**: Main page where the Angular application is mounted.
-- **`styles.css`**: Global style file.
+- **`styles.css`**: Global stylesheet.
 - **`angular.json`**: Angular project configuration file.
 
 ---
@@ -121,7 +121,7 @@ my-project/
 
 ---
 
-## **7. Angular Language Service Extension**
+## **7. The Angular Language Service extension**
 
 Add the Angular Language Service extension to Visual Studio Code to make developing applications in Angular easier.
 
@@ -139,14 +139,14 @@ npm install -g @angular/cli
 ```
 
 
-Creation of new project
+Create a new project
 
 ```sh
 ng new my-project
 ```
 
 
-Raise the project
+Start the project
 
 ```sh
 ng serve
@@ -155,4 +155,4 @@ ng serve
 
 ---
 
-In the next topic, we will explore in depth **components in Angular** and how to structure our application correctly.
+In the next topic, we will explore **components in Angular** in depth and how to structure our application properly.

@@ -1,14 +1,14 @@
-# **Exercises - Topic 16: Performing Unit Tests with Jasmine and Karma**
+# **Exercises - Topic 16: Writing Unit Tests with Jasmine and Karma**
 
 ## **Instructions:**
 
-Below you will find exercises on how to unit test in Angular using Jasmine and Karma.
+Below you will find exercises on how to write unit tests in Angular using Jasmine and Karma.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Test a Simple Function**
+### **Exercise 1: Test a simple function**
 
 Write a test for a function that adds two numbers.
 
@@ -42,7 +42,7 @@ describe("sumar", () => {
 
 ---
 
-### **Exercise 2: Test an Angular Component**
+### **Exercise 2: Test an Angular component**
 
 Create a test for a simple component that displays a message.
 
@@ -95,7 +95,7 @@ describe("MensajeComponent", () => {
 
 ---
 
-### **Exercise 3: Test an Angular Service**
+### **Exercise 3: Test an Angular service**
 
 Write a test for a service that returns a greeting.
 
@@ -140,7 +140,7 @@ describe("SaludoService", () => {
 
 ---
 
-### **Exercise 4: Simulate a Service with Spy**
+### **Exercise 4: Mock a service with a spy**
 
 Mock a service using `spyOn` for a component that depends on a service.
 
@@ -220,7 +220,7 @@ describe("UsuarioComponent", () => {
 
 ---
 
-### **Exercise 5: Test an Asynchronous Method**
+### **Exercise 5: Test an asynchronous method**
 
 Write a test for a method that returns an observable.
 

@@ -2,17 +2,17 @@
 
 ## 1. Introduction
 
-In Java you have worked with **primitive types** such as:
+In Java you've worked with **primitive types** such as:
 
 - `int`, `double`, `boolean`, `char`, etc.
 
 These types are fast and efficient, but they have an important limitation:
 
-- **They are not objects**, therefore they do not have methods and cannot be used directly in some language contexts.
+- **They aren't objects**, so they don't have methods and can't be used directly in some parts of the language.
 
-To solve this, Java offers wrappers for primitive types.
+To solve this, Java offers **wrappers** (wrapper classes) for the primitive types.
 
-Wrappers allow:
+Wrappers let you:
 
 - Treat primitive values as **objects**
 - Use useful methods (parsing, comparisons, constants...)
@@ -21,11 +21,11 @@ Wrappers allow:
 
 In this topic you will learn:
 
-- What are wrappers and what are they for?
-- What is **autoboxing** and **unboxing**
+- What wrappers are and what they're for
+- What **autoboxing** and **unboxing** are
 - How to convert between `String` and numbers with `parseXxx` and `valueOf`
 - Constants like `MAX_VALUE` and `MIN_VALUE`
-- Comparison of wrappers and typical errors
+- Comparing wrappers and typical mistakes
 
 ---
 
@@ -33,7 +33,7 @@ In this topic you will learn:
 
 ---
 
-## 2. What is a wrapper
+## 2. What a wrapper is
 
 A **wrapper** is a class that “wraps” a primitive value inside an object.
 
@@ -54,11 +54,11 @@ They are all in `java.lang`, so you don't need to import them.
 
 ---
 
-## 3. Why wrappers exist (when do you need them)
+## 3. Why wrappers exist (when you need them)
 
-### 3.1. Collections (primitives not accepted)
+### 3.1. Collections (they don't accept primitives)
 
-Later you will see collections like `List`, `Set` or `Map`. These structures store **objects**, not primitives.
+Later you'll see collections like `List`, `Set` or `Map`. These structures store **objects**, not primitives.
 
 For example, this is NOT valid:
 
@@ -74,7 +74,7 @@ The correct way uses `Integer`:
 
 ---
 
-### 3.2. You need `null` to represent “worthless”
+### 3.2. You need `null` to represent “no value”
 
 A primitive always has a value. For example, an `int` is always a number.
 
@@ -82,9 +82,9 @@ But sometimes you want to represent:
 
 - “There is no age”
 - “It has not been calculated yet”
-- “Unknown fact”
+- “Unknown data”
 
-With primitives you cannot use `null`, with wrappers you can:
+With primitives you can't use `null`; with wrappers you can:
 
 ```java
 Integer age = null;
@@ -98,15 +98,15 @@ Boolean isActive = null;
 
 Wrappers offer methods to:
 
-- Convert text to number
-- Convert number to text
+- Convert text to a number
+- Convert a number to text
 - Compare values
-- Obtain type limits (maximums and minimums)
+- Get the type's limits (maximums and minimums)
 - Validate characters (`Character`)
 
 ---
 
-## 4. Create wrappers
+## 4. Creating wrappers
 
 ### 4.1. Direct assignment (recommended)
 
@@ -117,9 +117,9 @@ Boolean isPremium = true;
 Character initial = 'A';
 ```
 
-**autoboxing** happens here, we'll see about that shortly.
+**Autoboxing** happens here; we'll look at it shortly.
 
-### 4.2. `valueOf(...)` (explicit form, also widely used)
+### 4.2. `valueOf(...)` (the explicit way, also widely used)
 
 ```java
 Integer score = Integer.valueOf(10);
@@ -151,8 +151,8 @@ int number = boxed; // unboxing
 
 ---
 
-## 6. Unboxing and `null` (typical error)
-If you try to unbox `null`, you will get an `NullPointerException`.
+## 6. Unboxing and `null` (a common mistake)
+If you try to unbox `null`, you'll get a `NullPointerException`.
 
 Example:
 
@@ -176,7 +176,7 @@ if (value != null) {
 
 ---
 
-## 7. Parsing: convert `String` to number (`parseXxx` methods)
+## 7. Parsing: converting a `String` to a number (`parseXxx` methods)
 
 ### 7.1. `Integer.parseInt(...)`
 
@@ -227,7 +227,7 @@ Quick comparison:
 
 ---
 
-## 9. Convert number to text
+## 9. Converting a number to text
 
 ### 9.1. `String.valueOf(...)`
 
@@ -265,7 +265,7 @@ System.out.println(Double.MAX_VALUE);
 
 ---
 
-## 11. Compare wrappers
+## 11. Comparing wrappers
 
 ### 11.1. `equals(...)`
 
@@ -276,9 +276,9 @@ Integer b = 100;
 System.out.println(a.equals(b)); // true
 ```
 
-### 11.2. `==` (beware)
+### 11.2. `==` (careful)
 
-`==` on objects compares references. In wrappers it can give confusing results due to the internal cache of `Integer`.
+`==` on objects compares references. With wrappers it can give confusing results because of `Integer`'s internal cache.
 
 ```java
 Integer a = 200;
@@ -322,9 +322,9 @@ System.out.println(Character.isWhitespace(c3)); // true
 
 ---
 
-## 14. Complete Guided Examples
+## 14. Complete guided examples
 
-### 14.1. Validate if an `String` is an integer before converting
+### 14.1. Checking whether a `String` is an integer before converting it
 
 ```java
 public class Main {
@@ -352,7 +352,7 @@ public class Main {
 
 ---
 
-### 14.2. Convert text to number to calculate a total
+### 14.2. Converting text to a number to calculate a total
 
 ```java
 public class Main {
@@ -372,7 +372,7 @@ public class Main {
 
 ---
 
-### 14.3. Use `null` with wrappers
+### 14.3. Using `null` with wrappers
 
 ```java
 public class Main {
@@ -390,10 +390,10 @@ public class Main {
 
 ---
 
-## 15. To take into account
+## 15. Things to keep in mind
 
 - Wrappers represent primitives as objects.
-- They are key for collections and to use `null` as “worthless”.
+- They're key for collections and for using `null` as “no value”.
 - Autoboxing/unboxing simplifies the code, but be careful with `null`.
 - `parseXxx` converts `String` → primitive.
 - `valueOf` returns wrappers.
@@ -401,4 +401,4 @@ public class Main {
 
 ---
 
-In the next topic we will delve into **method overloading**, and you will see how Java allows methods with the same name but different parameters.
+In the next topic we'll dive into **method overloading**, and you'll see how Java allows methods with the same name but different parameters.

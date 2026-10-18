@@ -1,12 +1,12 @@
 # Exercises - Topic 11: Copilot in Word, Excel, PowerPoint, Outlook and Teams
 
-Below you will find practical exercises for working with Copilot in Microsoft 365 applications. Try to solve them before consulting the solution.
+Below, you'll find hands-on exercises for working with Copilot in Microsoft 365 apps. Try to solve them before looking at the solution.
 
 ## Exercise 1: Create a draft in Word
 
-Imagine that you need to write a short document to explain to a company why they should train their team in generative artificial intelligence. Write a prompt for Copilot in Word.
+Imagine that you need to write a short document explaining to a company why it should train its team in generative artificial intelligence. Write a prompt for Copilot in Word.
 
-The prompt should ask:
+The prompt should ask for:
 
 - A professional tone.
 - A clear structure.
@@ -24,7 +24,7 @@ Redacta un documento profesional de aproximadamente una página dirigido a la di
 ```
 
 
-This prompt is appropriate because it indicates the recipient, the purpose, the structure, the approximate length, and the expected tone.
+This prompt is suitable because it states the recipient, the purpose, the structure, the approximate length and the expected tone.
 
 </details>
 
@@ -66,9 +66,9 @@ Imagine you have a sales table with these columns:
 - Category.
 - Month.
 - Units sold.
-- Income.
+- Revenue.
 - Cost.
-- Benefit.
+- Profit.
 
 Write a prompt for Copilot in Excel that helps analyze the data.
 
@@ -82,13 +82,13 @@ Analiza esta tabla de ventas y resume los principales resultados. Identifica los
 ```
 
 
-This prompt allows Copilot to not only describe the data, but also look for patterns, possible errors, and useful conclusions.
+This prompt lets Copilot not only describe the data, but also look for patterns, possible errors and useful conclusions.
 
 </details>
 
-## Exercise 4: Request a formula in Excel
+## Exercise 4: Ask for a formula in Excel
 
-You need to calculate the profit of each row by subtracting the cost from the income. The revenue column is `E` and the cost column is `F`. Write the prompt that you would use with Copilot in Excel.
+You need to calculate the profit of each row by subtracting the cost from the revenue. The revenue column is `E` and the cost column is `F`. Write the prompt that you would use with Copilot in Excel.
 
 <details>
 <summary>Show solution</summary>
@@ -107,7 +107,7 @@ The expected formula would be:
 ```
 
 
-You can then drag or copy down to calculate the profit for the rest of the rows.
+You can then drag it or copy it down to calculate the profit for the rest of the rows.
 
 </details>
 
@@ -125,13 +125,13 @@ Crea una presentación de 6 diapositivas sobre el uso responsable de Copilot en 
 ```
 
 
-This prompt is useful because it indicates the number of slides, the audience, the structure, and the desired visual style.
+This prompt is useful because it states the number of slides, the audience, the structure and the desired visual style.
 
 </details>
 
-## Exercise 6: Compose an email in Outlook
+## Exercise 6: Write an email in Outlook
 
-Imagine you need to send an email to your team reminding them not to enter sensitive data into unauthorized AI tools. Write a prompt for Copilot in Outlook.
+Imagine you need to send an email to your team reminding them not to enter confidential data into unauthorized AI tools. Write a prompt for Copilot in Outlook.
 
 <details>
 <summary>Show solution</summary>
@@ -163,7 +163,7 @@ Gracias por vuestra colaboración.
 </details>
 
 ## Exercise 7: Summarize a meeting in Teams
-Imagine that you have had a meeting about the implementation of Copilot in a company. Write a prompt to ask Copilot in Teams for a useful summary for the team.
+Imagine that you've had a meeting about rolling out Copilot in a company. Write a prompt to ask Copilot in Teams for a summary that is useful for the team.
 
 <details>
 <summary>Show solution</summary>
@@ -175,6 +175,6 @@ Resume la reunión en cuatro apartados: temas tratados, decisiones tomadas, tare
 ```
 
 
-This prompt is more useful than simply asking to “summarize the meeting,” because it organizes the information into actionable elements.
+This prompt is more useful than simply asking it to “summarize the meeting”, because it organizes the information into actionable items.
 
 </details>

@@ -4,30 +4,30 @@
 
 In the previous topics we have worked mainly with **GitHub Copilot**, a tool aimed at software development.
 
-In this topic we change the focus slightly and work with **Microsoft Copilot** in a more general context of productivity, search, analysis and daily support.
+In this topic we change the focus slightly and work with **Microsoft Copilot** in a more general context of productivity, search, analysis and everyday support.
 
 Microsoft Copilot can be used from different environments, including:
 
 - the Microsoft Edge browser;
-- Windows, if the functionality is available on the computer;
+- Windows, if the feature is available on your computer;
 - Microsoft 365 Copilot Chat;
-- Microsoft 365 applications, which we will see in the next topic.
+- Microsoft 365 apps, which we will see in the next topic.
 
-The goal of this topic is not to learn a closed list of buttons, because Copilot changes frequently. The objective is to learn to use it judiciously to search, summarize, compare, transform information and work more efficiently.
+The goal of this topic is not to memorize a fixed list of buttons, because Copilot changes frequently. The aim is to learn to use it wisely to search, summarize, compare and transform information, and to work more efficiently.
 
 ---
 
-## 2. Objectives of the topic
+## 2. Topic objectives
 
 By the end of this topic you should be able to:
 
 - Understand what Microsoft Copilot is for outside the programming environment.
-- Differentiate Copilot Chat, Copilot in Edge and Copilot integrated in Windows.
-- Use Copilot in Edge to summarize compatible pages and documents.
-- Formulate useful prompts for search, summary and analysis.
-- Use Copilot as support to understand complex information.
-- Identify limits, risks and good practices.
-- Critically review the responses generated.
+- Tell the difference between Copilot Chat, Copilot in Edge and the Copilot built into Windows.
+- Use Copilot in Edge to summarize supported pages and documents.
+- Write useful prompts for searching, summarizing and analyzing.
+- Use Copilot to help you understand complex information.
+- Identify limitations, risks and best practices.
+- Critically review the generated responses.
 
 ---
 
@@ -35,7 +35,7 @@ By the end of this topic you should be able to:
 
 Microsoft Copilot is an artificial intelligence assistant that allows you to interact with information using natural language.
 
-Instead of just typing a traditional search, we can ask you tasks like:
+Instead of just typing a traditional search, we can ask it to do tasks like:
 
 ```text
 Resume esta página en cinco ideas principales.
@@ -63,18 +63,18 @@ The key is to understand that Copilot does not replace human judgment. Copilot h
 
 # Part 1. Copilot in Microsoft Edge
 
-## 4. What Copilot allows you to do in Edge
+## 4. What Copilot lets you do in Edge
 
-Microsoft Edge can integrate Copilot Chat into the browser. This allows AI to be used while we are consulting compatible web pages or documents.
+Microsoft Edge can integrate Copilot Chat into the browser. This lets you use AI while browsing supported web pages or documents.
 
 Some common uses are:
 
 - summarize a web page;
 - extract main ideas;
-- ask questions about open content;
+- ask questions about the open content;
 - ask for simpler explanations;
 - compare information;
-- prepare an email from a page;
+- draft an email based on a page;
 - generate a summary table;
 - convert a long page into a list of actions;
 - analyze technical documentation.
@@ -85,7 +85,7 @@ For example, if we are reading a long page about a tool, we might ask:
 Resume esta página en un máximo de 8 puntos. Señala también qué información sería importante para una persona que empieza desde cero.
 ```
 
-We can also ask for:
+We can also ask:
 
 ```text
 Explícame esta documentación paso a paso y dime qué tendría que hacer primero para empezar.
@@ -93,32 +93,33 @@ Explícame esta documentación paso a paso y dime qué tendría que hacer primer
 
 ---
 
-## 5. Open Copilot in Edge step by step
+## 5. Opening Copilot in Edge step by step
 
-> Exact button names may vary depending on the version of Edge, the account used, and your organization settings.
+> Exact button names may vary depending on the version of Edge, the account used, and your organization's settings.
 
 ### Step 1. Open Microsoft Edge
 
 Open the **Microsoft Edge** browser.
 
-### Step 2. Log in
+### Step 2. Sign in
 
 Sign in with a supported account:
 
 - personal Microsoft account;
 - educational account;
 - professional or corporate account.
-Experience may vary by account. In enterprise environments, some features may be limited by the administrator.
+
+The experience may vary depending on the account. In enterprise environments, some features may be limited by the administrator.
 
 ### Step 3. Open the Copilot panel
 
 Look for the **Copilot** icon at the top or side of the browser.
 
-Clicking will open a chat panel where you can type instructions.
+Clicking it opens a chat panel where you can type instructions.
 
 ### Step 4. Open a supported page or document
 
-Opens a web page, technical documentation, or supported document in the browser.
+Open a web page, technical documentation or a supported document in the browser.
 
 ### Step 5. Ask a question about the content
 
@@ -134,7 +135,7 @@ Or also:
 ¿Qué partes de esta página son más importantes para alguien que está aprendiendo el tema por primera vez?
 ```
 
-### Step 6. Order a second version
+### Step 6. Ask for a second version
 
 A good practice is not to stop at the first answer. You can continue with:
 
@@ -148,7 +149,7 @@ Organiza la información en una tabla con tres columnas: concepto, explicación 
 
 ---
 
-## 6. Useful Prompts for Edge
+## 6. Useful prompts for Edge
 
 ### 6.1. Summarize a page
 
@@ -174,7 +175,7 @@ Crea una tabla con los conceptos más importantes de esta página. Incluye: conc
 Convierte esta página en una explicación didáctica para alumnos. Organízala por apartados y añade ejemplos sencillos.
 ```
 
-### 6.5. Detect questionable points
+### 6.5. Spot unclear points
 
 ```text
 Indica qué partes de esta página podrían ser confusas o requerir una explicación adicional.
@@ -210,11 +211,11 @@ A better prompt would be:
 Resume esta página en español para una persona que está empezando. Usa un máximo de 7 puntos, evita tecnicismos innecesarios y termina con una lista de conceptos que debería repasar.
 ```
 
-This second prompt is better because it indicates:
+This second prompt is better because it specifies:
 
 - language;
-- public level;
-- extension;
+- audience level;
+- length;
 - format;
 - style;
 - expected final result.
@@ -237,7 +238,7 @@ We can also ask for:
 Haz una explicación progresiva: primero una explicación muy sencilla, después una explicación intermedia y finalmente una explicación más técnica.
 ```
 
-This type of prompt helps to adapt the response to the level of the students.
+This type of prompt helps tailor the response to the students' level.
 
 ---
 
@@ -269,34 +270,35 @@ This way of using Copilot is especially useful because we are not simply asking 
 
 On supported computers, Copilot may be available as an application or assistant built into Windows.
 
-Depending on your system version, region, account, and organization policies, you can allow tasks such as:
+Depending on your system version, region, account and organization policies, it may allow tasks such as:
 
-- ask general questions;
-- help write texts;
-- search for information;
-- interact with certain files or content;
-- summarize information;
-- help with productivity tasks;
-- guide the user in using the system.
+- asking general questions;
+- helping write texts;
+- searching for information;
+- interacting with certain files or content;
+- summarizing information;
+- helping with productivity tasks;
+- guiding users as they use the system.
 
-It is important to note that available features may change. Therefore, in a professional course it is advisable to teach the work approach and not depend on a single interface.
+Keep in mind that the available features may change. That's why, in a professional course, it makes sense to teach the way of working rather than depend on a single interface.
 
 ---
 
-## 11. Basic use of Copilot in Windows step by step
+## 11. Basic use of Copilot on Windows step by step
 
 ### Step 1. Open Copilot
 
-Search for **Copilot** from the start menu or from the access available on your device.
+Search for **Copilot** in the Start menu or use the shortcut available on your device.
 
-### Step 2. Check active account
+### Step 2. Check the active account
 
-Check if you are using:
+Check whether you are using:
 
-- personal account;
-- educational account;
-- company account.
-Your account may determine what features are available to you and what data protections apply.
+- a personal account;
+- an educational account;
+- a company account.
+
+Your account may determine which features are available to you and which data protections apply.
 
 ### Step 3. Write a clear instruction
 
@@ -308,13 +310,13 @@ Ayúdame a preparar una lista de pasos para organizar una reunión de seguimient
 
 ### Step 4. Add context
 
-The answer will be better if you indicate the context:
+The answer will be better if you give it context:
 
 ```text
 Ayúdame a preparar una lista de pasos para organizar una reunión de seguimiento de proyecto. La reunión será de 30 minutos, participarán 5 personas y el objetivo es revisar avances, bloqueos y próximas tareas.
 ```
 
-### Step 5. Request a specific format
+### Step 5. Ask for a specific format
 
 ```text
 Organiza la respuesta en una tabla con tres columnas: momento de la reunión, objetivo y preguntas que puedo hacer.
@@ -322,7 +324,7 @@ Organiza la respuesta en una tabla con tres columnas: momento de la reunión, ob
 
 ---
 
-## 12. Useful Prompts for Copilot on Windows
+## 12. Useful prompts for Copilot on Windows
 
 ### 12.1. Organize tasks
 
@@ -356,13 +358,13 @@ Explícame para qué sirve esta herramienta y dame una guía de primeros pasos p
 
 ---
 
-# Part 3. Smart Search with Copilot
+# Part 3. Smart search with Copilot
 
 ## 13. Difference between searching and asking
 
 A traditional search usually returns links.
 
-A question to Copilot may return an elaborate response.
+A question to Copilot may return a detailed answer.
 
 For example, in a traditional search we would write:
 
@@ -376,7 +378,7 @@ In Copilot we could write:
 Explícame qué es Copilot Studio, para qué sirve y en qué se diferencia de Microsoft Copilot y GitHub Copilot. Usa ejemplos prácticos.
 ```
 
-The second option offers a more elaborate answer, but also requires revision. If the data is important, it should be compared with official documentation.
+The second option offers a more detailed answer, but it also needs to be reviewed. If the information is important, check it against official documentation.
 
 ---
 
@@ -432,22 +434,22 @@ Dame un ejemplo sencillo de aplicación de esta documentación en un caso real.
 
 ### Step 5. Verify
 
-After receiving the response, review the original documentation and check if the proposed steps are correct.
+After receiving the response, review the original documentation and check whether the proposed steps are correct.
 
 ---
 
 # Part 4. Content generation with Copilot
 
-## 16. What type of content can you generate
+## 16. What kind of content it can generate
 
 Copilot can help create:
 
-- drafts of texts;
+- text drafts;
 - summaries;
-- schemes;
+- outlines;
 - tables;
 - task lists;
-- mail;
+- emails;
 - explanations;
 - scripts;
 - proposals;
@@ -458,8 +460,8 @@ But it is important to review:
 
 - accuracy;
 - tone;
-- adaptation to the public;
-- possible inventions;
+- suitability for the audience;
+- possible made-up information;
 - sensitive data;
 - biases;
 - final format.
@@ -472,12 +474,12 @@ But it is important to review:
 
 Before asking for anything, think:
 
-- what do I want to achieve?;
-- who is the text for?
-- what tone do I need?;
-- What extension should it have?
-- What information should be included?
-- what information should you avoid?
+- What do I want to achieve?
+- Who is the text for?
+- What tone do I need?
+- How long should it be?
+- What information should it include?
+- What information should it avoid?
 
 ### Step 2. Write a complete prompt
 
@@ -489,16 +491,16 @@ Redacta una explicación introductoria sobre Microsoft Copilot para alumnos de u
 
 ### Step 3. Review the result
 
-Check if:
+Check whether it:
 
-- responds exactly to what was requested;
+- does exactly what was asked;
 - contains errors;
-- invents information;
+- makes up information;
 - repeats ideas;
-- use an appropriate tone;
-- needs simplification.
+- uses an appropriate tone;
+- needs simplifying.
 
-### Step 4. Request an upgrade
+### Step 4. Ask for an improvement
 
 ```text
 Mejora la respuesta anterior. Hazla más clara, menos repetitiva y añade ejemplos más concretos.
@@ -506,11 +508,11 @@ Mejora la respuesta anterior. Hazla más clara, menos repetitiva y añade ejempl
 
 ### Step 5. Do the final human edit
 
-The final version must be reviewed by one person. Copilot can speed up the work, but the responsibility for the content remains human.
+The final version must be reviewed by a person. Copilot can speed up the work, but the responsibility for the content remains human.
 
 ---
 
-# Part 5. Limits and good practices
+# Part 5. Limitations and best practices
 
 ## 18. What we should not do with Copilot on Windows or Edge
 
@@ -521,13 +523,13 @@ We should not:
 - enter unnecessary personal data;
 - share confidential information without permission;
 - accept answers without verifying them;
-- use Copilot as the sole source on critical issues;
+- use Copilot as the only source on critical matters;
 - copy results without adapting them;
 - ask for decisions that require professional responsibility without human review.
 
 ---
 
-## 19. Good practices
+## 19. Best practices
 
 General recommendations:
 
@@ -548,30 +550,30 @@ General recommendations:
 
 Before using a Copilot response, review:
 
-- [ ] Does the response respond exactly to what was requested?
-- [ ] Is the content updated?
+- [ ] Does the response answer exactly what was asked?
+- [ ] Is the content up to date?
 - [ ] Are there claims that should be verified?
 - [ ] Is the tone appropriate?
 - [ ] Has confidential information been included?
 - [ ] Is the result too generic?
-- [ ] Do you need human review?
+- [ ] Does it need human review?
 - [ ] Is there fabricated or dubious data?
-- [ ] Should it be compared with an official source?
+- [ ] Should it be checked against an official source?
 
 ---
 
 ## 21. Summary of the topic
 
-In this topic we have seen how to use Microsoft Copilot in Windows and Edge as a productivity and information analysis assistant.
+In this topic we have seen how to use Microsoft Copilot on Windows and in Edge as an assistant for productivity and information analysis.
 
 The main ideas are:
 
 - Copilot allows you to work with natural language.
 - In Edge it can help summarize and analyze supported pages or documents.
-- On Windows it can act as a general assistant, depending on the availability of functions.
+- On Windows it can act as a general assistant, depending on which features are available.
 - The quality of the response depends a lot on the quality of the prompt.
-- Copilot should be used with discretion, review and care with privacy.
-- It does not replace the search for official sources or human responsibility.
+- Copilot should be used with good judgment, careful review and attention to privacy.
+- It does not replace checking official sources or human responsibility.
 
 ---
 

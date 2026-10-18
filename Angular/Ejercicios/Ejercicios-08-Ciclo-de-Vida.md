@@ -1,10 +1,10 @@
-# **Exercises - Topic 8: Complete Life Cycle of Components in Angular**
+# **Exercises - Topic 8: Complete Component Lifecycle in Angular**
 
 ## **Instructions:**
 
 Below you will find exercises on lifecycle hooks in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -112,7 +112,7 @@ export class ExampleComponent implements DoCheck {
 
 ### **Exercise 4: Using `ngAfterViewInit()`**
 
-Modifies the color of an HTML element using `ngAfterViewInit()`.
+Change the color of an HTML element using `ngAfterViewInit()`.
 
 <details><summary>Show solution</summary>
 
@@ -148,7 +148,7 @@ export class ExampleComponent implements AfterViewInit {
 
 ### **Exercise 5: Using `ngOnDestroy()`**
 
-Execute an action before the component is destroyed.
+Run an action before the component is destroyed.
 
 <details><summary>Show solution</summary>
 

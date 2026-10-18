@@ -2,9 +2,9 @@
 
 ## **Instructions:**
 
-Below you will find 5 practical exercises on HTML images.
+Below you'll find 5 practical exercises on images in HTML.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -22,7 +22,7 @@ Create an HTML document that displays an image located in the same folder as the
 
 ---
 
-### **Exercise 2: Define the size of an image**
+### **Exercise 2: Set the size of an image**
 
 Modify the code from the previous exercise so that the image has a width of 400 pixels and a height of 300 pixels.
 
@@ -43,7 +43,7 @@ Modify the code from the previous exercise so that the image has a width of 400 
 
 ### **Exercise 3: Apply lazy loading (`loading="lazy"`)**
 
-Add the `loading="lazy"` attribute to the image so that it only loads when the user sees it on the screen.
+Add the `loading="lazy"` attribute to the image so that it only loads when the user can see it on the screen.
 
 <details><summary>Show solution</summary>
 
@@ -70,7 +70,7 @@ Create an HTML document that displays an image in `.webp` format and another in 
 
 ---
 
-### **Exercise 5: Image with link**
+### **Exercise 5: Image as a link**
 
 Make an image act as a link to another web page.
 

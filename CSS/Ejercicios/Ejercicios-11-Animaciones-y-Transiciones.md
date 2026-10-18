@@ -10,7 +10,7 @@ Try to solve them before consulting the solution.
 
 ### **Exercise 1: Create a color transition**
 
-Create a button that changes its background color from blue to red on hover with a smooth 0.5 second transition.
+Create a button that changes its background color from blue to red on hover, with a smooth 0.5-second transition.
 
 <details><summary>Show solution</summary>
 
@@ -39,9 +39,9 @@ Create a button that changes its background color from blue to red on hover with
 
 ---
 
-### **Exercise 2: Animate a moving frame**
+### **Exercise 2: Animate a moving box**
 
-Create a box that scrolls from left to right using `@keyframes`.
+Create a box that moves from left to right using `@keyframes`.
 
 <details><summary>Show solution</summary>
 
@@ -75,7 +75,7 @@ Create a box that scrolls from left to right using `@keyframes`.
 
 ### **Exercise 3: Create a scale effect on hover**
 
-Make an element enlarge to 120% of its original size when the cursor hovers over it.
+Make an element grow to 120% of its original size when the cursor hovers over it.
 
 <details><summary>Show solution</summary>
 
@@ -102,9 +102,9 @@ Make an element enlarge to 120% of its original size when the cursor hovers over
 
 ---
 
-### **Exercise 4: Create a Fade Effect**
+### **Exercise 4: Create a fade effect**
 
-Create text that fades in on page load using `opacity`.
+Create a text that fades in when the page loads, using `opacity`.
 
 <details><summary>Show solution</summary>
 
@@ -136,7 +136,7 @@ Create text that fades in on page load using `opacity`.
 
 ### **Exercise 5: Create an animated spinner**
 
-Create a circle that rotates continuously simulating a cargo spinner.
+Create a circle that spins continuously, like a loading spinner.
 
 <details><summary>Show solution</summary>
 

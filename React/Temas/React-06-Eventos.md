@@ -5,11 +5,11 @@
 In a real application, the user continuously interacts with the interface:
 
 - Clicks buttons
-- Write in inputs
-- Submit forms
-- Mouse over elements
+- Types into inputs
+- Submits forms
+- Hovers the mouse over elements
 
-In React, these interactions are managed with **events**. Learning to handle events is the first step for your components to go from being “static” to being **interactive**.
+In React, these interactions are handled with **events**. Learning to handle events is the first step to turning your components from “static” into **interactive** ones.
 
 In this topic you will learn:
 
@@ -17,16 +17,16 @@ In this topic you will learn:
 - How to create handler functions.
 - How to use parameters.
 - How to use the event object.
-- Important differences with HTML.
+- Important differences from HTML.
 
 ---
 
-## **2. How are events written in React?**
+## **2. How do you write events in React?**
 
 In React, events are written using:
 
-- Properties in **camelCase**: `onClick`, `onChange`, `onSubmit`, etc.
-- They are passed a **function**, not a string.
+- Props in **camelCase**: `onClick`, `onChange`, `onSubmit`, etc.
+- You pass them a **function**, not a string.
 
 Example:
 
@@ -45,7 +45,7 @@ export default App;
 Here:
 
 - `onClick={handleClick}` passes a function to React.
-- The function is executed when the user clicks.
+- The function runs when the user clicks.
 
 ---
 
@@ -73,17 +73,17 @@ export default LikeButton;
 
 ---
 
-## **4. Pass parameters to a function in an event**
+## **4. Passing parameters to a function in an event**
 
-If you want to pass parameters, you should not call the function directly.
+If you want to pass parameters, you shouldn't call the function directly.
 
-Incorrect (runs when rendering):
+Incorrect (runs on render):
 
 ```js
 <button onClick={handleMessage("Hello")}>Send</button>
 ```
 
-Correct (executes when clicked):
+Correct (runs on click):
 
 ```js
 <button onClick={() => handleMessage("Hello")}>Send</button>
@@ -131,13 +131,13 @@ Here:
 
 ## **6. Common events in React**
 
-Some of the most used:
+Some of the most commonly used ones:
 
 - `onClick`: click
-- `onChange`: change in inputs, selects and textareas
+- `onChange`: a change in inputs, selects and textareas
 - `onSubmit`: form submission
-- `onMouseEnter`: mouse enters an element
-- `onMouseLeave`: mouse exits
+- `onMouseEnter`: the mouse enters an element
+- `onMouseLeave`: the mouse leaves it
 
 Quick example with `onMouseEnter`:
 
@@ -155,11 +155,11 @@ export default HoverBox;
 
 ---
 
-## **7. Prevent default behavior (`preventDefault`)**
+## **7. Preventing the default behavior (`preventDefault`)**
 
-In forms, the browser tries to reload the page upon submission.
+In forms, the browser tries to reload the page on submit.
 
-In React, this is usually avoided by using `event.preventDefault()`:
+In React, you usually prevent this with `event.preventDefault()`:
 
 ```js
 function SimpleForm() {
@@ -180,18 +180,18 @@ export default SimpleForm;
 
 ---
 
-## **8. Important differences with HTML**
+## **8. Important differences from HTML**
 
-In traditional HTML you could see:
+In traditional HTML you might see:
 
 ```html
 <button onclick="doSomething()">Click</button>
 ```
 
-In React it is not done like that. In React:
+In React it isn't done like that. In React:
 
 - You don't use strings.
-- You do not write `onclick` in lowercase.
+- You don't write `onclick` in lowercase.
 - You use `onClick` and pass a function.
 
 Correct example:
@@ -202,18 +202,18 @@ Correct example:
 
 ---
 
-## **9. Good practices**
+## **9. Best practices**
 
 - Name handlers with `handle...`.
 - If you pass parameters, use an arrow function.
 - Use `preventDefault()` in `onSubmit`.
-- Keep the handler logic simple (the complexity will be organized later with state and hooks).
+- Keep the handler logic simple (we'll organize the complexity later with state and hooks).
 
 ---
 
-## **10. To take into account**
+## **10. Things to keep in mind**
 
-- Events in React are written to camelCase.
+- Events in React are written in camelCase.
 - Handlers receive the `event` object.
 - To pass parameters, use `() => ...`.
 - For forms, remember `preventDefault()`.
@@ -224,4 +224,4 @@ Correct example:
 
 ---
 
-In the next topic we will look at **useState**, which will allow us to save information in the component and update the UI when it changes.
+In the next topic we'll look at **useState**, which will let us store information in the component and update the UI when it changes.

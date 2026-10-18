@@ -2,17 +2,17 @@
 
 ## **1. Introduction**
 
-In Vue applications, communication between components is key for information to flow correctly. In Vue 3, this is primarily managed with:
+In Vue applications, communication between components is key to making information flow correctly. In Vue 3, this is mainly handled with:
 
 - **Props:** To pass data from a parent component to a child component.
-- **Emits (Component Events):** For a child to notify events to the parent.
-- **Slots:** For a parent component to insert custom content inside a child component.
+- **Emits (Component Events):** So that a child can notify the parent of events.
+- **Slots:** So that a parent component can insert custom content inside a child component.
 
 ---
 
-## **2. Props: Pass data from parent to child**
+## **2. Props: Passing data from parent to child**
 
-`defineProps()` allows a child component to receive data from its parent component. The information will be passed from the parent component to the component using an attribute.
+`defineProps()` lets a child component receive data from its parent component. The information is passed from the parent component to the child through an attribute.
 
 ### Basic example
 
@@ -30,13 +30,13 @@ const props = defineProps({
 </template>
 ```
 
-#### Usage in parent component:
+#### Usage in the parent component:
 
 ```vue
 <ChildComponent title="Bienvenido" />
 ```
 
-#### Variable from parent component:
+#### A variable from the parent component:
 
 ```vue
 <ChildComponent :title="titleVariable" />
@@ -48,9 +48,9 @@ const props = defineProps({
 
 ---
 
-## **3. Emits (Component Events): Emit events from the child to the parent**
+## **3. Emits (Component Events): Emitting events from the child to the parent**
 
-`defineEmits()` allows a child component to emit custom events that the parent component can listen to. With events you can travel information from the child component to the parent component.
+`defineEmits()` lets a child component emit custom events that the parent component can listen to. Events can carry information from the child component to the parent component.
 
 ### Basic example
 
@@ -68,7 +68,7 @@ function notify() {
 </template>
 ```
 
-Usage in parent component:
+Usage in the parent component:
 
 ```vue
 <ChildComponent @sendMessage="handleMessage" />
@@ -86,9 +86,9 @@ function handleMessage(msg) {
 
 ---
 
-## **4. Slots: Customize the content of a child component**
+## **4. Slots: Customizing the content of a child component**
 
-`slots` allow the parent component to insert arbitrary content inside the child component.
+`slots` let the parent component insert any content it wants inside the child component.
 
 ### Basic example
 
@@ -110,7 +110,7 @@ Child component (`Card.vue`):
 </style>
 ```
 
-Usage in parent component:
+Usage in the parent component:
 
 ```vue
 <Card>
@@ -124,9 +124,9 @@ Usage in parent component:
 
 ---
 
-## **5. Named Slots**
+## **5. Named slots**
 
-Slots can be named to allow multiple customizable zones within a component.
+Slots can have names, which allows multiple customizable areas within a component.
 
 ### Example
 
@@ -142,7 +142,7 @@ Child component (`Modal.vue`):
 </template>
 ```
 
-Usage in parent component:
+Usage in the parent component:
 
 ```vue
 <Modal>
@@ -158,18 +158,18 @@ Usage in parent component:
 
 ---
 
-[![Slots with name](https://img.youtube.com/vi/4017IZG5218/0.jpg)](https://www.youtube.com/watch?v=4017IZG5218&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Named slots](https://img.youtube.com/vi/4017IZG5218/0.jpg)](https://www.youtube.com/watch?v=4017IZG5218&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
 ## Summary
 
-| Technique | Address | Usage |
-| ------- | ------------- | ---------------------------- |
-| Props | Father ➡️ Son | Send data to child |
-| Emits | Son ➡️ Father | Notify events to parent |
-| Slots | Father ➡️ Son | Customize child content |
+| Technique | Direction      | Usage                         |
+| --------- | -------------- | ----------------------------- |
+| Props     | Parent ➡️ Child | Send data to the child        |
+| Emits     | Child ➡️ Parent | Notify the parent of events   |
+| Slots     | Parent ➡️ Child | Customize the child's content |
 
 ---
 
-In the next topic we will explore **Computed Properties, watch and watchEffect**, to have a completely reactive project.
+In the next topic, we'll explore **computed properties, watch and watchEffect**, to make our project fully reactive.

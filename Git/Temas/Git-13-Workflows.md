@@ -2,25 +2,25 @@
 
 ## **1. Introduction**
 
-The use of workflows and branching strategies in Git is essential to organize software development in teams and maintain a clean and structured history. There are several methodologies that allow code development to be managed efficiently, depending on the size of the team and the complexity of the project.
+Using workflows and branching strategies in Git is essential for organizing software development in teams and keeping a clean, structured history. There are several methodologies for managing code development efficiently, depending on the size of the team and the complexity of the project.
 
 ---
 
 ## **2. Branching strategies in Git**
 
-Branches in Git allow you to work on new features, fix bugs, and experiment without affecting the main version of the code. Some common strategies are:
+Branches in Git let you work on new features, fix bugs and experiment without affecting the main version of the code. Some common strategies are:
 
 ### **2.1. Single branch strategy (`main` or `master` only)**
 
 - All work is done directly in the `master` branch.
 - Recommended for small or personal projects only.
-- Does not allow a good separation between development and production.
+- Doesn't allow a proper separation between development and production.
 
-### **2.2. Branches by functionality (Feature Branches)**
+### **2.2. One branch per feature (Feature Branches)**
 
 - Each new feature or improvement is developed in a separate branch.
-- Once finished, it is merged with the main branch (`master`).
-- Facilitates code review through Pull Requests.
+- Once it's finished, it's merged into the main branch (`master`).
+- Makes code review easier through pull requests.
 
 Example:
 
@@ -30,21 +30,21 @@ git commit -m "Añadir nueva funcionalidad"
 git push origin feature/nueva-funcionalidad
 ```
 
-### **23. Git Flow**
+### **2.3. Git Flow**
 
-- Use multiple branches to manage development, integration and deployment.
+- Uses multiple branches to manage development, integration and deployment.
 - Separates `master` (production) and `develop` (development), as well as auxiliary branches:
-  - `feature/*`: To develop new functionalities.
-  - `release/*`: To prepare versions before launch.
+  - `feature/*`: To develop new features.
+  - `release/*`: To prepare versions before they're released.
   - `hotfix/*`: To fix critical bugs in production.
 
-Example flow with Git Flow:
+Example of a workflow with Git Flow:
 
 ```bash
 git flow init
 ```
 
-To start a new functionality:
+To start a new feature:
 
 ```bash
 git flow feature start nueva-funcionalidad
@@ -55,8 +55,8 @@ git flow feature finish nueva-funcionalidad
 ### **2.4. GitHub Flow**
 
 - Simpler than Git Flow, recommended for agile and continuous development.
-- It works exclusively with `feature/*` and `master` branches.
-- Does not use `develop`; each change is reviewed and merged with `master`.
+- It only works with `feature/*` and `master` branches.
+- Doesn't use `develop`; each change is reviewed and merged into `master`.
 
 Example:
 
@@ -69,8 +69,8 @@ git push origin feature/nueva-funcionalidad
 ### **2.5. Trunk-Based Development**
 
 - All development happens in a single branch (`master` or `trunk`).
-- Small and frequent commits are made.
-- Avoid long branches to minimize conflicts.
+- You make small, frequent commits.
+- Avoids long-lived branches to minimize conflicts.
 
 Example:
 
@@ -83,15 +83,15 @@ git push origin master
 
 ---
 
-## **3. Comparison of branch strategies**
+## **3. Comparison of branching strategies**
 
 | Strategy | Advantages | Disadvantages |
 | -------------------- | ------------------------------------------- | ------------------------------------------ |
-| **Single Branch** | Simple, easy to maintain | Does not scale well, risk of conflicts |
-| **Feature Branches** | Allows testing and revisions | Can generate many pending branches |
+| **Single Branch** | Simple, easy to maintain | Doesn't scale well, risk of conflicts |
+| **Feature Branches** | Allows testing and reviews | Can leave many pending branches |
 | **Git Flow** | Clear separation between development and production | Requires more maintenance |
 | **GitHub Flow** | Fast and simple flow | Less control over releases |
-| **Trunk-Based** | Fast continuous integration | Can generate instability if not controlled |
+| **Trunk-Based** | Fast continuous integration | Can cause instability if not kept under control |
 
 ---
 
@@ -99,17 +99,17 @@ git push origin master
 The ideal strategy depends on the team and the type of project:
 
 - **Small projects** → `master` only or GitHub Flow.
-- **Medium Teams** → Feature Branches or Trunk-Based Development.
+- **Medium-sized teams** → Feature Branches or Trunk-Based Development.
 - **Companies and large projects** → Git Flow.
 
 ---
 
-## **5. Good practices**
+## **5. Best practices**
 
-- Maintain descriptive names on branches (`feature/login-form`, `bugfix/api-error`).
-- Delete branches once merged to avoid unnecessary accumulation.
-- Do code reviews in Pull Requests before merging changes.
-- Keep branches short and update them frequently with `master` or `develop`.
+- Use descriptive branch names (`feature/login-form`, `bugfix/api-error`).
+- Delete branches once they're merged so they don't pile up unnecessarily.
+- Do code reviews in pull requests before merging changes.
+- Keep branches short-lived and update them frequently from `master` or `develop`.
 
 ---
 

@@ -4,7 +4,7 @@
 
 In the previous topic you learned how to work with `Map` and `HashMap`, a very useful key-value structure when you need to associate data.
 
-But the Java collections library offers more options, and it is important to know them because not all structures behave the same.
+But the Java collections library offers more options, and it is important to know them because not all structures behave in the same way.
 
 In this topic we are going to study three very common collections:
 
@@ -14,21 +14,21 @@ In this topic we are going to study three very common collections:
 
 They are all very useful, but each one solves a different problem:
 
-- `Set` is used to save elements **without duplicates**
-- `LinkedHashMap` is a map that **maintains insertion order**
+- `Set` is used to store elements **without duplicates**
+- `LinkedHashMap` is a map that **keeps the insertion order**
 - `TreeMap` is a map that **automatically sorts by key**
 
-Learning to choose the right structure is very important in real Java.
+Learning to choose the right structure is very important in real-world Java.
 
 In this topic you will learn:
 
-- What is an `Set`
-- What is the difference between `HashSet`, `LinkedHashSet` and `TreeSet` at a conceptual level?
+- What a `Set` is
+- What the difference between `HashSet`, `LinkedHashSet` and `TreeSet` is at a conceptual level
 - How to use `Set` to avoid duplicates
-- What is `LinkedHashMap` and when to use it instead of `HashMap`
-- What is `TreeMap` and how it sorts the keys
-- How to browse these collections
-- What typical mistakes you should avoid
+- What `LinkedHashMap` is and when to use it instead of `HashMap`
+- What `TreeMap` is and how it sorts the keys
+- How to iterate over these collections
+- Which typical mistakes you should avoid
 
 ---
 
@@ -36,7 +36,7 @@ In this topic you will learn:
 
 ---
 
-## 2. The key idea: not all collections do the same
+## 2. The key idea: not all collections do the same thing
 
 So far you have seen several structures:
 
@@ -48,12 +48,12 @@ Each one has a different purpose.
 
 ### 2.1. `ArrayList`
 
-Serves for:
+It is used to:
 
-- save items in sequence
+- store items in sequence
 - allow duplicates
 - access by index
-- maintain insertion order
+- keep the insertion order
 
 Example:
 
@@ -68,30 +68,30 @@ Here the value `"Laura"` can be repeated.
 
 ### 2.2. `Set`
 
-Serves for:
+It is used to:
 
-- save unique items
+- store unique items
 - avoid duplicates
-- do not work by index
+- work without indexes
 
-### 23. `Map`
+### 2.3. `Map`
 
-Serves for:
+It is used to:
 
-- save key-value pairs
-- access by password
+- store key-value pairs
+- access by key
 
 Therefore:
 
-- `List` = sorted collection with possible duplicates
+- `List` = ordered collection with possible duplicates
 - `Set` = collection without duplicates
 - `Map` = key-value structure
 
 ---
 
-## 3. What is an `Set`
+## 3. What is a `Set`
 
-An `Set` is a collection that **does not allow duplicate elements**.
+A `Set` is a collection that **does not allow duplicate elements**.
 
 Conceptual example:
 
@@ -101,7 +101,7 @@ Conceptual example:
 
 In a list that would be valid.
 
-But in an `Set`, the result would be something equivalent to:
+But in a `Set`, the result would be equivalent to:
 
 ```text
 ["Laura", "Alex", "Maria"]
@@ -123,7 +123,7 @@ And a widely used implementation is:
 
 ## 4. Necessary imports
 
-To work with `Set` and some common implementations, these imports are often used:
+To work with `Set` and some common implementations, you will often use these imports:
 
 ```java
 import java.util.HashSet;
@@ -137,9 +137,9 @@ Later you will also see other implementations such as `LinkedHashSet` or `TreeSe
 
 ---
 
-## 5. Create an `Set`
+## 5. Creating a `Set`
 
-Usual form:
+The usual way:
 
 ```java
 Set<String> names = new HashSet<>();
@@ -147,8 +147,8 @@ Set<String> names = new HashSet<>();
 
 Here you are saying:
 
-- the collection will save `String`
-- will not allow duplicates
+- the collection will store `String` values
+- it will not allow duplicates
 
 Example:
 
@@ -174,7 +174,7 @@ Even if you try to add `"Laura"` twice, there will only be one in the set.
 ---
 
 ## 6. Main operation: `add`
-To insert elements, `add` is used.
+To insert elements, you use `add`.
 
 ```java
 Set<String> cities = new HashSet<>();
@@ -184,7 +184,7 @@ cities.add("Berlin");
 cities.add("Paris");
 ```
 
-If you add a repeated item, `Set` does not save it again.
+If you add a repeated item, the `Set` does not store it again.
 
 ```java
 cities.add("Madrid");
@@ -196,9 +196,9 @@ The set will still have a single `"Madrid"`.
 
 ## 7. `add` returns `true` or `false`
 
-This is very useful and is often forgotten.
+This is very useful and often forgotten.
 
-On an `Set`, `add(...)` returns:
+In a `Set`, `add(...)` returns:
 
 - `true` if the item was added
 - `false` if it was not added because it already existed
@@ -221,7 +221,7 @@ This can be useful if you want to detect duplicates.
 
 ## 8. `Set` does not use indexes
 
-Unlike a list, an `Set` does not have positions like `0`, `1`, `2`...
+Unlike a list, a `Set` does not have positions like `0`, `1`, `2`...
 
 This does not exist:
 
@@ -229,18 +229,18 @@ This does not exist:
 // names.get(0); // NO
 ```
 
-On an `Set`:
+In a `Set`:
 
 - you do not access by index
-- you loop through the elements
-- you check if an element exists
+- you iterate over the elements with a loop
+- you check whether an element exists
 - you add and delete
 
-This makes sense because the goal of an `Set` is not to manage positions, but rather uniqueness.
+This makes sense because the goal of a `Set` is not to manage positions, but uniqueness.
 
 ---
 
-## 9. Basic methods of `Set`
+## 9. Basic `Set` methods
 
 The most important methods when starting out are:
 
@@ -255,7 +255,7 @@ The most important methods when starting out are:
 
 ## 10. `contains`
 
-It is used to check if an element is in the set.
+It is used to check whether an element is in the set.
 
 ```java
 Set<String> names = new HashSet<>();
@@ -270,7 +270,7 @@ System.out.println(names.contains("Maria")); // false
 
 ## 11. `remove`
 
-Used to delete an element.
+It is used to delete an element.
 
 ```java
 Set<String> names = new HashSet<>();
@@ -282,9 +282,9 @@ names.remove("Laura");
 System.out.println(names.contains("Laura")); // false
 ```
 
-Also returns `true` or `false`:
+It also returns `true` or `false`:
 
-- `true` if removed
+- `true` if it was removed
 - `false` if it did not exist
 
 ---
@@ -323,9 +323,9 @@ System.out.println(names.size()); // 0
 
 ---
 
-## 13. Loop through an `Set`
+## 13. Iterating over a `Set`
 
-Since there are no indexes, it is usually traversed with `for-each`.
+Since there are no indexes, you usually iterate over it with `for-each`.
 
 ```java
 import java.util.HashSet;
@@ -348,7 +348,7 @@ public class Main {
 
 ---
 
-## 14. Order on `HashSet`
+## 14. Order in `HashSet`
 
 As with `HashMap`, **`HashSet` does not guarantee order**.
 
@@ -367,29 +367,29 @@ The printing order may not match the order in which you added the items.
 
 Therefore:
 
-- don't assume insertion order
+- don't assume the insertion order
 - do not use `HashSet` if you need a specific order
 
 ---
 
-## 15. When to use an `Set`
+## 15. When to use a `Set`
 
-An `Set` is ideal when you want:
+A `Set` is ideal when you want to:
 
 - avoid duplicates
-- quickly check if something already exists
+- quickly check whether something already exists
 - work with a collection of unique items
 
 Typical examples:
 
-- unique logged in users
-- unrepeated product categories
+- unique logged-in users
+- product categories without repetitions
 - unique words in a text
 - registered emails without duplicates
 
 ---
 
-## 16. Guided Example: Remove Duplicates from a List
+## 16. Guided example: removing duplicates from a list
 
 This is one of the most typical uses of `Set`.
 
@@ -419,11 +419,11 @@ public class Main {
 Here:
 
 - the original list has duplicates
-- `Set` removes duplicates automatically
+- the `Set` removes duplicates automatically
 
 ---
 
-## 17. Guided Example: Detect if a value has already appeared
+## 17. Guided example: detecting whether a value has already appeared
 
 ```java
 import java.util.HashSet;
@@ -450,16 +450,17 @@ Here we take advantage of the fact that `add(...)` returns `false` if the elemen
 
 ---
 
-## 18. Important Variants of `Set`
+## 18. Important variants of `Set`
 
 Although `Set` is the interface, there are several implementations.
 
-At an initial level, it is advisable that you have this mental idea:
+At this early stage, it is a good idea to keep this mental picture:
 
 - `HashSet` → does not guarantee order
-- `LinkedHashSet` → maintains insertion order
-- `TreeSet` → order automatically
-In this topic we are not going to delve into all of them, but it is important that you know that they exist because they follow the same logic that you will see now with `LinkedHashMap` and `TreeMap`.
+- `LinkedHashSet` → keeps the insertion order
+- `TreeSet` → sorts automatically
+
+In this topic we are not going to go deep into all of them, but it is important that you know they exist, because they follow the same logic that you will now see with `LinkedHashMap` and `TreeMap`.
 
 ---
 
@@ -467,15 +468,15 @@ In this topic we are not going to delve into all of them, but it is important th
 
 In the previous topic you saw `HashMap`, which:
 
-- saves key-value pairs
-- allows quick search by key
+- stores key-value pairs
+- allows fast lookups by key
 - **does not guarantee order**
 
 `LinkedHashMap` is very similar to `HashMap`, but with one key difference:
 
-> `LinkedHashMap` maintains the insertion order.
+> `LinkedHashMap` keeps the insertion order.
 
-That is, if you insert:
+In other words, if you insert:
 
 ```text
 "Laura" -> 28
@@ -483,11 +484,11 @@ That is, if you insert:
 "Maria" -> 31
 ```
 
-When you go around the map, they will appear in that same order.
+when you iterate over the map, they will appear in that same order.
 
 ---
 
-## 20. Create an `LinkedHashMap`
+## 20. Creating a `LinkedHashMap`
 
 ```java
 import java.util.LinkedHashMap;
@@ -516,7 +517,7 @@ Here the insertion order is preserved.
 
 ---
 
-## 21. `LinkedHashMap` has almost the same usage as `HashMap`
+## 21. `LinkedHashMap` is used almost exactly like `HashMap`
 
 The basic methods are the same:
 
@@ -558,7 +559,7 @@ public class Main {
 }
 ```
 
-The big difference is not in the methods, but in the behavior of the order.
+The big difference is not in the methods, but in how the order behaves.
 
 ---
 
@@ -566,15 +567,15 @@ The big difference is not in the methods, but in the behavior of the order.
 
 Use `LinkedHashMap` when you need to:
 
-- associate key and value
-- maintain the order in which you inserted the entries
+- associate keys and values
+- keep the order in which you inserted the entries
 
 Typical examples:
 
-- display data in the same order it was loaded
-- generate menus or ordered settings
-- store insert history
-- have more predictable behavior when printing or scrolling
+- displaying data in the same order it was loaded
+- generating menus or ordered settings
+- storing an insertion history
+- having more predictable behavior when printing or iterating
 
 ---
 
@@ -588,9 +589,9 @@ Typical examples:
 ### 23.2. `LinkedHashMap`
 
 - key-value structure
-- maintains insertion order
+- keeps the insertion order
 
-Comparative example:
+Comparison example:
 
 ```java
 Map<String, Integer> hashMap = new HashMap<>();
@@ -614,7 +615,7 @@ In `linkedHashMap`, the order will be:
 {C=3, A=1, B=2}
 ```
 
-At `hashMap`, you should not assume anything.
+In `hashMap`, you should not assume anything.
 
 ---
 
@@ -624,7 +625,7 @@ At `hashMap`, you should not assume anything.
 
 > `TreeMap` automatically sorts entries by key.
 
-Not by the insertion order, but by the **natural order of the keys**.
+Not by insertion order, but by the **natural order of the keys**.
 
 Example with `String` keys:
 
@@ -640,7 +641,7 @@ Example with `Integer` keys:
 
 ---
 
-## 25. Create an `TreeMap`
+## 25. Creating a `TreeMap`
 
 ```java
 import java.util.Map;
@@ -665,7 +666,7 @@ Expected result:
 {Alex=35, Laura=28, Maria=31}
 ```
 
-Although you inserted in a different order, `TreeMap` organizes by key.
+Although you inserted them in a different order, `TreeMap` sorts them by key.
 
 ---
 
@@ -698,7 +699,7 @@ Expected result:
 
 ## 27. `TreeMap` also uses the same basic methods
 
-The main methods are the same as other maps:
+The main methods are the same as in other maps:
 
 - `put`
 - `get`
@@ -730,7 +731,7 @@ public class Main {
 }
 ```
 
-The difference is still the order by key.
+The difference, once again, is the ordering by key.
 
 ---
 
@@ -743,10 +744,10 @@ Use `TreeMap` when you need to:
 
 Typical examples:
 
-- alphabetical list of products
-- ranking by numerical identifier
-- show data sorted by key without manually sorting after
-- structures where order by key is important
+- an alphabetical list of products
+- a ranking by numeric identifier
+- showing data sorted by key without sorting it manually afterwards
+- structures where the order by key matters
 
 ---
 
@@ -756,7 +757,7 @@ This comparison is very important.
 
 ### 29.1. `LinkedHashMap`
 
-Maintains:
+Keeps:
 
 - the order in which you inserted the entries
 
@@ -768,7 +769,7 @@ A -> 1
 B -> 2
 ```
 
-It goes like this:
+It is iterated like this:
 
 ```text
 C, A, B
@@ -776,11 +777,11 @@ C, A, B
 
 ### 29.2. `TreeMap`
 
-Maintains:
+Keeps:
 
 - the natural order of the keys
 
-With those same keys, it goes like this:
+With those same keys, it is iterated like this:
 
 ```text
 A, B, C
@@ -795,7 +796,7 @@ A, B, C
 
 ## 30. What happens with duplicate keys in `LinkedHashMap` and `TreeMap`
 
-As with any `Map`, the keys are unique.
+As with any `Map`, keys are unique.
 
 If you repeat a key, the previous value is overwritten.
 
@@ -810,7 +811,7 @@ ages.put("Laura", 29);
 System.out.println(ages.get("Laura")); // 29
 ```
 
-Two entries are not created. There's only one left.
+Two entries are not created. Only one remains.
 
 ---
 
@@ -818,26 +819,26 @@ Two entries are not created. There's only one left.
 
 ### 31.1. `LinkedHashMap`
 
-It behaves similar to `HashMap` in many cases and allows working with `null` in key and values.
+In many cases it behaves like `HashMap` and lets you work with `null` keys and values.
 
 ### 31.2. `TreeMap`
 
 You have to be more careful here.
 
-Since `TreeMap` needs to order keys, using `null` as a key can cause problems because it cannot be compared correctly in the natural order.
+Since `TreeMap` needs to sort its keys, using `null` as a key can cause problems because it cannot be compared correctly in the natural order.
 
-At an initial level, the best recommendation is:
+At this early stage, the best recommendation is:
 
-- avoid using `null` as key in `TreeMap`
-- use comparable and well-defined keys
+- avoid using `null` as a key in `TreeMap`
+- use comparable, well-defined keys
 
 ---
 
-## 32. Loop through `LinkedHashMap` and `TreeMap`
+## 32. Iterating over `LinkedHashMap` and `TreeMap`
 
-As with `HashMap`, the most useful form is usually `entrySet()`.
+As with `HashMap`, the most useful way is usually `entrySet()`.
 
-### 32.1. `LinkedHashMap` Walkthrough
+### 32.1. Iterating over a `LinkedHashMap`
 
 ```java
 Map<String, Integer> ages = new LinkedHashMap<>();
@@ -850,7 +851,7 @@ for (Map.Entry<String, Integer> entry : ages.entrySet()) {
 }
 ```
 
-### 32.2. `TreeMap` Walkthrough
+### 32.2. Iterating over a `TreeMap`
 
 ```java
 Map<String, Integer> ages = new TreeMap<>();
@@ -863,7 +864,7 @@ for (Map.Entry<String, Integer> entry : ages.entrySet()) {
 }
 ```
 
-The syntax is the same, but the traversal order changes.
+The syntax is the same, but the iteration order changes.
 
 ---
 
@@ -898,7 +899,7 @@ Here:
 
 ---
 
-## 34. Complete Example: Push History with `LinkedHashMap`
+## 34. Complete example: insertion history with `LinkedHashMap`
 
 ```java
 import java.util.LinkedHashMap;
@@ -919,15 +920,15 @@ public class Main {
 }
 ```
 
-This example maintains the order:
+This example keeps the order:
 
 1. Spain
 2. France
-3.Germany
+3. Germany
 
 ---
 
-## 35. Complete example: map sorted with `TreeMap`
+## 35. Complete example: a sorted map with `TreeMap`
 
 ```java
 import java.util.Map;
@@ -949,19 +950,19 @@ public class Main {
 }
 ```
 
-Even if you insert in another order, the result will be ordered by product name.
+Even if you insert them in another order, the result will be sorted by product name.
 
 ---
 
 ## 36. How to choose the right structure
 
-Here you have a very useful mental guide.
+Here is a very useful rule of thumb.
 
 ### 36.1. Use `Set` when
 
 - you don't want duplicates
-- you don't mind working by index
-- you want to check existence of unique elements
+- you don't need to work by index
+- you want to check whether unique elements exist
 
 ### 36.2. Use `HashMap` when
 
@@ -971,7 +972,7 @@ Here you have a very useful mental guide.
 ### 36.3. Use `LinkedHashMap` when
 
 - you want key-value pairs
-- you want to maintain the insertion order
+- you want to keep the insertion order
 
 ### 36.4. Use `TreeMap` when
 
@@ -980,9 +981,9 @@ Here you have a very useful mental guide.
 
 ---
 
-## 37. Typical mistakes when starting
+## 37. Common beginner mistakes
 
-### 37.1. Trying to use indexes on an `Set`
+### 37.1. Trying to use indexes on a `Set`
 
 This does not exist:
 
@@ -990,30 +991,31 @@ This does not exist:
 // set.get(0); // error
 ```
 
-### 37.2. Thinking that `HashSet` maintains order
+### 37.2. Thinking that `HashSet` keeps the order
 
-You shouldn't assume it.
+You shouldn't assume it does.
 
 ### 37.3. Thinking that `LinkedHashMap` sorts alphabetically
 
 It doesn't sort alphabetically by itself.  
-It only maintains the insertion order.
-### 37.4. Thinking that `TreeMap` preserves insertion order
+It only keeps the insertion order.
+
+### 37.4. Thinking that `TreeMap` preserves the insertion order
 
 No.  
-`TreeMap` sort by key.
+`TreeMap` sorts by key.
 
-### 37.5. Forgetting that the keys in an `Map` are unique
+### 37.5. Forgetting that the keys in a `Map` are unique
 
 If you repeat the key, you replace the previous value.
 
 ---
 
-## 38. Good initial practices
+## 38. Good practices to start with
 
-- Use interface as a reference type when it makes sense:
+- Use the interface as the reference type when it makes sense:
   - `Set<String> names = new HashSet<>();`
-  -`Map<String, Integer> ages = new LinkedHashMap<>();`
+  - `Map<String, Integer> ages = new LinkedHashMap<>();`
 - Choose the collection based on the behavior you need, not out of habit.
 - If you need uniqueness, think about `Set`.
 - If you need insertion order in a map, think about `LinkedHashMap`.
@@ -1026,14 +1028,14 @@ If you repeat the key, you replace the previous value.
 
 ---
 
-## 39. To take into account
+## 39. Things to keep in mind
 
-- `Set` saves unique items.
+- `Set` stores unique items.
 - `HashSet` does not guarantee order.
-- `LinkedHashMap` maintains insertion order.
+- `LinkedHashMap` keeps the insertion order.
 - `TreeMap` automatically sorts by key.
 - `Map` still uses key-value pairs with unique keys.
-- Choosing the collection well makes the code clearer and more useful.
+- Choosing the right collection makes the code clearer and more useful.
 
 ---
 
@@ -1043,10 +1045,10 @@ In Java there is no single “best” collection for everything.
 
 Each structure is designed for a type of problem.
 
-- `Set` helps you work with unique securities
+- `Set` helps you work with unique values
 - `LinkedHashMap` helps you keep the order in which you added entries
-- `TreeMap` helps you have keys automatically sorted
+- `TreeMap` helps you keep the keys sorted automatically
 
-Knowing how to distinguish these cases is very important because, in real projects, choosing the appropriate collection greatly simplifies the code and avoids unnecessary errors.
+Knowing how to tell these cases apart is very important because, in real projects, choosing the right collection greatly simplifies the code and avoids unnecessary errors.
 
 ---

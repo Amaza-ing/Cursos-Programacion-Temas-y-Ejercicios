@@ -4,13 +4,13 @@
 
 Below you will find exercises on how to make HTTP requests in Angular using `HttpClient`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Make a GET Request**
+### **Exercise 1: Make a GET request**
 
-Create an `UserService` service that performs a GET request to obtain a list of users from `https://jsonplaceholder.typicode.com/users`.
+Create a `UserService` service that makes a GET request to get a list of users from `https://jsonplaceholder.typicode.com/users`.
 
 <details><summary>Show solution</summary>
 
@@ -83,7 +83,7 @@ export class UserComponent implements OnInit {
 
 ---
 
-### **Exercise 2: Make a POST Request**
+### **Exercise 2: Make a POST request**
 
 Create a form to add a new user using a POST request.
 
@@ -131,9 +131,9 @@ addNewUser() {
 
 ---
 
-### **Exercise 3: Make a PUT Request**
+### **Exercise 3: Make a PUT request**
 
-Updates an existing user using a PUT request.
+Update an existing user using a PUT request.
 
 <details><summary>Show solution</summary>
 
@@ -174,7 +174,7 @@ updateExistingUser() {
 
 ---
 
-### **Exercise 4: Make a DELETE Request**
+### **Exercise 4: Make a DELETE request**
 
 Delete an existing user using a DELETE request.
 

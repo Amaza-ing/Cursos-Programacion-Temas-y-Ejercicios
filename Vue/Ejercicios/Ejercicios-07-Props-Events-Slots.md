@@ -1,16 +1,16 @@
 # **Exercises - Topic 7: Communication between Components - Props, Component Events and Slots**
 
-Below you will find 7 practical exercises on communication between components in Vue.
+Below you'll find 7 practical exercises on communication between components in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Child component with title prop**
+## **Exercise 1: Child component with a title prop**
 
-Create an `TitleCard.vue` component that receives an `title` prop and displays it as a header.
+Create a `TitleCard.vue` component that receives a `title` prop and displays it as a heading.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -34,11 +34,11 @@ h3 {
 
 ---
 
-## **Exercise 2: Send event from child to parent**
+## **Exercise 2: Send an event from the child to the parent**
 
-Create an `AlertButton.vue` component that emits an event called `alertClicked` when the button is pressed.
+Create an `AlertButton.vue` component that emits an event called `alertClicked` when the button is clicked.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -70,7 +70,7 @@ button {
 
 Create an `AlertContainer.vue` component that listens to the `alertClicked` event of a child component and displays a message.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -102,11 +102,11 @@ p {
 
 ---
 
-## **Exercise 4: Child component with custom content in slot**
+## **Exercise 4: Child component with custom content in a slot**
 
-Create an `CardContainer.vue` component that wraps a generic slot.
+Create a `CardContainer.vue` component that wraps a generic slot.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <template>
@@ -130,9 +130,9 @@ Create an `CardContainer.vue` component that wraps a generic slot.
 
 ## **Exercise 5: Using a named slot for a footer**
 
-Create a component `CustomCard.vue` that has a slot named `footer`.
+Create a `CustomCard.vue` component that has a slot named `footer`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <template>
@@ -173,9 +173,9 @@ Usage:
 
 ## **Exercise 6: Child component that receives two props and displays them**
 
-Create an `ProfileCard.vue` component that receives `name` and `age` as props and displays them.
+Create a `ProfileCard.vue` component that receives `name` and `age` as props and displays them.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -205,9 +205,9 @@ p {
 
 ## **Exercise 7: Child component that emits an event with data**
 
-Create an `CounterButton.vue` component that has an internal counter and outputs the updated value each time the button is pressed.
+Create a `CounterButton.vue` component that has an internal counter and emits the updated value each time the button is clicked.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>

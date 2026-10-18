@@ -1,37 +1,37 @@
-# Topic 19. Packages: organize the project structure
+# Topic 19. Packages: organizing the project structure
 
 ## 1. Introduction
 
-As your Java projects grow, you start to have many classes:
+As your Java projects grow, you start having lots of classes:
 
 - `User`, `Product`, `Order`, `BankAccount`…
 - “Utility” classes such as `Calculator`, `StringUtils`…
 - Entry classes like `Main`
-- Later: drivers, services, repositories, etc.
+- Later on: controllers, services, repositories, etc.
 
-If all classes are in the same place, the project becomes difficult to maintain:
+If all classes are in the same place, the project becomes hard to maintain:
 
-- Hard to find files
+- Files are hard to find
 - Duplicate names appear
-- Responsibilities are mixed
+- Responsibilities get mixed up
 - You lose clarity when navigating the code
 
 To avoid this, Java has **packages**, which are used to:
 
-- Organize classes in “logical folders”
+- Organize classes into “logical folders”
 - Avoid name collisions (two classes can have the same name in different packages)
 - Control visibility using the _package-private_ modifier (no modifier)
 - Maintain a professional and scalable structure
 
 In this topic you will learn:
 
-- What is a package and how to write it
+- What a package is and how to write one
 - How to organize a project in IntelliJ
 - Package naming conventions
 - How `import` works
-- How to avoid _default package_
+- How to avoid the _default package_
 - Visibility: `public`, `private`, `protected` and _package-private_
-- Complete examples with real folder structure
+- Complete examples with a real folder structure
 
 ---
 
@@ -39,11 +39,11 @@ In this topic you will learn:
 
 ---
 
-## 2. What is a package
+## 2. What a package is
 
 A **package** is a “namespace” that groups related classes.
 
-In code, it is declared with the word `package` at the beginning of the file:
+In code, it's declared with the `package` keyword at the beginning of the file:
 
 ```java
 package com.mycompany.app;
@@ -51,8 +51,8 @@ package com.mycompany.app;
 
 Important rules:
 
-- Must be **the first real line** of the file (before `import` and before the class)
-- The package name must match the folder path within `src`
+- It must be **the first real line** of the file (before `import` and before the class)
+- The package name must match the folder path inside `src`
 
 Example:
 
@@ -62,7 +62,7 @@ If your file is in:
 src/com/mycompany/app/Main.java
 ```
 
-So above you should put:
+Then, at the top, you must write:
 
 ```java
 package com.mycompany.app;
@@ -75,7 +75,7 @@ package com.mycompany.app;
 In Java, the standard convention for packages is:
 
 - **all lowercase**
-- using inverted domain (to avoid collisions)
+- using a reversed domain (to avoid collisions)
 - separating levels with `.`
 
 Typical examples:
@@ -84,10 +84,10 @@ Typical examples:
 - `com.amazaing.javacurso`
 - `org.example.myapp`
 
-Why inverted domain:
+Why a reversed domain:
 
 - Two people could create a package called `utils`
-- But it is very unlikely that two projects share exactly `com.amazaing.utils`
+- But it's very unlikely that two projects share exactly `com.amazaing.utils`
 
 ---
 
@@ -114,17 +114,17 @@ Idea:
 
 - `model`: data classes (entities)
 - `service`: business logic
-- `utils`: supporting functions (if that makes sense)
+- `utils`: helper functions (if it makes sense)
 
 ---
 
-## 5. Create packages in IntelliJ (step by step)
+## 5. Creating packages in IntelliJ (step by step)
 
-### 5.1. Create a package
+### 5.1. Creating a package
 
 1. Open the **Project** panel
 2. Go to `src`
-3. Right click → **New** → **Package**
+3. Right-click → **New** → **Package**
 4. Write the name, for example:
 
 ```
@@ -133,9 +133,9 @@ com.amazaing.java25.model
 
 IntelliJ will automatically create the folders.
 
-### 5.2. Create a class inside a package
+### 5.2. Creating a class inside a package
 
-1. Right click on the package (`model`)
+1. Right-click the package (`model`)
 2. **New** → **Java Class**
 3. Type the name, for example: `User`
 
@@ -156,7 +156,7 @@ src/
 
 ### 6.2. `User.java`
 
-Route:
+Path:
 
 ```
 src/com/amazaing/java25/model/User.java
@@ -184,7 +184,7 @@ public class User {
 
 ### 6.3. `Main.java`
 
-Route:
+Path:
 
 ```
 src/com/amazaing/java25/Main.java
@@ -205,21 +205,21 @@ public class Main {
 }
 ```
 
-Look at:
+Notice that:
 
 - `Main` and `User` are in different packages
 - That's why we need `import com.amazaing.java25.model.User;`
 
 ---
 
-## 7. `import` – how it works
+## 7. `import`: how it works
 
 When you use a class from another package, you have two options:
 
 1. Use `import`
 2. Use the fully qualified name
 
-### 7.1. Use `import` (normal)
+### 7.1. Using `import` (the normal way)
 
 ```java
 import com.amazaing.java25.model.User;
@@ -231,18 +231,18 @@ Then you can write:
 User user = new User("Laura", 28);
 ```
 
-### 7.2. Use full name (not recommended for always writing)
+### 7.2. Using the full name (not recommended all the time)
 
 ```java
 com.amazaing.java25.model.User user =
         new com.amazaing.java25.model.User("Laura", 28);
 ```
 
-It is rarely used because it messes up the code, but it is useful to understand what is happening.
+It's rarely used because it clutters the code, but it's useful for understanding what's going on.
 
 ---
 
-## 8. Import multiple classes from the same package
+## 8. Importing several classes from the same package
 
 If you have multiple classes in `model`:
 
@@ -258,7 +258,7 @@ import com.amazaing.java25.model.Product;
 import com.amazaing.java25.model.Order;
 ```
 
-Or use wildcard (not usually recommended in large professional projects, but in learning it is valid):
+Or use a wildcard (not usually recommended in large professional projects, but fine while you're learning):
 
 ```java
 import com.amazaing.java25.model.*;
@@ -266,15 +266,15 @@ import com.amazaing.java25.model.*;
 
 ---
 
-## 9. The _default package_ and why avoid it
+## 9. The _default package_ and why you should avoid it
 
 If you create a class directly in `src` without a package, it will be in the **default package** (without `package ...;`).
 
-This works on very small projects, but is bad practice because:
+This works in very small projects, but it's bad practice because:
 
 - You can't organize your project well
-- Can cause problems with tools and tests
-- It is difficult to maintain
+- It can cause problems with tools and tests
+- It's hard to maintain
 - In real projects it is almost never used
 
 **Recommendation:** use packages from day one.
@@ -304,7 +304,7 @@ class InternalHelper {
 ```
 
 - `InternalHelper` is not `public`
-- Can only be used from `com.amazaing.java25.model`
+- It can only be used from `com.amazaing.java25.model`
 
 ---
 
@@ -344,7 +344,7 @@ public class User {
 
 This works because they are in the same package.
 
-### 11.3. Attempt from `Main` (another package)
+### 11.3. Trying from `Main` (another package)
 
 ```java
 package com.amazaing.java25;
@@ -360,13 +360,13 @@ It doesn't compile, because `InternalHelper` is not visible outside the package.
 
 `protected` allows access:
 
-- within the same package
+- inside the same package
 - and from subclasses (even if they are in another package)
 
 This is relevant when you work with inheritance.  
 As a general rule for this course:
 
-- Maintain `private` attributes
+- Keep attributes `private`
 - Expose getters/setters or methods
 
 ---
@@ -408,36 +408,36 @@ public class Main {
 
 ---
 
-## 14. Move classes between packages in IntelliJ (without breaking anything)
+## 14. Moving classes between packages in IntelliJ (without breaking anything)
 
 Steps:
 
-1. Right click on the class (or package)
+1. Right-click the class (or package)
 2. **Refactor** → **Move**
 3. Select the new package
-4. IntelliJ updates automatically:
+4. IntelliJ automatically updates:
    - the `package ...;` line
-   - the `import ...;` where that class is used
+   - the `import ...;` lines wherever that class is used
 
 ---
 
-## 15. Typical errors when working with packages
+## 15. Common mistakes when working with packages
 
-### 15.1. Package name does not match folder
+### 15.1. The package name doesn't match the folder
 If the file is in `src/es/app/model/User.java` but at the top it says:
 
 ```java
 package es.other.model;
 ```
 
-Then you will have errors.  
-The path and package must match.
+Then you'll get errors.  
+The path and the package must match.
 
-### 15.2. Forget `import`
+### 15.2. Forgetting the `import`
 
 If you are using a class from another package and you don't import it, Java doesn't recognize it (unless you use the full name).
 
-### 15.3. Confusing packages with “any” folders
+### 15.3. Confusing packages with “just any” folders
 
 In Java, it's not just “a pretty folder”:
 
@@ -449,23 +449,23 @@ In Java, it's not just “a pretty folder”:
 ## 16. Good practices
 
 - Use packages from the beginning (avoid the default package).
-- Follows the inverted domain convention (`com.amazaing...`).
+- Follow the reversed domain convention (`com.amazaing...`).
 - Separate by responsibility: `model`, `service`, `utils`, etc.
 - Use `package-private` for internal stuff when it makes sense.
-- Do not abuse `import *` in large projects.
-- Use IntelliJ to move/rename with refactor and avoid errors.
+- Don't overuse `import *` in large projects.
+- Use IntelliJ's refactoring to move/rename and avoid errors.
 
 ---
 
-## 17. To take into account
+## 17. Things to keep in mind
 
 - A package organizes classes and avoids name collisions.
-- `package ...;` must go to the beginning and match the file path.
-- `import` allows you to use classes from other packages cleanly.
+- `package ...;` must go at the beginning and match the file path.
+- `import` lets you use classes from other packages cleanly.
 - The _default package_ is bad practice in serious projects.
-- _package-private_ (no switch) limits access to the same package.
+- _package-private_ (no modifier) limits access to the same package.
 - IntelliJ can refactor and update imports automatically.
 
 ---
 
-In the next topic we will continue advancing with more advanced concepts of Object-Oriented Programming in Java with **Abstract Classes and Abstract Methods**.
+In the next topic we'll keep moving forward with more advanced Object-Oriented Programming concepts in Java: **Abstract Classes and Abstract Methods**.

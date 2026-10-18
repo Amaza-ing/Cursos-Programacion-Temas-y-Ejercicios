@@ -2,7 +2,7 @@
 
 ## **1. Introduction**
 
-In many applications not all pages have a fixed URL. You often need routes that change according to an **identifier**: the id of a user, a product, a post, etc.
+In many applications not all pages have a fixed URL. You often need routes that change based on an **identifier**: the id of a user, a product, a post, etc.
 
 Typical examples:
 
@@ -10,11 +10,11 @@ Typical examples:
 - `/users/42`
 - `/products/10`
 
-These types of routes are called **parametric routes**.
+These kinds of routes are called **parametric routes**.
 
 In this topic you will learn:
 
-- What are parametric routes.
+- What parametric routes are.
 - How to define parameters in a route.
 - How to read those parameters with `useParams`.
 - How to use them to load dynamic data.
@@ -36,21 +36,21 @@ Here:
 - `:id` is a **parameter**.
 - Its value depends on the actual URL.
 
-If the user enters:
+If the user goes to:
 
 ```txt
 /users/5
 ```
 
-So:
+Then:
 
 - `id = "5"`
 
 ---
 
-## **3. Define a parametric route**
+## **3. Defining a parametric route**
 
-Parametric routes are defined the same as normal routes, but using `:`.
+Parametric routes are defined just like normal routes, but using `:`.
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -69,9 +69,9 @@ export default App;
 
 ---
 
-## **4. Read parameters with `useParams`**
+## **4. Reading parameters with `useParams`**
 
-To access the URL parameters, the `useParams` hook is used.
+To access the URL parameters, you use the `useParams` hook.
 
 ```js
 import { useParams } from "react-router-dom";
@@ -85,7 +85,7 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-Most common way using destructuring:
+The most common way, using destructuring:
 
 ```js
 const { id } = useParams();
@@ -93,9 +93,9 @@ const { id } = useParams();
 
 ---
 
-## **5. Full Parametric Path – Simple Example**
+## **5. Complete parametric route: a simple example**
 
-### **5.1. Page `UserDetail.jsx`**
+### **5.1. `UserDetail.jsx` page**
 
 ```js
 import { useParams } from "react-router-dom";
@@ -132,7 +132,7 @@ export default UsersList;
 
 ---
 
-## **6. Use parameters to load data**
+## **6. Using parameters to load data**
 
 A very common use is to combine parametric routes with requests to an API.
 
@@ -164,7 +164,7 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-Important key:
+Key point:
 
 - The `useEffect` depends on `id`.
 
@@ -186,9 +186,9 @@ const { postId, commentId } = useParams();
 
 ## **8. Parameters are always strings**
 
-The values obtained with `useParams`:
+The values you get from `useParams`:
 
-- They are always **strings**.
+- Are always **strings**.
 
 If you need a number:
 
@@ -198,9 +198,9 @@ const numericId = Number(id);
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Forget the colon `:`**
+### **9.1. Forgetting the colon `:`**
 
 Incorrect:
 
@@ -216,13 +216,13 @@ Correct:
 
 ---
 
-### **9.2. Do not use parameter in dependencies**
+### **9.2. Leaving the parameter out of the dependencies**
 
-If you use the parameter in an `useEffect`, it must be in the dependencies array.
+If you use the parameter in a `useEffect`, it must be in the dependency array.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
 - Use clear names for parameters (`id`, `userId`, `productId`).
 - Keep routes simple.
@@ -235,4 +235,4 @@ If you use the parameter in an `useEffect`, it must be in the dependencies array
 
 ---
 
-In the next topic you will learn how to work with **protected routes**.
+In the next topic you'll learn how to work with **protected routes**.

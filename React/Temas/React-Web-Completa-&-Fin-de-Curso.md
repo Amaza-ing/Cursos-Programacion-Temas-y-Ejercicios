@@ -1,8 +1,8 @@
-# **Creating a Full Page with React**
+# **Building a Complete Website with React**
 
 ## **Notes App**
 
-In the following videos we will create a complete web page for a Notes App using everything learned in this React course
+In the following videos we'll build a complete website for a Notes App using everything you've learned in this React course.
 
 ### Part 1. How to start a website.
 

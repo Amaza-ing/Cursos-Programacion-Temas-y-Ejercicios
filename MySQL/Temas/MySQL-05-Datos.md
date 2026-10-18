@@ -1,6 +1,6 @@
 # **Topic 5: Insert, Update and Delete Data in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Insert records into a table with `INSERT`.
 - Modify existing records with `UPDATE`.
@@ -9,7 +9,7 @@ In this topic we will learn to:
 
 ---
 
-## **1. Insert data with `INSERT`**
+## **1. Inserting data with `INSERT`**
 
 The `INSERT` statement is used to add new rows to a table.
 
@@ -22,14 +22,14 @@ VALUES (valor1, valor2, ...);
 
 ### **Example**
 
-Insert a new client into the `customers` table:
+Insert a new customer into the `customers` table:
 
 ```sql
 INSERT INTO customers (first_name, last_name, signup_date, newsletter_subscribed)
 VALUES ('Laura', 'Gómez', '2025-04-01', TRUE);
 ```
 
-It is also possible to insert multiple records at once:
+You can also insert multiple records at once:
 
 ```sql
 INSERT INTO customers (first_name, last_name, signup_date, newsletter_subscribed)
@@ -38,7 +38,7 @@ VALUES
 ('Ana', 'Pérez', '2025-04-12', TRUE);
 ```
 
-To perform a query and observe all the data in a table, for example from `customers`, you can do:
+To run a query and see all the data in a table, for example `customers`, you can do this:
 
 ```sql
 SELECT * FROM customers;
@@ -46,11 +46,11 @@ SELECT * FROM customers;
 
 ---
 
-[![How to Insert Data into a Table](https://img.youtube.com/vi/qJQqFKdLYyg/0.jpg)](https://www.youtube.com/watch?v=qJQqFKdLYyg&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![How to insert data into a table](https://img.youtube.com/vi/qJQqFKdLYyg/0.jpg)](https://www.youtube.com/watch?v=qJQqFKdLYyg&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **2. Update data with `UPDATE`**
+## **2. Updating data with `UPDATE`**
 
 The `UPDATE` statement is used to modify one or more existing records.
 
@@ -62,11 +62,11 @@ SET columna1 = nuevo_valor1, columna2 = nuevo_valor2, ...
 WHERE condición;
 ```
 
-> ⚠️ You must always use `WHERE` to avoid updating all records by mistake.
+> ⚠️ Always use `WHERE` to avoid updating every record by mistake.
 
 ### **Example**
 
-Update the newsletter subscription status of a specific customer:
+Update a specific customer's newsletter subscription status:
 
 ```sql
 UPDATE customers
@@ -84,9 +84,9 @@ WHERE customer_id = 4;
 
 ---
 
-## **3. Delete data with `DELETE`**
+## **3. Deleting data with `DELETE`**
 
-The `DELETE` statement allows you to delete records from a table.
+The `DELETE` statement lets you delete records from a table.
 
 ### **Basic syntax**
 
@@ -106,7 +106,7 @@ DELETE FROM customers
 WHERE customer_id = 2;
 ```
 
-Delete all records from a table (carefully):
+Delete all the records in a table (carefully):
 
 ```sql
 DELETE FROM customers;
@@ -114,9 +114,9 @@ DELETE FROM customers;
 
 ---
 
-## **4. Insert data with foreign keys**
+## **4. Inserting data with foreign keys**
 
-When inserting data into tables that contain foreign keys, ensure that the referenced value exists in the parent table.
+When you insert data into tables that contain foreign keys, make sure that the referenced value exists in the parent table.
 
 Example: insert a new order into the `orders` table:
 
@@ -133,11 +133,11 @@ VALUES (1, 1, 150.00, '2025-04-14 12:30:00');
 
 ---
 
-## **5. Important Considerations**
+## **5. Important considerations**
 
-- Modify and delete operations can affect a lot of data if specific conditions are not used.
-- Make sure to make backup copies before executing destructive statements.
-- Use `SELECT` with the same condition that you plan to use in `UPDATE` or `DELETE` to review the data before:
+- Update and delete operations can affect a lot of data if you don't use specific conditions.
+- Make sure you back up your data before running destructive statements.
+- Use `SELECT` with the same condition you plan to use in `UPDATE` or `DELETE` to review the data first:
 
 ```sql
 SELECT * FROM customers WHERE customer_id = 5;
@@ -154,4 +154,4 @@ SELECT * FROM customers WHERE customer_id = 5;
 
 ---
 
-In the next topic we will learn to perform **advanced queries with SELECT and conditions using WHERE, ORDER BY, LIMIT and logical operators.**
+In the next topic we will learn how to write **advanced queries with SELECT and conditions using WHERE, ORDER BY, LIMIT and logical operators.**

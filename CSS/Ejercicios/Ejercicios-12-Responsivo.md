@@ -2,7 +2,7 @@
 
 ## **Instructions:**
 
-Below, you will find 5 practical exercises on media queries and responsive design in CSS.
+Below you will find 5 practical exercises on media queries and responsive design in CSS.
 
 Try to solve them before consulting the solution.
 
@@ -29,7 +29,7 @@ Create a media query that changes the background color of `<body>` to blue when 
 
 ### **Exercise 2: Adapt the font size on different devices**
 
-Make paragraphs a font size of 14px on mobile (less than 600px), 16px on tablets (between 600px and 1024px), and 18px on large screens (more than 1024px).
+Give paragraphs a font size of 14px on phones (less than 600px), 16px on tablets (between 600px and 1024px) and 18px on large screens (more than 1024px).
 
 <details><summary>Show solution</summary>
 

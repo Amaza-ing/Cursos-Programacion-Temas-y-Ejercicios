@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** to work with **interfaces, contracts, `implements`, `default` methods, `static` methods and polymorphism**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Create an `Notifiable` interface
+## Exercise 1: Create a `Notifiable` interface
 
-Creates an `Notifiable` interface with an `sendNotification(String message)` method. Then create an `EmailNotifier` class that implements the interface.
+Create a `Notifiable` interface with a `sendNotification(String message)` method. Then create an `EmailNotifier` class that implements the interface.
 
 <details><summary>Show solution</summary>
 
@@ -38,7 +38,7 @@ public class Main {
 
 ## Exercise 2: Interface as a reference type
 
-Create an `ReadableItem` interface with `read()`. Create a class `BlogPost` and save it in a variable of type `ReadableItem`.
+Create a `ReadableItem` interface with `read()`. Create a class `BlogPost` and store it in a variable of type `ReadableItem`.
 
 <details><summary>Show solution</summary>
 
@@ -68,7 +68,7 @@ public class Main {
 
 ## Exercise 3: Polymorphic list
 
-Create an `Downloadable` interface with `download()`. Create `ImageResource` and `AudioResource`, save them in a list and loop through it.
+Create a `Downloadable` interface with `download()`. Create `ImageResource` and `AudioResource`, store them in a list and loop through it.
 
 <details><summary>Show solution</summary>
 
@@ -113,7 +113,7 @@ public class Main {
 
 ## Exercise 4: Implement multiple interfaces
 
-Create `Startable` with `start()` and `Pausable` with `pause()`. Create an `VideoPlayer` class that implements both.
+Create `Startable` with `start()` and `Pausable` with `pause()`. Create a `VideoPlayer` class that implements both.
 
 <details><summary>Show solution</summary>
 
@@ -143,7 +143,7 @@ public class VideoPlayer implements Startable, Pausable {
 
 ---
 
-## Exercise 5: `default` Method
+## Exercise 5: `default` method
 
 Create an interface `Loggable` with `log(String message)` and a method `default logError(String message)` that uses `log`.
 
@@ -170,9 +170,9 @@ public class ConsoleLogger implements Loggable {
 
 ---
 
-## Exercise 6: Overriding an `default` method
+## Exercise 6: Overriding a `default` method
 
-Create an `Describable` interface with `describe()` by default. Create an `Game` class that overrides that method.
+Create a `Describable` interface with a default `describe()` method. Create a `Game` class that overrides that method.
 
 <details><summary>Show solution</summary>
 
@@ -197,7 +197,7 @@ public class Game implements Describable {
 
 ## Exercise 7: `static` method in an interface
 
-Create an `PasswordRules` interface with a static method `isLongEnough` that validates whether a password is at least 8 characters long.
+Create a `PasswordRules` interface with a static method `isLongEnough` that checks whether a password is at least 8 characters long.
 
 <details><summary>Show solution</summary>
 
@@ -252,9 +252,9 @@ public class OfficePrinter implements AdvancedPrinter {
 
 ---
 
-## Exercise 9: Interface with constant
+## Exercise 9: Interface with a constant
 
-Creates an interface `UploadConfig` with a constant `MAX_FILE_SIZE = 10`. Prints its value from `main`.
+Create an interface `UploadConfig` with a constant `MAX_FILE_SIZE = 10`. Print its value from `main`.
 
 <details><summary>Show solution</summary>
 
@@ -276,7 +276,7 @@ public class Main {
 
 ## Exercise 10: Method that receives an interface
 
-Create an `Compressible` interface and an `VideoFile` class. Then create a method `compressFile(Compressible file)`.
+Create a `Compressible` interface and a `VideoFile` class. Then create a method `compressFile(Compressible file)`.
 
 <details><summary>Show solution</summary>
 

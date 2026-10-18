@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** on variables, primitive types, `String`, constants and good naming practices.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Declaration and initialization of basic variables
+## Exercise 1: Declaring and initializing basic variables
 
-Create a program with these variables (choose correct types):
+Create a program with these variables (choose the right types):
 
 - `userName` (username) with the value `"Laura"`
 - `userAge` (age) with the value `28`
@@ -18,7 +18,7 @@ Create a program with these variables (choose correct types):
 
 Print each variable on a separate line.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -51,9 +51,9 @@ Declare and initialize variables with the most appropriate type:
 - `isWeekend` with the value `false`
 - `worldPopulation` with the value `8_000_000_000`
 
-Print all in console.
+Print them all to the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -77,15 +77,15 @@ public class Main {
 
 ## Exercise 3: Modify a variable step by step
 
-Creates a variable `lives` with initial value `3`.
+Create a variable `lives` with an initial value of `3`.
 
-- Subtract 1 life (must remain at 2)
-- Subtract 1 life (must remain at 1)
-- Add 2 lives (must remain at 3)
+- Subtract 1 life (it should end up at 2)
+- Subtract 1 life (it should end up at 1)
+- Add 2 lives (it should end up at 3)
 
-Prints the final value of `lives`.
+Print the final value of `lives`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -110,7 +110,7 @@ public class Main {
 Create these variables:
 
 - `productName` with value `"Keyboard"`
-- `unitPrice` with `29.99` value
+- `unitPrice` with value `29.99`
 - `quantity` with value `2`
 
 Print a sentence like this (same format, but with your variables):
@@ -121,7 +121,7 @@ Product: Keyboard | Units: 2 | Total: 59.98
 
 Hint: calculate `total` before printing.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -141,7 +141,7 @@ public class Main {
 
 ---
 
-## Exercise 5: `char` vs `String` (correct types)
+## Exercise 5: `char` vs `String` (fix the types)
 
 This code has type errors. Fix it so it compiles and keeps the same meaning:
 
@@ -157,7 +157,7 @@ public class Main {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -189,7 +189,7 @@ Print:
 
 Then, increment `attempts` to `1` and print `attempts` again.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -210,9 +210,9 @@ public class Main {
 
 ---
 
-## Exercise 7: Variable names (refactor for good practices)
+## Exercise 7: Variable names (refactor following good practices)
 
-Rewrite this code to make the names clearer using **camelCase** and actual meaning:
+Rewrite this code so the names are clearer, using **camelCase** and names that say what the values really mean:
 
 ```java
 public class Main {
@@ -230,7 +230,7 @@ public class Main {
 
 Keep the values, but change the names to more descriptive ones.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -255,7 +255,7 @@ Declare a variable `annualBudget` with value `2500000` but written using undersc
 
 Print the value to the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -271,7 +271,7 @@ public class Main {
 
 ---
 
-## Exercise 9: Uninitialized local variable (detect and correct the error)
+## Exercise 9: Uninitialized local variable (find and fix the error)
 
 This program does not compile. Fix it **without changing the type** of the variable:
 
@@ -284,9 +284,9 @@ public class Main {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-In Java, a local variable must be initialized before being used:
+In Java, a local variable must be initialized before it is used:
 
 ```java
 public class Main {
@@ -317,7 +317,7 @@ Assign made-up values and show output like this (same style, with your data):
 Nick: Neo | Level: 12 | Accuracy: 0.83 | Online: true | Rank: S
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

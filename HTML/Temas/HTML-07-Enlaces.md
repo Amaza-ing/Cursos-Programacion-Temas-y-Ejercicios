@@ -2,7 +2,7 @@
 
 ## **1. Introduction**
 
-HTML links allow you to connect web pages to each other, facilitating navigation within a website or to other external sites. They are created with the `<a>` tag and can contain different attributes to define their behavior.
+Links in HTML let you connect web pages to each other, making it easy to navigate within a website or to other external sites. They are created with the `<a>` tag and can have different attributes that define their behavior.
 
 ---
 
@@ -16,11 +16,11 @@ The `href` attribute within the `<a>` tag defines the URL or address that the li
 <a href="https://www.ejemplo.com">Visita Ejemplo</a>
 ```
 
-In this case, by clicking on the link, the user will be directed to the website indicated in `href`.
+In this case, when the user clicks the link, they'll be taken to the website given in `href`.
 
 ---
 
-## **3. Important attributes in links**
+## **3. Important link attributes**
 
 ### **3.1. `target="_blank"`**
 
@@ -32,7 +32,7 @@ This attribute indicates that the link will open in a new browser tab.
 
 ### **3.2. `rel="noopener"` and `rel="noreferrer"`**
 
-When using `target="_blank"`, it is recommended to add `rel="noopener noreferrer"` to improve security and prevent the destination page from accessing the `window.opener` of the source site.
+When you use `target="_blank"`, it's recommended to add `rel="noopener noreferrer"` to improve security and prevent the destination page from accessing the source site's `window.opener`.
 
 ```HTML
 <a href="https://www.ejemplo.com" target="_blank" rel="noopener noreferrer">Abrir con seguridad</a>
@@ -42,9 +42,9 @@ When using `target="_blank"`, it is recommended to add `rel="noopener noreferrer
 
 ## **4. Internal links and navigation within the same page**
 
-On a website, we can link different sections within the same page using identifiers (`id`).
+On a website, we can link to different sections within the same page using identifiers (`id`).
 
-### **Internal navigation example:**
+### **Example of internal navigation:**
 
 ```HTML
 <a href="#seccion1">Ir a la sección 1</a>
@@ -57,7 +57,7 @@ On a website, we can link different sections within the same page using identifi
 <p>Contenido de la segunda sección.</p>
 ```
 
-In this case, when you click on the links, the browser will scroll to the corresponding section.
+In this case, when you click the links, the browser will scroll to the corresponding section.
 
 ---
 
@@ -67,7 +67,7 @@ There are two types of links in HTML:
 
 ### **5.1. Absolute link**
 
-An absolute link points to a full URL of another website.
+An absolute link points to the full URL of another website.
 
 ```HTML
 <a href="https://www.ejemplo.com">Sitio externo</a>
@@ -83,13 +83,13 @@ A relative link points to a page within the same website without including the f
 
 ---
 
-[![Links and Attributes](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Links and attributes](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
 ## **6. Email and phone links**
 
-It is also possible to create links that open email applications or call a phone number.
+You can also create links that open an email app or call a phone number.
 
 ### **6.1. Link to send an email**
 
@@ -107,11 +107,11 @@ It is also possible to create links that open email applications or call a phone
 
 ## **7. Good practices when using links in HTML**
 
-- Use `rel="noopener noreferrer"` when using `target="_blank"`.
+- Use `rel="noopener noreferrer"` whenever you use `target="_blank"`.
 - Prefer relative links for navigation within the same website.
-- Use clear descriptions on links to improve accessibility.
-- Avoid excessive use of blank links (`#`), as they can confuse users.
+- Use clear link text to improve accessibility.
+- Avoid overusing empty links (`#`), as they can confuse users.
 
 ---
 
-In the next topic, we will explore HTML images, their syntax, attributes, and how to optimize their use on a web page.
+In the next topic, we'll explore **images in HTML**: their syntax, their attributes and how to use them efficiently on a web page.

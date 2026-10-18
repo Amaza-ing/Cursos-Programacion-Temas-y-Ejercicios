@@ -2,19 +2,19 @@
 
 Below you will find **10 practical exercises** on reactive attributes (connecting state/variables with HTML attributes).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: `disabled` button according to minimum length**
+## **Exercise 1: `disabled` button based on minimum length**
 
-Create an `UsernameGate.jsx` component with:
+Create a `UsernameGate.jsx` component with:
 
-- Initial `userName` state `""`.
+- A `userName` state with initial value `""`.
 - A controlled input.
-- A **Continue** button that is disabled if `userName` is less than 3 characters.
+- A **Continue** button that is disabled if `userName` has fewer than 3 characters.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -43,15 +43,15 @@ export default UsernameGate;
 
 ---
 
-## **Exercise 2: Checkbox that activates/deactivates a button**
+## **Exercise 2: Checkbox that enables/disables a button**
 
-Create an `ConfirmAction.jsx` component with:
+Create a `ConfirmAction.jsx` component with:
 
-- Initial `confirmed` boolean state `false`.
+- A boolean `confirmed` state with initial value `false`.
 - A controlled checkbox.
 - A **Delete** button that is disabled if `confirmed` is `false`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -81,18 +81,18 @@ export default ConfirmAction;
 
 ---
 
-## **Exercise 3: `placeholder` reactive according to status**
+## **Exercise 3: Reactive `placeholder` based on state**
 
-Create an `RoleSearch.jsx` component with:
+Create a `RoleSearch.jsx` component with:
 
-- Initial `role` state `"user"`.
+- A `role` state with initial value `"user"`.
 - A **Switch Role** button that toggles between `"user"` and `"admin"`.
 - An input whose `placeholder` is:
 
   - **"Search"** if `role` is `"user"`
   - **"Search users"** if `role` is `"admin"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -121,16 +121,16 @@ export default RoleSearch;
 
 ---
 
-## **Exercise 4: `title` reactive on an icon**
+## **Exercise 4: Reactive `title` on an icon**
 
 Create an `InfoIcon.jsx` component that:
 
-- Have initial status `helpText` `"Click for details"`.
-- Render an `span` with **"i"** text.
-- Assign `title={helpText}`.
-- A **Change tooltip** button that changes `helpText` to `"More info available"`.
+- Has a `helpText` state with initial value `"Click for details"`.
+- Renders a `span` with the text **"i"**.
+- Assigns `title={helpText}`.
+- Has a **Change tooltip** button that changes `helpText` to `"More info available"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -157,20 +157,20 @@ export default InfoIcon;
 
 ---
 
-## **Exercise 5: Reactive `src` with simple selector**
+## **Exercise 5: Reactive `src` with a simple selector**
 
-Create an `ProductImage.jsx` component with:
+Create a `ProductImage.jsx` component with:
 
-- Initial `size` state `"small"`.
+- A `size` state with initial value `"small"`.
 - A button that toggles between `"small"` and `"large"`.
 - An `img` whose `src` is:
 
   - `"/product-small.png"` if `size` is `"small"`
   - `"/product-large.png"` if `size` is `"large"`
 
-The images do not need to exist, just build the code.
+The images don't need to exist; just write the code.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -200,15 +200,15 @@ export default ProductImage;
 
 ---
 
-## **Exercise 6: `value` reactive with uppercase text (without modifying the input)**
+## **Exercise 6: Reactive `value` with uppercase text (without modifying the input)**
 
 Create an `UpperPreview.jsx` component with:
 
-- Initial `text` state `""`.
+- A `text` state with initial value `""`.
 - A controlled input (`value={text}` + `onChange`).
-- An `p` showing a preview in all caps with `text.toUpperCase()`.
+- A `p` showing an uppercase preview with `text.toUpperCase()`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -239,11 +239,11 @@ export default UpperPreview;
 
 Create an `EmailOptIn.jsx` component with:
 
-- Initial `optIn` state `false`.
-- Controlled checkbox.
-- An input for email that is **disabled** if `optIn` is `false`.
+- An `optIn` state with initial value `false`.
+- A controlled checkbox.
+- An email input that is **disabled** if `optIn` is `false`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -274,17 +274,17 @@ export default EmailOptIn;
 
 ---
 
-## **Exercise 8: `className` reactive according to status**
+## **Exercise 8: Reactive `className` based on state**
 Create an `OnlineDot.jsx` component with:
 
-- Initial `isOnline` state `false`.
+- An `isOnline` state with initial value `false`.
 - A **Toggle** button.
-- An `span` with **"●"** text and dynamic `className`:
+- A `span` with the text **"●"** and a dynamic `className`:
 
   - `"dotOnline"` if `isOnline` is `true`
   - `"dotOffline"` if `isOnline` is `false`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -313,9 +313,9 @@ export default OnlineDot;
 
 ---
 
-## **Exercise 9: Correct the typical error with checkbox**
+## **Exercise 9: Fix the typical checkbox mistake**
 
-This component tries to read the checkbox, but it is wrong. Correct it:
+This component tries to read the checkbox, but it's wrong. Fix it:
 
 ```js
 import { useState } from "react";
@@ -338,9 +338,9 @@ function Agreement() {
 export default Agreement;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-`event.target.checked` (boolean) is used in the checkbox, not `value`:
+With a checkbox you use `event.target.checked` (a boolean), not `value`:
 
 ```js
 import { useState } from "react";
@@ -367,7 +367,7 @@ export default Agreement;
 
 ---
 
-## **Exercise 10: Mini-case study (derived value for readability)**
+## **Exercise 10: Mini practical case (derived value for readability)**
 
 You have this button:
 
@@ -377,7 +377,7 @@ You have this button:
 
 Rewrite it by creating an `isDisabled` variable before the `return` to improve readability.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const isDisabled = text.trim() === "" || text.length < 5;

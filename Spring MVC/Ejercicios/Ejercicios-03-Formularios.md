@@ -2,20 +2,20 @@
 
 ## Introduction
 
-In these exercises you will practice the main contents of **Topic 3**:
+In these exercises you'll practice the main contents of **Topic 3**:
 
-- Creation of forms in Spring MVC.
-- Use of `@ModelAttribute`.
-- Use of `@Valid`.
-- Use of `BindingResult`.
+- Creating forms in Spring MVC.
+- Using `@ModelAttribute`.
+- Using `@Valid`.
+- Using `BindingResult`.
 - Validation with Jakarta Bean Validation.
-- Use of `<form:form>`, `<form:input>`, `<form:select>` and `<form:errors>` tags.
-- Processing of `GET` and `POST` requests.
-- Redirection after saving data.
-- Use of temporary messages with `RedirectAttributes`.
-- Separation between controller, model and service.
+- Using the `<form:form>`, `<form:input>`, `<form:select>` and `<form:errors>` tags.
+- Processing `GET` and `POST` requests.
+- Redirecting after saving data.
+- Using temporary messages with `RedirectAttributes`.
+- Separating the controller, the model and the service.
 
-The exercises follow a step-by-step progression. We will use as an example a small **products** management application, different from the course example seen in theory.
+The exercises follow a step-by-step progression. As an example, we'll use a small **product** management application, different from the courses example you saw in the theory.
 
 Each solution is hidden under the **show solution** button.
 
@@ -35,12 +35,12 @@ In Topic 3 we are going to validate forms using annotations such as:
 @Max
 ```
 
-Adds to `pom.xml` the necessary dependency to use Jakarta Bean Validation with Hibernate Validator.
+Add to `pom.xml` the dependency you need to use Jakarta Bean Validation with Hibernate Validator.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```xml
 <!-- Implementación de Jakarta Bean Validation -->
@@ -101,16 +101,16 @@ Add the following validations:
 | Field | Validation |
 | ---------- | ------------------------------------- |
 | `name` | Required and between 3 and 60 characters |
-| `category` | Mandatory |
-| `price` | Mandatory and minimum 0.01 |
-| `stock` | Mandatory and minimum 0 |
+| `category` | Required |
+| `price` | Required and minimum 0.01 |
+| `stock` | Required and minimum 0 |
 
-The class must have empty constructor, constructor with all fields, getters and setters.
+The class must have an empty constructor, a constructor with all the fields, getters and setters.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.shop.model;
@@ -209,13 +209,13 @@ We use:
 @NotNull
 ```
 
-for numeric fields that must have value.
+for numeric fields that must have a value.
 
-The `price` field is `Double`, not `double`, because we need `null` to be valid when the user leaves the field empty.
+The `price` field is `Double`, not `double`, because it needs to be able to hold `null` when the user leaves the field empty.
 
 The `stock` field is `Integer`, not `int`, for the same reason.
 
-If we use primitive types like `int` or `double`, we cannot represent the absence of value well.
+If we use primitive types like `int` or `double`, we can't properly represent the absence of a value.
 
 </details>
 
@@ -230,21 +230,21 @@ Create a class called `ProductService` in the package:
 com.example.shop.service
 ```
 
-It must be noted with `@Service`.
+It must be annotated with `@Service`.
 
 The class must:
 
 1. Have a mutable list of products.
 2. Load three initial products.
-3. Have an `nextId` counter.
-4. Have an `findAll()` method.
-5. Have an `findById(Long id)` method.
-6. Have a method `save(Product product)` that assigns a new id and saves the product.
+3. Have a `nextId` counter.
+4. Have a `findAll()` method.
+5. Have a `findById(Long id)` method.
+6. Have a `save(Product product)` method that assigns a new id and saves the product.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.shop.service;
@@ -303,7 +303,7 @@ If we used:
 List.of(...)
 ```
 
-We could not add new products.
+we couldn't add new products.
 
 The `save` method does three things:
 
@@ -323,27 +323,27 @@ It first assigns an identifier, then saves the product, and finally increments t
 
 ## Statement
 
-Create a handler named `ProductController` in the package:
+Create a controller named `ProductController` in the package:
 
 ```text
 com.example.shop.controller
 ```
 
-You must:
+It must:
 
-1. Be registered with `@Controller`.
-2. Have a base path `/products`.
-3. Receive `ProductService` by builder.
+1. Be annotated with `@Controller`.
+2. Have the base path `/products`.
+3. Receive `ProductService` through its constructor.
 4. Have a method that responds to `GET /products`.
-5. Add to model:
+5. Add to the model:
    - `pageTitle` with the value `Listado de productos`.
-   - `products` with product list.
+   - `products` with the list of products.
 6. Return the `products/list` view.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.shop.controller;
@@ -382,19 +382,19 @@ The base route is:
 @RequestMapping("/products")
 ```
 
-As the method has:
+Since the method has:
 
 ```java
 @GetMapping
 ```
 
-responds to:
+it responds to:
 
 ```text
 GET /products
 ```
 
-The controller does not create the products directly. You ask the service:
+The controller doesn't create the products directly. It asks the service for them:
 
 ```java
 productService.findAll()
@@ -426,13 +426,13 @@ Create the view:
 src/main/webapp/WEB-INF/views/products/list.jsp
 ```
 
-It should show a table with:
+It must show a table with:
 
 ```text
 Nombre | Categoría | Precio | Stock | Acción
 ```
 
-You should also include a button to create a new product that points to:
+It must also include a button to create a new product that points to:
 
 ```text
 /products/new
@@ -443,7 +443,7 @@ Use JSTL to loop through the list of products.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -511,13 +511,13 @@ Use JSTL to loop through the list of products.
 
 ### Explanation
 
-The list is traversed with:
+We loop through the list with:
 
 ```jsp
 <c:forEach var="product" items="${products}">
 ```
 
-The `products` attribute comes from the driver:
+The `products` attribute comes from the controller:
 
 ```java
 model.addAttribute("products", productService.findAll());
@@ -540,7 +540,7 @@ For example:
 ${product.name}
 ```
 
-call:
+calls:
 
 ```java
 getName()
@@ -563,13 +563,13 @@ GET /products/new
 This method must:
 
 1. Add to the model `pageTitle` with the value `Crear nuevo producto`.
-2. Add to the model an empty object `Product` with the name `product`.
+2. Add an empty `Product` object to the model with the name `product`.
 3. Return the `products/form` view.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @GetMapping("/new")
@@ -581,7 +581,7 @@ public String showCreateForm(Model model) {
 }
 ```
 
-### Complete driver up to this point
+### Complete controller so far
 
 ```java
 package com.example.shop.controller;
@@ -660,7 +660,7 @@ The form must:
 
 1. Use Spring's form tag library.
 2. Send the data via `POST` to `/products`.
-3. Be linked to the `product` attribute.
+3. Be bound to the `product` attribute.
 4. Have fields for:
    - `name`
    - `category`
@@ -680,7 +680,7 @@ Otros
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -768,7 +768,7 @@ The line:
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-allows using Spring form tags.
+lets you use Spring's form tags.
 
 The main tag is:
 
@@ -786,7 +786,7 @@ For example:
 <form:input path="name" />
 ```
 
-connects with:
+is connected to:
 
 ```java
 private String name;
@@ -814,16 +814,16 @@ POST /products
 
 The method must:
 
-1. Receive an `Product` object using `@ModelAttribute("product")`.
+1. Receive a `Product` object using `@ModelAttribute("product")`.
 2. Save it using `productService.save(product)`.
 3. Redirect to `/products`.
 
-In this exercise do not add validation yet.
+Don't add validation yet in this exercise.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @PostMapping
@@ -834,7 +834,7 @@ public String createProduct(@ModelAttribute("product") Product product) {
 }
 ```
 
-### Controller with necessary imports
+### Controller with the necessary imports
 
 ```java
 package com.example.shop.controller;
@@ -891,7 +891,7 @@ The annotation:
 @ModelAttribute("product")
 ```
 
-causes Spring MVC to construct an `Product` object from the fields submitted by the form.
+makes Spring MVC build a `Product` object from the fields submitted by the form.
 
 If the form sends:
 
@@ -928,17 +928,17 @@ return "redirect:/products";
 
 Modify the `createProduct` method so that:
 
-1. Validate the product with `@Valid`.
-2. Receive an `BindingResult`.
-3. If there are errors, redisplay the `products/form` view.
-4. If there are no errors, save the product and redirect to `/products`.
+1. It validates the product with `@Valid`.
+2. It receives a `BindingResult`.
+3. If there are errors, it shows the `products/form` view again.
+4. If there are no errors, it saves the product and redirects to `/products`.
 
 Remember that if there are errors you must add `pageTitle` to the model again.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @PostMapping
@@ -958,7 +958,7 @@ public String createProduct(
 }
 ```
 
-### Imports required
+### Required imports
 
 ```java
 import jakarta.validation.Valid;
@@ -990,7 +990,7 @@ That's why we check:
 if (bindingResult.hasErrors()) {
 ```
 
-If there are errors, we do not keep the product. We return to the form:
+If there are errors, we don't save the product. We go back to the form:
 
 ```java
 return "products/form";
@@ -1003,7 +1003,7 @@ productService.save(product);
 return "redirect:/products";
 ```
 
-`BindingResult` should come right after the validated object:
+`BindingResult` must come right after the validated object:
 
 ```java
 @Valid @ModelAttribute("product") Product product,
@@ -1014,11 +1014,11 @@ BindingResult bindingResult,
 
 ---
 
-# Exercise 10 — Add success message with `RedirectAttributes`
+# Exercise 10 — Add a success message with `RedirectAttributes`
 
 ## Statement
 
-Modify the `createProduct` method so that when the product saves successfully, it adds a temporary message called `successMessage`.
+Modify the `createProduct` method so that, when the product is saved successfully, it adds a temporary message called `successMessage`.
 
 The message must be:
 
@@ -1031,7 +1031,7 @@ Then modify `list.jsp` to display that message if it exists.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Controller
 
@@ -1059,7 +1059,7 @@ public String createProduct(
 }
 ```
 
-### Import required
+### Required import
 
 ```java
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -1077,7 +1077,7 @@ Add this block before the table:
 </c:if>
 ```
 
-The view would look like this in the main part:
+The main part of the view would look like this:
 
 ```jsp
 <main class="container">
@@ -1103,7 +1103,7 @@ The view would look like this in the main part:
 
 ### Explanation
 
-`RedirectAttributes` allows temporary data to be sent after a redirect.
+`RedirectAttributes` lets you send temporary data after a redirect.
 
 This is useful because after saving we do:
 
@@ -1117,7 +1117,7 @@ The flash attribute:
 redirectAttributes.addFlashAttribute("successMessage", "...");
 ```
 
-It will be available on the next request, but will not stay permanently in session.
+will be available in the next request, but won't stay in the session permanently.
 
 </details>
 
@@ -1135,8 +1135,8 @@ GET /products/detail?id=1
 
 The method must:
 
-1. Receive parameter `id` with `@RequestParam`.
-2. Search for the product.
+1. Receive the `id` parameter with `@RequestParam`.
+2. Look up the product.
 3. If it does not exist, return the `products/not-found` view.
 4. If it exists, add `product` and `pageTitle` to the model.
 5. Return the `products/detail` view.
@@ -1146,7 +1146,7 @@ Then create the view `detail.jsp`.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Method in `ProductController`
 
@@ -1169,7 +1169,7 @@ public String productDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-### Import required
+### Required import
 
 ```java
 import org.springframework.web.bind.annotation.RequestParam;
@@ -1270,7 +1270,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 ### Explanation
 
-`@RequestParam` allows reading a specific parameter from the URL.
+`@RequestParam` lets you read a specific parameter from the URL.
 
 If the URL is:
 
@@ -1284,7 +1284,7 @@ Spring assigns:
 id = 2L;
 ```
 
-Then we search for the product with:
+Then we look up the product with:
 
 ```java
 productService.findById(id)
@@ -1307,7 +1307,7 @@ In `Product`, the `category` field has this validation:
 private String category;
 ```
 
-Explain why in the form it is important that the first option has an empty value:
+Explain why it's important for the first option in the form to have an empty value:
 
 ```jsp
 <form:option value="" label="Selecciona una categoría" />
@@ -1325,7 +1325,7 @@ Alimentación
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Explanation
 
@@ -1345,7 +1345,7 @@ If the first option had a valid value, such as:
 
 then the form would be submitted with a valid category even if the user had not chosen anything.
 
-As we have:
+Since we have:
 
 ```java
 @NotBlank(message = "La categoría es obligatoria.")
@@ -1370,7 +1370,7 @@ we need the initial option to send an empty value so that validation can be trig
 
 ---
 
-# Exercise 13 — Diagnose frequent errors in forms
+# Exercise 13 — Diagnose common errors in forms
 
 ## Statement
 
@@ -1384,7 +1384,7 @@ In the controller the object is added like this:
 model.addAttribute("product", new Product());
 ```
 
-But in the JSP it is written:
+But the JSP has:
 
 ```jsp
 <form:form modelAttribute="item">
@@ -1396,7 +1396,7 @@ What's happening?
 
 ## Case B
 
-In the POST method you write:
+The POST method has:
 
 ```java
 public String createProduct(
@@ -1411,13 +1411,13 @@ Why is it wrong?
 
 ## Case C
 
-In the class `Product` there is the attribute:
+The `Product` class has the attribute:
 
 ```java
 private String name;
 ```
 
-But in the JSP it is written:
+But the JSP has:
 
 ```jsp
 <form:input path="productName" />
@@ -1428,7 +1428,7 @@ What's happening?
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Case A
 
@@ -1459,7 +1459,7 @@ The solution is to use the same name:
 ## Case B
 
 The problem is the order of the parameters.
-`BindingResult` should come right after the validated object.
+`BindingResult` must come right after the validated object.
 
 Incorrect:
 
@@ -1477,7 +1477,7 @@ BindingResult bindingResult,
 Model model
 ```
 
-If `BindingResult` is not placed right after the validated object, Spring will not correctly associate validation errors.
+If `BindingResult` is not placed right after the validated object, Spring won't associate the validation errors correctly.
 
 ---
 
@@ -1509,19 +1509,19 @@ Spring will try to look for a property called `productName`, but it does not exi
 
 ---
 
-# Exercise 14 — Final challenge: complete form to register clients
+# Exercise 14 — Final challenge: a complete form to register customers
 
 ## Statement
 
-Create a new section to register clients.
+Create a new section to register customers.
 
 You must create:
 
-1. An `Customer` class.
-2. An `CustomerService` class.
-3. An `CustomerController` class.
-4. An `customers/list.jsp` view.
-5. An `customers/form.jsp` view.
+1. A `Customer` class.
+2. A `CustomerService` class.
+3. A `CustomerController` class.
+4. A `customers/list.jsp` view.
+5. A `customers/form.jsp` view.
 
 The `Customer` model must have:
 
@@ -1529,8 +1529,8 @@ The `Customer` model must have:
 | ---------------- | -------- | ------------------------------------ |
 | `id` | `Long` | No validation |
 | `fullName` | `String` | Required, between 3 and 80 characters |
-| `email` | `String` | Mandatory and email format |
-| `membershipType` | `String` | Mandatory |
+| `email` | `String` | Required and email format |
+| `membershipType` | `String` | Required |
 
 The routes must be:
 
@@ -1540,7 +1540,7 @@ GET  /customers/new  → formulario
 POST /customers      → guardar cliente
 ```
 
-The form should have a dropdown for `membershipType` with:
+The form must have a dropdown for `membershipType` with:
 
 ```text
 Basic
@@ -1551,7 +1551,7 @@ VIP
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Model `Customer.java`
 
@@ -1656,7 +1656,7 @@ public class CustomerService {
 }
 ```
 
-## `CustomerController.java` driver
+## `CustomerController.java` controller
 
 ```java
 package com.example.shop.controller;

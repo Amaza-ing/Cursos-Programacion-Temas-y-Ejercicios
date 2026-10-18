@@ -1,8 +1,8 @@
 # Exercises - Topic 32: Date/Time API
 
-Below you will find **10 practical exercises** to work with **Date/Time API**: `LocalDate`, `LocalTime`, `LocalDateTime`, `DateTimeFormatter`, `Period`, `Duration`, comparison of dates and operations with days, months and years.
+Below you will find **10 practical exercises** to work with the **Date/Time API**: `LocalDate`, `LocalTime`, `LocalDateTime`, `DateTimeFormatter`, `Period`, `Duration`, comparing dates and operations with days, months and years.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -143,15 +143,15 @@ public class Main {
 
 ---
 
-## Exercise 6: Parse text to date
+## Exercise 6: Parse text into a date
 
-Declares:
+Declare:
 
 ```java
 String text = "25/12/2026";
 ```
 
-Convert that text to `LocalDate` using `DateTimeFormatter` with pattern `dd/MM/yyyy`.
+Convert that text to `LocalDate` using `DateTimeFormatter` with the pattern `dd/MM/yyyy`.
 
 <details><summary>Show solution</summary>
 
@@ -184,7 +184,7 @@ Create a date of birth:
 LocalDate birthDate = LocalDate.of(2000, 3, 20);
 ```
 
-Calculate age in years using `Period.between`.
+Calculate the age in years using `Period.between`.
 
 <details><summary>Show solution</summary>
 
@@ -217,7 +217,7 @@ LocalDate deadline = LocalDate.of(2026, 8, 1);
 LocalDate currentDate = LocalDate.of(2026, 8, 10);
 ```
 
-Checks if `currentDate` is later than `deadline` using `isAfter`.
+Check whether `currentDate` is later than `deadline` using `isAfter`.
 
 If it is, print `"Expired"`.
 
@@ -242,9 +242,9 @@ public class Main {
 
 ---
 
-## Exercise 9: Duration between two hours
+## Exercise 9: Duration between two times
 
-Create two hours:
+Create two times:
 
 ```java
 LocalTime start = LocalTime.of(9, 30);
@@ -275,7 +275,7 @@ public class Main {
 
 ---
 
-## Exercise 10: Create a method to check expiration
+## Exercise 10: Create a method to check whether a due date has passed
 
 Create a method:
 
@@ -283,9 +283,9 @@ Create a method:
 public static boolean isExpired(LocalDate dueDate)
 ```
 
-Should return `true` if `dueDate` is older than the current date.
+It should return `true` if `dueDate` is earlier than the current date.
 
-Try the method from `main` with a past date and a future date.
+Test the method from `main` with a past date and a future date.
 
 <details><summary>Show solution</summary>
 

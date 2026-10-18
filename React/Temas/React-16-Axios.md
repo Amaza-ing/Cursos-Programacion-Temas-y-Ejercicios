@@ -2,11 +2,11 @@
 
 ## **1. Introduction**
 
-In the previous topic you learned how to make HTTP requests using **Fetch API**. Although Fetch is native to the browser, many React projects use an external library called **Axios**, which greatly simplifies the code and error handling.
+In the previous topic you learned how to make HTTP requests using the **Fetch API**. Although Fetch is native to the browser, many React projects use an external library called **Axios**, which greatly simplifies the code and error handling.
 
 In this topic you will learn:
 
-- What is Axios and why it is used.
+- What Axios is and why it's used.
 - How to install Axios in a React project.
 - How to make **GET** and **POST** requests.
 - How to handle typical states: `loading`, `error` and `data`.
@@ -16,14 +16,14 @@ In this topic you will learn:
 
 ## **2. What is Axios?**
 
-Axios is a library for making HTTP requests based on Promises.
+Axios is a Promise-based library for making HTTP requests.
 
 Main advantages over Fetch:
 
-- Automatically convert the response to JSON.
-- Automatically throws errors when the answer is not correct (404, 500...).
-- Allows you to configure default values ​​(baseURL, headers).
-- Shorter and more readable code.
+- It automatically converts the response to JSON.
+- It automatically throws errors when the response isn't successful (404, 500...).
+- It lets you configure default values (baseURL, headers).
+- Shorter, more readable code.
 
 ---
 
@@ -55,13 +55,13 @@ axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
 
 Key points:
 
-- Axios returns an `response` object.
+- Axios returns a `response` object.
 - The data already comes in `response.data`.
-- No need to call `.json()`.
+- There's no need to call `.json()`.
 
 ---
 
-## **5. GET with `useEffect` and status**
+## **5. GET with `useEffect` and state**
 
 The pattern in React is very similar to what you already know with Fetch.
 
@@ -112,11 +112,11 @@ export default Users;
 
 ---
 
-## **6. Error Handling in Axios**
+## **6. Error handling in Axios**
 
 Unlike Fetch:
 
-- Axios **automatically throws error** if the status is not 2xx.
+- Axios **automatically throws an error** if the status isn't 2xx.
 - You don't need to check `response.ok`.
 
 That's why this code is enough:
@@ -133,7 +133,7 @@ try {
 
 ## **7. POST with Axios**
 
-For sending data, Axios is more direct than Fetch.
+To send data, Axios is more direct than Fetch.
 
 ```js
 const createUser = async () => {
@@ -151,16 +151,16 @@ const createUser = async () => {
 };
 ```
 
-Note that:
+Notice that:
 
 - You don't need `JSON.stringify`.
-- You don't need to manually configure headers for JSON (Axios does it for you).
+- You don't need to set the JSON headers manually (Axios does it for you).
 
 ---
 
-## **8. Set up an Axios instance (optional but common)**
+## **8. Setting up an Axios instance (optional but common)**
 
-In medium or large projects it is common to create an instance:
+In medium-sized or large projects it's common to create an instance:
 
 ```js
 import axios from "axios";
@@ -182,30 +182,30 @@ const response = await api.get("/users");
 
 Advantages:
 
-- Do not repeat the base URL.
+- You don't repeat the base URL.
 - You can configure common headers.
 
 ---
 
-## **9. Quick Comparison: Fetch vs Axios**
+## **9. Quick comparison: Fetch vs Axios**
 
 | Fetch | Axios |
 | -------------------------- | --------------------------- |
-| Browser Native | External library |
-| Need `response.json()` | automatic JSON |
-| Does not throw error at 404/500 | Automatically throws error |
+| Built into the browser | External library |
+| Needs `response.json()` | Automatic JSON |
+| Doesn't throw an error on 404/500 | Throws errors automatically |
 | More verbose | Cleaner |
 
 Both are valid, but Axios is often preferred in real projects.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
 - Keep `data`, `isLoading` and `error` separate.
 - Use `try / catch / finally`.
 - Centralize Axios in one instance if the project grows.
-- Don't mix UI logic with excessive request logic.
+- Don't mix too much request logic into your UI logic.
 
 ---
 
@@ -213,4 +213,4 @@ Both are valid, but Axios is often preferred in real projects.
 
 ---
 
-In the next topic you will learn how to work with **forms in React**, combining them with state and HTTP requests.
+In the next topic you'll learn how to work with **forms in React**, combining them with state and HTTP requests.

@@ -1,26 +1,26 @@
-# **Topic 14: Perform Unit Tests in Vue 3 using Vitest**
+# **Topic 14: Writing Unit Tests in Vue 3 with Vitest**
 
 ## **1. Introduction**
 
-Unit testing is a key tool to ensure that components work correctly in isolation. In a Vue 3 project with Vite, the best option for testing is **Vitest**, a fast library compatible with Vite.
+Unit tests are a key tool for making sure components work correctly in isolation. In a Vue 3 project with Vite, the best option for testing is **Vitest**, a fast library that's compatible with Vite.
 
-In this topic we will learn:
+In this topic, we'll learn how to:
 
-- Configure Vitest in a Vue 3 project.
+- Set up Vitest in a Vue 3 project.
 - Write tests for components using `@vue/test-utils`.
 - Simulate events and check the expected behavior.
 
 ---
 
-## **2. Basic Vitest Configuration**
+## **2. Basic Vitest setup**
 
-Before starting to do unit tests with Vitest we must install the dependencies:
+Before we start writing unit tests with Vitest, we need to install the dependencies:
 
 ```sh
 npm install vitest @vue/test-utils jsdom -D
 ```
 
-The `package.json` file must include Vitest as a dependency and add a script to run the tests:
+The `package.json` file must include Vitest as a dependency, plus a script to run the tests:
 
 **package.json:**
 
@@ -51,7 +51,7 @@ export default defineConfig({
 
 ## **3. Creating a basic test**
 
-Unit tests are usually placed in files next to the component or in specific folders (`tests` or `__tests__`). A basic test with `@vue/test-utils` and Vitest looks like this:
+Unit tests usually go in files next to the component or in dedicated folders (`tests` or `__tests__`). A basic test with `@vue/test-utils` and Vitest looks like this:
 
 **Home.test.js:**
 
@@ -70,9 +70,9 @@ describe("Home", () => {
 
 ---
 
-## **4. Simulate interactions**
+## **4. Simulating interactions**
 
-It is also possible to simulate user events, such as clicks or inputs, and verify that the component responds correctly.
+You can also simulate user events, such as clicks or inputs, and check that the component responds correctly.
 
 ```javascript
 it("incrementa el contador al hacer clic", async () => {
@@ -88,9 +88,9 @@ it("incrementa el contador al hacer clic", async () => {
 
 ---
 
-## **5. Mock of Stores or Modules**
+## **5. Mocking stores or modules**
 
-If the component depends on a Pinia store or other external modules, those dependencies can be **mocked** so that the test is controlled.
+If the component depends on a Pinia store or other external modules, you can **mock** those dependencies to keep the test under control.
 
 ```javascript
 vi.mock("../stores/user", () => ({
@@ -101,30 +101,30 @@ vi.mock("../stores/user", () => ({
 }));
 ```
 
-This ensures that the test does not fail due to external causes, such as the actual implementation of the store.
+This ensures that the test doesn't fail for external reasons, such as the store's actual implementation.
 
 ---
 
-## **6. Test execution**
+## **6. Running the tests**
 
-To run all tests:
+To run all the tests:
 
 ```sh
 npm run test
 ```
 
-Vitest will show a summary of executed tests, failures and results.
+Vitest will show a summary of the tests run, failures and results.
 
 ---
 
 ## Summary
 
-| Tool | Usage |
+| Tool            | Usage                                      |
 | --------------- | ------------------------------------------ |
-| Vitest | Run and manage tests |
-| @vue/test-utils | Assemble components and simulate interactions |
-| jsdom | Simulate the DOM in a test environment |
-| vi.mock() | Simulate external dependencies |
+| Vitest          | Run and manage the tests                   |
+| @vue/test-utils | Mount components and simulate interactions |
+| jsdom           | Simulate the DOM in a test environment     |
+| vi.mock()       | Simulate external dependencies             |
 
 ---
 

@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** to work with **`try`, `catch`, `finally`, `throw`, `throws` and custom exceptions**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Capture `NumberFormatException`
+## Exercise 1: Catch `NumberFormatException`
 
-Converts the text `"12x"` to integer and captures the error.
+Convert the text `"12x"` to an integer and catch the error.
 
 <details><summary>Show solution</summary>
 
@@ -31,9 +31,9 @@ public class Main {
 
 ---
 
-## Exercise 2: Capture division by zero
+## Exercise 2: Catch a division by zero
 
-Splits `20 / 0` inside an `try` and captures `ArithmeticException`.
+Divide `20 / 0` inside a `try` and catch `ArithmeticException`.
 
 <details><summary>Show solution</summary>
 
@@ -54,9 +54,9 @@ public class Main {
 
 ---
 
-## Exercise 3: Various `catch`
+## Exercise 3: Several `catch` blocks
 
-Accesses an invalid position in an array and uses several `catch` blocks.
+Access an invalid position in an array and use several `catch` blocks.
 
 <details><summary>Show solution</summary>
 
@@ -81,7 +81,7 @@ public class Main {
 
 ## Exercise 4: Use `finally`
 
-Try converting `"abc"` to integer. In `finally`, print `"Validation finished"`.
+Try converting `"abc"` to an integer. In `finally`, print `"Validation finished"`.
 
 <details><summary>Show solution</summary>
 
@@ -104,9 +104,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Launch with `throw`
+## Exercise 5: Throw an exception with `throw`
 
-Create `validateUsername` and cast `IllegalArgumentException` if the user is empty.
+Create `validateUsername` and throw `IllegalArgumentException` if the username is empty.
 
 <details><summary>Show solution</summary>
 
@@ -132,7 +132,7 @@ public class Main {
 
 ## Exercise 6: Declare `throws`
 
-Create `readConfig(String fileName) throws Exception` and throw exception if name is empty.
+Create `readConfig(String fileName) throws Exception` and throw an exception if the name is empty.
 
 <details><summary>Show solution</summary>
 
@@ -228,7 +228,7 @@ public class Product {
 
 ## Exercise 9: Multi-catch
 
-Captures `NullPointerException` and `NumberFormatException` in the same `catch`.
+Catch `NullPointerException` and `NumberFormatException` in a single `catch`.
 
 <details><summary>Show solution</summary>
 
@@ -250,7 +250,7 @@ public class Main {
 
 ---
 
-## Exercise 10: Validate withdrawal
+## Exercise 10: Validate a withdrawal
 
 Create a class `Wallet` and throw exceptions if the withdrawal is invalid.
 

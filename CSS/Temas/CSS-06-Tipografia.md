@@ -2,13 +2,13 @@
 
 ## **1. Introduction to typography in CSS**
 
-Typography is a fundamental aspect of web design, as it affects the readability and aesthetics of a page. CSS allows you to define fonts, sizes, spacing, and styles to customize the appearance of text.
+Typography is a fundamental aspect of web design, as it affects the readability and aesthetics of a page. CSS lets you define fonts, sizes, spacing and styles to customize the appearance of text.
 
 ---
 
-## **2. `font-family`** Property
+## **2. `font-family` property**
 
-Defines the font of the text. It is recommended to use a list of backup sources.
+It defines the font of the text. It's a good idea to use a list of fallback fonts.
 
 ```css
 p {
@@ -21,7 +21,7 @@ Font types:
 
 - **Serif**: With serifs (Times New Roman, Georgia)
 - **Sans-serif**: Without serifs (Arial, Helvetica)
-- **Monospace**: Each character has the same width (Courier New, Consoles)
+- **Monospace**: Each character has the same width (Courier New, Consolas)
 - **Cursive**: Handwritten style (Comic Sans, Pacifico)
 - **Fantasy**: Decorative designs (Papyrus, Impact)
 
@@ -29,7 +29,7 @@ Font types:
 
 ## **3. Font size with `font-size`**
 
-Determines the size of the text, using different units.
+It sets the size of the text, using different units.
 
 ```css
 h1 {
@@ -59,7 +59,7 @@ p {
 
 ### **`font-style`**
 
-Defines whether the text is normal, cursive or slanted.
+It defines whether the text is normal, italic or oblique.
 
 ```css
 p {
@@ -70,7 +70,7 @@ p {
 
 ### **`font-weight`**
 
-Defines the thickness of the text.
+It defines the thickness of the text.
 
 ```css
 h1 {
@@ -113,7 +113,7 @@ p {
 
 ### **`line-height`**
 
-Control the space between lines.
+Controls the space between lines.
 
 ```css
 p {
@@ -124,9 +124,9 @@ p {
 
 ---
 
-## **6. Import external fonts with Google Fonts**
+## **6. Importing external fonts with Google Fonts**
 
-To use an external font, such as those from [Google Fonts](https://fonts.google.com/), it must be imported into the CSS file.
+To use an external font, such as those from [Google Fonts](https://fonts.google.com/), you need to import it into the CSS file.
 
 Example with **Roboto**:
 
@@ -145,14 +145,14 @@ body {
 
 ---
 
-## **7. Good practices with typography in CSS**
+## **7. Best practices for typography in CSS**
 
 - Use `rem` or `em` instead of `px` for better accessibility.
-- Define backup sources in `font-family`.
+- Define fallback fonts in `font-family`.
 - Avoid excessive use of decorative fonts.
-- Apply appropriate `line-height` to improve readability.
+- Apply a suitable `line-height` to improve readability.
 - Use **Google Fonts** or **@font-face** for custom fonts.
 
 ---
 
-In the next topic, we will explore **positioning with CSS**, including the differences between relative and absolute positioning as well as other uses.
+In the next topic, we will explore **positioning with CSS**, including the differences between relative and absolute positioning, as well as other useful options.

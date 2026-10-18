@@ -1,14 +1,14 @@
-# Exercises - Topic 27: `BigDecimal`
+# Exercises - Topic 27: BigDecimal
 
 Below you will find **10 practical exercises** to work with **`BigDecimal`, operations, rounding, immutability and `compareTo`**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Create values
 
-Create two `BigDecimal` with `String`.
+Create two `BigDecimal` values from a `String`.
 
 <details><summary>Show solution</summary>
 
@@ -31,7 +31,7 @@ public class Main {
 
 ## Exercise 2: Add
 
-Add three prices.
+Add up three prices.
 
 <details><summary>Show solution</summary>
 
@@ -55,7 +55,7 @@ public class Main {
 
 ## Exercise 3: Subtract
 
-A discount remains.
+Subtract a discount.
 
 <details><summary>Show solution</summary>
 
@@ -77,7 +77,7 @@ public class Main {
 
 ## Exercise 4: Multiply
 
-Multiply price by quantity.
+Multiply a price by a quantity.
 
 <details><summary>Show solution</summary>
 
@@ -99,7 +99,7 @@ public class Main {
 
 ## Exercise 5: Divide
 
-Divide with scale and rounding.
+Divide with a scale and rounding.
 
 <details><summary>Show solution</summary>
 
@@ -120,7 +120,7 @@ public class Main {
 
 ---
 
-## Exercise 6: Rounding
+## Exercise 6: Round
 
 Use `setScale`.
 
@@ -144,7 +144,7 @@ public class Main {
 
 ## Exercise 7: Immutability
 
-Save the result after each operation.
+Store the result after each operation.
 
 <details><summary>Show solution</summary>
 
@@ -187,9 +187,9 @@ public class Main {
 
 ---
 
-## Exercise 9: Validate price
+## Exercise 9: Validate a price
 
-Assigns zero if the price is negative.
+Assign zero if the price is negative.
 
 <details><summary>Show solution</summary>
 
@@ -215,7 +215,7 @@ public class Product {
 
 ## Exercise 10: Calculate tax
 
-Calculate 21% tax.
+Calculate a 21% tax.
 
 <details><summary>Show solution</summary>
 

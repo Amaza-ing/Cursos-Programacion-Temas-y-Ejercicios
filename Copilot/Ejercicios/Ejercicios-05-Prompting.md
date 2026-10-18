@@ -1,17 +1,17 @@
 # Exercises - Topic 05: Prompting for programmers
 
-Below, you will find practical exercises to learn to write clear, complete and useful prompts in programming tasks.
+Below, you'll find hands-on exercises to learn how to write clear, complete and useful prompts for programming tasks.
 
-## Exercise 1: Improve a too general prompt
+## Exercise 1: Improve a prompt that is too general
 
-Improve the following prompt so that Copilot can generate a more accurate response:
+Improve the following prompt so that Copilot can generate a more accurate answer:
 
 ```text
 Haz una función para usuarios.
 ```
 
 
-The new prompt must indicate language, objective, input data, expected output and any restrictions.
+The new prompt must state the language, the goal, the input data, the expected output and some constraint.
 
 <details>
 <summary>Show solution</summary>
@@ -27,14 +27,14 @@ Incluye un ejemplo de uso al final.
 ```
 
 
-This prompt is better because it indicates:
+This prompt is better because it states:
 
 1. The programming language.
 2. The name of the function.
 3. The structure of the input data.
 4. The expected output.
-5. An important restriction: do not modify the original array.
-6. Additional format desired: include an example of use.
+5. An important constraint: don't modify the original array.
+6. The additional format wanted: include a usage example.
 
 </details>
 
@@ -42,7 +42,7 @@ This prompt is better because it indicates:
 
 Imagine that you have a function that calculates discounts in an online store. Write a prompt to ask Copilot to document the function with JSDoc comments.
 
-The prompt should ask that the documentation be clear, brief, and useful to other developers.
+The prompt should ask for documentation that is clear, brief and useful to other developers.
 
 <details>
 <summary>Show solution</summary>
@@ -71,7 +71,7 @@ The key is to clearly separate the documentation task from the code modification
 
 </details>
 
-## Exercise 3: Request a refactoring without changing the behavior
+## Exercise 3: Ask for a refactoring without changing the behavior
 
 You have this code:
 
@@ -115,7 +115,7 @@ function getFinalPrice(price, discount, tax) {
 ```
 
 
-The behavior is maintained, but the variable names are clearer and the code is easier to read.
+The behavior stays the same, but the variable names are clearer and the code is easier to read.
 
 </details>
 
@@ -123,7 +123,7 @@ The behavior is maintained, but the variable names are clearer and the code is e
 
 Create a prompt to ask Copilot to generate unit tests for a function called `validatePassword`.
 
-The function receives a string and should return `true` if the password has at least 8 characters, an uppercase letter, a lowercase letter, and a number. Otherwise, `false` is returned.
+The function receives a string and must return `true` if the password has at least 8 characters, an uppercase letter, a lowercase letter and a number. Otherwise, it returns `false`.
 
 <details>
 <summary>Show solution</summary>
@@ -166,13 +166,13 @@ describe("validatePassword", () => {
 ```
 
 
-The prompt is correct because it indicates the testing tool, expected behavior, and types of cases that should be included.
+The prompt is correct because it states the testing tool, the expected behavior and the types of cases that should be included.
 
 </details>
 
-## Exercise 5: Detect problems in an incomplete prompt
+## Exercise 5: Spot the problems in an incomplete prompt
 
-Analyze the following prompt and explain why it may produce an unhelpful response:
+Analyze the following prompt and explain why it may produce an unhelpful answer:
 
 ```text
 Arregla este código.
@@ -184,14 +184,14 @@ Then write an improved version.
 <details>
 <summary>Show solution</summary>
 
-The prompt is not very useful because it does not indicate:
+The prompt isn't very useful because it doesn't say:
 
-1. What error is occurring.
+1. What error is happening.
 2. What behavior is expected.
-3. What language or framework are you working on.
+3. What language or framework you're working with.
 4. Which part of the code needs to be reviewed.
-5. Whether the entire function can be modified or just a part.
-6. Whether explanation, correction, or both are needed.
+5. Whether the whole function can be modified or just part of it.
+6. Whether an explanation, a fix or both are needed.
 
 An improved version could be:
 
@@ -202,15 +202,15 @@ Después, explica brevemente cuál era el problema y por qué la solución lo co
 ```
 
 
-This version helps a lot more because it gives context, describes the problem, and limits the type of change expected.
+This version helps a lot more because it gives context, describes the problem and limits the type of change expected.
 
 </details>
 
-## Exercise 6: Create a prompt with style restrictions
+## Exercise 6: Create a prompt with style constraints
 
 Write a prompt to ask Copilot to create a React component called `ProductCard`.
 
-The component must receive `name`, `price` and `imageUrl` as props. It should show product information and should not include purchasing logic or connection to APIs.
+The component must receive `name`, `price` and `imageUrl` as props. It must show the product's information and must not include purchase logic or any connection to APIs.
 
 <details>
 <summary>Show solution</summary>
@@ -245,24 +245,24 @@ export default ProductCard;
 ```
 
 
-Example of use:
+Usage example:
 
 ```jsx
 <ProductCard name="Laptop" price={899} imageUrl="/images/laptop.jpg" />
 ```
 
 
-The prompt includes objective, props, restrictions and expected format.
+The prompt includes the goal, the props, the constraints and the expected format.
 
 </details>
 
-## Exercise 7: Convert a functional request into a technical prompt
+## Exercise 7: Turn a functional request into a technical prompt
 
-Transform this request into a technical prompt suitable for Copilot:
+Turn this request into a technical prompt suitable for Copilot:
 
 “I need the cheap products to appear before the expensive ones.”
 
-The prompt must be designed for JavaScript and must ask for a reusable function.
+The prompt must be intended for JavaScript and must ask for a reusable function.
 
 <details>
 <summary>Show solution</summary>
@@ -288,7 +288,7 @@ function sortProductsByPrice(products) {
 ```
 
 
-Example of use:
+Usage example:
 
 ```javascript
 const products = [
@@ -301,6 +301,6 @@ console.log(sortProductsByPrice(products));
 ```
 
 
-The original request was functional, but the technical prompt indicates language, function name, data structure, sort order and restriction on not modifying the original array.
+The original request was functional, but the technical prompt states the language, the function name, the data structure, the sort order and the constraint of not modifying the original array.
 
 </details>

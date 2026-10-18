@@ -2,19 +2,19 @@
 
 Below you will find **10 practical exercises** to learn how to work with **controlled forms**, `useState`, `onChange` and `onSubmit`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Controlled input (text)**
 
-Create an `NameField.jsx` component that:
+Create a `NameField.jsx` component that:
 
-- Have status `name` (initial `""`).
-- Render a controlled input.
-- Show an `p` with: **"Hello, {name}"**.
+- Has a `name` state (initial value `""`).
+- Renders a controlled input.
+- Shows a `p` with: **"Hello, {name}"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -45,12 +45,12 @@ export default NameField;
 
 Create an `EmailForm.jsx` component that:
 
-- Have status `email`.
-- Render an `<form>`.
-- When submitting, make `console.log(email)`.
-- Do not reload the page.
+- Has an `email` state.
+- Renders a `<form>`.
+- On submit, does `console.log(email)`.
+- Doesn't reload the page.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -85,13 +85,13 @@ export default EmailForm;
 
 ## **Exercise 3: Form with two fields**
 
-Create an `LoginForm.jsx` component with:
+Create a `LoginForm.jsx` component with:
 
-- `email` and `password` status.
+- `email` and `password` state.
 - A form with two controlled inputs.
-- When sending, displays an `{ email, password }` object in the console.
+- On submit, it displays an `{ email, password }` object in the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -131,13 +131,13 @@ export default LoginForm;
 
 ---
 
-## **Exercise 4: Clean the form after submitting**
+## **Exercise 4: Clear the form after submitting**
 
-From exercise 3:
+Starting from exercise 3:
 
 - After `console.log`, reset `email` and `password` to `""`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const handleSubmit = (event) => {
@@ -153,15 +153,15 @@ const handleSubmit = (event) => {
 
 ---
 
-## **Exercise 5: Controlled Checkbox**
+## **Exercise 5: Controlled checkbox**
 
-Create an `TermsForm.jsx` component that:
+Create a `TermsForm.jsx` component that:
 
-- Have state `accepted` (boolean).
-- Render a controlled checkbox.
-- Show an `p` with: **"Accepted: Yes/No"**.
+- Has an `accepted` state (boolean).
+- Renders a controlled checkbox.
+- Shows a `p` with: **"Accepted: Yes/No"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -191,14 +191,14 @@ export default TermsForm;
 
 ---
 
-## **Exercise 6: Button disabled according to checkbox**
+## **Exercise 6: Button disabled based on a checkbox**
 
-From exercise 5:
+Starting from exercise 5:
 
 - Create a **Continue** button.
-- Must be `disabled` if `accepted` is `false`.
+- It must be `disabled` if `accepted` is `false`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <button disabled={!accepted}>Continue</button>
@@ -208,15 +208,15 @@ From exercise 5:
 
 ---
 
-## **Exercise 7: Controlled Select**
+## **Exercise 7: Controlled select**
 
-Create an `RolePicker.jsx` component that:
+Create a `RolePicker.jsx` component that:
 
-- Have status `role` (initial `"user"`).
-- Render a controlled `select` with `user` and `admin` options.
-- Show an `p` with: **"Role: ..."**.
+- Has a `role` state (initial value `"user"`).
+- Renders a controlled `select` with the options `user` and `admin`.
+- Shows a `p` with: **"Role: ..."**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -244,13 +244,13 @@ export default RolePicker;
 
 ## **Exercise 8: Character counter in a textarea**
 
-Create an `BioField.jsx` component that:
+Create a `BioField.jsx` component that:
 
-- Have status `bio`.
-- Render a controlled `textarea`.
-- Show an `p` with: **"Chars: X"**.
+- Has a `bio` state.
+- Renders a controlled `textarea`.
+- Shows a `p` with: **"Chars: X"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -277,19 +277,19 @@ export default BioField;
 
 ---
 
-## **Exercise 9: Simple validation in submit**
+## **Exercise 9: Simple validation on submit**
 
-Create an `UsernameForm.jsx` component that:
+Create a `UsernameForm.jsx` component that:
 
-- Have status `username`.
-- In the submit:
+- Has a `username` state.
+- On submit:
 
-  - If `username.trim()` is empty, it displays: **"Username required"**.
-  - If not empty, displays: **"Saved"**.
+  - If `username.trim()` is empty, it displays on screen: **"Username required"**.
+  - If it isn't empty, it displays: **"Saved"**.
 
-Hint: Create an `message` state.
+Hint: create a `message` state.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -330,19 +330,19 @@ export default UsernameForm;
 ---
 ## **Exercise 10: A single state for multiple fields**
 
-Create an `ProfileForm.jsx` component that:
+Create a `ProfileForm.jsx` component that:
 
-- Use a single `form` state with:
+- Uses a single `form` state with:
 
 ```js
 { fullName: "", email: "" }
 ```
 
-- Render two controlled inputs (`fullName` and `email`).
-- Update status using spread (`...form`).
-- In the submit, make `console.log(form)`.
+- Renders two controlled inputs (`fullName` and `email`).
+- Updates the state using the spread operator (`...form`).
+- On submit, does `console.log(form)`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";

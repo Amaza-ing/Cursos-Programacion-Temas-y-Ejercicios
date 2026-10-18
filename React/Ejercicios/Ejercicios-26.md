@@ -1,18 +1,18 @@
 # **Exercises - Topic 26: Unit Tests in React**
 
-Below you will find **10 practical exercises** to master setting up and writing unit tests using **Vitest** and **React Testing Library**, including component, event, asynchronous behavior, and **Context** tests.
+Below you will find **10 practical exercises** to consolidate setting up and writing unit tests using **Vitest** and **React Testing Library**, including tests for components, events, asynchronous behavior and **Context**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Check that a component renders**
 
-Create an `Title.jsx` component that renders an `h1` with the text **"Welcome"**.
+Create a `Title.jsx` component that renders an `h1` with the text **"Welcome"**.
 
 Write a test that verifies that the text appears in the document.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -30,11 +30,11 @@ test("renders title", () => {
 
 ## **Exercise 2: Test props**
 
-Create an `Greeting.jsx` component that receives an `name` prop and displays **"Hello {name}"**.
+Create a `Greeting.jsx` component that receives a `name` prop and displays **"Hello {name}"**.
 
 Write a test that renders the component with `name="Sara"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 render(<Greeting name="Sara" />);
@@ -47,14 +47,14 @@ expect(screen.getByText("Hello Sara")).toBeInTheDocument();
 
 ## **Exercise 3: Test a button and a click**
 
-Create an `LikeButton.jsx` component with:
+Create a `LikeButton.jsx` component with:
 
-- Initial `likes` state `0`.
+- A `likes` state with initial value `0`.
 - A **Like** button that increments the counter.
 
-Write a test that clicks and verifies that the counter goes to `1`.
+Write a test that clicks the button and checks that the counter goes to `1`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import userEvent from "@testing-library/user-event";
@@ -68,11 +68,11 @@ expect(screen.getByText("Likes: 1")).toBeInTheDocument();
 
 ---
 
-## **Exercise 4: Using `getByRole` correctly**
+## **Exercise 4: Use `getByRole` correctly**
 
 Modify a test to locate a button using `getByRole` instead of `getByText`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 screen.getByRole("button", { name: /like/i });
@@ -86,13 +86,13 @@ screen.getByRole("button", { name: /like/i });
 
 Create a form with:
 
-- Controlled input.
-- **Submit** button.
-- Error message if the input is empty.
+- A controlled input.
+- A **Submit** button.
+- An error message if the input is empty.
 
-Write a test that verifies that the error appears when sending empty.
+Write a test that checks that the error appears when the form is submitted empty.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 await user.click(screen.getByRole("button", { name: "Submit" }));
@@ -105,11 +105,11 @@ expect(screen.getByText("Required")).toBeInTheDocument();
 
 ## **Exercise 6: Asynchronous test with `findByText`**
 
-Create a component that displays **"Loading..."** and then **"Done"** after an `setTimeout`.
+Create a component that displays **"Loading..."** and then **"Done"** after a `setTimeout`.
 
 Write a test using `findByText`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 expect(await screen.findByText("Done")).toBeInTheDocument();
@@ -119,13 +119,13 @@ expect(await screen.findByText("Done")).toBeInTheDocument();
 
 ---
 
-## **Exercise 7: `fetch` Mock**
+## **Exercise 7: Mocking `fetch`**
 
-Create a component that fetches an API and displays the number of items received.
+Create a component that fetches data from an API and displays the number of items received.
 
-Write a test that **mocks `fetch`** to return 3 elements.
+Write a test that **mocks `fetch`** to return 3 items.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { vi } from "vitest";
@@ -141,9 +141,9 @@ vi.spyOn(global, "fetch").mockResolvedValue({
 
 ## **Exercise 8: Wrap a component with Context in tests**
 
-Given an `UsersContext`, write a test for a component that consumes `users` from the context.
+Given a `UsersContext`, write a test for a component that consumes `users` from the context.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 render(
@@ -161,9 +161,9 @@ render(
 
 Create a button that uses an `addUser` function from the context.
 
-Write a test that clicks and verifies that the user appears on the screen.
+Write a test that clicks the button and checks that the user appears on the screen.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 await user.click(screen.getByRole("button", { name: "Add" }));
@@ -174,12 +174,12 @@ expect(screen.getByText("New user")).toBeInTheDocument();
 
 ---
 
-## **Exercise 10: Helper `renderWithProviders`**
+## **Exercise 10: `renderWithProviders` helper**
 
-Create an `renderWithProviders` helper that wraps the components with the necessary Providers.
+Create a `renderWithProviders` helper that wraps the components with the necessary Providers.
 Write a test that uses it.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 renderWithProviders(<UsersList />);

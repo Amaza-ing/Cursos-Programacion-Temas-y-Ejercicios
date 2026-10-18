@@ -2,15 +2,15 @@
 
 ## **1. Introduction**
 
-In HTML, the structure of a web page is made up of **elements**, which are defined by **tags** and may contain attributes that add information or functionality. Understanding these differences is essential for writing clean and structured HTML code.
+In HTML, the structure of a web page is made up of **elements**, which are defined by **tags** and may contain attributes that add information or functionality. Understanding these differences is essential for writing clean, well-structured HTML code.
 
 ---
 
-## **2. Difference between elements and labels**
+## **2. The difference between elements and tags**
 
 ### **What is a tag in HTML?**
 
-A **tag** in HTML is an identifier that defines the start and/or end of an element. They are written between `< >` and can be opening, closing or self-concluding.
+A **tag** in HTML is an identifier that marks the start and/or end of an element. Tags are written between `< >` and can be opening, closing or self-closing tags.
 
 **Example:**
 
@@ -21,7 +21,7 @@ A **tag** in HTML is an identifier that defines the start and/or end of an eleme
 
 - `<p>` is an opening tag.
 - `</p>` is a closing tag.
-- All content within `<p>...</p>` is an **item**.
+- Everything from `<p>` to `</p>` is an **element**.
 
 ### **What is an element in HTML?**
 
@@ -34,13 +34,13 @@ An **element** in HTML is the combination of an opening tag, its content, and, i
 ```
 
 
-In this case, `<h1>` and `</h1>` form a **header element**.
+In this case, `<h1>` and `</h1>` form a **heading element**.
 
 ---
 
 ## **3. What are attributes in HTML?**
 
-Attributes provide additional information about an element. They are included in the opening tag and follow the `nombre="valor"` syntax.
+Attributes provide additional information about an element. They go in the opening tag and follow the `nombre="valor"` (name="value") syntax.
 
 ### **Example of attributes in an image:**
 
@@ -52,7 +52,7 @@ Attributes provide additional information about an element. They are included in
 In this case:
 
 - `src` defines the source of the image.
-- `alt` provides alternative text in case the image fails to load.
+- `alt` provides alternative text in case the image doesn't load.
 
 ---
 
@@ -70,12 +70,12 @@ In this case:
   <p id="intro">Este es un párrafo con un ID.</p>
   ```
 
-- **class**: Allows you to group several elements under the same category.
+- **class**: Lets you group several elements under the same category.
   ```HTML
   <p class="destacado">Texto destacado.</p>
   ```
 
-- **data-\***: Allows you to store personalized information.
+- **data-\***: Lets you store custom data.
   ```HTML
   <div data-usuario="123">Perfil del usuario</div>
   ```
@@ -97,7 +97,7 @@ In this case:
   ```
 
 
-- **title**: Shows a pop-up text on hover.
+- **title**: Shows a tooltip when you hover over the element.
   ```HTML
   <p title="Información adicional">Coloca el cursor aquí.</p>
   ```
@@ -105,15 +105,15 @@ In this case:
 
 ---
 
-[![Links and Attributes](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Links and attributes](https://img.youtube.com/vi/8foa_ash-Ws/0.jpg)](https://www.youtube.com/watch?v=8foa_ash-Ws&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
 ## **5. Other important attributes**
 
-### **Attributes in forms**
+### **Form attributes**
 
-- **placeholder**: Reference text in an input field.
+- **placeholder**: Hint text inside an input field.
   ```HTML
   <input type="text" placeholder="Escribe tu nombre">
   ```
@@ -123,20 +123,20 @@ In this case:
   <input type="text" disabled>
   ```
 
-- **required**: Makes a field mandatory.
+- **required**: Makes a field required.
   ```HTML
   <input type="email" required>
   ```
 
 
-### **Attributes in multimedia**
+### **Multimedia attributes**
 
-- **controls**: Add controls to an audio or video.
+- **controls**: Adds controls to an audio or video element.
   ```HTML
   <video src="video.mp4" controls></video>
   ```
 
-- **autoplay**: Play content automatically.
+- **autoplay**: Plays the content automatically.
   ```HTML
   <audio src="musica.mp3" autoplay></audio>
   ```
@@ -146,11 +146,11 @@ In this case:
 
 ## **6. Good practices when using attributes in HTML**
 
-- Use **friendly names** on the `id` and `class` attributes.
-- Do not repeat **`id` values**, as they must be unique.
+- Use **descriptive names** in the `id` and `class` attributes.
+- Don't repeat **`id` values**, as they must be unique.
 - Use **`alt` on images** to improve accessibility.
-- Avoid **unnecessary attributes** if they do not add value to the code.
+- Avoid **unnecessary attributes** that don't add value to the code.
 
 ---
 
-In the next topic, we will explore **links in HTML**, their syntax, attributes, and how to create links inside and outside of a web page.
+In the next topic, we'll explore **links in HTML**: their syntax, their attributes and how to create links within a web page and to other pages.

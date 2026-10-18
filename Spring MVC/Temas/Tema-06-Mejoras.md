@@ -1,4 +1,4 @@
-#Topic 6 — Simple improvements for our Spring MVC project
+# Topic 6 — Simple improvements to our Spring MVC project
 
 ## 1. Objective of the topic
 
@@ -12,9 +12,9 @@ Tema 4 Opcional → Conexión con MySQL y DBeaver.
 Tema 5 → Excepciones, internacionalización y temas visuales.
 ```
 
-In this **Topic 6** we are going to improve the project without adding too complex functionalities.
+In this **Topic 6** we are going to improve the project without adding overly complex features.
 
-The goal is to make the code cleaner, easier to maintain, and more comfortable to continue expanding.
+The goal is to make the code cleaner, easier to maintain and more convenient to keep extending.
 
 We will work on four main improvements:
 
@@ -34,7 +34,7 @@ También debe ser fácil de leer, modificar y mantener.
 
 ---
 
-#2. Starting point
+# 2. Starting point
 
 We start from the Spring MVC project that we have already been building.
 
@@ -109,7 +109,7 @@ In this topic we are not going to remake the project from scratch. We are going 
 
 ---
 
-#3. Improvement 1 — Use Lombok to reduce boilerplate code
+# 3. Improvement 1 — Use Lombok to reduce boilerplate code
 
 ## 3.1. What problem do we want to solve?
 
@@ -148,7 +148,7 @@ equals
 hashCode
 ```
 
-This type of code is known as **boilerplate code** or **boilerplate code**.
+This type of code is known as **repetitive code** or **boilerplate code**.
 
 To reduce it we are going to use **Lombok**.
 
@@ -164,7 +164,7 @@ and automatically generates some of the code that we would normally write by han
 
 ---
 
-#4. Add Lombok to `pom.xml`
+# 4. Add Lombok to `pom.xml`
 
 We open the file:
 
@@ -172,7 +172,7 @@ We open the file:
 pom.xml
 ```
 
-And we add this dependency within the `<dependencies>` block:
+And we add this dependency inside the `<dependencies>` block:
 
 ```xml
 <!-- Lombok: reduce código repetitivo en modelos y clases Java -->
@@ -200,7 +200,7 @@ The scope is:
 <scope>provided</scope>
 ```
 
-This means that Lombok is used when compiling, but is not packaged inside the `.war`.
+This means that Lombok is used when compiling, but it is not packaged inside the `.war`.
 
 Why?
 
@@ -208,11 +208,11 @@ Because Lombok generates code during compilation. Once the project is compiled, 
 
 ---
 
-#5. Activate Lombok in IntelliJ
+# 5. Enable Lombok in IntelliJ
 
-After adding the dependency, we must verify that IntelliJ allows processing annotations.
+After adding the dependency, we must check that IntelliJ allows annotation processing.
 
-In IntelliJ, we will:
+In IntelliJ, we go to:
 
 ```text
 File
@@ -222,7 +222,7 @@ File
 → Annotation Processors
 ```
 
-And we activate:
+And we enable:
 
 ```text
 Enable annotation processing
@@ -230,7 +230,7 @@ Enable annotation processing
 
 Then we reload Maven.
 
-Normally it can be done from the Maven window with:
+This can usually be done from the Maven window with:
 
 ```text
 Reload All Maven Projects
@@ -247,7 +247,7 @@ If IntelliJ does not recognize `@Data`, `@NoArgsConstructor` or `@AllArgsConstru
 
 ---
 
-#6. Update `Course.java` with Lombok
+# 6. Update `Course.java` with Lombok
 
 Previously, our `Course` class could look like this:
 
@@ -357,7 +357,7 @@ public class Course {
 
 ---
 
-#7. Lombok Annotations Explained
+# 7. Lombok annotations explained
 
 ## 7.1. `@Data`
 
@@ -448,7 +448,7 @@ new Course(1L, "Spring MVC desde cero", "Inicial", 20);
 
 ---
 
-#8. Checking that Lombok works
+# 8. Checking that Lombok works
 
 After modifying `Course.java`, we check if the rest of the project still works.
 
@@ -476,7 +476,7 @@ This will still work because Lombok generates:
 getTitle()
 ```
 
-It will also continue to work:
+This will also keep working:
 
 ```java
 course.setId(generatedId.longValue());
@@ -515,11 +515,11 @@ For this course, `@Data` is a good choice because our classes are simple.
 
 ---
 
-#10. Improvement 2 — Externalize MySQL configuration
+# 10. Improvement 2 — Externalize the MySQL configuration
 
 ## 10.1. What problem do we want to solve?
 
-In the MySQL extension we configure the connection directly in `app-servlet.xml`.
+In the MySQL extension we configured the connection directly in `app-servlet.xml`.
 
 For example:
 
@@ -539,7 +539,7 @@ This works, but has some drawbacks:
 3. La configuración de Spring MVC y la configuración de MySQL quedan mezcladas.
 ```
 
-A simple improvement is to move those values to an `.properties` file.
+A simple improvement is to move those values to a `.properties` file.
 
 ---
 
@@ -547,7 +547,7 @@ A simple improvement is to move those values to an `.properties` file.
 
 ---
 
-#11. Create `database.properties`
+# 11. Create `database.properties`
 
 We create this file:
 
@@ -566,7 +566,7 @@ db.password=TU_PASSWORD
 
 ## Explanation
 
-Here we save the connection data with MySQL.
+Here we store the MySQL connection details.
 
 The property:
 
@@ -590,7 +590,7 @@ The property:
 db.username=root
 ```
 
-indicates the user.
+indicates the username.
 
 The property:
 
@@ -606,11 +606,11 @@ Each student must change:
 TU_PASSWORD
 ```
 
-by the actual password of your MySQL.
+with their actual MySQL password.
 
 ---
 
-#12. Difference between `&` in XML and in `.properties`
+# 12. Difference between `&` in XML and in `.properties`
 
 In `app-servlet.xml` we had to write:
 
@@ -636,13 +636,13 @@ Here we use:
 &
 ```
 
-normal.
+as a plain character.
 
-The reason is that XML interprets `&` as a special character, but an `.properties` file does not work the same.
+The reason is that XML interprets `&` as a special character, but a `.properties` file does not work the same way.
 
 ---
 
-#13. Modify `app-servlet.xml` to read `database.properties`
+# 13. Modify `app-servlet.xml` to read `database.properties`
 
 We open:
 
@@ -650,7 +650,7 @@ We open:
 src/main/webapp/WEB-INF/spring/app-servlet.xml
 ```
 
-Inside the file we must already have the namespace `context`, because we have used it to:
+Inside the file we should already have the `context` namespace, because we have used it for:
 
 ```xml
 <context:component-scan base-package="com.example.springmvcday1" />
@@ -715,7 +715,7 @@ The `JdbcTemplate` remains the same:
 
 ---
 
-#14. `app-servlet.xml` with upgrade applied
+# 14. `app-servlet.xml` with the improvement applied
 
 The important part of the file would look like this:
 
@@ -767,7 +767,7 @@ The important part of the file would look like this:
 
 ---
 
-#15. Checking External Settings
+# 15. Checking the external configuration
 
 To check that it works:
 
@@ -775,7 +775,7 @@ To check that it works:
 2. We open DBeaver and check that the database exists.
 3. We check `database.properties`.
 4. We run Tomcat.
-5. We enter:
+5. We go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses
@@ -799,7 +799,7 @@ If there is an error, we check:
 
 ---
 
-#16. Improvement 3 — Create reusable JSP fragments
+# 16. Improvement 3 — Create reusable JSP fragments
 
 ## 16.1. What problem do we want to solve?
 
@@ -839,7 +839,7 @@ A simple improvement is to create **reusable JSP fragments**.
 
 ---
 
-#17. Create `fragments` folder
+# 17. Create the `fragments` folder
 
 We create this folder:
 
@@ -847,7 +847,7 @@ We create this folder:
 src/main/webapp/WEB-INF/views/fragments
 ```
 
-Inside we will create these files:
+Inside it, we will create these files:
 
 ```text
 head.jspf
@@ -856,11 +856,11 @@ header.jspf
 
 The `.jspf` extension is typically used for JSP fragments.
 
-It's not required, but it helps differentiate an entire page from a reusable fragment.
+It's not required, but it helps tell a complete page apart from a reusable fragment.
 
 ---
 
-#18. Create `head.jspf` fragment
+# 18. Create the `head.jspf` fragment
 
 We create the file:
 
@@ -896,7 +896,7 @@ Content:
 
 ---
 
-#19. `head.jspf` Explanation
+# 19. Explanation of `head.jspf`
 
 First we declare the tag libraries:
 
@@ -920,7 +920,7 @@ We need `c` to be able to use JSTL tags like:
 <c:otherwise>
 ```
 
-Then we calculate the current theme:
+Then we determine the current theme:
 
 ```jsp
 <c:set var="currentTheme" value="${empty sessionScope.theme ? 'light' : sessionScope.theme}" />
@@ -943,19 +943,19 @@ We use:
 
 because some pages have an internationalized title and others have a dynamic title.
 
-For example, the course listing can use:
+For example, the course list can use:
 
 ```java
 model.addAttribute("pageTitleCode", "courses.list.title");
 ```
 
-But the detail of a course can use:
+But a course's detail page can use:
 
 ```java
 model.addAttribute("pageTitle", course.getTitle());
 ```
 
-That is why we consider both possibilities.
+That's why we cover both possibilities.
 
 Finally we always load:
 
@@ -971,7 +971,7 @@ styles-dark.css
 
 ---
 
-#20. Create `header.jspf` fragment
+# 20. Create the `header.jspf` fragment
 
 We create the file:
 
@@ -1019,11 +1019,11 @@ Content:
 
 ---
 
-#21. `header.jspf` Explanation
+# 21. Explanation of `header.jspf`
 
-This snippet contains the common menu.
+This fragment contains the common menu.
 
-Includes:
+It includes:
 
 ```text
 1. Enlace a inicio.
@@ -1037,7 +1037,7 @@ Includes:
 
 The advantage is that, if we later want to add a new link, we only modify this file.
 
-For example, if we want to add contact:
+For example, if we want to add a contact link:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/contact">
@@ -1045,23 +1045,23 @@ For example, if we want to add contact:
 </a>
 ```
 
-We do it only once.
+we only do it once.
 
 ---
 
-#22. Use fragments in a JSP
+# 22. Use the fragments in a JSP
 
 Now let's apply the fragments to a view.
 
-Take as an example:
+Let's take this one as an example:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
-Before you could have a lot of repeated code.
+Before, it could have a lot of repeated code.
 
-Now you can start like this:
+Now it can start like this:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1098,11 +1098,11 @@ The line:
 <%@ include file="/WEB-INF/views/fragments/header.jspf" %>
 ```
 
-insert the common menu.
+inserts the common menu.
 
 ---
 
-#23. Complete `courses/list.jsp` Example Simplified
+# 23. Complete simplified `courses/list.jsp` example
 
 File:
 
@@ -1192,7 +1192,7 @@ Code:
 
 # 24. What we have gained with the fragments
 
-Before each JSP repeated:
+Before, each JSP repeated:
 
 ```text
 taglibs
@@ -1216,15 +1216,15 @@ This makes views shorter and easier to maintain.
 
 ---
 
-[![Global Attributes](https://img.youtube.com/vi/FRhcFwESdEw/0.jpg)](https://www.youtube.com/watch?v=FRhcFwESdEw&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Global attributes](https://img.youtube.com/vi/FRhcFwESdEw/0.jpg)](https://www.youtube.com/watch?v=FRhcFwESdEw&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-#25. Improvement 4 — Create global attributes for common data
+# 25. Improvement 4 — Create global attributes for common data
 
 ## 25.1. What problem do we want to solve?
 
-In the course form we have a drop-down list of levels.
+In the course form we have a dropdown of levels.
 
 For example:
 ```jsp
@@ -1244,11 +1244,11 @@ Los niveles están escritos directamente en la vista.
 
 If tomorrow we want to add a new level, we have to modify the JSP.
 
-A simple improvement is to prepare that data from Java and automatically send it to the model.
+A simple improvement is to prepare that data in Java and send it to the model automatically.
 
 ---
 
-#26. Create `GlobalModelAttributes`
+# 26. Create `GlobalModelAttributes`
 
 We create a new package:
 
@@ -1256,7 +1256,7 @@ We create a new package:
 src/main/java/com/example/springmvcday1/config
 ```
 
-Inside we create the file:
+Inside it, we create the file:
 
 ```text
 GlobalModelAttributes.java
@@ -1289,7 +1289,7 @@ public class GlobalModelAttributes {
 
 ---
 
-#27. `GlobalModelAttributes` Explanation
+# 27. Explanation of `GlobalModelAttributes`
 
 The class has:
 
@@ -1324,7 +1324,7 @@ Therefore, a JSP can use:
 ${courseLevels}
 ```
 
-without each driver having to add it manually.
+without each controller having to add it manually.
 
 We also add:
 
@@ -1335,11 +1335,11 @@ public String appName() {
 }
 ```
 
-This allows the application name to be available in the views.
+This makes the application name available in the views.
 
 ---
 
-#28. Use `courseLevels` in `form.jsp`
+# 28. Use `courseLevels` in `form.jsp`
 
 Now we modify the levels dropdown.
 
@@ -1380,7 +1380,7 @@ Now:
 
 ---
 
-#29. `form.jsp` View with Shards and Global Levels
+# 29. `form.jsp` view with fragments and global levels
 
 The complete file can look like this:
 
@@ -1472,7 +1472,7 @@ The complete file can look like this:
 
 ---
 
-#30. Explanation of the new dropdown
+# 30. Explanation of the new dropdown
 
 The important block is this:
 
@@ -1484,7 +1484,7 @@ The important block is this:
 </c:forEach>
 ```
 
-Here we go through the list:
+Here we loop through the list:
 
 ```jsp
 ${courseLevels}
@@ -1499,7 +1499,7 @@ public List<String> courseLevels() {
 }
 ```
 
-For each level, a drop-down option is generated.
+For each level, a dropdown option is generated.
 
 If the list contains:
 
@@ -1509,7 +1509,7 @@ Intermedio
 Avanzado
 ```
 
-The JSP generates options equivalent to:
+the JSP generates options equivalent to:
 
 ```html
 <option value="Inicial">Inicial</option>
@@ -1519,17 +1519,17 @@ The JSP generates options equivalent to:
 
 ---
 
-#31. Add a new level
+# 31. Add a new level
 
-If now we want to add a new level called:
+If we now want to add a new level called:
 
 ```text
 Experto
 ```
 
-We no longer modify the JSP.
+we no longer modify the JSP.
 
-We only change Java:
+We only change the Java code:
 
 ```java
 @ModelAttribute("courseLevels")
@@ -1542,9 +1542,9 @@ The view will update automatically.
 
 ---
 
-#32. Use `appName` in the menu
+# 32. Use `appName` in the menu
 
-How we created this global attribute:
+Since we have created this global attribute:
 
 ```java
 @ModelAttribute("appName")
@@ -1601,7 +1601,7 @@ Now the application name can be changed from Java, not from each JSP.
 
 ---
 
-#33. Add style for `.brand`
+# 33. Add a style for `.brand`
 
 If we use `.brand`, we add this CSS in:
 
@@ -1621,9 +1621,9 @@ If `header` uses `display: flex`, the application name will appear next to the m
 
 ---
 
-#34. Summary of created or modified files
+# 34. Summary of created or modified files
 
-In this topic we have touched on these files:
+In this topic we have touched these files:
 
 ```text
 pom.xml
@@ -1641,7 +1641,7 @@ We simplify the model with Lombok.
 src/main/resources/database.properties
 ```
 
-We create an external file for the connection data with MySQL.
+We create an external file for the MySQL connection details.
 
 ```text
 src/main/webapp/WEB-INF/spring/app-servlet.xml
@@ -1653,7 +1653,7 @@ We load `database.properties` and use `${db...}`.
 src/main/webapp/WEB-INF/views/fragments/head.jspf
 ```
 
-We create a common shard for the `<head>`.
+We create a common fragment for the `<head>`.
 
 ```text
 src/main/webapp/WEB-INF/views/fragments/header.jspf
@@ -1671,7 +1671,7 @@ We use fragments to simplify the view.
 src/main/webapp/WEB-INF/views/courses/form.jsp
 ```
 
-We use fragments and the global tier list.
+We use fragments and the global list of levels.
 
 ```text
 src/main/java/com/example/springmvcday1/config/GlobalModelAttributes.java
@@ -1683,11 +1683,11 @@ We create global attributes available in multiple views.
 src/main/webapp/resources/css/styles.css
 ```
 
-We added styles for `.brand`, if we use the application name in the menu.
+We add styles for `.brand`, if we use the application name in the menu.
 
 ---
 
-#35. Common mistakes from Topic 6
+# 35. Common mistakes in Topic 6
 
 ## Error 1 — Lombok does not generate getters and setters
 
@@ -1709,11 +1709,12 @@ import lombok.NoArgsConstructor;
 ```
 
 ---
-## Error 2 — Empty constructor missing
 
-If we use forms, we need empty constructor.
+## Error 2 — The empty constructor is missing
 
-With Lombok we achieve it with:
+If we use forms, we need an empty constructor.
+
+With Lombok we get it with:
 
 ```java
 @NoArgsConstructor
@@ -1765,11 +1766,11 @@ Not:
 db.url=jdbc:mysql://localhost:3306/spring_mvc_courses?useSSL=false&amp;serverTimezone=Europe/Madrid
 ```
 
-`&amp;` was only needed within the XML.
+`&amp;` was only needed inside the XML.
 
 ---
 
-## Error 5 — Forget `context:property-placeholder`
+## Error 5 — Forgetting `context:property-placeholder`
 
 If we use:
 
@@ -1787,7 +1788,7 @@ Spring will not know how to replace `${db.url}`.
 
 ---
 
-## Error 6 — Include a JSP fragment incorrectly
+## Error 6 — Including a JSP fragment incorrectly
 
 The path must match the actual location of the file.
 
@@ -1813,7 +1814,7 @@ If a JSP uses:
 <spring:message code="nav.home" />
 ```
 
-This line must exist in the JSP or in an included fragment:
+this line must exist in the JSP or in an included fragment:
 
 ```jsp
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -1831,17 +1832,17 @@ If we use:
 <c:forEach var="level" items="${courseLevels}">
 ```
 
-must exist:
+this must exist:
 
 ```jsp
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 ```
 
-Additionally, the project must have the JSTL dependencies on the `pom.xml`.
+Additionally, the project must have the JSTL dependencies in the `pom.xml`.
 
 ---
 
-## Error 9 — Global attribute does not appear in the view
+## Error 9 — The global attribute does not appear in the view
 
 If `${courseLevels}` does not appear, check:
 
@@ -1868,9 +1869,9 @@ ${courseLevels}
 
 # 36. Final result of Topic 6
 
-After applying these improvements, the project continues to function the same from the user's point of view.
+After applying these improvements, the project keeps working the same way from the user's point of view.
 
-The user can follow:
+The user can still:
 
 ```text
 Ver cursos
@@ -1880,7 +1881,7 @@ Cambiar tema
 Ver errores personalizados
 ```
 
-But inside the project is cleaner.
+But on the inside, the project is cleaner.
 
 ## Before
 
@@ -1902,7 +1903,7 @@ Los niveles del formulario vienen de un atributo global.
 
 ---
 
-#37. Closing the topic
+# 37. Closing the topic
 
 This topic introduces an important idea for any project:
 
@@ -1911,7 +1912,7 @@ La calidad de una aplicación no depende solo de que funcione.
 También depende de que el código sea claro, ordenado y fácil de cambiar.
 ```
 
-The improvements applied are small, but have a lot of value:
+The improvements we applied are small, but they are very valuable:
 
 ```text
 Lombok reduce código repetitivo.

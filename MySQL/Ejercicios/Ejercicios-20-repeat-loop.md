@@ -2,15 +2,15 @@
 
 Below you will find 6 practical exercises to work with **REPEAT** and **LOOP** loops in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: REPEAT to insert odd numbers**
 
-Create a procedure `insertar_impares_repeat` that inserts into `numbers(value)` the **odd** numbers from 1 to nine (1, 3, 5, 7, 9) using `REPEAT`.
+Create an `insertar_impares_repeat` procedure that inserts the **odd** numbers from 1 to 9 (1, 3, 5, 7, 9) into `numbers(value)` using `REPEAT`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -30,11 +30,11 @@ DELIMITER ;
 
 ---
 
-### **Exercise 2: REPEAT with accumulated sum**
+### **Exercise 2: REPEAT with a running sum**
 
-Create a procedure `sumar_de_siete_en_siete` that accumulates in `v_total` in 7 at a time and records each value in `accumulated(total)` **until** `v_total` is **greater than or equal to 70**.
+Create a `sumar_de_siete_en_siete` procedure that adds 7 at a time to `v_total` and records each value in `accumulated(total)` **until** `v_total` is **greater than or equal to 70**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -56,9 +56,9 @@ DELIMITER ;
 
 ### **Exercise 3: LOOP with `LEAVE` and `ITERATE`**
 
-Create a procedure `insertar_multiplos_de_cinco` that loops numbers from 1 to 50 using `LOOP`. Insert into `numbers(value)` **only multiples of 5**. Use `ITERATE` to **skip** those that are not and `LEAVE` to exit when exceeding 50.
+Create an `insertar_multiplos_de_cinco` procedure that goes through the numbers from 1 to 50 using `LOOP`. Insert **only the multiples of 5** into `numbers(value)`. Use `ITERATE` to **skip** the ones that aren't and `LEAVE` to exit once the number goes past 50.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -86,11 +86,11 @@ DELIMITER ;
 
 ---
 
-### **Exercise 4: Nested LOOP for join table**
+### **Exercise 4: Nested LOOP for a combinations table**
 
-Create a procedure `generar_combinaciones_3x3` that fills `pairs(a, b)` with all combinations **(a, b)** where `a` and `b` range from **1 to 3** using two nested `LOOP` and `LEAVE` in each.
+Create a `generar_combinaciones_3x3` procedure that fills `pairs(a, b)` with all the combinations **(a, b)** where `a` and `b` range from **1 to 3**, using two nested `LOOP`s with a `LEAVE` in each one.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -119,11 +119,11 @@ DELIMITER ;
 
 ---
 
-### **Exercise 5: Process queue with LOOP until there are no elements left**
+### **Exercise 5: Process a queue with LOOP until no items are left**
 
-Given a table `task_queue(id, processed TINYINT(1))`, create a procedure `procesar_cola` that, using `LOOP`, marks **unprocessed** tasks **one at a time** as `processed = 1`. Stop the loop when **no more exist**.
+Given a `task_queue(id, processed TINYINT(1))` table, create a `procesar_cola` procedure that, using `LOOP`, marks the **unprocessed** tasks as `processed = 1`, **one at a time**. Stop the loop when **there are none left**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -146,11 +146,11 @@ DELIMITER ;
 
 ---
 
-### **Exercise 6: REPEAT to generate backward dates**
+### **Exercise 6: REPEAT to generate dates going backwards**
 
-Create a procedure `generar_ultimos_dias` that receives `p_dias INT` and populates `dates_list(fecha)` with the dates **from today backwards** `p_dias` days (including today) using `REPEAT`.
+Create a `generar_ultimos_dias` procedure that takes `p_dias INT` and fills `dates_list(fecha)` with the dates **going back from today** `p_dias` days (including today), using `REPEAT`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$

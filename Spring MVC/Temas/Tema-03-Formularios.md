@@ -4,7 +4,7 @@
 
 In this topic we will learn how to work with forms in a Spring MVC application.
 
-Until now, the application allows you to navigate between pages, show a list of courses and see the details of a specific course. In this topic we will add a new functionality: **create courses from a web form**.
+Until now, the application lets you navigate between pages, show a list of courses and view the details of a specific course. In this topic we will add a new feature: **creating courses from a web form**.
 
 The goal is to understand this complete flow:
 
@@ -33,7 +33,7 @@ During this topic we will work with these concepts:
 - Post-Redirect-Get pattern
 - temporary messages with `RedirectAttributes`
 
-In this topic **we will not use MySQL yet**. We will temporarily save courses in memory to focus on forms processing. Later we could replace this list with a database.
+In this topic **we will not use MySQL yet**. We will temporarily save courses in memory to focus on form processing. Later we could replace this list with a database.
 
 ---
 
@@ -133,7 +133,7 @@ That file will contain the form to create a course.
 
 ---
 
-## 4. Add validation dependency
+## 4. Add the validation dependency
 
 To validate forms in Java we will use **Jakarta Bean Validation**.
 
@@ -150,7 +150,7 @@ With this annotation we indicate that the `title` field cannot be empty.
 
 For these annotations to work, we need to add Hibernate Validator to the `pom.xml`.
 
-### Code that we must add in `pom.xml`
+### Code to add to `pom.xml`
 
 Inside the `<dependencies>` tag, we add this dependency:
 
@@ -163,9 +163,9 @@ Inside the `<dependencies>` tag, we add this dependency:
 </dependency>
 ```
 
-### Complete block of dependencies
+### Complete dependencies block
 
-The complete block of project dependencies would look like this:
+The project's complete dependencies block would look like this:
 
 ```xml
 <dependencies>
@@ -237,18 +237,18 @@ The idea is that the validation rules are part of the object itself that we want
 
 ---
 
-## 5. Update `Course` class
+## 5. Update the `Course` class
 
-In the previous topic our `Course` class was very simple. It had attributes, constructor and getters.
+In the previous topic our `Course` class was very simple. It had attributes, a constructor and getters.
 
-Now we need Spring MVC to be able to create an `Course` object from data submitted by a form.
+Now we need Spring MVC to be able to create a `Course` object from the data submitted by a form.
 
 For that, the class must have:
 
 1. An empty constructor.
 2. Getters.
-3.Setters.
-4. Validation notes.
+3. Setters.
+4. Validation annotations.
 
 The file we are going to modify is:
 
@@ -328,15 +328,16 @@ public class Course {
 ```
 
 ---
+
 [![Validation](https://img.youtube.com/vi/JEYTTwuVz38/0.jpg)](https://www.youtube.com/watch?v=JEYTTwuVz38&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-## 6. Explanation of `Course` class
+## 6. Explanation of the `Course` class
 
 ### 6.1. Validation imports
 
-At first we import these classes:
+At the top we import these classes:
 
 ```java
 import jakarta.validation.constraints.Max;
@@ -346,13 +347,13 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 ```
 
-Each one serves a different validation rule.
+Each one is used for a different validation rule.
 
 | Annotation | Function |
 | ----------- | ----------------------------------------------------------------- |
-| `@NotBlank` | Check that a text is not empty or made up of only spaces |
-| `@Size` | Check the length of a text |
-| `@NotNull` | Check that the value is not `null` |
+| `@NotBlank` | Checks that a text is not empty or made up only of spaces |
+| `@Size` | Checks the length of a text |
+| `@NotNull` | Checks that the value is not `null` |
 | `@Min` | Checks that a number has a minimum value |
 | `@Max` | Checks that a number does not exceed a maximum value |
 
@@ -381,7 +382,7 @@ If the user leaves the field empty, this message will appear:
 El título es obligatorio.
 ```
 
-If you type a title that is too short or too long, this message appears:
+If they type a title that is too short or too long, this message will appear:
 
 ```text
 El título debe tener entre 3 y 80 caracteres.
@@ -433,14 +434,14 @@ For example:
 
 | Entered value | Result |
 | ----------------- | ----------------------------------------- |
-| empty | Error: duration is required |
-| `0` | Error: minimum duration is 1 hour |
-| `201` | Error: maximum duration is 200 hours |
+| empty | Error: the duration is required |
+| `0` | Error: the minimum duration is 1 hour |
+| `201` | Error: the maximum duration is 200 hours |
 | `20` | Correct |
 
 ---
 
-### 6.5. Why do we use `Integer` and not `int`
+### 6.5. Why we use `Integer` and not `int`
 
 In the previous topic we used:
 
@@ -456,11 +457,11 @@ private Integer durationInHours;
 
 The reason is important.
 
-`int` is a primitive type and cannot take `null`.
+`int` is a primitive type and cannot be `null`.
 
-`Integer` is an object and it can be used as `null`.
+`Integer` is an object, so it can be `null`.
 
-When the user leaves the field empty, we need Spring to be able to represent that field as `null`. This is how you can activate this validation:
+When the user leaves the field empty, we need Spring to be able to represent that field as `null`. That way this validation can be triggered:
 
 ```java
 @NotNull(message = "La duración es obligatoria.")
@@ -470,7 +471,7 @@ Therefore, in forms, it is often preferable to use `Integer` instead of `int`.
 
 ---
 
-### 6.6. empty constructor
+### 6.6. Empty constructor
 
 We add this constructor:
 
@@ -479,7 +480,7 @@ public Course() {
 }
 ```
 
-This constructor is necessary so that Spring can create an empty object before filling it with form data.
+This constructor is necessary so that Spring can create an empty object before filling it with the form data.
 
 When the user submits the form, Spring internally does something like this:
 
@@ -494,7 +495,7 @@ In order to do `new Course()`, the class needs an empty constructor.
 
 ---
 
-### 6.7. setters
+### 6.7. Setters
 
 We also add `set` methods:
 
@@ -504,7 +505,7 @@ public void setTitle(String title) {
 }
 ```
 
-Spring uses these setters to enter the values ​​sent by the form into the object.
+Spring uses these setters to put the values sent by the form into the object.
 
 For example, if the form sends this:
 
@@ -520,11 +521,11 @@ course.setTitle("Spring MVC práctico");
 
 ---
 
-## 7. Update `CourseService` service
+## 7. Update the `CourseService` service
 
 In the previous topic, the course list had been created with `List.of(...)`.
 
-This form is used to create a fixed list, but does not allow adding new courses.
+That approach creates a fixed list, but it does not allow adding new courses.
 
 Now we need a modifiable list, because the form will create new courses.
 
@@ -534,7 +535,7 @@ The file we are going to modify is:
 src/main/java/com/example/springmvcday1/service/CourseService.java
 ```
 
-### Complete code of `CourseService.java`
+### Full code of `CourseService.java`
 
 ```java
 package com.example.springmvcday1.service;
@@ -579,7 +580,7 @@ public class CourseService {
 
 ---
 
-## 8. `CourseService` Explanation
+## 8. Explanation of `CourseService`
 
 ### 8.1. Modifiable list
 
@@ -595,7 +596,7 @@ This is necessary because the `save()` method will add courses to the list.
 
 ---
 
-### 8.2. Next course identifier
+### 8.2. Identifier of the next course
 
 We also add:
 
@@ -629,7 +630,7 @@ public CourseService() {
 }
 ```
 
-This allows the application to have data from the first moment.
+This way the application has data from the very start.
 
 ---
 
@@ -662,11 +663,11 @@ public Course findById(Long id) {
 }
 ```
 
-Search for a course by its identifier.
+searches for a course by its identifier.
 
 If it finds the course, it returns it.
 
-If it is not found, it returns `null`.
+If it doesn't find it, it returns `null`.
 
 ---
 
@@ -704,7 +705,7 @@ Afterwards `nextId` will become `5`.
 
 ---
 
-## 9. Update `CourseController` driver
+## 9. Update the `CourseController` controller
 
 Now we will add two new methods to the controller:
 
@@ -826,11 +827,11 @@ This method responds to the route:
 GET /courses/new
 ```
 
-Your responsibility is to display the empty form.
+Its job is to display the empty form.
 
 ---
 
-### 10.1. Add page title
+### 10.1. Add the page title
 
 First we add:
 
@@ -870,7 +871,7 @@ We are creating an empty object:
 new Course()
 ```
 
-And we are sending it to view with the name:
+And we are sending it to the view with the name:
 
 ```text
 course
@@ -892,7 +893,7 @@ Cada campo del formulario se vincula a una propiedad
 
 ---
 
-### 10.3. Return form view
+### 10.3. Return the form view
 
 Finally we return:
 
@@ -903,7 +904,8 @@ return "courses/form";
 This is not the exact file name.
 
 It is the logical name of the view.
-Since we have `ViewResolver` configured in `app-servlet.xml`, Spring will do this transformation:
+
+Since we have the `ViewResolver` configured in `app-servlet.xml`, Spring will do this transformation:
 
 ```text
 courses/form
@@ -951,7 +953,7 @@ This method responds to:
 POST /courses
 ```
 
-As the controller has this general path:
+Since the controller has this general path:
 
 ```java
 @RequestMapping("/courses")
@@ -1048,7 +1050,7 @@ This means:
 Después de rellenar el objeto Course, valida sus anotaciones.
 ```
 
-Spring will review rules like these:
+Spring will check rules like these:
 
 ```java
 @NotBlank(message = "El título es obligatorio.")
@@ -1058,7 +1060,7 @@ private String title;
 
 If the title is empty, an error will be raised.
 
-If the title is less than 3 characters, an error will also be raised.
+If the title is shorter than 3 characters, an error will also be raised.
 
 If everything is correct, there will be no validation errors.
 
@@ -1066,7 +1068,7 @@ If everything is correct, there will be no validation errors.
 
 ## 14. `BindingResult`
 
-After the validated object appears:
+Right after the validated object comes:
 
 ```java
 BindingResult bindingResult
@@ -1096,7 +1098,7 @@ Si el formulario tiene errores:
 
 ### Important
 
-`BindingResult` should come right after the object being validated.
+`BindingResult` must come right after the object being validated.
 
 Correct:
 
@@ -1116,13 +1118,13 @@ public String createCourse(
         BindingResult bindingResult) {
 ```
 
-If misplaced, Spring will not correctly associate validation errors with the `course` object.
+If it is misplaced, Spring will not correctly associate validation errors with the `course` object.
 
 ---
 
 ## 15. Save the course
 
-If there are no errors, we execute:
+If there are no errors, we run:
 
 ```java
 courseService.save(course);
@@ -1130,7 +1132,7 @@ courseService.save(course);
 
 The controller does not save the course directly.
 
-Delegate that task to the service.
+It delegates that task to the service.
 
 This keeps responsibilities separate:
 
@@ -1138,7 +1140,7 @@ This keeps responsibilities separate:
 | ------------------ | -------------------------------------------------- |
 | `CourseController` | Receive web requests and decide which view to show |
 | `CourseService` | Manage course data |
-| `Course` | Represent course data |
+| `Course` | Represent a course's data |
 
 ---
 
@@ -1153,7 +1155,7 @@ redirectAttributes.addFlashAttribute(
 );
 ```
 
-This message will be displayed in the listing after the redirect.
+This message will be displayed in the list after the redirect.
 
 The keyword here is **flash attribute**.
 
@@ -1205,8 +1207,9 @@ This is very important after processing forms.
 
 ---
 
-## 18. Post-Redirect-Get Pattern
-After successfully processing a form, it is advisable not to directly return a view.
+## 18. The Post-Redirect-Get pattern
+
+After successfully processing a form, it is advisable not to return a view directly.
 
 It is better to redirect.
 
@@ -1230,7 +1233,7 @@ GET /courses
 
 This avoids a common problem: the form being submitted twice if the user refreshes the page.
 
-If after saving we directly returned a view, when pressing F5 the browser could try to repeat the POST.
+If we returned a view directly after saving, pressing F5 could make the browser try to repeat the POST.
 
 With a redirect, the last request is a normal GET, so refreshing the page does not recreate the course.
 
@@ -1248,7 +1251,7 @@ src/main/webapp/WEB-INF/views/courses/form.jsp
 
 To create forms in JSP with Spring MVC we use Spring's form tag library.
 
-This library is activated with this line at the beginning of the file:
+This library is enabled with this line at the beginning of the file:
 
 ```jsp
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -1334,9 +1337,9 @@ This library is activated with this line at the beginning of the file:
 
 ---
 
-## 20. `form.jsp` Explanation
+## 20. Explanation of `form.jsp`
 
-### 20.1. Page Directive
+### 20.1. Page directive
 
 The first line is:
 
@@ -1346,11 +1349,11 @@ The first line is:
 
 This indicates that the page uses UTF-8 encoding.
 
-It is important so that the accents and ñ are seen correctly.
+It is important so that accented letters and the ñ display correctly.
 
 ---
 
-### 20.2. Spring Forms Library
+### 20.2. Spring's form library
 
 The second line is:
 
@@ -1419,7 +1422,7 @@ We use:
 ${pageContext.request.contextPath}
 ```
 
-so as not to manually type the name of the application.
+so we don't have to type the application's name by hand.
 
 If the application is deployed as:
 
@@ -1441,7 +1444,7 @@ This is the most important part:
 modelAttribute="course"
 ```
 
-Indicates that the form is linked to the model object named `course`.
+Indicates that the form is bound to the model object named `course`.
 
 That object was added in the controller:
 
@@ -1485,7 +1488,7 @@ When the user submits the form, Spring will do something similar to:
 course.setTitle(valorIntroducido);
 ```
 
-The label:
+The tag:
 
 ```jsp
 <form:errors path="title" cssClass="error" />
@@ -1532,7 +1535,7 @@ Intermedio
 Avanzado
 ```
 
-The first option has empty value:
+The first option has an empty value:
 
 ```jsp
 <form:option value="" label="Selecciona un nivel" />
@@ -1540,7 +1543,7 @@ The first option has empty value:
 
 This allows us to detect that the user has not selected any level.
 
-If you submit the form without choosing a level, this validation will be activated:
+If they submit the form without choosing a level, this validation will kick in:
 
 ```java
 @NotBlank(message = "El nivel es obligatorio.")
@@ -1594,7 +1597,7 @@ If there are errors, they will be displayed here:
 
 ### 20.7. Form buttons
 
-In the end we have:
+At the end we have:
 
 ```jsp
 <div class="form-actions">
@@ -1614,7 +1617,7 @@ The button:
 <button type="submit" class="button">Crear curso</button>
 ```
 
-submit the form.
+submits the form.
 
 The link:
 
@@ -1628,14 +1631,14 @@ takes the user back to the list without sending data.
 
 ---
 
-## 21. Update `list.jsp` view
+## 21. Update the `list.jsp` view
 
 Now we must modify the list to add two things:
 
 1. A button to go to the form.
 2. A success message after creating a course.
 
-The file we modified is:
+The file we modify is:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
@@ -1724,9 +1727,9 @@ src/main/webapp/WEB-INF/views/courses/list.jsp
 
 ---
 
-## 22. Explanation of changes in `list.jsp`
+## 22. Explanation of the changes in `list.jsp`
 
-### 22.1. Show success message
+### 22.1. Show the success message
 
 We add this block:
 
@@ -1740,13 +1743,13 @@ We add this block:
 
 This block uses JSTL.
 
-The label:
+The tag:
 
 ```jsp
 <c:if>
 ```
 
-allows displaying content only if a condition is met.
+displays content only if a condition is met.
 
 In this case, the condition is:
 
@@ -1754,7 +1757,7 @@ In this case, the condition is:
 ${not empty successMessage}
 ```
 
-That is to say:
+In other words:
 
 ```text
 Si successMessage no está vacío, muestra el mensaje.
@@ -1773,7 +1776,7 @@ redirectAttributes.addFlashAttribute(
 
 ### 22.2. Button to create a course
 
-We also added this link:
+We also add this link:
 
 ```jsp
 <a class="button" href="${pageContext.request.contextPath}/courses/new">
@@ -1787,7 +1790,7 @@ This link takes the user to:
 /courses/new
 ```
 
-That route will be served by this method:
+That route will be handled by this method:
 
 ```java
 @GetMapping("/new")
@@ -1798,7 +1801,7 @@ public String showCreateForm(Model model) {
 
 ---
 
-## 23. Update CSS file
+## 23. Update the CSS file
 
 Now we will add styles for:
 
@@ -1886,7 +1889,7 @@ We add this code to the end of the file:
 
 ---
 
-## 24. CSS explanation
+## 24. Explanation of the CSS
 
 ### 24.1. Form styles
 
@@ -1896,11 +1899,11 @@ We add this code to the end of the file:
 }
 ```
 
-Add separation between the introductory text and the form.
+Adds spacing between the introductory text and the form.
 
 ---
 
-### 24.2. Field Groups
+### 24.2. Field groups
 
 ```css
 .form-group {
@@ -1908,11 +1911,11 @@ Add separation between the introductory text and the form.
 }
 ```
 
-Visually separate each field of the form.
+Visually separates each field of the form.
 
 ---
 
-### 24.3. Tags
+### 24.3. Labels
 
 ```css
 .form-group label {
@@ -1972,7 +1975,7 @@ If there is an error in the `title` field, the message will appear in this style
 
 ---
 
-### 24.6. success message
+### 24.6. Success message
 
 ```css
 .success {
@@ -1995,7 +1998,7 @@ Let's see the whole process step by step.
 
 ### Step 1
 
-The user enters:
+The user goes to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses/new
@@ -2003,7 +2006,7 @@ http://localhost:8080/spring-mvc-day1/courses/new
 
 ### Step 2
 
-Spring executes this method:
+Spring runs this method:
 
 ```java
 @GetMapping("/new")
@@ -2044,7 +2047,7 @@ Duración: 12
 
 ### Step 6
 
-The user presses the button:
+The user clicks the button:
 
 ```text
 Crear curso
@@ -2060,7 +2063,7 @@ POST /courses
 
 ### Step 8
 
-Spring executes:
+Spring runs:
 
 ```java
 @PostMapping
@@ -2071,7 +2074,7 @@ public String createCourse(...) {
 
 ### Step 9
 
-Spring creates an `Course` object with the submitted data:
+Spring creates a `Course` object with the submitted data:
 
 ```java
 course.setTitle("Spring MVC práctico");
@@ -2080,6 +2083,7 @@ course.setDurationInHours(12);
 ```
 
 ### Step 10
+
 Spring validates the object.
 
 Since the data is correct, there are no errors.
@@ -2094,7 +2098,7 @@ courseService.save(course);
 
 ### Step 12
 
-The driver creates a success message:
+The controller creates a success message:
 
 ```java
 redirectAttributes.addFlashAttribute(
@@ -2105,7 +2109,7 @@ redirectAttributes.addFlashAttribute(
 
 ### Step 13
 
-The controller redirects to the listing:
+The controller redirects to the list:
 
 ```java
 return "redirect:/courses";
@@ -2125,13 +2129,13 @@ The updated list with the new course is displayed.
 
 ---
 
-## 26. Complete flow when form has errors
+## 26. Complete flow when the form has errors
 
 Now suppose the user submits the empty form.
 
 ### Step 1
 
-The user enters:
+The user goes to:
 
 ```text
 /courses/new
@@ -2143,7 +2147,7 @@ Spring displays the form.
 
 ### Step 3
 
-The user does not fill out anything and clicks:
+The user doesn't fill anything in and clicks:
 
 ```text
 Crear curso
@@ -2159,7 +2163,7 @@ POST /courses
 
 ### Step 5
 
-Spring tries to create an `Course` object.
+Spring tries to create a `Course` object.
 
 But the fields don't follow the rules:
 
@@ -2180,7 +2184,7 @@ private Integer durationInHours;
 
 ### Step 7
 
-The controller executes:
+The controller runs:
 
 ```java
 if (bindingResult.hasErrors()) {
@@ -2195,7 +2199,7 @@ The course is not saved.
 
 ### Step 9
 
-Spring shows again:
+Spring displays again:
 
 ```text
 /WEB-INF/views/courses/form.jsp
@@ -2236,7 +2240,7 @@ For example:
 @RequestParam("search") String search
 ```
 
-But when we have a form with several fields, it would be uncomfortable to read each field separately:
+But when we have a form with several fields, it would be tedious to read each field separately:
 
 ```java
 @PostMapping
@@ -2254,24 +2258,24 @@ In those cases we use:
 @ModelAttribute("course") Course course
 ```
 
-So Spring creates a complete object with all the form data.
+That way Spring creates a complete object with all the form data.
 
 | Annotation | Main use |
 | ----------------- | ------------------------------------------ |
 | `@RequestParam` | Read individual parameters |
-| `@ModelAttribute` | Construct an object from several fields |
+| `@ModelAttribute` | Build an object from several fields |
 
 ---
 
 ## 28. Difference between returning a view and returning a redirect
 
-In Spring MVC it is not the same to return this:
+In Spring MVC, returning this:
 
 ```java
 return "courses/form";
 ```
 
-than return this:
+is not the same as returning this:
 
 ```java
 return "redirect:/courses";
@@ -2289,7 +2293,7 @@ return "courses/form";
 
 Spring uses the `ViewResolver`.
 
-With our setup, it will search for:
+With our setup, it will look for:
 
 ```text
 /WEB-INF/views/courses/form.jsp
@@ -2338,7 +2342,7 @@ private final List<Course> courses = new ArrayList<>();
 
 This means that data is lost when the application is restarted.
 
-It is enough to learn forms.
+That is enough for learning forms.
 
 Later we could replace this storage with a MySQL database.
 
@@ -2356,9 +2360,9 @@ CourseRepository
 MySQL
 ```
 
-In that case, we would use DBeaver to manage the database and check the saved logs.
+In that case, we would use DBeaver to manage the database and check the saved records.
 
-But for this topic it is convenient to separate the concepts:
+But for this topic it is better to keep the concepts separate:
 
 ```text
 Primero: entender formularios y validación.
@@ -2369,7 +2373,8 @@ Después: añadir persistencia en base de datos.
 
 ## 30. Common mistakes
 
-### Error 1: forgetting the form object
+### Error 1: Forgetting the form object
+
 If we do not add this in the controller:
 
 ```java
@@ -2392,7 +2397,7 @@ course
 
 ---
 
-### Error 2: Using field names that do not exist
+### Error 2: Using field names that don't exist
 
 If in the JSP we write:
 
@@ -2400,7 +2405,7 @@ If in the JSP we write:
 <form:input path="name" />
 ```
 
-but the `Course` class does not have a property called `name`, the link will fail.
+but the `Course` class does not have a property called `name`, the binding will fail.
 
 The class has:
 
@@ -2418,7 +2423,7 @@ The `path` values must match the properties of the object.
 
 ---
 
-### Error 3: Forget `BindingResult`
+### Error 3: Forgetting `BindingResult`
 
 If we write:
 
@@ -2432,7 +2437,7 @@ public String createCourse(@Valid @ModelAttribute("course") Course course) {
 
 we will not be able to check for errors.
 
-The correct thing is:
+The right way is:
 
 ```java
 @PostMapping
@@ -2445,7 +2450,7 @@ public String createCourse(
 
 ---
 
-### Error 4: misplace `BindingResult`
+### Error 4: Misplacing `BindingResult`
 
 Incorrect:
 
@@ -2465,7 +2470,7 @@ public String createCourse(
         Model model) {
 ```
 
-`BindingResult` should come right after the validated object.
+`BindingResult` must come right after the validated object.
 
 ---
 
@@ -2477,7 +2482,7 @@ If we use:
 private int durationInHours;
 ```
 
-an empty value is not represented well as `null`.
+an empty value can't be properly represented as `null`.
 
 For forms it is clearer to use:
 
@@ -2485,7 +2490,7 @@ For forms it is clearer to use:
 private Integer durationInHours;
 ```
 
-So this validation can work correctly:
+That way this validation can work correctly:
 
 ```java
 @NotNull(message = "La duración es obligatoria.")
@@ -2493,9 +2498,9 @@ So this validation can work correctly:
 
 ---
 
-### Error 6: Return `courses/list` after saving
+### Error 6: Returning `courses/list` after saving
 
-After saving successfully, we might think about doing this:
+After saving successfully, we might be tempted to do this:
 
 ```java
 return "courses/list";
@@ -2511,7 +2516,7 @@ This way we prevent the form from being resubmitted if the user refreshes the pa
 
 ---
 
-### Error 7: Forget validation dependency
+### Error 7: Forgetting the validation dependency
 
 If we use annotations like:
 
@@ -2535,7 +2540,7 @@ That's why we add:
 
 ---
 
-### Error 8: forgetting the forms library in JSP
+### Error 8: Forgetting the form library in the JSP
 
 If we use tags like:
 
@@ -2551,7 +2556,7 @@ but we don't add this line at the beginning of the JSP:
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-the view will not be able to interpret those labels.
+the view will not be able to interpret those tags.
 
 ---
 
@@ -2598,17 +2603,17 @@ The main pieces are:
 | Element | Function |
 | -------------------- | ------------------------------------------------------- |
 | `@ModelAttribute` | Binds form data to a Java object |
-| `@Valid` | Activate object validation |
-| `BindingResult` | Save validation errors |
-| `form:form` | Create a form linked to the model |
-| `form:input` | Create a field associated with a property |
-| `form:select` | Create a dropdown associated with a property |
+| `@Valid` | Activates object validation |
+| `BindingResult` | Stores validation errors |
+| `form:form` | Creates a form bound to the model |
+| `form:input` | Creates a field bound to a property |
+| `form:select` | Creates a dropdown bound to a property |
 | `form:errors` | Shows validation errors |
-| `RedirectAttributes` | Allows you to send temporary messages after a redirect |
-| `redirect:/...` | Redirect the browser to another route |
-| Post-Redirect-Get | Avoid accidental form resubmissions |
+| `RedirectAttributes` | Lets you send temporary messages after a redirect |
+| `redirect:/...` | Redirects the browser to another route |
+| Post-Redirect-Get | Prevents accidental form resubmissions |
 
-The key phrase that we must remember is:
+The key sentence to remember is:
 
 ```text
 El controlador no necesita leer manualmente cada campo del formulario.

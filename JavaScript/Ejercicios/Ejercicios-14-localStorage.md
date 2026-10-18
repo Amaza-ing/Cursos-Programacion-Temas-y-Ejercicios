@@ -1,8 +1,8 @@
-# **Exercises - Topic 14: Storage on the Client with `localStorage` and `sessionStorage`**
+# **Exercises - Topic 14: Client-Side Storage with `localStorage` and `sessionStorage`**
 
-Below you will find 5 practical exercises on how to use `localStorage` and `sessionStorage` in JavaScript.
+Below you'll find 5 practical exercises on how to use `localStorage` and `sessionStorage` in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -31,7 +31,7 @@ getUsername(); // Salida: "Juan Pérez"
 
 ### **Exercise 2: Click counter with `localStorage`**
 
-Create a button in HTML with `id="click-btn"` that counts how many times it has been pressed and stores that value in `localStorage` for persistence between sessions.
+Create a button in HTML with `id="click-btn"` that counts how many times it has been clicked and stores that value in `localStorage` so it persists between sessions.
 
 <details><summary>Show solution</summary>
 
@@ -49,9 +49,9 @@ document.getElementById("click-btn").addEventListener("click", () => {
 
 ---
 
-### **Exercise 3: Saving and Retrieving User Preferences with `sessionStorage`**
+### **Exercise 3: Save and retrieve user preferences with `sessionStorage`**
 
-Create a form with an `select` to choose a background color. Save the preference to `sessionStorage` and apply it to the page on load.
+Create a form with a `select` to choose a background color. Save the preference in `sessionStorage` and apply it to the page when it loads.
 
 <details><summary>Show solution</summary>
 
@@ -83,7 +83,7 @@ loadTheme();
 
 ### **Exercise 4: Store and retrieve a task list in `localStorage`**
 
-Create a function that allows tasks to be added to a list and saved to `localStorage`, ensuring that tasks persist between sessions.
+Create a function that lets you add tasks to a list and save them in `localStorage`, making sure the tasks persist between sessions.
 
 <details><summary>Show solution</summary>
 
@@ -109,7 +109,7 @@ getTasks();
 
 ### **Exercise 5: Delete data stored in `localStorage` and `sessionStorage`**
 
-Create two buttons in HTML to clear the storage of `localStorage` and `sessionStorage` when clicked.
+Create two buttons in HTML that clear `localStorage` and `sessionStorage` when clicked.
 
 <details><summary>Show solution</summary>
 

@@ -1,12 +1,12 @@
 # Exercises - Topic 19: Packages
 
-Below you will find **10 practical exercises** on **packages**: creating folder structure, `package` declaration, use of `import`, avoiding _default package_, `package-private`, and a first contact with `static import`.
+Below you will find **10 practical exercises** on **packages**: creating the folder structure, the `package` declaration, using `import`, avoiding the _default package_, `package-private`, and a first contact with `static import`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Create a main package and an `Main`
+## Exercise 1: Create a main package and a `Main`
 
 Create a project with this main package:
 
@@ -17,7 +17,7 @@ app
 Inside, create `Main.java` with:
 
 - `package app;`
-- An `main` that prints `Hello packages`.
+- A `main` method that prints `Hello packages`.
 
 <details><summary>Show solution</summary>
 
@@ -35,7 +35,7 @@ public class Main {
 
 ---
 
-## Exercise 2: Create `model` and an `User` class
+## Exercise 2: Create `model` and a `User` class
 
 Create the package:
 
@@ -46,7 +46,7 @@ app.model
 Inside, create `User.java` with:
 
 - `private String name`
-- `User(String name)` Builder
+- `User(String name)` constructor
 - `printInfo()` method that prints `User: name`
 
 <details><summary>Show solution</summary>
@@ -73,7 +73,7 @@ public class User {
 
 ## Exercise 3: Import `User` from `Main`
 
-Using exercise 2, in `Main.java` (package `app`) create an `User` and print its information.
+Using what you did in exercise 2, in `Main.java` (package `app`) create a `User` and print its info.
 
 You must use `import`.
 
@@ -96,7 +96,7 @@ public class Main {
 
 ---
 
-## Exercise 4: Use full name without `import`
+## Exercise 4: Use the fully qualified name without `import`
 
 Repeat exercise 3, but this time **do not** use `import`.  
 Create the `User` using the fully qualified name of the class.
@@ -125,7 +125,7 @@ Create two classes called `Logger` in:
 - `app.utils.Logger`
 - `app.service.Logger`
 
-Each must have an `log(String message)` method that prints:
+Each one must have a `log(String message)` method that prints:
 
 - `UTILS: message`
 - `SERVICE: message`
@@ -175,14 +175,14 @@ public class Main {
 
 ---
 
-## Exercise 6: `package-private` class (without modifier)
+## Exercise 6: `package-private` class (no modifier)
 
 Create a class `InternalValidator` in `app.model` without `public` (package-private).
 
-You must have a method `isValidName(String name)` that returns `true` if:
+It must have a method `isValidName(String name)` that returns `true` if:
 
 - it is not `null`
-- it is not white (`isBlank()`)
+- it is not blank (`isBlank()`)
 
 Then, in `User` (same package `app.model`), create a method `setName(String name)` that uses `InternalValidator`.
 
@@ -232,7 +232,7 @@ public class User {
 ## Exercise 7: Test that `package-private` is not accessible from another package
 
 With exercise 6 done, in `Main` (package `app`) try to create `InternalValidator`.  
-It should fail (does not compile). Leave the code commented.
+It should fail (it doesn't compile). Leave the code commented out.
 
 <details><summary>Show solution</summary>
 
@@ -255,7 +255,7 @@ public class Main {
 
 ---
 
-## Exercise 8: Reorganize structure with `Refactor > Move` (theoretical-practical)
+## Exercise 8: Reorganize the structure with `Refactor > Move` (theory and practice)
 
 Imagine you have a class `Order` in `app.model`, but you want to move it to:
 
@@ -263,12 +263,12 @@ Imagine you have a class `Order` in `app.model`, but you want to move it to:
 app.domain
 ```
 
-Write the changes that must occur to the `Order.java` file:
+Write down the changes that must be made to the `Order.java` file:
 
-1. Correct `package ...;` line
-2. Imports that change in classes that use `Order`
+1. The correct `package ...;` line
+2. The imports that change in the classes that use `Order`
 
-You don't need to execute anything: just write the example of how it would look.
+You don't need to run anything: just write an example of how it would look.
 
 <details><summary>Show solution</summary>
 
@@ -310,10 +310,10 @@ Create three classes in `app.model`:
 
 In `Main`, write two versions:
 
-1. Explicit import of the three classes
-2. Import with `import app.model.*;` wildcard
+1. Explicit imports of the three classes
+2. A wildcard import with `import app.model.*;`
 
-You don't need to instantiate anything, just show what the imports would be like.
+You don't need to instantiate anything, just show what the imports would look like.
 
 <details><summary>Show solution</summary>
 
@@ -337,8 +337,8 @@ import app.model.*;
 
 In `Main`, calculate:
 
-- Area of a circle of radius `r = 3` with `PI`
-- Square root of `81` with `sqrt`
+- The area of a circle with radius `r = 3` using `PI`
+- The square root of `81` using `sqrt`
 
 Use `static import` to be able to write `PI` and `sqrt(...)` without `Math.`.
 

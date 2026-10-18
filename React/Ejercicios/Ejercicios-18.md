@@ -2,7 +2,7 @@
 
 Below, you will find **10 practical exercises** to learn how to work with **React Router v6**, defining routes, pages and navigation.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -10,7 +10,7 @@ Try to solve them before consulting the solution.
 
 Install React Router in your project and configure `BrowserRouter` by wrapping the app in `main.jsx` or `index.jsx`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```bash
 npm install react-router-dom
@@ -35,12 +35,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 ## **Exercise 2: Create two pages**
 
-Create an `pages` folder with two components:
+Create a `pages` folder with two components:
 
 - `Home.jsx` → shows `Home page`
 - `About.jsx` → shows `About page`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Home() {
@@ -69,7 +69,7 @@ Configure the routes in `App.jsx`:
 - `/` → `Home`
 - `/about` → `About`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -92,14 +92,14 @@ export default App;
 
 ---
 
-## **Exercise 4: Browse with `Link`**
+## **Exercise 4: Navigate with `Link`**
 
-Create an `Nav.jsx` component that:
+Create a `Nav.jsx` component that:
 
-- Have two links: **Home** and **About**.
-- Use `Link` (not `<a>`).
+- Has two links: **Home** and **About**.
+- Uses `Link` (not `<a>`).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Link } from "react-router-dom";
@@ -122,9 +122,9 @@ export default Nav;
 
 ## **Exercise 5: Show navigation on all pages**
 
-Include `Nav` in `App.jsx` so that it is always displayed, regardless of the path.
+Include `Nav` in `App.jsx` so that it is always displayed, regardless of the route.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function App() {
@@ -144,11 +144,11 @@ function App() {
 
 ---
 
-## **Exercise 6: Route 404**
+## **Exercise 6: 404 route**
 
-Create an `NotFound.jsx` component and configure it to display when the route does not exist.
+Create a `NotFound.jsx` component and configure it to be displayed when the route doesn't exist.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function NotFound() {
@@ -168,9 +168,9 @@ export default NotFound;
 
 ## **Exercise 7: Programmatic navigation with `useNavigate`**
 
-Create an `Login.jsx` component with a **Login** button that, when clicked, redirects to `/`.
+Create a `Login.jsx` component with a **Login** button that, when clicked, redirects to `/`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useNavigate } from "react-router-dom";
@@ -194,9 +194,9 @@ export default Login;
 
 ## **Exercise 8: Add a new route**
 
-Add an `Profile.jsx` page and create the route `/profile`.
+Add a `Profile.jsx` page and create the route `/profile`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Profile() {
@@ -216,9 +216,9 @@ export default Profile;
 
 ## **Exercise 9: Redirect after an action**
 
-Modify the `Login.jsx` component so that, after login, it redirects to `/profile`.
+Modify the `Login.jsx` component so that, after logging in, it redirects to `/profile`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const handleLogin = () => {
@@ -232,14 +232,14 @@ const handleLogin = () => {
 
 ## **Exercise 10: Mini-structure of an app with routes**
 
-Describes the folder structure of a React Router app that has:
+Describe the folder structure of a React Router app that has:
 
 - `Home`
 - `Login`
 - `Profile`
 - `NotFound`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```
 src/

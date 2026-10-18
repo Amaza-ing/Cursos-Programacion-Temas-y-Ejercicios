@@ -1,14 +1,14 @@
-# **Exercises - Topic 7: Step by Value and Step by Reference**
+# **Exercises - Topic 7: Pass by Value and Pass by Reference**
 
-Below you will find 5 practical exercises on passing by value and passing by reference in JavaScript.
+Below you'll find 5 practical exercises on pass by value and pass by reference in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Step by Value with Primitive Variables**
+### **Exercise 1: Pass by Value with Primitive Variables**
 
-Create two variables `x` and `y`, assigning `y` the value of `x`. Then, change the value of `y` and check if `x` has changed.
+Create two variables, `x` and `y`, assigning `y` the value of `x`. Then, change the value of `y` and check whether `x` has changed.
 
 <details><summary>Show solution</summary>
 
@@ -27,7 +27,7 @@ console.log(y); // Salida: 100
 
 ### **Exercise 2: Modifying an Object by Reference**
 
-Creates an `car` object with `brand` and `year` properties. Then, assign this object to a new variable `carCopy` and modify `year` to `carCopy`. What happens with `car`?
+Create a `car` object with `brand` and `year` properties. Then, assign this object to a new variable `carCopy` and modify `year` in `carCopy`. What happens to `car`?
 
 <details><summary>Show solution</summary>
 
@@ -46,7 +46,7 @@ console.log(carCopy.year); // Salida: 2025
 
 ### **Exercise 3: Create an Independent Copy of an Object**
 
-Given the following `user` object, create a separate copy and modify only the `age` property in the copy without affecting the original object.
+Given the following `user` object, create an independent copy and modify only the `age` property in the copy without affecting the original object.
 
 <details><summary>Show solution</summary>
 
@@ -65,7 +65,7 @@ console.log(userCopy.age); // Salida: 35
 
 ### **Exercise 4: Copy an Array without Modifying the Original**
 
-Given an `numbers` array, create a copy of the array and add a new number to the copy without affecting the original.
+Given a `numbers` array, create a copy of the array and add a new number to the copy without affecting the original.
 
 <details><summary>Show solution</summary>
 
@@ -84,7 +84,7 @@ console.log(numbersCopy); // Salida: [10, 20, 30, 40]
 
 ### **Exercise 5: Deep Copy of an Object with Nested Objects**
 
-Given the following `student` object, perform a deep copy and modify the `grade` property without affecting the original.
+Given the following `student` object, make a deep copy and modify the `grade` property without affecting the original.
 
 ```js
 const student = {

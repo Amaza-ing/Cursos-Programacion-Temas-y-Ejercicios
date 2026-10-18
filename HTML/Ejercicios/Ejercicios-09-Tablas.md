@@ -2,9 +2,9 @@
 
 ## **Instructions:**
 
-Below you will find 5 practical exercises on tables in HTML.
+Below you'll find 5 practical exercises on tables in HTML.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -40,7 +40,7 @@ Create a table with 3 columns: "Name", "Age" and "City". Add at least two rows o
 
 ### **Exercise 2: Add headers to a table**
 
-Modify the following table so that the titles "Product", "Price", and "Quantity" are headings (`<th>` in the first row).
+Modify the following table so that the titles "Product", "Price" and "Quantity" are headers (`<th>` in the first row).
 
 ```html
 <table border="1">
@@ -109,7 +109,7 @@ Create a table with one header row and three columns. Then, in the second row, u
 
 ### **Exercise 4: Merge cells with `rowspan`**
 
-Create a table where one cell occupies two rows using `rowspan="2"`.
+Create a table where one cell spans two rows using `rowspan="2"`.
 
 <details><summary>Show solution</summary>
 
@@ -135,7 +135,7 @@ Create a table where one cell occupies two rows using `rowspan="2"`.
 
 ### **Exercise 5: Create a table with multiple rows and columns**
 
-Design a table that has at least 3 rows and 4 columns with fictitious customer information.
+Design a table with at least 3 rows and 4 columns containing made-up customer information.
 
 <details><summary>Show solution</summary>
 

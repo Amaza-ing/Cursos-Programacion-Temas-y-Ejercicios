@@ -2,7 +2,7 @@
 
 ## **1. Introduction to objects**
 
-In JavaScript, an **object** is a collection of key-value pairs where the keys are strings and the values can be any data type, including other functions and objects. Objects allow complex data to be structured and are essential in object-oriented programming.
+In JavaScript, an **object** is a collection of key-value pairs where the keys are strings and the values can be any data type, including functions and other objects. Objects let you structure complex data and are essential in object-oriented programming.
 
 This is the structure of an object:
 
@@ -19,7 +19,7 @@ const myObject {
 
 ---
 
-## **2. Object creation**
+## **2. Creating objects**
 
 ### **2.1. Using object literal syntax**
 
@@ -36,7 +36,7 @@ const person = {
 console.log(person);
 ```
 
-### **2.2. Using the `Object`** constructor
+### **2.2. Using the `Object` constructor**
 
 ```js
 const car = new Object();
@@ -47,7 +47,7 @@ car.year = 2022;
 console.log(car);
 ```
 
-### **23. Using constructor functions**
+### **2.3. Using constructor functions**
 
 ```js
 function Person(firstName, lastName, age) {
@@ -80,11 +80,11 @@ console.log(dog.describe()); // Salida: Firulais es un perro
 
 ---
 
-## **3. Access to properties**
+## **3. Accessing properties**
 
-It is not necessary to use the entire object, you can access the properties of an object in different ways.
+You don't need to use the whole object: you can access an object's properties in different ways.
 
-### **3.1. Point notation**
+### **3.1. Dot notation**
 
 object.property
 
@@ -92,7 +92,7 @@ object.property
 console.log(person.firstName); // Salida: Ana
 ```
 
-### **3.2. Bracket Notation**
+### **3.2. Bracket notation**
 
 object[property]
 
@@ -107,9 +107,9 @@ const key = "age";
 console.log(person[key]); // Salida: 30
 ```
 
-### **3.3. Add properties**
+### **3.3. Adding properties**
 
-New properties can be added to an object by accessing them even if they did not previously exist.
+You can add new properties to an object by accessing them, even if they didn't exist before.
 
 ```js
 person.country = "España";
@@ -118,7 +118,7 @@ console.log(person.country); // Salida: España
 
 ---
 
-## **4. Methods on objects**
+## **4. Methods in objects**
 
 Objects can have functions as properties, called **methods**.
 
@@ -138,9 +138,9 @@ console.log(calculator.subtract(5, 3)); // Salida: 2
 
 ---
 
-## **5. The `this`** object
+## **5. The `this` object**
 
-Within a method, `this` refers to the object that calls the method.
+Inside a method, `this` refers to the object that calls the method.
 
 ```js
 const user = {
@@ -153,7 +153,7 @@ const user = {
 user.greet(); // Salida: Hola, soy Laura
 ```
 
-> **Note:** Arrow functions do not have their own `this`, so it is preferable to use normal functions for methods that depend on `this`.
+> **Note:** Arrow functions don't have their own `this`, so it's better to use regular functions for methods that depend on `this`.
 
 ---
 
@@ -195,7 +195,7 @@ console.log(Object.entries(person));
 
 ### **6.4. `hasOwnProperty()`**
 
-Checks if the object has a specific property.
+Checks whether the object has a specific property.
 
 ```js
 console.log(person.hasOwnProperty("age")); // Salida: true
@@ -207,9 +207,9 @@ console.log(person.hasOwnProperty("age")); // Salida: true
 
 ---
 
-## **7. Destructuring objects**
+## **7. Object destructuring**
 
-It allows extracting properties from an object and assigning them to variables.
+It lets you extract properties from an object and assign them to variables.
 
 ```js
 const { firstName, age } = person;
@@ -217,7 +217,7 @@ console.log(firstName); // Salida: Ana
 console.log(age); // Salida: 30
 ```
 
-You can also assign new names to variables:
+You can also give the variables new names:
 
 ```js
 const { firstName: name, age: years } = person;
@@ -233,6 +233,6 @@ console.log(years); // Salida: 30
 
 ## **8. Conclusion**
 
-Objects in JavaScript are a powerful tool for structuring and manipulating complex data. With the ability to add methods, inherit properties, and use classes, objects form the basis of many modern applications.
+Objects in JavaScript are a powerful tool for structuring and manipulating complex data. With the ability to add methods, inherit properties and use classes, objects form the basis of many modern applications.
 
-In the next topic, we will delve into **arrays** and how to efficiently work with data collections in JavaScript.
+In the next topic, we'll take a closer look at **arrays** and how to work efficiently with collections of data in JavaScript.

@@ -1,27 +1,27 @@
 # **Topic 11: Stored Procedures in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Understand what a stored procedure is.
-- Create and execute stored procedures.
+- Create and run stored procedures.
 - Use input and output parameters.
-- Modify and eliminate procedures.
+- Modify and delete procedures.
 
 ---
 
 ## **1. What is a stored procedure?**
 
-A **stored procedure** is a set of SQL statements that is stored in the database and can be executed later.
+A **stored procedure** is a set of SQL statements that is saved in the database and can be run later.
 
 ### **Advantages:**
 
 - Code reuse.
-- Performance improvement by reducing traffic between the application and the database.
-- Greater security, since the logic is maintained on the server.
+- Better performance, by reducing traffic between the application and the database.
+- Greater security, since the logic stays on the server.
 
 ---
 
-## **2. Create a stored procedure**
+## **2. Creating a stored procedure**
 
 ### **Basic syntax:**
 
@@ -45,11 +45,11 @@ END $$
 DELIMITER ;
 ```
 
-This procedure, when executed, returns all clients.
+When you run this procedure, it returns all the customers.
 
 ---
 
-## **3. Run a stored procedure**
+## **3. Running a stored procedure**
 
 ```sql
 CALL obtener_clientes();
@@ -96,11 +96,11 @@ SELECT @total;
 
 ### **Input/output parameters (INOUT)**
 
-They allow you to modify the value of a parameter and return it modified.
+They let you change the value of a parameter and return it modified.
 
 ---
 
-## **5. Delete a procedure**
+## **5. Deleting a procedure**
 
 ```sql
 DROP PROCEDURE obtener_clientes;
@@ -108,9 +108,9 @@ DROP PROCEDURE obtener_clientes;
 
 ---
 
-## **6. Modify a procedure**
+## **6. Modifying a procedure**
 
-In MySQL there is no `ALTER PROCEDURE` to change the logic directly. It must be deleted and recreated:
+In MySQL there is no `ALTER PROCEDURE` to change the logic directly. You have to delete the procedure and create it again:
 
 ```sql
 DROP PROCEDURE IF EXISTS obtener_clientes;
@@ -123,11 +123,11 @@ CREATE PROCEDURE obtener_clientes() ...
 CREATE OR REPLACE PROCEDURE obtener_clientes;
 ```
 
-This syntax does exist in other engines such as PostgreSQL and Oracle.
+That syntax does exist in other database engines, such as PostgreSQL and Oracle.
 
 ---
 
-## **7. See existing procedures**
+## **7. Viewing existing procedures**
 
 ```sql
 SHOW PROCEDURE STATUS WHERE Db = 'nombre_base_datos';
@@ -135,16 +135,16 @@ SHOW PROCEDURE STATUS WHERE Db = 'nombre_base_datos';
 
 ---
 
-[![Stored Procedures](https://img.youtube.com/vi/4qnZDc2yWYc/0.jpg)](https://www.youtube.com/watch?v=4qnZDc2yWYc&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Stored procedures](https://img.youtube.com/vi/4qnZDc2yWYc/0.jpg)](https://www.youtube.com/watch?v=4qnZDc2yWYc&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
 ## **8. Conclusion**
 
-- Stored procedures allow you to encapsulate SQL logic within the database.
-- They can receive input, output parameters or both.
-- They are executed with `CALL` and managed with `DROP` to remove them.
+- Stored procedures let you encapsulate SQL logic inside the database.
+- They can take input parameters, output parameters or both.
+- They are run with `CALL`, and `DROP` removes them.
 
 ---
 
-In the next topic we will learn to **create and use triggers to automate actions in the database.**
+In the next topic we will learn how to **create and use triggers to automate actions in the database.**

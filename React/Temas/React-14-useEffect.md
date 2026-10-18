@@ -2,25 +2,25 @@
 
 ## **1. Introduction**
 
-So far we have used `useState` to save data and update the interface. But there are situations where a component needs to do “extra things” besides rendering:
+So far we've used `useState` to store data and update the interface. But there are situations where a component needs to do “extra things” besides rendering:
 
 - Request data from an API.
-- Read or write to `localStorage`.
-- Configure an `setInterval` or an `setTimeout`.
-- Subscribe to events (e.g. window `resize`).
+- Read from or write to `localStorage`.
+- Set up a `setInterval` or a `setTimeout`.
+- Subscribe to events (for example, the window's `resize`).
 
-React calls these types of actions **effects_. The main hook to manage them is **`useEffect`**.
+React calls these kinds of actions **effects**. The main hook to manage them is **`useEffect`**.
 
 In this topic you will learn:
 
-- What is an effect.
+- What an effect is.
 - How `useEffect` works.
-- What does the dependency list mean?
-- How to execute an effect:
+- What the dependency list means.
+- How to run an effect:
 
-  - Only when riding.
+  - Only on mount.
   - Every time a variable changes.
-  - With cleaning (_cleanup_).
+  - With a _cleanup_.
 
 ---
 
@@ -28,13 +28,13 @@ In this topic you will learn:
 
 An effect is any logic that:
 
-- It does not belong directly to the render.
+- Doesn't belong directly to the render.
 - Interacts with something “external” to the component.
 
-Very useful mental rule:
+A very useful rule of thumb:
 
 - **Render**: generates JSX.
-- **Effect**: does “secondary” work that occurs after rendering.
+- **Effect**: does “secondary” work that happens after rendering.
 
 ---
 
@@ -56,7 +56,7 @@ useEffect(() => {
 
 Important:
 
-- If you don't put dependencies, it is executed **after each render**.
+- If you don't add dependencies, it runs **after every render**.
 
 ---
 
@@ -72,13 +72,13 @@ useEffect(() => {
 
 That array tells React:
 
-- “Only rerun this effect if any of these variables change.”
+- “Only run this effect again if any of these variables change.”
 
 ---
 
-## **5. Execute an effect only when mounted (equivalent to “on mount”)**
+## **5. Running an effect only when the component mounts (“on mount”)**
 
-If you want an effect to run only **once**, when mounting the component, use an empty array:
+If you want an effect to run only **once**, when the component mounts, use an empty array:
 
 ```js
 import { useEffect } from "react";
@@ -94,18 +94,18 @@ function App() {
 export default App;
 ```
 
-This pattern is widely used for:
+This pattern is widely used to:
 
 - Load data at startup.
 - Initialize something only once.
 
 ---
 
-## **6. Run an effect when a variable changes**
+## **6. Running an effect when a variable changes**
 
-If you put a dependency, the effect is executed:
+If you add a dependency, the effect runs:
 
-- When riding, and
+- On mount, and
 - Every time that dependency changes.
 
 Example:
@@ -130,14 +130,14 @@ export default CounterWatcher;
 
 ---
 
-## **7. Cleanup: clean an effect**
+## **7. Cleanup: cleaning up an effect**
 
-Some effects create “subscriptions” or timers. In these cases you have to clean when:
+Some effects create “subscriptions” or timers. In those cases you have to clean up:
 
-- The component is disassembled.
+- When the component unmounts.
 - Before running the effect again.
 
-Cleanup is done by returning a function inside `useEffect`.
+Cleanup is done by returning a function inside the `useEffect`.
 
 ### **7.1. Example: `setInterval` with cleanup**
 
@@ -163,15 +163,15 @@ function Timer() {
 export default Timer;
 ```
 
-Without cleanup, the interval would continue to work even if the component disappears.
+Without cleanup, the interval would keep running even after the component disappears.
 
 ---
 
-## **8. Typical case: read/write `localStorage`**
+## **8. Typical case: reading/writing `localStorage`**
 
 A very common practical case:
 
-- When mounting: read a saved value.
+- On mount: read a saved value.
 - When the state changes: save it.
 
 Example:
@@ -212,11 +212,11 @@ export default ThemeSaver;
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Forget dependencies**
+### **9.1. Forgetting dependencies**
 
-If you use variables inside the effect, they should normally be in the dependencies array.
+If you use variables inside the effect, they should normally be in the dependency array.
 
 ```js
 useEffect(() => {
@@ -224,27 +224,27 @@ useEffect(() => {
 }, [query]);
 ```
 
-### **9.2. Do “render work” within the effect**
+### **9.2. Doing “render work” inside the effect**
 
-The effect is not to generate JSX, but for secondary logic.
+Effects aren't for generating JSX, but for secondary logic.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
-- Use `[]` if you only want to run on mount.
+- Use `[]` if you only want it to run on mount.
 - Add dependencies when the effect depends on state/props.
 - If you create timers or listeners, return a cleanup.
-- Keep the effects small and with clear responsibility.
+- Keep effects small, with a clear responsibility.
 
 ---
-## **11. To take into account**
+## **11. Things to keep in mind**
 
-- `useEffect` is executed **after** the render.
-- No dependencies: executed after each render.
-- With `[]`: only when mounting.
-- With `[x]`: when mounting and when changing `x`.
-- The cleanup prevents leaks and unexpected behavior.
+- `useEffect` runs **after** the render.
+- No dependencies: it runs after every render.
+- With `[]`: only on mount.
+- With `[x]`: on mount and whenever `x` changes.
+- Cleanup prevents leaks and unexpected behavior.
 
 ---
 
@@ -252,4 +252,4 @@ The effect is not to generate JSX, but for secondary logic.
 
 ---
 
-In the next topic we will see **Fetch API**, to request data from an API and combine it with `useEffect`.
+In the next topic we'll look at the **Fetch API**, to request data from an API and combine it with `useEffect`.

@@ -4,15 +4,15 @@
 
 In programming, many tasks consist of **repeating actions**:
 
-- Show a list of numbers
-- Add values until something happens
-- Ask the user for data until they are valid
-- Repeat attempts in a game
-- Loop through a data structure (arrays, lists, etc.)
+- Showing a list of numbers
+- Adding values until something happens
+- Asking the user for data until it's valid
+- Repeating attempts in a game
+- Looping through a data structure (arrays, lists, etc.)
 
-For this there are **loops**.
+That's what **loops** are for.
 
-A loop allows a block of code to be executed **multiple times**, under a condition or a certain number of repetitions.
+A loop lets you run a block of code **several times**, based on a condition or a set number of repetitions.
 
 In Java, the most important loops to get started with are:
 
@@ -21,11 +21,11 @@ In Java, the most important loops to get started with are:
 
 In this topic you will learn:
 
-- How an `while` loop works
-- How an `for` loop works
-- How to choose between one and the other
-- Common errors (infinite loops, off-by-one, etc.)
-- Basic patterns that you will use constantly
+- How a `while` loop works
+- How a `for` loop works
+- How to choose between them
+- Common mistakes (infinite loops, off-by-one, etc.)
+- Basic patterns you'll use all the time
 
 ---
 
@@ -35,21 +35,21 @@ In this topic you will learn:
 
 ## 2. Key concept: condition, repetition and state
 
-Every loop has three important ideas:
+Every loop involves three important ideas:
 
-1. **Condition**: Decides whether the loop continues or stops.
+1. **Condition**: decides whether the loop continues or stops.
 2. **State**: a variable (or several) that changes over time.
-3. **Update**: which modifies the state so that the loop advances.
+3. **Update**: what modifies the state so the loop moves forward.
 
 If you don't update the state, it's easy to fall into an **infinite loop**.
 
 ---
 
-## 3. `while` loop
+## 3. The `while` loop
 
-### 3.1. What is an `while`?
+### 3.1. What is a `while`?
 
-An `while` repeats a block **as long as** the condition is `true`.
+A `while` repeats a block **as long as** the condition is `true`.
 
 Syntax:
 
@@ -59,8 +59,8 @@ while (condition) {
 }
 ```
 
-- If the condition is `true`, enter the loop.
-- After each iteration, check the condition again.
+- If the condition is `true`, it enters the loop.
+- After each iteration, it checks the condition again.
 - If the condition is `false`, the loop ends.
 
 ---
@@ -83,9 +83,9 @@ public class Main {
 What's happening:
 
 - `counter` starts at 1 (initial state)
-- Condition is `counter <= 5`
-- On each turn it is printed and then incremented
-- When reaching 6, the condition is false and the loop ends
+- The condition is `counter <= 5`
+- On each pass it's printed and then incremented
+- When it reaches 6, the condition is false and the loop ends
 
 Output:
 
@@ -99,7 +99,7 @@ Output:
 
 ---
 
-### 3.3. Example 2: Adding numbers until a limit is reached
+### 3.3. Example 2: adding numbers until a limit is reached
 
 ```java
 public class Main {
@@ -124,7 +124,7 @@ Key ideas:
 
 ---
 
-### 3.4. Typical error: infinite loop due to not updating the counter
+### 3.4. Common mistake: an infinite loop from not updating the counter
 
 This is a classic mistake:
 
@@ -139,7 +139,7 @@ while (counter <= 5) {
 The condition is always `true` because `counter` never changes.  
 The program does not terminate (infinite loop).
 
-Solution: update the status
+Solution: update the state
 
 ```java
 int counter = 1;
@@ -152,9 +152,9 @@ while (counter <= 5) {
 
 ---
 
-## 4. `do-while` loop (very useful for validating)
+## 4. The `do-while` loop (very useful for validation)
 
-Although the topic focuses on `while` and `for`, it is worth knowing `do-while` because it appears a lot when you want something to be executed at least once.
+Although the topic focuses on `while` and `for`, it's worth knowing `do-while` because it comes up a lot when you want something to run at least once.
 
 Syntax:
 
@@ -164,7 +164,7 @@ do {
 } while (condition);
 ```
 
-The difference with `while` is:
+The difference from `while` is:
 
 - `do-while` executes the block **once** and then evaluates the condition.
 
@@ -187,11 +187,11 @@ This prints `10` once, even if the condition is false from the start.
 
 ---
 
-## 5. `for` loop
+## 5. The `for` loop
 
-### 5.1. What is an `for`?
+### 5.1. What is a `for`?
 
-An `for` is ideal when you know how many times you want to repeat something. It is a counter loop.
+A `for` is ideal when you know how many times you want to repeat something. It is a counter loop.
 
 Syntax:
 
@@ -201,9 +201,9 @@ for (initialization; condition; update) {
 }
 ```
 
-- **initialization**: executed once at startup
+- **initialization**: runs only once, at the start
 - **condition**: checked before each iteration
-- **update**: executed after each iteration
+- **update**: runs after each iteration
 
 ---
 
@@ -219,7 +219,7 @@ public class Main {
 }
 ```
 
-Compared to `while`, `for` groups into a single line:
+Compared to `while`, a `for` groups into a single line:
 
 - counter variable (`int i = 1`)
 - condition (`i <= 5`)
@@ -251,7 +251,7 @@ Output:
 
 ---
 
-### 5.4. Example 3: jumps (step) 2 by 2
+### 5.4. Example 3: jumps (step) of 2
 
 ```java
 public class Main {
@@ -276,15 +276,15 @@ Output:
 
 ---
 
-## 6. When to use `while` and when to use `for`?
+## 6. When should you use `while` and when `for`?
 
 ### 6.1. Use `for` when
 
 - You know how many repetitions there will be
-- You are running through a clear range: 1 to 10, 0 to 99, etc.
-- There is a counter with simple increment
+- You're going through a clear range: 1 to 10, 0 to 99, etc.
+- There's a counter with a simple increment
 
-Typical example: repeat 10 times
+Typical example: repeating 10 times
 
 ```java
 for (int i = 0; i < 10; i++) {
@@ -297,10 +297,10 @@ for (int i = 0; i < 10; i++) {
 ### 6.2. Use `while` when
 
 - You don't know how many repetitions there will be
--Depends on an external condition
+- It depends on an external condition
 - You are waiting for something to happen
 
-Typical example: repeat until a value reaches a state
+Typical example: repeating until a value reaches a certain state
 
 ```java
 while (balance > 0) {
@@ -327,7 +327,7 @@ while (counter < 3) {
 
 ### 7.2. Pattern 2: accumulator
 
-An accumulator is a variable that “stores” a result.
+An accumulator is a variable that “builds up” a result.
 
 ```java
 int sum = 0;
@@ -343,9 +343,9 @@ Here `sum` is the accumulator.
 
 ---
 
-### 7.3. Pattern 3: Find a maximum
+### 7.3. Pattern 3: finding a maximum
 
-Although we haven't seen arrays yet, we can understand the idea with single variables:
+Although we haven't seen arrays yet, we can understand the idea with separate variables:
 
 ```java
 int max = 10;
@@ -356,13 +356,13 @@ if (value > max) {
 }
 ```
 
-When you see arrays, this pattern is used inside loops.
+When you get to arrays, you'll use this pattern inside loops.
 
 ---
 
-### 7.4. Pattern 4: Conditional Counter
+### 7.4. Pattern 4: conditional counter
 
-Count how many times something happens:
+Counting how many times something happens:
 
 ```java
 int count = 0;
@@ -380,17 +380,17 @@ System.out.println(count); // cuántos pares hay entre 1 y 10
 
 ## 8. Common mistakes when working with loops
 
-### 8.1. infinite loop
+### 8.1. Infinite loop
 
-Occurs when the condition never becomes `false`.
+It happens when the condition never becomes `false`.
 
 Typical causes:
 
-- Do not update the counter
-- Update it in the wrong address
-- Condition misspelled
+- Not updating the counter
+- Updating it in the wrong direction
+- A badly written condition
 
-Typical example (wrong address):
+Typical example (wrong direction):
 
 ```java
 int counter = 1;
@@ -403,7 +403,7 @@ while (counter <= 5) {
 
 ---
 
-### 8.2. “Off-by-one” error
+### 8.2. The “one too many” error (off-by-one)
 
 Very common in ranges.
 
@@ -415,9 +415,9 @@ for (int i = 0; i <= 10; i++) {
 }
 ```
 
-Prints 11 numbers (0 to 10).
+It prints 11 numbers (0 to 10).
 
-If you wanted to print 10 numbers, it is usually:
+If you wanted to print 10 numbers, you usually write:
 
 ```java
 for (int i = 0; i < 10; i++) {
@@ -429,9 +429,9 @@ for (int i = 0; i < 10; i++) {
 
 ---
 
-### 8.3. Reuse counters with “dirty” values
+### 8.3. Reusing counters with “dirty” values
 
-If you reuse the same variable without resetting it, it may cause logic failures.
+If you reuse the same variable without resetting it, it can cause logic errors.
 
 Example:
 
@@ -448,13 +448,13 @@ while (i < 3) {
 }
 ```
 
-Solution: Reset `i` before the second loop.
+Solution: reset `i` before the second loop.
 
 ---
 
-## 9. Complete and guided examples
+## 9. Complete, guided examples
 
-### 9.1. Example 1: Print a simple table (multiply by 3)
+### 9.1. Example 1: printing a simple times table (multiplying by 3)
 
 ```java
 public class Main {
@@ -469,11 +469,11 @@ public class Main {
 }
 ```
 
-This prints a multiplication table of 3, 1 to 10.
+This prints the 3 times table, from 1 to 10.
 
 ---
 
-### 9.2. Example 2: simulate attempts until reaching a goal
+### 9.2. Example 2: simulating attempts until reaching a goal
 
 ```java
 public class Main {
@@ -496,12 +496,12 @@ public class Main {
 Key ideas:
 
 - `progress` controls when to stop
-- `attempts` counts how many turns the loop has taken
+- `attempts` counts how many times the loop has run
 - `progress` grows and eventually reaches the target
 
 ---
 
-### 9.3. Example 3: Combine loop and conditional inside
+### 9.3. Example 3: combining a loop with a conditional inside it
 
 ```java
 public class Main {
@@ -519,19 +519,19 @@ public class Main {
 }
 ```
 
-This adds only the pairs 1 to 10.
+This adds only the even numbers from 1 to 10.
 
 ---
 
-## 10. To take into account
+## 10. Things to keep in mind
 
 - A loop repeats code until an exit condition is met.
 - `while` is ideal when you don't know how many repetitions there will be.
 - `for` is ideal when there is a counter and a clear range.
 - Almost all loops need a variable that changes (state).
-- The most common errors are: infinite loops and off-by-one.
+- The most common mistakes are infinite loops and off-by-one errors.
 - Practicing patterns (counter, accumulator, filtering) will help you in future topics such as arrays and collections.
 
 ---
 
-In the next topic we will see **flow control in loops** (`break` and `continue`), to stop a repetition or skip an iteration when you need it.
+In the next topic we'll look at **flow control in loops** (`break` and `continue`), to stop a loop or skip an iteration when you need to.

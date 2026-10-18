@@ -1,16 +1,16 @@
 # **Exercises - Topic 9: Creating and Validating Forms in Vue.js**
 
-Below you will find 5 practical exercises on creating and validating forms in Vue.
+Below you'll find 5 practical exercises on creating and validating forms in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Contact form with v-model**
 
-Create an `ContactForm.vue` component with a contact form that has the fields `nombre`, `email`, and `mensaje`, all connected to `v-model`.
+Create a `ContactForm.vue` component with a contact form that has the fields `nombre`, `email` and `mensaje`, all bound with `v-model`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -62,9 +62,9 @@ button {
 
 ## **Exercise 2: Basic email validation**
 
-Create an `EmailForm.vue` component that has an input for email and validates that it contains `@` when sent.
+Create an `EmailForm.vue` component that has an email input and checks that it contains `@` when the form is submitted.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -104,11 +104,11 @@ function handleSubmit() {
 
 ---
 
-## **Exercise 3: Show message when submitting form**
+## **Exercise 3: Show a message when the form is submitted**
 
-Create an `SimpleForm.vue` component that displays a success message upon successful submission.
+Create a `SimpleForm.vue` component that displays a success message when the form is submitted successfully.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -144,11 +144,11 @@ p {
 
 ---
 
-## **Exercise 4: Disable button if the form is invalid**
+## **Exercise 4: Disable the button if the form is invalid**
 
-Create an `LoginForm.vue` component that only allows sending if `usuario` and `contraseña` are non-empty.
+Create a `LoginForm.vue` component that only allows submitting if `usuario` and `contraseña` aren't empty.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -185,11 +185,11 @@ button:disabled {
 
 ---
 
-## **Exercise 5: Validate that the fields are complete before sending**
+## **Exercise 5: Check that the fields are filled in before submitting**
 
-Create an `ProfileForm.vue` component that validates that `nombre`, `apellido`, and `edad` are complete before sending.
+Create a `ProfileForm.vue` component that checks that `nombre`, `apellido` and `edad` are filled in before submitting.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>

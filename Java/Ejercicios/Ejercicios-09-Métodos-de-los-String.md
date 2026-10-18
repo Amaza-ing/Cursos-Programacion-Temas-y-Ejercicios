@@ -1,8 +1,8 @@
-# Exercises - Topic 9: `String` Methods
+# Exercises - Topic 9: String Methods
 
-Below you will find **10 practical exercises** to work with the most used methods of `String` (`length`, `charAt`, `substring`, `equals`, `contains`, `indexOf`, `replace`, `strip/trim`, `split`, `String.format`, etc.).
+Below you will find **10 practical exercises** to work with the most commonly used `String` methods (`length`, `charAt`, `substring`, `equals`, `contains`, `indexOf`, `replace`, `strip/trim`, `split`, `String.format`, etc.).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -32,9 +32,9 @@ public class Main {
 
 ## Exercise 2: Get the first 3 letters
 
-Declares a variable `word` with value `"IntelliJ"`.
+Declare a variable `word` with value `"IntelliJ"`.
 
-Use `substring` to get `"Int"` and show it in the console.
+Use `substring` to get `"Int"` and print it to the console.
 
 <details><summary>Show solution</summary>
 
@@ -55,9 +55,9 @@ public class Main {
 
 ## Exercise 3: Case-insensitive comparison
 
-Declares a variable `input` with value `"YeS"`.
+Declare a variable `input` with value `"YeS"`.
 
-Checks whether the value means `"yes"`, ignoring case, and prints the result.
+Check whether the value means `"yes"`, ignoring case, and print the result.
 
 <details><summary>Show solution</summary>
 
@@ -80,9 +80,9 @@ public class Main {
 
 Declare a variable `rawName` with value `"   Laura   "`.
 
-- Eliminates spaces on the sides
-- Check if the result is NOT empty
-- Print the name clean
+- Remove the leading and trailing spaces
+- Check whether the result is NOT empty
+- Print the clean name
 
 <details><summary>Show solution</summary>
 
@@ -110,8 +110,8 @@ Declare a variable `email` with value `"user@example.com"`.
 
 Create a variable `isValid` that is `true` if:
 
-- Contains `@`
-- Ends in `.com`
+- It contains `@`
+- It ends in `.com`
 
 Print `isValid`.
 
@@ -132,7 +132,7 @@ public class Main {
 
 ---
 
-## Exercise 6: Finding the position of a character
+## Exercise 6: Find the position of a character
 
 Declare a variable `fileName` with value `"report_2026.pdf"`.
 
@@ -188,7 +188,7 @@ public class Main {
 
 ## Exercise 8: Replace text
 
-Declares a variable `sentence` with value `"Java is hard"`.
+Declare a variable `sentence` with value `"Java is hard"`.
 
 Replace `"hard"` with `"powerful"` and print the result.
 
@@ -209,11 +209,11 @@ public class Main {
 
 ---
 
-## Exercise 9: Split a CSV String
+## Exercise 9: Split a CSV string
 
-Declares a variable `line` with value `"Laura;28;Madrid"`.
+Declare a variable `line` with value `"Laura;28;Madrid"`.
 
-- Split the chain by `;`
+- Split the string on `;`
 - Print each part on a different line
 
 <details><summary>Show solution</summary>
@@ -238,12 +238,12 @@ public class Main {
 
 ## Exercise 10: Format a message with `String.format`
 
-Declares:
-- `product` with `"Mouse"` value
-- `unitPrice` with `12.5` value
-- `quantity` with `3` value
+Declare:
+- `product` with value `"Mouse"`
+- `unitPrice` with value `12.5`
+- `quantity` with value `3`
 
-Calculates the total and displays text formatted with two decimal places using `String.format`, for example:
+Calculate the total and print a text formatted with two decimal places using `String.format`, for example:
 
 ```
 Product: Mouse | Total: 37.50

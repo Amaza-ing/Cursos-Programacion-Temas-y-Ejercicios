@@ -2,17 +2,17 @@
 
 ## Introduction
 
-In these exercises you will practice the main contents of **Topic 2**:
+In these exercises you'll practice the main contents of **Topic 2**:
 
-- Spring MVC configuration with annotations.
-- Use of `@Controller`.
-- Use of `@GetMapping`, `@RequestMapping` and `@RequestParam`.
+- Configuring Spring MVC with annotations.
+- Using `@Controller`.
+- Using `@GetMapping`, `@RequestMapping` and `@RequestParam`.
 - Sending data from the controller to the view using `Model`.
-- Creation of model classes.
-- Creation of simple services.
-- Creation of JSP views.
-- Using JSTL to traverse lists.
-- Use of relative paths with `${pageContext.request.contextPath}`.
+- Creating model classes.
+- Creating simple services.
+- Creating JSP views.
+- Using JSTL to loop through lists.
+- Using relative paths with `${pageContext.request.contextPath}`.
 
 The exercises are similar to those seen in the topic, but they use other examples so that you can practice without copying the course project exactly.
 
@@ -20,7 +20,7 @@ Each solution is hidden under the **show solution** button.
 
 ---
 
-# Exercise 1 — Activate controllers with annotations
+# Exercise 1 — Enable controllers with annotations
 
 ## Statement
 
@@ -36,13 +36,13 @@ so that Spring MVC can work with controllers annotated with `@Controller`.
 
 The configuration must:
 
-1. Enable Spring MVC support with annotations.
+1. Enable Spring MVC's annotation support.
 2. Scan the `com.example.library` base package.
 3. Configure an `InternalResourceViewResolver`.
 4. Serve static resources from `/resources/`.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,7 +85,7 @@ The line:
 <mvc:annotation-driven />
 ```
 
-Enables necessary support for Spring MVC to work with annotated methods.
+enables the support Spring MVC needs to work with annotated methods.
 
 The line:
 
@@ -117,11 +117,11 @@ becomes:
 
 ---
 
-# Exercise 2 — Create a startup controller
+# Exercise 2 — Create a home controller
 
 ## Statement
 
-Create a handler named `HomeController` in the package:
+Create a controller named `HomeController` in the package:
 
 ```text
 com.example.library.controller
@@ -146,14 +146,14 @@ The controller must send the following data to the view:
 | `pageTitle` | `Bienvenido a la biblioteca` |
 | `message` | `Aplicación de gestión de libros con Spring MVC` |
 
-The view you should return will be called:
+The view it must return will be called:
 
 ```text
 home
 ```
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.controller;
@@ -240,7 +240,7 @@ The page must:
 5. Load the CSS file from `/resources/css/styles.css`.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -282,7 +282,7 @@ The line:
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 ```
 
-It helps to display accents and eñes correctly.
+helps accented letters and the letter ñ display correctly.
 
 The title is displayed with:
 
@@ -314,7 +314,7 @@ so that it works even if the application is deployed with a context name, for ex
 
 ---
 
-# Exercise 4 — Create a model class `Book`
+# Exercise 4 — Create a `Book` model class
 
 ## Statement
 
@@ -333,15 +333,15 @@ The class must have these attributes:
 | `author` | `String` |
 | `year` | `int` |
 
-Must have:
+It must have:
 
-1. Builder with all fields.
-2. Getters for all fields.
+1. A constructor with all the fields.
+2. Getters for all the fields.
 
 There is no need to add setters in this exercise.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.model;
@@ -388,7 +388,7 @@ For example, we can create an object like this:
 new Book(1L, "La isla del tesoro", "Robert Louis Stevenson", 1883);
 ```
 
-Getters are important because JSPs will be able to access the object's properties.
+Getters are important because they let JSPs access the object's properties.
 
 For example, if the view receives an object called `book`, we can write:
 
@@ -416,7 +416,7 @@ Create a class called `BookService` in the package:
 com.example.library.service
 ```
 
-It must be noted with `@Service`.
+It must be annotated with `@Service`.
 
 The class must have a fixed list of books and two methods:
 
@@ -433,7 +433,7 @@ Book findById(Long id)
 Use at least four different books.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.service;
@@ -496,11 +496,11 @@ The method:
 findById(Long id)
 ```
 
-search for a book by its identifier.
+looks for a book by its identifier.
 
-If you find it, you return it.
+If it finds it, it returns it.
 
-If it is not found, it returns `null`.
+If it doesn't find it, it returns `null`.
 
 </details>
 
@@ -510,29 +510,29 @@ If it is not found, it returns `null`.
 
 ## Statement
 
-Create a handler named `BookController` in the package:
+Create a controller named `BookController` in the package:
 
 ```text
 com.example.library.controller
 ```
 
-You must:
+It must:
 
-1. Be registered with `@Controller`.
-2. Have a base path `/books`.
-3. Receive one `BookService` per builder.
+1. Be annotated with `@Controller`.
+2. Have the base path `/books`.
+3. Receive a `BookService` through its constructor.
 4. Have a method that responds to `GET /books`.
-5. Add to model:
+5. Add to the model:
    - `pageTitle` with the value `Libros disponibles`.
-   - `books` with book list.
-6. Return sight:
+   - `books` with the list of books.
+6. Return the view:
 
 ```text
 books/list
 ```
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.controller;
@@ -573,19 +573,19 @@ The annotation:
 
 defines a base route for the entire controller.
 
-As the method has:
+Since the method has:
 
 ```java
 @GetMapping
 ```
 
-without additional path, it will respond to:
+with no additional path, it will respond to:
 
 ```text
 GET /books
 ```
 
-The driver receives `BookService` by constructor:
+The controller receives `BookService` through its constructor:
 
 ```java
 public BookController(BookService bookService) {
@@ -620,7 +620,7 @@ Create the view:
 src/main/webapp/WEB-INF/views/books/list.jsp
 ```
 
-It should display a table with the books received from the controller.
+It must display a table with the books received from the controller.
 
 The table must have these columns:
 
@@ -628,16 +628,16 @@ The table must have these columns:
 Título | Autor | Año | Acción
 ```
 
-In the `Acción` column, add a link to the book detail:
+In the `Acción` column, add a link to the book's detail page:
 
 ```text
 /books/detail?id=ID_DEL_LIBRO
 ```
 
-Remember to use JSTL to traverse the list.
+Remember to use JSTL to loop through the list.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -709,7 +709,7 @@ The line:
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 ```
 
-allows using JSTL tags.
+lets you use JSTL tags.
 
 The loop:
 
@@ -723,7 +723,7 @@ loops through the list of books sent by the controller:
 model.addAttribute("books", bookService.findAll());
 ```
 
-At each turn, the variable `book` represents a specific book.
+On each iteration, the variable `book` represents a specific book.
 
 That is why we can access its properties:
 
@@ -751,15 +751,15 @@ GET /books/detail?id=1
 The method must:
 
 1. Receive the parameter `id` using `@RequestParam`.
-2. Search the book with `bookService.findById(id)`.
-3. If the book does not exist, send to view `books/not-found`.
+2. Look up the book with `bookService.findById(id)`.
+3. If the book does not exist, return the `books/not-found` view.
 4. If it exists, add to the model:
    - `pageTitle` with the title of the book.
-   - `book` with the found book.
+   - `book` with the book found.
 5. Return the `books/detail` view.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.controller;
@@ -823,7 +823,7 @@ The method has:
 @GetMapping("/detail")
 ```
 
-Therefore, respond to:
+Therefore, it responds to:
 
 ```text
 /books/detail
@@ -841,7 +841,7 @@ If the URL is:
 /books/detail?id=3
 ```
 
-then `id` will be worth:
+then `id` will be:
 
 ```java
 3L
@@ -861,15 +861,15 @@ Create the view:
 src/main/webapp/WEB-INF/views/books/detail.jsp
 ```
 
-Must show:
+It must show:
 
 1. The title of the book.
 2. The author.
 3. The year of publication.
-4. A link to return to the book list.
+4. A link to go back to the book list.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -946,7 +946,7 @@ The view is displayed when the controller returns:
 return "books/detail";
 ```
 
-Spring converts it to:
+Spring converts it into:
 
 ```text
 /WEB-INF/views/books/detail.jsp
@@ -956,7 +956,7 @@ Spring converts it to:
 
 ---
 
-# Exercise 10 — Create the book not found view
+# Exercise 10 — Create the “book not found” view
 
 ## Statement
 
@@ -966,14 +966,14 @@ Create the view:
 src/main/webapp/WEB-INF/views/books/not-found.jsp
 ```
 
-Must show:
+It must show:
 
 1. The page title received as `${pageTitle}`.
-2. A message indicating that there is no book with the received identifier.
-3. A link to return to the book list.
+2. A message saying that there is no book with the received identifier.
+3. A link to go back to the book list.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1016,7 +1016,7 @@ Must show:
 
 ### Explanation
 
-This view is used when the controller executes this block:
+This view is used when the controller runs this block:
 
 ```java
 if (book == null) {
@@ -1033,7 +1033,7 @@ The attribute:
 bookId
 ```
 
-shown in the JSP with:
+is shown in the JSP with:
 
 ```jsp
 ${bookId}
@@ -1053,7 +1053,7 @@ Add a new route:
 /about-library
 ```
 
-This path should display a page with information about the library.
+This route must display a page with information about the library.
 
 Create a method in `HomeController` that adds to the model:
 
@@ -1062,7 +1062,7 @@ Create a method in `HomeController` that adds to the model:
 | `pageTitle` | `Sobre la biblioteca` |
 | `description` | `Esta aplicación permite consultar libros disponibles y ver su información detallada.` |
 
-You should return the view:
+It must return the view:
 
 ```text
 about-library
@@ -1071,7 +1071,7 @@ about-library
 Then create the corresponding JSP.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Controller
 
@@ -1180,7 +1180,7 @@ Therefore, Spring will look for:
 
 ---
 
-# Exercise 12 — Diagnose frequent errors
+# Exercise 12 — Diagnose common errors
 
 ## Statement
 
@@ -1188,13 +1188,13 @@ Read each case and explain what the problem is.
 
 ## Case A
 
-In `app-servlet.xml` this appears:
+`app-servlet.xml` contains this:
 
 ```xml
 <context:component-scan base-package="com.example.store" />
 ```
 
-But the drivers are in:
+But the controllers are in:
 
 ```text
 com.example.library.controller
@@ -1218,11 +1218,11 @@ But the view is in:
 /WEB-INF/views/books/list.jsp
 ```
 
-What error is there?
+What's the error?
 
 ## Case C
 
-In the JSP it is written:
+The JSP contains:
 
 ```jsp
 <c:forEach var="book" items="${books}">
@@ -1234,16 +1234,16 @@ but this line is missing:
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 ```
 
-What can happen?
+What might happen?
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Case A
 
 The problem is with the scanned package.
 
-Spring is looking for drivers in:
+Spring is looking for controllers in:
 
 ```text
 com.example.store
@@ -1301,19 +1301,19 @@ The JSP will not know how to interpret:
 <c:forEach>
 ```
 
-The solution is to add at the beginning of the JSP:
+The solution is to add this at the beginning of the JSP:
 
 ```jsp
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 ```
 
-Additionally, the project must have the JSTL dependencies on the `pom.xml`.
+Additionally, the project must have the JSTL dependencies in the `pom.xml`.
 
 </details>
 
 ---
 
-# Exercise 13 — Final challenge: add a second section of the application
+# Exercise 13 — Final challenge: add a second section to the application
 
 ## Statement
 
@@ -1323,7 +1323,7 @@ You must create:
 
 1. A class `Author`.
 2. An `AuthorService` service.
-3. An `AuthorController` driver.
+3. An `AuthorController` controller.
 4. An `authors/list.jsp` view.
 
 The route will be:
@@ -1341,7 +1341,7 @@ Nombre | País | Número de libros
 Use at least three authors.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Model `Author.java`
 
@@ -1405,7 +1405,7 @@ public class AuthorService {
 }
 ```
 
-## `AuthorController.java` driver
+## `AuthorController.java` controller
 
 ```java
 package com.example.library.controller;
@@ -1503,7 +1503,7 @@ This challenge brings together several ideas from Topic 2:
 - Create a service.
 - Inject the service into a controller.
 - Create a route with `@RequestMapping` and `@GetMapping`.
-- Send a list on view with `Model`.
+- Send a list to the view with `Model`.
 - Loop through the list with JSTL.
 - Use a logical view name.
 

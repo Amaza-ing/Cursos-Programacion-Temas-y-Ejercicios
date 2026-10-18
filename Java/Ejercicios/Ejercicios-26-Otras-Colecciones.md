@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** to work with **`Set`, `HashSet`, `LinkedHashMap`, `TreeMap`, uniqueness and order**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Create `HashSet`
+## Exercise 1: Create a `HashSet`
 
-Add repeating elements and check the size.
+Add repeated elements and check the size.
 
 <details><summary>Show solution</summary>
 
@@ -31,7 +31,7 @@ public class Main {
 
 ---
 
-## Exercise 2: Detect duplicate
+## Exercise 2: Detect a duplicate
 
 Use the boolean returned by `add`.
 
@@ -56,7 +56,7 @@ public class Main {
 
 ## Exercise 3: Use `contains`
 
-Checks if a set contains an id.
+Check whether a set contains an ID.
 
 <details><summary>Show solution</summary>
 
@@ -80,7 +80,7 @@ public class Main {
 
 ## Exercise 4: Remove duplicates
 
-Converts a list to `HashSet`.
+Convert a list into a `HashSet`.
 
 <details><summary>Show solution</summary>
 
@@ -102,9 +102,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Create `LinkedHashMap`
+## Exercise 5: Create a `LinkedHashMap`
 
-Maintain insertion order.
+Keep the insertion order.
 
 <details><summary>Show solution</summary>
 
@@ -126,9 +126,9 @@ public class Main {
 
 ---
 
-## Exercise 6: Update `LinkedHashMap`
+## Exercise 6: Update a `LinkedHashMap`
 
-Updates an existing value.
+Update an existing value.
 
 <details><summary>Show solution</summary>
 
@@ -150,7 +150,7 @@ public class Main {
 
 ---
 
-## Exercise 7: Create `TreeMap`
+## Exercise 7: Create a `TreeMap`
 
 Automatically sort by key.
 
@@ -177,7 +177,7 @@ public class Main {
 
 ## Exercise 8: Numeric `TreeMap`
 
-Sort task ids.
+Sort task IDs.
 
 <details><summary>Show solution</summary>
 
@@ -202,7 +202,7 @@ public class Main {
 
 ## Exercise 9: Unique codes
 
-Use `Set` for discount codes.
+Use a `Set` for discount codes.
 
 <details><summary>Show solution</summary>
 

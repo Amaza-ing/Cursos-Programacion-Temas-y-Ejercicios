@@ -2,14 +2,14 @@
 
 ## **1. Introduction to the Box Model**
 
-The **Box Model** is a fundamental concept in CSS that describes how elements are represented and organized on a web page. Each HTML element is considered a rectangular box that is made up of four main areas:
+The **Box Model** is a fundamental concept in CSS that describes how elements are represented and organized on a web page. Every HTML element is treated as a rectangular box made up of four main areas:
 
 1. **Content:** The area where the element's content is displayed, such as text or images.
-2. **Padding:** Space between the content and the border of the element.
-3. **Border:** Line that surrounds the content and padding.
-4. **Margin:** Space between the edge of the element and adjacent elements.
+2. **Padding:** The space between the content and the border of the element.
+3. **Border:** The line that surrounds the content and the padding.
+4. **Margin:** The space between the border of the element and adjacent elements.
 
-Representation for an element with a content of 500px wide and 20px high, 5px padding, 2px border and 20px top margin and 0px of the rest of the margins:
+This is how an element with content 500px wide and 20px high, 5px of padding, a 2px border, a 20px top margin and 0px for the other margins is represented:
 
 ![Box Model](https://raw.githubusercontent.com/Amaza-ing/Cursos-Programacion-Temas-y-Ejercicios/master/CSS/Assets/box-model.png "Box Model")
 
@@ -34,7 +34,7 @@ In this case:
 
 - **width** and **height** define the size of the content.
 - **padding** adds internal space around the content.
-- **border** creates a 5 pixel solid black border.
+- **border** creates a solid black 5-pixel border.
 - **margin** separates the element from the others.
 
 ---
@@ -73,7 +73,7 @@ The total size would be:
 
 ---
 
-## **4. `box-sizing`: Cash calculation control**
+## **4. `box-sizing`: Controlling how the box size is calculated**
 
 By default, CSS calculates the size of elements without including the border and padding. However, with `box-sizing: border-box;`, the width and height include the padding and border.
 
@@ -88,7 +88,7 @@ div {
 ```
 
 
-Now, the width and height of the element remain at 200x100 pixels, without increasing with padding and border.
+Now the width and height of the element stay at 200x100 pixels: the padding and the border don't make it any bigger.
 
 ---
 
@@ -96,7 +96,7 @@ Now, the width and height of the element remain at 200x100 pixels, without incre
 
 ### **Margin (`margin`)**
 
-Defines the external space between an element and adjacent elements.
+It defines the outer space between an element and the elements next to it.
 
 ```css
 div {
@@ -105,7 +105,7 @@ div {
 ```
 
 
-It can be defined individually:
+It can be set for each side individually:
 
 ```css
 div {
@@ -117,7 +117,7 @@ div {
 ```
 
 
-You can also use the shortcut:
+You can also use the shorthand:
 
 ```css
 div {
@@ -128,7 +128,7 @@ div {
 
 ### **Padding (`padding`)**
 
-Similar to `margin`, but defines the internal space between the content and the element's border.
+Similar to `margin`, but it defines the inner space between the content and the element's border.
 
 ```css
 div {
@@ -137,7 +137,7 @@ div {
 ```
 
 
-Individual values can be defined:
+You can set individual values:
 
 ```css
 div {
@@ -162,7 +162,7 @@ div {
 
 ## **6. Margin collapse**
 
-When two elements have consecutive top or bottom margins, they are combined rather than added.
+When two elements have adjoining top or bottom margins, the margins are combined instead of added together.
 
 Example:
 
@@ -184,12 +184,12 @@ In this case, the resulting margin between the two elements will be 30px, not 50
 
 ---
 
-## **7. Good practices with the Box Model**
+## **7. Best practices with the Box Model**
 
 - Use `box-sizing: border-box;` to avoid complicated size calculations.
-- Maintain a clear structure with well-defined `margin` and `padding`.
+- Keep a clear structure with well-defined `margin` and `padding`.
 - Avoid negative margins, as they can cause unexpected problems.
-- Check margin collapse to avoid visual errors.
+- Keep an eye on margin collapse to avoid visual errors.
 
 ---
 

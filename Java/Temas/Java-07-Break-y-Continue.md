@@ -2,11 +2,11 @@
 
 ## 1. Introduction
 
-In the previous topic you learned how to repeat actions with `while` and `for`. However, in real programs you don't always want that loop:
+In the previous topic you learned how to repeat actions with `while` and `for`. However, in real programs you don't always want the loop to:
 
-- Always runs from start to finish
-- Repeat all iterations
-- Depend solely on the loop condition
+- Run from start to finish every time
+- Repeat every iteration
+- Depend only on the loop condition
 
 Sometimes you need to **control the flow** inside the loop:
 
@@ -32,23 +32,23 @@ In this topic you will learn:
 
 ---
 
-## 2. Key idea: “alter” the loop from within
+## 2. Key idea: “altering” the loop from the inside
 
 A loop normally proceeds like this:
 
-1. Check condition
-2. Run the block
-3. Update counter (if `for`)
-4. Repeat
+1. Checks the condition
+2. Runs the block
+3. Updates the counter (if it's a `for`)
+4. Repeats
 
-With `break` and `continue` you can intervene in that flow:
+With `break` and `continue` you can step into that flow:
 
-- `break` cuts the entire loop
-- `continue` cuts _only the current iteration_
+- `break` cuts off the whole loop
+- `continue` cuts off _only the current iteration_
 
 ---
 
-## 3. `break`: exit the loop
+## 3. `break`: exiting the loop
 
 ### 3.1. What `break` does
 
@@ -59,13 +59,13 @@ This works the same in:
 - `while`
 - `for`
 - `do-while`
-- `switch` (although in switches it is another use, you already know it)
+- `switch` (although there it's a different use, which you already know)
 
 ---
 
-### 3.2. Example 1: Stop when a value is found
+### 3.2. Example 1: stopping when a value is found
 
-Imagine that you are “searching” for the number 7 within a range.
+Imagine you're “searching” for the number 7 within a range.
 
 ```java
 public class Main {
@@ -87,14 +87,14 @@ public class Main {
 What happens:
 
 - The loop prints “Checking” for 1, 2, 3...
-- When `i` is 7, print “Found it!” and run `break`
-- The loop ends, although there would still be iterations 8, 9 and 10
+- When `i` is 7, it prints “Found it!” and runs `break`
+- The loop ends, even though iterations 8, 9 and 10 are still left
 
 ---
 
-### 3.3. Example 2: `while` loop stopping for an internal condition
+### 3.3. Example 2: a `while` loop that stops because of an internal condition
 
-Sometimes the condition of the `while` is not enough, and you decide to finish from within.
+Sometimes the `while` condition isn't enough, and you decide to end the loop from the inside.
 
 ```java
 public class Main {
@@ -120,17 +120,17 @@ Here the loop condition is `true`, so **only `break` can stop it**.
 
 This is often used when:
 
-- You don't know what exact condition will stop the loop at the start
-- Condition depends on several internal factors
+- At the start, you don't know exactly which condition will stop the loop
+- The condition depends on several internal factors
 
 ---
 
 ### 3.4. Common pattern: “find and stop”
 
-This pattern appears a lot when you work with arrays or lists:
+This pattern comes up a lot when you work with arrays or lists:
 
-- You walk something
-- If you find what you are looking for, stop with `break`
+- You go through something
+- If you find what you're looking for, you stop with `break`
 
 Although we haven't seen arrays yet, you can get the idea with a range.
 
@@ -154,21 +154,21 @@ public class Main {
 
 ---
 
-## 4. `continue`: skip an iteration
+## 4. `continue`: skipping an iteration
 
 ### 4.1. What `continue` does
 
 When Java executes `continue` inside a loop:
 
 - The current iteration is stopped
-- Skip what's left of the block
+- The rest of the block is skipped
 - The loop goes directly to the next iteration
 
-That is, the loop does not end, it only “jumps” one turn.
+In other words, the loop doesn't end; it just “skips” one pass.
 
 ---
 
-### 4.2. Example 1: Skip odd numbers
+### 4.2. Example 1: skipping odd numbers
 
 ```java
 public class Main {
@@ -187,14 +187,14 @@ public class Main {
 What happens:
 
 - For `i = 1`, it is odd, so it does `continue` and does not print.
-- For `i = 2`, it does not enter the `if` and print.
-- Result: only print the pairs.
+- For `i = 2`, it doesn't enter the `if`, so it's printed.
+- Result: it only prints the even numbers.
 
 ---
 
-### 4.3. Example 2: Avoid processing “invalid” values
+### 4.3. Example 2: not processing “invalid” values
 
-Imagine that you want to “process” numbers, but ignore the 0.
+Imagine you want to “process” numbers, but ignore 0.
 
 ```java
 public class Main {
@@ -211,14 +211,14 @@ public class Main {
 }
 ```
 
-If you don't use `continue`, there would be division by zero (error).  
+Without `continue`, there would be a division by zero (an error).  
 With `continue`, `i == 0` is skipped and the loop continues.
 
 ---
 
-### 4.4. Example 3: filter and count
+### 4.4. Example 3: filtering and counting
 
-You can use `continue` to filter out securities that you are not interested in.
+You can use `continue` to filter out values you're not interested in.
 
 ```java
 public class Main {
@@ -240,15 +240,15 @@ public class Main {
 
 ---
 
-## 5. Quick Comparison: `break` vs `continue`
+## 5. Quick comparison: `break` vs `continue`
 
-- `break` → complete loop ends
-- `continue` → skip current iteration and continue
+- `break` → ends the whole loop
+- `continue` → skips the current iteration and keeps going
 
 Visual example (idea):
 
 - `break`: “I'm leaving the loop”
-- `continue`: “not this round, next”
+- `continue`: “not this round, next one”
 
 ---
 
@@ -256,12 +256,12 @@ Visual example (idea):
 
 In `while`, the effect is the same, but there is an important detail:
 
-- On an `for`, the counter is automatically updated at the end of the iteration
-- In an `while`, you control everything
+- In a `for`, the counter is automatically updated at the end of the iteration
+- In a `while`, you control everything
 
-That means that if you do `continue` on an `while`, you have to make sure the loop state keeps updating, or you could create an infinite loop.
+That means that if you use `continue` in a `while`, you have to make sure the loop state keeps updating, or you could create an infinite loop.
 
-### 6.1. Example: `continue` in `while` carefully
+### 6.1. Example: using `continue` in a `while` carefully
 
 ```java
 public class Main {
@@ -281,18 +281,18 @@ public class Main {
 }
 ```
 
-Note that `i++` occurs **before** `continue`.  
-If it were after, the loop would get “stuck”.
+Notice that `i++` happens **before** the `continue`.  
+If it came after it, the loop would get “stuck”.
 
 ---
 
-## 7. Good practices (when to use them and when to avoid it)
+## 7. Good practices (when to use them and when to avoid them)
 
 ### 7.1. When `break` is a good option
 
 - When you are looking for something and want to stop when you find it
 - When you need a clear way out in a special case
-- When an `while (true)` has an explicit and clear exit point
+- When a `while (true)` has an explicit and clear exit point
 
 Example of reasonable use:
 
@@ -309,7 +309,7 @@ for (int i = 0; i < 100; i++) {
 ### 7.2. When `continue` is a good option
 
 - When you want to filter cases quickly
-- When you want to avoid a large block of nested `if`
+- When you want to avoid a big block of nested `if` statements
 
 Cleaner example with `continue`:
 
@@ -327,19 +327,19 @@ for (int i = 1; i <= 10; i++) {
 
 ### 7.3. When you should be careful
 
-If you abuse `break` and `continue`, your loop can become difficult to read, especially if there are many conditions and multiple `continue`.
+If you overuse `break` and `continue`, your loop can become hard to read, especially if there are many conditions and several `continue` statements.
 
-In those cases it is usually better:
+In those cases it's usually better to:
 
-- Rewrite loop condition
-- Move part of the logic to methods (you will see it later)
+- Rewrite the loop condition
+- Move part of the logic into methods (you'll see them later)
 - Use boolean variables for clarity
 
 ---
 
-## 8. Complete examples (frequent patterns)
+## 8. Complete examples (common patterns)
 
-### 8.1. Pattern: Validate attempts and cut
+### 8.1. Pattern: validating attempts and stopping
 
 ```java
 public class Main {
@@ -365,7 +365,7 @@ public class Main {
 
 ---
 
-### 8.2. Pattern: filter and process
+### 8.2. Pattern: filtering and processing
 
 ```java
 public class Main {
@@ -388,7 +388,7 @@ public class Main {
 
 ---
 
-### 8.3. Pattern: Combine `continue` to avoid an exception
+### 8.3. Pattern: using `continue` to avoid an exception
 
 ```java
 public class Main {
@@ -406,14 +406,14 @@ public class Main {
 
 ---
 
-## 9. To take into account
+## 9. Things to keep in mind
 
 - `break` ends the entire loop immediately.
 - `continue` skips the current iteration and goes to the next one.
-- They are useful tools, but they must be used with intention.
-- In `while`, use `continue` carefully so as not to create infinite loops.
+- They are useful tools, but you should use them deliberately.
+- In a `while`, use `continue` carefully so you don't create infinite loops.
 - They are especially useful for patterns like “search”, “filter” and “avoid special cases”.
 
 ---
 
-In the next topic we will see **methods**: what they are, how they are defined and how they are used to better organize your code when it starts to grow.
+In the next topic we'll look at **methods**: what they are, how to define them and how to use them to organize your code better as it starts to grow.

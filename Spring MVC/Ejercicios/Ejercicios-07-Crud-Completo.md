@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In these exercises you will practice how to complete a CRUD in a Spring MVC application.
+In these exercises you'll practice how to complete a CRUD in a Spring MVC application.
 
-In Topic 7 we added the operations that were missing to complete the complete data management cycle:
+In Topic 7 we added the missing operations to complete the full data management cycle:
 
 ```text
 Create  → Crear
@@ -13,55 +13,55 @@ Update  → Actualizar
 Delete  → Borrar
 ```
 
-Instead of using courses, in these exercises we will work with a small book management application. This way you will practice the same flow, but with a different example.
+Instead of courses, in these exercises we'll work with a small **book** management application. That way you'll practice the same flow, but with a different example.
 
-You are going to practice:
+You'll practice:
 
-- Add `update` and `deleteById` methods to the DAO.
-- Implement `UPDATE` and `DELETE` with `JdbcTemplate`.
-- Update the service layer.
-- Create edit and delete paths in the controller.
-- Reuse a form to create and edit.
-- Use a hidden field to keep the `id`.
-- Add edit and delete buttons to the list.
-- Delete using `POST`.
-- Show success messages with `RedirectAttributes`.
-- Diagnose typical CRUD errors.
+- Adding `update` and `deleteById` methods to the DAO.
+- Implementing `UPDATE` and `DELETE` with `JdbcTemplate`.
+- Updating the service layer.
+- Creating edit and delete routes in the controller.
+- Reusing one form to create and edit.
+- Using a hidden field to keep the `id`.
+- Adding edit and delete buttons to the list.
+- Deleting with `POST`.
+- Showing success messages with `RedirectAttributes`.
+- Diagnosing typical CRUD errors.
 
 Each solution is hidden under the **show solution** button.
 
 ---
 
-# Exercise 1 — Recognize CRUD operations
+# Exercise 1 — Recognize the CRUD operations
 
 ## Statement
 
-Complete the table indicating which CRUD operation corresponds to each action.
+Complete the table by indicating which CRUD operation corresponds to each action.
 
-| Action | Operation CRUD |
+| Action | CRUD operation |
 | -------------------------- | -------------- |
 | Create a new book | ?              |
-| See all books | ?              |
-| See the details of a book | ?              |
+| View all books | ?              |
+| View the details of a book | ?              |
 | Edit an existing book | ?              |
 | Delete a book | ?              |
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-| Action | Operation CRUD |
+| Action | CRUD operation |
 | -------------------------- | -------------- |
 | Create a new book | Create |
-| See all books | Read |
-| See the details of a book | Read |
+| View all books | Read |
+| View the details of a book | Read |
 | Edit an existing book | Update |
 | Delete a book | Delete |
 
 ### Explanation
 
-CRUD summarizes the four basic operations of a management application:
+CRUD sums up the four basic operations of a management application:
 
 ```text
 Create  → insertar datos nuevos
@@ -70,13 +70,13 @@ Update  → modificar datos existentes
 Delete  → eliminar datos
 ```
 
-In a Spring MVC application these operations are usually distributed between controller, service, DAO, JSP views and database.
+In a Spring MVC application, these operations are usually split between the controller, service, DAO, JSP views and database.
 
 </details>
 
 ---
 
-# Exercise 2 — Design the complete CRUD routes
+# Exercise 2 — Design the routes for the complete CRUD
 
 ## Statement
 
@@ -89,16 +89,16 @@ GET  /books/new         → formulario de creación
 POST /books             → guardar libro nuevo
 ```
 
-Add the necessary routes to:
+Add the routes needed to:
 
-1. Show the editing form.
+1. Show the edit form.
 2. Process the edit.
 3. Delete a book.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```text
 GET  /books/edit?id=1   → mostrar formulario de edición
@@ -110,7 +110,7 @@ POST /books/delete      → borrar libro
 
 Editing requires two steps.
 
-First we show the form with existing data:
+First we show the form with the existing data:
 
 ```text
 GET /books/edit?id=1
@@ -122,38 +122,38 @@ Then we process the edited form:
 POST /books/update
 ```
 
-To delete we use `POST`:
+To delete, we use `POST`:
 
 ```text
 POST /books/delete
 ```
 
-We do not use `GET` for clearing because clearing data modifies the state of the application.
+We don't use `GET` to delete because deleting data changes the state of the application.
 
 </details>
 
 ---
 
-# Exercise 3 — Create the table `books`
+# Exercise 3 — Create the `books` table
 
 ## Statement
 
 Create a MySQL table named `books`.
 
-You must have these fields:
+It must have these fields:
 
-| Column | Type | Restriction |
+| Column | Type | Constraint |
 | ---------- | -------------- | --------------------------- |
-| `id` | `BIGINT` | Autoincremental primary key |
-| `title` | `VARCHAR(100)` | Mandatory |
-| `author` | `VARCHAR(80)` | Mandatory |
-| `category` | `VARCHAR(40)` | Mandatory |
-| `pages` | `INT` | Mandatory |
+| `id` | `BIGINT` | Auto-increment primary key |
+| `title` | `VARCHAR(100)` | Required |
+| `author` | `VARCHAR(80)` | Required |
+| `category` | `VARCHAR(40)` | Required |
+| `pages` | `INT` | Required |
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 CREATE TABLE IF NOT EXISTS books (
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS books (
 
 `id` identifies each book.
 
-`AUTO_INCREMENT` allows MySQL to automatically generate the token.
+`AUTO_INCREMENT` lets MySQL generate the identifier automatically.
 
 The other columns use `NOT NULL`, so they must always have a value.
 
@@ -181,22 +181,22 @@ The other columns use `NOT NULL`, so they must always have a value.
 
 ## Statement
 
-Inserts three initial books into the `books` table.
+Insert three initial books into the `books` table.
 
 Use this data:
 
 | title | author | category | pages |
 | ------------- | ------------------------ | -------- | ----- |
-| Frankenstein | Mary Shelley | Novel | 280 |
-| The Hobbit | J. R. R. Tolkien | Fantasy | 310 |
-| The little prince | Antoine de Saint-Exupéry | Fable | 96 |
+| Frankenstein | Mary Shelley | Novela | 280 |
+| El Hobbit | J. R. R. Tolkien | Fantasía | 310 |
+| El principito | Antoine de Saint-Exupéry | Fábula | 96 |
 
 Then write a query to check the data.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 INSERT INTO books (title, author, category, pages)
@@ -210,7 +210,7 @@ SELECT * FROM books;
 
 ### Explanation
 
-We do not insert the `id` because MySQL generates it automatically.
+We don't insert the `id` because MySQL generates it automatically.
 
 The query:
 
@@ -218,7 +218,7 @@ The query:
 SELECT * FROM books;
 ```
 
-allows you to check from DBeaver that the books have been saved.
+lets you check in DBeaver that the books have been saved.
 
 </details>
 
@@ -228,13 +228,13 @@ allows you to check from DBeaver that the books have been saved.
 
 ## Statement
 
-Create a class `Book` in the package:
+Create a `Book` class in the package:
 
 ```text
 com.example.library.model
 ```
 
-Must have:
+It must have:
 
 ```text
 id
@@ -246,19 +246,19 @@ pages
 
 Use Lombok to generate getters, setters and constructors.
 
-Add validations:
+Add these validations:
 
 | Field | Validation |
 | ---------- | ------------------------------------- |
 | `title` | Required, between 3 and 100 characters |
-| `author` | Mandatory |
-| `category` | Mandatory |
+| `author` | Required |
+| `category` | Required |
 | `pages` | Required, minimum 1, maximum 3000 |
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.model;
@@ -327,14 +327,14 @@ public interface BookDao {
 }
 ```
 
-Expand it to complete the CRUD.
+Extend it to complete the CRUD.
 
 It must include methods to update and delete.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.dao;
@@ -365,7 +365,7 @@ We add:
 void update(Book book);
 ```
 
-to modify an existing workbook.
+to modify an existing book.
 
 We add:
 
@@ -375,16 +375,17 @@ void deleteById(Long id);
 
 to delete a book by its identifier.
 
-The interface defines what operations exist, but does not contain SQL.
+The interface defines which operations exist, but it doesn't contain any SQL.
 
 </details>
 
 ---
 
-# Exercise 7 — Create the `RowMapper` from `Book`
+# Exercise 7 — Create the `RowMapper` for `Book`
 
 ## Statement
-Inside `JdbcBookDao`, create an `RowMapper<Book>` that converts the columns of the `books` table to an `Book` object.
+
+Inside `JdbcBookDao`, create a `RowMapper<Book>` that converts the columns of the `books` table into a `Book` object.
 
 Columns:
 
@@ -399,7 +400,7 @@ pages
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 private final RowMapper<Book> bookRowMapper = (resultSet, rowNumber) ->
@@ -418,7 +419,7 @@ An SQL query returns rows.
 
 Java works with objects.
 
-The `RowMapper` transforms each row of the result into an `Book` object.
+The `RowMapper` transforms each row of the result into a `Book` object.
 
 </details>
 
@@ -428,16 +429,16 @@ The `RowMapper` transforms each row of the result into an `Book` object.
 
 ## Statement
 
-Implements the `findAll` and `findById` methods within `JdbcBookDao`.
+Implement the `findAll` and `findById` methods in `JdbcBookDao`.
 
-`findAll` must return all books ordered by `id`.
+`findAll` must return all the books sorted by `id`.
 
-`findById` should search for a book by its identifier and return `null` if it does not exist.
+`findById` must look up a book by its identifier and return `null` if it doesn't exist.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -469,7 +470,7 @@ public Book findById(Long id) {
 
 ### Explanation
 
-`findAll` returns a complete list.
+`findAll` returns the whole list.
 
 `findById` uses:
 
@@ -477,7 +478,7 @@ public Book findById(Long id) {
 WHERE id = ?
 ```
 
-to search only one record.
+to look up a single record.
 
 If there are no results, it returns `null`.
 
@@ -489,16 +490,16 @@ If there are no results, it returns `null`.
 
 ## Statement
 
-Implements the `save(Book book)` method on `JdbcBookDao`.
+Implement the `save(Book book)` method in `JdbcBookDao`.
 
-You must insert a new book into the `books` table.
+It must insert a new book into the `books` table.
 
-You should not insert the `id`, because MySQL generates it automatically.
+It must not insert the `id`, because MySQL generates it automatically.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -527,9 +528,9 @@ INSERT INTO books (title, author, category, pages)
 VALUES (?, ?, ?, ?)
 ```
 
-create a new book.
+creates a new book.
 
-We do not include `id` because the column is `AUTO_INCREMENT`.
+We don't include `id` because the column is `AUTO_INCREMENT`.
 
 </details>
 
@@ -539,9 +540,9 @@ We do not include `id` because the column is `AUTO_INCREMENT`.
 
 ## Statement
 
-Implements the `update(Book book)` method on `JdbcBookDao`.
+Implement the `update(Book book)` method in `JdbcBookDao`.
 
-You must update:
+It must update:
 
 ```text
 title
@@ -555,7 +556,7 @@ of the book whose `id` matches.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -595,7 +596,7 @@ The most important part is:
 WHERE id = ?
 ```
 
-Without this condition all the books in the table would be updated.
+Without that condition, every book in the table would be updated.
 
 </details>
 
@@ -605,14 +606,14 @@ Without this condition all the books in the table would be updated.
 
 ## Statement
 
-Implements the `deleteById(Long id)` method on `JdbcBookDao`.
+Implement the `deleteById(Long id)` method in `JdbcBookDao`.
 
-You must delete the book whose identifier matches from the `books` table.
+It must delete the book whose identifier matches from the `books` table.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -635,9 +636,9 @@ DELETE FROM books
 WHERE id = ?
 ```
 
-delete only the indicated book.
+deletes only the given book.
 
-Without `WHERE`, we would delete all records in the table.
+Without `WHERE`, we would delete every record in the table.
 
 </details>
 
@@ -649,17 +650,17 @@ Without `WHERE`, we would delete all records in the table.
 
 Create a custom exception called `BookNotFoundException`.
 
-You must:
+It must:
 
 1. Be in the `com.example.library.exception` package.
 2. Extend `RuntimeException`.
-3. Save the `bookId`.
-4. Have getter for `bookId`.
+3. Store the `bookId`.
+4. Have a getter for `bookId`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.exception;
@@ -681,24 +682,25 @@ public class BookNotFoundException extends RuntimeException {
 
 ### Explanation
 
-This exception will be thrown when someone tries to view, edit or delete a workbook that does not exist.
+This exception will be thrown when someone tries to view, edit or delete a book that doesn't exist.
 
-This way we avoid handling `null` manually in each controller.
+This way we avoid handling `null` manually in every controller.
 
 </details>
 
 ---
 
-# Exercise 13 — Create complete `BookService`
+# Exercise 13 — Create the complete `BookService`
 
 ## Statement
 
-Create a service `BookService`.
+Create a `BookService` service.
 
-Has to:
-1. Be registered with `@Service`.
-2. Receive `BookDao` by builder.
-3. Have methods:
+It must:
+
+1. Be annotated with `@Service`.
+2. Receive `BookDao` through its constructor.
+3. Have these methods:
    - `findAll`
    - `findById`
    - `findByIdOrThrow`
@@ -706,14 +708,14 @@ Has to:
    - `update`
    - `deleteById`
 
-In `update`, you must first verify that the book exists.
+In `update`, it must first check that the book exists.
 
-In `deleteById`, you must first verify that the book exists.
+In `deleteById`, it must first check that the book exists.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.service;
@@ -776,9 +778,9 @@ public class BookService {
 
 ### Explanation
 
-In `update` we first search for the existing book.
+In `update` we first look up the existing book.
 
-This allows you to verify that it really exists before updating it.
+This lets us check that it really exists before updating it.
 
 In `deleteById` we also check that it exists before deleting.
 
@@ -790,9 +792,9 @@ In `deleteById` we also check that it exists before deleting.
 
 ## Statement
 
-Add message keys for book CRUD actions.
+Add message keys for the book CRUD actions.
 
-Create the keys in Spanish to:
+Create the Spanish keys for:
 
 ```text
 books.list.title
@@ -812,7 +814,7 @@ success.book.deleted
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```properties
 books.list.title=Listado de libros
@@ -831,7 +833,7 @@ success.book.deleted=El libro se ha borrado correctamente.
 
 ### Explanation
 
-These keys allow us to avoid fixed texts in the JSPs and in the controller.
+These keys let us avoid hard-coded text in the JSPs and in the controller.
 
 For example:
 
@@ -849,24 +851,24 @@ messageSource.getMessage("success.book.updated", null, locale);
 
 ---
 
-# Exercise 15 — Create the method to list books
+# Exercise 15 — Create the method to list the books
 
 ## Statement
 
-Create the `listBooks` method on `BookController`.
+Create the `listBooks` method in `BookController`.
 
-You must:
+It must:
 
-1. Reply to `GET /books`.
-2. Add to model:
+1. Respond to `GET /books`.
+2. Add to the model:
    - `pageTitleCode` with `books.list.title`.
-   - `books` with book list.
+   - `books` with the list of books.
 3. Return the `books/list` view.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @GetMapping
@@ -880,13 +882,13 @@ public String listBooks(Model model) {
 
 ### Explanation
 
-As the controller you will have:
+Since the controller will have:
 
 ```java
 @RequestMapping("/books")
 ```
 
-This method responds to:
+this method responds to:
 
 ```text
 GET /books
@@ -902,19 +904,19 @@ bookService.findAll()
 
 ---
 
-# Exercise 16 — Show the creation form
+# Exercise 16 — Show the create form
 
 ## Statement
 
-Create the `showCreateForm` method on `BookController`.
+Create the `showCreateForm` method in `BookController`.
 
-You must respond to:
+It must respond to:
 
 ```text
 GET /books/new
 ```
 
-You must add to the model:
+It must add to the model:
 
 | Attribute | Value |
 | --------------- | -------------------- |
@@ -923,7 +925,7 @@ You must add to the model:
 | `submitCode` | `books.create` |
 | `book` | `new Book()` |
 
-You must return:
+It must return:
 
 ```text
 books/form
@@ -932,7 +934,7 @@ books/form
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @GetMapping("/new")
@@ -948,9 +950,9 @@ public String showCreateForm(Model model) {
 
 ### Explanation
 
-We use `formAction` and `submitCode` so we can reuse the same form when creating and editing.
+We use `formAction` and `submitCode` so we can reuse the same form for creating and editing.
 
-To create, the `book` object is empty.
+When creating, the `book` object is empty.
 
 </details>
 
@@ -960,27 +962,27 @@ To create, the `book` object is empty.
 
 ## Statement
 
-Create the `createBook` method on `BookController`.
+Create the `createBook` method in `BookController`.
 
-You must respond to:
+It must respond to:
 
 ```text
 POST /books
 ```
 
-You must:
+It must:
 
 1. Receive `Book` with `@Valid` and `@ModelAttribute("book")`.
 2. Receive `BindingResult`.
 3. If there are errors, return to `books/form`.
-4. If there are no errors, save the workbook.
-5. Add `success.book.created` flash message.
+4. If there are no errors, save the book.
+5. Add the flash message `success.book.created`.
 6. Redirect to `/books`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @PostMapping
@@ -1013,7 +1015,7 @@ public String createBook(
 
 If there are validation errors, we return to the form.
 
-It is important to add again:
+It's important to add these again:
 
 ```java
 pageTitleCode
@@ -1021,38 +1023,39 @@ formAction
 submitCode
 ```
 
-because the sight needs them.
+because the view needs them.
 
 </details>
 
 ---
 
-# Exercise 18 — Show the editing form
+# Exercise 18 — Show the edit form
 
 ## Statement
-Create the `showEditForm` method on `BookController`.
 
-You must respond to:
+Create the `showEditForm` method in `BookController`.
+
+It must respond to:
 
 ```text
 GET /books/edit?id=1
 ```
 
-You must:
+It must:
 
 1. Receive the `id` parameter.
-2. Search the book with `bookService.findByIdOrThrow(id)`.
-3. Add to model:
+2. Look up the book with `bookService.findByIdOrThrow(id)`.
+3. Add to the model:
    - `pageTitleCode` with `books.edit.title`.
    - `formAction` with `/books/update`.
    - `submitCode` with `books.update`.
-   - `book` with the found book.
+   - `book` with the book found.
 4. Return the `books/form` view.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @GetMapping("/edit")
@@ -1073,11 +1076,11 @@ public String showEditForm(
 
 ### Explanation
 
-This method does not create an empty workbook.
+This method doesn't create an empty book.
 
-Searches for an existing book and submits it to the form.
+It looks up an existing book and sends it to the form.
 
-Thus the form appears filled with the current data.
+That way the form appears filled in with the current data.
 
 </details>
 
@@ -1087,27 +1090,27 @@ Thus the form appears filled with the current data.
 
 ## Statement
 
-Create the `updateBook` method on `BookController`.
+Create the `updateBook` method in `BookController`.
 
-You must respond to:
+It must respond to:
 
 ```text
 POST /books/update
 ```
 
-You must:
+It must:
 
 1. Receive `Book` with `@Valid` and `@ModelAttribute("book")`.
 2. Receive `BindingResult`.
-3. If there are errors, return to the editing form.
-4. If there are no errors, update the workbook.
-5. Add `success.book.updated` flash message.
+3. If there are errors, return to the edit form.
+4. If there are no errors, update the book.
+5. Add the flash message `success.book.updated`.
 6. Redirect to `/books`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @PostMapping("/update")
@@ -1138,7 +1141,7 @@ public String updateBook(
 
 ### Explanation
 
-This method looks like the create method, but calls:
+This method is similar to the create method, but it calls:
 
 ```java
 bookService.update(book);
@@ -1158,25 +1161,25 @@ bookService.save(book);
 
 ## Statement
 
-Create the `deleteBook` method on `BookController`.
+Create the `deleteBook` method in `BookController`.
 
-You must respond to:
+It must respond to:
 
 ```text
 POST /books/delete
 ```
 
-You must:
+It must:
 
 1. Receive the `id` parameter.
 2. Delete the book with `bookService.deleteById(id)`.
-3. Add `success.book.deleted` flash message.
+3. Add the flash message `success.book.deleted`.
 4. Redirect to `/books`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @PostMapping("/delete")
@@ -1197,9 +1200,9 @@ public String deleteBook(
 
 ### Explanation
 
-We erase using `POST`, not `GET`.
+We delete using `POST`, not `GET`.
 
-This is important because deleting modifies data.
+This is important because deleting changes data.
 
 After deleting, we redirect to the list.
 
@@ -1207,13 +1210,13 @@ After deleting, we redirect to the list.
 
 ---
 
-# Exercise 21 — Create private method for flash messages
+# Exercise 21 — Create a private method for flash messages
 
 ## Statement
 
 In `BookController`, create a private method called `addFlashMessage`.
 
-You must:
+It must:
 
 1. Receive `RedirectAttributes`.
 2. Receive a message code.
@@ -1224,7 +1227,7 @@ You must:
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 private void addFlashMessage(
@@ -1243,7 +1246,7 @@ private void addFlashMessage(
 }
 ```
 
-### Imports required
+### Required imports
 
 ```java
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -1253,7 +1256,7 @@ import java.util.Locale;
 
 ### Explanation
 
-This method avoids repeating code every time we want to display a success message.
+This method saves us from repeating code every time we want to show a success message.
 
 For example:
 
@@ -1265,19 +1268,19 @@ addFlashMessage(redirectAttributes, "success.book.updated");
 
 ---
 
-# Exercise 22 — Create reusable `books/form.jsp`
+# Exercise 22 — Create a reusable `books/form.jsp`
 
 ## Statement
 
-Create an `books/form.jsp` view that can be used for both creating and editing books.
+Create a `books/form.jsp` view that works for both creating and editing books.
 
-You must:
+It must:
 
 1. Use `<form:form>`.
 2. Use `modelAttribute="book"`.
-3. Send the form to `${formAction}`.
+3. Submit the form to `${formAction}`.
 4. Include a hidden field for `id`.
-5. Have fields:
+5. Have these fields:
    - `title`
    - `author`
    - `category`
@@ -1288,7 +1291,7 @@ You must:
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1372,14 +1375,15 @@ You must:
 
 ### Explanation
 
-The most important part to edit is:
+The most important part for editing is:
 
 ```jsp
 <form:hidden path="id" />
 ```
 
-This field retains the book's identifier.
-Without that field, the object could arrive at the controller with `id = null`.
+This field keeps the book's identifier.
+
+Without that field, the object could reach the controller with `id = null`.
 
 </details>
 
@@ -1395,7 +1399,7 @@ The `books/form.jsp` view uses:
 ${bookCategories}
 ```
 
-Create a class `GlobalModelAttributes` that adds that list to the model.
+Create a `GlobalModelAttributes` class that adds that list to the model.
 
 The categories will be:
 
@@ -1410,7 +1414,7 @@ Ciencia ficción
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.library.config;
@@ -1444,7 +1448,7 @@ The annotation:
 @ControllerAdvice
 ```
 
-allows this attribute to be available in multiple views.
+makes this attribute available in several views.
 
 The method:
 
@@ -1452,7 +1456,7 @@ The method:
 @ModelAttribute("bookCategories")
 ```
 
-adds a list to the model that can be used in JSP.
+adds a list to the model that can be used in the JSPs.
 
 </details>
 
@@ -1462,20 +1466,20 @@ adds a list to the model that can be used in JSP.
 
 ## Statement
 
-Create the stock part of `books/list.jsp`.
+Create the actions part of `books/list.jsp`.
 
-For each book there must appear:
+For each book, it must show:
 
-1. Link to see details.
-2. Link to edit.
-3. Form `POST` to delete.
+1. A link to view the details.
+2. A link to edit.
+3. A `POST` form to delete.
 
-The delete button should ask for confirmation before submitting the form.
+The delete button must ask for confirmation before submitting the form.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <td class="actions-cell">
@@ -1503,9 +1507,9 @@ The delete button should ask for confirmation before submitting the form.
 
 ### Explanation
 
-The edit link uses `GET` because it only displays one form.
+The edit link uses `GET` because it only shows a form.
 
-The wipe uses `POST` because it modifies data.
+Deleting uses `POST` because it changes data.
 
 The `id` is sent in a hidden field.
 
@@ -1513,21 +1517,21 @@ The `id` is sent in a hidden field.
 
 ---
 
-# Exercise 25 — Create complete `books/list.jsp`
+# Exercise 25 — Create the complete `books/list.jsp`
 
 ## Statement
 
-Create an `books/list.jsp` view with:
+Create a `books/list.jsp` view with:
 
-1. Table of books.
-2. Success message if `successMessage` exists.
-3. Button to create book.
-4. Detail, editing and deletion actions.
+1. A table of books.
+2. A success message if `successMessage` exists.
+3. A button to create a book.
+4. Details, edit and delete actions.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1620,17 +1624,17 @@ Editar
 Borrar
 ```
 
-Deletion is done with form `POST`.
+Deleting is done with a `POST` form.
 
 </details>
 
 ---
 
-# Exercise 26 — Add styles for actions
+# Exercise 26 — Add styles for the actions
 
 ## Statement
 
-Add CSS styles to make table actions appear inline.
+Add CSS styles so the table actions appear inline.
 
 Create styles for:
 
@@ -1644,7 +1648,7 @@ Create styles for:
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```css
 .actions-cell {
@@ -1675,7 +1679,7 @@ Create styles for:
 
 ### Explanation
 
-`.actions-cell` places the shares online.
+`.actions-cell` places the actions inline.
 
 `.inline-form` prevents the delete form from taking up an entire line.
 
@@ -1685,7 +1689,7 @@ Create styles for:
 
 ---
 
-# Exercise 27 — Explain why the hidden field `id` is needed
+# Exercise 27 — Explain why the hidden `id` field is needed
 
 ## Statement
 
@@ -1700,9 +1704,9 @@ Explain what it is for and what problem we would have if we removed it.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-The hidden field retains the identifier of the book we are editing.
+The hidden field keeps the identifier of the book we are editing.
 
 When the user submits the form, Spring populates the `Book` object.
 
@@ -1714,7 +1718,7 @@ Thanks to:
 
 the object arrives with its `id`.
 
-That value is necessary to execute:
+That value is needed to run:
 
 ```sql
 UPDATE books
@@ -1730,11 +1734,11 @@ Then the service wouldn't know which book to update.
 
 ---
 
-# Exercise 28 — Explain why delete with POST
+# Exercise 28 — Explain why we delete with POST
 
 ## Statement
 
-Explain why it is better to delete with:
+Explain why it's better to delete with:
 
 ```html
 <form method="post"></form>
@@ -1749,32 +1753,33 @@ instead of using a link like:
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-A normal link uses an `GET` request.
-`GET` should be used to query information, not modify data.
+A normal link uses a `GET` request.
 
-Deleting a book modifies the state of the application.
+`GET` should be used to query information, not to modify data.
 
-That is why it is better to use:
+Deleting a book changes the state of the application.
+
+That's why it's better to use:
 
 ```html
 <form method="post"></form>
 ```
 
-Thus the deletion is carried out by:
+That way, the deletion is done through:
 
 ```text
 POST /books/delete
 ```
 
-This prevents a simple visit to a URL from accidentally deleting data.
+This prevents a simple visit to a URL from deleting data by accident.
 
 </details>
 
 ---
 
-# Exercise 29 — Diagnose frequent errors
+# Exercise 29 — Diagnose common errors
 
 ## Statement
 
@@ -1782,21 +1787,21 @@ Read each case and explain the problem.
 
 ## Case A
 
-In `books/form.jsp` you have forgotten:
+In `books/form.jsp`, someone forgot:
 
 ```jsp
 <form:hidden path="id" />
 ```
 
-When editing, an error appears or the correct book is not updated.
+When editing, an error appears or the right book isn't updated.
 
-What's happening?
+What happens?
 
 ---
 
 ## Case B
 
-The edit form sends to:
+The edit form submits to:
 
 ```text
 /books
@@ -1814,7 +1819,7 @@ What can happen?
 
 ## Case C
 
-In the DAO it is written:
+In the DAO, someone wrote:
 
 ```sql
 UPDATE books
@@ -1823,7 +1828,7 @@ SET title = ?
 
 without `WHERE`.
 
-What's happening?
+What happens?
 
 ---
 
@@ -1837,18 +1842,18 @@ The delete button is this:
 </a>
 ```
 
-What problem do you have?
+What's wrong with it?
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Case A
 
-The `Book` object arrives at the controller without `id`.
+The `Book` object reaches the controller without an `id`.
 
-Without `id`, the service does not know which book to update.
+Without an `id`, the service doesn't know which book to update.
 
 The solution is to add:
 
@@ -1860,17 +1865,17 @@ The solution is to add:
 
 ## Case B
 
-If the edit form sends to:
+If the edit form submits to:
 
 ```text
 /books
 ```
 
-will probably execute the create method.
+it will probably run the create method.
 
-Instead of updating the existing workbook, you can create a new workbook.
+Instead of updating the existing book, it may create a new book.
 
-The editing action should be:
+The edit action must be:
 
 ```text
 /books/update
@@ -1880,7 +1885,7 @@ The editing action should be:
 
 ## Case C
 
-Without `WHERE`, the query updates all records in the table.
+Without `WHERE`, the query updates every record in the table.
 
 Incorrect:
 
@@ -1903,9 +1908,9 @@ WHERE id = ?
 
 That link uses `GET`.
 
-It is not recommended to delete data with `GET`.
+Deleting data with `GET` isn't recommended.
 
-It is better to use a form with:
+It's better to use a form with:
 
 ```html
 method="post"
@@ -1917,13 +1922,13 @@ and send the `id` in a hidden field.
 
 ---
 
-# Exercise 30 – Final Challenge: Complete CRUD of editorials
+# Exercise 30 — Final challenge: complete CRUD for publishers
 
 ## Statement
 
 Create a section to manage publishers called `Publisher`.
 
-You must have these fields:
+It must have these fields:
 
 | Field | Type |
 | ------------- | --------- |
@@ -1934,13 +1939,13 @@ You must have these fields:
 
 You must create:
 
-1. Model `Publisher`.
-2. `PublisherDao` interface.
-3. `JdbcPublisherDao` implementation.
-4. `PublisherService` service.
-5. `PublisherController` driver.
-6. View `publishers/list.jsp`.
-7. View `publishers/form.jsp`.
+1. The `Publisher` model.
+2. The `PublisherDao` interface.
+3. The `JdbcPublisherDao` implementation.
+4. The `PublisherService` service.
+5. The `PublisherController` controller.
+6. The `publishers/list.jsp` view.
+7. The `publishers/form.jsp` view.
 
 It must allow:
 
@@ -1954,9 +1959,9 @@ Borrar editorial.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-## Model `Publisher.java`
+## `Publisher.java` model
 
 ```java
 package com.example.library.model;
@@ -2109,7 +2114,7 @@ public class JdbcPublisherDao implements PublisherDao {
 }
 ```
 
-## `PublisherService.java` Service
+## `PublisherService.java` service
 
 ```java
 package com.example.library.service;
@@ -2151,7 +2156,7 @@ public class PublisherService {
 }
 ```
 
-## `PublisherController.java` driver
+## `PublisherController.java` controller
 
 ```java
 package com.example.library.controller;
@@ -2267,7 +2272,7 @@ public class PublisherController {
 }
 ```
 
-## View `publishers/list.jsp`
+## `publishers/list.jsp` view
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -2342,7 +2347,7 @@ public class PublisherController {
 </html>
 ```
 
-## View `publishers/form.jsp`
+## `publishers/form.jsp` view
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -2407,7 +2412,7 @@ public class PublisherController {
 
 ### Explanation
 
-This challenge brings together all CRUD:
+This challenge brings the whole CRUD together:
 
 ```text
 Crear
@@ -2424,7 +2429,7 @@ The field:
 <form:hidden path="id" />
 ```
 
-allows you to preserve the identifier during editing.
+lets us keep the identifier during editing.
 
 </details>
 

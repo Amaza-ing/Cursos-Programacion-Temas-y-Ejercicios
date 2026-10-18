@@ -1,12 +1,12 @@
-# Exercises - Topic 25: `Map` and `HashMap`
+# Exercises - Topic 25: Map and HashMap
 
 Below you will find **10 practical exercises** to work with **`Map`, `HashMap`, `put`, `get`, `remove`, `containsKey`, `getOrDefault`, `putIfAbsent` and `entrySet`**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Create map
+## Exercise 1: Create a map
 
 Create a map of countries and capitals.
 
@@ -33,7 +33,7 @@ public class Main {
 
 ## Exercise 2: Read with `get`
 
-Retrieves the price of `P02`.
+Retrieve the price of `P02`.
 
 <details><summary>Show solution</summary>
 
@@ -55,7 +55,7 @@ public class Main {
 
 ---
 
-## Exercise 3: Update value
+## Exercise 3: Update a value
 
 Update the stock of `Mouse`.
 
@@ -81,7 +81,7 @@ public class Main {
 
 ## Exercise 4: Use `containsKey`
 
-Checks if `admin` exists.
+Check whether `admin` exists.
 
 <details><summary>Show solution</summary>
 
@@ -104,7 +104,7 @@ public class Main {
 
 ## Exercise 5: Use `getOrDefault`
 
-Get default score if it doesn't exist.
+Get a default score if it doesn't exist.
 
 <details><summary>Show solution</summary>
 
@@ -149,7 +149,7 @@ public class Main {
 
 ---
 
-## Exercise 7: Delete entry
+## Exercise 7: Remove an entry
 
 Remove `Cable` from the map.
 
@@ -176,7 +176,7 @@ public class Main {
 
 ## Exercise 8: Loop through `entrySet`
 
-Print students and notes.
+Print the students and their grades.
 
 <details><summary>Show solution</summary>
 
@@ -228,7 +228,7 @@ public class Main {
 
 ## Exercise 10: Map with objects
 
-Save students by ID.
+Store students by ID.
 
 <details><summary>Show solution</summary>
 

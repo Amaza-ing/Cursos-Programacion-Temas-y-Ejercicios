@@ -2,14 +2,14 @@
 
 ## **1. What is semantic HTML and why is it important?**
 
-Semantic HTML refers to the use of tags with their own meaning that describe the content of a web page in a clear and structured way. These tags help improve accessibility, search engine optimization (SEO), and code maintainability.
+Semantic HTML means using tags that carry their own meaning and describe the content of a web page in a clear, structured way. These tags help improve accessibility, search engine optimization (SEO) and code maintainability.
 
 ### **Benefits of semantic HTML:**
 
-- Makes code easier to understand for both developers and browsers.
-- Improves accessibility for people with disabilities who use screen readers.
-- Improves positioning in search engines like Google.
-- Provides a logical structure to the content.
+- It makes the code easier to understand for both developers and browsers.
+- It improves accessibility for people with disabilities who use screen readers.
+- It improves your ranking in search engines like Google.
+- It gives the content a logical structure.
 
 ---
 
@@ -28,7 +28,7 @@ The `<header>` element represents the header of a document or section.
 </header>
 ```
 
-### **2.2. `<nav>` - Navigation Menu**
+### **2.2. `<nav>` - Navigation menu**
 
 The `<nav>` element defines a section containing navigation links.
 
@@ -44,9 +44,9 @@ The `<nav>` element defines a section containing navigation links.
 </nav>
 ```
 
-### **23. `<main>` - Main page content**
+### **2.3. `<main>` - Main page content**
 
-The `<main>` element contains the main content of the document, excluding headers, menus, and footers.
+The `<main>` element contains the main content of the document, excluding headers, menus and footers.
 
 **Example:**
 
@@ -57,9 +57,9 @@ The `<main>` element contains the main content of the document, excluding header
 </main>
 ```
 
-### **2.4. `<section>` - An independent Section of the page**
+### **2.4. `<section>` - A standalone section of the page**
 
-The `<section>` element represents a separate section, such as a comment board or an image gallery.
+The `<section>` element represents a standalone section, such as the comments area or an image gallery.
 
 **Example:**
 
@@ -76,7 +76,7 @@ The `<section>` element represents a separate section, such as a comment board o
 
 ### **2.5. `<article>` - Independent and reusable content**
 
-The `<article>` element represents stand-alone content, such as a blog article or news story.
+The `<article>` element represents self-contained content, such as a blog post or a news story.
 
 **Example:**
 
@@ -116,11 +116,11 @@ The `<footer>` element represents the footer of a document or section.
 
 ---
 
-## **3. Difference between `<div>` and semantic elements**
+## **3. The difference between `<div>` and semantic elements**
 
-The `<div>` element is used as a generic container with no semantic meaning, while semantic elements provide context about its content.
+The `<div>` element is used as a generic container with no semantic meaning, while semantic elements provide context about their content.
 
-### **`<div>` example without semantics:**
+### **Example of a `<div>` without semantics:**
 
 ```html
 <div class="cabecera">
@@ -136,7 +136,7 @@ The `<div>` element is used as a generic container with no semantic meaning, whi
 </header>
 ```
 
-**Conclusion:** It is recommended to use semantic elements instead of `<div>` whenever possible to improve the structure and accessibility of the content.
+**Conclusion:** Use semantic elements instead of `<div>` whenever possible to improve the structure and accessibility of your content.
 
 ---
 
@@ -147,8 +147,9 @@ The `<div>` element is used as a generic container with no semantic meaning, whi
 ## **4. Other important aspects of semantic HTML**
 
 - **Additional semantic tags:** `<figure>`, `<figcaption>`, ...
-- **Improve SEO with semantic HTML.**
-- **Correct use of nested tags for a clear and orderly structure.**
+- **Improving SEO with semantic HTML.**
+- **Nesting tags correctly for a clear, orderly structure.**
 
 ---
-In the next topic, we will explore **the use of accessibility in HTML**, including attributes like `aria-label` and best practices to improve the user experience.
+
+In the next topic, we'll explore **applying accessibility in HTML**, including attributes like `aria-label` and best practices to improve the user experience.

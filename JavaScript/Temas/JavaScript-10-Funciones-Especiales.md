@@ -2,7 +2,7 @@
 
 ## **1. Introduction**
 
-JavaScript provides a series of special functions that allow code to be executed lazily, repetitively, or in specific contexts. In this topic we will explore some of the most useful:
+JavaScript provides a number of special functions that let you run code with a delay, repeatedly or in specific contexts. In this topic, we'll explore some of the most useful ones:
 
 - `setTimeout()`
 - `setInterval()`
@@ -12,9 +12,9 @@ JavaScript provides a series of special functions that allow code to be executed
 
 ---
 
-## **2. `setTimeout()` - Execute code after a while**
+## **2. `setTimeout()` - Run code after a while**
 
-`setTimeout()` allows a function to be executed after a specific time (in milliseconds).
+`setTimeout()` lets you run a function after a specific amount of time (in milliseconds).
 
 ### **Example**
 
@@ -34,7 +34,7 @@ Fin
 Esto aparece después de 2 segundos
 ```
 
-> **Note:** The script execution does not stop while waiting for the `setTimeout()`.
+> **Note:** The script doesn't stop running while it waits for the `setTimeout()`.
 
 ---
 
@@ -42,9 +42,9 @@ Esto aparece después de 2 segundos
 
 ---
 
-## **3. `setInterval()` - Execute code repeatedly**
+## **3. `setInterval()` - Run code repeatedly**
 
-`setInterval()` allows you to execute a function repetitively in a defined time interval.
+`setInterval()` lets you run a function repeatedly at a set time interval.
 
 ### **Example**
 
@@ -77,8 +77,8 @@ Contador: 5
 
 Both `setTimeout()` and `setInterval()` return an identifier that we can use to cancel their execution.
 
-- `clearTimeout(id)` cancels the execution of an `setTimeout()`.
-- `clearInterval(id)` stops an `setInterval()`.
+- `clearTimeout(id)` cancels the execution of a `setTimeout()`.
+- `clearInterval(id)` stops a `setInterval()`.
 
 ### **`clearTimeout()` example**
 
@@ -107,7 +107,7 @@ setTimeout(() => {
 
 ## **5. `requestAnimationFrame()` - Optimize animations**
 
-`requestAnimationFrame()` allows you to run a function before the next browser repaint, optimizing animations.
+`requestAnimationFrame()` lets you run a function before the browser's next repaint, which optimizes animations.
 
 ### **Example**
 
@@ -120,9 +120,9 @@ function animate() {
 requestAnimationFrame(animate); // Llama a la animación continuamente
 ```
 
-> **Note:** Unlike `setInterval()`, this method synchronizes with the monitor's refresh rate, avoiding unnecessary rendering.
+> **Note:** Unlike `setInterval()`, this method syncs with the monitor's refresh rate, avoiding unnecessary rendering.
 
-### **Example of "video game"**
+### **"Video game" example**
 
 ```html
 <!DOCTYPE html>
@@ -201,9 +201,9 @@ requestAnimationFrame(animate);
 
 ## **6. `debounce()` and `throttle()` - Control the execution of functions**
 
-### **6.1. `debounce()` - Execute a function after a period of time without events**
+### **6.1. `debounce()` - Run a function after a period of time without events**
 
-It is used to prevent multiple executions of a function while the user is still interacting (for example, typing in a search engine).
+It's used to prevent a function from running multiple times while the user is still interacting (for example, typing in a search box).
 
 ### **Example**
 
@@ -225,9 +225,9 @@ const logMessage = debounce(
 document.addEventListener("keydown", logMessage);
 ```
 
-### **6.2. `throttle()` - Limit the execution of a function in time intervals**
+### **6.2. `throttle()` - Limit how often a function runs within time intervals**
 
-Used to limit the frequency of execution of a function (for example, `scroll` events).
+It's used to limit how often a function runs (for example, on `scroll` events).
 
 ### **Example**
 
@@ -281,6 +281,6 @@ button.addEventListener(
 
 ## **7. Conclusion**
 
-These special functions allow you to handle code execution times efficiently, from simple timers to performance optimization on frequent events.
+These special functions let you control when your code runs efficiently, from simple timers to optimizing performance on frequent events.
 
-In the next topic we will define what asynchrony is and how we can manage it using promises with both the classic syntax and async/await.
+In the next topic, we'll define what asynchrony is and how we can handle it using promises, both with the classic syntax and with async/await.

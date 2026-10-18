@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-We come to the last topic of the course.
+We've reached the last topic of the course.
 
 Throughout the course you have learned many important pieces of Java:
 
@@ -15,7 +15,7 @@ Throughout the course you have learned many important pieces of Java:
 - `ArrayList`
 - classes and objects
 - encapsulation
-- builders
+- constructors
 - static methods
 - inheritance
 - polymorphism
@@ -39,7 +39,7 @@ Throughout the course you have learned many important pieces of Java:
 - sealed classes
 - basic concurrency
 - annotations
--Maven
+- Maven
 
 Now we are going to combine many of those concepts into a final project.
 
@@ -55,11 +55,11 @@ Let's create a console application called:
 Task Manager
 ```
 
-The application will allow you to manage tasks.
+The application will let you manage tasks.
 
 Each task will have:
 
-- go
+- id
 - title
 - description
 - priority
@@ -80,7 +80,7 @@ The user will be able to:
 
 ---
 
-## 3. Course concepts to be practiced
+## 3. Course concepts you'll practice
 
 In this project we will use:
 
@@ -99,11 +99,11 @@ In this project we will use:
 - `Files`
 - `Path`
 - `BigDecimal` optionally
--Maven
+- Maven
 - packages
 - static methods
 - encapsulation
-- separation of responsibilities
+- separation by responsibility
 
 ---
 
@@ -125,11 +125,11 @@ The app will display a menu like this:
 Choose an option:
 ```
 
-The user will be able to interact from the console by writing numbers and texts.
+The user will be able to interact from the console by typing numbers and text.
 
 ---
 
-## 5. Create the Maven project
+## 5. Creating the Maven project
 
 The structure of the project will be:
 
@@ -216,7 +216,7 @@ TaskApplication
 
 ### 6.5. `exception`
 
-Contains its own exceptions.
+Contains custom exceptions.
 
 Example:
 
@@ -251,7 +251,7 @@ DateUtils
 
 ## 7. `pom.xml`
 
-First we create the file `pom.xml`.
+First we create the `pom.xml` file.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -298,9 +298,9 @@ We will use only standard Java.
 
 ## 8. Main model: `Task`
 
-Let's represent a task with an `record`.
+Let's represent a task with a `record`.
 
-Route:
+Path:
 ```text
 src/main/java/com/amazaing/taskmanager/model/Task.java
 ```
@@ -386,9 +386,9 @@ This reduces errors and makes the code more predictable.
 
 ---
 
-## 10. Enum `Priority`
+## 10. The `Priority` enum
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/model/Priority.java
@@ -410,9 +410,9 @@ We use an enum because priority can only have a closed set of values.
 
 ---
 
-## 11. Enum `TaskStatus`
+## 11. The `TaskStatus` enum
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/model/TaskStatus.java
@@ -438,7 +438,7 @@ We also use an enum for the task status.
 
 Let's create our own exception for when a task is not found.
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/exception/TaskNotFoundException.java
@@ -464,7 +464,7 @@ We use a custom exception to make the error more expressive.
 
 The repository will be responsible for saving and loading tasks.
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/repository/TaskRepository.java
@@ -486,13 +486,13 @@ public interface TaskRepository {
 }
 ```
 
-This allows the application to not depend directly on how the data is saved.
+This means the application doesn't depend directly on how the data is stored.
 
 ---
 
-## 14. Implementation with files: `FileTaskRepository`
+## 14. File-based implementation: `FileTaskRepository`
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/repository/FileTaskRepository.java
@@ -600,27 +600,27 @@ public class FileTaskRepository implements TaskRepository {
 }
 ```
 
-This repository saves each task on a line of text separating the fields with `;`.
+This repository saves each task on its own line of text, separating the fields with `;`.
 
 ---
 
-## 15. Note on saving to file
+## 15. A note on saving to a file
 
-This save system is simple.
+This saving system is simple.
 
 It's not perfect, but it's enough to practice:
 
 - `Files`
 - `Path`
 - lists
-- text to object conversion
-- object to text conversion
+- converting text to objects
+- converting objects to text
 - exceptions
 
 In a real application you could use:
 
--JSON
--XML
+- JSON
+- XML
 - a database
 - an external API
 
@@ -628,11 +628,11 @@ But for a basic Java capstone project, this system is very useful.
 
 ---
 
-## 16. Sealed interface for removal results
+## 16. Sealed interface for deletion results
 
 We are going to use a sealed interface to represent the result of deleting a task.
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/result/DeleteResult.java
@@ -649,9 +649,9 @@ public sealed interface DeleteResult permits DeleteSuccess, DeleteError {
 
 ---
 
-## 17. Record `DeleteSuccess`
+## 17. The `DeleteSuccess` record
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/result/DeleteSuccess.java
@@ -668,9 +668,9 @@ public record DeleteSuccess(int id) implements DeleteResult {
 
 ---
 
-## 18. Record `DeleteError`
+## 18. The `DeleteError` record
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/result/DeleteError.java
@@ -685,13 +685,13 @@ public record DeleteError(String message) implements DeleteResult {
 }
 ```
 
-This allows us to return a clear result without using only `boolean`.
+This lets us return a clear result instead of just a `boolean`.
 
 ---
 
 ## 19. Main service: `TaskService`
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/service/TaskService.java
@@ -837,7 +837,7 @@ This service contains the main logic of the project.
 
 ## 21. `DateUtils` utility class
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/util/DateUtils.java
@@ -886,7 +886,7 @@ This class uses static methods because they are pure utilities.
 
 ## 22. `ConsoleReader` utility class
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/util/ConsoleReader.java
@@ -978,7 +978,7 @@ This class centralizes reading from the console.
 
 ## 23. Main application: `TaskApplication`
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/app/TaskApplication.java
@@ -1173,7 +1173,7 @@ public class TaskApplication {
 
 ## 24. `Main` class
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/taskmanager/Main.java
@@ -1208,7 +1208,7 @@ This class connects the main pieces.
 
 ---
 
-## 25. Run the project from the IDE
+## 25. Running the project from the IDE
 
 If you use an IDE, you can directly run the class:
 
@@ -1216,11 +1216,11 @@ If you use an IDE, you can directly run the class:
 Main.java
 ```
 
-The program will open the menu on the integrated console.
+The program will open the menu in the integrated console.
 
 ---
 
-## 26. Run the project with Maven
+## 26. Running the project with Maven
 
 From the terminal, you can compile with:
 
@@ -1234,7 +1234,7 @@ Create the `.jar`:
 mvn package
 ```
 
-Run `.jar`:
+Run the `.jar`:
 
 ```bash
 java -jar target/java-task-manager-1.0.0.jar
@@ -1242,9 +1242,9 @@ java -jar target/java-task-manager-1.0.0.jar
 
 ---
 
-## 27. Test the app
+## 27. Trying out the application
 
-A possible test would be:
+A possible test run would be:
 
 ```text
 1. Create task
@@ -1254,13 +1254,13 @@ Priority: MEDIUM
 Due date: 30/06/2026
 ```
 
-After:
+After that:
 
 ```text
 2. List tasks
 ```
 
-You should see the task created.
+You should see the task you created.
 
 Then:
 
@@ -1268,7 +1268,7 @@ Then:
 7. Save tasks
 ```
 
-Then you can close, reopen and use:
+Then you can close the app, open it again and use:
 
 ```text
 8. Load tasks
@@ -1301,7 +1301,7 @@ This project is functional, but it can be improved.
 Some possible improvements:
 
 - edit a task
-- change status to `IN_PROGRESS`
+- change the status to `IN_PROGRESS`
 - filter by priority
 - sort by deadline
 - search by text
@@ -1317,7 +1317,7 @@ Some possible improvements:
 
 ---
 
-## 30. Improvement 1: Change status to `IN_PROGRESS`
+## 30. Improvement 1: change the status to `IN_PROGRESS`
 
 Right now we only complete tasks.
 
@@ -1349,9 +1349,9 @@ You could then add a new option to the menu.
 
 ---
 
-## 31. Improvement 2: Filter by priority
+## 31. Improvement 2: filter by priority
 
-You can add in `TaskService`:
+You can add this to `TaskService`:
 
 ```java
 public List<Task> findByPriority(Priority priority) {
@@ -1362,7 +1362,7 @@ public List<Task> findByPriority(Priority priority) {
 }
 ```
 
-This practices:
+This lets you practice:
 
 - enums
 - streams
@@ -1371,7 +1371,7 @@ This practices:
 
 ---
 
-## 32. Improvement 3: Sort by deadline
+## 32. Improvement 3: sort by deadline
 
 You can create a method:
 
@@ -1384,7 +1384,7 @@ public List<Task> findAllSortedByDueDate() {
 }
 ```
 
-This practices:
+This lets you practice:
 
 - `LocalDate`
 - `Comparator`
@@ -1393,7 +1393,7 @@ This practices:
 
 ---
 
-## 33. Improvement 4: Search by text
+## 33. Improvement 4: search by text
 
 You can search for tasks that contain a word in the title or description.
 
@@ -1411,7 +1411,7 @@ public List<Task> searchByText(String text) {
 
 ---
 
-## 34. Improvement 5: Auto save on exit
+## 34. Improvement 5: save automatically on exit
 
 Right now the user must choose the save option.
 
@@ -1430,16 +1430,16 @@ This way you reduce the risk of losing information.
 
 ---
 
-## 35. Improvement 6: Automatically load on startup
+## 35. Improvement 6: load automatically on startup
 
-In `Main`, after creating the service, you could upload the tasks.
+In `Main`, after creating the service, you could load the tasks.
 
 ```java
 TaskService service = new TaskService(repository);
 service.loadTasks();
 ```
 
-Thus the application recovers the data automatically when it starts.
+That way the application gets its data back automatically when it starts.
 
 ---
 
@@ -1462,7 +1462,7 @@ Then you can create tests for `TaskService`.
 
 ---
 
-## 37. Test example for `TaskService`
+## 37. Example test for `TaskService`
 
 ```java
 package com.amazaing.taskmanager.service;
@@ -1523,7 +1523,7 @@ This avoids depending on real files during testing.
 
 ---
 
-## 39. Improvement 8: Use your own annotations
+## 39. Improvement 8: use your own annotations
 
 You could create an annotation to mark menu options.
 
@@ -1536,11 +1536,11 @@ public @interface MenuOption {
 }
 ```
 
-Although not necessary for this project, it would be an interesting way to practice annotations.
+Although it isn't necessary for this project, it would be an interesting way to practice annotations.
 
 ---
 
-## 40. Improvement 9: Add concurrency
+## 40. Improvement 9: add concurrency
 
 You could save tasks in the background.
 
@@ -1561,11 +1561,11 @@ executor.execute(() -> taskService.saveTasks());
 executor.shutdown();
 ```
 
-For this project it is not mandatory, but it is used to practice basic concurrency.
+It isn't required for this project, but it's a good way to practice basic concurrency.
 
 ---
 
-## 41. Improvement 10: Use JSON
+## 41. Improvement 10: use JSON
 
 The current system saves text separated by `;`.
 A more professional improvement would be to save tasks in JSON.
@@ -1584,14 +1584,14 @@ Conceptual example:
 
 For this you could use libraries like:
 
--Jackson
--Gson
+- Jackson
+- Gson
 
 And manage them with Maven.
 
 ---
 
-## 42. Review of applied concepts
+## 42. Review of the concepts applied
 
 This project applies many concepts from the course.
 
@@ -1668,7 +1668,7 @@ Files.write(filePath, lines)
 throw new TaskNotFoundException(id);
 ```
 
-### 42.11. maven
+### 42.11. Maven
 
 ```bash
 mvn clean package
@@ -1676,7 +1676,7 @@ mvn clean package
 
 ---
 
-## 43. Why separate by layers
+## 43. Why separate into layers
 
 This project separates:
 
@@ -1688,7 +1688,7 @@ This project separates:
 
 This prevents all the code from being mixed up in `Main`.
 
-For example, `Main` just boots the application:
+For example, `Main` just starts the application:
 
 ```java
 application.run();
@@ -1706,7 +1706,7 @@ Persistence is in:
 FileTaskRepository
 ```
 
-The console is at:
+The console handling is in:
 
 ```java
 TaskApplication
@@ -1720,13 +1720,13 @@ This separation makes the project easier to maintain.
 
 Some possible errors:
 
-- write a date with incorrect format
-- try to complete a non-existent task
-- delete a non-existent task
-- do not save before exit
-- manually modify the file and break the format
-- do not have permissions to write to the folder
-- run from an unexpected path
+- typing a date in the wrong format
+- trying to complete a task that doesn't exist
+- deleting a task that doesn't exist
+- not saving before exiting
+- editing the file by hand and breaking the format
+- not having permission to write to the folder
+- running the app from an unexpected path
 
 Part of programming is thinking about these cases.
 
@@ -1734,7 +1734,7 @@ Part of programming is thinking about these cases.
 
 ## 45. Possible date validation improvement
 
-Now, if the date cannot be parsed, we return `null`.
+Right now, if the date can't be parsed, we return `null`.
 
 You could improve this by asking until the user enters a valid date.
 
@@ -1751,14 +1751,14 @@ while (dueDate == null) {
 
 But remember that you also want to allow empty dates, so you would have to distinguish between:
 
-- vacuum allowed
-- incorrect text
+- an empty value (allowed)
+- invalid text
 
 ---
 
-## 46. Possible improvement of the model
+## 46. Possible model improvement
 
-Now `TaskStatus` has three values:
+Right now `TaskStatus` has three values:
 
 ```java
 PENDING
@@ -1786,7 +1786,7 @@ Example:
 BigDecimal estimatedCost
 ```
 
-This is how you would practice:
+That way you would practice:
 
 - `BigDecimal`
 - validation
@@ -1820,9 +1820,9 @@ This reinforces `Stream API`.
 
 ## 49. Possible improvement with `HashMap`
 
-Now we search by id using streams.
+Right now we search by id using streams.
 
-You could use an `HashMap<Integer, Task>` to optimize searches.
+You could use a `HashMap<Integer, Task>` to optimize searches.
 
 Example:
 
@@ -1830,12 +1830,12 @@ Example:
 private final Map<Integer, Task> tasksById = new HashMap<>();
 ```
 
-This would practice:
+This would let you practice:
 
 - maps
 - keys
 - values
-- data update
+- updating data
 
 ---
 
@@ -1856,13 +1856,13 @@ module com.amazaing.taskmanager {
 }
 ```
 
-For a first project it is not mandatory, but it would be a way to practice the topic of modules.
+It isn't required for a first project, but it would be a good way to practice what you learned in the modules topic.
 
 ---
 
-## 51. Checklist to complete the project
+## 51. Checklist for finishing the project
 
-Before finishing the project, check:
+Before you consider the project finished, check that:
 - the project compiles with `mvn compile`
 - the `.jar` is generated with `mvn package`
 - the application starts
@@ -1872,21 +1872,21 @@ Before finishing the project, check:
 - you can complete tasks
 - you can delete tasks
 - you can save tasks
-- you can upload tasks
+- you can load tasks
 - the file is created in `data/tasks.txt`
 - the code is organized by packages
 - class and method names are clear
 
 ---
 
-## 52. Proposed final exercise
+## 52. Suggested final exercise
 
-Complete the following upgrades:
+Complete the following improvements:
 
 1. Add an option to mark a task as `IN_PROGRESS`.
 2. Add an option to filter by priority.
-3. Have tasks load automatically on startup.
-4. Have tasks automatically saved when you exit.
+3. Make tasks load automatically on startup.
+4. Make tasks save automatically on exit.
 5. Add an option to list overdue tasks.
 6. Add a report with the total number of tasks by status.
 7. Add tests for `TaskService`.
@@ -1895,11 +1895,11 @@ With these improvements, the project would be much more complete.
 
 ---
 
-## 53. How to submit this project on GitHub
+## 53. How to present this project on GitHub
 
-If you upload this project to GitHub, you could add an `README.md`.
+If you upload this project to GitHub, you could add a `README.md`.
 
-Example of sections:
+Example sections:
 
 ````markdown
 # Java Task Manager
@@ -1933,39 +1933,37 @@ java -jar target/java-task-manager-1.0.0.jar
 ```
 ````
 
-````
-
-Un buen README ayuda a que otras personas entiendan tu proyecto.
+A good README helps other people understand your project.
 
 ---
 
-## 54. Buenas prácticas aplicadas
+## 54. Best practices applied
 
-En este proyecto hemos intentado aplicar buenas prácticas:
+In this project we've tried to apply best practices:
 
-- separar responsabilidades
-- usar nombres claros
-- evitar código demasiado largo en `Main`
-- usar interfaces para desacoplar
-- usar records para datos inmutables
-- usar enums para valores cerrados
-- usar exceptions para errores relevantes
-- usar `Optional` cuando puede no existir un valor
-- usar streams para búsquedas y filtros
-- usar Maven para organizar el proyecto
-- guardar datos fuera del código fuente
+- separating responsibilities
+- using clear names
+- avoiding overly long code in `Main`
+- using interfaces to decouple
+- using records for immutable data
+- using enums for closed sets of values
+- using exceptions for relevant errors
+- using `Optional` when a value may not exist
+- using streams for searches and filters
+- using Maven to organize the project
+- keeping data outside the source code
 
 ---
 
-## 55. Errores típicos al hacer este proyecto
+## 55. Common mistakes when building this project
 
-### 55.1. No respetar los paquetes
+### 55.1. Not respecting the packages
 
-Si una clase tiene:
+If a class has:
 
 ```java
 package com.amazaing.taskmanager.model;
-````
+```
 
 It should be in the correct folder:
 
@@ -1973,7 +1971,7 @@ It should be in the correct folder:
 com/amazaing/taskmanager/model
 ```
 
-### 55.2. Forget imports
+### 55.2. Forgetting imports
 
 For example:
 
@@ -1982,7 +1980,7 @@ import java.time.LocalDate;
 import java.util.List;
 ```
 
-### 55.3. Run from an unexpected path
+### 55.3. Running from an unexpected path
 
 The file is saved in:
 
@@ -1992,15 +1990,15 @@ data/tasks.txt
 
 relative to the folder from which the application is run.
 
-### 55.4. Don't save after creating tasks
+### 55.4. Not saving after creating tasks
 
-If you don't save, they are lost when you close.
+If you don't save, they're lost when you close the app.
 
-### 55.5. Break file format manually
+### 55.5. Breaking the file format by hand
 
-If you edit `tasks.txt` by hand and remove fields, the upload may fail.
+If you edit `tasks.txt` by hand and remove fields, loading may fail.
 
-### 55.6. Copy classes without updating packages
+### 55.6. Copying classes without updating packages
 
 Each file must have the correct `package`.
 
@@ -2010,7 +2008,7 @@ Each file must have the correct `package`.
 
 In this project you have created a complete console application to manage tasks.
 
-The application allows:
+The application lets you:
 
 - create tasks
 - list tasks
@@ -2038,7 +2036,7 @@ Maven
 
 The most important thing is not to memorize all the code, but to understand how the pieces connect.
 
-A real project is not just a class with an `main`.
+A real project is not just a class with a `main`.
 
 A real project usually has:
 
@@ -2046,12 +2044,12 @@ A real project usually has:
 - services
 - repositories
 - utilities
-- error control
+- error handling
 - persistence
 - folder structure
-- construction tool
+- a build tool
 
-This final project gives you a very good foundation to continue moving towards more professional applications.
+This final project gives you a very good foundation to keep moving towards more professional applications.
 
 ---
 
@@ -2062,21 +2060,21 @@ After finishing this course, you could continue with:
 - testing with JUnit
 - databases with JDBC
 - MySQL from Java
--SpringBoot
+- Spring Boot
 - REST APIs
 - web programming with Java
 - persistence with JPA and Hibernate
 - Gradle
-- pattern design
+- design patterns
 - layered architecture
-- applications with graphical interface
+- applications with a graphical interface
 - Java application deployment
 
-Java is a very broad ecosystem, and this course gives you the foundation to continue growing.
+Java is a very broad ecosystem, and this course gives you the foundation to keep growing.
 
 ---
 
-## 58. Closing of the course
+## 58. Wrapping up the course
 
 You have reached the end of the Java course.
 
@@ -2085,7 +2083,7 @@ You started with the basics of the language and have ended up creating an organi
 The key now is to practice.
 It's not enough to read code: you have to write it, break it, fix it and improve it.
 
-This final project is a good starting point to experiment, add features, and make it your own.
+This final project is a good starting point for experimenting, adding features and making it your own.
 
 ---
 
@@ -2095,17 +2093,17 @@ Try making an expanded version of the project with these features:
 
 - cleaner menu
 - automatic loading
-- auto save
+- automatic saving
 - task editing
 - text search
 - filter by priority
 - list of overdue tasks
-- statistics by state
+- statistics by status
 - unit tests
-- Complete README
+- a complete README
 - GitHub repository
 
-When you finish, you will have a very complete Java project to teach as a final practice.
+When you finish, you'll have a very complete Java project to show as your final assignment.
 
 ---
 
@@ -2113,9 +2111,9 @@ When you finish, you will have a very complete Java project to teach as a final 
 
 This topic closes the course with a practical application.
 
-The objective has been to unite the main concepts in a meaningful project.
+The goal has been to bring the main concepts together in a meaningful project.
 
-Have you seen how:
+You've seen how to:
 
 - organize a Maven project
 - create models with records
@@ -2127,7 +2125,7 @@ Have you seen how:
 - separate responsibilities
 - create a small layered architecture
 
-From here, the next natural step is to create increasingly larger projects and connect them with technologies such as databases, APIs and frameworks such as Spring MVC or Spring Boot.
+From here, the natural next step is to build increasingly larger projects and connect them to technologies such as databases, APIs and frameworks like Spring MVC or Spring Boot.
 
 ---
 

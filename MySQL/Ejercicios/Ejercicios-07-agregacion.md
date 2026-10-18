@@ -1,16 +1,16 @@
-# **Exercises - Topic 7: Aggregation Functions and Groupings**
+# **Exercises - Topic 7: Aggregate Functions and Grouping**
 
-Below you will find 10 practical exercises to practice aggregation functions (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`), grouping with `GROUP BY` and filters with `HAVING` in MySQL.
+Below you will find 10 practical exercises to practice aggregate functions (`SUM`, `COUNT`, `AVG`, `MAX`, `MIN`), grouping with `GROUP BY` and filtering with `HAVING` in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Calculate the total registered orders**
+### **Exercise 1: Count the stored orders**
 
-Check the total number of orders in the `orders` table.
+Query the total number of orders in the `orders` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT COUNT(*) AS total_pedidos FROM orders;
@@ -20,11 +20,11 @@ SELECT COUNT(*) AS total_pedidos FROM orders;
 
 ---
 
-### **Exercise 2: Calculate the total amount of sales**
+### **Exercise 2: Calculate total sales**
 
-Calculates the sum of all amounts (`total_amount`) in the `orders` table.
+Calculate the sum of all the amounts (`total_amount`) in the `orders` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT SUM(total_amount) AS total_ventas FROM orders;
@@ -36,9 +36,9 @@ SELECT SUM(total_amount) AS total_ventas FROM orders;
 
 ### **Exercise 3: Calculate the average order amount**
 
-Shows the average amount (`AVG`) of the orders.
+Show the average amount (`AVG`) of the orders.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT AVG(total_amount) AS promedio_pedidos FROM orders;
@@ -50,9 +50,9 @@ SELECT AVG(total_amount) AS promedio_pedidos FROM orders;
 
 ### **Exercise 4: Find the order with the largest amount**
 
-See which was the most expensive order recorded.
+Find out which was the most expensive order ever placed.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT MAX(total_amount) AS pedido_mas_caro FROM orders;
@@ -62,11 +62,11 @@ SELECT MAX(total_amount) AS pedido_mas_caro FROM orders;
 
 ---
 
-### **Exercise 5: Obtain the cheapest order**
+### **Exercise 5: Get the cheapest order**
 
-Queries the minimum value of the `total_amount` field.
+Query the minimum value of the `total_amount` field.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT MIN(total_amount) AS pedido_mas_barato FROM orders;
@@ -78,9 +78,9 @@ SELECT MIN(total_amount) AS pedido_mas_barato FROM orders;
 
 ### **Exercise 6: Group orders by customer**
 
-Shows how many orders each customer has placed.
+Show how many orders each customer has placed.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT customer_id, COUNT(*) AS cantidad_pedidos
@@ -94,9 +94,9 @@ GROUP BY customer_id;
 
 ### **Exercise 7: Total spent per customer**
 
-See how much each customer has spent by adding the `total_amount` field.
+Find out how much each customer has spent by adding up the `total_amount` field.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT customer_id, SUM(total_amount) AS total_gastado
@@ -110,9 +110,9 @@ GROUP BY customer_id;
 
 ### **Exercise 8: Customers with more than 2 orders**
 
-Filter only customers who have more than two registered orders.
+Filter only the customers who have more than two orders on record.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT customer_id, COUNT(*) AS total_pedidos
@@ -127,9 +127,9 @@ HAVING total_pedidos > 2;
 
 ### **Exercise 9: Average spending per customer with more than €100 spent**
 
-Obtain the average spending per customer and filter those who have spent more than €100.
+Get the average spending per customer and keep only those who have spent more than €100.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT customer_id, AVG(total_amount) AS media_gasto
@@ -142,11 +142,11 @@ HAVING media_gasto > 100;
 
 ---
 
-### **Exercise 10: Group by client and day**
+### **Exercise 10: Group by customer and day**
 
-Shows how many orders each customer has placed per day.
+Show how many orders each customer has placed per day.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT customer_id, DATE(created_at) AS fecha, COUNT(*) AS pedidos_dia

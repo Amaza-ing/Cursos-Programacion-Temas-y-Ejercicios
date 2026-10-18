@@ -1,14 +1,14 @@
 # **Exercises - Topic 2: Conditionals in JavaScript**
 
-Below you will find 5 practical exercises on using conditionals in JavaScript.
+Below you'll find 5 practical exercises on using conditionals in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Verify positive or negative number**
+### **Exercise 1: Check whether a number is positive or negative**
 
-Create a program that prompts the user for a number using `prompt` and displays on the console whether it is positive, negative, or zero.
+Create a program that asks the user for a number using `prompt` and displays in the console whether it's positive, negative or zero.
 
 <details><summary>Show solution</summary>
 
@@ -30,12 +30,12 @@ if (number > 0) {
 
 ### **Exercise 2: Age classification**
 
-Asks the user for their age and displays a message indicating their age group:
+Ask the user for their age and display a message indicating their age group:
 
 - Under 13: "Child"
-- Between 13 and 19: "Adolescent"
+- Between 13 and 19: "Teenager"
 - Between 20 and 64: "Adult"
-- 65 or more: "Older adult"
+- 65 or over: "Senior"
 
 <details><summary>Show solution</summary>
 
@@ -59,7 +59,7 @@ if (age < 13) {
 
 ### **Exercise 3: Simple calculator with `switch`**
 
-Create a program that requests two numbers and a math operation (`+`, `-`, `*`, `/`) and displays the result using `switch`.
+Create a program that asks for two numbers and a math operation (`+`, `-`, `*`, `/`) and displays the result using `switch`.
 
 <details><summary>Show solution</summary>
 
@@ -94,14 +94,14 @@ console.log(`Resultado: ${result}`);
 
 ---
 
-### **Exercise 4: Check leap year**
+### **Exercise 4: Check for a leap year**
 
-Create a program that requests a year and determines if it is a leap year.
+Create a program that asks for a year and determines whether it's a leap year.
 
 **Rules for a leap year:**
 
-- It is divisible by 4.
-- It is not divisible by 100, unless it is also divisible by 400.
+- It's divisible by 4.
+- It isn't divisible by 100, unless it's also divisible by 400.
 
 <details><summary>Show solution</summary>
 
@@ -121,7 +121,7 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
 
 ### **Exercise 5: Using the ternary operator**
 
-Using the ternary operator, it prompts the user for their age and displays "You are of legal age" if they are 18 or older, and "You are a minor" otherwise.
+Using the ternary operator, ask the user for their age and display "You're an adult" if they're 18 or older, and "You're a minor" otherwise.
 
 <details><summary>Show solution</summary>
 

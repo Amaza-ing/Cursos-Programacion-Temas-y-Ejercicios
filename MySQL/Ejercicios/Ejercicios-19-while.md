@@ -2,15 +2,15 @@
 
 Below you will find 6 practical exercises to work with **WHILE loops** in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Insert multiples of 3**
 
-Create a procedure `insertar_multiplos_tres` that inserts numbers multiples of 3 from 3 to 30 into the `numbers(value)` table.
+Create an `insertar_multiplos_tres` procedure that inserts the multiples of 3 from 3 to 30 into the `numbers(value)` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -30,11 +30,11 @@ DELIMITER ;
 
 ---
 
-### **Exercise 2: Fill in date table**
+### **Exercise 2: Fill a table with dates**
 
-Create a procedure `rellenar_fechas` that inserts the dates from `'2025-01-01'` to `'2025-01-10'` into the table `dates_list(fecha)`.
+Create a `rellenar_fechas` procedure that inserts the dates from `'2025-01-01'` to `'2025-01-10'` into the `dates_list(fecha)` table.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -56,9 +56,9 @@ DELIMITER ;
 
 ### **Exercise 3: Reduce inventory step by step**
 
-Create a procedure `vender_producto` that receives `p_id INT` and `p_cantidad INT`. Subtract 1 from `products_stock(product_id, quantity)` inventory until `p_cantidad` units are sold.
+Create a `vender_producto` procedure that takes `p_id INT` and `p_cantidad INT`. It should subtract 1 from the inventory in `products_stock(product_id, quantity)` until `p_cantidad` units have been sold.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -82,9 +82,9 @@ DELIMITER ;
 
 ### **Exercise 4: Insert powers of 2**
 
-Create a procedure `insertar_potencias_dos` that inserts into `numbers(value)` the powers of 2 from 1 to 1024.
+Create an `insertar_potencias_dos` procedure that inserts the powers of 2 from 1 to 1024 into `numbers(value)`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -106,9 +106,9 @@ DELIMITER ;
 
 ### **Exercise 5: Increase salaries up to a limit**
 
-Create a procedure `incrementar_sueldos` that increases the salary (`salary`) by 50 of all employees in `employees` whose salary is less than 1000, repeating the increase until everyone has at least 1000.
+Create an `incrementar_sueldos` procedure that increases by 50 the salary (`salary`) of all the employees in `employees` whose salary is less than 1000, repeating the increase until everyone earns at least 1000.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -135,9 +135,9 @@ DELIMITER ;
 
 ### **Exercise 6: Countdown**
 
-Create a procedure `contador_regresivo` that starts at `p_inicio INT` and inserts decreasing values into the `numbers(value)` table until it reaches 1.
+Create a `contador_regresivo` procedure that starts at `p_inicio INT` and inserts decreasing values into the `numbers(value)` table until it reaches 1.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$

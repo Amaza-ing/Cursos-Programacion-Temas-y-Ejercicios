@@ -2,11 +2,11 @@
 
 ## **1. Introduction**
 
-JavaScript is a flexible and dynamic language, but this flexibility sometimes generates unexpected or curious behavior. In this topic we will explore some of the quirks and how to handle them correctly.
+JavaScript is a flexible and dynamic language, but this flexibility sometimes leads to unexpected or curious behavior. In this topic, we'll explore some of its quirks and how to handle them correctly.
 
 ---
 
-## **2. Strange Comparisons**
+## **2. Strange comparisons**
 
 JavaScript performs implicit type conversions when comparing values, which can produce unexpected results.
 
@@ -17,14 +17,14 @@ console.log(0 == "0"); // true (conversión implícita)
 console.log(0 === "0"); // false (comparación estricta)
 ```
 
-### **2.2. `null` and `undefined` in Comparisons**
+### **2.2. `null` and `undefined` in comparisons**
 
 ```js
 console.log(null == undefined); // true (se consideran equivalentes)
 console.log(null === undefined); // false (son tipos distintos)
 ```
 
-### **23. Is `NaN` the same as `NaN`?**
+### **2.3. Is `NaN` equal to `NaN`?**
 
 ```js
 console.log(NaN === NaN); // false (NaN nunca es igual a sí mismo)
@@ -33,9 +33,9 @@ console.log(Number.isNaN(NaN)); // true (forma correcta de verificar NaN)
 
 ---
 
-## **3. Strange Array Behavior**
+## **3. Strange array behavior**
 
-### **3.1. Arrays with Empty Spaces**
+### **3.1. Arrays with empty slots**
 
 ```js
 const arr = [1, , 3];
@@ -43,7 +43,7 @@ console.log(arr.length); // 3 (pero el segundo elemento es `empty`)
 console.log(arr[1]); // undefined
 ```
 
-### **3.2. Add Arrays with `+`**
+### **3.2. Adding arrays with `+`**
 
 ```js
 console.log([1, 2, 3] + [4, 5, 6]); // "1,2,34,5,6" (se convierten en strings y se concatenan)
@@ -51,9 +51,9 @@ console.log([1, 2, 3] + [4, 5, 6]); // "1,2,34,5,6" (se convierten en strings y 
 
 ---
 
-## **4. Implicit Type Conversion**
+## **4. Implicit type conversion**
 
-JavaScript tries to automatically convert types in certain operations.
+JavaScript tries to convert types automatically in certain operations.
 
 ### **4.1. Adding numbers with strings**
 
@@ -71,9 +71,9 @@ console.log(false + 1); // 1 (false se convierte en 0)
 
 ---
 
-## **5. Objects and Arrays in Comparisons**
+## **5. Objects and arrays in comparisons**
 
-### **5.1. Objects Compared to Themselves**
+### **5.1. Objects compared to themselves**
 
 ```js
 const obj = {};
@@ -81,7 +81,7 @@ console.log(obj === obj); // true (misma referencia en memoria)
 console.log({} === {}); // false (diferentes referencias en memoria)
 ```
 
-### **5.2. `typeof` of Arrays and `null`**
+### **5.2. `typeof` of arrays and `null`**
 
 ```js
 console.log(typeof []); // "object" (aunque es un array)
@@ -90,9 +90,9 @@ console.log(typeof null); // "object" (error histórico de JavaScript)
 
 ---
 
-## **6. `null` and `undefined` in Mathematical Operations**
+## **6. `null` and `undefined` in mathematical operations**
 
-### **6.1. Sum with `null`**
+### **6.1. Addition with `null`**
 
 ```js
 console.log(null + 1); // 1 (null se convierte en 0)
@@ -108,7 +108,7 @@ console.log(undefined * 5); // NaN (undefined no puede convertirse a un número)
 
 ## **7. Strange behaviors with `typeof`**
 
-### **7.1. `typeof` in unexpected values**
+### **7.1. `typeof` on unexpected values**
 
 ```js
 console.log(typeof NaN); // "number" (aunque no representa un número real)
@@ -127,9 +127,9 @@ console.log(isFinite(1000)); // true
 
 ---
 
-## **8. Curious String Behavior**
+## **8. Curious string behavior**
 
-### **8.1. `String` converted to number automatically**
+### **8.1. `String` automatically converted to a number**
 
 ```js
 console.log("10" * 2); // 20 (convierte el string en número implícitamente)
@@ -137,7 +137,7 @@ console.log("10" - 1); // 9 (también convierte el string a número)
 console.log("10" + 1); // "101" (pero aquí lo trata como una concatenación de string)
 ```
 
-### **8.2. Comparison with `>` and `<` in strings**
+### **8.2. Comparing strings with `>` and `<`**
 
 ```js
 console.log("2" > "12"); // true (comparación lexicográfica, "2" es mayor que "1")
@@ -145,7 +145,7 @@ console.log("2" > "12"); // true (comparación lexicográfica, "2" es mayor que 
 
 ---
 
-## **9. `falsy` and `truthy` Strange Values**
+## **9. Strange `falsy` and `truthy` values**
 
 ### **9.1. Unexpected `falsy` values**
 
@@ -167,16 +167,16 @@ console.log(!!null); // false
 
 ---
 
-## **10. Oddities with Arrays and Objects**
+## **10. Oddities with arrays and objects**
 
-### **10.1. Array Comparison**
+### **10.1. Comparing arrays**
 
 ```js
 console.log([] == []); // false (son referencias distintas en memoria)
 console.log([] == ![]); // true (![] se convierte en false que se convierte en 0 implícitamente y [] es también convertido a 0 a efectos de esta comparación)
 ```
 
-### **10.2. Access non-existent indexes in an array**
+### **10.2. Accessing non-existent indexes in an array**
 
 ```js
 const arr = [1, 2, 3];
@@ -185,7 +185,7 @@ console.log(arr[10]); // undefined (pero no error)
 
 ---
 
-## **11. Functions and their Unusual Behavior**
+## **11. Functions and their unusual behavior**
 
 ### **11.1. Functions with duplicate parameters**
 
@@ -198,7 +198,7 @@ weird(1, 2, 3); // Salida: 3 (el último valor sobrescribe los anteriores)
 
 ---
 
-[![How to create a Watch](https://img.youtube.com/vi/7cQ81kmMIpE/0.jpg)](https://www.youtube.com/watch?v=7cQ81kmMIpE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![How to build a clock](https://img.youtube.com/vi/7cQ81kmMIpE/0.jpg)](https://www.youtube.com/watch?v=7cQ81kmMIpE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -208,6 +208,6 @@ JavaScript is a powerful language, but some of its features can lead to unexpect
 
 ---
 
-[![End of Course](https://img.youtube.com/vi/pP-bbDGJZZE/0.jpg)](https://www.youtube.com/watch?v=pP-bbDGJZZE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![End of the course](https://img.youtube.com/vi/pP-bbDGJZZE/0.jpg)](https://www.youtube.com/watch?v=pP-bbDGJZZE&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---

@@ -1,16 +1,16 @@
 # **Exercises - Topic 5: Conditional Control Structures and Dynamic Lists in Vue.js**
 
-Below you will find 10 practical exercises on conditional control structures and dynamic lists in Vue.
+Below you'll find 10 practical exercises on conditional control structures and dynamic lists in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Show a welcome message only if the user is logged in**
 
-Create an `WelcomeMessage.vue` component that displays a welcome message only when `isLoggedIn` is `true`.
+Create a `WelcomeMessage.vue` component that displays a welcome message only when `isLoggedIn` is `true`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -34,11 +34,11 @@ p {
 
 ---
 
-## **Exercise 2: Switch between two messages based on connection status**
+## **Exercise 2: Switch between two messages based on the connection state**
 
-Create an `ConnectionStatus.vue` component that displays "Connected" or "Disconnected" depending on the value of `isOnline`.
+Create a `ConnectionStatus.vue` component that displays "Conectado" ("Connected") or "Desconectado" ("Disconnected") depending on the value of `isOnline`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -65,9 +65,9 @@ p {
 
 ## **Exercise 3: Show a list of tasks**
 
-Create an `TaskList.vue` component that displays a list of tasks.
+Create a `TaskList.vue` component that displays a list of tasks.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -93,9 +93,9 @@ li {
 
 ## **Exercise 4: Show only products in stock**
 
-Create an `ProductList.vue` component that displays only products whose `inStock` is `true`.
+Create a `ProductList.vue` component that displays only the products whose `inStock` is `true`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -129,11 +129,11 @@ li {
 
 ---
 
-## **Exercise 5: Show message if list is empty**
+## **Exercise 5: Show a message if the list is empty**
 
-Create an `EmptyList.vue` component that displays "No items" if the `items` list is empty.
+Create an `EmptyList.vue` component that displays "No hay elementos" ("No items") if the `items` list is empty.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -157,11 +157,11 @@ p {
 
 ---
 
-## **Exercise 6: Show a user table**
+## **Exercise 6: Show a table of users**
 
-Create an `UserTable.vue` component that displays a table with the name and age of each user.
+Create a `UserTable.vue` component that displays a table with the name and age of each user.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -197,11 +197,11 @@ td {
 
 ---
 
-## **Exercise 7: Show welcome message according to role**
+## **Exercise 7: Show a welcome message based on the role**
 
-Create an `RoleMessage.vue` component that displays a different message if the role is `admin`, `user`, or `guest`.
+Create a `RoleMessage.vue` component that displays a different message depending on whether the role is `admin`, `user` or `guest`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -229,9 +229,9 @@ p {
 
 ## **Exercise 8: Show a list of even numbers**
 
-Create an `EvenNumbers.vue` component that displays only the even numbers in a list.
+Create an `EvenNumbers.vue` component that displays only the even numbers from a list.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -257,11 +257,11 @@ li {
 
 ---
 
-## **Exercise 9: Show details of a product**
+## **Exercise 9: Show a product's details**
 
-Create an `ProductDetails.vue` component that loops through an `product` object and displays its properties.
+Create a `ProductDetails.vue` component that loops through a `product` object and displays its properties.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -291,9 +291,9 @@ li {
 
 ## **Exercise 10: Display a list of names in uppercase**
 
-Create an `UppercaseList.vue` component that displays a list of names transformed to uppercase.
+Create an `UppercaseList.vue` component that displays a list of names converted to uppercase.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>

@@ -2,13 +2,13 @@
 
 ## **1. Introduction to animations and transitions in CSS**
 
-Animations and transitions add dynamism and improve the user experience on a web page. CSS offers specific properties to create visual effects without the need for JavaScript.
+Animations and transitions make a web page more dynamic and improve the user experience. CSS offers specific properties to create visual effects without needing JavaScript.
 
 ---
 
 ## **2. Transitions in CSS**
 
-Transitions allow you to smoothly change the value of a CSS property over a period of time.
+Transitions let you change the value of a CSS property smoothly over a period of time.
 
 ### **Main properties:**
 
@@ -35,18 +35,18 @@ Transitions allow you to smoothly change the value of a CSS property over a peri
 
 In this example, the button background smoothly changes from blue to red when you hover over it.
 
-> Note: With `transition: all` all properties can be affected at the same time.
+> Note: With `transition: all`, you can affect all properties at once.
 
 ---
 
 ## **3. Timing functions (`transition-timing-function`)**
 
-They control the speed of the transition during its execution.
+They control the speed of the transition while it runs.
 
 - `linear`: Constant speed.
-- `ease` (default): Slow start and end with medium speed.
-- `ease-in`: Start slowly.
-- `ease-out`: End slowly.
+- `ease` (default): Slow start and end, with a medium speed.
+- `ease-in`: Starts slowly.
+- `ease-out`: Ends slowly.
 - `ease-in-out`: Slow start and end.
 - `cubic-bezier(n,n,n,n)`: Defines a custom Bézier curve.
 
@@ -68,19 +68,19 @@ They control the speed of the transition during its execution.
 
 ---
 
-## **4. CSS animations**
+## **4. Animations in CSS**
 
-Animations allow you to create sequences of style changes that are more complex than transitions.
+Animations let you create sequences of style changes that are more complex than transitions.
 
 ### **Main properties:**
 
 - `@keyframes`: Defines the animation steps.
 - `animation-name`: Name of the animation.
 - `animation-duration`: Duration of the animation.
-- `animation-timing-function`: Controls acceleration.
+- `animation-timing-function`: Controls the acceleration.
 - `animation-delay`: Delay before starting.
 - `animation-iteration-count`: Number of repetitions.
-- `animation-direction`: Animation direction.
+- `animation-direction`: Direction of the animation.
 - `animation`: Shorthand for the rest of the properties.
 
 ### **Basic example:**
@@ -104,7 +104,7 @@ Animations allow you to create sequences of style changes that are more complex 
 ```
 
 
-In this example, the box will move from left to right infinitely.
+In this example, the box will move from left to right endlessly.
 
 ---
 
@@ -112,19 +112,19 @@ In this example, the box will move from left to right infinitely.
 
 ### **`animation-iteration-count` property**
 
-Defines how many times the animation is executed.
+It defines how many times the animation runs.
 
 - `infinite`: The animation repeats indefinitely.
 - Specific number (`1`, `2`, etc.): Number of repetitions.
 
 ### **`animation-direction` property**
 
-Controls the direction of the animation.
+It controls the direction of the animation.
 
-- `normal`: Standard execution.
-- `reverse`: Start from the end.
-- `alternate`: Alternate addresses in each iteration.
-- `alternate-reverse`: Toggle starting in reverse.
+- `normal`: Standard playback.
+- `reverse`: Starts from the end.
+- `alternate`: Alternates direction on each iteration.
+- `alternate-reverse`: Alternates, starting in reverse.
 
 ### **Example:**
 
@@ -149,9 +149,9 @@ Controls the direction of the animation.
 ```
 
 
-In this example, a rotating magazine effect is created.
+In this example, a spinning loader effect is created.
 
-You can also control the animation more closely by specifying more percentage values:
+You can also control the animation in more detail by specifying more percentage values:
 
 ```css
 @keyframes mover {
@@ -168,13 +168,13 @@ You can also control the animation more closely by specifying more percentage va
 ```
 
 
-In this example, the animation now causes, in addition to the above, to change color to green halfway through.
+In this example, besides doing all of the above, the animation now also changes the color to green halfway through.
 
 ---
 
-## **6. Combine transitions and animations**
+## **6. Combining transitions and animations**
 
-It is possible to combine both effects to achieve more dynamic results.
+You can combine both effects to get more dynamic results.
 
 ### **Example:**
 
@@ -209,12 +209,12 @@ Here, the button grows and shrinks while changing color on hover.
 
 ---
 
-## **7. Good practices with animations and transitions**
+## **7. Best practices for animations and transitions**
 
 - Avoid animating properties that affect performance, such as `width` and `height`.
 - Use `transform` and `opacity` for smoother animations.
-- Maintain adequate durations to improve the user experience.
-- Do not abuse animations so as not to overload the interface.
+- Keep durations reasonable to improve the user experience.
+- Don't overuse animations, so the interface doesn't feel overloaded.
 
 ---
 

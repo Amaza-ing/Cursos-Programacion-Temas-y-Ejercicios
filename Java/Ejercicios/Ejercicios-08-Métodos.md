@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** to work with **methods**, parameters, arguments and return values.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Method without parameters or return
+## Exercise 1: Method with no parameters or return value
 
-Create a method called `printHello` that displays the `"Hello Java"` message in the console.  
+Create a method called `printHello` that prints the message `"Hello Java"` to the console.  
 Call the method from `main`.
 
 <details><summary>Show solution</summary>
@@ -31,10 +31,10 @@ public class Main {
 
 ## Exercise 2: Method with a parameter
 
-Create a method `printName` that receives an `String` called `name` and returns  
+Create a method `printName` that receives a `String` called `name` and prints  
 `"Name: <name>"`.
 
-Calls the method passing `"Laura"` as an argument.
+Call the method, passing `"Laura"` as an argument.
 
 <details><summary>Show solution</summary>
 
@@ -56,8 +56,8 @@ public class Main {
 
 ## Exercise 3: Method with two parameters and `return`
 
-Create a method `sum` that receives two `int` and returns their sum.  
-Save the result in a variable and display it in the console.
+Create a method `sum` that receives two `int` values and returns their sum.  
+Store the result in a variable and print it to the console.
 
 <details><summary>Show solution</summary>
 
@@ -101,9 +101,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Method that builds an `String`
+## Exercise 5: Method that builds a `String`
 
-Create a method `buildMessage` that takes a name and age, and returns text in the format:
+Create a method `buildMessage` that receives a name and an age and returns a text in this format:
 
 ```
 Name: Laura | Age: 28
@@ -130,8 +130,8 @@ public class Main {
 
 ## Exercise 6: Method that uses another method
 
-Create a method `doubleNumber` that returns double a number.  
-Then create another `printDouble` method that uses `doubleNumber` to print the result.
+Create a method `doubleNumber` that returns twice a number.  
+Then create another method, `printDouble`, that uses `doubleNumber` to print the result.
 
 <details><summary>Show solution</summary>
 
@@ -188,7 +188,7 @@ public class Main {
 ## Exercise 8: Method with `double` and calculation
 
 Create a method `calculateArea` that receives the radius of a circle (`double`)  
-and return the area (`π * r * r`). Use `Math.PI`.
+and returns the area (`π * r * r`). Use `Math.PI`.
 
 <details><summary>Show solution</summary>
 
@@ -211,11 +211,11 @@ public class Main {
 
 ## Exercise 9: Method that validates text
 
-Create a method `isValidName` that receives an `String` and returns `true` if:
+Create a method `isValidName` that receives a `String` and returns `true` if:
 
-- Not `null`
+- It is not `null`
 - It is not empty
-- Not blank
+- It is not blank
 
 <details><summary>Show solution</summary>
 
@@ -240,9 +240,9 @@ public class Main {
 
 Create a program that:
 
-- Have an `printWelcome` method
-- Have a method `calculateScore` that receives two numbers and returns a result
-- From `main`, call both methods and display the result
+- Has a `printWelcome` method
+- Has a method `calculateScore` that receives two numbers and returns a result
+- Calls both methods from `main` and displays the result
 
 <details><summary>Show solution</summary>
 

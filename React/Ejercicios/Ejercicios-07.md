@@ -2,19 +2,19 @@
 
 Below you will find **10 practical exercises** on `useState`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Counter with decrement**
 
-Create an `Stepper.jsx` component that has:
+Create a `Stepper.jsx` component that has:
 
-- A state `count` with initial value `5`.
-- A *+** button that increases.
-- A **-** button that decreases.
+- A `count` state with initial value `5`.
+- A **+** button that increments it.
+- A **-** button that decrements it.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -46,15 +46,15 @@ export default Stepper;
 
 ---
 
-## **Exercise 2: State reset**
+## **Exercise 2: Resetting the state**
 
-Create an `ResettableCounter.jsx` component with:
+Create a `ResettableCounter.jsx` component with:
 
-- Initial `count` state `0`.
-- **Add** button that increases.
-- **Reset** button to set it to `0`.
+- A `count` state with initial value `0`.
+- An **Add** button that increments it.
+- A **Reset** button that sets it to `0`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -88,16 +88,16 @@ export default ResettableCounter;
 
 ## **Exercise 3: Toggle with dynamic text**
 
-Create an `PowerSwitch.jsx` component with:
+Create a `PowerSwitch.jsx` component with:
 
-- Initial `isOn` boolean state `false`.
+- A boolean `isOn` state with initial value `false`.
 - A button that changes the state.
 - A text that shows:
 
   - **"Power: ON"** if `isOn` is `true`.
   - **"Power: OFF"** if `isOn` is `false`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -126,13 +126,13 @@ export default PowerSwitch;
 
 ## **Exercise 4: Controlled input with character counter**
 
-Create an `BioInput.jsx` component with:
+Create a `BioInput.jsx` component with:
 
-- Initial `bio` state `""`.
+- A `bio` state with initial value `""`.
 - A controlled input.
-- An `p` showing: **"Chars: X"**, where X is `bio.length`.
+- A `p` showing: **"Chars: X"**, where X is `bio.length`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -163,13 +163,13 @@ export default BioInput;
 
 Create an `AgeInput.jsx` component with:
 
-- Initial `age` state `0`.
-- A controlled `number` type input.
-- An `p` showing: **"Age: {age}"**.
+- An `age` state with initial value `0`.
+- A controlled input of type `number`.
+- A `p` showing: **"Age: {age}"**.
 
 Hint: `event.target.value` arrives as a string.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -196,9 +196,9 @@ export default AgeInput;
 
 ---
 
-## **Exercise 6: Incorrect update (fixes the bug)**
+## **Exercise 6: Incorrect update (fix the bug)**
 
-This component tries to increment 2 times, but it doesn't always work as you expect:
+This component tries to increment twice, but it doesn't always work as you expect:
 
 ```js
 import { useState } from "react";
@@ -217,9 +217,9 @@ function DoubleAdd() {
 export default DoubleAdd;
 ```
 
-Correct it so that it actually adds up to 2.
+Fix it so that it actually adds 2.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 You have to use the functional form:
 
@@ -246,13 +246,13 @@ export default DoubleAdd;
 
 ## **Exercise 7: Clear an input with a button**
 
-Create an `ClearableInput.jsx` component with:
+Create a `ClearableInput.jsx` component with:
 
-- Initial `text` state `""`.
-- Controlled input.
-- **Clear** button that puts `text` in `""`.
+- A `text` state with initial value `""`.
+- A controlled input.
+- A **Clear** button that sets `text` to `""`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -285,13 +285,13 @@ export default ClearableInput;
 
 ## **Exercise 8: Switch between two texts**
 
-Create an `LanguageToggle.jsx` component with:
+Create a `LanguageToggle.jsx` component with:
 
-- Initial `language` state `"EN"`.
+- A `language` state with initial value `"EN"`.
 - A button that toggles between `"EN"` and `"ES"`.
-- An `p` showing: **"Language: EN"** or **"Language: ES"**.
+- A `p` showing: **"Language: EN"** or **"Language: ES"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -320,11 +320,11 @@ export default LanguageToggle;
 
 ## **Exercise 9: Avoid negative state**
 
-Create an `NonNegativeCounter.jsx` component with:
+Create a `NonNegativeCounter.jsx` component with:
 
-- Initial `count` state `0`.
-- **-** button that subtracts, but never leave the counter below `0`.
-<details><summary>Show Solution</summary>
+- A `count` state with initial value `0`.
+- A **-** button that subtracts, but never lets the counter go below `0`.
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -356,11 +356,11 @@ export default NonNegativeCounter;
 
 ---
 
-## **Exercise 10: Mini-decision case (choose the best way)**
+## **Exercise 10: Mini decision case (choose the best way)**
 
-You want to update an `count` status based on the previous value.
+You want to update a `count` state based on its previous value.
 
-What is the most recommended way?
+Which is the most recommended way?
 
 1.
 
@@ -374,7 +374,7 @@ setCount(count + 1);
 setCount((prevCount) => prevCount + 1);
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 The most recommended way is **2**:
 
@@ -382,7 +382,7 @@ The most recommended way is **2**:
 setCount((prevCount) => prevCount + 1);
 ```
 
-Reason: It is safer when the new state depends on the previous one.
+Reason: it is safer when the new state depends on the previous one.
 
 </details>
 

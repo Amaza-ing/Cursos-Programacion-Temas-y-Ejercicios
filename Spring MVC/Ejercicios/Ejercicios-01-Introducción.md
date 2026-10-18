@@ -34,7 +34,7 @@ spring-mvc-books
                     └── welcome.jsp
 ```
 
-Indicate what function each of these files or folders has:
+Say what each of these files or folders is for:
 
 ```text
 pom.xml
@@ -47,7 +47,7 @@ WEB-INF/views
 ```
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -55,7 +55,7 @@ WEB-INF/views
 pom.xml
 ```
 
-It is the Maven configuration file. Defines the project name, Java version, application packaging, and required dependencies, such as `spring-webmvc` or `jakarta.servlet-api`.
+It's the Maven configuration file. It defines the project name, the Java version, the application's packaging and the required dependencies, such as `spring-webmvc` or `jakarta.servlet-api`.
 
 ---
 
@@ -63,7 +63,7 @@ It is the Maven configuration file. Defines the project name, Java version, appl
 web.xml
 ```
 
-It is the deployment descriptor of the web application. In it, the `DispatcherServlet` is configured, which will be the main Spring MVC servlet.
+It's the web application's deployment descriptor. It configures the `DispatcherServlet`, which will be the main Spring MVC servlet.
 
 ---
 
@@ -71,7 +71,7 @@ It is the deployment descriptor of the web application. In it, the `DispatcherSe
 app-servlet.xml
 ```
 
-It is the Spring MVC configuration file. Drivers, URL mappings, the `ViewResolver` and static resource configuration can be registered here.
+It's the Spring MVC configuration file. This is where you can register controllers, URL mappings, the `ViewResolver` and the static resource configuration.
 
 ---
 
@@ -79,7 +79,7 @@ It is the Spring MVC configuration file. Drivers, URL mappings, the `ViewResolve
 WelcomeController.java
 ```
 
-It's the controller. Its function is to receive a request, prepare the necessary data and return an `ModelAndView` indicating which view should be shown.
+It's the controller. Its function is to receive a request, prepare the necessary data and return a `ModelAndView` indicating which view should be shown.
 
 ---
 
@@ -87,7 +87,7 @@ It's the controller. Its function is to receive a request, prepare the necessary
 welcome.jsp
 ```
 
-It is the JSP view. Receives the data sent by the controller and generates the final HTML that the user will see.
+It's the JSP view. It receives the data sent by the controller and generates the final HTML that the user will see.
 
 ---
 
@@ -95,7 +95,7 @@ It is the JSP view. Receives the data sent by the controller and generates the f
 resources/css/styles.css
 ```
 
-It is a static resource. Contains CSS styles to visually format pages.
+It's a static resource. It contains the CSS styles that give the pages their visual format.
 
 ---
 
@@ -103,7 +103,7 @@ It is a static resource. Contains CSS styles to visually format pages.
 WEB-INF/views
 ```
 
-It is the folder where we save the JSP views. Being inside `WEB-INF`, the user cannot directly access those files from the browser. They can only be displayed through Spring MVC.
+It's the folder where we save the JSP views. Since it's inside `WEB-INF`, the user can't access those files directly from the browser. They can only be displayed through Spring MVC.
 
 </details>
 
@@ -113,14 +113,14 @@ It is the folder where we save the JSP views. Being inside `WEB-INF`, the user c
 
 ## Statement
 
-We want to create an application called `spring-mvc-library` packaged as `.war` file.
+We want to create an application called `spring-mvc-library` packaged as a `.war` file.
 
 Complete the following `pom.xml` to include:
 
 1. Java version 17 or higher.
-2.SpringMVC.
+2. Spring MVC.
 3. Jakarta Servlet API.
-4. `war` type packaging.
+4. `war` packaging.
 5. Final file name: `spring-mvc-library`.
 
 Incomplete code:
@@ -144,7 +144,7 @@ Incomplete code:
 ```
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -233,7 +233,7 @@ allows you to compile classes that use the Servlet API. The `scope` is `provided
 
 ---
 
-# Exercise 3 – Set `DispatcherServlet` to `web.xml`
+# Exercise 3 - Configure `DispatcherServlet` in `web.xml`
 
 ## Statement
 
@@ -246,7 +246,7 @@ Create the `web.xml` file for a Spring MVC application with these conditions:
 5. All requests must go through the servlet.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -297,7 +297,7 @@ The parameter:
 <contextConfigLocation>
 ```
 
-It is not written directly as a tag, but inside `init-param`:
+isn't written directly as a tag, but inside `init-param`:
 ```xml
 <init-param>
     <param-name>contextConfigLocation</param-name>
@@ -313,22 +313,22 @@ Finally, the mapping:
 <url-pattern>/</url-pattern>
 ```
 
-makes requests come in through `DispatcherServlet`.
+makes requests go through `DispatcherServlet`.
 
 </details>
 
 ---
 
-# Exercise 4 – Create a classic controller with `ModelAndView`
+# Exercise 4 - Create a classic controller with `ModelAndView`
 
 ## Statement
 
-Create a driver named `LibraryHomeController` that meets these conditions:
+Create a controller named `LibraryHomeController` that meets these conditions:
 
 1. It must be in the `com.example.springmvclibrary.controller` package.
-2. You must implement Spring MVC's `Controller` interface.
-3. It should return the logical view `library-home`.
-4. You must send three pieces of information to the view:
+2. It must implement Spring MVC's `Controller` interface.
+3. It must return the logical view `library-home`.
+4. It must send three pieces of data to the view:
 
 ```text
 pageTitle = Biblioteca Spring MVC
@@ -337,7 +337,7 @@ sectionName = Inicio de la biblioteca
 ```
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -375,7 +375,7 @@ The class implements:
 Controller
 ```
 
-that's why you must override the method:
+so it must override the method:
 
 ```java
 handleRequest(HttpServletRequest request, HttpServletResponse response)
@@ -424,15 +424,15 @@ ${pageTitle}
 
 Create the file `library-servlet.xml` so that:
 
-1. Register the `LibraryHomeController` driver as a bean.
+1. It registers the `LibraryHomeController` controller as a bean.
 2. The `/` URL points to that controller.
-3. The URL `/library` also points to that controller.
-4. JSP views are inside `/WEB-INF/views/`.
-5. The views have extension `.jsp`.
-6. Static resources are inside `/resources/`.
+3. The `/library` URL also points to that controller.
+4. The JSP views are inside `/WEB-INF/views/`.
+5. The views have the `.jsp` extension.
+6. The static resources are inside `/resources/`.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -490,7 +490,7 @@ Then we associate URLs with that controller:
 <prop key="/library">libraryHomeController</prop>
 ```
 
-This means that both `/` and `/library` will run the same driver.
+This means that both `/` and `/library` will run the same controller.
 
 The `ViewResolver` converts a logical name like:
 
@@ -498,7 +498,7 @@ The `ViewResolver` converts a logical name like:
 library-home
 ```
 
-on this actual route:
+into this actual path:
 
 ```text
 /WEB-INF/views/library-home.jsp
@@ -536,7 +536,7 @@ The view must:
 6. Include a link to `/library` using `pageContext.request.contextPath`.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -595,15 +595,15 @@ ${mainMessage}
 ${sectionName}
 ```
 
-They come from the controller.
+come from the controller.
 
-For example, this controller data:
+For example, this piece of data from the controller:
 
 ```java
 modelAndView.addObject("pageTitle", "Biblioteca Spring MVC");
 ```
 
-It is displayed in JSP like this:
+is displayed in the JSP like this:
 
 ```jsp
 ${pageTitle}
@@ -621,7 +621,7 @@ so that it works even if the application is deployed with another context name.
 
 ---
 
-# Exercise 7 – Create a CSS resource and configure it correctly
+# Exercise 7 - Create a CSS resource and configure it correctly
 
 ## Statement
 
@@ -631,17 +631,17 @@ Create a CSS file called:
 src/main/webapp/resources/css/library.css
 ```
 
-You should apply these styles:
+It must apply these styles:
 
-1. The `body` must not have margin.
+1. The `body` must not have a margin.
 2. The font must be Arial or sans-serif.
-3. The background must be clear.
+3. The background must be light.
 4. The main card must be centered.
-5. The card must have a white background, rounded edges and shadow.
-6. The message should have a slightly larger font size.
+5. The card must have a white background, rounded corners and a shadow.
+6. The message must have a slightly larger font size.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -696,13 +696,13 @@ The file must be in:
 src/main/webapp/resources/css/library.css
 ```
 
-And in the XML this configuration must exist:
+And this configuration must exist in the XML:
 
 ```xml
 <mvc:resources mapping="/resources/**" location="/resources/" />
 ```
 
-If that line is missing, the JSP may load, but the CSS may not be applied.
+If that line is missing, the JSP may load, but the CSS won't be applied.
 
 In the JSP we load it with:
 
@@ -739,7 +739,7 @@ HTML final
 ```
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -775,7 +775,7 @@ The configured servlet is:
 4. DispatcherServlet carga la configuración de library-servlet.xml.
 ```
 
-That setting was indicated in `web.xml`:
+That was set in `web.xml`:
 
 ```xml
 <param-value>/WEB-INF/spring/library-servlet.xml</param-value>
@@ -791,13 +791,13 @@ In `library-servlet.xml` there is this mapping:
 <prop key="/library">libraryHomeController</prop>
 ```
 
-Therefore, Spring knows to run the handler called `libraryHomeController`.
+Therefore, Spring knows it must run the controller called `libraryHomeController`.
 
 ```text
 6. Spring ejecuta LibraryHomeController.
 ```
 
-The `handleRequest` method creates an `ModelAndView`:
+The `handleRequest` method creates a `ModelAndView`:
 
 ```java
 ModelAndView modelAndView = new ModelAndView("library-home");
@@ -832,7 +832,7 @@ That's why it converts:
 library-home
 ```
 
-in:
+into:
 
 ```text
 /WEB-INF/views/library-home.jsp
@@ -842,7 +842,7 @@ in:
 9. Se procesa la JSP.
 ```
 
-The JSP uses the data received:
+The JSP uses the data it received:
 
 ```jsp
 ${pageTitle}
@@ -854,7 +854,7 @@ ${sectionName}
 10. Tomcat devuelve el HTML final al navegador.
 ```
 
-The user does not see the JSP file directly. View the HTML generated from the JSP.
+The user doesn't see the JSP file directly. They see the HTML generated from the JSP.
 
 </details>
 
@@ -868,27 +868,27 @@ Extend the library application by creating a second page called `/info`.
 
 You must meet these conditions:
 
-1. Create a driver called `LibraryInfoController`.
-2. The controller should return the logical view `library-info`.
-3. You must send this data to the model:
+1. Create a controller called `LibraryInfoController`.
+2. The controller must return the logical view `library-info`.
+3. It must send this data to the model:
 
 ```text
 pageTitle = Información de la biblioteca
 mainMessage = Esta biblioteca permite consultar libros y autores.
 ```
 
-4. Register the driver in `library-servlet.xml`.
+4. Register the controller in `library-servlet.xml`.
 5. Map the `/info` URL to that controller.
 6. Create the `library-info.jsp` view.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
 ### 1. Create `LibraryInfoController.java`
 
-Route:
+Path:
 
 ```text
 src/main/java/com/example/springmvclibrary/controller/LibraryInfoController.java
@@ -923,7 +923,7 @@ public class LibraryInfoController implements Controller {
 
 ---
 
-### 2. Register the driver in `library-servlet.xml`
+### 2. Register the controller in `library-servlet.xml`
 
 We add this bean:
 
@@ -934,7 +934,7 @@ We add this bean:
 
 ---
 
-### 3. Add `/info` mapping
+### 3. Add the `/info` mapping
 
 Inside `SimpleUrlHandlerMapping`, we add:
 
@@ -960,7 +960,7 @@ The complete block of mappings can look like this:
 
 ### 4. Create `library-info.jsp`
 
-Route:
+Path:
 
 ```text
 src/main/webapp/WEB-INF/views/library-info.jsp
@@ -1024,7 +1024,7 @@ LibraryInfoController → library-info.jsp
 
 ---
 
-# Exercise 10 - Correct common configuration errors
+# Exercise 10 - Fix common configuration errors
 
 ## Statement
 
@@ -1048,7 +1048,7 @@ A student has this configuration in `library-servlet.xml`:
 </bean>
 ```
 
-And your controller returns:
+And their controller returns:
 ```java
 return new ModelAndView("library-home");
 ```
@@ -1059,10 +1059,10 @@ The JSP is at:
 /WEB-INF/views/library-home.jsp
 ```
 
-Explain what errors there are and correct the configuration.
+Explain what the errors are and fix the configuration.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -1070,9 +1070,9 @@ There are two main errors.
 
 ---
 
-## Error 1: Mapping points to a bean that does not exist
+## Error 1: the mapping points to a bean that does not exist
 
-In XML it appears:
+The XML has:
 
 ```xml
 <prop key="/library">homeController</prop>
@@ -1105,7 +1105,7 @@ Correction:
 
 ---
 
-## Error 2: `ViewResolver` looks in the wrong folder
+## Error 2: the `ViewResolver` looks in the wrong folder
 
 The `ViewResolver` has:
 
@@ -1178,11 +1178,11 @@ Spring will correctly search for:
 
 ---
 
-# Exercise 11 – Create a complete applet from scratch
+# Exercise 11 - Create a complete mini application from scratch
 
 ## Statement
 
-Create a Spring MVC applet called `spring-mvc-events`.
+Create a Spring MVC mini application called `spring-mvc-events`.
 
 The application will have a single page accessible from:
 
@@ -1209,7 +1209,7 @@ You must create:
 6. `events.css`.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -1269,7 +1269,7 @@ You must create:
 
 ## 2. `web.xml`
 
-Route:
+Path:
 
 ```text
 src/main/webapp/WEB-INF/web.xml
@@ -1311,7 +1311,7 @@ Code:
 
 ## 3. `events-servlet.xml`
 
-Route:
+Path:
 
 ```text
 src/main/webapp/WEB-INF/spring/events-servlet.xml
@@ -1357,7 +1357,7 @@ Code:
 
 ## 4. `EventsHomeController.java`
 
-Route:
+Path:
 
 ```text
 src/main/java/com/example/springmvcevents/controller/EventsHomeController.java
@@ -1395,7 +1395,7 @@ public class EventsHomeController implements Controller {
 
 ## 5. `events-home.jsp`
 
-Route:
+Path:
 
 ```text
 src/main/webapp/WEB-INF/views/events-home.jsp
@@ -1444,7 +1444,7 @@ Code:
 
 ## 6. `events.css`
 
-Route:
+Path:
 
 ```text
 src/main/webapp/resources/css/events.css
@@ -1489,23 +1489,23 @@ a {
 
 ## Expected result
 
-Upon entering:
+When the user goes to:
 
 ```text
 http://localhost:8080/spring-mvc-events/events
 ```
 
-The user should see the event panel home page.
+they should see the home page of the events dashboard.
 
 </details>
 
 ---
 
-# Exercise 12 - Final diagnosis: find why a 404 appears
+# Exercise 12 - Final diagnosis: find out why a 404 appears
 
 ## Statement
 
-A Spring MVC application boots correctly in Tomcat, but upon entering:
+A Spring MVC application starts correctly in Tomcat, but when you go to:
 
 ```text
 http://localhost:8080/spring-mvc-events/events
@@ -1558,10 +1558,10 @@ The `events-servlet.xml` file contains:
 </bean>
 ```
 
-Detect errors and correct them.
+Find the errors and fix them.
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Solution
 
@@ -1569,21 +1569,21 @@ There are two main errors.
 
 ---
 
-##Error 1: servlet name does not match
+## Error 1: the servlet name does not match
 
-In the servlet declaration it appears:
+The servlet declaration has:
 
 ```xml
 <servlet-name>event</servlet-name>
 ```
 
-But in the mapping it appears:
+But the mapping has:
 
 ```xml
 <servlet-name>events</servlet-name>
 ```
 
-They must be called exactly the same.
+They must have exactly the same name.
 
 We can fix it by using `events` in both places:
 
@@ -1608,7 +1608,7 @@ We can fix it by using `events` in both places:
 
 ---
 
-## Error 2: The configured URL does not match the URL the user visits
+## Error 2: the configured URL does not match the URL the user visits
 
 The user enters:
 
@@ -1616,7 +1616,7 @@ The user enters:
 /events
 ```
 
-But in `events-servlet.xml` it is set:
+But `events-servlet.xml` has:
 
 ```xml
 <prop key="/event">eventsHomeController</prop>

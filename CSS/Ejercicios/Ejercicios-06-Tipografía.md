@@ -10,7 +10,7 @@ Try to solve them before consulting the solution.
 
 ### **Exercise 1: Apply a specific font**
 
-Defines a paragraph with the source `Arial` and a supporting source `sans-serif`.
+Define a paragraph with the font `Arial` and the fallback font `sans-serif`.
 
 <details><summary>Show solution</summary>
 
@@ -32,7 +32,7 @@ p {
 
 ### **Exercise 2: Modify the font size**
 
-Creates a title `<h1>` with a font size of `32px`.
+Create an `<h1>` heading with a font size of `32px`.
 
 <details><summary>Show solution</summary>
 
@@ -54,7 +54,7 @@ h1 {
 
 ### **Exercise 3: Apply bold and italics**
 
-Set some text to bold and some to italic using `font-weight` and `font-style`.
+Make one text bold and another italic using `font-weight` and `font-style`.
 
 <details><summary>Show solution</summary>
 
@@ -78,9 +78,9 @@ Set some text to bold and some to italic using `font-weight` and `font-style`.
 
 ---
 
-### **Exercise 4: Using `letter-spacing` and `line-height`**
+### **Exercise 4: Use `letter-spacing` and `line-height`**
 
-Creates a paragraph with letter spacing of `2px` and line spacing of `1.5`.
+Create a paragraph with a letter spacing of `2px` and a line height of `1.5`.
 
 <details><summary>Show solution</summary>
 
@@ -105,7 +105,7 @@ p {
 
 ### **Exercise 5: Import a font from Google Fonts**
 
-Import the font `Roboto` from Google Fonts and apply it to the entire body of the document.
+Import the `Roboto` font from Google Fonts and apply it to the whole body of the document.
 
 <details><summary>Show solution</summary>
 

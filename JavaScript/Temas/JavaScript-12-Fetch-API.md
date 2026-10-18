@@ -1,16 +1,16 @@
-# **Topic 12: Requests to an API with `fetch()` in JavaScript**
+# **Topic 12: API requests with `fetch()` in JavaScript**
 
 ## **1. Introduction**
 
-JavaScript allows you to make HTTP requests to servers and external APIs using the `fetch()` function. This method allows us to obtain data asynchronously and work with it in our code.
+JavaScript lets you make HTTP requests to servers and external APIs using the `fetch()` function. This method lets us get data asynchronously and work with it in our code.
 
 ---
 
 ## **2. What is `fetch()`?**
 
-`fetch()` is a function built into JavaScript that allows you to easily make HTTP requests and returns a **promise** that is resolved with the server's response.
+`fetch()` is a function built into JavaScript that lets you make HTTP requests easily and returns a **promise** that resolves with the server's response.
 
-In order to obtain the data we need from this response we must transform it with the `.json()` function that will return another promise, so typically a request to an API using `fetch()` will look like this:
+To get the data we need from this response, we have to transform it with the `.json()` function, which returns another promise, so a request to an API using `fetch()` typically looks like this:
 
 ### **Basic syntax**
 
@@ -36,7 +36,7 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 
 ---
 
-## **3. Make a GET request with `async/await`**
+## **3. Making a GET request with `async/await`**
 
 We can also use `async/await` to make the code cleaner and more structured.
 
@@ -58,7 +58,7 @@ fetchPost();
 
 ---
 
-## **4. Send data with a POST request**
+## **4. Sending data with a POST request**
 
 To send data to an API, we can make a POST request and add a body (`body`) in JSON format.
 
@@ -89,7 +89,7 @@ createUser();
 
 ## **5. Other HTTP requests (`PUT`, `PATCH`, `DELETE`)**
 
-### **5.1. Update a post with `PUT`**
+### **5.1. Updating a post with `PUT`**
 
 `PUT` completely replaces an existing resource.
 
@@ -119,9 +119,9 @@ async function updateUser() {
 updateUser();
 ```
 
-### **5.2. Partially update with `PATCH`**
+### **5.2. Partial updates with `PATCH`**
 
-`PATCH` allows you to modify only some properties of a resource without replacing it completely.
+`PATCH` lets you modify just some properties of a resource without replacing it completely.
 
 ```js
 async function patchUser() {
@@ -148,7 +148,7 @@ async function patchUser() {
 patchUser();
 ```
 
-### **5.3. Delete a resource with `DELETE`**
+### **5.3. Deleting a resource with `DELETE`**
 
 ```js
 async function deleteUser() {
@@ -172,9 +172,9 @@ deleteUser();
 
 ---
 
-## **6. Error Handling in `fetch()`**
+## **6. Error handling in `fetch()`**
 
-The `fetch()` method **does not automatically raise an error** if the server response is an error code (such as 404 or 500). You need to handle this manually.
+The `fetch()` method **doesn't automatically throw an error** if the server responds with an error code (such as 404 or 500). You need to handle this manually.
 
 ```js
 async function fetchWithErrorHandling() {
@@ -200,8 +200,8 @@ fetchWithErrorHandling();
 ## **7. Conclusion**
 
 - `fetch()` is the standard way to make HTTP requests in JavaScript.
-- `GET`, `POST`, `PUT`, `PATCH` and `DELETE` requests can be made.
-- `async/await` allows you to write clearer and more manageable code.
-- It is important to handle errors correctly to avoid unexpected failures.
+- You can make `GET`, `POST`, `PUT`, `PATCH` and `DELETE` requests.
+- `async/await` lets you write clearer, more manageable code.
+- It's important to handle errors properly to avoid unexpected failures.
 
-In the next topic, we will explore how to select, manipulate and create elements in the DOM to have dynamic web pages.
+In the next topic, we'll explore how to select, manipulate and create elements in the DOM to build dynamic web pages.

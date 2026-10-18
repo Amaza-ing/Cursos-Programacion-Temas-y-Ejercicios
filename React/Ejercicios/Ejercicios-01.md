@@ -2,7 +2,7 @@
 
 Below, you will find **5 practical exercises** on the contents of Topic 1.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -16,7 +16,7 @@ Create a React project with Vite called `react-starter`.
 - Enter the folder.
 - Install dependencies.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 npm create vite@latest react-starter
@@ -28,19 +28,19 @@ npm install
 
 ---
 
-## **Exercise 2: Raise the server and locate the URL**
+## **Exercise 2: Start the server and find the URL**
 
-Raise the project's development server and write the local URL where the app will be seen.
+Start the project's development server and write down the local URL where you'll see the app.
 
-**Hint:** the command is the development script and Vite usually uses the `5173` port.
+**Hint:** the command is the development script, and Vite usually uses port `5173`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sh
 npm run dev
 ```
 
-The app will normally be seen in:
+You'll normally see the app at:
 
 ```
 http://localhost:5173
@@ -52,12 +52,12 @@ http://localhost:5173
 
 ## **Exercise 3: Modify `App.jsx` to display dynamic data**
 
-Edit `src/App.jsx` so that:
+Edit `src/App.jsx` so that it:
 
-- Display a title with the text **"React Starter"**.
-- Display a paragraph with the current year (for example: `2025`) using a variable called `currentYear`.
+- Displays a title with the text **"React Starter"**.
+- Displays a paragraph with the current year (for example: `2025`) using a variable called `currentYear`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function App() {
@@ -78,15 +78,15 @@ export default App;
 
 ---
 
-## **Exercise 4: Understanding the entry point (`main.jsx`)**
+## **Exercise 4: Understand the entry point (`main.jsx`)**
 
 Answer:
 
-1. What file is React “mounted” in the DOM?
-2. What id does the HTML element have where the application is rendered?
-3. Which component is rendered as root?
+1. In which file is React “mounted” on the DOM?
+2. What is the id of the HTML element where the application is rendered?
+3. Which component is rendered as the root?
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 1. In `src/main.jsx`.
 2. The id is `root` (it is in `index.html`).
@@ -100,11 +100,11 @@ Answer:
 
 Without using conditional rendering yet (more on that later), create the following in `App.jsx`:
 
-- An `userName` variable with your name.
+- A `userName` variable with your name.
 - An `h2` that says: **"Hello, {userName}"**.
-- An `p` that displays the result of `2 + 3` within JSX.
+- A `p` that displays the result of `2 + 3` inside JSX.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function App() {

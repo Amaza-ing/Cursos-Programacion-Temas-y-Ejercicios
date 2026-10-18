@@ -1,16 +1,16 @@
-# **Exercises - Topic 12: Management of Reactive Forms with `FormGroup` and `FormControl`**
+# **Exercises - Topic 12: Managing Reactive Forms with `FormGroup` and `FormControl`**
 
 ## **Instructions:**
 
 Below you will find exercises on how to manage reactive forms in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Create a Reactive Form with `FormGroup`**
+### **Exercise 1: Create a reactive form with `FormGroup`**
 
-Creates a reactive form with the fields `name` and `email` and displays the data entered in the console when submitting the form.
+Create a reactive form with the `name` and `email` fields and display the data entered in the console when the form is submitted.
 
 <details><summary>Show solution</summary>
 
@@ -54,9 +54,9 @@ export class FormComponent {
 
 ---
 
-### **Exercise 2: Add Validations to a Form**
+### **Exercise 2: Add validations to a form**
 
-Add validations so that the `name` field is required and has at least 3 characters, and so that the `email` field is required and has email format.
+Add validations so that the `name` field is required and has at least 3 characters, and the `email` field is required and has a valid email format.
 
 <details><summary>Show solution</summary>
 
@@ -100,9 +100,9 @@ export class FormComponent {
 
 ---
 
-### **Exercise 3: Detect Changes in Real Time**
+### **Exercise 3: Detect changes in real time**
 
-Displays the form values in the console every time the user makes a change.
+Display the form values in the console every time the user makes a change.
 
 <details><summary>Show solution</summary>
 

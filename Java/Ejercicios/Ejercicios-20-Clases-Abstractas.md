@@ -1,8 +1,8 @@
 # Exercises - Topic 20: Abstract classes and abstract methods
 
-Below you will find **10 practical exercises** on **abstract classes** and **abstract methods**: `abstract` declaration, bodyless methods, mandatory implementation in subclasses, constructors in abstract classes, `@Override`, polymorphism with lists, and a first comparison with “normal” classes.
+Below you will find **10 practical exercises** on **abstract classes** and **abstract methods**: the `abstract` declaration, methods without a body, mandatory implementation in subclasses, constructors in abstract classes, `@Override`, polymorphism with lists, and a first comparison with “normal” classes.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -14,9 +14,9 @@ Create an abstract class `Shape` with an abstract method:
 public abstract double area();
 ```
 
-Create a class `Square extends Shape` with attribute `side` and that implements `area()`.
+Create a class `Square extends Shape` with a `side` attribute that implements `area()`.
 
-In `main`, create an `Shape` that is an `Square` and display the area.
+In `main`, create a `Shape` that is a `Square` and print its area.
 
 <details><summary>Show solution</summary>
 
@@ -54,18 +54,18 @@ public class Main {
 
 ---
 
-## Exercise 2: Abstract class with constructor
+## Exercise 2: Abstract class with a constructor
 
 Create an abstract class `Animal` with:
 
 - `private String name`
-- `Animal(String name)` Builder
--Getter `getName()`
+- `Animal(String name)` constructor
+- Getter `getName()`
 - Abstract method `sound()`
 
 Create `Dog extends Animal` and implement `sound()` to print `Woof`.
 
-In `main`, create an `Dog` and display the name and sound.
+In `main`, create a `Dog` and print its name and sound.
 
 <details><summary>Show solution</summary>
 
@@ -117,12 +117,12 @@ public class Main {
 Create an abstract class `Employee` with:
 
 - `private String name`
-- Builder
+- Constructor
 - Normal `printPayslip()` method that prints:
   - `Employee: name | Pay: X`
 - Abstract method `calculatePay()`
 
-Create `HourlyEmployee` with `hourlyRate` and `hoursWorked` and deploy `calculatePay()`.
+Create `HourlyEmployee` with `hourlyRate` and `hoursWorked` and implement `calculatePay()`.
 
 In `main`, create an `HourlyEmployee` and call `printPayslip()`.
 
@@ -175,11 +175,11 @@ public class Main {
 
 ---
 
-## Exercise 4: Subclass that does not implement an abstract
+## Exercise 4: Subclass that does not implement an abstract method
 
-Creates an abstract class `Device` with abstract method `start()`.
+Create an abstract class `Device` with an abstract method `start()`.
 
-Create an `SmartDevice extends Device` class that does NOT implement `start()`.
+Create a `SmartDevice extends Device` class that does NOT implement `start()`.
 
 What should happen to `SmartDevice`?  
 Make it compile.
@@ -211,7 +211,7 @@ Create two concrete classes:
 - `Circle` with `radius`
 - `Rectangle` with `width` and `height`
 
-In `main`, create a list `List<Shape>` with 3 shapes (mix of Circle/Rectangle) and sum all the areas.
+In `main`, create a list `List<Shape>` with 3 shapes (a mix of Circle/Rectangle) and add up all the areas.
 
 <details><summary>Show solution</summary>
 
@@ -284,12 +284,12 @@ public class Main {
 Create an abstract class `Document` with:
 
 - `private String title`
-- `Document(String title)` constructor that uses an `setTitle` setter
+- `Document(String title)` constructor that uses a `setTitle` setter
 - `getTitle()`
-- `setTitle(String title)` if it is `null` or `isBlank()` use `"Untitled"`
+- `setTitle(String title)`, which uses `"Untitled"` if the title is `null` or `isBlank()`
 - Abstract method `printContent()`
 
-Create `Note extends Document` with `text` attribute and print the content.
+Create `Note extends Document` with a `text` attribute that prints the content.
 <details><summary>Show solution</summary>
 
 ```java
@@ -338,9 +338,9 @@ public class Note extends Document {
 
 ---
 
-## Exercise 7: Abstract method with boolean return
+## Exercise 7: Abstract method with a boolean return value
 
-Create an abstract class `Validator` with abstract method:
+Create an abstract class `Validator` with the abstract method:
 
 ```java
 public abstract boolean isValid(String value);
@@ -348,10 +348,10 @@ public abstract boolean isValid(String value);
 
 Create:
 
-- `EmailValidator` returns `true` if `value` contains `"@"` and `"."`
+- `EmailValidator`, which returns `true` if `value` contains `"@"` and `"."`
 - `MinLengthValidator` that receives `minLength` in the constructor and validates by length
 
-On `main`, try both validators.
+In `main`, test both validators.
 
 <details><summary>Show solution</summary>
 
@@ -412,15 +412,15 @@ public class Main {
 
 ---
 
-## Exercise 8: Abstract class with “template” method
+## Exercise 8: Abstract class with a “template” method
 
-Create an abstract class `Report` with normal method:
+Create an abstract class `Report` with a normal method:
 
 ```java
 public void printReport()
 ```
 
-What:
+It must:
 
 1. Print `"=== Report ==="`
 2. Call an abstract method `printBody()`
@@ -467,9 +467,9 @@ public class Main {
 
 ## Exercise 9: Compare abstract class vs “normal” class
 
-Create a class `Printer` (normal) with method `print()` that prints `"Printing..."`.
+Create a class `Printer` (normal) with a `print()` method that prints `"Printing..."`.
 
-Then create an abstract class `AbstractPrinter` with abstract method `print()`.
+Then create an abstract class `AbstractPrinter` with an abstract method `print()`.
 
 Create a class `ConsolePrinter extends AbstractPrinter` that implements `print()`.
 
@@ -523,14 +523,14 @@ Create an abstract class `Payment` with:
 - `private double amount`
 - `Payment(double amount)` constructor that uses `setAmount`
 - `getAmount()`
-- `setAmount(double amount)` if negative use `0.0`
+- `setAmount(double amount)`, which uses `0.0` if the amount is negative
 - Abstract method `process()`
 
 Create:
 
-- `CardPayment extends Payment` with attribute `cardNumber` and `process()` printing:
+- `CardPayment extends Payment` with a `cardNumber` attribute and a `process()` that prints:
   - `Processing card payment: amount`
-- `CashPayment extends Payment` with `process()` printing:
+- `CashPayment extends Payment` with a `process()` that prints:
   - `Processing cash payment: amount`
 
 In `main`, create both payments and call `process()` with references of type `Payment`.

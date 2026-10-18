@@ -2,13 +2,13 @@
 
 ## **1. Introduction to loops**
 
-Loops allow a block of code to be executed repeatedly as long as a specific condition is met. In JavaScript, there are several types of loops that allow us to iterate over data and execute repetitive tasks.
+Loops let you run a block of code repeatedly as long as a specific condition is met. In JavaScript, there are several types of loops that let us iterate over data and perform repetitive tasks.
 
 ---
 
-## **2. `for`** loop
+## **2. The `for` loop**
 
-The `for` loop is one of the most used when we know the exact number of iterations.
+The `for` loop is one of the most widely used when we know the exact number of iterations.
 
 ### **Syntax:**
 
@@ -38,13 +38,13 @@ Iteración número 4
 
 ---
 
-[![Loop for](https://img.youtube.com/vi/MvneErXddY4/0.jpg)](https://www.youtube.com/watch?v=MvneErXddY4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![The for loop](https://img.youtube.com/vi/MvneErXddY4/0.jpg)](https://www.youtube.com/watch?v=MvneErXddY4&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **3. `while`** loop
+## **3. The `while` loop**
 
-The `while` loop executes the code block as long as the condition is true.
+The `while` loop runs the block of code as long as the condition is true.
 
 ### **Syntax:**
 
@@ -77,9 +77,9 @@ Contador: 2
 
 ---
 
-## **4. `do...while`** loop
+## **4. The `do...while` loop**
 
-The `do...while` loop executes the code block at least once before checking the condition.
+The `do...while` loop runs the block of code at least once before checking the condition.
 
 ### **Syntax:**
 
@@ -108,17 +108,17 @@ Número: 1
 Número: 2
 ```
 
-> **Note:** `do...while` will always execute the code block at least once.
+> **Note:** `do...while` will always run the block of code at least once.
 
 ---
 
-[![While & do while](https://img.youtube.com/vi/3LZHs0xtJEY/0.jpg) loops](https://www.youtube.com/watch?v=3LZHs0xtJEY&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![While & do while loops](https://img.youtube.com/vi/3LZHs0xtJEY/0.jpg)](https://www.youtube.com/watch?v=3LZHs0xtJEY&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. `for...of`** loop
+## **5. The `for...of` loop**
 
-The `for...of` loop is used to iterate over elements of iterable structures such as arrays, strings or sets.
+The `for...of` loop is used to iterate over the elements of iterable structures such as arrays, strings or sets.
 
 ### **Syntax:**
 
@@ -167,7 +167,7 @@ a
 
 ---
 
-## **6. `for...in`** loop
+## **6. The `for...in` loop**
 
 The `for...in` loop is used to iterate over the enumerable properties of an object.
 
@@ -201,18 +201,18 @@ edad: 25
 ciudad: Madrid
 ```
 
-> **Note:** `for...in` is best used with objects and not arrays.
+> **Note:** `for...in` is best used with objects, not arrays.
 
 ---
 
-[![Loops for of & for in](https://img.youtube.com/vi/kB2vGOxs024/0.jpg)](https://www.youtube.com/watch?v=kB2vGOxs024&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![For of & for in loops](https://img.youtube.com/vi/kB2vGOxs024/0.jpg)](https://www.youtube.com/watch?v=kB2vGOxs024&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
 ## **7. Controlling loops: `break` and `continue`**
 
 - **`break`**: Completely ends the loop.
-- **`continue`**: Skip the current iteration and move to the next one.
+- **`continue`**: Skips the current iteration and moves on to the next one.
 
 ### **Example with `break`:**
 
@@ -261,13 +261,13 @@ for (let i = 0; i < 5; i++) {
 
 ---
 
-## **8. Array methods to iterate**
+## **8. Array methods for iterating**
 
-JavaScript also offers functional methods for iterating over arrays. We will delve into this topic later.
+JavaScript also offers functional methods for iterating over arrays. We'll go deeper into this later on.
 
 ### **`forEach()`**
 
-Execute a function for each element of the array.
+Runs a function for each element of the array.
 
 ```js
 const numbers = [1, 2, 3];
@@ -283,20 +283,20 @@ numbers.forEach((num) => console.log(num));
 3
 ```
 
-There are other array methods such as `map` or `filter` that will be explained in the next lessons.
+There are other array methods, such as `map` or `filter`, that we'll explain in upcoming lessons.
 
 ---
 
-## **9. Good practices**
+## **9. Best practices**
 
-- Choose the appropriate loop based on the data structure.
-- Avoid infinite loops by verifying the conditions well.
+- Choose the right loop for the data structure.
+- Avoid infinite loops by checking your conditions carefully.
 - Use functional methods (`forEach`) for cleaner code.
-- Avoid using `for...in` in arrays, as it may include inherited properties.
+- Avoid using `for...in` with arrays, as it may include inherited properties.
 
 ---
 
 ## **10. Conclusion**
-Loops are essential for handling data and automating repetitive tasks in JavaScript. Understanding the differences between different types of loops will allow you to write more efficient and cleaner code.
+Loops are essential for handling data and automating repetitive tasks in JavaScript. Understanding the differences between the various types of loops will help you write cleaner, more efficient code.
 
-In the next topic, we'll explore **functions** and how to modularize your code in JavaScript.
+In the next topic, we'll explore **functions** and how to make your JavaScript code modular.

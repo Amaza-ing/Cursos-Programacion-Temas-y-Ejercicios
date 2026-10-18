@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-You already know how to create variables and save values. Now it's time to do what really makes a program useful: **doing things with those values**.
+You already know how to create variables and store values. Now it's time for what really makes a program useful: **doing things with those values**.
 
 In Java, to work with values we use:
 
@@ -20,11 +20,11 @@ In this topic you will learn, with clear and guided examples:
 
 - Arithmetic operators
 - Relational operators (comparisons)
-- Logical operators (combine conditions)
-- Assignment operators (including compounds)
+- Logical operators (combining conditions)
+- Assignment operators (including compound ones)
 - Increment and decrement (`++` and `--`)
-- Priority of operators and use of parentheses
-- Typical errors (very common when starting out)
+- Operator precedence and the use of parentheses
+- Typical mistakes (very common when you're starting out)
 
 ---
 
@@ -32,15 +32,15 @@ In this topic you will learn, with clear and guided examples:
 
 ---
 
-## 2. What is an operator and what is an expression
+## 2. What an operator is and what an expression is
 
 ### 2.1. Operator
 
 An **operator** is a symbol that indicates an operation:
 
-- `+` sum
-- `==` compares equality
-- `&&` combine conditions
+- `+` adds
+- `==` compares for equality
+- `&&` combines conditions
 
 ### 2.2. Expression
 
@@ -54,7 +54,7 @@ age >= 18
 isPremium && hasPermission
 ```
 
-And normally you save the result in a variable:
+And you usually store the result in a variable:
 
 ```java
 int result = 10 + 5;
@@ -67,19 +67,19 @@ boolean isValid = age >= 18;
 
 Arithmetic operators are used for mathematical calculations.
 
-### 3.1. Available Arithmetic Operators
+### 3.1. Available arithmetic operators
 
 | Operator | Name | Example |
 | -------- | -------------- | ------- |
-| `+` | Sum | `a + b` |
+| `+` | Addition | `a + b` |
 | `-` | Subtraction | `a - b` |
 | `*` | Multiplication | `a * b` |
 | `/` | Division | `a / b` |
-| `%` | Module (rest) | `a % b` |
+| `%` | Modulo (remainder) | `a % b` |
 
 ---
 
-### 3.2. Guided Example: Basic Operations
+### 3.2. Guided example: basic operations
 
 ```java
 int a = 10;
@@ -100,23 +100,23 @@ System.out.println("remainder: " + remainder);   // 1
 
 ---
 
-### 3.3. Division by integers (typical error)
+### 3.3. Integer division (a common mistake)
 
-When you divide two `int`, the result is `int` and the decimals are lost:
+When you divide two `int` values, the result is an `int` and the decimals are lost:
 
 ```java
 int result = 5 / 2;
 System.out.println(result); // 2
 ```
 
-If you need decimals, at least one must be `double`:
+If you need decimals, at least one of them must be a `double`:
 
 ```java
 double result = 5 / 2.0;
 System.out.println(result); // 2.5
 ```
 
-Or using cast:
+Or using a cast:
 
 ```java
 int a = 5;
@@ -128,9 +128,9 @@ System.out.println(result); // 2.5
 
 ---
 
-### 3.4. `%` module (very useful)
+### 3.4. Modulo `%` (very useful)
 
-The module returns the remainder of a division.
+The modulo operator returns the remainder of a division.
 
 Example:
 
@@ -141,8 +141,8 @@ System.out.println(remainder); // 1
 
 Typical cases:
 
-- Check if a number is even or odd
-- Run something “every N” times
+- Checking whether a number is even or odd
+- Running something “every N” times
 - Cycles
 
 Example: even or odd
@@ -158,7 +158,7 @@ System.out.println(isEven); // false
 
 ## 4. Assignment operators
 
-### 4.1. `=` Base Allocation
+### 4.1. Basic assignment `=`
 
 The `=` operator assigns a value to a variable.
 
@@ -168,9 +168,9 @@ int age = 25;
 
 ---
 
-### 4.2. Composite allocation (`+=`, `-=`, `*=`, `/=`, `%=`)
+### 4.2. Compound assignment (`+=`, `-=`, `*=`, `/=`, `%=`)
 
-They allow a variable to be updated in a more compact way.
+They let you update a variable more compactly.
 
 | Operator | Example | Equivalent to |
 | -------- | -------- | ----------- |
@@ -209,8 +209,8 @@ count--; // vuelve a 0
 
 ### 5.1. Pre-increment vs post-increment (very important)
 
-- `count++` (post): first use value, then increment
-- `++count` (pre): first increment, then use the value
+- `count++` (post): first uses the value, then increments
+- `++count` (pre): first increments, then uses the value
 
 Guided example:
 
@@ -230,20 +230,20 @@ System.out.println(++count); // count pasa a 6 y luego imprime 6
 System.out.println(count);   // imprime 6
 ```
 
-> Beginner Recommendation: Use `count++` on separate lines to avoid confusion.
+> Recommendation for beginners: use `count++` on separate lines to avoid confusion.
 
 ---
 
 ## 6. Relational operators (comparisons)
 
-Relational operators compare values and the result is always an `boolean`.
+Relational operators compare values and the result is always a `boolean`.
 
 ### 6.1. Relational operators
 
 | Operator | Meaning | Example |
 | -------- | ----------------- | -------- |
-| `==` | Equals | `a == b` |
-| `!=` | Other than | `a != b` |
+| `==` | Equal to | `a == b` |
+| `!=` | Not equal to | `a != b` |
 | `>` | Greater than | `a > b` |
 | `<` | Less than | `a < b` |
 | `>=` | Greater than or equal to | `a >= b` |
@@ -251,7 +251,7 @@ Relational operators compare values and the result is always an `boolean`.
 
 ---
 
-### 6.2. Guided Example: Age Comparison
+### 6.2. Guided example: comparing ages
 
 ```java
 int age = 17;
@@ -265,9 +265,9 @@ System.out.println(isMinor); // true
 
 ---
 
-### 6.3. Comparisons to `double` (Caution)
+### 6.3. Comparisons with `double` (be careful)
 
-Comparing exact decimals can fail due to internal representation, although in simple examples it usually works.
+Comparing decimals for exact equality can fail because of how they're represented internally, although in simple examples it usually works.
 
 ```java
 double a = 0.1 + 0.2;
@@ -330,7 +330,7 @@ System.out.println(canLogin); // true
 
 ---
 
-## 8. Short-circuit in `&&` and `||`
+## 8. Short-circuit evaluation in `&&` and `||`
 
 This is important because it affects the behavior of the program.
 
@@ -348,7 +348,7 @@ System.out.println(result); // false
 
 There is no error here, because `value != 0` is `false` and Java does not evaluate `10 / value`.
 
-If there was no short circuit, this code would throw a division by zero error.
+Without short-circuit evaluation, this code would throw a division-by-zero error.
 
 ---
 
@@ -368,7 +368,7 @@ System.out.println(message);
 
 ---
 
-### 9.2. Typical error: concatenation vs addition
+### 9.2. Common mistake: concatenation vs addition
 
 Look at this:
 
@@ -384,7 +384,7 @@ Result: 23
 
 Because it is interpreted as concatenation: `"Result: " + 2` and then `+ 3`.
 
-If you want real sum, use parentheses:
+If you want an actual sum, use parentheses:
 
 ```java
 System.out.println("Result: " + (2 + 3));
@@ -398,8 +398,8 @@ Result: 5
 
 ---
 
-### 9.3. Compare `String`: use `.equals(...)`
-This is a classic Java error.
+### 9.3. Comparing `String` values: use `.equals(...)`
+This is a classic Java mistake.
 
 Incorrect:
 
@@ -421,30 +421,30 @@ if (role.equals("admin")) {
 }
 ```
 
-Later you will see why (objects vs references), but for now stick with the rule:
+Later you'll see why (objects vs references), but for now stick to the rule:
 
 > To compare text in Java, use `.equals(...)`.
 
 ---
 
-## 10. Priority of operators and parentheses
+## 10. Operator precedence and parentheses
 
-Java evaluates expressions following an order of priority.
+Java evaluates expressions following an order of precedence.
 
 Quick rule of thumb:
 
-1. `( )` parentheses
-2. Multiplication/Division/`* / %` Module
+1. Parentheses `( )`
+2. Multiplication/Division/Modulo `* / %`
 3. Addition/Subtraction `+ -`
-4. `> < >= <=` Comparisons
+4. Comparisons `> < >= <=`
 5. Equality `== !=`
 6. AND `&&`
 7. OR `||`
-8. `=` allocation
+8. Assignment `=`
 
 ---
 
-### 10.1. Example: priority in arithmetic
+### 10.1. Example: precedence in arithmetic
 
 ```java
 int result = 5 + 2 * 3;
@@ -460,19 +460,19 @@ System.out.println(result); // 21
 
 ---
 
-### 10.2. Example: priority in conditions
+### 10.2. Example: precedence in conditions
 
 ```java
 boolean result = true || false && false;
 System.out.println(result); // true
 ```
 
-Because `&&` has higher priority than `||`, it is evaluated like this:
+Because `&&` has higher precedence than `||`, it is evaluated like this:
 
 - `false && false` -> `false`
 - `true || false` -> `true`
 
-If you wanted another logic:
+If you wanted different logic:
 
 ```java
 boolean result = (true || false) && false;
@@ -481,9 +481,9 @@ System.out.println(result); // false
 
 ---
 
-## 11. Guided Examples (for real practice)
+## 11. Guided examples (for real practice)
 
-### 11.1. Example 1: calculate the final price with discount
+### 11.1. Example 1: calculating the final price with a discount
 
 We want:
 
@@ -514,12 +514,12 @@ Key points:
 
 ---
 
-### 11.2. Example 2: Validate access with logical conditions
+### 11.2. Example 2: validating access with logical conditions
 
 We want to allow access if:
 
-- is of legal age **and**
-- has entrance **or** is VIP
+- they're of legal age **and**
+- they have a ticket **or** they're VIP
 
 ```java
 public class Main {
@@ -536,7 +536,7 @@ public class Main {
 }
 ```
 
-Look at the parentheses:
+Notice the parentheses:
 
 - Without parentheses the condition can be interpreted differently
 - Parentheses make the intention clear
@@ -563,9 +563,9 @@ public class Main {
 
 ## 12. Common mistakes (and how to avoid them)
 
-### 12.1. Use `=` instead of `==`
+### 12.1. Using `=` instead of `==`
 
-Incorrect (does not compile correctly):
+Incorrect (it doesn't compile in conditions):
 
 ```java
 // if (age = 18) { ... } // error
@@ -581,7 +581,7 @@ if (age == 18) {
 
 ---
 
-### 12.2. Forget parentheses in concatenation
+### 12.2. Forgetting parentheses in concatenation
 
 ```java
 System.out.println("Total: " + 2 + 3); // "Total: 23"
@@ -590,7 +590,7 @@ System.out.println("Total: " + (2 + 3)); // "Total: 5"
 
 ---
 
-### 12.3. Divide integers expecting decimals
+### 12.3. Dividing integers and expecting decimals
 
 ```java
 int a = 7;
@@ -607,14 +607,14 @@ double average = (double) a / b; // 3.5
 
 ---
 
-## 13. To take into account
+## 13. Things to keep in mind
 
-- An operator is a symbol; An expression combines operators and values.
-- Division by integers is a typical source of errors.
-- `&&` and `||` use short circuit (sometimes prevents errors).
+- An operator is a symbol; an expression combines operators and values.
+- Integer division is a typical source of errors.
+- `&&` and `||` use short-circuit evaluation (which sometimes prevents errors).
 - For `String`, concatenate with `+` and compare with `.equals(...)`.
-- Use parentheses for clarity and to control priority.
+- Use parentheses for clarity and to control precedence.
 
 ---
 
-In the next topic you will learn **type conversion**, where you will see how to go from `int` to `double`, from `String` to number, and why some operations give unexpected results if you don't convert correctly.
+In the next topic you'll learn about **type conversion**, where you'll see how to go from `int` to `double`, from `String` to a number, and why some operations give unexpected results if you don't convert correctly.

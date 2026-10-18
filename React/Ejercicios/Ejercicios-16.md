@@ -2,18 +2,18 @@
 
 Below you will find **10 practical exercises** to work with **Axios in React**, using `useEffect`, state management and HTTP requests.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Basic GET with Axios**
 
-Create an `UsersList.jsx` component that:
+Create a `UsersList.jsx` component that:
 
-- Make a GET request to `https://jsonplaceholder.typicode.com/users` using **Axios**.
-- Show the user array in the console.
+- Makes a GET request to `https://jsonplaceholder.typicode.com/users` using **Axios**.
+- Shows the array of users in the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import axios from "axios";
@@ -38,13 +38,13 @@ export default UsersList;
 
 ---
 
-## **Exercise 2: GET with `useEffect` (only when mounting)**
+## **Exercise 2: GET with `useEffect` (only on mount)**
 
 Modify the previous exercise so that the request:
 
-- Run **only when mounting** the component.
+- Runs **only when the component mounts**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect } from "react";
@@ -72,15 +72,15 @@ export default UsersList;
 
 ---
 
-## **Exercise 3: Save data in state**
+## **Exercise 3: Store data in state**
 
-Create an `PostsList.jsx` component that:
+Create a `PostsList.jsx` component that:
 
-- GET `https://jsonplaceholder.typicode.com/posts`.
-- Save data in `posts` state.
-- Show the total number of posts.
+- Makes a GET request to `https://jsonplaceholder.typicode.com/posts`.
+- Stores the data in a `posts` state.
+- Shows the total number of posts.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -110,14 +110,14 @@ export default PostsList;
 
 ---
 
-## **Exercise 4: Loading status (`loading`)**
+## **Exercise 4: Loading state (`loading`)**
 
-Expand the previous exercise:
+Extend the previous exercise:
 
-- Add `isLoading` status.
-- Shows `Loading...` while data is loading.
+- Add an `isLoading` state.
+- Show `Loading...` while the data is loading.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -152,15 +152,15 @@ export default PostsList;
 
 ---
 
-## **Exercise 5: Error Handling**
+## **Exercise 5: Error handling**
 
-Create an `BrokenRequest.jsx` component that:
+Create a `BrokenRequest.jsx` component that:
 
-- Make a GET request to an incorrect URL.
-- Capture the error with `try/catch`.
-- Show `Error: ...` if it fails.
+- Makes a GET request to an incorrect URL.
+- Catches the error with `try/catch`.
+- Shows `Error: ...` if it fails.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -199,7 +199,7 @@ Refactor exercise 4 so that:
 
 - `isLoading` is turned off using `finally`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 useEffect(() => {
@@ -225,12 +225,12 @@ useEffect(() => {
 
 ## **Exercise 7: POST with Axios**
 
-Create a function `createPost` that:
+Create a `createPost` function that:
 
-- Make a POST to `https://jsonplaceholder.typicode.com/posts`.
-- Send `{ title: "Hello", body: "World", userId: 1 }`.
+- Makes a POST request to `https://jsonplaceholder.typicode.com/posts`.
+- Sends `{ title: "Hello", body: "World", userId: 1 }`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import axios from "axios";
@@ -251,14 +251,14 @@ const createPost = async () => {
 
 ---
 
-## **Exercise 8: Axios with dependency on `useEffect`**
+## **Exercise 8: Axios with a `useEffect` dependency**
 
-Create an `UserById.jsx` component that:
+Create a `UserById.jsx` component that:
 
-- Have initial status `userId` `1`.
-- Do GET to `/users/{userId}` every time you change `userId`.
+- Has a `userId` state with initial value `1`.
+- Makes a GET request to `/users/{userId}` every time `userId` changes.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -298,10 +298,10 @@ export default UserById;
 
 Create an `api.js` file that:
 
-- Use `axios.create`.
-- Set `baseURL` to `https://jsonplaceholder.typicode.com`.
+- Uses `axios.create`.
+- Sets `baseURL` to `https://jsonplaceholder.typicode.com`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import axios from "axios";
@@ -317,14 +317,14 @@ export default api;
 
 ---
 
-## **Exercise 10: Using the Axios instance**
+## **Exercise 10: Use the Axios instance**
 
 Use the instance from the previous exercise to:
 
-- Make GET to `/todos`.
-- Show how many all there are.
+- Make a GET request to `/todos`.
+- Show how many todos there are.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";

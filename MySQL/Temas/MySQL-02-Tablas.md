@@ -1,17 +1,17 @@
 # **Topic 2: Creating and Modifying Tables in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
-- Create tables with different types of data.
+- Create tables with different data types.
 - Modify existing tables.
 - Understand primary and foreign keys.
 - Use the most common data types in MySQL.
 
 ---
 
-## **1. Create tables in MySQL**
+## **1. Creating tables in MySQL**
 
-To create a table, the `CREATE TABLE` statement is used. For example, let's create a table `users` with several fields:
+To create a table, you use the `CREATE TABLE` statement. For example, let's create a `users` table with several fields:
 
 ```sql
 CREATE TABLE users (
@@ -25,17 +25,17 @@ CREATE TABLE users (
 
 ### **Explanation of the fields:**
 
-- `id`: integer that increments automatically. It is the primary key (`PRIMARY KEY`).
+- `id`: an integer that increments automatically. It is the primary key (`PRIMARY KEY`).
 - `name`: short text of up to 50 characters.
-- `email`: longer text up to 100 characters.
+- `email`: longer text of up to 100 characters.
 - `birth_date`: a date (`YYYY-MM-DD`).
-- `is_active`: true/false value.
+- `is_active`: a true/false value.
 
 ---
 
 ## **2. Data types in MySQL**
 
-### **Numerics**
+### **Numeric**
 
 | Type | Description |
 | --------- | ---------------------------- |
@@ -43,14 +43,14 @@ CREATE TABLE users (
 | `TINYINT` | Small integer (1 byte) |
 | `BIGINT` | Large integer (8 bytes) |
 | `DECIMAL` | Numbers with exact decimals |
-| `FLOAT` | Numbers with inaccurate decimals |
+| `FLOAT` | Numbers with approximate decimals |
 
-### **Text Strings**
+### **Text strings**
 
 | Type | Description |
 | ------------ | --------------------------------------- |
-| `CHAR(n)` | Fixed length chain `n` |
-| `VARCHAR(n)` | Variable string of up to `n` characters |
+| `CHAR(n)` | Fixed-length string of length `n` |
+| `VARCHAR(n)` | Variable-length string of up to `n` characters |
 | `TEXT` | Long text (up to 65,535 characters) |
 
 ### **Dates and times**
@@ -66,7 +66,7 @@ CREATE TABLE users (
 | Type | Description |
 | --------- | ------------------------- |
 | `BOOLEAN` | `TRUE` or `FALSE` |
-| `ENUM` | List of possible values ​​|
+| `ENUM` | List of possible values |
 
 Example of using `ENUM`:
 
@@ -99,7 +99,7 @@ CREATE TABLE categories (
 
 ### **Foreign key**
 
-Relates data between two tables.
+Links data between two tables.
 
 ```sql
 CREATE TABLE products (
@@ -116,7 +116,7 @@ CREATE TABLE products (
 
 ---
 
-## **4. Modify tables with `ALTER TABLE`**
+## **4. Modifying tables with `ALTER TABLE`**
 
 You can modify an existing table with the `ALTER TABLE` command.
 
@@ -140,7 +140,7 @@ ALTER TABLE users MODIFY COLUMN name VARCHAR(100);
 
 ---
 
-## **5. Delete a table**
+## **5. Deleting a table**
 
 To delete a table completely:
 
@@ -148,15 +148,15 @@ To delete a table completely:
 DROP TABLE users;
 ```
 
-> ⚠️ Caution: This action is irreversible and deletes all data from the table.
+> ⚠️ Caution: this action is irreversible and deletes all the data in the table.
 
 ---
 
 ## **6. Conclusion**
 
 - We have learned how to create tables using appropriate data types.
-- We know how to modify its structure with `ALTER TABLE`.
+- We know how to modify their structure with `ALTER TABLE`.
 - We understand the importance of primary and foreign keys.
 
 ---
-In the next topic we will learn to **create relationships between tables and apply integrity constraints with primary and foreign keys.**
+In the next topic we will learn how to **create relationships between tables and apply integrity constraints with primary and foreign keys.**

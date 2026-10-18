@@ -1,30 +1,30 @@
-# **Topic 7: Passing by Value and Passing by Reference in JavaScript**
+# **Topic 7: Pass by Value and Pass by Reference in JavaScript**
 
 ## **1. Introduction**
 
-When values are assigned to variables or passed as arguments to functions in JavaScript, they can be handled in two ways:
+When you assign values to variables or pass them as arguments to functions in JavaScript, they can be handled in two ways:
 
-- **Step by Value** (Primitives)
-- **Step by Reference** (Objects and Arrays)
+- **Pass by value** (primitives)
+- **Pass by reference** (objects and arrays)
 
-Understanding this difference is key to avoiding unexpected effects on your code.
+Understanding this difference is key to avoiding unexpected effects in your code.
 
 ---
 
-## **2. Step by Value**
+## **2. Pass by value**
 
-**passing by value** occurs when a variable containing a primitive data type is assigned or passed:
+**Pass by value** happens when you assign or pass a variable that contains a primitive data type:
 
 - Numbers (`Number`)
-- Chains (`String`)
+- Strings (`String`)
 - Booleans (`Boolean`)
 - `null`, `undefined`
 - `Symbol`
 - `BigInt`
 
-Each time a variable of primitive type is assigned to another variable, an **independent copy** of the original value is created.
+Every time a variable of a primitive type is assigned to another variable, an **independent copy** of the original value is created.
 
-### **Pass by Value Example**
+### **Pass by value example**
 
 ```js
 let a = 10;
@@ -36,21 +36,21 @@ console.log(a); // Salida: 10
 console.log(b); // Salida: 20
 ```
 
-> **Note:** The `b` variable gets a copy of the value of `a`, so modifying `b` does not affect `a`.
+> **Note:** The variable `b` gets a copy of the value of `a`, so modifying `b` doesn't affect `a`.
 
 ---
 
-## **3. Step by Reference**
+## **3. Pass by reference**
 
-**Passing by reference** occurs when a variable containing a non-primitive data type is assigned or passed:
+**Pass by reference** happens when you assign or pass a variable that contains a non-primitive data type:
 
-- Items (`Object`)
+- Objects (`Object`)
 - Arrays (`Array`)
 - Functions (`Function`)
 
-In these cases, instead of copying the value, **the reference** is copied into memory. That is, both variables point to the same object.
+In these cases, instead of copying the value, **the reference** in memory is copied. In other words, both variables point to the same object.
 
-### **Example of Pass by Reference**
+### **Pass by reference example**
 
 ```js
 let person1 = { name: "Ana", age: 25 };
@@ -62,19 +62,19 @@ console.log(person1.age); // Salida: 30
 console.log(person2.age); // Salida: 30
 ```
 
-> **Note:** Changes in `person2` affect `person1` because both variables refer to the same object in memory.
+> **Note:** Changes to `person2` affect `person1` because both variables refer to the same object in memory.
 
 ---
 
-[![Step by Value vs Reference](https://img.youtube.com/vi/tPcA6iDA5yc/0.jpg)](https://www.youtube.com/watch?v=tPcA6iDA5yc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Pass by value vs reference](https://img.youtube.com/vi/tPcA6iDA5yc/0.jpg)](https://www.youtube.com/watch?v=tPcA6iDA5yc&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **4. Copy Objects and Arrays without modifying the original**
+## **4. Copying objects and arrays without modifying the original**
 
-To avoid unwanted modifications to objects and arrays, it is necessary to make **independent copies**.
+To avoid unwanted changes to objects and arrays, you need to make **independent copies**.
 
-### **4.1. Shallow Copy with `Object.assign()`**
+### **4.1. Shallow copy with `Object.assign()`**
 
 ```js
 const original = { name: "Carlos", age: 40 };
@@ -84,7 +84,7 @@ copy.age = 45;
 console.log(original.age); // Salida: 40 (no se modifica)
 ```
 
-### **4.2. Shallow copy with the Spread operator (`...`)**
+### **4.2. Shallow copy with the spread operator (`...`)**
 
 ```js
 const copy2 = { ...original };
@@ -92,9 +92,9 @@ copy2.age = 50;
 console.log(original.age); // Salida: 40
 ```
 
-### **4.3. Deep Copy with `JSON.parse(JSON.stringify())`**
+### **4.3. Deep copy with `JSON.parse(JSON.stringify())`**
 
-If the object is nested, `Object.assign()` and `spread` **do not** copy the internal objects.
+If the object is nested, `Object.assign()` and `spread` **don't** copy the inner objects.
 
 ```js
 const nestedObject = {
@@ -109,7 +109,7 @@ deepCopy.details.age = 35;
 console.log(nestedObject.details.age); // Salida: 30 (no se modifica)
 ```
 
-> **Note:** `JSON.stringify()` does not work well with `undefined` functions or values.
+> **Note:** `JSON.stringify()` doesn't work well with functions or `undefined` values.
 
 ### **4.4. Deep copy with `structuredClone()` (ES2021)**
 
@@ -121,11 +121,11 @@ console.log(nestedObject.details.age); // Salida: 30
 
 ---
 
-[![Copy of Objects](https://img.youtube.com/vi/nxcXzZzdXKU/0.jpg)](https://www.youtube.com/watch?v=nxcXzZzdXKU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Copying objects](https://img.youtube.com/vi/nxcXzZzdXKU/0.jpg)](https://www.youtube.com/watch?v=nxcXzZzdXKU&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **5. Copying Arrays**
+## **5. Copying arrays**
 
 ### **5.1. Shallow copy with `slice()`**
 
@@ -138,7 +138,7 @@ console.log(numbers); // [1, 2, 3, 4]
 console.log(numbersCopy); // [1, 2, 3, 4, 5]
 ```
 
-### **5.2. Shallow copy with the Spread operator (`...`)**
+### **5.2. Shallow copy with the spread operator (`...`)**
 
 ```js
 const newNumbers = [...numbers];
@@ -180,20 +180,20 @@ console.log(deepCopyArray[0][0]); // 99 (copia independiente)
 
 ---
 
-[![Copy of Arrays](https://img.youtube.com/vi/V727GTGDvv0/0.jpg)](https://www.youtube.com/watch?v=V727GTGDvv0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Copying arrays](https://img.youtube.com/vi/V727GTGDvv0/0.jpg)](https://www.youtube.com/watch?v=V727GTGDvv0&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
-## **6. Good Practices**
+## **6. Best practices**
 
-- **Use passing by value** for primitive types when reference sharing is not needed.
+- **Use pass by value** for primitive types when you don't need to share a reference.
 - **Avoid modifying shared objects** when using pass by reference.
 - **Make independent copies** with `Object.assign()`, `spread (...)`, `JSON.parse(JSON.stringify())` or `structuredClone()`.
-- **Be careful with superficial copies**: They do not copy nested objects.
+- **Be careful with shallow copies**: they don't copy nested objects.
 
 ---
 ## **7. Conclusion**
 
 Understanding the difference between **passing by value** and **passing by reference** helps you write more predictable code and avoid unexpected errors when modifying objects and arrays in JavaScript.
 
-In the next topic we will see some less known operators, such as spread operator, optional chaining and others.
+In the next topic, we'll look at some lesser-known operators, such as the spread operator, optional chaining and others.

@@ -1,15 +1,15 @@
-# Ejercicios - Tema 10: Wrappers de tipos de datos primitivos
+# Exercises - Topic 10: Primitive data type wrappers
 
-Below you will find **10 practical exercises** to work with **wrappers**, autoboxing, unboxing, `parseXxx`, `valueOf`, comparison and handling of `null`.
+Below you will find **10 practical exercises** to work with **wrappers**, autoboxing, unboxing, `parseXxx`, `valueOf`, comparisons and handling `null`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Basic Autoboxing
+## Exercise 1: Basic autoboxing
 
-Declara una variable primitiva `int` con valor `10` y asígnala a una variable `Integer` usando autoboxing.  
-Prints the value of the wrapper.
+Declare a primitive `int` variable with value `10` and assign it to an `Integer` variable using autoboxing.  
+Print the wrapper's value.
 
 <details><summary>Show solution</summary>
 
@@ -28,9 +28,9 @@ public class Main {
 
 ---
 
-## Exercise 2: Basic Unboxing
+## Exercise 2: Basic unboxing
 
-Declara una variable `Integer` con valor `25` y asígnala a una variable `int` usando unboxing.  
+Declare an `Integer` variable with value `25` and assign it to an `int` variable using unboxing.  
 Print the primitive value.
 
 <details><summary>Show solution</summary>
@@ -54,7 +54,7 @@ public class Main {
 
 Declare a variable `text` with value `"42"`.
 
-Convierte el texto a `int` usando `Integer.parseInt` y suma `8` al resultado.
+Convert the text to `int` using `Integer.parseInt` and add `8` to the result.
 
 <details><summary>Show solution</summary>
 
@@ -75,9 +75,9 @@ public class Main {
 
 ## Exercise 4: Convert text to `Double`
 
-Declares a variable `priceText` with value `"19.99"`.
+Declare a variable `priceText` with value `"19.99"`.
 
-Convierte el texto a `Double` usando `Double.valueOf` y muestra el valor.
+Convert the text to `Double` using `Double.valueOf` and print the value.
 
 <details><summary>Show solution</summary>
 
@@ -98,9 +98,9 @@ public class Main {
 
 ## Exercise 5: Compare wrappers correctly
 
-Declara dos variables `Integer` con valor `100`.
+Declare two `Integer` variables with value `100`.
 
-- Compare values using `equals`
+- Compare their values using `equals`
 - Print the result
 
 <details><summary>Show solution</summary>
@@ -122,12 +122,12 @@ public class Main {
 
 ## Exercise 6: Avoid `NullPointerException`
 
-Declara una variable `Integer` llamada `age` con valor `null`.
+Declare an `Integer` variable called `age` with value `null`.
 
-Comprueba si es `null` antes de intentar convertirla a `int`.  
+Check whether it is `null` before trying to convert it to `int`.  
 If it is `null`, print `"No age provided"`.
 
-<details><summary>Mostrar solución</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -148,9 +148,9 @@ public class Main {
 
 ---
 
-## Ejercicio 7: Usar constantes `MIN_VALUE` y `MAX_VALUE`
+## Exercise 7: Use the `MIN_VALUE` and `MAX_VALUE` constants
 
-Print via console:
+Print to the console:
 
 - The minimum value of `Integer`
 - The maximum value of `Integer`
@@ -172,9 +172,9 @@ public class Main {
 
 ## Exercise 8: Compare with `compareTo`
 
-Declara dos variables `Integer` con valores `15` y `30`.
+Declare two `Integer` variables with values `15` and `30`.
 
-Usa `compareTo` para comparar ambos valores e imprime el resultado.
+Use `compareTo` to compare both values and print the result.
 
 <details><summary>Show solution</summary>
 
@@ -195,9 +195,9 @@ public class Main {
 
 ## Exercise 9: Validate characters with `Character`
 
-Declare a variable `char` with value `'7'`.
+Declare a `char` variable with value `'7'`.
 
-Usa `Character.isDigit` para comprobar si es un dígito e imprime el resultado.
+Use `Character.isDigit` to check whether it is a digit and print the result.
 
 <details><summary>Show solution</summary>
 
@@ -216,9 +216,9 @@ public class Main {
 
 ---
 
-## Exercise 10: Convert number to text
+## Exercise 10: Convert a number to text
 
-Declara una variable `int` con valor `50`.
+Declare an `int` variable with value `50`.
 
 Convert the number to `String` using `String.valueOf` and print the result.
 

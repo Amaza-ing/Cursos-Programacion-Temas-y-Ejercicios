@@ -1,14 +1,14 @@
-# **Topic 2: File Schema in React**
+# **Topic 2: File Structure in React**
 
 ## **1. Introduction**
 
-Good **file organization** is key for a React project to be **readable**, **scalable** and **easy to maintain**. Although React does not impose a rigid structure, there are widely used conventions that facilitate individual and team work.
+Good **file organization** is key to making a React project **readable**, **scalable** and **easy to maintain**. Although React doesn't impose a rigid structure, there are widely used conventions that make both individual work and teamwork easier.
 
 In this topic you will learn:
 
-- What is the basic structure of a React project.
-- What responsibility does each folder and file have?
-- A recommended structure proposal for small and medium projects.
+- What the basic structure of a React project looks like.
+- What each folder and file is responsible for.
+- A recommended structure for small and medium-sized projects.
 
 ---
 
@@ -34,19 +34,19 @@ This structure is minimal but enough to start working.
 
 ---
 
-## **3. Explanation of main folders and files**
+## **3. The main folders and files explained**
 
 ### **3.1. `node_modules/`**
 
-Contains all project dependencies installed with npm. It should not be modified manually or uploaded to repositories such as GitHub.
+It contains all the project's dependencies installed with npm. It shouldn't be modified by hand or uploaded to repositories such as GitHub.
 
 ---
 
 ### **3.2. `public/`**
 
-It contains static files that do not go through the compilation process.
+It contains static files that don't go through the build process.
 
-Examples of use:
+Typical uses:
 
 - Public images
 - Icons
@@ -62,15 +62,15 @@ The files in this folder are referenced from the root:
 
 ### **3.3. `src/`**
 
-It is the most important folder in the project. This is where **all of the React code** lives.
+It's the most important folder in the project. This is where **all the React code** lives.
 
 ---
 
 #### **3.3.1. `main.jsx`**
 
-It is the **entry point** of the application.
+It's the **entry point** of the application.
 
-Its function is:
+Its job is to:
 
 - Create the React root.
 - Render the main component.
@@ -92,10 +92,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 #### **3.3.2. `App.jsx`**
 
-It is the **root component** of the application.
+It's the **root component** of the application.
 
-- From here the rest of the components are built.
-- Usually contains the main structure of the interface.
+- The rest of the components are built from here.
+- It usually contains the main structure of the interface.
 
 ```js
 function App() {
@@ -109,9 +109,9 @@ export default App;
 
 #### **3.3.3. `index.css`**
 
-Application **global styles** file.
+The application's **global styles** file.
 
-Here they are usually defined:
+This is where you usually define:
 
 - Base styles
 - Fonts
@@ -121,13 +121,13 @@ Here they are usually defined:
 
 ### **3.4. `assets/`**
 
-It is used to store resources that **do pass through the bundler**:
+It's used to store resources that **do go through the bundler**:
 
 - Images
 - Icons
-- Sources
+- Fonts
 
-Example of use:
+Usage example:
 
 ```js
 import logo from "./assets/react.svg";
@@ -137,19 +137,19 @@ import logo from "./assets/react.svg";
 
 ### **3.5. `index.html`**
 
-It is the main HTML file. Contains the element where React is mounted:
+It's the main HTML file. It contains the element where React is mounted:
 
 ```html
 <div id="root"></div>
 ```
 
-React does not generate multiple HTML, but rather works as a **Single Page Application (SPA)**.
+React doesn't generate multiple HTML files: instead, it works as a **Single Page Application (SPA)**.
 
 ---
 
-## **4. Recommended structure proposal**
+## **4. A recommended structure**
 
-As the project grows, it is advisable to better organize the files:
+As the project grows, it's a good idea to organize the files better:
 
 ```
 src/
@@ -169,11 +169,11 @@ src/
 │── index.css
 ```
 
-This structure helps:
+This structure helps to:
 
 - Separate responsibilities.
 - Avoid giant files.
-- Facilitate code reuse.
+- Make code reuse easier.
 
 ---
 
@@ -196,16 +196,16 @@ This structure helps:
 
 ---
 
-## **6. To take into account**
+## **6. Things to keep in mind**
 
-- React does not force a specific structure, but following conventions is good practice.
+- React doesn't force a specific structure, but following conventions is good practice.
 - `App.jsx` acts as the central point of the application.
 - Separating components and pages improves scalability.
-- Good organization saves time and errors in the long term.
+- Good organization saves time and prevents errors in the long run.
 
 ---
-[![File and Folder Scheme](https://img.youtube.com/vi/TCfSknh03Lc/0.jpg)](https://www.youtube.com/watch?v=TCfSknh03Lc&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![File and Folder Structure](https://img.youtube.com/vi/TCfSknh03Lc/0.jpg)](https://www.youtube.com/watch?v=TCfSknh03Lc&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-In the next topic we will start working with **components in React** and understand how to create and reuse them correctly.
+In the next topic we'll start working with **components in React** and see how to create and reuse them properly.

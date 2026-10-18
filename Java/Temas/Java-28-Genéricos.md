@@ -21,9 +21,9 @@ That `<String>`, `<Integer>` or `<Double>` is part of a very important feature o
 
 - **Generics**
 
-**generics** allow you to write classes, interfaces and methods that work with **parameterized types**, that is, with a type that is indicated later.
+**Generics** allow you to write classes, interfaces and methods that work with **parameterized types**, that is, with a type that is specified later.
 
-The great advantage is that they allow:
+The great advantage is that they allow you to:
 
 - reuse code
 - work with types safely
@@ -32,15 +32,15 @@ The great advantage is that they allow:
 
 In this topic you will learn:
 
-- What are generics?
+- What generics are
 - Why they are useful
-- What problem do they solve?
+- What problem they solve
 - How to use generics in collections
 - How to create generic classes
 - How to create generic methods
-- What are wildcards (`?`, `? extends`, `? super`)
-- What limitations do generics have in Java?
-- Typical errors and good practices
+- What wildcards are (`?`, `? extends`, `? super`)
+- What limitations generics have in Java
+- Typical mistakes and good practices
 
 ---
 
@@ -48,7 +48,7 @@ In this topic you will learn:
 
 To understand why generics exist, you first have to look at the problem they solve.
 
-Before using generics, a collection could store elements like `Object`.
+Before generics, a collection could store its elements as `Object`.
 
 Conceptual example:
 
@@ -59,7 +59,7 @@ values.add(28);
 values.add(true);
 ```
 
-Here you can enter everything:
+Here you can put anything in:
 
 - `String`
 - `Integer`
@@ -90,15 +90,15 @@ public class Main {
 }
 ```
 
-The problem is that Java allows that code to be compiled, but it fails at runtime with an exception.
+The problem is that Java lets that code compile, but it fails at runtime with an exception.
 
-Generics avoid precisely this type of situation.
+Generics prevent precisely this kind of situation.
 
 ---
 
 ## 3. What are generics
 
-Generics allow types to be defined using a type parameter.
+Generics allow you to define types using a type parameter.
 
 Example:
 
@@ -106,12 +106,12 @@ Example:
 List<String> names = new ArrayList<>();
 ```
 
-Here `String` is the specific type that you have indicated.
+Here `String` is the specific type you have specified.
 
 That means:
 
-- this list can only save `String`
-- if you try to enter another type, Java will flag a compilation error
+- this list can only store `String` values
+- if you try to add another type, Java will report a compilation error
 
 Example:
 
@@ -123,7 +123,7 @@ names.add("Alex");
 // names.add(25); // error
 ```
 
-This makes the code much more secure.
+This makes the code much safer.
 
 ---
 
@@ -131,7 +131,7 @@ This makes the code much more secure.
 
 The most important advantages are these:
 
-### 4.1. Type Safety
+### 4.1. Type safety
 
 You avoid mixing incorrect types in a structure.
 
@@ -147,7 +147,7 @@ When you see this:
 List<String> names
 ```
 
-You already know that there is only `String` there.
+you already know that it only contains `String` values.
 
 ### 4.4. Reuse
 
@@ -157,7 +157,7 @@ You can create classes and methods that work with different types without duplic
 
 ## 5. Generics in collections
 
-Most early uses of generics appear in collections.
+Most of your first encounters with generics will be in collections.
 
 ### 5.1. `List<String>`
 
@@ -178,7 +178,7 @@ public class Main {
 }
 ```
 
-Notice that `get(0)` already returns an `String`.  
+Notice that `get(0)` already returns a `String`.  
 There is no need to cast.
 
 ---
@@ -238,7 +238,7 @@ Simple example:
 ClassName<T>
 ```
 
-You can see names like:
+You will see names like:
 
 - `T` → Type
 - `E` → Element
@@ -257,19 +257,19 @@ Optional<T>
 
 ---
 
-## 7. Create a generic class
+## 7. Creating a generic class
 
-Now we are going to take the important step: not only use generics, but create a generic class.
+Now we are going to take the big step: not just using generics, but creating a generic class.
 
 Imagine a class that holds a single value.
 
-Without generics, you would have to make separate versions:
+Without generics, you would have to write separate versions:
 
 - `StringBox`
 - `IntegerBox`
 - `DoubleBox`
 
-With generics, you can make a single class.
+With generics, you can write a single class.
 
 ### 7.1. Basic example: `Box<T>`
 
@@ -291,9 +291,9 @@ public class Box<T> {
 }
 ```
 
-Here `T` represents “the type that will be decided when using the class”.
+Here `T` represents “the type that will be decided when the class is used”.
 
-### 7.2. Class usage
+### 7.2. Using the class
 
 ```java
 public class Main {
@@ -307,7 +307,7 @@ public class Main {
 }
 ```
 
-Now the same class serves different types.
+Now the same class works with different types.
 
 ---
 
@@ -332,12 +332,12 @@ public class Box<ValueType> {
 }
 ```
 
-This works, but normally in Java short letters are used because they are a very widespread convention.
+This works, but in Java single letters are normally used because they are a very widespread convention.
 
-The most common are:
+The most common ones are:
 
 - `T` → generic type
-- `E` → item
+- `E` → element
 - `K` → key
 - `V` → value
 - `R` → result
@@ -387,11 +387,11 @@ public class Main {
 
 ## 10. Generic methods
 
-Not only classes can be generic. Also the methods.
+Classes are not the only things that can be generic. Methods can be too.
 
 A generic method defines its own type parameter.
 
-### 10.1. Example: print any value
+### 10.1. Example: printing any value
 
 ```java
 public class Printer {
@@ -413,7 +413,7 @@ public class Main {
 }
 ```
 
-Here the method works with different types without the need to overload it several times.
+Here the method works with different types without having to overload it several times.
 
 ---
 
@@ -483,7 +483,7 @@ public class Main {
 }
 ```
 
-This method works for any type of array of objects:
+This method works for any array of objects:
 
 - `String[]`
 - `Integer[]`
@@ -525,9 +525,9 @@ You must use wrappers:
 
 ---
 
-## 14. Type inference and diamond operator `<>`
+## 14. Type inference and the diamond operator `<>`
 
-Since Java 7, when the type is already clear on the left, you can use the diamond operator.
+Since Java 7, when the type is already clear on the left-hand side, you can use the diamond operator.
 
 Example:
 
@@ -543,7 +543,7 @@ List<String> names = new ArrayList<String>();
 
 Java can infer the type.
 
-Same here:
+The same goes here:
 
 ```java
 Box<String> nameBox = new Box<>("Laura");
@@ -553,9 +553,9 @@ This makes the code cleaner.
 
 ---
 
-## 15. `Object` is not the same as generic
+## 15. `Object` is not the same as generics
 
-Sometimes someone thinks:
+Sometimes people think:
 
 > “If everything inherits from `Object`, why do I need generics?”
 
@@ -615,11 +615,12 @@ Now you don't need casting and the compiler protects your code better.
 
 ## 16. Wildcards: `?`
 
-Now we are going to see a very important part: the wildcards.
+Now we are going to see a very important part: wildcards.
+
 The `?` symbol means:
 
-- “some kind”
-- “an unknown guy”
+- “some type”
+- “an unknown type”
 
 Example:
 
@@ -629,8 +630,8 @@ List<?> values
 
 This means:
 
-- a list of some kind
-- we don't know which one exactly
+- a list of some type
+- we don't know exactly which one
 
 It can be:
 
@@ -642,7 +643,7 @@ It can be:
 
 ## 17. When to use `List<?>`
 
-It is useful when you just need to read or generally work with a collection regardless of the specific type.
+It is useful when you only need to read from a collection, or work with it in a general way, regardless of its specific type.
 
 Example:
 
@@ -680,7 +681,7 @@ public class Main {
 }
 ```
 
-Here `printList` is used for lists of any type.
+Here `printList` works for lists of any type.
 
 ---
 
@@ -728,11 +729,11 @@ public class Main {
 }
 ```
 
-Here the method accepts different numerical lists.
+Here the method accepts different lists of numbers.
 
 ---
 
-## 19. Mind idea of `extends`
+## 19. How to think about `extends`
 
 When you see this:
 
@@ -792,7 +793,7 @@ Here you can add `Integer` because the list accepts `Integer` or a supertype of 
 
 ## 21. Very useful rule of thumb: PECS
 
-There is a famous rule to remember `extends` and `super`:
+There is a famous rule for remembering `extends` and `super`:
 
 - **Producer Extends**
 - **Consumer Super**
@@ -802,13 +803,13 @@ Idea:
 - if a structure **produces** data to read → `extends`
 - if a structure **consumes** data to write → `super`
 
-It is not necessary to memorize it perfectly yet, but you do need to understand the general idea.
+You don't need to memorize it perfectly yet, but you do need to understand the general idea.
 
 ---
 
 ## 22. Example comparing `extends` and `super`
 
-### 22.1. Read numbers with `extends`
+### 22.1. Reading numbers with `extends`
 
 ```java
 public static double sumNumbers(List<? extends Number> numbers)
@@ -826,9 +827,9 @@ This signature is good for adding integers.
 
 ---
 
-## 23. Generic classes with limits
+## 23. Generic classes with bounds
 
-You can also limit which types are valid in a generic.
+You can also restrict which types are valid in a generic.
 
 Example:
 
@@ -846,7 +847,7 @@ public class NumericBox<T extends Number> {
 }
 ```
 
-Here `T` must be `Number` or a subtype.
+Here `T` must be `Number` or a subtype of it.
 
 Valid use:
 
@@ -902,7 +903,7 @@ public class Main {
 
 ## 25. Generics and inheritance
 
-This part is usually quite confusing when starting out.
+This part is usually quite confusing when you are starting out.
 
 Even though `Integer` inherits from `Number`, that does **not** mean that:
 
@@ -910,7 +911,7 @@ Even though `Integer` inherits from `Number`, that does **not** mean that:
 List<Integer>
 ```
 
-be subtype of:
+is a subtype of:
 
 ```java
 List<Number>
@@ -922,7 +923,7 @@ This is incorrect:
 // List<Number> numbers = new ArrayList<Integer>(); // NO
 ```
 
-And this surprises at first.
+And this surprises people at first.
 
 The reason is that if that were allowed, you could break type safety.
 
@@ -939,7 +940,7 @@ List<Number> numbers = new ArrayList<Integer>();
 numbers.add(3.14);
 ```
 
-Then you would be putting an `Double` into a list that was actually `Integer`.
+Then you would be putting a `Double` into a list that was actually a list of `Integer`.
 
 That would completely break type safety.
 
@@ -952,20 +953,20 @@ Generics in Java work using a technique called:
 
 - **type erasure**
 
-That means that at compile time, Java uses generic information to check types, but at run time that information is not preserved the same as in other languages.
+That means that, at compile time, Java uses the generic information to check types, but at runtime that information is not preserved the way it is in other languages.
 
-At an initial level, the important thing is to understand two ideas:
+At this early stage, the important thing is to understand two ideas:
 
-- generics help especially in compilation
-- have certain limitations due to how they are implemented
+- generics help mainly at compile time
+- they have certain limitations because of how they are implemented
 
-It is not necessary to go much deeper for now, but you do need to know the concept.
+You don't need to go much deeper for now, but you do need to know the concept.
 
 ---
 
 ## 28. Typical limitations of generics
 
-### 28.1. You cannot create generic type arrays directly
+### 28.1. You cannot create arrays of a generic type directly
 
 This is not allowed:
 
@@ -975,15 +976,15 @@ This is not allowed:
 
 ### 28.2. You can't use primitive types
 
-This neither:
+This isn't allowed either:
 
 ```java
 // Box<int> box = new Box<>(10); // NO
 ```
 
-### 28.3. You can't use `instanceof` with the particular parameterized type like that
+### 28.3. You can't use `instanceof` with the specific parameterized type like that
 
-For example, this is not used like this:
+For example, you can't do this:
 
 ```java
 // if (value instanceof T) { ... } // NO
@@ -991,7 +992,7 @@ For example, this is not used like this:
 
 ### 28.4. You cannot create objects of the generic type with `new T()`
 
-This neither:
+This isn't allowed either:
 
 ```java
 // T value = new T(); // NO
@@ -1001,9 +1002,9 @@ These limitations are a consequence of _type erasure_.
 
 ---
 
-## 29. Raw types: why avoid them
+## 29. Raw types: why you should avoid them
 
-A **raw type** is using a generic class without indicating the type.
+A **raw type** means using a generic class without specifying the type.
 
 Example:
 
@@ -1013,7 +1014,7 @@ List values = new ArrayList();
 
 This compiles in many cases, but it is bad practice because you lose all the advantages of generics.
 
-The correct thing is:
+The right way is:
 
 ```java
 List<String> values = new ArrayList<>();
@@ -1023,7 +1024,7 @@ Avoid raw types except in very specific or legacy contexts.
 
 ---
 
-## 30. Guided Example: Generic class to store two values of the same type
+## 30. Guided example: a generic class to store two values of the same type
 
 ```java
 public class DoubleBox<T> {
@@ -1066,7 +1067,7 @@ public class Main {
 
 ---
 
-## 31. Guided example: generic method to compare equality
+## 31. Guided example: a generic method to check equality
 
 ```java
 public class CompareUtils {
@@ -1094,7 +1095,7 @@ public class Main {
 
 ---
 
-## 32. Guided Example: Print Any Collection
+## 32. Guided example: printing any collection
 
 ```java
 import java.util.List;
@@ -1128,12 +1129,12 @@ public class Main {
 
 ## 33. When to use generics
 
-Use generics whenever you want:
+Use generics whenever you want to:
 
 - create reusable structures for various types
-- work with collections securely
+- work with collections safely
 - avoid manual casting
-- clearly express what type a class or method handles
+- clearly express which type a class or method handles
 
 Clear examples:
 
@@ -1144,11 +1145,11 @@ Clear examples:
 
 ---
 
-## 34. Typical mistakes when starting
+## 34. Common beginner mistakes
 
 ### 34.1. Thinking that generics accept primitives
 
-Not:
+They don't:
 
 ```java
 // List<int> numbers = new ArrayList<>(); // error
@@ -1164,20 +1165,20 @@ List<Integer> numbers = new ArrayList<>();
 
 It is not.
 
-### 34.3. Use raw types for convenience
+### 34.3. Using raw types for convenience
 
-This makes the code less secure:
+This makes the code less safe:
 
 ```java
 List values = new ArrayList();
 ```
 
-### 34.4. Confusing `Object` with generic
+### 34.4. Confusing `Object` with generics
 
-It's not the same.  
+They are not the same.  
 With `Object` you lose type safety and need casting.
 
-### 34.5. Wanting to write and read the same with `extends` and `super`
+### 34.5. Expecting to read and write the same way with `extends` and `super`
 
 Each one has a different purpose:
 
@@ -1191,14 +1192,14 @@ Each one has a different purpose:
 - Use generics whenever you work with collections.
 - Avoid raw types.
 - Use clear names in generic classes when necessary, but respect the usual conventions (`T`, `E`, `K`, `V`).
-- Use limits (`extends`) when a type must belong to a specific hierarchy.
-- Use wildcards when a method must accept related type families.
-- Don't complicate the API if you don't have to: sometimes a specific type is better than an excessive generic signature.
+- Use bounds (`extends`) when a type must belong to a specific hierarchy.
+- Use wildcards when a method must accept families of related types.
+- Don't overcomplicate the API if you don't have to: sometimes a specific type is better than an overly generic signature.
 
 ---
-## 36. To take into account
+## 36. Things to keep in mind
 
-- Generics allow working with parameterized types.
+- Generics let you work with parameterized types.
 - They improve type safety and avoid many errors.
 - They are used a lot in collections.
 - You can create generic classes and generic methods.
@@ -1206,13 +1207,13 @@ Each one has a different purpose:
 - `? extends T` is used to read from a type hierarchy.
 - `? super T` is used to write to a type hierarchy.
 - Generics do not accept primitive types.
-- In Java there are limitations due to the _type erasure_.
+- In Java they have limitations due to _type erasure_.
 
 ---
 
 ## 37. Final summary
 
-Generics are one of the most important Java tools because they allow you to write code:
+Generics are one of Java's most important tools because they allow you to write code that is:
 
 - safer
 - more reusable
@@ -1223,14 +1224,14 @@ At first you will see them mainly in collections like `List<String>` or `Map<Str
 
 Thanks to generics you can create classes and methods that work with many types without losing control or clarity.
 
-Mastering this part will help you greatly to understand better:
+Mastering this part will help you a great deal to better understand:
 
 - collections
 - comparators
 - streams
--optional
-- Modern Java APIs in general
+- Optional
+- modern Java APIs in general
 
 ---
 
-In the next topic we will continue advancing with modern Java and we will see **lambda expressions** and **functional interfaces**, which are closely related to generics and are constantly used together with `Stream API`.
+In the next topic we will keep moving forward with modern Java and we will see **lambda expressions** and **functional interfaces**, which are closely related to generics and are constantly used together with `Stream API`.

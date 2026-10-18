@@ -2,15 +2,15 @@
 
 ## **1. What is JavaScript?**
 
-JavaScript is an interpreted, object-oriented, prototype-based programming language. It is one of the essential languages ​​for web development, along with HTML and CSS, allowing you to create dynamic and interactive web pages.
+JavaScript is an interpreted, object-oriented, prototype-based programming language. It is one of the essential languages of web development, along with HTML and CSS, and it lets you create dynamic, interactive web pages.
 
-### **JavaScript Key Features:**
+### **Key features of JavaScript:**
 
-- **Interpreted language:** Does not require prior compilation.
-- **Cross-platform:** Works on most modern web browsers.
-- **Object-oriented:** Uses objects and prototypes to structure the code.
-- **Event-based:** Allows you to respond to user actions, such as clicks and keystrokes.
-- **DOM Manipulation:** You can access and modify the content and structure of web pages.
+- **Interpreted language:** It doesn't need to be compiled beforehand.
+- **Cross-platform:** It works in most modern web browsers.
+- **Object-oriented:** It uses objects and prototypes to structure the code.
+- **Event-driven:** It lets you respond to user actions, such as clicks and key presses.
+- **DOM manipulation:** It can access and modify the content and structure of web pages.
 
 ---
 
@@ -18,14 +18,14 @@ JavaScript is an interpreted, object-oriented, prototype-based programming langu
 
 - **1995:** JavaScript was created by Brendan Eich at Netscape.
 - **1997:** It was standardized under the name ECMAScript.
-- **ECMAScript 6 (2015):** Introduced modern features like `let`, `const`, arrow classes and functions.
-- **Current:** JavaScript continues to evolve with new annual versions of ECMAScript.
+- **ECMAScript 6 (2015):** It introduced modern features such as `let`, `const`, classes and arrow functions.
+- **Today:** JavaScript keeps evolving with a new version of ECMAScript every year.
 
 ---
 
-## **3. Environment installation and configuration**
+## **3. Installing and setting up the environment**
 
-To start programming in JavaScript it is not necessary to install complex tools. You only need:
+To start programming in JavaScript, you don't need to install complex tools. All you need is:
 
 ### **Basic requirements:**
 
@@ -37,7 +37,7 @@ To start programming in JavaScript it is not necessary to install complex tools.
 If you want to run JavaScript code outside the browser:
 
 1. Download and install Node.js from [nodejs.org](https://nodejs.org/).
-2. Verify the installation by running in the terminal:
+2. Check the installation by running this in the terminal:
 
 ```sh
 node -v
@@ -51,7 +51,7 @@ npm -v
 
 ---
 
-## **4. Writing your first program in JavaScript**
+## **4. Writing your first JavaScript program**
 
 Let's create a simple program that displays a message in the console.
 
@@ -67,7 +67,7 @@ console.log("¡Hola, mundo!");
 ```
 
 
-You should see the message "Hello, world!" on the console.
+You should see the message "¡Hola, mundo!" in the console.
 
 ### **Option 2: Using an HTML file**
 
@@ -90,14 +90,14 @@ You should see the message "Hello, world!" on the console.
 ```
 
 
-2. Open the file in your browser (In VSCode you can install the `Live Server` extension and then click the `Go Live` button at the bottom right)
-3. Go to the browser console to view the message.
+2. Open the file in your browser (in VS Code you can install the `Live Server` extension and then click the `Go Live` button at the bottom right).
+3. Go to the browser console to see the message.
 
 ### **Option 3: Using a JS file**
 
 Create a new file with the extension `.js`. Example: `main.js`
 
-Modify the html file so that it links the JavaScript file using the `<script src="main.js">` tag again, adding the path to the `main.js` file in the `src` attribute.
+Modify the HTML file so that it links the JavaScript file, once again with the `<script src="main.js">` tag, putting the path to the `main.js` file in the `src` attribute.
 
 ```html
 <head>
@@ -110,11 +110,12 @@ Modify the html file so that it links the JavaScript file using the `<script src
 
 ---
 
-## **5. Basic JavaScript Syntax**
+## **5. Basic JavaScript syntax**
 
 ### **5.1. Variables**
 
-Variables are data, that is, information, that is stored under a specific name.
+Variables are data, that is, information, stored under a specific name.
+
 In JavaScript you can declare variables using `var`, `let` or `const`:
 
 ```js
@@ -125,8 +126,8 @@ var oldVariable = "Usado antes de ES6";
 
 
 - **`let`**: Used to declare variables that can change.
-- **`const`**: Declare constants that cannot be reassigned.
-- **`var`**: Obsolete, avoid its use.
+- **`const`**: Declares constants that can't be reassigned.
+- **`var`**: Obsolete; avoid using it.
 
 ---
 
@@ -136,11 +137,11 @@ var oldVariable = "Usado antes de ES6";
 
 ### **5.2. Data types**
 
-- **String:** Text strings. They are in quotes. Example: `"Hola"`.
+- **String:** Text strings. They go in quotes. Example: `"Hola"`.
 - **Number:** Numbers. Example: `42`, `3.14`.
 - **Boolean:** Logical values. Example: `true`, `false`.
-- **Array:** Lists of elements. They are in brackets. Example: `[1, 2, 3]`.
-- **Object:** Collection of key-value pairs. They go between keys. Example:
+- **Array:** Lists of elements. They go in square brackets. Example: `[1, 2, 3]`.
+- **Object:** Collections of key-value pairs. They go in curly braces. Example:
 
 ```js
 const user = {
@@ -152,21 +153,21 @@ const user = {
 
 ---
 
-[![Typed](https://img.youtube.com/vi/m8-g18kKjg8/0.jpg)](https://www.youtube.com/watch?v=m8-g18kKjg8&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Typing](https://img.youtube.com/vi/m8-g18kKjg8/0.jpg)](https://www.youtube.com/watch?v=m8-g18kKjg8&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
 ### **5.3 Strings in JavaScript**
 
-A **string** in JavaScript is a sequence of characters used to represent text. Strings are one of the most used primitive data types and there are several ways to create them.
+A **string** in JavaScript is a sequence of characters used to represent text. Strings are one of the most widely used primitive data types, and there are several ways to create them.
 
 ---
 
-### **Ways to create Strings**
+### **Ways to create strings**
 
 #### **1. Using single quotes (`'`)**
 
-Allows you to create a simple string by enclosing the text in single quotes.
+Lets you create a simple string by enclosing the text in single quotes.
 
 ```js
 const singleQuoteString = "Hola, mundo";
@@ -180,7 +181,7 @@ console.log(singleQuoteString); // Salida: Hola, mundo
 
 **Disadvantages:**
 
-- If the text contains apostrophes, it is necessary to escape them with `\`.
+- If the text contains apostrophes, you need to escape them with `\`.
 
 ```js
 const escapedString = 'No es posible' hacerlo así';
@@ -233,8 +234,8 @@ console.log(templateLiteral); // Salida: Hola, mundo
 
 **Advantages:**
 
-- Allows interpolation of variables using `${}`.
-- Supports multiple lines without the need for special characters.
+- They allow variable interpolation using `${}`.
+- They support multiple lines without needing special characters.
 
 #### **Variable interpolation:**
 
@@ -261,9 +262,9 @@ Y esta es otra línea.
 
 ---
 
-#### **Comparison between ways to create Strings**
+#### **Comparison of the ways to create strings**
 
-| Method | Interpolation | Multiline | Needs escape |
+| Method | Interpolation | Multiline | Needs escaping |
 | ---------------------- | ------------- | ---------- | --------------- |
 | Single quotes (`'`) | ❌ | ❌ | Yes |
 | Double quotes (`"`) | ❌ | ❌ | Yes |
@@ -271,14 +272,14 @@ Y esta es otra línea.
 
 **Recommendation:**
 
-- Use **Template Literals** for cases that require interpolation or multiline.
-- Use single or double quotes for simple strings depending on the content.
+- Use **Template Literals** when you need interpolation or multiple lines.
+- Use single or double quotes for simple strings, depending on the content.
 
 ---
 
 ### **Concatenation**
 
-- Multiple strings can be concatenated **Using `+`**:
+- You can concatenate several strings **using `+`**:
 
 ```js
 const firstName = "Laura";
@@ -298,10 +299,11 @@ console.log(fullNameTemplate); // Salida: Laura García
 
 ---
 
-#### **Useful methods for Strings**
+#### **Useful methods for strings**
 
-We'll talk about functions later, but we should know some useful and easy methods to use with strings.
-Any string variable that we create can use these methods using the dot "." `variableName.method()`.
+We'll talk about functions later on, but we should know a few useful, easy-to-use methods for strings.
+
+Any string variable we create can use these methods with dot "." syntax: `variableName.method()`.
 
 ---
 
@@ -323,7 +325,7 @@ Any string variable that we create can use these methods using the dot "." `vari
   ```
 
 
-- `includes()`: Check if a text contains a substring.
+- `includes()`: Checks whether a text contains a substring.
 
   ```js
   console.log(text.includes("la")); // Salida: true
@@ -337,7 +339,7 @@ Any string variable that we create can use these methods using the dot "." `vari
   ```
 
 
-- `trim()`: Remove spaces at the beginning and end.
+- `trim()`: Removes spaces at the beginning and end.
   ```js
   const spaced = "  Hola  ";
   console.log(spaced.trim()); // Salida: Hola
@@ -346,7 +348,7 @@ Any string variable that we create can use these methods using the dot "." `vari
 
 ---
 
-JavaScript offers multiple ways to create and manipulate strings. Choosing the appropriate method depends on the context and the need for interpolation or formatting. With **Template Literals**, the creation of dynamic and multiline strings is simpler and clearer.
+JavaScript offers multiple ways to create and manipulate strings. Choosing the right one depends on the context and on whether you need interpolation or formatting. With **Template Literals**, creating dynamic and multiline strings is simpler and clearer.
 
 ---
 
@@ -356,7 +358,7 @@ JavaScript offers multiple ways to create and manipulate strings. Choosing the a
 
 ### **5.4. Basic operators**
 
-Basic mathematical and logical operations can be performed easily using operators.
+You can easily perform basic mathematical and logical operations using operators.
 
 - **Arithmetic:** `+`, `-`, `*`, `/`, `%`
 - **Assignment:** `=`, `+=`, `-=`, `*=`
@@ -381,7 +383,7 @@ const result = str1 + ", " + str2; // result = Hola, Qué tal?
 ```
 
 
-The `%` modulo operator calculates the remainder of the integer division. This can be useful for example to check if a number is even (If the remainder of the division by 2 is 0 it will be even, if it is 1 it will be odd).
+The modulo operator `%` calculates the remainder of an integer division. This can be useful, for example, to check whether a number is even (if the remainder of dividing it by 2 is 0, it's even; if it's 1, it's odd).
 
 ```js
 let num1 = 7;
@@ -397,11 +399,11 @@ const result = num1 % num2; // result = 1
 
 ---
 
-### **5.5. Flow control structures**
+### **5.5. Control flow structures**
 
-In the following topics we will delve into these concepts. But in essence, when we write our code we can decide whether to execute one line or another, or none at all using a conditional flow control structure. We can also decide to repeat blocks of code as many times as we want by using loops.
+We'll go deeper into these concepts in the following topics. But in essence, when we write our code we can decide whether one line or another runs, or none at all, using a conditional control flow structure. We can also repeat blocks of code as many times as we want by using loops.
 
-- **Conditional:**
+- **Conditionals:**
 
 ```js
 let age = 18;
@@ -456,14 +458,14 @@ console.table([
 
 ---
 
-### **6.2. Use of Breakpoints**
+### **6.2. Using breakpoints**
 
-In the browser's developer tools, you can set **breakpoints** to pause execution and examine the program's status.
+In the browser's developer tools, you can set **breakpoints** to pause execution and examine the program's state.
 
 1. Open the **Sources** tab.
 2. Find your JavaScript file.
 3. Click the line number where you want to pause.
-4. Refresh the page and watch it stop at the breakpoint.
+4. Reload the page and watch it stop at the breakpoint.
 
 ---
 
@@ -471,7 +473,7 @@ In the browser's developer tools, you can set **breakpoints** to pause execution
 
 ---
 
-## **7. Good practices in JavaScript**
+## **7. Best practices in JavaScript**
 
 - Use `let` and `const` instead of `var`.
 - Name variables and functions descriptively (in English, using camelCase).
@@ -482,6 +484,6 @@ In the browser's developer tools, you can set **breakpoints** to pause execution
 
 ## **8. Conclusion**
 
-In this topic, we explore the fundamentals of JavaScript, its history, basic setup, and essential concepts. With this knowledge, you can now start writing your own simple programs.
+In this topic, we explored the fundamentals of JavaScript, its history, basic setup and essential concepts. With this knowledge, you can now start writing your own simple programs.
 
-In the next topic, we will delve into **conditionals** in JavaScript.
+In the next topic, we'll take a closer look at **conditionals** in JavaScript.

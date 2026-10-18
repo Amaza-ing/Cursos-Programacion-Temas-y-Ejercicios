@@ -8,9 +8,9 @@ Try to solve them before consulting the solution.
 
 ---
 
-### **Exercise 1: Using absolute units**
+### **Exercise 1: Use absolute units**
 
-Creates an `div` with a width of 500 pixels and a height of 80 pixels.
+Create a `div` with a width of 500 pixels and a height of 80 pixels.
 
 <details><summary>Show solution</summary>
 
@@ -32,9 +32,9 @@ Creates an `div` with a width of 500 pixels and a height of 80 pixels.
 
 ---
 
-### **Exercise 2: Using percentages for flexible design**
+### **Exercise 2: Use percentages for a flexible layout**
 
-Defines a container with a width of 80% of the size of the parent element.
+Define a container whose width is 80% of the size of its parent element.
 
 <details><summary>Show solution</summary>
 
@@ -59,7 +59,7 @@ Defines a container with a width of 80% of the size of the parent element.
 
 ### **Exercise 3: Compare `em` and `rem`**
 
-Create a paragraph where the font size is 2em and another where it is 2rem. Define `html` with an `font-size` of 16px and the parent container with an `font-size` of 10px and see the difference.
+Create a paragraph where the font size is 2em and another where it is 2rem. Give `html` a `font-size` of 16px and the parent container a `font-size` of 10px, and see the difference.
 
 <details><summary>Show solution</summary>
 
@@ -93,7 +93,7 @@ p.em-example {
 
 ### **Exercise 4: Apply `vw` and `vh`**
 
-Create an `div` that takes up 50% of the width and 30% of the height of the browser window.
+Create a `div` that takes up 50% of the width and 30% of the height of the browser window.
 
 <details><summary>Show solution</summary>
 
@@ -115,9 +115,9 @@ Create an `div` that takes up 50% of the width and 30% of the height of the brow
 
 ---
 
-### **Exercise 5: Using `vmin` and `vmax`**
+### **Exercise 5: Use `vmin` and `vmax`**
 
-Create one `div` where the font size is `5vmin`, and another where the font size is `5vmax`.
+Create a `div` where the font size is `5vmin`, and another one where it is `5vmax`.
 
 <details><summary>Show solution</summary>
 
@@ -141,9 +141,9 @@ Create one `div` where the font size is `5vmin`, and another where the font size
 
 ---
 
-### **Exercise 6: Create a responsive design by combining units**
+### **Exercise 6: Create a responsive layout by combining units**
 
-Defines a flexible container with `width: 80%`, `max-width: 600px`, and `min-width: 300px`. Use `rem` to define padding.
+Define a flexible container with `width: 80%`, `max-width: 600px` and `min-width: 300px`. Use `rem` to define the padding.
 
 <details><summary>Show solution</summary>
 

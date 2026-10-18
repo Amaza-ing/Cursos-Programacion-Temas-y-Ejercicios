@@ -2,28 +2,28 @@
 
 ## **1. Introduction**
 
-Forms are a fundamental part of any web application: login, registration, search, data submission... In React, forms are managed in a slightly different way than traditional HTML, because the state of the form usually lives within the component.
+Forms are a fundamental part of any web application: login, sign-up, search, data submission... In React, forms are handled slightly differently from traditional HTML, because the form's state usually lives inside the component.
 
 In this topic you will learn:
 
-- What is a controlled form.
-- How to manage inputs with `useState`.
+- What a controlled form is.
+- How to handle inputs with `useState`.
 - How to work with different types of fields.
 - How to handle the `onSubmit` event.
-- Good practices when working with forms in React.
+- Best practices when working with forms in React.
 
 ---
 
 ## **2. Forms in React: key idea**
 
-In React, the usual thing is that:
+In React, the usual approach is that:
 
-- The value of the input comes from **state**.
-- Each input change updates that state.
+- The input's value comes from **state**.
+- Each change to the input updates that state.
 
-This is called **controlled component**.
+This is called a **controlled component**.
 
-Mental rule:
+Rule of thumb:
 
 > The state is the source of truth.
 
@@ -54,17 +54,17 @@ function NameForm() {
 export default NameForm;
 ```
 
-Important keys:
+Key points:
 
 - `value` connects the input to the state.
-- `onChange` updates status.
+- `onChange` updates the state.
 - Without `onChange`, the input would be read-only.
 
 ---
 
-## **4. Handle form submission (`onSubmit`)**
+## **4. Handling form submission (`onSubmit`)**
 
-In React, the `onClick` event of the button to submit forms is not usually used, but `onSubmit` of the `<form>`.
+In React, you don't usually use the button's `onClick` event to submit forms, but the `<form>`'s `onSubmit`.
 
 ```js
 function LoginForm() {
@@ -99,7 +99,7 @@ Important:
 
 ## **5. Forms with multiple fields**
 
-When there are several inputs, it is normal to have one state per field:
+When there are several inputs, it's normal to have one state per field:
 
 ```js
 import { useState } from "react";
@@ -138,7 +138,7 @@ export default RegisterForm;
 
 ## **6. Controlled checkbox**
 
-Checkboxes are controlled with the `checked` property:
+Checkboxes are controlled with the `checked` attribute:
 
 ```js
 import { useState } from "react";
@@ -163,7 +163,7 @@ export default TermsCheckbox;
 
 ---
 
-## **7. Select controlled**
+## **7. Controlled select**
 
 ```js
 import { useState } from "react";
@@ -184,9 +184,9 @@ export default RoleSelect;
 
 ---
 
-## **8. Clear the form after submit**
+## **8. Clearing the form after submitting**
 
-After submitting a form, it is common to reset the fields:
+After submitting a form, it's common to reset the fields:
 
 ```js
 const handleSubmit = (event) => {
@@ -201,11 +201,11 @@ const handleSubmit = (event) => {
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Forget `preventDefault`**
+### **9.1. Forgetting `preventDefault`**
 
-Causes page reload.
+It causes a page reload.
 
 ### **9.2. Not controlling the input**
 
@@ -213,20 +213,20 @@ Causes page reload.
 <input />
 ```
 
-It is not a controlled input.
+It isn't a controlled input.
 
-### **9.3. Use `onClick` instead of `onSubmit`**
+### **9.3. Using `onClick` instead of `onSubmit`**
 
-Makes the form less accessible.
+It makes the form less accessible.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
 - Always use controlled forms.
 - Centralize the logic in `onSubmit`.
 - Keep the components simple.
-- Validate before sending (you will see it later).
+- Validate before submitting (you'll see this later).
 
 ---
 
@@ -234,4 +234,4 @@ Makes the form less accessible.
 
 ---
 
-In the next topic you will learn how to work with **React Router** to create applications with multiple pages.
+In the next topic you'll learn how to work with **React Router** to create multi-page applications.

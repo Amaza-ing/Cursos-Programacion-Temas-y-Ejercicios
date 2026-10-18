@@ -1,24 +1,24 @@
-# **Exercises - Topic 4: Normalization of Tables in MySQL**
+# **Exercises - Topic 4: Table Normalization in MySQL**
 
-Below you will find 4 practical exercises on database normalization. Try to solve them before consulting the solution.
+Below you will find 4 practical exercises on database normalization. Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Detect 1NF violations**
 
-Analyze the following table and explain why it is not in First Normal Form (1NF). Then, propose a standardized version.
+Analyze the following table and explain why it is not in First Normal Form (1NF). Then propose a normalized version.
 
-| id | name | emails |
+| id | nombre | correos |
 | --- | ------ | ----------------------- |
 | 1 | Elena | elena@mail.com; e@x.com |
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 The `correos` column contains multiple values in a single cell, which violates 1NF.
 
 **Solution (normalized):**
 
-| id | name | mail |
+| id | nombre | correo |
 | --- | ------ | -------------- |
 | 1 | Elena | elena@mail.com |
 | 1 | Elena | e@x.com |
@@ -29,28 +29,28 @@ The `correos` column contains multiple values in a single cell, which violates 1
 
 ### **Exercise 2: Separate data according to 2NF**
 
-Observe the following table:
+Look at the following table:
 
-| teacher_id | course_id | teacher_name |
+| profesor_id | curso_id | profesor_nombre |
 | ----------- | -------- | --------------- |
 | 1 | 101 | Juan Ortega |
 | 1 | 102 | Juan Ortega |
 
 Does it violate Second Normal Form? If so, normalize the structure.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-Yes. `profesor_nombre` depends only on `profesor_id`, not on the `(profesor_id, curso_id)` set.
+Yes. `profesor_nombre` depends only on `profesor_id`, not on the whole `(profesor_id, curso_id)` pair.
 
 **Solution:**
 
 **`teachers` table:**
-| teacher_id | teacher_name |
+| profesor_id | profesor_nombre |
 |-------------|------------------|
 | 1 | Juan Ortega |
 
 **`teaching` table:**
-| teacher_id | course_id |
+| profesor_id | curso_id |
 |-------------|-----------|
 | 1 | 101 |
 | 1 | 102 |
@@ -59,51 +59,51 @@ Yes. `profesor_nombre` depends only on `profesor_id`, not on the `(profesor_id, 
 
 ---
 
-### **Exercise 3: Eliminate transitive dependency (3NF)**
+### **Exercise 3: Remove a transitive dependency (3NF)**
 
 Analyze this table:
 
-| client_id | customer_name | city ​​| country |
+| cliente_id | nombre_cliente | ciudad | país |
 | ---------- | -------------- | --------- | ------ |
 | 1 | Ana Rivas | Madrid | Spain |
-| 2 | Laura Vazquez | Barcelona | Spain |
+| 2 | Laura Vázquez | Barcelona | Spain |
 
-What 3NF problem can you identify? Propose normalization.
+What 3NF problem can you spot? Propose a normalized design.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `país` depends on `ciudad`, not directly on `cliente_id`. This is a transitive dependency.
 
 **Solution:**
 
 **`cities` table:**
-| city_id | city ​​| country |
+| ciudad_id | ciudad | país |
 |-----------|------------|---------|
 | 1 | Madrid | Spain |
 | 2 | Barcelona | Spain |
 
 **`customers` table:**
-| client_id | customer_name | city_id |
+| cliente_id | nombre_cliente | ciudad_id |
 |------------|----------------|-----------|
 | 1 | Ana Rivas | 1 |
-| 2 | Laura Vazquez | 2 |
+| 2 | Laura Vázquez | 2 |
 
 </details>
 
 ---
 
-### **Exercise 4: Normalize an order table**
+### **Exercise 4: Normalize an orders table**
 
 Given the following table:
 
-| order_id | client | product | quantity | unit_price |
+| order_id | customer | product | quantity | unit_price |
 | --------- | ----------- | ---------- | -------- | --------------- |
 | 1 | Pedro Núñez | Pen | 3 | 0.75 |
 | 2 | Pedro Núñez | A4 folder | 2 | 1.50 |
 
-Design a normalized model in at least three tables.
+Design a normalized model with at least three tables.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`customers` table:**
 | id | name |

@@ -4,31 +4,31 @@
 
 So far you have learned to:
 
-- Save information with **variables**
-- Trade values using **operators**
+- Store information with **variables**
+- Operate on values using **operators**
 - Convert types when necessary
 
 The next step is for the program to **make decisions**.
 
 In programming, making decisions means:
 
-- Evaluate a condition (something that is `true` or `false`)
-- Execute one block of code or another depending on the result
+- Evaluating a condition (something that is `true` or `false`)
+- Running one block of code or another depending on the result
 
 In Java, the main conditionals are:
 
 - `if`, `else if`, `else`
-- `switch` (including **modern switch**)
+- `switch` (including the **modern switch**)
 
 In this topic you will learn how to use them clearly and with guided examples.
 
 ---
 
-[![Conditional if / else](https://img.youtube.com/vi/ogHYPSBWS9A/0.jpg)](https://www.youtube.com/watch?v=ogHYPSBWS9A&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![if / else conditionals](https://img.youtube.com/vi/ogHYPSBWS9A/0.jpg)](https://www.youtube.com/watch?v=ogHYPSBWS9A&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. Conditional `if`
+## 2. The `if` conditional
 
 ### 2.1. What does an `if` do?
 
@@ -42,12 +42,12 @@ if (condition) {
 }
 ```
 
-- `condition` must be an expression that returns an `boolean` (`true` or `false`).
+- `condition` must be an expression that returns a `boolean` (`true` or `false`).
 - The block is enclosed in braces `{}`.
 
 ---
 
-### 2.2. Example 1: check if a person is of legal age
+### 2.2. Example 1: checking whether a person is of legal age
 
 ```java
 int age = 20;
@@ -57,11 +57,11 @@ if (age >= 18) {
 }
 ```
 
-If `age` is 20, the condition `age >= 18` is `true`, therefore the message is executed.
+If `age` is 20, the condition `age >= 18` is `true`, so the message is printed.
 
 ---
 
-### 23. Example 2: false condition (nothing happens)
+### 2.3. Example 2: false condition (nothing happens)
 
 ```java
 int age = 15;
@@ -91,7 +91,7 @@ if (condition) {
 
 ---
 
-### 3.2. Example: of legal age or minor
+### 3.2. Example: adult or minor
 
 ```java
 int age = 15;
@@ -103,7 +103,7 @@ if (age >= 18) {
 }
 ```
 
-With `age = 15`, print:
+With `age = 15`, it prints:
 
 ```
 You are a minor.
@@ -111,9 +111,9 @@ You are a minor.
 
 ---
 
-## 4. `if` with `else if` (various conditions)
+## 4. `if` with `else if` (several conditions)
 
-### 4.1. When to use `else if`?
+### 4.1. When should you use `else if`?
 
 When you need to evaluate **more than two cases**.
 
@@ -127,11 +127,11 @@ if (condition1) {
 }
 ```
 
-Java evaluates from top to bottom and sticks with the **first case that is true**.
+Java evaluates from top to bottom and picks the **first case that is true**.
 
 ---
 
-### 4.2. Example: classify a note
+### 4.2. Example: classifying a grade
 
 ```java
 int score = 82;
@@ -147,7 +147,7 @@ if (score >= 90) {
 }
 ```
 
-If `score = 82`, print:
+If `score = 82`, it prints:
 
 ```
 Grade: B
@@ -155,7 +155,7 @@ Grade: B
 
 ---
 
-### 4.3. Typical error: wrong order
+### 4.3. Common mistake: wrong order
 
 This example is wrong:
 
@@ -175,7 +175,7 @@ With `82`, the first `if` is already `true`, so it never reaches `score >= 80`.
 
 ---
 
-## 5. Composite conditions (AND, OR, NOT)
+## 5. Compound conditions (AND, OR, NOT)
 
 This is where logical operators come in handy.
 
@@ -198,7 +198,7 @@ if (age >= 18 && hasId) {
 
 ### 5.2. OR (`||`)
 
-If a condition is true, it is enough.
+It's enough for one condition to be true.
 
 ```java
 boolean isVip = true;
@@ -229,9 +229,9 @@ if (!isBlocked) {
 
 ## 6. Good practices with `if`
 
-### 6.1. Avoid difficult to read conditions
+### 6.1. Avoid hard-to-read conditions
 
-Wrong (hard to understand):
+Bad (hard to understand):
 
 ```java
 if (age >= 18 && (country.equals("ES") || country.equals("FR")) && !isBlocked) {
@@ -257,7 +257,7 @@ This is longer, but much more readable.
 
 ### 6.2. Comparisons with `String` (very important)
 
-In Java, to compare `String` you must use `.equals(...)`, not `==`.
+In Java, to compare `String` values you must use `.equals(...)`, not `==`.
 
 Incorrect:
 
@@ -280,11 +280,11 @@ if (role.equals("admin")) {
 ```
 
 ---
-[![Conditional switch](https://img.youtube.com/vi/9cBYs_NqWuE/0.jpg)](https://www.youtube.com/watch?v=9cBYs_NqWuE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![switch conditionals](https://img.youtube.com/vi/9cBYs_NqWuE/0.jpg)](https://www.youtube.com/watch?v=9cBYs_NqWuE&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 7. Conditional `switch`
+## 7. The `switch` conditional
 
 ### 7.1. What is `switch`?
 
@@ -337,7 +337,7 @@ switch (option) {
 
 ---
 
-### 8.2. Typical error: forgetting `break`
+### 8.2. Common mistake: forgetting `break`
 
 ```java
 int option = 2;
@@ -352,27 +352,27 @@ switch (option) {
 }
 ```
 
-With `option = 2`, you will print:
+With `option = 2`, it will print:
 
 ```
 Settings
 Exit
 ```
 
-Because since there is no `break`, enter `case 2` and continue.
+Because there is no `break`, it goes into `case 2` and keeps going.
 
 ---
 
-## 9. Modern Switch (recommended in modern Java)
+## 9. Modern switch (recommended in modern Java)
 
-Modern Java allows `switch` to be written in a more secure and compact way.
+Modern Java lets you write `switch` in a safer and more compact way.
 
 Features:
 
-- Use `->` instead of `:`
-- No need `break`
-- Allows easy return values
-- Avoid “fall-through” errors
+- Uses `->` instead of `:`
+- Doesn't need `break`
+- Makes it easy to return values
+- Avoids “fall-through” errors
 
 ---
 
@@ -391,7 +391,7 @@ String message = switch (option) {
 System.out.println(message);
 ```
 
-Here `switch` returns an `String`, as if it were an expression.
+Here `switch` returns a `String`, as if it were an expression.
 
 ---
 
@@ -413,7 +413,7 @@ System.out.println(type);
 
 ### 9.3. Example: block with `yield`
 
-When you need more than one line in a case, you can use an `{}` and `yield` block.
+When you need more than one line in a case, you can use a `{}` block and `yield`.
 
 ```java
 int score = 85;
@@ -433,7 +433,7 @@ System.out.println(grade);
 
 ---
 
-## 10. When to use `if` and when to use `switch`?
+## 10. When should you use `if` and when `switch`?
 
 ### 10.1. Use `if` when
 
@@ -469,13 +469,13 @@ switch (option) {
 
 ---
 
-## 11. Guided Examples (to really understand it)
+## 11. Guided examples (to really understand it)
 
-### 11.1. Example 1: Validate a simple password with `if`
+### 11.1. Example 1: validating a simple password with `if`
 
 We want to check:
 
-- The password must be at least 8 characters
+- That the password has at least 8 characters
 - That the user is not blocked
 
 ```java
@@ -499,13 +499,13 @@ Key points:
 
 - `password.length()` returns the number of characters
 - `isLongEnough` makes the condition more readable
-- `!isBlocked` means “not locked”
+- `!isBlocked` means “not blocked”
 
 ---
 
-### 11.2. Example 2: Level system with `else if`
+### 11.2. Example 2: a level system with `else if`
 
-We want to classify a level according to points:
+We want to classify a level based on points:
 
 - 0 to 99: Beginner
 - 100 to 199: Intermediate
@@ -529,12 +529,12 @@ public class Main {
 
 Key points:
 
-- It is not necessary to write `points >= 100` in the second case
-- If you reach `else if`, we already know that `points >= 100`
+- You don't need to write `points >= 100` in the second case
+- If it reaches the `else if`, we already know that `points >= 100`
 
 ---
 
-### 11.3. Example 3: Select an action with a modern switch
+### 11.3. Example 3: selecting an action with a modern switch
 
 ```java
 public class Main {
@@ -561,14 +561,14 @@ Key points:
 
 ---
 
-## 12. To take into account
+## 12. Things to keep in mind
 
 - `if` is used for condition-based decisions.
 - `else` covers the opposite case.
 - `else if` allows multiple paths, but the order matters.
-- `switch` is ideal when you compare a single security with multiple options.
+- `switch` is ideal when you compare a single value against several options.
 - The **modern switch** avoids errors and is usually more readable.
 
 ---
 
-In the next topic we will learn to repeat actions with **loops** (`while` and `for`), where conditionals will be key to control when to stop or continue.
+In the next topic we'll learn to repeat actions with **loops** (`while` and `for`), where conditionals will be key to controlling when to stop or keep going.

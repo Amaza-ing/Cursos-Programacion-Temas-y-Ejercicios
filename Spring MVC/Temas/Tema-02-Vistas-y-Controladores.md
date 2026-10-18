@@ -1,23 +1,23 @@
 # Topic 2: Mappings, annotated controllers and views in Spring MVC
 
-## 1. Objectives of the topic
+## 1. Topic objectives
 
-In Topic 1 we created a first Spring MVC application using a classic XML-based setup. We manually register a controller and associate URLs to that controller from the `app-servlet.xml` file.
+In Topic 1 we created a first Spring MVC application using a classic XML-based configuration. We manually registered a controller and mapped URLs to that controller in the `app-servlet.xml` file.
 
-In this Topic 2 we are going to move towards a more common way of working in Spring MVC: the use of **controllers with annotations**.
+In this Topic 2 we are going to move towards a more common way of working in Spring MVC: using **controllers with annotations**.
 
 By the end of this topic you should be able to:
 
 - Understand the difference between mappings defined in XML and mappings defined with annotations.
-- Create drivers using `@Controller`.
-- Associate routes to methods using `@GetMapping` and `@RequestMapping`.
-- Send data from controller to view using `Model`.
-- Create multiple JSP views connected with different routes.
-- Display data lists in a JSP using JSTL.
+- Create controllers using `@Controller`.
+- Map routes to methods using `@GetMapping` and `@RequestMapping`.
+- Send data from the controller to the view using `Model`.
+- Create several JSP views connected to different routes.
+- Display lists of data in a JSP using JSTL.
 - Read URL parameters using `@RequestParam`.
-- Understand the complete flow between browser, controller, model and view.
+- Understand the complete flow between the browser, controller, model and view.
 
-The main idea of the topic is this:
+The main idea of this topic is this:
 
 ```text
 El usuario escribe una URL.
@@ -39,13 +39,13 @@ spring-mvc-day1
 
 In Topic 1 we had a very simple application with:
 
-- An `web.xml` file.
+- A `web.xml` file.
 - An `app-servlet.xml` file.
 - A classic controller implementing the `Controller` interface.
 - A JSP view named `home.jsp`.
 - A CSS file.
 
-In this topic we are going to modify and expand that project to have multiple pages.
+In this topic we are going to modify and expand that project so it has several pages.
 
 The final application will have these routes:
 
@@ -55,13 +55,13 @@ The final application will have these routes:
 | `/home` | Home page |
 | `/about` | Information page about the course |
 | `/courses` | List of courses |
-| `/courses/detail?id=1` | Detail of a specific course |
+| `/courses/detail?id=1` | Details of a specific course |
 
 ---
 
 ## 3. Final project structure
 
-At the end of this topic, the structure of the project will be approximately this:
+By the end of this topic, the project structure will look roughly like this:
 
 ```text
 spring-mvc-day1
@@ -104,17 +104,17 @@ spring-mvc-day1
                         └── not-found.jsp
 ```
 
-Not all files are completely new. Some, such as `pom.xml`, `app-servlet.xml`, `home.jsp`, and `styles.css`, already existed in Topic 1, but we will modify them now.
+Not all the files are completely new. Some, such as `pom.xml`, `app-servlet.xml`, `home.jsp` and `styles.css`, already existed in Topic 1, but now we will modify them.
 
 ---
 
-[![Notes](https://img.youtube.com/vi/xpHJwu2M088/0.jpg)](https://www.youtube.com/watch?v=xpHJwu2M088&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Annotations](https://img.youtube.com/vi/xpHJwu2M088/0.jpg)](https://www.youtube.com/watch?v=xpHJwu2M088&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
 ## 4. From XML configuration to annotations
 
-In Topic 1 we related a URL to a controller using XML.
+In Topic 1 we mapped a URL to a controller using XML.
 
 For example:
 
@@ -129,7 +129,7 @@ For example:
 </bean>
 ```
 
-That code said that routes `/` and `/home` should be served by the bean named `homeController`.
+That code said that the `/` and `/home` routes should be handled by the bean named `homeController`.
 
 From now on we will make that association directly in Java:
 
@@ -140,16 +140,16 @@ public String home(Model model) {
 }
 ```
 
-The main difference is that the URL now appears next to the method being executed. This makes the code easier to read and maintain.
+The main difference is that the URL now appears next to the method that runs. This makes the code easier to read and maintain.
 
-Before we had to look at two places:
+Before, we had to look in two places:
 
 ```text
 XML → para saber qué URL llama al controlador.
 Java → para saber qué hace el controlador.
 ```
 
-Now almost everything remains in the Java class:
+Now almost everything stays in the Java class:
 
 ```text
 Java → URL, método, modelo y vista.
@@ -157,10 +157,11 @@ Java → URL, método, modelo y vista.
 
 ---
 
-## 5. Update `pom.xml` file
+## 5. Updating the `pom.xml` file
 
-Since in this topic we are going to display a list of courses in a JSP, it is convenient for us to use JSTL.
-JSTL allows us to write useful tags inside JSP. For example, to traverse a list we will use:
+Since we are going to display a list of courses in a JSP in this topic, it's a good idea to use JSTL.
+
+JSTL lets us write useful tags inside a JSP. For example, to loop through a list we will use:
 
 ```jsp
 <c:forEach var="course" items="${courses}">
@@ -255,7 +256,7 @@ We already had this dependency in Topic 1:
 
 It is the main dependency for working with Spring MVC.
 
-We also maintain the dependency on the Servlet API:
+We also keep the Servlet API dependency:
 
 ```xml
 <dependency>
@@ -266,7 +267,7 @@ We also maintain the dependency on the Servlet API:
 </dependency>
 ```
 
-We use `scope` with value `provided` because Tomcat already provides this library when you run the application.
+We use `scope` with the value `provided` because Tomcat already provides this library when it runs the application.
 
 The new dependencies are these:
 
@@ -284,22 +285,22 @@ The new dependencies are these:
 </dependency>
 ```
 
-The first contains the JSTL API. The second contains the actual implementation.
+The first one contains the JSTL API. The second one contains the actual implementation.
 
 If we don't add these dependencies and then use a tag like `c:forEach`, the application may fail to render the JSP.
 
 ---
 
-## 6. `app-servlet.xml` update
+## 6. Updating `app-servlet.xml`
 
-In Topic 1 we registered the controller manually in XML. Now we want Spring to automatically find classes annotated with `@Controller` or `@Service`.
+In Topic 1 we registered the controller manually in XML. Now we want Spring to find the classes annotated with `@Controller` or `@Service` automatically.
 
-To do this we must activate two things:
+To do this, we have to enable two things:
 
 1. Annotation-based MVC support.
 2. Automatic component scanning.
 
-The file is in:
+The file is located at:
 
 ```text
 src/main/webapp/WEB-INF/spring/app-servlet.xml
@@ -348,7 +349,7 @@ This line is essential:
 <mvc:annotation-driven />
 ```
 
-Allows Spring MVC to work correctly with annotation-based controllers, for example with methods marked with `@GetMapping`.
+It allows Spring MVC to work properly with annotation-based controllers, for example with methods annotated with `@GetMapping`.
 
 We also add:
 
@@ -356,7 +357,7 @@ We also add:
 <context:component-scan base-package="com.example.springmvcday1" />
 ```
 
-This tells Spring to look for annotated classes within the package:
+This tells Spring to look for annotated classes inside the package:
 
 ```text
 com.example.springmvcday1
@@ -391,9 +392,9 @@ We no longer need to write this:
       class="com.example.springmvcday1.controller.HomeController" />
 ```
 
-We also don't need to manually write the mappings for each URL in XML. Now the mappings will be in the controller methods themselves.
+We don't need to write the mappings for each URL manually in XML either. Now the mappings will live in the controller methods themselves.
 
-The `ViewResolver` configuration is maintained:
+The `ViewResolver` configuration stays the same:
 
 ```xml
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -414,7 +415,7 @@ Spring will look for this JSP:
 /WEB-INF/views/home.jsp
 ```
 
-And when you return:
+And when it returns:
 
 ```java
 return "courses/list";
@@ -436,7 +437,7 @@ Spring will look for this JSP:
 
 Before creating the courses page, we need a class that represents a course.
 
-We will create it in this route:
+We will create it at this path:
 
 ```text
 src/main/java/com/example/springmvcday1/model/Course.java
@@ -481,7 +482,7 @@ public class Course {
 
 ### Code explanation
 
-This class represents a course within our application.
+This class represents a course in our application.
 
 It has four attributes:
 
@@ -501,7 +502,7 @@ Each attribute stores a part of the course information:
 | `level` | Course level |
 | `durationInHours` | Duration in hours |
 
-The builder allows you to easily create courses:
+The constructor makes it easy to create courses:
 
 ```java
 public Course(Long id, String title, String level, int durationInHours) {
@@ -517,7 +518,7 @@ For example:
 new Course(1L, "Spring MVC desde cero", "Inicial", 20);
 ```
 
-Create a course with this data:
+creates a course with this data:
 
 ```text
 id: 1
@@ -526,21 +527,21 @@ level: Inicial
 durationInHours: 20
 ```
 
-The `get` methods allow data to be read from other classes and from the JSP.
+The `get` methods let other classes and the JSP read the data.
 
-For example, if in a JSP we have an object called `course`, we can write:
+For example, if we have an object called `course` in a JSP, we can write:
 
 ```jsp
 ${course.title}
 ```
 
-Internally, JSP will call the method:
+Internally, the JSP will call the method:
 
 ```java
 getTitle()
 ```
 
-That is why it is important that the class has public `get` methods.
+That's why it's important for the class to have public `get` methods.
 
 ---
 
@@ -548,17 +549,17 @@ That is why it is important that the class has public `get` methods.
 
 Now let's create a service class.
 
-A service is a class that contains logic related to data or application operations.
+A service is a class that contains logic related to the data or the operations of the application.
 
 In a real application, this service could query a MySQL database. In this topic we are not going to use a database yet. We will use a fixed list of courses to focus on Spring MVC.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/java/com/example/springmvcday1/service/CourseService.java
 ```
 
-### Complete code of `CourseService.java`
+### Full code of `CourseService.java`
 
 ```java
 package com.example.springmvcday1.service;
@@ -592,7 +593,7 @@ public class CourseService {
 
 ### Code explanation
 
-The class begins with this annotation:
+The class starts with this annotation:
 
 ```java
 @Service
@@ -605,7 +606,7 @@ Esta clase es un componente de servicio.
 Spring debe crear un objeto de esta clase y gestionarlo.
 ```
 
-As in `app-servlet.xml` we have written:
+Since in `app-servlet.xml` we wrote:
 
 ```xml
 <context:component-scan base-package="com.example.springmvcday1" />
@@ -623,7 +624,7 @@ private final List<Course> courses = List.of(
 );
 ```
 
-This list simulates application data.
+This list simulates the application's data.
 
 The `findAll()` method returns all courses:
 
@@ -635,7 +636,7 @@ public List<Course> findAll() {
 
 We will use it to display the list of courses.
 
-The `findById()` method searches for a course by its identifier:
+The `findById()` method looks up a course by its identifier:
 
 ```java
 public Course findById(Long id) {
@@ -655,15 +656,15 @@ Devolver el primero que encuentre.
 Si no encuentra ninguno, devolver null.
 ```
 
-Later we will see more complete ways to handle cases where something is not found, especially when we study exception management.
+Later we will see more complete ways to handle cases where something isn't found, especially when we study exception handling.
 
 ---
 
-## 9. Creating the `HomeController` driver
+## 9. Creating the `HomeController` controller
 
 Now let's modify the main controller to use annotations.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/java/com/example/springmvcday1/controller/HomeController.java
@@ -722,9 +723,9 @@ public String home(Model model) {
 }
 ```
 
-`@GetMapping` indicates that this method will serve HTTP GET requests.
+`@GetMapping` indicates that this method will handle HTTP GET requests.
 
-In this case, the method serves two routes:
+In this case, the method handles two routes:
 
 ```text
 /
@@ -746,7 +747,7 @@ model.addAttribute("message", "Ahora estamos usando controladores con anotacione
 model.addAttribute("courseName", "Curso de Spring MVC - Día 2");
 ```
 
-Each call to `addAttribute` adds one piece of information to the model.
+Each call to `addAttribute` adds a value to the model.
 
 For example:
 
@@ -754,7 +755,7 @@ For example:
 model.addAttribute("pageTitle", "Bienvenida a Spring MVC");
 ```
 
-allows us to write in the JSP:
+lets us write this in the JSP:
 
 ```jsp
 ${pageTitle}
@@ -768,7 +769,7 @@ return "home";
 
 That value is the logical name of the view.
 
-As in `app-servlet.xml` we have:
+Since in `app-servlet.xml` we have:
 
 ```xml
 <property name="prefix" value="/WEB-INF/views/" />
@@ -794,13 +795,13 @@ public String about(Model model) {
 }
 ```
 
-This method serves the route:
+This method handles the route:
 
 ```text
 /about
 ```
 
-Add the title and a description to the model, and return the view:
+It adds the title and a description to the model, and returns the view:
 
 ```text
 about
@@ -814,15 +815,15 @@ Therefore, Spring will look for:
 
 ---
 
-[![Parametric Routes](https://img.youtube.com/vi/ENzHoMrjD8I/0.jpg)](https://www.youtube.com/watch?v=ENzHoMrjD8I&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Routes with parameters](https://img.youtube.com/vi/ENzHoMrjD8I/0.jpg)](https://www.youtube.com/watch?v=ENzHoMrjD8I&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-## 10. Creating the `CourseController` driver
+## 10. Creating the `CourseController` controller
 
 Now let's create a second controller for course-related routes.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/java/com/example/springmvcday1/controller/CourseController.java
@@ -888,11 +889,11 @@ The class starts like this:
 public class CourseController {
 ```
 
-`@Controller` marks the class as a webdriver.
+`@Controller` marks the class as a web controller.
 
 `@RequestMapping("/courses")` defines a base path for the entire controller.
 
-This means that all methods in this class start with:
+This means that all the methods in this class start with:
 
 ```text
 /courses
@@ -938,9 +939,9 @@ Inside the controller we have this attribute:
 private final CourseService courseService;
 ```
 
-The driver needs to use `CourseService` to get the courses.
+The controller needs to use `CourseService` to get the courses.
 
-Then the constructor appears:
+Then comes the constructor:
 
 ```java
 public CourseController(CourseService courseService) {
@@ -969,13 +970,13 @@ Thanks to this we avoid writing code like this:
 private CourseService courseService = new CourseService();
 ```
 
-In Spring applications, we typically let Spring create and connect the main objects of the application.
+In Spring applications, we normally let Spring create and wire together the main objects of the application.
 
 ---
 
-## 12. Method for listing courses
+## 12. Method to list the courses
 
-The method that shows the list of courses is this:
+The method that shows the list of courses is this one:
 
 ```java
 @GetMapping
@@ -987,7 +988,7 @@ public String listCourses(Model model) {
 }
 ```
 
-As the class has:
+Since the class has:
 
 ```java
 @RequestMapping("/courses")
@@ -999,13 +1000,13 @@ and the method has:
 @GetMapping
 ```
 
-This method responds to:
+this method responds to:
 
 ```text
 GET /courses
 ```
 
-Within the method we add two data to the model:
+Inside the method we add two values to the model:
 
 ```java
 model.addAttribute("pageTitle", "Listado de cursos");
@@ -1038,7 +1039,7 @@ That means Spring will look for this view:
 
 ## 13. Method to view the details of a course
 
-The method that shows a specific course is this:
+The method that shows a specific course is this one:
 
 ```java
 @GetMapping("/detail")
@@ -1059,7 +1060,7 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-This method responds to URLs like this:
+This method responds to URLs like this one:
 
 ```text
 /courses/detail?id=1
@@ -1071,7 +1072,7 @@ The part:
 @RequestParam("id") Long id
 ```
 
-He tells Spring:
+tells Spring:
 
 ```text
 Busca en la URL un parámetro llamado id.
@@ -1079,7 +1080,7 @@ Convierte ese valor a Long.
 Guárdalo en la variable id.
 ```
 
-For example, if the user enters:
+For example, if the user goes to:
 
 ```text
 /courses/detail?id=2
@@ -1097,9 +1098,9 @@ Then we look for the course:
 Course course = courseService.findById(id);
 ```
 
-If the course does not exist, `course` will be `null`.
+If the course doesn't exist, `course` will be `null`.
 
-In that case this block is executed:
+In that case, this block runs:
 
 ```java
 if (course == null) {
@@ -1110,7 +1111,7 @@ if (course == null) {
 }
 ```
 
-This sends the handle that was not found to the view and returns the view:
+This sends the identifier that wasn't found to the view and returns the view:
 
 ```text
 courses/not-found
@@ -1122,7 +1123,7 @@ Spring will look for:
 /WEB-INF/views/courses/not-found.jsp
 ```
 
-If the course does exist, this part is executed:
+If the course does exist, this part runs:
 
 ```java
 model.addAttribute("pageTitle", course.getTitle());
@@ -1131,7 +1132,7 @@ model.addAttribute("course", course);
 return "courses/detail";
 ```
 
-We send the complete course in sight with the name:
+We send the whole course to the view under the name:
 
 ```text
 course
@@ -1151,7 +1152,7 @@ Spring will look for:
 
 ---
 
-## 14. Update `home.jsp` view
+## 14. Updating the `home.jsp` view
 
 Now we will modify the home view to add navigation to the new pages.
 
@@ -1229,7 +1230,7 @@ ${message}
 ${courseName}
 ```
 
-This data was added in the `home()` method:
+These values were added in the `home()` method:
 
 ```java
 model.addAttribute("pageTitle", "Bienvenida a Spring MVC");
@@ -1237,7 +1238,7 @@ model.addAttribute("message", "Ahora estamos usando controladores con anotacione
 model.addAttribute("courseName", "Curso de Spring MVC - Día 2");
 ```
 
-We have also added a navigation menu:
+We also added a navigation menu:
 
 ```jsp
 <nav class="nav">
@@ -1253,7 +1254,7 @@ We use:
 ${pageContext.request.contextPath}
 ```
 
-to construct correct routes regardless of the name with which the application is deployed.
+to build correct routes no matter what name the application is deployed under.
 
 If the application is deployed as:
 
@@ -1273,7 +1274,7 @@ becomes:
 /spring-mvc-day1/courses
 ```
 
-This avoids problems when the application is not deployed directly to the root of the server.
+This avoids problems when the application isn't deployed directly at the root of the server.
 
 ---
 
@@ -1281,13 +1282,13 @@ This avoids problems when the application is not deployed directly to the root o
 
 Now we will create an information page about the course.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/webapp/WEB-INF/views/about.jsp
 ```
 
-### Complete code of `about.jsp`
+### Full code of `about.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1379,13 +1380,13 @@ Therefore, Spring uses the `ViewResolver` to look up:
 
 Now we will create the view that shows the list of courses.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
-It is important to create the `courses` folder inside `views`.
+It's important to create the `courses` folder inside `views`.
 
 ### Full code of `list.jsp`
 
@@ -1464,19 +1465,19 @@ The first line configures the JSP page:
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 ```
 
-The second line activates JSTL:
+The second line enables JSTL:
 
 ```jsp
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 ```
 
-This line is necessary to be able to use tags like:
+This line is required to use tags like:
 
 ```jsp
 <c:forEach>
 ```
 
-The controller sends two pieces of data to this view:
+The controller sends two values to this view:
 
 ```java
 model.addAttribute("pageTitle", "Listado de cursos");
@@ -1489,7 +1490,7 @@ In the JSP we use the title like this:
 <h1>${pageTitle}</h1>
 ```
 
-The list of courses is traversed with:
+We loop through the list of courses with:
 
 ```jsp
 <c:forEach var="course" items="${courses}">
@@ -1504,7 +1505,7 @@ Recorre todos los elementos de la lista courses.
 En cada vuelta, guarda el curso actual en una variable llamada course.
 ```
 
-Within the loop we can access the properties of each course:
+Inside the loop we can access the properties of each course:
 
 ```jsp
 ${course.title}
@@ -1521,7 +1522,7 @@ For example:
 
 shows the course title.
 
-The link to the detail is constructed like this:
+The link to the details page is built like this:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses/detail?id=${course.id}">
@@ -1535,7 +1536,7 @@ If the current course has `id` equal to `1`, the generated URL will be:
 /spring-mvc-day1/courses/detail?id=1
 ```
 
-That URL will be served by this controller method:
+That URL will be handled by this controller method:
 
 ```java
 @GetMapping("/detail")
@@ -1548,9 +1549,9 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 
 ## 17. Creating the `courses/detail.jsp` view
 
-Now we will create the view that shows the information of a specific course.
+Now we will create the view that shows the information about a specific course.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/detail.jsp
@@ -1649,15 +1650,15 @@ La JSP imprime los datos del curso.
 
 ## 18. Creating the `courses/not-found.jsp` view
 
-Now we will create a view for the case in which the user tries to view a course that does not exist.
+Now we will create a view for when the user tries to view a course that doesn't exist.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/webapp/WEB-INF/views/courses/not-found.jsp
 ```
 
-### Complete code of `not-found.jsp`
+### Full code of `not-found.jsp`
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1706,7 +1707,7 @@ src/main/webapp/WEB-INF/views/courses/not-found.jsp
 
 ### Code explanation
 
-This view is used when the service does not find any course with the received identifier.
+This view is used when the service doesn't find any course with the given identifier.
 
 In the controller we had:
 
@@ -1735,11 +1736,11 @@ This solution is simple and manual. Later it can be improved by using exceptions
 
 ---
 
-## 19. Update `styles.css` file
+## 19. Updating the `styles.css` file
 
-Now we will update the CSS file so that all views have a common look.
+Now we will update the CSS file so that all the views share a common look.
 
-The route will be:
+The path will be:
 
 ```text
 src/main/webapp/resources/css/styles.css
@@ -1861,9 +1862,9 @@ code {
 
 ### Code explanation
 
-This file does not contain Spring MVC logic. It is a static resource.
+This file doesn't contain any Spring MVC logic. It's a static resource.
 
-Let's remember that in `app-servlet.xml` we had this line:
+Remember that in `app-servlet.xml` we had this line:
 
 ```xml
 <mvc:resources mapping="/resources/**" location="/resources/" />
@@ -1875,7 +1876,7 @@ Thanks to that configuration, the browser can access the CSS using paths like:
 /resources/css/styles.css
 ```
 
-In the JSP we link it like this:
+In the JSPs we link it like this:
 ```jsp
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
 ```
@@ -1889,7 +1890,7 @@ The `.header` class styles the top of the page.
 }
 ```
 
-The `.nav` class organizes the menu links:
+The `.nav` class lays out the menu links:
 
 ```css
 .nav {
@@ -1910,7 +1911,7 @@ The `.card` class is used to display the main content as a card:
 }
 ```
 
-The `.table` class is used for course listing.
+The `.table` class is used for the list of courses.
 
 ```css
 .table {
@@ -1923,15 +1924,15 @@ The `.table` class is used for course listing.
 
 ---
 
-## 20. `/home` Complete Flow
+## 20. Complete flow of `/home`
 
-When the user enters:
+When the user goes to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/home
 ```
 
-the following occurs:
+the following happens:
 
 ```text
 1. Tomcat recibe la petición.
@@ -1945,7 +1946,7 @@ the following occurs:
 9. El navegador muestra la página.
 ```
 
-The responsible method is:
+The method responsible for this is:
 
 ```java
 @GetMapping({"/", "/home"})
@@ -1960,15 +1961,15 @@ public String home(Model model) {
 
 ---
 
-## 21. `/courses` Complete Flow
+## 21. Complete flow of `/courses`
 
-When the user enters:
+When the user goes to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses
 ```
 
-the following occurs:
+the following happens:
 
 ```text
 1. Tomcat recibe la petición.
@@ -1984,7 +1985,7 @@ the following occurs:
 11. El navegador muestra una tabla con los cursos.
 ```
 
-The responsible method is:
+The method responsible for this is:
 
 ```java
 @GetMapping
@@ -1998,9 +1999,9 @@ public String listCourses(Model model) {
 
 ---
 
-## 22. `/courses/detail?id=1` complete flow
+## 22. Complete flow of `/courses/detail?id=1`
 
-When the user clicks on the `Ver detalle` link, a URL like this is generated:
+When the user clicks the `Ver detalle` link, a URL like this is generated:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses/detail?id=1
@@ -2023,7 +2024,7 @@ Then the following happens:
 12. La JSP muestra los datos del curso.
 ```
 
-The responsible method is:
+The method responsible for this is:
 
 ```java
 @GetMapping("/detail")
@@ -2046,9 +2047,9 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 
 ---
 
-## 23. Comparison between `ModelAndView` and `Model`
+## 23. Comparing `ModelAndView` and `Model`
 
-In Topic 1 we use `ModelAndView`:
+In Topic 1 we used `ModelAndView`:
 
 ```java
 ModelAndView modelAndView = new ModelAndView("home");
@@ -2059,7 +2060,7 @@ modelAndView.addObject("message", "Nuestra primera aplicación Spring MVC funcio
 return modelAndView;
 ```
 
-In this topic we use `Model` and return an `String`:
+In this topic we use `Model` and return a `String`:
 
 ```java
 model.addAttribute("pageTitle", "Bienvenida a Spring MVC");
@@ -2068,28 +2069,28 @@ model.addAttribute("message", "Ahora estamos usando controladores con anotacione
 return "home";
 ```
 
-Both forms are valid.
+Both approaches are valid.
 
-The difference is that `ModelAndView` joins into a single object:
+The difference is that `ModelAndView` combines into a single object:
 
 ```text
 Datos del modelo + nombre de la vista
 ```
 
-While with `Model` and `String` we use two separate elements:
+Whereas with `Model` and `String` we use two separate elements:
 
 ```text
 Model → contiene los datos.
 String → contiene el nombre lógico de la vista.
 ```
 
-With annotated drivers it is usually more convenient to work with `Model` and return an `String`.
+With annotated controllers it's usually more convenient to work with `Model` and return a `String`.
 
 ---
 
-## 24. Comparison between XML and annotations
+## 24. Comparing XML and annotations
 
-In Topic 1, to associate `/home` with a controller we wrote something like this in XML:
+In Topic 1, to map `/home` to a controller we wrote something like this in XML:
 
 ```xml
 <prop key="/home">homeController</prop>
@@ -2104,7 +2105,7 @@ public String home(Model model) {
 }
 ```
 
-The advantage of the annotated approach is that the path is next to the method being executed.
+The advantage of the annotation-based approach is that the route sits next to the method that runs.
 
 That makes the code easier to understand:
 
@@ -2124,15 +2125,15 @@ Este método devuelve la vista about.jsp.
 
 ---
 
-## 25. Summary of main notes
+## 25. Summary of the main annotations
 
-| Annotation | Usage |
+| Annotation | Use |
 | ----------------- | --------------------------------------------------- |
-| `@Controller` | Mark a class as a web controller |
-| `@Service` | Mark a class as a Spring managed service |
+| `@Controller` | Marks a class as a web controller |
+| `@Service` | Marks a class as a service managed by Spring |
 | `@RequestMapping` | Defines a base route or a general route |
-| `@GetMapping` | Associate a GET request with a |
-| `@RequestParam` | Read a parameter from the URL |
+| `@GetMapping` | Maps a GET request to a method |
+| `@RequestParam` | Reads a parameter from the URL |
 
 ### `@Controller` example
 
@@ -2187,7 +2188,7 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-Reads the `id` parameter from a URL like this:
+Reads the `id` parameter from a URL like this one:
 
 ```text
 /courses/detail?id=1
@@ -2195,9 +2196,9 @@ Reads the `id` parameter from a URL like this:
 
 ---
 
-## 26. Common mistakes
+## 26. Common errors
 
-### Error 1: Forget `<mvc:annotation-driven />`
+### Error 1: Forgetting `<mvc:annotation-driven />`
 
 If this line is missing from `app-servlet.xml`:
 
@@ -2207,11 +2208,11 @@ If this line is missing from `app-servlet.xml`:
 
 Spring MVC may not process annotated controllers correctly.
 
-It should appear inside `app-servlet.xml`.
+It must appear inside `app-servlet.xml`.
 
 ---
 
-### Error 2: Forget `<context:component-scan />`
+### Error 2: Forgetting `<context:component-scan />`
 
 If this line is missing:
 
@@ -2219,9 +2220,9 @@ If this line is missing:
 <context:component-scan base-package="com.example.springmvcday1" />
 ```
 
-Spring will not automatically find drivers annotated with `@Controller` or services annotated with `@Service`.
+Spring won't automatically find the controllers annotated with `@Controller` or the services annotated with `@Service`.
 
-A common symptom will be receiving a 404 error when entering a route that should exist.
+A common symptom is getting a 404 error when you go to a route that should exist.
 
 ---
 
@@ -2241,11 +2242,11 @@ com.example.springmvcday1
 
 Spring won't find them.
 
-The package indicated in `base-package` must match the actual root package of our application.
+The package given in `base-package` must match the actual root package of our application.
 
 ---
 
-### Error 4: Returning wrong view name
+### Error 4: Returning the wrong view name
 
 If the controller returns:
 
@@ -2253,7 +2254,7 @@ If the controller returns:
 return "course/list";
 ```
 
-but the real view is in:
+but the actual view is at:
 
 ```text
 /WEB-INF/views/courses/list.jsp
@@ -2265,7 +2266,7 @@ Spring will look for:
 /WEB-INF/views/course/list.jsp
 ```
 
-Since that route does not exist, an error will appear.
+Since that path doesn't exist, you'll get an error.
 
 The correct name would be:
 
@@ -2275,7 +2276,7 @@ return "courses/list";
 
 ---
 
-### Error 5: misspelling links in JSPs
+### Error 5: Writing the links in the JSPs incorrectly
 
 If we write a link like this:
 
@@ -2283,13 +2284,13 @@ If we write a link like this:
 <a href="/courses">Cursos</a>
 ```
 
-may fail if the application is deployed with a context like:
+it may fail if the application is deployed with a context like:
 
 ```text
 /spring-mvc-day1
 ```
 
-It is better to write:
+It's better to write:
 
 ```jsp
 <a href="${pageContext.request.contextPath}/courses">Cursos</a>
@@ -2299,7 +2300,7 @@ This way the route is built correctly.
 
 ---
 
-### Error 6: Forgetting JSTL dependencies
+### Error 6: Forgetting the JSTL dependencies
 
 If we use:
 
@@ -2307,9 +2308,9 @@ If we use:
 <c:forEach>
 ```
 
-but we have not added the JSTL dependencies in `pom.xml`, the page may crash.
+but we haven't added the JSTL dependencies to `pom.xml`, the page may fail.
 
-We must have these two dependencies:
+We need these two dependencies:
 
 ```xml
 <dependency>
@@ -2327,7 +2328,7 @@ We must have these two dependencies:
 
 ---
 
-### Error 7: Forgetting to create `courses` folder
+### Error 7: Forgetting to create the `courses` folder
 
 If the controller returns:
 
@@ -2341,13 +2342,13 @@ Spring will look for:
 /WEB-INF/views/courses/list.jsp
 ```
 
-Therefore, the folder must exist:
+Therefore, this folder must exist:
 
 ```text
 src/main/webapp/WEB-INF/views/courses
 ```
 
-And inside there should be the file:
+And the file must be inside it:
 
 ```text
 list.jsp
@@ -2355,11 +2356,11 @@ list.jsp
 
 ---
 
-## 27. Final summary of the topic
+## 27. Final topic summary
 
-In this topic we have learned how to build a Spring MVC application using annotated controllers.
+In this topic we learned how to build a Spring MVC application using annotated controllers.
 
-We have seen that a Spring MVC application can be organized like this:
+We saw that a Spring MVC application can be organized like this:
 
 ```text
 Controlador → recibe la petición.
@@ -2386,9 +2387,9 @@ JSP
 HTML final
 ```
 
-We have also seen how to create several routes:
+We also saw how to create several routes:
 
-| Route | Responsible method | View |
+| Route | Method responsible | View |
 | ---------------------- | ------------------ | -------------------- |
 | `/` | `home()` | `home.jsp` |
 | `/home` | `home()` | `home.jsp` |
@@ -2406,4 +2407,4 @@ El controlador prepara datos.
 Spring decide qué vista mostrar.
 ```
 
-In the next topic we will work on form processing, which will allow data to be sent from an HTML page to a controller using GET and POST methods.
+In the next topic we will work on form processing, which will let us send data from an HTML page to a controller using the GET and POST methods.

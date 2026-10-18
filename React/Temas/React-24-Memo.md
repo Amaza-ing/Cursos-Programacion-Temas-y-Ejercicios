@@ -2,17 +2,17 @@
 
 ## **1. Introduction**
 
-As a React application grows, the number of components and renders also increases. Not all renders are necessary: ​​sometimes a component is re-rendered even though **its props have not changed**.
+As a React application grows, the number of components and renders also increases. Not all renders are necessary: sometimes a component re-renders even though **its props haven't changed**.
 
 React offers a tool to optimize this behavior: **`React.memo`**.
 
 In this topic you will learn:
 
-- What is unnecessary rendering.
+- What an unnecessary render is.
 - What `React.memo` does.
 - When to use it and when not to.
-- Relationship between `React.memo`, props and state.
-- Common errors and good practices.
+- The relationship between `React.memo`, props and state.
+- Common mistakes and best practices.
 
 ---
 
@@ -20,11 +20,11 @@ In this topic you will learn:
 
 A component **renders** when:
 
-- Change your status.
-- They change their props.
-- Its parent component is rendered.
+- Its state changes.
+- Its props change.
+- Its parent component renders.
 
-The latter is important: **a child is rendered when its parent is rendered**, even if its props do not change.
+The last one is important: **a child renders when its parent renders**, even if its props don't change.
 
 ---
 
@@ -45,22 +45,22 @@ function Parent() {
 }
 ```
 
-Although `Child` does not receive props, **it is rendered every time** `count` changes.
+Although `Child` doesn't receive any props, **it renders every time** `count` changes.
 
-In small apps it is not a problem, but in large components it can affect performance.
+In small apps it isn't a problem, but in large components it can affect performance.
 
 ---
 
 ## **4. What is `React.memo`?**
 
-`React.memo` is a function that **memorizes** a component.
+`React.memo` is a function that **memoizes** a component.
 
-- If the props **do not change**, React reuses the previous render.
-- If the props **change**, the component is re-rendered.
+- If the props **don't change**, React reuses the previous render.
+- If the props **change**, the component re-renders.
 
 ---
 
-## **5. Basic use of `React.memo`**
+## **5. Basic usage of `React.memo`**
 
 ```js
 import { memo } from "react";
@@ -73,7 +73,7 @@ function Child() {
 export default memo(Child);
 ```
 
-Now `Child` **does not render** if its props don't change.
+Now `Child` **doesn't re-render** if its props don't change.
 
 ---
 
@@ -90,16 +90,16 @@ function Child({ name }) {
 export default memo(Child);
 ```
 
-- If `name` does not change → there is no render.
-- If `name` changes → yes there is render.
+- If `name` doesn't change → there's no render.
+- If `name` changes → there is a render.
 
 ---
 
-## **7. Superficial comparison of props**
+## **7. Shallow comparison of props**
 
 `React.memo` does a **shallow comparison**:
 
-- Primitive values (`string`, `number`, `boolean`) → correct.
+- Primitive values (`string`, `number`, `boolean`) → work fine.
 - Objects and arrays → are compared by reference.
 
 Problematic example:
@@ -108,7 +108,7 @@ Problematic example:
 <Child options={{ theme: "dark" }} />
 ```
 
-This object is **new in each render**, even though its content is the same.
+This object is **new on every render**, even though its content is the same.
 
 ---
 
@@ -118,16 +118,16 @@ When you pass:
 
 - Objects
 - Arrays
-- Features
+- Functions
 
-…like props, they usually change reference.
+…as props, their reference usually changes.
 
-Solutions (will be seen later):
+Solutions (we'll see them later):
 
 - `useCallback`
 - `useMemo`
 
-For now, key idea:
+For now, the key idea:
 
 > `React.memo` works best with simple props.
 
@@ -138,10 +138,10 @@ For now, key idea:
 ✔️ Useful when:
 
 - The component is heavy.
-- Rendered many times.
-- Receive stable props.
+- It renders many times.
+- It receives stable props.
 
-❌ Not necessary when:
+❌ Not needed when:
 
 - The component is small.
 - The render is cheap.
@@ -151,32 +151,32 @@ Optimizing without measuring can be counterproductive.
 
 ---
 
-## **10. Typical errors**
+## **10. Common mistakes**
 
-### **10.1. Use `React.memo` on all components**
+### **10.1. Using `React.memo` on every component**
 
-It is not good practice.
+It isn't good practice.
 
-### **10.2. Wait for it to fix renders by local state**
+### **10.2. Expecting it to fix renders caused by local state**
 
-If the state is inside the component, it **renders the same**.
+If the state is inside the component, **it renders anyway**.
 
-### **10.3. Forget that it is an optimization**
+### **10.3. Forgetting that it's an optimization**
 
 First make it work, then optimize.
 
 ---
 
-## **11. Good practices**
+## **11. Best practices**
 
 - Use `React.memo` selectively.
 - Start with large components or lists.
 - Avoid passing objects inline.
-- Combine with `useCallback` and `useMemo` when necessary.
+- Combine it with `useCallback` and `useMemo` when necessary.
 
 ---
 [![React Memo](https://img.youtube.com/vi/Y9aWic62X7M/0.jpg)](https://www.youtube.com/watch?v=Y9aWic62X7M&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-In the next topic you will learn how to optimize loading with **Lazy Loading**.
+In the next topic you'll learn how to optimize loading with **Lazy Loading**.

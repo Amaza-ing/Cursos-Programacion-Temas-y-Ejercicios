@@ -1,14 +1,14 @@
 # Exercises - Topic 31: Optional
 
-Below you will find **10 practical exercises** to work with **Optional**: `ofNullable`, `empty`, `isPresent`, `ifPresent`, `orElse`, `orElseGet`, `orElseThrow`, `map`, `filter` and searches that may not return results.
+Below you will find **10 practical exercises** to work with **Optional**: `ofNullable`, `empty`, `isPresent`, `ifPresent`, `orElse`, `orElseGet`, `orElseThrow`, `map`, `filter` and searches that may not return a result.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Create an `Optional` with `ofNullable`
 
-Declare an `String username = null` variable.
+Declare a `String username = null` variable.
 
 Create an `Optional<String>` using `Optional.ofNullable(username)` and print a default value using `orElse`.
 
@@ -70,12 +70,12 @@ Create a method:
 public static Optional<String> findEmail(String username)
 ```
 
-You must return:
+It must return:
 
 - `Optional.of("admin@example.com")` if `username` is `"admin"`
 - `Optional.empty()` in any other case
 
-Try the method from `main`.
+Test the method from `main`.
 
 <details><summary>Show solution</summary>
 
@@ -134,12 +134,12 @@ public class Main {
 
 Create an `Optional<Integer>` with the value `17`.
 
-Use `filter` to only keep the value if it is greater than or equal to `18`.
+Use `filter` to keep the value only if it is greater than or equal to `18`.
 
 Then print:
 
-- `"Adult"` if value left
-- `"Minor"` if empty
+- `"Adult"` if there is a value left
+- `"Minor"` if it is empty
 
 <details><summary>Show solution</summary>
 
@@ -199,7 +199,7 @@ public static Optional<String> findToken()
 
 It should return `Optional.empty()`.
 
-From `main`, call the method and use `orElseThrow` to throw an exception with message `"Token not found"`.
+From `main`, call the method and use `orElseThrow` to throw an exception with the message `"Token not found"`.
 
 <details><summary>Show solution</summary>
 
@@ -224,7 +224,7 @@ public class Main {
 
 ---
 
-## Exercise 8: Search product by code
+## Exercise 8: Search for a product by code
 
 Create a class `Product` with:
 
@@ -237,7 +237,7 @@ Create a list of products and a method:
 public static Optional<Product> findByCode(List<Product> products, String code)
 ```
 
-You must return the first product with that code.
+It must return the first product with that code.
 
 <details><summary>Show solution</summary>
 
@@ -289,7 +289,7 @@ public class Main {
 
 ---
 
-## Exercise 9: Chain `map`
+## Exercise 9: Chain `map` calls
 
 Create a class `User` with:
 
@@ -341,9 +341,9 @@ public class Main {
 Create an empty `Optional<String>`.
 
 Do not use `get()` directly.  
-Check if it has value with `isPresent()` and:
+Check whether it has a value with `isPresent()` and:
 
-- if it has value, print it
+- if it has a value, print it
 - if it has no value, print `"No value"`
 
 <details><summary>Show solution</summary>

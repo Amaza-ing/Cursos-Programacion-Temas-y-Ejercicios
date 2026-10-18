@@ -2,9 +2,9 @@
 
 ## **Instructions:**
 
-Below you will find 7 practical exercises on inline and block elements in HTML. Perform each of them in a code editor and view the results in your browser.
+Below you'll find 7 practical exercises on inline and block elements in HTML. Do each one in a code editor and check the results in your browser.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -19,12 +19,12 @@ Look at the following code and answer:
 </p>
 ```
 
-Which of these elements are block type and which are inline type?
+Which of these elements are block elements and which are inline elements?
 
 <details><summary>Show solution</summary>
 
 - **Block elements:** `<h1>`, `<p>`
-- **Online items:** `<strong>`, `<a>`
+- **Inline elements:** `<strong>`, `<a>`
 
 </details>
 
@@ -68,7 +68,7 @@ Possible example:
 
 ## **Exercise 3: Combine inline and block elements**
 
-Write a paragraph where you include **bold text**, a **link** and a **span**.
+Write a paragraph that includes **bold text**, a **link** and a **span**.
 
 <details><summary>Show solution</summary>
 
@@ -86,7 +86,7 @@ Write a paragraph where you include **bold text**, a **link** and a **span**.
 
 ## **Exercise 4: Avoid nesting elements incorrectly**
 
-Why is the following code incorrect? Correct it.
+Why is the following code incorrect? Fix it.
 
 ```html
 <span>
@@ -96,7 +96,7 @@ Why is the following code incorrect? Correct it.
 
 <details><summary>Show solution</summary>
 
-The problem in the code is that `<span>` is an inline element and cannot contain a block element like `<h2>`. The correction would be:
+The problem with the code is that `<span>` is an inline element and can't contain a block element like `<h2>`. The fixed version would be:
 
 ```html
 <div>
@@ -108,9 +108,9 @@ The problem in the code is that `<span>` is an inline element and cannot contain
 
 ---
 
-## **Exercise 5: Using `span` and `div` in a text**
+## **Exercise 5: Using `span` and `div` in text**
 
-Write a paragraph where you use `em` to highlight a phrase and an `div` to enclose a set of phrases in a separate block.
+Write a paragraph where you use `em` to highlight a phrase, and a `div` to wrap a group of sentences in a separate block.
 
 <details><summary>Show solution</summary>
 
@@ -130,7 +130,7 @@ Write a paragraph where you use `em` to highlight a phrase and an `div` to enclo
 
 ## **Exercise 6: Create a list of items**
 
-Use a list (`ul` or `ol`) and make sure you use the `li` elements. It can be a shopping list, language list or anything else.
+Use a list (`ul` or `ol`) and make sure you use `li` elements. It can be a shopping list, a list of languages or anything else.
 
 <details><summary>Show solution</summary>
 

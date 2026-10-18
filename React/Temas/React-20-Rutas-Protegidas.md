@@ -2,38 +2,38 @@
 
 ## **1. Introduction**
 
-In many applications, not all pages must be accessible to any user. For example:
+In many applications, not every page should be accessible to every user. For example:
 
-- A profile only for logged in users.
-- An administration panel.
+- A profile only for logged-in users.
+- An admin panel.
 - Pages that require authentication.
 
-In React Router, this behavior is implemented using **protected routes**: routes that are only rendered if a condition is met (typically being authenticated).
+In React Router, this behavior is implemented with **protected routes**: routes that are only rendered if a condition is met (usually, being authenticated).
 
 In this topic you will learn:
 
-- What are protected routes.
-- How to create a protective component.
-- How to redirect to another route if the condition is not met.
-- A simple and reusable pattern.
+- What protected routes are.
+- How to create a guard component.
+- How to redirect to another route if the condition isn't met.
+- A simple, reusable pattern.
 
 ---
 
-## **2. Protected Routes Key Idea**
+## **2. The key idea behind protected routes**
 
 A protected route:
 
 - **Checks a condition** (for example, `isAuthenticated`).
-- If met → shows the page.
-- If it is not met → redirect to another route (login, home, etc.).
+- If it's met → it shows the page.
+- If it isn't met → it redirects to another route (login, home, etc.).
 
-The protection **is not in the route**, but in an **intermediate component**.
+The protection **doesn't go in the route**, but in an **intermediate component**.
 
 ---
 
-## **3. Simulate authentication (state)**
+## **3. Simulating authentication (state)**
 
-To understand the concept, we will use a simple simulation of stateful authentication.
+To understand the concept, we'll use a simple simulation of authentication with state.
 
 ```js
 import { useState } from "react";
@@ -47,14 +47,14 @@ function App() {
 
 In a real app, this value could come from:
 
--Context
+- Context
 - localStorage
 - A token
 - An API
 
 ---
 
-## **4. Create an `ProtectedRoute`** component
+## **4. Creating a `ProtectedRoute` component**
 
 This component decides what to display.
 
@@ -72,15 +72,15 @@ function ProtectedRoute({ isAllowed, children }) {
 export default ProtectedRoute;
 ```
 
-Keys:
+Key points:
 
-- `isAllowed`: access condition.
+- `isAllowed`: the access condition.
 - `children`: the protected component.
-- `Navigate`: redirect automatically.
+- `Navigate`: redirects automatically.
 
 ---
 
-## **5. Use `ProtectedRoute` on routes**
+## **5. Using `ProtectedRoute` in the routes**
 
 Now we protect a specific route.
 
@@ -139,16 +139,16 @@ export default Login;
 
 ## **7. Complete example flow**
 
-1. User enters `/profile`.
+1. The user goes to `/profile`.
 2. `ProtectedRoute` checks `isAuthenticated`.
-3. If it is `false` → redirect to `/login`.
+3. If it's `false` → it redirects to `/login`.
 4. The user logs in.
-5. The status is updated.
-6. Navigate to `/profile`.
+5. The state is updated.
+6. The app navigates to `/profile`.
 
 ---
 
-## **8. Protect multiple routes**
+## **8. Protecting multiple routes**
 
 You can reuse `ProtectedRoute` for as many routes as you want:
 
@@ -165,26 +165,26 @@ You can reuse `ProtectedRoute` for as many routes as you want:
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Try to protect within the component**
+### **9.1. Trying to protect from inside the component**
 
-It is not good practice to do the redirect directly on the page.
+It isn't good practice to do the redirect directly in the page.
 
-### **9.2. Forget `children`**
+### **9.2. Forgetting `children`**
 
-`ProtectedRoute` should render `{children}`.
+`ProtectedRoute` must render `{children}`.
 
-### **9.3. Redirect with `useNavigate` instead of `Navigate`**
+### **9.3. Redirecting with `useNavigate` instead of `Navigate`**
 
-For protected routes, `Navigate` is the correct option.
+For protected routes, `Navigate` is the right option.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
-- Uses a reusable `ProtectedRoute` component.
-- Keep permissions logic off pages.
+- Use a reusable `ProtectedRoute` component.
+- Keep permission logic out of the pages.
 - Use clear names: `isAuthenticated`, `isAdmin`, etc.
 - Later you can combine it with **Context**.
 
@@ -194,8 +194,8 @@ For protected routes, `Navigate` is the correct option.
 
 ---
 
-[![Charge State Management](https://img.youtube.com/vi/SP1CIB_HnGA/0.jpg)](https://www.youtube.com/watch?v=SP1CIB_HnGA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Managing Loading States](https://img.youtube.com/vi/SP1CIB_HnGA/0.jpg)](https://www.youtube.com/watch?v=SP1CIB_HnGA&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-In the next topic you will learn how to work with **state management**.
+In the next topic you'll learn how to work with **state management**.

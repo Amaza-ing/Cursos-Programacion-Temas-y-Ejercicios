@@ -1,14 +1,14 @@
 # Exercises - Topic 16: Constructor overloading
 
-Below you will find **10 practical exercises** on **constructor overloading**: multiple constructors with different signatures, default values, using `this(...)` to delegate between constructors, consistent initialization and typical errors (such as call loops).
+Below you will find **10 practical exercises** on **constructor overloading**: multiple constructors with different signatures, default values, using `this(...)` to delegate between constructors, consistent initialization and common mistakes (such as call loops).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: `User` with 3 constructors
 
-Create a class `User` with attributes `private`:
+Create a class `User` with these `private` attributes:
 
 - `name` (String)
 - `age` (int)
@@ -59,13 +59,13 @@ Create a class `Product` with:
 - `price` (double)
 - `stock` (int)
 
-Builders:
+Constructors:
 
 1. `Product(String name)` → `price = 0.0`, `stock = 0`
 2. `Product(String name, double price)` → `stock = 0`
 3. `Product(String name, double price, int stock)`
 
-Use `this(...)` to delegate to the most complete builder.
+Use `this(...)` to delegate to the most complete constructor.
 
 <details><summary>Show solution</summary>
 
@@ -102,7 +102,7 @@ Create a class `Student` with:
 - `name` (String)
 - `grade` (double)
 
-Builders:
+Constructors:
 
 1. `Student(String name)` → `grade = 0`
 2. `Student(String name, double grade)`
@@ -141,7 +141,7 @@ public class Student {
 
 ---
 
-## Exercise 4: `Order` with autoincremental `id`
+## Exercise 4: `Order` with an auto-incrementing `id`
 
 Create a class `Order` with:
 
@@ -150,7 +150,7 @@ Create a class `Order` with:
 - `private String customer`
 - `private double total`
 
-Builders:
+Constructors:
 
 1. `Order()` → customer `"Unknown"`, total `0.0`
 2. `Order(String customer)` → total `0.0`
@@ -194,14 +194,14 @@ public class Order {
 
 ---
 
-## Exercise 5: `Rectangle` with “square” constructor
+## Exercise 5: `Rectangle` with a “square” constructor
 
 Create a class `Rectangle` with:
 
 - `width` (double)
 - `height` (double)
 
-Builders:
+Constructors:
 
 1. `Rectangle(double width, double height)`
 2. `Rectangle(double side)` → create a square (`width = side`, `height = side`)
@@ -230,19 +230,19 @@ public class Rectangle {
 
 ---
 
-## Exercise 6: `Point` with parameterless constructor
+## Exercise 6: `Point` with a parameterless constructor
 
 Create a class `Point` with:
 
 - `x` (int)
 - `y` (int)
 
-Builders:
+Constructors:
 
 1. `Point()` → `(0, 0)`
 2. `Point(int x, int y)`
 
-Add method `print()` that displays:
+Add a `print()` method that displays:
 
 ```
 (x, y)
@@ -282,13 +282,13 @@ Create a class `Car` with:
 - `model` (String)
 - `year` (int)
 
-Builders:
+Constructors:
 
 1. `Car(String brand)` → model `"Unknown"`, year `0`
 2. `Car(String brand, String model)` → year `0`
 3. `Car(String brand, String model, int year)`
 
-Mandatory delegation using `this(...)`.
+You must delegate using `this(...)`.
 
 <details><summary>Show solution</summary>
 
@@ -318,7 +318,7 @@ public class Car {
 
 ---
 
-## Exercise 8: Constructor with optional “mock” parameters
+## Exercise 8: Constructor with “simulated” optional parameters
 
 Create a class `Notification` with:
 
@@ -326,7 +326,7 @@ Create a class `Notification` with:
 - `priority` (int)
 - `sender` (String)
 
-Builders:
+Constructors:
 
 1. `Notification(String message)` → `priority = 1`, `sender = "System"`
 2. `Notification(String message, int priority)` → `sender = "System"`
@@ -372,7 +372,7 @@ Create a class `Demo` and write two constructors that DO NOT cause an infinite l
 Avoid this mistake:
 
 - `Demo()` → `this("x")`
-- `Demo(String value)` → `this()` (this would create loop)
+- `Demo(String value)` → `this()` (this would create a loop)
 
 <details><summary>Show solution</summary>
 
@@ -400,7 +400,7 @@ Create a class `Logger` with:
 
 - `prefix` (String)
 
-Builders:
+Constructors:
 
 1. `Logger()` → prefix `"APP"`
 2. `Logger(String prefix)`

@@ -2,15 +2,15 @@
 
 Below you will find 5 practical exercises to work with **PARTITION BY** and window functions in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Count records by category**
 
-In the `products(id, category_id, name, price)` table, it shows all the products along with the **total number of products** that are in the same category.
+In the `products(id, category_id, name, price)` table, show all the products along with the **total number of products** in the same category.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT id,
@@ -24,11 +24,11 @@ FROM products;
 
 ---
 
-### **Exercise 2: Calculate average by department**
+### **Exercise 2: Calculate the average by department**
 
-In the `employees(id, department_id, salary)` table, it shows each employee, their salary, and the **average salary** of their department.
+In the `employees(id, department_id, salary)` table, show each employee, their salary and the **average salary** of their department.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT id,
@@ -44,9 +44,9 @@ FROM employees;
 
 ### **Exercise 3: Sales ranking by seller**
 
-In the `sales(id, seller_id, amount)` table, assign a **rank number** to each sale within each seller, from highest to lowest `amount`.
+In the `sales(id, seller_id, amount)` table, assign a **ranking number** to each of every seller's sales, from highest to lowest `amount`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT seller_id,
@@ -60,11 +60,11 @@ FROM sales;
 
 ---
 
-### **Exercise 4: Accumulated income per month**
+### **Exercise 4: Cumulative income per month**
 
-In the `invoices(id, customer_id, total_amount, invoice_date)` table, calculate the **cumulative** `total_amount` for each customer, sorted by `invoice_date`.
+In the `invoices(id, customer_id, total_amount, invoice_date)` table, calculate the **running total** of `total_amount` for each customer, sorted by `invoice_date`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT customer_id,
@@ -79,11 +79,11 @@ FROM invoices;
 
 ---
 
-### **Exercise 5: Difference with the seller's highest sale**
+### **Exercise 5: Difference from the seller's highest sale**
 
-In the `sales(id, seller_id, amount)` table, show each sale along with the **difference** to the highest sale from the same seller.
+In the `sales(id, seller_id, amount)` table, show each sale along with its **difference** from the highest sale by the same seller.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT seller_id,

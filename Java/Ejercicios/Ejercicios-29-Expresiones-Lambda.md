@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** to work with **lambdas, functional interfaces, `Predicate`, `Function`, `Consumer`, `Supplier`, `removeIf`, `sort` and method references**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Functional interface
 
-Create `MessagePrinter` and implement it with lambda.
+Create `MessagePrinter` and implement it with a lambda.
 
 <details><summary>Show solution</summary>
 
@@ -32,7 +32,7 @@ public class Main {
 
 ## Exercise 2: Two parameters
 
-Create `Multiplier` with lambda.
+Create `Multiplier` with a lambda.
 
 <details><summary>Show solution</summary>
 
@@ -54,9 +54,9 @@ public class Main {
 
 ---
 
-## Exercise 3: Lambda Block
+## Exercise 3: Lambda block
 
-Clear spaces and convert to uppercase.
+Trim the spaces and convert to uppercase.
 
 <details><summary>Show solution</summary>
 
@@ -83,7 +83,7 @@ public class Main {
 
 ## Exercise 4: `Predicate`
 
-Checks if an age is adult.
+Check whether an age is that of an adult.
 
 <details><summary>Show solution</summary>
 
@@ -146,7 +146,7 @@ public class Main {
 
 ## Exercise 7: `Supplier`
 
-Returns a generated code.
+Return a generated code.
 
 <details><summary>Show solution</summary>
 
@@ -167,7 +167,7 @@ public class Main {
 
 ## Exercise 8: `removeIf`
 
-Eliminate negative numbers.
+Remove negative numbers.
 
 <details><summary>Show solution</summary>
 

@@ -4,11 +4,11 @@
 
 Below you will find exercises on how to configure routes and navigate within a SPA in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Configure a Router with Basic Routes**
+### **Exercise 1: Configure a router with basic routes**
 
 Define a router with two routes: `home` and `about`, and have the application start with `home`.
 
@@ -33,7 +33,7 @@ export const routes = [
 
 ---
 
-### **Exercise 2: Create Links with `RouterLink`**
+### **Exercise 2: Create links with `RouterLink`**
 
 Add the code needed to include navigation links with `RouterLink` to one component and add `<router-outlet>` to another component to render the pages.
 
@@ -60,9 +60,9 @@ Add the code needed to include navigation links with `RouterLink` to one compone
 
 ---
 
-### **Exercise 3: Create a Route with Parameters**
+### **Exercise 3: Create a route with parameters**
 
-Create a new `/profile/:id` route and an `ProfileComponent` component that displays the user ID received by the URL.
+Create a new `/profile/:id` route and a `ProfileComponent` component that displays the user ID received through the URL.
 
 <details><summary>Show solution</summary>
 
@@ -103,9 +103,9 @@ export class ProfileComponent {
 
 ---
 
-### **Exercise 4: Route Redirection and 404 Handling**
+### **Exercise 4: Route redirection and 404 handling**
 
-Configure the Router so that any undefined routes redirect to `home`.
+Configure the Router so that any undefined route redirects to `home`.
 
 <details><summary>Show solution</summary>
 
@@ -124,7 +124,7 @@ const routes = [
 
 ---
 
-### **Exercise 5: Establish an Active Route with `routerLinkActive`**
+### **Exercise 5: Set an active route with `routerLinkActive`**
 
 Add a CSS class to highlight the active link.
 

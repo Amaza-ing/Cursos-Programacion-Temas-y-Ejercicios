@@ -1,14 +1,14 @@
 # **Topic 7: Positioning in CSS**
 
-## **1. Introduction to Positioning in CSS**
+## **1. Introduction to positioning in CSS**
 
-Positioning in CSS allows you to control the location of elements within a web page. It is defined with the `position` property, which offers different ways to organize elements according to the need of the design.
+Positioning in CSS lets you control where elements are placed on a web page. It is set with the `position` property, which offers different modes for arranging elements depending on what the design needs.
 
 ---
 
 ## **2. `position` property and its values**
 
-The `position` property has several values that affect the location of an item in the document flow.
+The `position` property has several values that affect the location of an element in the document flow.
 
 | Value | Description |
 | ---------- | ---------------------------------------------------------------------------------------------------------- |
@@ -16,7 +16,7 @@ The `position` property has several values that affect the location of an item i
 | `relative` | The element is positioned **relative** to its original location.                                             |
 | `absolute` | The element is positioned **relative** to its first ancestor with `position: relative`, `absolute`, or `fixed`. |
 | `fixed` | The element remains fixed on the screen regardless of scrolling.                                        |
-| `sticky` | The element acts as a relative until a point on the scroll is reached, where it becomes fixed.            |
+| `sticky` | The element behaves as relative until a certain scroll point is reached, where it becomes fixed.            |
 
 ---
 
@@ -31,13 +31,13 @@ All elements in HTML have `position: static` by default.
 ```
 
 
-Items with `static` follow the normal document flow and do not respond to `top`, `right`, `bottom`, or `left`.
+Elements with `static` follow the normal document flow and do not respond to `top`, `right`, `bottom`, or `left`.
 
 ---
 
 ## **4. `position: relative` (Relative position)**
 
-Allows you to move an element **from its original position** without affecting nearby elements.
+It lets you move an element **from its original position** without affecting nearby elements.
 
 ```css
 .box {
@@ -54,7 +54,7 @@ The element will be shifted 20px down and 30px to the right from its initial pos
 
 ## **5. `position: absolute` (Absolute position)**
 
-Positions an element **absolutely with respect to its first positioned ancestor** (`relative`, `absolute`, `fixed`).
+It positions an element **absolutely, relative to its first positioned ancestor** (`relative`, `absolute`, `fixed`).
 
 ```css
 .container {
@@ -75,7 +75,7 @@ If `.container` did not have `position: relative`, `.box` would be positioned re
 
 ## **6. `position: fixed` (Fixed position)**
 
-Keeps an element fixed on the screen regardless of scrolling.
+It keeps an element fixed on the screen regardless of scrolling.
 
 ```css
 .navbar {
@@ -89,13 +89,13 @@ Keeps an element fixed on the screen regardless of scrolling.
 ```
 
 
-Useful for sticky navigation menus at the top of the page.
+Useful for fixed navigation menus at the top of the page.
 
 ---
 
-## **7. `position: sticky` (Sticky Position)**
+## **7. `position: sticky` (Sticky position)**
 
-The element behaves like `relative` until it reaches a point on the scroll, where it becomes `fixed`.
+The element behaves like `relative` until it reaches a certain scroll point, where it becomes `fixed`.
 
 ```css
 .header {
@@ -112,10 +112,10 @@ Useful for section titles or table headings.
 
 ## **8. Key differences between `relative`, `absolute`, `fixed` and `sticky`**
 
-| Property | It moves with the scroll | Relating to |
+| Property | Moves when scrolling | Relative to |
 | ---------- | ---------------------- | --------------------------------------- |
-| `relative` | Yes | Your original position |
-| `absolute` | Yes | Your first ancestor positioned |
+| `relative` | Yes | Its original position |
+| `absolute` | Yes | Its first positioned ancestor |
 | `fixed` | No | The browser window |
 | `sticky` | Partially | Its position until it reaches a threshold |
 
@@ -125,13 +125,13 @@ Useful for section titles or table headings.
 
 ---
 
-## **9. Good practices in the use of positioning**
+## **9. Best practices for positioning**
 
 - Use `relative` when you need to move elements without affecting others.
-- Apply `absolute` only when you have a container positioned.
-- Avoid `fixed` on large elements, as they may affect usability.
+- Apply `absolute` only when there is a positioned container.
+- Avoid `fixed` on large elements, as it can hurt usability.
 - Use `sticky` to improve the browsing experience.
 
 ---
 
-In the next topic, we'll explore **flexbox layout in CSS**, a powerful technique for arranging elements on a page.
+In the next topic, we'll explore **layout with flexbox in CSS**, a powerful technique for arranging elements on a page.

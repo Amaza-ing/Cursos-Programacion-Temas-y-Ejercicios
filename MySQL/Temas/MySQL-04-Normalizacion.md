@@ -2,15 +2,15 @@
 
 In this topic we will learn:
 
-- What is database normalization.
-- What are the most important normal forms.
-- How to apply normalization to our tables to avoid redundancies and improve data integrity.
+- What database normalization is.
+- Which normal forms are the most important.
+- How to apply normalization to our tables to avoid redundancy and improve data integrity.
 
 ---
 
 ## **1. What is normalization?**
 
-**Normalization** is a process that is applied to database design to:
+**Normalization** is a process applied to database design to:
 
 - Reduce **data redundancy**.
 - Avoid **anomalies** in insert, update and delete operations.
@@ -20,9 +20,9 @@ Normalizing a database means **splitting the data into several related tables** 
 
 ---
 
-## **2. Normal Forms**
+## **2. Normal forms**
 
-Normal forms are rules or levels that help us decide if a database is well structured. Below we will see the three most used:
+Normal forms are rules or levels that help us decide whether a database is well structured. Below we will look at the three most commonly used ones:
 
 ### **1st Normal Form (1NF)**
 
@@ -47,69 +47,70 @@ Normal forms are rules or levels that help us decide if a database is well struc
 
 ### **2nd Normal Form (2NF)**
 
-- Must comply with 1NF.
+- It must satisfy 1NF.
 - All non-key attributes must depend on **the entire** primary key (not just part of it).
 
 **Incorrect example:**
 
-| course_id | student_id | student_name |
+| curso_id | estudiante_id | estudiante_nombre |
 | -------- | ------------- | ----------------- |
-| 1 | 10 | Ana Fernandez |
+| 1 | 10 | Ana Fernández |
 
-`estudiante_nombre` depends only on `estudiante_id`, not on the `(curso_id, estudiante_id)` set.
+`estudiante_nombre` depends only on `estudiante_id`, not on the whole `(curso_id, estudiante_id)` pair.
 
 **Solution:**
-Separate into two tables:
+Split it into two tables:
 
 **`enrollments` table:**
-| course_id | student_id |
+| curso_id | estudiante_id |
 |----------|----------------|
 | 1 | 10 |
 
 **`students` table:**
-| student_id | student_name |
+| estudiante_id | estudiante_nombre |
 |----------------|-------------------|
-| 10 | Ana Fernandez |
+| 10 | Ana Fernández |
 
 ---
 
 ### **3rd Normal Form (3NF)**
 
-- Must comply with 2NF.
-- There should be no **transitive dependencies**, that is, non-key attributes should not depend on each other.
+- It must satisfy 2NF.
+- There must be no **transitive dependencies**; that is, non-key attributes must not depend on each other.
 
 **Incorrect example:**
 
-| id | customer_name | city ​​| postal_code |
+| id | nombre_cliente | ciudad | código_postal |
 | --- | -------------- | ------- | ------------- |
 | 1 | Raúl Pérez | Seville | 41001 |
 
 `código_postal` depends on `ciudad`, not directly on `id`.
 
-**Solution:** Separate into two tables:
+**Solution:** Split it into two tables:
 
 **`customers` table:**
-| id | customer_name | city_id |
+| id | nombre_cliente | ciudad_id |
 |----|----------------|-----------|
 | 1 | Raúl Pérez | 3 |
 
 **`cities` table:**
-| city_id | city ​​| postal_code |
+| ciudad_id | ciudad | código_postal |
 |-----------|---------|----------------|
 | 3 | Seville | 41001 |
 
 ---
 
-## **3. Step-by-step Normalization Example**
+## **3. Step-by-step normalization example**
 
 Suppose we have this initial table:
 
-| order_id | client_name | product | quantity | total_price |
+| order_id | customer_name | product | quantity | total_price |
 | --------- | -------------- | -------- | -------- | ------------ |
-| 1 | Ana Gomez | Pencil | 2 | 1.00 |
-| 2 | Ana Gomez | Notebook | 1 | 2.00 |
+| 1 | Ana Gómez | Pencil | 2 | 1.00 |
+| 2 | Ana Gómez | Notebook | 1 | 2.00 |
 
 This table mixes customer, order and product information.
+
 ### **Step 1: separate products**
 
 **`products` table:**
@@ -118,14 +119,14 @@ This table mixes customer, order and product information.
 | 1 | Pencil | 0.50 |
 | 2 | Notebook | 2.00 |
 
-### **Step 2: Separate clients**
+### **Step 2: separate customers**
 
 **`customers` table:**
 | id | name |
 |----|-------------|
-| 1 | Ana Gomez |
+| 1 | Ana Gómez |
 
-### **Step 3: Record orders and details**
+### **Step 3: record orders and their details**
 
 **`orders` table:**
 | id | customer_id |
@@ -141,26 +142,26 @@ This table mixes customer, order and product information.
 
 ---
 
-[![Table Normalization](https://img.youtube.com/vi/w0olqd2CxJI/0.jpg)](https://www.youtube.com/watch?v=w0olqd2CxJI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Table normalization](https://img.youtube.com/vi/w0olqd2CxJI/0.jpg)](https://www.youtube.com/watch?v=w0olqd2CxJI&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
-## **4. Advantages of standardization**
+## **4. Advantages of normalization**
 
-- Avoid unnecessary repetition of data.
-- Reduces the size of the database.
-- Facilitates modification and updating.
-- Improves data consistency.
+- It avoids unnecessary repetition of data.
+- It reduces the size of the database.
+- It makes changes and updates easier.
+- It improves data consistency.
 
 ---
 
-## **5. When not to overnormalize**
+## **5. When not to over-normalize**
 
-Although normalization is useful, **a database that is too fragmented can affect performance**.
+Although normalization is useful, **a database that is too fragmented can hurt performance**.
 
-On systems with many read queries, **controlled denormalization** is sometimes chosen to reduce the number of `JOIN` required.
+In systems with many read queries, **controlled denormalization** is sometimes chosen to reduce the number of `JOIN` operations needed.
 
-There are even a fourth and fifth normal forms, but they are not usually necessary except in very specific cases.
+There are even fourth and fifth normal forms, but they are rarely needed except in very specific cases.
 
 ---
 

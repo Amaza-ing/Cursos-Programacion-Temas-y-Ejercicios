@@ -2,7 +2,7 @@
 
 Below you will find **10 practical exercises** to work with **sealed classes** and **sealed interfaces**: `sealed`, `permits`, `final`, `non-sealed`, records, `switch`, `instanceof` and closed hierarchies.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -46,7 +46,7 @@ Create a method:
 public static void printNotification(Notification notification)
 ```
 
-You must print different information if you receive an `EmailNotification` or an `SmsNotification`.
+It must print different information depending on whether it receives an `EmailNotification` or an `SmsNotification`.
 
 <details><summary>Show solution</summary>
 
@@ -74,14 +74,14 @@ public class Main {
 
 ---
 
-## Exercise 3: Sealed class with subclasses `final`
+## Exercise 3: Sealed class with `final` subclasses
 
 Create a sealed abstract class `Document` that allows:
 
 - `PdfDocument`
 - `WordDocument`
 
-Each subclass must be `final` and have an `printType()` method.
+Each subclass must be `final` and have a `printType()` method.
 
 <details><summary>Show solution</summary>
 
@@ -158,8 +158,8 @@ Create a sealed interface `SearchResult` that allows:
 - `Found`
 - `NotFound`
 
-`Found` must save `title`.  
-`NotFound` should save `query`.
+`Found` must store `title`.  
+`NotFound` must store `query`.
 
 Create a method that returns `Found` if the search is `"java"` and `NotFound` otherwise.
 
@@ -196,7 +196,7 @@ public class SearchService {
 
 ---
 
-## Exercise 6: Use `switch` with sealed interface
+## Exercise 6: Use `switch` with a sealed interface
 
 Use `SearchResult` from the previous exercise.
 
@@ -268,7 +268,7 @@ public record Cash() implements PaymentMethod {
 
 ---
 
-## Exercise 8: Method for describing payments
+## Exercise 8: Method to describe payments
 
 Use the hierarchy from the previous exercise.
 
@@ -278,7 +278,7 @@ Create a method:
 public static String describe(PaymentMethod method)
 ```
 
-You should return different text for each payment type using `switch`.
+It must return a different text for each payment type using `switch`.
 
 <details><summary>Show solution</summary>
 
@@ -304,7 +304,7 @@ public class Main {
 
 ---
 
-## Exercise 9: Sealed class with second sealed level
+## Exercise 9: Sealed class with a second sealed level
 
 Create a sealed class `Vehicle` that allows:
 
@@ -348,14 +348,14 @@ public final class Bike extends Vehicle {
 
 ---
 
-## Exercise 10: Choose between enum and sealed interface
+## Exercise 10: Choose between an enum and a sealed interface
 
 Create a sealed interface `UploadResult` with:
 
 - `UploadSuccess(String fileName)`
 - `UploadError(String reason)`
 
-Then, in `main`, create an error output and use `switch` to print the message.
+Then, in `main`, create an error result and use `switch` to print the message.
 
 <details><summary>Show solution</summary>
 

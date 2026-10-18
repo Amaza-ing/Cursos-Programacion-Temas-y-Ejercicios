@@ -1,8 +1,8 @@
-# Exercises - Topic 28: Generic
+# Exercises - Topic 28: Generics
 
 Below you will find **10 practical exercises** to work with **generic classes, generic methods, wildcards, `extends`, `super` and type safety**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -34,7 +34,7 @@ public class Container<T> {
 
 ---
 
-## Exercise 2: Using multiple types
+## Exercise 2: Use several types
 
 Use `Container` with different types.
 
@@ -119,7 +119,7 @@ public class Main {
 
 ---
 
-## Exercise 6: `?` wildcard
+## Exercise 6: The `?` wildcard
 
 Create `printItems(List<?> items)`.
 
@@ -167,7 +167,7 @@ public class Main {
 
 ## Exercise 8: `super Integer`
 
-Adds integers to an `List<? super Integer>` list.
+Add integers to a `List<? super Integer>` list.
 
 <details><summary>Show solution</summary>
 
@@ -187,7 +187,7 @@ public class Main {
 
 ---
 
-## Exercise 9: Generic limit
+## Exercise 9: Generic bound
 
 Create `NumberBox<T extends Number>`.
 
@@ -211,9 +211,9 @@ public class NumberBox<T extends Number> {
 
 ---
 
-## Exercise 10: `swap` Method
+## Exercise 10: `swap` method
 
-Swaps two positions of a generic array.
+Swap two positions of a generic array.
 
 <details><summary>Show solution</summary>
 

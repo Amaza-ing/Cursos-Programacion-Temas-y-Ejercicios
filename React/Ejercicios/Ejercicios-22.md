@@ -2,18 +2,18 @@
 
 Below you will find **10 practical exercises** to learn how to create, provide and consume Context using `createContext`, `useContext` and custom Providers.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Create a Context**
 
-Create an `ThemeContext.js` file that:
+Create a `ThemeContext.js` file that:
 
-- Use `createContext`.
-- Export the context.
+- Uses `createContext`.
+- Exports the context.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { createContext } from "react";
@@ -27,15 +27,15 @@ export default ThemeContext;
 
 ---
 
-## **Exercise 2: Provide a value with Provider**
+## **Exercise 2: Provide a value with a Provider**
 
 In `App.jsx`:
 
-- Create state `theme` with initial value `"light"`.
+- Create a `theme` state with initial value `"light"`.
 - Wrap the app with `ThemeContext.Provider`.
-- Passes `{ theme }` as `value`.
+- Pass `{ theme }` as `value`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -60,13 +60,13 @@ export default App;
 
 ## **Exercise 3: Consume Context with `useContext`**
 
-Create an `Header.jsx` component that:
+Create a `Header.jsx` component that:
 
-- Use `useContext`.
-- Read `theme` from `ThemeContext`.
-- Show `Theme: light/dark`.
+- Uses `useContext`.
+- Reads `theme` from `ThemeContext`.
+- Shows `Theme: light/dark`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useContext } from "react";
@@ -85,14 +85,14 @@ export default Header;
 
 ---
 
-## **Exercise 4: Context with state and function**
+## **Exercise 4: Context with state and a function**
 
-Expand the context to include:
+Extend the context to include:
 
 - `theme`
 - `setTheme`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -109,9 +109,9 @@ Expand the context to include:
 In `Header.jsx`:
 
 - Add a **Toggle theme** button.
-- Switch between `"light"` and `"dark"`.
+- Make it switch between `"light"` and `"dark"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
@@ -127,11 +127,11 @@ In `Header.jsx`:
 
 Create `ThemeProvider.jsx` that:
 
-- Have the status `theme`.
-- Provide `{ theme, setTheme }`.
-- Render `{children}`.
+- Holds the `theme` state.
+- Provides `{ theme, setTheme }`.
+- Renders `{children}`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { createContext, useState } from "react";
@@ -155,11 +155,11 @@ export default ThemeProvider;
 
 ---
 
-## **Exercise 7: Using the Custom Provider**
+## **Exercise 7: Use the custom Provider**
 
 Wrap the app with `ThemeProvider`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <ThemeProvider>
@@ -173,11 +173,11 @@ Wrap the app with `ThemeProvider`.
 
 ## **Exercise 8: Typical error — forgetting the Provider**
 
-What happens if you use `useContext(ThemeContext)` unwrapped with the Provider?
+What happens if you use `useContext(ThemeContext)` without wrapping the component in the Provider?
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-The context value will be `undefined` and may cause runtime errors.
+The context value will be `undefined`, which can cause runtime errors.
 
 </details>
 
@@ -187,9 +187,9 @@ The context value will be `undefined` and may cause runtime errors.
 
 Explain when you should **NOT** use Context.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-When the state only needs one component or a very small number of them.
+When the state is only needed by one component or a very small number of them.
 
 </details>
 
@@ -197,9 +197,9 @@ When the state only needs one component or a very small number of them.
 
 ## **Exercise 10: Context for authentication**
 
-Describes what values a basic `AuthContext` would have.
+Describe what values a basic `AuthContext` would have.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 {

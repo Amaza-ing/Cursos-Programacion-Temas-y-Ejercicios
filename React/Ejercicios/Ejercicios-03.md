@@ -2,20 +2,20 @@
 
 Below you will find **8 practical exercises** on components in React.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Create an `Logo` component**
+## **Exercise 1: Create a `Logo` component**
 
 Create a component called `Logo.jsx` inside `src/components/` that displays:
 
 - An `h2` with the text: **"MyCompany"**
-- An `p` with the text: **"Building UI with React"**
+- A `p` with the text: **"Building UI with React"**
 
 Then use it inside `App.jsx`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`src/components/Logo.jsx`**
 
@@ -52,9 +52,9 @@ export default App;
 
 ---
 
-## **Exercise 2: Correct the “only parent element” error**
+## **Exercise 2: Fix the “single parent element” error**
 
-This component gives an error. Fix it to work:
+This component throws an error. Fix it so that it works:
 
 ```js
 function Greeting() {
@@ -67,7 +67,7 @@ function Greeting() {
 export default Greeting;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Greeting() {
@@ -86,20 +86,20 @@ export default Greeting;
 
 ---
 
-## **Exercise 3: Create `UserBadge` with variables within JSX**
+## **Exercise 3: Create `UserBadge` with variables inside JSX**
 
-Create an `UserBadge.jsx` component in `src/components/` that:
+Create a `UserBadge.jsx` component in `src/components/` that:
 
-- Declare a variable `userName` with the value `"Alex"`.
-- Declare a variable `userRole` with the value `"Admin"`.
-- Show in JSX:
+- Declares a variable `userName` with the value `"Alex"`.
+- Declares a variable `userRole` with the value `"Admin"`.
+- Shows in JSX:
 
   - `h3`: **"User: Alex"**
   - `p`: **"Role: Admin"**
 
-Then use it on `App.jsx`.
+Then use it in `App.jsx`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`src/components/UserBadge.jsx`**
 
@@ -143,13 +143,13 @@ export default App;
 
 Create these components in `src/components/`:
 
-- `Header.jsx` with an `header` and an `h1` that says **"Dashboard"**.
-- `Footer.jsx` with an `footer` and an `small` that says **"All rights reserved"**.
-- `Layout.jsx` that uses `Header` and `Footer` and also includes an `main` with an `p` that says: **"Content goes here"**.
+- `Header.jsx` with a `header` and an `h1` that says **"Dashboard"**.
+- `Footer.jsx` with a `footer` and a `small` that says **"All rights reserved"**.
+- `Layout.jsx` that uses `Header` and `Footer` and also includes a `main` with a `p` that says: **"Content goes here"**.
 
-Finally, render `Layout` to `App.jsx`.
+Finally, render `Layout` in `App.jsx`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`src/components/Header.jsx`**
 
@@ -220,7 +220,7 @@ export default App;
 
 ---
 
-## **Exercise 5: Successful import (detect the problem)**
+## **Exercise 5: Correct import (spot the problem)**
 
 You have this component:
 
@@ -240,9 +240,9 @@ import { Card } from "./components/Card";
 
 Fix the import so it works.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-Since the component is exported with `export default`, the import must be keyless:
+Since the component is exported with `export default`, the import must not use curly braces:
 
 ```js
 import Card from "./components/Card";
@@ -252,15 +252,15 @@ import Card from "./components/Card";
 
 ---
 
-## **Exercise 6: Create an `Stats` component with simple calculation**
+## **Exercise 6: Create a `Stats` component with a simple calculation**
 
-Create an `Stats.jsx` component that:
+Create a `Stats.jsx` component that:
 
-- Declare two variables: `visits = 120` and `signups = 45`.
-- Show both in JSX.
-- Calculate and display in an `p` the sum: **"Total: 165"** using `{}`.
+- Declares two variables: `visits = 120` and `signups = 45`.
+- Shows both in JSX.
+- Calculates and displays the sum in a `p`: **"Total: 165"** using `{}`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Stats() {
@@ -285,11 +285,11 @@ export default Stats;
 
 ## **Exercise 7: Reuse a component multiple times**
 
-Create an `Tag.jsx` component that displays an `span` with the text **"New"**.
+Create a `Tag.jsx` component that displays a `span` with the text **"New"**.
 
-Then on `App.jsx` use it **three times** in a row.
+Then use it **three times** in a row in `App.jsx`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`src/components/Tag.jsx`**
 ```js
@@ -332,7 +332,7 @@ Mark the most recommended option in each case:
    - b) `Navbar.jsx`
    - c) `navBar.jsx`
 
-2. How many components per file is recommended when starting out?
+2. How many components per file are recommended when you're starting out?
 
    - a) Many, to have fewer files
    - b) One per file
@@ -341,13 +341,13 @@ Mark the most recommended option in each case:
 3. A component should:
 
    - a) Have many responsibilities to save code
-   - b) Be small and with a clear responsibility
-   - c) Do not import other components
+   - b) Be small, with a clear responsibility
+   - c) Not import other components
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 1. b) `Navbar.jsx` (PascalCase).
 2. b) One per file.
-3. b) Be small and with clear responsibility.
+3. b) Be small, with a clear responsibility.
 
 </details>

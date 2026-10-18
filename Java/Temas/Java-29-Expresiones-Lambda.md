@@ -4,40 +4,40 @@
 
 In the previous topic you learned what **generics** are, how they allow you to work with types more safely and how they constantly appear in modern Java collections and APIs.
 
-Now we are going to enter a fundamental part of current Java:
+Now we are going to dive into a fundamental part of today's Java:
 
 - **lambda expressions**
 - **functional interfaces**
 
-These tools made it possible for Java to write code that was more compact, more expressive, and more comfortable to work with:
+These tools made it possible to write Java code that is more compact, more expressive and more convenient for working with:
 
 - collections
-- orders
+- sorting
 - callbacks
 - validations
 - `Stream API`
 
-At first glance, lambdas may seem like a strange syntax, but they actually solve a very simple idea:
+At first glance, lambdas may look like strange syntax, but they actually express a very simple idea:
 
-> be able to pass behavior as if it were data
+> being able to pass behavior around as if it were data
 
 In this topic you will learn:
 
-- What is a functional interface
-- What relationship does it have with lambdas?
+- What a functional interface is
+- How it relates to lambdas
 - How to write a lambda
 - How to replace anonymous classes with lambdas
 - Common Java functional interfaces
-- Annotation `@FunctionalInterface`
+- The `@FunctionalInterface` annotation
 - Variables captured in lambdas
-- What is a method reference
-- Typical errors and good practices
+- What a method reference is
+- Typical mistakes and good practices
 
 ---
 
 ## 2. The problem before lambdas
 
-Before lambdas, if you wanted to pass a “behavior” to a method, you typically needed:
+Before lambdas, if you wanted to pass a “behavior” to a method, you typically needed to:
 
 - create a class
 - or use an anonymous class
@@ -71,7 +71,7 @@ public class Main {
 
 This works, but for such a small operation the code is quite verbose.
 
-Lambdas were created to simplify these types of situations.
+Lambdas were created to simplify this kind of situation.
 
 ---
 
@@ -97,11 +97,11 @@ That's why it is a functional interface.
 
 A functional interface represents an action or behavior that can be implemented in a specific way.
 
-That makes it perfect for using lambdas.
+That makes it perfect for lambdas.
 
 ---
 
-## 4. Simple functional interface example
+## 4. A simple functional interface example
 
 ```java
 public interface Greeter {
@@ -133,7 +133,7 @@ public class Main {
 }
 ```
 
-But with lambdas we will see that this can be written much shorter.
+But with lambdas we will see that this can be written in a much shorter way.
 
 ---
 
@@ -149,8 +149,8 @@ Example:
 
 This means, in a simplified way:
 
-- does not receive parameters
-- execute that instruction
+- it takes no parameters
+- it runs that statement
 
 If we assign it to the `Greeter` interface, it would look like this:
 
@@ -199,7 +199,7 @@ The lambda has two parts:
 () -> System.out.println("Hello")
 ```
 
-### 7.2. with a parameter
+### 7.2. With one parameter
 
 ```java
 name -> System.out.println(name)
@@ -211,7 +211,7 @@ name -> System.out.println(name)
 (a, b) -> a + b
 ```
 
-### 7.4. With code block
+### 7.4. With a code block
 
 ```java
 (name) -> {
@@ -222,10 +222,11 @@ name -> System.out.println(name)
 
 ---
 
-## 8. Replace an anonymous class with a lambda
-This is one of the most important steps to understand them.
+## 8. Replacing an anonymous class with a lambda
 
-### 8.1. Version with anonymous class
+This is one of the most important steps to understanding them.
+
+### 8.1. Version with an anonymous class
 
 ```java
 public interface Calculator {
@@ -246,7 +247,7 @@ public class Main {
 }
 ```
 
-### 8.2. Version with lambda
+### 8.2. Version with a lambda
 
 ```java
 public interface Calculator {
@@ -266,11 +267,11 @@ Now the code is much clearer.
 
 ---
 
-## 9. When an interface can be used with lambda
+## 9. When an interface can be used with a lambda
 
 Only when it is a **functional interface**, that is, when it has **a single abstract method**.
 
-This yes:
+This one works:
 
 ```java
 public interface Printer {
@@ -278,7 +279,7 @@ public interface Printer {
 }
 ```
 
-Not this:
+This one doesn't:
 
 ```java
 public interface InvalidInterface {
@@ -287,13 +288,13 @@ public interface InvalidInterface {
 }
 ```
 
-The second cannot be represented with a single lambda because there are two abstract methods.
+The second one cannot be represented with a single lambda because it has two abstract methods.
 
 ---
 
 ## 10. The `@FunctionalInterface` annotation
 
-Java has a very useful annotation to mark that an interface is intended as functional:
+Java has a very useful annotation to indicate that an interface is meant to be functional:
 
 ```java
 @FunctionalInterface
@@ -304,11 +305,11 @@ public interface Printer {
 
 ### 10.1. What is it for?
 
-Serves for:
+It is used to:
 
 - make the intention clear
 - make the code more readable
-- ask the compiler to warn you if you break the only abstract method rule
+- ask the compiler to warn you if you break the single-abstract-method rule
 
 Example:
 
@@ -321,15 +322,15 @@ public interface Printer {
 }
 ```
 
-If you add a second abstract method, Java will flag an error.
+If you add a second abstract method, Java will report an error.
 
 ### 10.2. Good practice
 
-Although not required, it is highly recommended to use `@FunctionalInterface` when an interface is intended for lambdas.
+Although it is not required, it is highly recommended to use `@FunctionalInterface` when an interface is meant to be used with lambdas.
 
 ---
 
-## 11. Own functional interfaces
+## 11. Your own functional interfaces
 
 You can create your own functional interfaces when it makes sense.
 
@@ -342,7 +343,7 @@ public interface TextValidator {
 }
 ```
 
-Usage with lambda:
+Usage with a lambda:
 
 ```java
 public class Main {
@@ -359,21 +360,21 @@ public class Main {
 
 ## 12. Parameters in lambdas
 
-### 12.1. A parameter without an explicit type
+### 12.1. One parameter without an explicit type
 
 ```java
 name -> System.out.println(name)
 ```
 
-### 12.2. An explicit type parameter
+### 12.2. One parameter with an explicit type
 
 ```java
 (String name) -> System.out.println(name)
 ```
 
-Both options are valid many times.
+Both options are often valid.
 
-### 12.3. Various parameters
+### 12.3. Several parameters
 
 ```java
 (a, b) -> a + b
@@ -389,9 +390,9 @@ In most cases Java can infer the type, so there is no need to write it.
 
 ---
 
-## 13. Body of a lambda
+## 13. The body of a lambda
 
-### 13.1. simple expression
+### 13.1. A simple expression
 
 If the body is a single expression, you can write it without curly braces:
 
@@ -399,7 +400,7 @@ If the body is a single expression, you can write it without curly braces:
 (a, b) -> a + b
 ```
 
-### 13.2. Block with several instructions
+### 13.2. A block with several statements
 
 If you need multiple lines, use curly braces:
 
@@ -412,11 +413,11 @@ If you need multiple lines, use curly braces:
 
 ### 13.3. Important rule
 
-If you use braces and the lambda returns something, you should use `return`.
+If you use curly braces and the lambda returns something, you must use `return`.
 
 ---
 
-## 14. Java Standard Functional Interfaces
+## 14. Java's standard functional interfaces
 
 Java already comes with many functional interfaces out of the box, especially in the package:
 
@@ -424,7 +425,7 @@ Java already comes with many functional interfaces out of the box, especially in
 java.util.function
 ```
 
-The most common are:
+The most common ones are:
 
 - `Predicate<T>`
 - `Function<T, R>`
@@ -433,7 +434,7 @@ The most common are:
 - `UnaryOperator<T>`
 - `BinaryOperator<T>`
 
-These interfaces are widely used with `Stream API`, collections, and modern code.
+These interfaces are widely used with `Stream API`, collections and modern code in general.
 
 ---
 
@@ -442,7 +443,7 @@ These interfaces are widely used with `Stream API`, collections, and modern code
 `Predicate<T>` represents a function that:
 
 - receives a value of type `T`
-- returns `boolean`
+- returns a `boolean`
 
 It is ideal for validations and filters.
 
@@ -527,7 +528,7 @@ Main method:
 
 `Supplier<T>` represents an operation that:
 
-- does not receive parameters
+- takes no parameters
 - returns a value of type `T`
 
 Example:
@@ -618,7 +619,7 @@ public class Main {
 
 ## 21. Lambdas and passing behavior to methods
 
-One of the great advantages of lambdas is that you can pass them as an argument to a method.
+One of the great advantages of lambdas is that you can pass them as arguments to a method.
 
 Example:
 
@@ -645,7 +646,7 @@ Here you are passing an implementation directly to the method.
 
 ---
 
-## 22. Guided Example: Method that receives an `Predicate`
+## 22. Guided example: a method that receives a `Predicate`
 
 ```java
 import java.util.function.Predicate;
@@ -668,7 +669,7 @@ This makes the method more flexible, because the validation criterion is not fix
 
 ## 23. Lambdas with collections
 
-Even if you haven't seen `Stream API` yet, lambdas can already be used with collections in several modern methods.
+Even though you haven't seen `Stream API` yet, you can already use lambdas with several modern collection methods.
 
 For example, with `forEach`.
 
@@ -690,7 +691,7 @@ Here each item in the list is processed with a lambda.
 
 ## 24. Example with `removeIf`
 
-Another very useful method is `removeIf`, which receives an `Predicate`.
+Another very useful method is `removeIf`, which receives a `Predicate`.
 
 ```java
 import java.util.ArrayList;
@@ -742,7 +743,7 @@ names.sort((a, b) -> Integer.compare(a.length(), b.length()));
 
 A lambda can use variables from its outer context, but with an important rule:
 
-> the variable must be final or actually final
+> the variable must be final or effectively final
 
 Valid example:
 
@@ -758,11 +759,11 @@ public class Main {
 }
 ```
 
-This works because `prefix` does not change after being assigned.
+This works because `prefix` does not change after it is assigned.
 
 ### 26.1. What does “effectively final” mean?
 
-It means that it is not necessary to write `final`, but in practice the variable does not change.
+It means that you don't need to write `final`, but in practice the variable never changes.
 
 This would be incorrect:
 
@@ -787,7 +788,7 @@ This is a more advanced detail, but useful:
 - in an **anonymous class**, `this` refers to the object of the anonymous class
 - in a **lambda**, `this` refers to the outer object
 
-You don't need to memorize it thoroughly yet, but it's good to know that lambdas and anonymous classes are not exactly the same internally.
+You don't need to learn it in depth yet, but it's good to know that lambdas and anonymous classes are not exactly the same internally.
 
 ---
 
@@ -795,19 +796,19 @@ You don't need to memorize it thoroughly yet, but it's good to know that lambdas
 
 A **method reference** is an even shorter way to write certain lambdas.
 
-Example with lambda:
+Example with a lambda:
 
 ```java
 name -> System.out.println(name)
 ```
 
-Method reference equivalent:
+Equivalent method reference:
 
 ```java
 System.out::println
 ```
 
-Full use:
+Full example:
 
 ```java
 import java.util.List;
@@ -827,13 +828,13 @@ This does the same thing, but with a more compact syntax.
 
 ## 29. Common types of method references
 
-### 29.1. static method
+### 29.1. Static method
 
 ```java
 Integer::parseInt
 ```
 
-### 29.2. Instance method of a concrete object
+### 29.2. Instance method of a specific object
 
 ```java
 System.out::println
@@ -845,17 +846,17 @@ System.out::println
 String::toUpperCase
 ```
 
-### 29.4. Builder
+### 29.4. Constructor
 
 ```java
 ArrayList::new
 ```
 
-It is not necessary to master all of them right now, but you do need to recognize the syntax.
+You don't need to master all of them right now, but you do need to recognize the syntax.
 
 ---
 
-## 30. Guided example with method reference
+## 30. Guided example with a method reference
 
 ```java
 import java.util.List;
@@ -877,7 +878,7 @@ names.forEach(name -> System.out.println(name));
 
 ---
 
-## 31. Guided Example: Validator with `Predicate`
+## 31. Guided example: a validator with `Predicate`
 
 ```java
 import java.util.function.Predicate;
@@ -897,7 +898,7 @@ public class Main {
 ```
 
 ---
-## 32. Guided Example: Transformer with `Function`
+## 32. Guided example: a transformer with `Function`
 
 ```java
 import java.util.function.Function;
@@ -915,7 +916,7 @@ public class Main {
 
 ---
 
-## 33. Guided Example: Consumer with `Consumer`
+## 33. Guided example: a consumer with `Consumer`
 
 ```java
 import java.util.List;
@@ -934,7 +935,7 @@ public class Main {
 
 ---
 
-## 34. Guided Example: Provider with `Supplier`
+## 34. Guided example: a supplier with `Supplier`
 
 ```java
 import java.util.function.Supplier;
@@ -956,28 +957,28 @@ public class Main {
 
 ### 35.1. Use standard interfaces when
 
-- the case fits well on `Predicate`, `Function`, `Consumer`, `Supplier`, etc.
-- want to take advantage of standard APIs
-- want code more familiar to other Java programmers
+- the case fits well into `Predicate`, `Function`, `Consumer`, `Supplier`, etc.
+- you want to take advantage of standard APIs
+- you want code that is more familiar to other Java programmers
 
 ### 35.2. Use your own interfaces when
 
-- the name of the behavior is important to the domain
-- want a more expressive interface
-- the case does not fit well into standard interfaces
+- the name of the behavior is important for the domain
+- you want a more expressive interface
+- the case does not fit well into the standard interfaces
 
-For example, `TextValidator` or `OrderCalculator` may make sense as project names.
+For example, `TextValidator` or `OrderCalculator` may make sense as names in a project.
 
 ---
 
-## 36. Typical mistakes when starting
+## 36. Common beginner mistakes
 
-### 36.1. Think that any interface works for lambda
+### 36.1. Thinking that any interface works with a lambda
 
 No.  
-Just a functional interface.
+Only a functional interface does.
 
-### 36.2. Forget that with several instructions you need keys
+### 36.2. Forgetting that you need curly braces for several statements
 
 Not this:
 
@@ -994,13 +995,13 @@ It must be:
 }
 ```
 
-### 36.3. Forget `return` in a lambda with block
+### 36.3. Forgetting `return` in a lambda with a block
 
-If you use braces and the lambda returns value, you need `return`.
+If you use curly braces and the lambda returns a value, you need `return`.
 
-### 36.4. Try to modify captured variables
+### 36.4. Trying to modify captured variables
 
-The external variables used by the lambda must be final or actually final.
+The outer variables used by the lambda must be final or effectively final.
 
 ### 36.5. Using lambdas when a normal class would be clearer
 
@@ -1013,21 +1014,21 @@ There are cases where a clearly named class or method is better.
 
 - Use `@FunctionalInterface` when designing your own functional interface.
 - Prefer standard interfaces (`Predicate`, `Function`, `Consumer`, `Supplier`) when they fit well.
-- Use lambdas for short and clear behaviors.
+- Use lambdas for short, clear behaviors.
 - If the lambda starts to get complex, consider moving the logic to a named method.
 - Use method references when they improve readability.
-- Don't complicate the code just by using modern syntax.
+- Don't complicate the code just for the sake of using modern syntax.
 
 ---
 
-## 38. To take into account
+## 38. Things to keep in mind
 
 - A functional interface has a single abstract method.
 - Lambdas are a compact way to implement functional interfaces.
 - Java includes very useful standard functional interfaces in `java.util.function`.
 - `Predicate` validates, `Function` transforms, `Consumer` consumes and `Supplier` produces.
-- Lambdas allow behavior to be passed to methods.
-- Method references are a shortened version of some lambdas.
+- Lambdas let you pass behavior to methods.
+- Method references are a shorter version of some lambdas.
 - Lambdas are used a lot with collections and `Stream API`.
 
 ---
@@ -1036,18 +1037,18 @@ There are cases where a clearly named class or method is better.
 
 Lambdas and functional interfaces are an essential part of modern Java.
 
-Thanks to them you can write code:
+Thanks to them you can write code that is:
 
 - more compact
 - more expressive
 - more flexible
 - better prepared to work with collections and streams
 
-At first they may seem like a new syntax that is difficult to read, but once you understand that a lambda is nothing more than a short implementation of a functional interface, everything starts to fall into place.
+At first they may seem like a new syntax that is hard to read, but once you understand that a lambda is nothing more than a short implementation of a functional interface, everything starts to fall into place.
 
 Mastering this part will help you a lot in topics such as:
 
-- orders
+- sorting
 - filters
 - transformations
 - `forEach`
@@ -1055,4 +1056,4 @@ Mastering this part will help you a lot in topics such as:
 - `Stream API`
 
 ---
-In the next topic we will continue advancing with modern Java and we will see **Stream API**, a very powerful tool that constantly works together with lambdas and functional interfaces.
+In the next topic we will keep moving forward with modern Java and we will see **Stream API**, a very powerful tool that is constantly used together with lambdas and functional interfaces.

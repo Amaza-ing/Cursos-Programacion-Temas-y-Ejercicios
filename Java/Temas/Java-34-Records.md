@@ -5,15 +5,15 @@
 In previous topics you have learned how to create classes with:
 
 - attributes
-- builders
--getters
+- constructors
+- getters
 - setters
 - methods
 - `equals`
 - `hashCode`
 - `toString`
 
-Many times we create classes whose main objective is to simply **save data**.
+We often create classes whose main purpose is simply to **store data**.
 
 For example:
 
@@ -27,22 +27,22 @@ For these cases, Java includes a modern tool called:
 
 - **record**
 
-An `record` allows you to declare in a very compact way a class intended mainly to store immutable data.
+A `record` lets you declare, in a very compact way, a class meant mainly to store immutable data.
 
 In this topic you will learn:
 
-- What is an `record`
-- What problem does it solve?
+- What a `record` is
+- What problem it solves
 - How to declare records
-- What code Java automatically generates
-- How to access your values
-- Why are they immutable?
+- What code Java generates automatically
+- How to access their values
+- Why they are immutable
 - How to create compact constructors
 - How to validate data in a record
 - How to add your own methods
 - How to use records with lists, maps and streams
 - When to use records and when to use normal classes
-- Typical errors and good practices
+- Common mistakes and best practices
 
 ---
 
@@ -94,13 +94,13 @@ public class Product {
 }
 ```
 
-This class only stores data, but has quite a bit of code.
+This class only stores data, but it has quite a lot of code.
 
-In modern Java, an `record` allows this same idea to be expressed in a much shorter way.
+In modern Java, a `record` lets you express this same idea in a much shorter way.
 
 ---
 
-## 3. First example of `record`
+## 3. A first `record` example
 
 ```java
 public record Product(String name, double price) {
@@ -110,8 +110,8 @@ public record Product(String name, double price) {
 With a single line, Java automatically generates:
 
 - private and final attributes
-- builder
-- access methods
+- a constructor
+- accessor methods
 - `toString`
 - `equals`
 - `hashCode`
@@ -165,7 +165,7 @@ In this example, the components are:
 
 ---
 
-## 5. Access methods
+## 5. Accessor methods
 
 In a normal class, we typically create getters:
 
@@ -174,7 +174,7 @@ getName()
 getEmail()
 ```
 
-In an `record`, Java creates accessor methods with the same name as the component:
+In a `record`, Java creates accessor methods with the same name as the component:
 
 ```java
 name()
@@ -239,9 +239,9 @@ This connects with a very important idea:
 
 ---
 
-## 7. Difference between normal and record class
+## 7. Difference between a normal class and a record
 
-### 7.1. normal class
+### 7.1. Normal class
 
 A regular class is better when you need:
 
@@ -251,12 +251,12 @@ A regular class is better when you need:
 - inheritance from another class
 - behavior with its own identity
 
-### 7.2. record
+### 7.2. Record
 
 A record is better when you need:
 
-- save data
-- transport information
+- store data
+- carry information
 - represent immutable values
 - reduce repetitive code
 - have `equals`, `hashCode` and `toString` automatically
@@ -264,7 +264,7 @@ A record is better when you need:
 ---
 
 ## 8. Automatic `toString`
-Java automatically generates an `toString`.
+Java automatically generates a `toString`.
 
 ```java
 public record Product(String name, double price) {
@@ -300,7 +300,7 @@ Java also generates `equals`.
 Two records are equal if:
 
 - they are the same type
-- have the same values in their components
+- they have the same values in their components
 
 Example:
 
@@ -324,11 +324,11 @@ public class Main {
 }
 ```
 
-This avoids having to type `equals` manually.
+This saves you from writing `equals` by hand.
 
 ---
 
-## 10. `hashCode` automatic
+## 10. Automatic `hashCode`
 
 Java also generates `hashCode`.
 
@@ -362,7 +362,7 @@ Result:
 2
 ```
 
-The repeat product is not added twice because `equals` and `hashCode` work automatically.
+The repeated product is not added twice because `equals` and `hashCode` work automatically.
 
 ---
 
@@ -392,11 +392,11 @@ Usage:
 User user = new User("Laura", "laura@example.com");
 ```
 
-That constructor is called **canonical constructor**.
+That constructor is called the **canonical constructor**.
 
 ---
 
-## 12. Compact Builder
+## 12. Compact constructor
 
 You can define a compact constructor to validate or adjust values.
 
@@ -416,7 +416,7 @@ public record User(String name, String email) {
 }
 ```
 
-Look at the syntax:
+Notice the syntax:
 
 ```java
 public User {
@@ -424,7 +424,7 @@ public User {
 }
 ```
 
-The parameters are not written because they are already defined in the record.
+You don't write the parameters because they are already defined in the record.
 
 ---
 
@@ -462,7 +462,7 @@ public class Main {
 
 ---
 
-## 14. Normalize values in a compact constructor
+## 14. Normalizing values in a compact constructor
 
 In addition to validating, you can also normalize data.
 
@@ -504,7 +504,7 @@ Important:
 
 ---
 
-## 15. Full Explicit Constructor
+## 15. Full explicit constructor
 
 You can also write the full constructor, although this is usually not necessary.
 
@@ -529,7 +529,7 @@ In many cases the compact constructor is cleaner.
 
 ---
 
-## 16. Add your own methods to a record
+## 16. Adding your own methods to a record
 
 A record can have its own methods.
 
@@ -556,11 +556,11 @@ public class Main {
 ```
 
 Records are not just “data without methods.”  
-They may have behavior related to that data.
+They can have behavior related to that data.
 
 ---
 
-## 17. Example with calculated method
+## 17. Example with a computed method
 
 ```java
 public record Rectangle(double width, double height) {
@@ -625,9 +625,9 @@ public class Main {
 
 ---
 
-## 19. Records and charts
+## 19. Records and lists
 
-Records fit very well with collections.
+Records work really well with collections.
 
 ```java
 import java.util.List;
@@ -658,7 +658,7 @@ public record User(String name, String email) {
 
 ## 20. Records and `Map`
 
-They are also useful as values on maps.
+They are also useful as map values.
 
 ```java
 import java.util.HashMap;
@@ -689,7 +689,7 @@ public record User(String name, String email) {
 
 ## 21. Records and `Stream API`
 
-Records are used very well with streams because they are light and expressive.
+Records work very well with streams because they are lightweight and expressive.
 
 ```java
 import java.util.List;
@@ -837,7 +837,7 @@ public record User(String name, String email) {
 }
 ```
 
-You can also have static methods.
+It can also have static methods.
 
 ```java
 public record User(String name, String email) {
@@ -863,7 +863,7 @@ public class Main {
 
 ## 27. Records and inheritance
 
-The records have an important limitation:
+Records have an important limitation:
 
 > A record cannot extend another class.
 
@@ -873,7 +873,7 @@ This cannot be done:
 // public record User(String name) extends Person { } // error
 ```
 
-All records already extend internally from `java.lang.Record`.
+Internally, all records already extend `java.lang.Record`.
 
 But they can implement interfaces.
 
@@ -920,7 +920,7 @@ public class Main {
 
 Records can be combined with sealed interfaces.
 
-This topic will be seen later in **Sealed Classes**, but it should be seen in a simple way.
+We'll cover this later in **Sealed Classes**, but it's worth a quick, simple look now.
 
 ```java
 public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
@@ -945,7 +945,7 @@ The idea is that records are very useful for representing different types of imm
 
 ## 30. Records and validation with null objects
 
-As records do not automatically validate `null`, you must do so if you need to.
+Since records don't validate `null` automatically, you have to do it yourself if you need it.
 
 Example:
 
@@ -973,9 +973,9 @@ That's why validation depends on your design.
 
 ---
 
-## 31. Override methods in a record
+## 31. Overriding methods in a record
 
-Although Java generates `toString`, `equals`, and `hashCode`, you can overwrite them.
+Although Java generates `toString`, `equals`, and `hashCode`, you can override them.
 
 For example, customize `toString`:
 
@@ -1006,7 +1006,7 @@ Result:
 Laura <laura@example.com>
 ```
 
-Still, in many cases it is better to keep the behavior automatic.
+Still, in many cases it's better to keep the automatic behavior.
 
 ---
 
@@ -1158,9 +1158,9 @@ Use records when you want to represent:
 - method results
 - DTOs
 - coordinates
-- settings
+- configurations
 - value pairs
-- simple answers
+- simple responses
 - objects that are compared by content
 
 Examples:
@@ -1184,13 +1184,13 @@ public record ProductSummary(String name, double price) {
 
 ## 36. When not to use records
 
-Avoid records when you need to:
+Avoid records when you need:
 
 - setters
 - mutable state
 - class inheritance
 - complex lifecycle logic
-- own identity beyond your data
+- an identity of their own beyond their data
 - constantly changing objects
 
 Examples where a normal class can be better:
@@ -1221,7 +1221,7 @@ name()
 email()
 ```
 
-That is why it is advisable to use clear and expressive names.
+That's why you should use clear, expressive names.
 
 Avoid:
 
@@ -1239,9 +1239,9 @@ public record User(String name, String email) {
 
 ---
 
-## 38. Typical mistakes when starting
+## 38. Common beginner mistakes
 
-### 38.1. Try using classic getters
+### 38.1. Trying to use classic getters
 
 This does not exist automatically:
 
@@ -1255,30 +1255,30 @@ You must use:
 user.name();
 ```
 
-### 38.2. Wait setters
+### 38.2. Expecting setters
 
-The records are immutable:
+Records are immutable:
 
 ```java
 // user.setName("Alex"); // error
 ```
 
-### 38.3. Think they validate `null` automatically
+### 38.3. Thinking they validate `null` automatically
 
 They don't.  
 If you need to validate, use a compact constructor.
 
-### 38.4. Try to add extra instance attributes
+### 38.4. Trying to add extra instance attributes
 
-The record status must be in the header.
+The record's state must be in its header.
 
-### 38.5. Use record for objects with changing state
+### 38.5. Using a record for objects with changing state
 
 If the object changes a lot during its lifetime, you probably need a normal class.
 
 ---
 
-## 39. Good practices
+## 39. Best practices
 
 - Use records for simple and immutable data.
 - Use clear names for components.
@@ -1290,14 +1290,14 @@ If the object changes a lot during its lifetime, you probably need a normal clas
 
 ---
 
-## 40. To take into account
+## 40. Things to keep in mind
 
 - A record is a compact way to declare a data class.
 - Its components are private and final.
-- Java generates constructor, accessors, `toString`, `equals` and `hashCode`.
+- Java generates the constructor, the accessors, `toString`, `equals` and `hashCode`.
 - The accessors are named like the components: `name()`, `price()`, etc.
 - Records are immutable.
-- They may have their own methods.
+- They can have their own methods.
 - They can have compact constructors.
 - They can implement interfaces.
 - They cannot extend other classes.
@@ -1314,8 +1314,8 @@ They allow you to write less code when you need to represent immutable data.
 Instead of creating a long class with:
 
 - private attributes
-- builder
--getters
+- a constructor
+- getters
 - `toString`
 - `equals`
 - `hashCode`
@@ -1337,4 +1337,4 @@ The main idea is:
 Mastering records will help you write modern code, especially in applications that handle DTOs, results, configurations, and simple data structures.
 
 ---
-In the next topic we will continue advancing with modern Java and see **Sealed Classes**, a tool that allows you to control which classes can inherit or implement a hierarchy.
+In the next topic we'll keep moving forward with modern Java and look at **Sealed Classes**, a tool that lets you control which classes can extend or implement a hierarchy.

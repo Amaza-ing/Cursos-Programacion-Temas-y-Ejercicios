@@ -1,20 +1,20 @@
-# **Topic 11: Creation and Validation of Forms with `ngModel` in Angular**
+# **Topic 11: Creating and Validating Forms with `ngModel` in Angular**
 
 ## **1. Introduction**
 
-In Angular, `ngModel` enables bidirectional binding of data in forms, making it easier to capture and validate user data.
+In Angular, `ngModel` enables two-way data binding in forms, making it easier to capture and validate user data.
 
-In this topic you will learn:
+In this topic, you will learn:
 
 - How to use `ngModel` to capture data in forms.
 - How to validate forms with built-in and custom validations.
-- How to manage errors in forms efficiently.
+- How to handle form errors efficiently.
 
 ---
 
-## **2. Initial Configuration**
+## **2. Initial setup**
 
-To use `ngModel`, it is necessary to import the `FormsModule` module in the application imports.
+To use `ngModel`, you need to add the `FormsModule` module to the application's imports.
 
 ---
 
@@ -22,11 +22,11 @@ To use `ngModel`, it is necessary to import the `FormsModule` module in the appl
 
 ---
 
-## **3. Creating a Form with `ngModel`**
+## **3. Creating a form with `ngModel`**
 
-The `ngModel` directive allows two-way binding in forms, which automatically synchronizes the model with the view.
+The `ngModel` directive enables two-way binding in forms, which automatically keeps the model in sync with the view.
 
-The `(ngSubmit)` event allows you to manage the submission of a form.
+The `(ngSubmit)` event lets you handle the submission of a form.
 
 #### **File: `form.component.ts`**
 
@@ -76,9 +76,9 @@ export class FormComponent {
 
 ---
 
-## **4. Form Validation**
+## **4. Form validation**
 
-Custom validations can be defined in a method in the component.
+You can define custom validations in a method of the component.
 
 #### **File: `form.component.ts`**
 
@@ -109,9 +109,9 @@ export class FormComponent {
 
 ## **5. Conclusion**
 
-- `ngModel` allows two-way binding in forms.
-- Custom validations can be defined for specific rules.
-- Error management improves user experience when filling out forms.
+- `ngModel` enables two-way binding in forms.
+- You can define custom validations for specific rules.
+- Handling errors improves the user experience when filling out forms.
 
 ---
 

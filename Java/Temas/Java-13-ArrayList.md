@@ -2,31 +2,31 @@
 
 ## 1. Introduction
 
-Until now you have worked with **arrays**, which are a fundamental structure in Java. However, arrays have several important limitations:
+So far you've worked with **arrays**, which are a fundamental structure in Java. However, arrays have several important limitations:
 
-- Its size is **fixed** (it cannot grow or shrink)
-- They do not have “high-level” methods to insert, delete, search, etc.
-- When managing insertions or deletions, you have to move elements manually
+- Their size is **fixed** (it can't grow or shrink)
+- They don't have “high-level” methods to insert, delete, search, etc.
+- When handling insertions or deletions, you have to move elements around manually
 
-To solve this, Java provides **collections**, and one of the most used is:
+To solve this, Java provides **collections**, and one of the most widely used is:
 
 - `List` (interface)
 - `ArrayList` (implementation)
 
 **Key idea:**
 
-- **`List`** defines “what operations I can do” (contract).
+- **`List`** defines “what operations I can do” (a contract).
 - **`ArrayList`** is a concrete class that implements that contract and works with an internal array that grows automatically.
 
 In this topic you will learn:
 
-- What is `List` and what is `ArrayList`
+- What `List` is and what `ArrayList` is
 - Why you need **wrappers** (`Integer`, `Double`, etc.) in collections
-- How to create, add, get, modify and delete items
+- How to create, add, get, modify and delete elements
 - How to loop through lists
 - Useful methods (`contains`, `indexOf`, `isEmpty`, `clear`…)
 - Conversion between arrays and lists
-- Typical errors (indexes, `null`, `ConcurrentModificationException`, etc.)
+- Typical mistakes (indices, `null`, `ConcurrentModificationException`, etc.)
 
 ---
 
@@ -40,11 +40,11 @@ In this topic you will learn:
 
 `List` is a Java **interface** that represents an ordered collection of elements.
 
-Features of an `List`:
+Characteristics of a `List`:
 
-- It has **order** (there is position 0, 1, 2...)
-- Allows **duplicates**
-- Accessed by **index** (same as in arrays)
+- It has **order** (there's a position 0, 1, 2...)
+- It allows **duplicates**
+- It's accessed by **index** (just like arrays)
 
 ### 2.2. What is `ArrayList`?
 
@@ -52,15 +52,15 @@ Features of an `List`:
 
 In general, `ArrayList` is the default option when you need:
 
-- Add elements dynamically
-- Quick access by index (`get(i)`)
-- Scroll through the list with ease
+- To add elements dynamically
+- Fast access by index (`get(i)`)
+- To loop through the list easily
 
 ---
 
-## 3. Import required
+## 3. Required import
 
-`List` and `ArrayList` are not in `java.lang`, so they must be imported:
+`List` and `ArrayList` are not in `java.lang`, so you have to import them:
 
 ```java
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ import java.util.List;
 
 ## 4. Generics: `List<T>`
 
-In Java, collections are defined with **generic**, indicating the type of elements they can contain.
+In Java, collections are defined with **generics**, indicating the type of elements they can contain.
 
 Example:
 
@@ -82,7 +82,7 @@ List<String> names = new ArrayList<>();
 Here you are saying:
 
 - “`names` is a list of `String`”
-- You will not be able to enter `int`, `double`, etc. (unless they are wrappers)
+- You won't be able to put `int`, `double`, etc. in it (unless they're wrappers)
 
 ---
 
@@ -108,7 +108,7 @@ This connects directly to **Topic 10: Wrappers**.
 
 ---
 
-## 6. Create an `ArrayList`
+## 6. Creating an `ArrayList`
 
 Recommended way:
 
@@ -116,12 +116,12 @@ Recommended way:
 List<String> names = new ArrayList<>();
 ```
 
-Why so:
+Why do it this way:
 
-- You declare with the interface (`List`) for flexible programming
+- You declare it with the interface (`List`) so your code stays flexible
 - You use a concrete implementation (`ArrayList`) to create the object
 
-You can also declare directly as `ArrayList`, but it is less recommended:
+You can also declare it directly as an `ArrayList`, but it's less recommended:
 
 ```java
 ArrayList<String> names = new ArrayList<>();
@@ -153,7 +153,7 @@ public class Main {
 
 ### 7.1. `add(element)`
 
-Add at the end:
+Adds to the end:
 
 ```java
 cities.add("Rome");
@@ -161,7 +161,7 @@ cities.add("Rome");
 
 ### 7.2. `add(index, element)`
 
-Insert in a specific position (move the rest to the right):
+Inserts at a specific position (shifts the rest to the right):
 
 ```java
 cities.add(1, "Lisbon");
@@ -169,7 +169,7 @@ cities.add(1, "Lisbon");
 
 ### 7.3. `get(index)`
 
-Gets the element at position:
+Gets the element at a position:
 
 ```java
 String first = cities.get(0);
@@ -177,7 +177,7 @@ String first = cities.get(0);
 
 ### 7.4. `set(index, element)`
 
-Replaces the element at one position (does not change the size):
+Replaces the element at a position (doesn't change the size):
 
 ```java
 cities.set(0, "Valencia");
@@ -185,13 +185,13 @@ cities.set(0, "Valencia");
 
 ### 7.5. `remove(index)` and `remove(object)`
 
-- Delete by index:
+- Remove by index:
 
 ```java
 cities.remove(1);
 ```
 
-- Delete by value (if exists, deletes the first match):
+- Remove by value (if it exists, it removes the first match):
 
 ```java
 cities.remove("Paris");
@@ -203,7 +203,7 @@ cities.remove("Paris");
 
 ### 8.1. `size()`
 
-Equivalent to `length` in arrays, but here is a method:
+Equivalent to `length` in arrays, but here it's a method:
 
 ```java
 System.out.println(cities.size());
@@ -219,7 +219,7 @@ if (cities.isEmpty()) {
 
 ---
 
-## 9. Loop through a list
+## 9. Looping through a list
 
 ### 9.1. `for` loop with indices
 
@@ -229,7 +229,7 @@ for (int i = 0; i < cities.size(); i++) {
 }
 ```
 
-### 9.2. `for-each` Loop
+### 9.2. `for-each` loop
 
 ```java
 for (String city : cities) {
@@ -259,7 +259,7 @@ System.out.println(lastBerlin);
 
 ## 11. Duplicates and order
 
-An `List`:
+A `List`:
 
 - Allows duplicates
 - Maintains insertion order
@@ -277,7 +277,7 @@ System.out.println(values); // [5, 5, 2]
 
 ## 12. `null` in lists
 
-In a list you can save `null` (depends on your design, but it is possible):
+You can store `null` in a list (it depends on your design, but it's possible):
 
 ```java
 List<String> names = new ArrayList<>();
@@ -286,13 +286,13 @@ names.add(null);
 names.add("Alex");
 ```
 
-Be careful: if you call methods on an `null` element, you will have `NullPointerException`.
+Be careful: if you call methods on a `null` element, you'll get a `NullPointerException`.
 
 ---
 
 ## 13. `remove` and the special case of `List<Integer>`
 
-With `List<Integer>`, `remove` can be confusing because there is:
+With `List<Integer>`, `remove` can be confusing because both of these exist:
 
 - `remove(int index)`
 - `remove(Object o)`
@@ -314,7 +314,7 @@ System.out.println(cities.size()); // 0
 
 ---
 
-## 15. Sort a list: `Collections.sort` and `List.sort`
+## 15. Sorting a list: `Collections.sort` and `List.sort`
 
 ```java
 import java.util.Collections;
@@ -325,7 +325,7 @@ cities.sort(null); // orden natural
 
 ---
 
-## 16. Convert between arrays and lists
+## 16. Converting between arrays and lists
 
 ### 16.1. Array → List
 
@@ -336,7 +336,7 @@ List<String> fixed = List.of("A", "B", "C");
 // fixed.add("D"); // UnsupportedOperationException
 ```
 
-Modifiable list from another list:
+A modifiable list from another list:
 
 ```java
 List<String> names = new ArrayList<>(List.of("A", "B", "C"));
@@ -351,7 +351,7 @@ String[] array = names.toArray(new String[0]);
 
 ---
 
-## 17. Complete Guided Examples
+## 17. Complete guided examples
 
 ### 17.1. Task management
 
@@ -375,7 +375,7 @@ public class Main {
 }
 ```
 
-### 17.2. Add values in `List<Integer>`
+### 17.2. Adding up values in a `List<Integer>`
 
 ```java
 import java.util.ArrayList;
@@ -401,13 +401,13 @@ public class Main {
 
 ---
 
-## 18. Typical mistakes and how to avoid them
+## 18. Common mistakes and how to avoid them
 
-- `IndexOutOfBoundsException`: valid indexes from `0` to `size() - 1`
-- Avoid deleting items on an `for-each` (may cause `ConcurrentModificationException`)
-- With `List<Integer>`, use `remove(Integer.valueOf(x))` if you want to clear by value
+- `IndexOutOfBoundsException`: valid indices go from `0` to `size() - 1`
+- Avoid removing elements inside a `for-each` (it can cause `ConcurrentModificationException`)
+- With `List<Integer>`, use `remove(Integer.valueOf(x))` if you want to remove by value
 
-Modern example for delete by condition:
+A modern way to remove by condition:
 
 ```java
 items.removeIf(item -> item.equals("A"));
@@ -415,14 +415,14 @@ items.removeIf(item -> item.equals("A"));
 
 ---
 
-## 19. To take into account
+## 19. Things to keep in mind
 
 - `List` is the interface; `ArrayList` is a common implementation.
 - Lists have dynamic size.
 - Wrappers (`Integer`, `Double`, etc.) are used in collections, not primitives.
 - Essential methods: `add`, `get`, `set`, `remove`, `size`, `contains`, `indexOf`.
-- Be careful with `null`, with indices out of range and with `remove` in `List<Integer>`.
+- Be careful with `null`, with out-of-range indices and with `remove` in `List<Integer>`.
 
 ---
 
-In the next topic we will learn what **classes and objects** are, and we will delve into the world of object-oriented programming (**OOP**).
+In the next topic we'll learn what **classes and objects** are, and we'll dive into the world of object-oriented programming (**OOP**).

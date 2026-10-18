@@ -1,16 +1,16 @@
 # **Topic 20: Using REPEAT and LOOP in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Understand what the `REPEAT` and `LOOP` loops are.
-- Use them within stored procedures.
-- Differentiate its behavior with respect to `WHILE`.
+- Use them inside stored procedures.
+- Tell how their behavior differs from `WHILE`.
 
 ---
 
-## **1. REPEAT Loop**
+## **1. The REPEAT loop**
 
-`REPEAT` executes a block of statements **at least once** and then evaluates the stop condition.
+`REPEAT` runs a block of statements **at least once** and then evaluates the stopping condition.
 
 ### **Syntax:**
 
@@ -23,7 +23,7 @@ END REPEAT [etiqueta];
 
 ### **Example:**
 
-Insert numbers from 1 to 5 into an `numbers` table.
+Insert the numbers from 1 to 5 into a `numbers` table.
 
 ```sql
 DELIMITER $$
@@ -40,16 +40,16 @@ END $$
 DELIMITER ;
 ```
 
-**Features:**
+**Characteristics:**
 
-- Always runs at least once.
+- It always runs at least once.
 - The condition is evaluated at the end.
 
 ---
 
-## **2. LOOP**
+## **2. The LOOP loop**
 
-`LOOP` repeats instructions until explicitly interrupted with `LEAVE`.
+`LOOP` repeats statements until it is explicitly interrupted with `LEAVE`.
 
 ### **Syntax:**
 
@@ -62,7 +62,7 @@ END LOOP [etiqueta];
 
 ### **Example:**
 
-Insert even numbers from 2 to 10.
+Insert the even numbers from 2 to 10.
 
 ```sql
 DELIMITER $$
@@ -81,20 +81,20 @@ END $$
 DELIMITER ;
 ```
 
-**Features:**
+**Characteristics:**
 
-- Does not evaluate condition automatically.
-- You need `LEAVE` to finish.
+- It does not evaluate any condition automatically.
+- It needs `LEAVE` to finish.
 
 ---
 
-[![LOOP](https://img.youtube.com/vi/F3lHxZ5jDa4/0.jpg)](https://www.youtube.com/watch?v=F3lHxZ5jDa4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![LOOP loop](https://img.youtube.com/vi/F3lHxZ5jDa4/0.jpg)](https://www.youtube.com/watch?v=F3lHxZ5jDa4&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
 ## **3. Differences between WHILE, REPEAT and LOOP**
 
-| Loop | Condition Assessment | Minimum execution |
+| Loop | Condition check | Minimum runs |
 | ------ | ----------------------- | -------------------------- |
 | WHILE | Before entering | 0 times |
 | REPEAT | After running | 1 time |
@@ -102,9 +102,9 @@ DELIMITER ;
 
 ---
 
-## **4. Combined use of tags and LEAVE**
+## **4. Using labels and LEAVE together**
 
-We can use tags to control multiple nested loops.
+We can use labels to control multiple nested loops.
 
 ```sql
 DELIMITER $$
@@ -137,15 +137,15 @@ DELIMITER ;
 
 ## **5. Good practices**
 
-- Use `REPEAT` when you need to execute the block at least once.
-- Use `LOOP` for cases where the exit condition is not fixed from the beginning.
-- Avoid infinite loops by ensuring a clear exit condition.
+- Use `REPEAT` when you need to run the block at least once.
+- Use `LOOP` for cases where the exit condition is not fixed from the start.
+- Avoid infinite loops by making sure there is a clear exit condition.
 - Use descriptive labels to improve readability.
 
 ---
 
 ## **6. Conclusion**
 
-- `REPEAT` evaluates the condition at the end, guaranteeing at least one execution.
-- `LOOP` requires `LEAVE` to exit, offering full flexibility.
-- Choosing between them depends on the control logic needed.
+- `REPEAT` evaluates the condition at the end, which guarantees at least one run.
+- `LOOP` requires `LEAVE` to exit, which gives you full flexibility.
+- Which one you choose depends on the control logic you need.

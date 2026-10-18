@@ -1,14 +1,14 @@
 # **Exercises - Topic 2: Components in Vue.js**
 
-Below you will find 3 practical exercises on components in Vue.
+Below you'll find 3 practical exercises on components in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ## **Exercise 1: Create a basic component**
 
 Create a component called `WelcomeMessage.vue` that displays a welcome message. Remember to follow the structure: `<script setup>`, `<template>`, `<style>`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `WelcomeMessage.vue`
 
@@ -35,11 +35,11 @@ h1 {
 
 ---
 
-## **Exercise 2: Button Component**
+## **Exercise 2: Button component**
 
-Create a component called `BaseButton.vue` that receives text as a variable and displays it inside a button.
+Create a component called `BaseButton.vue` that takes a text as a variable and displays it inside a button.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `BaseButton.vue`
 
@@ -69,9 +69,9 @@ button {
 
 ## **Exercise 3: Parent-child component**
 
-Create an `ParentComponent.vue` component that displays the `WelcomeMessage.vue` component.
+Create a `ParentComponent.vue` component that displays the `WelcomeMessage.vue` component.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `ParentComponent.vue`
 

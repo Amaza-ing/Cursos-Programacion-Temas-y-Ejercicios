@@ -10,13 +10,13 @@ In JavaScript, functions are first-class citizens, meaning they can be assigned 
 
 ## **2. Function declaration**
 
-Functions must be declared, that is, written what they do, at some point in the code, but that does not mean that they will be executed directly.
-When you declare a function, you specify the name of the function, the arguments it needs, and the logic it will apply.
+Functions have to be declared, that is, you write what they do, somewhere in the code, but that doesn't mean they'll run straight away.
+When you declare a function, you specify its name, the arguments it needs and the logic it will apply.
 
-To execute a function you must call the function from another line of code, which should be below the function declaration.
-When you call a function you have to pass it the arguments it needs.
+To run a function, you have to call it from another line of code, which should come after the function declaration.
+When you call a function, you have to pass it the arguments it needs.
 
-When a function is named, it should be as explicit as possible and be in camelCase format.
+When you name a function, the name should be as explicit as possible and written in camelCase.
 
 ### **Example:**
 
@@ -28,7 +28,7 @@ function sayHello() {
 sayHello(); // Respuesta en consola: Hello!
 ```
 
-Functions can receive no parameters as in the previous example or receive one or more:
+Functions can take no parameters, as in the previous example, or take one or more:
 
 ```js
 function saySomething(str) {
@@ -38,7 +38,7 @@ function saySomething(str) {
 saySomething("Qué tal?"); // Respuesta en consola: Qué tal?
 ```
 
-Functions can directly apply their internal logic without returning anything as in the previous example or they can also return a value using the `return` reserved word:
+Functions can apply their internal logic directly without returning anything, as in the previous example, or they can return a value using the reserved word `return`:
 
 ```js
 function sum(num1, num2) {
@@ -49,9 +49,9 @@ let sumResult = sum(2, 8);
 console.log(sumResult); // Respuesta en consola: 10
 ```
 
-### **2.1. Declared functions**
+### **2.1. Function declarations**
 
-The declared functions are defined using the `function` keyword.
+Function declarations are defined using the `function` keyword.
 
 ### **Syntax:**
 
@@ -61,25 +61,25 @@ function greet(name) {
 }
 ```
 
-Here the function is called `greet` and receives an `name` parameter.
+Here the function is called `greet` and receives a `name` parameter.
 
-### **Function execution:**
+### **Calling the function:**
 
 ```js
 greet("Ana"); // Salida: ¡Hola, Ana!
 ```
 
-When the `greet` function is executed, the value `"Ana"` has been passed as an argument, which will be the value received by the `name` parameter.
+When the `greet` function is called, the value `"Ana"` is passed as an argument, and that's the value the `name` parameter receives.
 
-> **Note:** Declared functions suffer from "hoisting", that is, they can be invoked before being declared in the code. Since what hoisting does is elevate the function to the first lines of the code before it is interpreted. It is usually not a good idea to take advantage of this behavior, and functions must be declared before executing them.
+> **Note:** Function declarations are affected by "hoisting", that is, they can be invoked before they're declared in the code. That's because hoisting moves the function up to the first lines of the code before it's interpreted. It's usually not a good idea to take advantage of this behavior: you should declare functions before calling them.
 
 ---
 
-### **2.2. Expressed functions**
+### **2.2. Function expressions**
 
-The expressed functions are assigned to a variable. They do not rise like the declared functions.
+Function expressions are assigned to a variable. They aren't hoisted like function declarations.
 
-These types of functions are declared similar to a variable, but they maintain the reserved word `function`.
+This type of function is declared much like a variable, but it keeps the reserved word `function`.
 
 ### **Syntax:**
 
@@ -101,7 +101,7 @@ console.log(sum(3, 4)); // Salida: 7
 
 ---
 
-## **3. Arrow Functions (`arrow functions`)**
+## **3. Arrow functions (`arrow functions`)**
 
 Arrow functions offer a more concise syntax for writing functions.
 
@@ -123,7 +123,7 @@ const square = (num) => {
 console.log(square(5)); // Salida: 25
 ```
 
-If the function has only one parameter it can be simplified by removing the parentheses:
+If the function has only one parameter, you can simplify it by removing the parentheses:
 
 ```js
 const square = (num) => {
@@ -133,7 +133,7 @@ const square = (num) => {
 console.log(square(5)); // Salida: 25
 ```
 
-If the function has a single line of code it can be simplified by removing the braces and the return:
+If the function has a single line of code, you can simplify it by removing the curly braces and the return:
 
 ```js
 const square = (num) => num * num;
@@ -149,7 +149,7 @@ const greet = (name) => console.log(`¡Hola, ${name}!`);
 greet("Carlos"); // Salida: ¡Hola, Carlos!
 ```
 
-> **Note:** Arrow functions **do not** have their own `this`, which affects their behavior in certain contexts. This will be seen later in the course.
+> **Note:** Arrow functions **do not** have their own `this`, which affects their behavior in certain contexts. We'll see this later in the course.
 
 ---
 
@@ -175,7 +175,7 @@ greet(); // Salida: ¡Hola, Invitado!
 
 ### **4.2. Rest parameters (`...`)**
 
-They allow you to pass an indefinite number of arguments to a function:
+They let you pass an indefinite number of arguments to a function:
 
 ```js
 function sumAll(...numbers) {
@@ -194,7 +194,7 @@ console.log(sumAll(1, 2, 3, 4)); // Salida: 10
 
 ### **4.3. Spread operator (`...`)**
 
-Used to expand elements of an array when calling a function:
+It's used to expand the elements of an array when calling a function:
 
 ```js
 const numbers = [1, 2, 3];
@@ -208,17 +208,17 @@ console.log(sum(...numbers)); // Salida: 6
 
 ---
 
-## **5. Callbacks & Anonymous Functions**
+## **5. Callbacks & anonymous functions**
 
-### **5.1. What is a Callback?**
+### **5.1. What is a callback?**
 
-In JavaScript, a **callback** is a function that is passed as an argument to another function and is executed after that function has finished its task. Callbacks are a key tool in JavaScript for handling asynchrony, allowing code to continue executing without blocking while waiting for a task to complete.
+In JavaScript, a **callback** is a function that is passed as an argument to another function and is executed after that function has finished its task. Callbacks are a key tool in JavaScript for handling asynchrony, allowing code to keep running without blocking while it waits for a task to complete.
 
 Callbacks are commonly used in asynchronous operations such as server requests, timers, or event handling.
 
 ---
 
-### **5.2. Basic Callback Example**
+### **5.2. Basic callback example**
 
 Here is a simple example of how to use a callback in JavaScript:
 
@@ -251,7 +251,7 @@ In this example, the `greetUser` function receives two arguments: a name and a c
 
 ### **5.3. Callbacks in asynchronous operations**
 
-A use case where callbacks are useful is in asynchronous operations like `setTimeout`:
+A practical case where callbacks come in handy is asynchronous operations like `setTimeout`:
 
 ```js
 console.log("Inicio");
@@ -271,13 +271,13 @@ Fin
 Esto se muestra después de 2 segundos
 ```
 
-Here, `setTimeout` accepts a callback that will be executed after 2 seconds. Meanwhile, the program continues execution, displaying "End" before the delayed message.
+Here, `setTimeout` accepts a callback that will run after 2 seconds. Meanwhile, the program keeps running and displays "Fin" before the delayed message.
 
 ---
 
 ### **5.4. Conclusion**
 
-Callbacks are essential in JavaScript to control program flow and can be used to handle asynchronous tasks.
+Callbacks are essential in JavaScript for controlling program flow, and you can use them to handle asynchronous tasks.
 
 ---
 
@@ -287,7 +287,7 @@ Callbacks are essential in JavaScript to control program flow and can be used to
 
 ### **5.5. What is an anonymous function?**
 
-They are unnamed functions, commonly used as callbacks:
+They're functions without a name, commonly used as callbacks:
 
 ```js
 setTimeout(function () {
@@ -295,7 +295,7 @@ setTimeout(function () {
 }, 2000);
 ```
 
-With arrow function:
+With an arrow function:
 
 ```js
 setTimeout(() => {
@@ -309,9 +309,9 @@ setTimeout(() => {
 
 ---
 
-## **6. Higher order functions**
+## **6. Higher-order functions**
 
-They are functions that receive other functions as arguments or return functions.
+They're functions that receive other functions as arguments or return functions.
 
 ### **Example returning a function:**
 
@@ -328,9 +328,9 @@ console.log(double(5)); // Salida: 10
 
 ---
 
-## **7. Self-invoked functions (IIFE)**
+## **7. Self-invoking functions (IIFE)**
 
-They are executed immediately upon declaration.
+They run immediately after being declared.
 
 ```js
 (function () {
@@ -366,17 +366,17 @@ greetPerson(fullName); // Salida: ¡Hola, Laura García!
 
 ---
 
-## **9. Good practices**
+## **9. Best practices**
 
-1. Name the functions descriptively in English.
+1. Give your functions descriptive names in English.
 2. Keep functions short and focused on a single task.
 3. Avoid unwanted side effects.
 4. Use pure functions whenever possible.
-5. It is preferable to use arrow functions for simple callbacks.
+5. Prefer arrow functions for simple callbacks.
 
 ---
 
 ## **10. Conclusion**
-Functions are essential in JavaScript to structure and reuse code. Mastering the different types and techniques for modularizing will improve the efficiency and readability of your projects.
+Functions are essential in JavaScript for structuring and reusing code. Mastering the different types and techniques for making code modular will improve the efficiency and readability of your projects.
 
 In the next topic, we'll explore **objects** and how they represent more complex data in JavaScript.

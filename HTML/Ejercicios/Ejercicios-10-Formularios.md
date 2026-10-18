@@ -2,9 +2,9 @@
 
 ## **Instructions:**
 
-Below you will find 8 practical exercises on HTML forms.
+Below you'll find 8 practical exercises on HTML forms.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -28,7 +28,7 @@ Create a form that contains a text field for the username and a submit button.
 
 ### **Exercise 2: Fields with different input types**
 
-Create a form with fields such as email, number and date of birth.
+Create a form with an email field, a number field and a date of birth field.
 
 <details><summary>Show solution</summary>
 
@@ -53,7 +53,7 @@ Create a form with fields such as email, number and date of birth.
 
 ### **Exercise 3: Using `select` and `option`**
 
-Create a form with a drop-down menu to select the city of residence.
+Create a form with a drop-down menu to select your city of residence.
 
 <details><summary>Show solution</summary>
 
@@ -116,9 +116,9 @@ Create a form with radio buttons to choose marital status.
 
 ---
 
-### **Exercise 6: Validations in forms**
+### **Exercise 6: Form validation**
 
-Create a form with a user field that requires at least 5 characters.
+Create a form with a username field that requires at least 5 characters.
 
 <details><summary>Show solution</summary>
 
@@ -162,7 +162,7 @@ Create a form where personal data is grouped with `fieldset`.
 
 ### **Exercise 8: Create a complete contact form**
 
-Design a contact form with name, email, message and a send button.
+Design a contact form with name, email and message fields and a submit button.
 
 <details><summary>Show solution</summary>
 

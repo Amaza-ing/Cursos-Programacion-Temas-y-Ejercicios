@@ -1,8 +1,8 @@
-# **Topic 4: Flow Control in Angular (@if and @for)**
+# **Topic 4: Control Flow in Angular (@if and @for)**
 
 ## **1. Introduction**
 
-In Angular, flow control allows us to manage the display logic of elements in the DOM. Starting with Angular 17, the `@if` and `@for` directives were introduced, which improve the readability and efficiency of the code.
+In Angular, control flow lets us manage the display logic of elements in the DOM. Angular 17 introduced the `@if` and `@for` directives, which improve the readability and efficiency of the code.
 
 This topic will cover:
 
@@ -12,9 +12,9 @@ This topic will cover:
 
 ---
 
-## **2. The `@if`** Directive
+## **2. The `@if` directive**
 
-The `@if` directive allows you to show or hide elements based on a condition. Replaces `*ngIf`, improving code structure and clarity.
+The `@if` directive lets you show or hide elements based on a condition. It replaces `*ngIf`, improving the structure and clarity of the code.
 
 ### **2.1. Basic use of `@if`**
 
@@ -47,8 +47,8 @@ export class ControlFlujoComponent {
 
 In this case:
 
-- If `isLoggedIn` is `true`, the message "Welcome, user." will be displayed.
-- If `isLoggedIn` is `false`, "Please log in." will be displayed.
+- If `isLoggedIn` is `true`, the message "Bienvenido, usuario." will be displayed.
+- If `isLoggedIn` is `false`, "Por favor, inicia sesión." will be displayed.
 
 ---
 
@@ -56,9 +56,9 @@ In this case:
 
 ---
 
-## **3. The `@for`** Directive
+## **3. The `@for` directive**
 
-The `@for` directive allows iterating over a list and dynamically generating elements in the view, it replaces `*ngFor`, improving the structure and clarity of the code.
+The `@for` directive lets you iterate over a list and dynamically generate elements in the view. It replaces `*ngFor`, improving the structure and clarity of the code.
 
 ### **3.1. Basic use of `@for`**
 
@@ -91,8 +91,8 @@ export class ControlFlujoComponent {
 
 In this case:
 
-- An `ul` list is dynamically generated with the elements of `items`.
-- `track` is used to optimize DOM updating by making Angular clearly identify each element in the list.
+- A `ul` list is generated dynamically with the elements of `items`.
+- `track` is used to optimize DOM updates by letting Angular clearly identify each element in the list.
 
 ---
 
@@ -100,25 +100,25 @@ In this case:
 
 ---
 
-## **4. Comparison between `@if`/`@for` and `*ngIf`/`*ngFor`**
+## **4. Comparing `@if`/`@for` and `*ngIf`/`*ngFor`**
 
-| **Directive** | **New Syntax** | **Previous Syntax** |
+| **Directive** | **New syntax** | **Previous syntax** |
 | ------------- | ------------------------------------------ | --------------------------------------------------------------------- |
 | Conditional | `@if (condición) { ... } @else { ... }` | `<ng-container *ngIf="condición; else otraPlantilla"></ng-container>` |
 | Iteration | `@for (item of items; track item) { ... }` | `<div *ngFor="let item of items">{{ item }}</div>` |
 
 ### **4.1. Advantages of `@if` and `@for`**
 
-- **Greater readability**: More like JavaScript syntax.
+- **Better readability**: It looks more like JavaScript syntax.
 - **Better performance**: Reduces unnecessary calculations in the DOM.
-- **Clearer structure**: Avoid the use of `<ng-container>` and auxiliary templates.
+- **Clearer structure**: Avoids the use of `<ng-container>` and helper templates.
 
 ---
 
 ## **5. Conclusion**
 
-- `@if` allows you to show or hide content depending on the condition we choose.
-- `@for` makes iterating over lists efficiently.
+- `@if` lets you show or hide content depending on the condition you choose.
+- `@for` makes it easy to iterate over lists efficiently.
 - These new directives simplify the code and improve the organization of the view.
 
 ---

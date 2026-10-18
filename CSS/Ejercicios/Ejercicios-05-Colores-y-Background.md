@@ -8,9 +8,9 @@ Try to solve them before consulting the solution.
 
 ---
 
-### **Exercise 1: Apply color to text**
+### **Exercise 1: Apply a color to text**
 
-Create a paragraph with the text color red.
+Create a paragraph with red text.
 
 <details><summary>Show solution</summary>
 
@@ -30,9 +30,9 @@ p {
 
 ---
 
-### **Exercise 2: Using a hexadecimal color**
+### **Exercise 2: Use a hexadecimal color**
 
-Creates an `<h1>` header with blue text color using a hexadecimal code.
+Create an `<h1>` heading with blue text using a hexadecimal code.
 
 <details><summary>Show solution</summary>
 
@@ -54,7 +54,7 @@ h1 {
 
 ### **Exercise 3: Apply a background image**
 
-Creates an `div` with a background image named `fondo.jpg`.
+Create a `div` with a background image called `fondo.jpg`.
 
 <details><summary>Show solution</summary>
 
@@ -78,7 +78,7 @@ div {
 
 ### **Exercise 4: Create a background gradient**
 
-Creates an `div` with a red to blue gradient background from left to right.
+Create a `div` with a background gradient from red to blue, going from left to right.
 
 <details><summary>Show solution</summary>
 
@@ -100,9 +100,9 @@ div {
 
 ---
 
-### **Exercise 5: Set a background image**
+### **Exercise 5: Fix a background image in place**
 
-Create an `div` with a background image that remains fixed when scrolling.
+Create a `div` with a background image that stays fixed when you scroll.
 
 <details><summary>Show solution</summary>
 

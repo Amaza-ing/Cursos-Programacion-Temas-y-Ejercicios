@@ -1,16 +1,16 @@
 # **Exercises - Topic 11: Stored Procedures**
 
-Below, you will find 8 practical exercises to create, run and manage **stored procedures** in MySQL.
+Below you will find 8 practical exercises to create, run and manage **stored procedures** in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Procedure without parameters**
 
-Create a procedure `list_active_customers` that returns all clients whose column `is_active` is `TRUE`.
+Create a `list_active_customers` procedure that returns all the customers whose `is_active` column is `TRUE`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -29,11 +29,11 @@ CALL list_active_customers();
 
 ---
 
-### **Exercise 2: Procedure with IN parameter**
+### **Exercise 2: Procedure with an IN parameter**
 
-Create a procedure `get_orders_by_customer` that receives `p_customer_id INT` and returns orders (`orders`) from that customer sorted by descending `created_at`.
+Create a `get_orders_by_customer` procedure that takes `p_customer_id INT` and returns that customer's orders (`orders`) sorted by `created_at` in descending order.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -53,11 +53,11 @@ CALL get_orders_by_customer(2);
 
 ---
 
-### **Exercise 3: Procedure with OUT parameter**
+### **Exercise 3: Procedure with an OUT parameter**
 
-Create a procedure `count_orders_in_range` that receives two dates `p_from DATE`, `p_to DATE` and returns for `OUT p_total INT` how many orders there are in that range (inclusive).
+Create a `count_orders_in_range` procedure that takes two dates, `p_from DATE` and `p_to DATE`, and returns through `OUT p_total INT` how many orders there are in that range (inclusive).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -81,11 +81,11 @@ SELECT @total AS total_orders_april;
 
 ---
 
-### **Exercise 4: Procedure with INOUT parameter**
+### **Exercise 4: Procedure with an INOUT parameter**
 
-Create a procedure `apply_discount_if_high_spender` that receives `IN p_customer_id INT` and `INOUT p_discount DECIMAL(5,2)`. If the customer has spent more than 500 in total (sum of `total_amount`), increase `p_discount` by `2.50`; if not, leave the value as is.
+Create an `apply_discount_if_high_spender` procedure that takes `IN p_customer_id INT` and `INOUT p_discount DECIMAL(5,2)`. If the customer has spent more than 500 in total (sum of `total_amount`), increase `p_discount` by `2.50`; otherwise, leave the value as it is.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -116,9 +116,9 @@ SELECT @disc AS new_discount;
 
 ### **Exercise 5: Procedure with validation and `EXIT HANDLER`**
 
-Create a procedure `create_product_safe` that inserts into `products(name, price)` validating that `price > 0`. If `price <= 0`, throw an error using `SIGNAL`. Add an `EXIT HANDLER` that catches any errors and makes `ROLLBACK`.
+Create a `create_product_safe` procedure that inserts into `products(name, price)`, validating that `price > 0`. If `price <= 0`, raise an error using `SIGNAL`. Add an `EXIT HANDLER` that catches any error and does a `ROLLBACK`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -153,9 +153,9 @@ CALL create_product_safe('Notebook', 3.50);
 
 ### **Exercise 6: Procedure that returns aggregates**
 
-Create a procedure `customer_order_stats` that receives `p_customer_id` and returns: number of orders (`total_orders`), average amount (`avg_amount`) and last date (`last_order`).
+Create a `customer_order_stats` procedure that takes `p_customer_id` and returns: the number of orders (`total_orders`), the average amount (`avg_amount`) and the latest date (`last_order`).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -178,9 +178,9 @@ CALL customer_order_stats(1);
 
 ### **Exercise 7: Procedure with optional parameters (simulated)**
 
-Create a procedure `search_customers` with `IN p_name VARCHAR(100)` and `IN p_city VARCHAR(100)`. If a parameter arrives `NULL`, it does not filter on that field.
+Create a `search_customers` procedure with `IN p_name VARCHAR(100)` and `IN p_city VARCHAR(100)`. If a parameter is `NULL`, the procedure does not filter by that field.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -205,11 +205,11 @@ CALL search_customers('an', NULL);
 
 ### **Exercise 8: Replace and delete procedures**
 
-1. Create `get_last_orders` that receives `p_limit INT` and returns the latest `p_limit` orders.
+1. Create `get_last_orders`, which takes `p_limit INT` and returns the latest `p_limit` orders.
 2. Modify it to also return `customer_id` and rename it.
 3. Delete it.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 -- 1) Crear

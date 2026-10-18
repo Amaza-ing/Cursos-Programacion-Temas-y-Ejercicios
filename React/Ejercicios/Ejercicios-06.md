@@ -2,15 +2,15 @@
 
 Below you will find **10 practical exercises** on events in React.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Button with `onClick`**
 
-Create an `ClickCounter.jsx` component with a button that when clicked shows in the console: **"Button clicked"**.
+Create a `ClickCounter.jsx` component with a button that, when clicked, shows in the console: **"Button clicked"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function ClickCounter() {
@@ -28,7 +28,7 @@ export default ClickCounter;
 
 ---
 
-## **Exercise 2: Correct the event written as in HTML**
+## **Exercise 2: Fix the event written as in HTML**
 
 This code is written as if it were traditional HTML. Fix it for React:
 
@@ -38,7 +38,7 @@ function App() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 In React, you use `onClick` and pass a function:
 
@@ -58,16 +58,16 @@ export default App;
 
 ---
 
-## **Exercise 3: Pass parameters without executing when rendering**
+## **Exercise 3: Pass parameters without running the function on render**
 
-Create an `MessageButtons.jsx` component with two buttons:
+Create a `MessageButtons.jsx` component with two buttons:
 
 - One that sends the message **"Hello"**.
-- Another one who sends the message **"Goodbye"**.
+- Another one that sends the message **"Goodbye"**.
 
-When you click, the message with `alert` should be displayed.
+When you click, the message should be displayed with `alert`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function MessageButtons() {
@@ -92,11 +92,11 @@ export default MessageButtons;
 
 ## **Exercise 4: Capture text from an input with `onChange`**
 
-Create an `LiveInput.jsx` component with an input that:
+Create a `LiveInput.jsx` component with an input that:
 
-- In each change, show the text that the user writes in the console.
+- On every change, shows in the console the text the user types.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function LiveInput() {
@@ -114,14 +114,14 @@ export default LiveInput;
 
 ---
 
-## **Exercise 5: Event `onMouseEnter` and `onMouseLeave`**
+## **Exercise 5: `onMouseEnter` and `onMouseLeave` events**
 
-Create an `HoverLogger.jsx` component with an `div` that:
+Create a `HoverLogger.jsx` component with a `div` that:
 
-- When the mouse enters, show: **"Mouse entered"** in the console.
-- When the mouse exits, show: **"Mouse left"** in the console.
+- When the mouse enters, shows **"Mouse entered"** in the console.
+- When the mouse leaves, shows **"Mouse left"** in the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function HoverLogger() {
@@ -149,17 +149,17 @@ export default HoverLogger;
 
 ## **Exercise 6: `onSubmit` with `preventDefault()`**
 
-Create an `NewsletterForm.jsx` component with a form that has:
+Create a `NewsletterForm.jsx` component with a form that has:
 
-- An entry with `name="email"`.
+- An input with `name="email"`.
 - A submit button.
 
 When the form is submitted:
 
-- Avoid recharging with `preventDefault()`.
-- Show in console: **"Form submitted"**.
+- Prevent the page reload with `preventDefault()`.
+- Show in the console: **"Form submitted"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function NewsletterForm() {
@@ -183,20 +183,20 @@ export default NewsletterForm;
 
 ---
 
-## **Exercise 7: Obtain the value of an input in `onSubmit`**
+## **Exercise 7: Get the value of an input in `onSubmit`**
 
-Create an `SimpleSearchForm.jsx` component with:
+Create a `SimpleSearchForm.jsx` component with:
 
-- An `form`.
+- A `form`.
 - An `input` with `name="query"`.
 - A submit button.
 
-When sending:
+On submit:
 
 - Use `preventDefault()`.
 - Show the input text in the console using `event.target`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function SimpleSearchForm() {
@@ -224,7 +224,7 @@ export default SimpleSearchForm;
 
 ## **Exercise 8: Avoid an incorrect handler call**
 
-This code runs the function when rendering. Correct it:
+This code runs the function on render. Fix it:
 
 ```js
 function App() {
@@ -234,7 +234,7 @@ function App() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 In React you must pass the function, not call it:
 
@@ -254,7 +254,7 @@ export default App;
 
 ## **Exercise 9: Create handlers with correct names**
 
-Rewrite this component using more recommended handler names:
+Rewrite this component using better handler names:
 
 ```js
 function App() {
@@ -264,7 +264,7 @@ function App() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function App() {
@@ -282,10 +282,10 @@ export default App;
 
 ---
 
-## **Exercise 10: Mini-case study (choose the correct solution)**
+## **Exercise 10: Mini practical case (choose the correct solution)**
 
-You want a button to call a function `handleSelect` by passing the text `"Option A"`.
-What is the correct option?
+You want a button to call a function `handleSelect`, passing it the text `"Option A"`.
+Which is the correct option?
 
 1.
 
@@ -305,7 +305,7 @@ What is the correct option?
 <button onclick={() => handleSelect("Option A")}>Select</button>
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 The correct option is **2**:
 
@@ -315,8 +315,8 @@ The correct option is **2**:
 
 Reason:
 
-- `onClick` must go in camelCase.
-- To pass parameters, you need a function that is executed when clicked.
+- `onClick` must be written in camelCase.
+- To pass parameters, you need a function that runs when the button is clicked.
 
 </details>
 

@@ -2,9 +2,9 @@
 
 ## 1. Objective of the topic
 
-In **Topic 7** we complete the CRUD of our Spring MVC application.
+In **Topic 7** we completed the CRUD of our Spring MVC application.
 
-The application already allows:
+The application already lets you:
 
 ```text
 Crear cursos.
@@ -16,7 +16,7 @@ Borrar cursos.
 
 However, there is still something we can improve.
 
-In Topic 7 we use routes like these:
+In Topic 7 we used routes like these:
 
 ```text
 GET  /courses/detail?id=1
@@ -53,7 +53,7 @@ This change does not add completely new functionality, but it greatly improves t
 
 ---
 
-#2. What problem do we want to solve?
+# 2. What problem do we want to solve?
 
 In Topic 7 we had these types of methods:
 
@@ -73,7 +73,7 @@ public String deleteCourse(...) {
 }
 ```
 
-These methods work, but have a small readability problem.
+These methods work, but they have a small readability problem.
 
 They both use `POST`, although they do different things:
 
@@ -93,11 +93,11 @@ PUT    → actualizar
 DELETE → borrar
 ```
 
-Thus, when reading the driver, the intention becomes much clearer.
+This way, when reading the controller, the intention becomes much clearer.
 
 ---
 
-#3. Before and after
+# 3. Before and after
 
 ## Before
 
@@ -177,15 +177,15 @@ DELETE /courses/1
 
 ---
 
-#4. HTTP Method Table
+# 4. HTTP methods table
 
 Before modifying the code, it is worth remembering what each HTTP method represents.
 
-| Method | Regular use | In our CRUD |
+| Method | Typical use | In our CRUD |
 | -------- | ---------------------------------------- | --------------------------------- |
-| `GET` | Consult information | See list, detail or form |
+| `GET` | Retrieve information | View the list, details or a form |
 | `POST` | Create a new resource | Create course |
-| `PUT` | Update a complete existing resource | Update course |
+| `PUT` | Update an entire existing resource | Update course |
 | `DELETE` | Delete an existing resource | Delete course |
 
 In this topic we are not going to build a complete REST API. We continue working with Spring MVC, JSP and traditional forms.
@@ -194,7 +194,7 @@ But we are going to use more expressive HTTP methods within our application.
 
 ---
 
-#5. Major issue: HTML forms only send GET and POST
+# 5. An important problem: HTML forms only send GET and POST
 
 An important limitation appears here.
 
@@ -228,7 +228,7 @@ Therefore, in order to use `@PutMapping` and `@DeleteMapping` from JSP forms, we
 HiddenHttpMethodFilter
 ```
 
-This filter allows you to submit a form like `POST`, but add a hidden field called `_method` with the actual method we want to use.
+This filter lets you submit a form as `POST`, but add a hidden field called `_method` with the actual method we want to use.
 
 For example:
 
@@ -238,13 +238,13 @@ For example:
 </form>
 ```
 
-Spring receives the request as `POST`, reads the `_method` field, and treats it internally as if it were an `PUT` request.
+Spring receives the request as `POST`, reads the `_method` field, and treats it internally as if it were a `PUT` request.
 
 The same goes for `DELETE`.
 
 ---
 
-# 6. What are we going to modify
+# 6. What we are going to modify
 
 In this topic we will mainly modify these files:
 
@@ -252,7 +252,7 @@ In this topic we will mainly modify these files:
 src/main/webapp/WEB-INF/web.xml
 ```
 
-to activate `HiddenHttpMethodFilter`.
+to enable `HiddenHttpMethodFilter`.
 
 ```text
 src/main/java/com/example/springmvcday1/controller/CourseController.java
@@ -291,7 +291,7 @@ Crear métodos privados para preparar el formulario de creación y edición.
 
 ---
 
-#7. Step 1 — Activate `HiddenHttpMethodFilter` on `web.xml`
+# 7. Step 1 — Enable `HiddenHttpMethodFilter` in `web.xml`
 
 We open the file:
 
@@ -303,7 +303,7 @@ In this file we already have the `DispatcherServlet` configured.
 
 Now we will add a filter before the servlet configuration.
 
-## Code that we must add
+## Code to add
 
 ```xml
 <filter>
@@ -317,7 +317,7 @@ Now we will add a filter before the servlet configuration.
 </filter-mapping>
 ```
 
-## `web.xml` complete indicative
+## Complete `web.xml` (for reference)
 
 The file can look like this:
 
@@ -373,7 +373,7 @@ The file can look like this:
 
 ---
 
-#8. `HiddenHttpMethodFilter` Explanation
+# 8. Explanation of `HiddenHttpMethodFilter`
 
 The filter:
 
@@ -381,7 +381,7 @@ The filter:
 <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
 ```
 
-serves to detect `POST` forms that contain a hidden field called:
+is used to detect `POST` forms that contain a hidden field called:
 
 ```text
 _method
@@ -411,7 +411,7 @@ or:
 DELETE
 ```
 
-even though the browser actually sent an `POST`.
+even though the browser actually sent a `POST`.
 
 This allows us to have methods in the controller like:
 
@@ -429,9 +429,9 @@ from traditional HTML forms.
 
 ---
 
-#9. Step 2 — Change routes with `@PathVariable`
+# 9. Step 2 — Change routes with `@PathVariable`
 
-Until now, to see a detail we used:
+Until now, to view a course's details we used:
 
 ```text
 /courses/detail?id=1
@@ -457,7 +457,7 @@ and we will receive the value with:
 
 ## Difference between `@RequestParam` and `@PathVariable`
 
-| Annotation | Where do you read the data from? Example |
+| Annotation | Where it reads the data from | Example |
 | --------------- | -------------------- | ---------------------- |
 | `@RequestParam` | From the query string | `/courses/detail?id=1` |
 | `@PathVariable` | From the route | `/courses/1` |
@@ -482,7 +482,7 @@ public String courseDetail(@PathVariable Long id, Model model) {
 
 ---
 
-#10. Step 3 — Update `CourseController`
+# 10. Step 3 — Update `CourseController`
 
 We are going to modify the controller to use cleaner routes and more expressive HTTP methods.
 
@@ -492,7 +492,7 @@ File:
 src/main/java/com/example/springmvcday1/controller/CourseController.java
 ```
 
-## Complete updated code
+## Updated full code
 
 ```java
 package com.example.springmvcday1.controller;
@@ -671,7 +671,7 @@ public class CourseController {
 
 ---
 
-#11. Driver Changes Explained
+# 11. Explanation of the changes in the controller
 
 ## 11.1. New imports
 
@@ -687,7 +687,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 `@DeleteMapping` will be used to delete.
 
-`@PathVariable` will be used to read the `id` from the path.
+`@PathVariable` will be used to read the `id` from the route.
 
 ---
 
@@ -702,7 +702,7 @@ private static final String COURSE_FORM_VIEW = "courses/form";
 
 It is not required, but it improves readability.
 
-Before we repeated several times:
+Before, we repeated this several times:
 
 ```java
 return "redirect:/courses";
@@ -726,11 +726,11 @@ or:
 return COURSE_FORM_VIEW;
 ```
 
-If the view name or redirection path changes in the future, we would only have to change it in one place.
+If the view name or the redirect route changes in the future, we would only have to change it in one place.
 
 ---
 
-#12. Detail Route with `@PathVariable`
+# 12. Detail route with `@PathVariable`
 
 Before:
 
@@ -762,11 +762,11 @@ Now it is:
 /courses/1
 ```
 
-The `1` value is automatically saved in the `id` variable.
+The value `1` is automatically stored in the `id` variable.
 
 ---
 
-#13. Edit path with `@PathVariable`
+# 13. Edit route with `@PathVariable`
 
 Before:
 
@@ -804,7 +804,7 @@ Mostrar el formulario de edición del curso 1.
 
 ---
 
-#14. Update with `@PutMapping`
+# 14. Update with `@PutMapping`
 
 Before:
 
@@ -833,21 +833,21 @@ The URL will be:
 PUT /courses/1
 ```
 
-This best expresses the intention:
+This expresses the intention better:
 
 ```text
 Actualizar el curso con id 1.
 ```
 
-Within the method we do:
+Inside the method we do:
 
 ```java
 course.setId(id);
 ```
 
-## Why do we make `course.setId(id)`?
+## Why do we call `course.setId(id)`?
 
-Because now the main `id` comes in the path:
+Because now the main `id` comes in the route:
 
 ```text
 /courses/1
@@ -859,7 +859,7 @@ and we receive it with:
 @PathVariable Long id
 ```
 
-Although the form can also submit a hidden field with the `id`, it is clearer to use the `id` of the path as the primary source.
+Although the form can also submit a hidden field with the `id`, it is clearer to use the `id` from the route as the main source.
 
 That's why we do:
 
@@ -871,7 +871,7 @@ This ensures that the `Course` object has the correct identifier before updating
 
 ---
 
-#15. Erase with `@DeleteMapping`
+# 15. Delete with `@DeleteMapping`
 
 Before:
 
@@ -897,17 +897,17 @@ The URL will be:
 DELETE /courses/1
 ```
 
-This clearly states:
+This clearly expresses:
 
 ```text
 Borrar el curso con id 1.
 ```
 
-The method is cleaner because the `id` is part of the path.
+The method is cleaner because the `id` is part of the route.
 
 ---
 
-# 16. Auxiliary methods for preparing forms
+# 16. Helper methods for preparing forms
 
 In Topic 7 we repeated these attributes several times:
 
@@ -934,7 +934,7 @@ private void prepareEditForm(Model model, Course course) {
 }
 ```
 
-## Method for creation
+## Method for creating
 
 ```java
 private void prepareCreateForm(Model model, Course course) {
@@ -946,7 +946,7 @@ private void prepareCreateForm(Model model, Course course) {
 }
 ```
 
-This method prepares the form for creation.
+This method prepares the form for creating.
 
 The main values are:
 
@@ -982,7 +982,7 @@ This will allow us to use the same `form.jsp` view for creating and editing.
 
 ---
 
-#17. Step 4 — Update `form.jsp`
+# 17. Step 4 — Update `form.jsp`
 
 We now modify the form so that it can submit `PUT` when we are editing.
 
@@ -1088,7 +1088,7 @@ src/main/webapp/WEB-INF/views/courses/form.jsp
 
 ---
 
-#18. `form.jsp` changes explained
+# 18. Explanation of the changes in `form.jsp`
 
 ## 18.1. The form still uses `POST`
 
@@ -1108,7 +1108,7 @@ This is normal because traditional HTML forms do not send `PUT` directly.
 
 ---
 
-## 18.2. Hidden field `_method`
+## 18.2. The hidden `_method` field
 
 The key is here:
 
@@ -1130,9 +1130,9 @@ Then the JSP adds:
 <input type="hidden" name="_method" value="put" />
 ```
 
-When the form is submitted, `HiddenHttpMethodFilter` detects this field and transforms the request into `PUT`.
+When the form is submitted, `HiddenHttpMethodFilter` detects this field and turns the request into a `PUT`.
 
-This is how this controller method can be executed:
+That's how this controller method can run:
 
 ```java
 @PutMapping("/{id}")
@@ -1143,29 +1143,29 @@ public String updateCourse(...) {
 
 ---
 
-## 18.3. Hidden field `id`
+## 18.3. The hidden `id` field
 
-We continue to maintain:
+We still keep:
 
 ```jsp
 <form:hidden path="id" />
 ```
 
-Although the `id` is also in the path, this field is still useful for the `course` object to maintain its identifier in the form.
+Although the `id` is also in the route, this field is still useful so that the `course` object keeps its identifier in the form.
 
-The main source of the `id` will be the path:
+The main source of the `id` will be the route:
 
 ```java
 @PathVariable Long id
 ```
 
-but keeping the field hidden helps keep the form complete.
+but keeping the hidden field helps keep the form complete.
 
 ---
 
-#19. Step 5 — Update `list.jsp`
+# 19. Step 5 — Update `list.jsp`
 
-Now we must change the links in the listing.
+Now we must change the links in the list.
 
 File:
 
@@ -1268,7 +1268,8 @@ src/main/webapp/WEB-INF/views/courses/list.jsp
 ```
 
 ---
-#20. `list.jsp` changes explained
+
+# 20. Explanation of the changes in `list.jsp`
 
 ## 20.1. Detail link
 
@@ -1318,9 +1319,9 @@ This generates routes like:
 
 ---
 
-## 20.3. Deletion form with `_method=delete`
+## 20.3. Delete form with `_method=delete`
 
-Before deletion could go to:
+Before, deletion could go to:
 
 ```text
 POST /courses/delete
@@ -1338,11 +1339,11 @@ and contains:
 <input type="hidden" name="_method" value="delete" />
 ```
 
-The browser sends an `POST`.
+The browser sends a `POST`.
 
-But `HiddenHttpMethodFilter` converts the request to `DELETE`.
+But `HiddenHttpMethodFilter` converts the request into a `DELETE`.
 
-Then Spring executes:
+Then Spring runs:
 
 ```java
 @DeleteMapping("/{id}")
@@ -1353,7 +1354,7 @@ public String deleteCourse(...) {
 
 ---
 
-#21. Step 6 — Update `detail.jsp`
+# 21. Step 6 — Update `detail.jsp`
 
 Now we must adapt the detail view so that its links use the new routes.
 
@@ -1363,7 +1364,7 @@ File:
 src/main/webapp/WEB-INF/views/courses/detail.jsp
 ```
 
-Guidance code:
+Reference code:
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1427,11 +1428,11 @@ For example:
 /courses/3/edit
 ```
 
-This way we maintain the new style of routes throughout the project.
+This way we keep the new route style throughout the project.
 
 ---
 
-#22. Step 7 — Check `CourseService` and `CourseDao`
+# 22. Step 7 — Check `CourseService` and `CourseDao`
 
 The good news is that, in principle, we do not need to change `CourseService` or `CourseDao`.
 
@@ -1474,17 +1475,17 @@ public void deleteById(Long id) {
 }
 ```
 
-This demonstrates an advantage of having the project separated by layers.
+This shows one advantage of separating the project into layers.
 
 We can change the controller routes without touching the data access logic.
 
 ---
 
-#23. Step 8 — Test the entire flow
+# 23. Step 8 — Test the complete flow
 
-## 23.1. Test list
+## 23.1. Test the list
 
-We enter:
+We go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses
@@ -1501,7 +1502,7 @@ The links should now look like:
 
 ---
 
-## 23.2. Test detail
+## 23.2. Test the details
 
 We click on:
 
@@ -1515,13 +1516,13 @@ The URL should look like:
 /courses/1
 ```
 
-The course details must be shown.
+The course details should be shown.
 
 ---
 
-## 23.3. Test creation
+## 23.3. Test creating
 
-We enter:
+We go to:
 
 ```text
 /courses/new
@@ -1529,7 +1530,7 @@ We enter:
 
 We create a course.
 
-The creation continues using:
+Creating still uses:
 
 ```text
 POST /courses
@@ -1539,21 +1540,21 @@ It should work the same as before.
 
 ---
 
-## 23.4. Test edition
+## 23.4. Test editing
 
-We press:
+We click:
 
 ```text
 Editar
 ```
 
-The URL must be:
+The URL should be:
 
 ```text
 /courses/1/edit
 ```
 
-We modify the course and send the form.
+We modify the course and submit the form.
 
 Internally, the form sends:
 
@@ -1573,7 +1574,7 @@ Spring interprets it as:
 PUT /courses/1
 ```
 
-The method must be executed with:
+The method that should run is the one with:
 
 ```java
 @PutMapping("/{id}")
@@ -1581,9 +1582,9 @@ The method must be executed with:
 
 ---
 
-## 23.5. Test deletion
+## 23.5. Test deleting
 
-We press:
+We click:
 
 ```text
 Borrar
@@ -1607,7 +1608,7 @@ Spring interprets it as:
 DELETE /courses/1
 ```
 
-It must be executed:
+This method should run:
 
 ```java
 @DeleteMapping("/{id}")
@@ -1615,9 +1616,9 @@ It must be executed:
 
 ---
 
-#24. How to check that `HiddenHttpMethodFilter` works
+# 24. How to check that `HiddenHttpMethodFilter` works
 
-An easy way to check this is to temporarily put a message in the controller.
+An easy way to check this is to temporarily add a message to the controller.
 
 For example:
 
@@ -1641,7 +1642,7 @@ If you remove it, the form will arrive as `POST`, and Spring will not find the `
 
 ---
 
-#25. Simple Additional Improvement — Private Methods to Reduce Repetition
+# 25. Simple additional improvement — Private methods to reduce repetition
 
 In this topic we have added two private methods:
 
@@ -1652,7 +1653,7 @@ prepareEditForm(...)
 
 This is a small but important improvement.
 
-Before we could have it repeated several times:
+Before, we could have this repeated several times:
 
 ```java
 model.addAttribute("pageTitleCode", "courses.edit.title");
@@ -1661,16 +1662,16 @@ model.addAttribute("submitCode", "courses.update");
 model.addAttribute("course", course);
 ```
 
-Now we focus on:
+Now we centralize it in:
 ```java
 prepareEditForm(model, course);
 ```
 
-This makes the driver more readable.
+This makes the controller more readable.
 
 ---
 
-#26. Simple additional improvement — Constants for views and redirects
+# 26. Simple additional improvement — Constants for views and redirects
 
 We also add:
 
@@ -1695,13 +1696,13 @@ Now:
 return REDIRECT_COURSES;
 ```
 
-It is not mandatory, but in medium projects it helps avoid writing errors.
+It is not mandatory, but in medium-sized projects it helps avoid typos.
 
 ---
 
-#27. Common mistakes from Topic 8
+# 27. Common mistakes in Topic 8
 
-## Error 1 — Forget `HiddenHttpMethodFilter`
+## Error 1 — Forgetting `HiddenHttpMethodFilter`
 
 If we do not configure:
 
@@ -1719,19 +1720,19 @@ The method:
 @PutMapping("/{id}")
 ```
 
-will not be executed.
+will not run.
 
 ---
 
 ## Error 2 — Forgetting the `_method` field
 
-If in the editing form we do not put:
+If we don't add this to the edit form:
 
 ```html
 <input type="hidden" name="_method" value="put" />
 ```
 
-the form will still be an `POST`.
+the form will still be a `POST`.
 
 The same thing happens for deletion:
 
@@ -1765,9 +1766,9 @@ This way we know exactly what is happening.
 
 ---
 
-## Error 4 — Change the controller path but not the JSP bindings
+## Error 4 — Changing the controller route but not the JSP links
 
-If the driver uses:
+If the controller uses:
 
 ```java
 @GetMapping("/{id}")
@@ -1781,7 +1782,7 @@ but the JSP keeps linking to:
 
 the old route will no longer work.
 
-Links need to be updated:
+The links need to be updated:
 
 ```jsp
 /courses/${course.id}
@@ -1789,7 +1790,7 @@ Links need to be updated:
 
 ---
 
-## Error 5 — Switch to `@PathVariable` but still use `@RequestParam`
+## Error 5 — Switching to `@PathVariable` but still using `@RequestParam`
 
 If the route is:
 
@@ -1832,15 +1833,15 @@ We have these two routes:
 @GetMapping("/{id}")
 ```
 
-Spring usually resolves the most specific path correctly, but it is a good idea to write clear paths and not use identifiers that could be confused with words.
+Spring usually resolves the most specific route correctly, but it is a good idea to write clear routes and not use identifiers that could be confused with words.
 
-In our case, `/new` means creation form, and `/{id}` means course details.
+In our case, `/new` means the creation form, and `/{id}` means a course's details.
 
 ---
 
-## Error 7 — Not doing `course.setId(id)` in `update` method
+## Error 7 — Not calling `course.setId(id)` in the `update` method
 
-In the `@PutMapping` method, the `id` comes from the path:
+In the `@PutMapping` method, the `id` comes from the route:
 
 ```java
 @PathVariable Long id
@@ -1856,17 +1857,17 @@ This way we ensure that the object that arrives at the service has the correct i
 
 ---
 
-#28. CRUD summary after Topic 8
+# 28. CRUD summary after Topic 8
 
 After this topic, the CRUD looks like this:
 
-| Operation | HTTP Method | Route | Controller method |
+| Operation | HTTP method | Route | Controller method |
 | ---------------- | ----------- | -------------------- | ---------------------- |
 | List | `GET` | `/courses` | `listCourses` |
-| See detail | `GET` | `/courses/{id}` | `courseDetail` |
-| Show creation | `GET` | `/courses/new` | `showCreateForm` |
+| View details | `GET` | `/courses/{id}` | `courseDetail` |
+| Show creation form | `GET` | `/courses/new` | `showCreateForm` |
 | Create | `POST` | `/courses` | `createCourse` |
-| Show edition | `GET` | `/courses/{id}/edit` | `showEditForm` |
+| Show edit form | `GET` | `/courses/{id}/edit` | `showEditForm` |
 | Update | `PUT` | `/courses/{id}` | `updateCourse` |
 | Delete | `DELETE` | `/courses/{id}` | `deleteCourse` |
 
@@ -1874,7 +1875,7 @@ Now the controller communicates the intention of each operation much better.
 
 ---
 
-#39. Final Comparison
+# 29. Final comparison
 
 ## Topic 7
 
@@ -1908,9 +1909,9 @@ The application doesn't change much for the end user, but the code becomes clear
 
 ---
 
-#30. Closure
+# 30. Closing the topic
 
-In this topic we have improved the readability of CRUD by using more expressive HTTP methods.
+In this topic we have improved the readability of the CRUD by using more expressive HTTP methods.
 
 We have learned that:
 

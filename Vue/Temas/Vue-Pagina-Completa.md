@@ -1,8 +1,8 @@
-# **Creating a Full Page with Vue.js**
+# **Building a Complete Website with Vue.js**
 
 ## **Notes App**
 
-In the following videos we will create a complete web page for a Notes App using everything learned in this Vue.js course
+In the following videos, we'll build a complete website for a notes app using everything you've learned in this Vue.js course.
 
 ### Part 1. How to start a website.
 

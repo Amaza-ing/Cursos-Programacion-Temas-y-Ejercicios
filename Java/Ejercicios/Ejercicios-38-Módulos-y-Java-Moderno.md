@@ -1,14 +1,14 @@
-# Exercises - Topic 38: Notes
+# Exercises - Topic 38: Annotations
 
-Below you will find **10 practical exercises** to work with **annotations**: `@Override`, `@Deprecated`, `@SuppressWarnings`, `@FunctionalInterface`, creating your own annotations, `@Retention`, `@Target` and basic reading with reflection.
+Below you will find **10 practical exercises** to work with **annotations**: `@Override`, `@Deprecated`, `@SuppressWarnings`, `@FunctionalInterface`, creating your own annotations, `@Retention`, `@Target` and reading annotations with basic reflection.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Use `@Override`
 
-Create an `BasePrinter` class with an `print()` method.
+Create a `BasePrinter` class with a `print()` method.
 
 Create a class `ConsolePrinter` that inherits from `BasePrinter` and overrides `print()` using `@Override`.
 
@@ -49,8 +49,8 @@ public class Main {
 
 Create a class `ReportService` with:
 
-- method `generateOldReport()` marked as `@Deprecated`
-- `generateNewReport()` method
+- a `generateOldReport()` method marked as `@Deprecated`
+- a `generateNewReport()` method
 
 From `main`, call both methods.
 
@@ -88,7 +88,7 @@ public class Main {
 
 Create a class `Main` with an unused local variable.
 
-Applies `@SuppressWarnings("unused")` to the `main` method.
+Apply `@SuppressWarnings("unused")` to the `main` method.
 
 <details><summary>Show solution</summary>
 
@@ -109,9 +109,9 @@ public class Main {
 
 ## Exercise 4: Create a functional interface
 
-Creates an `TextFormatter` interface marked `@FunctionalInterface`.
+Create a `TextFormatter` interface marked with `@FunctionalInterface`.
 
-You must have a single abstract method:
+It must have a single abstract method:
 
 ```java
 String format(String text);
@@ -146,7 +146,7 @@ public class Main {
 
 Create your own annotation called `Important`.
 
-Then use it on an `PaymentService` class.
+Then use it on a `PaymentService` class.
 
 <details><summary>Show solution</summary>
 
@@ -195,9 +195,9 @@ public class Article {
 
 ## Exercise 7: Annotation with `value`
 
-Create an `Version` annotation with an element named `value`.
+Create a `Version` annotation with an element named `value`.
 
-Use it as a shorthand on an `ApiClient` class.
+Use it in its shorthand form on an `ApiClient` class.
 
 <details><summary>Show solution</summary>
 
@@ -217,11 +217,11 @@ public class ApiClient {
 
 ---
 
-## Exercise 8: Using `@Retention` and `@Target`
+## Exercise 8: Use `@Retention` and `@Target`
 
-Create an `RunNow` annotation that:
+Create a `RunNow` annotation that:
 
-- is preserved at runtime
+- is retained at runtime
 - can only be applied to methods
 
 <details><summary>Show solution</summary>
@@ -242,12 +242,12 @@ public @interface RunNow {
 
 ---
 
-## Exercise 9: Read an annotation of a class
+## Exercise 9: Read an annotation from a class
 
-Create an `Category` annotation with:
+Create a `Category` annotation with:
 
 - `RetentionPolicy.RUNTIME`
-- an `String value()` value
+- a `String value()` element
 
 Annotate a class `BookService` with `@Category("books")`.
 
@@ -287,15 +287,15 @@ public class Main {
 
 ---
 
-## Exercise 10: Execute annotated methods
+## Exercise 10: Run annotated methods
 
-Creates an `Execute` annotation for methods at runtime.
+Create an `Execute` annotation for methods, available at runtime.
 Create a class `JobService` with two methods:
 
 - `clean()` annotated with `@Execute`
-- `helper()` without annotation
+- `helper()` without an annotation
 
-From `main`, use reflection to execute only the annotated methods.
+From `main`, use reflection to run only the annotated methods.
 
 <details><summary>Show solution</summary>
 

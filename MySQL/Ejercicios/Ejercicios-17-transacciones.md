@@ -1,16 +1,16 @@
 # **Exercises - Topic 17: Transactions in MySQL**
 
-Below, you will find 5 practical exercises to work with **transactions** in MySQL.
+Below you will find 5 practical exercises to work with **transactions** in MySQL.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Transfer between accounts with error control**
+### **Exercise 1: Transfer between accounts with error handling**
 
-In table `accounts(id, balance)`, make a transaction to transfer 250 from account `id = 3` to account `id = 4`. If any update fails, revert all changes.
+In the `accounts(id, balance)` table, run a transaction that transfers 250 from account `id = 3` to account `id = 4`. If any update fails, roll back all the changes.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 START TRANSACTION;
@@ -25,11 +25,11 @@ COMMIT;
 
 ---
 
-### **Exercise 2: Using SAVEPOINT to partially roll back**
+### **Exercise 2: Use SAVEPOINT to partially roll back**
 
-In the `orders(id, status)` table, first update the order `id = 10` to `status = 'SHIPPED'` and save a checkpoint named `sp1`. It then updates the request `id = 11` to `status = 'SHIPPED'`, but reverts only this last update using `SAVEPOINT`.
+In the `orders(id, status)` table, first update order `id = 10` to `status = 'SHIPPED'` and save a checkpoint named `sp1`. Then update order `id = 11` to `status = 'SHIPPED'`, but roll back only this last update using `SAVEPOINT`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 START TRANSACTION;
@@ -46,9 +46,9 @@ COMMIT;
 
 ### **Exercise 3: Inventory adjustment with validation**
 
-In `inventory(product_id, quantity)`, subtract 5 units from the product with `product_id = 7` only if the available quantity is greater than or equal to 5. If not, reverse the transaction.
+In `inventory(product_id, quantity)`, subtract 5 units from the product with `product_id = 7` only if the available quantity is greater than or equal to 5. If it isn't, roll back the transaction.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 START TRANSACTION;
@@ -68,11 +68,11 @@ END IF;
 
 ---
 
-### **Exercise 4: Change of isolation level**
+### **Exercise 4: Change the isolation level**
 
-Set the isolation level to `READ COMMITTED` and then insert a new client into `customers`. Make sure you confirm the transaction.
+Set the isolation level to `READ COMMITTED` and then insert a new customer into `customers`. Make sure you commit the transaction.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
@@ -86,11 +86,11 @@ COMMIT;
 
 ---
 
-### **Exercise 5: Multiple operations with final confirmation**
+### **Exercise 5: Multiple operations with a final commit**
 
-For `products(id, price)` and `suppliers(id, city)`, update the price of the product `id = 5` to 19.99 and change the supplier city `id = 2` to `'Barcelona'` in the same transaction. Confirms only if both operations are executed correctly.
+In `products(id, price)` and `suppliers(id, city)`, update the price of product `id = 5` to 19.99 and change the city of supplier `id = 2` to `'Barcelona'` in the same transaction. Commit only if both operations run successfully.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 START TRANSACTION;

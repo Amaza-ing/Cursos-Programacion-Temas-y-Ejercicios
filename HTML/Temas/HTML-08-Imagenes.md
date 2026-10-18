@@ -6,9 +6,9 @@ Images are an essential part of web content, as they enrich the user experience 
 
 ---
 
-## **2. Insert images with `<img>`**
+## **2. Inserting images with `<img>`**
 
-The `<img>` tag allows images to be displayed on a web page. It is an element of type **empty**, which means it does not need a closing tag.
+The `<img>` tag lets you display images on a web page. It is an **empty** element, which means it doesn't need a closing tag.
 
 ### **Basic example:**
 
@@ -16,10 +16,10 @@ The `<img>` tag allows images to be displayed on a web page. It is an element of
 <img src="imagen.jpg" alt="Descripción de la imagen" />
 ```
 
-### **Explanation of attributes:**
+### **The attributes explained:**
 
 - `src`: Defines the path or URL of the image.
-- `alt`: Provides an alternative description in case the image does not load or for accessibility.
+- `alt`: Provides an alternative description, for accessibility or in case the image doesn't load.
 
 ---
 
@@ -27,7 +27,7 @@ The `<img>` tag allows images to be displayed on a web page. It is an element of
 
 ### **3.1. Size attributes: `width` and `height`**
 
-These attributes allow you to define the width and height of an image in pixels or percentages.
+These attributes let you define the width and height of an image in pixels or percentages.
 
 **Example:**
 
@@ -40,11 +40,11 @@ These attributes allow you to define the width and height of an image in pixels 
 />
 ```
 
-> **Note:** It is preferable to control the size with CSS for greater flexibility.
+> **Note:** It's better to control the size with CSS, for greater flexibility.
 
-### **3.2. `loading="lazy"` (Lazy Loading)**
+### **3.2. `loading="lazy"` (lazy loading)**
 
-The `loading="lazy"` attribute allows images to load only when the user scrolls to them, improving page performance.
+The `loading="lazy"` attribute makes images load only when the user scrolls to them, which improves page performance.
 
 **Example:**
 
@@ -54,29 +54,29 @@ The `loading="lazy"` attribute allows images to load only when the user scrolls 
 
 ---
 
-## **4. Use of images in different formats**
+## **4. Using images in different formats**
 
-Depending on the need, we can use different image formats on the web:
+Depending on what we need, we can use different image formats on the web:
 
 ### **4.1. `.jpg` (JPEG)**
 
-- Format commonly used for photographs.
-- Good compression, but with loss of quality.
+- A format commonly used for photographs.
+- Good compression, but with some loss of quality.
 
 ### **4.2. `.png`**
 
 - Supports transparency.
 - Ideal for graphics with transparent backgrounds.
-- Files larger than JPEG.
+- Larger files than JPEG.
 
 ### **4.3. `.webp`**
 
-- Modern format that offers better compression and quality.
-- Compatible with most modern browsers.
+- A modern format that offers better compression and quality.
+- Supported by most modern browsers.
 
 ### **4.4. `.svg`**
 
-- Vector format, scalable without loss of quality.
+- A vector format that scales without losing quality.
 - Ideal for logos and icons.
 
 **Example of using an SVG file:**
@@ -93,12 +93,12 @@ Depending on the need, we can use different image formats on the web:
 
 ## **5. Good practices for image optimization**
 
-- **Reduce the size of the images** before uploading them to the website.
+- **Reduce the size of your images** before uploading them to the website.
 - Use **optimized formats** such as WebP when possible.
 - Apply **lossless compression** with tools like TinyPNG or Squoosh.
-- Implement `loading="lazy"` to improve performance on image-heavy pages.
-- Correctly define the `alt` to improve accessibility and SEO.
+- Use `loading="lazy"` to improve performance on image-heavy pages.
+- Write a proper `alt` text to improve accessibility and SEO.
 
 ---
 
-In the next topic, we will explore HTML tables, their structure, and how to use them to organize information on the web.
+In the next topic, we'll explore **tables in HTML**, their structure and how to use them to organize information on the web.

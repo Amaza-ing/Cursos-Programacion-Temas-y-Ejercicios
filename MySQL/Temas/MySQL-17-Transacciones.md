@@ -1,28 +1,28 @@
 # **Topic 17: Transactions in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
-- Understand what a transaction is and its usefulness.
+- Understand what a transaction is and why it is useful.
 - Use transactions to ensure data integrity.
-- Control the initiation, confirmation and cancellation of transactions.
+- Control how transactions are started, committed and rolled back.
 - Know the ACID properties.
 
 ---
 
 ## **1. What is a transaction?**
 
-A **transaction** is a set of SQL operations that are executed as an indivisible unit. This means that **either all of them are executed correctly or none are executed**.
+A **transaction** is a set of SQL operations that run as an indivisible unit. This means that **either all of them run successfully or none of them run at all**.
 
 ---
 
-## **2. ACID Properties**
+## **2. ACID properties**
 
 Transactions are governed by four properties known as **ACID**:
 
-- **Atomicity**: All operations are completed or none are applied.
-- **Consistency**: The database goes from one valid state to another.
-- **Isolation**: Concurrent transactions do not interfere with each other.
-- **Durability**: Committed changes persist even in the face of failures.
+- **Atomicity**: either all the operations are completed or none are applied.
+- **Consistency**: the database goes from one valid state to another.
+- **Isolation**: concurrent transactions do not interfere with each other.
+- **Durability**: committed changes persist even if there are failures.
 
 ---
 
@@ -63,7 +63,7 @@ ROLLBACK;
 
 ## **5. Using SAVEPOINT**
 
-A **savepoint** is an intermediate save point within a transaction:
+A **savepoint** is an intermediate checkpoint within a transaction:
 
 ```sql
 START TRANSACTION;
@@ -78,14 +78,14 @@ COMMIT;
 
 ## **6. Transaction isolation**
 
-MySQL allows you to adjust the isolation level to control how concurrent transactions interact:
+MySQL lets you adjust the isolation level to control how concurrent transactions interact:
 
 - `READ UNCOMMITTED`
 - `READ COMMITTED`
 - `REPEATABLE READ` (default)
 - `SERIALIZABLE`
 
-Example to change it:
+Example of how to change it:
 
 ```sql
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
@@ -99,18 +99,18 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 ## **7. Good practices**
 
-- Start the transaction as close as possible to critical operations.
-- Commit (`COMMIT`) or rollback (`ROLLBACK`) as soon as possible.
-- Avoid keeping transactions open for too long to avoid blocking resources.
+- Start the transaction as close as possible to the critical operations.
+- Commit (`COMMIT`) or roll back (`ROLLBACK`) as soon as possible.
+- Don't keep transactions open for too long, so you don't lock resources.
 
 ---
 
 ## **8. Conclusion**
 
-- Transactions ensure that a set of operations is executed safely and consistently.
-- ACID properties ensure reliability in data manipulation.
-- Tools like `SAVEPOINT` and isolation levels offer greater control over your execution.
+- Transactions ensure that a set of operations runs safely and consistently.
+- The ACID properties make data manipulation reliable.
+- Tools like `SAVEPOINT` and isolation levels give you more control over how transactions run.
 
 ---
 
-In the next topic we will learn to **use IF in queries and stored procedures**.
+In the next topic we will learn how to **use IF in queries and stored procedures**.

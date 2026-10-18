@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** on using `while`, `do-while` and `for` loops.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Count from 1 to 10 with `while`
 
-Write a program that displays the numbers **1 to 10** on the console using an `while` loop.
+Write a program that prints the numbers **1 to 10** to the console using a `while` loop.
 
 <details><summary>Show solution</summary>
 
@@ -31,7 +31,7 @@ public class Main {
 
 ## Exercise 2: Count from 10 to 1 with `for`
 
-Display the numbers **10 to 1** via console using an `for` loop.
+Print the numbers **10 to 1** to the console using a `for` loop.
 
 <details><summary>Show solution</summary>
 
@@ -51,7 +51,7 @@ public class Main {
 
 ## Exercise 3: Show only even numbers
 
-Use an `for` loop to display the **even numbers from 1 to 20** on the console.
+Use a `for` loop to print the **even numbers from 1 to 20** to the console.
 
 <details><summary>Show solution</summary>
 
@@ -71,9 +71,9 @@ public class Main {
 
 ---
 
-## Exercise 4: Add numbers from 1 to 100
+## Exercise 4: Add up the numbers from 1 to 100
 
-Calculates the **sum of numbers 1 to 100** using a loop.
+Calculate the **sum of the numbers from 1 to 100** using a loop.
 
 <details><summary>Show solution</summary>
 
@@ -123,7 +123,7 @@ public class Main {
 
 ## Exercise 6: Repeat a message 5 times with `do-while`
 
-Displays the message `"Learning Java"` **5 times** using an `do-while` loop.
+Print the message `"Learning Java"` **5 times** using a `do-while` loop.
 
 <details><summary>Show solution</summary>
 
@@ -169,9 +169,9 @@ public class Main {
 
 ---
 
-## Exercise 8: Add only the odd numbers from 1 to 20
+## Exercise 8: Add up only the odd numbers from 1 to 20
 
-Use a loop to add only the **odd numbers** between 1 and 20.
+Use a loop to add up only the **odd numbers** between 1 and 20.
 
 <details><summary>Show solution</summary>
 
@@ -222,9 +222,9 @@ public class Main {
 
 ## Exercise 10: Simulate attempts until a value is reached
 
-Declare an `progress` variable starting with `0`.  
-In each iteration its value increases by `15` until it reaches or exceeds `100`.  
-Shows how many attempts were necessary.
+Declare a `progress` variable that starts at `0`.  
+On each iteration, increase its value by `15` until it reaches or exceeds `100`.  
+Print how many attempts it took.
 
 <details><summary>Show solution</summary>
 

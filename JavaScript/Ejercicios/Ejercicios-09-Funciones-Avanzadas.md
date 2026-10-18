@@ -1,12 +1,12 @@
 # **Exercises - Topic 9: Advanced Functions in JavaScript**
 
-Below you will find 5 practical exercises on advanced functions in JavaScript.
+Below you'll find 5 practical exercises on advanced functions in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Higher Order Function**
+### **Exercise 1: Higher-Order Function**
 
 Create a function called `applyOperation` that takes two numbers and a function as parameters. The function must apply the given operation to the two numbers.
 
@@ -56,7 +56,7 @@ console.log(double(5)); // Salida: 10
 
 ### **Exercise 3: Currying**
 
-Converts the `sum` function to a curried function that allows adding numbers in separate calls.
+Convert the `sum` function into a curried function that lets you add numbers in separate calls.
 
 <details><summary>Show solution</summary>
 
@@ -77,7 +77,7 @@ console.log(addFive(3)); // Salida: 8
 
 ### **Exercise 4: Modularization with `import` and `export`**
 
-Create a module `math.js` that exports two functions (`add` and `subtract`). Then import them and use them in another file.
+Create a module `math.js` that exports two functions (`add` and `subtract`). Then, import them and use them in another file.
 
 <details><summary>Show solution</summary>
 

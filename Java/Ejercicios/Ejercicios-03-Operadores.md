@@ -1,8 +1,8 @@
 # Exercises - Topic 3: Operators and expressions (Java)
 
-Below, you will find **10 practical exercises** on arithmetic, relational, logical, assignment and operator priority operators.
+Below you will find **10 practical exercises** on arithmetic, relational, logical and assignment operators, and on operator precedence.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -13,15 +13,15 @@ Declare two variables:
 - `a` with value `14`
 - `b` with value `4`
 
-Calculates and displays by console:
+Calculate and print to the console:
 
 - The sum
-- The subtraction
-- Multiplication
-- The division
-- The rest
+- The difference
+- The product
+- The quotient
+- The remainder
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -44,14 +44,14 @@ public class Main {
 
 ## Exercise 2: Division with decimals
 
-Declares:
+Declare:
 
-- `totalPoints` with `9` value
-- `numberOfPlayers` with `2` value
+- `totalPoints` with value `9`
+- `numberOfPlayers` with value `2`
 
-Calculate the correct mean using `double`.
+Calculate the correct average using `double`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -69,13 +69,13 @@ public class Main {
 
 ---
 
-## Exercise 3: Even or Odd
+## Exercise 3: Even or odd
 
-Declares a variable `number` with value `21`.
+Declare a variable `number` with value `21`.
 
-Checks if the number is even and displays the result (`true` or `false`).
+Check whether the number is even and print the result (`true` or `false`).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -94,19 +94,19 @@ public class Main {
 
 ## Exercise 4: Relational comparisons
 
-Declares:
+Declare:
 
-- `age` with `16` value
+- `age` with value `16`
 
 Create boolean variables that indicate whether:
 
-- He is of legal age
-- He is a minor
-- He is exactly 18 years old
+- The person is an adult
+- The person is a minor
+- The person is exactly 18 years old
 
 Print the results.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -128,16 +128,16 @@ public class Main {
 
 ---
 
-## Exercise 5: Logical AND operators (`&&`)
+## Exercise 5: Logical AND operator (`&&`)
 
-Declares:
+Declare:
 
-- `age` with `22` value
-- `hasId` with `true` value
+- `age` with value `22`
+- `hasId` with value `true`
 
-Create a variable `canEnter` that is `true` only if it meets both conditions.
+Create a variable `canEnter` that is `true` only if both conditions are met.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -155,16 +155,16 @@ public class Main {
 
 ---
 
-## Exercise 6: Logical OR operators (`||`)
+## Exercise 6: Logical OR operator (`||`)
 
-Declares:
+Declare:
 
 - `isVip` with value `false`
-- `hasInvitation` with `true` value
+- `hasInvitation` with value `true`
 
-Create a variable `hasAccess` that is `true` if it meets at least one condition.
+Create a variable `hasAccess` that is `true` if at least one condition is met.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -182,13 +182,13 @@ public class Main {
 
 ---
 
-## Exercise 7: NOT Operator (`!`)
+## Exercise 7: NOT operator (`!`)
 
 Declare a variable `isBlocked` with value `true`.
 
-Create a variable `canLogin` that is the opposite value.
+Create a variable `canLogin` that holds the opposite value.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -205,7 +205,7 @@ public class Main {
 
 ---
 
-## Exercise 8: Composite assignment operators
+## Exercise 8: Compound assignment operators
 
 Declare a variable `score` with value `10`.
 
@@ -215,7 +215,7 @@ Declare a variable `score` with value `10`.
 
 Print the final value.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -239,13 +239,13 @@ public class Main {
 
 Declare a variable `counter` with value `0`.
 
-- Increase once
-- Increase again
-- Decrements once
+- Increment it once
+- Increment it again
+- Decrement it once
 
 Print the final result.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -265,7 +265,7 @@ public class Main {
 
 ---
 
-## Exercise 10: Operator priority
+## Exercise 10: Operator precedence
 
 Without running the code, think about what the result will be:
 
@@ -276,7 +276,7 @@ System.out.println(result);
 
 Then modify the expression so that the result is `30`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Original result:
 

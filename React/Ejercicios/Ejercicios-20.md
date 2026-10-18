@@ -1,8 +1,8 @@
 # **Exercises - Topic 20: Protected Routes**
 
-Below you will find **10 practical exercises** to learn how to create protected routes with React Router using an `ProtectedRoute` component and redirects with `Navigate`.
+Below you will find **10 practical exercises** to learn how to create protected routes with React Router using a `ProtectedRoute` component and redirects with `Navigate`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -10,11 +10,11 @@ Try to solve them before consulting the solution.
 
 Create `ProtectedRoute.jsx` that:
 
-- Receive `isAllowed` and `children`.
-- If `isAllowed` is `false`, redirect to `/login` using `Navigate`.
-- If it is `true`, render `children`.
+- Receives `isAllowed` and `children`.
+- If `isAllowed` is `false`, redirects to `/login` using `Navigate`.
+- If it is `true`, renders `children`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Navigate } from "react-router-dom";
@@ -34,7 +34,7 @@ export default ProtectedRoute;
 
 ---
 
-## **Exercise 2: Protect an `/profile` route**
+## **Exercise 2: Protect a `/profile` route**
 
 In `App.jsx`, create these routes:
 
@@ -43,7 +43,7 @@ In `App.jsx`, create these routes:
 
 Use `ProtectedRoute`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -77,14 +77,14 @@ export default App;
 
 ---
 
-## **Exercise 3: Simulate stateful authentication**
+## **Exercise 3: Simulate authentication with state**
 
 In `App.jsx`:
 
 - Use `useState` to create `isAuthenticated`.
 - Initial value: `false`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -96,14 +96,14 @@ const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 ---
 
-## **Exercise 4: Login from the `Login` page**
+## **Exercise 4: Log in from the `Login` page**
 
 Create `Login.jsx` that:
 
-- Receive an `onLogin` prop.
-- By clicking a button, execute `onLogin()`.
+- Receives an `onLogin` prop.
+- When a button is clicked, runs `onLogin()`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Login({ onLogin }) {
@@ -127,7 +127,7 @@ Modify `Login.jsx`:
   - Call `onLogin()`.
   - Navigate to `/profile`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useNavigate } from "react-router-dom";
@@ -154,10 +154,10 @@ export default Login;
 
 In `App.jsx`:
 
-- Create a function `handleLogin` that puts `isAuthenticated` in `true`.
+- Create a `handleLogin` function that sets `isAuthenticated` to `true`.
 - Pass it as a prop to `Login`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const handleLogin = () => {
@@ -171,11 +171,11 @@ const handleLogin = () => {
 
 ---
 
-## **Exercise 7: Protect another route `/admin`**
+## **Exercise 7: Protect another route, `/admin`**
 
 Create an `Admin.jsx` page and protect it using `ProtectedRoute`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <Route
@@ -196,10 +196,10 @@ Create an `Admin.jsx` page and protect it using `ProtectedRoute`.
 
 In `App.jsx`:
 
-- Create a variable `isAdmin`.
-- Protect `/admin` by using `isAdmin` instead of `isAuthenticated`.
+- Create an `isAdmin` variable.
+- Protect `/admin` using `isAdmin` instead of `isAuthenticated`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const isAdmin = false;
@@ -218,14 +218,14 @@ const isAdmin = false;
 
 ---
 
-## **Exercise 9: Logout Button**
+## **Exercise 9: Logout button**
 
 In `Profile.jsx`:
 
 - Receive an `onLogout` prop.
-- When clicked, execute `onLogout()`.
+- When the button is clicked, run `onLogout()`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Profile({ onLogout }) {
@@ -244,17 +244,17 @@ export default Profile;
 
 ---
 
-## **Exercise 10: Logout + redirection to `/login`**
+## **Exercise 10: Logout + redirect to `/login`**
 
-Expand exercise 9:
+Extend exercise 9:
 
 - Use `useNavigate` in `Profile.jsx`.
 - When the user logs out:
 
   - Run `onLogout()`.
-  - Redirects to `/login`.
+  - Redirect to `/login`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useNavigate } from "react-router-dom";

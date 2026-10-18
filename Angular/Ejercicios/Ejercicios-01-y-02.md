@@ -1,10 +1,10 @@
 # **Exercises - Topics 1 and 2**
 
-## **Exercises from Topic 1: Introduction to Angular and Environment Configuration**
+## **Exercises for Topic 1: Introduction to Angular and Environment Setup**
 
 Below you will find 10 practical exercises on the basics of Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ### **Exercise 1: Installing Angular CLI**
 
@@ -39,7 +39,7 @@ ng new mi-proyecto-angular
 
 ### **Exercise 3: Project structure**
 
-Briefly explain the function of the following files:
+Briefly explain the purpose of the following files:
 
 - `src/app/app.component.ts`
 - `src/main.ts`
@@ -56,7 +56,7 @@ Briefly explain the function of the following files:
 
 ---
 
-### **Exercise 4: Development Server**
+### **Exercise 4: Development server**
 
 Start the development server and explain what happens when you change `app.component.html`.
 
@@ -67,13 +67,13 @@ ng serve
 ```
 
 
-Any changes to `app.component.html` will be automatically reflected in the browser without the need to reload the page.
+Any change to `app.component.html` will automatically be reflected in the browser without having to reload the page.
 
 </details>
 
 ---
 
-### **Exercise 5: Modification of the initial template**
+### **Exercise 5: Modifying the initial template**
 
 Modify `app.component.html` to display a custom message.
 
@@ -88,11 +88,11 @@ Modify `app.component.html` to display a custom message.
 
 ---
 
-## **Exercises from Topic 2: Components in Angular**
+## **Exercises for Topic 2: Components in Angular**
 
 ### **Exercise 6: Creating a component**
 
-Create an `header` component inside the `components` folder.
+Create a `header` component inside the `components` folder.
 
 <details><summary>Show solution</summary>
 
@@ -124,7 +124,7 @@ Add the `header` component inside `app.component.html`.
 
 ### **Exercise 8: Interpolation**
 
-Define a variable `title` in the `header` component and display it in its template.
+Define a `title` variable in the `header` component and display it in its template.
 
 <details><summary>Show solution</summary>
 
@@ -144,9 +144,9 @@ export class HeaderComponent {
 
 ---
 
-### **Exercise 9: Property Binding**
+### **Exercise 9: Property binding**
 
-Creates an entry with dynamic `placeholder` based on a variable.
+Create an input with a dynamic `placeholder` based on a variable.
 
 <details><summary>Show solution</summary>
 
@@ -166,9 +166,9 @@ export class HeaderComponent {
 
 ---
 
-### **Exercise 10: Components within components**
+### **Exercise 10: Components inside components**
 
-Create an `footer` component that contains three other internal components.
+Create a `footer` component that contains three other components inside it.
 
 <details><summary>Show solution</summary>
 

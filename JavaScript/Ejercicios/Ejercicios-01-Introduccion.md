@@ -1,14 +1,14 @@
 # **Exercises - Topic 1: Introduction to JavaScript**
 
-Below you will find 4 practical exercises on the fundamentals of JavaScript.
+Below you'll find 4 practical exercises on the fundamentals of JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Hello World**
 
-Create a program that displays the message "Hello, world!" on the console.
+Create a program that displays the message "Hello, world!" in the console.
 
 <details><summary>Show solution</summary>
 
@@ -20,9 +20,9 @@ console.log("¡Hola, mundo!");
 
 ---
 
-### **Exercise 2: Declaration of Variables**
+### **Exercise 2: Declaring variables**
 
-Declare two variables named `firstName` and `lastName`, give them your first and last names, and display the message "Hello, [firstName] [lastName]!" on the console.
+Declare two variables named `firstName` and `lastName`, assign them your first name and last name, and display the message "Hello, [firstName] [lastName]!" in the console.
 
 <details><summary>Show solution</summary>
 
@@ -39,7 +39,7 @@ console.log("Hola " + firstName + lastName");
 
 ### **Exercise 3: Conditionals**
 
-Create a program that verifies if a person is of legal age. Asks the user for their age (use `prompt`) and displays a message indicating whether they are older or younger.
+Create a program that checks whether a person is an adult. Ask the user for their age (use `prompt`) and display a message saying whether they're an adult or a minor.
 
 <details><summary>Show solution</summary>
 
@@ -57,9 +57,9 @@ if (age >= 18) {
 
 ---
 
-### **Exercise 4: For Loop**
+### **Exercise 4: For loop**
 
-Display the numbers 1 to 10 on the console using an `for` loop.
+Display the numbers from 1 to 10 in the console using a `for` loop.
 
 <details><summary>Show solution</summary>
 

@@ -1,8 +1,8 @@
-# **Exercises - Topic 2: File Schema in React**
+# **Exercises - Topic 2: File Structure in React**
 
-Below, you will find **5 practical exercises** on the file schema and organization of a React project.
+Below, you will find **5 practical exercises** on the file structure and organization of a React project.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -10,12 +10,12 @@ Try to solve them before consulting the solution.
 
 In a React project with Vite, indicate **which file or folder** you would use for each case:
 
-1. Save an image that you want to import in a component (`import logo from ...`).
+1. Store an image that you want to import into a component (`import logo from ...`).
 2. Define global styles for the entire application.
 3. Mount React on the DOM.
-4. Save a static file accessible by direct URL (for example `/robots.txt`).
+4. Store a static file that can be reached through a direct URL (for example `/robots.txt`).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 1. `src/assets/` (or `src/assets/...`) because the file goes through the bundler and is imported from the code.
 2. `src/index.css` (or the global file you import from `main.jsx`).
@@ -37,7 +37,7 @@ Within `src/`, create (on paper or in your editor) a recommended structure that 
 
 Then, add **an example file** with a correct name inside each folder.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Valid example:
 
@@ -77,9 +77,9 @@ src/
 │── main.jsx
 ```
 
-Reorganize it using the theme's recommended structure (without changing the content of the files, just their location). Keep names in English.
+Reorganize it using the topic's recommended structure (without changing the content of the files, just their location). Keep names in English.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 A correct reorganization could be:
 
@@ -111,9 +111,9 @@ Notes:
 
 ---
 
-## **Exercise 4: Naming Conventions (choose the correct option)**
+## **Exercise 4: Naming conventions (choose the correct option)**
 
-Select the most correct name in each case according to the conventions of the theme:
+Select the most appropriate name in each case according to the topic's conventions:
 
 1. User card component:
 
@@ -121,19 +121,19 @@ Select the most correct name in each case according to the conventions of the th
    - b) `UserCard.jsx`
    - c) `userCard.jsx`
 
-2. Function that handles one click:
+2. Function that handles a click:
 
    - a) `Handle_Click()`
    - b) `handleClick`
    - c) `handle_click`
 
-3. Custom hook for dark theme:
+3. Custom hook for a dark theme:
 
    - a) `UseDarkMode.js`
    - b) `useDarkMode.js`
    - c) `use-dark-mode.js`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 1. b) `UserCard.jsx` (components in PascalCase).
 2. b) `handleClick` (functions in camelCase).
@@ -145,17 +145,17 @@ Select the most correct name in each case according to the conventions of the th
 
 ## **Exercise 5: Choose carefully between `public` and `assets`**
 
-You have these cases. Indicate whether you would save it in `public/` or `src/assets/` and explain why:
+Here are some cases. Indicate whether you would store each one in `public/` or `src/assets/` and explain why:
 
-1. An `favicon.ico`.
-2. An `banner.png` image that you will use inside a component with `import banner from ...`.
-3. An `robots.txt` file.
-4. An `terms.pdf` file that you want to open with a direct `/terms.pdf` link.
-<details><summary>Show Solution</summary>
+1. A `favicon.ico`.
+2. A `banner.png` image that you will use inside a component with `import banner from ...`.
+3. A `robots.txt` file.
+4. A `terms.pdf` file that you want to open with a direct `/terms.pdf` link.
+<details><summary>Show solution</summary>
 
-1. `public/` (static resource that must be accessible directly and without import).
-2. `src/assets/` (will be imported from JavaScript and goes through the bundler).
-3. `public/` (must be accessible as `/robots.txt`).
+1. `public/` (a static resource that must be directly accessible, without an import).
+2. `src/assets/` (it will be imported from JavaScript and goes through the bundler).
+3. `public/` (it must be accessible as `/robots.txt`).
 4. `public/` (if you want direct access by URL: `/terms.pdf`).
 
 </details>

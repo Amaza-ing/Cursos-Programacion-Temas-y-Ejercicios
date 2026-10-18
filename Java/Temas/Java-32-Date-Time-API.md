@@ -6,15 +6,15 @@ Working with dates and times is a very common need in programming.
 
 For example:
 
-- save a user's registration date
-- calculate the age of a person
-- show current time
-- check if a task is overdue
-- calculate how many days until an event
-- record the date and time of a purchase
-- work with time zones
+- storing a user's registration date
+- calculating a person's age
+- showing the current time
+- checking whether a task is overdue
+- calculating how many days are left until an event
+- recording the date and time of a purchase
+- working with time zones
 
-Java includes a modern API to work with dates and times in a clear and secure way:
+Java includes a modern API for working with dates and times in a clear and safe way:
 
 - **Date/Time API**
 
@@ -26,17 +26,17 @@ java.time
 
 In this topic you will learn:
 
-- Why it is not recommended to use the old classes `Date` and `Calendar` for new code
-- What is `LocalDate`
-- What is `LocalTime`
-- What is `LocalDateTime`
+- Why using the old `Date` and `Calendar` classes is not recommended for new code
+- What `LocalDate` is
+- What `LocalTime` is
+- What `LocalDateTime` is
 - How to create dates and times
 - How to add and subtract days, months, years, hours or minutes
 - How to compare dates
 - How to work with `Period` and `Duration`
 - How to format and parse dates
-- What are `ZonedDateTime` and `ZoneId`
-- Typical errors and good practices
+- What `ZonedDateTime` and `ZoneId` are
+- Typical mistakes and good practices
 
 ---
 
@@ -101,9 +101,9 @@ Examples:
 - `2025-12-31`
 - `1995-04-10`
 
-Does not include:
+It does not include:
 
-- time
+- hours
 - minutes
 - seconds
 - time zone
@@ -130,7 +130,7 @@ public class Main {
 
 ---
 
-## 5. Create a specific date with `LocalDate.of`
+## 5. Creating a specific date with `LocalDate.of`
 
 You can create a specific date with `of`.
 
@@ -160,9 +160,9 @@ LocalDate date = LocalDate.of(2026, 6, 21);
 
 ---
 
-## 6. Get parts of a date
+## 6. Getting the parts of a date
 
-You can get year, month or day.
+You can get the year, the month or the day.
 
 ```java
 import java.time.LocalDate;
@@ -187,9 +187,9 @@ Important difference:
 
 ---
 
-## 7. Add and subtract dates
+## 7. Adding to and subtracting from dates
 
-`LocalDate` allows you to add or subtract days, weeks, months and years.
+`LocalDate` lets you add or subtract days, weeks, months and years.
 
 ```java
 import java.time.LocalDate;
@@ -217,8 +217,8 @@ public class Main {
 
 The main classes of `java.time` are immutable.
 
-That means they don't change their original value.  
-When you do an operation, a new object is returned.
+That means their original value never changes.  
+When you perform an operation, a new object is returned.
 
 Incorrect example:
 
@@ -242,7 +242,7 @@ System.out.println(date); // 2026-06-22
 
 ---
 
-## 9. Compare dates
+## 9. Comparing dates
 
 You can compare dates with methods like:
 
@@ -269,7 +269,7 @@ public class Main {
 
 ---
 
-## 10. Guided example: Check if a task is due
+## 10. Guided example: checking whether a task is overdue
 
 ```java
 import java.time.LocalDate;
@@ -291,6 +291,7 @@ public class Main {
 ---
 
 ## 11. `LocalTime`: time only
+
 `LocalTime` represents a time without a date.
 
 Examples:
@@ -299,7 +300,7 @@ Examples:
 - `18:45:20`
 - `09:15:00`
 
-Does not include:
+It does not include:
 
 - day
 - month
@@ -328,7 +329,7 @@ public class Main {
 
 ---
 
-## 12. Create a specific time with `LocalTime.of`
+## 12. Creating a specific time with `LocalTime.of`
 
 ```java
 import java.time.LocalTime;
@@ -350,7 +351,7 @@ LocalTime time = LocalTime.of(9, 30, 15);
 
 ---
 
-## 13. Get parts of an hour
+## 13. Getting the parts of a time
 
 ```java
 import java.time.LocalTime;
@@ -368,7 +369,7 @@ public class Main {
 
 ---
 
-## 14. Add and subtract time
+## 14. Adding and subtracting time
 
 ```java
 import java.time.LocalTime;
@@ -401,7 +402,7 @@ Example:
 2026-06-21T10:30
 ```
 
-Does not include time zone.
+It does not include a time zone.
 
 Import:
 
@@ -425,7 +426,7 @@ public class Main {
 
 ---
 
-## 16. Create an `LocalDateTime`
+## 16. Creating a `LocalDateTime`
 
 ```java
 import java.time.LocalDateTime;
@@ -447,9 +448,9 @@ LocalDateTime.of(year, month, day, hour, minute)
 
 ---
 
-## 17. Combine `LocalDate` and `LocalTime`
+## 17. Combining `LocalDate` and `LocalTime`
 
-You can create an `LocalDateTime` by combining date and time.
+You can create a `LocalDateTime` by combining a date and a time.
 
 ```java
 import java.time.LocalDate;
@@ -470,7 +471,7 @@ public class Main {
 
 ---
 
-## 18. Separate date and time from `LocalDateTime`
+## 18. Splitting a `LocalDateTime` into date and time
 
 ```java
 import java.time.LocalDate;
@@ -492,7 +493,7 @@ public class Main {
 
 ---
 
-## 19. Add and subtract with `LocalDateTime`
+## 19. Adding and subtracting with `LocalDateTime`
 
 ```java
 import java.time.LocalDateTime;
@@ -520,7 +521,7 @@ public class Main {
 - months
 - days
 
-Typically used with `LocalDate`.
+It is normally used with `LocalDate`.
 
 Example:
 
@@ -544,7 +545,7 @@ public class Main {
 
 ---
 
-## 21. Guided example: calculate age
+## 21. Guided example: calculating an age
 
 ```java
 import java.time.LocalDate;
@@ -564,11 +565,11 @@ public class Main {
 
 ---
 
-## 22. `Duration`: difference between hours
+## 22. `Duration`: difference between times
 
 `Duration` represents an amount of time based on seconds and nanoseconds.
 
-Typically used with:
+It is normally used with:
 
 - `LocalTime`
 - `LocalDateTime`
@@ -595,7 +596,7 @@ public class Main {
 
 ---
 
-## 23. Guided example: calculate duration of a class
+## 23. Guided example: calculating the length of a class
 
 ```java
 import java.time.Duration;
@@ -619,13 +620,13 @@ public class Main {
 
 ### 24.1. `Period`
 
-Use dates:
+It uses dates:
 
 ```java
 Period.between(startDate, endDate)
 ```
 
-Work with:
+It works with:
 
 - years
 - months
@@ -633,13 +634,13 @@ Work with:
 
 ### 24.2. `Duration`
 
-Use times:
+It uses times:
 
 ```java
 Duration.between(startTime, endTime)
 ```
 
-Work with:
+It works with:
 
 - hours
 - minutes
@@ -649,11 +650,11 @@ Work with:
 ### 24.3. Rule of thumb
 
 - Difference between dates → `Period`
-- Difference between hours or moments → `Duration`
+- Difference between times or instants → `Duration`
 
 ---
 
-## 25. Format dates with `DateTimeFormatter`
+## 25. Formatting dates with `DateTimeFormatter`
 
 By default, `LocalDate` is printed in ISO format:
 
@@ -661,7 +662,7 @@ By default, `LocalDate` is printed in ISO format:
 2026-06-21
 ```
 
-But many times you want to show it in another way:
+But you will often want to show it in another way:
 
 ```text
 21/06/2026
@@ -716,9 +717,9 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
 ---
 
-## 27. Parse text to date
+## 27. Parsing text into a date
 
-Parsing means converting a text into a date.
+Parsing means converting text into a date.
 
 Example:
 
@@ -738,9 +739,9 @@ This works because the text is in ISO format (`yyyy-MM-dd`).
 
 ---
 
-## 28. Parse with custom formatting
+## 28. Parsing with a custom format
 
-If the text is in another format, you must indicate an `DateTimeFormatter`.
+If the text is in another format, you must specify a `DateTimeFormatter`.
 
 ```java
 import java.time.LocalDate;
@@ -767,7 +768,7 @@ Result:
 
 ---
 
-## 29. Parse date and time
+## 29. Parsing a date and time
 
 ```java
 import java.time.LocalDateTime;
@@ -790,7 +791,7 @@ public class Main {
 
 ## 30. `ZoneId`: time zones
 
-So far we have seen classes without time zone:
+So far we have seen classes without a time zone:
 
 - `LocalDate`
 - `LocalTime`
@@ -813,7 +814,7 @@ ZoneId madridZone = ZoneId.of("Europe/Madrid");
 
 ## 31. `ZonedDateTime`: date, time and time zone
 
-`ZonedDateTime` represents a date and time with time zone.
+`ZonedDateTime` represents a date and time with a time zone.
 
 Example:
 
@@ -837,11 +838,11 @@ This includes:
 - date
 - time
 - time zone
-- corresponding UTC offset
+- the corresponding UTC offset
 
 ---
 
-## 32. See time in another time zone
+## 32. Seeing the time in another time zone
 
 ```java
 import java.time.ZoneId;
@@ -890,11 +891,11 @@ public class Main {
 }
 ```
 
-`Instant` is not intended primarily to show the end user, but to represent an exact moment.
+`Instant` is not mainly intended to be shown to the end user, but to represent an exact moment.
 
 ---
 
-## 34. Convert between `Instant` and `ZonedDateTime`
+## 34. Converting between `Instant` and `ZonedDateTime`
 
 ```java
 import java.time.Instant;
@@ -914,7 +915,7 @@ public class Main {
 
 ---
 
-## 35. Complete example: event with date and time
+## 35. Complete example: an event with a date and time
 
 ### 35.1. `Event.java`
 
@@ -984,7 +985,7 @@ public class Main {
 
 ---
 
-## 36. Complete example: task with deadline
+## 36. Complete example: a task with a due date
 
 ### 36.1. `Task.java`
 
@@ -1047,7 +1048,7 @@ public class Main {
 
 ---
 
-## 37. Guided Example: Calculate days until a date
+## 37. Guided example: calculating the days left until a date
 
 ```java
 import java.time.LocalDate;
@@ -1069,7 +1070,7 @@ public class Main {
 
 ---
 
-## 38. `Month` as enum
+## 38. `Month` as an enum
 
 Java also has an enum called `Month`.
 
@@ -1106,18 +1107,18 @@ This helps avoid impossible dates.
 
 ---
 
-## 40. Typical mistakes when starting
+## 40. Common beginner mistakes
 
-### 40.1. Use `Date` and `Calendar` in new code without need
+### 40.1. Using `Date` and `Calendar` in new code when there is no need
 
-For modern code, it is usually best to use `java.time`.
+For modern code, it is usually better to use `java.time`.
 
 ### 40.2. Confusing `LocalDateTime` with a universal date
 
 `LocalDateTime` does not have a time zone.  
 It does not represent a global instant in itself.
 
-### 40.3. Forget that dates are immutable
+### 40.3. Forgetting that dates are immutable
 
 This does not change the original date:
 
@@ -1125,7 +1126,7 @@ This does not change the original date:
 date.plusDays(1);
 ```
 
-You must save the result:
+You must store the result:
 
 ```java
 date = date.plusDays(1);
@@ -1138,14 +1139,14 @@ For example:
 - `MM` means month
 - `mm` means minutes
 
-It is not the same:
+They are not the same:
 
 ```java
 DateTimeFormatter.ofPattern("dd/MM/yyyy");
 DateTimeFormatter.ofPattern("HH:mm");
 ```
 
-### 40.5. Ignore time zones when they matter
+### 40.5. Ignoring time zones when they matter
 
 If you work with users from different countries or global events, you need to think about time zones.
 
@@ -1153,26 +1154,26 @@ If you work with users from different countries or global events, you need to th
 
 ## 41. Good practices
 
-- Use `LocalDate` for dates without time.
-- Use `LocalTime` for undated times.
-- Use `LocalDateTime` for datetime without time zone.
-- Use `ZonedDateTime` if time zone matters.
-- Use `Instant` for exact times and internal records.
+- Use `LocalDate` for dates without a time.
+- Use `LocalTime` for times without a date.
+- Use `LocalDateTime` for a date and time without a time zone.
+- Use `ZonedDateTime` if the time zone matters.
+- Use `Instant` for exact moments and internal records.
 - Use `Period` for differences between dates.
-- Use `Duration` for differences between hours or moments.
-- Use `DateTimeFormatter` to display or read dates with specific formats.
+- Use `Duration` for differences between times or instants.
+- Use `DateTimeFormatter` to display or read dates in specific formats.
 - Remember that `java.time` classes are immutable.
 - Avoid `Date` and `Calendar` in new code unless you have to work with old APIs.
 
 ---
 
-## 42. To take into account
+## 42. Things to keep in mind
 
 - `java.time` is the modern date and time API in Java.
-- `LocalDate` represents date only.
-- `LocalTime` represents time only.
-- `LocalDateTime` represents date and time without time zone.
-- `ZonedDateTime` includes time zone.
+- `LocalDate` represents a date only.
+- `LocalTime` represents a time only.
+- `LocalDateTime` represents a date and time without a time zone.
+- `ZonedDateTime` includes a time zone.
 - `Instant` represents an exact moment in UTC.
 - `Period` measures differences between dates.
 - `Duration` measures differences between times.
@@ -1183,26 +1184,26 @@ If you work with users from different countries or global events, you need to th
 
 ## 43. Final summary
 
-Java's modern Date/Time API allows you to work with dates and times much more cleanly than older classes.
+Java's modern Date/Time API lets you work with dates and times much more clearly than the old classes.
 
 The key is choosing the right class:
 
-- `LocalDate` if you only need one date
-- `LocalTime` if you only need an hour
-- `LocalDateTime` if you need date and time without time zone
-- `ZonedDateTime` if timezone matters
+- `LocalDate` if you only need a date
+- `LocalTime` if you only need a time
+- `LocalDateTime` if you need a date and time without a time zone
+- `ZonedDateTime` if the time zone matters
 - `Instant` if you need an exact moment
 
-You have also seen how:
+You have also seen how to:
 
 - add and subtract dates
 - compare dates
 - calculate periods and durations
 - format dates
-- parse text to date
+- parse text into a date
 
 Mastering this API is very important because dates appear constantly in real applications.
 
 ---
 
-In the next topic we will continue advancing with modern Java and see how to work with files and paths using **Files** and **Path**.
+In the next topic we will keep moving forward with modern Java and see how to work with files and paths using **Files** and **Path**.

@@ -1,20 +1,20 @@
-**Exercises - Topic 11: Props Father to Son**
+**Exercises - Topic 11: Props from Parent to Child**
 
 Below you will find **10 practical exercises** to learn how to pass data from a parent component to a child component using **props**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Pass a text as a prop**
 
-Create an `Headline.jsx` component that receives an `text` prop and renders an `h2` with that text.
+Create a `Headline.jsx` component that receives a `text` prop and renders an `h2` with that text.
 
 Then in `App.jsx`, use it like this:
 
 - `Headline` with `text="React Basics"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`Headline.jsx`**
 
@@ -48,13 +48,13 @@ export default App;
 
 ## **Exercise 2: Pass a number and display it**
 
-Create an `PriceTag.jsx` component that receives an `price` (number) prop and displays:
+Create a `PriceTag.jsx` component that receives a `price` (number) prop and displays:
 
-- `p` with: **"Price: €X"**
+- `p` with: **"Price: X€"**
 
 In `App.jsx`, pass it `price={29}`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`PriceTag.jsx`**
 
@@ -86,16 +86,16 @@ export default App;
 
 ---
 
-## **Exercise 3: Boolean Prop with Conditional Rendering**
+## **Exercise 3: Boolean prop with conditional rendering**
 
-Create an `FeatureBadge.jsx` component that receives an `isFeatured` boolean prop.
+Create a `FeatureBadge.jsx` component that receives a boolean `isFeatured` prop.
 
-- If `isFeatured` is `true`, displays: `span` with **"Featured"**.
-- If it is `false`, don't show anything.
+- If `isFeatured` is `true`, it displays: `span` with **"Featured"**.
+- If it is `false`, it doesn't show anything.
 
-Try it on `App.jsx` with `isFeatured` on `true`.
+Try it in `App.jsx` with `isFeatured` set to `true`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`FeatureBadge.jsx`**
 
@@ -133,11 +133,11 @@ In `App.jsx`, create:
 
 - `const userName = "Marta";`
 
-Create an `Greeting.jsx` component that receives `name` and displays:
+Create a `Greeting.jsx` component that receives `name` and displays:
 
 - `p` with: **"Hello, Marta"** (dynamic).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`Greeting.jsx`**
 
@@ -173,19 +173,19 @@ export default App;
 
 ## **Exercise 5: Pass several props (destructuring in the child)**
 
-Create an `ProfileSummary.jsx` component that receives:
+Create a `ProfileSummary.jsx` component that receives:
 
 - `name`
 - `jobTitle`
 
-You must render:
+It must render:
 
-- `h3` with name
+- `h3` with the name
 - `p` with: **"Job: ..."**
 
-On `App.jsx`, use it with `name="Alex"` and `jobTitle="Designer"`.
+In `App.jsx`, use it with `name="Alex"` and `jobTitle="Designer"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`ProfileSummary.jsx`**
 
@@ -222,14 +222,14 @@ export default App;
 
 ---
 
-## **Exercise 6: Passing an entire object as a prop**
+## **Exercise 6: Pass an entire object as a prop**
 
-Create an `UserRow.jsx` component that receives an `user` prop (object) with:
+Create a `UserRow.jsx` component that receives a `user` prop (an object) with:
 
 - `name`
 - `email`
 
-You must render:
+It must render:
 
 - `p` with: **"Name: ..."**
 - `p` with: **"Email: ..."**
@@ -242,7 +242,7 @@ const user = { name: "Leo", email: "leo@mail.com" };
 
 And pass it as `user={user}`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`UserRow.jsx`**
 
@@ -283,11 +283,11 @@ export default App;
 
 ## **Exercise 7: Props + list of objects**
 
-Create an `CourseItem.jsx` component that receives `title` and `level` and renders:
+Create a `CourseItem.jsx` component that receives `title` and `level` and renders:
 
 - `li` with: **"Title - Level"**
 
-Create an `CoursesList.jsx` component that has:
+Create a `CoursesList.jsx` component that has:
 
 ```js
 const courses = [
@@ -297,11 +297,11 @@ const courses = [
 ];
 ```
 
-- Renders an `ul`.
+- Render a `ul`.
 - Use `.map()` to render `CourseItem`.
-- Put the `key` in the repeated component using `course.id`.
+- Put the `key` on the repeated component using `course.id`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`CourseItem.jsx`**
 
@@ -345,9 +345,9 @@ export default CoursesList;
 
 ---
 
-## **Exercise 8: Correct the braces error in a dynamic prop**
+## **Exercise 8: Fix the curly braces error in a dynamic prop**
 
-This code has an error. Correct it:
+This code has an error. Fix it:
 
 ```js
 function App() {
@@ -357,7 +357,7 @@ function App() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 In JSX, variables are passed with curly braces:
 
@@ -375,16 +375,16 @@ export default App;
 
 ---
 
-## **Exercise 9: Props with default value (default)**
+## **Exercise 9: Props with a default value (default)**
 
 Create an `Avatar.jsx` component that receives an `altText` prop.
 
-- If `altText` is not included, use `"User avatar"` by default.
-- Renders an `img` with `src="/avatar.png"` and `alt={altText}`.
+- If `altText` is not passed, it uses `"User avatar"` by default.
+- It renders an `img` with `src="/avatar.png"` and `alt={altText}`.
 
 Hint: you can define the default value in destructuring.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Avatar({ altText = "User avatar" }) {
@@ -419,9 +419,9 @@ And this data in the parent:
 const product = { id: 7, name: "Chair", price: 40 };
 ```
 
-Write the correct JSX to render `ProductCard` by passing the appropriate props.
+Write the correct JSX to render `ProductCard`, passing the appropriate props.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <ProductCard name={product.name} price={product.price} />

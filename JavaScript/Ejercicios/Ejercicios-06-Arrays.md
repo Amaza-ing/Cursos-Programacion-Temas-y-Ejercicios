@@ -1,14 +1,14 @@
 # **Exercises - Topic 6: Arrays in JavaScript**
 
-Below you will find 5 practical exercises on using arrays in JavaScript.
+Below you'll find 5 practical exercises on using arrays in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Access elements of an array**
+### **Exercise 1: Access the elements of an array**
 
-Create an array called `colors` with the following values: `"rojo"`, `"verde"`, `"azul"`. Then, it shows the second element of the array in the console.
+Create an array called `colors` with the following values: `"rojo"`, `"verde"`, `"azul"`. Then, display the second element of the array in the console.
 
 <details><summary>Show solution</summary>
 
@@ -21,13 +21,13 @@ console.log(colors[1]); // Salida: verde
 
 ---
 
-### **Exercise 2: Add and delete elements**
+### **Exercise 2: Add and remove elements**
 
 Create an array called `fruits` with the values `"manzana"` and `"banana"`. Then:
 
 - Add `"naranja"` to the end of the array.
-- Delete the first element of the array.
-- Shows the updated array in the console.
+- Remove the first element of the array.
+- Display the updated array in the console.
 
 <details><summary>Show solution</summary>
 
@@ -59,7 +59,7 @@ numbers.forEach((num) => console.log(num * 2));
 
 ### **Exercise 4: Filter elements of an array**
 
-Create an array called `ages` with the values `[12, 25, 18, 30, 16]`. Then, use `filter` to create a new array with only values ​​greater than or equal to 18 and display it in the console.
+Create an array called `ages` with the values `[12, 25, 18, 30, 16]`. Then, use `filter` to create a new array with only the values greater than or equal to 18 and display it in the console.
 
 <details><summary>Show solution</summary>
 
@@ -75,7 +75,7 @@ console.log(adults); // Salida: [25, 18, 30]
 
 ### **Exercise 5: Create a new array with `map`**
 
-Create an array called `prices` with the `[10, 20, 30]` values. Then, use `map` to create a new array with the prices increased by 10% and display it in the console.
+Create an array called `prices` with the values `[10, 20, 30]`. Then, use `map` to create a new array with the prices increased by 10% and display it in the console.
 
 <details><summary>Show solution</summary>
 

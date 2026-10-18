@@ -2,38 +2,38 @@
 
 ## 1. Introduction
 
-In this topic we are going to use GitHub Copilot in tasks related to automation and real development environments:
+In this topic we are going to use GitHub Copilot for tasks related to automation and real-world development environments:
 
-- integration with APIs;
-- creation of services;
+- API integration;
+- service creation;
 - Docker file generation;
 - basic use of infrastructure as code;
-- creation of workflows with GitHub Actions;
-- automation of tests and builds;
-- good security practices in CI/CD.
+- creating workflows with GitHub Actions;
+- test and build automation;
+- security best practices in CI/CD.
 
-This topic connects GitHub Copilot to work done outside of a specific feature.  
-AI can help write configuration files, scripts, and workflows, but these files should be reviewed especially carefully because they can affect project deployment, permissions, and security.
+This topic connects GitHub Copilot with work that goes beyond a specific function.  
+AI can help write configuration files, scripts and workflows, but these files should be reviewed especially carefully because they can affect the project's deployment, permissions and security.
 
 ---
 
-## 2. Objectives of the topic
+## 2. Topic objectives
 
 By the end of this topic you should be able to:
 
 - Ask Copilot for help consuming an API.
 - Generate simple endpoints with a clear structure.
-- Create basic documentation of an API.
-- Ask Copilot for an `Dockerfile` and an `docker-compose.yml`.
+- Create basic documentation for an API.
+- Ask Copilot for a `Dockerfile` and a `docker-compose.yml`.
 - Understand which parts of Docker should not be accepted without review.
 - Use Copilot to create a basic GitHub Actions workflow.
-- Automate installation, tests and build.
+- Automate installation, tests and builds.
 - Identify security risks in workflows.
 - Use clear prompts for infrastructure and CI/CD.
 
 ---
 
-# Part 1. Copilot and integration with APIs
+# Part 1. Copilot and API integration
 
 ## 3. What is an API
 
@@ -41,10 +41,10 @@ An API allows one application to communicate with another.
 
 For example:
 
-- a web application queries products to a backend;
-- a backend queries data to an external service;
-- an application obtains weather information;
-- an online store connects with a payment gateway;
+- a web application requests products from a backend;
+- a backend requests data from an external service;
+- an application gets weather information;
+- an online store connects to a payment gateway;
 - an internal application queries a database through a service.
 
 In web development it is very common to work with REST APIs.
@@ -56,7 +56,7 @@ In web development it is very common to work with REST APIs.
 Copilot can help:
 
 - create endpoints;
-- generate drivers;
+- generate controllers;
 - write services;
 - consume external APIs;
 - create request examples;
@@ -66,7 +66,7 @@ Copilot can help:
 - generate endpoint tests;
 - create HTTP clients.
 
-Examples of tasks:
+Example tasks:
 
 ```text
 Crea un endpoint GET /products que devuelva una lista de productos en memoria.
@@ -82,9 +82,9 @@ Documenta estos endpoints en formato Markdown con método, ruta, descripción, p
 
 ---
 
-## 5. Step-by-step guide: request an endpoint from Copilot
+## 5. Step-by-step guide: asking Copilot for an endpoint
 
-Imagine an API with Express.
+Imagine an API built with Express.
 
 ### Step 1. Describe the context
 
@@ -94,7 +94,7 @@ El proyecto separa rutas, controladores y servicios.
 Los datos se almacenarán en memoria para este ejemplo.
 ```
 
-### Step 2. Request a specific route
+### Step 2. Ask for a specific route
 
 ```text
 Crea una ruta GET /products.
@@ -103,21 +103,21 @@ Separa la ruta, el controlador y el servicio.
 No añadas base de datos.
 ```
 
-### Step 3. Order files separately
+### Step 3. Ask for the files separately
 
-Instead of ordering everything at once, you can divide:
+Instead of asking for everything at once, you can split it up:
 
 ```text
 Crea primero el archivo src/services/productService.js con una función getProducts().
 ```
 
-After:
+Then:
 
 ```text
 Ahora crea src/controllers/productController.js usando el servicio anterior.
 ```
 
-After:
+Then:
 
 ```text
 Ahora crea src/routes/productRoutes.js y registra la ruta GET /products.
@@ -128,14 +128,14 @@ Ahora crea src/routes/productRoutes.js y registra la ruta GET /products.
 Check:
 
 - whether the file names fit the project;
-- if the exports/imports are correct;
-- if no unnecessary dependency has been added;
+- whether the exports/imports are correct;
+- that no unnecessary dependency has been added;
 - whether error handling is sufficient;
-- if the endpoint registers successfully in `app.js`.
+- whether the endpoint is registered correctly in `app.js`.
 
 ---
 
-## 6. Service example
+## 6. Example service
 
 ```js
 const products = [
@@ -162,7 +162,7 @@ Controla el caso en el que no exista ningún producto con ese id.
 
 ---
 
-## 7. Consumption of an external API
+## 7. Consuming an external API
 
 We can also ask Copilot for functions that consume APIs.
 
@@ -203,12 +203,12 @@ module.exports = { getUserById };
 ### What to check
 
 - Is the URL correct?
-- Is `response.ok` controlled?
+- Is `response.ok` checked?
 - What if `user.address` does not exist?
 - Does the function return too much data?
 - Is sensitive data being exposed?
-- Is there a need for a timeout?
-- Is retry necessary?
+- Is a timeout needed?
+- Is a retry needed?
 - Are there tests?
 
 ---
@@ -248,36 +248,35 @@ Devuelve la lista de productos disponibles.
   }
 ]
 ```
-````
 
-### Possible errors
+### Errores posibles
 
-- `500 Internal Server Error`: unexpected server error.
+- `500 Internal Server Error`: error inesperado en el servidor.
 
 ````
 
 ---
 
-# Parte 2. Copilot y Docker
+# Part 2. Copilot and Docker
 
-## 9. Qué es Docker
+## 9. What Docker is
 
-Docker permite empaquetar una aplicación con sus dependencias para ejecutarla de forma más consistente en distintos entornos.
+Docker lets you package an application with its dependencies so it runs more consistently across different environments.
 
-Con Docker podemos definir:
+With Docker we can define:
 
-- qué imagen base usar;
-- qué dependencias instalar;
-- qué archivos copiar;
-- qué comando ejecutar;
-- qué puerto exponer;
-- qué variables de entorno utilizar.
+- which base image to use;
+- which dependencies to install;
+- which files to copy;
+- which command to run;
+- which port to expose;
+- which environment variables to use.
 
-El archivo principal suele llamarse:
+The main file is usually called:
 
 ```text
 Dockerfile
-````
+```
 
 ---
 
@@ -285,15 +284,15 @@ Dockerfile
 
 Copilot can help:
 
-- create an `Dockerfile`;
-- create an `.dockerignore`;
-- generate an `docker-compose.yml`;
-- explain construction errors;
+- create a `Dockerfile`;
+- create a `.dockerignore`;
+- generate a `docker-compose.yml`;
+- explain build errors;
 - optimize layers;
 - review security issues;
 - create commands to build and run images.
 
-Prompt example:
+Example prompt:
 
 ```text
 Crea un Dockerfile para una aplicación Node.js con Express.
@@ -307,7 +306,7 @@ Incluye comentarios breves.
 
 ---
 
-## 11. Dockerfile example for Node.js
+## 11. Example Dockerfile for Node.js
 
 ```dockerfile
 FROM node:22-alpine
@@ -325,11 +324,11 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-This file indicates:
+This file tells Docker to:
 
 - use Node 22 on Alpine;
-- work within `/app`;
-- copy the dependencies files;
+- work inside `/app`;
+- copy the dependency files;
 - install production dependencies;
 - copy the source code;
 - expose port 3000;
@@ -337,9 +336,9 @@ This file indicates:
 
 ---
 
-## 12. `.dockerignore` file
+## 12. The `.dockerignore` file
 
-Copilot can also generate an `.dockerignore`.
+Copilot can also generate a `.dockerignore`.
 
 Prompt:
 
@@ -362,11 +361,11 @@ dist
 .DS_Store
 ```
 
-The `.dockerignore` avoids copying unnecessary or sensitive files into the image.
+The `.dockerignore` prevents unnecessary or sensitive files from being copied into the image.
 
 ---
 
-## 13. Step-by-step guide: request and review a Dockerfile
+## 13. Step-by-step guide: asking for and reviewing a Dockerfile
 
 ### Step 1. Explain the project
 
@@ -377,7 +376,7 @@ El script de inicio es npm start.
 La aplicación escucha en el puerto 3000.
 ```
 
-### Step 2. Request Dockerfile
+### Step 2. Ask for a Dockerfile
 
 ```text
 Crea un Dockerfile para este proyecto.
@@ -386,7 +385,7 @@ No incluyas secretos ni variables de entorno reales.
 Explica cada línea.
 ```
 
-### Step 3. Order `.dockerignore`
+### Step 3. Ask for a `.dockerignore`
 
 ```text
 Crea un .dockerignore adecuado para este proyecto Node.js.
@@ -469,18 +468,18 @@ volumes:
 
 ## 15. What to check in Docker files generated by Copilot
 
-Before accepting an `Dockerfile` or `docker-compose.yml`, check:
+Before accepting a `Dockerfile` or a `docker-compose.yml`, check:
 
 - whether the base image is suitable;
-- if the version is fixed or too generic;
-- if you copy sensitive files;
-- if you install unnecessary dependencies;
-- if you expose correct ports;
-- if you use environment variables;
-- if you avoid including real passwords;
-- if you execute dangerous commands;
-- if the container runs as root when it shouldn't;
-- whether the file is understandable by the computer.
+- whether the version is pinned or too generic;
+- whether it copies sensitive files;
+- whether it installs unnecessary dependencies;
+- whether it exposes the correct ports;
+- whether it uses environment variables;
+- whether it avoids including real passwords;
+- whether it runs dangerous commands;
+- whether the container runs as root when it shouldn't;
+- whether the team can understand the file.
 
 ---
 
@@ -490,9 +489,9 @@ Before accepting an `Dockerfile` or `docker-compose.yml`, check:
 
 Infrastructure as code, or IaC, involves defining infrastructure resources using configuration files.
 
-Examples of tools:
+Example tools:
 
--Terraform;
+- Terraform;
 - Bicep;
 - CloudFormation;
 - Pulumi.
@@ -515,12 +514,12 @@ Copilot can help you write infrastructure templates, but you have to be especial
 An infrastructure error can cause:
 
 - unnecessary costs;
-- publicly displayed resources;
+- publicly exposed resources;
 - excessive permissions;
 - data loss;
 - regulatory compliance issues.
 
-Therefore, in IaC it is recommended to use Copilot to:
+That's why, for IaC, it's best to use Copilot to:
 
 - generate drafts;
 - explain existing blocks;
@@ -528,11 +527,11 @@ Therefore, in IaC it is recommended to use Copilot to:
 - document resources;
 - create educational examples.
 
-It is not recommended to accept infrastructure generated without expert review.
+Accepting generated infrastructure without an expert review is not recommended.
 
 ---
 
-## 18. Secure Prompt for Terraform
+## 18. A safe prompt for Terraform
 
 ```text
 Genera un ejemplo educativo de Terraform para crear un recurso sencillo.
@@ -541,7 +540,7 @@ No configures acceso público salvo que lo expliques.
 Incluye comentarios y explica cada bloque.
 ```
 
-Prompt for review:
+Review prompt:
 
 ```text
 Revisa este archivo Terraform.
@@ -557,7 +556,7 @@ No modifiques el archivo todavía.
 
 ---
 
-## 19. Safe Prompt for Bicep
+## 19. A safe prompt for Bicep
 
 ```text
 Explica este archivo Bicep paso a paso.
@@ -573,7 +572,7 @@ No propongas cambios todavía.
 
 GitHub Actions allows you to automate workflows within a repository.
 
-Can be used for:
+It can be used to:
 
 - install dependencies;
 - run tests;
@@ -582,7 +581,7 @@ Can be used for:
 - generate artifacts;
 - deploy;
 - publish packages;
-- execute scheduled tasks.
+- run scheduled tasks.
 
 A GitHub Actions workflow is typically defined in YAML files within:
 
@@ -594,18 +593,18 @@ A GitHub Actions workflow is typically defined in YAML files within:
 
 ## 21. What is CI/CD
 
-CI stands for **Continuous Integration** or continuous integration.  
-It consists of automatically checking that the code works when changes are uploaded.
+CI stands for **Continuous Integration**.  
+It means automatically checking that the code works whenever changes are pushed.
 
 CD can mean **Continuous Delivery** or **Continuous Deployment**.  
-It consists of preparing or carrying out automated deployments.
+It means preparing or carrying out automated deployments.
 
-Basic CI flow example:
+Example of a basic CI flow:
 
-1. A developer uploads code.
+1. A developer pushes code.
 2. GitHub Actions detects the change.
 3. The project is installed.
-4. The tests are executed.
+4. The tests run.
 5. The build is generated.
 6. If something fails, the workflow flags an error.
 
@@ -617,10 +616,10 @@ Copilot can help:
 
 - create workflows;
 - explain YAML files;
-- correct indentation errors;
+- fix indentation errors;
 - add jobs;
 - configure versions of Node, Java, Python, etc.;
-- add dependency cache;
+- add dependency caching;
 - run tests;
 - create builds;
 - review security issues;
@@ -638,7 +637,7 @@ Explica cada parte del YAML.
 
 ---
 
-## 23. Workflow example for Node.js
+## 23. Example workflow for Node.js
 
 File:
 
@@ -685,19 +684,19 @@ jobs:
 
 This workflow:
 
-- it is called `CI`;
-- is executed when pushing `main`;
-- is executed when opening or updating a pull request towards `main`;
-- uses Ubuntu as an environment;
-- download the repository;
-- configure Node.js;
-- install dependencies;
-- run tests;
+- is called `CI`;
+- runs when you push to `main`;
+- runs when a pull request to `main` is opened or updated;
+- uses Ubuntu as its environment;
+- checks out the repository;
+- sets up Node.js;
+- installs dependencies;
+- runs the tests;
 - generates the build.
 
 ---
 
-## 24. Step-by-step guide: create a workflow with Copilot
+## 24. Step-by-step guide: creating a workflow with Copilot
 
 ### Step 1. Explain the project
 
@@ -709,7 +708,7 @@ El build se ejecuta con npm run build.
 Quiero un workflow de CI para GitHub Actions.
 ```
 
-### Step 2. Request the workflow
+### Step 2. Ask for the workflow
 
 ```text
 Crea un archivo .github/workflows/ci.yml.
@@ -727,9 +726,9 @@ Check:
 - events (`push`, `pull_request`);
 - correct branch;
 - Node version;
-- actual project commands;
-- if the script `build` exists;
-- if the `test` script exists.
+- the project's actual commands;
+- whether the `build` script exists;
+- whether the `test` script exists.
 
 ### Step 4. Create the file
 
@@ -745,7 +744,7 @@ Inside, create:
 ci.yml
 ```
 
-### Step 5. Upload changes
+### Step 5. Push the changes
 
 ```bash
 git add .github/workflows/ci.yml
@@ -753,7 +752,7 @@ git commit -m "Add CI workflow"
 git push
 ```
 
-### Step 6. Review the Actions tab
+### Step 6. Check the Actions tab
 
 On GitHub, go to the repository and open the tab:
 
@@ -761,13 +760,13 @@ On GitHub, go to the repository and open the tab:
 Actions
 ```
 
-There you can see if the workflow has been executed correctly.
+There you can see whether the workflow ran successfully.
 
 ---
 
-## 25. Common errors in workflows generated with Copilot
+## 25. Common mistakes in workflows generated with Copilot
 
-### Error 1. Using commands that do not exist
+### Mistake 1. Using commands that do not exist
 
 Copilot can generate:
 
@@ -776,19 +775,20 @@ Copilot can generate:
   run: npm run build
 ```
 
-But your `package.json` may not have `build` script.
+But your `package.json` may not have a `build` script.
 
 Always check `package.json`.
 
-### Error 2. Incorrect indentation
+### Mistake 2. Incorrect indentation
 
 YAML relies heavily on indentation.  
-An incorrect space can break the workflow.
-### Error 3. Using outdated versions of actions
+A single wrong space can break the workflow.
 
-Check that the actions used are current and official.
+### Mistake 3. Using outdated versions of actions
 
-### Error 4. Including secrets directly
+Check that the actions you use are up to date and official.
+
+### Mistake 4. Including secrets directly
 
 Never accept this:
 
@@ -802,7 +802,7 @@ Use repository secrets:
 password: ${{ secrets.DB_PASSWORD }}
 ```
 
-### Error 5. Giving excessive permissions
+### Mistake 5. Giving excessive permissions
 
 If the workflow does not need to write to the repository, do not give it write permissions.
 
@@ -812,19 +812,19 @@ If the workflow does not need to write to the repository, do not give it write p
 
 Security is especially important in CI/CD.
 
-Good practices:
+Best practices:
 
-- do not keep secrets in the code;
+- don't store secrets in the code;
 - use `secrets`;
 - limit permissions;
-- review actions of third parties;
-- fix versions;
-- do not run unknown scripts;
-- be careful with workflows that are executed on external pull requests;
-- review what commands Copilot proposes;
+- review third-party actions;
+- pin versions;
+- don't run unknown scripts;
+- be careful with workflows that run on external pull requests;
+- review the commands Copilot proposes;
 - avoid publishing sensitive artifacts.
 
-Security Review Prompt:
+Security review prompt:
 
 ```text
 Revisa este workflow de GitHub Actions desde el punto de vista de seguridad.
@@ -840,9 +840,9 @@ No modifiques todavía el archivo.
 
 ---
 
-## 27. Add minimum permissions
+## 27. Adding minimal permissions
 
-In some workflows it may be advisable to declare explicit permissions.
+In some workflows it may be a good idea to declare explicit permissions.
 
 Example:
 
@@ -854,23 +854,23 @@ permissions:
 This indicates that the workflow only needs to read the contents of the repository.
 
 If the workflow needs to publish packages, create releases, or comment on pull requests, the permissions would be different.  
-It is not advisable to give broad permissions “just in case.”
+It's not a good idea to grant broad permissions “just in case.”
 
 ---
 
-## 28. Copilot to diagnose GitHub Actions errors
+## 28. Using Copilot to diagnose GitHub Actions errors
 
 When a workflow fails, Copilot can help.
 
 ### Step 1. Copy the error
 
-Includes:
+Include:
 
-- job name;
-- step that fails;
-- error message;
-- YAML fragment;
-- command that was executed.
+- the job name;
+- the step that fails;
+- the error message;
+- the YAML snippet;
+- the command that was run.
 
 ### Step 2. Ask about the cause
 
@@ -881,7 +881,7 @@ Explícame la causa más probable y cómo comprobarla.
 No propongas cambios todavía.
 ```
 
-### Step 3. Request minimum correction
+### Step 3. Ask for a minimal fix
 
 ```text
 Propón la corrección mínima para arreglar este workflow.
@@ -891,9 +891,9 @@ Explica por qué el cambio soluciona el problema.
 
 ---
 
-# Part 5. Integrative flow with Copilot
+# Part 5. An end-to-end workflow with Copilot
 
-## 29. Guided case: API + Docker + CI
+## 29. Guided example: API + Docker + CI
 
 Suppose we have a Node.js API with Express.
 
@@ -903,11 +903,11 @@ We want:
 2. Add tests.
 3. Create a Dockerfile.
 4. Create a CI workflow.
-5. Document how to execute the project.
+5. Document how to run the project.
 
 ---
 
-## 30. Step 1. Order endpoints
+## 30. Step 1. Ask for the endpoints
 
 ```text
 Tengo una API Node.js con Express.
@@ -921,7 +921,7 @@ No añadas base de datos.
 
 ---
 
-## 31. Step 2. Request tests
+## 31. Step 2. Ask for tests
 
 ```text
 Genera tests para los endpoints de productos.
@@ -934,7 +934,7 @@ Incluye:
 
 ---
 
-## 32. Step 3. Request Dockerfile
+## 32. Step 3. Ask for a Dockerfile
 
 ```text
 Crea un Dockerfile para esta API.
@@ -947,7 +947,7 @@ Incluye también un .dockerignore.
 
 ---
 
-## 33. Step 4. Request workflow
+## 33. Step 4. Ask for a workflow
 
 ```text
 Crea un workflow de GitHub Actions para esta API.
@@ -958,7 +958,7 @@ No debe publicar la imagen.
 
 ---
 
-## 34. Step 5. Request documentation
+## 34. Step 5. Ask for documentation
 
 ```text
 Actualiza el README con:
@@ -971,7 +971,7 @@ Actualiza el README con:
 
 ---
 
-## 35. Step 6. Request full review
+## 35. Step 6. Ask for a full review
 
 ```text
 Revisa los cambios propuestos.
@@ -996,12 +996,12 @@ Check:
 - correct HTTP methods;
 - parameter validation;
 - error handling;
-- clear answers;
-- coherent structure;
+- clear responses;
+- consistent structure;
 - sufficient tests;
 - updated documentation.
 
-## 37. Before accepting Dockerfile
+## 37. Before accepting a Dockerfile
 
 Check:
 
@@ -1009,7 +1009,7 @@ Check:
 - reasonable version;
 - correct dependencies;
 - `.dockerignore`;
-- absence of secrets;
+- no secrets;
 - correct port;
 - correct start command;
 - reasonable image size.
@@ -1022,15 +1022,15 @@ Check:
 - correct branch;
 - runtime version;
 - existing commands;
-- minimum permissions;
-- well used secrets;
+- minimal permissions;
+- secrets used properly;
 - reliable actions;
 - understandable logs;
-- absence of accidental deployments.
+- no accidental deployments.
 
 ---
 
-## 39. Theme compilation prompts
+## 39. This topic's prompts at a glance
 
 ### API
 
@@ -1042,7 +1042,7 @@ Incluye manejo básico de errores.
 No añadas base de datos.
 ```
 
-### HTTP Client
+### HTTP client
 
 ```text
 Crea una función async que consuma esta API.
@@ -1052,7 +1052,7 @@ Devuelve solo los campos necesarios.
 Incluye un ejemplo de uso.
 ```
 
-###Docker
+### Docker
 
 ```text
 Crea un Dockerfile para este proyecto.
@@ -1079,6 +1079,7 @@ No modifiques todavía el archivo.
 ```
 
 ### GitHub Actions
+
 ```text
 Crea un workflow de GitHub Actions para este proyecto.
 Debe ejecutarse en push y pull_request hacia main.
@@ -1113,16 +1114,16 @@ Therefore, they should always be reviewed with special attention.
 
 The general rule is:
 
-> Use Copilot to generate drafts, explanations and proposals; Use your technical judgment to decide what goes into the project.
+> Use Copilot to generate drafts, explanations and proposals; use your technical judgment to decide what goes into the project.
 
 ---
 
 ## 41. Recommended documentation
 
-- GitHub Docs—GitHub Actions.
+- GitHub Docs — GitHub Actions.
 - GitHub Docs — Workflow syntax for GitHub Actions.
 - GitHub Docs — Secure use of GitHub Actions.
 - Docker Docs — Dockerfile reference.
 - Docker Docs — Docker Compose.
--Terraform Docs.
+- Terraform Docs.
 - Microsoft Learn — Bicep.

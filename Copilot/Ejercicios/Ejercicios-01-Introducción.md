@@ -4,28 +4,28 @@ Below, you'll find hands-on exercises on generative AI, prompts, Copilot limits,
 
 ## Exercise 1: Identify tasks suitable for generative AI
 
-Read the following tasks and indicate which ones are appropriate to ask Copilot or a generative AI for help and which ones should be done with special human supervision.
+Read the following tasks and say which ones are suitable for asking Copilot or a generative AI for help and which ones should be done under especially close human supervision.
 
 1. Summarize a long document to get its main ideas.
 2. Automatically decide whether a person should be hired or not.
 3. Generate a first version of a professional email.
 4. Make up sales data to complete a real report.
 5. Propose an initial structure for a presentation.
-6. Completely replace the security patch of an application.
+6. Completely replace the security review of an application.
 
 <details>
 <summary><strong>Show solution</strong></summary>
 
-1. **Adequate**, as long as the summary is reviewed and it is verified that it does not omit important information.
-2. **Not suitable as an automatic decision**, because it implies a sensitive decision about a person. AI could help sort information, but the decision must be human.
-3. **Appropriate**, because it can help create a draft that is later revised.
-4. **Not appropriate**, because inventing data for a real report would be incorrect and unethical.
-5. **Appropriate**, because it can serve as a starting point.
-6. **Not suitable as a complete replacement**, because safety review requires technical checks, testing and professional supervision.
+1. **Suitable**, as long as the summary is reviewed and you check that it doesn't leave out important information.
+2. **Not suitable as an automatic decision**, because it involves a sensitive decision about a person. AI could help organize information, but the decision must be made by a human.
+3. **Suitable**, because it can help create a draft that is reviewed afterwards.
+4. **Not suitable**, because making up data for a real report would be wrong and unethical.
+5. **Suitable**, because it can serve as a starting point.
+6. **Not suitable as a complete replacement**, because a security review requires technical checks, testing and professional supervision.
 
 </details>
 
-## Exercise 2: Improve a too general prompt
+## Exercise 2: Improve a prompt that is too general
 
 Look at this prompt:
 
@@ -34,7 +34,7 @@ Hazme una explicación sobre Copilot.
 ```
 
 
-Rewrite it to make it more useful in a training context for beginners.
+Rewrite it so that it's more useful in a training context for beginner students.
 
 <details>
 <summary><strong>Show solution</strong></summary>
@@ -60,22 +60,23 @@ This prompt is better because it includes:
 
 ## Exercise 3: Distinguish between search and generation
 
-Indicate whether in each case it would be more appropriate to use a traditional search, a generative AI or both options.
+For each case, say whether it would be more appropriate to use a traditional search, a generative AI or both.
 
 1. Check the official release date of a tool.
 2. Ask for a simple explanation of what a language model is.
-3. Create a first version of an internal use guide.
-4. Check if a particular feature is currently available in an application.
+3. Create a first version of an internal user guide.
+4. Check whether a particular feature is currently available in an application.
 5. Rephrase a text to make it clearer.
 
 <details>
 <summary><strong>Show solution</strong></summary>
 
-1. **Traditional search or official source**, because verifiable and updated data is needed.
-2. **Generative AI**, because an explanation adapted to the user level is sought.
-3. **Generative AI**, although it is advisable to review and compare the information afterwards.
+1. **Traditional search or official source**, because you need a verifiable, up-to-date fact.
+2. **Generative AI**, because you want an explanation adapted to the user's level.
+3. **Generative AI**, although it's a good idea to review and cross-check the information afterwards.
 4. **Traditional search or official documentation**, because features may change over time.
-5. **Generative AI**, because it is a text transformation task.
+5. **Generative AI**, because it's a text transformation task.
+
 In many cases, both options can be combined: first search for reliable information and then use generative AI to summarize, organize or adapt it.
 
 </details>
@@ -94,9 +95,9 @@ Explain what the problem is with this request and how it should be rephrased.
 <details>
 <summary><strong>Show solution</strong></summary>
 
-The main problem is that the AI is being asked to generate a legal document to publish directly, without professional review. A privacy policy depends on the applicable legislation, the type of data collected, the services used, the location of the company and other specific factors.
+The main problem is that the AI is being asked to generate a legal document to be published directly, without any professional review. A privacy policy depends on the applicable legislation, the type of data collected, the services used, the company's location and other specific factors.
 
-A more suitable version would be:
+A better version would be:
 
 ```text
 Ayúdame a preparar un borrador inicial de política de privacidad para una web educativa.
@@ -105,13 +106,13 @@ No inventes datos de la empresa y señala qué información tendría que complet
 ```
 
 
-Thus AI is used as initial support, not as a substitute for a legal review.
+This way, AI is used as initial support, not as a substitute for a legal review.
 
 </details>
 
 ## Exercise 5: Create an AI workflow
 
-Imagine that you have to prepare a short presentation on the uses of generative AI in a company. Order the following steps in a logical flow:
+Imagine that you have to prepare a short presentation on the uses of generative AI in a company. Put the following steps in a logical order:
 
 - Manually review the generated content.
 - Ask Copilot for a first structure.
@@ -128,10 +129,10 @@ A logical order would be:
 1. Give Copilot the context and target audience.
 2. Ask Copilot for a first structure.
 3. Manually review the generated content.
-4. Check important data from reliable sources.
+4. Check important data in reliable sources.
 5. Ask for clarity and style improvements.
 6. Prepare the final version.
 
-The important idea is that Copilot can help during the process, but should not replace the person's review, verification, or final decision.
+The key idea is that Copilot can help during the process, but it shouldn't replace the person's review, verification or final decision.
 
 </details>

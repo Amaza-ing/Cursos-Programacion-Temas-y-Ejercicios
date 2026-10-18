@@ -2,18 +2,18 @@
 
 ## **1. Introduction to conditional structures**
 
-Conditional structures allow different blocks of code to be executed depending on whether or not certain conditions are met. In JavaScript, the most common conditional statements are:
+Conditional structures let you run different blocks of code depending on whether certain conditions are met. In JavaScript, the most common conditional statements are:
 
 - `if` / `else`
 - `else if`
 - `switch`
-- `? :` ternary operator
+- The ternary operator `? :`
 
 ---
 
 ## **2. The `if` / `else` statement**
 
-The `if` statement evaluates a condition and executes a block of code if it is true. You can use `else` to execute another block if the condition is not met.
+The `if` statement evaluates a condition and runs a block of code if it's true. You can use `else` to run another block if the condition isn't met.
 
 ### **Basic syntax:**
 
@@ -41,7 +41,7 @@ if (age >= 18) {
 
 ## **3. Using `else if` for multiple conditions**
 
-When multiple conditions need to be evaluated, `else if` can be used.
+When you need to evaluate multiple conditions, you can use `else if`.
 
 ### **Basic syntax:**
 
@@ -77,7 +77,7 @@ if (score >= 90) {
 
 ---
 
-## **4. The `switch`** statement
+## **4. The `switch` statement**
 
 The `switch` statement is useful when you need to evaluate a variable against multiple possible values.
 
@@ -116,7 +116,7 @@ switch (day) {
 }
 ```
 
-> **Note:** Don't forget to use `break` to prevent the following cases from being executed.
+> **Note:** Don't forget to use `break` to stop the following cases from running.
 
 ---
 
@@ -124,7 +124,7 @@ switch (day) {
 
 ---
 
-## **5. `? :`** ternary operator
+## **5. The ternary operator `? :`**
 
 The ternary operator is a shorthand way of writing simple conditionals.
 
@@ -150,23 +150,23 @@ console.log(message);
 
 ---
 
-## **6. Comparators in JavaScript**
+## **6. Comparison operators in JavaScript**
 
-To perform conditions, the following comparison operators are used:
+To write conditions, you use the following comparison operators:
 
 | Operator | Description | Example | Result |
 | -------- | -------------------- | ----------- | --------- |
-| `==` | Weak equality | `5 == '5'` | `true` |
+| `==` | Loose equality | `5 == '5'` | `true` |
 | `===` | Strict equality | `5 === '5'` | `false` |
-| `!=` | Weak inequality | `5 != '5'` | `false` |
+| `!=` | Loose inequality | `5 != '5'` | `false` |
 | `!==` | Strict inequality | `5 !== '5'` | `true` |
 | `>` | Greater than | `7 > 5` | `true` |
 | `<` | Less than | `3 < 5` | `true` |
 | `>=` | Greater than or equal to | `5 >= 5` | `true` |
 | `<=` | Less than or equal to | `4 <= 3` | `false` |
 
-Strict equality `===` in JavaScript is equivalent to double equality `==` in most programming languages.
-Weak equality compares only the value, but not the data type, and strict equality compares both the value and the type.
+Strict equality `===` in JavaScript is the equivalent of the double equals `==` in most programming languages.
+Loose equality compares only the value, not the data type, while strict equality compares both the value and the type.
 
 > **Recommendation:** Use `===` and `!==` to avoid implicit type conversion problems.
 
@@ -176,7 +176,7 @@ Weak equality compares only the value, but not the data type, and strict equalit
 
 ---
 
-[![Double Like vs Triple Like](https://img.youtube.com/vi/GuCv3LrxA7A/0.jpg)](https://www.youtube.com/watch?v=GuCv3LrxA7A&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
+[![Double equals vs triple equals](https://img.youtube.com/vi/GuCv3LrxA7A/0.jpg)](https://www.youtube.com/watch?v=GuCv3LrxA7A&list=PLzA2VyZwsq__JeA3Xa02uWT08Ljji931m)
 
 ---
 
@@ -189,11 +189,11 @@ In conditions, you can use logical operators to combine multiple expressions:
 | `\|\|` | OR (or) | `true \|\| false` | `true` |
 | `!` | NOT (not) | `!true` | `false` |
 
-Using the "logical and" `&&` all expressions have to be true for the result to be true.
+With the "logical AND" `&&`, all the expressions have to be true for the result to be true.
 
-Using the "logical or" `||` with one of the expressions being true, the result is already true.
+With the "logical OR" `||`, if just one of the expressions is true, the result is already true.
 
-The "negation" operator transforms an `true` into an `false` and vice versa.
+The "negation" operator turns a `true` into a `false` and vice versa.
 
 ### **Example combining conditions:**
 
@@ -214,18 +214,18 @@ if (age >= 18 && hasLicense) {
 
 ---
 
-## **8. Truthy and Falsy Values in JavaScript**
+## **8. Truthy and falsy values in JavaScript**
 
 ### **8.1. Definition**
 
-In JavaScript, values are evaluated in Boolean contexts (such as in conditionals) to determine whether they are "true" or "false." However, not all true or false values are strictly `true` or `false`. This is where the concepts of **truthy** and **falsy** come in.
+In JavaScript, values are evaluated in boolean contexts (such as in conditionals) to determine whether they are "true" or "false." However, not all true or false values are strictly `true` or `false`. This is where the concepts of **truthy** and **falsy** come in.
 
 - **Truthy:** A value that evaluates to `true` in a boolean context.
 - **Falsy:** A value that evaluates to `false` in a boolean context.
 
 ---
 
-### **8.2. Falsy Values**
+### **8.2. Falsy values**
 
 A **falsy** value is one that is considered `false` when evaluated in a condition.
 
@@ -233,8 +233,8 @@ A **falsy** value is one that is considered `false` when evaluated in a conditio
 
 1. `false` — The false boolean value.
 2. `0` — The number zero.
-3. `-0` — The negative number zero.
-4. `0n` — The BigInt value of zero.
+3. `-0` — Negative zero.
+4. `0n` — The BigInt zero.
 5. `""` or `''` or `` (empty string) — An empty string.
 6. `null` — Intentional absence of any value.
 7. `undefined` — A variable declared but not initialized.
@@ -265,16 +265,16 @@ Cadena vacía es falsy.
 
 ---
 
-### **8.3. Truthy Values**
+### **8.3. Truthy values**
 
-A **truthy** value is any value that is not false. These values are considered `true` when evaluated in a boolean context.
+A **truthy** value is any value that is not falsy. These values are considered `true` when evaluated in a boolean context.
 
 ### **Examples of truthy values:**
 
 1. Any number other than `0` (positive or negative): `42`, `-7`
 2. Non-empty strings: `'Hola'`, `'false'`, `'0'`
 3. Arrays: `[]`
-4. Items: `{}`
+4. Objects: `{}`
 5. Functions: `function() {}`
 6. Class instances
 
@@ -302,7 +302,7 @@ Un array vacío es truthy.
 Un objeto vacío es truthy.
 ```
 
-> **Note:** Even if an array or object is empty, they are considered truthy.
+> **Note:** Even when an array or object is empty, it's considered truthy.
 
 ---
 
@@ -312,7 +312,7 @@ Un objeto vacío es truthy.
 
 ### **8.4. Implicit conversion to boolean**
 
-JavaScript automatically converts values to booleans in contexts where an `true` or `false` is expected, as in:
+JavaScript automatically converts values to booleans in contexts where a `true` or `false` is expected, such as:
 
 - Conditional statements (`if`, `while`, `for`)
 - Logical operators (`&&`, `||`, `!`)
@@ -326,16 +326,16 @@ console.log(Boolean(0)); // false
 console.log(Boolean(null)); // false
 ```
 
-### **Example with `!` (NOT) operator:**
+### **Example with the `!` (NOT) operator:**
 
-The not operator (`!`) will return true when evaluated on a false value and will return false when evaluated on a truthy value.
+The NOT operator (`!`) returns true when it's applied to a falsy value and false when it's applied to a truthy value.
 
 ```js
 console.log(!"hola"); // false
 console.log(!0); // true
 ```
 
-Two negation operators (`!!`) can be applied to return true from a truthy value and false from a falsy value.
+You can apply two negation operators (`!!`) to get true from a truthy value and false from a falsy value.
 
 ```js
 console.log(!!"hola"); // true
@@ -348,9 +348,9 @@ console.log(!!0); // false
 
 ---
 
-### **8.5. Practical Use: Default Values**
+### **8.5. Practical use: default values**
 
-A common use of truthy and falsy is to provide default values using the "logical or" operator, since even if the first expression is false it will continue to evaluate the rest of the expressions until it finds something truthy and that will be the returned value.
+A common use of truthy and falsy values is to provide default values with the "logical OR" operator: even if the first expression is falsy, it keeps evaluating the rest of the expressions until it finds something truthy, and that is the value it returns.
 
 ### **Example with logical operator `||`:**
 
@@ -361,33 +361,33 @@ let displayName = username || "Invitado";
 console.log(displayName); // Salida: Invitado
 ```
 
-In this case, since `username` is an empty string (falsy), `displayName` takes the value "Guest".
+In this case, since `username` is an empty string (falsy), `displayName` takes the value "Invitado".
 
 ---
 
-### **8.6. Good practices**
+### **8.6. Best practices**
 
-1. **Be explicit:** Although JavaScript allows these implicit conversions, it is advisable to be clear in the code.
-2. **Avoid common errors:** Remember that values like `0`, `""`, `null`, `undefined` and `NaN` are false and can cause logical errors.
+1. **Be explicit:** Although JavaScript allows these implicit conversions, it's a good idea to keep your code clear.
+2. **Avoid common mistakes:** Remember that values like `0`, `""`, `null`, `undefined` and `NaN` are falsy and can cause logic errors.
 
 ---
 
 ### **8.7. Important**
 
-Understanding the concepts of **truthy** and **falsy** in JavaScript is essential to writing efficient and error-free code. These values affect how logical conditions and operations are evaluated in your code.
+Understanding the concepts of **truthy** and **falsy** in JavaScript is essential to writing efficient and error-free code. These values affect how conditions and logical operations are evaluated in your code.
 
-## **9. Good practices**
+## **9. Best practices**
 
 - Use `===` and `!==` instead of `==` and `!=`.
-- Keep the conditions simple and legible.
+- Keep your conditions simple and readable.
 - Comment complex conditionals.
 - Use the ternary operator for simple conditions.
-- Don't abuse `switch` if `if/else` is lighter.
+- Don't overuse `switch` if `if/else` is clearer.
 
 ---
 
 ## **10. Conclusion**
 
-Conditional structures are essential for flow control in JavaScript. Knowing when to use `if/else`, `switch`, or the ternary operator will allow you to write cleaner, more efficient code.
+Conditional structures are essential for control flow in JavaScript. Knowing when to use `if/else`, `switch` or the ternary operator will help you write cleaner, more efficient code.
 
 In the next topic, we'll dive deeper into **loops** and how to iterate over data in JavaScript.

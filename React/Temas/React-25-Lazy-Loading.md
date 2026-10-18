@@ -2,17 +2,17 @@
 
 ## **1. Introduction**
 
-When a React application grows, the size of the initial JavaScript also increases. Loading **all** code from the beginning can cause the app to take longer to display, especially on slow connections.
+When a React application grows, the size of the initial JavaScript also increases. Loading **all** the code from the start can make the app take longer to show up, especially on slow connections.
 
-To improve performance, React allows you to **load components only when they are needed**. This technique is called **Lazy Loading**.
+To improve performance, React lets you **load components only when they're needed**. This technique is called **Lazy Loading**.
 
 In this topic you will learn:
 
-- What is Lazy Loading.
+- What Lazy Loading is.
 - Why it improves performance.
 - How to use `React.lazy` and `Suspense`.
 - Lazy Loading with routes.
-- Common errors and good practices.
+- Common mistakes and best practices.
 
 ---
 
@@ -20,21 +20,21 @@ In this topic you will learn:
 
 Lazy Loading means:
 
-> Do not load a component until it is actually going to be used.
+> Don't load a component until it's actually going to be used.
 
 Instead of downloading all the code at startup:
 
-- The app is divided into **chunks**.
+- The app is split into **chunks**.
 - Each chunk is downloaded on demand.
 
 This reduces:
 
-- Initial loading time.
+- The initial load time.
 - The size of the main bundle.
 
 ---
 
-## **3. Problem without Lazy Loading**
+## **3. The problem without Lazy Loading**
 
 Typical example:
 
@@ -50,7 +50,7 @@ Even if the user only visits `Home`, the browser downloads **everything**.
 
 ## **4. Lazy Loading with `React.lazy`**
 
-`React.lazy` allows you to import components dynamically.
+`React.lazy` lets you import components dynamically.
 
 ```js
 import { lazy } from "react";
@@ -59,11 +59,11 @@ const Home = lazy(() => import("./pages/Home"));
 const Profile = lazy(() => import("./pages/Profile"));
 ```
 
-Each component will be loaded only when it is rendered.
+Each component will only be loaded when it's rendered.
 
 ---
 
-## **5. `Suspense`: show a fallback**
+## **5. `Suspense`: showing a fallback**
 
 Lazy components **must** be wrapped in `Suspense`.
 
@@ -75,13 +75,13 @@ import { Suspense } from "react";
 </Suspense>;
 ```
 
-- `fallback` is what is displayed while the chunk is downloading.
+- `fallback` is what's displayed while the chunk downloads.
 
 ---
 
 ## **6. Lazy Loading with React Router**
 
-The most common case is to load pages by path.
+The most common case is loading pages by route.
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -104,17 +104,17 @@ function App() {
 export default App;
 ```
 
-Each page is downloaded only when visited.
+Each page is downloaded only when it's visited.
 
 ---
 
-## **7. What can be loaded lazy**
+## **7. What can be lazy-loaded**
 
 ✔️ Ideal for:
 
 - Pages.
 - Large components.
-- Little used sections.
+- Rarely used sections.
 
 ❌ Not recommended for:
 
@@ -125,34 +125,34 @@ Each page is downloaded only when visited.
 
 ## **8. Lazy Loading vs React.memo**
 
-Although both optimize performance, **they do not do the same thing**:
+Although both optimize performance, **they don't do the same thing**:
 
-- `React.memo` → avoid unnecessary renders.
-- Lazy Loading → avoid downloading unnecessary code.
+- `React.memo` → avoids unnecessary renders.
+- Lazy Loading → avoids downloading unnecessary code.
 
-They are complementary techniques.
+They're complementary techniques.
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Forget `Suspense`**
+### **9.1. Forgetting `Suspense`**
 
-Causes error at runtime.
+It causes a runtime error.
 
-### **9.2. Use lazy in everything**
+### **9.2. Using lazy for everything**
 
-Too many small chunks can worsen performance.
+Too many small chunks can hurt performance.
 
 ### **9.3. Unclear fallback**
 
-Always informs the user that something is loading.
+Always let the user know that something is loading.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
-- Applies lazy mainly to pages.
+- Apply lazy mainly to pages.
 - Use `Suspense` at the route level.
 - Keep fallbacks simple.
 - Combine Lazy Loading with memoization when necessary.
@@ -163,4 +163,4 @@ Always informs the user that something is loading.
 
 ---
 
-In the next topic you will learn how to write **tests in React**.
+In the next topic you'll learn how to write **tests in React**.

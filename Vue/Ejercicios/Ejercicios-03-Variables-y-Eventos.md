@@ -1,16 +1,16 @@
 # **Exercises - Topic 3: Reactive Variables, Events and Binding in Vue.js**
 
-Below you will find 5 practical exercises on reactive variables, events and binding in Vue.
+Below you'll find 5 practical exercises on reactive variables, events and binding in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Create a reactive variable and display it**
 
-Create an `DisplayMessage.vue` component that defines a reactive variable called `message` and displays it on the screen.
+Create a `DisplayMessage.vue` component that defines a reactive variable called `message` and displays it on the screen.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `DisplayMessage.vue`
 
@@ -39,9 +39,9 @@ p {
 
 ## **Exercise 2: Handle an event with a method**
 
-Create an `ClickCounter.vue` component that counts how many times a button has been pressed.
+Create a `ClickCounter.vue` component that counts how many times a button has been clicked.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `ClickCounter.vue`
 
@@ -79,9 +79,9 @@ button {
 
 ## **Exercise 3: Change an attribute dynamically**
 
-Create an `DynamicImage.vue` component that displays an image, and allows the image to be changed by clicking a button.
+Create a `DynamicImage.vue` component that displays an image and lets you change it by clicking a button.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `DynamicImage.vue`
 
@@ -117,9 +117,9 @@ img {
 
 ## **Exercise 4: Input with v-model**
 
-Create an `UserInput.vue` component that has an input where the user can write their name, and displays it on the screen.
+Create a `UserInput.vue` component with an input where the user can type their name, and display it on the screen.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `UserInput.vue`
 
@@ -155,9 +155,9 @@ input {
 
 ## **Exercise 5: Capture an event and display the value**
 
-Create an `TrackInput.vue` component that captures each key pressed in an input and displays it on the screen.
+Create a `TrackInput.vue` component that captures each key pressed in an input and displays it on the screen.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `TrackInput.vue`
 

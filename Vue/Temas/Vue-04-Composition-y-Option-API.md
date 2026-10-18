@@ -1,18 +1,18 @@
-# **Topic 4: Composition API vs Option API in Vue.js**
+# **Topic 4: Composition API vs Options API in Vue.js**
 
 ## **1. Introduction**
 
-In Vue 3, the **Composition API** was introduced, a new approach to defining component logic. Until then, Vue exclusively used the **Option API**, which is still available in Vue 3.
+Vue 3 introduced the **Composition API**, a new approach to defining component logic. Until then, Vue used only the **Options API**, which is still available in Vue 3.
 
-In this course we will only use the most modern and recommended syntax, that is, the **Composition API**, but it is essential to know the differences.
+In this course, we'll only use the most modern and recommended syntax, the **Composition API**, but it's essential to know the differences.
 
 ---
 
-## **2. Option API: Traditional structure**
+## **2. Options API: The traditional structure**
 
-The **Option API** organizes a component's code into predefined sections (data, methods, computed, etc.). It is familiar to developers coming from Vue 2.
+The **Options API** organizes a component's code into predefined sections (data, methods, computed, etc.). It's familiar to developers coming from Vue 2.
 
-### Option API Example
+### Options API example
 
 ```vue
 <script>
@@ -46,11 +46,11 @@ button {
 
 ---
 
-## **3. Composition API: New approach**
+## **3. Composition API: The new approach**
 
-The **Composition API** allows you to organize logic by functionality, using composition functions such as `ref()` and `computed()`. This flexibility improves organization into complex components.
+The **Composition API** lets you organize logic by feature, using composition functions such as `ref()` and `computed()`. This flexibility makes complex components better organized.
 
-### Composition API Example
+### Composition API example
 
 ```vue
 <script setup>
@@ -81,30 +81,30 @@ button {
 
 ## **4. Key differences**
 
-| Appearance | Options API | Composition API |
-| ------------------------ | ------------------------------------------- | -------------------------------------------- |
-| **Structure** | Separated by options (data, methods, etc.) | Logic grouped by functionality |
-| **Learning curve** | Easier for beginners | Requires knowing new functions |
-| **Reactivity** | Implicit via `data()` | Manually defined with `ref()` and `reactive()` |
-| **Composition** | Difficult to combine reusable logic | Easy to split into reusable functions |
-| **Migration** | Compatible with Vue 2 | Vue 3 Exclusive |
+| Aspect                   | Options API                                 | Composition API                                 |
+| ------------------------ | ------------------------------------------- | ----------------------------------------------- |
+| **Structure**            | Split into options (data, methods, etc.)    | Logic grouped by feature                        |
+| **Learning curve**       | Easier for beginners                        | Requires learning new functions                 |
+| **Reactivity**           | Implicit through `data()`                   | Defined manually with `ref()` and `reactive()`  |
+| **Composition**          | Hard to combine reusable logic              | Easy to split into reusable functions           |
+| **Migration**            | Compatible with Vue 2                       | Vue 3 only                                      |
 
 ---
 
 ## **5. When to use each one**
 
-| Situation | Recommendation |
+| Situation                                   | Recommendation                         |
 | ------------------------------------------- | -------------------------------------- |
-| Small or simple applications | Option API is enough |
-| Medium/Large Applications | Composition API improves organization |
-| Reuse logic between components | Composition API is more efficient |
-| You work with a team accustomed to Vue 2 | Option API may be more natural |
+| Small or simple applications                | The Options API is enough              |
+| Medium/large applications                   | The Composition API improves organization |
+| Reusing logic across components             | The Composition API is more efficient  |
+| You work with a team used to Vue 2          | The Options API may feel more natural  |
 
 ---
 
-## **6. Complete comparative example**
+## **6. Full side-by-side example**
 
-### Component with Option API
+### Component with the Options API
 
 ```vue
 <script>
@@ -126,7 +126,7 @@ p {
 </style>
 ```
 
-### Component with Composition API
+### Component with the Composition API
 
 ```vue
 <script setup>
@@ -148,4 +148,4 @@ p {
 
 ---
 
-In the next topic we will explore Conditional Control Structures and Dynamic Lists in Vue.js to display conditional content and loop through arrays.
+In the next topic, we'll explore **conditional control structures and dynamic lists in Vue.js**, to display content conditionally and loop through arrays.

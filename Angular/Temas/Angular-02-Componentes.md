@@ -9,21 +9,21 @@ A component is the fundamental unit of an Angular application. Each component de
 A component in Angular is made up of three main parts:
 
 - **Template (`.html`)**: Defines the visual structure of the component.
-- **Styles (`.css` or `.scss`)**: Contains the design rules of the component.
+- **Styles (`.css` or `.scss`)**: Contains the component's styling rules.
 - **TypeScript class (`.ts`)**: Contains the logic and behavior of the component.
 
 ---
 
 ## **2. Creating a component**
 
-To create a new component in Angular, for example a component for a menu called menu, use the following command:
+To create a new component in Angular, for example, a component for a menu called menu, use the following command:
 
 ```sh
 ng generate component components/menu
 ```
 
 
-Or in its abbreviated version:
+Or in its short form:
 
 ```sh
 ng g c components/menu
@@ -45,7 +45,7 @@ menu/
 
 ## **3. Using a component**
 
-To use a component elsewhere in the application, add it in the HTML template of another component as follows:
+To use a component elsewhere in the application, add it to the HTML template of another component as follows:
 
 ```html
 <app-menu></app-menu>
@@ -65,7 +65,7 @@ import { MenuComponent } from "./components/menu/menu.component";
 ```
 
 
-The component selector is defined in the file `menu.component.ts`
+The component's selector is defined in the `menu.component.ts` file
 
 ```ts
 @Component({
@@ -81,7 +81,7 @@ The component selector is defined in the file `menu.component.ts`
 
 ---
 
-## **4. Using variables and data-binding in Angular**
+## **4. Using variables and data binding in Angular**
 
 ### **Variables in a component**
 
@@ -110,9 +110,9 @@ export class MenuComponent {
 
 ---
 
-### **Data Binding in Angular**
+### **Data binding in Angular**
 
-Data-binding in Angular allows data to be synchronized between the model (TypeScript class) and the view (HTML template). There are four main types of data-binding:
+Data binding in Angular keeps the data in sync between the model (TypeScript class) and the view (HTML template). There are four main types of data binding:
 
 1. **Interpolation (`{{ }}`)**: Used to display values within the HTML template.
 2. **Property binding (`[property]`)**: Allows you to assign values to HTML attributes from the component.
@@ -135,7 +135,7 @@ In this example:
 
 ---
 
-### **2. Property Binding (`[property]`)**
+### **2. Property binding (`[property]`)**
 
 Allows you to assign dynamic values to HTML properties.
 
@@ -155,13 +155,13 @@ export class MenuComponent {
 ```
 
 
-Here, the value of `src` in the image is obtained from the variable `image` of the component.
+Here, the value of the image's `src` comes from the component's `image` variable.
 
-> Note: Images and other assets are usually saved in the `public` folder so the paths start from this folder. It is not correct to write the path as `public/assets/imagen.png`, you must write it as `assets/imagen.png`.
+> Note: Images and other assets are usually stored in the `public` folder, so paths start from that folder. Don't write the path as `public/assets/imagen.png`; write it as `assets/imagen.png`.
 
 ---
 [![Variables in Angular](https://img.youtube.com/vi/8QVG8JA495Q/0.jpg)](https://www.youtube.com/watch?v=8QVG8JA495Q&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-In the next topic we will see how to work with events and bidirectional data binding using `ngModel`.
+In the next topic, we will see how to work with events and two-way data binding using `ngModel`.

@@ -2,13 +2,13 @@
 
 ## **1. What is CSS and what is it for?**
 
-CSS (Cascading Style Sheets) is a language used to define the design and presentation of HTML documents. It allows you to improve the appearance of a web page, separating the structure of the content from the visual design.
+CSS (_Cascading Style Sheets_) is a language used to define the design and presentation of HTML documents. It lets you improve the appearance of a web page while keeping the structure of the content separate from the visual design.
 
-### **CSS Key Features:**
+### **Key features of CSS:**
 
 - Allows you to customize the style of a web page.
 - Separates the content (HTML) from the presentation.
-- Facilitates maintenance and reuse of styles.
+- Makes styles easier to maintain and reuse.
 - Improves accessibility and user experience.
 - Compatible with all modern browsers.
 
@@ -51,7 +51,7 @@ There are three main ways to include CSS in an HTML document:
 
 ### **1. Inline CSS**
 
-It is applied directly in the HTML tag using the `style` attribute.
+It is applied directly to the HTML tag through the `style` attribute.
 
 ```html
 <p style="color: red; font-size: 18px;">
@@ -60,9 +60,9 @@ It is applied directly in the HTML tag using the `style` attribute.
 ```
 
 
-✔ Fast for small changes, but difficult to maintain on large projects. It is not recommended to use it if there is an alternative.
+✔ Quick for small changes, but hard to maintain in large projects. It's best not to use it when there is an alternative.
 
-### **2. Internal CSS (internal CSS)**
+### **2. Internal CSS**
 
 It is placed inside the `<style>` tag in the `<head>` of the HTML document.
 
@@ -84,9 +84,9 @@ It is placed inside the `<style>` tag in the `<head>` of the HTML document.
 ```
 
 
-✔ Useful for small pages without the need for multiple CSS files.
+✔ Useful for small pages that don't need multiple CSS files.
 
-### **3. External CSS (external CSS)**
+### **3. External CSS**
 
 It is saved in a separate file (`.css`) and linked from the HTML with `<link>`.
 
@@ -115,15 +115,15 @@ h1 {
 ```
 
 
-✔ Best practice for large, scalable projects.
+✔ The best practice for large, scalable projects.
 
 ---
 
 ## **4. Cascade and specificity in CSS**
 
-The name "Cascading Style Sheets" comes from the concept of **cascading**, which determines the order of priority of style rules.
+The name "Cascading Style Sheets" comes from the concept of the **cascade**, which determines the priority order of style rules.
 
-### **Order of applying styles:**
+### **Order in which styles are applied:**
 
 1. Browser styles (default).
 2. External styles (`.css`).
@@ -144,7 +144,7 @@ p {
 ```
 
 
-📌 **Rules with `!important`** overwrite any other style, even if it comes from an external file. The use of `!important` is completely discouraged.
+📌 **Rules with `!important`** override any other style, even if it comes from an external file. Using `!important` is strongly discouraged.
 
 ---
 
@@ -152,13 +152,13 @@ p {
 
 ---
 
-## **5. Good practices in CSS**
+## **5. Best practices in CSS**
 
 - Use external CSS files to keep code organized.
 - Avoid excessive use of inline styles.
-- Maintain a clear structure with comments in the code.
+- Keep a clear structure with comments in the code.
 - Reuse classes and avoid IDs when possible.
-- Optimize the code avoiding unnecessary rules.
+- Optimize the code by avoiding unnecessary rules.
 
 ---
-In the next topic, we will explore **selectors and specificity in CSS**, essential for effectively applying styles to a web page.
+In the next topic, we will explore **selectors and specificity in CSS**, which are essential for applying styles to a web page effectively.

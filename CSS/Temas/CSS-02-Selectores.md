@@ -2,7 +2,7 @@
 
 ## **1. Introduction to selectors in CSS**
 
-**selectors** in CSS allow you to select HTML elements and apply styles to them. There are several types of selectors, each with different levels of specificity.
+**Selectors** in CSS let you select HTML elements and apply styles to them. There are several types of selectors, each with a different level of specificity.
 
 ### **Example of a basic selector:**
 
@@ -21,21 +21,21 @@ This selector applies the color blue to all paragraphs (`<p>`) on the page.
 
 ### **1. Basic selectors**
 
-- **Tag Selector**: Select elements by their HTML tag.
+- **Tag selector**: selects elements by their HTML tag.
   ```css
   h1 {
     color: red;
   }
   ```
 
-- **Class Selector (`.`)**: Selects items with a specific class.
+- **Class selector (`.`)**: selects elements with a specific class.
   ```css
   .highlighted {
     font-weight: bold;
   }
   ```
 
-- **ID Selector (`#`)**: Select an item with a unique ID.
+- **ID selector (`#`)**: selects an element with a unique ID.
   ```css
   #some-id {
     text-align: center;
@@ -45,7 +45,7 @@ This selector applies the color blue to all paragraphs (`<p>`) on the page.
 
 ### **2. Combinator selectors**
 
-- **United selectors**: select elements that have the selectors (label, cases, id, etc.) used at the same time.
+- **Compound selectors**: select elements that match all the selectors used (tag, classes, ID, etc.) at the same time.
 
   ```css
   div.box.green {
@@ -56,30 +56,30 @@ This selector applies the color blue to all paragraphs (`<p>`) on the page.
   ```
 
 
-  It will only apply to an `<div>` with the classes `box` and `green`.
+  It will only apply to a `<div>` with the classes `box` and `green`.
 
-- **Offspring Selector (`espacio`)**: Selects elements within a container.
+- **Descendant selector (`espacio`)**: selects elements inside a container.
   ```css
   div p {
     color: green;
   }
   ```
 
-- **Direct child selector (`>`)**: Selects only direct children.
+- **Direct child selector (`>`)**: selects only direct children.
   ```css
   div > p {
     font-size: 18px;
   }
   ```
 
-- **Adjacent sibling selector (`+`)**: Select one item immediately after another.
+- **Adjacent sibling selector (`+`)**: selects an element that comes immediately after another.
   ```css
   h1 + p {
     font-style: italic;
   }
   ```
 
-- **General Sibling Selector (`~`)**: Select all sibling elements.
+- **General sibling selector (`~`)**: selects all sibling elements.
   ```css
   h1 ~ p {
     color: gray;
@@ -89,7 +89,7 @@ This selector applies the color blue to all paragraphs (`<p>`) on the page.
 
 ### **3. Attribute selectors**
 
-They allow elements to be selected based on their attributes.
+They let you select elements based on their attributes.
 
 ```css
 input[type="text"] {
@@ -111,7 +111,7 @@ a:hover {
 
 ### **5. Pseudo-element selectors**
 
-They allow you to stylize specific parts of an element.
+They let you style specific parts of an element.
 
 ```css
 p::first-letter {
@@ -122,7 +122,7 @@ p::first-letter {
 
 ### **6. Universal selector**
 
-It will apply to all elements. It has the lowest specificity.
+It applies to all elements. It has the lowest specificity.
 
 ```css
 * {
@@ -133,17 +133,17 @@ It will apply to all elements. It has the lowest specificity.
 
 ---
 
-## **3. CSS Specificity**
+## **3. Specificity in CSS**
 
 Specificity determines which CSS rule is applied when there are multiple conflicting rules.
 
 ### **Selector priority:**
 
-1. Online Styles (`style=""`) → **Higher**.
+1. Inline styles (`style=""`) → **Highest**.
 2. ID selectors (`#id`).
 3. Class selectors (`.clase`), attributes and pseudo-classes (`:hover`).
 4. Tag selectors (`elemento`).
-5. Legacy and Browser Styles → **Less Priority**.
+5. Inherited and browser styles → **Lowest priority**.
 
 ### **Example of specificity:**
 
@@ -162,11 +162,11 @@ p {
 ```
 
 
-If an `<p>` has class `highlighted` and ID `some-id`, the color **red** will be applied due to the greater specificity of the ID selector.
+If a `<p>` has the class `highlighted` and the ID `some-id`, the color **red** will be applied, because the ID selector is more specific.
 
-### **Cascade Priority:**
+### **Cascade priority:**
 
-If there are selectors with the same specificity, the styles of the one found last in the code will be applied.
+If several selectors have the same specificity, the styles of the one that comes last in the code are applied.
 
 ```css
 .some-class {
@@ -183,7 +183,7 @@ If there are selectors with the same specificity, the styles of the one found la
 ```
 
 
-Here the blue color will be applied.
+Here, the color blue will be applied.
 
 ---
 
@@ -202,25 +202,25 @@ p {
 ```
 
 
-⚠ **Use sparingly** as it can make the code difficult to maintain. It is advisable not to use it at all.
+⚠ **Use it sparingly**, as it can make the code hard to maintain. It's best not to use it at all.
 
 ---
-[![nested CSS & !important](https://img.youtube.com/vi/9FNDDjs6u7I/0.jpg)](https://www.youtube.com/watch?v=9FNDDjs6u7I&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
+[![Nested CSS & !important](https://img.youtube.com/vi/9FNDDjs6u7I/0.jpg)](https://www.youtube.com/watch?v=9FNDDjs6u7I&list=PLzA2VyZwsq_9hRcJ0nEDQkoI1aK5V74y-)
 
 ---
 
-## **5. Good practices with selectors in CSS**
+## **5. Best practices for selectors in CSS**
 
-- Use classes instead of IDs for greater reuse.
+- Use classes instead of IDs for better reusability.
 - Keep selectors short and specific.
 - Avoid using `!important`.
 - Organize styles in a logical order.
 
 ---
 
-## **Links of Interest.**
+## **Useful links**
 
-- Game to practice with CSS selectors: [flukeout](https://flukeout.github.io/).
+- A game to practice CSS selectors: [flukeout](https://flukeout.github.io/).
 
 ---
 

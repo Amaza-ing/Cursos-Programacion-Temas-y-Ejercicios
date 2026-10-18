@@ -1,25 +1,25 @@
-# Topic 5: Exception Management, Internationalization and Local Issues in Spring MVC
+# Topic 5: Exception handling, internationalization and themes in Spring MVC
 
 ## 1. Objectives of the topic
 
 In this topic we are going to complete the Spring MVC application that we have been building during the course.
 
-So far, the application already allows:
+So far, the application already lets you:
 
-- Display pages using JSP controllers and views.
+- Display pages using controllers and JSP views.
 - List courses.
-- See the details of a course.
+- View the details of a course.
 - Create courses using forms.
 - Validate form data.
 - Optionally, save the data in MySQL.
 
-In this topic we will add three important aspects in a real web application:
+In this topic we will add three important aspects of a real web application:
 
-1. **Exception Handling**: Handle errors neatly and display custom error pages.
+1. **Exception handling**: handle errors in an orderly way and display custom error pages.
 2. **Internationalization**: allow the application to display texts in different languages.
-3. **Local themes**: Allow the user to change the visual appearance of the application, for example between light theme and dark theme.
+3. **Local themes**: allow the user to change the visual appearance of the application, for example between a light theme and a dark theme.
 
-Upon completion of this topic, the application will be able to:
+By the end of this topic, the application will be able to:
 
 - Show a specific page when a course does not exist.
 - Show a custom 404 page when the user accesses a non-existent route.
@@ -110,7 +110,7 @@ src/main/webapp/WEB-INF/views/error
 
 ---
 
-# Part 1. Exception Management
+# Part 1. Exception handling
 
 ## 3. Why do we need to handle exceptions?
 
@@ -131,10 +131,10 @@ This code works, but it has a problem: the controller starts mixing too many res
 
 The controller should mainly be responsible for:
 
-- Receive requests.
-- Request data from the service.
-- Add data to the model.
-- Return the name of a view.
+- Receiving requests.
+- Requesting data from the service.
+- Adding data to the model.
+- Returning the name of a view.
 
 But if we start adding error conditions in all the methods, the code becomes long and repetitive.
 
@@ -146,7 +146,7 @@ Después, una clase global se encarga de capturar esa excepción
 y decidir qué página de error mostrar.
 ```
 
-This way we manage to better separate responsibilities.
+This way we separate responsibilities better.
 
 ---
 
@@ -186,7 +186,7 @@ public class CourseNotFoundException extends RuntimeException {
 }
 ```
 
-### Step by step explanation
+### Step-by-step explanation
 
 The class starts like this:
 
@@ -196,7 +196,7 @@ public class CourseNotFoundException extends RuntimeException {
 
 This means that we are creating our own exception and that it inherits from `RuntimeException`.
 
-We use `RuntimeException` because we don't want to be forced to put `throws` in all methods that can launch it.
+We use `RuntimeException` because we don't want to be forced to add `throws` to every method that can throw it.
 
 Then we save the course identifier:
 
@@ -235,7 +235,7 @@ The line:
 this.courseId = courseId;
 ```
 
-Save the identifier so you can retrieve it later.
+stores the identifier so it can be retrieved later.
 
 Finally, the method:
 
@@ -326,7 +326,7 @@ The new method is:
 public Course findByIdOrThrow(Long id) {
 ```
 
-Your responsibility is very clear:
+Its responsibility is very clear:
 
 ```text
 Buscar un curso por id.
@@ -368,7 +368,7 @@ File:
 src/main/java/com/example/springmvcday1/controller/CourseController.java
 ```
 
-### Updated code for `courseDetail` method
+### Updated code of the `courseDetail` method
 
 ```java
 @GetMapping("/detail")
@@ -384,7 +384,7 @@ public String courseDetail(@RequestParam("id") Long id, Model model) {
 
 ### Explanation
 
-Previously, the driver had to do this check:
+Previously, the controller had to do this check:
 
 ```java
 if (course == null) {
@@ -392,9 +392,9 @@ if (course == null) {
 }
 ```
 
-Now it's not necessary anymore.
+Now it's no longer necessary.
 
-The driver just writes:
+The controller just writes:
 
 ```java
 Course course = courseService.findByIdOrThrow(id);
@@ -402,9 +402,9 @@ Course course = courseService.findByIdOrThrow(id);
 
 If the course exists, the code continues normally.
 
-If it does not exist, an `CourseNotFoundException` is released.
+If it does not exist, a `CourseNotFoundException` is thrown.
 
-In that case, the driver does not continue running. Spring will look for a method that knows how to handle that exception.
+In that case, the controller stops running. Spring will look for a method that knows how to handle that exception.
 
 We will create that method now.
 
@@ -455,7 +455,7 @@ public class GlobalExceptionHandler {
 }
 ```
 
-### Step by step explanation
+### Step-by-step explanation
 
 The class has this annotation:
 
@@ -489,7 +489,7 @@ Cuando se lance una CourseNotFoundException,
 ejecuta este método.
 ```
 
-Inside we add information to the model:
+Inside, we add information to the model:
 
 ```java
 model.addAttribute("pageTitle", "Curso no encontrado");
@@ -503,7 +503,7 @@ Then we return the view:
 return "error/course-not-found";
 ```
 
-This will cause Spring to search for the file:
+This will make Spring look for the file:
 
 ```text
 /WEB-INF/views/error/course-not-found.jsp
@@ -518,9 +518,9 @@ public String handleGeneralException(
         Model model) {
 ```
 
-This method will catch unforeseen exceptions.
+This method will catch unexpected exceptions.
 
-It serves as a safety net so that the user does not see technical pages from the server.
+It acts as a safety net so that the user does not see the server's technical error pages.
 
 ---
 
@@ -532,7 +532,7 @@ We create the folder:
 src/main/webapp/WEB-INF/views/error
 ```
 
-Inside we create the file:
+Inside it, we create the file:
 
 ```text
 course-not-found.jsp
@@ -608,7 +608,7 @@ model.addAttribute("courseId", exception.getCourseId());
 model.addAttribute("errorMessage", exception.getMessage());
 ```
 
-That's why we can use in the JSP:
+That's why we can use this in the JSP:
 
 ```jsp
 ${pageTitle}
@@ -696,7 +696,7 @@ src/main/webapp/WEB-INF/views/error/general-error.jsp
 
 ### Explanation
 
-This view will be used when an unforeseen exception occurs.
+This view will be used when an unexpected exception occurs.
 
 The method that returns it is:
 
@@ -714,13 +714,14 @@ For this course, we show it to better understand what is happening.
 ---
 
 [![Error 404](https://img.youtube.com/vi/phVpQszocuI/0.jpg)](https://www.youtube.com/watch?v=phVpQszocuI&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+
 ---
 
-## 10. Configure pages 404 and 500 in `web.xml`
+## 10. Configure the 404 and 500 pages in `web.xml`
 
-Management with `@ControllerAdvice` works very well for exceptions that occur within controllers.
+Handling errors with `@ControllerAdvice` works very well for exceptions that occur inside controllers.
 
-But there are errors that can occur before, for example when the user tries to enter a URL that does not exist:
+But some errors can happen earlier, for example when the user tries to open a URL that does not exist:
 
 ```text
 http://localhost:8080/spring-mvc-day1/pagina-inventada
@@ -734,7 +735,7 @@ File:
 src/main/webapp/WEB-INF/web.xml
 ```
 
-We add at the end, before `</web-app>`:
+We add this at the end, before `</web-app>`:
 
 ```xml
 <error-page>
@@ -794,7 +795,7 @@ The complete file can look like this:
 
 ## 11. Create `ErrorPageController`
 
-Now we need a controller that serves these routes:
+Now we need a controller that handles these routes:
 
 ```text
 /error/404
@@ -842,7 +843,7 @@ If a 404 error occurs, `web.xml` internally redirects to:
 /error/404
 ```
 
-Then Spring executes this method:
+Then Spring runs this method:
 
 ```java
 @GetMapping("/error/404")
@@ -939,7 +940,7 @@ src/main/webapp/WEB-INF/views/error/not-found.jsp
 
 ---
 
-## 13. Summary of exception management
+## 13. Exception handling summary
 
 The flow when a course does not exist is:
 
@@ -983,7 +984,7 @@ Spring muestra error/not-found.jsp
 
 Internationalizing an application means preparing it so that it can display texts in different languages.
 
-For example, instead of writing directly to a JSP:
+For example, instead of writing this directly in a JSP:
 
 ```jsp
 <a href="/home">Inicio</a>
@@ -1009,7 +1010,7 @@ In English:
 nav.home=Home
 ```
 
-This way we ensure that the same JSP can display different languages.
+This way the same JSP can display different languages.
 
 ---
 
@@ -1077,9 +1078,9 @@ If you are not using MySQL, you can use this version:
 </beans>
 ```
 
-If you are using MySQL, also keep the `dataSource` and `jdbcTemplate` beans that you configured in the extension of topic 3.
+If you are using MySQL, also keep the `dataSource` and `jdbcTemplate` beans that you configured in the Topic 3 extension.
 
-### `messageSource` explanation
+### Explanation of `messageSource`
 
 ```xml
 <bean id="messageSource"
@@ -1105,9 +1106,9 @@ The property:
 <property name="defaultEncoding" value="UTF-8" />
 ```
 
-It helps characters such as accents, eñes and special symbols to be read well.
+helps characters such as accented letters, the ñ and special symbols to be read correctly.
 
-### `localeResolver` explanation
+### Explanation of `localeResolver`
 
 ```xml
 <bean id="localeResolver"
@@ -1124,7 +1125,7 @@ Additionally, the default language will be Spanish:
 es
 ```
 
-### `LocaleChangeInterceptor` Explanation
+### Explanation of `LocaleChangeInterceptor`
 
 ```xml
 <mvc:interceptors>
@@ -1142,17 +1143,17 @@ For example:
 /home?lang=es
 ```
 
-change to Spanish.
+switches to Spanish.
 
 ```text
 /home?lang=en
 ```
 
-change to english.
+switches to English.
 
 ---
 
-## 16. Create message files
+## 16. Create the message files
 
 We create the files inside:
 
@@ -1365,7 +1366,7 @@ course.duration.max=The maximum duration is 200 hours.
 
 Some messages appear in the controller, not in the JSP.
 
-For example, when we created a course correctly, in the previous topic we had:
+For example, in the previous topic, when a course was created successfully we had:
 
 ```java
 redirectAttributes.addFlashAttribute(
@@ -1481,7 +1482,7 @@ public CourseController(
         MessageSource messageSource) {
 ```
 
-Spring will inject the bean we configured into XML:
+Spring will inject the bean we configured in XML:
 
 ```xml
 <bean id="messageSource"
@@ -1607,7 +1608,7 @@ src/main/webapp/WEB-INF/views/home.jsp
 
 ### Explanation
 
-We activate Spring tags:
+We enable Spring's tags:
 
 ```jsp
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -1773,7 +1774,7 @@ src/main/webapp/WEB-INF/views/courses/list.jsp
 
 ### Explanation
 
-Fixed texts disappear from the JSP.
+Hard-coded texts disappear from the JSP.
 
 For example, before we could have:
 
@@ -1913,13 +1914,13 @@ src/main/webapp/WEB-INF/views/courses/form.jsp
 
 ### Explanation
 
-The form is still linked to the `course` object:
+The form is still bound to the `course` object:
 
 ```jsp
 <form:form modelAttribute="course">
 ```
 
-The fields are still linked to the `Course` properties:
+The fields are still bound to the properties of `Course`:
 
 ```jsp
 <form:input path="title" />
@@ -2040,7 +2041,7 @@ The key:
 course.title.notBlank
 ```
 
-searches message archives.
+is looked up in the message files.
 
 In Spanish:
 
@@ -2054,17 +2055,17 @@ In English:
 course.title.notBlank=The title is required.
 ```
 
-Thus form errors also change language.
+This way form errors also change language.
 
 ---
 
-[![Topics](https://img.youtube.com/vi/MBKMcnjJKME/0.jpg)](https://www.youtube.com/watch?v=MBKMcnjJKME&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
+[![Themes](https://img.youtube.com/vi/MBKMcnjJKME/0.jpg)](https://www.youtube.com/watch?v=MBKMcnjJKME&list=PLzA2VyZwsq_-_2eSWslazLtvKEolZduFi)
 
 ---
 
-# Part 3. Local issues
+# Part 3. Local themes
 
-## 22. What are local issues?
+## 22. What are local themes?
 
 A local theme allows you to change the visual appearance of the application according to a user preference.
 
@@ -2133,7 +2134,7 @@ The class is annotated with:
 @Controller
 ```
 
-Therefore, Spring detects it as a driver.
+Therefore, Spring detects it as a controller.
 
 The annotation:
 
@@ -2153,7 +2154,7 @@ The method:
 @GetMapping("/change")
 ```
 
-serves the route:
+handles the route:
 
 ```text
 /theme/change
@@ -2171,7 +2172,7 @@ The parameter is received here:
 @RequestParam(defaultValue = "light") String theme
 ```
 
-If the user does not submit any topics, the default value will be:
+If the user does not send any theme, the default value will be:
 
 ```text
 light
@@ -2192,13 +2193,13 @@ Solo aceptamos "dark" como valor especial.
 Cualquier otro valor se convierte en "light".
 ```
 
-Then we save the preference in session:
+Then we save the preference in the session:
 
 ```java
 session.setAttribute("theme", theme);
 ```
 
-Finally we redirect to the beginning:
+Finally we redirect to the home page:
 
 ```java
 return "redirect:/home";
@@ -2304,7 +2305,7 @@ Since `styles-dark.css` is loaded later, it can override the colors defined in `
 
 ---
 
-## 25. Update JSPs to load the dark theme
+## 25. Update the JSPs to load the dark theme
 
 In the JSPs where we want to allow a dark theme, we add this line at the beginning, after the `taglib` directives:
 
@@ -2338,7 +2339,7 @@ Si el tema actual es dark, carga también styles-dark.css.
 
 ---
 
-## 26. Update `styles.css` for toolbar
+## 26. Update `styles.css` for the toolbar
 
 We add these styles to the end of:
 
@@ -2386,11 +2387,11 @@ With:
 justify-content: space-between;
 ```
 
-The navigation is on the left and the toolbar is on the right.
+the navigation stays on the left and the toolbar on the right.
 
 ---
 
-## 27. Complete Theme Change Flow
+## 27. Complete theme change flow
 
 When the user clicks the dark theme link:
 
@@ -2410,7 +2411,7 @@ this happens:
 7. La página se muestra con tema oscuro.
 ```
 
-When the user clicks the clear theme link:
+When the user clicks the light theme link:
 
 ```text
 /theme/change?theme=light
@@ -2432,7 +2433,7 @@ this happens:
 
 ## 28. Check exception handling
 
-Start Tomcat and enter:
+Start Tomcat and go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses/detail?id=999
@@ -2444,7 +2445,7 @@ Expected result:
 Debe aparecer una página de error indicando que el curso no existe.
 ```
 
-Then enter:
+Then go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/pagina-inventada
@@ -2460,7 +2461,7 @@ Debe aparecer la página 404 personalizada.
 
 ## 29. Check internationalization
 
-Enter:
+Go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/home?lang=es
@@ -2472,7 +2473,7 @@ Expected result:
 La aplicación debe mostrarse en español.
 ```
 
-Enter:
+Go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/home?lang=en
@@ -2484,7 +2485,7 @@ Expected result:
 La aplicación debe mostrarse en inglés.
 ```
 
-Then enter:
+Then go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/courses
@@ -2500,7 +2501,7 @@ El idioma debe mantenerse, porque se ha guardado en sesión.
 
 ## 30. Check themes
 
-Enter:
+Go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/theme/change?theme=dark
@@ -2512,7 +2513,7 @@ Expected result:
 La aplicación debe mostrarse con tema oscuro.
 ```
 
-Then enter:
+Then go to:
 
 ```text
 http://localhost:8080/spring-mvc-day1/theme/change?theme=light
@@ -2528,7 +2529,7 @@ La aplicación debe volver al tema claro.
 
 # Part 5. Common mistakes
 
-## 31. Error: `GlobalExceptionHandler` is not executed
+## 31. Error: `GlobalExceptionHandler` does not run
 
 Check that the class has:
 
@@ -2536,7 +2537,7 @@ Check that the class has:
 @ControllerAdvice
 ```
 
-It also checks that it is inside the package that Spring scans:
+Also check that it is inside the package that Spring scans:
 
 ```xml
 <context:component-scan base-package="com.example.springmvcday1" />
@@ -2546,11 +2547,11 @@ If the class is outside that package, Spring will not detect it.
 
 ---
 
-## 32. Error: Exception is not caught
+## 32. Error: The exception is not caught
 
 Check that the exception type matches.
 
-If you cast:
+If you throw:
 
 ```java
 throw new CourseNotFoundException(id);
@@ -2564,7 +2565,7 @@ the handler must have:
 
 ---
 
-## 33. Error: language texts do not change
+## 33. Error: Language texts do not change
 
 Check that you have `messageSource` configured:
 
@@ -2582,7 +2583,7 @@ Also check that the files are in:
 src/main/resources
 ```
 
-and they are called exactly:
+and that they are named exactly:
 
 ```text
 messages.properties
@@ -2592,7 +2593,7 @@ messages_en.properties
 
 ---
 
-## 34. Error: `?lang=en` does not change language
+## 34. Error: `?lang=en` does not change the language
 
 Check that the interceptor exists:
 
@@ -2615,7 +2616,7 @@ And check that the `localeResolver` also exists:
 
 ---
 
-## 35. Error: key appears instead of text
+## 35. Error: The key appears instead of the text
 
 If something like this appears on the screen:
 
@@ -2623,13 +2624,13 @@ If something like this appears on the screen:
 ???nav.home???
 ```
 
-or directly the key:
+or just the key itself:
 
 ```text
 nav.home
 ```
 
-it means that Spring does not find that key in the `.properties` files.
+it means that Spring cannot find that key in the `.properties` files.
 
 Check that the key written in the JSP exactly matches the key in the file.
 
@@ -2647,7 +2648,7 @@ nav.courses=Cursos
 
 ---
 
-## 36. Error: Dark theme not applied
+## 36. Error: The dark theme is not applied
 
 Check that the file exists:
 
@@ -2655,7 +2656,7 @@ Check that the file exists:
 src/main/webapp/resources/css/styles-dark.css
 ```
 
-Also check that the JSP loads the file when the topic is `dark`:
+Also check that the JSP loads the file when the theme is `dark`:
 
 ```jsp
 <c:if test="${currentTheme == 'dark'}">
@@ -2663,7 +2664,7 @@ Also check that the JSP loads the file when the topic is `dark`:
 </c:if>
 ```
 
-And check that the controller saves the theme in session:
+And check that the controller saves the theme in the session:
 
 ```java
 session.setAttribute("theme", theme);
@@ -2671,7 +2672,7 @@ session.setAttribute("theme", theme);
 
 ---
 
-## 37. Bug: Language and theme bar looks bad
+## 37. Error: The language and theme bar looks wrong
 
 Check that you have added the `.toolbar` styles to `styles.css`:
 
@@ -2697,9 +2698,9 @@ And that the `header` uses flex:
 
 # Part 6. Final summary
 
-In this topic we have added three transversal functionalities to the application.
+In this topic we have added three cross-cutting features to the application.
 
-##Exception management
+## Exception handling
 
 We have created:
 
@@ -2748,7 +2749,7 @@ Spring busca el texto en el idioma activo.
 
 ---
 
-## Local topics
+## Local themes
 
 We have created:
 
@@ -2757,7 +2758,7 @@ ThemeController
 styles-dark.css
 ```
 
-And we have used session to save the visual preference.
+And we have used the session to save the visual preference.
 
 The main idea is:
 

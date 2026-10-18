@@ -2,9 +2,9 @@
 
 ## **1. Introduction to colors in CSS**
 
-CSS allows you to define colors in various ways to apply to texts, backgrounds and borders. Different formats can be used to specify colors.
+CSS lets you define colors in several ways and apply them to text, backgrounds and borders. You can use different formats to specify colors.
 
-### **Methods to define colors:**
+### **Ways to define colors:**
 
 - **Color name**: `red`, `blue`, `green`, etc.
 - **Hexadecimal**: `#ff0000`, `#00ff00`, `#0000ff`
@@ -35,7 +35,7 @@ CSS allows you to define colors in various ways to apply to texts, backgrounds a
 
 ## **2. `background-color` property**
 
-Allows you to define the background color of an element.
+It lets you set the background color of an element.
 
 ```css
 div {
@@ -44,7 +44,7 @@ div {
 ```
 
 
-Solid colors can be combined with transparencies using `rgba` or `hsla`.
+You can combine solid colors with transparency using `rgba` or `hsla`.
 
 ```css
 div {
@@ -57,7 +57,7 @@ div {
 
 ## **3. Backgrounds with images**
 
-CSS allows you to define images as the background of an element with `background-image`.
+CSS lets you use images as the background of an element with `background-image`.
 
 ```css
 div {
@@ -79,7 +79,7 @@ div {
 
 ## **4. `background-repeat` property**
 
-Defines how a background image repeats.
+It defines how a background image is repeated.
 
 ```css
 div {
@@ -92,9 +92,9 @@ div {
 
 ---
 
-## **5. Property `background-position`**
+## **5. `background-position` property**
 
-Defines the position of a background image within the container.
+It defines the position of a background image inside the container.
 
 ```css
 div {
@@ -111,9 +111,9 @@ Possible values:
 
 ---
 
-## **6. Property `background-attachment`**
+## **6. `background-attachment` property**
 
-Defines whether the background moves with the page or remains fixed.
+It defines whether the background scrolls with the page or stays fixed.
 
 ```css
 div {
@@ -124,15 +124,15 @@ div {
 
 Possible values:
 
-- `scroll` (by default the background scrolls with the page)
-- `fixed` (the background remains fixed when scrolling)
-- `local` (moves with item content)
+- `scroll` (the default: the background scrolls with the page)
+- `fixed` (the background stays fixed when you scroll)
+- `local` (it moves with the element's content)
 
 ---
 
 ## **7. Backgrounds with gradients**
 
-CSS allows creating gradients with the `background` property.
+CSS lets you create gradients with the `background` property.
 
 **Linear gradient:**
 
@@ -143,7 +143,7 @@ div {
 ```
 
 
-**Radial Gradient:**
+**Radial gradient:**
 
 ```css
 div {
@@ -158,14 +158,14 @@ div {
 
 ---
 
-## **8. Good practices when using colors and backgrounds**
+## **8. Best practices for colors and backgrounds**
 
-- Use colors with sufficient contrast to improve readability.
-- Prefer `rgba` to handle transparencies when necessary.
-- Do not abuse large background images to improve performance.
-- Use `background-size` correctly so that the images adapt correctly.
+- Use colors with enough contrast to improve readability.
+- Prefer `rgba` to handle transparency when you need it.
+- Don't overuse large background images, so performance doesn't suffer.
+- Use `background-size` properly so that images fit correctly.
 - Combine colors and gradients to achieve attractive designs.
 
 ---
 
-In the next topic, we will explore **typefaces and fonts in CSS**, including how to customize texts and use external fonts.
+In the next topic, we will explore **typography and fonts in CSS**, including how to customize text and use external fonts.

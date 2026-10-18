@@ -2,9 +2,9 @@
 
 ## **1. Introduction**
 
-In React, a big part of interaction is **connecting state to interface**.
+In React, a big part of interaction is **connecting the state to the interface**.
 
-This not only means displaying text on the screen, but also controlling **HTML attributes** such as:
+This doesn't just mean displaying text on the screen, but also controlling **HTML attributes** such as:
 
 - `disabled`
 - `checked`
@@ -13,39 +13,39 @@ This not only means displaying text on the screen, but also controlling **HTML a
 - `src`
 - `title`
 
-When an attribute depends on state (or variables), we say that it is a **reactive attribute**: it changes automatically when the state changes.
+When an attribute depends on state (or variables), we say it's a **reactive attribute**: it changes automatically when the state changes.
 
 In this topic you will learn:
 
-- How to link state with attributes.
-- How to use boolean attributes (like `disabled` either `checked`).
+- How to bind state to attributes.
+- How to use boolean attributes (like `disabled` or `checked`).
 - How to control `value` in inputs.
-- Typical cases and good practices.
+- Typical cases and best practices.
 
 ---
 
 ## **2. Reminder: JSX uses braces `{}` for expressions**
 
-In React, to assign a dynamic value to an attribute, curly braces are used:
+In React, to assign a dynamic value to an attribute, you use curly braces:
 
 ```js
 <img src={imageUrl} />
 ```
 
-This goes for:
+This works for:
 
 - Variables
 - Expressions
 - Conditions
-- Status
+- State
 
 ---
 
-## **3. Attribute `disabled` (buttons disabled)**
+## **3. The `disabled` attribute (disabled buttons)**
 
-`disabled` is a boolean attribute. In React you can activate or deactivate it with an expression.
+`disabled` is a boolean attribute. In React you can turn it on or off with an expression.
 
-### **Example: disable a button if the input is empty**
+### **Example: disabling a button if the input is empty**
 
 ```js
 import { useState } from "react";
@@ -73,11 +73,11 @@ export default SaveButton;
 Here:
 
 - `disabled={isDisabled}` changes automatically.
-- If the user types, the button is activated.
+- If the user types, the button is enabled.
 
 ---
 
-## **4. Attribute `checked` (checkbox controlled)**
+## **4. The `checked` attribute (controlled checkbox)**
 
 A checkbox is controlled with `checked`.
 
@@ -106,17 +106,17 @@ export default TermsCheckbox;
 
 Here:
 
-- `checked={accepted}` It depends on the state.
+- `checked={accepted}` depends on the state.
 - `event.target.checked` returns `true/false`.
 
 ---
 
-## **5. Attribute `value` (controlled inputs)**
+## **5. The `value` attribute (controlled inputs)**
 
-A controlled input is the most frequent case of a reactive attribute:
+A controlled input is the most common case of a reactive attribute:
 
-- `value` It depends on the state.
-- `onChange` updates the status.
+- `value` depends on the state.
+- `onChange` updates the state.
 
 Example:
 
@@ -142,7 +142,7 @@ export default EmailInput;
 
 Any attribute can be dynamic.
 
-### **6.1. `placeholder` dynamic**
+### **6.1. Dynamic `placeholder`**
 
 ```js
 function SearchInput() {
@@ -155,7 +155,7 @@ function SearchInput() {
 export default SearchInput;
 ```
 
-### **6.2. `title` dynamic**
+### **6.2. Dynamic `title`**
 
 ```js
 function HelpIcon() {
@@ -167,7 +167,7 @@ function HelpIcon() {
 export default HelpIcon;
 ```
 
-### **6.3. `src` dynamic**
+### **6.3. Dynamic `src`**
 
 ```js
 function Avatar() {
@@ -183,7 +183,7 @@ export default Avatar;
 
 ## **7. Reactive classes with `className`**
 
-Although we already saw the issue of styles, `className` It is also an attribute and can be reactive.
+Although we've already covered styles, `className` is also an attribute and can be reactive.
 
 Example:
 
@@ -199,23 +199,23 @@ export default Status;
 
 ---
 
-## **8. Good practices**
+## **8. Best practices**
 
 - For boolean attributes, always pass a boolean (`true/false`).
-- For inputs, avoid mixing controlled and uncontrolled.
-- Calculates derived values ​​(such as `isDisabled`) in variables to improve readability.
+- For inputs, avoid mixing controlled and uncontrolled ones.
+- Compute derived values (such as `isDisabled`) in variables to improve readability.
 - Remember:
 
   - `event.target.value` for text
-  - `event.target.checked` for checkbox
+  - `event.target.checked` for checkboxes
 
 ---
 
-## **9. To take into account**
+## **9. Things to keep in mind**
 
-- A reactive attribute is an attribute whose value depends on the state or variables.
+- A reactive attribute is an attribute whose value depends on the state or on variables.
 - React automatically updates the UI when the state changes.
-- `disabled`, `checked` and `value` They are the most common.
+- `disabled`, `checked` and `value` are the most common ones.
 
 ---
 
@@ -223,4 +223,4 @@ export default Status;
 
 ---
 
-In the next topic we will see **conditional rendering**, to show or hide elements in the UI depending on the state.
+In the next topic we'll look at **conditional rendering**, to show or hide elements in the UI depending on the state.

@@ -1,14 +1,14 @@
-# **Topic 1: Introduction to Vue.js and Environment Configuration with Vite**
+# **Topic 1: Introduction to Vue.js and Environment Setup with Vite**
 
 ## **1. What is Vue.js?**
 
 Vue.js is a **progressive framework** for building user interfaces. It was created by **Evan You** and stands out for its:
 
-- **Simplicity and smooth learning curve**.
+- **Simplicity and gentle learning curve**.
 - **Approach based on reusable components**.
 - **Declarative reactivity** that updates the interface automatically.
-- **Flexibility** to integrate into new or existing projects.
-- **Lightness** in size and speed in execution.
+- **Flexibility** to fit into new or existing projects.
+- **Small size** and **fast performance**.
 
 ---
 
@@ -25,9 +25,9 @@ npm -v
 
 ---
 
-## **3. Create a new Vue project with Vite**
+## **3. Creating a new Vue project with Vite**
 
-**Vite** is a project manager. Vue recommends using **Vite** as a development tool because of its speed and easy configuration.
+**Vite** is a project manager. Vue recommends using **Vite** as a development tool because it's fast and easy to configure.
 
 To create a new Vue project with Vite, run:
 
@@ -35,25 +35,25 @@ To create a new Vue project with Vite, run:
 npm create vue@latest
 ```
 
-### Creation Process
+### The creation process
 
-1. The wizard will ask you for the name of the project. For example:
+1. The wizard will ask you for the project name. For example:
 
 ```
 Project name: my-vue-project
 ```
 
-2. Select the optional features (pinia, router, testing, etc.) or leave the default options to start.
+2. Select the optional features (pinia, router, testing, etc.) or keep the default options to get started.
 
-3. Access the project directory:
+3. Go to the project directory:
 
-- Via terminal:
+- From the terminal:
 
 ```sh
 cd my-vue-project
 ```
 
-- Or by moving directly to the folder: file -> open folder -> my-vue-project
+- Or by opening the folder directly: File -> Open Folder -> my-vue-project
 
 4. Install the dependencies:
 
@@ -85,7 +85,7 @@ my-vue-project/
 
 ---
 
-## **5. Raise the development server**
+## **5. Starting the development server**
 
 To start the development server, run:
 
@@ -101,9 +101,9 @@ http://localhost:5173/
 
 ---
 
-## **6. Basic composition of a component in Vue**
+## **6. The basic makeup of a Vue component**
 
-Vue uses a format called **Single File Component (SFC)**, which combines logic (JavaScript), template (HTML) and styles (CSS) in a single `.vue` file.
+Vue uses a format called **Single File Component (SFC)**, which combines logic (JavaScript), the template (HTML) and styles (CSS) in a single `.vue` file.
 
 Example:
 
@@ -129,11 +129,11 @@ p {
 
 To improve the development experience, install the following extensions:
 
-- **Vue - Official**: Official extension for Vue 3.
-- **ESLint**: To validate the quality of the code.
-- **Prettier**: Code formatter.
+- **Vue - Official**: The official extension for Vue 3.
+- **ESLint**: Checks the quality of your code.
+- **Prettier**: A code formatter.
 
-> Note: The Vue - Official extension is especially important for .vue files to display correctly.
+> Note: The Vue - Official extension is especially important to make .vue files display correctly.
 
 ---
 
@@ -143,20 +143,20 @@ To improve the development experience, install the following extensions:
 
 ## Important commands
 
-Create Vue project with Vite:
+Create a Vue project with Vite:
 
 ```sh
 npm create vue@latest
 ```
 
-Access the project and install dependencies:
+Go to the project and install the dependencies:
 
 ```sh
 cd my-vue-project
 npm install
 ```
 
-Raise development server:
+Start the development server:
 
 ```sh
 npm run dev
@@ -164,4 +164,4 @@ npm run dev
 
 ---
 
-In the next topic we will explore **components in Vue.js**.
+In the next topic, we'll explore **components in Vue.js**.

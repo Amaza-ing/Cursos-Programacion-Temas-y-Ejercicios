@@ -26,41 +26,41 @@ This information can be used by:
 - the IDE
 - external tools
 - frameworks
-- bookstores
+- libraries
 - the program itself at runtime
 
 In modern Java, annotations appear constantly.
 
 For example, they are widely used in:
 
--Spring
+- Spring
 - Jakarta EE
 - JUnit
 - Hibernate
--Lombok
-- validations
+- Lombok
+- validation
 - JSON serialization
 - documentation
 - code analysis
 
 In this topic you will learn:
 
-- What is an annotation
-- What are annotations for?
+- What an annotation is
+- What annotations are for
 - Common Java annotations
 - `@Override`
 - `@Deprecated`
 - `@SuppressWarnings`
 - `@FunctionalInterface`
 - How to create your own annotations
-- What are `@Retention` and `@Target`
+- What `@Retention` and `@Target` are
 - How to use annotations with classes, methods and attributes
-- Basic introduction to reading notes with reflection
-- Typical errors and good practices
+- A basic introduction to reading annotations with reflection
+- Common mistakes and best practices
 
 ---
 
-## 2. What is an annotation
+## 2. What is an annotation?
 
 An annotation is a way to add metadata to code.
 
@@ -87,7 +87,7 @@ public class Dog extends Animal {
 }
 ```
 
-The annotation is not a normal instruction like an `if` or an `for`.  
+An annotation is not a regular statement like an `if` or a `for`.  
 It is extra information that Java or a tool can interpret.
 
 ---
@@ -98,17 +98,17 @@ Annotations can be used for many things.
 
 Some common uses are:
 
-- notify the compiler
-- generate warnings
-- mark obsolete code
-- configure frameworks
-- validate data
-- define web routes
-- indicate automated tests
-- map classes to database tables
-- reduce repetitive code
+- giving information to the compiler
+- generating warnings
+- marking obsolete code
+- configuring frameworks
+- validating data
+- defining web routes
+- marking automated tests
+- mapping classes to database tables
+- reducing repetitive code
 
-Typical example in frameworks:
+A typical example in frameworks:
 
 ```java
 @RestController
@@ -132,7 +132,7 @@ Some of the most important are:
 - `@FunctionalInterface`
 - `@SafeVarargs`
 
-In this topic we will see the most useful ones to start with.
+In this topic we'll look at the most useful ones to start with.
 
 ---
 
@@ -159,7 +159,7 @@ public class Dog extends Animal {
 }
 ```
 
-Annotation helps detect errors.
+The annotation helps detect errors.
 
 ---
 
@@ -209,13 +209,13 @@ This makes it clear that `print` comes from the interface.
 
 ## 8. `@Deprecated`
 
-`@Deprecated` indicates that an item is no longer recommended.
+`@Deprecated` indicates that an element is no longer recommended.
 
-Can be applied to:
+It can be applied to:
 
 - classes
 - methods
-- builders
+- constructors
 - attributes
 
 Example:
@@ -251,7 +251,7 @@ The IDE will normally display a warning when using `oldMethod`.
 
 ## 9. What `@Deprecated` is for
 
-It is used to warn that something still exists, but should not be used in new code.
+It warns that something still exists, but shouldn't be used in new code.
 
 This is very common when an API evolves.
 
@@ -263,14 +263,14 @@ public void loginWithUsername(String username) {
 }
 ```
 
-Maybe now you prefer:
+Maybe this is now preferred:
 
 ```java
 public void loginWithEmail(String email) {
 }
 ```
 
-The annotation allows compatibility to be maintained without removing the bash method.
+The annotation lets you keep compatibility without removing the method all at once.
 
 ---
 
@@ -286,8 +286,8 @@ public void oldMethod() {
 
 This indicates:
 
-- since which version is it obsolete
-- if it is planned to be removed
+- which version it has been deprecated since
+- whether it is scheduled for removal
 
 Example:
 
@@ -319,7 +319,7 @@ public class Main {
 }
 ```
 
-Here you are saying to ignore the warning that `message` is not used.
+Here you're telling the compiler to ignore the warning that `message` is not used.
 
 Another example:
 
@@ -337,7 +337,7 @@ This suppresses the warning for using a deprecated method.
 
 ---
 
-## 12. Use `@SuppressWarnings` carefully
+## 12. Using `@SuppressWarnings` carefully
 
 `@SuppressWarnings` can be useful, but it should not be abused.
 
@@ -345,9 +345,9 @@ If a warning appears, it's usually a good idea to ask yourself:
 
 - is there a real problem?
 - can I improve the code?
-- Am I hiding something important?
+- am I hiding something important?
 
-Not recommended example:
+An example that's not recommended:
 
 ```java
 @SuppressWarnings("all")
@@ -403,7 +403,7 @@ This annotation:
 - helps the compiler detect errors
 - makes it clear that the interface is intended for lambdas
 
-Example of use:
+Usage example:
 
 ```java
 @FunctionalInterface
@@ -430,7 +430,7 @@ Annotations can be placed on different elements of the code.
 
 For example:
 
-### 15.1. in a class
+### 15.1. On a class
 
 ```java
 @Deprecated
@@ -438,7 +438,7 @@ public class OldService {
 }
 ```
 
-### 15.2. in a method
+### 15.2. On a method
 
 ```java
 @Override
@@ -447,14 +447,14 @@ public String toString() {
 }
 ```
 
-### 15.3. in an attribute
+### 15.3. On an attribute
 
 ```java
 @Deprecated
 private String oldField;
 ```
 
-### 15.4. in an interface
+### 15.4. On an interface
 
 ```java
 @FunctionalInterface
@@ -463,7 +463,7 @@ public interface Action {
 }
 ```
 
-### 15.5. In parameters
+### 15.5. On parameters
 
 ```java
 public void print(@Deprecated String text) {
@@ -476,7 +476,7 @@ Whether an annotation can be used in one place or another depends on how it is d
 
 ## 16. Annotations in frameworks
 
-Many times you will see annotations in frameworks.
+You'll often see annotations in frameworks.
 
 For example, in Spring:
 
@@ -515,19 +515,19 @@ Each framework interprets its own annotations.
 
 ---
 
-## 17. Important idea: an annotation does not do magic on its own
+## 17. Key idea: an annotation doesn't do any magic on its own
 
 An annotation only adds information.
 
 For it to take effect, someone must read that information.
 
-You can read it:
+It can be read by:
 
 - the compiler
 - the IDE
 - a framework
-- a bookstore
-- own code through reflection
+- a library
+- your own code, through reflection
 
 Example:
 
@@ -537,11 +537,11 @@ Example:
 
 This annotation works because JUnit looks for it and runs that method as a test.
 
-If there wasn't a tool that read `@Test`, the annotation wouldn't do anything useful on its own.
+If there were no tool reading `@Test`, the annotation wouldn't do anything useful on its own.
 
 ---
 
-## 18. Create your own annotation
+## 18. Creating your own annotation
 
 You can create your own annotations using `@interface`.
 
@@ -564,7 +564,7 @@ Here we have created an annotation called `Important`.
 
 ---
 
-## 19. Basic syntax of an own annotation
+## 19. Basic syntax of a custom annotation
 
 ```java
 public @interface AnnotationName {
@@ -586,7 +586,7 @@ public class ProductService {
 }
 ```
 
-For now, this annotation only marks something as reviewable.
+For now, this annotation only marks something as needing review.
 
 ---
 
@@ -614,9 +614,9 @@ Here `name` is an element of the annotation.
 
 ---
 
-## 21. Element named `value`
+## 21. An element named `value`
 
-If an annotation has an element called `value`, you can use shorter syntax.
+If an annotation has an element called `value`, you can use a shorter syntax.
 
 Definition:
 
@@ -626,7 +626,7 @@ public @interface Version {
 }
 ```
 
-Full use:
+Full usage:
 
 ```java
 @Version(value = "1.0")
@@ -634,7 +634,7 @@ public class ProductService {
 }
 ```
 
-Abbreviated use:
+Shorthand usage:
 
 ```java
 @Version("1.0")
@@ -642,7 +642,7 @@ public class ProductService {
 }
 ```
 
-This only works especially with the item called `value`.
+This special shorthand only works with the element called `value`.
 
 ---
 
@@ -667,7 +667,7 @@ public class TaskService {
 
 Here `priority` is `1` because it has a default value.
 
-You can also indicate another value:
+You can also specify a different value:
 
 ```java
 @TaskInfo(author = "Laura", priority = 3)
@@ -679,7 +679,7 @@ public class TaskService {
 
 ## 23. Types allowed in annotation elements
 
-The elements of an annotation cannot be any type.
+The elements of an annotation can't be of just any type.
 
 They can be, among others:
 
@@ -687,7 +687,7 @@ They can be, among others:
 - `String`
 - `Class`
 - enums
-- other notes
+- other annotations
 - arrays of the above types
 
 Example:
@@ -740,14 +740,14 @@ The annotation only exists in the source code.
 @Retention(RetentionPolicy.SOURCE)
 ```
 
-Typical example:
+Typical examples:
 
 - analysis tools
 - annotations that only matter during compilation
 
 ### 25.2. `CLASS`
 
-The annotation is saved in the `.class`, but is not normally available at runtime by reflection.
+The annotation is stored in the `.class` file, but it is not normally available at runtime through reflection.
 
 ```java
 @Retention(RetentionPolicy.CLASS)
@@ -755,7 +755,7 @@ The annotation is saved in the `.class`, but is not normally available at runtim
 
 ### 25.3. `RUNTIME`
 
-The annotation is persisted at runtime and can be read with reflection.
+The annotation is kept at runtime and can be read with reflection.
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
@@ -791,7 +791,7 @@ This means that `@Run` can only be applied to methods.
 
 ---
 
-## 27. Typical values of `ElementType`
+## 27. Common values of `ElementType`
 
 Some common values are:
 
@@ -799,7 +799,7 @@ Some common values are:
 - `METHOD` → methods
 - `FIELD` → attributes
 - `PARAMETER` → parameters
-- `CONSTRUCTOR` → builders
+- `CONSTRUCTOR` → constructors
 - `LOCAL_VARIABLE` → local variables
 - `PACKAGE` → packages
 
@@ -841,14 +841,14 @@ public class UserService {
 
 This annotation:
 
-- preserved at runtime
+- is kept at runtime
 - can only be applied to types such as classes or interfaces
 
 ---
 
-## 29. Apply an annotation to multiple element types
+## 29. Applying an annotation to multiple element types
 
-You can allow multiple destinations.
+You can allow multiple targets.
 
 ```java
 import java.lang.annotation.ElementType;
@@ -872,7 +872,7 @@ public class ProductService {
 
 ---
 
-## 30. Guided Example: `@Todo` Annotation
+## 30. Guided example: a `@Todo` annotation
 Let's create an annotation to mark pending parts of the code.
 
 ### 30.1. `Todo.java`
@@ -891,7 +891,7 @@ public @interface Todo {
 }
 ```
 
-### 30.2. Use
+### 30.2. Usage
 
 ```java
 @Todo(value = "Review validation rules", author = "Laura")
@@ -907,26 +907,26 @@ public class UserService {
 
 ## 31. Introduction to reflection
 
-**Reflection** allows classes, methods, and attributes to be inspected at runtime.
+**Reflection** lets you inspect classes, methods and attributes at runtime.
 
 With reflection you can ask things like:
 
-- what methods does a class have
-- what attributes does it have
-- what notes does it have
+- what methods a class has
+- what attributes it has
+- what annotations it has
 - what constructors exist
 
-The annotations with:
+Annotations with:
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
 ```
 
-They can be read by reflection.
+can be read through reflection.
 
 ---
 
-## 32. Read a class annotation
+## 32. Reading a class annotation
 
 Let's assume this annotation:
 
@@ -969,7 +969,7 @@ true
 
 ---
 
-## 33. Read values from an annotation
+## 33. Reading values from an annotation
 
 Annotation:
 
@@ -1015,7 +1015,7 @@ Laura
 
 ---
 
-## 34. Read method annotations
+## 34. Reading method annotations
 
 Annotation:
 
@@ -1072,9 +1072,9 @@ Method with @Run: task1
 
 ---
 
-## 35. Execute methods marked with an annotation
+## 35. Running methods marked with an annotation
 
-This example is more advanced, but it helps understand how tools like JUnit work.
+This example is more advanced, but it helps you understand how tools like JUnit work.
 
 ```java
 import java.lang.reflect.Method;
@@ -1125,7 +1125,7 @@ This is a very simple example of how a tool can search for annotations and act o
 
 ## 36. Repeatable annotations
 
-Java allows the same annotation to be repeated on the same element if it is prepared for it.
+Java allows the same annotation to be repeated on the same element if the annotation is designed for it.
 
 This is done with:
 
@@ -1157,7 +1157,7 @@ You have already seen two:
 @Target(...)
 ```
 
-These do not annotate business classes directly, but rather configure how their own annotation works.
+These don't annotate business classes directly; instead, they configure how a custom annotation works.
 
 Example:
 
@@ -1184,14 +1184,14 @@ public record OldUser(String name, String email) {
 }
 ```
 
-You can also write down components:
+You can also annotate components:
 
 ```java
 public record User(@Deprecated String name, String email) {
 }
 ```
 
-In frameworks, this can be very useful for validations or serialization.
+In frameworks, this can be very useful for validation or serialization.
 
 Conceptual example:
 
@@ -1219,15 +1219,15 @@ module com.amazaing.app {
 
 This allows certain frameworks to inspect classes and annotations at runtime.
 
-At an initial level, remember this idea:
+For now, just remember this idea:
 
 - if a framework uses reflection, it may need special access in modular projects
 
 ---
 
-## 40. Complete example: mini task system
+## 40. Complete example: a mini task system
 
-Let's create an annotation to mark methods that need to be executed.
+Let's create an annotation to mark methods that should be run.
 
 ### 40.1. `RunTask.java`
 
@@ -1303,7 +1303,7 @@ Sending report...
 
 ---
 
-## 41. Complete example: annotation for roles
+## 41. Complete example: an annotation for roles
 
 ### 41.1. `RequiresRole.java`
 
@@ -1336,7 +1336,7 @@ public class AdminService {
 }
 ```
 
-### 41.3. Simple reading
+### 41.3. Reading the annotation (simple version)
 
 ```java
 import java.lang.reflect.Method;
@@ -1356,7 +1356,7 @@ public class Main {
 }
 ```
 
-This example does not implement actual security, but shows how an annotation can describe requirements.
+This example doesn't implement real security, but it shows how an annotation can describe requirements.
 
 ---
 
@@ -1365,7 +1365,7 @@ Creating your own annotations can make sense when you want to:
 
 - mark classes or methods
 - add readable metadata
-- create internal mini tools
+- build small internal tools
 - configure behavior
 - avoid repetitive code
 - design a small declarative API
@@ -1384,7 +1384,7 @@ This communicates intent clearly.
 
 ## 43. When not to create your own annotations
 
-You don't always need your own notes.
+You don't always need your own annotations.
 
 Avoid them if:
 
@@ -1425,22 +1425,22 @@ The key difference is:
 
 ---
 
-## 45. Typical mistakes when starting
+## 45. Common beginner mistakes
 
-### 45.1. Thinking that an annotation executes code on its own
+### 45.1. Thinking that an annotation runs code on its own
 
 It doesn't.  
 Someone must read it and interpret it.
 
-### 45.2. Forget `@Retention(RetentionPolicy.RUNTIME)`
+### 45.2. Forgetting `@Retention(RetentionPolicy.RUNTIME)`
 
-If you want to read the annotation with reflection running, you need:
+If you want to read the annotation with reflection at runtime, you need:
 
 ```java
 @Retention(RetentionPolicy.RUNTIME)
 ```
 
-### 45.3. Misuse `@Target`
+### 45.3. Misusing `@Target`
 
 If you define:
 
@@ -1450,34 +1450,34 @@ If you define:
 
 you will not be able to apply that annotation to a class.
 
-### 45.4. Abuse `@SuppressWarnings`
+### 45.4. Overusing `@SuppressWarnings`
 
 It can hide real problems.
 
-### 45.5. Create unnecessary annotations
+### 45.5. Creating unnecessary annotations
 
 Not everything needs its own annotation.
 
 ---
 
-## 46. Good practices
+## 46. Best practices
 
 - Use `@Override` whenever you override methods.
-- Use `@FunctionalInterface` in interfaces designed for lambdas.
+- Use `@FunctionalInterface` on interfaces designed for lambdas.
 - Use `@Deprecated` to mark code that should not be used in new versions.
 - Use `@SuppressWarnings` only when you understand the warning.
 - Define `@Retention` and `@Target` in your own annotations.
-- Use `RetentionPolicy.RUNTIME` only if you need to read the running annotation.
+- Use `RetentionPolicy.RUNTIME` only if you need to read the annotation at runtime.
 - Choose clear names for your annotations.
 - Create your own annotations only if they provide clarity or real functionality.
-- Remember that annotations are metadata, not business logic alone.
+- Remember that annotations are metadata, not business logic in themselves.
 
 ---
 
-## 47. To take into account
+## 47. Things to keep in mind
 
-- The annotations begin with `@`.
-- Add metadata to the code.
+- Annotations start with `@`.
+- They add metadata to the code.
 - They can be read by Java, tools, frameworks or reflection.
 - `@Override` helps avoid errors when overriding methods.
 - `@Deprecated` marks obsolete code.
@@ -1486,7 +1486,7 @@ Not everything needs its own annotation.
 - You can create your own annotations with `@interface`.
 - `@Retention` indicates how long an annotation is kept.
 - `@Target` indicates where it can be used.
-- To read running notes you need reflection and `RetentionPolicy.RUNTIME`.
+- To read annotations at runtime you need reflection and `RetentionPolicy.RUNTIME`.
 
 ---
 
@@ -1494,7 +1494,7 @@ Not everything needs its own annotation.
 
 Annotations are a very important tool in modern Java.
 
-They allow extra information to be added to the code in a structured way.
+They let you add extra information to the code in a structured way.
 
 Some annotations help the compiler:
 
@@ -1524,8 +1524,8 @@ public @interface Important {
 The main idea is:
 > an annotation describes something about the code, but needs some tool or logic to interpret it.
 
-Mastering annotations will help you better understand many Java libraries and frameworks, as well as allowing you to create more expressive code when it makes sense.
+Mastering annotations will help you better understand many Java libraries and frameworks, and will let you write more expressive code when it makes sense.
 
 ---
 
-In the next topic we will continue advancing with modern Java and we will see **Modules and Modern Java**, where you will learn how to organize projects with the module system and you will learn about some current ideas of the Java ecosystem.
+In the next topic we'll keep moving forward with modern Java and look at **Modules and Modern Java**, where you'll learn how to organize projects with the module system and discover some current ideas from the Java ecosystem.

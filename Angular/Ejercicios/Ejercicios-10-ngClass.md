@@ -4,13 +4,13 @@
 
 Below you will find exercises on how to apply dynamic classes and styles with `ngClass` in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Apply a dynamic class with `ngClass`**
 
-Create a component that applies a CSS class defined based on a variable.
+Create a component that applies a CSS class determined by a variable.
 
 <details><summary>Show solution</summary>
 
@@ -88,7 +88,7 @@ export class ExampleComponent {
 
 ### **Exercise 3: Apply conditional classes with `ngClass`**
 
-Uses an object to conditionally assign classes.
+Use an object to assign classes conditionally.
 
 <details><summary>Show solution</summary>
 
@@ -124,9 +124,9 @@ export class ExampleComponent {
 
 ---
 
-### **Exercise 4: Toggle Classes with a Button**
+### **Exercise 4: Toggle classes with a button**
 
-Create a button that allows you to toggle the application of a class in a paragraph.
+Create a button that toggles a class on a paragraph.
 
 <details><summary>Show solution</summary>
 

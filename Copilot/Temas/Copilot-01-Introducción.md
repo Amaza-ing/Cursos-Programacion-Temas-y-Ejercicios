@@ -1,20 +1,20 @@
 # Topic 01 — Introduction to generative AI and the Copilot ecosystem
 
-## 1. Objective of the topic
+## 1. Goal of the topic
 
-In this first topic we are going to introduce the fundamental concepts that allow us to understand what Copilot is, what its relationship is with generative artificial intelligence and how it can be used in professional contexts.
+In this first topic, we're going to introduce the fundamental concepts you need to understand what Copilot is, how it relates to generative artificial intelligence and how it can be used in professional contexts.
 
-The goal is not to learn a specific tool in depth yet, but to understand the general logic behind Copilot and start working with a key idea: **Generative AI does not replace professional judgment, but rather expands work capacity when used with supervision and critical sense**.
+The goal isn't to learn a specific tool in depth yet, but to understand the general logic behind Copilot and start working with a key idea: **generative AI doesn't replace professional judgment; it expands your capacity to work when it's used with supervision and critical thinking**.
 
-Upon finishing this topic you should be able to:
+By the end of this topic, you should be able to:
 
 - Explain what generative artificial intelligence is.
 - Understand what a language model is.
-- Differentiate between a traditional search and an AI-generated response.
+- Tell the difference between a traditional search and an AI-generated answer.
 - Understand what Copilot is as a family of tools.
 - Identify Copilot use cases in development, productivity, analysis and automation.
-- Recognize basic risks: errors, hallucinations, privacy, biases and excessive dependency.
-- Formulate your first prompts in a clear and useful way.
+- Recognize basic risks: errors, hallucinations, privacy, biases and overreliance.
+- Write your first prompts in a clear and useful way.
 
 ---
 
@@ -35,7 +35,7 @@ That content can take many forms:
 - Solution proposals.
 - Ideas to automate processes.
 
-Generative AI is not limited to searching for an already written answer. Instead, it generates a new response based on the received context and the patterns it has learned during its training.
+Generative AI doesn't just search for an answer that has already been written. Instead, it generates a new answer based on the context it receives and the patterns it learned during its training.
 
 For example, a generative AI tool may receive a request like this:
 
@@ -45,13 +45,13 @@ Explícame qué es una API REST con un ejemplo sencillo para una persona que est
 
 And it can return an explanation adapted to the requested level.
 
-You may also receive a technical request like this:
+It may also receive a technical request like this:
 
 ```text
 Crea una función en JavaScript que reciba una lista de productos y devuelva solo aquellos cuyo precio sea mayor que 100.
 ```
 
-And you can generate a possible implementation:
+And it can generate a possible implementation:
 
 ```javascript
 function filterExpensiveProducts(products) {
@@ -59,7 +59,7 @@ function filterExpensiveProducts(products) {
 }
 ```
 
-This type of tool can be very useful, but it is important to remember that **generating an answer does not mean guaranteeing that that answer is correct**.
+This type of tool can be very useful, but it's important to remember that **generating an answer doesn't guarantee that the answer is correct**.
 
 ---
 
@@ -67,11 +67,11 @@ This type of tool can be very useful, but it is important to remember that **gen
 
 Many current generative AI tools are based on **language models**.
 
-A language model is a system trained to process and generate text. To do this, it learns patterns from large amounts of information. Thanks to that training, you can predict which words, code fragments or structures are most likely in a given context.
+A language model is a system trained to process and generate text. To do this, it learns patterns from large amounts of information. Thanks to that training, it can predict which words, code snippets or structures are most likely in a given context.
 
-When we use a tool like Copilot, we typically write an instruction. That instruction is called **prompt**.
+When we use a tool like Copilot, we usually write an instruction. That instruction is called a **prompt**.
 
-The model analyzes the prompt, interprets the user's intention and generates a response.
+The model analyzes the prompt, interprets the user's intention and generates an answer.
 
 The general process would be:
 
@@ -79,12 +79,13 @@ The general process would be:
 Usuario → Prompt → Modelo de IA → Respuesta generada → Revisión humana
 ```
 
-The last part is essential. The response must be reviewed by a person, especially if it affects code, data, business decisions, important documents or sensitive information.
+The last part is essential. The answer must be reviewed by a person, especially if it affects code, data, business decisions, important documents or sensitive information.
 
 ---
 
 ## 4. Difference between traditional search and generative AI
-A traditional search attempts to locate existing information. For example, if we search on the Internet:
+
+A traditional search tries to find existing information. For example, if we search the internet for:
 
 ```text
 qué es GitHub Copilot
@@ -92,7 +93,7 @@ qué es GitHub Copilot
 
 The search engine will show us links to pages that already exist.
 
-Instead, a generative AI tool can create a new response from a request like this:
+A generative AI tool, on the other hand, can create a new answer from a request like this:
 
 ```text
 Explícame qué es GitHub Copilot en 5 líneas, con un ejemplo práctico para una persona que programa en JavaScript.
@@ -102,22 +103,22 @@ The main difference is this:
 
 | Traditional search | Generative AI |
 | --------------------------------------- | -------------------------------------------------- |
-| Find existing content | Generate new content |
-| Returns links or snippets | Returns a crafted response |
+| Finds existing content | Generates new content |
+| Returns links or snippets | Returns an elaborate answer |
 | Requires the user to compare sources | Can synthesize, explain or transform content |
-| Usually shows the original source | You can make a mistake if you don't check it |
+| Usually shows the original source | Can be wrong if it isn't reviewed |
 
-Therefore, in a professional context, we should not treat generative AI as an infallible source. We must treat her like a **work assistant**.
+That's why, in a professional context, we shouldn't treat generative AI as an infallible source. We should treat it as a **work assistant**.
 
 ---
 
 ## 5. What is Copilot
 
-The term **Copilot** is used to refer to different artificial intelligence tools created or integrated into the Microsoft and GitHub ecosystem.
+The term **Copilot** refers to different artificial intelligence tools created for or built into the Microsoft and GitHub ecosystem.
 
-The general idea of ​​Copilot is to act as an **intelligent assistant** that accompanies the user while they work.
+The general idea of Copilot is to act as a **smart assistant** that works alongside the user.
 
-Depending on the specific tool, Copilot can help:
+Depending on the specific tool, Copilot can help you:
 
 - Write code.
 - Explain existing code.
@@ -131,20 +132,20 @@ Depending on the specific tool, Copilot can help:
 - Create conversational agents.
 - Automate workflows.
 
-However, not all Copilots serve the same purpose. Throughout the course we will mainly distinguish between:
+However, not all Copilots serve the same purpose. Throughout the course, we'll mainly distinguish between:
 
 - **GitHub Copilot**, focused on software development.
-- **Microsoft Copilot**, aimed at general assistance, productivity and daily work.
-- **Microsoft 365 Copilot**, integrated into applications such as Word, Excel, PowerPoint, Outlook or Teams.
+- **Microsoft Copilot**, aimed at general assistance, productivity and everyday work.
+- **Microsoft 365 Copilot**, built into applications such as Word, Excel, PowerPoint, Outlook or Teams.
 - **Copilot Studio**, aimed at creating agents and conversational automations.
 
 ---
 
 ## 6. Copilot as an assistant, not as a substitute
 
-A simple way to understand Copilot is to compare it to a helper who works with you.
+A simple way to understand Copilot is to compare it to an assistant who works with you.
 
-It can help you move faster, but you shouldn't make critical decisions without supervision.
+It can help you move faster, but it shouldn't make critical decisions without supervision.
 
 Copilot can:
 
@@ -157,12 +158,12 @@ Copilot can:
 
 But the user must:
 
-- Check if the result is correct.
-- Check if the code works.
-- Validate if the information is reliable.
+- Check whether the result is correct.
+- Check whether the code works.
+- Validate whether the information is reliable.
 - Adapt the result to the real context.
-- Ensure that sensitive data is not shared.
-- Decide if the proposal fits with the project objectives.
+- Make sure that no sensitive data is shared.
+- Decide whether the proposal fits the project's goals.
 
 The basic rule of the course will be:
 
@@ -172,7 +173,8 @@ The basic rule of the course will be:
 
 ## 7. What is a prompt
 
-A **prompt** is the instruction we write to request something from a generative AI tool.
+A **prompt** is the instruction we write to ask a generative AI tool for something.
+
 A prompt can be very simple:
 
 ```text
@@ -193,25 +195,25 @@ Genera una función en JavaScript que reciba un array de usuarios y devuelva sol
 
 A good prompt usually includes:
 
-1. **Context**: what we are doing.
-2. **Objective**: what we want to achieve.
-3. **Restrictions**: what the response must respect.
+1. **Context**: what we're doing.
+2. **Goal**: what we want to achieve.
+3. **Constraints**: what the answer must respect.
 4. **Format**: how we want to receive the result.
 5. **Level of detail**: brief explanation, step by step, table, code, etc.
 
 ---
 
-## 8. Example of unhelpful prompt and improved prompt
+## 8. Example of an unhelpful prompt and an improved prompt
 
-### Prompt not very useful
+### Unhelpful prompt
 
 ```text
 Hazme una función.
 ```
 
-This prompt is too ambiguous. It does not indicate language, objective, input data, output data or restrictions.
+This prompt is too ambiguous. It doesn't state the language, the goal, the input data, the output data or any constraints.
 
-### Prompt improved
+### Improved prompt
 
 ```text
 Crea una función en JavaScript llamada calculateTotalPrice.
@@ -232,31 +234,31 @@ function calculateTotalPrice(products) {
 }
 ```
 
-This second prompt works better because it includes context, objective, data structure, and formatting criteria.
+This second prompt works better because it includes context, a goal, the data structure and formatting criteria.
 
 ---
 
 ## 9. How to work step by step with a generative AI tool
 
-When we use Copilot or any generative AI tool, it is advisable to follow an orderly process.
+When we use Copilot or any generative AI tool, it's a good idea to follow an orderly process.
 
 ### Step 1. Clearly define what you need
 
 Before writing the prompt, think about what you want to achieve.
 
-It is not the same to ask:
+Asking:
 
 ```text
 Explícame este código.
 ```
 
-What to order:
+isn't the same as asking:
 
 ```text
 Explícame este código paso a paso, como si estuviera aprendiendo JavaScript desde cero.
 ```
 
-The second request is more precise and will probably generate a more useful response.
+The second request is more precise and will probably generate a more useful answer.
 
 ### Step 2. Give context
 
@@ -268,9 +270,9 @@ For example:
 Estoy creando una aplicación web sencilla con JavaScript. Tengo una lista de tareas y quiero mostrar solo las que están completadas.
 ```
 
-### Step 3. Indicates the expected result
+### Step 3. State the expected result
 
-You can specify whether you want an explanation, code, a table, a list of steps, or a review.
+You can specify whether you want an explanation, code, a table, a list of steps or a review.
 
 ```text
 Devuélveme la respuesta en forma de pasos numerados.
@@ -284,9 +286,9 @@ Devuélveme solo el código, sin explicación adicional.
 Primero explícame el problema y después propón una solución.
 ```
 
-### Step 4. Add restrictions
+### Step 4. Add constraints
 
-Constraints help the answer better fit your needs.
+Constraints help the answer fit your needs better.
 
 Examples:
 
@@ -312,24 +314,24 @@ Never accept an important answer without reviewing it.
 
 In code, you should check:
 
-- Yes it compiles.
-- If it is executed.
-- If it really solves the problem.
-- If it respects the style of the project.
-- If it introduces vulnerabilities.
-- If it generates unnecessarily complex code.
+- Whether it compiles.
+- Whether it runs.
+- Whether it really solves the problem.
+- Whether it follows the project's style.
+- Whether it introduces vulnerabilities.
+- Whether it generates unnecessarily complex code.
 
-In text, you must check:
+In text, you should check:
 
-- If the information is correct.
-- If the tone is appropriate.
-- If important data is missing.
-- If there are doubtful claims.
-- If something has been invented.
+- Whether the information is correct.
+- Whether the tone is appropriate.
+- Whether important data is missing.
+- Whether there are questionable claims.
+- Whether anything has been made up.
 
 ### Step 6. Iterate
 
-The first answer does not have to be the definitive one. You can ask for improvements.
+The first answer doesn't have to be the final one. You can ask for improvements.
 
 Examples:
 
@@ -355,13 +357,13 @@ Genera una versión alternativa usando programación funcional.
 
 ---
 
-## 10. Copilot Use Cases
+## 10. Copilot use cases
 
 Copilot can be applied in different professional areas.
 
 ### 10.1 Software development
 
-In development, Copilot can help:
+In development, Copilot can help you:
 
 - Generate functions.
 - Complete code snippets.
@@ -383,13 +385,13 @@ Revisa esta función y dime si puede fallar con valores nulos o arrays vacíos. 
 
 ### 10.2 Productivity
 
-In productivity, Copilot can help:
+In productivity, Copilot can help you:
 
 - Write emails.
 - Summarize documents.
-- Transform notes into reports.
+- Turn notes into reports.
 - Prepare presentations.
-- Create schemes.
+- Create outlines.
 - Rewrite texts with another tone.
 - Extract pending tasks from a conversation.
 
@@ -401,7 +403,7 @@ Convierte estas notas de reunión en un resumen profesional con tres apartados: 
 
 ### 10.3 Automation
 
-In automation, Copilot can help:
+In automation, Copilot can help you:
 
 - Design workflows.
 - Create conversational agents.
@@ -417,7 +419,7 @@ Diseña un flujo de automatización para recibir solicitudes de soporte, clasifi
 
 ### 10.4 Analysis
 
-In analysis, Copilot can help:
+In analysis, Copilot can help you:
 
 - Interpret tables.
 - Generate formulas.
@@ -438,25 +440,25 @@ Analiza esta tabla de ventas y señala tres tendencias relevantes, posibles caus
 
 Copilot can be very useful, but it also has limits.
 
-### 11.1 You can be wrong
+### 11.1 It can be wrong
 
 An AI-generated answer can seem right and be wrong.
 
-This is especially dangerous because many times the response is worded confidently.
+This is especially dangerous because the answer is often worded confidently.
 
-For example, you can:
+For example, it can:
 
-- Invent a function that does not exist.
-- Using an API incorrectly.
-- Confuse versions of a library.
-- Propose code that does not compile.
+- Make up a function that doesn't exist.
+- Use an API incorrectly.
+- Mix up versions of a library.
+- Propose code that doesn't compile.
 - Give an incomplete explanation.
 
-### 11.2 May generate unsafe code
+### 11.2 It can generate insecure code
 
-The generated code may work, but may not be secure.
+The generated code may work and still not be secure.
 
-You may have problems like:
+It may have problems like:
 
 - Lack of data validation.
 - Exposure of sensitive information.
@@ -464,25 +466,25 @@ You may have problems like:
 - Vulnerable queries.
 - Weak error handling.
 
-### 11.3 May depend too much on visible context
+### 11.3 It can depend too much on the visible context
 
-Copilot responds based on the context available to him. If the context is incomplete, it may generate an incomplete response.
+Copilot answers based on the context it has available. If the context is incomplete, it may generate an incomplete answer.
 
-For example, if you only see an isolated feature and don't know the full architecture of the application, you may propose a solution that doesn't fit well with the project.
+For example, if it only sees an isolated function and doesn't know the full architecture of the application, it may propose a solution that doesn't fit well with the project.
 
-### 11.4 Can reinforce bad practices
+### 11.4 It can reinforce bad practices
 
-If a project already has messy code, Copilot can mimic that style.
+If a project already has messy code, Copilot can imitate that style.
 
-That is why it is convenient to define standards:
+That's why it's a good idea to define standards:
 
 - Naming conventions.
 - Folder structure.
-- Way of writing tests.
+- How tests are written.
 - Documentation style.
-- Safety rules.
+- Security rules.
 
-### 11.5 May generate dependency
+### 11.5 It can create dependency
 
 One of the most important risks is using Copilot without understanding what it proposes.
 
@@ -510,7 +512,7 @@ Now improve the request:
 Explícame qué es la inteligencia artificial generativa en un lenguaje sencillo, pensando en personas que trabajan en desarrollo web y nunca han usado herramientas de IA.
 ```
 
-### Step 3. Request a specific format
+### Step 3. Ask for a specific format
 
 ```text
 Explícame qué es la inteligencia artificial generativa en un lenguaje sencillo. Usa una introducción breve, una lista de usos profesionales y un ejemplo aplicado a desarrollo web.
@@ -527,10 +529,10 @@ Haz la explicación más práctica y añade un ejemplo de prompt para generar un
 Check:
 
 - Is the explanation correct?
-- Is the example understood?
+- Is the example easy to understand?
 - Does the code work?
-- Has something been invented?
-- Are there any important warnings missing?
+- Has anything been made up?
+- Is any important warning missing?
 
 ### Step 6. Adjust the prompt
 
@@ -550,9 +552,9 @@ A good prompt usually answers these questions:
 | ----------------------- | ------------------------------------------------------------ |
 | What do I want to achieve?  | Create a function, summarize a text, explain a concept |
 | In what context?       | Web project, business document, meeting, data table |
-| What restrictions are there? | No external libraries, formal tone, maximum 10 lines |
+| What constraints are there? | No external libraries, formal tone, maximum 10 lines |
 | What format do I want?    | Code, table, numbered steps, summary, checklist |
-| What level do I need?    | Beginner, Intermediate, Advanced, Technical, Executive |
+| What level do I need?    | Beginner, intermediate, advanced, technical, executive |
 
 General template:
 
@@ -576,30 +578,30 @@ Devuélveme solo el código con comentarios breves en español.
 
 ---
 
-## 14. Good practices from day one
+## 14. Best practices from day one
 
 When working with Copilot, follow these recommendations:
 
-1. **Do not paste sensitive information** if you are not clear about the environment, license and applicable privacy policy.
-2. **Do not accept code without reading it**.
+1. **Don't paste sensitive information** if you're not sure about the environment, the license and the applicable privacy policy.
+2. **Don't accept code without reading it**.
 3. **Run and test the generated code**.
 4. **Ask for explanations when you don't understand a solution**.
 5. **Break big problems into small steps**.
-6. **Don't use Copilot to hide lack of understanding**.
+6. **Don't use Copilot to hide a lack of understanding**.
 7. **Check the version of the tools or libraries**.
-8. **Adapt the result to the style of your project**.
+8. **Adapt the result to your project's style**.
 9. **Use specific prompts**.
-10. **Always maintain professional judgment**.
+10. **Always keep your professional judgment**.
 
 ---
 
 ## 15. Summary of the topic
 
-In this topic we have seen that generative AI allows us to create new content based on instructions given by the user. Copilot is part of this type of tools, but it is not a single tool: it is an ecosystem with different applications aimed at development, productivity, automation and the creation of agents.
+In this topic, we've seen that generative AI lets us create new content based on instructions given by the user. Copilot belongs to this type of tool, but it isn't a single tool: it's an ecosystem with different applications aimed at development, productivity, automation and agent creation.
 
-The fundamental idea is that Copilot should be understood as an assistant. It can speed up tasks, propose solutions, and help understand information, but it should not replace human review.
+The fundamental idea is that Copilot should be understood as an assistant. It can speed up tasks, propose solutions and help you understand information, but it shouldn't replace human review.
 
-To obtain good results, it is necessary to learn to write good prompts, provide context, define restrictions and always review the responses generated.
+To get good results, you need to learn how to write good prompts, provide context, define constraints and always review the answers generated.
 
 ---
 
@@ -609,10 +611,10 @@ Before moving on to the next topic, make sure you can answer these questions:
 
 - What is generative AI?
 - What is a language model?
-- What is the difference between searching for information and generating a response?
+- What is the difference between searching for information and generating an answer?
 - What is a prompt?
 - What types of tasks can Copilot do?
-- Why is it important to review your answers?
+- Why is it important to review its answers?
 - What are the risks of using Copilot without supervision?
 - What elements should a good prompt have?
 

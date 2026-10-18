@@ -2,11 +2,11 @@
 
 ## **1. Reactive variables in Vue 3**
 
-In Vue 3, reactive variables are created using `ref()` or `reactive()` within `<script setup>`. These variables allow the interface to update automatically when their values ​​change. To use `ref()` you must import it from `<script setup>`.
+In Vue 3, reactive variables are created using `ref()` or `reactive()` within `<script setup>`. These variables let the interface update automatically when their values change. To use `ref()`, you have to import it in `<script setup>`.
 
-When we use reactive variables like `ref()` we must keep in mind that we cannot access its value directly as in a normal variable in the `<script setup>` part but rather we must access it using the `.value` property.
+When we use reactive variables like `ref()`, keep in mind that in the `<script setup>` part we can't access their value directly as we would with a normal variable; instead, we have to access it through the `.value` property.
 
-In the `<template>` part we can access its value directly without using `.value`.
+In the `<template>` part, however, we can access their value directly without using `.value`.
 
 ### Example with `ref()`
 
@@ -34,15 +34,15 @@ p {
 
 ---
 
-[![Variables and Reactivity](https://img.youtube.com/vi/gC8metiacVg/0.jpg)](https://www.youtube.com/watch?v=gC8metiacVg&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![Variables and reactivity](https://img.youtube.com/vi/gC8metiacVg/0.jpg)](https://www.youtube.com/watch?v=gC8metiacVg&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
 ## **2. Events in Vue 3**
 
-Events allow the user to interact with the application. Events are captured directly in the template using the `v-on:` directive, or in its shortened version: the `@` prefix.
+Events let the user interact with the application. Events are captured directly in the template using the `v-on:` directive, or its shorthand: the `@` prefix.
 
-### Example: Handle clicks
+### Example: Handling clicks
 
 ```vue
 <script setup>
@@ -81,9 +81,9 @@ button {
 
 ## **3. Attribute binding (v-bind)**
 
-**binding** allows you to link HTML attributes to the value of reactive variables. The directive `v-bind` or directly `:` is used as a shortcut.
+**Binding** lets you link HTML attributes to the value of reactive variables. You use the `v-bind` directive, or just `:` as a shorthand.
 
-### Example: Change the placeholder dynamically
+### Example: Changing the placeholder dynamically
 
 ```vue
 <script setup>
@@ -106,13 +106,13 @@ input {
 
 ---
 
-[![v-bindDirective](https://img.youtube.com/vi/CpdZPw36i4A/0.jpg)](https://www.youtube.com/watch?v=CpdZPw36i4A&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![The v-bind directive](https://img.youtube.com/vi/CpdZPw36i4A/0.jpg)](https://www.youtube.com/watch?v=CpdZPw36i4A&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
-## **4. Bidirectional binding (v-model)**
+## **4. Two-way binding (v-model)**
 
-`v-model` is a directive that creates **bidirectional binding** between a variable and an input, that is, the value of the input is automatically updated when the variable changes, and vice versa.
+`v-model` is a directive that creates a **two-way binding** between a variable and an input; that is, the input's value updates automatically when the variable changes, and vice versa.
 
 ### Example: Input connected to a variable
 
@@ -144,15 +144,15 @@ input {
 
 ---
 
-[![Directive v-model](https://img.youtube.com/vi/QQuXu1ingRo/0.jpg)](https://www.youtube.com/watch?v=QQuXu1ingRo&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
+[![The v-model directive](https://img.youtube.com/vi/QQuXu1ingRo/0.jpg)](https://www.youtube.com/watch?v=QQuXu1ingRo&list=PLzA2VyZwsq_92Fnb4JEUnXUhSYfNHtcKx)
 
 ---
 
 ## **5. Events with arguments**
 
-Sometimes we need to pass arguments or the event itself to the event handler.
+Sometimes we need to pass arguments, or the event itself, to the event handler.
 
-### Example: Capture entered text
+### Example: Capturing the text entered
 
 ```vue
 <script setup>
@@ -183,12 +183,12 @@ input {
 
 ## Summary
 
-| Concept | Syntax | Example |
-| --------------------- | ----------- | ---------------------------- |
-| Click event | `@click` | `<button @click='doSomething'>` |
-| Attribute Binding | `:atributo` | `<img :src='imageUrl'>` |
-| Bidirectional binding | `v-model` | `<input v-model='name'>` |
+| Concept               | Syntax      | Example                         |
+| --------------------- | ----------- | ------------------------------- |
+| Click event           | `@click`    | `<button @click='doSomething'>` |
+| Attribute binding     | `:atributo` | `<img :src='imageUrl'>`         |
+| Two-way binding       | `v-model`   | `<input v-model='name'>`        |
 
 ---
 
-In the next topic we will explore **the differences between Composition API and Option API**.
+In the next topic, we'll explore **the differences between the Composition API and the Options API**.

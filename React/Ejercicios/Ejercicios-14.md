@@ -2,19 +2,19 @@
 
 Below you will find **10 practical exercises** on `useEffect()`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Riding effect (only once)**
+## **Exercise 1: Effect on mount (only once)**
 
-Create an `MountLogger.jsx` component that, when mounted, displays in the console:
+Create a `MountLogger.jsx` component that, when mounted, displays in the console:
 
 - **"Component mounted"**
 
-It must be run **only once**.
+It must run **only once**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect } from "react";
@@ -34,15 +34,15 @@ export default MountLogger;
 
 ---
 
-## **Exercise 2: Effect of changing a variable**
+## **Exercise 2: Effect when a variable changes**
 
-Create an `TitleWatcher.jsx` component with:
+Create a `TitleWatcher.jsx` component with:
 
-- Initial `title` state `""`.
+- A `title` state with initial value `""`.
 - A controlled input.
-- An `useEffect` that shows in the console: **"Title changed"** every time `title` changes.
+- A `useEffect` that shows in the console: **"Title changed"** every time `title` changes.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -74,13 +74,13 @@ export default TitleWatcher;
 
 ## **Exercise 3: `setInterval` with cleanup**
 
-Create an `Stopwatch.jsx` component that:
+Create a `Stopwatch.jsx` component that:
 
-- Have initial status `seconds` `0`.
-- Use an `setInterval` to increment `seconds` every 1 second.
-- Clean the gap when disassembling the component.
+- Has a `seconds` state with initial value `0`.
+- Uses a `setInterval` to increment `seconds` every second.
+- Clears the interval when the component unmounts.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -108,16 +108,16 @@ export default Stopwatch;
 
 ---
 
-## **Exercise 4: `resize` Listener with cleanup**
+## **Exercise 4: `resize` listener with cleanup**
 
-Create an `WindowWidth.jsx` component that:
+Create a `WindowWidth.jsx` component that:
 
-- Save the `window.innerWidth` value in state `width`.
-- Add a listener to `window` for the `resize` event.
-- Update `width` when resizing.
-- Clean the listener when disassembling.
+- Stores the `window.innerWidth` value in a `width` state.
+- Adds a listener to `window` for the `resize` event.
+- Updates `width` when the window is resized.
+- Removes the listener when it unmounts.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -149,13 +149,13 @@ export default WindowWidth;
 
 ## **Exercise 5: Save state to `localStorage`**
 
-Create an `NoteSaver.jsx` component with:
+Create a `NoteSaver.jsx` component with:
 
-- Initial `note` state `""`.
+- A `note` state with initial value `""`.
 - A controlled `textarea`.
-- An `useEffect` that stores `note` in `localStorage` with the key `"note"` **every time it changes**.
+- A `useEffect` that stores `note` in `localStorage` with the key `"note"` **every time it changes**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -183,16 +183,16 @@ export default NoteSaver;
 
 ---
 
-## **Exercise 6: Read `localStorage` when mounting**
+## **Exercise 6: Read `localStorage` on mount**
 
-Create an `NoteLoader.jsx` component that:
+Create a `NoteLoader.jsx` component that:
 
-- Have initial status `note` `""`.
-- When mounting, read `localStorage.getItem("note")`.
-- If it exists, save it to the state.
-- Render an `p` with `note`.
+- Has a `note` state with initial value `""`.
+- On mount, reads `localStorage.getItem("note")`.
+- If it exists, stores it in the state.
+- Renders a `p` with `note`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -217,9 +217,9 @@ export default NoteLoader;
 
 ---
 
-## **Exercise 7: Correct dependencies (typical bug)**
+## **Exercise 7: Fix the dependencies (typical bug)**
 
-This component has a bug: the effect uses `query`, but the dependencies array is empty. Correct it.
+This component has a bug: the effect uses `query`, but the dependency array is empty. Fix it.
 
 ```js
 import { useEffect, useState } from "react";
@@ -237,7 +237,7 @@ function SearchLogger() {
 export default SearchLogger;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -259,9 +259,9 @@ export default SearchLogger;
 
 ---
 
-## **Exercise 8: Avoid infinite loop (updating within the effect)**
+## **Exercise 8: Avoid an infinite loop (updating inside the effect)**
 
-This component enters a loop because it updates state in an `useEffect` that is executed after each render. Fix it so it only runs when mounting.
+This component gets stuck in a loop because it updates state in a `useEffect` that runs after every render. Fix it so it only runs on mount.
 
 ```js
 import { useEffect, useState } from "react";
@@ -279,7 +279,7 @@ function InitFlag() {
 export default InitFlag;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -305,12 +305,12 @@ export default InitFlag;
 
 Create an `AutoHideMessage.jsx` component that:
 
-- Have initial state `visible` `true`.
-- Show an `p` with **"Saved"** only if `visible` is `true`.
-- When mounting, program an `setTimeout` to set `visible` to `false` after 2 seconds.
-- Clean the timeout in the cleanup.
+- Has a `visible` state with initial value `true`.
+- Shows a `p` with **"Saved"** only if `visible` is `true`.
+- On mount, schedules a `setTimeout` that sets `visible` to `false` after 2 seconds.
+- Clears the timeout in the cleanup.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -338,20 +338,20 @@ export default AutoHideMessage;
 
 ---
 
-## **Exercise 10: Effect with async function (recommended pattern)**
+## **Exercise 10: Effect with an async function (recommended pattern)**
 
-Create an `UserLoader.jsx` component that simulates asynchronous loading:
+Create a `UserLoader.jsx` component that simulates asynchronous loading:
 
-- `status` status with values: `"idle"`, `"loading"`, `"done"`.
-- When riding:
+- A `status` state with the values: `"idle"`, `"loading"`, `"done"`.
+- On mount:
 
-  - Put `status` in `"loading"`.
+  - Set `status` to `"loading"`.
   - Wait 1 second.
-  - Put `status` in `"done"`.
+  - Set `status` to `"done"`.
 
-Hint: don't do `async` directly in the `useEffect` callback, create a function inside it.
+Hint: don't make the `useEffect` callback itself `async`; create a function inside it.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";

@@ -4,13 +4,13 @@
 
 Below you will find exercises on how to use services and manage global state in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Create a Service**
+### **Exercise 1: Create a service**
 
-Create an `CounterService` service that stores a counter and allows it to be incremented and reset.
+Create a `CounterService` service that stores a counter and lets you increment and reset it.
 
 <details><summary>Show solution</summary>
 
@@ -60,9 +60,9 @@ export class CounterService {
 
 ---
 
-### **Exercise 2: Using a Service in a Component**
+### **Exercise 2: Use a service in a component**
 
-Create an `CounterComponent` component that displays the counter value and allows it to be incremented and reset using `CounterService`.
+Create a `CounterComponent` component that displays the counter's value and lets you increment and reset it using `CounterService`.
 
 <details><summary>Show solution</summary>
 
@@ -93,9 +93,9 @@ export class CounterComponent {
 
 ---
 
-### **Exercise 3: Create a Service to Store Users**
+### **Exercise 3: Create a service to store users**
 
-Create an `UserService` service that manages a list of users and allows new users to be added.
+Create a `UserService` service that manages a list of users and lets you add new users.
 
 <details><summary>Show solution</summary>
 
@@ -122,9 +122,9 @@ export class UserService {
 
 ---
 
-### **Exercise 4: Show Users in a Component**
+### **Exercise 4: Display users in a component**
 
-Create an `UserComponent` component that displays the list of users and allows new ones to be added.
+Create a `UserComponent` component that displays the list of users and lets you add new ones.
 
 <details><summary>Show solution</summary>
 

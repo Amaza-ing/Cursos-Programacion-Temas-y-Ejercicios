@@ -2,17 +2,17 @@
 
 ## **1. Introduction**
 
-As an application grows, a common problem arises: passing props through many intermediate components even though they don't need them directly. This problem is called **prop drilling**.
+As an application grows, a common problem arises: **passing props through many intermediate components** even though they don't need them directly. This problem is called **prop drilling**.
 
 React offers a native solution for sharing state and logic globally: **Context**.
 
 In this topic you will learn:
 
-- What is Context and when to use it.
+- What Context is and when to use it.
 - How to create a Context.
-- How to provide values ​​with a Provider.
+- How to provide values with a Provider.
 - How to consume Context with `useContext`.
-- Good practices and common mistakes.
+- Best practices and common mistakes.
 
 ---
 
@@ -20,37 +20,37 @@ In this topic you will learn:
 
 Typical example:
 
-- `App` has status `user`.
+- `App` has the `user` state.
 - `Header` and `Profile` need `user`.
 - In between there are several components that **only pass props**.
 
 This causes:
 
 - More verbose code.
-- Less clear components.
-- Difficulty maintaining the tree.
+- Components that are less clear.
+- A tree that's harder to maintain.
 
-Context allows **sharing data without manually passing props**.
+Context lets you **share data without passing props manually**.
 
 ---
 
-## **3. Context Key Idea**
+## **3. The key idea behind Context**
 
 Context is based on three pieces:
 
 1. **Create the context** (`createContext`).
 2. **Provide a value** (`Provider`).
-3. **Consume value** (`useContext`).
+3. **Consume the value** (`useContext`).
 
-Mental rule:
+Rule of thumb:
 
 > Context is like a “global box” that can be accessed by certain components.
 
 ---
 
-## **4. Create a Context**
+## **4. Creating a Context**
 
-First, the context is created.
+First, you create the context.
 
 ```js
 import { createContext } from "react";
@@ -60,7 +60,7 @@ const ThemeContext = createContext();
 export default ThemeContext;
 ```
 
-Typically this file is saved in:
+This file is usually saved in:
 
 ```txt
 src/context/ThemeContext.js
@@ -68,7 +68,7 @@ src/context/ThemeContext.js
 
 ---
 
-## **5. Provide the Context (`Provider`)**
+## **5. Providing the Context (`Provider`)**
 
 The `Provider` wraps the components that need access to the context.
 
@@ -89,14 +89,14 @@ function App() {
 export default App;
 ```
 
-Keys:
+Key points:
 
 - `value` is the shared data.
 - It can be a simple value or an object.
 
 ---
 
-## **6. Consume Context with `useContext`**
+## **6. Consuming Context with `useContext`**
 
 To access the context from any child component:
 
@@ -141,9 +141,9 @@ This is widely used for:
 
 ---
 
-## **8. Create a custom Provider**
+## **8. Creating a custom Provider**
 
-To keep the code clean, it is common to create your own Provider.
+To keep the code clean, it's common to create your own Provider.
 
 ```js
 import { createContext, useState } from "react";
@@ -176,28 +176,28 @@ Usage:
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Use Context for everything**
+### **9.1. Using Context for everything**
 
-Context **does not replace** the local `useState`.
+Context **doesn't replace** local `useState`.
 
-### **9.2. Forget to wrap with the Provider**
+### **9.2. Forgetting to wrap with the Provider**
 
 `useContext` will return `undefined`.
 
-### **9.3. Insert complex logic without control**
+### **9.3. Adding complex logic without any control**
 
-Context must be clear and predictable.
+Context should be clear and predictable.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
-- Use Context only when state is shared between many components.
-- Create a Context for responsibility (auth, theme, settings...).
-- Extract Providers to separate files.
-- Keep context values ​​simple.
+- Use Context only when the state is shared between many components.
+- Create one Context per responsibility (auth, theme, settings...).
+- Extract Providers into separate files.
+- Keep context values simple.
 
 ---
 
@@ -205,4 +205,4 @@ Context must be clear and predictable.
 
 ---
 
-In the next topic you will learn how to combine **Context with users** to manage global authentication.
+In the next topic you'll learn how to combine **Context with users** to manage global authentication.

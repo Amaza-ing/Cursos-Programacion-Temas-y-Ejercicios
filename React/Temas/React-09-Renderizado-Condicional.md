@@ -4,37 +4,37 @@
 
 In a real interface, not everything is always displayed:
 
-- Sometimes there is a loader while loading data.
+- Sometimes there's a loader while data is loading.
 - Sometimes an error message appears.
-- Sometimes one button or another is shown depending on the status.
+- Sometimes one button or another is shown depending on the state.
 
 In React, this is achieved with **conditional rendering**: deciding which JSX is rendered based on a condition.
 
 In this topic you will learn:
 
-- Conditional with `if`.
-- Conditionals with ternary operator.
+- Conditionals with `if`.
+- Conditionals with the ternary operator.
 - Conditional rendering with `&&`.
-- Good practices to keep the code clean.
+- Best practices to keep the code clean.
 
 ---
 
-## **2. The basic idea: conditions within JSX**
+## **2. The basic idea: conditions inside JSX**
 
-In React, within JSX you can use JavaScript expressions with `{}`.
+In React, inside JSX you can use JavaScript expressions with `{}`.
 
 But remember:
 
-- `if` cannot be put directly inside the JSX as a statement.
-- Yes, you can use operators or prepare variables before `return`.
+- `if` can't be placed directly inside JSX as a statement.
+- But you can use operators or prepare variables before the `return`.
 
 ---
 
-## **3. Conditional rendering with `if` (before return)**
+## **3. Conditional rendering with `if` (before the return)**
 
-When the condition is complex, it is common to use `if` before `return`.
+When the condition is complex, it's common to use `if` before the `return`.
 
-Example: show a loader.
+Example: showing a loader.
 
 ```js
 function Page() {
@@ -52,13 +52,13 @@ export default Page;
 
 This is used a lot in:
 
-- Data dependent screens
+- Data-dependent screens
 - Loading states
 - Error states
 
 ---
 
-## **4. Conditional rendering with ternary**
+## **4. Conditional rendering with the ternary operator**
 
 The ternary operator is very useful when you want to choose between **two options**.
 
@@ -107,7 +107,7 @@ function Warning() {
 export default Warning;
 ```
 
-If `hasWarning` is `false`, React doesn't render anything on that part.
+If `hasWarning` is `false`, React doesn't render anything in that part.
 
 ---
 
@@ -133,7 +133,7 @@ const count = 0;
 return <div>{count && <p>Count is {count}</p>}</div>;
 ```
 
-`0` is rendered here, which is usually unwanted behavior.
+Here `0` is rendered, which is usually not what you want.
 
 Typical solution: use a more explicit condition:
 
@@ -145,9 +145,9 @@ Typical solution: use a more explicit condition:
 
 ---
 
-## **7. Save JSX in variables to improve readability**
+## **7. Saving JSX in variables to improve readability**
 
-If an `return` is filled with conditions, you can save JSX to a variable.
+If a `return` fills up with conditions, you can save the JSX in a variable.
 
 ```js
 function Result() {
@@ -174,23 +174,23 @@ export default Result;
 
 ---
 
-## **8. Good practices**
+## **8. Best practices**
 
-- For two clear options, use ternary.
-- To “show if met”, use `&&`.
-- For complex conditions, use `if` before return.
+- For two clear options, use the ternary operator.
+- To “show it if the condition is met”, use `&&`.
+- For complex conditions, use `if` before the return.
 - Avoid overly nested JSX.
-- If the JSX becomes difficult to read, extract components.
+- If the JSX becomes hard to read, extract components.
 
 ---
 
-## **9. To take into account**
+## **9. Things to keep in mind**
 
-- Conditional rendering = decide which JSX is displayed based on a condition.
+- Conditional rendering = deciding which JSX is displayed based on a condition.
 - Main techniques:
 
-  - `if` before `return`
-  - `cond ? A : B` ternary
+  - `if` before the `return`
+  - the ternary `cond ? A : B`
   - `cond && A`
 
 - Be careful with `0 && ...` because it can render `0`.
@@ -201,4 +201,4 @@ export default Result;
 
 ---
 
-In the next topic we will see **Lists**, to render collections of elements using `.map()`.
+In the next topic we'll look at **Lists**, to render collections of elements using `.map()`.

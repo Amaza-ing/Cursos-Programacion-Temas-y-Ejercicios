@@ -1,16 +1,16 @@
-# **Exercises - Topic 10: Pseudoclasses and Pseudoelements in CSS**
+# **Exercises - Topic 10: Pseudo-classes and Pseudo-elements in CSS**
 
 ## **Instructions:**
 
-Below you will find **6 practical exercises** on pseudoclasses and pseudoelements in CSS.
+Below you will find **6 practical exercises** on pseudo-classes and pseudo-elements in CSS.
 
 Try to solve them before consulting the solution.
 
 ---
 
-### **Exercise 1: Using the `:hover` pseudo-class**
+### **Exercise 1: Use the `:hover` pseudo-class**
 
-Create a button that changes its background color to black and text color to white when the user hovers over it.
+Create a button that changes its background color to black and its text color to white when the user hovers over it.
 
 <details><summary>Show solution</summary>
 
@@ -33,7 +33,7 @@ button:hover {
 
 ### **Exercise 2: Apply `:focus` to an input**
 
-Creates a text field (`input`) that displays a 2 pixel blue border when it has focus.
+Create a text field (`input`) that shows a 2-pixel blue border when it has focus.
 
 <details><summary>Show solution</summary>
 
@@ -53,7 +53,7 @@ input:focus {
 
 ---
 
-### **Exercise 3: Using structural pseudoclasses**
+### **Exercise 3: Use structural pseudo-classes**
 
 Select the first item in a list and make it bold.
 
@@ -81,7 +81,7 @@ li:first-child {
 
 ### **Exercise 4: Use `:nth-child()`**
 
-Changes the background color of even-numbered items in a list to a light gray color.
+Change the background color of the even items in a list to light gray.
 
 <details><summary>Show solution</summary>
 
@@ -108,7 +108,7 @@ li:nth-child(even) {
 
 ### **Exercise 5: Insert content with `::before`**
 
-Adds a ★ symbol before the text of all `<h2>` headers using a pseudo element.
+Add a ★ symbol before the text of all `<h2>` headings using a pseudo-element.
 
 <details><summary>Show solution</summary>
 
@@ -129,9 +129,9 @@ h2::before {
 
 ---
 
-### **Exercise 6: Styling the text selection**
+### **Exercise 6: Style the text selection**
 
-Changes the background color to black and the text color to white when the user selects text on the page.
+Change the background color to black and the text color to white when the user selects text on the page.
 
 <details><summary>Show solution</summary>
 

@@ -32,12 +32,12 @@ For these cases, Java provides a very important class:
 In this topic you will learn:
 
 - Why `double` can cause problems
-- What is `BigDecimal`
+- What `BigDecimal` is
 - How to create `BigDecimal` values correctly
 - How to add, subtract, multiply and divide
-- How to round up with `RoundingMode`
-- What does it mean for `BigDecimal` to be immutable?
-- Differences between `equals` and `compareTo`
+- How to round with `RoundingMode`
+- What it means for `BigDecimal` to be immutable
+- The differences between `equals` and `compareTo`
 - Good practices for working with money and precise decimals
 
 ---
@@ -75,19 +75,19 @@ public class Main {
 }
 ```
 
-You could expect:
+You might expect:
 
 ```text
 0.3
 ```
 
-But many times you will see something similar to:
+But you will often see something like:
 
 ```text
 0.30000000000000004
 ```
 
-This occurs because many decimals cannot be represented exactly in binary.
+This happens because many decimal numbers cannot be represented exactly in binary.
 
 ---
 
@@ -98,7 +98,7 @@ In some programs, this small error doesn't matter too much.
 For example:
 
 - approximate coordinates
-- scientific calculations with margin of error
+- scientific calculations with a margin of error
 - graphics
 - simulations
 
@@ -115,7 +115,7 @@ System.out.println(total);
 
 If you're working with money, you don't want inaccurate results.
 
-For that we use `BigDecimal`.
+That is what `BigDecimal` is for.
 
 ---
 
@@ -123,7 +123,7 @@ For that we use `BigDecimal`.
 
 `BigDecimal` is a Java class designed to represent decimal numbers with arbitrary precision.
 
-It's in the package:
+It is in the package:
 
 ```java
 java.math
@@ -153,15 +153,15 @@ public class Main {
 
 ---
 
-## 5. Create an `BigDecimal`
+## 5. Creating a `BigDecimal`
 
-There are several ways to create an `BigDecimal`, but not all of them are equally recommended.
+There are several ways to create a `BigDecimal`, but not all of them are equally recommended.
 
 ---
 
-## 6. Recommended way: use `String`
+## 6. Recommended way: use a `String`
 
-The safest way for exact decimal values is to use an `String`.
+The safest way to get exact decimal values is to use a `String`.
 
 ```java
 BigDecimal price = new BigDecimal("19.99");
@@ -170,7 +170,7 @@ BigDecimal tax = new BigDecimal("4.21");
 
 Why?
 
-Because then Java receives exactly the decimal value that you have written.
+Because then Java receives exactly the decimal value you have written.
 
 Example:
 
@@ -202,7 +202,7 @@ This way can be dangerous:
 BigDecimal value = new BigDecimal(0.1);
 ```
 
-Although it appears correct, it may produce an unexpected value because the `double` already arrives with inaccuracy.
+Although it looks correct, it may produce an unexpected value because the `double` is already imprecise when it arrives.
 
 Example:
 
@@ -224,7 +224,7 @@ You might see something like:
 0.1000000000000000055511151231257827021181583404541015625
 ```
 
-Therefore, for directly typed values, it is better to use:
+Therefore, for values you write directly, it is better to use:
 
 ```java
 BigDecimal value = new BigDecimal("0.1");
@@ -232,7 +232,7 @@ BigDecimal value = new BigDecimal("0.1");
 
 ---
 
-## 8. Use `BigDecimal.valueOf`
+## 8. Using `BigDecimal.valueOf`
 
 Another widely used option is `BigDecimal.valueOf`.
 
@@ -240,7 +240,7 @@ Another widely used option is `BigDecimal.valueOf`.
 BigDecimal value = BigDecimal.valueOf(0.1);
 ```
 
-This form is generally more secure than `new BigDecimal(0.1)` because it internally uses a conversion based on the textual representation of the `double`.
+This form is generally safer than `new BigDecimal(0.1)` because it internally uses a conversion based on the textual representation of the `double`.
 
 Example:
 
@@ -312,7 +312,7 @@ BigDecimal total = new BigDecimal("0");
 
 With `BigDecimal` we do not use operators like `+`, `-`, `*` or `/`.
 
-This cannot be done:
+You cannot do this:
 
 ```java
 // BigDecimal total = price + tax; // error
@@ -327,7 +327,7 @@ Instead, we use methods:
 
 ---
 
-## 11. Add with `add`
+## 11. Adding with `add`
 
 ```java
 import java.math.BigDecimal;
@@ -352,7 +352,7 @@ Result:
 
 ---
 
-## 12. Subtract with `subtract`
+## 12. Subtracting with `subtract`
 
 ```java
 import java.math.BigDecimal;
@@ -377,7 +377,7 @@ Result:
 
 ---
 
-## 13. Multiply with `multiply`
+## 13. Multiplying with `multiply`
 
 ```java
 import java.math.BigDecimal;
@@ -402,9 +402,9 @@ Result:
 
 ---
 
-## 14. Split with `divide`
+## 14. Dividing with `divide`
 
-Splitting with `BigDecimal` requires more care.
+Dividing with `BigDecimal` requires more care.
 
 Simple example:
 
@@ -429,7 +429,7 @@ Result:
 5
 ```
 
-But some divisions do not end exactly.
+But some divisions do not have an exact result.
 
 Example:
 
@@ -445,7 +445,7 @@ ArithmeticException
 
 Why?
 
-Because `10 / 3` gives an infinite decimal:
+Because `10 / 3` gives a never-ending decimal:
 
 ```text
 3.333333333...
@@ -455,14 +455,14 @@ Java needs to know how to round.
 
 ---
 
-## 15. Divide with scaling and rounding
+## 15. Dividing with scale and rounding
 
-To safely split, we typically indicate:
+To divide safely, we usually specify:
 
-- scale
-- rounding mode
+- the scale
+- the rounding mode
 
-The scale indicates how many decimals we want.
+The scale indicates how many decimal places we want.
 
 Example:
 
@@ -521,19 +521,19 @@ Some common modes are:
 - `CEILING`
 - `FLOOR`
 
-To start, the most intuitive is usually:
+To start with, the most intuitive one is usually:
 
 ```java
 RoundingMode.HALF_UP
 ```
 
-which looks like the typical rounding we normally learn.
+which is similar to the usual rounding we learn at school.
 
 ---
 
 ## 17. `setScale`
 
-`setScale` allows you to adjust the number of decimal places.
+`setScale` lets you adjust the number of decimal places.
 
 Example:
 
@@ -564,9 +564,9 @@ Result:
 
 This is very important.
 
-An `BigDecimal` object does not change after it is created.
+A `BigDecimal` object does not change after it is created.
 
-When you do an operation, Java returns a new `BigDecimal`.
+When you perform an operation, Java returns a new `BigDecimal`.
 
 Incorrect example:
 
@@ -580,7 +580,7 @@ System.out.println(price); // 10.00
 
 The addition does not modify `price`.
 
-The correct thing is to save the result:
+The right thing to do is to store the result:
 
 ```java
 BigDecimal price = new BigDecimal("10.00");
@@ -617,7 +617,7 @@ Result:
 
 Why?
 
-Because you are not saving the results.
+Because you are not storing the results.
 
 Correct version:
 
@@ -644,9 +644,9 @@ Result:
 
 ---
 
-## 20. Compare `BigDecimal`
+## 20. Comparing `BigDecimal` values
 
-With `BigDecimal`, there are two important ways to compare:
+With `BigDecimal`, there are two important ways to compare values:
 
 - `equals`
 - `compareTo`
@@ -686,7 +686,7 @@ Because:
 - `10.0` has scale 1
 - `10.00` has scale 2
 
-Although numerically they represent the same, `equals` considers the scale.
+Although they represent the same number, `equals` takes the scale into account.
 
 ---
 
@@ -717,8 +717,8 @@ A result of `0` means they are numerically equal.
 
 Rule of thumb:
 
-- to compare numerical values, use `compareTo`
-- to compare exact equality including scale, use `equals`
+- to compare numeric values, use `compareTo`
+- to check exact equality including the scale, use `equals`
 
 ---
 
@@ -726,9 +726,9 @@ Rule of thumb:
 
 `compareTo` returns:
 
-- negative if the first is less
-- `0` if they are the same
-- positive if the first is greater
+- a negative number if the first is smaller
+- `0` if they are equal
+- a positive number if the first is greater
 
 Example:
 
@@ -757,9 +757,9 @@ public class Main {
 
 ---
 
-## 24. Check if a value is zero
+## 24. Checking whether a value is zero
 
-It is not recommended to do this:
+Doing this is not recommended:
 
 ```java
 price.equals(BigDecimal.ZERO)
@@ -784,7 +784,7 @@ System.out.println(value.compareTo(BigDecimal.ZERO) == 0); // true
 
 ---
 
-## 25. Guided example: calculate cart total
+## 25. Guided example: calculating a cart total
 
 ```java
 import java.math.BigDecimal;
@@ -808,7 +808,7 @@ public class Main {
 
 ---
 
-## 26. Guided Example: Quantity Pricing
+## 26. Guided example: price by quantity
 
 ```java
 import java.math.BigDecimal;
@@ -827,7 +827,7 @@ public class Main {
 
 ---
 
-## 27. Guided Example: Apply Discount
+## 27. Guided example: applying a discount
 
 We are going to apply a 20% discount.
 
@@ -853,7 +853,7 @@ public class Main {
 
 ---
 
-## 28. Guided example: calculate VAT
+## 28. Guided example: calculating VAT
 
 ```java
 import java.math.BigDecimal;
@@ -878,7 +878,7 @@ public class Main {
 
 ---
 
-## 29. Guided Example: Splitting an Account
+## 29. Guided example: splitting a bill
 
 ```java
 import java.math.BigDecimal;
@@ -898,7 +898,7 @@ public class Main {
 
 ---
 
-## 30. Create a class `Product` with `BigDecimal`
+## 30. Creating a `Product` class with `BigDecimal`
 
 When working with prices, it is better to use `BigDecimal` than `double`.
 
@@ -1020,9 +1020,9 @@ public class Main {
 
 ---
 
-## 32. `BigDecimal` and `Stream API` as preview
+## 32. `BigDecimal` and `Stream API`: a preview
 
-Later you will see `Stream API`, but here you can see how adding prices with streams would look like.
+You will see `Stream API` later on, but here you can see what adding up prices with streams would look like.
 
 ```java
 import java.math.BigDecimal;
@@ -1048,7 +1048,7 @@ You don't need to master this syntax yet, but it's helpful to see that `BigDecim
 
 ---
 
-## 33. Format the output
+## 33. Formatting the output
 
 `BigDecimal` represents the value, but sometimes you want to display it with formatting.
 
@@ -1075,13 +1075,13 @@ Result:
 19.90
 ```
 
-For real interfaces, invoices or currency applications, you could later use formatting tools like `NumberFormat`.
+For real user interfaces, invoices or applications that handle currencies, you could later use formatting tools like `NumberFormat`.
 
 ---
 
-## 34. Use `MathContext`
+## 34. Using `MathContext`
 
-`MathContext` allows you to control the precision of some operations.
+`MathContext` lets you control the precision of some operations.
 
 Example:
 
@@ -1107,13 +1107,13 @@ Approximate result:
 3.333
 ```
 
-At an initial level, for money calculations it is usually more common to control decimals with:
+At this early stage, for money calculations it is usually more common to control the decimal places with:
 
 ```java
 setScale(2, RoundingMode.HALF_UP)
 ```
 
-or divide with scaling and rounding.
+or to divide with scale and rounding.
 
 ---
 
@@ -1124,7 +1124,7 @@ Use `BigDecimal` when working with:
 - money
 - prices
 - taxes
-- interests
+- interest
 - discounts
 - percentages where precision matters
 - financial calculations
@@ -1137,7 +1137,7 @@ BigDecimal price = new BigDecimal("19.99");
 
 ---
 
-## 36. When can `double` be enough
+## 36. When `double` can be enough
 
 `double` is still useful in many cases.
 
@@ -1157,12 +1157,12 @@ double distance = 12.75;
 double average = 8.43;
 ```
 
-It is not about `double` being “bad”, but about using each type for the appropriate case.
+It is not about `double` being “bad”, but about using each type in the right situation.
 
 ---
-## 37. Typical mistakes when starting
+## 37. Common beginner mistakes
 
-### 37.1. Create `BigDecimal` with `double`
+### 37.1. Creating a `BigDecimal` from a `double`
 
 Avoid:
 
@@ -1182,9 +1182,9 @@ or:
 BigDecimal value = BigDecimal.valueOf(0.1);
 ```
 
-### 37.2. Use arithmetic operators
+### 37.2. Using arithmetic operators
 
-This cannot be done:
+You cannot do this:
 
 ```java
 // BigDecimal total = price + tax;
@@ -1196,7 +1196,7 @@ Use:
 BigDecimal total = price.add(tax);
 ```
 
-### 37.3. Forget that `BigDecimal` is immutable
+### 37.3. Forgetting that `BigDecimal` is immutable
 
 This does not change the original value:
 
@@ -1210,7 +1210,7 @@ You must do:
 total = total.add(price);
 ```
 
-### 37.4. Divide without rounding when the result is infinite
+### 37.4. Dividing without rounding when the result is non-terminating
 
 This may fail:
 
@@ -1225,7 +1225,7 @@ BigDecimal result = new BigDecimal("10")
         .divide(new BigDecimal("3"), 2, RoundingMode.HALF_UP);
 ```
 
-### 37.5. Use `equals` to compare numeric values
+### 37.5. Using `equals` to compare numeric values
 
 This may surprise you:
 
@@ -1233,7 +1233,7 @@ This may surprise you:
 new BigDecimal("10.0").equals(new BigDecimal("10.00")); // false
 ```
 
-For numerical comparison, use:
+For numeric comparisons, use:
 
 ```java
 a.compareTo(b) == 0
@@ -1244,25 +1244,25 @@ a.compareTo(b) == 0
 ## 38. Good practices
 
 - Use `BigDecimal` for money and exact decimal calculations.
-- Create decimal values ​​with `String` or `BigDecimal.valueOf`.
+- Create decimal values with `String` or `BigDecimal.valueOf`.
 - Avoid `new BigDecimal(double)`.
-- Remember to save the result of each operation.
-- Use `compareTo` to compare numerical values.
-- Clearly defines scale and rounding.
+- Remember to store the result of each operation.
+- Use `compareTo` to compare numeric values.
+- Define the scale and rounding clearly.
 - For prices, it usually makes sense to work with 2 decimal places.
 - Use constants like `BigDecimal.ZERO`, `BigDecimal.ONE` and `BigDecimal.TEN`.
 
 ---
 
-## 39. To take into account
+## 39. Things to keep in mind
 
-- `double` may have decimal precision errors.
+- `double` can have decimal precision errors.
 - `BigDecimal` allows more accurate decimal calculations.
-- Operators such as `+` or `*` are not used, but rather methods.
+- You don't use operators such as `+` or `*`, but methods.
 - `BigDecimal` is immutable.
-- For non-exact divisions, you need to indicate rounding.
-- `equals` takes scale into account.
-- `compareTo` compares the numerical value.
+- For non-exact divisions, you need to specify the rounding.
+- `equals` takes the scale into account.
+- `compareTo` compares the numeric value.
 - It is the usual option for prices, money and taxes.
 
 ---
@@ -1282,4 +1282,4 @@ If you work with prices, taxes, discounts or amounts, `BigDecimal` will almost a
 
 ---
 
-In the next topic we will continue to expand the domain of modern Java with generic data types.
+In the next topic we will keep expanding your command of modern Java with generic types.

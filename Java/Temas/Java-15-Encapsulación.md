@@ -6,15 +6,15 @@ In the previous topic you learned how to create **classes and objects** with:
 
 - Attributes (state)
 - Methods (behavior)
-- Builders
+- Constructors
 - Getters and setters
 
-Now let's delve into a key idea of OOP in Java:
+Now let's dig deeper into a key idea of OOP in Java:
 
 - **Encapsulation**
 
 Encapsulation is what makes a class “safe” and easy to maintain:  
-prevents the internal state of the object from being incorrectly modified from the outside.
+it prevents the object's internal state from being modified incorrectly from the outside.
 
 To achieve encapsulation, Java gives us two main tools:
 
@@ -23,12 +23,12 @@ To achieve encapsulation, Java gives us two main tools:
 
 In this topic you will learn:
 
-- What is encapsulation and why does it matter?
+- What encapsulation is and why it matters
 - What access modifiers exist and what they mean
 - How to design getters and setters with validation
 - When you should NOT create setters
 - How to expose behavior with methods instead of “exposing data”
-- Typical mistakes when starting
+- Typical mistakes when you're starting out
 
 ---
 
@@ -36,12 +36,12 @@ In this topic you will learn:
 
 ---
 
-## 2. What is encapsulation
+## 2. What encapsulation is
 
-Encapsulate means:
+Encapsulating means:
 
-- Hide the internal state (attributes) of a class
-- Allow access/control through methods (getters, setters or other methods)
+- Hiding the internal state (attributes) of a class
+- Allowing access/control through methods (getters, setters or other methods)
 
 **Goal:** protect the consistency of the object.
 
@@ -60,7 +60,7 @@ BankAccount account = new BankAccount();
 account.balance = -5000; // estado inválido
 ```
 
-This breaks the rules of the domain (a balance should not become negative “by magic” in many cases).
+This breaks the domain rules (in many cases, a balance shouldn't go negative “by magic”).
 
 ### 2.2. Encapsulated class (good practice)
 
@@ -130,7 +130,7 @@ public class User {
 }
 ```
 
-From the outside you cannot do:
+From outside the class you can't do:
 
 ```java
 // user.name = "Laura"; // error
@@ -138,8 +138,8 @@ From the outside you cannot do:
 
 ### 3.3. No modifier (package-private)
 
-If you do not enter anything, access is “per package”:  
-can only be accessed from classes within the same package.
+If you don't write anything, access is “package-level”:  
+it can only be accessed from classes inside the same package.
 
 ```java
 class Helper {
@@ -154,15 +154,15 @@ Accessible from:
 - The same package
 - Subclasses (even if they are in another package)
 
-`protected` is used a lot when working with inheritance (you'll see this later).
+`protected` is used a lot when you work with inheritance (you'll see it later).
 
 ---
 
 ## 4. Access table (summary)
 
-In simplified form:
+Simplified:
 
-- `private` → only within class
+- `private` → only inside the class
 - no modifier → inside the package
 - `protected` → package + subclasses
 - `public` → from anywhere
@@ -173,8 +173,8 @@ In simplified form:
 
 The typical rule in Java is:
 
-- Attributes almost always `private`
-- Accessed/modified with methods
+- Attributes are almost always `private`
+- They're accessed/modified through methods
 
 Example:
 
@@ -187,7 +187,7 @@ public class User {
 
 ---
 
-## 6. Getters: read state in a controlled way
+## 6. Getters: reading the state in a controlled way
 
 A **getter** returns the value of an attribute.
 
@@ -196,6 +196,7 @@ Naming convention:
 - `getName()` for `name`
 - `getAge()` for `age`
 - `isActive()` for `boolean active`
+
 Example:
 
 ```java
@@ -215,7 +216,7 @@ public class User {
 
 ---
 
-## 7. Setters: modify the state in a controlled way
+## 7. Setters: modifying the state in a controlled way
 
 A **setter** modifies the value of an attribute.
 
@@ -240,7 +241,7 @@ But the important thing is that the setter can include **validation**.
 
 A setter should prevent the object from being left in an inconsistent state.
 
-### 8.1. Validate age
+### 8.1. Validating age
 
 ```java
 public void setAge(int age) {
@@ -252,7 +253,7 @@ public void setAge(int age) {
 }
 ```
 
-### 8.2. Validate name
+### 8.2. Validating a name
 
 ```java
 public void setName(String name) {
@@ -270,10 +271,10 @@ public void setName(String name) {
 
 You don't always need setters.
 
-If an attribute should not change, you can:
+If an attribute shouldn't change, you can:
 
-- Do not create setter (only getter)
-- Make the `final` attribute
+- Not create a setter (only a getter)
+- Make the attribute `final`
 
 Example: an `id` that should not change:
 
@@ -309,12 +310,12 @@ public class User {
 
 ## 10. Better than a setter: methods with intent
 
-Sometimes it is better to create methods that express the intent of the change, rather than exposing generic setters.
+Sometimes it's better to create methods that express the intent of the change, rather than exposing generic setters.
 
 Example:
 
 - Instead of `setBalance(...)` (dangerous)
-- Better `deposit(...)` and `withdraw(...)`
+- Better: `deposit(...)` and `withdraw(...)`
 
 ---
 
@@ -454,24 +455,24 @@ public class Main {
 
 ---
 
-## 13. Typical errors
+## 13. Common mistakes
 
-- Use `public` attributes “for convenience”
-- Create setters without validation when the domain requires it
-- Validate only in the constructor and not in setters (or the other way around)
+- Using `public` attributes “for convenience”
+- Creating setters without validation when the domain requires it
+- Validating only in the constructor and not in setters (or the other way around)
 
-Recommended pattern: The constructor can call setters to reuse validation.
+Recommended pattern: the constructor can call the setters to reuse validation.
 
 ---
 
-## 14. To take into account
+## 14. Things to keep in mind
 
-- Encapsulation = private attributes + method controlled access.
+- Encapsulation = private attributes + access controlled through methods.
 - `public`, `private`, `protected` and package-private determine where you can access it from.
 - Getters are used to read the state; setters to modify it with validation.
 - You don't always need setters.
-- Many times a method with intent (`deposit`, `withdraw`) is better than a generic setter (`setBalance`).
+- A method with intent (`deposit`, `withdraw`) is often better than a generic setter (`setBalance`).
 
 ---
 
-In the next topic we will advance with more complete constructors, constructor overloading and typical object creation patterns.
+In the next topic we'll move on to more complete constructors, constructor overloading and typical object creation patterns.

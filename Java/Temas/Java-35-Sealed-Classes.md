@@ -23,29 +23,29 @@ Typical examples:
 
 - result types: success or error
 - payment types: card, PayPal or transfer
-- geometric figures: circle, rectangle or triangle
+- geometric shapes: circle, rectangle or triangle
 - states of an operation
 - possible responses from an API
 - types of events
 
 In this topic you will learn:
 
-- What is a sealed class
-- What problem does it solve?
+- What a sealed class is
+- What problem it solves
 - How to use `sealed`
-- What is `permits` for?
+- What `permits` is for
 - What `final`, `sealed` and `non-sealed` mean
 - How to use sealed classes with inheritance
 - How to use sealed interfaces
 - How to combine sealed interfaces with records
 - When to use sealed classes and when not to
-- Typical errors and good practices
+- Common mistakes and best practices
 
 ---
 
 ## 2. The problem: hierarchies that are too open
 
-When you create a normal class, other classes can inherit from it if you don't prevent it with `final`.
+When you create a normal class, other classes can inherit from it unless you prevent it with `final`.
 
 Example:
 
@@ -76,13 +76,13 @@ public class StrangePayment extends PaymentMethod {
 In some cases that is fine.  
 But in others you want to control exactly which subclasses are valid.
 
-The sealed classes appear there.
+That's where sealed classes come in.
 
 ---
 
-## 3. What is a sealed class
+## 3. What is a sealed class?
 
-A **sealed class** is a class that limits what other classes can inherit from it.
+A **sealed class** is a class that limits which other classes can inherit from it.
 
 It is declared with the keyword:
 
@@ -120,7 +120,7 @@ public final class CardPayment extends PaymentMethod {
 }
 ```
 
-### 4.3. Other allowed subclass
+### 4.3. Another allowed subclass
 
 ```java
 public final class PaypalPayment extends PaymentMethod {
@@ -138,7 +138,7 @@ This doesn't compile:
 
 Why?
 
-Because `CashPayment` does not appear in the list of `permits`.
+Because `CashPayment` is not in the `permits` list.
 
 ---
 
@@ -151,7 +151,7 @@ public sealed class Shape permits Circle, Rectangle, Triangle {
 }
 ```
 
-Here they can only inherit directly from `Shape`:
+Here, only these classes can inherit directly from `Shape`:
 
 - `Circle`
 - `Rectangle`
@@ -163,7 +163,7 @@ No other class can extend `Shape`.
 
 ## 6. Subclasses must declare their intent
 
-When a class inherits from a sealed class, it must indicate one of three options:
+When a class inherits from a sealed class, it must specify one of these three options:
 
 - `final`
 - `sealed`
@@ -184,7 +184,7 @@ Java wants each subclass to clearly say whether the hierarchy ends there or cont
 
 ## 7. Option 1: `final`
 
-An `final` subclass does not allow further inheritance.
+A `final` subclass does not allow further inheritance.
 
 ```java
 public final class Circle extends Shape {
@@ -231,7 +231,7 @@ The hierarchy remains controlled.
 
 ## 9. Option 3: `non-sealed`
 
-A subclass `non-sealed` reopens inheritance.
+A `non-sealed` subclass reopens inheritance.
 
 ```java
 public non-sealed class Triangle extends Shape {
@@ -250,17 +250,17 @@ public class RightTriangle extends Triangle {
 }
 ```
 
-`non-sealed` breaks the restriction starting from that class.
+`non-sealed` lifts the restriction from that class downwards.
 
 ---
 
 ## 10. Summary of `final`, `sealed` and `non-sealed`
 
-When a class inherits from a sealed class, you must choose:
+When a class inherits from a sealed class, it must choose:
 
 ### 10.1. `final`
 
-The inheritance ends.
+Inheritance ends here.
 
 ```java
 public final class Circle extends Shape {
@@ -269,7 +269,7 @@ public final class Circle extends Shape {
 
 ### 10.2. `sealed`
 
-The inheritance continues, but it remains controlled.
+Inheritance continues, but it stays under control.
 
 ```java
 public sealed class Rectangle extends Shape permits Square {
@@ -278,7 +278,7 @@ public sealed class Rectangle extends Shape permits Square {
 
 ### 10.3. `non-sealed`
 
-The inheritance is reopened.
+Inheritance is opened up again.
 
 ```java
 public non-sealed class Triangle extends Shape {
@@ -287,7 +287,7 @@ public non-sealed class Triangle extends Shape {
 
 ---
 
-## 11. Complete example: geometric figures
+## 11. Complete example: geometric shapes
 
 ### 11.1. `Shape.java`
 
@@ -365,8 +365,8 @@ Here `Shape` is an abstract and sealed class.
 
 That means:
 
-- cannot be instantiated directly
-- only allowed classes can inherit
+- it can't be instantiated directly
+- only the allowed classes can inherit from it
 
 ---
 
@@ -465,7 +465,7 @@ public record PaymentError(String message) implements PaymentResult {
 Here we have two possible results:
 
 - successful payment
-- payment with error
+- failed payment
 
 And the hierarchy is closed.
 
@@ -475,9 +475,9 @@ And the hierarchy is closed.
 
 Records are immutable and represent data.
 
-Sealed interfaces allow you to close a type family.
+Sealed interfaces let you close a family of types.
 
-Together they are very useful in representing possible outcomes.
+Together, they are very useful for representing possible outcomes.
 
 Conceptual example:
 
@@ -542,7 +542,7 @@ public class Main {
 }
 ```
 
-This layout is more expressive than returning `null`, `boolean`, or single text.
+This design is more expressive than returning `null`, a `boolean` or a loose piece of text.
 
 ---
 
@@ -574,7 +574,7 @@ result instanceof PaymentSuccess success
 
 ## 18. Sealed classes and `switch`
 
-Sealed classes fit very well with `switch`, because Java can know all possible types of a closed hierarchy.
+Sealed classes work really well with `switch`, because Java knows every possible type in a closed hierarchy.
 
 Example:
 
@@ -587,7 +587,7 @@ public static String getMessage(PaymentResult result) {
 }
 ```
 
-As `PaymentResult` is sealed and only allows two types, the `switch` can cover all cases.
+Since `PaymentResult` is sealed and only allows two types, the `switch` can cover all cases.
 
 ---
 
@@ -612,11 +612,11 @@ This style is very expressive for closed hierarchies.
 
 ---
 
-## 20. Example: statuses of a task
+## 20. Example: task states
 
 Imagine that a task can be in one of several states:
 
-- slope
+- pending
 - in progress
 - completed
 - canceled
@@ -630,7 +630,7 @@ public sealed interface TaskStatus permits Pending, InProgress, Completed, Cance
 }
 ```
 
-### 20.2. Status records
+### 20.2. State records
 
 ```java
 public record Pending() implements TaskStatus {
@@ -652,7 +652,7 @@ public record Cancelled(String reason) implements TaskStatus {
 }
 ```
 
-### 20.3. Use
+### 20.3. Usage
 
 ```java
 public class Main {
@@ -677,7 +677,7 @@ This design allows each state to have its own data.
 
 ## 21. Difference between enum and sealed classes
 
-Sometimes an `enum` also serves to represent closed options.
+Sometimes an `enum` also works for representing a closed set of options.
 
 Example:
 
@@ -694,7 +694,7 @@ This is simple and very useful.
 
 But an enum has a limitation:
 
-- each constant does not usually carry a different data structure in such a flexible way
+- its constants can't usually carry different data structures as flexibly
 
 With sealed classes or sealed interfaces, each case can have its own data.
 
@@ -710,16 +710,16 @@ public record Cancelled(String reason) implements TaskStatus {
 }
 ```
 
-Each state may have specific information.
+Each state can have its own specific information.
 
 ---
 
-## 22. When to use enum
+## 22. When to use an enum
 
 Use `enum` when:
 
 - you have a fixed set of simple constants
-- cases do not need different data
+- the cases don't need different data
 - you want something direct and easy to read
 
 Example:
@@ -829,9 +829,9 @@ public class Main {
 
 ---
 
-## 25. Example with sealed class and subclass `non-sealed`
+## 25. Example with a sealed class and a `non-sealed` subclass
 
-Sometimes you want to control a part of the hierarchy, but leave a branch open.
+Sometimes you want to control part of the hierarchy, but leave a branch open.
 
 ```java
 public sealed class Notification permits EmailNotification, CustomNotification {
@@ -859,9 +859,9 @@ Because `CustomNotification` is `non-sealed`.
 
 ---
 
-## 26. Example with sealed subclass
+## 26. Example with a sealed subclass
 
-You can also create a hierarchy by levels.
+You can also build a hierarchy in levels.
 
 ```java
 public sealed class Vehicle permits Car, Motorcycle {
@@ -900,7 +900,7 @@ Here:
 To work with sealed classes, remember these rules:
 
 - a sealed class uses `sealed`
-- you must indicate which classes you allow with `permits`
+- it must state which classes it allows with `permits`
 - each direct subclass must be `final`, `sealed` or `non-sealed`
 - a disallowed class cannot inherit from the sealed one
 - records can implement sealed interfaces
@@ -908,7 +908,7 @@ To work with sealed classes, remember these rules:
 
 ---
 
-## 28. File Organization
+## 28. File organization
 
 Typically each class will be in its own file.
 
@@ -959,7 +959,7 @@ public record PaymentError(String message) implements PaymentResult {
 }
 ```
 
-For an initial course, the important thing is to keep the hierarchy clear and in the same package.
+In an introductory course, what matters is keeping the hierarchy clear and in the same package.
 
 ---
 
@@ -971,8 +971,8 @@ Examples:
 
 - payment result
 - login result
-- statuses of a task
-- events of an application
+- task states
+- application events
 - user commands
 - validation responses
 - message types
@@ -1058,9 +1058,9 @@ The main advantages are:
 - you control who can inherit
 - you make the design clearer
 - you avoid unexpected subclasses
-- improvements to the use of `switch`
-- you model better results and states
-- you combine very well with records
+- you get more out of `switch`
+- you model results and states better
+- they work very well with records
 - you make the intent of the code more explicit
 
 ---
@@ -1071,7 +1071,7 @@ They also have limitations:
 
 - can add complexity if used unnecessarily
 - require careful thought about the hierarchy
-- are not ideal for systems where anyone must be able to extend
+- are not ideal for systems that anyone should be able to extend
 - may be excessive for very simple cases
 
 As always, the tool should be used when it fits the problem.
@@ -1082,18 +1082,18 @@ As always, the tool should be used when it fits the problem.
 
 ### 34.1. Normal abstract class
 
-Allows open inheritance.
+It allows open inheritance.
 
 ```java
 public abstract class Shape {
 }
 ```
 
-Any class can extend it, if they have access.
+Any class can extend it, as long as it has access.
 
 ### 34.2. Sealed abstract class
 
-Allows controlled inheritance.
+It allows controlled inheritance.
 
 ```java
 public sealed abstract class Shape permits Circle, Rectangle {
@@ -1131,7 +1131,7 @@ Only allowed classes or records can implement it.
 Don't use sealed classes if:
 
 - you want other developers to be able to freely extend
-- the hierarchy can grow without planned control
+- the hierarchy may grow in ways you can't control in advance
 - a simple `enum` solves the problem
 - a normal class is clearer
 - you are modeling objects with very open behavior
@@ -1148,23 +1148,23 @@ If you want anyone to be able to create new plugins, you don't want to seal the 
 
 ---
 
-## 37. Typical mistakes when starting
+## 37. Common beginner mistakes
 
-### 37.1. Forget `permits`
+### 37.1. Forgetting `permits`
 
 ```java
 public sealed class Shape {
 }
 ```
 
-In many cases you must indicate which subclasses are allowed.
+In many cases you'll need to state which subclasses are allowed.
 
 ```java
 public sealed class Shape permits Circle, Rectangle {
 }
 ```
 
-### 37.2. Forget `final`, `sealed` or `non-sealed`
+### 37.2. Forgetting `final`, `sealed` or `non-sealed`
 
 This doesn't compile:
 
@@ -1186,7 +1186,7 @@ public final class Circle extends Shape {
 // public final class Triangle extends Shape { } // error si no aparece en permits
 ```
 
-### 37.4. Use sealed classes when an enum would suffice
+### 37.4. Using sealed classes when an enum would be enough
 
 If you only have simple constants, an `enum` is probably clearer.
 
@@ -1197,7 +1197,7 @@ If you only have simple constants, an `enum` is probably clearer.
 
 ---
 
-## 38. Good practices
+## 38. Best practices
 
 - Use sealed classes for closed and known hierarchies.
 - Use sealed interfaces with records to represent results or states.
@@ -1205,14 +1205,14 @@ If you only have simple constants, an `enum` is probably clearer.
 - Use `final` when you don't want the inheritance to continue.
 - Use `sealed` if you want to control another level of inheritance.
 - Use `non-sealed` only when you really want to open a branch.
-- If the cases are simple and without your own data, consider using `enum`.
-- Do not seal interfaces that are intended for open extensions.
+- If the cases are simple and carry no data of their own, consider using an `enum`.
+- Don't seal interfaces that are meant to be freely extended.
 
 ---
 
-## 39. To take into account
+## 39. Things to keep in mind
 
-- `sealed` limits who can inherit or deploy.
+- `sealed` limits who can inherit or implement.
 - `permits` indicates the allowed classes.
 - Direct subclasses must be `final`, `sealed` or `non-sealed`.
 - `final` closes the inheritance.
@@ -1220,7 +1220,7 @@ If you only have simple constants, an `enum` is probably clearer.
 - `non-sealed` reopens inheritance.
 - Sealed interfaces combine very well with records.
 - They are useful for results, states and closed hierarchies.
-- They help to write `switch` more confident and expressive.
+- They help you write safer, more expressive `switch` statements.
 
 ---
 
@@ -1229,7 +1229,7 @@ If you only have simple constants, an `enum` is probably clearer.
 Sealed classes allow you to better control type hierarchies in Java.
 
 With a normal class or a normal interface, inheritance can be left too open.  
-With `sealed`, you can tell exactly which classes are part of the family.
+With `sealed`, you can state exactly which classes are part of the family.
 
 Example:
 
@@ -1238,17 +1238,17 @@ public sealed interface PaymentResult permits PaymentSuccess, PaymentError {
 }
 ```
 
-This makes the design clearer and more secure.
+This makes the design clearer and safer.
 
 The main idea is:
 
 - use `sealed` when you know all possible cases
 - use `final` to close a branch
-- use `sealed` to continue controlling another branch
+- use `sealed` to keep controlling another branch
 - use `non-sealed` to open a specific branch
 
-Combined with records, sealed interfaces are a very powerful tool for modeling modern data in Java.
+Combined with records, sealed interfaces are a very powerful tool for modeling data in modern Java.
 
 ---
 
-In the next topic we will continue advancing with modern Java and look at **Basic Concurrency**, an introduction to how to run tasks in parallel or in the background with tools like `Thread`, `Runnable` and `ExecutorService`.
+In the next topic we'll keep moving forward with modern Java and look at **Basic Concurrency**, an introduction to running tasks in parallel or in the background with tools like `Thread`, `Runnable` and `ExecutorService`.

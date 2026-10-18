@@ -2,19 +2,19 @@
 
 ## **1. Introduction**
 
-In many web applications it is necessary to obtain data from a server or external API. In Vue.js, the most recommended and modern way to do this is by using `fetch` combined with the `async/await` syntax. This allows you to write clearer, easier-to-read asynchronous code.
+Many web applications need to get data from a server or an external API. In Vue.js, the most modern and recommended way to do this is to use `fetch` combined with the `async/await` syntax. This lets you write clearer, easier-to-read asynchronous code.
 
-In this topic we will learn:
+In this topic, we'll learn:
 
 - How to make an HTTP request.
-- Where to execute the request within a Vue component.
-- How to manage the charging status and possible errors.
+- Where to run the request inside a Vue component.
+- How to manage the loading state and possible errors.
 
 ---
 
 ## **2. fetch basics**
 
-`fetch()` is a native JavaScript function that allows you to make HTTP requests.
+`fetch()` is a native JavaScript function that lets you make HTTP requests.
 
 Basic example:
 
@@ -27,11 +27,11 @@ const data = await response.json();
 
 ---
 
-## **3. Where to perform the fetch in a Vue component?**
+## **3. Where should you fetch in a Vue component?**
 
-In a Vue component, requests are usually made when the component is mounted, that is, when the component is already in the DOM. In Vue 3 with Composition API, the most common thing is to do the fetch inside `onMounted()`.
+In a Vue component, requests are usually made when the component is **mounted**, that is, once the component is already in the DOM. In Vue 3 with the Composition API, the most common approach is to fetch inside `onMounted()`.
 
-> Note: `onMounted()` is one of the hooks (methods) of the component life cycle. We will see this in the next topic.
+> Note: `onMounted()` is one of the component lifecycle hooks (methods). We'll cover this in the next topic.
 
 ```vue
 <script setup>
@@ -58,9 +58,9 @@ onMounted(() => {
 
 ---
 
-## **4. Manage loading status and errors**
+## **4. Handling the loading state and errors**
 
-It is important to display a loading indicator or an error message if the request fails.
+It's important to display a loading indicator, or an error message if the request fails.
 
 ### Complete example
 
@@ -107,7 +107,7 @@ onMounted(fetchPosts);
 
 ## **5. Fetch inside a store action**
 
-If the application needs to share data between multiple components, it is best to do the fetch within a Pinia store.
+If the application needs to share the data between multiple components, it's better to fetch it inside a Pinia store.
 
 ### Example of a store with fetch
 
@@ -150,12 +150,12 @@ export const usePostStore = defineStore("post", {
 
 ## **6. Summary**
 
-| Task | Best place |
-| -------------------------------------------- | -------------------------- |
-| Load data when mounting component | `onMounted()` |
-| Show loading and errors | Reactive variables (`ref()`) |
-| Reuse fetch logic between components | Actions of a store (Pinia) |
+| Task                                            | Best place                    |
+| ----------------------------------------------- | ----------------------------- |
+| Load data when the component is mounted         | `onMounted()`                 |
+| Show the loading state and errors               | Reactive variables (`ref()`)  |
+| Reuse fetch logic across components             | Store actions (Pinia)         |
 
 ---
 
-In the next topic we will explore **The Life Cycle of Components**, to execute code at the appropriate times in each case.
+In the next topic, we'll explore **the component lifecycle**, so we can run code at the right moment in each case.

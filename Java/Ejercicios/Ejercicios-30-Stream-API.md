@@ -1,14 +1,14 @@
 # Exercises - Topic 30: Stream API
 
-Below you will find **10 practical exercises** to work with **Stream API**: `filter`, `map`, `sorted`, `distinct`, `count`, `reduce`, `findFirst`, `anyMatch`, `allMatch` and final conversion with `toList`.
+Below you will find **10 practical exercises** to work with the **Stream API**: `filter`, `map`, `sorted`, `distinct`, `count`, `reduce`, `findFirst`, `anyMatch`, `allMatch` and the final conversion with `toList`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Filter long words
 
-Create an `List<String> words` list with these values:
+Create a `List<String> words` list with these values:
 
 - `"java"`
 - `"stream"`
@@ -16,8 +16,8 @@ Create an `List<String> words` list with these values:
 - `"programming"`
 - `"code"`
 
-Use `stream()` to only keep words that are **more than 4 characters**.  
-Save the result in a new list and print it.
+Use `stream()` to keep only the words that are **longer than 4 characters**.  
+Store the result in a new list and print it.
 
 <details><summary>Show solution</summary>
 
@@ -43,7 +43,7 @@ public class Main {
 
 ## Exercise 2: Convert names to uppercase
 
-Create an `List<String> names` list with:
+Create a `List<String> names` list with:
 
 - `"laura"`
 - `"alex"`
@@ -76,7 +76,7 @@ public class Main {
 
 ## Exercise 3: Filter even numbers
 
-Create an `List<Integer> numbers` list with:
+Create a `List<Integer> numbers` list with:
 
 `3`, `8`, `12`, `5`, `7`, `20`.
 
@@ -106,11 +106,11 @@ public class Main {
 
 ## Exercise 4: Sort prices from lowest to highest
 
-Create an `List<Double> prices` list with:
+Create a `List<Double> prices` list with:
 
 `19.99`, `5.50`, `120.0`, `49.99`.
 
-Use `sorted` to create a list ordered from smallest to largest.
+Use `sorted` to create a list sorted from lowest to highest.
 
 <details><summary>Show solution</summary>
 
@@ -134,9 +134,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Delete repeated tags
+## Exercise 5: Remove repeated tags
 
-Create an `List<String> tags` list with:
+Create a `List<String> tags` list with:
 
 - `"java"`
 - `"backend"`
@@ -223,9 +223,9 @@ public class Main {
 
 ---
 
-## Exercise 7: Add numbers with `reduce`
+## Exercise 7: Add up numbers with `reduce`
 
-Create an `List<Integer> expenses` list with:
+Create a `List<Integer> expenses` list with:
 
 `10`, `25`, `15`, `40`.
 
@@ -254,7 +254,7 @@ public class Main {
 
 ## Exercise 8: Find the first name that starts with a letter
 
-Create an `List<String> names` list with:
+Create a `List<String> names` list with:
 
 - `"Carlos"`
 - `"Ana"`
@@ -339,7 +339,7 @@ public class Main {
 
 ## Exercise 10: Filter, transform and sort
 
-Create an `List<String> emails` list with:
+Create a `List<String> emails` list with:
 
 - `"LAURA@EXAMPLE.COM"`
 - `"test@gmail.com"`
@@ -348,7 +348,7 @@ Create an `List<String> emails` list with:
 
 Use the Stream API to:
 
-1. Keep only emails that end in `"@example.com"`, ignoring upper/lower case.
+1. Keep only the emails that end in `"@example.com"`, ignoring case.
 2. Convert them to lowercase.
 3. Sort them alphabetically.
 4. Print the final list.

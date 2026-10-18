@@ -1,12 +1,12 @@
-# **Exercises - Topic 3: Events and Bidirectional Binding (`ngModel`)**
+# **Exercises - Topic 3: Events and Two-Way Binding (`ngModel`)**
 
-Below you will find 5 practical exercises on events and bidirectional binding.
+Below you will find 5 practical exercises on events and two-way binding.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ## **Exercise 1: Handling events with buttons**
 
-Implement a button that changes the text of a paragraph when pressed.
+Implement a button that changes the text of a paragraph when it is clicked.
 
 <details><summary>Show solution</summary>
 
@@ -33,7 +33,7 @@ export class EventosComponent {
 
 ## **Exercise 2: Capturing events with `$event`**
 
-Detect what the user writes in an input field and display it on the screen in real time.
+Detect what the user types in an input field and display it on the screen in real time.
 
 <details><summary>Show solution</summary>
 
@@ -58,9 +58,9 @@ export class EventosComponent {
 
 ---
 
-## **Exercise 3: Bidirectional Binding with `ngModel`**
+## **Exercise 3: Two-way binding with `ngModel`**
 
-Create a form where the user enters their name and age, and they automatically update on the screen.
+Create a form where the user enters their name and age, and both are updated automatically on the screen.
 
 <details><summary>Show solution</summary>
 
@@ -89,16 +89,16 @@ Implement a counter that increments and decrements when buttons are clicked.
 
 **Requirements:**
 
-1. In `counter.component.ts`, define a variable `counter` with initial value `0`.
+1. In `counter.component.ts`, define a `counter` variable with an initial value of `0`.
 2. In `counter.component.html`, add:
-   - An `+` button that increments the counter in `+1`.
-   - An `-` button that decrements the counter in `-1`.
-   - An `<p>` paragraph showing the current value of the counter.
+   - A `+` button that increments the counter by `+1`.
+   - A `-` button that decrements the counter by `-1`.
+   - A `<p>` paragraph showing the current value of the counter.
 3. Implement logic to prevent the counter from going below `0`.
 4. When the counter reaches `10`, display an `"Has alcanzado el límite"` alert.
 
 Expected output:
-[User clicks "+" 3 times] → Displays: "3" [User clicks "-" 1 time] → Displays: "2"
+[User clicks "+" 3 times] → Displays: "3" [User clicks "-" once] → Displays: "2"
 
 <details><summary>Show solution</summary>
 

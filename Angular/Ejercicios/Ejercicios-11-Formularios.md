@@ -1,14 +1,14 @@
-# **Exercises - Topic 11: Creation and Validation of Forms with `ngModel`**
+# **Exercises - Topic 11: Creating and Validating Forms with `ngModel`**
 
 ## **Instructions:**
 
 Below you will find exercises on using `ngModel` in Angular forms.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Capture Data with `ngModel`**
+### **Exercise 1: Capture data with `ngModel`**
 
 Create a simple form with a text field and a button that displays the value entered in the console.
 
@@ -54,9 +54,9 @@ export class FormComponent {
 
 ---
 
-### **Exercise 2: Validate Age with a Custom Restriction**
+### **Exercise 2: Validate age with a custom restriction**
 
-Create a form where the minimum age allowed is 18 years old.
+Create a form where the minimum age allowed is 18.
 
 <details><summary>Show solution</summary>
 
@@ -84,9 +84,9 @@ export class FormComponent {
 
 ---
 
-### **Exercise 3: Capture and Display Data on Screen**
+### **Exercise 3: Capture and display data on the screen**
 
-Create a form where the user enters their name and age, and they are displayed in real time on the screen.
+Create a form where the user enters their name and age, and both are displayed on the screen in real time.
 
 <details><summary>Show solution</summary>
 

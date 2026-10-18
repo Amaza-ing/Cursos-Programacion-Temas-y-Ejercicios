@@ -1,8 +1,8 @@
-# Exercises - Topic 22: `equals`, `hashCode` and `toString`
+# Exercises - Topic 22: equals, hashCode and toString
 
-Below you will find **10 practical exercises** to work with **`equals`, `hashCode`, `toString`, object comparison and use in collections**.
+Below you will find **10 practical exercises** to work with **`equals`, `hashCode`, `toString`, comparing objects and using them in collections**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -35,9 +35,9 @@ public class Main {
 
 ---
 
-## Exercise 2: Overwrite `equals`
+## Exercise 2: Override `equals`
 
-Create a class `Customer` with `email`. Two clients must be the same if they have the same email.
+Create a class `Customer` with `email`. Two customers must be equal if they have the same email.
 
 <details><summary>Show solution</summary>
 
@@ -73,7 +73,7 @@ public class Customer {
 
 ## Exercise 3: Add `hashCode`
 
-Add `hashCode()` to the above class using `Objects.hash(email)`.
+Add `hashCode()` to the previous class using `Objects.hash(email)`.
 
 <details><summary>Show solution</summary>
 
@@ -114,7 +114,7 @@ public class Customer {
 
 ## Exercise 4: Duplicates in `HashSet`
 
-Create a class `Course` with `code`, override `equals` and `hashCode`, and check that an `HashSet` does not duplicate courses with the same code.
+Create a class `Course` with `code`, override `equals` and `hashCode`, and check that a `HashSet` does not duplicate courses with the same code.
 
 <details><summary>Show solution</summary>
 
@@ -165,9 +165,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Overwrite `toString`
+## Exercise 5: Override `toString`
 
-Create a class `Movie` with `title` and `year`. Overwrites `toString()`.
+Create a class `Movie` with `title` and `year`. Override `toString()`.
 
 <details><summary>Show solution</summary>
 

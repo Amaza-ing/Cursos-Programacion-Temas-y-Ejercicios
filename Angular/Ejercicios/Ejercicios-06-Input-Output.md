@@ -4,7 +4,7 @@
 
 Below you will find 10 practical exercises on communication between components in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -64,7 +64,7 @@ export class ChildComponent {
 
 ### **Exercise 2: Basic use of `@Output()`**
 
-Allows a child component to send a message to the parent component using events.
+Let a child component send a message to its parent component through events.
 
 <details><summary>Show solution</summary>
 
@@ -221,7 +221,7 @@ export class ParentComponent {
 
 ### **Exercise 5: Two-way communication with Signals**
 
-Create an interaction where the parent can update the status of a child and vice versa.
+Create an interaction where the parent can update the state of a child and vice versa.
 
 <details><summary>Show solution</summary>
 

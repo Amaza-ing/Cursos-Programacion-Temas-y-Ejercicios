@@ -2,9 +2,9 @@
 
 ## **1. Introduction**
 
-Forms are a fundamental element in any web application, and in Vue.js we can manage them reactively and easily. Using the `v-model` directive, we can connect each field of a form directly to a reactive property. Additionally, with the `@submit.prevent` event, we control the submission of the form avoiding the default behavior.
+Forms are a fundamental element of any web application, and in Vue.js we can manage them reactively and easily. Using the `v-model` directive, we can connect each form field directly to a reactive property. And with the `@submit.prevent` event, we control the form submission, preventing the default behavior.
 
-In this topic we will learn to:
+In this topic, we'll learn how to:
 
 - Create forms with `v-model`
 - Validate forms easily
@@ -14,9 +14,9 @@ In this topic we will learn to:
 
 ## **2. Creating forms with v-model**
 
-`v-model` creates **bidirectional binding**, which means that the value of the input will always reflect the value of the variable, and any change to the input will automatically update the variable.
+`v-model` creates a **two-way binding**, which means that the input's value will always reflect the variable's value, and any change to the input will automatically update the variable.
 
-Since the default behavior of the `submit` event is to reload the page, we must prevent this. This can be achieved by adding `.prevent` to the event listener. Leaving like this: `@submit.prevent`.
+Since the default behavior of the `submit` event is to reload the page, we need to prevent it. We can do this by adding `.prevent` to the event listener, like this: `@submit.prevent`.
 
 ### Basic example
 
@@ -61,9 +61,9 @@ button {
 
 ---
 
-## **3. Basic Form Validation**
+## **3. Basic form validation**
 
-In Vue we can validate forms directly in the `handleSubmit` method, or even with computed properties.
+In Vue, we can validate forms directly in the `handleSubmit` method, or even with computed properties.
 
 ### Example with manual validation
 
@@ -140,9 +140,9 @@ ul {
 
 ---
 
-## **4. Manage shipping status**
+## **4. Managing the submission state**
 
-It is common to disable the submit button while the form is invalid or processing.
+It's common to disable the submit button while the form is invalid or being processed.
 
 ### Example
 
@@ -188,7 +188,7 @@ button:disabled {
 
 ## **5. Real-time validation**
 
-We can observe the changes in the fields and automatically validate with `watch`.
+We can watch the fields for changes and validate them automatically with `watch`.
 
 ### Example
 
@@ -227,13 +227,13 @@ watch(email, (newValue) => {
 
 ## Summary
 
-| Technique | Purpose |
+| Technique         | Purpose                                                            |
 | ----------------- | ------------------------------------------------------------------ |
-| `v-model` | Connect inputs with reactive variables |
-| `@submit.prevent` | Control sending manually preventing page reload |
-| `computed` | Calculate form validity |
-| `watch` | Validate in real time |
+| `v-model`         | Connect inputs to reactive variables                               |
+| `@submit.prevent` | Handle the submission manually, preventing the page from reloading |
+| `computed`        | Work out whether the form is valid                                 |
+| `watch`           | Validate in real time                                              |
 
 ---
 
-In the next topic we will explore **Vue Router and Router Links**, for creating **views** and routes in a SPA project.
+In the next topic, we'll explore **Vue Router and Router Links**, to create **views** and routes in a SPA project.

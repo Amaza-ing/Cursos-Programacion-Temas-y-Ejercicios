@@ -1,28 +1,28 @@
-# Exercises Topic 4 (Optional): Connection with MySQL and DBeaver
+# Exercises Topic 4 (Optional): Connecting to MySQL with DBeaver
 
 ## Introduction
 
-In this optional topic you will practice how to connect a **Classic Spring MVC** application with a **MySQL** database using **DBeaver** and **Spring JDBC**.
+In this optional topic you'll practice how to connect a **classic Spring MVC** application to a **MySQL** database using **DBeaver** and **Spring JDBC**.
 
 The idea is to replace an in-memory list with persistent data in a database.
 
-In the exercises we will work with a small **product inventory** application, different from the main example of the course.
+In the exercises we'll work with a small **product inventory** application, different from the course's main example.
 
-You are going to practice:
+You'll practice:
 
-- Create a database from DBeaver.
-- Create tables with SQL.
-- Insert initial data.
-- Add the necessary dependencies to `pom.xml`.
-- Configure an `DataSource`.
-- Configure `JdbcTemplate`.
-- Create a DAO interface.
-- Create a DAO implementation with JDBC.
-- Convert SQL rows to Java objects with `RowMapper`.
-- Execute `SELECT` queries.
-- Execute `INSERT` queries.
-- Recover automatically generated keys.
-- Connect controller, service, DAO and database.
+- Creating a database from DBeaver.
+- Creating tables with SQL.
+- Inserting initial data.
+- Adding the necessary dependencies to `pom.xml`.
+- Configuring a `DataSource`.
+- Configuring `JdbcTemplate`.
+- Creating a DAO interface.
+- Creating a DAO implementation with JDBC.
+- Converting SQL rows into Java objects with `RowMapper`.
+- Running `SELECT` queries.
+- Running `INSERT` queries.
+- Retrieving automatically generated keys.
+- Connecting the controller, service, DAO and database.
 
 Each solution is hidden under the **show solution** button.
 
@@ -40,14 +40,14 @@ The database must be called:
 spring_mvc_inventory
 ```
 
-You must use encoding compatible with accents, eñes and special characters.
+It must use an encoding that supports accents, the letter ñ and special characters.
 
-Write the SQL script necessary to create and select it.
+Write the SQL script needed to create and select it.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_inventory
@@ -59,7 +59,7 @@ USE spring_mvc_inventory;
 
 ### Explanation
 
-The instruction:
+The statement:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_inventory
@@ -73,7 +73,7 @@ We use:
 CHARACTER SET utf8mb4
 ```
 
-to allow special characters, accents, eñes and symbols.
+to allow special characters, accents, the letter ñ and symbols.
 
 Then we use:
 
@@ -81,13 +81,13 @@ Then we use:
 USE spring_mvc_inventory;
 ```
 
-to indicate that the following SQL statements will be executed within that database.
+to indicate that the following SQL statements will run in that database.
 
 </details>
 
 ---
 
-# Exercise 2 — Create the table `items`
+# Exercise 2 — Create the `items` table
 
 ## Statement
 
@@ -95,20 +95,20 @@ Create a table named `items` to store inventory products.
 
 The table must have these columns:
 
-| Column | Type | Restriction |
+| Column | Type | Constraint |
 |---|---|---|
-| `id` | `BIGINT` | Primary and autoincremental key |
-| `name` | `VARCHAR(80)` | Mandatory |
-| `brand` | `VARCHAR(60)` | Mandatory |
-| `price` | `DECIMAL(10,2)` | Mandatory |
-| `quantity` | `INT` | Mandatory |
+| `id` | `BIGINT` | Auto-increment primary key |
+| `name` | `VARCHAR(80)` | Required |
+| `brand` | `VARCHAR(60)` | Required |
+| `price` | `DECIMAL(10,2)` | Required |
+| `quantity` | `INT` | Required |
 
-Write the table creation SQL.
+Write the SQL to create the table.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 CREATE TABLE IF NOT EXISTS items (
@@ -134,9 +134,9 @@ The column:
 id BIGINT PRIMARY KEY AUTO_INCREMENT
 ```
 
-It will be the unique identifier of each product.
+will be the unique identifier of each product.
 
-`AUTO_INCREMENT` causes MySQL to automatically generate the following identifier.
+`AUTO_INCREMENT` makes MySQL generate the next identifier automatically.
 
 The columns:
 
@@ -147,7 +147,7 @@ price
 quantity
 ```
 
-they have `NOT NULL`, so they cannot be saved empty in the database.
+have `NOT NULL`, so they can't be saved empty in the database.
 
 </details>
 
@@ -157,25 +157,25 @@ they have `NOT NULL`, so they cannot be saved empty in the database.
 
 ## Statement
 
-Inserts four initial products into the `items` table.
+Insert four initial products into the `items` table.
 
-The products must be different from those of the main course.
+The products must be different from the ones in the main course.
 
 You can use this data:
 
 | name | brand | price | quantity |
 |---|---|---|---|
-| 24 inch monitor | ViewMax | 139.99 | 8 |
+| 24-inch monitor | ViewMax | 139.99 | 8 |
 | Ergonomic chair | ComfortPro | 189.50 | 5 |
 | LED lamp | BrightHome | 24.90 | 20 |
-| Bluetooth Headphones | SoundBeat | 49.99 | 14 |
+| Bluetooth headphones | SoundBeat | 49.99 | 14 |
 
 Then write a query to verify that they were inserted correctly.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 INSERT INTO items (name, brand, price, quantity)
@@ -190,7 +190,7 @@ SELECT * FROM items;
 
 ### Explanation
 
-We do not manually insert the `id` because MySQL generates it automatically.
+We don't insert the `id` manually because MySQL generates it automatically.
 
 That's why we write:
 
@@ -210,7 +210,7 @@ The query:
 SELECT * FROM items;
 ```
 
-allows you to check from DBeaver that the records have been saved correctly.
+lets you check in DBeaver that the records have been saved correctly.
 
 </details>
 
@@ -220,18 +220,18 @@ allows you to check from DBeaver that the records have been saved correctly.
 
 ## Statement
 
-Join the previous exercises into a single SQL script that:
+Combine the previous exercises into a single SQL script that:
 
-1. Create the database.
-2. Select it.
-3. Create the table.
-4. Insert initial data.
-5. Display the inserted data.
+1. Creates the database.
+2. Selects it.
+3. Creates the table.
+4. Inserts the initial data.
+5. Displays the inserted data.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 CREATE DATABASE IF NOT EXISTS spring_mvc_inventory
@@ -262,15 +262,15 @@ SELECT * FROM items;
 
 This script can be run directly from DBeaver.
 
-It is useful to quickly prepare the database of all students.
+It's useful for quickly setting up the database for all the students.
 
-If run twice, the database and table are not duplicated because we use:
+If you run it twice, the database and the table aren't duplicated because we use:
 
 ```sql
 IF NOT EXISTS
 ```
 
-Of course, the `INSERT` would be executed again and could duplicate the products. If you want to avoid duplicates, you can first delete the table or use another type of more advanced insertion.
+However, the `INSERT` statements would run again and could duplicate the products. If you want to avoid duplicates, you can drop the table first or use a more advanced kind of insert.
 
 </details>
 
@@ -290,7 +290,7 @@ Write only the necessary dependencies.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```xml
 <!-- Spring JDBC -->
@@ -330,7 +330,7 @@ The dependency:
 mysql-connector-j
 ```
 
-It is the driver that allows Java to connect to MySQL.
+is the driver that lets Java connect to MySQL.
 
 Without the MySQL driver, Java would not know how to interpret a URL like:
 
@@ -354,8 +354,8 @@ src/main/webapp/WEB-INF/spring/app-servlet.xml
 
 to add:
 
-1. An `dataSource` bean using `DriverManagerDataSource`.
-2. An `jdbcTemplate` bean using that `dataSource`.
+1. A `dataSource` bean using `DriverManagerDataSource`.
+2. A `jdbcTemplate` bean using that `dataSource`.
 
 Use these connection details:
 
@@ -371,7 +371,7 @@ Remember that in XML the character `&` must be written as `&amp;`.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```xml
 <!-- Conexión a MySQL -->
@@ -411,7 +411,7 @@ The bean:
 <bean id="jdbcTemplate" ...>
 ```
 
-use that `dataSource` to execute SQL queries.
+uses that `dataSource` to run SQL queries.
 
 The relationship is:
 
@@ -423,7 +423,7 @@ DataSource
 MySQL
 ```
 
-In XML we cannot write directly:
+In XML we can't write this directly:
 
 ```xml
 &serverTimezone=Europe/Madrid
@@ -451,7 +451,7 @@ Create a class called `Item` in the package:
 com.example.inventory.model
 ```
 
-It should represent the data from the `items` table.
+It must represent the data from the `items` table.
 
 The class must have:
 
@@ -463,12 +463,12 @@ The class must have:
 | `price` | `Double` |
 | `quantity` | `Integer` |
 
-Add empty constructor, constructor with all fields, getters and setters.
+Add an empty constructor, a constructor with all the fields, getters and setters.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.inventory.model;
@@ -548,7 +548,7 @@ price: 139.99
 quantity: 8
 ```
 
-will be converted to a Java object:
+will be converted into a Java object:
 
 ```java
 new Item(1L, "Monitor 24 pulgadas", "ViewMax", 139.99, 8);
@@ -570,7 +570,7 @@ Create an interface named `ItemDao` in the package:
 com.example.inventory.dao
 ```
 
-You must declare these methods:
+It must declare these methods:
 
 ```java
 List<Item> findAll();
@@ -583,7 +583,7 @@ void save(Item item);
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.inventory.dao;
@@ -606,9 +606,9 @@ public interface ItemDao {
 
 The DAO interface defines what data access operations the application needs.
 
-Does not contain SQL.
+It doesn't contain SQL.
 
-Just declare operations:
+It only declares operations:
 
 ```java
 findAll()
@@ -618,21 +618,21 @@ save()
 
 The advantage of using an interface is that we could change the implementation later.
 
-For example, now we will use JDBC, but later we could use JPA or Hibernate without changing the service.
+For example, we'll use JDBC now, but later we could use JPA or Hibernate without changing the service.
 
 </details>
 
 ---
 
-# Exercise 9 — Create an `RowMapper` to convert rows to objects
+# Exercise 9 — Create a `RowMapper` to convert rows into objects
 
 ## Statement
 
 Let's create the class `JdbcItemDao`.
 
-Before implementing all its methods, write an `RowMapper<Item>` called `itemRowMapper` inside the class.
+Before implementing all its methods, write a `RowMapper<Item>` called `itemRowMapper` inside the class.
 
-You must convert the SQL columns:
+It must convert the SQL columns:
 
 ```text
 id
@@ -642,12 +642,12 @@ price
 quantity
 ```
 
-in an `Item` object.
+into an `Item` object.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 private final RowMapper<Item> itemRowMapper = (resultSet, rowNumber) ->
@@ -698,20 +698,20 @@ Create the class:
 com.example.inventory.dao.JdbcItemDao
 ```
 
-You must:
+It must:
 
-1. Be registered with `@Repository`.
+1. Be annotated with `@Repository`.
 2. Implement `ItemDao`.
-3. Receive one `JdbcTemplate` per builder.
-4. Have an `RowMapper<Item>`.
+3. Receive a `JdbcTemplate` through its constructor.
+4. Have a `RowMapper<Item>`.
 5. Implement the `findAll()` method.
 
-The query should get all products ordered by `id`.
+The query must get all the products ordered by `id`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.inventory.dao;
@@ -801,16 +801,16 @@ In this exercise we leave `findById` and `save` unimplemented to focus on the li
 
 Complete the `findById(Long id)` method of `JdbcItemDao`.
 
-You must run a query to search for a product by its ID.
+It must run a query to look up a product by its ID.
 
-If it exists, you must return it.
+If it exists, it must return it.
 
 If it does not exist, it must return `null`.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -836,7 +836,7 @@ The query uses a parameter:
 WHERE id = ?
 ```
 
-That `?` is replaced by the value of `id` when we execute:
+That `?` is replaced by the value of `id` when we run:
 
 ```java
 jdbcTemplate.query(sql, itemRowMapper, id);
@@ -876,9 +876,9 @@ return items.stream()
 
 Complete the `save(Item item)` method of `JdbcItemDao`.
 
-You must insert a new product into the `items` table.
+It must insert a new product into the `items` table.
 
-You should not insert the `id`, because MySQL generates it automatically.
+It must not insert the `id`, because MySQL generates it automatically.
 
 The SQL query must insert:
 
@@ -892,7 +892,7 @@ quantity
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -921,7 +921,7 @@ INSERT INTO items (name, brand, price, quantity)
 VALUES (?, ?, ?, ?)
 ```
 
-We do not insert the `id` because the column is set to:
+We don't insert the `id` because the column is configured with:
 
 ```sql
 AUTO_INCREMENT
@@ -933,7 +933,7 @@ The method:
 jdbcTemplate.update(...)
 ```
 
-It is used to execute operations that modify the database, such as:
+is used to run operations that modify the database, such as:
 
 ```sql
 INSERT
@@ -954,11 +954,11 @@ item.getQuantity()
 
 ---
 
-# Exercise 13 — Implement `save` by recovering the generated id
+# Exercise 13 — Implement `save` and retrieve the generated id
 
 ## Statement
 
-Improves the `save(Item item)` method so that after inserting the product, it retrieves the `id` automatically generated by MySQL and assigns it to the `item` object.
+Improve the `save(Item item)` method so that, after inserting the product, it retrieves the `id` generated automatically by MySQL and assigns it to the `item` object.
 
 Use:
 
@@ -971,7 +971,7 @@ Statement.RETURN_GENERATED_KEYS
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @Override
@@ -1005,7 +1005,7 @@ public void save(Item item) {
 }
 ```
 
-### Imports required
+### Required imports
 
 ```java
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -1025,13 +1025,13 @@ If we want to retrieve that identifier from Java, we use:
 KeyHolder keyHolder = new GeneratedKeyHolder();
 ```
 
-Then we prepare the consultation with:
+Then we prepare the query with:
 
 ```java
 Statement.RETURN_GENERATED_KEYS
 ```
 
-This indicates that we want to recover the generated key.
+This indicates that we want to retrieve the generated key.
 
 Finally we get the id:
 
@@ -1045,7 +1045,7 @@ and we assign it to the object:
 item.setId(generatedId.longValue());
 ```
 
-Thus the Java object is synchronized with the row inserted in MySQL.
+This way, the Java object stays in sync with the row inserted in MySQL.
 
 </details>
 
@@ -1061,12 +1061,12 @@ Create a class called `ItemService` in the package:
 com.example.inventory.service
 ```
 
-You must:
+It must:
 
-1. Be registered with `@Service`.
-2. Receive `ItemDao` by builder.
+1. Be annotated with `@Service`.
+2. Receive `ItemDao` through its constructor.
 3. Have the methods:
-   -`findAll()`
+   - `findAll()`
    - `findById(Long id)`
    - `save(Item item)`
 
@@ -1075,7 +1075,7 @@ Each method must delegate to the DAO.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.inventory.service;
@@ -1139,27 +1139,27 @@ This separation means that the controller does not have to know how the database
 
 ## Statement
 
-Create a handler named `ItemController` in the package:
+Create a controller named `ItemController` in the package:
 
 ```text
 com.example.inventory.controller
 ```
 
-You must:
+It must:
 
-1. Be registered with `@Controller`.
-2. Have base path `/items`.
-3. Receive `ItemService` by builder.
-4. Have an `GET /items` method.
-5. Add to model:
-- `pageTitle` with the value `Inventario`
+1. Be annotated with `@Controller`.
+2. Have the base path `/items`.
+3. Receive `ItemService` through its constructor.
+4. Have a `GET /items` method.
+5. Add to the model:
+   - `pageTitle` with the value `Inventario`
    - `items` with the data obtained from MySQL
 6. Return the `items/list` view.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 package com.example.inventory.controller;
@@ -1228,24 +1228,24 @@ Create the view:
 src/main/webapp/WEB-INF/views/items/list.jsp
 ```
 
-It should show a table with:
+It must show a table with:
 
 ```text
 Nombre | Marca | Precio | Cantidad | Acción
 ```
 
-The action column must have a link to the detail:
+The action column must have a link to the detail page:
 
 ```text
 /items/detail?id=ID
 ```
 
-Use JSTL to traverse the list.
+Use JSTL to loop through the list.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1313,7 +1313,7 @@ Use JSTL to traverse the list.
 
 ### Explanation
 
-The `items` list comes from the driver:
+The `items` list comes from the controller:
 
 ```java
 model.addAttribute("items", itemService.findAll());
@@ -1327,11 +1327,11 @@ It only receives Java objects and displays them.
 
 ---
 
-# Exercise 17 — Add product detail from MySQL
+# Exercise 17 — Add a product detail page from MySQL
 
 ## Statement
 
-Add `ItemController` a route:
+Add a route to `ItemController`:
 
 ```text
 GET /items/detail?id=1
@@ -1340,7 +1340,7 @@ GET /items/detail?id=1
 The method must:
 
 1. Receive the `id` parameter.
-2. Search for the product with `itemService.findById(id)`.
+2. Look up the product with `itemService.findById(id)`.
 3. If it does not exist, return `items/not-found`.
 4. If it exists, add `item` and `pageTitle` to the model.
 5. Return `items/detail`.
@@ -1350,7 +1350,7 @@ Then create the view `items/detail.jsp`.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Method in `ItemController`
 
@@ -1373,7 +1373,7 @@ public String itemDetail(@RequestParam("id") Long id, Model model) {
 }
 ```
 
-### Imports required
+### Required imports
 
 ```java
 import com.example.inventory.model.Item;
@@ -1481,7 +1481,7 @@ The detail method calls:
 itemService.findById(id)
 ```
 
-That method ends up executing a SQL query with:
+That method ends up running a SQL query with:
 
 ```sql
 WHERE id = ?
@@ -1493,7 +1493,7 @@ Therefore, the detail is no longer obtained from an in-memory list, but directly
 
 ---
 
-# Exercise 18 — Create form to insert in MySQL
+# Exercise 18 — Create a form to insert into MySQL
 
 ## Statement
 
@@ -1504,16 +1504,16 @@ GET  /items/new
 POST /items
 ```
 
-The `GET` method should return an empty form.
+The `GET` method must show an empty form.
 
-The `POST` method should receive an `Item` with `@ModelAttribute`, save it using `itemService.save(item)`, and redirect to `/items`.
+The `POST` method must receive an `Item` with `@ModelAttribute`, save it using `itemService.save(item)` and redirect to `/items`.
 
-Don't add validation to this exercise yet.
+Don't add validation yet in this exercise.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```java
 @GetMapping("/new")
@@ -1532,7 +1532,7 @@ public String createItem(@ModelAttribute("item") Item item) {
 }
 ```
 
-### Imports required
+### Required imports
 
 ```java
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -1559,7 +1559,7 @@ The `POST` method receives the already populated object:
 @ModelAttribute("item") Item item
 ```
 
-Then call:
+Then it calls:
 
 ```java
 itemService.save(item)
@@ -1581,9 +1581,9 @@ Create the view:
 src/main/webapp/WEB-INF/views/items/form.jsp
 ```
 
-You must have a form that you send via `POST` to `/items`.
+It must have a form that submits via `POST` to `/items`.
 
-The form must be linked to the `item` attribute and have fields for:
+The form must be bound to the `item` attribute and have fields for:
 
 ```text
 name
@@ -1592,12 +1592,12 @@ price
 quantity
 ```
 
-Use Spring form tags.
+Use Spring's form tags.
 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -1669,12 +1669,12 @@ Use Spring form tags.
 
 ### Explanation
 
-The label:
+The tag:
 ```jsp
 <form:form modelAttribute="item">
 ```
 
-Binds the form to the `item` object sent from the controller.
+binds the form to the `item` object sent from the controller.
 
 Each `path` must match a property of the `Item` class:
 
@@ -1700,7 +1700,7 @@ After creating a product from the web application, write the SQL query that you 
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ```sql
 SELECT * FROM items
@@ -1715,17 +1715,17 @@ If the form worked correctly, a new row will appear with the product created fro
 
 This confirms that the data is no longer just in memory.
 
-They are persisted in MySQL.
+It's persisted in MySQL.
 
 </details>
 
 ---
 
-# Exercise 21 — Externalize database configuration
+# Exercise 21 — Externalize the database configuration
 
 ## Statement
 
-Currently the MySQL configuration is written directly to `app-servlet.xml`.
+Currently the MySQL configuration is written directly in `app-servlet.xml`.
 
 Create a file:
 
@@ -1747,7 +1747,7 @@ Then modify the XML to load that file and use the properties.
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## File `database.properties`
 
@@ -1758,7 +1758,7 @@ db.username=root
 db.password=TU_PASSWORD
 ```
 
-## Modification in `app-servlet.xml`
+## Changes in `app-servlet.xml`
 
 First we add:
 
@@ -1781,15 +1781,15 @@ Then we configure the `dataSource` like this:
 
 ### Explanation
 
-The `.properties` file allows you to separate specific configuration data.
+The `.properties` file lets you keep specific configuration values separate.
 
-Thus, if the MySQL password changes, we only modify:
+That way, if the MySQL password changes, we only change:
 
 ```properties
 db.password=...
 ```
 
-and we don't have to touch all the XML configuration.
+and we don't have to touch the whole XML configuration.
 
 In the `.properties` file we use:
 
@@ -1797,21 +1797,21 @@ In the `.properties` file we use:
 &
 ```
 
-normal.
+as is.
 
-In XML it is used:
+In XML we use:
 
 ```xml
 &amp;
 ```
 
-but within `.properties` it is not necessary.
+but in `.properties` it isn't needed.
 
 </details>
 
 ---
 
-# Exercise 22 — Diagnose frequent errors
+# Exercise 22 — Diagnose common errors
 
 ## Statement
 
@@ -1819,14 +1819,14 @@ Read each case and explain the error.
 
 ## Case A
 
-`app-servlet.xml` shows:
+`app-servlet.xml` contains:
 
 ```xml
 <property name="url"
           value="jdbc:mysql://localhost:3306/spring_mvc_inventory?useSSL=false&serverTimezone=Europe/Madrid" />
 ```
 
-When starting the application an XML error appears.
+When the application starts, an XML error appears.
 
 What's happening?
 
@@ -1881,7 +1881,7 @@ What is probably missing?
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
 ## Case A
 
@@ -1934,7 +1934,7 @@ Or change the `RowMapper`:
 resultSet.getDouble("unit_price")
 ```
 
-Column names used in Java must match the actual table names.
+The column names used in Java must match the actual column names in the table.
 
 ---
 
@@ -1950,7 +1950,7 @@ La URL de conexión está mal escrita.
 El servidor MySQL no acepta conexiones.
 ```
 
-First you should check from DBeaver if the connection works.
+It's a good idea to first check in DBeaver whether the connection works.
 
 ---
 
@@ -1990,7 +1990,7 @@ The table should be called:
 suppliers
 ```
 
-Must have:
+It must have:
 
 | Column | Type |
 |---|---|
@@ -2001,13 +2001,13 @@ Must have:
 
 You must create:
 
-1. SQL script for table creation and data insertion.
-2. `Supplier` class.
-3. `SupplierDao` interface.
-4. `JdbcSupplierDao` class.
-5. `SupplierService` class.
-6. `SupplierController` class.
-7. View `suppliers/list.jsp`.
+1. A SQL script to create the table and insert data.
+2. A `Supplier` class.
+3. A `SupplierDao` interface.
+4. A `JdbcSupplierDao` class.
+5. A `SupplierService` class.
+6. A `SupplierController` class.
+7. A `suppliers/list.jsp` view.
 
 The route will be:
 
@@ -2018,9 +2018,9 @@ The route will be:
 ---
 
 <details>
-<summary>show solution</summary>
+<summary>Show solution</summary>
 
-##SQLScript
+## SQL script
 
 ```sql
 USE spring_mvc_inventory;
@@ -2180,7 +2180,7 @@ public class SupplierService {
 }
 ```
 
-##`SupplierController.java` driver
+## `SupplierController.java` controller
 
 ```java
 package com.example.inventory.controller;
@@ -2284,7 +2284,7 @@ MySQL
 
 The view only receives a list of `Supplier` objects.
 
-The controller does not know how to obtain that list.
+The controller doesn't know how that list is obtained.
 
 The service delegates to the DAO.
 

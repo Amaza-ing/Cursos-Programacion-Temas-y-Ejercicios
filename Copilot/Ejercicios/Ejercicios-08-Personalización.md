@@ -1,19 +1,19 @@
 # Exercises - Topic 08: Advanced GitHub Copilot, projects, instructions, agents and CLI
 
-Below, you'll find hands-on exercises for working with GitHub Copilot on more complete projects, using custom instructions, assisted planning, agents, and Copilot from the terminal.
+Below, you'll find hands-on exercises for working with GitHub Copilot on more complete projects, using custom instructions, assisted planning, agents and Copilot from the terminal.
 
 ## Exercise 1: Create custom instructions for a repository
 
-Imagine you have a React project with Vite. The team wants Copilot to respect the following rules:
+Imagine you have a React project built with Vite. The team wants Copilot to follow these rules:
 
 - Use functional components.
 - Use variable and function names in English.
 - Write comments in Spanish only when necessary.
 - Use `fetch` for simple HTTP calls.
 - Keep components small.
-- Do not add external libraries without asking for confirmation.
+- Don't add external libraries without asking for confirmation.
 
-Write the content that you would put in an `.github/copilot-instructions.md` file.
+Write the content that you would put in a `.github/copilot-instructions.md` file.
 
 <details>
 <summary>Show solution</summary>
@@ -56,13 +56,13 @@ Este proyecto es una aplicación de React creada con Vite.
 ```
 
 
-These instructions help Copilot generate responses that are more consistent with the project style and reduce the need to repeat the same rules at each prompt.
+These instructions help Copilot generate answers that are more consistent with the project's style and reduce the need to repeat the same rules in every prompt.
 
 </details>
 
 ## Exercise 2: Ask Copilot for a plan before generating code
 
-You want to create a small task management app with these features:
+You want to create a small task management application with these features:
 
 - List tasks.
 - Create tasks.
@@ -70,7 +70,7 @@ You want to create a small task management app with these features:
 - Delete tasks.
 - Save the data in `localStorage`.
 
-Before requesting code, you want Copilot to propose an implementation plan.
+Before asking for code, you want Copilot to propose an implementation plan.
 
 Write an appropriate prompt.
 
@@ -88,25 +88,25 @@ Primero indica la estructura de componentes, el estado necesario y el orden reco
 ```
 
 
-A good Copilot response should include something like this:
+A good answer from Copilot should include something like this:
 
-1. Create a main component `App`.
-2. Define an `tasks` state.
-3. Load the tasks from `localStorage` when starting the application.
-4. Save tasks to `localStorage` every time they change.
-5. Create an `TaskForm` component to add tasks.
-6. Create an `TaskList` component to display the tasks.
-7. Create an `TaskItem` component for each task.
+1. Create a main `App` component.
+2. Define a `tasks` state.
+3. Load the tasks from `localStorage` when the application starts.
+4. Save the tasks to `localStorage` every time they change.
+5. Create a `TaskForm` component to add tasks.
+6. Create a `TaskList` component to display the tasks.
+7. Create a `TaskItem` component for each task.
 8. Add functions to create, complete and delete tasks.
-9. Manually test the entire flow.
+9. Manually test the whole flow.
 
-Asking for a plan first helps you maintain control of the project and avoids accepting overly large code without understanding its structure.
+Asking for a plan first helps you stay in control of the project and keeps you from accepting a huge amount of code without understanding its structure.
 
 </details>
 
-## Exercise 3: Use Copilot as an assistant to divide a large task
+## Exercise 3: Use Copilot as an assistant to split up a large task
 
-You have this request too broad:
+You have this request, which is too broad:
 
 ```text
 Crea una API completa para una tienda online.
@@ -131,16 +131,16 @@ No escribas todavía la implementación completa.
 
 This request is better because:
 
-- Defines the technological stack.
-- Ask for planning before implementation.
-- Divide the problem into small parts.
-- Prevent Copilot from generating too much code at once.
-- Allows you to review the architecture before starting.
+- It defines the tech stack.
+- It asks for planning before implementation.
+- It splits the problem into small parts.
+- It keeps Copilot from generating too much code at once.
+- It lets you review the architecture before starting.
 
 </details>
 
 ## Exercise 4: Design a prompt for Copilot CLI
-You are working from the terminal and want to ask for help understanding the scripts available in a Node.js project. The `package.json` file contains several scripts, but you don't know which one to use to run tests, start development or create the build.
+You're working from the terminal and want to ask for help understanding the scripts available in a Node.js project. The `package.json` file contains several scripts, but you don't know which one to use to run the tests, start development or create the build.
 
 Write a request you could make to Copilot CLI.
 
@@ -156,7 +156,7 @@ No modifiques ningún archivo.
 ```
 
 
-If you were using Copilot CLI from the terminal, the idea would be to ask for a contextual explanation of the project before executing commands. A good answer should identify scripts like:
+If you were using Copilot CLI from the terminal, the idea would be to ask for an explanation of the project in context before running commands. A good answer should identify scripts like:
 
 ```json
 {
@@ -173,15 +173,15 @@ If you were using Copilot CLI from the terminal, the idea would be to ask for a 
 And explain them like this:
 
 - `npm run dev`: starts the development environment.
-- `npm test` or `npm run test`: run the tests.
+- `npm test` or `npm run test`: runs the tests.
 - `npm run build`: generates the production version.
-- `npm run preview`: preview the generated build.
+- `npm run preview`: previews the generated build.
 
 </details>
 
-## Exercise 5: Review an agent proposal before accepting changes
+## Exercise 5: Review an agent's proposal before accepting changes
 
-Imagine that Copilot Agent proposes to resolve an issue with these changes:
+Imagine that the Copilot cloud agent proposes to resolve an issue with these changes:
 
 - Create a new `UserCard` component.
 - Rename the `username` property to `name` throughout the application.
@@ -190,7 +190,7 @@ Imagine that Copilot Agent proposes to resolve an issue with these changes:
 
 The issue only asked to show the username and email on a card.
 
-Write a review checklist before accepting the pull request generated by the agent.
+Write a review checklist to go through before accepting the pull request generated by the agent.
 
 <details>
 <summary>Show solution</summary>
@@ -212,21 +212,21 @@ A suitable checklist would be:
 ```
 
 
-The most suspicious part is the global change from `username` to `name` and the addition of `axios`. They may be unnecessary changes for a small task and should be reviewed before accepting the pull request.
+The most suspicious parts are the global change from `username` to `name` and the addition of `axios`. They may be unnecessary changes for a small task, and it's a good idea to review them before accepting the pull request.
 
 </details>
 
 ## Exercise 6: Create a reusable prompt file
 
-You want to create a reusable prompt to ask Copilot to review JavaScript functions before uploading them to GitHub.
+You want to create a reusable prompt to ask Copilot to review JavaScript functions before pushing them to GitHub.
 
-The prompt should ask:
+The prompt should ask for:
 
 - Possible bugs.
 - Readability problems.
-- Borderline cases.
+- Edge cases.
 - Recommended tests.
-- A minimal correction if you find errors.
+- A minimal fix if it finds errors.
 
 Write the content of that prompt file.
 
@@ -254,6 +254,6 @@ Explica cada cambio de forma breve.
 ```
 
 
-This prompt file would be useful because it turns a regular request into a reusable template. This avoids writing the same instruction every time you want to review a function.
+This prompt file would be useful because it turns a frequent request into a reusable template. That way, you don't have to write the same instruction every time you want to review a function.
 
 </details>

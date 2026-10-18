@@ -1,16 +1,16 @@
 # **Exercises - Topic 8: Computed Properties, watch and watchEffect in Vue.js**
 
-Below you will find 6 practical exercises on computed properties, watch and watchEffect in Vue.
+Below you'll find 6 practical exercises on computed properties, watch and watchEffect in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Property computed price with VAT**
+## **Exercise 1: Computed property for a price with VAT**
 
-Create a component `ProductPrice.vue` that has a reactive variable `basePrice` and a computed property `priceWithTax` that adds 21% VAT.
+Create a `ProductPrice.vue` component that has a reactive variable `basePrice` and a computed property `priceWithTax` that adds 21% VAT.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -37,11 +37,11 @@ p {
 
 ---
 
-## **Exercise 2: Watch observing name changes**
+## **Exercise 2: A watch that observes name changes**
 
-Create a component `NameWatcher.vue` that has a variable `name`, and every time it changes, display a message in the console.
+Create a `NameWatcher.vue` component that has a `name` variable and, every time it changes, displays a message in the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -69,11 +69,11 @@ input {
 
 ---
 
-## **Exercise 3: Computed to format a full name**
+## **Exercise 3: A computed property to format a full name**
 
-Create an `FullName.vue` component that has `firstName` and `lastName`, and an `formattedName` compute that returns "LastName, FirstName".
+Create a `FullName.vue` component that has `firstName` and `lastName`, and a `formattedName` computed property that returns "LastName, FirstName".
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -100,11 +100,11 @@ p {
 
 ---
 
-## **Exercise 4: WatchEffect reacting to multiple values**
+## **Exercise 4: A watchEffect that reacts to multiple values**
 
-Create an `CounterLogger.vue` component with `count` and `step`, and use an `watchEffect` to display each change in the console.
+Create a `CounterLogger.vue` component with `count` and `step`, and use a `watchEffect` to display each change in the console.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -137,11 +137,11 @@ input {
 
 ---
 
-## **Exercise 5: Computed to classify age**
+## **Exercise 5: A computed property to classify age**
 
-Create an `AgeClassifier.vue` component that has `age` and an `ageCategory` compute that returns "Minor", "Adult", or "Major".
+Create an `AgeClassifier.vue` component that has `age` and an `ageCategory` computed property that returns "Menor" ("Minor"), "Adulto" ("Adult") or "Mayor" ("Senior").
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -172,11 +172,11 @@ p {
 
 ---
 
-## **Exercise 6: Watch that loads data when changing an id**
+## **Exercise 6: A watch that loads data when an id changes**
 
-Create an `UserLoader.vue` component that has `userId` and uses `watch` to simulate loading data when the id changes.
+Create a `UserLoader.vue` component that has `userId` and uses `watch` to simulate loading data when the id changes.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>

@@ -2,18 +2,18 @@
 
 Below you will find **10 practical exercises** to work with dynamic routes in React Router using `:params` and `useParams`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Create a parametric route**
 
-In `App.jsx`, create a parametric route to display a user's detail:
+In `App.jsx`, create a parametric route to display a user's details:
 
 - Route: `/users/:id`
 - Component: `UserDetail.jsx`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Routes, Route } from "react-router-dom";
@@ -39,9 +39,9 @@ export default App;
 In `UserDetail.jsx`:
 
 - Read the `id` parameter using `useParams`.
-- Shows an `p` with: **"User id: X"**.
+- Show a `p` with: **"User id: X"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useParams } from "react-router-dom";
@@ -61,7 +61,7 @@ export default UserDetail;
 
 ## **Exercise 3: Create links to parametric routes**
 
-Create an `UsersLinks.jsx` component that displays a list with links to:
+Create a `UsersLinks.jsx` component that displays a list with links to:
 
 - `/users/1`
 - `/users/2`
@@ -69,7 +69,7 @@ Create an `UsersLinks.jsx` component that displays a list with links to:
 
 Use `Link`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Link } from "react-router-dom";
@@ -97,18 +97,18 @@ export default UsersLinks;
 
 ---
 
-## **Exercise 4: Load data with Axios using parameter**
+## **Exercise 4: Load data with Axios using the parameter**
 
 In `UserDetail.jsx`:
 
-- Use Axios to GET to:
+- Use Axios to make a GET request to:
 
   - `https://jsonplaceholder.typicode.com/users/{id}`
 
-- Save the user in state.
-- Shows the user's name.
+- Store the user in state.
+- Show the user's name.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -144,17 +144,17 @@ export default UserDetail;
 
 ## **Exercise 5: Add `loading` and `error`**
 
-Expand the previous exercise to include:
+Extend the previous exercise to include:
 
 - `isLoading`
 - `error`
 
 Behavior:
 
-- Shows `Loading...` while charging.
+- It shows `Loading...` while it loads.
 - If it fails, it shows `Error: ...`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useEffect, useState } from "react";
@@ -206,10 +206,10 @@ export default UserDetail;
 
 In `UserDetail.jsx`:
 
-- Convert `id` to number.
-- Shows an `p` with: **"Numeric id: X"**.
+- Convert `id` to a number.
+- Show a `p` with: **"Numeric id: X"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const numericId = Number(id);
@@ -227,9 +227,9 @@ Create a route:
 
 - `/posts/:postId/comments/:commentId`
 
-And an `CommentDetail.jsx` component that displays both values.
+And a `CommentDetail.jsx` component that displays both values.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <Route path="/posts/:postId/comments/:commentId" element={<CommentDetail />} />
@@ -257,7 +257,7 @@ export default CommentDetail;
 
 ## **Exercise 8: Generate dynamic links from an array**
 
-Create an `ProductsLinks.jsx` component with this array:
+Create a `ProductsLinks.jsx` component with this array:
 
 ```js
 const products = [
@@ -267,10 +267,10 @@ const products = [
 ];
 ```
 
-- Renders an `ul`.
+- Render a `ul`.
 - Use `.map()` to create links to `/products/{id}`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { Link } from "react-router-dom";
@@ -304,7 +304,7 @@ export default ProductsLinks;
 
 On a detail page, create a **Back** button that returns to the previous page using `useNavigate`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useNavigate } from "react-router-dom";
@@ -320,11 +320,11 @@ const navigate = useNavigate();
 
 ## **Exercise 10: 404 for non-existent detail routes**
 
-Configure an `*` route that displays `NotFound`.
+Configure a `*` route that displays `NotFound`.
 
-- Make sure that if the user enters `/users/9999` (or an undefined path), the app does not break.
+- Make sure that if the user goes to `/users/9999` (or an undefined route), the app doesn't break.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import NotFound from "./pages/NotFound";

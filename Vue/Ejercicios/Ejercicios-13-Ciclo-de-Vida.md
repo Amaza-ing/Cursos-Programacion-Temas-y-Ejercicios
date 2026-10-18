@@ -1,16 +1,16 @@
-# **Exercises - Topic 13: The Life Cycle of Components in Vue.js**
+# **Exercises - Topic 13: The Component Lifecycle in Vue.js**
 
-Below you will find 5 practical exercises on the life cycle of components in Vue.js.
+Below you'll find 5 practical exercises on the component lifecycle in Vue.js.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Display a message when mounting the component**
+## **Exercise 1: Display a message when the component is mounted**
 
-Create an `WelcomeMessage.vue` component that displays a console message when mounted.
+Create a `WelcomeMessage.vue` component that displays a message in the console when it's mounted.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -38,9 +38,9 @@ p {
 
 ## **Exercise 2: Save data before unmounting**
 
-Create an `FormDraft.vue` component that temporarily saves a message when unmounted.
+Create a `FormDraft.vue` component that temporarily saves a message when it's unmounted.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -70,11 +70,11 @@ textarea {
 
 ---
 
-## **Exercise 3: Show message before and after updating**
+## **Exercise 3: Show a message before and after updating**
 
-Create an `ReactiveMessage.vue` component that displays a console message before and after updating its content.
+Create a `ReactiveMessage.vue` component that displays a message in the console before and after its content is updated.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -109,11 +109,11 @@ input {
 
 ---
 
-## **Exercise 4: Initialize a timer on mount and clear it on unmount**
+## **Exercise 4: Start a timer on mount and clear it on unmount**
 
-Create an `TimerComponent.vue` component that starts a counter on mount and stops it on unmount.
+Create a `TimerComponent.vue` component that starts a counter when it's mounted and stops it when it's unmounted.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -149,11 +149,11 @@ p {
 
 ---
 
-## **Exercise 5: Log in console when creating and deleting a component**
+## **Exercise 5: Log to the console when a component is created and removed**
 
-Create an `LifecycleLogger.vue` component that logs console messages upon creation and deletion.
+Create a `LifecycleLogger.vue` component that logs messages to the console when it's created and removed.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>

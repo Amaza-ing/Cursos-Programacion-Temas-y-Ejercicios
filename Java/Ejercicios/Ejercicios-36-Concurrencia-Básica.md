@@ -2,7 +2,7 @@
 
 Below you will find **10 practical exercises** to work with **basic concurrency**: `Thread`, `Runnable`, `sleep`, `join`, `synchronized`, `ExecutorService`, `Callable`, `Future`, interruptions and virtual threads.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -38,7 +38,7 @@ public class Main {
 
 Create a class `DownloadTask` that implements `Runnable`.
 
-Your `run()` method should print:
+Its `run()` method must print:
 
 ```text
 Downloading file...
@@ -79,13 +79,13 @@ Create a program that prints:
 Start
 ```
 
-wait 1 second with `Thread.sleep(1000)` and then print:
+waits 1 second with `Thread.sleep(1000)` and then prints:
 
 ```text
 End
 ```
 
-Manages `InterruptedException`.
+Handle `InterruptedException`.
 
 <details><summary>Show solution</summary>
 
@@ -285,9 +285,9 @@ public class Main {
 
 ## Exercise 8: `Callable` and `Future`
 
-Create an `Callable<Integer>` that returns the sum of `15 + 25`.
+Create a `Callable<Integer>` that returns the sum of `15 + 25`.
 
-Send it to an executor with `submit` and get the result with `future.get()`.
+Submit it to an executor with `submit` and get the result with `future.get()`.
 
 <details><summary>Show solution</summary>
 
@@ -326,7 +326,7 @@ public class Main {
 Create a thread that tries to sleep for 5 seconds.
 
 From `main`, start the thread and interrupt it immediately.  
-The thread should print `"Interrupted"` if it receives the interrupt.
+The thread must print `"Interrupted"` if it is interrupted.
 
 <details><summary>Show solution</summary>
 

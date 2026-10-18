@@ -2,22 +2,22 @@
 
 ## 1. Introduction
 
-Until now you have created Java programs using `.java` files, classes, packages and different language APIs.
+So far you have created Java programs using `.java` files, classes, packages and various language APIs.
 
-But when a project begins to grow, new needs appear:
+But when a project starts to grow, new needs come up:
 
-- better organize the code
-- compile the project easily
-- run tests
-- add external libraries
-- generate an `.jar`
-- share the project with other people
-- avoid setting everything manually
-- maintain a standard structure
+- organizing the code better
+- compiling the project easily
+- running tests
+- adding external libraries
+- generating a `.jar`
+- sharing the project with other people
+- not having to configure everything manually
+- keeping a standard structure
 
-For that there are project construction tools.
+That's what build tools are for.
 
-One of the most used in Java is:
+One of the most widely used in Java is:
 
 - **Maven**
 
@@ -25,43 +25,43 @@ Maven helps manage Java projects in a standardized way.
 
 In this topic you will learn:
 
-- What is Maven
-- What is it for?
-- What is an `pom.xml` file?
-- What are `groupId`, `artifactId` and `version`
-- What is the typical structure of a Maven project
+- What Maven is
+- What it's for
+- What a `pom.xml` file is
+- What `groupId`, `artifactId` and `version` are
+- What the typical structure of a Maven project looks like
 - How to add dependencies
-- What is Maven Central
-- What is the Maven life cycle
+- What Maven Central is
+- What the Maven lifecycle is
 - Basic commands like `mvn compile`, `mvn test` and `mvn package`
-- What are plugins
+- What plugins are
 - How to configure Java 25 in Maven
-- What is Maven Wrapper
-- Good practices and typical errors
+- What Maven Wrapper is
+- Best practices and common mistakes
 
 ---
 
 ## 2. What problem does Maven solve?
 
-Imagine that you are doing a Java project and you need:
+Imagine you're working on a Java project and you need to:
 
 - compile many classes
 - use an external library
 - run tests
-- generate an `.jar` file
-- share the project with another computer
+- generate a `.jar` file
+- move the project to another computer
 
 Without Maven, you might have to:
 
 - download libraries manually
-- configure routes manually
+- configure paths manually
 - compile with long commands
 - explain to another person how to set up the project
 - repeat configurations on each computer
 
 Maven simplifies all this.
 
-With Maven, much of the configuration lives in a file:
+With Maven, much of the configuration lives in one file:
 
 ```text
 pom.xml
@@ -77,11 +77,11 @@ mvn package
 
 ---
 
-## 3. What is Maven
+## 3. What is Maven?
 
-Maven is a project management and construction tool.
+Maven is a project management and build tool.
 
-Serves for:
+It's used to:
 
 - compile code
 - run tests
@@ -96,7 +96,7 @@ Maven helps you work better with Java projects.
 
 ---
 
-## 4. What is `pom.xml`
+## 4. What is the `pom.xml`?
 
 The main Maven file is called:
 
@@ -104,7 +104,7 @@ The main Maven file is called:
 pom.xml
 ```
 
-POM means:
+POM stands for:
 
 ```text
 Project Object Model
@@ -112,7 +112,7 @@ Project Object Model
 
 This file describes the project.
 
-In it you can indicate:
+In it you can specify:
 
 - project name
 - version
@@ -154,7 +154,7 @@ my-project
                         └── MainTest.java
 ```
 
-The most important structure is:
+The most important part of the structure is:
 
 ```text
 src/main/java
@@ -165,7 +165,7 @@ src/test/java
 
 ## 6. `src/main/java`
 
-Here goes the main code of the application.
+This is where the application's main code goes.
 
 Example:
 
@@ -189,7 +189,7 @@ public class Main {
 
 ## 7. `src/test/java`
 
-Here are the tests of the project.
+This is where the project's tests go.
 
 Example:
 
@@ -197,15 +197,15 @@ Example:
 src/test/java/com/amazaing/app/MainTest.java
 ```
 
-The tests are not part of the main production code, but are used to verify that the project is working correctly.
+The tests are not part of the main production code, but they are used to check that the project works correctly.
 
 ---
 
-## 8. Advantage of standard structure
+## 8. The advantage of a standard structure
 
 Maven expects this structure by default.
 
-That means you don't have to explain where your main classes are if you follow convention.
+That means you don't have to tell it where your main classes are if you follow the convention.
 
 Maven already knows that:
 ```text
@@ -214,7 +214,7 @@ src/main/java
 
 contains the main code.
 
-And what:
+And that:
 
 ```text
 src/test/java
@@ -226,13 +226,13 @@ This is known as:
 
 > convention over configuration
 
-That is to say:
+In other words:
 
 > following conventions reduces the configuration needed
 
 ---
 
-## 9. First basic `pom.xml`
+## 9. A first basic `pom.xml`
 
 A basic `pom.xml` can look like this:
 
@@ -257,13 +257,13 @@ This file defines a minimal Maven project.
 
 ## 10. `modelVersion`
 
-This line appears almost always:
+This line almost always appears:
 
 ```xml
 <modelVersion>4.0.0</modelVersion>
 ```
 
-Indicates the version of the POM model that Maven uses.
+It indicates the version of the POM model that Maven uses.
 
 For most current Maven projects, you will see:
 
@@ -327,7 +327,7 @@ Example:
 <version>1.0.0</version>
 ```
 
-You can also see versions like:
+You may also see versions like:
 
 ```xml
 <version>1.0-SNAPSHOT</version>
@@ -337,7 +337,7 @@ The word `SNAPSHOT` usually indicates that it is a development version.
 
 ---
 
-## 14. Maven Coordinates
+## 14. Maven coordinates
 
 The combination of:
 
@@ -361,23 +361,23 @@ These coordinates uniquely identify an artifact.
 
 ---
 
-## 15. What is an artifact
+## 15. What is an artifact?
 
 An artifact is the output generated by a Maven project.
 
-Typically it can be:
+It's usually one of these:
 
-- an `.jar`
-- an `.war`
-- other type of package
+- a `.jar`
+- a `.war`
+- another type of package
 
-For a basic Java project, the most common thing to do is to generate an `.jar`.
+For a basic Java project, the most common thing is to generate a `.jar`.
 
 ---
 
 ## 16. `packaging`
 
-You can indicate the type of packaging.
+You can specify the packaging type.
 
 ```xml
 <packaging>jar</packaging>
@@ -396,9 +396,9 @@ If you don't set it, Maven usually assumes `jar` by default.
 
 ---
 
-## 17. Configure Java 25
+## 17. Configuring Java 25
 
-To indicate that you want to compile using Java 25, you can use properties on the `pom.xml`.
+To specify that you want to compile with Java 25, you can use properties in the `pom.xml`.
 
 ```xml
 <properties>
@@ -406,7 +406,7 @@ To indicate that you want to compile using Java 25, you can use properties on th
 </properties>
 ```
 
-Example within the POM:
+Example inside the POM:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -431,7 +431,7 @@ This tells Maven that the project should be compiled for Java 25.
 
 ---
 
-## 18. Check Maven installed
+## 18. Checking that Maven is installed
 
 To check if Maven is installed, you can open a terminal and type:
 
@@ -450,7 +450,7 @@ This displays information such as:
 - Maven version
 - Java version used by Maven
 - operating system
-- java route
+- Java path
 
 Conceptual example:
 
@@ -461,7 +461,7 @@ Java version: 25
 
 ---
 
-## 19. Basic Maven Commands
+## 19. Basic Maven commands
 
 The most important commands to get started are:
 
@@ -473,13 +473,13 @@ mvn clean
 mvn install
 ```
 
-Each executes a phase of the Maven lifecycle.
+Each one runs a phase of the Maven lifecycle.
 
 ---
 
 ## 20. `mvn compile`
 
-Compile the main code of the project.
+Compiles the project's main code.
 
 ```bash
 mvn compile
@@ -501,13 +501,13 @@ target/classes
 
 ## 21. `target`
 
-When you run Maven, a folder called:
+When you run Maven, it creates a folder called:
 
 ```text
 target
 ```
 
-Generated files are saved inside.
+Generated files are stored inside it.
 
 Examples:
 
@@ -517,13 +517,13 @@ target/test-classes
 target/maven-demo-1.0.0.jar
 ```
 
-The `target` folder is not normally uploaded to Git.
+The `target` folder is not normally committed to Git.
 
 ---
 
 ## 22. `mvn test`
 
-Run the project tests.
+Runs the project's tests.
 
 ```bash
 mvn test
@@ -531,9 +531,9 @@ mvn test
 
 Maven:
 
-1. compile the main code
-2. compile the test code
-3. run the tests
+1. compiles the main code
+2. compiles the test code
+3. runs the tests
 
 The test code is normally in:
 
@@ -544,31 +544,31 @@ src/test/java
 ---
 ## 23. `mvn package`
 
-Generate the final package of the project.
+Generates the project's final package.
 
 ```bash
 mvn package
 ```
 
-For an `jar` project, generate something like:
+For a `jar` project, it generates something like:
 
 ```text
 target/maven-demo-1.0.0.jar
 ```
 
-Before packaging, Maven also runs previous phases like build and test.
+Before packaging, Maven also runs earlier phases such as compiling and testing.
 
 ---
 
 ## 24. `mvn clean`
 
-Delete the `target` folder.
+Deletes the `target` folder.
 
 ```bash
 mvn clean
 ```
 
-It is useful when you want to clean the generated files and start from scratch.
+It is useful when you want to clean up the generated files and start from scratch.
 
 Very common:
 
@@ -578,16 +578,16 @@ mvn clean package
 
 This command:
 
-1. clean the project
-2. compile
-3. run tests
-4. generate the package
+1. cleans the project
+2. compiles
+3. runs the tests
+4. generates the package
 
 ---
 
 ## 25. `mvn install`
 
-Install the artifact in your local Maven repository.
+Installs the artifact in your local Maven repository.
 
 ```bash
 mvn install
@@ -603,11 +603,11 @@ This allows other projects on your computer to use that artifact as a dependency
 
 ---
 
-## 26. Maven life cycle
+## 26. The Maven lifecycle
 
-Maven has life cycles.
+Maven has lifecycles.
 
-The most important one to start with is the default life cycle.
+The most important one to start with is the default lifecycle.
 
 Some common phases are:
 
@@ -621,7 +621,7 @@ install
 deploy
 ```
 
-When you run a phase, Maven also runs the necessary previous phases.
+When you run a phase, Maven also runs the earlier phases it needs.
 
 For example:
 
@@ -629,7 +629,7 @@ For example:
 mvn package
 ```
 
-run before:
+first runs:
 
 - `validate`
 - `compile`
@@ -637,7 +637,7 @@ run before:
 
 ---
 
-## 27. Difference between phase and command
+## 27. The difference between a phase and a command
 
 When you write:
 
@@ -655,14 +655,14 @@ mvn clean package
 
 you are running:
 
-- phase `clean`
-- phase `package`
+- the `clean` phase
+- the `package` phase
 
-Maven is responsible for executing everything necessary.
+Maven takes care of running everything that's needed.
 
 ---
 
-## 28. What are dependencies
+## 28. What are dependencies?
 
 A dependency is an external library that your project needs.
 
@@ -678,9 +678,9 @@ In Maven, dependencies are declared in the `pom.xml`.
 
 ---
 
-## 29. Add a dependency
+## 29. Adding a dependency
 
-The dependencies are placed within:
+Dependencies go inside:
 
 ```xml
 <dependencies>
@@ -708,7 +708,7 @@ Each dependency also has Maven coordinates.
 
 Maven downloads dependencies from repositories.
 
-The best known public repository is:
+The best-known public repository is:
 
 ```text
 Maven Central
@@ -716,7 +716,7 @@ Maven Central
 
 When you add a dependency, Maven can automatically download it from Maven Central and save it to your local repository.
 
-That avoids having to download `.jar` manually.
+That saves you from downloading `.jar` files manually.
 
 ---
 
@@ -737,17 +737,17 @@ Dependency example:
 </dependencies>
 ```
 
-Look at:
+Notice:
 
 ```xml
 <scope>test</scope>
 ```
 
-This means that the dependency is used for tests, not the main code.
+This means that the dependency is used for tests, not for the main code.
 
 ---
 
-## 32. What is `scope`
+## 32. What is `scope`?
 
 The `scope` indicates when a dependency is used.
 
@@ -774,7 +774,7 @@ The dependency is only used in tests.
 
 ### 32.3. `provided`
 
-The dependency is required to compile, but is provided by the runtime environment.
+The dependency is required to compile, but it is provided by the runtime environment.
 
 ### 32.4. `runtime`
 
@@ -814,9 +814,9 @@ It is not needed to compile, but it is needed to run.
 
 ---
 
-## 34. Create a main class
+## 34. Creating a main class
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/app/Calculator.java
@@ -840,9 +840,9 @@ public class Calculator {
 
 ---
 
-## 35. Create a test with JUnit
+## 35. Creating a test with JUnit
 
-Route:
+Path:
 ```text
 src/test/java/com/amazaing/app/CalculatorTest.java
 ```
@@ -891,7 +891,7 @@ Tu proyecto
             Library B depende de Library C
 ```
 
-Maven solves that chain of dependencies.
+Maven resolves that chain of dependencies.
 
 That's called:
 
@@ -899,7 +899,7 @@ That's called:
 
 ---
 
-## 37. View dependency tree
+## 37. Viewing the dependency tree
 
 You can see the project dependencies with:
 
@@ -913,22 +913,22 @@ This shows:
 - transitive dependencies
 - possible conflicts
 
-It is very useful to understand what libraries your project is using.
+It is very useful for understanding which libraries your project is using.
 
 ---
 
-## 38. What are Maven plugins
+## 38. What are Maven plugins?
 
 Plugins allow Maven to perform tasks.
 
 For example:
 
-- compile
-- run tests
-- pack
-- generate documentation
-- create an executable `.jar`
-- copy resources
+- compiling
+- running tests
+- packaging
+- generating documentation
+- creating an executable `.jar`
+- copying resources
 
 Maven is largely powered by plugins.
 
@@ -936,7 +936,7 @@ Maven is largely powered by plugins.
 
 ## 39. Maven Compiler Plugin
 
-One of the most important plugins is the build plugin.
+One of the most important plugins is the compiler plugin.
 
 You can configure it like this:
 
@@ -962,11 +962,11 @@ You can also use the property:
 </properties>
 ```
 
-For starter projects, property is usually sufficient.
+For beginner projects, the property is usually enough.
 
 ---
 
-## 40. Create an `.jar`
+## 40. Creating a `.jar`
 
 With:
 
@@ -974,7 +974,7 @@ With:
 mvn package
 ```
 
-Maven generates an `.jar` in:
+Maven generates a `.jar` in:
 
 ```text
 target
@@ -986,19 +986,19 @@ Example:
 target/maven-demo-1.0.0.jar
 ```
 
-But for an `.jar` to be executable with:
+But for a `.jar` to be executable with:
 
 ```bash
 java -jar archivo.jar
 ```
 
-you need to know what the main class is.
+it needs to know which class is the main class.
 
 ---
 
-## 41. Configure main class in the `.jar`
+## 41. Configuring the main class in the `.jar`
 
-You can configure the packaging plugin to indicate the parent class.
+You can configure the packaging plugin to specify the main class.
 
 Example:
 
@@ -1020,13 +1020,13 @@ Example:
 </build>
 ```
 
-Now the `.jar` can know which class to run.
+Now the `.jar` knows which class to run.
 
 ---
 
-## 42. `Main.java` Example
+## 42. `Main.java` example
 
-Route:
+Path:
 
 ```text
 src/main/java/com/amazaing/app/Main.java
@@ -1046,7 +1046,7 @@ public class Main {
 
 ---
 
-## 43. Run `.jar`
+## 43. Running the `.jar`
 
 After:
 
@@ -1082,8 +1082,8 @@ Here you can put files like:
 - `.json`
 - `.xml`
 - templates
-- texts
-- settings
+- text files
+- configuration files
 
 Example:
 
@@ -1095,7 +1095,7 @@ When packaging the project, Maven includes those resources.
 
 ---
 
-## 45. Read a resource
+## 45. Reading a resource
 
 Suppose you have:
 
@@ -1137,7 +1137,7 @@ public class Main {
 
 ## 46. Maven Wrapper
 
-Maven Wrapper allows you to run Maven even if the person does not have Maven installed globally.
+Maven Wrapper lets you run Maven even if Maven isn't installed globally.
 
 Instead of:
 
@@ -1161,9 +1161,9 @@ This helps everyone use a specific version of Maven for the project.
 
 ---
 
-## 47. Maven Wrapper Files
+## 47. Maven Wrapper files
 
-When a project uses Maven Wrapper, files like:
+When a project uses Maven Wrapper, you'll usually see files like:
 
 ```text
 mvnw
@@ -1171,7 +1171,7 @@ mvnw.cmd
 .mvn/wrapper/maven-wrapper.properties
 ```
 
-These files are usually uploaded to the repository.
+These files, on the other hand, are usually committed to the repository.
 
 So another person can clone the project and run:
 
@@ -1183,14 +1183,14 @@ without installing Maven manually.
 
 ---
 
-## 48. Create a Maven project from an IDE
+## 48. Creating a Maven project from an IDE
 
 Many IDEs allow you to create Maven projects automatically.
 
 For example:
 
--IntelliJ IDEA
--Eclipse
+- IntelliJ IDEA
+- Eclipse
 - NetBeans
 - Visual Studio Code with Java extensions
 
@@ -1208,8 +1208,8 @@ And the IDE creates:
 
 ---
 
-## 49. Create a Maven project from terminal
-You can also create a Maven project from terminal using an archetype.
+## 49. Creating a Maven project from the terminal
+You can also create a Maven project from the terminal using an archetype.
 
 Example:
 
@@ -1219,13 +1219,13 @@ mvn archetype:generate
 
 An archetype is a project template.
 
-For an initial course, it is often more convenient to create the structure manually or from the IDE.
+In an introductory course, it's often easier to create the structure manually or from the IDE.
 
 ---
 
-## 50. Import a Maven project
+## 50. Importing a Maven project
 
-If you download or clone a Maven project, usually just open the folder where the `pom.xml` is.
+If you download or clone a Maven project, opening the folder that contains the `pom.xml` is usually enough.
 
 The IDE detects that it is a Maven project and downloads the dependencies.
 
@@ -1243,18 +1243,18 @@ Update Project
 
 ---
 
-## 51. Update dependencies
+## 51. Updating dependencies
 
 When you modify the `pom.xml`, the IDE may need to reload Maven.
 
-Examples of actions:
+Example actions:
 
 - Reload Maven
 - Reimport Maven project
 - Update project
 - Sync project
 
-In terminal, you can run:
+In the terminal, you can run:
 
 ```bash
 mvn clean compile
@@ -1264,7 +1264,7 @@ to check that everything downloads and compiles correctly.
 
 ---
 
-## 52. `.m2` local repository
+## 52. The `.m2` local repository
 
 Maven saves downloaded dependencies to your local repository.
 
@@ -1280,13 +1280,13 @@ On Windows, it can be in a path like:
 C:\Users\YourUser\.m2\repository
 ```
 
-This allows Maven to not download the same dependency over and over again.
+This means Maven doesn't have to download the same dependency over and over again.
 
 ---
 
 ## 53. `.gitignore` in a Maven project
 
-Normally you should not upload the `target` folder to Git.
+Normally you shouldn't commit the `target` folder to Git.
 
 `.gitignore` example:
 
@@ -1296,7 +1296,7 @@ target/
 *.iml
 ```
 
-If you use Maven Wrapper, they normally do upload:
+If you use Maven Wrapper, you normally do commit:
 
 ```text
 mvnw
@@ -1306,7 +1306,7 @@ mvnw.cmd
 
 ---
 
-## 54. Complete Maven Project Example
+## 54. Complete Maven project example
 
 Structure:
 
@@ -1331,7 +1331,7 @@ maven-demo
 
 ---
 
-## 55. `pom.xml` complete example
+## 55. Complete example `pom.xml`
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -1449,7 +1449,7 @@ public class CalculatorTest {
 
 ---
 
-## 59. Commands to test the project
+## 59. Commands to try out the project
 
 Compile:
 
@@ -1463,7 +1463,7 @@ Run tests:
 mvn test
 ```
 
-Create `.jar`:
+Create the `.jar`:
 
 ```bash
 mvn package
@@ -1475,7 +1475,7 @@ Clean and create package:
 mvn clean package
 ```
 
-Run `.jar`:
+Run the `.jar`:
 
 ```bash
 java -jar target/maven-demo-1.0.0.jar
@@ -1508,7 +1508,7 @@ To begin with, there is no need to mix modules and Maven in every project, but i
 
 ## 61. Maven and modern Java
 
-Maven fits very well with modern Java because it allows you to manage projects that use:
+Maven works really well with modern Java because it lets you manage projects that use:
 
 - records
 - sealed classes
@@ -1529,7 +1529,7 @@ Example:
 </properties>
 ```
 
-This way anyone who opens the project knows which version of Java it is prepared for.
+This way anyone who opens the project knows which version of Java it's set up for.
 
 ---
 
@@ -1537,33 +1537,33 @@ This way anyone who opens the project knows which version of Java it is prepared
 
 Another well-known tool in Java is Gradle.
 
-### 62.1. maven
+### 62.1. Maven
 
 - mainly uses XML
 - has a very standard structure
 - is widely used in enterprise Java projects
-- it is easy to recognize
+- is easy to recognize
 - has a lot of documentation and examples
 
 ### 62.2. Gradle
 
 - usually uses Groovy or Kotlin
-- it is more flexible
-- used a lot on Android
+- is more flexible
+- is used a lot on Android
 - can be more compact
-- may be more complex at first
-To learn Java, Maven is a very good first tool because its structure is clear and very standard.
+- can be more complex at first
+When you're learning Java, Maven is a very good first tool because its structure is clear and very standard.
 
 ---
 
 ## 63. When to use Maven
 
-Use Maven whenever you want:
+Use Maven when you want to:
 
 - create a well-organized Java project
 - add external dependencies
 - run tests easily
-- generate an `.jar`
+- generate a `.jar`
 - share the project
 - follow a standard structure
 - work with frameworks like Spring
@@ -1574,39 +1574,39 @@ Use Maven whenever you want:
 
 You may not need Maven if:
 
-- you are making an example of a single class
+- you are writing a single-class example
 - you are learning very basic syntax
 - you have no external dependencies
 - you don't need testing or packaging
-- you want to do quick tests
+- you want to try things out quickly
 
-But as soon as the project grows a little, Maven starts to be very useful.
+But as soon as the project grows a bit, Maven becomes very useful.
 
 ---
 
-## 65. Typical mistakes when starting
+## 65. Common beginner mistakes
 
-### 65.1. Put classes outside of `src/main/java`
+### 65.1. Putting classes outside `src/main/java`
 
-Maven expects the main code at:
+Maven expects the main code in:
 
 ```text
 src/main/java
 ```
 
-### 65.2. Put tests outside of `src/test/java`
+### 65.2. Putting tests outside `src/test/java`
 
-Maven awaits the tests in:
+Maven expects the tests in:
 
 ```text
 src/test/java
 ```
 
-### 65.3. Modify the `pom.xml` and not reload Maven
+### 65.3. Changing the `pom.xml` without reloading Maven
 
 If you add a dependency and the IDE does not recognize it, reload the Maven project.
 
-### 65.4. Forget to close XML tags
+### 65.4. Forgetting to close XML tags
 
 The `pom.xml` is XML, so all tags must be properly closed.
 
@@ -1624,17 +1624,17 @@ Correct example:
 
 ### 65.5. Confusing `groupId` and `artifactId`
 
-- `groupId` identifies organization or group
+- `groupId` identifies the organization or group
 - `artifactId` identifies the project or artifact
 
-### 65.6. Upload `target` to Git
+### 65.6. Committing `target` to Git
 
 The `target` folder contains generated files.  
 Normally it should be ignored.
 
-### 65.7. Use a different version of Java
+### 65.7. Using a different Java version
 
-If your `pom.xml` indicates Java 25, make sure Maven is using a supported JDK.
+If your `pom.xml` specifies Java 25, make sure Maven is using a compatible JDK.
 
 Check with:
 
@@ -1644,22 +1644,22 @@ mvn -v
 
 ---
 
-## 66. Good practices
+## 66. Best practices
 
-- Follows the standard Maven structure.
-- Keep `pom.xml` tidy.
+- Follow the standard Maven structure.
+- Keep the `pom.xml` tidy.
 - Use clear names for `groupId` and `artifactId`.
 - Configure the Java version with `maven.compiler.release`.
-- Do not upload the `target` folder to the repository.
-- Use Maven Wrapper if you want to facilitate the execution of the project on other computers.
-- Declare dependencies on `pom.xml`, do not download `.jar` manually.
+- Don't commit the `target` folder to the repository.
+- Use Maven Wrapper if you want to make it easier to run the project on other computers.
+- Declare dependencies in the `pom.xml`; don't download `.jar` files manually.
 - Use `scope test` for testing dependencies.
 - Run `mvn clean package` to verify that the project compiles from scratch.
 - Check `mvn dependency:tree` if you have dependency conflicts.
 
 ---
 
-## 67. To take into account
+## 67. Things to keep in mind
 
 - Maven is a tool for building and managing Java projects.
 - The main file is `pom.xml`.
@@ -1670,9 +1670,9 @@ mvn -v
 - Maven downloads dependencies automatically.
 - `mvn compile` compiles.
 - `mvn test` runs tests.
-- `mvn package` generates the packet.
+- `mvn package` generates the package.
 - `mvn clean` cleans generated files.
-- `mvn install` installs the artifact to the local repository.
+- `mvn install` installs the artifact in the local repository.
 - The `target` folder contains the generated files.
 - Maven Wrapper allows you to run Maven without a global installation.
 
@@ -1726,4 +1726,4 @@ Learning Maven prepares you to work with real Java projects, external libraries,
 
 ---
 
-In the next topic we will finish the course with a **Final Project**, where you will be able to unite many of the concepts learned in a practical application.
+In the next topic we'll wrap up the course with a **Final Project**, where you'll be able to bring together many of the concepts you've learned in a practical application.

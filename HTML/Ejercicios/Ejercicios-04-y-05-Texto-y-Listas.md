@@ -2,9 +2,9 @@
 
 ## **Instructions:**
 
-Below you will find 10 practical exercises on using headings, paragraphs and lists in HTML. Perform each of them in a code editor and view the results in your browser.
+Below you'll find 10 practical exercises on using headings, paragraphs and lists in HTML. Do each one in a code editor and check the results in your browser.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -12,7 +12,7 @@ Try to solve them before consulting the solution.
 
 ### **Exercise 1: Structure of an article with headings**
 
-Create an HTML document with an article structure that includes a main heading (`h1`), a subheading (`h2`), and three sections (`h3`). Add content in paragraphs (`p`).
+Create an HTML document with an article structure that includes a main title (`h1`), a subtitle (`h2`) and three sections (`h3`). Add content in paragraphs (`p`).
 
 <details><summary>Show solution</summary>
 
@@ -34,9 +34,9 @@ Create an HTML document with an article structure that includes a main heading (
 
 ---
 
-### **Exercise 2: Correct use of headers**
+### **Exercise 2: Using headings correctly**
 
-Analyze the following code and correct any misuse of headers:
+Analyze the following code and fix any misuse of headings:
 
 ```html
 <h3>Título principal</h3>
@@ -48,7 +48,7 @@ Explain why headings should follow a logical hierarchy.
 
 <details><summary>Show solution</summary>
 
-**Correction:**
+**Fixed code:**
 
 ```html
 <h1>Título principal</h1>
@@ -56,7 +56,7 @@ Explain why headings should follow a logical hierarchy.
 <h3>Sección del contenido</h3>
 ```
 
-**Explanation:** Headers should follow a logical hierarchy, starting from `<h1>`, followed by `<h2>`, `<h3>`, etc. An `<h3>` should not be used as a main title, nor an `<h1>` as a subtitle.
+**Explanation:** Headings should follow a logical hierarchy, starting with `<h1>`, followed by `<h2>`, `<h3>`, etc. You shouldn't use an `<h3>` as the main title, or an `<h1>` as a subtitle.
 
 </details>
 
@@ -82,7 +82,7 @@ Create a paragraph in HTML where you use the `<br>` tag to separate lines within
 
 ### **Exercise 4: Quote and preformatted text**
 
-Write an HTML document that includes a quote block (`<blockquote>`) with a famous phrase and a preformatted code block (`<pre>`) with a fragment of text representing a poem or a multi-line message.
+Write an HTML document that includes a quote block (`<blockquote>`) with a famous quote, and a preformatted block (`<pre>`) with a piece of text such as a poem or a multi-line message.
 
 <details><summary>Show solution</summary>
 
@@ -108,7 +108,7 @@ Y tú también.
 
 ### **Exercise 5: Unordered list of favorite items**
 
-Create an unordered list (`<ul>`) with at least five items that represent your favorite foods, movies, or books.
+Create an unordered list (`<ul>`) with at least five items representing your favorite foods, movies or books.
 
 <details><summary>Show solution</summary>
 
@@ -126,7 +126,7 @@ Create an unordered list (`<ul>`) with at least five items that represent your f
 
 ### **Exercise 6: Ordered list of steps in a process**
 
-Create an ordered list (`<ol>`) that describes the steps to make a simple recipe (for example, making coffee or making a salad).
+Create an ordered list (`<ol>`) that describes the steps of a simple recipe (for example, making coffee or a salad).
 
 <details><summary>Show solution</summary>
 
@@ -146,8 +146,8 @@ Create an ordered list (`<ol>`) that describes the steps to make a simple recipe
 
 ### **Exercise 7: Nested list of categories and subcategories**
 
-Creates a nested list containing main categories (`<ul>`) and subcategories (`<li>` with internal lists).
-Example: List of musical genres and some artists within each genre.
+Create a nested list with main categories (`<ul>`) and subcategories (`<li>` with inner lists).
+Example: a list of music genres and some artists in each genre.
 
 <details><summary>Show solution</summary>
 
@@ -174,9 +174,9 @@ Example: List of musical genres and some artists within each genre.
 
 ---
 
-### **Exercise 8: Correcting a poorly structured list**
+### **Exercise 8: Fixing a badly structured list**
 
-Correct the following code to make the list structure valid:
+Fix the following code so that the list structure is valid:
 
 ```html
 <ol>
@@ -188,10 +188,11 @@ Correct the following code to make the list structure valid:
 </ol>
 ```
 
-Explain what was wrong and how you corrected it.
+Explain what was wrong and how you fixed it.
+
 <details><summary>Show solution</summary>
 
-**Correction:**
+**Fixed code:**
 
 ```html
 <ol>
@@ -205,7 +206,7 @@ Explain what was wrong and how you corrected it.
 </ol>
 ```
 
-**Explanation:** The lists must follow an appropriate structure, preventing an `<ul>` from being directly inside an `<ol>` without being inside an `<li>`.
+**Explanation:** Lists must follow a proper structure: a `<ul>` must not sit directly inside an `<ol>` without being inside an `<li>`.
 
 </details>
 
@@ -213,7 +214,7 @@ Explain what was wrong and how you corrected it.
 
 ### **Exercise 9: Description list with terms and definitions**
 
-Create a description list (`<dl>`) where you define at least three terms and their respective explanations.
+Create a description list (`<dl>`) where you define at least three terms, each with its explanation.
 
 <details><summary>Show solution</summary>
 
@@ -236,7 +237,7 @@ Create a description list (`<dl>`) where you define at least three terms and the
 
 ### **Exercise 10: Create a combined list**
 
-Create a list structure that combines ordered, unordered, and description lists within a single HTML document.
+Create a list structure that combines ordered, unordered and description lists in a single HTML document.
 
 <details><summary>Show solution</summary>
 

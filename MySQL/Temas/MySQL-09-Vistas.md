@@ -1,8 +1,8 @@
 # **Topic 9: Create and Manage Views (VIEW) in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
-- Understand what a view is (`VIEW`).
+- Understand what a view (`VIEW`) is.
 - Create views to simplify complex queries.
 - Update, delete and use views as virtual tables.
 
@@ -10,17 +10,17 @@ In this topic we will learn to:
 
 ## **1. What is a view (VIEW)?**
 
-A **view** is a saved query that behaves like a virtual table. It does not store data itself, but instead displays the result of a query each time it is accessed.
+A **view** is a saved query that behaves like a virtual table. It does not store any data itself; instead, it shows the result of a query every time it is accessed.
 
 ### **Advantages:**
 
-- Hides the complexity of long queries.
-- Improves code readability and maintainability.
-- You can limit access to certain data.
+- It hides the complexity of long queries.
+- It improves code readability and maintainability.
+- It can limit access to certain data.
 
 ---
 
-## **2. Create a view**
+## **2. Creating a view**
 
 ### **Basic syntax:**
 
@@ -33,7 +33,7 @@ WHERE condición;
 
 ### **Example:**
 
-View showing orders with customer information:
+A view that shows orders with customer information:
 
 ```sql
 CREATE VIEW pedidos_con_clientes AS
@@ -44,7 +44,7 @@ JOIN customers c ON o.customer_id = c.id;
 
 ---
 
-## **3. Consult a view**
+## **3. Querying a view**
 
 Once created, you can query the view as if it were a table:
 
@@ -61,7 +61,7 @@ WHERE total_amount > 100;
 
 ---
 
-## **4. Update a view**
+## **4. Updating a view**
 
 You can modify a view with `CREATE OR REPLACE VIEW`:
 
@@ -72,11 +72,11 @@ FROM orders o
 JOIN customers c ON o.customer_id = c.id;
 ```
 
-> Note that only some views can be updated directly (when they do not contain aggregation functions, `GROUP BY`, `DISTINCT`, etc.).
+> Keep in mind that only some views can be updated directly (when they do not contain aggregate functions, `GROUP BY`, `DISTINCT`, etc.).
 
 ---
 
-## **5. Delete a view**
+## **5. Deleting a view**
 
 To delete a view:
 
@@ -86,9 +86,9 @@ DROP VIEW pedidos_con_clientes;
 
 ---
 
-## **6. Check existing views**
+## **6. Checking existing views**
 
-To view all views defined in the database:
+To see all the views defined in the database:
 
 ```sql
 SHOW FULL TABLES WHERE Table_type = 'VIEW';
@@ -113,9 +113,9 @@ Use views when:
 ## **8. Conclusion**
 
 - Views simplify access to complex data.
-- They are useful to better structure queries and reuse them.
+- They are useful for structuring queries better and reusing them.
 - Although they look like tables, they do not store data directly.
 
 ---
 
-In the next topic we will learn to **create and use indexes.**
+In the next topic we will learn how to **create and use indexes.**

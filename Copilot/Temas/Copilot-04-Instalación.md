@@ -1,27 +1,27 @@
 # Topic 04 — Installing and configuring GitHub Copilot in VS Code and JetBrains
 
-## 1. Objectives of the topic
+## 1. Topic objectives
 
-In this topic you will learn how to prepare the work environment to use **GitHub Copilot** in a real development project.
+In this topic you will learn how to set up your work environment to use **GitHub Copilot** in a real development project.
 
 By the end of this topic you should be able to:
 
 - Understand what you need to use GitHub Copilot.
 - Install GitHub Copilot in **Visual Studio Code**.
-- Install GitHub Copilot on **JetBrains**.
+- Install GitHub Copilot in **JetBrains**.
 - Sign in with your GitHub account.
-- Check if Copilot is working correctly.
-- Activate and deactivate automatic suggestions.
-- Identify the difference between inline suggestions and Copilot Chat.
-- Apply a safe and comfortable basic configuration to work.
+- Check whether Copilot is working correctly.
+- Enable and disable automatic suggestions.
+- Tell the difference between inline suggestions and Copilot Chat.
+- Apply a basic configuration that is safe and comfortable to work with.
 
-> In this topic we are not yet looking to master the prompts or Copilot Chat. The goal is to leave the environment prepared for the following topics.
+> This topic is not yet about mastering prompts or Copilot Chat. The goal is to get your environment ready for the following topics.
 
 ---
 
-## 2. What is GitHub Copilot within the development environment
+## 2. What GitHub Copilot is within the development environment
 
-**GitHub Copilot** is an artificial intelligence-based programming assistant that is integrated within the editor or IDE.
+**GitHub Copilot** is an AI-based programming assistant that integrates into your editor or IDE.
 
 It can help you:
 
@@ -31,18 +31,18 @@ It can help you:
 - Explain existing code.
 - Propose refactorings.
 - Help write tests.
-- Resolve technical doubts from the editor itself.
+- Answer technical questions right from the editor.
 - Detect errors or possible improvements.
 
-The main idea is that Copilot acts as a **development assistant**, not a substitute for the programmer.
+The main idea is that Copilot acts as a **development assistant**, not as a replacement for the programmer.
 
 You are still responsible for:
 
-- Understand the code.
-- Review what is generated.
-- Test that it works.
-- Check that you meet the requirements.
-- Maintain the quality and safety of the project.
+- Understanding the code.
+- Reviewing what is generated.
+- Testing that it works.
+- Checking that it meets the requirements.
+- Maintaining the quality and security of the project.
 
 ---
 
@@ -64,14 +64,14 @@ https://github.com/
 
 GitHub Copilot requires access through a subscription, educational license, enterprise license, or activation within an organization.
 
-Depending on the context of the course, one of these situations may occur:
+Depending on how you take the course, you may be in one of these situations:
 
 - You have an individual subscription.
 - Your company or training center has assigned you a license.
 - You use an educational account with access to Copilot.
-- The teacher provides specific instructions for access during training.
+- Your teacher gives you specific instructions to get access during the training.
 
-### 3.3. Editor or IDE supported
+### 3.3. A supported editor or IDE
 
 In this course we will work mainly with:
 
@@ -106,7 +106,8 @@ Visual Studio Code is one of the most convenient environments to get started wit
 
 ### 4.1. Step 1: Open Visual Studio Code
 
-Open Visual Studio Code from your computer.
+Open Visual Studio Code on your computer.
+
 If you don't have it installed yet, you can download it from:
 
 ```text
@@ -133,9 +134,9 @@ Cmd + Shift + X
 
 ---
 
-### 4.3. Step 3: Search GitHub Copilot
+### 4.3. Step 3: Search for GitHub Copilot
 
-In the extension search, type:
+In the extensions search box, type:
 
 ```text
 GitHub Copilot
@@ -185,31 +186,31 @@ Follow the steps:
 
 ---
 
-### 4.6. Step 6: Check Copilot Status
+### 4.6. Step 6: Check Copilot's status
 
 In Visual Studio Code, a Copilot icon usually appears at the bottom or top of the editor, depending on the version.
 
-From that icon you can check if Copilot is:
+From that icon you can check whether Copilot is:
 
-- Activated.
+- Enabled.
 - Disabled.
-- Waiting for login.
-- Without license access.
+- Waiting for you to sign in.
+- Without access because of its license.
 - Blocked by the organization.
 
 If Copilot doesn't work, check:
 
-- That you have logged in with the correct account.
+- That you have signed in with the correct account.
 - That your account has access to Copilot.
 - That the extension is installed and enabled.
-- There are no network or proxy restrictions.
+- That there are no network or proxy restrictions.
 - That Visual Studio Code is up to date.
 
 ---
 
 ## 5. First test in Visual Studio Code
 
-To test that Copilot works, create a test folder.
+To check that Copilot works, create a test folder.
 
 For example:
 
@@ -231,7 +232,7 @@ Write the following comment:
 
 Wait a few seconds.
 
-Copilot should suggest a possible feature.
+Copilot should suggest a possible function.
 
 A possible suggestion would be:
 
@@ -274,7 +275,7 @@ Esc
 
 Depending on your editor settings, you can move between suggestions with keyboard shortcuts.
 
-You can also open the command panel:
+You can also open the Command Palette:
 
 ```text
 Ctrl + Shift + P
@@ -286,7 +287,7 @@ On macOS:
 Cmd + Shift + P
 ```
 
-And search for commands related to Copilot.
+Then search for commands related to Copilot.
 
 ---
 
@@ -296,17 +297,18 @@ There are times when you may want to temporarily disable Copilot.
 
 For example:
 
-- When you are doing a test without help.
+- When you are taking a test without help.
 - When you are working with sensitive information.
 - When suggestions distract you.
-- When you want to manually write a solution.
+- When you want to write a solution by hand.
 
 ### From the Copilot icon
+
 1. Click the Copilot icon.
 2. Select the option to turn Copilot on or off.
-3. Choose if you want to disable it globally or only for a specific language.
+3. Choose whether you want to disable it globally or only for a specific language.
 
-### From configuration
+### From the settings
 
 You can also open VS Code settings and search for:
 
@@ -317,13 +319,13 @@ Copilot
 From there you can modify options related to:
 
 - Inline suggestions.
-- Activation by languages.
-- Chat Behavior.
+- Enabling it per language.
+- Chat behavior.
 - Shortcuts.
 
 ---
 
-## 8. Activate or deactivate Copilot by language
+## 8. Turn Copilot on or off per language
 
 Sometimes you don't want Copilot to work in all languages.
 
@@ -343,9 +345,9 @@ An example configuration could be:
 }
 ```
 
-This example indicates:
+This example means:
 
-- Copilot is activated by default.
+- Copilot is enabled by default.
 - Copilot is disabled in Markdown.
 - Copilot is disabled in plain text.
 
@@ -353,9 +355,9 @@ This example indicates:
 
 ---
 
-## 9. Installing GitHub Copilot on JetBrains
+## 9. Installing GitHub Copilot in JetBrains
 
-GitHub Copilot can also be installed on JetBrains IDEs.
+GitHub Copilot can also be installed in JetBrains IDEs.
 
 Some examples are:
 
@@ -363,7 +365,7 @@ Some examples are:
 - WebStorm.
 - PyCharm.
 - PhpStorm.
--RubyMine.
+- RubyMine.
 - GoLand.
 
 ---
@@ -380,7 +382,7 @@ IntelliJ IDEA
 
 ---
 
-### 9.2. Step 2: Open plugin settings
+### 9.2. Step 2: Open the plugin settings
 
 On Windows or Linux:
 
@@ -396,15 +398,15 @@ IntelliJ IDEA > Settings > Plugins
 
 ---
 
-### 9.3. Step 3: Search GitHub Copilot
+### 9.3. Step 3: Search for GitHub Copilot
 
-Under the Marketplace tab, look for:
+In the Marketplace tab, search for:
 
 ```text
 GitHub Copilot
 ```
 
-Check that the plugin corresponds to GitHub.
+Check that the plugin is the one published by GitHub.
 
 ---
 
@@ -424,11 +426,11 @@ If that message appears, restart the IDE.
 
 ### 9.5. Step 5: Sign in
 
-After rebooting, the IDE may ask you to sign in to GitHub.
+After restarting, the IDE may ask you to sign in to GitHub.
 
 Follow these steps:
 
-1. Click on the login option.
+1. Click the sign-in option.
 2. The browser will open.
 3. Sign in with your GitHub account.
 4. Authorize the plugin.
@@ -436,7 +438,7 @@ Follow these steps:
 
 ---
 
-### 9.6. Step 6: Check operation
+### 9.6. Step 6: Check that it works
 
 Create a test file.
 
@@ -482,14 +484,14 @@ GitHub Copilot can help you in two main ways within the editor.
 
 ### 10.1. Inline suggestions
 
-They are suggestions that appear while you write code.
+These are suggestions that appear while you write code.
 
-They serve for:
+They are useful to:
 
 - Complete a line.
 - Generate a function.
 - Continue a pattern.
-- Fill repetitive code.
+- Fill in repetitive code.
 - Suggest an implementation.
 
 Example:
@@ -506,17 +508,17 @@ Copilot can suggest the rest of the function.
 
 Copilot Chat allows you to write questions or instructions in natural language.
 
-Serves for:
+It is useful to:
 
 - Ask what a file does.
-- Ask them to explain a function.
+- Ask it to explain a function.
 - Request a refactoring.
-- Request tests.
+- Ask for tests.
 - Analyze errors.
 - Generate documentation.
 - Compare alternatives.
 
-Prompt example:
+Example prompt:
 
 ```text
 Explain what this function does and suggest how to make it easier to read.
@@ -526,15 +528,16 @@ Explain what this function does and suggest how to make it easier to read.
 
 ## 11. When to use inline suggestions and when to use Chat
 
-Use **inline hints** when:
+Use **inline suggestions** when:
+
 - You already know what you want to write.
 - You are completing repetitive code.
 - You want to speed up a simple implementation.
-- The close context of the file is sufficient.
+- The surrounding context in the file is enough.
 
 Use **Copilot Chat** when:
 
-- You need to explain a doubt.
+- You need a question explained.
 - You want to analyze an error.
 - You need to compare alternatives.
 - You want to modify several parts of the code.
@@ -543,7 +546,7 @@ Use **Copilot Chat** when:
 
 ---
 
-## 12. Recommended configuration for class
+## 12. Recommended setup for class
 
 For this course, it is recommended to work with the following initial configuration:
 
@@ -553,22 +556,22 @@ For this course, it is recommended to work with the following initial configurat
 - Have Copilot Chat available.
 - Have Git installed.
 - Have a test project open as a folder.
-- Have inline suggestions activated.
+- Have inline suggestions enabled.
 - Have the Chat panel visible.
 
-### At JetBrains
+### In JetBrains
 
 - Have the official GitHub Copilot plugin installed.
-- Have logged in with GitHub.
+- Have signed in with GitHub.
 - Have tried an inline suggestion.
 - Have a test project open.
-- Have the Copilot options located in Settings.
+- Know where the Copilot options are in Settings.
 
 ---
 
-## 13. Example project for course tests
+## 13. Sample project to try things out during the course
 
-During the following topics you can use a simple project.
+Over the next topics you can use a simple project.
 
 Create a folder called:
 
@@ -591,9 +594,9 @@ copilot-course-demo/
 
 The project does not have to be complex.
 
-The idea is to have enough files to test:
+The idea is to have enough files to try out:
 
-- Generation of functions.
+- Function generation.
 - Refactoring.
 - Documentation.
 - Tests.
@@ -602,7 +605,7 @@ The idea is to have enough files to test:
 
 ---
 
-## 14. Example initial file
+## 14. Example starter file
 
 In the file:
 
@@ -637,7 +640,7 @@ module.exports = {
 };
 ```
 
-This code will allow us to ask Copilot to:
+With this code we will be able to ask Copilot to:
 
 - Add validations.
 - Document functions.
@@ -647,13 +650,13 @@ This code will allow us to ask Copilot to:
 
 ---
 
-## 15. Common mistakes when configuring Copilot
+## 15. Common errors when setting up Copilot
 
 ### Error 1: No suggestions appear
 
 Possible causes:
 
-- You are not logged in.
+- You are not signed in.
 - The extension is not installed.
 - Copilot is disabled.
 - Your account does not have access to Copilot.
@@ -663,10 +666,10 @@ Possible causes:
 Recommended solution:
 
 1. Check the status of Copilot in the editor.
-2. Check that the GitHub account is correct.
+2. Check that you are using the right GitHub account.
 3. Close and reopen the editor.
 4. Update the extension.
-5. Test on a simple file.
+5. Try it in a simple file.
 
 ---
 
@@ -681,7 +684,7 @@ Possible causes:
 
 Recommended solution:
 
-- Add clear function names.
+- Use clear function names.
 - Write specific comments.
 - Open related files.
 - Use Copilot Chat to give more context.
@@ -698,9 +701,9 @@ Copilot does not guarantee that the code is correct.
 Recommended solution:
 
 - Read the code before accepting it.
-- Execute the project.
+- Run the project.
 - Add tests.
-- Check borderline cases.
+- Check edge cases.
 - Don't accept code you don't understand.
 
 ---
@@ -708,22 +711,23 @@ Recommended solution:
 ### Error 4: Copilot does not respond in Chat
 
 Possible causes:
+
 - You do not have access to Copilot Chat.
 - There is a session problem.
-- The IDE is not updated.
+- The IDE is not up to date.
 - There are network restrictions.
 
 Recommended solution:
 
-- Log out and log in again.
+- Sign out and sign in again.
 - Update the IDE.
 - Update the extension.
 - Check the official documentation.
-- Check if your organization has limited any functions.
+- Check whether your organization has restricted any features.
 
 ---
 
-## 16. Good configuration practices
+## 16. Configuration best practices
 
 To work better with Copilot:
 
@@ -746,11 +750,11 @@ Before moving on to the next topic, check that you can answer yes to these quest
 - Do I have an active GitHub account?
 - Do I have access to GitHub Copilot?
 - Have I installed Copilot in VS Code or JetBrains?
-- Have I logged in correctly?
+- Have I signed in correctly?
 - Have I tried an inline suggestion?
 - Do I know how to accept or reject a suggestion?
 - Do I know how to open Copilot Chat?
-- Do I know how to activate or deactivate Copilot if I need to?
+- Do I know how to turn Copilot on or off if I need to?
 - Do I understand that the generated code needs to be reviewed?
 
 ---
@@ -759,19 +763,19 @@ Before moving on to the next topic, check that you can answer yes to these quest
 
 In this topic you have prepared your environment to work with GitHub Copilot.
 
-Have you seen:
+You have seen:
 
 - What you need to use Copilot.
 - How to install it in VS Code.
 - How to install it in JetBrains.
 - How to check that it works.
-- What are inline suggestions.
-- What is Copilot Chat.
-- When to use each modality.
+- What inline suggestions are.
+- What Copilot Chat is.
+- When to use each mode.
 - What configuration errors may appear.
-- What good practices to apply from the beginning.
+- Which best practices to apply from the start.
 
-From the next topic we will begin to work with one of the most important parts of the course: **how to write good prompts to program with Copilot**.
+In the next topic we will start working on one of the most important parts of the course: **how to write good prompts for programming with Copilot**.
 
 ---
 

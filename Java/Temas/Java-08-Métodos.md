@@ -1,40 +1,40 @@
-# Topic 8. Methods: definition and use (parameters, arguments and returns)
+# Topic 8. Methods: definition and use (parameters, arguments and return)
 
 ## 1. Introduction
 
-As a program grows, a problem appears very quickly: the code becomes long, repetitive and difficult to maintain.
+As a program grows, a problem shows up very quickly: the code becomes long, repetitive and hard to maintain.
 
-The **methods** solve this because they allow you to:
+**Methods** solve this because they let you:
 
-- Reuse logic without copy and paste
-- Divide the program into small and understandable parts
+- Reuse logic without copying and pasting
+- Split the program into small, understandable parts
 - Give clear names to actions (“calculate”, “validate”, “show”)
 - Organize code to make it easier to read and modify
 
 In this topic you will learn:
 
-- What is a method and why is it a basic piece in Java
+- What a method is and why it's a basic building block in Java
 - How a method is defined (signature, parameters, body, return)
-- Difference between **parameters** and **arguments**
+- The difference between **parameters** and **arguments**
 - Methods with `return` and `void` methods
 - How to call methods and use their result
-- Typical errors and good practices
+- Typical mistakes and good practices
 
 ---
 
-[![](https://img.youtube.com/vi/i7Ewxu-9BcI/0.jpg) Methods](https://www.youtube.com/watch?v=i7Ewxu-9BcI&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
+[![Methods](https://img.youtube.com/vi/i7Ewxu-9BcI/0.jpg)](https://www.youtube.com/watch?v=i7Ewxu-9BcI&list=PLzA2VyZwsq_-30Z1c9LjWZpq24Kf-2MjD)
 
 ---
 
-## 2. What is a method
+## 2. What a method is
 
 A **method** is a block of code with a name that:
 
 - Can receive data (parameters)
-- Perform a specific task
+- Performs a specific task
 - Can return a result (`return`)
 
-Think of a method as a “mini tool” within your program.
+Think of a method as a “mini tool” inside your program.
 
 Mental example:
 
@@ -44,17 +44,17 @@ Mental example:
 
 ---
 
-## 3. Where are methods placed in Java
+## 3. Where methods go in Java
 
-In Java, methods live **within classes**.
+In Java, methods live **inside classes**.
 
-In a basic program (single file), the most common is:
+In a basic program (a single file), the most common setup is:
 
 - The `Main` class
 - The `main` method
-- And other auxiliary methods within the same class
+- And other helper methods inside the same class
 
-Structure example:
+Example structure:
 
 ```java
 public class Main {
@@ -70,10 +70,10 @@ public class Main {
 
 ## 4. Parts of a method (signature and body)
 
-One method has:
+A method has:
 
 - **Modifiers** (e.g. `public`, `private`)
-- **static** (we will use it for now)
+- **static** (we'll use it for now)
 - **Return type** (`int`, `double`, `boolean`, `String`, `void`, etc.)
 - **Method name**
 - **Parameters** (optional)
@@ -107,22 +107,22 @@ public static void main(String[] args) {
 }
 ```
 
-Features:
+Characteristics:
 
 - It is always `public static void`
 - It's called exactly `main`
-- Receive an `String[] args` (you will see it in more depth later)
+- It receives a `String[] args` (you'll see it in more depth later)
 
-Inside `main` normally:
+Inside `main` you normally:
 
-- You declare variables
-- Calls to methods
+- Declare variables
+- Call methods
 - Show results
-- You control the flow of the program
+- Control the flow of the program
 
 ---
 
-## 6. Create your first method (without parameters and without return)
+## 6. Creating your first method (no parameters and no return)
 
 A method can receive nothing and return nothing.
 
@@ -138,7 +138,7 @@ public static void printWelcomeMessage() {
 }
 ```
 
-### 6.2. Call method from `main`
+### 6.2. Calling the method from `main`
 
 ```java
 public class Main {
@@ -157,12 +157,12 @@ This prints the message twice without repeating the `System.out.println` in `mai
 
 ---
 
-## 7. Parameters and arguments (clear difference)
+## 7. Parameters and arguments (a clear difference)
 
 This difference is fundamental.
 
 - **Parameters**: variables that appear in the method definition
-- **Arguments**: real values that you pass when calling the method
+- **Arguments**: actual values that you pass when calling the method
 
 ### 7.1. Guided example
 
@@ -207,14 +207,14 @@ The order matters:
 
 ---
 
-## 8. Methods with return (return a value)
+## 8. Methods with return (returning a value)
 
 A method can return a value using `return`.
 
 When a method returns a value:
 
-- Return type cannot be `void`
-- Must return a value compatible with the declared type
+- The return type can't be `void`
+- It must return a value compatible with the declared type
 
 ### 8.1. Example: adding two numbers
 
@@ -233,7 +233,7 @@ System.out.println(result);
 
 ---
 
-### 8.2. `return` ends method
+### 8.2. `return` ends the method
 
 When Java encounters `return`, the method stops and returns the value.
 
@@ -251,8 +251,8 @@ public static int clampToZero(int value) {
 
 What it does:
 
-- If `value` is negative, return 0 immediately
-- If not, return `value`
+- If `value` is negative, it returns 0 immediately
+- Otherwise, it returns `value`
 
 ---
 
@@ -264,7 +264,7 @@ These methods usually start with:
 - `has...`
 - `can...`
 
-Example: Check if a number is even
+Example: checking whether a number is even
 
 ```java
 public static boolean isEven(int number) {
@@ -283,7 +283,7 @@ System.out.println(result);
 
 ## 10. Methods that return `String`
 
-Example: construct a message
+Example: building a message
 
 ```java
 public static String buildGreeting(String userName) {
@@ -324,9 +324,9 @@ System.out.println(total);
 
 ---
 
-## 12. Scope (scope) of variables in methods
+## 12. Scope of variables in methods
 
-Variables declared within a method exist **only within that method**.
+Variables declared inside a method exist **only inside that method**.
 
 Example:
 
@@ -337,7 +337,7 @@ public static void example() {
 }
 ```
 
-Outside of the method, `value` does not exist.
+Outside the method, `value` does not exist.
 
 This helps avoid conflicts and keep code organized.
 
@@ -371,9 +371,9 @@ System.out.println(finalPrice);
 
 ## 14. Good practices when designing methods
 
-### 14.1. A method must do one thing
+### 14.1. A method should do one thing
 
-Bad: does too many things at once
+Bad: it does too many things at once
 
 ```java
 public static void processUser() {
@@ -381,7 +381,7 @@ public static void processUser() {
 }
 ```
 
-Better: divide responsibilities
+Better: split responsibilities
 
 - `isValidUser(...)`
 - `calculateScore(...)`
@@ -389,7 +389,7 @@ Better: divide responsibilities
 
 ---
 
-### 14.2. Clear nouns and verbs
+### 14.2. Clear names and verbs
 
 Good ideas:
 
@@ -404,7 +404,7 @@ Avoid generic names like `doStuff` or `test`.
 
 ### 14.3. Avoid depending on global variables (for now)
 
-At first, it is better for the method to receive what it needs by parameters and return a result.
+At first, it is better for the method to receive what it needs through parameters and return a result.
 
 This makes the method more reusable and easier to test.
 
@@ -412,9 +412,9 @@ This makes the method more reusable and easier to test.
 
 ## 15. Common mistakes when starting out (and how to avoid them)
 
-### 15.1. Forget to use method result
+### 15.1. Forgetting to use the method's result
 
-This compiles, but does not take advantage of the `return`:
+This compiles, but it doesn't make use of the `return`:
 
 ```java
 sum(2, 3);
@@ -439,7 +439,7 @@ public static int getName() {
 }
 ```
 
-Solution: type must match
+Solution: the type must match
 
 ```java
 public static String getName() {
@@ -449,9 +449,9 @@ public static String getName() {
 
 ---
 
-### 15.3. `return` missing
+### 15.3. Missing `return`
 
-If a method declares a return type, it must return it in all possible paths.
+If a method declares a return type, it must return a value on every possible path.
 
 This fails:
 
@@ -477,7 +477,7 @@ public static int getScore(boolean isPremium) {
 
 ---
 
-### 15.4. Confuse parameters with arguments
+### 15.4. Confusing parameters with arguments
 
 - Parameter: `int age`
 - Argument: `25`
@@ -493,7 +493,7 @@ boolean result = isAdult(25);
 ```
 
 ---
-## 16. Complete example (organized program with methods)
+## 16. Complete example (a program organized with methods)
 
 This example shows how to use several methods to make `main` cleaner.
 
@@ -525,23 +525,23 @@ public class Main {
 }
 ```
 
-What this approach brings:
+What this approach gives you:
 
-- `main` becomes a “high level” read of the program
+- `main` reads like a “high-level” overview of the program
 - Each method has a clear responsibility
 - You can change the summary format without touching the `main` logic
 
 ---
 
-## 17. To take into account
+## 17. Things to keep in mind
 
-- A method is a reusable piece of named code.
+- A method is a named, reusable piece of code.
 - Methods help organize, reuse and maintain programs.
-- Parameters = definition, arguments = values ​​when calling.
+- Parameters = definition, arguments = values when calling.
 - `void` means that the method does not return anything.
-- `return` returns a value and terminates the method.
+- `return` returns a value and ends the method.
 - Designing small methods with clear names greatly improves the quality of the code.
 
 ---
 
-In the next topic we will learn about **String methods**, and we will see how to get the most out of this type of data.
+In the next topic we'll learn about **String methods**, and we'll see how to get the most out of this data type.

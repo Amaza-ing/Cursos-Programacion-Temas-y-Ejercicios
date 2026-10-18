@@ -1,14 +1,14 @@
-# Exercises - Topic 17: Static methods and the `Math` library
+# Exercises - Topic 17: Static methods and the Math library
 
-Below you will find **10 practical exercises** on **static methods** and the **`Math`** library: differences between instance methods and `static`, creation of utilities, `static final` (constants), `Math.abs`, `min/max`, `pow`, `sqrt`, `round/floor/ceil`, `random` with ranges, and common calculation cases.
+Below you will find **10 practical exercises** on **static methods** and the **`Math`** library: differences between instance and `static` methods, creating utilities, `static final` (constants), `Math.abs`, `min/max`, `pow`, `sqrt`, `round/floor/ceil`, `random` with ranges, and common calculation cases.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Static method `isEven`
 
-Create an `NumberUtils` class with a static method:
+Create a `NumberUtils` class with a static method:
 
 ```java
 public static boolean isEven(int value)
@@ -16,7 +16,7 @@ public static boolean isEven(int value)
 
 It should return `true` if `value` is even and `false` if it is odd.
 
-On `main`, try the method with `4`, `7` and `0`.
+In `main`, test the method with `4`, `7` and `0`.
 
 <details><summary>Show solution</summary>
 
@@ -44,19 +44,19 @@ public class Main {
 
 ## Exercise 2: Static method `clamp`
 
-Create a static method on `NumberUtils`:
+Create a static method in `NumberUtils`:
 
 ```java
 public static int clamp(int value, int min, int max)
 ```
 
-You must return:
+It must return:
 
-- `min` yes `value < min`
-- `max` yes `value > max`
-- `value` if within range
+- `min` if `value < min`
+- `max` if `value > max`
+- `value` if it is within the range
 
-In `main`, try:
+In `main`, try it with:
 
 - `clamp(5, 0, 10)`
 - `clamp(-2, 0, 10)`
@@ -137,7 +137,7 @@ public class Main {
 
 ## Exercise 4: Distance on a straight line with `Math.abs`
 
-Declares:
+Declare:
 
 - `int a = -8;`
 - `int b = 3;`
@@ -162,9 +162,9 @@ public class Main {
 
 ---
 
-## Exercise 5: Greater and lesser than 3 values with `Math.max` and `Math.min`
+## Exercise 5: Largest and smallest of 3 values with `Math.max` and `Math.min`
 
-Declares:
+Declare:
 
 - `int x = 12;`
 - `int y = 5;`
@@ -172,8 +172,8 @@ Declares:
 
 Calculate:
 
-- The oldest of the 3
-- The youngest of the 3
+- The largest of the 3
+- The smallest of the 3
 
 Use combinations of `Math.max` and `Math.min`.
 
@@ -232,7 +232,7 @@ public class Main {
 
 ## Exercise 7: Round to 2 decimal places using `Math.round`
 
-Declares:
+Declare:
 
 - `double price = 19.987;`
 
@@ -255,9 +255,9 @@ public class Main {
 
 ---
 
-## Exercise 8: `floor` and `ceil` to separate integer part
+## Exercise 8: `floor` and `ceil` to separate the integer part
 
-Declares:
+Declare:
 
 - `double value = 7.3;`
 
@@ -296,7 +296,7 @@ public class Main {
 ---
 
 ## Exercise 9: Random integer in a range
-Generates a random integer between `1` and `10` (inclusive).  
+Generate a random integer between `1` and `10` (inclusive).  
 Print the result.
 
 <details><summary>Show solution</summary>
@@ -317,15 +317,15 @@ public class Main {
 
 ---
 
-## Exercise 10: Static method to roll a dice `rollDice`
+## Exercise 10: Static method `rollDice` to roll a die
 
-Create an `RandomUtils` class with a static method:
+Create a `RandomUtils` class with a static method:
 
 ```java
 public static int rollDice()
 ```
 
-You must return an integer between `1` and `6` using `Math.random()`.
+It must return an integer between `1` and `6` using `Math.random()`.
 
 In `main`, call the method 5 times and print each result.
 

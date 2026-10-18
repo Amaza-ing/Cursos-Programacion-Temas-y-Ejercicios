@@ -2,20 +2,20 @@
 
 ## 1. Introduction
 
-In previous topics you have learned how to create classes with:
+In earlier topics you've learned how to create classes with:
 
 - Attributes and methods
 - Encapsulation (`private` attributes, getters and setters)
 - Constructors and overloading
 - Static members (`static`)
 
-Now you are going to learn a central concept of Object-Oriented Programming (OOP):
+Now you're going to learn a core concept of Object-Oriented Programming (OOP):
 
 - **Inheritance**
 
-Inheritance allows you to create a new class from another, **reusing** code and extending behavior.
+Inheritance lets you create a new class based on another one, **reusing** code and extending behavior.
 
-Mental example:
+A mental example:
 
 - `Animal` (base class)
 - `Dog` and `Cat` (derived classes)
@@ -24,13 +24,13 @@ All pets share things (name, age), but each one has special behaviors.
 
 In this topic you will learn:
 
-- What is inheritance and when does it make sense to use it?
-- `extends` and the _is-a_ (es-un) relationship
-- What is `super` and what is it for?
+- What inheritance is and when it makes sense to use it
+- `extends` and the _is-a_ relationship
+- What `super` is and what it's for
 - How constructors work in inheritance
 - `protected` vs `private`
-- Method override (`@Override`)
-- Basic polymorphism (use a parent reference for a child)
+- Method overriding (`@Override`)
+- Basic polymorphism (using a parent reference for a child object)
 - Complete examples ready to run
 
 ---
@@ -39,14 +39,14 @@ In this topic you will learn:
 
 ---
 
-## 2. What is inheritance
+## 2. What inheritance is
 
 Inheritance means:
 
 - A “child” class (subclass) inherits the attributes and methods of a “parent” class (superclass).
 - The child class can:
   - Add new attributes and methods
-  - Reuse what is inherited
+  - Reuse what it inherits
   - Modify behaviors (override methods)
 
 The syntax is:
@@ -58,7 +58,7 @@ public class Child extends Parent {
 
 ---
 
-## 3. Relationship _is-a_ (is-a)
+## 3. The _is-a_ relationship
 
 A very important rule of thumb:
 
@@ -66,16 +66,16 @@ A very important rule of thumb:
 
 Correct examples (_is-a_):
 
-- `Car` is an `Vehicle`
-- `Student` is an `Person`
+- `Car` is a `Vehicle`
+- `Student` is a `Person`
 - `Dog` is an `Animal`
 
-Incorrect examples (is not _is-a_):
+Incorrect examples (not _is-a_):
 
-- `Engine` is an `Car` (no, an engine is **not** a car)
-- `Address` is an `User` (not)
+- `Engine` is a `Car` (no, an engine is **not** a car)
+- `Address` is a `User` (no)
 
-If the relationship is more like “has-a_”, it is usually composition (you will see this later).
+If the relationship is more like “has a” (_has-a_), it's usually composition (you'll see it later).
 
 ---
 
@@ -125,7 +125,7 @@ public class Person {
 }
 ```
 
-### 4.2. Daughter class: `Student`
+### 4.2. Child class: `Student`
 
 `Student` inherits `name`, `age` and `printInfo()`, and adds `grade`.
 
@@ -153,7 +153,7 @@ public class Student extends Person {
 }
 ```
 
-### 4.3. Use
+### 4.3. Usage
 
 ```java
 public class Main {
@@ -176,7 +176,7 @@ Key points:
 
 ---
 
-## 5. `super`: access parent
+## 5. `super`: accessing the parent
 
 `super` is used for two main things:
 
@@ -190,9 +190,9 @@ Key points:
 When you create an object of a child class:
 
 - First the “parent” part is built
-- Then the “daughter” part
+- Then the “child” part
 
-That's why Java requires the daughter's constructor to call `super(...)`.
+That's why Java requires the child's constructor to call `super(...)`.
 
 Example:
 
@@ -204,7 +204,7 @@ public class Student extends Person {
 }
 ```
 
-### 6.1. `super(...)` should be the first line
+### 6.1. `super(...)` must be the first line
 
 This is mandatory.
 
@@ -219,15 +219,15 @@ public Student(String name, int age) {
 
 ## 7. `private` vs `protected` in inheritance
 
-- `private`: only accessible within the parent class
-- `protected`: accessible within the parent and also within the child classes
+- `private`: only accessible inside the parent class
+- `protected`: accessible inside the parent and also inside the child classes
 
-In this course, since you are starting, the most common thing is:
+In this course, since you're just starting out, the most common approach is:
 
 - `private` attributes
-- Access from the daughter using getters and setters of the parent (recommended)
+- Access from the child using the parent's getters and setters (recommended)
 
-If `name` is `private` in `Person`, you cannot do:
+If `name` is `private` in `Person`, you can't do:
 
 ```java
 // this.name = "Laura"; // no se puede si es private
@@ -241,11 +241,11 @@ setName("Laura"); // método heredado
 
 ---
 
-## 8. Method Override (`@Override`)
+## 8. Method overriding (`@Override`)
 
 A child class can **override** a parent method to change its behavior.
 
-Example: we want `Student.printInfo()` to also show the note.
+Example: we want `Student.printInfo()` to also show the grade.
 
 ```java
 public class Student extends Person {
@@ -273,8 +273,8 @@ public class Student extends Person {
 }
 ```
 
-- `@Override` tells Java: “this overwrites a parent method.”
-- `super.printInfo()` reuses the parent printout and then we add information.
+- `@Override` tells Java: “this overrides a parent method.”
+- `super.printInfo()` reuses the parent's printing and then we add more information.
 
 ---
 
@@ -302,7 +302,7 @@ for (Person person : people) {
 }
 ```
 
-If `Student` overwrites `printInfo`, the correct version will be executed.
+If `Student` overrides `printInfo`, the right version will run.
 
 ---
 
@@ -352,7 +352,7 @@ public class Employee {
 }
 ```
 
-### 10.2. `Manager.java` (daughter)
+### 10.2. `Manager.java` (child)
 
 ```java
 public class Manager extends Employee {
@@ -419,31 +419,31 @@ public class Main {
 
 ---
 
-## 11. Typical errors
+## 11. Common mistakes
 
-- Forget to call `super(...)` when parent has no empty constructor
-- Try to access `private` attributes of the father from the daughter
-- Use inheritance where an _is-a_ relationship does not exist
+- Forgetting to call `super(...)` when the parent has no empty constructor
+- Trying to access the parent's `private` attributes from the child
+- Using inheritance where there's no _is-a_ relationship
 
 ---
 
-## 12. Good initial practices
+## 12. Good practices to start with
 
 - Use inheritance for clear _is-a_ relationships.
-- Maintain `private` attributes and expose methods.
-- Use `@Override` whenever you overwrite.
+- Keep attributes `private` and expose methods.
+- Use `@Override` whenever you override a method.
 - Reuse logic with `super.method()` when it makes sense.
 
 ---
 
-## 13. To take into account
+## 13. Things to keep in mind
 
 - `extends` creates an inheritance relationship.
 - `super(...)` calls the parent's constructor and must be the first line.
-- `private` is not accessible in the daughter; `protected` yes.
-- `@Override` helps to write correct code.
-- Polymorphism: you can save a child as a parent and the correct method is executed.
+- `private` isn't accessible in the child; `protected` is.
+- `@Override` helps you write correct code.
+- Polymorphism: you can store a child as a parent and the right method runs.
 
 ---
 
-In the next topic we will learn how to organize the project into **Packages** or packages, which help you design more robust hierarchies and organize the code.
+In the next topic we'll learn how to organize the project into **packages**, which help you design more robust hierarchies and organize your code.

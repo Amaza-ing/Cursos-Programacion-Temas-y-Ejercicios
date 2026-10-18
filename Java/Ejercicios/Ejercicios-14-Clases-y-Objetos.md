@@ -1,8 +1,8 @@
 # Exercises - Topic 14: Classes and Objects
 
-Below you will find **10 practical exercises** on **Classes and Objects**: definition of classes, attributes, methods, constructors, use of `this`, getters and setters.
+Below you will find **10 practical exercises** on **Classes and Objects**: defining classes, attributes, methods, constructors, using `this`, getters and setters.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -13,7 +13,7 @@ Create a class `Book` with:
 - `title` (String)
 - `pages` (int)
 
-Create a constructor that receives both values and an `printInfo()` method that returns:
+Create a constructor that receives both values and a `printInfo()` method that prints:
 
 ```
 Title: X | Pages: Y
@@ -52,14 +52,14 @@ public class Main {
 
 ---
 
-## Exercise 2: Using `this` correctly
+## Exercise 2: Use `this` correctly
 
 Create a class `Car` with:
 
 - `brand`
 - `year`
 
-In the constructor, use `this` to differentiate attributes and parameters.
+In the constructor, use `this` to tell attributes and parameters apart.
 
 Create a method `printInfo()`.
 
@@ -94,9 +94,9 @@ Create a class `Student` with:
 
 Make the attributes `private` and create:
 
-- Builder
-- Getter for both
-- Setter for `grade` that validates that it is between 0 and 10
+- A constructor
+- Getters for both
+- A setter for `grade` that checks the value is between 0 and 10
 
 <details><summary>Show solution</summary>
 
@@ -138,11 +138,11 @@ Create a class `BankAccount` with:
 
 - `balance`
 
-Includes:
+Include:
 
 - Constructor that initializes the balance
 - `deposit(double amount)` method
-- `withdraw(double amount)` method (do not allow negative balance)
+- `withdraw(double amount)` method (don't allow a negative balance)
 
 <details><summary>Show solution</summary>
 
@@ -216,7 +216,7 @@ Create a class `Product` with:
 - `name`
 - `price`
 
-Add an `getFormattedPrice()` method that returns:
+Add a `getFormattedPrice()` method that returns:
 
 ```
 Product: X | Price: Y
@@ -251,9 +251,9 @@ Create a class `Rectangle` with:
 - `width`
 - `height`
 
-Includes method `area()`.
+Include an `area()` method.
 
-In `main`, create 3 different objects and show their areas.
+In `main`, create 3 different objects and print their areas.
 
 <details><summary>Show solution</summary>
 
@@ -297,7 +297,7 @@ Create a class `Light` with:
 
 - `isOn` (boolean)
 
-Includes:
+Include:
 
 - `turnOn()` method
 - `turnOff()` method
@@ -331,13 +331,13 @@ public class Light {
 
 ---
 
-## Exercise 9: Method that uses attributes to calculate result
+## Exercise 9: Method that uses attributes to calculate a result
 
 Create a class `Circle` with:
 
 - `radius`
 
-Includes method `area()` using `Math.PI`.
+Include an `area()` method that uses `Math.PI`.
 
 <details><summary>Show solution</summary>
 
@@ -365,12 +365,12 @@ Create a class `Employee` with:
 - `name`
 - `salary`
 
-Includes:
+Include:
 
 - `increaseSalary(double percentage)` method
 - `getAnnualSalary()` method
 
-`increaseSalary` should increase the salary according to the percentage received.
+`increaseSalary` should increase the salary by the percentage it receives.
 
 <details><summary>Show solution</summary>
 

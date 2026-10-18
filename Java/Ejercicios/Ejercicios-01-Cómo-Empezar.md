@@ -1,8 +1,8 @@
-# Exercises - Topic 1: What is Java and first program with IntelliJ
+# Exercises - Topic 1: What Java is and your first program with IntelliJ
 
-Below, you will find **4 practical exercises** related to the first contact with Java, the IntelliJ environment and the basic structure of a program.
+Below you will find **4 practical exercises** about your first contact with Java, the IntelliJ environment and the basic structure of a program.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -18,19 +18,19 @@ public class Main {
 }
 ```
 
-Indicates:
+Identify:
 
 - The name of the class
 - The name of the main method
-- Which line shows text per console
+- Which line prints text to the console
 
 Don't modify the code, just analyze it.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 - The class is called `Main`.
 - The main method is `main`.
-- The line that shows text through the console is:
+- The line that prints text to the console is:
 
 ```java
 System.out.println("Hello, Java!");
@@ -40,7 +40,7 @@ System.out.println("Hello, Java!");
 
 ---
 
-## Exercise 2: Change the text displayed by the console
+## Exercise 2: Change the text shown in the console
 
 Starting from this program:
 
@@ -58,7 +58,7 @@ Modify the text to display the message:
 My first Java program
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -72,9 +72,9 @@ public class Main {
 
 ---
 
-## Exercise 3: Show multiple messages per console
+## Exercise 3: Show several messages in the console
 
-Write a program that displays **three different lines** per console:
+Write a program that prints **three different lines** to the console:
 
 - Your name
 - The name of the language (`Java`)
@@ -82,7 +82,7 @@ Write a program that displays **three different lines** per console:
 
 Each message must appear on a different line.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -110,11 +110,11 @@ public class main {
 }
 ```
 
-Indicates **at least three errors** that would prevent the program from running correctly.
+Point out **at least three errors** that would prevent the program from running correctly.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-Code errors:
+Errors in the code:
 
 1. The class name must begin with a capital letter: `Main`.
 2. The main method must be called exactly `main` (lowercase).

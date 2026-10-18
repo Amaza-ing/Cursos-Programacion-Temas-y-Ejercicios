@@ -2,33 +2,33 @@
 
 ## **1. Introduction**
 
-In real applications it is very common to combine **users**, **API requests** and **Context**. For example:
+In real applications it's very common to combine **users**, **API requests** and **Context**. For example:
 
 - Load users from an API.
-- Save them in a global state.
+- Store them in a global state.
 - Access those users from any component.
 
-In this topic you will learn to:
+In this topic you will learn how to:
 
 - Manage users with Context.
-- Load data with Fetch (or Axios) within a Provider.
+- Load data with Fetch (or Axios) inside a Provider.
 - Share data and functions globally.
-- Maintain a clear and scalable architecture.
+- Keep a clear, scalable architecture.
 
 ---
 
-## **2. Problem to solve**
+## **2. The problem to solve**
 
 Without Context:
 
 - Each component makes its own fetch.
-- Logic is repeated.
-- The state is fragmented.
+- Logic gets repeated.
+- The state gets fragmented.
 
 With Context:
 
 - The fetch is done **only once**.
-- Data is shared.
+- The data is shared.
 - Components only consume what they need.
 
 ---
@@ -50,9 +50,9 @@ src/
 
 ---
 
-## **4. Create the UsersContext**
+## **4. Creating the UsersContext**
 
-We create the context that users will share.
+We create the context that will share the users.
 
 ```js
 import { createContext } from "react";
@@ -64,13 +64,13 @@ export default UsersContext;
 
 ---
 
-## **5. Create the UsersProvider with Fetch**
+## **5. Creating the UsersProvider with Fetch**
 
-The Provider is responsible for:
+The Provider is in charge of:
 
-- Make the request to the API.
-- Save users in status.
-- Manage `loading` and `error`.
+- Making the request to the API.
+- Storing the users in state.
+- Managing `loading` and `error`.
 
 ```js
 import { useEffect, useState } from "react";
@@ -116,7 +116,7 @@ export default UsersProvider;
 
 ---
 
-## **6. Wrap the app with the Provider**
+## **6. Wrapping the app with the Provider**
 
 ```js
 import UsersProvider from "./context/UsersProvider";
@@ -132,13 +132,13 @@ function App() {
 export default App;
 ```
 
-Now any component can access users.
+Now any component can access the users.
 
 ---
 
-## **7. Consume users from Context**
+## **7. Consuming users from Context**
 
-Example of user list:
+Example of a user list:
 
 ```js
 import { useContext } from "react";
@@ -164,9 +164,9 @@ export default UsersList;
 
 ---
 
-## **8. Share functions in Context**
+## **8. Sharing functions in Context**
 
-The Context is not only used for data, but also for functions.
+Context isn't only for data: it's also for functions.
 
 ```js
 const addUser = (newUser) => {
@@ -176,7 +176,7 @@ const addUser = (newUser) => {
 <UsersContext.Provider value={{ users, addUser }}>
 ```
 
-This allows the global state to be modified from any component.
+This lets you modify the global state from any component.
 
 ---
 
@@ -203,31 +203,31 @@ function UserDetail() {
 export default UserDetail;
 ```
 
-There is no need to make a new fetch.
+There's no need to make a new fetch.
 
 ---
 
-## **10. Typical errors**
+## **10. Common mistakes**
 
-### **10.1. Fetch each component**
+### **10.1. Fetching in every component**
 
-Duplicate logic and calls.
+It duplicates logic and calls.
 
-### **10.2. Context too large**
+### **10.2. A Context that's too large**
 
-Better several small contexts.
+Several small contexts are better.
 
-### **10.3. Do not handle loading/error**
+### **10.3. Not handling loading/error**
 
-They must always exist.
+They should always be there.
 
 ---
 
-## **11. Good practices**
+## **11. Best practices**
 
 - Do the fetch in the Provider.
-- Share only what is necessary.
-- Separate Context by domain (users, auth, settings).
+- Share only what's necessary.
+- Split Context by domain (users, auth, settings).
 - Keep Providers simple and predictable.
 
 ---
@@ -240,4 +240,4 @@ They must always exist.
 
 ---
 
-In the next topic you will delve into **optimization with React Memo**.
+In the next topic you'll dive into **optimization with React Memo**.

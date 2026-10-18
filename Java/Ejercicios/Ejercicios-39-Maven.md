@@ -1,8 +1,8 @@
 # Exercises - Topic 39: Maven
 
-Below you will find **10 practical exercises** to work with **Maven**: project structure, `pom.xml`, Maven coordinates, Java version, dependencies, scopes, commands, plugins, resources, `.gitignore` and Maven Wrapper.
+Below you will find **10 practical exercises** to work with **Maven**: project structure, `pom.xml`, Maven coordinates, Java version, dependencies, scopes, commands, plugins, resources, `.gitignore` and the Maven Wrapper.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -14,7 +14,7 @@ Write the Maven coordinates for a project with this data:
 - project name: `library-app`
 - version: `1.0.0`
 
-You must write the corresponding XML elements.
+Write the corresponding XML elements.
 
 <details><summary>Show solution</summary>
 
@@ -28,7 +28,7 @@ You must write the corresponding XML elements.
 
 ---
 
-## Exercise 2: Create a minimum `pom.xml`
+## Exercise 2: Create a minimal `pom.xml`
 
 Create a minimal `pom.xml` for a project called:
 
@@ -65,7 +65,7 @@ With:
 
 ## Exercise 3: Configure Java 25
 
-Add to `pom.xml` the necessary configuration to compile with Java 25 using properties.
+Add the configuration needed to compile with Java 25 to `pom.xml`, using properties.
 
 <details><summary>Show solution</summary>
 
@@ -86,7 +86,7 @@ Write the basic folder structure of a Maven project with:
 
 - main code
 - tests
-- file `pom.xml`
+- the `pom.xml` file
 
 <details><summary>Show solution</summary>
 
@@ -104,11 +104,11 @@ my-project
 
 ---
 
-## Exercise 5: Add JUnit dependency
+## Exercise 5: Add the JUnit dependency
 
-Adds a JUnit Jupiter dependency to `pom.xml`.
+Add a JUnit Jupiter dependency to `pom.xml`.
 
-Must have scope `test`.
+It must have the `test` scope.
 
 <details><summary>Show solution</summary>
 
@@ -132,7 +132,7 @@ Must have scope `test`.
 Write the Maven command for each action:
 
 1. Compile the project
-2. Run tests
+2. Run the tests
 3. Create the final package
 4. Clean and create the package from scratch
 
@@ -158,9 +158,9 @@ mvn clean package
 
 ---
 
-## Exercise 7: Configure `.jar` main class
+## Exercise 7: Configure the `.jar` main class
 
-Add to `pom.xml` a configuration of `maven-jar-plugin` so that the main class is:
+Add a `maven-jar-plugin` configuration to `pom.xml` so that the main class is:
 
 ```text
 com.amazaing.app.Main
@@ -190,13 +190,13 @@ com.amazaing.app.Main
 
 ---
 
-## Exercise 8: Create an `.gitignore` for Maven
+## Exercise 8: Create a `.gitignore` for Maven
 
 Write a basic `.gitignore` for a Maven project that ignores:
 
-- `target` folder
+- the `target` folder
 - `.iml` files
-- `.idea` folder
+- the `.idea` folder
 
 <details><summary>Show solution</summary>
 
@@ -212,7 +212,7 @@ target/
 
 ## Exercise 9: Use resources
 
-Indicates where you would place a file called:
+Say where you would place a file called:
 
 ```text
 config.properties
@@ -234,10 +234,10 @@ src/main/resources/config.properties
 
 ## Exercise 10: Maven Wrapper
 
-Write the equivalent commands with Maven Wrapper to:
+Write the equivalent commands with the Maven Wrapper to:
 
-1. Run tests on macOS/Linux
-2. Run tests on Windows
+1. Run the tests on macOS/Linux
+2. Run the tests on Windows
 3. Create the package on macOS/Linux
 4. Create the package on Windows
 

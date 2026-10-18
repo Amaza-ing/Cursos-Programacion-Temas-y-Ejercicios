@@ -1,8 +1,8 @@
 # Exercises - Topic 07: Refactoring, documentation, testing and debugging with GitHub Copilot
 
-Below, you will find practical exercises to work with GitHub Copilot on refactoring, documentation, test creation, and error detection tasks.
+Below, you'll find hands-on exercises to work with GitHub Copilot on refactoring, documentation, test creation and error detection tasks.
 
-## Exercise 1: Refactor a poorly readable function
+## Exercise 1: Refactor a hard-to-read function
 
 You have the following code:
 
@@ -21,7 +21,7 @@ function c(a) {
 
 The function calculates the total of paid orders whose amount is greater than 50.
 
-Write a prompt to ask GitHub Copilot to refactor the code to improve readability, without changing the behavior.
+Write a prompt to ask GitHub Copilot to refactor the code to improve its readability, without changing the behavior.
 
 <details>
 <summary>Show solution</summary>
@@ -47,7 +47,7 @@ function calculatePaidOrdersTotal(orders) {
 ```
 
 
-If the property names cannot be changed because they come from an external API, an alternative would be:
+If the property names can't be changed because they come from an external API, an alternative would be:
 
 ```javascript
 function calculatePaidOrdersTotal(orders) {
@@ -58,7 +58,7 @@ function calculatePaidOrdersTotal(orders) {
 ```
 
 
-The second option maintains exactly the original properties. The first option is clearer, but would only be valid if the data structure can also be modified.
+The second option keeps exactly the original properties. The first option is clearer, but it would only be valid if the data structure can also be changed.
 
 </details>
 
@@ -113,7 +113,7 @@ function calculateDiscount(price, percentage) {
 ```
 
 
-Documentation is useful because it allows you to understand the function without having to read the entire body of the code. Additionally, it helps other developers and improves the support that Copilot can offer on the project.
+Documentation is useful because it lets you understand the function without having to read the whole body of the code. It also helps other developers and improves the help that Copilot can offer in the project.
 
 </details>
 
@@ -130,7 +130,7 @@ function isValidPassword(password) {
 ```
 
 
-The function should return `true` if the password has at least 8 characters, a capital letter, and a number.
+The function must return `true` if the password has at least 8 characters, an uppercase letter and a number.
 
 Write a prompt to ask GitHub Copilot to generate unit tests using Jest.
 
@@ -169,7 +169,7 @@ describe("isValidPassword", () => {
 ```
 
 
-The tests cover both one correct case and several incorrect cases. This allows you to verify that the function not only works when the password is valid, but also when it must reject values ​​that do not meet the conditions.
+The tests cover both a valid case and several invalid ones. This lets you check that the function works not only when the password is valid, but also when it must reject values that don't meet the conditions.
 
 </details>
 
@@ -184,9 +184,9 @@ function findProduct(products, productId) {
 ```
 
 
-The intention was to obtain a single product, not an array.
+The intention was to get a single product, not an array.
 
-Write a prompt to ask Copilot to review the code, detect the problem, and propose a minimal fix.
+Write a prompt to ask Copilot to review the code, detect the problem and propose a minimal fix.
 
 <details>
 <summary>Show solution</summary>
@@ -210,11 +210,11 @@ function findProduct(products, productId) {
 ```
 
 
-The original function uses `filter`, which always returns an array. If you want to retrieve a single element, it is more appropriate to use `find`, because it returns the first element that meets the condition or `undefined` if none are found.
+The original function uses `filter`, which always returns an array. If you want to retrieve a single element, it's more appropriate to use `find`, because it returns the first element that meets the condition, or `undefined` if none is found.
 
 </details>
 
-## Exercise 5: Request a refactoring without breaking compatibility
+## Exercise 5: Ask for a refactoring without breaking compatibility
 
 You have this code in an existing application:
 
@@ -224,7 +224,7 @@ function getUserName(user) {
 }
 ```
 
-The problem is that some users do not have `profile` or do not have `name`, and the application may crash.
+The problem is that some users don't have `profile` or don't have `name`, and the application may crash.
 
 Write a prompt to ask Copilot to make the function safer without changing the type of result expected when the name exists.
 
@@ -280,7 +280,7 @@ async function loadUsers() {
 
 When you run it, an error related to `response.json` appears.
 
-Write a prompt to ask GitHub Copilot to help detect the issue and propose a fix.
+Write a prompt to ask GitHub Copilot to help you detect the problem and propose a fix.
 
 <details>
 <summary>Show solution</summary>
@@ -310,6 +310,6 @@ async function loadUsers() {
 ```
 
 
-The problem was that `await` was missing in front of `fetch`. Without `await`, `response` does not yet contain the HTTP response, but rather a promise. That's why `response.json()` cannot be called correctly.
+The problem was that `await` was missing before `fetch`. Without `await`, `response` doesn't contain the HTTP response yet, but a promise. That's why `response.json()` can't be called correctly.
 
 </details>

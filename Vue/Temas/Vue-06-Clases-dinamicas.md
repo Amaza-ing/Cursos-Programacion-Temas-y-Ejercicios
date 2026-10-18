@@ -2,13 +2,13 @@
 
 ## **1. Introduction**
 
-In Vue.js we can apply CSS classes and inline styles dynamically. This allows styles to change based on reactive data, which is especially useful for highlighting elements, displaying states, or making visual adaptations based on user interaction.
+In Vue.js, we can apply CSS classes and inline styles dynamically. This lets styles change based on reactive data, which is especially useful for highlighting elements, showing states or adapting the look of the page to user interaction.
 
 ---
 
-## **2. Apply dynamic classes with v-bind:class**
+## **2. Applying dynamic classes with v-bind:class**
 
-The `v-bind:class` directive (or its short form `:class`) allows one or more classes to be associated based on reactive variables.
+The `v-bind:class` directive (or its shorthand `:class`) lets you bind one or more classes based on reactive variables.
 
 ### Basic example
 
@@ -31,13 +31,13 @@ const isActive = ref(true);
 </style>
 ```
 
-Here the `active` class will be applied to the `<p>` element if the `isActive` property is truthy.
+Here, the `active` class will be applied to the `<p>` element if `isActive` is truthy.
 
 ---
 
-## **3. Apply multiple conditional classes**
+## **3. Applying multiple conditional classes**
 
-You can combine several dynamic classes in the same `:class`, using an object or array.
+You can combine several dynamic classes in the same `:class`, using an object or an array.
 
 ### Example
 
@@ -71,9 +71,9 @@ const isHighlighted = ref(false);
 
 ---
 
-## **4. Apply dynamic inline styles with v-bind:style**
+## **4. Applying dynamic inline styles with v-bind:style**
 
-In addition to classes, CSS styles can also be defined directly from reactive variables.
+Besides classes, you can also define CSS styles directly from reactive variables.
 
 ### Basic example
 
@@ -100,9 +100,9 @@ p {
 
 ---
 
-## **5. Change classes and styles from events**
+## **5. Changing classes and styles from events**
 
-It is very common to change classes or styles directly after some interaction.
+It's very common to change classes or styles right after some interaction.
 
 ### Example
 
@@ -134,9 +134,9 @@ button {
 
 ---
 
-## **6. Combine dynamic classes and inline styles**
+## **6. Combining dynamic classes and inline styles**
 
-Vue allows you to mix both techniques in the same element.
+Vue lets you mix both techniques on the same element.
 
 ### Example
 
@@ -165,11 +165,11 @@ const customColor = ref("purple");
 
 ## Summary
 
-| Directive | Usage |
+| Directive | Usage                               |
 | --------- | ----------------------------------- |
-| `:class` | Add dynamic classes |
-| `:style` | Add dynamic inline CSS styles |
+| `:class`  | Adds dynamic classes                |
+| `:style`  | Adds dynamic inline CSS styles      |
 
 ---
 
-In the next topic we will explore **Communication between Components: Props, Component Events and Slots in Vue.js**, to learn how to pass data, emit events and create flexible components.
+In the next topic, we'll explore **communication between components: props, component events and slots in Vue.js**, to learn how to pass data, emit events and create flexible components.

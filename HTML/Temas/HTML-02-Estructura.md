@@ -4,11 +4,11 @@
 
 An HTML document has a fundamental structure that all files must follow. This structure is made up of various tags that organize the content and define its behavior within a web browser.
 
-### **Importance of an ordered structure:**
+### **Why a well-ordered structure matters:**
 
-- Facilitates understanding of the document.
-- Improves accessibility and usability.
-- Allows better interpretation by browsers and search engines.
+- It makes the document easier to understand.
+- It improves accessibility and usability.
+- It helps browsers and search engines interpret the page better.
 
 ---
 
@@ -17,11 +17,11 @@ An HTML document has a fundamental structure that all files must follow. This st
 Every HTML document is made up of the following sections:
 
 1. **Document type declaration (`DOCTYPE`)**
-2. **`<html>` element** (Main container of the page)
-3. **`<head>` Section** (Metadata and imports)
-4. **`<body>` Section** (Content visible on the page)
+2. **The `<html>` element** (the page's main container)
+3. **The `<head>` section** (metadata and imports)
+4. **The `<body>` section** (the content visible on the page)
 
-### **Basic structure example:**
+### **Example of the basic structure:**
 
 ```HTML
 <!DOCTYPE html>
@@ -44,12 +44,12 @@ Every HTML document is made up of the following sections:
 
 ---
 
-## **3. Explanation of main tags**
+## **3. The main tags explained**
 
 ### **1. `<!DOCTYPE html>`**
 
-- Indicates to the browser that the document is written in HTML5.
-- It is not a label itself, but an instruction for the browser.
+- Tells the browser that the document is written in HTML5.
+- It isn't really a tag, but an instruction for the browser.
 
 ### **2. `<html>`**
 
@@ -61,15 +61,15 @@ Every HTML document is made up of the following sections:
 - Contains information about the document.
 - May include:
   - Metadata (`<meta>`)
-  - Page Title (`<title>`)
-  - Links to style sheets (`<link>`)
+  - Page title (`<title>`)
+  - Links to stylesheets (`<link>`)
   - Scripts (`<script>`)
 
 ### **4. `<body>`**
 
 - Contains all the content visible on the page.
 - May include:
-  - Headers (`<h1>` to `<h6>`)
+  - Headings (`<h1>` to `<h6>`)
   - Paragraphs (`<p>`)
   - Images (`<img>`)
   - Links (`<a>`)
@@ -79,25 +79,25 @@ Every HTML document is made up of the following sections:
 
 ---
 
-## **4. Importance of metadata in the `<head>`**
+## **4. Why metadata in the `<head>` matters**
 
-Metadata helps improve performance, accessibility, and search engine optimization (**SEO**).
+Metadata helps improve performance, accessibility and search engine optimization (**SEO**).
 
 ### **Common metadata:**
 
 - `<meta charset="UTF-8">` → Defines the character encoding.
-- `<meta name="viewport" content="width=device-width, initial-scale=1.0">` → Optimize the page for mobile devices.
-- `<meta name="description" content="Descripción de la página">` → Improves search engine positioning.
+- `<meta name="viewport" content="width=device-width, initial-scale=1.0">` → Optimizes the page for mobile devices.
+- `<meta name="description" content="Descripción de la página">` → Improves search engine ranking.
 
 ---
 
-## **5. Good practices in HTML structuring**
+## **5. Good practices for structuring HTML**
 
-- **Use a clear and semantic structure.**
-- **Close all labels correctly.**
-- **Avoid excessive use of `<div>` when semantic tags are available.**
+- **Use a clear, semantic structure.**
+- **Close all tags correctly.**
+- **Avoid overusing `<div>` when semantic tags are available.**
 - **Include basic metadata for compatibility and SEO.**
-- **Keep the code clean and commented when necessary.**
+- **Keep your code clean, with comments when needed.**
 
 ---
 
@@ -106,10 +106,10 @@ Metadata helps improve performance, accessibility, and search engine optimizatio
 To create an HTML file on your computer:
 
 1. Open a text editor (Visual Studio Code, Notepad++, Sublime Text).
-2. Save the file with the extension `.html` (Example: `index.html`).
+2. Save the file with the `.html` extension (for example: `index.html`).
 3. Write the basic HTML structure.
 4. Open the file in a web browser to view it.
 
 ---
 
-In the next topic, we will learn about **Elements, tags and attributes in HTML**, fundamental for web development.
+In the next topic, we'll learn about **elements, tags and attributes in HTML**, which are fundamental for web development.

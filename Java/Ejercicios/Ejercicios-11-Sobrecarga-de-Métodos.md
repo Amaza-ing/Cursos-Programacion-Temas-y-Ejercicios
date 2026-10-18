@@ -2,7 +2,7 @@
 
 Below you will find **10 practical exercises** to work with **method overloading** (same name, different parameters).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -11,7 +11,7 @@ Try to solve them before consulting the solution.
 Create two `sum` methods:
 
 - One that receives 2 integers and returns the sum
-- Another who receives 3 integers and returns the sum
+- Another one that receives 3 integers and returns the sum
 
 From `main`, call both and display the results.
 
@@ -75,7 +75,7 @@ public class Main {
 Create two `printUser` methods:
 
 - One that receives only the name (`String`) and shows `"User: <name>"`
-- Another that receives name and age (`String`, `int`) and shows `"User: <name> | Age: <age>"`
+- Another one that receives the name and the age (`String`, `int`) and shows `"User: <name> | Age: <age>"`
 
 Call both from `main`.
 
@@ -102,12 +102,12 @@ public class Main {
 
 ---
 
-## Exercise 4: Overload `calculateTotal` (without discount and with discount)
+## Exercise 4: Overload `calculateTotal` (with and without a discount)
 
 Create two `calculateTotal` methods:
 
-- One who receives `unitPrice` (`double`) and `quantity` (`int`) and returns the total
-- Another person who also receives `discountRate` (`double`) and applies the discount
+- One that receives `unitPrice` (`double`) and `quantity` (`int`) and returns the total
+- Another one that also receives `discountRate` (`double`) and applies the discount
 
 Call both from `main`.
 

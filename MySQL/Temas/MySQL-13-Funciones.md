@@ -1,27 +1,27 @@
-# **Topic 13: Functions in MySQL and Differences with Stored Procedures**
+# **Topic 13: Functions in MySQL and How They Differ from Stored Procedures**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Understand what a function is in MySQL.
 - Create and run custom functions.
 - Know the key differences between functions and stored procedures.
-- Apply good practices in its use.
+- Follow good practices when using them.
 
 ---
 
 ## **1. What is a function in MySQL?**
 
-A **function** is a block of SQL code stored in the database that receives parameters, performs operations, and returns **a single value**.
+A **function** is a block of SQL code stored in the database that takes parameters, performs operations and returns **a single value**.
 
-### **Features:**
+### **Characteristics:**
 
-- Always returns a value using `RETURN`.
-- Can receive one or more parameters.
-- Can be used directly in `SELECT` queries.
+- It always returns a value using `RETURN`.
+- It can take one or more parameters.
+- It can be used directly in `SELECT` queries.
 
 ---
 
-## **2. Syntax to create a function**
+## **2. Syntax for creating a function**
 
 ```sql
 DELIMITER $$
@@ -41,7 +41,7 @@ DELIMITER ;
 
 ## **3. Basic example**
 
-Function to calculate the price with VAT (21%).
+A function that calculates the price with VAT (21%).
 
 ```sql
 DELIMITER $$
@@ -89,16 +89,16 @@ SELECT first_name, es_mayor_de_edad(age) AS mayor FROM customers;
 
 ## **5. Differences between functions and stored procedures**
 
-| Feature | Function | Procedure |
+| Characteristic | Function | Procedure |
 | ---------------- | --------------------------------- | -------------------------------------------------------- |
-| Returns value | Yes, just one | Not necessarily (may return zero or more results) |
+| Returns a value | Yes, just one | Not necessarily (it may return zero or more results) |
 | Use in queries | Yes | Not directly |
-| Call | Inside `SELECT`, `WHERE`, etc. | With `CALL nombre_procedimiento()` |
+| How it is called | Inside `SELECT`, `WHERE`, etc. | With `CALL nombre_procedimiento()` |
 | Parameters | Only `IN` | `IN`, `OUT` and `INOUT` |
 
 ---
 
-## **6. View existing features**
+## **6. Viewing existing functions**
 
 ```sql
 SHOW FUNCTION STATUS WHERE Db = 'nombre_base_datos';
@@ -106,7 +106,7 @@ SHOW FUNCTION STATUS WHERE Db = 'nombre_base_datos';
 
 ---
 
-## **7. Delete a function**
+## **7. Deleting a function**
 
 ```sql
 DROP FUNCTION IF EXISTS precio_con_iva;
@@ -124,10 +124,10 @@ DROP FUNCTION IF EXISTS precio_con_iva;
 
 ## **9. Conclusion**
 
-- Functions allow you to encapsulate calculations and reuse them in queries.
-- They differ from procedures in that they always return a value and can be used within SQL statements.
-- Proper use improves the clarity and reusability of SQL code.
+- Functions let you encapsulate calculations and reuse them in queries.
+- They differ from procedures in that they always return a value and can be used inside SQL statements.
+- Using them properly makes SQL code clearer and more reusable.
 
 ---
 
-In the next topic we will learn to **work with boolean and date type variables**.
+In the next topic we will learn how to **work with Boolean and date variables**.

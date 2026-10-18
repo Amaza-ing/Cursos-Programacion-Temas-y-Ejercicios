@@ -2,22 +2,22 @@
 
 ## **1. Introduction**
 
-In Angular, the **Router** allows you to manage navigation within a single page application (**SPA**, _Single Page Application_). Instead of reloading the page, Angular dynamically changes components based on the URL.
+In Angular, the **Router** lets you manage navigation within a single-page application (**SPA**, _Single Page Application_). Instead of reloading the page, Angular dynamically swaps components based on the URL.
 
-In this topic you will learn:
+In this topic, you will learn:
 
-- How to configure `Router` in Angular.
+- How to configure the `Router` in Angular.
 - How to define routes and navigate between them.
 - How to use `RouterLink` to create dynamic links.
 - How to handle dynamic routes with parameters.
 
 ---
 
-## **2. Router Configuration in Angular**
+## **2. Configuring the Router in Angular**
 
-### **2.1. Open `app.routes.ts` and Define Routes**
+### **2.1. Opening `app.routes.ts` and defining routes**
 
-Angular allows you to define routes in the `app.routes.ts` file without needing a separate module.
+Angular lets you define routes in the `app.routes.ts` file without needing a separate module.
 
 #### **File: `app.routes.ts`**
 
@@ -37,14 +37,14 @@ export const routes = [
 Here:
 
 - Routes are defined for `/` (Home) and `/about` (About).
-- For this to work the Home and About components must exist.
+- For this to work, the Home and About components must exist.
 - One way to organize these components is to create them in the `app/pages` folder instead of `app/components`.
 
 ---
 
-## **3. Creation of Components for Routes**
+## **3. Creating components for the routes**
 
-Each route must be associated with a component. Each route will represent a page on our website, and each component will be rendered in the appropriate route.
+Each route must be associated with a component. Each route will represent a page of our website, and each component will be rendered on the right route.
 
 #### **File: `home.component.ts`**
 
@@ -72,9 +72,9 @@ export class AboutComponent {}
 
 ## **4. Router Outlet**
 
-For these pages to render we need to use the `<router-outlet>` component and add `RouterOutlet` to the imports.
+For these pages to render, we need to use the `<router-outlet>` component and add `RouterOutlet` to the imports.
 
-This will usually be found in the `app.component.html` root component. And usually it's the only thing in the html of the root component.
+It is usually placed in the root component, `app.component.html`, and it is normally the only thing in the root component's HTML.
 
 #### **File: `app.component.ts`**
 
@@ -93,7 +93,7 @@ This will usually be found in the `app.component.html` root component. And usual
 ```
 
 
-We can think of the `<router-outlet>` as a kind of television, which shows one image or another when changing channels, only here it will render one page or another when changing routes.
+We can think of the `<router-outlet>` as a kind of television that shows one picture or another when you change channels, except that here it renders one page or another when the route changes.
 
 ---
 
@@ -101,13 +101,13 @@ We can think of the `<router-outlet>` as a kind of television, which shows one i
 
 ---
 
-## **5. Navigation with `RouterLink`**
+## **5. Navigating with `RouterLink`**
 
-As our website can have several pages, we need internal links to navigate between them and not depend on typing the path in the browser's address bar.
+Since our website can have several pages, we need internal links to navigate between them instead of depending on typing the path in the browser's address bar.
 
 Angular provides `RouterLink` to create these links and navigate between pages without reloading the application.
 
-To use `RouterLink` we have to import it into the component where we want to use it.
+To use `RouterLink`, we have to import it into the component where we want to use it.
 
 #### **File: `header.component.ts`**
 
@@ -135,7 +135,7 @@ export class HeaderComponent {
 ```
 
 
-Here `routerLink` defines internal links without reloading the page.
+Here, `routerLink` defines internal links that don't reload the page.
 
 ---
 
@@ -143,29 +143,29 @@ Here `routerLink` defines internal links without reloading the page.
 
 ---
 
-## **6. Routes with Dynamic Parameters**
+## **6. Routes with dynamic parameters**
 
-It is possible to define routes with parameters to display dynamic information. This way a component with different information can be reused many times.
+You can define routes with parameters to display dynamic information. This way, a component can be reused many times with different information.
 
-Imagine you want to create an image gallery or a social network, you wouldn't want to create a component for each individual image nor a component for each user. The ideal is to create a single component and from a parameter (id of a photo, or username) obtain all the necessary information to display it on the page.
-### **6.1. Define a Route with Parameters**
+Imagine you want to create an image gallery or a social network: you wouldn't want to create a component for each individual image, or a component for each user. The ideal is to create a single component and, from a parameter (a photo's id or a username), get all the information needed to display it on the page.
+### **6.1. Defining a route with parameters**
 
-To define a parametric route we must do the same as before, add a route to the `app.routes.ts` file and specify a parameter in that route.
+To define a parameterized route, we do the same as before: add a route to the `app.routes.ts` file and specify a parameter in that route.
 
-#### **File: `app.routes.ts` (Add a Route with Parameter)**
+#### **File: `app.routes.ts` (adding a route with a parameter)**
 
 ```ts
 const routes = [{ path: "profile/:id", component: ProfileComponent }];
 ```
 
 
-Here `:id` represents an `id` variable that can get any value in the path. A colon (:) must be used to specify the route parameter.
+Here, `:id` represents an `id` variable that can take any value in the route. You must put the colon (:) to specify the route parameter.
 
-### **6.2. Capture Parameters in a Component**
+### **6.2. Capturing parameters in a component**
 
-Once we have a parametric route we can obtain the route parameter and then use it to search for the information we want (for example, obtain a user's information from their username by making a query in a database or an API).
+Once we have a parameterized route, we can get the route parameter and then use it to look up the information we want (for example, getting a user's information from their username by querying a database or an API).
 
-For that we have to import `ActivatedRoute` and use `this.route.snapshot.paramMap.get("id")` where `id` can be any name that we have given to the parameter and `route` the name of the variable that contains all the route information. This variable must be injected into the constructor.
+To do that, we have to import `ActivatedRoute` and use `this.route.snapshot.paramMap.get("id")`, where `id` can be whatever name we gave the parameter and `route` is the name of the variable that holds all the route information. This variable has to be injected into the constructor.
 
 #### **File: `profile.component.ts`**
 
@@ -188,11 +188,11 @@ export class ProfileComponent {
 
 ---
 
-[![Parametric Routes](https://img.youtube.com/vi/tAa4P8a__uQ/0.jpg)](https://www.youtube.com/watch?v=tAa4P8a__uQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
+[![Parameterized Routes](https://img.youtube.com/vi/tAa4P8a__uQ/0.jpg)](https://www.youtube.com/watch?v=tAa4P8a__uQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y)
 
 ---
 
-### **6.3. Link to a Route with Parameters**
+### **6.3. Linking to a route with parameters**
 
 #### **File: `app.component.html`**
 
@@ -208,11 +208,11 @@ export class ProfileComponent {
 ```
 
 
-**Or without using '/' from a specific path:**
+**Or without using '/' from a specific route:**
 
-If we add a link from a component that is being rendered in a specific path, adding `[routerLink]` with any value without using "/" will go to the path we were on / the value we added.
+If we add a link from a component that is being rendered on a specific route, adding `[routerLink]` with any value without a "/" will take us to the route we were on / the value we added.
 
-For example, from a component that renders to path `/profile`.
+For example, from a component that is rendered on the `/profile` route.
 
 ```html
 <a [routerLink]="user.id">Ver Perfil de Usuario 1</a>
@@ -228,9 +228,9 @@ If `user.id` is equal to 1, this would take us to `/profile/1`.
 
 ---
 
-## **7. Redirects and 404 Routes**
+## **7. Redirects and 404 routes**
 
-We can define default routes and handle non-existent routes.
+We can define default routes and handle routes that don't exist.
 
 #### **File: `main.ts`**
 
@@ -245,14 +245,14 @@ const routes = [
 
 Here:
 
-- `redirectTo: ''` redirects any non-existent routes to `/` (Home).
-- We can create any other component, such as an Error page, to redirect there instead of to the Home.
+- `redirectTo: ''` redirects any route that doesn't exist to `/` (Home).
+- We can create any other component, such as an Error page, and redirect there instead of to the Home page.
 
 ---
 
 ## **8. Routes and services**
 
-If we mix routes with services we can share information between pages (components) in a simple way.
+If we combine routes with services, we can easily share information between pages (components).
 
 ---
 
@@ -262,9 +262,9 @@ If we mix routes with services we can share information between pages (component
 
 ## **9. Conclusion**
 
-- **The Angular Router** allows you to manage navigation in a SPA without reloading the page.
-- **`RouterLink`** facilitates internal navigation without the need for `href`.
-- **Routes with parameters** allow you to display dynamic content.
+- **The Angular Router** lets you manage navigation in a SPA without reloading the page.
+- **`RouterLink`** makes internal navigation easy without the need for `href`.
+- **Routes with parameters** let you display dynamic content.
 - **`router-outlet`** defines the area where components will be displayed based on the active route.
 
 ---

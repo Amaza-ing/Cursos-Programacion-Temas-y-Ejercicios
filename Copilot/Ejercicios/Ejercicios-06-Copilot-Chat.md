@@ -1,6 +1,6 @@
 # Exercises - Topic 06: Copilot Chat applied to development
 
-Below, you will find practical exercises to use Copilot Chat to support explanation, analysis, improvement and code review.
+Below, you'll find hands-on exercises on using Copilot Chat to help you explain, analyze, improve and review code.
 
 ## Exercise 1: Ask for a clear explanation of a function
 
@@ -20,7 +20,7 @@ function groupOrdersByCustomer(orders) {
 ```
 
 
-Write a message to Copilot Chat asking it to explain the feature clearly to a person learning JavaScript.
+Write a message to Copilot Chat asking it to explain the function clearly to someone who is learning JavaScript.
 
 <details>
 <summary>Show solution</summary>
@@ -36,10 +36,10 @@ No cambies el código, solo explícalo de forma clara.
 
 A good answer should explain that:
 
-1. The function receives an array of requests.
-2. Use `reduce` to build an accumulator object.
-3. Each key in the object represents the `customerId` of a client.
-4. If an entry does not yet exist for that client, an empty array is created.
+1. The function receives an array of orders.
+2. It uses `reduce` to build an accumulator object.
+3. Each key in the object represents a customer's `customerId`.
+4. If there's no entry for that customer yet, an empty array is created.
 5. Each order is added to the corresponding array.
 6. The final result is an object with orders grouped by customer.
 
@@ -59,7 +59,7 @@ console.log(getAverageScore([]));
 ```
 
 
-Write a message to Copilot Chat asking to detect the problem and propose a minimal fix.
+Write a message to Copilot Chat asking it to detect the problem and propose a minimal fix.
 
 <details>
 <summary>Show solution</summary>
@@ -108,7 +108,7 @@ function f(items) {
 ```
 
 
-Write a message to Copilot Chat requesting a readability improvement without changing behavior.
+Write a message to Copilot Chat asking it to improve readability without changing the behavior.
 
 <details>
 <summary>Show solution</summary>
@@ -141,7 +141,7 @@ function getAvailablePaidItems(items) {
 ```
 
 
-The main improvement is to use a clearer function name, avoid non-descriptive variables and replace the manual loop with `filter`.
+The main improvement is using a clearer function name, avoiding non-descriptive variables and replacing the manual loop with `filter`.
 
 </details>
 
@@ -159,7 +159,7 @@ function removeUser(users, userId) {
 
 The intention was to remove a user by their `id`, not by their position in the array.
 
-Write a message to Copilot Chat asking to review the code, detect the problem, and fix it.
+Write a message to Copilot Chat asking it to review the code, detect the problem and fix it.
 
 <details>
 <summary>Show solution</summary>
@@ -183,7 +183,7 @@ function removeUser(users, userId) {
 ```
 
 
-The problem with the original code is that `splice(userId, 1)` interprets `userId` as the index of the array. Additionally, it modifies the original array. The new version uses `filter`, removes the user whose `id` property matches `userId` and returns a new array.
+The problem with the original code is that `splice(userId, 1)` treats `userId` as an index of the array. Besides, it modifies the original array. The new version uses `filter`, removes the user whose `id` property matches `userId` and returns a new array.
 
 </details>
 
@@ -196,7 +196,7 @@ Cannot read properties of undefined (reading 'name')
 ```
 
 
-The component contains this fragment:
+The component contains this snippet:
 
 ```jsx
 function UserProfile({ user }) {
@@ -209,7 +209,7 @@ function UserProfile({ user }) {
 }
 ```
 
-Write a message to Copilot Chat asking for help understanding and correcting the error.
+Write a message to Copilot Chat asking for help to understand and fix the error.
 
 <details>
 <summary>Show solution</summary>
@@ -241,7 +241,7 @@ function UserProfile({ user }) {
 ```
 
 
-The error occurs because the component tries to access `user.name` when `user` is still `undefined`. The initial condition prevents accessing its properties until the object exists.
+The error occurs because the component tries to access `user.name` while `user` is still `undefined`. The initial condition prevents its properties from being accessed until the object exists.
 
 </details>
 
@@ -267,22 +267,22 @@ A good answer should compare:
 **localStorage**
 
 - Advantages: simple, fast, no backend needed.
-- Disadvantages: only saves data in the current browser, does not sync between devices, not suitable for sensitive data.
+- Disadvantages: only saves data in the current browser, doesn't sync between devices, not suitable for sensitive data.
 
-**External or backend API**
+**External API or backend**
 
 - Advantages: allows real persistence, users, synchronization and access from multiple devices.
-- Disadvantages: requires server, database, authentication and more configuration.
+- Disadvantages: requires a server, a database, authentication and more configuration.
 
-For a simple first release, it would usually be reasonable to use `localStorage`, as long as the data is not sensitive.
+For a simple first version, it would usually be reasonable to use `localStorage`, as long as the data isn't sensitive.
 
 </details>
 
 ## Exercise 7: Create an iterative improvement conversation
 
-Write a sequence of three messages that you could send to Copilot Chat to progressively improve a feature that filters products by category.
+Write a sequence of three messages that you could send to Copilot Chat to progressively improve a function that filters products by category.
 
-The conversation should include a first request, a subsequent improvement, and a final request for revision.
+The conversation should include a first request, a later improvement and a final request for a review.
 
 <details>
 <summary>Show solution</summary>
@@ -322,6 +322,6 @@ function filterProductsByCategory(products, category) {
 ```
 
 
-Further review could check whether `category` or `product.category` may be `undefined`. If that case is possible, validations would have to be added.
+An additional review could check whether `category` or `product.category` may be `undefined`. If that case is possible, validations would have to be added.
 
 </details>

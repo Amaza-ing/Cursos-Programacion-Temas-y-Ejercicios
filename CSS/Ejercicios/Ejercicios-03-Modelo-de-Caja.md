@@ -10,7 +10,7 @@ Try to solve them before consulting the solution.
 
 ### **Exercise 1: Define margins and padding**
 
-Creates an `div` with a gray background, a 20 pixel margin, and a 10 pixel padding.
+Create a `div` with a gray background, a 20-pixel margin and 10 pixels of padding.
 
 <details><summary>Show solution</summary>
 
@@ -34,7 +34,7 @@ Creates an `div` with a gray background, a 20 pixel margin, and a 10 pixel paddi
 
 ### **Exercise 2: Use `box-sizing: border-box`**
 
-Defines an `div` with a width of 200 pixels, a border of 5 pixels, and activates the `box-sizing: border-box` property.
+Define a `div` with a width of 200 pixels and a 5-pixel border, and enable the `box-sizing: border-box` property.
 
 <details><summary>Show solution</summary>
 
@@ -58,7 +58,7 @@ Defines an `div` with a width of 200 pixels, a border of 5 pixels, and activates
 
 ### **Exercise 3: Apply different margins**
 
-Create an `div` with different margins: 10 pixels on top, 20 pixels on the right, 30 pixels on the bottom, and 40 pixels on the left.
+Create a `div` with different margins: 10 pixels on top, 20 pixels on the right, 30 pixels on the bottom and 40 pixels on the left.
 
 <details><summary>Show solution</summary>
 
@@ -78,9 +78,9 @@ Create an `div` with different margins: 10 pixels on top, 20 pixels on the right
 
 ---
 
-### **Exercise 4: Create a rounded edge**
+### **Exercise 4: Create a rounded border**
 
-Defines an `div` with a 2 pixel solid black border and 15 pixel rounded corners.
+Define a `div` with a solid black 2-pixel border and 15-pixel rounded corners.
 
 <details><summary>Show solution</summary>
 
@@ -103,7 +103,7 @@ Defines an `div` with a 2 pixel solid black border and 15 pixel rounded corners.
 
 ### **Exercise 5: Create a shadow effect**
 
-Creates an `div` with a blue background and a 5 pixel offset shadow on the X and Y axes, with an opacity of 0.5.
+Create a `div` with a blue background and a shadow offset by 5 pixels on the X and Y axes, with an opacity of 0.5.
 
 <details><summary>Show solution</summary>
 

@@ -1,23 +1,23 @@
-# **Exercises - Topic 10: Lists, Index and Lists of Objects**
+# **Exercises - Topic 10: Lists, Index and Object Lists**
 
 Below you will find **10 practical exercises** to learn how to render lists in React with `.map()`, use `key` correctly, and work with **lists of objects**.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Simple list of strings**
 
-Create an `CitiesList.jsx` component that renders an `ul` with these cities:
+Create a `CitiesList.jsx` component that renders a `ul` with these cities:
 
 ```js
 const cities = ["Madrid", "Sevilla", "Valencia", "Bilbao"];
 ```
 
-- Renders each city in an `li`.
-- Use a stable `key` (don't use index).
+- Render each city in an `li`.
+- Use a stable `key` (don't use the index).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function CitiesList() {
@@ -41,17 +41,17 @@ export default CitiesList;
 
 ## **Exercise 2: Also show the index (without using it as a key)**
 
-Create an `Steps.jsx` component with this array:
+Create a `Steps.jsx` component with this array:
 
 ```js
 const steps = ["Install", "Create", "Run", "Build"];
 ```
 
-- Renders each step as: `1. Install`, `2. Create`, etc.
+- Render each step as: `1. Install`, `2. Create`, etc.
 - Show the number using the `index`.
-- The `key` must NOT be the `index` (use the text from the step).
+- The `key` must NOT be the `index` (use the step's text).
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Steps() {
@@ -75,17 +75,17 @@ export default Steps;
 
 ---
 
-## **Exercise 3: When to use index as `key` (static list)**
+## **Exercise 3: When to use the index as `key` (static list)**
 
-Create an `FixedRules.jsx` component with a fixed list of 3 rules:
+Create a `FixedRules.jsx` component with a fixed list of 3 rules:
 
 - "Be respectful"
 - "Write clear code"
 - "Keep components small"
 
-In this case, use the **index** as `key` and add a comment to the code explaining why it is acceptable here.
+In this case, use the **index** as `key` and add a comment in the code explaining why it is acceptable here.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function FixedRules() {
@@ -110,7 +110,7 @@ export default FixedRules;
 
 ## **Exercise 4: List of objects with `id` as key**
 
-Create an `ProductsList.jsx` component with this array:
+Create a `ProductsList.jsx` component with this array:
 
 ```js
 const products = [
@@ -120,13 +120,13 @@ const products = [
 ];
 ```
 
-Renders an `ul` where each `li` displays:
+Render a `ul` where each `li` displays:
 
 - `Keyboard - 30€`
 
 Use `product.id` as `key`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function ProductsList() {
@@ -154,9 +154,9 @@ export default ProductsList;
 
 ---
 
-## **Exercise 5: Render components within a list**
+## **Exercise 5: Render components inside a list**
 
-Create an `SkillItem.jsx` component that receives `name` by props and renders:
+Create a `SkillItem.jsx` component that receives `name` through props and renders:
 
 - An `li` with the skill text.
 
@@ -170,9 +170,9 @@ const skills = [
 ];
 ```
 
-Render `SkillItem` using `.map()` and put the `key` in the repeating component.
+Render `SkillItem` using `.map()` and put the `key` on the component that repeats.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 **`SkillItem.jsx`**
 
@@ -224,10 +224,10 @@ const products = [
 ];
 ```
 
-- Render only products with `price >= 25`.
+- Render only the products with `price >= 25`.
 - Use `.filter()` before `.map()`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function ExpensiveProducts() {
@@ -259,7 +259,7 @@ export default ExpensiveProducts;
 
 ## **Exercise 7: Sort and render (create a copy)**
 
-Create an `SortedUsers.jsx` component with this array:
+Create a `SortedUsers.jsx` component with this array:
 
 ```js
 const users = [
@@ -269,10 +269,10 @@ const users = [
 ];
 ```
 
-- Renders users sorted alphabetically by `name`.
+- Render the users sorted alphabetically by `name`.
 - Do not modify the original array: create a copy before sorting.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function SortedUsers() {
@@ -302,7 +302,7 @@ export default SortedUsers;
 
 ## **Exercise 8: Render a formatted list (simple card)**
 
-Create an `BookCards.jsx` component with this array:
+Create a `BookCards.jsx` component with this array:
 
 ```js
 const books = [
@@ -311,14 +311,14 @@ const books = [
 ];
 ```
 
-Render each book on an `div` (card type) with:
+Render each book in a `div` (card style) with:
 
-- `h4` for title
+- `h4` for the title
 - `p` for the author
 
-Remember to put `key` in the repeating `div`.
+Remember to put the `key` on the `div` that repeats.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function BookCards() {
@@ -346,9 +346,9 @@ export default BookCards;
 
 ---
 
-## **Exercise 9: Detect an incorrect `key`**
+## **Exercise 9: Spot an incorrect `key`**
 
-This code has a bad `key`. Explain why and correct it.
+This code has a bad `key`. Explain why and fix it.
 
 ```js
 function Tags() {
@@ -364,14 +364,14 @@ function Tags() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 The problem is that `tag` is not unique ("sale" appears twice). The `key` must be unique within the list.
 
 Possible solutions:
 
 - If the tags can be repeated, create a key combined with the index.
-- Or use objects with id.
+- Or use objects with an id.
 
 Simple example (combined key):
 
@@ -412,7 +412,7 @@ Which is the best `key` and why?
 - b) `key={task.text}`
 - c) `key={task.id}`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 The best option is **c) `key={task.id}`**.
 

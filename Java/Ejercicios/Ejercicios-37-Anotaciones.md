@@ -2,13 +2,13 @@
 
 Below you will find **10 practical exercises** on **modules and modern Java**: `module-info.java`, `requires`, `exports`, `opens`, modular structure, compact source files, modern `switch`, text blocks, `var` and pattern matching.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Create an empty module
 
-Create an `module-info.java` file for a module called:
+Create a `module-info.java` file for a module called:
 
 ```text
 com.amazaing.notes
@@ -49,13 +49,13 @@ module com.amazaing.notes {
 
 ## Exercise 3: Require another module
 
-Create an `module-info.java` for a module called:
+Create a `module-info.java` for a module called:
 
 ```text
 com.amazaing.app
 ```
 
-You must require the module:
+It must require the module:
 
 ```text
 com.amazaing.notes
@@ -75,13 +75,13 @@ module com.amazaing.app {
 
 ## Exercise 4: Use `requires java.sql`
 
-Create an `module-info.java` for a module called:
+Create a `module-info.java` for a module called:
 
 ```text
 com.amazaing.database
 ```
 
-You must declare that you need `java.sql`.
+It must declare that it needs `java.sql`.
 
 <details><summary>Show solution</summary>
 
@@ -97,13 +97,13 @@ module com.amazaing.database {
 
 ## Exercise 5: Open a package with `opens`
 
-Create an `module-info.java` for a module called:
+Create a `module-info.java` for a module called:
 
 ```text
 com.amazaing.users
 ```
 
-You must open the package:
+It must open the package:
 
 ```text
 com.amazaing.users.model
@@ -123,7 +123,7 @@ module com.amazaing.users {
 
 ---
 
-## Exercise 6: Writing a modular structure
+## Exercise 6: Write a modular structure
 
 Write the folder structure for a module called:
 
@@ -137,7 +137,7 @@ With a main class:
 com.amazaing.shop.Main
 ```
 
-You don't need to create complete code, just the structure.
+You don't need to write the complete code, just the structure.
 
 <details><summary>Show solution</summary>
 
@@ -157,7 +157,7 @@ src
 
 ## Exercise 7: Compact source file
 
-Write a simple program using the modern Java compact form for printing:
+Write a simple program using modern Java's compact form to print:
 
 ```text
 Hello modern Java
@@ -177,7 +177,7 @@ void main() {
 
 ---
 
-## Exercise 8: modern `switch`
+## Exercise 8: Modern `switch`
 
 Declare a variable:
 
@@ -185,7 +185,7 @@ Declare a variable:
 String role = "admin";
 ```
 
-Use a modern `switch` to assign to an `message` variable:
+Use a modern `switch` to assign to a `message` variable:
 
 - `"Full access"` if the role is `"admin"`
 - `"Limited access"` if the role is `"user"`
@@ -223,7 +223,7 @@ Declare a variable:
 Object value = "Java";
 ```
 
-Use pattern matching with `instanceof` to check if it is `String` and print its length.
+Use pattern matching with `instanceof` to check whether it is a `String` and print its length.
 
 <details><summary>Show solution</summary>
 
@@ -245,7 +245,7 @@ public class Main {
 
 ## Exercise 10: Text block for JSON
 
-Create an `String json` using text block with this content:
+Create a `String json` using a text block with this content:
 
 ```json
 {

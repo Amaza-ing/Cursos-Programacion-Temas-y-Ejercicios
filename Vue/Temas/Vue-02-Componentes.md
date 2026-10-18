@@ -4,13 +4,13 @@
 
 In Vue.js, a **component** is a reusable, independent unit of the user interface. Each component manages its own content, logic and style.
 
-With **Composition API** and the `<script setup>` syntax, working with components is even easier and more efficient.
+With the **Composition API** and the `<script setup>` syntax, working with components is even easier and more efficient.
 
 ---
 
 ## **2. Structure of a Vue component**
 
-In Vue 3, each component is defined in an `.vue` file with the following basic structure:
+In Vue 3, each component is defined in a `.vue` file with the following basic structure:
 
 ```vue
 <script setup>
@@ -35,24 +35,24 @@ h1 {
 ### Explanation
 
 - `template`: Contains the HTML of the component.
-- `script setup`: Defines the component logic using the Composition API.
-- `style scoped`: Add local styles, applicable only to the component.
+- `script setup`: Defines the component's logic using the Composition API.
+- `style scoped`: Adds local styles that only apply to this component.
 
-> Note: If we do not add the `scoped` attribute in the `style` label, the styles will be applicable to all components of the project.
+> Note: If we don't add the `scoped` attribute to the `style` tag, the styles will apply to every component in the project.
 
 ---
 
 ## **3. Creating a component**
 
-To create a component called `MyComponent.vue`, simply create the file inside `src/components`:
+To create a component called `MyComponent.vue`, just create the file inside `src/components`:
 
-Component names must start in uppercase and use PascalCase (All words in the name start in uppercase).
+Component names must start with a capital letter and use PascalCase (every word in the name starts with a capital letter).
 
 ```
 src/components/MyComponent.vue
 ```
 
-Component content:
+The component's content:
 
 ```vue
 <script setup>
@@ -74,13 +74,13 @@ p {
 </style>
 ```
 
-> Note: In this example `ref()` is used to create a reactive variable, we will see this later.
+> Note: In this example, `ref()` is used to create a reactive variable; we'll cover this later.
 
 ---
 
 ## **4. Using one component inside another**
 
-Once created, we can import and use the component within `App.vue` or other components.
+Once it's created, we can import and use the component in `App.vue` or in other components.
 
 Example in `App.vue`:
 
@@ -98,4 +98,4 @@ import MyComponent from "./components/MyComponent.vue";
 
 ---
 
-In the next topic, we will explore **Reactive Variables, Events and Binding in Vue.js**, to learn how to manage user interaction.
+In the next topic, we'll explore **reactive variables, events and binding in Vue.js**, to learn how to handle user interaction.

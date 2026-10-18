@@ -1,6 +1,6 @@
 # **Topic 3: Primary and Foreign Keys in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Define primary keys (`PRIMARY KEY`).
 - Create foreign keys (`FOREIGN KEY`) to relate tables.
@@ -12,9 +12,9 @@ In this topic we will learn to:
 
 A **primary key** is a column (or combination of columns) that uniquely identifies each row in a table.
 
-### **Features:**
+### **Characteristics:**
 
-- Cannot contain duplicate values.
+- It cannot contain duplicate values.
 - It cannot be null.
 
 ### **Example:**
@@ -56,7 +56,7 @@ This indicates that `customer_id` in `orders` must match an existing `id` in `cu
 
 ---
 
-## **3. Create multiple keys**
+## **3. Creating multiple keys**
 
 A table can have one primary key and multiple foreign keys.
 
@@ -79,7 +79,7 @@ CREATE TABLE order_details (
 
 ---
 
-## **4. Additional restrictions**
+## **4. Additional constraints**
 
 You can define what happens when a referenced value is deleted or updated.
 
@@ -93,15 +93,15 @@ ON UPDATE CASCADE
 
 ### **Common options:**
 
-- `CASCADE`: Applies the change to related rows.
+- `CASCADE`: applies the change to the related rows.
 - `SET NULL`: sets the value to `NULL` if the referenced record is deleted.
-- `RESTRICT`: prevent deleting/updating if there are related rows.
+- `RESTRICT`: prevents deleting/updating if there are related rows.
 
 ---
 
-## **5. View keys and relationships in an existing table**
+## **5. Viewing the keys and relationships of an existing table**
 
-Query the structure of a table to see defined keys:
+Look at the structure of a table to see the keys defined on it:
 
 ```sql
 SHOW CREATE TABLE orders;
@@ -111,18 +111,18 @@ SHOW CREATE TABLE orders;
 
 ## **6. Advantages of using keys correctly**
 
-- They guarantee the integrity of the data.
-- They avoid orphan or inconsistent records.
-- They allow you to work with `JOIN` safely.
+- They guarantee data integrity.
+- They prevent orphaned or inconsistent records.
+- They let you work with `JOIN` safely.
 
 ---
 
 ## **7. Conclusion**
 
 - Primary keys uniquely identify records.
-- Foreign keys allow relating tables.
-- The `ON DELETE` and `ON UPDATE` constraints control the behavior of relationships.
+- Foreign keys let you relate tables.
+- The `ON DELETE` and `ON UPDATE` constraints control how relationships behave.
 
 ---
 
-In the next topic we will learn to **Normalize tables before working with them**.
+In the next topic we will learn how to **normalize tables before working with them**.

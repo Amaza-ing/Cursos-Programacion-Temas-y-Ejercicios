@@ -2,20 +2,20 @@
 
 ## **1. Introduction**
 
-In Angular, components have a lifecycle that defines how they are created, updated, and destroyed. Two key methods in this life cycle are:
+In Angular, components have a lifecycle that defines how they are created, updated, and destroyed. Two key methods in this lifecycle are:
 
-- **The constructor**: It is executed when an instance of the component is created.
-- **`ngOnInit`**: It is an Angular lifecycle hook that is executed after the component has been initialized.
+- **The constructor**: It runs when an instance of the component is created.
+- **`ngOnInit`**: It is an Angular lifecycle hook that runs after the component has been initialized.
 
-Understanding the difference between the two is essential to correctly handle the initialization and configuration of components.
+Understanding the difference between the two is essential to handle the initialization and configuration of components correctly.
 
 ---
 
 ## **2. What is the constructor in Angular?**
 
-The constructor is a special method in TypeScript that is executed when a new instance of the class is created. It is used to initialize properties and for dependency injection.
+The constructor is a special method in TypeScript that runs when a new instance of the class is created. It is used to initialize properties and for dependency injection.
 
-### **Example of constructor usage**
+### **Example of using the constructor**
 
 #### **File: `example.component.ts`**
 
@@ -44,11 +44,11 @@ export class ExampleComponent {
 ```
 
 
-### **Builder Features**
+### **Features of the constructor**
 
 - Runs **before Angular initializes the component**.
 - Mainly used to **initialize variables and receive dependencies**.
-- No heavy logic should be performed inside the constructor.
+- You shouldn't put heavy logic inside the constructor.
 
 ---
 
@@ -60,7 +60,7 @@ export class ExampleComponent {
 
 `ngOnInit` is an Angular lifecycle method that runs after the constructor has finished and when Angular has initialized the component.
 
-### **Example of use of `ngOnInit`**
+### **Example of using `ngOnInit`**
 
 #### **File: `example.component.ts`**
 
@@ -94,13 +94,13 @@ export class ExampleComponent implements OnInit {
 ```
 
 
-### **`ngOnInit` Features**
+### **Features of `ngOnInit`**
 
-- It is executed **only once**, after the constructor.
+- It runs **only once**, after the constructor.
 - Used to **perform complex initializations** such as:
   - API calls.
-  - Assign values obtained from services.
-  - Subscribe to observables.
+  - Assigning values obtained from services.
+  - Subscribing to observables.
 - It is defined by implementing the `OnInit` interface and the `ngOnInit()` method.
 
 ---
@@ -111,12 +111,12 @@ export class ExampleComponent implements OnInit {
 
 ## **4. Differences between the constructor and `ngOnInit`**
 
-| **Feature** | **Builder** | **ngOnInit** |
+| **Feature** | **Constructor** | **ngOnInit** |
 | ----------------------- | ------------------------------------------------------ | ------------------------------------------------ |
-| When is it executed | When creating the component | After component initialization |
+| When it runs | When the component is created | After the component is initialized |
 | Main use | Variable initialization, dependency injection | API calls, subscriptions and complex logic |
-| Number of executions | One time | One time |
-| Interaction with Angular | You do not have full access to the framework yet | You can now interact with Angular |
+| Number of runs | Only once | Only once |
+| Interaction with Angular | Doesn't have full access to the framework yet | Can already interact with Angular |
 
 ---
 
@@ -124,13 +124,13 @@ export class ExampleComponent implements OnInit {
 
 You should use `ngOnInit` instead of the constructor when:
 
-- You need to wait until the component has been completely initialized.
-- You must make calls to services or HTTP requests.
-- You require logic that depends on dependency injection.
+- You need to wait until the component has been fully initialized.
+- You need to call services or make HTTP requests.
+- You need logic that depends on dependency injection.
 
-This is very often used in conjunction with services. We will talk about services later in topic 13.
+This is used very often together with services. We will talk about services later, in topic 13.
 
-Example with service:
+Example with a service:
 
 #### **File: `example.component.ts`**
 
@@ -162,9 +162,9 @@ In this case, `ngOnInit` is the appropriate place to make the service call, sinc
 
 - The **constructor** is used to initialize variables and receive dependencies.
 - `ngOnInit` is an Angular **lifecycle hook** that runs after the constructor.
-- It is preferable to **perform complex logic inside `ngOnInit`** instead of the constructor.
+- It is better to **put complex logic inside `ngOnInit`** instead of the constructor.
 - Understanding the difference between the two improves code organization and application performance.
 
 ---
 
-In the next topic, we will explore **the complete life cycles of components in Angular**.
+In the next topic, we will explore **the complete lifecycle of components in Angular**.

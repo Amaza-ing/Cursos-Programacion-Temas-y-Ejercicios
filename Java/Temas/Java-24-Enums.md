@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-As you program in Java, there are situations where a variable cannot take any value, but only a **limited and known** set of options.
+As you program in Java, you will find situations where a variable cannot take just any value, but only one from a **limited and known** set of options.
 
 Typical examples:
 
@@ -10,7 +10,7 @@ Typical examples:
 - The status of an order
 - The difficulty level of a game
 - The role of a user
-- The size of a t-shirt
+- The size of a T-shirt
 - The seasons of the year
 - The colors allowed in a configuration
 
@@ -20,20 +20,20 @@ A bad solution would be to use `String`:
 String status = "SHIPPED";
 ```
 
-This works, but has several problems:
+This works, but it has several problems:
 
 - you can misspell the value (`"SHIPED"`, `"shipped"`, `"Shipped"`)
-- no real control of the set allowed
-- the code is less secure and less clear
-- future changes are more difficult to maintain
+- there is no real control over the set of allowed values
+- the code is less safe and less clear
+- future changes are harder to maintain
 
-To solve this, Java offers **enum**.
+To solve this, Java offers **enums**.
 
 An `enum` allows you to define a fixed set of named constants.
 
 In this topic you will learn:
 
-- what is an `enum`
+- what an `enum` is
 - when to use it and why it is better than using `String` or magic numbers
 - how to declare and use an `enum`
 - how to use `enum` with `switch`
@@ -49,7 +49,7 @@ In this topic you will learn:
 
 ## 2. What is an `enum`
 
-`enum` comes from **enumeration**, that is, enumeration.
+`enum` is short for **enumeration**.
 
 An `enum` is a special Java type that represents a fixed set of constants.
 
@@ -74,8 +74,8 @@ Use an `enum` when:
 
 - there is a fixed and known set of values
 - you want to give clear meaning to those values
-- you want to avoid errors with `String` or loose numbers
-- you want the compiler to help detect incorrect usage
+- you want to avoid errors with `String` values or arbitrary numbers
+- you want the compiler to help you detect incorrect usage
 
 Clear examples:
 
@@ -85,7 +85,7 @@ Clear examples:
 - `Role`
 - `TrafficLight`
 
-It usually doesn't make sense to use `enum` when the values:
+It usually doesn't make sense to use an `enum` when the values:
 
 - are completely free
 - change dynamically based on external data
@@ -105,7 +105,7 @@ public enum Difficulty {
 }
 ```
 
-### 4.2. Use in a variable
+### 4.2. Using it in a variable
 
 ```java
 public class Main {
@@ -125,9 +125,9 @@ MEDIUM
 
 ---
 
-## 5. Compare values of an `enum`
+## 5. Comparing `enum` values
 
-`enum` are often compared to `==`.
+Enums are usually compared with `==`.
 
 This is different from `String`, where you would normally have to use `equals`.
 
@@ -141,7 +141,7 @@ if (difficulty == Difficulty.HARD) {
 }
 ```
 
-Why `==` works well here?
+Why does `==` work well here?
 
 Because each constant of an `enum` is unique within the program.
 
@@ -163,9 +163,9 @@ if (status.equals("PAID")) {
 
 Problems:
 
-- if you write `"paid"` in lower case it fails
+- if you write `"paid"` in lowercase, it fails
 - if you write `"PADI"` by mistake, it compiles anyway
-- no strong set control allowed
+- there is no strong control over the set of allowed values
 
 ### 6.2. Using `enum` (best option)
 
@@ -190,7 +190,7 @@ Advantages:
 
 - the compiler validates the values
 - the code is more readable
-- you avoid writing errors
+- you avoid typos
 - you can use `switch` very cleanly
 
 ---
@@ -229,7 +229,7 @@ public class Main {
 }
 ```
 
-You can also use modern `switch`:
+You can also use the modern `switch`:
 
 ```java
 String message = switch (light) {
@@ -241,13 +241,13 @@ String message = switch (light) {
 
 ---
 
-## 8. Useful methods of `enum`
+## 8. Useful `enum` methods
 
-All `enum` have some useful methods built in.
+Every `enum` has some useful built-in methods.
 
 ### 8.1. `values()`
 
-Returns an array with all the values of `enum`.
+Returns an array with all the values of the `enum`.
 
 Example:
 
@@ -279,7 +279,7 @@ WEDNESDAY
 
 ### 8.2. `name()`
 
-Returns the exact name of the constant as `String`.
+Returns the exact name of the constant as a `String`.
 
 ```java
 Day day = Day.MONDAY;
@@ -299,7 +299,7 @@ System.out.println(Day.TUESDAY.ordinal());  // 1
 
 ### 8.4. `valueOf(...)`
 
-Converts an `String` to the value of the `enum`.
+Converts a `String` into a value of the `enum`.
 
 ```java
 Day day = Day.valueOf("MONDAY");
@@ -314,7 +314,7 @@ But be careful: the text must match exactly or it will throw an exception.
 
 ---
 
-## 9. Loop through all the values of an `enum`
+## 9. Iterating over all the values of an `enum`
 
 This is very useful for menus, validations, debugging or showing options to the user.
 
@@ -343,14 +343,14 @@ public class Main {
 
 ## 10. `enum` with attributes, constructor and methods
 
-This is where many people find that an `enum` in Java is quite powerful.
+This is where many people discover that an `enum` in Java is quite powerful.
 
 An `enum` can have:
 
 - attributes
-- builder
+- a constructor
 - methods
-- own logic
+- its own logic
 
 ### 10.1. Example: priority levels
 
@@ -385,13 +385,13 @@ public class Main {
 }
 ```
 
-### 10.2. Important about the builder of `enum`
+### 10.2. Important points about the `enum` constructor
 
-The builder of the `enum`:
+The constructor of the `enum`:
 
-- not called with `new`
-- used by Java internally to create each constant
-- is usually `private` implicitly
+- is not called with `new`
+- is used internally by Java to create each constant
+- is usually implicitly `private`
 
 You can't do this:
 
@@ -436,11 +436,11 @@ public class Main {
 }
 ```
 
-This shows that an `enum` is not just a list of words; can encapsulate data and behavior.
+This shows that an `enum` is not just a list of words; it can encapsulate data and behavior.
 
 ---
 
-## 12. `enum` with own methods
+## 12. `enum` with its own methods
 
 You can add logic directly to the `enum`.
 
@@ -474,7 +474,7 @@ This improves cohesion: the logic associated with the concept lives within the `
 
 ---
 
-## 13. Overwrite `toString()` on an `enum`
+## 13. Overriding `toString()` in an `enum`
 
 By default, an `enum` prints the exact name of the constant.
 
@@ -484,7 +484,7 @@ Example:
 System.out.println(Priority.HIGH); // HIGH
 ```
 
-But you can overwrite `toString()` for more readable output.
+But you can override `toString()` to get more readable output.
 
 ```java
 public enum Size {
@@ -515,7 +515,7 @@ public class Main {
 
 ---
 
-## 14. Complete Example: Order Status with Behavior
+## 14. Complete example: order status with behavior
 
 ### 14.1. `OrderStatus.java`
 
@@ -542,7 +542,7 @@ public enum OrderStatus {
 }
 ```
 
-### 14.2. Use in a class `Order`
+### 14.2. Using it in an `Order` class
 
 ```java
 public class Order {
@@ -640,7 +640,7 @@ This makes the method much safer and more expressive.
 
 ## 16. `enum` in lists and collections
 
-`enum` work perfectly with collections.
+Enums work perfectly with collections.
 
 Example:
 
@@ -694,21 +694,21 @@ You don't need to master `EnumSet` now, but it's good to know it exists.
 
 ---
 
-## 18. Typical mistakes when starting
+## 18. Common beginner mistakes
 
-### 18.1. Use `String` when value set is fixed
+### 18.1. Using `String` when the set of values is fixed
 
-If values are controlled and limited, an `enum` is usually better.
+If the values are controlled and limited, an `enum` is usually better.
 
 ### 18.2. Thinking that an `enum` is just a list of constants
 
-It can have attributes, constructor, methods and logic.
+It can have attributes, a constructor, methods and logic.
 
-### 18.3. Using `ordinal()` as important part of logic
+### 18.3. Using `ordinal()` as an important part of the logic
 
 It is dangerous, because changing the order of the `enum` changes the ordinals.
 
-### 18.4. Use `valueOf(...)` with invalid text
+### 18.4. Using `valueOf(...)` with unvalidated text
 
 If the text does not match exactly, it throws an exception.
 
@@ -718,23 +718,23 @@ Example:
 // Day.valueOf("monday"); // error
 ```
 
-### 18.5. Try to create dynamic constants
+### 18.5. Trying to create dynamic constants
 
-An `enum` represents a fixed set. You cannot add new values ​​at run time.
+An `enum` represents a fixed set. You cannot add new values at runtime.
 
 ---
 
 ## 19. Good practices
 
 - Use `enum` when you have a fixed, known set of values.
-- Use clear, capitalized names for constants (`PENDING`, `PAID`, `DONE`).
+- Use clear, uppercase names for constants (`PENDING`, `PAID`, `DONE`).
 - Avoid using `ordinal()` for important logic.
-- Add attributes and methods to `enum` when it provides clarity.
-- If a logic belongs to the concept represented by the `enum`, consider putting it inside the `enum` itself.
+- Add attributes and methods to the `enum` when it makes things clearer.
+- If some logic belongs to the concept represented by the `enum`, consider putting it inside the `enum` itself.
 
 ---
 
-## 20. To take into account
+## 20. Things to keep in mind
 
 - An `enum` defines a fixed set of constants.
 - It is much safer than using `String` or magic numbers.
@@ -742,19 +742,19 @@ An `enum` represents a fixed set. You cannot add new values ​​at run time.
 - You can use it with `switch`.
 - It has useful methods like `values()`, `name()`, `valueOf()` and `ordinal()`.
 - It can have its own attributes, constructors and methods.
-- It is used a lot in real Java.
+- It is used a lot in real-world Java.
 
 ---
 
 ## 21. Final summary
 
-- **`enum`** serves to represent limited and known options.
-- **Improves security and readability** compared to `String`.
-- **Compares with `==`**.
-- **Works great with `switch`**.
-- **Can have data and behavior**, it is not just a list of constants.
+- **`enum`** is used to represent limited and known options.
+- **It improves safety and readability** compared to `String`.
+- **It is compared with `==`**.
+- **It works great with `switch`**.
+- **It can have data and behavior**; it is not just a list of constants.
 - **It is ideal** for states, roles, levels, types and closed configurations.
 
 ---
 
-In the next topic we will continue advancing by working on other data collections such as `HashMaps`.
+In the next topic we will keep moving forward by working with other data collections such as `HashMaps`.

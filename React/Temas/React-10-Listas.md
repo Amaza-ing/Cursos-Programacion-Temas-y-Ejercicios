@@ -2,25 +2,25 @@
 
 ## **1. Introduction**
 
-In a real application, you rarely render elements “by hand” one by one. The usual thing is to have a collection of data (array) and generate the interface dynamically.
+In a real application, you rarely render elements “by hand” one by one. The usual approach is to have a collection of data (an array) and generate the interface dynamically.
 
 In React, this is done by rendering **lists** with `.map()`.
 
 In this topic you will learn:
 
 - How to render lists with `.map()`.
-- What is the `key` prop and why is it important.
-- When to use **index** like `key` and when to avoid it.
+- What the `key` prop is and why it's important.
+- When to use the **index** as the `key` and when to avoid it.
 - How to render **lists of objects**.
 
 ---
 
-## **2. Render a simple list with `.map()`**
+## **2. Rendering a simple list with `.map()`**
 
 A typical pattern:
 
 - You have an array.
-- You go through it with `.map()`.
+- You loop through it with `.map()`.
 - You return JSX for each element.
 
 Example with a list of strings:
@@ -44,7 +44,7 @@ export default FruitsList;
 Important details:
 
 - `.map()` returns a **new array**.
-- Each list item in React must have an `key`.
+- Each list item in React must have a `key`.
 
 ---
 
@@ -53,7 +53,7 @@ Important details:
 When React renders a list, it needs a stable way to identify each element. That's what `key` is for.
 
 - `key` must be **unique** within that list.
-- It must be **stable** (ideally it does not change between renders).
+- It must be **stable** (ideally it doesn't change between renders).
 
 Recommended example:
 
@@ -69,7 +69,7 @@ Recommended example:
 
 ## **4. Lists with `index` (Index Lists)**
 
-Sometimes the **index** of `.map()` is used as `key`:
+Sometimes the **index** from `.map()` is used as the `key`:
 
 ```js
 function ColorsList() {
@@ -87,29 +87,29 @@ function ColorsList() {
 export default ColorsList;
 ```
 
-### **4.1. When can you use the index like `key`?**
+### **4.1. When can you use the index as the `key`?**
 
 You can use `index` if these conditions are met:
 
-- The list is **static** (it is not reordered).
-- No elements are deleted or inserted in between.
-- Each element does not have a stable id.
+- The list is **static** (it isn't reordered).
+- No elements are removed or inserted in the middle.
+- The elements don't have a stable id.
 
 Typical example: a fixed list of steps in a tutorial.
 
-### **4.2. When should you NOT use index like `key`?**
+### **4.2. When should you NOT use the index as the `key`?**
 
 Avoid it if:
 
 - You can reorder the list.
-- You can delete/add elements.
-- Elements have associated status or inputs.
+- You can remove/add elements.
+- The elements have associated state or inputs.
 
-If React misidentifies elements, you can:
+If React misidentifies the elements, it can:
 
-- Reuse an element where it does not belong.
-- Show “changed location” data.
-- Keep states on the wrong item.
+- Reuse an element where it doesn't belong.
+- Show data that has “moved places”.
+- Keep state in the wrong item.
 
 ---
 
@@ -117,9 +117,9 @@ If React misidentifies elements, you can:
 
 ---
 
-## **5. Render lists of objects (Object Lists)**
+## **5. Rendering lists of objects (Object Lists)**
 
-The most common thing is that your list is an array of objects.
+Most commonly, your list is an array of objects.
 
 Example:
 
@@ -148,16 +148,16 @@ export default UsersList;
 Here the ideal `key` is `user.id` because:
 
 - It's unique.
-- Doesn't change.
+- It doesn't change.
 - React can identify each item correctly.
 
 ---
 
-[![Item Lists](https://img.youtube.com/vi/RxJ-8PTAuBY/0.jpg)](https://www.youtube.com/watch?v=RxJ-8PTAuBY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Object Lists](https://img.youtube.com/vi/RxJ-8PTAuBY/0.jpg)](https://www.youtube.com/watch?v=RxJ-8PTAuBY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-## **6. Render components within a list**
+## **6. Rendering components inside a list**
 
 A very common pattern is to have an “item” component and render it in the `.map()`.
 
@@ -198,14 +198,14 @@ function UsersList() {
 export default UsersList;
 ```
 
-Note that:
+Notice that:
 
-- The `key` is put in the **repeating component** (`UserItem`).
-- `UserItem` receives data by props.
+- The `key` goes on the **repeated component** (`UserItem`).
+- `UserItem` receives data through props.
 
 ---
 
-## **7. Good practices with lists**
+## **7. Best practices with lists**
 
 - Use a stable `key` (ideally an `id`).
 - Avoid using `index` as `key` if the list may change.
@@ -214,11 +214,11 @@ Note that:
 
 ---
 
-## **8. To take into account**
+## **8. Things to keep in mind**
 
-- To render lists in React, `.map()` is used.
-- Each item must have an `key`.
+- To render lists in React, you use `.map()`.
+- Each item must have a `key`.
 - `index` as `key` only in static lists.
-- In item lists, use `id` as `key`.
+- In lists of objects, use `id` as `key`.
 
-In the next topic we will see **Parent to Child Props** to share dynamic information between components.
+In the next topic we'll look at **Props from Parent to Child** to share dynamic information between components.

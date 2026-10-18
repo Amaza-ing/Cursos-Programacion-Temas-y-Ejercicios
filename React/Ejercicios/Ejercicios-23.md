@@ -1,19 +1,19 @@
 # **Exercises - Topic 23: Users, Fetch and Context**
 
-Below, you will find **10 practical exercises** to work on user management combining **Context**, **Fetch** and global data consumption.
+Below, you will find **10 practical exercises** to practice user management by combining **Context**, **Fetch** and global data consumption.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Create `UsersContext`**
 
-Create an `UsersContext.jsx` file that:
+Create a `UsersContext.jsx` file that:
 
-- Use `createContext`.
-- Export the default context.
+- Uses `createContext`.
+- Exports the context as the default export.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { createContext } from "react";
@@ -31,11 +31,11 @@ export default UsersContext;
 
 Create `UsersProvider.jsx` that has:
 
-- Initial `users` state `[]`.
-- `isLoading` status.
-- `error` status.
+- A `users` state with initial value `[]`.
+- An `isLoading` state.
+- An `error` state.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useState } from "react";
@@ -62,13 +62,13 @@ export default UsersProvider;
 
 ## **Exercise 3: Fetch users in the Provider**
 
-Extends `UsersProvider` so that:
+Extend `UsersProvider` so that it:
 
-- Fetch `https://jsonplaceholder.typicode.com/users`.
-- Run when mounting.
-- Save users in status.
+- Fetches `https://jsonplaceholder.typicode.com/users`.
+- Runs the fetch on mount.
+- Stores the users in state.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 useEffect(() => {
@@ -94,7 +94,7 @@ useEffect(() => {
 
 Add error handling to the fetch using `try/catch`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 try {
@@ -115,7 +115,7 @@ try {
 
 Wrap your application with `UsersProvider` in `App.jsx` or `main.jsx`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <UsersProvider>
@@ -131,10 +131,10 @@ Wrap your application with `UsersProvider` in `App.jsx` or `main.jsx`.
 
 Create `UsersList.jsx` that:
 
-- Use `useContext(UsersContext)`.
-- Show `Loading...`, `Error` or the user list.
+- Uses `useContext(UsersContext)`.
+- Shows `Loading...`, `Error` or the list of users.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { useContext } from "react";
@@ -164,9 +164,9 @@ export default UsersList;
 
 ## **Exercise 7: Add a function to the Context**
 
-Extends the Context to include an `addUser` function.
+Extend the Context to include an `addUser` function.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const addUser = (newUser) => {
@@ -184,10 +184,10 @@ const addUser = (newUser) => {
 
 Create an `AddUser.jsx` component that:
 
-- Use `addUser` from the Context.
-- Add a dummy user when you press a button.
+- Uses `addUser` from the Context.
+- Adds a dummy user when a button is pressed.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const newUser = { id: Date.now(), name: "New user" };
@@ -198,15 +198,15 @@ addUser(newUser);
 
 ---
 
-## **Exercise 9: User detail without new fetch**
+## **Exercise 9: User details without a new fetch**
 
 Create `UserDetail.jsx` that:
 
-- Read `id` from `useParams`.
-- Find the user in `users` of the Context.
-- Show your name.
+- Reads `id` from `useParams`.
+- Finds the user in the Context's `users`.
+- Shows their name.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const user = users.find((u) => u.id === Number(id));
@@ -218,9 +218,9 @@ const user = users.find((u) => u.id === Number(id));
 
 ## **Exercise 10: Advantages of Fetch + Context**
 
-Explain two advantages of doing the fetch within the Provider.
+Explain two advantages of doing the fetch inside the Provider.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 - The fetch is done only once.
 - Data is shared globally without repeating logic.

@@ -1,8 +1,8 @@
 # Exercises - Topic 18: Inheritance and Polymorphism
 
-Below you will find **10 practical exercises** on **inheritance** and **polymorphism**: `extends`, `super(...)`, overwriting with `@Override`, using parent references for child instances, polymorphic lists, and a first contact with `instanceof`.
+Below you will find **10 practical exercises** on **inheritance** and **polymorphism**: `extends`, `super(...)`, overriding with `@Override`, using parent references for child instances, polymorphic lists, and a first contact with `instanceof`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
@@ -11,8 +11,8 @@ Try to solve them before consulting the solution.
 Create a class `Person` with:
 
 - `private String name`
-- `Person(String name)` Builder
-- `printInfo()` method showing `Name: ...`
+- `Person(String name)` constructor
+- `printInfo()` method that prints `Name: ...`
 
 Create a class `Student extends Person` with:
 
@@ -20,7 +20,7 @@ Create a class `Student extends Person` with:
 - `Student(String name, String studentId)` constructor that calls `super(name)`
 - `printStudentId()` method
 
-In `main`, create an `Student` and call both methods.
+In `main`, create a `Student` and call both methods.
 
 <details><summary>Show solution</summary>
 
@@ -67,15 +67,15 @@ public class Main {
 
 ---
 
-## Exercise 2: Overwrite `printInfo()` with `@Override`
+## Exercise 2: Override `printInfo()` with `@Override`
 
-Building on the previous exercise, overwrite `printInfo()` in `Student` so that it displays:
+Building on the previous exercise, override `printInfo()` in `Student` so that it displays:
 
 ```
 Name: ... | StudentId: ...
 ```
 
-Reuse the parent's `printInfo()` with `super.printInfo()` or print everything yourself (choose an option).
+Reuse the parent's `printInfo()` with `super.printInfo()` or print everything yourself (pick one option).
 
 <details><summary>Show solution</summary>
 
@@ -102,7 +102,7 @@ public class Student extends Person {
 
 ## Exercise 3: `Vehicle`, `Car` and `Bike`
 
-Create an `Vehicle` class with an `move()` method that prints:
+Create a `Vehicle` class with a `move()` method that prints:
 
 ```
 Moving...
@@ -110,10 +110,10 @@ Moving...
 
 Create:
 
-- `Car extends Vehicle` → overwrite `move()` to print `Driving...`
-- `Bike extends Vehicle` → overwrite `move()` to print `Cycling...`
+- `Car extends Vehicle` → override `move()` to print `Driving...`
+- `Bike extends Vehicle` → override `move()` to print `Cycling...`
 
-In `main`, create one `Vehicle` that is an `Car` and another that is an `Bike` and call `move()`.
+In `main`, create one `Vehicle` that is a `Car` and another that is a `Bike`, and call `move()`.
 
 <details><summary>Show solution</summary>
 
@@ -161,7 +161,7 @@ public class Main {
 
 ## Exercise 4: Polymorphic list of vehicles
 
-Using the classes from the previous exercise, create an `List<Vehicle>` list and add:
+Using the classes from the previous exercise, create a `List<Vehicle>` list and add:
 
 - 2 cars
 - 1 bike
@@ -193,9 +193,9 @@ public class Main {
 
 ---
 
-## Exercise 5: `Animal` with overridden method
+## Exercise 5: `Animal` with an overridden method
 
-Create a class `Animal` with method `sound()` that prints:
+Create a class `Animal` with a `sound()` method that prints:
 
 ```
 Animal sound...
@@ -206,7 +206,7 @@ Create:
 - `Dog extends Animal` → `sound()` prints `Woof`
 - `Cat extends Animal` → `sound()` prints `Meow`
 
-In `main`, save an `Dog` and an `Cat` in variables of type `Animal` and call `sound()`.
+In `main`, store a `Dog` and a `Cat` in variables of type `Animal` and call `sound()`.
 
 <details><summary>Show solution</summary>
 
@@ -252,21 +252,21 @@ public class Main {
 
 ---
 
-## Exercise 6: Access to exclusive methods of the child
+## Exercise 6: Accessing methods that only the child class has
 
-Create a class `Employee` with method `work()` that prints:
+Create a class `Employee` with a `work()` method that prints:
 
 ```
 Working...
 ```
 
-Create a class `Manager extends Employee` with additional method `approveVacation()`.
+Create a class `Manager extends Employee` with an additional method, `approveVacation()`.
 
 In `main`:
 
-1. Create an `Employee` that is an `Manager` (parent reference)
+1. Create an `Employee` that is a `Manager` (parent reference)
 2. Call `work()`
-3. To call `approveVacation()`, cast `Manager`
+3. To call `approveVacation()`, cast it to `Manager`
 
 <details><summary>Show solution</summary>
 
@@ -304,7 +304,7 @@ public class Main {
 
 ## Exercise 7: `instanceof` to avoid an unsafe cast
 
-Use the classes in exercise 6.
+Use the classes from exercise 6.
 
 In `main`, create:
 
@@ -317,9 +317,9 @@ Write a static method:
 public static void tryApprove(Employee employee)
 ```
 
-What:
+The method must:
 
-- If `employee` is `Manager`, call `approveVacation()`
+- If `employee` is a `Manager`, call `approveVacation()`
 - If not, print `Not a manager`
 
 <details><summary>Show solution</summary>
@@ -365,7 +365,7 @@ public class Main {
 
 ---
 
-## Exercise 8: Overwriting and calling `super.method()`
+## Exercise 8: Overriding and calling `super.method()`
 
 Create a class `BaseLogger` with a method `log(String message)` that prints:
 
@@ -379,7 +379,7 @@ Create a class `FileLogger extends BaseLogger` that overrides `log` to print fir
 Saving to file...
 ```
 
-And then call `super.log(message)`.
+It must then call `super.log(message)`.
 
 <details><summary>Show solution</summary>
 
@@ -414,12 +414,12 @@ public class Main {
 
 ---
 
-## Exercise 9: Hierarchy with parent constructor
+## Exercise 9: Hierarchy with a parent constructor
 
 Create a class `Account` with:
 
 - `private String id`
-- `Account(String id)` Builder
+- `Account(String id)` constructor
 - `printInfo()` method that prints `Account id: ...`
 
 Create `PremiumAccount extends Account` with:
@@ -427,7 +427,7 @@ Create `PremiumAccount extends Account` with:
 - `private int points`
 - `PremiumAccount(String id, int points)` constructor that calls `super(id)`
 
-Overwrite `printInfo()` to also include the points.
+Override `printInfo()` so it also includes the points.
 
 <details><summary>Show solution</summary>
 
@@ -477,7 +477,7 @@ public class Main {
 
 ## Exercise 10: Polymorphism with calculation in an overridden method
 
-Create a class `Discount` with method:
+Create a class `Discount` with the method:
 
 ```java
 public double apply(double price)
@@ -487,15 +487,15 @@ By default, it returns the same `price` (no discount).
 
 Create:
 
-- `PercentageDiscount extends Discount` with attribute `percent` and `apply` that subtracts the percentage.
-- `FixedDiscount extends Discount` with attribute `amount` and `apply` that subtracts a fixed amount (without going below 0).
+- `PercentageDiscount extends Discount` with a `percent` attribute and an `apply` that subtracts the percentage.
+- `FixedDiscount extends Discount` with an `amount` attribute and an `apply` that subtracts a fixed amount (without going below 0).
 
-In `main`, create an `List<Discount>` list with:
+In `main`, create a `List<Discount>` list with:
 
 - a percentage discount of 10%
 - a fixed discount of 5
 
-It applies both to `price = 50` and shows the result of each.
+Apply both to `price = 50` and print the result of each one.
 
 <details><summary>Show solution</summary>
 

@@ -2,21 +2,21 @@
 
 ## AI with Copilot
 
-This material is designed for development profiles such as administrative, management, support, documentation or internal coordination profiles.
+This material is designed both for development profiles and for administrative, management, support, documentation or internal coordination profiles.
 
-The main idea is to learn to ask Copilot better. A good prompt does not consist of writing a lot, but rather giving the AI ​​the appropriate information: what you need, why you need it, in what context you work, with what format it should respond and what limits it should respect.
+The main idea is to learn how to ask Copilot better. A good prompt isn't about writing a lot, but about giving the AI the right information: what you need, why you need it, what context you work in, what format it should answer in and what limits it should respect.
 
 ---
 
 ## Learning objectives
 
-At the end of this class, you will be able to:
+By the end of this class, you'll be able to:
 
 - Understand what prompting frameworks are for in a professional environment.
-- Choose the appropriate framework according to the type of task.
+- Choose the right framework for each type of task.
 - Apply prompting frameworks to development, documentation, analysis, communication and administration tasks.
-- Create clearer, reusable and easy to improve prompts.
-- Critically review Copilot's responses before using them at work.
+- Create prompts that are clearer, reusable and easy to improve.
+- Critically review Copilot's answers before using them at work.
 
 ---
 
@@ -40,56 +40,56 @@ Usa un tono profesional, claro y directo.
 Devuelve la respuesta en formato de lista.
 ```
 
-The second option works better because it includes context, objective, role, format and quality criteria.
+The second option works better because it includes context, goal, role, format and quality criteria.
 
 ---
 
 ## 2) Why use frameworks in a consulting firm?
 
-In a consulting firm, the tasks are usually varied: software development, customer support, documentation, preparation of reports, meetings, project monitoring, data analysis, commercial proposals or administrative tasks.
+In a consulting firm, tasks tend to be varied: software development, customer support, documentation, report writing, meetings, project tracking, data analysis, sales proposals or administrative tasks.
 
-Prompting frameworks help:
+Prompting frameworks help you:
 
-- **Save time:** Reduce trial and error when requesting tasks from Copilot.
-- **Improve quality:** The responses are more complete and adjusted to what we need.
+- **Save time:** They reduce trial and error when you ask Copilot for tasks.
+- **Improve quality:** The answers are more complete and closer to what we need.
 - **Standardize work:** Several people can use similar structures for similar tasks.
-- **Reduce ambiguity:** Copilot better understands the context and expected format.
-- **Improve the review:** It is easier to detect if the answer meets the objective or not.
+- **Reduce ambiguity:** Copilot understands the context and the expected format better.
+- **Improve the review:** It's easier to see whether or not the answer meets the goal.
 - **Work better with clients:** They help prepare clearer communications, documentation and deliverables.
 
 ---
 
-## 3) Good practices before using Copilot
+## 3) Best practices before using Copilot
 
 Before pasting information into Copilot, remember these recommendations:
 
-1. **Do not share confidential information if you do not have authorization.** Avoid real customer data, credentials, contracts, sensitive financial information or personal data.
-2. **Anonymize examples.** Use fictitious names such as `Cliente A`, `Proyecto X`, `Usuario 1` or `Empresa Demo`.
-3. **Always check the response.** Copilot may make mistakes, invent data or misinterpret the request.
-4. **Do not copy code without understanding it.** Ask for explanations if something is not clear.
-5. **Indicates the output format.** Table, list, steps, email, checklist, executive summary, commented code, etc.
-6. **Give sufficient context.** The clearer the situation, the better the response.
-7. **Ask for a second version if necessary.** You can request that it be shorter, more formal, more technical or simpler.
+1. **Don't share confidential information unless you're authorized to.** Avoid real customer data, credentials, contracts, sensitive financial information or personal data.
+2. **Anonymize the examples.** Use fictional names such as `Cliente A`, `Proyecto X`, `Usuario 1` or `Empresa Demo`.
+3. **Always check the answer.** Copilot may make mistakes, make up data or misunderstand the request.
+4. **Don't copy code without understanding it.** Ask for explanations if something isn't clear.
+5. **State the output format.** Table, list, steps, email, checklist, executive summary, commented code, etc.
+6. **Give enough context.** The clearer the situation, the better the answer.
+7. **Ask for a second version if needed.** You can ask for it to be shorter, more formal, more technical or simpler.
 
 ---
-## 4) How to select the right framework
+## 4) How to choose the right framework
 
-Not all frameworks serve the same purpose. You can choose them depending on the task in front of you.
+Not all frameworks serve the same purpose. You can choose them depending on the task at hand.
 
-| Need | Recommended Framework |
+| Need | Recommended framework |
 | ----------------------------------------------------------- | --------------------- |
-| Explain a technical or functional concept | RACE, I BELIEVE |
-| Request a quick and direct task | TAG |
-| Generate documentation, emails or materials with example | CARE |
+| Explain a technical or functional concept | RACE, CREO |
+| Ask for a quick, direct task | TAG |
+| Generate documentation, emails or materials based on an example | CARE |
 | Create an activity, procedure or deliverable step by step | APE, RISE |
-| Design a more complete and adjusted prompt | CREATE |
-| Analyze a problem or blockage | PAIN |
+| Design a more complete, fine-tuned prompt | CREATE |
+| Analyze a problem or blocker | PAIN |
 | Plan a task, meeting, delivery or mini-project | COAST |
-| Request a complete and structured solution | ROSES |
+| Ask for a complete, structured solution | ROSES |
 
 ---
 
-#5) Prompting Frameworks with Professional Examples
+# 5) Prompting frameworks with professional examples
 
 ---
 
@@ -97,10 +97,10 @@ Not all frameworks serve the same purpose. You can choose them depending on the 
 
 **RACE = Role – Action – Context – Explanation**
 
-- **Role:** What role should Copilot adopt.
-- **Action:** What you should do.
-- **Context:** In what situation the response is going to be used.
-- **Explanation:** How you should explain or justify the answer.
+- **Role:** The role Copilot should take on.
+- **Action:** What it should do.
+- **Context:** The situation in which the answer will be used.
+- **Explanation:** How it should explain or justify the answer.
 
 ### When to use it
 
@@ -148,7 +148,7 @@ Explanation: Explica la respuesta de forma [nivel de detalle, tono o formato].
 - **Context:** Starting situation.
 - **Action:** Specific task.
 - **Result:** Expected result.
-- **Example:** Example or reference of the type of response you want.
+- **Example:** An example or reference of the type of answer you want.
 
 ### When to use it
 
@@ -199,13 +199,13 @@ Example: [Ejemplo de estilo, estructura o contenido].
 
 **APE = Action – Purpose – Execution**
 
-- **Action:** What do you want it to do.
-- **Purpose:** What do you need it for.
-- **Execution:** How you should deliver it.
+- **Action:** What you want it to do.
+- **Purpose:** What you need it for.
+- **Execution:** How it should deliver it.
 
 ### When to use it
 
-Use APE when you are clear about the task and also want to define its purpose and execution format.
+Use APE when the task is clear to you and you also want to define its purpose and the execution format.
 
 ### Example for development
 
@@ -242,16 +242,16 @@ Execution: [Formato, estructura o pasos que debe seguir].
 
 **CREATE = Character – Request – Examples – Adjustment – Type – Extras**
 
-- **Character:** Role that Copilot must assume.
+- **Character:** The role Copilot must take on.
 - **Request:** Main request.
 - **Examples:** Examples or references.
-- **Adjustment:** Tone, level or criteria adjustments.
+- **Adjustment:** Adjustments to tone, level or criteria.
 - **Type:** Type of output.
 - **Extras:** Additional elements.
 
 ### When to use it
 
-Use CREATE when you need a more complete, careful and adapted response to a specific context.
+Use CREATE when you need a more complete, polished answer tailored to a specific context.
 
 ### Example for development
 
@@ -295,12 +295,12 @@ Extras: Añade [elementos adicionales].
 **TAG = Task – Action – Goal**
 
 - **Task:** General task.
-- **Action:** Concrete action.
-- **Goal:** Final objective.
+- **Action:** Specific action.
+- **Goal:** Final goal.
 
 ### When to use it
 
-Use TAG for quick and direct requests. It is useful when the task does not need much context.
+Use TAG for quick, direct requests. It's useful when the task doesn't need much context.
 
 ### Example for development
 
@@ -336,7 +336,7 @@ Goal: [Objetivo final].
 
 ## 5.6 CREO Framework
 
-**I BELIEVE = Context – Request – Explanation – Outcome**
+**CREO = Context – Request – Explanation – Outcome**
 
 - **Context:** Situation.
 - **Request:** Request.
@@ -345,7 +345,7 @@ Goal: [Objetivo final].
 
 ### When to use it
 
-Use CREO when you want Copilot to not only generate an answer, but also explain why it is proposing that answer.
+Use CREO when you want Copilot not only to generate an answer, but also to explain why it's proposing that answer.
 
 ### Example for development
 
@@ -380,14 +380,14 @@ Outcome: [Resultado final esperado].
 
 **RISE = Role – Input – Steps – Execution**
 
-- **Role:** Role that Copilot must adopt.
+- **Role:** The role Copilot must take on.
 - **Input:** Input information.
-- **Steps:** Steps you must follow.
-- **Execution:** How the response should be delivered.
+- **Steps:** Steps it must follow.
+- **Execution:** How it should deliver the answer.
 
 ### When to use it
 
-Use RISE for step-by-step processes, especially when you want Copilot to work in an orderly manner.
+Use RISE for step-by-step processes, especially when you want Copilot to work in an orderly way.
 
 ### Example for development
 
@@ -430,14 +430,14 @@ Execution: Devuelve la respuesta en formato [formato].
 
 **PAIN = Problem – Action – Information – Next Steps**
 
-- **Problem:** Problem or blockage.
+- **Problem:** Problem or blocker.
 - **Action:** What Copilot should do.
 - **Information:** Available information or missing information.
 - **Next Steps:** Recommended next actions.
 
 ### When to use it
 
-Use PAIN when there is a problem that you need to analyze, unlock or turn into an action plan.
+Use PAIN when there's a problem that you need to analyze, unblock or turn into an action plan.
 
 ### Example for development
 
@@ -473,8 +473,8 @@ Next Steps: [Qué tipo de próximos pasos necesitas].
 **COAST = Context – Objective – Actions – Scenario – Task**
 
 - **Context:** General situation.
-- **Objective:** Objective you want to achieve.
-- **Actions:** Actions that must be considered.
+- **Objective:** The objective you want to achieve.
+- **Actions:** Actions that must be taken into account.
 - **Scenario:** Scenario or conditions.
 - **Task:** Final task for Copilot.
 
@@ -518,11 +518,11 @@ Task: [Tarea concreta que debe realizar Copilot].
 
 **ROSES = Role – Objective – Scenario – Expected solution – Steps**
 
-- **Role:** Role that Copilot adopts.
+- **Role:** The role Copilot takes on.
 - **Objective:** Main objective.
 - **Scenario:** Specific scenario.
-- **Expected solution:** Type of expected solution.
-- **Steps:** Steps that you must follow or include.
+- **Expected solution:** Type of solution expected.
+- **Steps:** Steps it must follow or include.
 
 ### When to use it
 
@@ -568,24 +568,24 @@ Steps: Incluye estos pasos: [pasos].
 
 ---
 
-#6) Checklist to write better prompts
+# 6) Checklist for writing better prompts
 
-Before sending a prompt to Copilot, check if you have included:
+Before sending a prompt to Copilot, check whether you've included:
 
-- [ ] What do you want me to do.
-- [ ] What do you need it for.
-- [ ] What role should you assume.
-- [ ] What context you should know.
-- [ ] What output format do you want.
-- [ ] What level of detail do you need.
-- [ ] What tone should you use.
-- [ ] What information you should avoid or protect.
-- [ ] What examples can you follow.
-- [ ] How will you know if the answer is useful.
+- [ ] What you want it to do.
+- [ ] What you need it for.
+- [ ] What role it should take on.
+- [ ] What context it should know.
+- [ ] What output format you want.
+- [ ] What level of detail you need.
+- [ ] What tone it should use.
+- [ ] What information it should avoid or protect.
+- [ ] What examples it can follow.
+- [ ] How you'll know whether the answer is useful.
 
 ---
 
-#7) Common mistakes when using Copilot
+# 7) Common mistakes when using Copilot
 
 ## Mistake 1: Asking for something too generic
 
@@ -601,7 +601,7 @@ Céntrate en commit, branch, merge y pull request.
 Usa ejemplos sencillos y termina con una tabla resumen.
 ```
 
-## Error 2: Not indicating the format
+## Mistake 2: Not stating the format
 
 ```text
 Organiza estas tareas.
@@ -613,7 +613,7 @@ Better:
 Organiza estas tareas en una tabla con las columnas: tarea, responsable, prioridad, fecha límite y estado.
 ```
 
-## Error 3: Not indicating the audience
+## Mistake 3: Not stating the audience
 
 ```text
 Redacta una explicación sobre este proyecto.
@@ -626,7 +626,7 @@ Redacta una explicación sobre este proyecto para una persona del área administ
 Usa lenguaje claro y evita jerga de programación.
 ```
 
-## Mistake 4: Not asking for critical review
+## Mistake 4: Not asking for a critical review
 
 ```text
 Crea este procedimiento.
@@ -640,27 +640,27 @@ Crea este procedimiento y después añade una sección final con posibles riesgo
 
 ---
 
-#8) Key Takeaways
+# 8) Key takeaways
 
-- A good prompt gives context, objective, format and limits.
+- A good prompt gives context, goal, format and limits.
 - Frameworks help turn vague requests into clear instructions.
-- It is not necessary to always use the longest framework: choose according to the task.
+- You don't always need to use the longest framework: choose according to the task.
 - Copilot is useful for generating drafts, ideas, explanations, documentation and work plans.
-- Copilot responses should always be reviewed before being used professionally.
-- In a consulting firm, confidentiality and quality of information are as important as speed.
+- Copilot's answers should always be reviewed before being used professionally.
+- In a consulting firm, confidentiality and the quality of information are as important as speed.
 
 ---
 
-#9) Quick overview of frameworks
+# 9) Quick overview of frameworks
 
 | Framework | Meaning | Best for |
 | --------- | ------------------------------------------------------ | ---------------------------------- |
 | RACE | Role, Action, Context, Explanation | Clear explanations |
-| CARE | Context, Action, Result, Example | Practical results with example |
-| APE | Action, Purpose, Execution | Tasks with objective and format |
-| CREATE | Character, Request, Examples, Adjustment, Type, Extras | Complete and personalized prompts |
-| TAG | Task, Action, Goal | Quick Requests |
-| I BELIEVE | Context, Request, Explanation, Outcome | Explanations with final result |
+| CARE | Context, Action, Result, Example | Practical results based on an example |
+| APE | Action, Purpose, Execution | Tasks with a goal and a format |
+| CREATE | Character, Request, Examples, Adjustment, Type, Extras | Complete, tailored prompts |
+| TAG | Task, Action, Goal | Quick requests |
+| CREO | Context, Request, Explanation, Outcome | Explanations with a final result |
 | RISE | Role, Input, Steps, Execution | Step-by-step processes |
 | PAIN | Problem, Action, Information, Next Steps | Problem analysis |
 | COAST | Context, Objective, Actions, Scenario, Task | Planning |
@@ -670,4 +670,4 @@ Crea este procedimiento y después añade una sección final con posibles riesgo
 
 ## Closing
 
-The best way to learn prompting is to practice. Start with simple prompts, review Copilot's response, and gradually improve your instructions. If the answer is not helpful, it doesn't necessarily mean that Copilot can't help you: it often means that the prompt needs more context, more boundaries, or clearer formatting.
+The best way to learn prompting is to practice. Start with simple prompts, review Copilot's answer and gradually improve your instructions. If the answer isn't helpful, it doesn't necessarily mean that Copilot can't help you: it often means that the prompt needs more context, more limits or a clearer format.

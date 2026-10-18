@@ -1,14 +1,14 @@
 # **Exercises - Topic 3: Loops in JavaScript**
 
-Below you will find 6 practical exercises on using loops in JavaScript.
+Below you'll find 6 practical exercises on using loops in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Count from 1 to 10**
 
-Create a program that prints the numbers 1 to 10 using an `for` loop.
+Create a program that prints the numbers from 1 to 10 using a `for` loop.
 
 <details><summary>Show solution</summary>
 
@@ -22,9 +22,9 @@ for (let i = 1; i <= 10; i++) {
 
 ---
 
-### **Exercise 2: Addition of even numbers**
+### **Exercise 2: Sum of even numbers**
 
-Using an `while` loop, add all even numbers between 1 and 20 and print the result.
+Using a `while` loop, add up all the even numbers between 1 and 20 and print the result.
 
 <details><summary>Show solution</summary>
 
@@ -48,9 +48,9 @@ console.log(`La suma de los números pares entre 1 y 20 es: ${sum}`);
 
 ### **Exercise 3: Word backwards**
 
-Use an `for` loop to print a word backwards.
+Use a `for` loop to print a word backwards.
 
-**Example:** If the word is "JavaScript", the result must be "tpircSavaJ".
+**Example:** If the word is "JavaScript", the result should be "tpircSavaJ".
 
 <details><summary>Show solution</summary>
 
@@ -69,9 +69,9 @@ console.log(reversedWord);
 
 ---
 
-### **Exercise 4: Print properties of an object**
+### **Exercise 4: Print the properties of an object**
 
-Uses an `for...in` loop to print the keys and values of an object.
+Use a `for...in` loop to print the keys and values of an object.
 
 **Example:**
 
@@ -142,7 +142,7 @@ for (const fruit of fruits) {
 
 ### **Exercise 6: Multiplication table**
 
-Prompts the user for a number and displays its multiplication table from 1 to 10 using an `for` loop.
+Ask the user for a number and display its multiplication table from 1 to 10 using a `for` loop.
 
 **Example:** If the user enters `5`, the output will be:
 

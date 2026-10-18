@@ -1,10 +1,10 @@
 # Exercises - Topic 02: Copilot Ecosystem
 
-Below you will find practical exercises to differentiate Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot and Copilot Studio depending on the context of use.
+Below, you'll find hands-on exercises to tell Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot and Copilot Studio apart depending on the context of use.
 
 ## Exercise 1: Choose the right Copilot
 
-Indicate which tool would be most appropriate in each situation: Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot or Copilot Studio.
+Say which tool would be the most suitable in each situation: Microsoft Copilot, GitHub Copilot, Microsoft 365 Copilot or Copilot Studio.
 
 1. A programmer wants to generate unit tests for a JavaScript function.
 2. A team wants to summarize a Teams meeting and extract pending tasks.
@@ -15,17 +15,17 @@ Indicate which tool would be most appropriate in each situation: Microsoft Copil
 <details>
 <summary><strong>Show solution</strong></summary>
 
-1. **GitHub Copilot**, because it is oriented towards software development.
-2. **Microsoft 365 Copilot**, because it works within tools like Teams.
-3. **Copilot Studio**, because it is used to create custom agents.
-4. **Microsoft Copilot on Edge**, because it can help with web content.
+1. **GitHub Copilot**, because it's focused on software development.
+2. **Microsoft 365 Copilot**, because it works inside tools like Teams.
+3. **Copilot Studio**, because it's used to create custom agents.
+4. **Microsoft Copilot in Edge**, because it can help with web content.
 5. **Microsoft 365 Copilot**, especially using Word and PowerPoint.
 
 </details>
 
-## Exercise 2: Complete a comparative table
+## Exercise 2: Complete a comparison table
 
-Complete the following table indicating the main use of each tool.
+Complete the following table with the main use of each tool.
 
 | Tool | Main use |
 | --------------------- | ------------- |
@@ -39,23 +39,23 @@ Complete the following table indicating the main use of each tool.
 
 | Tool | Main use |
 | --------------------- | ----------------------------------------------------------------------------------------------------------- |
-| GitHub Copilot | Helps software development: generate code, explain code, refactor, create tests and review changes. |
-| Microsoft Copilot | General AI assistant for search, content generation, conversation and support in daily tasks.     |
-| Microsoft 365 Copilot | Integrated assistant in Word, Excel, PowerPoint, Outlook and Teams for business productivity.                |
+| GitHub Copilot | Helps with software development: generating code, explaining code, refactoring, creating tests and reviewing changes. |
+| Microsoft Copilot | General-purpose AI assistant for search, content generation, conversation and help with everyday tasks.     |
+| Microsoft 365 Copilot | Assistant built into Word, Excel, PowerPoint, Outlook and Teams for business productivity.                |
 | Copilot Studio | Platform to create, configure and publish custom agents.                                           |
 
 </details>
 
 ## Exercise 3: Analyze a business use case
 
-A company wants to improve its productivity using AI. You have these needs:
+A company wants to improve its productivity using AI. It has these needs:
 
 - Summarize meetings.
 - Create email drafts.
 - Help the development team write tests.
 - Create an internal assistant to answer frequently asked questions from employees.
 
-Indicate what type of Copilot you would use for each need.
+Say which type of Copilot you would use for each need.
 
 <details>
 <summary><strong>Show solution</strong></summary>
@@ -65,11 +65,11 @@ Indicate what type of Copilot you would use for each need.
 - **Help the development team write tests:** GitHub Copilot.
 - **Create an internal assistant for frequently asked questions:** Copilot Studio.
 
-This case shows that there is no one Copilot for everything. Each tool is designed for a different context.
+This case shows that there isn't a single Copilot for everything. Each tool is designed for a different context.
 
 </details>
 
-## Exercise 4: Detect a common confusion
+## Exercise 4: Spot a common misconception
 
 Read this statement:
 
@@ -83,30 +83,30 @@ Explain why this statement is not correct.
 <details>
 <summary><strong>Show solution</strong></summary>
 
-The statement is not correct because both tools have different objectives.
+The statement is not correct because the two tools have different goals.
 
-**GitHub Copilot** is designed primarily for software development. It helps generate code, explain functions, refactor, create tests, work with repositories and assist with technical tasks.
+**GitHub Copilot** is designed mainly for software development. It helps generate code, explain functions, refactor, create tests, work with repositories and assist with technical tasks.
 
-**Microsoft 365 Copilot** is aimed at productivity in applications such as Word, Excel, PowerPoint, Outlook and Teams. Helps summarize documents, compose emails, analyze data, prepare presentations or summarize meetings.
+**Microsoft 365 Copilot** is aimed at productivity in applications such as Word, Excel, PowerPoint, Outlook and Teams. It helps summarize documents, write emails, analyze data, prepare presentations or summarize meetings.
 
-Both use AI, but are applied to different work contexts.
+Both use AI, but they're applied to different work contexts.
 
 </details>
 
 ## Exercise 5: Design a combined flow
 
-Imagine that a team wants to prepare a new functionality for an application and then present it to management. Propose a workflow using at least two types of Copilot.
+Imagine that a team wants to prepare a new feature for an application and then present it to management. Propose a workflow that uses at least two types of Copilot.
 
 <details>
 <summary><strong>Show solution</strong></summary>
 
 A possible flow would be:
 
-1. Use **GitHub Copilot** to analyze existing code and propose an initial structure of the new functionality.
-2. Use **GitHub Copilot** to generate part of the code, create tests and review possible errors.
-3. Use **Microsoft 365 Copilot in Word** to write a document explaining the functionality.
-4. Use **Microsoft 365 Copilot in PowerPoint** to transform that document into an initial presentation.
-5. Manually review the code, document and presentation before delivering them.
+1. Use **GitHub Copilot** to analyze the existing code and propose an initial structure for the new feature.
+2. Use **GitHub Copilot** to generate part of the code, create tests and look for possible errors.
+3. Use **Microsoft 365 Copilot in Word** to write a document explaining the feature.
+4. Use **Microsoft 365 Copilot in PowerPoint** to turn that document into an initial presentation.
+5. Manually review the code, the document and the presentation before handing them in.
 
 This flow combines development, documentation and communication.
 

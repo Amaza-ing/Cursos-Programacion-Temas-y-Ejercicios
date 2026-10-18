@@ -1,16 +1,16 @@
 # **Exercises - Topic 6: Styles and Dynamic Classes in Vue.js**
 
-Below you will find 6 practical exercises on styles and dynamic classes in Vue.
+Below you'll find 6 practical exercises on styles and dynamic classes in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## **Exercise 1: Apply a class if a user is active**
 
-Creates an `UserStatus.vue` component that displays a paragraph with class `active` if the variable `isUserActive` is `true`.
+Create a `UserStatus.vue` component that displays a paragraph with the `active` class if the `isUserActive` variable is `true`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -37,9 +37,9 @@ const isUserActive = ref(true);
 
 ## **Exercise 2: Apply multiple dynamic classes**
 
-Create an `DynamicBox.vue` component that always applies `box`, `selected` if `isSelected` is `true`, and `highlighted` if `isHighlighted` is `true`.
+Create a `DynamicBox.vue` component that always applies `box`, applies `selected` if `isSelected` is `true`, and `highlighted` if `isHighlighted` is `true`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -74,11 +74,11 @@ const isHighlighted = ref(false);
 
 ---
 
-## **Exercise 3: Change text color dynamically**
+## **Exercise 3: Change the text color dynamically**
 
-Create an `ColorText.vue` component that has text whose color comes from an `textColor` reactive variable.
+Create a `ColorText.vue` component with some text whose color comes from a `textColor` reactive variable.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -102,11 +102,11 @@ p {
 
 ---
 
-## **Exercise 4: Change font size with a button**
+## **Exercise 4: Change the font size with a button**
 
-Create an `ResizableText.vue` component that has a button to increase the font size of a paragraph.
+Create a `ResizableText.vue` component with a button that increases the font size of a paragraph.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -137,11 +137,11 @@ button {
 
 ---
 
-## **Exercise 5: Switch between light and dark theme**
+## **Exercise 5: Switch between a light and a dark theme**
 
-Create an `ThemeSwitcher.vue` component that applies the `dark` or `light` class to an `div` depending on the `isDarkMode` variable.
+Create a `ThemeSwitcher.vue` component that applies the `dark` or `light` class to a `div` depending on the `isDarkMode` variable.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>
@@ -176,11 +176,11 @@ button {
 
 ---
 
-## **Exercise 6: Change background color from an input**
+## **Exercise 6: Change the background color from an input**
 
-Create an `BackgroundPicker.vue` component that allows the user to enter a color in an input, and that color is applied as the background of an `div`.
+Create a `BackgroundPicker.vue` component that lets the user enter a color in an input and applies that color as the background of a `div`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```vue
 <script setup>

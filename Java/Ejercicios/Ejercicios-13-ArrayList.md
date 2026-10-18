@@ -1,14 +1,14 @@
-# Exercises - Topic 13: `List` and `ArrayList`
+# Exercises - Topic 13: List and ArrayList
 
-Below you will find **10 practical exercises** on **`List` and `ArrayList`**: creation, generics, `add/get/set/remove`, searches, tours, `size`, `isEmpty`, `contains/indexOf`, conversions and typical cases with `List<Integer>`.
+Below you will find **10 practical exercises** on **`List` and `ArrayList`**: creating lists, generics, `add/get/set/remove`, searching, iterating, `size`, `isEmpty`, `contains/indexOf`, conversions and typical cases with `List<Integer>`.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Create a list and add items
 
-Create an `List<String> animals` list.
+Create a `List<String> animals` list.
 
 1. Add `"Dog"`, `"Cat"`, `"Bird"` (in that order).
 2. Print the entire list.
@@ -41,7 +41,7 @@ public class Main {
 
 ## Exercise 2: Index access with `get`
 
-Create an `List<Integer> numbers` list and add these values:
+Create a `List<Integer> numbers` list and add these values:
 
 `12`, `5`, `30`, `7`.
 
@@ -77,13 +77,13 @@ public class Main {
 
 ## Exercise 3: Insert at a specific position (`add(index, value)`)
 
-Create an `List<String> cities` list with:
+Create a `List<String> cities` list with:
 
 - `"Madrid"`
 - `"Paris"`
 - `"Rome"`
 
-Insert `"Berlin"` in position 1.  
+Insert `"Berlin"` at position 1.  
 Print the list to check the final order.
 
 <details><summary>Show solution</summary>
@@ -113,7 +113,7 @@ public class Main {
 
 ## Exercise 4: Replace an element with `set`
 
-Create an `List<String> tasks` list with:
+Create a `List<String> tasks` list with:
 
 - `"Study"`
 - `"Train"`
@@ -147,16 +147,16 @@ public class Main {
 
 ---
 
-## Exercise 5: Delete by index and by value
+## Exercise 5: Remove by index and by value
 
-Create an `List<String> fruits` list with:
+Create a `List<String> fruits` list with:
 
 - `"Apple"`
 - `"Banana"`
 - `"Orange"`
 - `"Banana"`
 
-1. Delete index element 2.
+1. Remove the element at index 2.
 2. Remove the **first** occurrence of `"Banana"` by value.
 3. Print the final list.
 
@@ -187,13 +187,13 @@ public class Main {
 
 ---
 
-## Exercise 6: Loop through a list and add values
+## Exercise 6: Loop through a list and add up its values
 
-Create an `List<Integer> values` list with:
+Create a `List<Integer> values` list with:
 
 `3`, `8`, `2`, `10`.
 
-Scan it with an `for-each` and calculate the total sum.  
+Loop through it with a `for-each` and calculate the total sum.  
 Print the result.
 
 <details><summary>Show solution</summary>
@@ -228,15 +228,15 @@ public class Main {
 
 ## Exercise 7: Search with `contains` and `indexOf`
 
-Create an `List<String> names` list with:
+Create a `List<String> names` list with:
 
 - `"laura"`
 - `"alex"`
 - `"maria"`
 
-Create a variable `String input = "Alex"` and check if it exists in the list ignoring case.
+Create a variable `String input = "Alex"` and check whether it exists in the list, ignoring case.
 
-If it exists, it prints `"Found at: X"` where X is its index.  
+If it exists, print `"Found at: X"` where X is its index.  
 If it does not exist, print `"Not found"`.
 
 <details><summary>Show solution</summary>
@@ -272,11 +272,11 @@ public class Main {
 
 ## Exercise 8: `List<Integer>` and `remove` (special case)
 
-Create an `List<Integer> numbers` list with:
+Create a `List<Integer> numbers` list with:
 
 `10`, `20`, `30`, `20`.
 
-Removes the `20` value **by value** (not by index) and displays the final list.
+Remove the value `20` **by value** (not by index) and print the final list.
 
 <details><summary>Show solution</summary>
 
@@ -304,7 +304,7 @@ public class Main {
 
 ---
 
-## Exercise 9: Convert an array to modifiable `ArrayList`
+## Exercise 9: Convert an array to a modifiable `ArrayList`
 
 Declare an array:
 
@@ -313,7 +313,7 @@ String[] data = {"A", "B", "C"};
 ```
 
 
-Converts that array into a **modifiable** list (not immutable).
+Convert that array into a **modifiable** list (not immutable).
 
 1. Add `"D"` to the list.
 2. Print the list.
@@ -350,7 +350,7 @@ public static int countLongWords(List<String> words, int minLength)
 ```
 
 
-You must count how many words are **greater than or equal to** length than `minLength`.
+It must count how many words have a length **greater than or equal to** `minLength`.
 
 In `main`, create a list with:
 

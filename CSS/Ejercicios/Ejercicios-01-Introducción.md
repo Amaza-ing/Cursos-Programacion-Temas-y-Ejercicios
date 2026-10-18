@@ -10,7 +10,7 @@ Try to solve them before consulting the solution.
 
 ### **Exercise 1: Apply an inline style**
 
-Create an HTML paragraph that has red text color using inline CSS.
+Create an HTML paragraph with red text using inline CSS.
 
 <details><summary>Show solution</summary>
 
@@ -25,7 +25,7 @@ Create an HTML paragraph that has red text color using inline CSS.
 
 ### **Exercise 2: Use internal CSS**
 
-Create an HTML document that defines a CSS style on the `<style>` tag so that all paragraphs are colored blue.
+Create an HTML document that defines a CSS style in the `<style>` tag so that all paragraphs are blue.
 
 <details><summary>Show solution</summary>
 
@@ -52,7 +52,7 @@ Create an HTML document that defines a CSS style on the `<style>` tag so that al
 
 ### **Exercise 3: Apply a style from an external file**
 
-Create an external CSS file called `styles.css` and apply it to an HTML document so that the `<h1>` titles are colored green.
+Create an external CSS file called `styles.css` and apply it to an HTML document so that the `<h1>` headings are green.
 
 <details><summary>Show solution</summary>
 
@@ -86,7 +86,7 @@ h1 {
 
 ### **Exercise 4: Modify the text size**
 
-Use CSS to resize paragraph text to 20 pixels.
+Use CSS to change the text size of a paragraph to 20 pixels.
 
 <details><summary>Show solution</summary>
 
@@ -111,9 +111,9 @@ Use CSS to resize paragraph text to 20 pixels.
 
 ---
 
-### **Exercise 5: Using multiple CSS properties**
+### **Exercise 5: Use multiple CSS properties**
 
-Create a paragraph with CSS that has red text color, 18px font size, and centered alignment.
+Create a paragraph with CSS that has red text, an 18px font size and centered alignment.
 
 <details><summary>Show solution</summary>
 

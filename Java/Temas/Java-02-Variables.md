@@ -2,23 +2,23 @@
 
 ## 1. Introduction
 
-In any programming language, if you can't **save information**, you can't build useful programs.
+In any programming language, if you can't **store information**, you can't build useful programs.
 
 In Java, that information is mainly stored in:
 
 - **Variables** (data that can change)
-- **Constant** (data that should not change)
+- **Constants** (data that should not change)
 
-And in order to save information, Java forces you to be very explicit: **every variable has a type**.
+And to store information, Java forces you to be very explicit: **every variable has a type**.
 
 In this topic you will learn:
 
-- What is a variable and how is it used?
-- What does it mean for Java to be a **strongly typed** language?
+- What a variable is and how to use it
+- What it means for Java to be a **strongly typed** language
 - **Primitive** data types (the basic ones of the language)
 - Essential reference types like `String`
 - Declaration, assignment and modification
-- Typical mistakes when starting
+- Common mistakes when you're starting out
 - Good practices for writing clear code
 
 ---
@@ -32,13 +32,13 @@ In this topic you will learn:
 A **variable** is a space in memory with:
 
 - A **name** (so you can refer to it)
-- A **type** (to define what values it can save)
+- A **type** (which defines what values it can hold)
 - A **value** (the information it actually stores)
 
 Think of a variable as a labeled “box”:
 
 - The **type** defines what can be inside (numbers, true/false, text, etc.)
-- **name** allows you to use that box in your code
+- The **name** lets you use that box in your code
 - The **value** is the current content
 
 ---
@@ -48,7 +48,7 @@ Think of a variable as a labeled “box”:
 We say that Java is a **strongly typed** language because:
 
 - Each variable has a fixed type
-- That guy can't change
+- That type can't change
 - The compiler checks that you use the types correctly
 
 Example:
@@ -65,7 +65,7 @@ int age = 25;
 age = "twenty five"; // Error: no se puede asignar texto a un int
 ```
 
-This is an advantage because it avoids many errors before running the program.
+This is an advantage because it catches many errors before you even run the program.
 
 ---
 
@@ -88,22 +88,22 @@ Example:
 int age;
 ```
 
-Here it still has **no value** (and cannot be used without initializing).
+Here it still has **no value** (and it can't be used until it's initialized).
 
 ---
 
 ## 5. Assignment and initialization
 
-Assigning a value means saving data inside the variable, using `=`.
+Assigning a value means storing a piece of data in the variable, using `=`.
 
-### 5.1. Assign after declare
+### 5.1. Assigning after declaring
 
 ```java
 int age;
 age = 25;
 ```
 
-### 5.2. Declare and initialize on the same line (most common)
+### 5.2. Declaring and initializing on the same line (the most common way)
 
 ```java
 int age = 25;
@@ -111,7 +111,7 @@ int age = 25;
 
 ---
 
-## 6. Modify a variable
+## 6. Modifying a variable
 
 A variable can change its value during execution.
 
@@ -128,24 +128,24 @@ The variable is still `int`, but its value changes.
 
 ## 7. Primitive data types
 
-Java has **8 primitive types**. They are “basic” data that are not objects.
+Java has **8 primitive types**. They are “basic” values that aren't objects.
 
 - Integers: `byte`, `short`, `int`, `long`
 - Decimals: `float`, `double`
 - Logical: `boolean`
 - Characters: `char`
 
-> Rule of thumb: When starting out, the most common are `int`, `double`, `boolean`, `char`.
+> Rule of thumb: when you're starting out, the most common ones are `int`, `double`, `boolean`, `char`.
 
 | Primitive type | Size | Possible values |
 | -------------- | ------- | ------------------------------------------------------------------------------- |
 | byte | 8 bits | From -128 to 127 |
-| short | 16 bit | From -32,768 to 32,767 |
-| int | 32 bit | From -2,147,483,648 to 2,147,483,647 |
-| long | 64 bit | From -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
-| float | 32 bit | Approximately ±1.4E-45 to ±3.4028235E38 (single precision) |
-| double | 64 bit | Approximately ±4.9E-324 to ±1.7976931348623157E308 (double precision) |
-| char | 16 bit | From '\u0000' (0) to '\uFFFF' (65,535), Unicode characters |
+| short | 16 bits | From -32,768 to 32,767 |
+| int | 32 bits | From -2,147,483,648 to 2,147,483,647 |
+| long | 64 bits | From -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| float | 32 bits | Approximately ±1.4E-45 to ±3.4028235E38 (single precision) |
+| double | 64 bits | Approximately ±4.9E-324 to ±1.7976931348623157E308 (double precision) |
+| char | 16 bits | From '\u0000' (0) to '\uFFFF' (65,535), Unicode characters |
 | boolean | 1 bit\* | true or false |
 
 ---
@@ -154,7 +154,7 @@ Java has **8 primitive types**. They are “basic” data that are not objects.
 
 They are used for numbers **without decimals**.
 
-### 8.1. `int` (most used)
+### 8.1. `int` (the most used)
 
 ```java
 int age = 25;
@@ -170,11 +170,11 @@ When the number may be very large, use `long`.
 long worldPopulation = 8_000_000_000L;
 ```
 
-- The `L` suffix is important to indicate that it is an `long` literal.
+- The `L` suffix is important to indicate that it is a `long` literal.
 
 ### 8.3. `byte` and `short`
 
-They are little used at the beginning, but they exist for memory efficiency.
+They're rarely used when you're starting out, but they exist for memory efficiency.
 
 ```java
 byte smallNumber = 120;
@@ -215,7 +215,7 @@ boolean isActive = true;
 boolean hasPermission = false;
 ```
 
-Very used condition (`if`, `while`, etc.).
+Widely used in conditions (`if`, `while`, etc.).
 
 ---
 
@@ -231,7 +231,7 @@ char grade = 'A';
 Important:
 
 - `char` is a single character
-- `"A"` (with double quotes) is an `String`, not an `char`
+- `"A"` (with double quotes) is a `String`, not a `char`
 
 ---
 
@@ -245,11 +245,11 @@ String city = "Madrid";
 ```
 
 - Use double quotes `" "`.
-- Allows you to save complete text strings.
+- It lets you store whole strings of text.
 
 ---
 
-## 13. Print variables via console
+## 13. Printing variables to the console
 
 To see the content of a variable, we use:
 
@@ -269,7 +269,7 @@ System.out.println(age);
 
 ---
 
-## 14. Concatenation (join text with variables)
+## 14. Concatenation (joining text and variables)
 
 With the `+` operator you can join text and variables.
 
@@ -314,13 +314,13 @@ What happens here:
 
 - You declare variables of different types
 - You initialize them with values
-- Samples per console with descriptive text
+- You print them to the console with descriptive text
 
 ---
 
-## 16. Declare multiple variables of the same type
+## 16. Declaring several variables of the same type
 
-You can, but when you start it is usually less readable.
+You can, but when you're starting out it's usually less readable.
 
 ```java
 int x = 1, y = 2, z = 3;
@@ -388,11 +388,11 @@ int age = 0;
 System.out.println(age);
 ```
 
-> You will see class attributes in OOP, later.
+> You'll see class attributes later, in OOP.
 
 ---
 
-## 19. Literals and details that save you errors
+## 19. Literals and details that save you from mistakes
 
 ### 19.1. Separators in numbers (more readable)
 
@@ -424,7 +424,7 @@ int a = 10;      // asignación
 boolean isTen = (a == 10); // comparación
 ```
 
-### 20.2. Trying to save decimals in `int`
+### 20.2. Trying to store decimals in an `int`
 
 ```java
 int price = 19.99; // Error
@@ -477,7 +477,7 @@ double totalPrice;
 boolean isLoggedIn;
 ```
 
-### 21.3. Booleans with clear prefix
+### 21.3. Booleans with a clear prefix
 
 Booleans usually start with:
 
@@ -495,15 +495,15 @@ boolean canAccess;
 
 ---
 
-## 22. To take into account
+## 22. Things to keep in mind
 
 - A variable is a space in memory with type, name and value.
 - Java is strongly typed: the type always matters.
 - Primitive types cover numbers, decimals, booleans and characters.
 - `String` is essential for working with text.
 - Initialize your variables before using them.
-- Name your variables with intention: it saves you errors and improves reading.
+- Name your variables with intent: it saves you mistakes and makes your code easier to read.
 
 ---
 
-In the next topic you will learn to work with **operators and expressions**, to start calculating, comparing and constructing conditions in Java.
+In the next topic you'll learn to work with **operators and expressions**, so you can start calculating, comparing and building conditions in Java.

@@ -1,8 +1,8 @@
-# **Topic 9: Tables in HTML - Data Organization**
+# **Topic 9: Tables in HTML - Data organization**
 
 ## **1. Introduction**
 
-HTML tables allow you to organize and display data in rows and columns. They are useful for displaying structured information in a clear and understandable way.
+Tables in HTML let you organize and display data in rows and columns. They're useful for presenting structured information in a clear, easy-to-understand way.
 
 ---
 
@@ -41,12 +41,12 @@ A table in HTML is built using different tags:
 
 ## **3. Using `colspan` and `rowspan` to merge cells**
 
-Sometimes it is necessary to merge cells in a table. To do this, we use:
+Sometimes you need to merge cells in a table. To do this, we use:
 
-- **`colspan`**: Extends a cell into multiple columns.
-- **`rowspan`**: Extends a cell into multiple rows.
+- **`colspan`**: Extends a cell across multiple columns.
+- **`rowspan`**: Extends a cell across multiple rows.
 
-### **Example of use of `colspan`:**
+### **Example using `colspan`:**
 
 ```html
 <table border="1">
@@ -60,7 +60,7 @@ Sometimes it is necessary to merge cells in a table. To do this, we use:
 </table>
 ```
 
-### **Example of use of `rowspan`:**
+### **Example using `rowspan`:**
 
 ```html
 <table border="1">
@@ -106,13 +106,13 @@ Tables can be customized with CSS to improve their appearance.
 
 ---
 
-## **5. Good practices in using tables in HTML**
+## **5. Good practices when using tables in HTML**
 
 - Use **`<th>` headers** to improve accessibility.
 - Use **`colspan` and `rowspan`** only when necessary.
-- Avoid tables that are too complex to make them easier to read.
-- Apply **CSS** to improve the table display.
+- Avoid overly complex tables so they're easier to read.
+- Apply **CSS** to improve how the table looks.
 
 ---
 
-In the next topic, we will explore **HTML forms**, their structure, and how to capture user data effectively.
+In the next topic, we'll explore **forms in HTML**, their structure and how to collect user data effectively.

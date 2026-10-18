@@ -2,15 +2,15 @@
 
 ## **Instructions:**
 
-Below, you will find 5 practical exercises on positioning in CSS.
+Below you will find 5 practical exercises on positioning in CSS.
 
 Try to solve them before consulting the solution.
 
 ---
 
-### **Exercise 1: Create an item with `position: relative`**
+### **Exercise 1: Create an element with `position: relative`**
 
-Create an `div` with a width of 150px, a height of 100px and a green background color. Then, shift it 30px down and 40px to the right using `position: relative`.
+Create a `div` with a width of 150px, a height of 100px and a green background color. Then, move it 30px down and 40px to the right using `position: relative`.
 
 <details><summary>Show solution</summary>
 
@@ -37,7 +37,7 @@ Create an `div` with a width of 150px, a height of 100px and a green background 
 
 ### **Exercise 2: Create a container with an `absolute` element**
 
-Define a parent `div` with `position: relative` and inside it place another `div` with `position: absolute`, which is positioned in the lower right corner of the container.
+Define a parent `div` with `position: relative` and, inside it, place another `div` with `position: absolute` positioned in the bottom right corner of the container.
 
 <details><summary>Show solution</summary>
 
@@ -71,9 +71,9 @@ Define a parent `div` with `position: relative` and inside it place another `div
 
 ---
 
-### **Exercise 3: Create a sticky navigation menu (`fixed`)**
+### **Exercise 3: Create a fixed navigation menu (`fixed`)**
 
-Creates a 100% width navigation bar with blue background color and fixed position at the top of the page.
+Create a full-width (100%) navigation bar with a blue background color and a fixed position at the top of the page.
 
 <details><summary>Show solution</summary>
 
@@ -101,9 +101,9 @@ Creates a 100% width navigation bar with blue background color and fixed positio
 
 ---
 
-### **Exercise 4: Create an item with `sticky`**
+### **Exercise 4: Create an element with `sticky`**
 
-Create an `<h2>` header that stays stuck to the top of the page when the user scrolls.
+Create an `<h2>` heading that stays stuck to the top of the page when the user scrolls.
 
 <details><summary>Show solution</summary>
 

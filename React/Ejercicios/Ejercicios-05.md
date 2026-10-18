@@ -1,14 +1,14 @@
-# **Exercises - Topic 5: Components in a line**
+# **Exercises - Topic 5: One-line components**
 
-Below you will find **10 practical exercises** on components in a line (arrow functions, implicit return and readability).
+Below you will find **10 practical exercises** on one-line components (arrow functions, implicit return and readability).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Convert to component in a line**
+## **Exercise 1: Convert to a one-line component**
 
-Convert this component to a one-line version using arrow function and implicit return:
+Convert this component to a one-line version using an arrow function and an implicit return:
 
 ```js
 function Title() {
@@ -18,7 +18,7 @@ function Title() {
 export default Title;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const Title = () => <h1>Welcome</h1>;
@@ -32,14 +32,14 @@ export default Title;
 
 ## **Exercise 2: JSX on multiple lines with parentheses**
 
-Create an `EmptyMessage.jsx` component in a single declaration with arrow function that renders:
+Create an `EmptyMessage.jsx` component in a single declaration with an arrow function that renders:
 
 - `h3` with the text: **"No results"**
 - `p` with the text: **"Try a different search"**
 
 The JSX should be on multiple lines using parentheses.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const EmptyMessage = () => (
@@ -56,9 +56,9 @@ export default EmptyMessage;
 
 ---
 
-## **Exercise 3: Detect the implicit return error**
+## **Exercise 3: Spot the implicit return error**
 
-This component does not show anything. Correct it:
+This component doesn't show anything. Fix it:
 
 ```js
 const Badge = () => {
@@ -68,9 +68,9 @@ const Badge = () => {
 export default Badge;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-When using `{}` keys, you need `return`:
+When you use curly braces `{}`, you need `return`:
 
 ```js
 const Badge = () => {
@@ -94,9 +94,9 @@ export default Badge;
 
 ## **Exercise 4: Create a simple “visual” component**
 
-Create an `Separator.jsx` component on a line that returns an `hr` with `className="separator"`.
+Create a one-line `Separator.jsx` component that returns an `hr` with `className="separator"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const Separator = () => <hr className="separator" />;
@@ -110,7 +110,7 @@ export default Separator;
 
 ## **Exercise 5: Refactor to improve readability**
 
-You have this component on one line, but it is poorly readable. Rewrite it using parentheses and several lines:
+You have this component on one line, but it's hard to read. Rewrite it using parentheses and several lines:
 
 ```js
 const Info = () => (
@@ -121,7 +121,7 @@ const Info = () => (
 );
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const Info = () => (
@@ -138,26 +138,26 @@ export default Info;
 
 ---
 
-## **Exercise 6: When NOT to use component in a line (choose the correct option)**
+## **Exercise 6: When NOT to use a one-line component (choose the correct option)**
 
 Choose the most recommended option:
 
-1. A component with 2 labels and no logic
+1. A component with 2 tags and no logic
 
-   - a) In a line
+   - a) On one line
    - b) Classic form
 
 2. A component with long JSX (many elements)
 
-   - a) In a line
+   - a) On one line
    - b) Classic form or several lines with parentheses
 
 3. A component with several variables and calculations
 
-   - a) In a line
+   - a) On one line
    - b) Classic form
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 1. a) On one line (if it's really short and readable).
 2. b) Classic form or several lines with parentheses.
@@ -171,14 +171,14 @@ Choose the most recommended option:
 
 Write the `FooterNote` component in two ways:
 
-- Classic shape with `function`.
-- Compact shape with arrow function in one line.
+- Classic form with `function`.
+- Compact form with an arrow function on one line.
 
-Should render: `small` with the text **"Built with React"**.
+It should render: `small` with the text **"Built with React"**.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-Classic shape:
+Classic form:
 
 ```js
 function FooterNote() {
@@ -188,7 +188,7 @@ function FooterNote() {
 export default FooterNote;
 ```
 
-Form in one line:
+One-line form:
 
 ```js
 const FooterNote = () => <small>Built with React</small>;
@@ -200,13 +200,13 @@ export default FooterNote;
 
 ---
 
-## **Exercise 8: Components on a line within `App.jsx`**
+## **Exercise 8: One-line components inside `App.jsx`**
 
-In `App.jsx`, create an `Label` component on one line and use it twice. You must render:
+In `App.jsx`, create a one-line `Label` component and use it twice. It must render:
 
 - `span` with the text: **"Featured"**
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const Label = () => <span>Featured</span>;
@@ -236,9 +236,9 @@ const Tip = () => <p>Remember to save your work</p>;
 export default Tip;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-On implicit returns with multiple lines, use parentheses:
+For implicit returns that span multiple lines, use parentheses:
 
 ```js
 const Tip = () => <p>Remember to save your work</p>;
@@ -250,19 +250,19 @@ export default Tip;
 
 ---
 
-## **Exercise 10: Decide on the appropriate style (mini-cases)**
+## **Exercise 10: Choose the right style (mini-cases)**
 
 Indicate which one you would choose and why (one sentence per case):
 
-1. `Dot` component that only renders an `span` with a dot (`•`).
-2. `UserProfile` component with multiple variables, long JSX and complex structure.
-3. `LoadingText` component that renders a very short `p`.
+1. A `Dot` component that only renders a `span` with a dot (`•`).
+2. A `UserProfile` component with multiple variables, long JSX and a complex structure.
+3. A `LoadingText` component that renders a very short `p`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-1. Component in a line: it is very small and visual.
-2. Classic form: needs readability and probably logic.
-3. On one line if it is short and legible; If it grows, it would change to classical form.
+1. One-line component: it is very small and visual.
+2. Classic form: it needs readability and probably has logic.
+3. On one line if it is short and readable; if it grows, I would switch to the classic form.
 
 </details>
 

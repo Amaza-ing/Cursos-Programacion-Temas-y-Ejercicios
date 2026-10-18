@@ -1,10 +1,10 @@
 # **Topic 10: Indexes in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
-- Understand what an index is and what it is for.
+- Understand what an index is and what it is used for.
 - Create indexes to optimize queries.
-- Know the different types of indexes in MySQL.
+- Recognize the different types of indexes in MySQL.
 - Manage and delete indexes.
 
 ---
@@ -15,13 +15,13 @@ An **index** is a special data structure that MySQL uses to quickly locate rows 
 
 ### **Advantages:**
 
-- Speed up `SELECT` queries.
-- Improves search and sort performance.
+- It speeds up `SELECT` queries.
+- It improves search and sort performance.
 
 ### **Disadvantages:**
 
-- Takes up additional disk space.
-- May slow down `INSERT`, `UPDATE` and `DELETE` operations due to index update.
+- It takes up additional disk space.
+- It may slow down `INSERT`, `UPDATE` and `DELETE` operations because the index has to be updated.
 
 ---
 
@@ -29,7 +29,7 @@ An **index** is a special data structure that MySQL uses to quickly locate rows 
 
 ### **Normal index (INDEX)**
 
-Used to speed up searches on specific columns.
+It is used to speed up searches on specific columns.
 
 ```sql
 CREATE INDEX idx_nombre ON customers(first_name);
@@ -37,19 +37,19 @@ CREATE INDEX idx_nombre ON customers(first_name);
 
 ### **Unique index (UNIQUE)**
 
-Ensures that all values in a column are unique.
+It ensures that all the values in a column are unique.
 
 ```sql
 CREATE UNIQUE INDEX idx_email ON customers(email);
 ```
 
-### **Primary Key Index**
+### **Primary key index (PRIMARY KEY)**
 
-It is created automatically when we define an `PRIMARY KEY`.
+It is created automatically when we define a `PRIMARY KEY`.
 
-### **Full text index (FULLTEXT)**
+### **Full-text index (FULLTEXT)**
 
-Special for text searches in large columns (`TEXT`, `VARCHAR`).
+Designed for text searches in large columns (`TEXT`, `VARCHAR`).
 
 ```sql
 CREATE FULLTEXT INDEX idx_texto ON articles(content);
@@ -57,7 +57,7 @@ CREATE FULLTEXT INDEX idx_texto ON articles(content);
 
 ### **Composite index**
 
-Cover multiple columns to optimize searches involving multiple conditions.
+It covers multiple columns to optimize searches that involve several conditions.
 
 ```sql
 CREATE INDEX idx_nombre_apellido ON customers(first_name, last_name);
@@ -65,7 +65,7 @@ CREATE INDEX idx_nombre_apellido ON customers(first_name, last_name);
 
 ---
 
-## **3. Create indexes when creating the table**
+## **3. Creating indexes when you create the table**
 
 We can define indexes directly when creating a table:
 
@@ -80,9 +80,9 @@ CREATE TABLE products (
 
 ---
 
-## **4. View existing indexes**
+## **4. Viewing existing indexes**
 
-To view the indexes of a table:
+To see the indexes of a table:
 
 ```sql
 SHOW INDEX FROM customers;
@@ -90,7 +90,7 @@ SHOW INDEX FROM customers;
 
 ---
 
-## **5. Delete indexes**
+## **5. Deleting indexes**
 
 We can delete an index with:
 
@@ -104,22 +104,22 @@ DROP INDEX idx_nombre ON customers;
 
 ## **6. Good practices with indexes**
 
-- Index frequently used columns in `WHERE`, `JOIN` or `ORDER BY`.
+- Index columns that are frequently used in `WHERE`, `JOIN` or `ORDER BY`.
 - Avoid creating too many unnecessary indexes.
-- Periodically review performance with `EXPLAIN`.
+- Review performance periodically with `EXPLAIN`.
 
 ---
 
-[![Indices](https://img.youtube.com/vi/Eu2o5tefWdU/0.jpg)](https://www.youtube.com/watch?v=Eu2o5tefWdU&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![Indexes](https://img.youtube.com/vi/Eu2o5tefWdU/0.jpg)](https://www.youtube.com/watch?v=Eu2o5tefWdU&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
 ## **7. Conclusion**
 
-- Indexes improve data reading speed.
-- There are several types: normal, unique, compound and full text.
-- They should be used strategically to balance performance and resource consumption.
+- Indexes make reading data faster.
+- There are several types: normal, unique, composite and full-text.
+- They should be used strategically to balance performance and resource usage.
 
 ---
 
-In the next topic we will learn to **create and use stored procedures to reuse code**
+In the next topic we will learn how to **create and use stored procedures to reuse code**

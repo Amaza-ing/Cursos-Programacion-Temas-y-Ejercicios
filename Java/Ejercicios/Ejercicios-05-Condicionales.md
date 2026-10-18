@@ -2,20 +2,20 @@
 
 Below you will find **10 practical exercises** on conditionals in Java: `if`, `else if`, `else` and `switch` (classic and modern).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Check if a number is positive
 
-Declares a variable `number` with value `-3`.
+Declare a variable `number` with value `-3`.
 
-Sample per console:
+Print to the console:
 
 - `"Positive number"` if the number is greater than 0
 - `"Not positive"` otherwise
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -45,7 +45,7 @@ Use `if`, `else if` and `else` to display:
 - `"Less than zero"`
 - `"Equal to zero"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -67,16 +67,16 @@ public class Main {
 
 ---
 
-## Exercise 3: Access with age and document
+## Exercise 3: Access by age and ID
 
-Declares:
+Declare:
 
-- `age` with `17` value
-- `hasId` with `true` value
+- `age` with value `17`
+- `hasId` with value `true`
 
-Displays `"Access granted"` only if it is greater than or equal to 18 **and** it has a document.
+Print `"Access granted"` only if the age is greater than or equal to 18 **and** the person has an ID.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -101,9 +101,9 @@ public class Main {
 
 Declare a variable `isBlocked` with value `true`.
 
-If the user is **not** blocked, it displays `"User can log in"`.
+If the user is **not** blocked, print `"User can log in"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -121,17 +121,17 @@ public class Main {
 
 ---
 
-## Exercise 5: Classify a numerical note
+## Exercise 5: Classify a numeric grade
 
-Declares a variable `score` with value `74`.
+Declare a variable `score` with value `74`.
 
-Sample:
+Print:
 
 - `"Excellent"` if greater than or equal to 90
 - `"Good"` if greater than or equal to 70
 - `"Fail"` in any other case
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -155,11 +155,11 @@ public class Main {
 
 ## Exercise 6: Compare text correctly
 
-Declares a variable `role` with value `"admin"`.
+Declare a variable `role` with value `"admin"`.
 
-Displays `"Administrator access"` only if the role is `"admin"`.
+Print `"Administrator access"` only if the role is `"admin"`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -177,9 +177,9 @@ public class Main {
 
 ---
 
-## Exercise 7: Classic switch with numerical options
+## Exercise 7: Classic switch with numeric options
 
-Declares a variable `option` with value `3`.
+Declare a variable `option` with value `3`.
 
 Use `switch` to display:
 
@@ -188,7 +188,7 @@ Use `switch` to display:
 - `3` → `"Exit"`
 - Any other value → `"Invalid option"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -220,13 +220,13 @@ public class Main {
 
 Declare a variable `day` with value `"SUN"`.
 
-Use modern `switch` to display:
+Use a modern `switch` to display:
 
 - `"Weekday"` if it is `"MON"`, `"TUE"`, `"WED"`, `"THU"` or `"FRI"`
 - `"Weekend"` if it is `"SAT"` or `"SUN"`
 - `"Unknown"` otherwise
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -250,7 +250,7 @@ public class Main {
 
 ## Exercise 9: Switch as an expression with `yield`
 
-Declares a variable `points` with value `85`.
+Declare a variable `points` with value `85`.
 
 Use `switch` to assign a letter:
 
@@ -258,7 +258,7 @@ Use `switch` to assign a letter:
 - 80 to 89 → `"B"`
 - 70 to 79 → `"C"`
 - Less than 70 → `"D"`
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -285,16 +285,16 @@ public class Main {
 
 ## Exercise 10: Choose between if and switch
 
-Declares a variable `statusCode` with value `404`.
+Declare a variable `statusCode` with value `404`.
 
-Use the structure that you consider most appropriate to show:
+Use whichever structure you think is most appropriate to display:
 
 - `200` → `"OK"`
 - `404` → `"Not Found"`
 - `500` → `"Server Error"`
-- Other value → `"Unknown status"`
+- Any other value → `"Unknown status"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

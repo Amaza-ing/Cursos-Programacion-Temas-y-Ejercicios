@@ -2,31 +2,31 @@
 
 ## **1. Introduction**
 
-So far we've created components and managed events, but there's still one key piece missing: **storing information within the component** and having the interface update when that information changes.
+So far we've created components and managed events, but there's still one key piece missing: **storing information inside the component** and having the interface update when that information changes.
 
 In React, this is done with **state**. The most important hook to start with is `useState`.
 
 In this topic you will learn:
 
-- What is state and why a normal variable is not useful.
+- What state is and why a normal variable won't do.
 - How to use `useState`.
-- How to update status correctly.
+- How to update state correctly.
 - Typical cases: counter, toggle and controlled input.
 
 ---
 
 ## **2. What is state in React?**
 
-**status** is information that:
+**State** is information that:
 
 - Belongs to a component.
-- May change over time.
+- Can change over time.
 - When it changes, React **re-renders** the component to update the UI.
 
-State examples:
+Examples of state:
 
-- Likes counter
-- Text written in an input
+- A likes counter
+- The text typed into an input
 - Whether a menu is open or closed
 
 ---
@@ -52,21 +52,21 @@ export default Counter;
 
 Something important happens here:
 
-- `count` changes in console.
-- But the UI is not updated.
+- `count` changes in the console.
+- But the UI doesn't update.
 
 This happens because React does **not re-render** the component when you change a normal variable.
 
 ---
 
-## **4. Create state with `useState`**
+## **4. Creating state with `useState`**
 
 `useState` is a hook that returns:
 
 - The value of the state.
 - A function to update it.
 
-### **4.1. Import `useState`**
+### **4.1. Importing `useState`**
 
 ```js
 import { useState } from "react";
@@ -84,7 +84,7 @@ const [count, setCount] = useState(0);
 
 ---
 
-## **5. Example 1: Accountant**
+## **5. Example 1: Counter**
 
 ```js
 import { useState } from "react";
@@ -102,17 +102,17 @@ function Counter() {
 export default Counter;
 ```
 
-What we want happens here:
+Now what we want actually happens:
 
-- When clicked, `setCount` updates the status.
+- When you click, `setCount` updates the state.
 - React re-renders the component.
 - The UI shows the new value.
 
 ---
 
-## **6. Secure update with feature (very important)**
+## **6. Safe updates with a function (very important)**
 
-Sometimes React can bundle updates. To avoid problems, it is highly recommended to use the functional form:
+Sometimes React may batch updates. To avoid problems, it's highly recommended to use the functional form:
 
 ```js
 setCount((prevCount) => prevCount + 1);
@@ -136,7 +136,7 @@ function Counter() {
 export default Counter;
 ```
 
-This way is safer because it always uses the most recent value.
+This form is safer because it always uses the most recent value.
 
 ---
 
@@ -194,26 +194,26 @@ export default NameInput;
 
 Here:
 
-- `value={name}` makes the input state dependent.
-- `onChange` updates status.
-- UI updates automatically.
+- `value={name}` makes the input depend on the state.
+- `onChange` updates the state.
+- The UI updates automatically.
 
 ---
 
-## **9. Good practices with `useState`**
+## **9. Best practices with `useState`**
 
-- Name the status clearly: `count`, `isOpen`, `name`.
+- Give the state a clear name: `count`, `isOpen`, `name`.
 - Name the setter `set...`: `setCount`, `setIsOpen`.
 - To update based on the previous value, use the functional form.
-- Avoid directly modifying the state.
+- Avoid modifying the state directly.
 
 ---
 
-## **10. To take into account**
+## **10. Things to keep in mind**
 
 - State is what makes React reactive.
-- `useState` allows you to save and update status.
-- Changing state with the setter causes re-render.
+- `useState` lets you store and update state.
+- Changing the state with the setter triggers a re-render.
 - For updates based on the previous value, use `setState((prev) => ...)`.
 
 ---
@@ -221,4 +221,4 @@ Here:
 [![useState](https://img.youtube.com/vi/ln8FKnZBvNo/0.jpg)](https://www.youtube.com/watch?v=ln8FKnZBvNo&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
-In the next topic we will see **Reactive Attributes**, to connect state with HTML attributes (for example `disabled`, `value`, `checked`).
+In the next topic we'll look at **Reactive Attributes**, to connect state with HTML attributes (for example `disabled`, `value`, `checked`).

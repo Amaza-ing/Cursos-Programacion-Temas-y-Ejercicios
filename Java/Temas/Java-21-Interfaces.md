@@ -2,13 +2,13 @@
 
 ## 1. Introduction
 
-In the previous topic you saw the **abstract classes** and **abstract methods**, which allow you to create a common base for several child classes.
+In the previous topic you saw **abstract classes** and **abstract methods**, which let you create a common base for several child classes.
 
-Now we are going to study another fundamental concept of Java and Object-Oriented Programming:
+Now we're going to look at another fundamental concept of Java and Object-Oriented Programming:
 
 - **Interfaces**
 
-Interfaces serve to define a **contract**: they indicate what methods a class should have, without forcing the sharing of state or a complete common implementation.
+Interfaces are used to define a **contract**: they state which methods a class must have, without forcing classes to share state or a complete common implementation.
 
 This is very useful when several different classes:
 
@@ -22,17 +22,17 @@ Typical examples:
 - `Comparable`
 - `Runnable`
 
-An interface allows you to say:
+An interface lets you say:
 
 > “Any class that implements this must know how to do these operations.”
 
 In this topic you will learn:
 
-- What is an interface
-- How it is declared and how it is implemented
-- Differences between interface and abstract class
-- What are the `default` and `static` methods in interfaces
-- What does it mean that a class can implement several interfaces?
+- What an interface is
+- How to declare it and how to implement it
+- The differences between an interface and an abstract class
+- What `default` and `static` methods are in interfaces
+- What it means for a class to implement several interfaces
 - How to use interfaces with polymorphism
 - Real examples and good practices
 
@@ -42,14 +42,14 @@ In this topic you will learn:
 
 ---
 
-## 2. What is an interface
+## 2. What an interface is
 
-An **interface** is a special type of Java that defines a contract.
+An **interface** is a special Java type that defines a contract.
 
 That contract indicates:
 
-- what methods should exist
-- but does not force a classical concrete implementation in all cases
+- which methods must exist
+- but it doesn't force a classic concrete implementation in every case
 
 Basic syntax:
 
@@ -62,7 +62,7 @@ public interface Printable {
 This means:
 
 - any class that implements `Printable`
-- must have an `print()` method
+- must have a `print()` method
 
 ---
 
@@ -102,9 +102,9 @@ public class Main {
 
 ## 4. Interface as a contract, not as a “normal” object
 
-Like an abstract class, an interface is not directly instantiated.
+Like an abstract class, an interface can't be instantiated directly.
 
-This cannot be done:
+You can't do this:
 
 ```java
 // Printable p = new Printable(); // error
@@ -132,7 +132,7 @@ In modern Java, an interface can contain:
 
 ### 5.1. Abstract method
 
-It is the classic case:
+This is the classic case:
 
 ```java
 public interface Payable {
@@ -166,7 +166,7 @@ System.out.println(AppConfig.MAX_USERS);
 
 ## 6. First complete example: `Playable`
 
-We want different classes to know how to “reproduce.”
+We want different classes to know how to “play.”
 
 ### 6.1. Interface
 
@@ -230,9 +230,9 @@ public class Main {
 
 Notice how powerful this is:
 
-- `Song` and `Video` do not have to inherit from the same concrete class
+- `Song` and `Video` don't have to inherit from the same concrete class
 - but both fulfill the `Playable` contract
-- so you can treat them evenly
+- so you can treat them uniformly
 
 ---
 
@@ -260,8 +260,8 @@ This comparison is very important.
 
 ### 8.1. Use an abstract class when
 
-- you want to share common status (attributes)
-- you want to reuse common implementation
+- you want to share common state (attributes)
+- you want to reuse a common implementation
 - there is a clear inheritance relationship (_is-a_)
 
 Example:
@@ -274,7 +274,7 @@ Example:
 
 - you want to define capabilities or behaviors
 - several unrelated classes must fulfill the same contract
-- you don't need to share common status required
+- you don't need to share mandatory common state
 
 Example:
 
@@ -285,18 +285,18 @@ Example:
 ### 8.3. Simple rule of thumb
 
 - Abstract class = common base
-- Interface = capacity or contract
+- Interface = capability or contract
 
 ---
 
 ## 9. A class can implement multiple interfaces
 
-Here is a big difference regarding class inheritance.
+Here's a big difference from class inheritance.
 
 In Java:
 
 - a class can only inherit from one class
-- but can implement multiple interfaces
+- but it can implement multiple interfaces
 
 Example:
 
@@ -339,7 +339,7 @@ public class Main {
 }
 ```
 
-This is very useful because a class can have several “abilities”.
+This is very useful because a class can have several “capabilities”.
 
 ---
 
@@ -404,9 +404,9 @@ public class Main {
 
 ## 11. `default` methods in interfaces
 
-Since Java 8, an interface can have `default` methods, that is, methods with default implementation.
+Since Java 8, an interface can have `default` methods, that is, methods with a default implementation.
 
-This allows common behavior to be added without forcing all classes to rewrite it.
+This lets you add common behavior without forcing every class to rewrite it.
 
 Example:
 
@@ -420,7 +420,7 @@ public interface Greeter {
 }
 ```
 
-Class that implements:
+A class that implements it:
 
 ```java
 public class Person implements Greeter {
@@ -447,11 +447,11 @@ public class Main {
 Here:
 
 - `greet()` must be implemented
-- `sayGoodbye()` is already “gifted” by the interface
+- `sayGoodbye()` comes “for free” from the interface
 
-### 11.1. Overriding an `default` method
+### 11.1. Overriding a `default` method
 
-You can also overwrite it:
+You can also override it:
 
 ```java
 public class FriendlyPerson implements Greeter {
@@ -473,7 +473,7 @@ public class FriendlyPerson implements Greeter {
 
 An interface can also have static methods.
 
-They are called with the name of the interface, not the object.
+They're called with the interface name, not through an object.
 
 Example:
 
@@ -541,7 +541,7 @@ public class Report implements AdvancedPrintable {
 
 ---
 
-## 14. Complete example: payment system with interface
+## 14. Complete example: a payment system with an interface
 
 This is a very realistic example.
 
@@ -602,7 +602,7 @@ public class PaypalPayment implements Payable {
 }
 ```
 
-### 14.4. Use
+### 14.4. Usage
 
 ```java
 import java.util.ArrayList;
@@ -623,7 +623,7 @@ public class Main {
 }
 ```
 
-The important thing here is not the specific class, but that they all comply with `Payable`.
+The important thing here isn't the concrete class, but that they all fulfill `Payable`.
 
 ---
 
@@ -631,7 +631,7 @@ The important thing here is not the specific class, but that they all comply wit
 
 One of the most famous interfaces in Java is `Comparable<T>`.
 
-It serves to indicate that the objects of a class can be compared with each other.
+It's used to indicate that the objects of a class can be compared with each other.
 
 Simple example:
 ```java
@@ -681,23 +681,23 @@ This shows that interfaces are everywhere in real Java.
 
 ---
 
-## 16. Typical mistakes when starting
+## 16. Common mistakes when you're starting out
 
 ### 16.1. Thinking that an interface is a normal class
 
-You cannot do:
+You can't do:
 
 ```java
 // Printable p = new Printable(); // error
 ```
 
-### 16.2. Forget to implement all methods
+### 16.2. Forgetting to implement all the methods
 
-If a class implements an interface, it must implement all of its abstract methods, or then the class must also be abstract.
+If a class implements an interface, it must implement all of its abstract methods, or else the class must also be abstract.
 
-### 16.3. Use interface when you actually need a base class with common state
+### 16.3. Using an interface when you actually need a base class with common state
 
-If many classes share attributes and a lot of logic, perhaps an abstract class is a better option.
+If many classes share attributes and a lot of logic, an abstract class may be a better option.
 
 ### 16.4. Confusing `extends` and `implements`
 
@@ -709,8 +709,8 @@ If many classes share attributes and a lot of logic, perhaps an abstract class i
 ## 17. Good practices
 
 - Use interfaces to define clear contracts.
-- Name the interfaces according to the capacity or responsibility (`Printable`, `Payable`, `Sortable`).
-- Program against the interface when it makes sense:
+- Name interfaces after the capability or responsibility (`Printable`, `Payable`, `Sortable`).
+- Program to the interface when it makes sense:
 
 ```java
 List<Printable> items = new ArrayList<>();
@@ -718,26 +718,26 @@ List<Printable> items = new ArrayList<>();
 
 instead of always working with concrete classes.
 
-- Use `default` methods sparingly: they help, but should not turn the interface into a “disguised class”.
+- Use `default` methods sparingly: they help, but they shouldn't turn the interface into a “disguised class”.
 - If several classes share a lot of state, consider whether an abstract class fits better.
 
 ---
 
-## 18. Clean interfaces and design
+## 18. Interfaces and clean design
 
 Interfaces favor a more flexible design because they decouple:
 
-- the **what** is done
-- **how** it is done
+- **what** is done
+- from **how** it's done
 
-For example, if you have a method that receives `Payable`, it doesn't care if the payment comes from:
+For example, if you have a method that receives `Payable`, it doesn't care whether the payment comes from:
 
-- card
--PayPal
-- transfer
+- a card
+- PayPal
+- a bank transfer
 - another future method
 
-You just need to fulfill the contract.
+It only needs it to fulfill the contract.
 
 Example:
 
@@ -751,27 +751,27 @@ This style makes the code more maintainable and extensible.
 
 ---
 
-## 19. To take into account
+## 19. Things to keep in mind
 
 - An interface defines a contract.
-- A class is implemented with `implements`.
+- A class implements it with `implements`.
 - Interfaces allow polymorphism.
 - A class can implement several interfaces.
-- An interface can have abstract methods, `default`, `static` and constants.
-- An interface does not always replace an abstract class: both tools have different purposes.
-- In real Java, interfaces are constantly used.
+- An interface can have abstract, `default` and `static` methods, and constants.
+- An interface doesn't always replace an abstract class: the two tools have different purposes.
+- In real-world Java, interfaces are used all the time.
 
 ---
 
 ## 20. Final summary
 
-- **Abstract class**: good for sharing common base and state.
+- **Abstract class**: good for sharing a common base and state.
 - **Interface**: good for defining capabilities and contracts.
 - **`implements`**: used to implement interfaces.
 - **Polymorphism**: you can work with interface references.
 - **Multiple interfaces**: a class can have multiple capabilities.
 - **`default` and `static`**: expand what an interface can offer.
-- **Flexible design**: Interfaces help write more reusable and cleaner code.
+- **Flexible design**: interfaces help you write cleaner, more reusable code.
 
 ---
 
@@ -779,4 +779,4 @@ This style makes the code more maintainable and extensible.
 
 ---
 
-In the next topic we will continue advancing in Java with new language tools and we will see how to compare objects correctly with `equals`.
+In the next topic we'll keep moving forward in Java with new language tools, and we'll see how to compare objects correctly with `equals`.

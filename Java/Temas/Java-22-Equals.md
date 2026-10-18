@@ -5,11 +5,11 @@
 When you start working with objects in Java, sooner or later these questions appear:
 
 - How do I compare two objects correctly?
-- Why do two objects with the same data sometimes appear “different”?
-- Why does something strange like `User@5f184fc6` appear when printing an object?
-- What relationship does all this have with collections like `Set`, `Map` or `List`?
+- Why do two objects with the same data sometimes seem “different”?
+- Why does something strange like `User@5f184fc6` appear when you print an object?
+- How does all this relate to collections like `Set`, `Map` or `List`?
 
-The responses go through three very important methods inherited from `Object`:
+The answers lie in three very important methods inherited from `Object`:
 
 - `equals(...)`
 - `hashCode()`
@@ -23,7 +23,7 @@ In this topic you will learn:
 - What `hashCode` does and why it should be consistent with `equals`
 - What `toString` does and why it is so useful when debugging or displaying information
 - How to correctly override these methods
-- What mistakes are very common when starting out
+- Which mistakes are very common when you are starting out
 - How they affect collections like `HashSet` and `HashMap`
 
 ---
@@ -44,17 +44,17 @@ public int hashCode()
 public String toString()
 ```
 
-If you do not override these methods in your class, Java will use the default implementation of `Object`.
+If you do not override these methods in your class, Java will use the default implementation from `Object`.
 
-And that is usually insufficient when you want to compare objects by their content.
+And that is usually not enough when you want to compare objects by their content.
 
 ---
 
 ## 3. `==` vs `equals(...)`
 
-This is the most important difference of the entire topic.
+This is the most important difference in the whole topic.
 
-### 3.1. `==` compare references
+### 3.1. `==` compares references
 
 When you use `==` with objects, Java checks if both variables point to the **same object in memory**.
 
@@ -75,7 +75,7 @@ Because `u1` and `u2` are two different objects, even though they have the same 
 
 The idea of `equals` is to check whether two objects should be considered equal by their content.
 
-But if you don't overwrite it, the default behavior of `Object` is similar to `==`.
+But if you don't override it, the default behavior of `Object` is similar to `==`.
 
 Example:
 
@@ -120,18 +120,18 @@ Even though `u1` and `u2` have the same `name` and the same `age`, Java doesn't 
 
 ---
 
-## 5. Overwrite `equals(...)`
+## 5. Overriding `equals(...)`
 
-To compare by content, you must overwrite `equals`.
+To compare by content, you must override `equals`.
 
 ### 5.1. What `equals` should do
 
-Typically, a well-made `equals` follows these steps:
+Typically, a well-written `equals` follows these steps:
 
 1. If both references are exactly the same → `true`
 2. If the other object is `null` → `false`
-3. If they are not the same class → `false`
-4. Compare relevant attributes
+3. If they are not of the same class → `false`
+4. Compare the relevant attributes
 
 ### 5.2. Complete example of `equals`
 
@@ -164,7 +164,7 @@ public class User {
 }
 ```
 
-### 5.3. Use
+### 5.3. Usage
 
 ```java
 public class Main {
@@ -183,13 +183,13 @@ public class Main {
 
 ## 6. `Objects.equals(...)` and why it helps
 
-In the previous example we have used:
+In the previous example we used:
 
 ```java
 Objects.equals(name, other.name)
 ```
 
-This is useful because it safely compares even if one of the two values ​​is `null`.
+This is useful because it compares safely even when one of the two values is `null`.
 
 Example:
 
@@ -203,11 +203,11 @@ This way you avoid `NullPointerException`.
 
 ---
 
-## 7. Important rules of `equals`
+## 7. Important rules for `equals`
 
-A good `equals` should meet these properties:
+A good `equals` should satisfy these properties:
 
-### 7.1. Reflective
+### 7.1. Reflexive
 
 An object must be equal to itself:
 
@@ -215,7 +215,7 @@ An object must be equal to itself:
 u1.equals(u1) // true
 ```
 
-### 7.2. Symmetrical
+### 7.2. Symmetric
 
 If `u1.equals(u2)` is `true`, then `u2.equals(u1)` must also be `true`.
 
@@ -239,7 +239,7 @@ u1.equals(null) // false
 
 `hashCode()` returns an integer associated with the object.
 
-That number is used a lot in hash structures, such as:
+That number is used a lot in hash-based structures, such as:
 
 - `HashSet`
 - `HashMap`
@@ -251,7 +251,7 @@ The idea is that Java can quickly place objects into internal “buckets” base
 
 If two objects are equal according to `equals`, then **they must have the same `hashCode`**.
 
-That is to say:
+In other words:
 
 ```java
 if (a.equals(b)) {
@@ -265,9 +265,9 @@ The converse is not always true:
 
 ---
 
-## 9. Overwrite `hashCode()` correctly
+## 9. Overriding `hashCode()` correctly
 
-Whenever you overwrite `equals`, you must also overwrite `hashCode`.
+Whenever you override `equals`, you must also override `hashCode`.
 
 ### 9.1. Example with `Objects.hash(...)`
 
@@ -305,26 +305,26 @@ public class User {
 }
 ```
 
-`Objects.hash(...)` greatly simplifies implementation.
+`Objects.hash(...)` greatly simplifies the implementation.
 
 ---
 
-## 10. What happens if you overwrite `equals` but not `hashCode`
+## 10. What happens if you override `equals` but not `hashCode`
 
-This causes subtle errors, especially in `HashSet` and `HashMap`.
+This causes subtle bugs, especially in `HashSet` and `HashMap`.
 
 ### 10.1. Conceptual example
 
-Let's assume:
+Suppose that:
 
 - two objects are equal according to `equals`
-- but they have different `hashCode`
+- but their `hashCode` values are different
 
-Then a hash collection can treat them as if they were in different places, and the behavior will be incorrect or inconsistent.
+Then a hash-based collection may treat them as if they were in different places, and its behavior will be incorrect or inconsistent.
 
 That is why the practical rule is:
 
-> If you overwrite `equals`, always overwrite `hashCode`.
+> If you override `equals`, always override `hashCode`.
 
 ---
 
@@ -366,7 +366,7 @@ public class Product {
 }
 ```
 
-### 11.2. Use with `HashSet`
+### 11.2. Usage with `HashSet`
 
 ```java
 import java.util.HashSet;
@@ -384,13 +384,13 @@ public class Main {
 }
 ```
 
-If `equals` and `hashCode` are done correctly, the `HashSet` detects that they are the same and does not duplicate the element.
+If `equals` and `hashCode` are implemented correctly, the `HashSet` detects that they are equal and does not duplicate the element.
 
 ---
 
-## 12. Compare `double` within `equals`
+## 12. Comparing `double` values inside `equals`
 
-When comparing `double`, it is often recommended to use:
+When comparing `double` values, it is usually recommended to use:
 
 ```java
 Double.compare(a, b) == 0
@@ -408,7 +408,7 @@ Example:
 return Double.compare(price, other.price) == 0;
 ```
 
-This is more robust and standard for implementing `equals` with decimal values.
+This is the more robust and standard way to implement `equals` with decimal values.
 
 ---
 
@@ -424,7 +424,7 @@ User@5f184fc6
 
 That is usually not very useful.
 
-### 13.1. Example without overwriting
+### 13.1. Example without overriding
 
 ```java
 public class User {
@@ -457,7 +457,7 @@ User@4e25154f
 
 ---
 
-## 14. Overwrite `toString()`
+## 14. Overriding `toString()`
 
 ### 14.1. Simple example
 
@@ -478,7 +478,7 @@ public class User {
 }
 ```
 
-### 14.2. Use
+### 14.2. Usage
 
 ```java
 public class Main {
@@ -495,7 +495,7 @@ Output:
 User{name='Laura', age=28}
 ```
 
-Much more useful for debugging, logging information or displaying objects through the console.
+Much more useful for debugging, logging information or displaying objects in the console.
 
 ---
 
@@ -503,12 +503,12 @@ Much more useful for debugging, logging information or displaying objects throug
 
 `toString()` is especially useful for:
 
-- Debug code
-- Show object lists per console
-- View internal status quickly
-- Register readable logs
+- Debugging code
+- Showing lists of objects in the console
+- Quickly checking the internal state
+- Writing readable logs
 
-Example with list:
+Example with a list:
 
 ```java
 import java.util.ArrayList;
@@ -600,13 +600,13 @@ public class Main {
 
 ---
 
-## 17. `equals` and attribute selection
+## 17. `equals` and choosing the attributes
 
-You don't always have to compare all attributes.
+You don't always have to compare every attribute.
 
 The decision depends on what “equality” means in your domain.
 
-Example: two users could be considered the same because of their `id`, even if they have different current names.
+Example: two users could be considered the same because of their `id`, even if their current names are different.
 
 ```java
 public class User {
@@ -622,25 +622,25 @@ That depends on the problem, not just the syntax.
 
 ---
 
-## 18. Typical mistakes when starting
+## 18. Common beginner mistakes
 
-### 18.1. Use `==` to compare objects
+### 18.1. Using `==` to compare objects
 
 This only compares references, not content.
 
-### 18.2. Overwrite `equals` but not `hashCode`
+### 18.2. Overriding `equals` but not `hashCode`
 
-Especially problematic on `HashSet` and `HashMap`.
+Especially problematic with `HashSet` and `HashMap`.
 
-### 18.3. Write an `equals` without type checking or `null`
+### 18.3. Writing an `equals` without checking the type or `null`
 
-It may produce errors or incorrect comparisons.
+It can cause errors or incorrect comparisons.
 
-### 18.4. Do not use `@Override`
+### 18.4. Not using `@Override`
 
-It is not mandatory, but it helps a lot to detect errors in the signature.
+It is not mandatory, but it helps a lot to catch errors in the signature.
 
-### 18.5. Create a useless `toString()`
+### 18.5. Writing a useless `toString()`
 
 Bad example:
 
@@ -657,15 +657,15 @@ That provides almost no information.
 
 ## 19. Good practices
 
-- Always use `@Override` in `equals`, `hashCode` and `toString`.
-- If you overwrite `equals`, also overwrite `hashCode`.
+- Always use `@Override` on `equals`, `hashCode` and `toString`.
+- If you override `equals`, also override `hashCode`.
 - Use `Objects.equals(...)` and `Objects.hash(...)` for simplicity.
 - Make `toString()` display useful and readable information.
-- Think carefully about what attributes define the logical equality of your class.
+- Think carefully about which attributes define the logical equality of your class.
 
 ---
 
-## 20. To take into account
+## 20. Things to keep in mind
 
 - `==` compares references; `equals` compares logical equality.
 - `hashCode` must be consistent with `equals`.
@@ -676,4 +676,4 @@ That provides almost no information.
 
 ---
 
-In the next topic we will continue advancing with tools to give robustness to our programs and we will see how to manage exceptions in Java.
+In the next topic we will keep moving forward with tools that make our programs more robust, and we will see how to **handle exceptions** in Java.

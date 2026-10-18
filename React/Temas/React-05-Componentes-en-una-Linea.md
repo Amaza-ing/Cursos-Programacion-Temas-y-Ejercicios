@@ -1,4 +1,4 @@
-# **Topic 5: Components in a line**
+# **Topic 5: One-line components**
 
 ## **1. Introduction**
 
@@ -8,18 +8,18 @@ In those cases, you can write the component more compactly (on “one line”), 
 
 In this topic you will learn:
 
-- What does “component in a line” mean?
-- When it makes sense to use it and when it doesn't.
-- Differences between `return (...)` and implicit return.
-- Good practices to maintain readability.
+- What a “one-line component” means.
+- When it makes sense to use one and when it doesn't.
+- The difference between `return (...)` and an implicit return.
+- Best practices to keep your code readable.
 
 ---
 
-## **2. What is a component in a line?**
+## **2. What is a one-line component?**
 
-A component on a line is a functional component that:
+A one-line component is a functional component that:
 
-- Does not need complex logic.
+- Doesn't need complex logic.
 - Returns JSX directly.
 - Can be written compactly.
 
@@ -39,10 +39,10 @@ This component is already very simple, but it still uses `return`.
 
 ## **3. Arrow functions and implicit return**
 
-In JavaScript, an arrow function can return a value without typing `return` if:
+In JavaScript, an **arrow function** can return a value without writing `return` if:
 
-- You do not use `{}` keys.
-- You directly return the expression.
+- You don't use curly braces `{}`.
+- You return the expression directly.
 
 Example:
 
@@ -50,11 +50,11 @@ Example:
 const sum = (a, b) => a + b;
 ```
 
-In React, we can apply the same with JSX.
+In React, we can do the same with JSX.
 
 ---
 
-## **4. Component on a line with arrow function**
+## **4. One-line component with an arrow function**
 
 Example:
 
@@ -66,13 +66,13 @@ export default Title;
 
 Features:
 
-- It is declared as `const`.
-- An arrow function is used.
-- JSX is returned implicitly.
+- It's declared as `const`.
+- It uses an arrow function.
+- The JSX is returned implicitly.
 
 ---
 
-## **5. Components in a line with longer JSX**
+## **5. One-line components with longer JSX**
 
 If the JSX spans multiple lines, you can wrap it in parentheses:
 
@@ -87,17 +87,17 @@ const EmptyState = () => (
 export default EmptyState;
 ```
 
-Even if the component is small, if it already has multiple lines, usually the most important thing is to maintain **readability**.
+Even if the component is small, once it spans several lines, keeping it **readable** is usually what matters most.
 
 ---
 
-## **6. When to use components on a line**
+## **6. When to use one-line components**
 
-They are useful when:
+They're useful when:
 
 - The component is very small.
-- There is no state or logic.
-- It is a simple “visual” component.
+- There's no state or logic.
+- It's a simple “visual” component.
 
 Typical examples:
 
@@ -120,11 +120,11 @@ export default Divider;
 
 Avoid writing them on one line if:
 
-- The JSX is long and difficult to read.
-- There is logic within the component.
-- You are just starting out and the implicit return confuses you.
+- The JSX is long and hard to read.
+- There's logic inside the component.
+- You're just starting out and the implicit return confuses you.
 
-In these cases, it is better to use the classic way:
+In these cases, it's better to use the classic form:
 
 ```js
 function Profile() {
@@ -147,7 +147,7 @@ export default Profile;
 
 Both are valid.
 
-### **8.1. Classic shape (most common when starting out)**
+### **8.1. Classic form (the most common when you're starting out)**
 
 ```js
 function Header() {
@@ -157,7 +157,7 @@ function Header() {
 export default Header;
 ```
 
-### **8.2. Shape in a line (compact)**
+### **8.2. One-line form (compact)**
 
 ```js
 const Header = () => <h1>Header</h1>;
@@ -167,25 +167,25 @@ export default Header;
 
 ---
 
-## **9. Good practices**
+## **9. Best practices**
 
 - Prioritize **clarity** over “saving lines”.
-- Use components in a line for very simple parts.
-- If the JSX grows, it changes to the classic form.
-- Keep names clear in PascalCase.
+- Use one-line components for very simple pieces.
+- If the JSX grows, switch to the classic form.
+- Keep names clear, in PascalCase.
 
 ---
 
-## **10. To take into account**
+## **10. Things to keep in mind**
 
-- A component on a line is a compact way to write small components.
-- It is supported by arrow functions and implicit return.
-- It is not “better” by default: it depends on size and readability.
-
----
-
-[![Components of a Line](https://img.youtube.com/vi/iIjk-AhtJ9A/0.jpg)](https://www.youtube.com/watch?v=iIjk-AhtJ9A&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+- A one-line component is a compact way to write small components.
+- It relies on arrow functions and implicit returns.
+- It isn't “better” by default: it depends on size and readability.
 
 ---
 
-In the next topic we will see how to handle **events in React** (click, input, and handler functions).
+[![One-Line Components](https://img.youtube.com/vi/iIjk-AhtJ9A/0.jpg)](https://www.youtube.com/watch?v=iIjk-AhtJ9A&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+
+---
+
+In the next topic we'll see how to handle **events in React** (click, input and handler functions).

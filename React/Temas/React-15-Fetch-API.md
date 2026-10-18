@@ -4,27 +4,27 @@
 
 In most apps you need to **request data from an API** (users, products, posts...).
 
-In React, the most common is:
+In React, the most common approach is to:
 
-- Make the request with **Fetch API**.
-- Save data in **state** with `useState`.
-- Execute the request in an **`useEffect`** (normally when mounting).
+- Make the request with the **Fetch API**.
+- Store the data in **state** with `useState`.
+- Run the request in a **`useEffect`** (usually on mount).
 
 In this topic you will learn:
 
-- What is Fetch and how it works.
-- How to do a **GET**.
+- What Fetch is and how it works.
+- How to make a **GET** request.
 - How to handle typical states: **loading**, **error** and **data**.
-- How to cancel/ignore responses when component is unmounted.
-- How to do **POST** (basic).
+- How to cancel/ignore responses when the component unmounts.
+- How to make a **POST** request (basic).
 
 ---
 
-## **2. What is Fetch API?**
+## **2. What is the Fetch API?**
 
 `fetch` is a browser function for making HTTP requests.
 
-- Returns a **Promise**.
+- It returns a **Promise**.
 - Normally you convert the response to JSON with `response.json()`.
 
 Basic example:
@@ -35,16 +35,16 @@ fetch("https://api.example.com/users")
   .then((data) => console.log(data));
 ```
 
-In React, we usually use `async/await` because it is more readable.
+In React, we usually use `async/await` because it's more readable.
 
 ---
 
-## **3. GET with `useEffect` (when mounting)**
+## **3. GET with `useEffect` (on mount)**
 
 Complete example with state:
 
-- `data` to save the answer.
-- `isLoading` for loader.
+- `data` to store the response.
+- `isLoading` for the loader.
 - `error` for failures.
 
 ```js
@@ -105,14 +105,14 @@ export default Users;
 
 ## **4. Why we use `response.ok`**
 
-`fetch` only automatically throws error if there is a network problem.
+`fetch` only throws an error automatically if there's a network problem.
 
 If the server responds with:
 
 - 404
 - 500
 
-**no** error is thrown by default. That is why it is good practice to check:
+**no** error is thrown by default. That's why it's good practice to check:
 
 ```js
 if (!response.ok) {
@@ -122,16 +122,16 @@ if (!response.ok) {
 
 ---
 
-## **5. Avoid updating state if component is unmounted**
+## **5. Avoiding state updates if the component unmounts**
 
 A common problem:
 
-- You make a fetch.
-- The user changes screen.
-- The answer arrives.
-- You are trying to do `setState` on a component that is no longer there.
+- You make a fetch request.
+- The user switches screens.
+- The response arrives.
+- You try to call `setState` on a component that's no longer there.
 
-A simple way (“ignore flag” pattern):
+A simple way (the “ignore flag” pattern):
 
 ```js
 import { useEffect, useState } from "react";
@@ -172,7 +172,7 @@ function Posts() {
 export default Posts;
 ```
 
-> Later you will see other ways (for example, `AbortController`), but this pattern already protects you from many cases.
+> Later you'll see other ways (for example, `AbortController`), but this pattern already protects you in many cases.
 
 ---
 
@@ -180,9 +180,9 @@ export default Posts;
 
 To send data:
 
-- `POST` method
-- `Content-Type: application/json` header
-- `body` with `JSON.stringify(...)`
+- The `POST` method
+- A `Content-Type: application/json` header
+- A `body` with `JSON.stringify(...)`
 
 ```js
 const createUser = async () => {
@@ -207,22 +207,22 @@ const createUser = async () => {
 
 ---
 
-## **7. Good practices**
+## **7. Best practices**
 
 - Keep the state separate: `data`, `isLoading`, `error`.
-- Use `try/catch/finally` for error control and loading.
+- Use `try/catch/finally` to handle errors and loading.
 - Check `response.ok`.
-- If the component can be disassembled, avoid doing `setState` afterwards (flag or cancel).
-- Keep the fetch logic in functions (`loadUsers`, `loadPosts`) to make the component easy to read.
+- If the component can unmount, avoid calling `setState` afterwards (flag or cancellation).
+- Keep the fetch logic in functions (`loadUsers`, `loadPosts`) so the component is easy to read.
 
 ---
 
-## **8. To take into account**
+## **8. Things to keep in mind**
 
 - `fetch` returns a Promise.
 - `response.json()` also returns a Promise.
 - A typical pattern is: `useEffect` + `async function` + `loading/error/data` states.
-- `fetch` does not throw an error for HTTP 4xx/5xx unless you check it.
+- `fetch` doesn't throw an error for HTTP 4xx/5xx unless you check for it.
 
 ---
 
@@ -230,4 +230,4 @@ const createUser = async () => {
 
 ---
 
-In the next topic we will see **Axios**, an alternative to Fetch with a more comfortable API for many cases.
+In the next topic we'll look at **Axios**, an alternative to Fetch with a more convenient API for many cases.

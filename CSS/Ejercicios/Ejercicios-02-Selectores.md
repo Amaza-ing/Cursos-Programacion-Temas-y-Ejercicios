@@ -8,9 +8,9 @@ Try to solve them before consulting the solution.
 
 ---
 
-### **Exercise 1: Using a tag selector**
+### **Exercise 1: Use a tag selector**
 
-Applies a yellow background color to all paragraphs (`<p>`) on a web page.
+Apply a yellow background color to all paragraphs (`<p>`) on a web page.
 
 <details><summary>Show solution</summary>
 
@@ -25,7 +25,7 @@ p {
 
 ---
 
-### **Exercise 2: Using a class selector**
+### **Exercise 2: Use a class selector**
 
 Create a class called `.danger` and use it to make the text of the elements it applies to red and bold.
 
@@ -48,9 +48,9 @@ Create a class called `.danger` and use it to make the text of the elements it a
 
 ---
 
-### **Exercise 3: Using an ID selector**
+### **Exercise 3: Use an ID selector**
 
-Create an ID called `#some-title` and use it to center the text of an `<h1>` header.
+Create an ID called `#some-title` and use it to center the text of an `<h1>` heading.
 
 <details><summary>Show solution</summary>
 
@@ -70,9 +70,9 @@ Create an ID called `#some-title` and use it to center the text of an `<h1>` hea
 
 ---
 
-### **Exercise 4: Using a descendant selector**
+### **Exercise 4: Use a descendant selector**
 
-Select all links (`<a>`) that are within a paragraph (`<p>`) and change their color to blue.
+Select all links (`<a>`) that are inside a paragraph (`<p>`) and change their color to blue.
 
 <details><summary>Show solution</summary>
 
@@ -92,9 +92,9 @@ p a {
 
 ---
 
-### **Exercise 5: Using specificity**
+### **Exercise 5: Use specificity**
 
-Apply different styles to a paragraph using a type selector, a class selector, and an ID selector. See which one has priority.
+Apply different styles to a paragraph using a type selector, a class selector and an ID selector. See which one takes priority.
 
 <details><summary>Show solution</summary>
 

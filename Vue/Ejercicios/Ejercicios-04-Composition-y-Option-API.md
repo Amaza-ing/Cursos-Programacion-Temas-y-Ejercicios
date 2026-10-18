@@ -1,16 +1,16 @@
-# **Exercises - Topic 4: Composition API vs Option API**
+# **Exercises - Topic 4: Composition API vs Options API**
 
-Below you will find 5 practical exercises on Composition API and Option API in Vue.
+Below you'll find 5 practical exercises on the Composition API and the Options API in Vue.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Create a counter component with Option API**
+## **Exercise 1: Create a counter component with the Options API**
 
-Create a component called `CounterOption.vue` that uses the Option API to define a counter that starts at 5 and increments by 2 each time a button is pressed.
+Create a component called `CounterOption.vue` that uses the Options API to define a counter that starts at 5 and goes up by 2 each time a button is clicked.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `CounterOption.vue`
 
@@ -51,11 +51,11 @@ button {
 
 ---
 
-## **Exercise 2: Create a dynamic message with Composition API**
+## **Exercise 2: Create a dynamic message with the Composition API**
 
-Create a component called `DynamicMessage.vue` that uses the Composition API to display a message that switches between "Hello" and "Goodbye" each time a button is pressed.
+Create a component called `DynamicMessage.vue` that uses the Composition API to display a message that switches between "Hola" ("Hello") and "Adiós" ("Goodbye") each time a button is clicked.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `DynamicMessage.vue`
 
@@ -91,11 +91,11 @@ button {
 
 ---
 
-## **Exercise 3: Display a list using Option API**
+## **Exercise 3: Display a list using the Options API**
 
-Create a component called `NameListOption.vue` that uses the Option API to define and display a list of names.
+Create a component called `NameListOption.vue` that uses the Options API to define and display a list of names.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `NameListOption.vue`
 
@@ -131,7 +131,7 @@ li {
 
 Create a component called `NameInput.vue` that uses the Composition API to capture the name entered by the user and display it on the screen.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `NameInput.vue`
 
@@ -161,11 +161,11 @@ input {
 
 ---
 
-## **Exercise 5: Compare Option and Composition in the same file**
+## **Exercise 5: Compare Options and Composition in the same file**
 
-Create a file called `CompareApis.vue` and define two components inside: one with the Option API and one with the Composition API, both displaying a sticky message.
+Create a file called `CompareApis.vue` and define two components inside it: one with the Options API and one with the Composition API, both displaying a fixed message.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 `CompareApis.vue`
 

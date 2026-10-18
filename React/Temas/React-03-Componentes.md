@@ -6,11 +6,11 @@ In React, a **component** is a reusable piece of interface. Instead of building 
 
 In this topic you will learn:
 
-- What is a component and why is it the basis of React.
-- Functional components and how they are created.
+- What a component is and why it's the foundation of React.
+- Functional components and how to create them.
 - How to use one component inside another.
 - How to organize components in folders.
-- Basic good practices to get started.
+- Basic best practices to get started.
 
 ---
 
@@ -20,7 +20,7 @@ A component is a function (or class, although today a function is almost always 
 
 Think of a component as a “piece” of the screen:
 
-- One button
+- A button
 - A product card
 - A menu
 - A form
@@ -29,7 +29,7 @@ The key idea is that those pieces can be **reused** and **composed** to build an
 
 ---
 
-## **3. Functional Component (Functional Component)**
+## **3. Functional components**
 
 A functional component is a JavaScript function that returns JSX.
 
@@ -47,7 +47,7 @@ export default Title;
 
 - The component name must be in **PascalCase**.
 - A component must **return a single parent element**.
-- To export it and use it in other files, `export default` is usually used.
+- To export it and use it in other files, you usually use `export default`.
 
 ---
 
@@ -93,10 +93,10 @@ function App() {
 export default App;
 ```
 
-Here the following happens:
+Here's what happens:
 
 - You import the component with `import`.
-- You use it as a tag: `<Header />`.
+- You use it like a tag: `<Header />`.
 
 ---
 
@@ -147,9 +147,9 @@ export default App;
 
 ---
 
-## **6. JSX within components**
+## **6. JSX inside components**
 
-Within JSX you can:
+Inside JSX you can:
 
 - Show text
 - Insert JavaScript expressions with `{}`
@@ -174,7 +174,7 @@ export default Welcome;
 
 ---
 
-## **7. Successful import of components**
+## **7. Importing components correctly**
 
 ### **7.1. Default import**
 
@@ -192,20 +192,20 @@ import Header from "./components/Header";
 
 ---
 
-## **8. Good practices to get started**
+## **8. Best practices to get started**
 
 - One component per file.
 - Clear names: `UserCard`, `ProductList`, `Navbar`.
-- Keep components small and with only one responsibility.
+- Keep components small, with a single responsibility.
 - Reuse components instead of copying and pasting JSX.
 
 ---
 
-## **9. To take into account**
+## **9. Things to keep in mind**
 
 - Components are the heart of React.
-- In React you compose the interface by putting components together as pieces.
-- For now, your components will be “static”. In the next topic we will start styling them.
+- In React you compose the interface by putting components together like pieces.
+- For now, your components will be “static”. In the next topic we'll start styling them.
 
 ---
 
@@ -213,4 +213,4 @@ import Header from "./components/Header";
 
 ---
 
-In the next topic we will see how to apply **styles in React** (global CSS, per-component CSS and initial good practices).
+In the next topic we'll see how to apply **styles in React** (global CSS, per-component CSS and a few first best practices).

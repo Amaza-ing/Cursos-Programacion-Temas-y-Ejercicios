@@ -2,68 +2,68 @@
 
 ## **1. Introduction**
 
-When you start building richer applications, a real need arises: making sure your code works today and will continue to work tomorrow, even after you make changes.
+When you start building more complete applications, a real need comes up: **making sure your code works today and will keep working tomorrow**, even after you make changes.
 
 That's where **unit tests** come in.
 
-In this topic you will learn step by step:
+In this topic you'll learn, step by step:
 
-- What **unit tests** are and what they are for.
-- How to configure **Vitest** and **React Testing Library** in a React project.
+- What **unit tests** are and what they're for.
+- How to set up **Vitest** and **React Testing Library** in a React project.
 - How to test components: render, props, events, forms.
 - How to test **asynchronous** behavior (data loading, loading states).
-- How to **mock** `fetch` (and also Axios if you use it).
+- How to **mock** `fetch` (and Axios too, if you use it).
 - How to test **Context** (Provider + consumers + hooks).
 
-> The goal is that you can follow it comfortably, with a clear initial configuration, and then you can repeat the process on any project.
+> The goal is for you to follow it comfortably, with a clear initial setup, and then be able to repeat the process in any project.
 
 ---
 
 ## **2. What are unit tests?**
 
-A **unit test** is a test that verifies that a **small unit** of code behaves as we expect.
+A **unit test** is a test that checks that a **small unit** of code behaves as we expect.
 
 In React, typical units are:
 
 - A component.
-- A utilitarian function.
+- A utility function.
 - A hook.
 
-Examples of things that a unit test validates:
+Examples of things a unit test checks:
 
-- “This component renders a text when it receives a prop.”
-- “This button calls a function when I click.”
+- “This component renders some text when it receives a prop.”
+- “This button calls a function when I click it.”
 - “If the request fails, an error message is displayed.”
 
 ---
 
-## **3. Why are they important**
+## **3. Why they're important**
 
-The tests help you:
+Tests help you:
 
 - Detect errors quickly.
 - Avoid breaking things when you refactor.
-- Increase confidence by adding new features.
-- Keep code more stable in large projects.
+- Gain confidence when adding new features.
+- Keep the code more stable in large projects.
 
 ---
 
-## **4. What libraries are we going to use**
+## **4. Which libraries we're going to use**
 
-In React, the most common today is this combination:
+In React, the most common combination today is this one:
 
-- **Vitest** → test runner (very fast and perfect with Vite).
+- **Vitest** → test runner (very fast and a perfect fit for Vite).
 - **React Testing Library** → to test components as if you were a user.
 - **@testing-library/jest-dom** → extra matchers (for example: `toBeInTheDocument`).
 - **@testing-library/user-event** → to simulate real interactions (keyboard, clicks).
 
-> You can do it with Jest too, but in modern projects with Vite, **Vitest is usually the most comfortable option**.
+> You can do it with Jest too, but in modern Vite projects, **Vitest is usually the most convenient option**.
 
 ---
 
-## **5. Step-by-step initial setup (Vite + React)**
+## **5. Initial setup, step by step (Vite + React)**
 
-### **5.1. Install dependencies**
+### **5.1. Installing dependencies**
 
 Run:
 
@@ -71,17 +71,17 @@ Run:
 npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
-What installs everything:
+What each package is for:
 
-- `vitest`: tool that runs the tests.
+- `vitest`: the tool that runs the tests.
 - `jsdom`: simulates the browser.
 - `@testing-library/react`: functions to render components in tests.
 - `@testing-library/jest-dom`: extra matchers.
-- `@testing-library/user-event`: simulates real use.
+- `@testing-library/user-event`: simulates real usage.
 
 ---
 
-### **5.2. Configure Vitest in `vite.config.js`**
+### **5.2. Configuring Vitest in `vite.config.js`**
 
 Open `vite.config.js` and add the `test` block:
 
@@ -100,26 +100,26 @@ export default defineConfig({
 
 This means:
 
-- `environment: "jsdom"` → React needs DOM.
-- `setupFiles` → file that is executed before the tests (ideal for configuring jest-dom).
+- `environment: "jsdom"` → React needs a DOM.
+- `setupFiles` → a file that runs before the tests (ideal for setting up jest-dom).
 
 ---
 
-### **5.3. Create the file `src/test/setup.js`**
+### **5.3. Creating the `src/test/setup.js` file**
 
-Create this route:
+Create this path:
 
 ```txt
 src/test/setup.js
 ```
 
-And inside he adds:
+And add this inside it:
 
 ```js
 import "@testing-library/jest-dom";
 ```
 
-This way you can use matchers like:
+Now you'll be able to use matchers like:
 
 - `toBeInTheDocument()`
 - `toHaveTextContent()`
@@ -127,9 +127,9 @@ This way you can use matchers like:
 
 ---
 
-### **5.4. Add scripts in `package.json`**
+### **5.4. Adding scripts to `package.json`**
 
-In your `package.json` add:
+Add this to your `package.json`:
 
 ```json
 {
@@ -144,14 +144,14 @@ In your `package.json` add:
 What each one does:
 
 - `npm run test` → watch mode.
-- `npm run test:run` → run all tests once.
+- `npm run test:run` → runs all the tests once.
 - `npm run test:ui` → visual interface (if you want to use it).
 
 ---
 
 ## **6. Recommended test structure**
 
-The most typical structure:
+The most common structure:
 
 ```txt
 src/
@@ -164,16 +164,16 @@ src/
      └─ setup.js
 ```
 
-That is to say:
+In other words:
 
-- The test is placed next to the component.
+- The test goes next to the component.
 - Name: `Component.test.jsx`.
 
 ---
 
 ## **7. Your first test: basic render**
 
-### **7.1. Example Component**
+### **7.1. Example component**
 
 `src/components/Hello.jsx`
 
@@ -204,7 +204,7 @@ Key points:
 
 - `render(...)` mounts the component.
 - `screen.getByText(...)` searches the DOM.
-- `expect(...).toBeInTheDocument()` verifies that it exists.
+- `expect(...).toBeInTheDocument()` checks that it exists.
 
 ---
 
@@ -254,7 +254,7 @@ test("increments count on click", async () => {
 Important recommendation:
 
 - Use `getByRole` whenever you can.
-- It is more robust and closer to real accessibility.
+- It's more robust and closer to real accessibility.
 
 ---
 
@@ -334,26 +334,26 @@ test("shows success when input has value", async () => {
 A key part of React is testing components that:
 
 - Load data.
-- They show loading.
-- They show result.
+- Show a loading state.
+- Show a result.
 
 For that we use:
 
-- `findBy...` (auto hold)
+- `findBy...` (waits automatically)
 - `waitFor(...)` (waits for a condition to be met)
 
 ---
 
-## **11. Fetch Mock (very important)**
+## **11. Mocking Fetch (very important)**
 
-If a component uses `fetch`, in tests we do not want to depend on the Internet.
+If a component uses `fetch`, we don't want our tests to depend on the Internet.
 
 The idea is:
 
 - Replace `fetch` with a mock.
-- Decide what to answer.
+- Decide what it responds with.
 
-### **11.1. Component that does fetch**
+### **11.1. A component that uses fetch**
 
 ```js
 import { useEffect, useState } from "react";
@@ -379,7 +379,7 @@ function UsersLoader() {
 export default UsersLoader;
 ```
 
-### **11.2. Test with fetch mock**
+### **11.2. Test with a fetch mock**
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -401,15 +401,15 @@ test("loads users and renders the count", async () => {
 
 Important notes:
 
-- `mockResolvedValue` causes `fetch` to return a resolved promise.
+- `mockResolvedValue` makes `fetch` return a resolved promise.
 - `findByText` waits for the text to exist.
-- `mockRestore()` cleans the mock.
+- `mockRestore()` cleans up the mock.
 
 ---
 
-## **12. Axios Mock (if you use it in your project)**
+## **12. Mocking Axios (if you use it in your project)**
 
-If instead of `fetch` you are using Axios:
+If you're using Axios instead of `fetch`:
 
 ```js
 import axios from "axios";
@@ -434,13 +434,13 @@ test("loads users with axios", async () => {
 
 ---
 
-## **13. Context Testing (Provider + Consumers)**
+## **13. Testing Context (Provider + consumers)**
 
-Here is one of the most important parts if your app already uses Context.
+This is one of the most important parts if your app already uses Context.
 
 The idea:
 
-- If a component depends on the context, in tests you need to wrap it with its Provider.
+- If a component depends on the context, you need to wrap it with its Provider in your tests.
 
 ---
 
@@ -493,7 +493,7 @@ export default UsersList;
 
 ---
 
-## **15. Test a component that uses Context**
+## **15. Testing a component that uses Context**
 
 In the test, we wrap the component with the Provider.
 
@@ -515,11 +515,11 @@ test("renders users from context", async () => {
 
 ---
 
-## **16. Context with functions: test updates**
+## **16. Context with functions: testing updates**
 
-Now a context that allows adding users.
+Now, a context that lets you add users.
 
-### **16.1. Provider with function**
+### **16.1. Provider with a function**
 
 ```js
 import { createContext, useState } from "react";
@@ -541,7 +541,7 @@ export function UsersProvider({ children }) {
 }
 ```
 
-### **16.2. Component to add**
+### **16.2. Component to add users**
 
 ```js
 import { useContext } from "react";
@@ -585,9 +585,9 @@ test("adds user through context", async () => {
 
 ---
 
-## **17. Useful pattern: helper `renderWithProviders`**
+## **17. Useful pattern: a `renderWithProviders` helper**
 
-In projects with several Providers, a helper is best for you.
+In projects with several Providers, a helper comes in handy.
 
 `src/test/renderWithProviders.js`
 
@@ -615,12 +615,12 @@ test("renders users", () => {
 
 ---
 
-## **18. What should you keep from this topic**
+## **18. What you should take away from this topic**
 
 - A unit test validates a small unit (component, function, hook).
 - With Vite, Vitest is a very convenient option.
-- React Testing Library teaches you how to test as a user.
-- Requests must be mocked (`fetch` or Axios).
+- React Testing Library teaches you to test like a user.
+- Requests should be mocked (`fetch` or Axios).
 - To test Context, wrap the component with the Provider.
 
 ## **19. Using Jest**
@@ -629,7 +629,7 @@ test("renders users", () => {
 
 ---
 
-[![Create Tests with Jest and the React Testing Library](https://img.youtube.com/vi/H4epaNzJCmY/0.jpg)](https://www.youtube.com/watch?v=H4epaNzJCmY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Creating Tests with Jest and React Testing Library](https://img.youtube.com/vi/H4epaNzJCmY/0.jpg)](https://www.youtube.com/watch?v=H4epaNzJCmY&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
@@ -637,4 +637,4 @@ test("renders users", () => {
 
 ---
 
-In the next topic you will work you will see **How to create a complete website from scratch** (A notes application).
+In the next topic you'll see **how to build a complete website from scratch** (a notes app).

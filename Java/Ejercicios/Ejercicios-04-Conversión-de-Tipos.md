@@ -2,20 +2,20 @@
 
 Below you will find **10 practical exercises** on implicit conversion, explicit conversion (casting), division between integers and conversion between `String` and numeric types.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Implicit conversion from `int` to `double`
 
-Declares:
+Declare:
 
 - A variable `points` of type `int` with value `7`
 - A variable `finalPoints` of type `double` that receives the value of `points`
 
 Print `finalPoints`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -34,14 +34,14 @@ public class Main {
 
 ## Exercise 2: Explicit conversion from `double` to `int`
 
-Declares:
+Declare:
 
 - A variable `price` of type `double` with value `24.75`
 
-Convert that value to `int` and save it to `roundedPrice`.  
+Convert that value to `int` and store it in `roundedPrice`.  
 Print `roundedPrice`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -58,16 +58,16 @@ public class Main {
 
 ---
 
-## Exercise 3: Division by integers (detect the problem)
+## Exercise 3: Integer division (spot the problem)
 
-Declares:
+Declare:
 
-- `totalScore` with `5` value
-- `players` with `2` value
+- `totalScore` with value `5`
+- `players` with value `2`
 
-Calculate the **correct** mean using `double`.
+Calculate the **correct** average using `double`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -87,7 +87,7 @@ public class Main {
 
 ## Exercise 4: Casting in the wrong place
 
-This code does not give the expected result. Correct it:
+This code does not give the expected result. Fix it:
 
 ```java
 int a = 7;
@@ -97,9 +97,9 @@ double result = (double) (a / b);
 System.out.println(result);
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-The problem is that the division occurs before casting.
+The problem is that the division happens before the cast.
 
 ```java
 int a = 7;
@@ -115,13 +115,13 @@ System.out.println(result);
 
 ## Exercise 5: Conversion from `char` to `int`
 
-Declares:
+Declare:
 
-- An `char` named `symbol` with value `'B'`
+- A `char` named `symbol` with value `'B'`
 
-Converts that character to `int` and displays the result.
+Convert that character to `int` and print the result.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -140,13 +140,13 @@ public class Main {
 
 ## Exercise 6: Conversion from `String` to `int`
 
-Declares:
+Declare:
 
 - A variable `textValue` with value `"15"`
 
-Convert text to number and calculate `textValue + 5`.
+Convert the text to a number and calculate `textValue + 5`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -165,13 +165,13 @@ public class Main {
 
 ## Exercise 7: Conversion from `String` to `double`
 
-Declares:
+Declare:
 
-- `priceText` with `"9.99"` value
+- `priceText` with value `"9.99"`
 
 Convert the value to `double` and multiply it by `2`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -190,13 +190,13 @@ public class Main {
 
 ## Exercise 8: Convert a number to `String`
 
-Declares:
+Declare:
 
 - A variable `level` of type `int` with value `4`
 
 Convert that value to `String` and concatenate it with the text `"Level: "`.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -215,14 +215,14 @@ public class Main {
 
 ## Exercise 9: Dangerous casting
 
-Declares:
+Declare:
 
-- An `int` with `130` value
+- An `int` with value `130`
 
-Cast `byte` and show the result.  
-Reflect on why the value is not what you expected.
+Cast it to `byte` and print the result.  
+Think about why the value is not what you expected.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {
@@ -235,19 +235,19 @@ public class Main {
 }
 ```
 
-The result is not correct because `byte` only supports values between -128 and 127.
+The result is wrong because `byte` can only hold values between -128 and 127.
 
 </details>
 
 ---
-## Exercise 10: Combined conversion into an expression
+## Exercise 10: Combined conversion in an expression
 
-Declares:
+Declare:
 
-- `hits` with `7` value
-- `attempts` with `3` value
+- `hits` with value `7`
+- `attempts` with value `3`
 
-Calculates the hit percentage as `double`.
+Calculate the hit percentage as `double`.
 
 Expected result:
 
@@ -255,7 +255,7 @@ Expected result:
 2.3333333333333335
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```java
 public class Main {

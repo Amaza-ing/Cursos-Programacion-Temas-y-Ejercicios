@@ -1,4 +1,4 @@
-# **Exercises - Topic 8: Design with Flexbox in CSS**
+# **Exercises - Topic 8: Layout with Flexbox in CSS**
 
 ## **Instructions:**
 
@@ -43,7 +43,7 @@ Create a container with `display: flex` and three child elements.
 
 ### **Exercise 2: Align elements with `justify-content`**
 
-Align the container elements to the center horizontally using `justify-content`.
+Center the elements of the container horizontally using `justify-content`.
 
 <details><summary>Show solution</summary>
 
@@ -70,7 +70,7 @@ Align the container elements to the center horizontally using `justify-content`.
 
 ### **Exercise 3: Align elements on the vertical axis**
 
-Align the elements in the center vertically using `align-items`.
+Center the elements vertically using `align-items`.
 
 <details><summary>Show solution</summary>
 
@@ -96,7 +96,7 @@ Align the elements in the center vertically using `align-items`.
 
 ---
 
-### **Exercise 4: Change the address with `flex-direction`**
+### **Exercise 4: Change the direction with `flex-direction`**
 
 Change the direction of the elements so that they are placed in a column.
 
@@ -184,7 +184,7 @@ Make the second element grow larger than the others using `flex-grow`.
 
 ### **Exercise 7: Change the order of elements with `order`**
 
-Make the third item appear first using `order`.
+Make the third element appear first using `order`.
 
 <details><summary>Show solution</summary>
 

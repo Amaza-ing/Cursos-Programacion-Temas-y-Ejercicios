@@ -4,11 +4,11 @@
 
 Below you will find 10 practical exercises on using Signals in Angular 19.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Create a Signal**
+### **Exercise 1: Creating a Signal**
 
 Create a Signal that stores a number and displays its value in the template.
 
@@ -32,9 +32,9 @@ export class CounterComponent {
 
 ---
 
-### **Exercise 2: Update a Signal**
+### **Exercise 2: Updating a Signal**
 
-Create a button that increments the Signal value when clicked.
+Create a button that increments the Signal's value when clicked.
 
 <details><summary>Show solution</summary>
 
@@ -61,7 +61,7 @@ export class CounterComponent {
 
 ### **Exercise 3: Computed Signal**
 
-Create a Computed Signal that computes twice the value stored in a Signal.
+Create a Computed Signal that calculates double the value stored in a Signal.
 
 <details><summary>Show solution</summary>
 
@@ -85,9 +85,9 @@ export class MathComponent {
 
 ---
 
-### **Exercise 4: Effect with Signal**
+### **Exercise 4: Effect with a Signal**
 
-Create an Effect that displays a message on the console when a Signal changes.
+Create an Effect that displays a message in the console when a Signal changes.
 
 <details><summary>Show solution</summary>
 
@@ -115,7 +115,7 @@ export class LoggerComponent {
 
 ---
 
-### **Exercise 5: List management with @for**
+### **Exercise 5: Handling a list with @for**
 
 Create a signal with a list of names and use `@for` to display them in the template.
 
@@ -141,9 +141,9 @@ export class NamesComponent {
 
 ---
 
-### **Exercise 6: Filter with Computed Signal**
+### **Exercise 6: Filtering with a Computed Signal**
 
-Filters a list of numbers to show only pairs using `computed()`.
+Filter a list of numbers to show only the even ones using `computed()`.
 
 <details><summary>Show solution</summary>
 
@@ -164,7 +164,7 @@ export class FilterComponent {
 
 ---
 
-### **Exercise 7: Using @if with Signal**
+### **Exercise 7: Using @if with a Signal**
 
 Display a message only if a counter is greater than 10.
 
@@ -188,9 +188,9 @@ export class ConditionComponent {
 
 ---
 
-### **Exercise 8: Signal Reset**
+### **Exercise 8: Resetting a Signal**
 
-Adds a button to reset the value of a Signal to its initial state.
+Add a button to reset the value of a Signal to its initial state.
 
 <details><summary>Show solution</summary>
 
@@ -215,9 +215,9 @@ export class ResetComponent {
 
 ---
 
-### **Exercise 9: Change of state with Signal**
+### **Exercise 9: Changing state with a Signal**
 
-Change the status of a Signal between "Active" and "Inactive" by clicking a button.
+Switch the state of a Signal between "Activo" and "Inactivo" when a button is clicked.
 
 <details><summary>Show solution</summary>
 

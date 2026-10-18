@@ -2,7 +2,7 @@
 
 ## **1. Introduction to units of measurement**
 
-CSS allows you to define sizes, spaces and dimensions using different **units of measurement**. Understanding them is key to designing flexible and adaptable websites.
+CSS lets you define sizes, spacing and dimensions using different **units of measurement**. Understanding them is key to designing flexible, adaptable websites.
 
 There are two main categories of units:
 
@@ -17,12 +17,12 @@ Absolute units have a fixed value and do not change with the size of the screen 
 
 | Unit | Description | Equivalence |
 | ------ | ------------------- | ---------------------------------- |
-| `px` | Pixels | Most common unit in screens |
-| `cm` | Centimeters | Related to impressions |
-| `mm` | Millimeters | Similar to cm, used in prints |
+| `px` | Pixels | The most common unit on screens |
+| `cm` | Centimeters | Related to print |
+| `mm` | Millimeters | Similar to cm, used for print |
 | `in` | Inches | 1in = 2.54cm |
-| `pt` | Typographic points | 1pt = 1/72 in |
-| `pc` | Spades | 1pc = 12pt |
+| `pt` | Points | 1pt = 1/72 in |
+| `pc` | Picas | 1pc = 12pt |
 
 **Example:**
 
@@ -43,12 +43,12 @@ Relative units depend on the size of other elements or the screen.
 | Unit | Description |
 | ------ | ----------------------------------------------------------------- |
 | `%` | Relative to the size of the parent container |
-| `em` | Relative to element font size |
-| `rem` | Relative to root element font size (`html`) |
-| `vw` | Relative to viewport width (1vw = 1% of window width) |
-| `vh` | Relative to the height of the viewport (1vh = 1% of the window height) |
-| `vmin` | Relative to the lower value between `vw` and `vh` |
-| `vmax` | Relative to the highest value between `vw` and `vh` |
+| `em` | Relative to the element's font size |
+| `rem` | Relative to the root element's font size (`html`) |
+| `vw` | Relative to the viewport width (1vw = 1% of the window width) |
+| `vh` | Relative to the viewport height (1vh = 1% of the window height) |
+| `vmin` | Relative to the smaller of `vw` and `vh` |
+| `vmax` | Relative to the larger of `vw` and `vh` |
 
 **Example:**
 
@@ -86,12 +86,12 @@ div {
 
 ---
 
-## **5. Use of `vw`, `vh`, `vmin`, and `vmax`**
+## **5. Using `vw`, `vh`, `vmin` and `vmax`**
 
-These units allow you to create fluid designs.
+These units let you create fluid layouts.
 
 - `vw` and `vh` are useful for defining sizes based on the screen.
-- `vmin` and `vmax` allow you to adjust elements according to the lower or higher value of the viewport.
+- `vmin` and `vmax` let you size elements according to the smaller or larger dimension of the viewport.
 
 **Example:**
 
@@ -109,11 +109,11 @@ These units allow you to create fluid designs.
 
 ---
 
-## **6. Good practices in the use of units**
+## **6. Best practices for using units**
 
-- Use `rem` to define sources and maintain scalability.
+- Use `rem` to define font sizes and keep your styles scalable.
 - Use `%` and `vw/vh` to make responsive designs.
-- Avoid using `px` in font sizes if you are looking for accessibility.
+- Avoid using `px` for font sizes if you care about accessibility.
 - Combine relative and absolute units as needed.
 
 ---

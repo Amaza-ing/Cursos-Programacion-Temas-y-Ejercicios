@@ -2,20 +2,20 @@
 
 ## **1. Introduction**
 
-Branches (**branches**) in Git allow you to work on different versions of a project without affecting the main branch. This makes it easier to collaborate, develop new features, and fix bugs without disturbing stable code.
+**Branches** in Git let you work on different versions of a project without affecting the main branch. This makes it easier to collaborate, develop new features and fix bugs without touching the stable code.
 
 ### **Benefits of using branches in Git**
 
 - They allow you to work on new features without affecting the stable version.
-- They facilitate collaboration between developers.
-- They help maintain an organized change history.
+- They make collaboration between developers easier.
+- They help keep the change history organized.
 - They allow you to manage different versions of a project efficiently.
 
 ---
 
-## **2. Creation and management of branches**
+## **2. Creating and managing branches**
 
-### **List available branches**
+### **List the available branches**
 
 ```bash
 git branch
@@ -40,14 +40,14 @@ git checkout nombre-de-la-rama
 ```
 
 
-Another more modern option is to use:
+A more modern option is to use:
 
 ```bash
 git switch nombre-de-la-rama
 ```
 
 
-This moves the job to the indicated branch.
+This moves your work to the given branch.
 
 ### **Create and switch to a new branch in one step**
 
@@ -69,13 +69,13 @@ git switch -c nombre-de-la-rama
 
 ---
 
-## **3. Merge branches (Merge)**
+## **3. Merging branches (merge)**
 
-To merge changes from one branch to another, use the `merge` command.
+To merge the changes from one branch into another, you use the `merge` command.
 
 ### **Steps to merge a branch into `master`**
 
-1. Switch to main branch:
+1. Switch to the main branch:
    ```bash
    git checkout master  # O bien: git switch master
    ```
@@ -85,12 +85,12 @@ To merge changes from one branch to another, use the `merge` command.
    git pull origin master
    ```
 
-3. Merge the child branch:
+3. Merge the secondary branch:
    ```bash
    git merge nombre-de-la-rama
    ```
 
-4. Delete branch after merge:
+4. Delete the branch after the merge:
    ```bash
    git branch -d nombre-de-la-rama
    ```
@@ -109,9 +109,9 @@ git push origin --delete nombre-de-la-rama
 
 ---
 
-### **Pull Request to merge a branch to Github**
+### **Pull request to merge a branch on GitHub**
 
-Another way to push changes to a branch is to make a Pull Request on Github. This is especially useful in collaborative environments, where your colleagues need to see the changes that have been made before merging branches.
+Another way to bring changes into a branch is to open a pull request on GitHub. This is especially useful in collaborative environments, where your teammates need to see the changes that have been made before the branches are merged.
 
 ---
 
@@ -119,31 +119,31 @@ Another way to push changes to a branch is to make a Pull Request on Github. Thi
 
 ---
 
-## **4. Conflict management in Git**
+## **4. Handling conflicts in Git**
 
 During a merge (`merge`), conflicts can arise if two branches have modified the same part of a file.
 
 ### **How to resolve a conflict in Git**
 
-1. Git will flag conflicting files.
+1. Git will mark the files that have conflicts.
    ```bash
    git status
    ```
 
-2. Edit the affected files, looking for the sections marked by `<<<<<<<`, `=======` and `>>>>>>>`.
-3. Keep the code correct and remove conflict flags.
+2. Edit the affected files, looking for the sections marked with `<<<<<<<`, `=======` and `>>>>>>>`.
+3. Keep the correct code and remove the conflict markers.
 4. Add the corrected files to the staging area:
    ```bash
    git add archivo-afectado
    ```
 
-5. Finalize the merger with a commit:
+5. Complete the merge with a commit:
    ```bash
    git commit -m "Resolviendo conflicto en archivo-afectado"
    ```
 
 
-To avoid conflicts, it is recommended to make `git pull` before making changes and coordinate with the development team.
+To avoid conflicts, it's a good idea to run `git pull` before making changes and to coordinate with the development team.
 
 ---
 
@@ -151,7 +151,7 @@ To avoid conflicts, it is recommended to make `git pull` before making changes a
 
 ---
 
-## **5. Rebase: Alternative to Merge**
+## **5. Rebase: an alternative to merge**
 
 Another way to integrate changes between branches is by using `rebase`. Instead of creating a merge commit, `rebase` rewrites the history.
 
@@ -160,16 +160,16 @@ git checkout nombre-de-la-rama
 git rebase master
 ```
 
-This moves the `nombre-de-la-rama` commits over the most recent version of `master`.
+This moves the commits of `nombre-de-la-rama` on top of the latest version of `master`.
 
-To resolve conflicts during an `rebase`, correct the files and continue with:
+To resolve conflicts during a `rebase`, fix the files and continue with:
 
 ```bash
 git rebase --continue
 ```
 
 
-If it is necessary to cancel the process:
+If you need to cancel the process:
 
 ```bash
 git rebase --abort
@@ -182,14 +182,14 @@ git rebase --abort
 
 ---
 
-## **6. Good practices with branches in Git**
+## **6. Best practices with branches in Git**
 
 - Use **descriptive names** for branches (e.g. `feature/nueva-funcionalidad`, `bugfix/error-login`).
 - Keep the `master` branch always stable and bug-free.
-- Update the `master` branch before starting a new branch with `git pull origin master`.
-- Remove obsolete branches to keep the repository clean.
-- Resolve conflicts calmly and review well before committing changes.
+- Update the `master` branch with `git pull origin master` before starting a new branch.
+- Delete obsolete branches to keep the repository clean.
+- Resolve conflicts calmly and review carefully before committing changes.
 
 ---
 
-In the next topic, we will learn about **remote repositories, `git push`, `git pull` and collaboration on GitHub**.
+In the next topic, we'll learn about **remote repositories, `git push`, `git pull` and collaboration on GitHub**.

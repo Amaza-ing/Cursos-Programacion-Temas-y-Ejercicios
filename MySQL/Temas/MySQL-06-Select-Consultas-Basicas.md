@@ -1,6 +1,6 @@
 # **Topic 6: Advanced Queries with SELECT and Conditions**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
 - Use `SELECT` to extract specific information from a table.
 - Apply filters with `WHERE` and logical operators.
@@ -11,7 +11,7 @@ In this topic we will learn to:
 
 ## **1. SELECT: Basic queries**
 
-The `SELECT` statement allows you to query data from one or more columns.
+The `SELECT` statement lets you query data from one or more columns.
 
 ### **Examples:**
 
@@ -22,9 +22,9 @@ SELECT first_name, last_name FROM customers; -- Sólo algunas columnas
 
 ---
 
-## **2. WHERE: Filter results**
+## **2. WHERE: Filtering results**
 
-The `WHERE` clause allows you to display only rows that meet a condition.
+The `WHERE` clause lets you display only the rows that meet a condition.
 
 ### **Examples:**
 
@@ -39,9 +39,9 @@ WHERE total_amount > 100;
 ### **Common operators:**
 
 - `=`: equal to
-- `!=` or `<>`: different from
+- `!=` or `<>`: not equal to
 - `>` / `<`: greater than / less than
-- `>=` / `<=`: greater than or equal / less than or equal
+- `>=` / `<=`: greater than or equal to / less than or equal to
 - `BETWEEN`: between two values
 - `IN`: in a list
 - `LIKE`: partial match with wildcards
@@ -71,7 +71,7 @@ SELECT * FROM customers
 WHERE city = 'Madrid' OR city = 'Barcelona';
 ```
 
-### **NOT**: negate the condition
+### **NOT**: negates the condition
 
 ```sql
 SELECT * FROM customers
@@ -80,9 +80,9 @@ WHERE NOT newsletter_subscribed;
 
 ---
 
-## **4. ORDER BY: Sort results**
+## **4. ORDER BY: Sorting results**
 
-Sort the rows according to one or more columns.
+It sorts the rows by one or more columns.
 
 ```sql
 SELECT * FROM customers
@@ -101,9 +101,9 @@ ORDER BY city ASC, last_name ASC;
 
 ---
 
-## **5. LIMIT: Limit results**
+## **5. LIMIT: Limiting results**
 
-Displays only a specific number of rows.
+It displays only a specific number of rows.
 
 ```sql
 SELECT * FROM customers
@@ -128,17 +128,17 @@ ORDER BY created_at DESC
 LIMIT 3;
 ```
 
-This query shows the 3 most recent orders with total greater than 50.
+This query shows the 3 most recent orders with a total greater than 50.
 
 ---
 
 ## **7. Conclusion**
 
-- `SELECT` allows you to consult specific data.
-- `WHERE` filters results according to conditions.
-- `ORDER BY` organizes the results.
+- `SELECT` lets you query specific data.
+- `WHERE` filters results based on conditions.
+- `ORDER BY` sorts the results.
 - `LIMIT` restricts the number of rows displayed.
-- By combining these tools you can obtain very powerful and specific queries.
+- By combining these tools you can write very powerful and specific queries.
 
 ---
 
@@ -146,4 +146,4 @@ This query shows the 3 most recent orders with total greater than 50.
 
 ---
 
-In the next topic we will learn to work with **aggregation functions (SUM, COUNT, AVG, MAX, MIN) and groupings with `GROUP BY`.**
+In the next topic we will learn how to work with **aggregate functions (SUM, COUNT, AVG, MAX, MIN) and grouping with `GROUP BY`.**

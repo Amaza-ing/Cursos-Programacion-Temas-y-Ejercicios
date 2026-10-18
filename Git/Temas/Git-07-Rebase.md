@@ -2,13 +2,13 @@
 
 ## **1. Introduction**
 
-The `git rebase` command allows you to rewrite the commit history to keep it cleaner and more linear. It is used to reorganize, modify or combine commits, avoiding unnecessary branches and facilitating code review.
+The `git rebase` command lets you rewrite the commit history to keep it cleaner and more linear. It's used to reorganize, modify or combine commits, avoiding unnecessary branches and making code review easier.
 
 ### **Benefits of `git rebase`**
 
-- Maintains a cleaner and easier to understand history.
-- Avoid unnecessary merges when integrating changes from a main branch.
-- Allows you to modify previous commits without affecting the content of the code.
+- Keeps the history cleaner and easier to understand.
+- Avoids unnecessary merges when integrating changes from a main branch.
+- Lets you modify previous commits without affecting the content of the code.
 
 ---
 
@@ -16,14 +16,14 @@ The `git rebase` command allows you to rewrite the commit history to keep it cle
 
 ### **2.1. Interactive rebase**
 
-Allows you to modify specific commits, reorder them, combine them or delete them.
+It lets you modify specific commits, reorder them, combine them or delete them.
 
 ```bash
 git rebase -i HEAD~3
 ```
 
 
-This command opens a text editor with the last 3 commits listed, where changes can be applied such as:
+This command opens a text editor listing the last 3 commits, where you can apply changes such as:
 
 - `pick` → Keep the commit.
 - `reword` → Modify the commit message.
@@ -31,9 +31,9 @@ This command opens a text editor with the last 3 commits listed, where changes c
 - `squash` → Combine several commits into one.
 - `drop` → Delete a commit.
 
-### **2.2. Removing one branch over another**
+### **2.2. Rebasing one branch onto another**
 
-Used to update one branch with changes from another without creating a merge commit.
+It's used to update a branch with the changes from another one without creating a merge commit.
 
 ```bash
 git checkout master
@@ -41,31 +41,31 @@ git rebase feature-branch
 ```
 
 
-This moves all `feature-branch` commits onto the most recent version of `master`.
+This moves all the commits of `feature-branch` onto the latest version of `master`.
 
 ---
 
 ## **3. Resolve conflicts during a rebase**
 
-If there are conflicts, Git will pause the process to allow them to be resolved.
+If there are conflicts, Git will pause the process so you can resolve them.
 
-1. Identify files in conflict with:
+1. Identify the conflicted files with:
    ```bash
    git status
    ```
 
-2. Edit the files and resolve conflicts manually.
+2. Edit the files and resolve the conflicts manually.
 3. Add the resolved changes:
    ```bash
    git add archivo-resuelto
    ```
 
-4. Continue rebasing:
+4. Continue the rebase:
    ```bash
    git rebase --continue
    ```
 
-5. If it is necessary to cancel the process:
+5. If you need to cancel the process:
    ```bash
    git rebase --abort
    ```
@@ -77,8 +77,8 @@ If there are conflicts, Git will pause the process to allow them to be resolved.
 
 | Command | Description |
 | ------------ | ----------------------------------------------------------------------- |
-| `git merge` | Merge branches, creating additional commits for the merged changes. |
-| `git rebase` | Move commits from one branch to another, maintaining a linear history.  |
+| `git merge` | Merges branches, creating additional commits for the combined changes. |
+| `git rebase` | Moves commits from one branch onto another, keeping a linear history.  |
 
 ---
 
@@ -95,17 +95,17 @@ git pull --rebase origin master
 ```
 
 
-This downloads remote changes and applies them before local commits.
+This downloads the remote changes and applies them before your local commits.
 
 ---
 
-## **6. Good practices when using `git rebase`**
+## **6. Best practices when using `git rebase`**
 
-- Use `git rebase -i` to clear history before pushing commits to a remote repository.
-- Avoid `git rebase` in shared branches to avoid rewriting the history of other collaborators.
+- Use `git rebase -i` to clean up the history before pushing commits to a remote repository.
+- Avoid `git rebase` on shared branches so you don't rewrite other collaborators' history.
 - Always make a backup (`git branch backup`) before a major rebase.
 - Use `git rebase --continue` and `git rebase --abort` carefully to handle errors without losing work.
 
 ---
 
-In the next topic, we will explore **how to work with `git cherry-pick` to select specific commits and apply them to other branches**.
+In the next topic, we'll explore **how to work with `git cherry-pick` to select specific commits and apply them to other branches**.

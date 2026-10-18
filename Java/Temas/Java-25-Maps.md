@@ -19,24 +19,24 @@ For example:
 - The price of a product based on its code
 - A student's grade based on their identifier
 - The stock quantity based on the product name
-- The country of a city from the city name
+- The country of a city based on the city's name
 
 With a list, searching for a value by “name” can be awkward, because you usually access it by position (`0`, `1`, `2`...).
 
-To solve this problem, Java has the **`Map`** structure, and one of its most used implementations is:
+To solve this problem, Java has the **`Map`** structure, and one of its most widely used implementations is:
 
 - `HashMap`
 
 In this topic you will learn:
 
-- What is an `Map`
-- What is an `HashMap`
-- How to save key-value pairs
+- What a `Map` is
+- What a `HashMap` is
+- How to store key-value pairs
 - How to add, read, modify and delete elements
-- How to tour an `HashMap`
+- How to iterate over a `HashMap`
 - Very useful methods like `containsKey`, `getOrDefault`, `putIfAbsent`
-- What happens with duplicate keys, `null` and the order
-- Typical errors and good practices
+- What happens with duplicate keys, `null` and ordering
+- Typical mistakes and good practices
 
 ---
 
@@ -44,9 +44,9 @@ In this topic you will learn:
 
 ---
 
-## 2. What is an `Map`
+## 2. What is a `Map`
 
-An `Map` is a structure that stores data in format:
+A `Map` is a structure that stores data in this format:
 
 - **key** → **value**
 
@@ -65,28 +65,28 @@ Here:
 
 The important idea is this:
 
-> In an `Map`, you do not search by index, but by key.
+> In a `Map`, you do not search by index, but by key.
 
 ---
 
-## 3. What is an `HashMap`
+## 3. What is a `HashMap`
 
 `HashMap` is a Java class that implements the `Map` interface.
 
 In practice, `HashMap` is one of the most common options when you need:
 
-- Save key-value pairs
-- Quick search by key
-- Add and delete entries with ease
+- To store key-value pairs
+- Fast lookups by key
+- To add and delete entries easily
 
-Think of an `HashMap` as a kind of “dictionary”:
+Think of a `HashMap` as a kind of “dictionary”:
 
-- you give a key
+- you give it a key
 - Java finds the associated value
 
 ---
 
-## 4. Import required
+## 4. Required imports
 
 `Map` and `HashMap` are in `java.util`, so you have to import them:
 
@@ -99,7 +99,7 @@ import java.util.Map;
 
 ## 5. `Map<K, V>`: generics
 
-As with `List<T>`, the maps use generics.
+As with `List<T>`, maps use generics.
 
 The general form is:
 
@@ -120,10 +120,10 @@ Map<String, Integer> ages = new HashMap<>();
 
 Here you are saying:
 
-- The key will be `String`
-- The value will be `Integer`
+- The key will be a `String`
+- The value will be an `Integer`
 
-That is to say:
+In other words:
 
 - `"Laura"` → `28`
 - `"Alex"` → `35`
@@ -132,7 +132,7 @@ That is to say:
 
 ## 6. Why do we use wrappers in `HashMap`?
 
-Just as in collections, in an `Map` generic types must be **objects**, not primitive types.
+Just as with collections, in a `Map` the generic types must be **objects**, not primitive types.
 
 This does not exist:
 
@@ -157,7 +157,7 @@ That's why the **wrappers** appear again here:
 
 ---
 
-## 7. Create an `HashMap`
+## 7. Creating a `HashMap`
 
 Recommended way:
 
@@ -165,10 +165,10 @@ Recommended way:
 Map<String, Integer> ages = new HashMap<>();
 ```
 
-Why so:
+Why this way:
 
-- You declare with the interface (`Map`)
-- You create with a concrete implementation (`HashMap`)
+- You declare it with the interface (`Map`)
+- You create it with a concrete implementation (`HashMap`)
 
 You could also do:
 
@@ -182,7 +182,7 @@ But it is usually recommended to program against the interface.
 
 ## 8. Basic operation: `put(key, value)`
 
-To save an entry on the map, `put` is used.
+To store an entry in the map, you use `put`.
 
 ```java
 import java.util.HashMap;
@@ -201,13 +201,13 @@ public class Main {
 }
 ```
 
-Here you have saved three key-value pairs.
+Here you have stored three key-value pairs.
 
 ---
 
-## 9. Read a value: `get(key)`
+## 9. Reading a value: `get(key)`
 
-To retrieve a value associated with a key, `get` is used.
+To retrieve the value associated with a key, you use `get`.
 
 ```java
 import java.util.HashMap;
@@ -228,12 +228,12 @@ public class Main {
 
 The idea is:
 
-- you give a key
+- you give it a key
 - Java returns the associated value
 
 ---
 
-## 10. What if the key does not exist
+## 10. What happens if the key does not exist
 
 If you call `get` with a key that is not in the map, the result will be `null`.
 
@@ -249,9 +249,9 @@ This is very important.
 If the expected value is an object, `null` means:
 
 - there is no such key
-- or there is no value associated
+- or there is no associated value
 
-With wrappers it can be delicate:
+With wrappers this can be tricky:
 
 ```java
 Integer age = ages.get("David");
@@ -266,9 +266,9 @@ But this would be dangerous:
 
 ---
 
-## 11. Duplicate keys: value is overwritten
+## 11. Duplicate keys: the value is overwritten
 
-In an `Map`, the keys must be unique.
+In a `Map`, keys must be unique.
 
 If you insert the same key twice, the previous value is replaced.
 
@@ -283,12 +283,12 @@ System.out.println(ages.get("Laura")); // 29
 
 Key point:
 
-- **No duplicate keys**
+- **There are no duplicate keys**
 - The new insertion overwrites the previous value
 
 ---
 
-## 12. Size and checks: `size()` e `isEmpty()`
+## 12. Size and checks: `size()` and `isEmpty()`
 
 ### 12.1. `size()`
 
@@ -304,7 +304,7 @@ System.out.println(ages.size()); // 2
 
 ### 12.2. `isEmpty()`
 
-Indicates if the map is empty.
+Tells you whether the map is empty.
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -316,9 +316,9 @@ if (ages.isEmpty()) {
 
 ---
 
-## 13. Check if a key exists: `containsKey`
+## 13. Checking whether a key exists: `containsKey`
 
-It is very common to want to check if a key exists before using it.
+You will very often want to check whether a key exists before using it.
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -328,13 +328,13 @@ System.out.println(ages.containsKey("Laura")); // true
 System.out.println(ages.containsKey("David")); // false
 ```
 
-This is usually clearer than depending on `get(...) == null`, especially when `null` could also be a valid value.
+This is usually clearer than relying on `get(...) == null`, especially when `null` could also be a valid value.
 
 ---
 
-## 14. Check if a value exists: `containsValue`
+## 14. Checking whether a value exists: `containsValue`
 
-You can also check if a value exists in any entry.
+You can also check whether a value exists in any entry.
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -347,9 +347,9 @@ System.out.println(ages.containsValue(50)); // false
 
 ---
 
-## 15. Delete entries: `remove`
+## 15. Deleting entries: `remove`
 
-### 15.1. Delete by key
+### 15.1. Deleting by key
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -375,9 +375,9 @@ If the key does not exist, it returns `null`.
 
 ---
 
-## 16. Modify a value
+## 16. Modifying a value
 
-Since `put` overwrites the value if the key already exists, it is also useful for modification.
+Since `put` overwrites the value if the key already exists, it is also useful for modifying values.
 
 ```java
 Map<String, Double> prices = new HashMap<>();
@@ -390,19 +390,19 @@ System.out.println(prices.get("Mouse")); // 17.99
 
 ---
 
-## 17. Loop through an `HashMap`
+## 17. Iterating over a `HashMap`
 
 Unlike lists and arrays, here you don't work by index.
 
-You will typically navigate a map in three main ways:
+You will typically iterate over a map in three main ways:
 
 - by keys
 - by values
-- for full entries (`key` + `value`)
+- by full entries (`key` + `value`)
 
 ---
 
-## 18. Loop keys with `keySet()`
+## 18. Iterating over keys with `keySet()`
 
 `keySet()` returns a set with all the keys in the map.
 
@@ -429,7 +429,7 @@ This prints the keys.
 
 ---
 
-## 19. Loop through values with `values()`
+## 19. Iterating over values with `values()`
 
 `values()` returns a collection with all the values.
 
@@ -456,11 +456,11 @@ This prints the values.
 
 ---
 
-## 20. Loop key and value with `entrySet()`
+## 20. Iterating over keys and values with `entrySet()`
 
 This is one of the most useful ways.
 
-`entrySet()` returns the set of map entries.
+`entrySet()` returns the set of entries in the map.
 
 Each entry has:
 
@@ -486,7 +486,7 @@ public class Main {
 }
 ```
 
-This way is very common when you need to work with both parts at the same time.
+This approach is very common when you need to work with both parts at the same time.
 
 ---
 
@@ -510,7 +510,7 @@ System.out.println(lauraAge); // 28
 System.out.println(davidAge); // 0
 ```
 
-This is very useful to avoid `null` in many cases.
+This is very useful for avoiding `null` in many cases.
 
 ---
 
@@ -549,7 +549,7 @@ If the key does not exist, nothing is added.
 
 ## 24. `clear()`
 
-Completely empty the map.
+Empties the map completely.
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -587,7 +587,7 @@ You might see something like:
 {Alex=35, Laura=28, Maria=31}
 ```
 
-or in another case a different order.
+or, in another case, a different order.
 
 ### 25.1. Key idea
 
@@ -596,8 +596,8 @@ or in another case a different order.
 
 Later, when you study other implementations, you will see alternatives such as:
 
-- `LinkedHashMap` → maintains insertion order
-- `TreeMap` → sort by key
+- `LinkedHashMap` → keeps the insertion order
+- `TreeMap` → sorts by key
 
 But in this topic we focus on `HashMap`.
 
@@ -605,11 +605,11 @@ But in this topic we focus on `HashMap`.
 
 ## 26. `null` in `HashMap`
 
-`HashMap` allows working with `null` in some cases.
+`HashMap` lets you work with `null` in some cases.
 
-### 26.1. Key `null`
+### 26.1. `null` key
 
-A key `null` may exist:
+A `null` key can exist:
 
 ```java
 Map<String, String> data = new HashMap<>();
@@ -618,9 +618,9 @@ data.put(null, "No key");
 System.out.println(data.get(null)); // No key
 ```
 
-### 26.2. `null` Securities
+### 26.2. `null` values
 
-You can also save `null` values:
+You can also store `null` values:
 
 ```java
 Map<String, String> users = new HashMap<>();
@@ -631,7 +631,7 @@ System.out.println(users.get("Laura")); // null
 
 ### 26.3. Be careful with this
 
-Although Java allows it, at the design level it can complicate your code:
+Although Java allows it, from a design point of view it can complicate your code:
 
 - `null` can mean “the key does not exist”
 - or “the key exists but the value is null”
@@ -640,11 +640,11 @@ That is why it is advisable to use it with care.
 
 ---
 
-## 27. Guided Example 1: Student Notes
+## 27. Guided example 1: student grades
 
 We are going to use a very clear case.
 
-We want to save the grade of several students using their name as a key.
+We want to store the grades of several students using their names as keys.
 
 ```java
 import java.util.HashMap;
@@ -671,9 +671,9 @@ You search directly by name.
 
 ---
 
-## 28. Guided Example 2: Update Stock
+## 28. Guided example 2: updating stock
 
-A very realistic case is to save stock by product.
+A very realistic case is storing the stock of each product.
 
 ```java
 import java.util.HashMap;
@@ -698,7 +698,7 @@ public class Main {
 
 ---
 
-## 29. Guided Example 3: Counting Reps
+## 29. Guided example 3: counting repetitions
 
 This example is very important because it shows a very typical use of `HashMap`.
 
@@ -734,15 +734,15 @@ Expected result:
 
 For each word:
 
-1. We looked at how many times it had already appeared
-2. If it was not there, we use `0`
-3. We save the new incremented value
+1. We check how many times it has already appeared
+2. If it is not there yet, we use `0`
+3. We store the new, incremented value
 
 This pattern is used a lot in real programming.
 
 ---
 
-## 30. Guided Example 4: Traverse an Entire Map
+## 30. Guided example 4: iterating over a whole map
 
 ```java
 import java.util.HashMap;
@@ -768,11 +768,11 @@ public class Main {
 
 ---
 
-## 31. Maps with objects as value
+## 31. Maps with objects as values
 
-An `HashMap` can not only store numbers or text. You can also save items.
+A `HashMap` can store more than just numbers or text. You can also store objects.
 
-Example with an `User` class:
+Example with a `User` class:
 
 ```java
 public class User {
@@ -790,7 +790,7 @@ public class User {
 }
 ```
 
-Map usage:
+Using it in a map:
 
 ```java
 import java.util.HashMap;
@@ -814,34 +814,34 @@ public class Main {
 
 Here:
 
-- the key is an `String` (`"u1"`, `"u2"`)
-- the value is an `User` object
+- the key is a `String` (`"u1"`, `"u2"`)
+- the value is a `User` object
 
 ---
 
-## 32. Maps with objects as key
+## 32. Maps with objects as keys
 
-You can also use objects as a key, but there is an important nuance here:
+You can also use objects as keys, but there is an important nuance here:
 
-- the key must be able to be compared correctly
-- this connects with the topic of `equals`
+- the key must be comparable correctly
+- this ties in with the topic on `equals`
 
-If you use objects as a key, you will usually have to define well:
+If you use objects as keys, you will usually have to define these properly:
 
 - `equals`
 - `hashCode`
 
-As you are still in an initial phase of the course, the safest thing for now is to use simple types like:
+As you are still at an early stage of the course, the safest thing for now is to use simple types as keys, such as:
 - `String`
 - `Integer`
 - `Long`
 - enums
 
-Later, when you delve into collections and hashing, this part will make a lot more sense.
+Later, when you go deeper into collections and hashing, this part will make a lot more sense.
 
 ---
 
-## 33. Mental difference between `ArrayList` and `HashMap`
+## 33. The conceptual difference between `ArrayList` and `HashMap`
 
 It is important to be clear about the difference.
 
@@ -849,8 +849,8 @@ It is important to be clear about the difference.
 
 In a list:
 
-- you keep items in order
-- access by index
+- you store items in order
+- you access them by index
 
 ```java
 List<String> names = new ArrayList<>();
@@ -862,10 +862,10 @@ System.out.println(names.get(0)); // Laura
 
 ### 33.2. `HashMap`
 
-On a map:
+In a map:
 
-- saves key-value pairs
-- access by password
+- you store key-value pairs
+- you access them by key
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -879,22 +879,22 @@ System.out.println(ages.get("Laura")); // 28
 Use `ArrayList` when:
 
 - you care about the order
-- you want to loop through elements as a sequence
-- you access by position
+- you want to iterate over elements as a sequence
+- you access them by position
 
 Use `HashMap` when:
 
 - you want to search by key
-- you need to associate one data with another
-- you are not interested in accessing by index
+- you need to associate one piece of data with another
+- you don't need to access by index
 
 ---
 
-## 34. Typical mistakes when starting
+## 34. Common beginner mistakes
 
 ### 34.1. Thinking that `get` throws an error if the key does not exist
 
-It doesn't throw error by itself. Returns `null`.
+It doesn't throw an error by itself. It returns `null`.
 
 ```java
 Map<String, Integer> ages = new HashMap<>();
@@ -905,23 +905,23 @@ The problem appears if you then do something that `null` does not support.
 
 ---
 
-### 34.2. Assume that order is guaranteed
+### 34.2. Assuming that the order is guaranteed
 
-With `HashMap`, order is not guaranteed.
+With `HashMap`, the order is not guaranteed.
 
-Don't write code that depends on printing or traversal order.
+Don't write code that depends on the printing or iteration order.
 
 ---
 
 ### 34.3. Confusing `containsKey` with `containsValue`
 
-This checks key:
+This checks a key:
 
 ```java
 ages.containsKey("Laura");
 ```
 
-This checks value:
+This checks a value:
 
 ```java
 ages.containsValue(28);
@@ -944,7 +944,7 @@ ages.put("Laura", 29);
 
 does not create two entries.
 
-Just leave one:
+Only one is left:
 
 ```text
 Laura -> 29
@@ -952,7 +952,7 @@ Laura -> 29
 
 ---
 
-### 34.5. Forget that generics use objects
+### 34.5. Forgetting that generics use objects
 
 This is wrong:
 
@@ -968,21 +968,21 @@ Map<String, Integer> ages = new HashMap<>();
 
 ---
 
-## 35. Good initial practices
+## 35. Good practices to start with
 
-- Use `Map` as reference type and `HashMap` as implementation.
+- Use `Map` as the reference type and `HashMap` as the implementation.
 - Choose clear names for the variables:
   - `agesByName`
   - `stockByProduct`
   - `usersById`
 - Use `getOrDefault` when it makes sense to avoid `null`.
-- Use `containsKey` when you want to clearly check if a key exists.
-- Do not depend on the order in `HashMap`.
+- Use `containsKey` when you want to check clearly whether a key exists.
+- Do not rely on the order of a `HashMap`.
 - Use simple and stable keys when you are starting out.
 
 ---
 
-## 36. Complete Example: Simple Product Management
+## 36. Complete example: simple product management
 
 This example brings together several operations in a realistic case.
 
@@ -1026,15 +1026,15 @@ public class Main {
 
 ---
 
-## 37. To take into account
+## 37. Things to keep in mind
 
 - `Map` represents a key-value structure.
 - `HashMap` is a widely used implementation of `Map`.
 - Keys must be unique.
 - `put` adds or replaces.
-- `get` retrieves one value per key.
+- `get` retrieves a value by its key.
 - `containsKey` and `containsValue` are used for checks.
-- `entrySet()` is very useful for looping key and value at the same time.
+- `entrySet()` is very useful for iterating over keys and values at the same time.
 - `HashMap` does not guarantee order.
 - `getOrDefault` and `putIfAbsent` are very practical methods.
 - Generics use objects (`Integer`, `Double`, etc.), not primitives.
@@ -1048,7 +1048,7 @@ public class Main {
 It allows you to work with a very powerful idea:
 
 - instead of searching by position
-- you search for a meaningful key
+- you search by a meaningful key
 
 That makes many problems easier to model.
 
@@ -1063,4 +1063,4 @@ Mastering `HashMap` will help you a lot in real projects, because maps constantl
 
 ---
 
-In the next topic we will continue with other very common Java collections, such as `Set`, `LinkedHashMap`, `TreeMap` or iterators, to expand your mastery of the collection library.
+In the next topic we will continue with other very common Java collections, such as `Set`, `LinkedHashMap`, `TreeMap` or iterators, to broaden your mastery of the collections library.

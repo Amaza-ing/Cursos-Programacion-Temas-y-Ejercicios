@@ -2,9 +2,9 @@
 
 ## **1. Introduction**
 
-In Angular, the `ngClass` directive allows you to dynamically assign CSS classes to HTML elements based on conditions or variable values. This makes it easy to customize the styling of components in response to events or data changes.
+In Angular, the `ngClass` directive lets you dynamically assign CSS classes to HTML elements based on conditions or variable values. This makes it easy to customize the styling of components in response to events or data changes.
 
-In this topic you will learn:
+In this topic, you will learn:
 
 - How to use `ngClass` to dynamically add or remove classes.
 - Different ways to apply `ngClass`.
@@ -16,17 +16,17 @@ In this topic you will learn:
 
 The `ngClass` directive is used in HTML templates to apply CSS classes conditionally or dynamically. It can be used in different ways:
 
-1. **As a text string**: A class is directly assigned.
+1. **As a string**: A class is assigned directly.
 2. **As an array of strings**: Multiple classes can be added.
 3. **As an object**: Classes can be assigned conditionally.
 
 ---
 
-## **3. Different Ways to Use `ngClass`**
+## **3. Different ways to use `ngClass`**
 
-To use ngClass we must add it to the imports: `imports: [NgClass]`
+To use ngClass, we must add it to the imports: `imports: [NgClass]`
 
-### **3.1. Using `ngClass` with a text string**
+### **3.1. Using `ngClass` with a string**
 
 A CSS class can be assigned directly from the component.
 
@@ -133,9 +133,9 @@ export class ExampleComponent {
 
 ---
 
-### **3.4. Alternate Classes with Events**
+### **3.4. Toggling classes with events**
 
-It is possible to toggle classes using events such as `click`.
+You can toggle classes using events such as `click`.
 
 #### **File: `example.component.ts`**
 
@@ -167,9 +167,9 @@ export class ExampleComponent {
 ## **4. Conclusion**
 
 - `ngClass` makes it easy to dynamically apply CSS classes in Angular.
-- Can be used as a text string, array or a conditional key object.
-- Allows classes to be switched through events such as `click`.
-- Improves customization and interaction in Angular applications.
+- It can be used as a string, an array or an object with conditional keys.
+- It lets you toggle classes through events such as `click`.
+- It improves customization and interaction in Angular applications.
 
 ---
 

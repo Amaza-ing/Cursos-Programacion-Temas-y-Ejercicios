@@ -2,13 +2,13 @@
 
 ## **1. Introduction**
 
-HTML forms allow user interaction with the web page, capturing information that can be sent to a server for processing. They are used in records, surveys, searches, among others.
+Forms in HTML let the user interact with the web page, collecting information that can be sent to a server for processing. They're used for sign-ups, surveys and searches, among other things.
 
 ---
 
 ## **2. Structure of a form with `<form>`**
 
-An HTML form is defined with the `<form>` tag and contains different elements to enter information.
+An HTML form is defined with the `<form>` tag and contains different elements for entering information.
 
 ### **Basic example of a form:**
 
@@ -23,8 +23,8 @@ An HTML form is defined with the `<form>` tag and contains different elements to
 
 ### **Explanation:**
 
-- `input type="text"`: Text field to enter information.
-- `button type="submit"`: Button to send the form.
+- `input type="text"`: A text field for entering information.
+- `button type="submit"`: A button to submit the form.
 
 ---
 
@@ -32,7 +32,7 @@ An HTML form is defined with the `<form>` tag and contains different elements to
 
 Forms can submit data using two methods:
 
-- **GET**: Send the data in the URL. Used for search forms or non-sensitive data.
+- **GET**: Sends the data in the URL. Used for search forms or non-sensitive data.
 - **POST**: Sends the data hidden in the body of the request. Used for sensitive data or large forms.
 
 ### **Example of a form with GET:**
@@ -45,7 +45,7 @@ Forms can submit data using two methods:
 ```
 
 - `action`: Specifies the URL where the data will be sent.
-- `method`: Defines the sending method (GET or POST).
+- `method`: Defines the submission method (GET or POST).
 
 ### **Example of a form with POST:**
 
@@ -59,20 +59,20 @@ Forms can submit data using two methods:
 
 ---
 
-## **4. Basic fields in forms**
+## **4. Basic form fields**
 
-Forms can contain various types of fields to capture information.
+Forms can contain various types of fields to collect information.
 
-The `<label>` element can be used to create a label that identifies the field by matching the `for` attribute of the `<label>` with the `id` of the field. This improves the user experience, since clicking on the label allows you to edit the field.
+You can use the `<label>` element to create a label that identifies a field, by matching the `for` attribute of the `<label>` with the field's `id`. This improves the user experience, since clicking the label lets you edit the field.
 
-You can also wrap an `<label>`-field set into an `<fieldset>` to better structure the tags and fields.
+You can also wrap a `<label>`-field pair in a `<fieldset>` to give your labels and fields a better structure.
 
 ### Important attributes:
 
 - `id` uniquely identifies a field.
-- `name` is the name of a specific field when the form is submitted.
+- `name` is the name a specific field is sent with when the form is submitted.
 - `value` is the value of that field.
-- `placeholder` displays a text while the field is empty.
+- `placeholder` displays some text while the field is empty.
 
 ### **Example of basic fields:**
 
@@ -97,9 +97,9 @@ You can also wrap an `<label>`-field set into an `<fieldset>` to better structur
 </form>
 ```
 
-### **Input types in forms and validations**
+### **Input types and validation in forms**
 
-In addition to text fields, there are other types of entries with built-in validations.
+Besides text fields, there are other input types with built-in validation.
 
 ```html
 <form>
@@ -121,11 +121,11 @@ In addition to text fields, there are other types of entries with built-in valid
 
 ---
 
-## **5. Use of selectors (`<select>`, `<option>`), checkboxes and radio buttons**
+## **5. Using selects (`<select>`, `<option>`), checkboxes and radio buttons**
 
-Forms allow you to select predefined options using drop-down lists, checkboxes, and radio buttons.
+Forms let you choose predefined options using drop-down lists, checkboxes and radio buttons.
 
-### **`select` example with options:**
+### **Example of a `select` with options:**
 
 ```html
 <form>
@@ -155,7 +155,7 @@ Forms allow you to select predefined options using drop-down lists, checkboxes, 
 </form>
 ```
 
-### **Radio buttons example:**
+### **Example of radio buttons:**
 
 ```html
 <form>
@@ -168,13 +168,13 @@ Forms allow you to select predefined options using drop-down lists, checkboxes, 
 
 ---
 
-[![HTML forms](https://img.youtube.com/vi/nEW11p_-gMo/0.jpg)](https://www.youtube.com/watch?v=nEW11p_-gMo&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Forms in HTML](https://img.youtube.com/vi/nEW11p_-gMo/0.jpg)](https://www.youtube.com/watch?v=nEW11p_-gMo&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **6. Basic validations in forms**
+## **6. Basic form validation**
 
-HTML provides automatic validations using attributes such as `required`, `pattern`, `minlength`, and `maxlength`.
+HTML provides automatic validation through attributes such as `required`, `pattern`, `minlength` and `maxlength`.
 
 ```html
 <form>
@@ -198,9 +198,9 @@ HTML provides automatic validations using attributes such as `required`, `patter
 
 ---
 
-## **7. Good practices in HTML forms**
+## **7. Good practices for HTML forms**
 
 - Use `<label>` tags to improve accessibility.
-- Apply HTML validations before relying on JavaScript validations.
+- Apply HTML validation before relying on JavaScript validation.
 - Use `placeholder` only as a complement, not as a replacement for `<label>` tags.
 - Use `fieldset` to group related fields.

@@ -1,15 +1,15 @@
 # Exercises - Topic 12: Arrays
 
-Below you will find **10 practical exercises** for working with **arrays**: creation, index access, modification, `length` and looping.
+Below you will find **10 practical exercises** for working with **arrays**: creating them, accessing elements by index, modifying them, `length` and looping through them.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Create an array and show its size
 
-Creates an `int[] numbers` array with size `5`.  
-Prints the value of `numbers.length`.
+Create an `int[] numbers` array of size `5`.  
+Print the value of `numbers.length`.
 
 <details><summary>Show solution</summary>
 
@@ -28,11 +28,11 @@ public class Main {
 
 ## Exercise 2: Literal initialization and element access
 
-Create an `String[] colors` array with these values:
+Create a `String[] colors` array with these values:
 
 - `"Blue"`, `"Orange"`, `"Purple"`
 
-Prints the first and last element.
+Print the first and last elements.
 
 <details><summary>Show solution</summary>
 
@@ -51,11 +51,11 @@ public class Main {
 
 ---
 
-## Exercise 3: Modify an element of the array
+## Exercise 3: Modify an array element
 
-Creates an `int[] scores` array with `{10, 20, 30, 40}` values.
+Create an `int[] scores` array with the values `{10, 20, 30, 40}`.
 
-Change the value of the second position (index 1) to `25` and print the entire array using a loop.
+Change the value at the second position (index 1) to `25` and print the entire array using a loop.
 
 <details><summary>Show solution</summary>
 
@@ -77,7 +77,7 @@ public class Main {
 
 ---
 
-## Exercise 4: Add all the elements of an array
+## Exercise 4: Add up all the elements of an array
 
 Declare `int[] values = {3, 6, 2, 9}` and calculate the total sum with a loop.
 
@@ -104,7 +104,7 @@ public class Main {
 
 ## Exercise 5: Find the maximum value
 
-Declara `int[] values = {7, 3, 11, 2, 9}`.
+Declare `int[] values = {7, 3, 11, 2, 9}`.
 
 Find the maximum value using a loop and display the result.
 
@@ -163,7 +163,7 @@ public class Main {
 
 ## Exercise 7: Create an array and fill it with a pattern
 
-Creates an `int[] numbers` array of size `6`.
+Create an `int[] numbers` array of size `6`.
 
 Fill it with the values:
 
@@ -195,7 +195,7 @@ public class Main {
 
 ---
 
-## Exercise 8: Search for a value and stop when finding it
+## Exercise 8: Search for a value and stop when you find it
 
 Declare `int[] values = {4, 8, 15, 16, 23, 42}` and a variable `target` with value `16`.
 
@@ -227,8 +227,8 @@ public class Main {
 
 Create a method `printFirstAndLast` that receives `int[] values` and prints:
 
-- El primer elemento
-- El último elemento
+- The first element
+- The last element
 
 Call the method from `main` with an example array.
 
@@ -259,9 +259,9 @@ public class Main {
 
 Declare `int[] source = {2, 4, 6, 8}` and create an `int[] copy` array of the same size.
 
-Copy all values ​​from `source` to `copy` using a loop.
+Copy all the values from `source` to `copy` using a loop.
 
-Print `copy` to check.
+Print `copy` to check it.
 
 <details><summary>Show solution</summary>
 

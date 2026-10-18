@@ -1,4 +1,4 @@
-# **Topic 11: Props Father to Son**
+# **Topic 11: Props from Parent to Child**
 
 ## **1. Introduction**
 
@@ -8,11 +8,11 @@ In React, data typically “flows down” from parent components to child compon
 
 In this topic you will learn:
 
-- What props are and what they are for.
+- What props are and what they're for.
 - How to pass props from a parent component to a child component.
 - How to read props in the child component.
 - How to use `props` with destructuring.
-- Good practices and typical errors.
+- Best practices and common mistakes.
 
 ---
 
@@ -21,24 +21,24 @@ In this topic you will learn:
 **Props** (properties) are values that a component receives from outside.
 
 - A **parent** component sends data.
-- A **child** component receives them.
-- The son should not modify those props.
+- A **child** component receives it.
+- The child shouldn't modify those props.
 
 Think of a component as a function:
 
-- You pass him arguments.
-- Returns a result.
+- You pass it arguments.
+- It returns a result.
 
 In React:
 
-- You pass him props.
-- Returns JSX.
+- You pass it props.
+- It returns JSX.
 
 ---
 
-## **3. Pass props from parent**
+## **3. Passing props from the parent**
 
-To pass props, you write attributes to the child component:
+To pass props, you write attributes on the child component:
 
 ```js
 <UserCard name="Alex" role="Admin" />
@@ -47,13 +47,13 @@ To pass props, you write attributes to the child component:
 Here:
 
 - `name` and `role` are props.
-- Its values ​​are sent from the parent.
+- Their values are sent from the parent.
 
 ---
 
-## **4. Receive props on child**
+## **4. Receiving props in the child**
 
-### **4.1. Way 1: Receive `props` as an object**
+### **4.1. Option 1: Receiving `props` as an object**
 
 ```js
 function UserCard(props) {
@@ -68,11 +68,11 @@ function UserCard(props) {
 export default UserCard;
 ```
 
-This way works, but when there are many props it can be less comfortable.
+This works, but when there are many props it can be less convenient.
 
 ---
 
-### **4.2. Way 2: Destructuring (recommended)**
+### **4.2. Option 2: Destructuring (recommended)**
 
 ```js
 function UserCard({ name, role }) {
@@ -90,11 +90,11 @@ export default UserCard;
 Advantages:
 
 - Cleaner code.
-- Do not repeat `props.`.
+- You don't repeat `props.`.
 
 ---
 
-## **5. Complete example: Father → Son**
+## **5. Complete example: Parent → Child**
 
 ### **5.1. `UserCard.jsx`**
 
@@ -128,17 +128,17 @@ function App() {
 export default App;
 ```
 
-Note that:
+Notice that:
 
 - `App` is the parent.
-- `UserCard` is the son.
+- `UserCard` is the child.
 - The parent reuses the same component with different values.
 
 ---
 
-## **6. Pass dynamic values (variables) as props**
+## **6. Passing dynamic values (variables) as props**
 
-You will not always pass strings “by hand”. The normal thing is to pass variables.
+You won't always pass strings “by hand”. Usually you'll pass variables.
 
 Example:
 
@@ -153,12 +153,12 @@ function App() {
 
 Here:
 
-- The `{}` braces indicate that you are passing a **JavaScript expression**.
-- There are no quotes.
+- The curly braces `{}` indicate that you're passing a **JavaScript expression**.
+- You don't use quotes.
 
 ---
 
-## **7. Pass numbers, booleans and objects**
+## **7. Passing numbers, booleans and objects**
 
 Props can be of any type.
 
@@ -174,7 +174,7 @@ Props can be of any type.
 <Badge isNew={true} />
 ```
 
-In booleans, you can use the short version:
+For booleans, you can use the shorthand:
 
 ```js
 <Badge isNew />
@@ -233,14 +233,14 @@ export default TasksList;
 
 Here:
 
-- The `key` goes in the repeating component.
+- The `key` goes on the repeated component.
 - The rest of the data is passed as props.
 
 ---
 
-## **9. Typical errors**
+## **9. Common mistakes**
 
-### **9.1. Forgetting braces in dynamic values**
+### **9.1. Forgetting the braces in dynamic values**
 
 Incorrect:
 
@@ -256,7 +256,7 @@ Correct:
 
 ---
 
-### **9.2. Try to modify props in the child**
+### **9.2. Trying to modify props in the child**
 
 Props are read-only.
 
@@ -269,30 +269,30 @@ function UserCard({ name }) {
 }
 ```
 
-If you need to change something, that usually indicates that it should be **state** (useState) or that the parent should send different values.
+If you need to change something, that usually means it should be **state** (useState) or that the parent should send different values.
 
 ---
 
-## **10. Good practices**
+## **10. Best practices**
 
-- Name props with intention: `title`, `isOpen`, `price`.
+- Name props with intent: `title`, `isOpen`, `price`.
 - Keep child components as “presentational” as possible.
-- Use destructuring when the component receives multiple props.
-- If you pass a lot of props, you may need to reorganize components (or use Context later).
+- Use destructuring when the component receives several props.
+- If you're passing a lot of props, you may need to reorganize your components (or use Context later on).
 
 ---
 
-## **11. To take into account**
+## **11. Things to keep in mind**
 
 - Props = data that a parent sends to a child.
-- The usual flow is from top to bottom.
-- The props are not modified in the child.
+- The usual flow is top-down.
+- Props aren't modified in the child.
 - You can pass any type of data.
 
 ---
 
-[![Props Father to Son](https://img.youtube.com/vi/N-uDcR4t9Yk/0.jpg)](https://www.youtube.com/watch?v=N-uDcR4t9Yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
+[![Props from Parent to Child](https://img.youtube.com/vi/N-uDcR4t9Yk/0.jpg)](https://www.youtube.com/watch?v=N-uDcR4t9Yk&list=PLzA2VyZwsq_-dE3Jvunglxq8a6UcH6gnF)
 
 ---
 
-In the next topic we will look at **`className` and `htmlFor`**, two key attributes in React when working with CSS and forms.
+In the next topic we'll look at **`className` and `htmlFor`**, two key attributes in React when you work with CSS and forms.

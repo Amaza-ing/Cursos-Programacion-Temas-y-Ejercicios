@@ -1,20 +1,20 @@
-# **Topic 12: Management of Reactive Forms with `FormGroup` and `FormControl`**
+# **Topic 12: Managing Reactive Forms with `FormGroup` and `FormControl`**
 
 ## **1. Introduction**
 
-In Angular, **reactive forms** allow advanced control of input data, validations, and events without relying on the data model directly in the template. They are built using `FormGroup` and `FormControl`, making them easy to programmatically manipulate and validate.
+In Angular, **reactive forms** give you advanced control over input data, validations and events without depending on the data model directly in the template. They are built with `FormGroup` and `FormControl`, which makes them easy to manipulate and validate programmatically.
 
-In this topic you will learn:
+In this topic, you will learn:
 
 - How to create and manage reactive forms with `FormGroup` and `FormControl`.
 - How to add validations without the need for HTML attributes.
-- How to react to changes in forms dynamically.
+- How to react to form changes dynamically.
 
 ---
 
-## **2. Initial Configuration**
+## **2. Initial setup**
 
-To use reactive forms in Angular 19, it is necessary to import `ReactiveFormsModule` in the Component in which we are going to use it.
+To use reactive forms in Angular 19, you need to import `ReactiveFormsModule` in the component where you are going to use them.
 
 ```ts
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,9 +30,9 @@ export class ReactiveFormComponent {
 
 ---
 
-## **3. Creating a Basic Reactive Form**
+## **3. Creating a basic reactive form**
 
-The key to reactive forms in Angular is in `FormGroup` and `FormControl`.
+The key to reactive forms in Angular lies in `FormGroup` and `FormControl`.
 
 #### **File: `form.component.ts`**
 
@@ -71,11 +71,11 @@ export class FormComponent {
 ```
 
 
-### **3.1. Clear fields when submitting form**
+### **3.1. Clearing the fields when the form is submitted**
 
-To reset the fields we can use the `reset()` method of the reactive forms. This way, when the form is submitted, whatever the user has written will disappear.
+To reset the fields, we can use the `reset()` method of reactive forms. This way, when the form is submitted, whatever the user has typed will disappear.
 
-> Note: If you reset the form, do it last, after applying the rest of the logic or you will lose the data.
+> Note: If you reset the form, do it last, after applying the rest of the logic, or you will lose the data.
 
 ```ts
   submitForm() {
@@ -92,7 +92,7 @@ To reset the fields we can use the `reset()` method of the reactive forms. This 
 
 ---
 
-## **4. Validations in Reactive Forms**
+## **4. Validations in reactive forms**
 
 In reactive forms, validations are added in the `FormControl` constructor.
 
@@ -147,9 +147,9 @@ export class FormComponent {
 
 ---
 
-## **5. Detect Changes in Real Time**
+## **5. Detecting changes in real time**
 
-Changes to form values can be subscribed to using `valueChanges`.
+You can subscribe to changes in form values using `valueChanges`.
 
 #### **File: `form.component.ts`**
 
@@ -173,9 +173,9 @@ export class FormComponent {
 
 ## **6. Conclusion**
 
-- `FormGroup` and `FormControl` allow you to create highly structured forms.
+- `FormGroup` and `FormControl` let you create highly structured forms.
 - Validations are handled in the TypeScript code instead of the template.
-- `valueChanges` allows you to detect changes in real time.
+- `valueChanges` lets you detect changes in real time.
 
 ---
 

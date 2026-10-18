@@ -1,14 +1,14 @@
 # Exercises - Topic 15: Encapsulation, getters & setters and access modifiers
 
-Below you will find **10 practical exercises** on **encapsulation**, **getters & setters** and **access modifiers**: use of `private`, state control, validation in setters, `public` vs _package-private_, `protected` (introduction) and typical cases.
+Below you will find **10 practical exercises** on **encapsulation**, **getters & setters** and **access modifiers**: using `private`, controlling state, validation in setters, `public` vs _package-private_, `protected` (introduction) and typical cases.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Encapsulate basic attributes
 
-Create a class `Profile` with the attributes `private`:
+Create a class `Profile` with these `private` attributes:
 
 - `username` (String)
 - `age` (int)
@@ -17,9 +17,9 @@ Create:
 
 - Constructor with both parameters
 - `getUsername()`, `getAge()`
-- `setAge(int age)` not allowing negative values (if negative, don't change the value)
+- `setAge(int age)`, which must not allow negative values (if the value is negative, don't change it)
 
-In `main`, create an object, print the age, try putting `-5` and print again.
+In `main`, create an object, print the age, try setting it to `-5` and print it again.
 
 <details><summary>Show solution</summary>
 
@@ -67,7 +67,7 @@ public class Main {
 
 ---
 
-## Exercise 2: Setter with validation of `String`
+## Exercise 2: Setter with `String` validation
 
 Create a class `Account` with:
 
@@ -75,11 +75,11 @@ Create a class `Account` with:
 
 Create:
 
-- Builder
+- Constructor
 - `getEmail()`
-- `setEmail(String email)` to ignore `null` or empty/white strings (`isBlank()`)
+- `setEmail(String email)`, which ignores `null` and empty/blank strings (`isBlank()`)
 
-Try `main` by assigning `"   "` and then a valid email.
+Test it in `main` by assigning `"   "` and then a valid email.
 
 <details><summary>Show solution</summary>
 
@@ -131,10 +131,10 @@ Create a class `BankAccount` with:
 
 Requirements:
 
-- DO NOT believe `setBalance`
+- DO NOT create `setBalance`
 - Create `getBalance()`
 - Create `deposit(double amount)` (only if amount > 0)
-- Create `withdraw(double amount)` (only if amount > 0 and <= balance, devuelve boolean)
+- Create `withdraw(double amount)` (only if amount > 0 and <= balance; it returns a boolean)
 
 <details><summary>Show solution</summary>
 
@@ -177,7 +177,7 @@ public class BankAccount {
 
 ---
 
-## Exercise 4: Getter boolean with `is...` convention
+## Exercise 4: Boolean getter with the `is...` convention
 
 Create a class `FeatureFlag` with:
 
@@ -185,9 +185,9 @@ Create a class `FeatureFlag` with:
 
 Create:
 
-- Builder who receives `enabled`
+- Constructor that receives `enabled`
 - Getter called `isEnabled()`
-- `enable()` and `disable()` method
+- `enable()` and `disable()` methods
 
 <details><summary>Show solution</summary>
 
@@ -229,7 +229,7 @@ Create setters with validation:
 - `setName`: if `null` or `isBlank()`, assign `"Unknown"`
 - `setAge`: if `< 0`, assign `0`
 
-In the constructor, instead of assigning directly, it calls the setters.
+In the constructor, call the setters instead of assigning the values directly.
 
 <details><summary>Show solution</summary>
 
@@ -275,7 +275,7 @@ public class User {
 
 ---
 
-## Exercise 6: “Read only” field (without setter)
+## Exercise 6: “Read-only” field (no setter)
 
 Create a class `Ticket` with:
 
@@ -285,7 +285,7 @@ Create a class `Ticket` with:
 Requirements:
 
 - `id` is assigned in the constructor and has NO setter
-- `description` can change with `setDescription(String description)` with `isBlank()` validation
+- `description` can change through `setDescription(String description)`, validated with `isBlank()`
 
 <details><summary>Show solution</summary>
 
@@ -321,17 +321,17 @@ public class Ticket {
 
 ---
 
-## Exercise 7: _Package-private_ (without modifier) in a helper class
+## Exercise 7: _Package-private_ (no modifier) in a helper class
 
 Create an `app.model` package with:
 
 - `User` class (`public`)
 - `InternalLogger` class (no modifier, _package-private_)
 
-`InternalLogger` must have an `log(String message)` method.
+`InternalLogger` must have a `log(String message)` method.
 In `User`, create a method `printInfo()` that uses `InternalLogger`.
 
-Check that from an `Main` in another package you CANNOT use `InternalLogger`.
+Check that you CANNOT use `InternalLogger` from a `Main` class in another package.
 
 <details><summary>Show solution</summary>
 
@@ -383,7 +383,7 @@ public class Main {
 
 ---
 
-## Exercise 8: `private` in attributes and range control
+## Exercise 8: `private` attributes and range checking
 
 Create a class `Temperature` with:
 
@@ -391,8 +391,8 @@ Create a class `Temperature` with:
 
 Create:
 
--Getter
-- Setter that only allows values between `-100` and `100` (if not, don't change the value)
+- Getter
+- Setter that only allows values between `-100` and `100` (otherwise, don't change the value)
 
 <details><summary>Show solution</summary>
 
@@ -428,13 +428,13 @@ Create a class `BaseMessage` with:
 
 - `protected String prefix`
 
-Create a constructor that initializes the prefix and an `print(String text)` method that prints:
+Create a constructor that initializes the prefix and a `print(String text)` method that prints:
 
 ```
 prefix + text
 ```
 
-Create a class `ErrorMessage extends BaseMessage` that uses the same prefix but adds `"ERROR: "` to the constructor.
+Create a class `ErrorMessage extends BaseMessage` that uses the same prefix but adds `"ERROR: "` in its constructor.
 
 <details><summary>Show solution</summary>
 
@@ -473,7 +473,7 @@ public class Main {
 
 ---
 
-## Exercise 10: Design a “safe” object with intent methods
+## Exercise 10: Design a “safe” object with intention-revealing methods
 
 Create a class `InventoryItem` with:
 
@@ -482,12 +482,12 @@ Create a class `InventoryItem` with:
 
 Requirements:
 
-- Builder with `name` and `stock` (if stock < 0, usar 0)
-- Getter para ambos
-- NO crear `setStock`
-- Crear métodos:
-  - `addStock(int amount)` (solo si amount > 0)
-  - `removeStock(int amount)` (only if amount > 0 and <= stock, devuelve boolean)
+- Constructor with `name` and `stock` (if stock < 0, use 0)
+- Getters for both
+- DO NOT create `setStock`
+- Create these methods:
+  - `addStock(int amount)` (only if amount > 0)
+  - `removeStock(int amount)` (only if amount > 0 and <= stock; it returns a boolean)
 
 <details><summary>Show solution</summary>
 

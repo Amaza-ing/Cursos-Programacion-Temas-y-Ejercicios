@@ -1,25 +1,25 @@
 # Exercises - Topic 03: Privacy, security, limits and responsible use of AI
 
-Below, you will find practical exercises to learn how to use Copilot safely, critically and responsibly.
+Below, you'll find hands-on exercises to learn how to use Copilot safely, critically and responsibly.
 
 ## Exercise 1: Classify sensitive information
 
-Indicates whether it would be appropriate to directly enter the following information into a Copilot prompt. Briefly justify each case.
+Say whether it would be appropriate to enter the following information directly into a Copilot prompt. Briefly justify each case.
 
 1. A code snippet with no real data.
 2. A password to access a database.
-3. A list with names, emails and telephone numbers of clients.
+3. A list of customers' names, emails and phone numbers.
 4. A generic console error with no private data.
-5. A complete internal contract of a company.
+5. A company's complete internal contract.
 
 <details>
 <summary><strong>Show solution</strong></summary>
 
-1. **Yes, in principle it may be appropriate**, as long as it does not contain secrets, credentials or private information.
-2. **No**, passwords, tokens or private keys should never be entered.
-3. **No**, it contains personal customer data.
-4. **Yes, this may normally be appropriate**, as long as it does not include private routes, keys, tokens or personal data.
-5. **Not directly**, because it may contain confidential information. It should be summarized, anonymized, or only necessary excerpts should be used if company policy permits.
+1. **Yes, in principle it may be appropriate**, as long as it doesn't contain secrets, credentials or private information.
+2. **No**, you should never enter passwords, tokens or private keys.
+3. **No**, it contains customers' personal data.
+4. **Yes, it's usually appropriate**, as long as it doesn't include private paths, keys, tokens or personal data.
+5. **Not directly**, because it may contain confidential information. It should be summarized or anonymized, or only the necessary excerpts should be used, if company policy allows it.
 
 </details>
 
@@ -32,7 +32,7 @@ Te paso el archivo completo de clientes con nombres, emails, teléfonos y compra
 ```
 
 
-Rewrite it to make it more secure.
+Rewrite it to make it safer.
 
 <details>
 <summary><strong>Show solution</strong></summary>
@@ -52,7 +52,7 @@ This version avoids sharing personal data and asks for general methodological gu
 
 ## Exercise 3: Review AI-generated code
 
-Copilot generates this code to log into an app:
+Copilot generates this code to log in to an application:
 
 ```javascript
 function login(username, password) {
@@ -64,7 +64,7 @@ function login(username, password) {
 ```
 
 
-Indicate at least three safety or quality problems.
+Point out at least three security or quality problems.
 
 <details>
 <summary><strong>Show solution</strong></summary>
@@ -75,20 +75,20 @@ Possible problems:
 2. The password is very weak.
 3. There is no encryption or password hashing.
 4. There is no connection to a real authentication system.
-5. There is no control of failed attempts.
+5. Failed attempts are not limited.
 6. The response message is too simple for a real system.
-7. The entry is not validated or sanitized.
+7. The input is not validated or sanitized.
 
-A real version should use a secure authentication system, hashed passwords, environment variables, and additional controls.
+A real version should use a secure authentication system, hashed passwords, environment variables and additional controls.
 
 </details>
 
 ## Exercise 4: Decide whether to use Copilot
 
-Read the following cases and indicate whether Copilot can be used as a support, if it should be avoided, or if it should be used with close supervision.
+Read the following cases and say whether Copilot can be used as support, whether it should be avoided or whether it should be used under close supervision.
 
 1. Create a first version of technical documentation.
-2. Generate an automatic decision on granting a scholarship.
+2. Generate an automatic decision on awarding a scholarship.
 3. Explain a programming error.
 4. Write code that handles online payments.
 5. Summarize personal notes containing medical data.
@@ -96,11 +96,11 @@ Read the following cases and indicate whether Copilot can be used as a support, 
 <details>
 <summary><strong>Show solution</strong></summary>
 
-1. **Can be used as support**, reviewing the content.
+1. **It can be used as support**, as long as you review the content.
 2. **It should be avoided as an automatic decision**, because it directly affects a person.
-3. **Can be used as support**, verifying the explanation.
-4. **Can be used with a lot of supervision**, because it involves security, money and possible sensitive data.
-5. **Should be carefully avoided or anonymized**, because it contains personal medical information.
+3. **It can be used as support**, as long as you verify the explanation.
+4. **It can be used under close supervision**, because it involves security, money and possibly sensitive data.
+5. **It should be avoided, or the data carefully anonymized**, because it contains personal medical information.
 
 </details>
 
@@ -113,21 +113,21 @@ Before accepting a response generated by Copilot, what would you check? Write a 
 
 A suitable checklist could be:
 
-- Check that the answer really solves the problem posed.
+- Check that the answer really solves the problem you described.
 - Check for technical errors.
 - Verify important data in reliable sources.
 - Check that no private or sensitive data has been included.
-- Check if the code contains credentials, tokens or private routes.
+- Check whether the code contains credentials, tokens or private paths.
 - Test the code before using it.
 - Review licenses or dependencies if external code has been generated.
-- Check that the result follows the project or company standards.
-- Make sure that one person makes the final decision.
+- Check that the result follows the project's or the company's standards.
+- Make sure that a person makes the final decision.
 
 </details>
 
 ## Exercise 6: Identify a hallucination
 
-An AI responds:
+An AI answers:
 
 ```text
 No necesitas revisar el código generado por Copilot, porque todo el código que produce está comprobado automáticamente y siempre es seguro.
@@ -139,7 +139,7 @@ Explain why this answer is incorrect.
 <details>
 <summary><strong>Show solution</strong></summary>
 
-The answer is incorrect because the code generated by AI may contain errors, bad practices, vulnerabilities or solutions that do not fit the project. Copilot can be a very useful tool, but its suggestions need to be reviewed, tested, and adapted.
+The answer is incorrect because AI-generated code may contain errors, bad practices, vulnerabilities or solutions that don't fit the project. Copilot can be a very useful tool, but its suggestions need to be reviewed, tested and adapted.
 
 A more correct answer would be:
 

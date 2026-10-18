@@ -7,10 +7,10 @@ Welcome to the **Complete Git and GitHub Course**, a repository designed to help
 ## 📌 **What will you learn in this course?**
 
 🔹 How to install and configure Git on your system.<br>
-🔹 Understand the difference between `git init`, `git clone`, `git add`, `git commit` and `git push`.<br>
-🔹 Workflow in Git and the most used branching strategies.<br>
+🔹 Understanding the difference between `git init`, `git clone`, `git add`, `git commit` and `git push`.<br>
+🔹 The Git workflow and the most widely used branching strategies.<br>
 🔹 How to work as a team with GitHub: forks, pull requests and merges.<br>
-🔹 Troubleshooting and how to undo changes in Git.<br>
+🔹 Resolving conflicts and how to undo changes in Git.<br>
 🔹 Creating and managing versions with tags (`tags`) and releases.<br>
 🔹 Git customization and automation.<br>
 
@@ -20,25 +20,25 @@ This course is structured in **practical modules**, each with examples and exerc
 
 ## 📂 **Course structure**
 
-Each theme is located in a **Markdown (`.md`)** file within this repository. You can browse the topics in the course directory:
+Each topic is in a **Markdown (`.md`)** file in this repository. You can browse the topics in the course directory:
 
-| 📚 Theme | Description |
+| 📚 Topic | Description |
 | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | 📝 [Topic 1: Introduction to Git and GitHub](Temas/Git-01-Introducción.md) | Basic concepts and first steps.                     |
 | 🌱 [Topic 2: Workflow in Git](Temas/Git-02-Flujo-de-Trabajo.md) | How Git works and its life cycle.                   |
-| 🌿 [Topic 3: Branches in Git](Temas/Git-03-Ramas.md) | Creation, merging and management of branches.                    |
-| 🔄 [Topic 4: Remote repositories](Temas/Git-04-Repositorios-Remotos.md) | Use of `git push`, `git pull` and collaboration on GitHub. |
-| 🏷️ [ Topic 5: Tags and versions](Temas/Git-05-Tags.md) | How to manage versions with `git tag`.                 |
-| 📌 [Topic 6: Save temporary changes](Temas/Git-06-Stash.md) | Using `git stash` for temporary changes.             |
-| 🏗️ [topic 7: Rebase and organization of history](Temas/Git-07-Rebase.md) | Advanced use of `git rebase`.                           |
-| 🍒 [topic 8: Apply specific commits](Temas/Git-08-Cherry-Pick.md) | Using `git cherry-pick` to select changes.      |
-| ⏪ [Topic 9: Undo changes](Temas/Git-09-Restore-Revert.md) | Use of `git restore` and `git revert`.                    |
-| 🔐 [ Topic 10: Public and private repositories](Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md) | How to manage repositories and delete branches.           |
-| 📜 [Tem 11: Creation of README.md](Temas/Git-11-Readme.md) | Using Markdown to document projects.              |
-| 🌳 [ Topic 12: Work on several branches at the same time](Temas/Git-12-Varias-Ramas.md) | How to work with multiple branches at the same time.                |
-| 💠 [ Topic 13: Workflows in Git](Temas/Git-13-Workflows.md) | Branch and workflow strategies.               |
+| 🌿 [Topic 3: Branches in Git](Temas/Git-03-Ramas.md) | Creating, merging and managing branches.                    |
+| 🔄 [Topic 4: Remote repositories](Temas/Git-04-Repositorios-Remotos.md) | Using `git push`, `git pull` and collaborating on GitHub. |
+| 🏷️ [Topic 5: Tags and versions](Temas/Git-05-Tags.md) | How to manage versions with `git tag`.                 |
+| 📌 [Topic 6: Saving temporary changes](Temas/Git-06-Stash.md) | Using `git stash` for temporary changes.             |
+| 🏗️ [Topic 7: Rebase and organizing the history](Temas/Git-07-Rebase.md) | Advanced use of `git rebase`.                           |
+| 🍒 [Topic 8: Applying specific commits](Temas/Git-08-Cherry-Pick.md) | Using `git cherry-pick` to select changes.      |
+| ⏪ [Topic 9: Undoing changes](Temas/Git-09-Restore-Revert.md) | Using `git restore` and `git revert`.                    |
+| 🔐 [Topic 10: Public and private repositories](Temas/Git-10-Visibilidad-y-Borrado-de-Repositorios.md) | How to manage repositories and delete branches.           |
+| 📜 [Topic 11: Creating a README.md](Temas/Git-11-Readme.md) | Using Markdown to document projects.              |
+| 🌳 [Topic 12: Working on several branches at once](Temas/Git-12-Varias-Ramas.md) | How to work with multiple branches at the same time.                |
+| 💠 [Topic 13: Workflows in Git](Temas/Git-13-Workflows.md) | Branching strategies and workflows.               |
 
-📌 **To see all available themes, check this repository.**
+📌 **To see all the available topics, check this repository.**
 
 ---
 
@@ -46,15 +46,15 @@ Each theme is located in a **Markdown (`.md`)** file within this repository. You
 
 If you prefer to learn visually, here is a video where the entire course is explained with practical examples:
 
-📺 **Complete Git & Github Course**
+📺 **Complete Git & GitHub Course**
 
-[![Complete Git and Github course](https://img.youtube.com/vi/yKMzq9VhmXo/0.jpg)](https://www.youtube.com/watch?v=yKMzq9VhmXo&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
+[![Complete Git and GitHub course](https://img.youtube.com/vi/yKMzq9VhmXo/0.jpg)](https://www.youtube.com/watch?v=yKMzq9VhmXo&list=PLzA2VyZwsq_9pAerklFF1vWe8lnWw03le)
 
 ---
 
 ## 🛠️ **Prerequisites**
 
-This course starts from 0, so you don't have to start with any prior knowledge.
+This course starts from scratch, so you don't need any prior knowledge.
 
 Before you start, make sure you have:
 
@@ -62,19 +62,19 @@ Before you start, make sure you have:
 - A GitHub account ([Create account](https://github.com/)).
 - A recommended code editor (VS Code, Sublime Text, etc.).
 
-Although this is explained in the first sections of the course.
+That said, all of this is explained in the first sections of the course.
 
 ---
 
 ## 📌 **How to use this repository**
 
-You can follow the course directly in this Github repository, but if you prefer, you can download it.
+You can follow the course directly in this GitHub repository or, if you prefer, download it.
 
 1️⃣ **Clone the repository** on your local machine.
 
 2️⃣ **Explore the topics** and follow the guides in each `.md` file.
 
-3️⃣ **Perform the exercises and tests** in your own development environment.
+3️⃣ **Do the exercises and try things out** in your own development environment.
 
 ---
 

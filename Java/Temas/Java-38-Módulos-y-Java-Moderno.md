@@ -16,41 +16,41 @@ So far you have worked with many fundamental elements of Java:
 - generics
 - lambdas
 - streams
--optional
+- optional
 - dates
 - files
 - records
 - sealed classes
 - basic concurrency
 
-In this topic we are going to go one step further and see two important ideas:
+In this topic we're going to go one step further and look at two important ideas:
 
 - **the Java module system**
 - **some features of modern Java**
 
 Modules allow you to better organize large applications.  
-Modern Java includes improvements designed to make the language clearer, more expressive, and more comfortable.
+Modern Java includes improvements designed to make the language clearer, more expressive, and more convenient.
 
 In this topic you will learn:
 
-- What problem do the modules solve?
-- What is a module in Java
-- What is `module-info.java`
+- What problem modules solve
+- What a module is in Java
+- What `module-info.java` is
 - How to use `requires`
 - How to use `exports`
 - How to organize packages within a module
-- What is `java.base`
-- What are `requires transitive` and `opens`
-- What are `import module` statements
-- What are compact source files?
-- What modern features have you seen in the course
+- What `java.base` is
+- What `requires transitive` and `opens` are
+- What `import module` declarations are
+- What compact source files are
+- Which modern features you've already seen in the course
 - How to think of Java as a language that continues to evolve
 
 ---
 
 ## 2. The problem of organizing large applications
 
-In small projects, you can have a few classes:
+In small projects, you might have just a few classes:
 
 ```text
 Main.java
@@ -58,14 +58,14 @@ User.java
 Product.java
 ```
 
-But in large applications you can have:
+But in large applications you might have:
 
 - dozens or hundreds of classes
 - many packages
 - external libraries
 - separate layers
 - dependencies between parts of the project
-- code that should not be accessible from anywhere
+- code that shouldn't be accessible from just anywhere
 
 Example:
 
@@ -79,13 +79,13 @@ com.amazaing.app.security
 
 Packages help organize code, but they are not always enough to control dependencies and visibility well.
 
-The modules appear there.
+That's where modules come in.
 
 ---
 
-## 3. What is a module
+## 3. What is a module?
 
-A **module** is a unit of organization superior to the package.
+A **module** is a unit of organization one level above the package.
 
 A module can contain:
 
@@ -99,9 +99,9 @@ A module can contain:
 
 The idea is that a module can say:
 
-- what do you need
-- what does it offer
-- what is hidden
+- what it needs
+- what it offers
+- what it hides
 
 ---
 
@@ -135,7 +135,7 @@ A module can contain multiple packages.
 
 ---
 
-## 5. What is `module-info.java`
+## 5. What is `module-info.java`?
 
 A module is defined by a special file called:
 
@@ -143,7 +143,7 @@ A module is defined by a special file called:
 module-info.java
 ```
 
-This file is placed at the root of the module source code.
+This file is placed at the root of the module's source code.
 
 Example:
 
@@ -176,7 +176,7 @@ The important file is:
 module-info.java
 ```
 
-And inside the module is declared:
+And the module is declared inside it:
 
 ```java
 module com.amazaing.app {
@@ -210,7 +210,7 @@ Here we have:
 
 - a module called `com.amazaing.app`
 - a package called `com.amazaing.app`
-- a class `Main`
+- a `Main` class
 
 ---
 
@@ -228,7 +228,7 @@ com.amazaing.products
 
 It is recommended to use unique and descriptive names.
 
-Avoid names that are too generic like:
+Avoid names that are too generic, such as:
 
 ```text
 app
@@ -273,9 +273,9 @@ because Java adds it automatically.
 
 ---
 
-## 10. Use `requires`
+## 10. Using `requires`
 
-When a module needs to use another module, it is declared with `requires`.
+When a module needs to use another module, this is declared with `requires`.
 
 Example:
 
@@ -287,7 +287,7 @@ module com.amazaing.app {
 
 This means:
 
-> `com.amazaing.app` module needs `java.sql` module
+> the `com.amazaing.app` module needs the `java.sql` module
 
 `java.sql` contains database-related classes, such as JDBC.
 
@@ -319,15 +319,15 @@ public class Main {
 }
 ```
 
-If the module does not declare `requires java.sql`, you would not be able to properly access those classes in a modular project.
+If the module didn't declare `requires java.sql`, it couldn't properly access those classes in a modular project.
 
 ---
 
-## 12. Use `exports`
+## 12. Using `exports`
 
-By default, packages from one module are not exposed to other modules.
+By default, a module's packages are not exposed to other modules.
 
-If you want a package to be used from outside, you must export it.
+If you want a package to be usable from outside, you must export it.
 
 ```java
 module com.amazaing.users {
@@ -404,13 +404,13 @@ public class Main {
 
 Here:
 
-- `com.amazaing.users` exports your package
+- `com.amazaing.users` exports its package
 - `com.amazaing.app` requires the users module
 - `Main` can use `User`
 
 ---
 
-## 14. Packages not exported
+## 14. Non-exported packages
 
 A module can have internal packages that it does not export.
 
@@ -429,7 +429,7 @@ com.amazaing.users.api
 com.amazaing.users.internal
 ```
 
-Only exported:
+Only this is exported:
 
 ```text
 com.amazaing.users.api
@@ -439,12 +439,12 @@ The internal package is hidden from other modules.
 
 This helps separate:
 
-- Public API
-- internal implementation
+- the public API
+- the internal implementation
 
 ---
 
-## 15. Example of public API and internal implementation
+## 15. Example of a public API and an internal implementation
 
 ```text
 com.amazaing.users.api.UserService
@@ -480,11 +480,11 @@ Modules allow a stronger level of encapsulation than packages.
 With packages you can organize.  
 With modules you can control which parts of the code are actually accessible from the outside.
 
-This helps:
+This helps you:
 
 - reduce coupling
 - protect internal details
-- improve maintenance
+- improve maintainability
 - make dependencies clearer
 - design cleaner APIs
 
@@ -511,7 +511,7 @@ module com.amazaing.orders {
 
 This means that whoever requires `com.amazaing.orders` will also have access to `com.amazaing.users`.
 
-It is a more advanced concept, but it is worth knowing it.
+It's a more advanced concept, but it's worth knowing about.
 
 ---
 
@@ -550,15 +550,15 @@ This means:
 - the package is exported
 - but only to the `com.amazaing.app` module
 
-It is not usually necessary when starting out, but is useful in more controlled designs.
+It is not usually necessary when starting out, but it is useful in more controlled designs.
 
 ---
 
 ## 20. `opens`
 
-`opens` allows opening a packet for reflection.
+`opens` lets you open a package for reflection.
 
-Reflection is a technique that allows classes, methods, and attributes to be inspected at runtime.
+Reflection is a technique that lets you inspect classes, methods and attributes at runtime.
 
 Some tools and frameworks use it.
 
@@ -572,12 +572,12 @@ module com.amazaing.app {
 
 This is not the same as `exports`.
 
-### 20.1. Simple difference
+### 20.1. The difference, simply put
 
-- `exports` allows using public classes from other modules
-- `opens` allows access by reflection
+- `exports` allows public classes to be used from other modules
+- `opens` allows access through reflection
 
-For introductory courses, the important thing is to know the general difference.
+In an introductory course, what matters is knowing the general difference.
 
 ---
 
@@ -609,7 +609,7 @@ module com.amazaing.app {
 
 It is a more advanced case.
 
-It can appear with annotation libraries or analysis tools.
+You may come across it with annotation libraries or analysis tools.
 
 ---
 
@@ -636,7 +636,7 @@ You don't need to master it yet, but it's good to know it exists.
 
 ---
 
-## 24. Keyword summary in `module-info.java`
+## 24. Summary of the keywords in `module-info.java`
 
 The most important ones are:
 
@@ -666,7 +666,7 @@ exports
 
 ---
 
-## 25. Complete Example: Products Module
+## 25. Complete example: a products module
 
 ### 25.1. Structure
 
@@ -732,9 +732,9 @@ public class Main {
 
 ---
 
-## 26. Compile modules from terminal
+## 26. Compiling modules from the terminal
 
-This section is more advanced, but it helps to understand how it works.
+This section is more advanced, but it helps you understand how it works.
 
 Let's assume this structure:
 
@@ -763,9 +763,9 @@ In real projects you will normally use an IDE or tools like Maven or Gradle, but
 
 Before the module system, Java mainly used the **classpath**.
 
-The classpath indicates where to look for classes and libraries.
+The classpath tells Java where to look for classes and libraries.
 
-With modules the **module path** appears.
+Modules bring in the **module path**.
 
 ### 27.1. Classpath
 
@@ -779,7 +779,7 @@ Busca clases y librerías de forma tradicional.
 Busca módulos con información declarada en module-info.java.
 ```
 
-At an initial level, you can think like this:
+For now, you can think of it like this:
 
 - traditional projects → classpath
 - modular projects → module path
@@ -794,13 +794,13 @@ Many Java projects do not use modules explicitly.
 
 For example, many projects with:
 
--Spring
+- Spring
 - Jakarta EE
--Maven
+- Maven
 - Gradle
-they can work without you writing an `module-info.java`.
+can work without you writing a `module-info.java`.
 
-This does not mean that the modules are not useful, but that they are not always necessary in initial courses or simple projects.
+This doesn't mean modules aren't useful, just that they aren't always necessary in introductory courses or simple projects.
 
 ---
 
@@ -825,14 +825,14 @@ It may not be worth using them if:
 - the project is small
 - you are learning the basics
 - you use frameworks that already manage the structure
-- adding modules complicates more than it helps
-- you still don't have a clear architecture
+- adding modules makes things more complicated instead of helping
+- you don't have a clear architecture yet
 
-To start, it is enough to understand them and know how to recognize an `module-info.java`.
+To start with, it's enough to understand them and be able to recognize a `module-info.java`.
 
 ---
 
-## 31. Modern Java: An Overview
+## 31. Modern Java: an overview
 
 Java has evolved a lot in recent years.
 
@@ -843,28 +843,28 @@ In this course you have already seen several:
 - lambdas
 - functional interfaces
 - Stream API
--Optional
+- Optional
 - Date/Time API
 - records
 - sealed classes
 - virtual threads
-- improvements in `switch`
+- improvements to `switch`
 - pattern matching
 - modules
 
-Modern Java seeks to be:
+Modern Java aims to be:
 
 - more expressive
 - safer
 - clearer
-- more comfortable to learn
-- more prepared for large applications
+- easier to learn
+- better suited to large applications
 
 ---
 
 ## 32. Module Import Declarations
 
-In modern Java there is a way to import all packages exported by a module with a single statement:
+In modern Java there is a way to import all packages exported by a module with a single declaration:
 
 ```java
 import module java.base;
@@ -874,9 +874,9 @@ This is called:
 
 - **Module Import Declaration**
 
-The idea is to reduce many individual imports when you are using classes from the same module.
+The idea is to avoid lots of individual imports when you are using classes from the same module.
 
-For example, instead of importing multiple concrete classes:
+For example, instead of importing several specific classes:
 
 ```java
 import java.util.List;
@@ -892,12 +892,12 @@ import module java.base;
 
 ### 32.1. Important
 
-This does not replace the complete module system.
+This doesn't replace the full module system.
 
 It is not the same as `requires`.
 
-- `requires` is written to `module-info.java`
-- `import module` is written to an `.java` file
+- `requires` is written in `module-info.java`
+- `import module` is written in a `.java` file
 
 ---
 
@@ -918,13 +918,13 @@ public class Main {
 }
 ```
 
-With `import module java.base`, classes exported by `java.base` can be made available without importing them one by one.
+With `import module java.base`, classes exported by `java.base` can be available without importing them one by one.
 
-Even so, in many projects classic imports are still used because they are explicit and known to everyone.
+Even so, many projects still use classic imports because they are explicit and familiar to everyone.
 
 ---
 
-## 34. Classic Imports vs `import module`
+## 34. Classic imports vs `import module`
 
 ### 34.1. Classic imports
 
@@ -936,8 +936,8 @@ import java.util.Optional;
 Advantages:
 
 - they are very explicit
-- work on all previous modern versions
-- they are family
+- they work in all earlier modern versions
+- they are familiar
 
 ### 34.2. `import module`
 
@@ -947,11 +947,11 @@ import module java.base;
 
 Advantages:
 
-- can reduce repetitive imports
-- fits with Java's modular organization
-- can be comfortable in examples or small programs
+- it can reduce repetitive imports
+- it fits in with Java's modular organization
+- it can be convenient in examples or small programs
 
-For an initial course, it is a good idea to know it, but it is not mandatory to always use it.
+In an introductory course, it's a good idea to know about it, but you don't have to use it all the time.
 
 ---
 
@@ -998,7 +998,7 @@ In real projects you will still use classes, packages and complete structures.
 
 Compact source files are intended to make it easier to write small programs.
 
-Learning example:
+Example for learning:
 
 ```java
 void main() {
@@ -1025,27 +1025,27 @@ Both styles can coexist.
 
 Related to the above, modern Java allows simpler `main` methods in certain contexts.
 
-Classic shape:
+Classic form:
 
 ```java
 public static void main(String[] args) {
 }
 ```
 
-Simplest way:
+Simpler form:
 
 ```java
 void main() {
 }
 ```
 
-This makes it easier to start without explaining concepts such as:
+This makes it easier to get started without having to explain, from minute one, concepts such as:
 
 - `public`
 - `static`
 - `String[] args`
 
-In a complete course, it is still important to understand the classical form, because you will constantly see it in projects and documentation.
+In a full course, it's still important to understand the classic form, because you'll see it all the time in projects and documentation.
 
 ---
 
@@ -1095,7 +1095,7 @@ switch (status) {
 }
 ```
 
-Modern shape:
+Modern form:
 
 ```java
 String message = switch (status) {
@@ -1108,8 +1108,8 @@ String message = switch (status) {
 Advantages:
 
 - less code
-- less `break`
-- can return a value
+- fewer `break` statements
+- it can return a value
 - more expressive
 
 ---
@@ -1148,7 +1148,7 @@ String text = switch (result) {
 };
 ```
 
-Since the hierarchy is closed, Java can know which cases exist.
+Since the hierarchy is closed, Java knows which cases exist.
 
 ---
 
@@ -1227,13 +1227,13 @@ public class Main {
 }
 ```
 
-They don't replace everything that exists about concurrency, but they simplify many scenarios where there are many tasks waiting.
+They don't replace everything else in concurrency, but they simplify many scenarios where lots of tasks are waiting.
 
 ---
 
 ## 44. Text blocks
 
-Text blocks allow you to write multi-line text more comfortably.
+Text blocks let you write multi-line text more easily.
 
 Example:
 
@@ -1249,9 +1249,9 @@ String html = """
 
 They are useful for:
 
--HTML
--JSON
--SQL
+- HTML
+- JSON
+- SQL
 - long messages
 - templates
 
@@ -1270,7 +1270,7 @@ String json = """
 
 ## 45. `var`
 
-Java allows you to infer the type of local variables with `var`.
+Java can infer the type of local variables with `var`.
 
 Example:
 
@@ -1297,11 +1297,11 @@ Avoid it if it makes the code less clear:
 var result = service.process();
 ```
 
-If you don't understand what type it returns, it may be better to write the type explicit.
+If it isn't clear what type it returns, it may be better to write the type explicitly.
 
 ---
 
-## 46. Modern APIs that you have already seen
+## 46. Modern APIs you've already seen
 
 In this course you have also worked with modern APIs such as:
 
@@ -1313,7 +1313,7 @@ java.util.Optional
 java.math.BigDecimal
 ```
 
-These APIs make Java more convenient and secure.
+These APIs make Java more convenient and safer.
 
 Examples:
 
@@ -1346,7 +1346,7 @@ Good programming is not about using the newest thing, but about using the right 
 
 ---
 
-## 48. Complete Example – Simple Modern App
+## 48. Complete example: a simple modern application
 
 ### 48.1. `module-info.java`
 
@@ -1455,7 +1455,7 @@ This example mixes several modern ideas:
 - records
 - sealed interfaces
 - streams
--optional
+- optional
 - modern switch
 - BigDecimal
 
@@ -1474,70 +1474,70 @@ A reasonable progression would be:
 5. use modern APIs like Date/Time and Files
 6. learn records and sealed classes
 7. understand basic concurrency
-8. Learn about modern modules and tools
-9. Practice with complete projects
+8. get to know modules and modern tools
+9. practice with complete projects
 
 The goal is not to memorize syntax, but to understand what problem each tool solves.
 
 ---
 
-## 50. Typical mistakes when getting started with modules and modern Java
+## 50. Common mistakes when getting started with modules and modern Java
 
 ### 50.1. Thinking that a package and a module are the same
 
 They are not.
 
-- package: organize classes
-- module: organize packages and dependencies
+- package: organizes classes
+- module: organizes packages and dependencies
 
-### 50.2. Forget `exports`
+### 50.2. Forgetting `exports`
 
 If a module does not export a package, other modules will not be able to use it directly.
 
 ### 50.3. Confusing `requires` with `import`
 
-- `requires` declares dependency between modules
-- `import` allows using classes with shorter names within the code
+- `requires` declares a dependency between modules
+- `import` lets you refer to classes by shorter names in your code
 
 ### 50.4. Using modules in projects that are too simple
 
 For small projects, they can add unnecessary complexity.
 
-### 50.5. Use modern features without improving the code
+### 50.5. Using modern features that don't improve the code
 
 Don't use records, streams, sealed classes or `var` just because they exist.  
 Use them when they make the code clearer.
 
-### 50.6. Abuse `var`
+### 50.6. Overusing `var`
 
 If the type is not obvious, writing it explicitly may be better.
 
 ---
 
-## 51. Good practices
+## 51. Best practices
 
 - Use packages to organize classes.
 - Use modules when you need to control dependencies and visibility.
 - Export only packages that are part of your public API.
-- Keep internal packages without exporting.
+- Keep internal packages unexported.
 - Use `requires` to declare real dependencies.
 - Use records for immutable data.
 - Use sealed classes for closed hierarchies.
-- Use modern `switch` when clarity improves.
+- Use modern `switch` when it improves clarity.
 - Use streams for clear data flows.
 - Use traditional loops when they are more readable.
-- Learn the news as tools, not as obligations.
+- Learn the new features as tools, not as obligations.
 
 ---
 
-## 52. To take into account
+## 52. Things to keep in mind
 
 - `module-info.java` defines a module.
 - `requires` declares dependencies.
-- `exports` exposes packets.
-- `opens` allows access by reflection.
+- `exports` exposes packages.
+- `opens` allows access through reflection.
 - `java.base` is available automatically.
-- `import module` allows importing packages exported by a module.
+- `import module` lets you import the packages exported by a module.
 - Compact source files simplify small programs.
 - Modern Java includes records, sealed classes, streams, optional, virtual threads and improvements to `switch`.
 - Not all projects need modules.
@@ -1547,7 +1547,7 @@ If the type is not obvious, writing it explicitly may be better.
 
 ## 53. Final summary
 
-The modules allow you to organize Java applications in a clearer and more controlled way.
+Modules let you organize Java applications in a clearer, more controlled way.
 
 With a file:
 
@@ -1566,7 +1566,7 @@ module com.amazaing.app {
 
 This helps define what your module needs and what parts it exposes.
 
-In addition, modern Java has added many improvements that make the language more comfortable and expressive:
+In addition, modern Java has added many improvements that make the language more convenient and expressive:
 
 - records
 - sealed classes
@@ -1575,13 +1575,13 @@ In addition, modern Java has added many improvements that make the language more
 - virtual threads
 - compact source files
 - module import declarations
-- Modern APIs like `java.time`, `java.nio.file` and `Stream API`
+- modern APIs like `java.time`, `java.nio.file` and `Stream API`
 
-The main idea is that Java continues to evolve, but maintains a solid foundation.
+The main idea is that Java keeps evolving while keeping a solid foundation.
 
 To program well in modern Java you don't need to use all the new features at once.  
 The important thing is to understand what problem each one solves and apply it when it improves your code.
 
 ---
 
-In the next topic we will see how to work with **Maven**.
+In the next topic we'll see how to work with **Maven**.

@@ -4,13 +4,13 @@
 
 Below you will find exercises on using interfaces and models in Angular.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: Create a Model for an object that represents a Product**
+### **Exercise 1: Create a model for an object that represents a product**
 
-Defines an `Product` interface with the following attributes:
+Define a `Product` interface with the following attributes:
 
 - `id: number`
 - `name: string`
@@ -35,9 +35,9 @@ export interface Product {
 
 ---
 
-### **Exercise 2: Using an Interface in a Component**
+### **Exercise 2: Use an interface in a component**
 
-Create a method on a component that returns a product based on the `Product` interface.
+Create a method in a component that returns a product based on the `Product` interface.
 
 <details><summary>Show solution</summary>
 

@@ -1,16 +1,16 @@
-# **Exercises - Topic 18: Use of IF in Queries and Stored Procedures in MySQL**
+# **Exercises - Topic 18: Using IF in Queries and Stored Procedures in MySQL**
 
-Below, you will find 6 practical exercises to work with **IF** in MySQL, both as a function in queries and as a control structure in procedures.
+Below you will find 6 practical exercises to work with **IF** in MySQL, both as a function in queries and as a control structure in procedures.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-### **Exercise 1: IF in query for price classification**
+### **Exercise 1: IF in a query to classify prices**
 
-In the `products(id, name, price)` table, displays the name and a calculated column `categoria_precio` that indicates `'Caro'` if `price > 50`, otherwise `'Económico'`.
+In the `products(id, name, price)` table, display the name and a calculated column `categoria_precio` that shows `'Caro'` if `price > 50`, and `'Económico'` otherwise.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT name,
@@ -22,11 +22,11 @@ FROM products;
 
 ---
 
-### **Exercise 2: IF in query with date comparison**
+### **Exercise 2: IF in a query with a date comparison**
 
-In the `events(id, name, event_date)` table, display the name and an `estado_evento` field indicating `'Pasado'` if `event_date` is before the current date, or `'Próximo'` otherwise.
+In the `events(id, name, event_date)` table, display the name and an `estado_evento` field that shows `'Pasado'` if `event_date` is before the current date, or `'Próximo'` otherwise.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT name,
@@ -40,13 +40,13 @@ FROM events;
 
 ### **Exercise 3: Procedure with IF and ELSEIF**
 
-Create a procedure `evaluar_producto` that receives `p_id INT` and displays:
+Create an `evaluar_producto` procedure that takes `p_id INT` and displays:
 
-- `'Muy caro'` yes `price > 100`
-- `'Caro'` yes `price > 50`
+- `'Muy caro'` if `price > 100`
+- `'Caro'` if `price > 50`
 - `'Económico'` otherwise.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -72,9 +72,9 @@ DELIMITER ;
 
 ### **Exercise 4: IF in SELECT with additional calculation**
 
-In the `orders(id, total_amount)` table, display the `id`, the `total_amount`, and an `total_con_envio` column that sums to 5 if `total_amount` is less than 50, otherwise leave the same value.
+In the `orders(id, total_amount)` table, display the `id`, the `total_amount` and a `total_con_envio` column that adds 5 if `total_amount` is less than 50, and otherwise keeps the same value.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT id,
@@ -89,13 +89,13 @@ FROM orders;
 
 ### **Exercise 5: Procedure with nested IF**
 
-Create a procedure `clasificar_cliente_por_pedidos` that receives `p_id INT` and classifies like this:
+Create a `clasificar_cliente_por_pedidos` procedure that takes `p_id INT` and classifies the customer like this:
 
-- `'Sin pedidos'` if you have no records in `orders`.
-- `'Cliente nuevo'` if you have 1 or 2 orders.
-- `'Cliente recurrente'` if you have more than 2 orders.
+- `'Sin pedidos'` if they have no records in `orders`.
+- `'Cliente nuevo'` if they have 1 or 2 orders.
+- `'Cliente recurrente'` if they have more than 2 orders.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 DELIMITER $$
@@ -119,11 +119,11 @@ DELIMITER ;
 
 ---
 
-### **Exercise 6: IF in combination with other functions**
+### **Exercise 6: IF combined with other functions**
 
-In the `employees(id, hire_date)` table, display the `id`, the `hire_date`, and an `antiguedad_categoria` column indicating `'Antiguo'` if you have been with the company for more than 5 years, otherwise `'Reciente'`.
+In the `employees(id, hire_date)` table, display the `id`, the `hire_date` and an `antiguedad_categoria` column that shows `'Antiguo'` if the employee has been with the company for more than 5 years, and `'Reciente'` otherwise.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```sql
 SELECT id,

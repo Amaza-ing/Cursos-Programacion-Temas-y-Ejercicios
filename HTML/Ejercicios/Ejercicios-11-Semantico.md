@@ -2,15 +2,15 @@
 
 ## **Instructions:**
 
-Below you will find 5 practical exercises on semantic HTML.
+Below you'll find 5 practical exercises on semantic HTML.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Create a basic structure with semantic tags**
 
-Create an HTML page that contains a header (`<header>`), a navigation menu (`<nav>`), a main section (`<main>`), an article (`<article>`), a sidebar (`<aside>`), and a footer (`<footer>`).
+Create an HTML page that contains a header (`<header>`), a navigation menu (`<nav>`), a main section (`<main>`), an article (`<article>`), a sidebar (`<aside>`) and a footer (`<footer>`).
 
 <details><summary>Show solution</summary>
 
@@ -51,9 +51,9 @@ Create an HTML page that contains a header (`<header>`), a navigation menu (`<na
 
 ---
 
-### **Exercise 2: Convert an `div`-based structure to semantic HTML**
+### **Exercise 2: Convert a `div`-based structure to semantic HTML**
 
-Transform the following structure that uses `div` into a suitable semantic structure.
+Turn the following `div`-based structure into a proper semantic structure.
 
 ```html
 <div class="container">
@@ -123,9 +123,9 @@ Create an HTML structure that includes an image with a description using `<figur
 
 ---
 
-### **Exercise 5: Create an `<footer>` with additional bindings**
+### **Exercise 5: Create a `<footer>` with additional links**
 
-Design a footer that contains links to a privacy policy, terms of service, and social media.
+Design a footer that contains links to a privacy policy, terms of service and social media.
 
 <details><summary>Show solution</summary>
 

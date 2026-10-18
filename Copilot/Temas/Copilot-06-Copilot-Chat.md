@@ -1,6 +1,6 @@
 # Topic 06 — Copilot Chat applied to development
 
-## 1. Objectives of the topic
+## 1. Topic objectives
 
 In this topic you will learn how to use **GitHub Copilot Chat** as a development assistant within the editor.
 
@@ -11,7 +11,7 @@ By the end of this topic you should be able to:
 - Ask about a code selection.
 - Ask for technical explanations adapted to the user's level.
 - Request refactorings.
-- Request generation of tests.
+- Ask it to generate tests.
 - Ask for help with errors.
 - Use Copilot Chat to document code.
 - Differentiate between requesting new code and requesting analysis of existing code.
@@ -25,7 +25,7 @@ By the end of this topic you should be able to:
 
 Unlike inline suggestions, which appear while you write code, Copilot Chat allows you to have a conversation with Copilot.
 
-You can ask him things like:
+You can ask it things like:
 
 ```text
 What does this function do?
@@ -47,28 +47,28 @@ Why am I getting this error?
 Document this class using JSDoc.
 ```
 
-Copilot Chat is especially useful when you need broader explanation, analysis, or changes.
+Copilot Chat is especially useful when you need broader explanations, analysis or changes.
 
 ---
 
 ## 3. Difference between Copilot Chat and inline suggestions
 
-| Function | Inline Suggestions | Copilot Chat |
+| Feature | Inline suggestions | Copilot Chat |
 | ----------------- | ---------------------------- | -------------------------------------------- |
-| How to use | They appear while you write | Used through conversation |
-| Best for | Complete code quickly | Analyze, explain and transform code |
+| How you use it | They appear while you write | Through a conversation |
+| Best for | Completing code quickly | Analyzing, explaining and transforming code |
 | Context level | Code near the cursor | File, selection, project and prompt |
 | Interaction | Accept or reject | Ask, answer, iterate |
-| Example | Complete a function | Request tests, explain errors or refactor |
+| Example | Completing a function | Asking for tests, explaining errors or refactoring |
 
 In general:
 
-- Use **inline hints** to write code faster.
+- Use **inline suggestions** to write code faster.
 - Use **Copilot Chat** to understand, review, modify or plan code.
 
 ---
 
-## 4. Open Copilot Chat in Visual Studio Code
+## 4. Opening Copilot Chat in Visual Studio Code
 
 In Visual Studio Code you can open Copilot Chat in several ways.
 
@@ -78,7 +78,7 @@ In Visual Studio Code you can open Copilot Chat in several ways.
 2. Look for the Copilot or Chat icon in the sidebar.
 3. Click to open the chat panel.
 
-### Option 2: From the command palette
+### Option 2: From the Command Palette
 
 1. Press:
 
@@ -92,7 +92,7 @@ On macOS:
 Cmd + Shift + P
 ```
 
-2. Write:
+2. Type:
 
 ```text
 Copilot Chat
@@ -102,7 +102,7 @@ Copilot Chat
 
 ### Option 3: From the editor
 
-In some versions you can right-click on a code selection and choose a Copilot-related action.
+In some versions you can right-click a code selection and choose a Copilot-related action.
 
 For example:
 
@@ -116,11 +116,11 @@ Or:
 Copilot > Fix
 ```
 
-Exact availability may vary depending on editor and extension version.
+Exact availability may vary depending on the editor and extension version.
 
 ---
 
-## 5. Open Copilot Chat in JetBrains
+## 5. Opening Copilot Chat in JetBrains
 
 In JetBrains IDEs, Copilot Chat is usually available after installing the official GitHub Copilot plugin.
 
@@ -129,9 +129,10 @@ General steps:
 1. Open the IDE.
 2. Open a project.
 3. Find the GitHub Copilot window or tool.
-4. Log in if the IDE requests it.
+4. Sign in if the IDE asks you to.
 5. Open the chat.
 6. Write a question related to the file or project.
+
 The exact location may vary between IntelliJ IDEA, WebStorm, PyCharm or other IDEs.
 
 ---
@@ -142,7 +143,7 @@ Copilot Chat can help you with different types of tasks.
 
 ### 6.1. Explanation questions
 
-They are used to understand code.
+Use them to understand code.
 
 Examples:
 
@@ -162,7 +163,7 @@ Explain this code as if I were new to JavaScript modules.
 
 ### 6.2. Generation questions
 
-They are used to create new code.
+Use them to create new code.
 
 Examples:
 
@@ -182,7 +183,7 @@ Create a controller method that returns all users.
 
 ### 6.3. Refactoring questions
 
-They serve to improve existing code.
+Use them to improve existing code.
 
 Examples:
 
@@ -202,7 +203,7 @@ Split this function into smaller helper functions.
 
 ### 6.4. Testing questions
 
-They are used to generate or improve tests.
+Use them to generate or improve tests.
 
 Examples:
 
@@ -222,7 +223,7 @@ Review these tests and suggest missing cases.
 
 ### 6.5. Debugging questions
 
-They are used to analyze errors.
+Use them to analyze errors.
 
 Examples:
 
@@ -242,7 +243,7 @@ Why does this code return undefined?
 
 ### 6.6. Documentation questions
 
-They serve to generate explanations or comments.
+Use them to generate explanations or comments.
 
 Examples:
 
@@ -264,12 +265,12 @@ Document the parameters and return value of this method.
 
 One of the most useful ways to use Copilot Chat is to select a code snippet before asking.
 
-### Step by step guide
+### Step-by-step guide
 
 1. Open a code file.
 2. Select the function or block you want to analyze.
 3. Open Copilot Chat.
-4. Write a concrete instruction.
+4. Write a specific instruction.
 
 Example:
 
@@ -282,13 +283,13 @@ Advantages of selecting code:
 - Copilot knows exactly which part you are referring to.
 - The answer is usually more precise.
 - You prevent it from analyzing irrelevant parts of the file.
-- You can work little by little on small fragments.
+- You can work step by step on small snippets.
 
 ---
 
-## 8. Ask about a complete file
+## 8. Asking about a whole file
 
-You can also ask Copilot to scan an entire file.
+You can also ask Copilot to analyze an entire file.
 
 Examples:
 
@@ -306,14 +307,14 @@ Review this file and suggest improvements in readability and maintainability.
 
 This option is useful when:
 
-- You open code that you don't know.
-- Review legacy code.
+- You open code you are not familiar with.
+- You are reviewing legacy code.
 - You want to document a file.
 - You need an overview before modifying something.
 
 ---
 
-## 9. Ask about the project
+## 9. Asking about the project
 
 In some cases, Copilot Chat can use project or workspace context.
 
@@ -334,9 +335,9 @@ Explain the general structure of this project.
 However, you must be careful:
 
 - Copilot may not have all the context.
-- You may misinterpret the project structure.
-- You can skip important files.
-- Your answers should be checked by browsing the code.
+- It may misinterpret the project's structure.
+- It may overlook important files.
+- Its answers should be checked by browsing the code.
 
 ---
 
@@ -350,13 +351,13 @@ Basic prompt:
 Explain this code.
 ```
 
-Improved Prompt:
+Improved prompt:
 
 ```text
 Explain this code step by step. Assume I know basic JavaScript but I am new to asynchronous programming.
 ```
 
-Even more specific prompt:
+An even more specific prompt:
 
 ```text
 Explain this async function step by step. Focus on what await does, how errors are handled and what value the function returns.
@@ -366,9 +367,9 @@ Explain this async function step by step. Focus on what await does, how errors a
 
 ## 11. Copilot Chat for refactoring
 
-Copilot Chat can help you improve code, but you must clearly indicate that you do not want to change the behavior.
+Copilot Chat can help you improve code, but you must state clearly that you don't want the behavior to change.
 
-Recommended Prompt:
+Recommended prompt:
 
 ```text
 Refactor the selected code to improve readability. Do not change its behavior. Keep the same function names and return values. Explain the changes after showing the code.
@@ -380,7 +381,7 @@ This prompt is better than:
 Improve this.
 ```
 
-because it indicates:
+because it states:
 
 - What needs to be improved.
 - What should not change.
@@ -389,7 +390,7 @@ because it indicates:
 
 ---
 
-## 12. Guided Refactoring Example
+## 12. Guided refactoring example
 
 Initial code:
 
@@ -440,11 +441,12 @@ function getUserStatus(user) {
 The refactored version uses early returns to reduce nesting.
 
 ---
+
 ## 13. Copilot Chat to generate tests
 
 Copilot Chat can generate tests from the selected code.
 
-Recommended Prompt:
+Recommended prompt:
 
 ```text
 Generate Jest unit tests for the selected function. Include normal cases, edge cases and invalid input. Do not modify the source code.
@@ -504,33 +506,33 @@ describe("getUserStatus", () => {
 });
 ```
 
-> The generated tests must be reviewed and executed. Copilot may leave out important cases or assume details that are not correct.
+> The generated tests must be reviewed and run. Copilot may leave out important cases or assume details that are not correct.
 
 ---
 
 ## 14. Copilot Chat to detect errors
 
-When you have an error, Copilot Chat can help you better if you provide complete information.
+When you get an error, Copilot Chat can help you better if you provide complete information.
 
-Weak Prompt:
+Weak prompt:
 
 ```text
 Fix this error.
 ```
 
-Recommended Prompt:
+Recommended prompt:
 
 ```text
 I am trying to run this function, but I get the following error: [paste error]. Explain the likely cause and suggest a minimal fix. Do not rewrite unrelated parts of the code.
 ```
 
-The phrase **“Do not rewrite unrelated parts of the code”** is useful to prevent Copilot from changing too many.
+The phrase **“Do not rewrite unrelated parts of the code”** is useful to stop Copilot from changing more than it should.
 
 ---
 
 ## 15. Copilot Chat to document code
 
-You can request documentation of different types.
+You can ask for different types of documentation.
 
 ### 15.1. Brief comments
 
@@ -544,7 +546,7 @@ Add short comments to the selected code only where they improve readability. Do 
 Add JSDoc comments to this function. Include description, parameters, return value and possible errors.
 ```
 
-### 15.3. Documentation for README
+### 15.3. README documentation
 
 ```text
 Write a README section explaining how to use this module. Include installation, usage example and expected output.
@@ -554,15 +556,15 @@ Write a README section explaining how to use this module. Include installation, 
 
 ## 16. Copilot Chat to review code
 
-Copilot Chat can also function as a first code review.
+Copilot Chat can also serve as a first code review.
 
-Recommended Prompt:
+Recommended prompt:
 
 ```text
 Review this code as if you were doing a code review. Focus on readability, maintainability, possible bugs and missing tests. Do not rewrite the code yet. First, list the issues you find.
 ```
 
-This prompt is useful because it asks for analysis first and not for immediate modification.
+This prompt is useful because it asks for an analysis first rather than an immediate change.
 
 Then you can ask:
 
@@ -610,7 +612,7 @@ Before asking for changes, ask what the code does.
 Explain what this file does and identify the main responsibilities of each function.
 ```
 
-### Step 2: Request analysis
+### Step 2: Ask for an analysis
 
 ```text
 Review this code and identify possible improvements. Do not modify it yet.
@@ -628,21 +630,21 @@ Refactor only the validation logic to reduce duplication. Keep the rest unchange
 Explain what changed and why.
 ```
 
-### Step 5: Order tests
+### Step 5: Ask for tests
 
 ```text
 Generate tests for the changed behavior and include edge cases.
 ```
 
-### Step 6: Run and Review
+### Step 6: Run and review
 
 Run the project or the tests.
 
-Do not accept the solution until you check it.
+Do not accept the solution until you have checked it.
 
 ---
 
-## 19. Complete Copilot Chat Usage Example
+## 19. Complete example of using Copilot Chat
 
 Suppose we have this code:
 
@@ -673,7 +675,7 @@ function validateUser(user) {
 Explain what this function does step by step.
 ```
 
-### Step 2: Ask for problems
+### Step 2: Ask about problems
 
 ```text
 Identify possible problems or limitations in this validation function.
@@ -681,12 +683,12 @@ Identify possible problems or limitations in this validation function.
 
 Possible problems:
 
-- Does not check if `user` exists.
-- Does not return error messages.
+- It doesn't check whether `user` exists.
+- It doesn't return error messages.
 - Email validation is very basic.
-- All rules are mixed in a single function.
+- All the rules are mixed together in a single function.
 
-### Step 3: Request refactoring
+### Step 3: Ask for a refactoring
 
 ```text
 Refactor this function so it returns an object with isValid and errors. Keep the validation rules simple and do not use external libraries.
@@ -728,60 +730,60 @@ function validateUser(user) {
 }
 ```
 
-### Step 4: Order tests
+### Step 4: Ask for tests
 
 ```text
 Generate Jest tests for this function. Include valid user, missing user, missing name, invalid email and short password.
 ```
 
-### Step 5: Review Manually
+### Step 5: Review manually
 
 Before accepting the solution, check:
 
 - Does the new function change the return type?
-- Are there other parts of the project that were waiting for `true` or `false`?
+- Are there other parts of the project that expected `true` or `false`?
 - Are the error messages appropriate?
 - Do the tests cover the important cases?
 - Is the solution too complex for the objective?
 
 ---
 
-## 20. Good practices when using Copilot Chat
+## 20. Best practices when using Copilot Chat
 
 - Select the relevant code before asking.
 - Write specific prompts.
-- Indicates the language or framework.
+- State the language or framework.
 - Ask for analysis first and then changes.
 - Ask for small, reviewable changes.
 - Do not accept large modifications without understanding them.
 - Run the code after applying changes.
 - Generate or update tests.
 - Do not paste secrets, keys or private data in the chat.
-- Ask Copilot to explain his changes.
+- Ask Copilot to explain its changes.
 
 ---
 
-## 21. Copilot Chat Limits
+## 21. Copilot Chat's limitations
 
 Copilot Chat can be wrong.
 
-You can:
+It may:
 
 - Invent functions that do not exist.
-- Assume uninstalled dependencies.
-- Not understanding the entire project.
+- Assume dependencies that aren't installed.
+- Fail to understand the whole project.
 - Propose code that does not compile.
-- Skip borderline cases.
+- Miss edge cases.
 - Generate insufficient tests.
-- Suggest unsafe solutions.
+- Suggest insecure solutions.
 
-That is why it is important to maintain a critical attitude.
+That is why it is important to keep a critical attitude.
 
-Copilot Chat should be a support, not a final authority.
+Copilot Chat should be a support, not the final authority.
 
 ---
 
-## 22. Checklist to use Copilot Chat professionally
+## 22. Checklist for using Copilot Chat professionally
 
 Before applying a Copilot Chat response, review:
 
@@ -789,12 +791,12 @@ Before applying a Copilot Chat response, review:
 - Does the answer fit my project?
 - Does the generated code compile?
 - Do I understand the solution?
-- Have parts been changed that you did not want to change?
-- Are there uncovered borderline cases?
+- Has it changed parts I didn't want to change?
+- Are there edge cases left uncovered?
 - Have unnecessary dependencies been added?
 - Are there possible security problems?
 - Are the tests adequate?
-- Does the result maintain the style of the project?
+- Does the result keep the project's style?
 
 ---
 
@@ -802,7 +804,7 @@ Before applying a Copilot Chat response, review:
 
 In this topic you have learned how to use Copilot Chat as a development assistant.
 
-Have you seen how to use it to:
+You have seen how to use it to:
 
 - Explain code.
 - Analyze files.
@@ -818,7 +820,7 @@ The main idea is that Copilot Chat is most useful when used conversationally and
 A good flow would be:
 
 1. Understand the code.
-2. Request analysis.
+2. Ask for an analysis.
 3. Request specific changes.
 4. Ask for an explanation.
 5. Generate tests.

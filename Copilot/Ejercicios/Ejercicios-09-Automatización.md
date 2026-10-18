@@ -1,10 +1,10 @@
 # Exercises - Topic 09: Copilot with APIs, Docker, infrastructure and GitHub Actions
 
-Below, you will find practical exercises to use Copilot to support integration with APIs, creation of containers, configuration of infrastructure and automation with GitHub Actions.
+Below, you'll find hands-on exercises on using Copilot to help with API integration, container creation, infrastructure configuration and automation with GitHub Actions.
 
 ## Exercise 1: Create a prompt to consume a REST API
 
-You have to create a JavaScript function that queries a Product API at this URL:
+You have to create a JavaScript function that queries a products API at this URL:
 
 ```text
 https://api.example.com/products
@@ -14,11 +14,11 @@ https://api.example.com/products
 The function must:
 
 - Use `fetch`.
-- Control HTTP errors.
+- Handle HTTP errors.
 - Return an array of products.
 - Return an empty array if an error occurs.
 
-Write a suitable prompt to request this feature from Copilot.
+Write a suitable prompt to ask Copilot for this function.
 
 <details>
 <summary>Show solution</summary>
@@ -55,15 +55,15 @@ async function getProducts() {
 ```
 
 
-The feature handles both HTTP errors and network errors. Also, check that the result is actually an array before returning it.
+The function handles both HTTP errors and network errors. It also checks that the result is actually an array before returning it.
 
 </details>
 
 ## Exercise 2: Ask Copilot for an endpoint with Express
 
-You want to create an `GET /products/:id` endpoint in Express. The endpoint must search for a product by its `id` in a local array called `products`.
+You want to create a `GET /products/:id` endpoint in Express. The endpoint must search for a product by its `id` in a local array called `products`.
 
-If the product exists, you must return it with status `200`. If it does not exist, it should return an `404` error with a clear message.
+If the product exists, it must return it with status `200`. If it doesn't exist, it must return a `404` error with a clear message.
 
 Write a suitable prompt for Copilot.
 
@@ -97,7 +97,7 @@ app.get("/products/:id", (req, res) => {
 ```
 
 
-It is important to convert `req.params.id` to number if the array identifiers are saved as numbers. If the identifiers were strings, `Number()` would not be needed.
+It's important to convert `req.params.id` to a number if the IDs in the array are stored as numbers. If the IDs were strings, `Number()` wouldn't be needed.
 
 </details>
 
@@ -110,7 +110,7 @@ npm start
 ```
 
 
-The application listens on the `3000` port.
+The application listens on port `3000`.
 
 Write a prompt to ask Copilot to generate a basic `Dockerfile`.
 
@@ -147,25 +147,25 @@ CMD ["npm", "start"]
 ```
 
 
-This `Dockerfile` creates a simple image to run the application. First copy the dependencies files, install the packages, and then copy the rest of the project.
+This `Dockerfile` creates a simple image to run the application. It first copies the dependency files, installs the packages and then copies the rest of the project.
 
 </details>
 
 ## Exercise 4: Create a docker-compose.yml file
 
-You want to build a Node.js API and a PostgreSQL database with Docker Compose.
+You want to spin up a Node.js API and a PostgreSQL database with Docker Compose.
 
 The API must:
 
-- Build from the current directory.
-- Use the `3000` port.
+- Be built from the current directory.
+- Use port `3000`.
 - Receive the `DATABASE_URL` environment variable.
 
 PostgreSQL must:
 
 - Use the `postgres:16` image.
-- Have user `app_user`.
-- Have password `app_password`.
+- Have the user `app_user`.
+- Have the password `app_password`.
 - Create a database called `app_db`.
 
 Write a possible solution for `docker-compose.yml`.
@@ -197,7 +197,7 @@ services:
 ```
 
 
-A suitable prompt to ask Copilot would be:
+A suitable prompt to ask Copilot for it would be:
 
 ```text
 Crea un archivo docker-compose.yml para levantar una API Node.js y una base de datos PostgreSQL.
@@ -206,13 +206,13 @@ La base de datos debe usar postgres:16, usuario app_user, contraseña app_passwo
 Mantén la configuración simple para un entorno de desarrollo.
 ```
 
-In a real project, passwords should not be left directly in the file if the repository is to be shared. It would be better to use environment variables or an `.env` file excluded from version control.
+In a real project, passwords shouldn't be left directly in the file if the repository is going to be shared. It would be better to use environment variables or a `.env` file excluded from version control.
 
 </details>
 
 ## Exercise 5: Create a GitHub Actions workflow to run tests
 
-You have a Node.js project. You want GitHub Actions to run the tests every time `push` or `pull request` is done on the `main` branch.
+You have a Node.js project. You want GitHub Actions to run the tests every time there's a `push` or a `pull request` on the `main` branch.
 
 The project uses:
 
@@ -261,7 +261,7 @@ jobs:
 ```
 
 
-A suitable prompt to ask Copilot would be:
+A suitable prompt to ask Copilot for it would be:
 
 ```text
 Crea un workflow de GitHub Actions para un proyecto Node.js.
@@ -271,7 +271,7 @@ Usa versiones actuales de las acciones oficiales de checkout y setup-node.
 ```
 
 
-This workflow automates basic project checking before integrating changes into the master branch.
+This workflow automates the project's basic checks before changes are merged into the main branch.
 
 </details>
 
@@ -297,17 +297,17 @@ jobs:
 ```
 
 
-Indicate what problems it has and how you would improve it.
+Point out what problems it has and how you would improve it.
 
 <details>
 <summary>Show solution</summary>
 
 Main problems:
 
-1. The token appears written directly in the workflow.
-2. The repository with `actions/checkout` is not downloaded.
-3. There is no installation, build or testing phase before deployment.
-4. The deployment is launched directly on each `push` to `main`.
+1. The token is written directly in the workflow.
+2. The repository isn't checked out with `actions/checkout`.
+3. There is no install, build or test phase before deployment.
+4. The deployment is triggered directly on every `push` to `main`.
 5. There is no clear separation between validation and deployment.
 
 An improved version could be:
@@ -349,13 +349,13 @@ jobs:
 ```
 
 
-The main improvement is that the token is saved as a GitHub Actions secret and the deployment is only executed if the tests have passed before.
+The main improvement is that the token is stored as a GitHub Actions secret and the deployment only runs if the tests have passed first.
 
 </details>
 
 ## Exercise 7: Ask for help creating infrastructure as code
 
-You want to ask Copilot for a simple Terraform template to create a resource, but you don't want it to come up with service names or advanced settings.
+You want to ask Copilot for a simple Terraform template to create a resource, but you don't want it to make up service names or advanced settings.
 
 Write a prompt that forces Copilot to ask for clarification if important information is missing.
 
@@ -372,6 +372,6 @@ Después, cuando tenga esos datos, generaremos el archivo main.tf paso a paso.
 ```
 
 
-This prompt is useful because it prevents Copilot from generating invented or overly generic infrastructure. In infrastructure as code, incorrect configuration can have significant consequences, so start by asking for clarification.
+This prompt is useful because it keeps Copilot from generating made-up or overly generic infrastructure. In infrastructure as code, a wrong configuration can have serious consequences, so it's a good idea to start by asking for clarification.
 
 </details>

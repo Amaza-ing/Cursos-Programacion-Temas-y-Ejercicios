@@ -2,11 +2,11 @@
 
 Below you will find **10 practical exercises** to work with **Files and Path**: creating paths, writing and reading files, folders, adding content, copying, deleting, listing files and working with lines.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## Exercise 1: Create a route with `Path.of`
+## Exercise 1: Create a path with `Path.of`
 
 Create a path that points to the file:
 
@@ -16,7 +16,7 @@ data/notes.txt
 
 Use `Path.of` and print:
 
-- the route
+- the path
 - the absolute path
 
 <details><summary>Show solution</summary>
@@ -42,7 +42,7 @@ public class Main {
 
 Create the `data` folder if it does not exist.
 
-Then write the text `"Learning Java files"` in:
+Then write the text `"Learning Java files"` to:
 
 ```text
 data/message.txt
@@ -84,7 +84,7 @@ Using the file from the previous exercise, read the contents of:
 data/message.txt
 ```
 
-and print it through the console.
+and print it to the console.
 
 <details><summary>Show solution</summary>
 
@@ -119,7 +119,7 @@ Create a list with these lines:
 - `"Second line"`
 - `"Third line"`
 
-Write them in:
+Write them to:
 
 ```text
 data/lines.txt
@@ -164,7 +164,7 @@ Read the file:
 data/lines.txt
 ```
 
-Use `Files.readAllLines` and display only lines that contain the word `"Second"`.
+Use `Files.readAllLines` and display only the lines that contain the word `"Second"`.
 
 <details><summary>Show solution</summary>
 
@@ -248,7 +248,7 @@ Create a copy of:
 data/message.txt
 ```
 
-in:
+to:
 
 ```text
 data/message-copy.txt
@@ -290,7 +290,7 @@ Delete the file:
 data/message-copy.txt
 ```
 
-Use `Files.deleteIfExists` and print whether it has been deleted or not.
+Use `Files.deleteIfExists` and print whether it was deleted or not.
 
 <details><summary>Show solution</summary>
 
@@ -352,9 +352,9 @@ public class Main {
 
 ---
 
-## Exercise 10: Count lines of a large file
+## Exercise 10: Count the lines of a large file
 
-Use `Files.lines` to count how many lines it has:
+Use `Files.lines` to count how many lines this file has:
 
 ```text
 data/lines.txt

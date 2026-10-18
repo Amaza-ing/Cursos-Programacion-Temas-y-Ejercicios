@@ -2,20 +2,20 @@
 
 ## 1. Introduction
 
-In Java, `String` is the most important type for working with text. You will use it constantly:
+In Java, `String` is the most important type for working with text. You'll use it all the time:
 
 - Usernames
 - Console messages
-- Data read from keyboard
+- Data read from the keyboard
 - File paths
 - Validations
 - Formatting results
 
-Although `String` is “used as a base type”, it is actually **an object** and therefore has many useful methods.
+Although `String` is “used like a basic type”, it's actually **an object**, and that's why it has many useful methods.
 
 In this topic you will learn:
 
-- What does it mean for `String` to be **immutable**
+- What it means for `String` to be **immutable**
 - Essential methods for measuring, comparing and searching text
 - Methods for extracting parts (`substring`) and accessing characters (`charAt`)
 - Typical transformations (`toLowerCase`, `strip`, `replace`…)
@@ -31,7 +31,7 @@ In this topic you will learn:
 ## 2. `String` is immutable (key idea)
 
 In Java, `String`s are **immutable**: you cannot change the contents of an existing `String`.  
-When you “modify” an `String`, you are actually creating **a new one**.
+When you “modify” a `String`, you are actually creating **a new one**.
 
 Example:
 
@@ -57,7 +57,7 @@ System.out.println(text); // "HELLO"
 
 ## 3. Length: `length()`
 
-`length()` returns the number of characters in an `String`.
+`length()` returns the number of characters in a `String`.
 
 ```java
 String userName = "Laura";
@@ -77,7 +77,7 @@ System.out.println(isLongEnough);
 
 ---
 
-## 4. Character access: `charAt(index)`
+## 4. Accessing characters: `charAt(index)`
 
 `charAt(int index)` returns the character at the indicated position.
 
@@ -92,7 +92,7 @@ System.out.println(last);  // 'X'
 
 Remember: indices start at 0.
 
-### 4.1. Typical error: index out of range
+### 4.1. Common mistake: index out of range
 
 ```java
 String text = "Hi";
@@ -103,13 +103,13 @@ Valid indices are 0 and 1.
 
 ---
 
-## 5. Extract parts: `substring(beginIndex)` and `substring(beginIndex, endIndex)`
+## 5. Extracting parts: `substring(beginIndex)` and `substring(beginIndex, endIndex)`
 
-`substring` is used to obtain a part of the text.
+`substring` is used to get part of the text.
 
 ### 5.1. `substring(beginIndex)`
 
-Returns from `beginIndex` to the end.
+It returns the text from `beginIndex` to the end.
 
 ```java
 String text = "JavaProgramming";
@@ -120,7 +120,7 @@ System.out.println(part); // "Programming"
 
 ### 5.2. `substring(beginIndex, endIndex)`
 
-Returns `beginIndex` through `endIndex`, but **not including** `endIndex`.
+It returns the text from `beginIndex` to `endIndex`, but **without including** `endIndex`.
 
 ```java
 String text = "JavaProgramming";
@@ -136,11 +136,11 @@ Rule of thumb:
 
 ---
 
-## 6. Compare `String`: `equals(...)` and `equalsIgnoreCase(...)`
+## 6. Comparing `String` values: `equals(...)` and `equalsIgnoreCase(...)`
 
-### 6.1. Why NOT use `==`
+### 6.1. Why you should NOT use `==`
 
-`==` compares references (if they are the same object), not the content.
+`==` compares references (whether they're the same object), not the content.
 
 ```java
 String a = "admin";
@@ -149,7 +149,7 @@ String b = "admin";
 System.out.println(a == b); // puede ser true o false dependiendo del caso
 ```
 
-The correct content is `equals`:
+To compare content, the right choice is `equals`:
 
 ```java
 String a = "admin";
@@ -171,11 +171,11 @@ System.out.println(isAdmin); // true
 
 ## 7. Alphabetical comparison: `compareTo(...)`
 
-`compareTo` compares two `String` in “alphabetical” order (lexicographic order).
+`compareTo` compares two `String` values in “alphabetical” order (lexicographic order).
 
 - Returns 0 if they are equal
 - Returns a negative number if the first one “comes first”
-- Returns a positive number if the first “comes after”
+- Returns a positive number if the first one “comes after”
 
 ```java
 String a = "apple";
@@ -188,7 +188,7 @@ System.out.println(a.compareTo("apple")); // 0
 
 ---
 
-## 8. Search text within text
+## 8. Searching for text within text
 
 ### 8.1. `contains(...)`
 
@@ -212,11 +212,11 @@ System.out.println(fileName.endsWith(".pdf"));      // true
 
 ---
 
-## 9. Find positions: `indexOf(...)` and `lastIndexOf(...)`
+## 9. Finding positions: `indexOf(...)` and `lastIndexOf(...)`
 
 ### 9.1. `indexOf(...)`
 
-Returns the index of the first occurrence. If not found, returns `-1`.
+Returns the index of the first occurrence. If it doesn't find it, it returns `-1`.
 ```java
 String text = "Java is Java";
 int first = text.indexOf("Java");
@@ -224,7 +224,7 @@ int first = text.indexOf("Java");
 System.out.println(first); // 0
 ```
 
-### 9.2. Search from an index
+### 9.2. Searching from an index
 
 ```java
 String text = "Java is Java";
@@ -246,7 +246,7 @@ System.out.println(last); // 8
 
 ---
 
-## 10. Replace text: `replace(...)`, `replaceAll(...)`, `replaceFirst(...)`
+## 10. Replacing text: `replace(...)`, `replaceAll(...)`, `replaceFirst(...)`
 
 ### 10.1. `replace(old, new)` (simple)
 
@@ -257,7 +257,7 @@ String updated = text.replace("world", "Java");
 System.out.println(updated); // "Hello Java"
 ```
 
-### 10.2. Replace characters
+### 10.2. Replacing characters
 
 ```java
 String phone = "123-456-789";
@@ -281,7 +281,7 @@ System.out.println(normalized); // "Hello Java 25"
 
 ---
 
-## 11. Case sensitive: `toUpperCase()` and `toLowerCase()`
+## 11. Uppercase and lowercase: `toUpperCase()` and `toLowerCase()`
 
 ```java
 String country = "Es";
@@ -300,11 +300,11 @@ System.out.println(isYes);
 
 ---
 
-## 12. Remove spaces: `trim()` and `strip()`
+## 12. Removing spaces: `trim()` and `strip()`
 
 ### 12.1. `trim()`
 
-Eliminate “simple” spaces at the beginning and end.
+It removes “simple” spaces at the beginning and end.
 
 ```java
 String raw = "   hello   ";
@@ -344,9 +344,9 @@ System.out.println(b.isBlank()); // true
 
 ---
 
-## 14. Split text: `split(...)`
+## 14. Splitting text: `split(...)`
 
-`split` separates a text into parts and returns an array of `String`.
+`split` breaks a text into parts and returns an array of `String`.
 
 ```java
 String line = "Laura,28,Madrid";
@@ -357,9 +357,9 @@ System.out.println(parts[1]); // "28"
 System.out.println(parts[2]); // "Madrid"
 ```
 
-### 14.1. Beware: `split` uses regex
+### 14.1. Careful: `split` uses regex
 
-If you divide by a point `.` you have to escape it:
+If you split on a dot `.`, you have to escape it:
 
 ```java
 String domain = "example.com";
@@ -371,7 +371,7 @@ System.out.println(parts[1]); // "com"
 
 ---
 
-## 15. Join text: `String.join(...)`
+## 15. Joining text: `String.join(...)`
 
 ```java
 String result = String.join(" - ", "Java", "IntelliJ", "JDK");
@@ -380,7 +380,7 @@ System.out.println(result); // "Java - IntelliJ - JDK"
 
 ---
 
-## 16. Format text: `String.format(...)`
+## 16. Formatting text: `String.format(...)`
 
 ```java
 String userName = "Laura";
@@ -401,7 +401,7 @@ System.out.println(text); // "Price: 19.99"
 
 ---
 
-## 17. Convert to `String`: `String.valueOf(...)`
+## 17. Converting to `String`: `String.valueOf(...)`
 
 ```java
 int level = 5;
@@ -412,7 +412,7 @@ System.out.println("Level: " + text);
 
 ---
 
-## 18. Repeat text: `repeat(n)`
+## 18. Repeating text: `repeat(n)`
 
 ```java
 String dash = "-";
@@ -437,7 +437,7 @@ System.out.println(text);
 
 ## 20. `null` and `String`: how to avoid errors
 
-Secure pattern with verification:
+A safe pattern with a check:
 
 ```java
 String name = null;
@@ -458,7 +458,7 @@ System.out.println(isAdmin);
 
 ---
 
-## 21. `+` vs `StringBuilder` (Preview)
+## 21. `+` vs `StringBuilder` (a preview)
 
 For repeated concatenations, `StringBuilder` is usually better:
 
@@ -473,9 +473,9 @@ System.out.println(message);
 
 ---
 
-## 22. Complete Guided Examples
+## 22. Complete guided examples
 
-### 22.1. Normalize user input
+### 22.1. Normalizing user input
 
 ```java
 public class Main {
@@ -495,7 +495,7 @@ public class Main {
 
 ---
 
-### 22.2. Extract extension from a file
+### 22.2. Extracting a file's extension
 
 ```java
 public class Main {
@@ -516,7 +516,7 @@ public class Main {
 
 ---
 
-### 22.3. Convert a CSV line to variables
+### 22.3. Converting a CSV line into variables
 
 ```java
 public class Main {
@@ -537,14 +537,14 @@ public class Main {
 
 ---
 
-## 23. To take into account
+## 23. Things to keep in mind
 
-- The `String` are immutable: save the result of the methods if you want to “modify” the text.
-- To compare content use `equals` (and `equalsIgnoreCase` if applicable).
+- `String` values are immutable: store the result of the methods if you want to “modify” the text.
+- To compare content, use `equals` (and `equalsIgnoreCase` when it applies).
 - `substring`, `indexOf` and `split` are essential for text processing.
 - `strip/trim`, `isBlank/isEmpty` are key in validations.
 - Avoid `NullPointerException` by checking `null` or comparing with `"literal".equals(variable)`.
 
 ---
 
-In the next topic we will learn about **Primitive type Wrappers**, and you will see what advantages they have over using basic types.
+In the next topic we'll learn about **primitive type wrappers**, and you'll see what advantages they have over using the basic types.

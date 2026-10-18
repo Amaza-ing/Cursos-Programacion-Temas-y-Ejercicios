@@ -7,32 +7,32 @@ In this topic we are going to go one step further: we will use Copilot to suppor
 
 GitHub Copilot can help with tasks like:
 
-- analyze a complete project;
-- plan a functionality;
-- generate initial file structure;
-- apply project conventions;
-- create repository documentation;
-- prepare pull requests;
-- suggest commit messages;
-- use custom instructions;
-- work with agents;
-- use Copilot from the terminal.
+- analyzing a whole project;
+- planning a feature;
+- generating an initial file structure;
+- applying project conventions;
+- creating repository documentation;
+- preparing pull requests;
+- suggesting commit messages;
+- using custom instructions;
+- working with agents;
+- using Copilot from the terminal.
 
-The goal is not for Copilot to “do everything,” but to learn how to direct it correctly so that it works within clear limits.
+The goal is not for Copilot to “do everything,” but for you to learn how to steer it properly so that it works within clear limits.
 
 ---
 
-## 2. Objectives of the topic
+## 2. Topic objectives
 
 By the end of this topic you should be able to:
 
 - Use Copilot to analyze the structure of a project.
 - Ask for implementation plans before generating code.
 - Create custom instructions for a repository.
-- Understand the difference between Copilot Chat, Agent Mode, Copilot cloud agent and Copilot CLI.
+- Understand the difference between Copilot Chat, agent mode, Copilot cloud agent and Copilot CLI.
 - Use Copilot in GitHub workflows.
 - Request change summaries, commit messages and help with pull requests.
-- Apply good practices when working with agents.
+- Apply best practices when working with agents.
 - Avoid common risks when delegating broad tasks to AI.
 
 ---
@@ -40,16 +40,16 @@ By the end of this topic you should be able to:
 ## 3. From autocomplete to full workflow
 
 GitHub Copilot started out best known for its code suggestions in the editor.  
-Currently you can intervene in more parts of the development process:
+Today it can play a part in more stages of the development process:
 
 - code writing;
 - code explanation;
 - documentation;
 - testing;
 - debugging;
-- revision;
+- review;
 - commits;
--pull requests;
+- pull requests;
 - agents;
 - terminal;
 - automation.
@@ -58,13 +58,13 @@ This implies an important change: Copilot is no longer used only to “complete 
 
 ---
 
-# Part 1. Using Copilot in complete projects
+# Part 1. Using Copilot on complete projects
 
-## 4. Analyze the structure of a project
+## 4. Analyzing the structure of a project
 
 Before asking Copilot to modify a project, it is a good idea to ask it to analyze it.
 
-Recommended Prompt:
+Recommended prompt:
 
 ```text
 Analiza la estructura de este proyecto.
@@ -83,17 +83,17 @@ This prompt helps Copilot act first as a reader of the project, not as a code ge
 
 ---
 
-## 5. Request a plan before requesting a code
+## 5. Asking for a plan before asking for code
 
-When a task is large, it is not advisable to directly ask for implementation.
+When a task is large, it's not a good idea to ask for the implementation straight away.
 
-Inadvisable prompt:
+A prompt to avoid:
 
 ```text
 Añade autenticación a este proyecto.
 ```
 
-Prompt best:
+A better prompt:
 
 ```text
 Quiero añadir autenticación básica a este proyecto.
@@ -107,22 +107,22 @@ No modifiques todavía el código.
 ```
 
 The difference is important.  
-First you get a plan, then you decide if that plan is correct.
+First you get a plan, then you decide whether that plan is correct.
 
 ---
 
-## 6. Recommended flow for complex functionalities
+## 6. Recommended flow for complex features
 
-For complex functionality, follow this sequence:
+For a complex feature, follow this sequence:
 
 1. **Explain the objective.**
-2. **Request analysis of the project.**
+2. **Ask for an analysis of the project.**
 3. **Ask for an implementation plan.**
 4. **Review the plan.**
 5. **Break the implementation into small steps.**
-6. **Apply changes in parts.**
+6. **Apply the changes in parts.**
 7. **Run tests or test manually.**
-8. **Request review of changes.**
+8. **Ask for a review of the changes.**
 9. **Document what was added.**
 
 Example prompt for step 5:
@@ -142,9 +142,10 @@ Explica qué has cambiado y cómo puedo probarlo.
 ```
 
 ---
-# Part 2. Project structure generation
 
-## 7. Ask for an initial structure
+# Part 2. Generating the project structure
+
+## 7. Asking for an initial structure
 
 Copilot can help design an initial project structure.  
 For example, for a simple API in Node.js:
@@ -190,7 +191,7 @@ Incluye comentarios breves en español.
 
 ---
 
-## 8. Maintain architectural control
+## 8. Keeping control of the architecture
 
 When Copilot generates a structure, it may propose more layers than necessary.  
 Before accepting, ask yourself:
@@ -206,13 +207,13 @@ A simple and clear structure is usually better than an excessively complex archi
 
 ---
 
-# Part 3. Custom GitHub Copilot Instructions
+# Part 3. GitHub Copilot custom instructions
 
-## 9. What are custom instructions
+## 9. What custom instructions are
 
-Custom instructions are used to give Copilot persistent information about how to work on a project.
+Custom instructions are used to give Copilot persistent information about how it should work on a project.
 
-Instead of repeating at each prompt:
+Instead of repeating in every prompt:
 
 ```text
 Usa JavaScript moderno, comentarios en español, nombres de variables en inglés, no añadas dependencias y escribe tests con Jest.
@@ -222,7 +223,7 @@ we can save these preferences in an instructions file.
 
 ---
 
-## 10. `.github/copilot-instructions.md` file
+## 10. The `.github/copilot-instructions.md` file
 
 A common way to add instructions to the repository is to create the file:
 
@@ -230,13 +231,13 @@ A common way to add instructions to the repository is to create the file:
 .github/copilot-instructions.md
 ```
 
-This file contains natural language prompts that Copilot can use as context when working with the repository.
+This file contains natural language instructions that Copilot can use as context when working with the repository.
 
 ---
 
-## 11. Step by Step Guide: Create Custom Instructions
+## 11. Step-by-step guide: creating custom instructions
 
-### Step 1. Create `.github` folder
+### Step 1. Create the `.github` folder
 
 In the root of the project, create the folder:
 
@@ -254,7 +255,7 @@ Inside `.github`, create this file:
 copilot-instructions.md
 ```
 
-The final route will be:
+The final path will be:
 
 ```text
 .github/copilot-instructions.md
@@ -315,12 +316,12 @@ Then try a prompt:
 Genera una función para calcular el precio final de un producto con descuento e impuestos.
 ```
 
-Check if Copilot respects:
+Check whether Copilot follows:
 
 - names in English;
 - comments in Spanish;
-- clear style;
-- absence of unnecessary dependencies.
+- a clear style;
+- no unnecessary dependencies.
 
 ---
 
@@ -328,20 +329,20 @@ Check if Copilot respects:
 
 A good instructions file may include:
 
-- technological stack;
+- tech stack;
 - language version;
 - code style;
 - naming conventions;
 - folder structure;
 - installation commands;
 - test commands;
-- safety regulations;
+- security rules;
 - what dependencies are used;
 - what dependencies should not be added;
 - documentation style;
 - review criteria.
 
-More complete example:
+A more complete example:
 
 ```md
 # Proyecto
@@ -373,7 +374,7 @@ Aplicación web con Node.js, Express y JavaScript.
 
 ---
 
-## 13. Specific instructions per route
+## 13. Path-specific instructions
 
 In some projects it may be useful to give specific instructions for certain file types.
 
@@ -425,31 +426,31 @@ These instructions help Copilot better tailor its responses depending on the fil
 
 ---
 
-## 14. Good practices with personalized instructions
+## 14. Best practices for custom instructions
 
-- Write clear and concrete instructions.
+- Write clear, specific instructions.
 - Avoid contradictory instructions.
 - Don't write a huge document if it is not necessary.
-- Update instructions when the project changes.
-- Includes actual project commands.
-- Includes explicit restrictions.
-- Do not keep secrets or sensitive information.
-- Check if Copilot is respecting the instructions.
+- Update the instructions when the project changes.
+- Include the project's actual commands.
+- Include explicit restrictions.
+- Don't store secrets or sensitive information in them.
+- Check whether Copilot is following the instructions.
 
 ---
 
 # Part 4. Copilot on GitHub: commits, pull requests and code review
 
-## 15. Generate commit messages
+## 15. Generating commit messages
 
 Copilot can help generate commit messages from the changes made.  
-Even so, the message should be reviewed before confirming it.
+Even so, you should review the message before committing.
 
 A good commit message should explain:
 
 - what has been changed;
 - why it has been changed;
-- if there are any important consequences.
+- whether there are any important consequences.
 
 Examples:
 
@@ -477,15 +478,15 @@ No exageres el alcance del cambio.
 
 ## 16. Pull request summaries
 
-When a pull request is opened, Copilot can help summarize the changes so other people better understand what has been changed.
+When a pull request is opened, Copilot can help summarize the changes so that others can better understand what has changed.
 
 A good PR summary should include:
 
-- objective of the change;
-- modified main files;
+- the goal of the change;
+- the main files modified;
 - relevant decisions;
-- tests carried out;
-- risks or aspects that should be reviewed.
+- the testing done;
+- risks or things worth reviewing.
 
 Useful prompt:
 
@@ -500,11 +501,11 @@ Incluye:
 
 ---
 
-## 17. Assisted code review
+## 17. AI-assisted code review
 
-Copilot can also assist in code review.
+Copilot can also help with code review.
 
-Recommended Prompt:
+Recommended prompt:
 
 ```text
 Revisa los cambios de esta pull request.
@@ -518,24 +519,24 @@ Prioriza los problemas importantes y evita comentarios de estilo menores.
 ```
 
 The Copilot review should be treated as a preliminary review.  
-The final decision must be made by one person.
+The final decision must be made by a person.
 
 ---
 
-# Part 5. Agent Mode, Copilot cloud agent and Copilot CLI
+# Part 5. Agent mode, Copilot cloud agent and Copilot CLI
 
 ## 18. What is an agent
 
 An AI agent is a system capable of:
 
-- receive a task;
-- analyze the context;
-- decide intermediate steps;
-- use tools;
-- propose or apply changes;
-- iterate over the result.
+- receiving a task;
+- analyzing the context;
+- deciding on intermediate steps;
+- using tools;
+- proposing or applying changes;
+- iterating on the result.
 
-In development, an agent can help modify multiple files, execute commands, prepare changes, or create a pull request.
+In development, an agent can help modify multiple files, run commands, prepare changes, or create a pull request.
 
 ---
 
@@ -543,10 +544,10 @@ In development, an agent can help modify multiple files, execute commands, prepa
 
 | Tool | Main use |
 | -------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Copilot Chat | Talk about code, ask for explanations, generate fragments, resolve doubts.                               |
-| Agent Mode in the IDE | Allow Copilot to propose changes to multiple files within the local environment, with monitoring.            |
-| Copilot cloud agent | Delegate tasks to GitHub for Copilot to research, plan, branch, and propose reviewable changes. |
-| Copilot CLI | Use Copilot from the terminal to ask, modify, debug, or interact with GitHub.                    |
+| Copilot Chat | Talk about code, ask for explanations, generate snippets, get questions answered.                               |
+| Agent mode in the IDE | Let Copilot propose changes to multiple files in your local environment, under your supervision.            |
+| Copilot cloud agent | Delegate tasks on GitHub so Copilot can research, plan, create a branch and propose reviewable changes. |
+| Copilot CLI | Use Copilot from the terminal to ask questions, modify code, debug or interact with GitHub.                    |
 
 ---
 
@@ -557,9 +558,9 @@ Use **Copilot Chat** when:
 - you want to understand code;
 - you need an explanation;
 - you want to generate a specific function;
-- you want to review a small fragment.
+- you want to review a small snippet.
 
-Use **Agent Mode in the IDE** when:
+Use **agent mode in the IDE** when:
 
 - a task affects several files;
 - you want to work locally;
@@ -568,14 +569,14 @@ Use **Agent Mode in the IDE** when:
 
 Use **Copilot cloud agent** when:
 
-- the task is associated with an issue;
+- the task is linked to an issue;
 - you want Copilot to prepare a branch;
 - you want to review the changes later;
-- the team flow revolves around GitHub and pull requests.
+- the team's workflow revolves around GitHub and pull requests.
 
 Use **Copilot CLI** when:
 
-- you work a lot from terminal;
+- you work a lot from the terminal;
 - you want to ask about commands;
 - you want to analyze console errors;
 - you want to summarize changes;
@@ -585,18 +586,18 @@ Use **Copilot CLI** when:
 
 ## 21. Copilot CLI
 
-GitHub Copilot CLI allows you to use Copilot from the command line.  
+GitHub Copilot CLI lets you use Copilot from the command line.  
 It can be used for:
 
-- ask technical questions;
-- analyze errors;
-- generate commands;
-- explain terminal outputs;
-- modify code;
-- interact with GitHub;
-- prepare changes.
+- asking technical questions;
+- analyzing errors;
+- generating commands;
+- explaining terminal output;
+- modifying code;
+- interacting with GitHub;
+- preparing changes.
 
-### Orientative installation
+### Installation (for reference)
 
 On Windows, it can be installed with WinGet:
 
@@ -622,13 +623,13 @@ You can then start an interactive session with:
 copilot
 ```
 
-On first use, if you are not logged in, Copilot will ask for authentication.
+The first time you use it, if you are not signed in, Copilot will ask you to authenticate.
 
 ---
 
-## 22. Copilot CLI Usage Examples
+## 22. Copilot CLI usage examples
 
-### Ask about a bug
+### Ask about an error
 
 ```bash
 copilot
@@ -640,13 +641,13 @@ Then, within the session:
 Estoy ejecutando npm test y aparece este error. Explícalo paso a paso y dime cómo investigarlo.
 ```
 
-### Request summary of changes
+### Ask for a summary of changes
 
 ```bash
 copilot -p "Resume los cambios actuales del repositorio y sugiere un mensaje de commit" --allow-tool='shell(git)'
 ```
 
-### Request structure analysis
+### Ask for a structure analysis
 
 ```text
 Analiza la estructura de este proyecto y dime dónde debería añadir un nuevo endpoint de productos.
@@ -658,32 +659,32 @@ Analiza la estructura de este proyecto y dime dónde debería añadir un nuevo e
 
 When a tool can execute commands or modify files, you have to be more careful.
 
-Good practices:
+Best practices:
 
 - Do not use options that allow any command to be executed without review.
 - Read the changes before accepting them.
 - Do not allow unnecessary access to secrets or credentials.
 - Work in a separate branch.
-- Use Git to be able to revert changes.
+- Use Git so you can revert changes.
 - Run tests after each major modification.
 - Do not delegate critical changes without human review.
 
 ---
 
-# Part 6. Recommended Advanced Flow
+# Part 6. Recommended advanced workflow
 
-## 24. Complete Flow Example with Copilot
+## 24. Example of a complete workflow with Copilot
 
-Imagine you want to add a new functionality: product management in an API.
+Imagine you want to add a new feature: product management in an API.
 
-### Step 1. Request project analysis
+### Step 1. Ask for a project analysis
 
 ```text
 Analiza este proyecto y dime dónde encajaría una nueva funcionalidad de gestión de productos.
 No modifiques archivos.
 ```
 
-### Step 2. Request implementation plan
+### Step 2. Ask for an implementation plan
 
 ```text
 Propón un plan para añadir gestión de productos.
@@ -718,7 +719,7 @@ Genera tests unitarios para el servicio de productos usando Jest.
 Incluye casos normales y casos límite.
 ```
 
-### Step 7. Review changes
+### Step 7. Review the changes
 
 ```text
 Revisa los cambios realizados.
@@ -732,7 +733,7 @@ Actualiza el README con una sección que explique los endpoints de productos.
 Incluye ejemplos de petición y respuesta.
 ```
 
-### Step 9. Prepare commit or pull request
+### Step 9. Prepare a commit or pull request
 
 ```text
 Genera un mensaje de commit claro para estos cambios.
@@ -741,18 +742,18 @@ Después genera un resumen breve para una pull request.
 
 ---
 
-## 25. How to evaluate if Copilot has worked well
+## 25. How to tell whether Copilot has done a good job
 
 After an advanced task, check:
 
 - Has the project structure been respected?
-- Have the personalized instructions been followed?
-- Are there changes out of scope?
+- Have the custom instructions been followed?
+- Are there out-of-scope changes?
 - Have unnecessary dependencies been added?
 - Are the names consistent?
 - Are the tests useful?
 - Does the documentation match the code?
-- Is the project still running?
+- Does the project still run?
 - Are there security risks?
 - Can I explain the generated code?
 
@@ -760,16 +761,16 @@ If you can't explain the code, you shouldn't integrate it yet.
 
 ---
 
-## 26. Compilation prompts of the topic
+## 26. This topic's prompts at a glance
 
-### Analyze project
+### Analyze the project
 
 ```text
 Analiza la estructura de este proyecto y explícame cómo está organizado.
 No modifiques archivos.
 ```
 
-### Plan functionality
+### Plan a feature
 
 ```text
 Quiero implementar [funcionalidad].
@@ -799,6 +800,7 @@ Incluye objetivo, cambios principales, pruebas realizadas y aspectos a revisar.
 ```
 
 ### Review changes
+
 ```text
 Revisa estos cambios como si fueras un revisor senior.
 Prioriza bugs, seguridad, mantenibilidad y tests.
@@ -812,23 +814,23 @@ Evita comentarios menores de estilo.
 In this topic we have seen how to use GitHub Copilot in advanced workflows:
 
 - analysis of complete projects;
-- functionality planning;
+- feature planning;
 - structure generation;
-- personalized instructions;
+- custom instructions;
 - commits and pull requests;
-- assisted code review;
+- AI-assisted code review;
 - agents;
 - Copilot CLI.
 
 The main idea is that the larger the task, the more important it is to work in phases.
 
-It is not advisable to ask:
+It's not a good idea to ask:
 
 ```text
 Haz todo el proyecto.
 ```
 
-It is advisable to ask:
+It's better to ask:
 
 ```text
 Analiza, planifica, divide, implementa una parte, prueba, revisa y documenta.
@@ -843,6 +845,6 @@ Copilot is most powerful when clearly directed.
 - GitHub Docs — GitHub Copilot.
 - GitHub Docs — Custom instructions.
 - GitHub Docs — Copilot CLI.
-- GitHub Docs — Copilot coding agent.
+- GitHub Docs — Copilot cloud agent.
 - GitHub Docs — Pull request summaries.
 - GitHub Docs — Copilot code review.

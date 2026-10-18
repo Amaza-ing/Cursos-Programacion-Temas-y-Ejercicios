@@ -1,18 +1,18 @@
 # **Topic 19: Using WHILE in MySQL**
 
-In this topic we will learn to:
+In this topic we will learn how to:
 
-- Understand what an `WHILE` loop is in MySQL.
-- Use `WHILE` within stored procedures.
-- Control the repetitive execution of instructions until a condition is met.
+- Understand what a `WHILE` loop is in MySQL.
+- Use `WHILE` inside stored procedures.
+- Run statements repeatedly until a condition is met.
 
 ---
 
 ## **1. What is WHILE in MySQL?**
 
-`WHILE` is a control structure that allows a block of instructions to be executed repeatedly as long as a condition is true.
+`WHILE` is a control structure that lets you run a block of statements repeatedly as long as a condition is true.
 
-It is primarily used **within stored procedures or functions**.
+It is mainly used **inside stored procedures or functions**.
 
 ---
 
@@ -24,15 +24,15 @@ It is primarily used **within stored procedures or functions**.
 END WHILE [etiqueta];
 ```
 
-- **condition**: Logical expression that is evaluated before each iteration.
-- If the condition is true, the statement block is executed.
-- If it is false, the loop is exited.
+- **condición**: a logical expression that is evaluated before each iteration.
+- If the condition is true, the block of statements runs.
+- If it is false, the loop ends.
 
 ---
 
 ## **3. Basic example**
 
-Count from 1 to 5 and insert the values into an `numbers` table.
+Count from 1 to 5 and insert the values into a `numbers` table.
 
 ```sql
 DELIMITER $$
@@ -50,9 +50,9 @@ DELIMITER ;
 
 ---
 
-## **4. WHILE with data dependent condition**
+## **4. WHILE with a data-dependent condition**
 
-We may use `WHILE` to process records as long as there is data that meets certain conditions.
+We can use `WHILE` to process records as long as there is data that meets certain conditions.
 
 ```sql
 DELIMITER $$
@@ -72,9 +72,9 @@ DELIMITER ;
 
 ---
 
-## **5. WHILE with label and LEAVE**
+## **5. WHILE with a label and LEAVE**
 
-We can tag a loop to exit it with `LEAVE`.
+We can label a loop so that we can exit it with `LEAVE`.
 
 ```sql
 DELIMITER $$
@@ -97,31 +97,31 @@ DELIMITER ;
 
 ## **6. Differences from other loops**
 
-| Loop | Condition Assessment | Common use |
+| Loop | Condition check | Common use |
 | -------- | ------------------------- | ------------------------------------------------------ |
 | `WHILE` | Before each iteration | When we know the stopping condition before starting |
-| `REPEAT` | After each iteration | When we need to run at least once |
-| `LOOP` | Manual (with `LEAVE`) | Cases where the purpose is not defined in advance |
+| `REPEAT` | After each iteration | When the loop must run at least once |
+| `LOOP` | Manual (with `LEAVE`) | Cases where the end is not defined in advance |
 
 ---
 
-[![WHILE](https://img.youtube.com/vi/0-bLHp3q1vw/0.jpg) loop](https://www.youtube.com/watch?v=0-bLHp3q1vw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
+[![WHILE loop](https://img.youtube.com/vi/0-bLHp3q1vw/0.jpg)](https://www.youtube.com/watch?v=0-bLHp3q1vw&list=PLzA2VyZwsq__lL586xdEFPJtV-gmYhP4N)
 
 ---
 
 ## **7. Good practices**
 
-- Avoid infinite loops by ensuring that the condition changes in each iteration.
-- Use variables to control the loop.
-- Keep the number of iterations as low as possible so as not to affect performance.
+- Avoid infinite loops by making sure the condition changes in each iteration.
+- Use variables to keep track of the loop.
+- Keep the number of iterations as low as possible so you don't hurt performance.
 
 ---
 
 ## **8. Conclusion**
 
-- `WHILE` allows a block to be executed repeatedly as long as the condition is true.
+- `WHILE` lets you run a block repeatedly as long as the condition is true.
 - It is useful for repetitive tasks such as inserting multiple records or processing data in batches.
-- Controlling the flow with `LEAVE` and tags prevents infinite loops.
+- Controlling the flow with `LEAVE` and labels prevents infinite loops.
 
 ---
 

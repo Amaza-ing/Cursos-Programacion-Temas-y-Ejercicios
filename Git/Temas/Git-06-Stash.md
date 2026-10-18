@@ -2,25 +2,25 @@
 
 ## **1. Introduction**
 
-During development, it is common to make changes to the code before it is ready for a commit. However, sometimes it is necessary to switch branches or update code without losing work in progress. In these cases, Git provides the `git stash` command to temporarily save the changes without committing them.
+During development, it's common to make changes to the code before you're ready to commit. However, sometimes you need to switch branches or update the code without losing your work in progress. In these cases, Git provides the `git stash` command to save your changes temporarily without committing them.
 
 ### **Benefits of `git stash`**
 
-- Allows you to save changes temporarily without the need for a commit.
-- Facilitates switching between branches without losing uncommitted modifications.
-- Avoid creating unnecessary commits in the history of the repository.
+- Lets you save changes temporarily without needing a commit.
+- Makes it easier to switch branches without losing uncommitted changes.
+- Avoids creating unnecessary commits in the repository's history.
 
 ---
 
 ## **2. Save changes with `git stash`**
 
-To store the current changes to the `stash` stack:
+To store the current changes on the `stash` stack:
 
 ```bash
 git stash
 ```
 
-This saves the modified files and restores them to the last clean commit.
+This saves the modified files and returns them to the state of the last clean commit.
 
 If you want to add a description to remember the saved changes:
 
@@ -34,7 +34,7 @@ To check the list of stored stashes:
 git stash list
 ```
 
-Output example:
+Example output:
 
 ```
 stash@{0}: On master: Corrección de bug en la API
@@ -45,13 +45,13 @@ stash@{1}: On master: Inicio de nueva funcionalidad
 
 ## **3. Recover changes from `git stash`**
 
-### **Apply last saved changes**
+### **Apply the last saved changes**
 
 ```bash
 git stash apply
 ```
 
-This recovers the changes from the last `stash`, but does not remove them from the list.
+This recovers the changes from the last `stash`, but doesn't remove them from the list.
 
 To apply a specific `stash`:
 
@@ -77,7 +77,7 @@ This is equivalent to `apply` followed by `drop`.
 
 ## **4. Delete a specific `stash` or all saved ones**
 
-If an `stash` is no longer needed, it can be removed with:
+If you no longer need a `stash`, you can delete it with:
 
 ```bash
 git stash drop stash@{0}
@@ -93,7 +93,7 @@ git stash clear
 
 ---
 
-## **5. Create a new branch from an `stash`**
+## **5. Create a new branch from a `stash`**
 
 If your saved changes need a new branch:
 
@@ -105,13 +105,13 @@ This creates `nueva-rama` with the changes stored in `stash@{0}` and automatical
 
 ---
 
-## **6. Good practices when using `git stash`**
+## **6. Best practices when using `git stash`**
 
-- Use `git stash push -m "Descripción"` to document saved changes.
-- Before applying an `stash`, verify its content with `git stash show -p`.
-- Avoid accumulating too many `stash` without managing them properly.
-- Use `git stash pop` only if you are sure that the changes applied will not generate conflicts.
+- Use `git stash push -m "Descripción"` to document the saved changes.
+- Before applying a `stash`, check its contents with `git stash show -p`.
+- Avoid piling up too many `stash` entries without managing them properly.
+- Only use `git stash pop` if you're sure the applied changes won't cause conflicts.
 
 ---
 
-In the next topic, we will explore **how to use `git rebase` to maintain a clean and organized commit history**.
+In the next topic, we'll explore **how to use `git rebase` to keep a clean and organized commit history**.

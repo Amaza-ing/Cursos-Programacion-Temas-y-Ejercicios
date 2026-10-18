@@ -1,37 +1,37 @@
-# **Topic 8: Complete Life Cycle of Components in Angular**
+# **Topic 8: Complete Component Lifecycle in Angular**
 
 ## **1. Introduction**
 
-Components in Angular have a life cycle defined by a series of methods (hooks) that allow logic to be executed at different times during the component's existence.
+Components in Angular have a lifecycle defined by a series of methods (hooks) that let you run logic at different moments of the component's existence.
 
-In this topic you will learn:
+In this topic, you will learn:
 
-- What are the hooks of the Angular life cycle.
-- When they are executed and how to use them correctly.
+- What the Angular lifecycle hooks are.
+- When they run and how to use them correctly.
 - Practical examples of each hook.
 
 ---
 
-## **2. Lifecycle Hooks in Angular**
+## **2. Lifecycle hooks in Angular**
 
-| **Hook** | **When is it executed** | **Primary use** |
+| **Hook** | **When it runs** | **Main use** |
 | ------------------------- | ---------------------------------------------------------- | --------------------------------------------------- |
 | `ngOnChanges()` | When an `@Input()` changes value | Detect changes in properties received from the parent |
-| `ngOnInit()` | After Angular initializes the | Initial configuration, calls to services |
-| `ngDoCheck()` | In each change detection cycle | Manually detect changes in variables |
-| `ngAfterContentInit()` | After inserting content into `<ng-content>` | Detect changes in projected content |
-| `ngAfterContentChecked()` | After each detection of changes in `<ng-content>` | Respond to changes in projected content |
-| `ngAfterViewInit()` | After the view and children have been initialized | Access view elements with `ViewChild` |
-| `ngAfterViewChecked()` | After each view change detection | Adjust dynamic visual elements |
-| `ngOnDestroy()` | Before destroying the component | Clean subscriptions and release resources |
+| `ngOnInit()` | After Angular initializes the component | Initial setup, calls to services |
+| `ngDoCheck()` | In every change detection cycle | Manually detect changes in variables |
+| `ngAfterContentInit()` | After content is inserted into `<ng-content>` | Detect changes in projected content |
+| `ngAfterContentChecked()` | After every change detection in `<ng-content>` | Respond to changes in projected content |
+| `ngAfterViewInit()` | After the view and its children have been initialized | Access view elements with `ViewChild` |
+| `ngAfterViewChecked()` | After every change detection in the view | Adjust dynamic visual elements |
+| `ngOnDestroy()` | Before the component is destroyed | Clean up subscriptions and release resources |
 
 ---
 
-## **3. Explanation and Examples of Hooks**
+## **3. Explanation and examples of the hooks**
 
 ### **3.1. `ngOnChanges()`**
 
-Executed when one or more `@Input()` values change in the child component.
+It runs when one or more `@Input()` values change in the child component.
 
 #### **File: `child.component.ts`**
 
@@ -64,7 +64,7 @@ export class ChildComponent implements OnChanges {
 
 ### **3.2. `ngOnInit()`**
 
-It is executed only once, after the constructor. Ideal for initializing data or making calls to services.
+It runs only once, after the constructor. Ideal for initializing data or calling services.
 
 #### **File: `example.component.ts`**
 
@@ -96,7 +96,7 @@ export class ExampleComponent implements OnInit {
 
 ### **3.3. `ngDoCheck()`**
 
-It runs every change detection cycle. Useful when Angular doesn't detect changes automatically.
+It runs in every change detection cycle. Useful when Angular doesn't detect changes automatically.
 
 #### **File: `example.component.ts`**
 
@@ -121,7 +121,7 @@ export class ExampleComponent implements DoCheck {
 
 ### **3.4. `ngAfterContentInit()` and `ngAfterContentChecked()`**
 
-These hooks allow detecting changes in projected content within `<ng-content>`.
+These hooks let you detect changes in content projected inside `<ng-content>`.
 
 #### **File: `child.component.html`**
 
@@ -159,7 +159,7 @@ export class ChildComponent implements AfterContentInit, AfterContentChecked {
 
 ### **3.5. `ngAfterViewInit()` and `ngAfterViewChecked()`**
 
-They are used to interact with elements of the view after rendering.
+They are used to interact with the view's elements after it has been rendered.
 
 #### **File: `example.component.ts`**
 
@@ -191,7 +191,7 @@ export class ExampleComponent implements AfterViewInit {
 ---
 
 ### **3.6. `ngOnDestroy()`**
-It is executed before destroying the component. Used to clean up subscriptions and release resources.
+It runs before the component is destroyed. It is used to clean up subscriptions and release resources.
 
 #### **File: `example.component.ts`**
 
@@ -214,13 +214,13 @@ export class ExampleComponent implements OnDestroy {
 
 ## **4. Conclusion**
 
-- Angular provides **lifecycle hooks** that allow logic to be executed at different times during a component's existence.
-- `ngOnInit()` is the most used for component initialization.
+- Angular provides **lifecycle hooks** that let you run logic at different moments of a component's existence.
+- `ngOnInit()` is the most commonly used one for initializing the component.
 - `ngOnChanges()` detects changes to `@Input()`.
 - `ngDoCheck()` is useful when Angular does not detect changes automatically.
-- `ngAfterViewInit()` and `ngAfterViewChecked()` allow you to manipulate the view after loading.
+- `ngAfterViewInit()` and `ngAfterViewChecked()` let you manipulate the view after it has loaded.
 - `ngOnDestroy()` is used to free resources before removing a component.
 
 ---
 
-In the next topic, we will explore **Models and Interfaces for Object typing**.
+In the next topic, we will explore **models and interfaces for typing objects**.

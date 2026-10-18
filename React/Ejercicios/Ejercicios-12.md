@@ -2,11 +2,11 @@
 
 Below you will find **10 practical exercises** on “special” attributes in React (`className`, `htmlFor`, `style`, events in camelCase, etc.).
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Correct `class` by `className`**
+## **Exercise 1: Replace `class` with `className`**
 
 This component is written as HTML. Fix it for React:
 
@@ -18,7 +18,7 @@ function Card() {
 export default Card;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Card() {
@@ -32,18 +32,18 @@ export default Card;
 
 ---
 
-## **Exercise 2: dynamic `className` with ternary**
+## **Exercise 2: Dynamic `className` with a ternary**
 
-Creates an `ModeTag.jsx` component with an `isDarkMode = true` variable.
+Create a `ModeTag.jsx` component with an `isDarkMode = true` variable.
 
 - If it is `true`, use `className="tagDark"`
 - If it is `false`, use `className="tagLight"`
 
-You must render:
+It must render:
 
 - `span` with the text: **"Mode"**
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function ModeTag() {
@@ -59,9 +59,9 @@ export default ModeTag;
 
 ---
 
-## **Exercise 3: Correct `for` by `htmlFor`**
+## **Exercise 3: Replace `for` with `htmlFor`**
 
-This form has a bug in React. Correct it:
+This form has a bug in React. Fix it:
 
 ```js
 function NameField() {
@@ -76,7 +76,7 @@ function NameField() {
 export default NameField;
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function NameField() {
@@ -97,12 +97,12 @@ export default NameField;
 
 ## **Exercise 4: Associate `label` and `input` correctly**
 
-Create an `PasswordField.jsx` component that has:
+Create a `PasswordField.jsx` component that has:
 
-- `label` with `htmlFor="password"` and text **"Password"**
+- `label` with `htmlFor="password"` and the text **"Password"**
 - `input` with `id="password"` and `type="password"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function PasswordField() {
@@ -121,9 +121,9 @@ export default PasswordField;
 
 ---
 
-## **Exercise 5: `style` as object (camelCase)**
+## **Exercise 5: `style` as an object (camelCase)**
 
-Create an `InlineBadge.jsx` component that renders an `span` with:
+Create an `InlineBadge.jsx` component that renders a `span` with:
 
 - Text: **"New"**
 - `style` with:
@@ -132,7 +132,7 @@ Create an `InlineBadge.jsx` component that renders an `span` with:
   - `borderRadius: "999px"`
   - `border: "1px solid #ddd"`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function InlineBadge() {
@@ -156,9 +156,9 @@ export default InlineBadge;
 
 ---
 
-## **Exercise 6: Correct event `onclick` → `onClick`**
+## **Exercise 6: Fix the event `onclick` → `onClick`**
 
-This button is misspelled for React. Correct it:
+This button is written incorrectly for React. Fix it:
 
 ```js
 function App() {
@@ -168,7 +168,7 @@ function App() {
 }
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function App() {
@@ -186,12 +186,12 @@ export default App;
 
 ## **Exercise 7: `tabIndex` and focus**
 
-Create an `FocusableBox.jsx` component that renders an `div`:
+Create a `FocusableBox.jsx` component that renders a `div`:
 
 - With `tabIndex={0}`
-- With text: **"Focus me"**
+- With the text: **"Focus me"**
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function FocusableBox() {
@@ -205,14 +205,14 @@ export default FocusableBox;
 
 ---
 
-## **Exercise 8: `readOnly` and fixed value**
+## **Exercise 8: `readOnly` and a fixed value**
 
-Create an `FixedInput.jsx` component that renders:
+Create a `FixedInput.jsx` component that renders:
 
 - An `input` with `value="Read only"`
-- AND `readOnly`
+- And `readOnly`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function FixedInput() {
@@ -233,7 +233,7 @@ Create an `AutoFocusSearch.jsx` component that renders an input with:
 - `placeholder="Search"`
 - `autoFocus`
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function AutoFocusSearch() {
@@ -249,12 +249,12 @@ export default AutoFocusSearch;
 
 ## **Exercise 10: Mini-case (choose the correct form)**
 
-You want to apply this style to `div`:
+You want to apply this style to the `div`:
 
 - background color: `"#f5f5f5"`
 - padding: `"12px"`
 
-What is the correct way in React?
+Which is the correct way in React?
 
 1.
 
@@ -274,7 +274,7 @@ What is the correct way in React?
 <div style={{ "background-color": "#f5f5f5", padding: "12px" }} />
 ```
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 The correct option is **2**:
 
@@ -283,7 +283,7 @@ The correct option is **2**:
 ```
 
 Reason:
-- `style` receives an item.
+- `style` receives an object.
 - The properties go in camelCase (`backgroundColor`).
 
 </details>

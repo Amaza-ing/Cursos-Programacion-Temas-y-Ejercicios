@@ -2,13 +2,13 @@
 
 ## **1. Introduction to responsive design**
 
-Responsive design allows a website to adapt to different screen sizes and devices, improving the user experience on mobiles, tablets and desktops. To achieve this, CSS offers **media queries**, which apply conditional styles depending on the characteristics of the device.
+Responsive design lets a web page adapt to different screen sizes and devices, improving the user experience on phones, tablets and desktops. To achieve this, CSS offers **media queries**, which apply conditional styles depending on the characteristics of the device.
 
 ---
 
 ## **2. What are Media Queries?**
 
-**media queries** allow you to apply CSS rules based on width, height, resolution or device-specific characteristics.
+**Media queries** let you apply CSS rules based on the width, height, resolution or specific characteristics of the device.
 
 ### **Basic syntax:**
 
@@ -35,17 +35,17 @@ In this example, when the screen width is 600 pixels or less, the background wil
 
 ---
 
-## **3. Common Breakpoints in Responsive Design**
+## **3. Common breakpoints in responsive design**
 
-**breakpoints** are points where the layout changes to adapt to the size of the device.
+**Breakpoints** are the points where the layout changes to adapt to the size of the device.
 
 | Device | Maximum width |
 | ------------------- | ------------ |
 | Small phones | 480px |
-| Big phones | 600px |
+| Large phones | 600px |
 | Tablets | 768px |
 | Laptops | 1024px |
-| Large desks | 1200px |
+| Large desktops | 1200px |
 
 ### **Example of multiple breakpoints:**
 
@@ -75,13 +75,13 @@ In this example, when the screen width is 600 pixels or less, the background wil
 
 ---
 
-## **4. Use of logical operators in media queries**
+## **4. Using logical operators in media queries**
 
 Media queries can combine conditions using logical operators.
 
-- **`and`**: Combine multiple conditions.
+- **`and`**: Combines multiple conditions.
 - **`not`**: Excludes certain conditions.
-- **`only`**: Applies styles only if all condition is met.
+- **`only`**: Applies styles only if the whole condition is met.
 
 ### **Example:**
 
@@ -97,11 +97,11 @@ Media queries can combine conditions using logical operators.
 
 ---
 
-## **5. Media Queries for guidance and resolution**
+## **5. Media Queries for orientation and resolution**
 
 Media queries can also be used to detect screen orientation or pixel density.
 
-### **Guidance example:**
+### **Orientation example:**
 
 ```css
 /* Estilo para pantallas en orientación horizontal */
@@ -113,7 +113,7 @@ Media queries can also be used to detect screen orientation or pixel density.
 ```
 
 
-### **Example resolution:**
+### **Resolution example:**
 
 ```css
 /* Estilos para pantallas de alta resolución */
@@ -127,9 +127,9 @@ Media queries can also be used to detect screen orientation or pixel density.
 
 ---
 
-## **6. Mobile First Design**
+## **6. Mobile-first design**
 
-The **mobile first** approach suggests designing for mobile devices first and then scaling to larger screens.
+The **mobile first** approach suggests designing for mobile devices first and then scaling up to larger screens.
 
 ### **Example:**
 
@@ -152,13 +152,13 @@ This approach improves performance and accessibility for mobile devices.
 
 ---
 
-## **7. News and Modern Syntax of Media Queries in CSS**
+## **7. New features and modern Media Queries syntax in CSS**
 
-Over time, **media queries** have evolved, introducing new features and simplifications to the syntax. These updates allow for more granular and cleaner control of responsive design.
+Over time, **media queries** have evolved, introducing new features and simplifying the syntax. These updates give you finer-grained, cleaner control over responsive design.
 
 ---
 
-### Media Queries Level 4 Syntax
+### Media Queries Level 4 syntax
 
 The **Media Queries Level 4** specification brought with it a series of improvements that simplify the syntax and expand the possibilities.
 
@@ -176,7 +176,7 @@ Previously, logical operators were used to define a range:
 ```
 
 
-With modern syntax, it can be written more simply:
+With the modern syntax, you can write it more simply:
 
 ```css
 /* Método moderno */
@@ -190,17 +190,17 @@ With modern syntax, it can be written more simply:
 
 ### New types of queries
 
-- `width` and `height`: `min-` or `max-` can be bypassed using operators.
+- `width` and `height`: you can leave out `min-` or `max-` by using operators.
 - `aspect-ratio`: Detects the aspect ratio.
 - `color-gamut`: Detects the range of supported colors.
-- `prefers-reduced-motion`: Detects if the user prefers reduced animations.
+- `prefers-reduced-motion`: Detects whether the user prefers reduced animations.
 
 ---
 ## **8. New features and advanced queries**
 
-### **8.1. `prefers-color-scheme` (Dark/Light Mode)**
+### **8.1. `prefers-color-scheme` (Dark/light mode)**
 
-Allows you to detect if the user uses a light or dark theme.
+It lets you detect whether the user is using a light or dark theme.
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -221,7 +221,7 @@ Allows you to detect if the user uses a light or dark theme.
 
 ### **8.2. `prefers-reduced-motion` (Reduce animations)**
 
-Detects if the user prefers to minimize animations.
+It detects whether the user prefers to minimize animations.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -235,7 +235,7 @@ Detects if the user prefers to minimize animations.
 
 ### **8.3. `hover` and `pointer`**
 
-They allow you to detect the input capabilities of the device.
+They let you detect the input capabilities of the device.
 
 ```css
 /* Detecta dispositivos que soportan hover */
@@ -254,9 +254,9 @@ They allow you to detect the input capabilities of the device.
 ```
 
 
-### **8.4. `aspect-ratio` (Aspect Ratio)**
+### **8.4. `aspect-ratio` (Aspect ratio)**
 
-Allows you to apply styles based on the aspect ratio of the screen.
+It lets you apply styles based on the aspect ratio of the screen.
 
 ```css
 @media (aspect-ratio: 16/9) {
@@ -269,11 +269,11 @@ Allows you to apply styles based on the aspect ratio of the screen.
 
 ---
 
-## **9. Media Queries Containers (Container Queries)**
+## **9. Container Queries**
 
-One of the most important new features is the introduction of **Container Queries**, which allow you to apply styles based on the size of a container, instead of the size of the window.
+One of the most important new features is the introduction of **Container Queries**, which let you apply styles based on the size of a container instead of the size of the window.
 
-### **9.1. Basic Container Queries Example**
+### **9.1. Basic Container Queries example**
 
 ```css
 /* Definir un contenedor */
@@ -300,13 +300,13 @@ With these new features and modern syntax, you can create responsive designs tha
 
 ---
 
-## **10. Good practices in responsive design**
+## **10. Best practices for responsive design**
 
 - Design with the **mobile first** approach.
 - Avoid fixed units like `px` and use relative units (`em`, `%`, `vh`, `vw`).
 - Use **flexbox** or **grid** for flexible layouts.
 - Test the layout on multiple devices and screen sizes.
-- Optimize images and resources for fast loads on mobile.
-- Use simplified syntax for ranges for cleaner code.
+- Optimize images and resources for fast loading on mobile.
+- Use the simplified range syntax for cleaner code.
 - Implement `prefers-color-scheme` and `prefers-reduced-motion` to improve the user experience.
 - Take advantage of Container Queries for more flexible components.

@@ -2,15 +2,15 @@
 
 ## **1. Introduction**
 
-Text is one of the most important elements on any web page. HTML provides various tags to structure textual content appropriately. In this topic, we will explore headings, paragraphs, and other text-related elements in HTML.
+Text is one of the most important elements on any web page. HTML provides several tags to structure text content properly. In this topic, we'll explore headings, paragraphs and other text-related elements in HTML.
 
 ---
 
-## **2. HTML headers**
+## **2. Headings in HTML**
 
-Headers (`h1` to `h6`) are used to define titles and subtitles on a web page. They are block elements and play a fundamental role in the content hierarchy.
+Headings (`h1` to `h6`) are used to define titles and subtitles on a web page. They are block elements and play a fundamental role in the content hierarchy.
 
-### **Example of using headers:**
+### **Example of using headings:**
 
 ```HTML
 <h1>Título Principal</h1>
@@ -21,17 +21,17 @@ Headers (`h1` to `h6`) are used to define titles and subtitles on a web page. Th
 <h6>Subtítulo Nivel 6</h6>
 ```
 
-### **Header characteristics:**
+### **Characteristics of headings:**
 
 - `h1` is the main title of the page and should be used only once.
-- `h2` to `h6` represent subtitles with lower importance.
+- `h2` to `h6` represent subtitles of decreasing importance.
 - They improve accessibility and SEO (search engine optimization).
 
 ---
 
 ## **3. Paragraphs and line breaks**
 
-Text within a web page is grouped into paragraphs using the `<p>` tag. If a line break is needed without starting a new paragraph, `<br>` is used.
+Text on a web page is grouped into paragraphs using the `<p>` tag. If you need a line break without starting a new paragraph, you use `<br>`.
 
 ### **Example of paragraphs and line breaks:**
 
@@ -40,20 +40,20 @@ Text within a web page is grouped into paragraphs using the `<p>` tag. If a line
 <p>Este es otro párrafo. <br> Aquí se usa un salto de línea dentro del mismo párrafo.</p>
 ```
 
-### **Features:**
+### **Characteristics:**
 
-- `<p>` generates a new text block.
-- `<br>` does not generate a new block, only a line break within the same text.
+- `<p>` creates a new block of text.
+- `<br>` doesn't create a new block, just a line break within the same text.
 
 ---
 
 ## **4. Other text-related block elements**
 
-In addition to headings and paragraphs, there are other useful block elements for structuring textual content:
+Besides headings and paragraphs, there are other useful block elements for structuring text content:
 
-### **Appointment Blocks (`<blockquote>`)**
+### **Quote blocks (`<blockquote>`)**
 
-Used to highlight long text quotes.
+Used to highlight long quotations.
 
 ```HTML
 <blockquote>
@@ -61,9 +61,9 @@ Used to highlight long text quotes.
 </blockquote>
 ```
 
-### **Preformatted (`<pre>`)**
+### **Preformatted text (`<pre>`)**
 
-Displays text with predefined format, respecting spaces and line breaks.
+Displays text exactly as formatted, preserving spaces and line breaks.
 
 ```HTML
 <pre>
@@ -74,7 +74,7 @@ Texto con espacios y saltos de línea
 
 ### **Content divisions (`<div>`)**
 
-It is used to group content into blocks without a specific semantic meaning.
+Used to group content into blocks with no specific semantic meaning.
 
 ```HTML
 <div>
@@ -85,17 +85,17 @@ It is used to group content into blocks without a specific semantic meaning.
 
 ---
 
-[![Text and Elements in Line and in Block](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
+[![Text and inline and block elements](https://img.youtube.com/vi/KBw2fd5BbCU/0.jpg)](https://www.youtube.com/watch?v=KBw2fd5BbCU&list=PLzA2VyZwsq_9NPG0g7N4fo6lw50rWnWPc)
 
 ---
 
-## **5. Best practices when working with HTML text**
+## **5. Best practices when working with text in HTML**
 
-- Use **headers correctly** to prioritize the information.
-- Do not abuse **line breaks (`<br>`)**, it is better to use paragraphs when necessary.
-- Use **semantic tags** such as `<blockquote>` and `<pre>` instead of `<div>` when the content requires it.
-- Maintain a clear and orderly structure in the code.
+- Use **headings correctly** to create a hierarchy for the information.
+- Don't overuse **line breaks (`<br>`)**; it's better to use paragraphs when needed.
+- Use **semantic tags** such as `<blockquote>` and `<pre>` instead of `<div>` when the content calls for it.
+- Keep a clear, orderly structure in your code.
 
 ---
 
-In the next topic, we will explore HTML lists, both ordered and unordered, and their importance in organizing information on a web page.
+In the next topic, we'll explore **lists in HTML**, both ordered and unordered, and why they matter for organizing information on a web page.

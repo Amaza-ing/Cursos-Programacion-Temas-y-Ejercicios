@@ -1,14 +1,14 @@
 # Exercises - Topic 34: Records
 
-Below you will find **10 practical exercises** to work with **records**: creation of records, accessors, validation with compact constructor, own methods, normalization, automatic equality and use with collections.
+Below you will find **10 practical exercises** to work with **records**: creating records, accessors, validation with a compact constructor, custom methods, normalization, automatic equality and using them with collections.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ## Exercise 1: Create a simple record
 
-Create an `Movie` record with:
+Create a `Movie` record with:
 
 - `title` (`String`)
 - `durationMinutes` (`int`)
@@ -39,7 +39,7 @@ public class Main {
 
 ## Exercise 2: Use automatic `toString`
 
-Create an `City` record with:
+Create a `City` record with:
 
 - `name`
 - `country`
@@ -69,7 +69,7 @@ public class Main {
 
 ## Exercise 3: Compare records with `equals`
 
-Create an `Point` record with:
+Create a `Point` record with:
 
 - `x`
 - `y`
@@ -100,15 +100,15 @@ public class Main {
 
 ## Exercise 4: Compact constructor with validation
 
-Create an `Course` record with:
+Create a `Course` record with:
 
 - `name`
 - `hours`
 
-Adds a compact constructor that:
+Add a compact constructor that:
 
-- cast `IllegalArgumentException` if `name` is `null` or blank
-- throw `IllegalArgumentException` if `hours` is less than or equal to `0`
+- throws `IllegalArgumentException` if `name` is `null` or blank
+- throws `IllegalArgumentException` if `hours` is less than or equal to `0`
 
 <details><summary>Show solution</summary>
 
@@ -142,12 +142,12 @@ public class Main {
 
 ## Exercise 5: Normalize values
 
-Create an `EmailAddress` record with an `value` component.
+Create an `EmailAddress` record with a `value` component.
 
 In the compact constructor:
 
-- removes spaces at the beginning and end
-- convert email to lowercase
+- remove the spaces at the beginning and end
+- convert the email to lowercase
 
 <details><summary>Show solution</summary>
 
@@ -177,9 +177,9 @@ public class Main {
 
 ---
 
-## Exercise 6: Add your own methods
+## Exercise 6: Add custom methods
 
-Create an `Circle` record with:
+Create a `Circle` record with:
 
 - `radius`
 
@@ -215,9 +215,9 @@ public class Main {
 
 ---
 
-## Exercise 7: Record with static method
+## Exercise 7: Record with a static method
 
-Create an `UserProfile` record with:
+Create a `UserProfile` record with:
 
 - `username`
 - `active`
@@ -253,12 +253,12 @@ public class Main {
 
 ## Exercise 8: Record in a list
 
-Create an `Book` record with:
+Create a `Book` record with:
 
 - `title`
 - `pages`
 
-In `main`, create a list of books and use `stream()` to get only books with more than `300` pages.
+In `main`, create a list of books and use `stream()` to get only the books with more than `300` pages.
 
 <details><summary>Show solution</summary>
 
@@ -293,12 +293,12 @@ public class Main {
 
 ## Exercise 9: Create a modified copy
 
-Create an `Task` record with:
+Create a `Task` record with:
 
 - `id`
 - `title`
 - `completed`
-Add a method `complete()` that returns a new same task, but with `completed = true`.
+Add a method `complete()` that returns a new, identical task, but with `completed = true`.
 
 <details><summary>Show solution</summary>
 
@@ -329,7 +329,7 @@ public class Main {
 
 ## Exercise 10: Record implementing an interface
 
-Creates an `Printable` interface with an `print()` method.
+Create a `Printable` interface with a `print()` method.
 
 Create an `Invoice` record with:
 

@@ -5,34 +5,34 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Nivel-Inicial%20a%20Intermedio-2563eb?style=for-the-badge" alt="Nivel inicial a intermedio">
-  <img src="https://img.shields.io/badge/Formato-Teoría%20%2B%20Práctica-9333ea?style=for-the-badge" alt="Formato teoría y práctica">
-  <img src="https://img.shields.io/badge/IA-Copilot-111827?style=for-the-badge" alt="Copilot">
+  <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-2563eb?style=for-the-badge" alt="Beginner to intermediate level">
+  <img src="https://img.shields.io/badge/Format-Theory%20%2B%20Practice-9333ea?style=for-the-badge" alt="Theory and practice format">
+  <img src="https://img.shields.io/badge/AI-Copilot-111827?style=for-the-badge" alt="Copilot">
 </p>
 
 ---
 
-## Course presentation
+## Course overview
 
-Welcome to the **Copilot and GitHub Copilot Course**, a training designed to learn how to use generative artificial intelligence tools in professional development, productivity, documentation, automation and collaborative work contexts.
+Welcome to the **Copilot and GitHub Copilot Course**, a course designed to teach you how to use generative artificial intelligence tools in professional contexts: development, productivity, documentation, automation and collaborative work.
 
-Throughout the course you will work with the Copilot ecosystem from a practical and responsible perspective. The objective is not only to learn how to ask an AI for answers, but to understand **how to correctly integrate it into a real workflow**, how to review the results generated and how to use it without losing technical control or professional judgment.
+Throughout the course, you'll work with the Copilot ecosystem from a practical and responsible perspective. The goal isn't just to learn how to ask an AI for answers, but to understand **how to integrate it properly into a real workflow**, how to review the results it generates and how to use it without losing technical control or professional judgment.
 
 ---
 
-## What will you learn in this course
+## What you'll learn in this course
 
-Upon completion of the course, you will be able to:
+By the end of the course, you'll be able to:
 
-- Understand what generative AI is and how it is applied in tools like Copilot.
-- Differentiate between **Microsoft Copilot**, **GitHub Copilot**, **Microsoft 365 Copilot** and **Copilot Studio**.
+- Understand what generative AI is and how it's applied in tools like Copilot.
+- Tell the difference between **Microsoft Copilot**, **GitHub Copilot**, **Microsoft 365 Copilot** and **Copilot Studio**.
 - Install and configure GitHub Copilot in development environments.
 - Create clear technical prompts to generate, explain, document and refactor code.
-- Use Copilot Chat to work contextually on real projects.
+- Use Copilot Chat to work on real projects with their context.
 - Generate tests, detect errors and improve code with the help of AI.
-- Customize Copilot using instructions from the repository.
-- Use Copilot in flows related to APIs, Docker, infrastructure and GitHub Actions.
-- Apply Copilot in productivity tools such as Word, Excel, PowerPoint, Outlook and Teams.
+- Customize Copilot with repository instructions.
+- Use Copilot in workflows related to APIs, Docker, infrastructure and GitHub Actions.
+- Use Copilot in productivity tools such as Word, Excel, PowerPoint, Outlook and Teams.
 - Design basic agents with Copilot Studio.
 - Work with AI safely, ethically and professionally.
 
@@ -49,14 +49,14 @@ Upon completion of the course, you will be able to:
   <thead>
     <tr>
       <th>Block</th>
-      <th>main block</th>
+      <th>Main block</th>
       <th>Contents</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Block 1</strong></td>
-      <td>Copilot Fundamentals and Ecosystem</td>
+      <td>Copilot fundamentals and ecosystem</td>
       <td>Generative AI, types of Copilot, privacy and responsible use</td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@ Upon completion of the course, you will be able to:
     <tr>
       <td><strong>Block 4</strong></td>
       <td>Microsoft Copilot and professional adoption</td>
-<td>Microsoft 365, Copilot Studio and good usage practices</td>
+      <td>Microsoft 365, Copilot Studio and usage best practices</td>
     </tr>
   </tbody>
 </table>
@@ -80,7 +80,7 @@ Upon completion of the course, you will be able to:
 
 ## Repository structure
 
-Each theme is located in a **Markdown (`.md`)** file inside the themes folder. In addition, the course includes exercises solved in a separate folder.
+Each topic is in a **Markdown (`.md`)** file inside the topics folder. The course also includes solved exercises in a separate folder.
 
 ```text
 .
@@ -119,7 +119,7 @@ Each theme is located in a **Markdown (`.md`)** file inside the themes folder. I
 
 ---
 
-## Complete agenda
+## Full syllabus
 
 <table>
   <colgroup>
@@ -129,7 +129,7 @@ Each theme is located in a **Markdown (`.md`)** file inside the themes folder. I
   </colgroup>
   <thead>
     <tr>
-      <th>TEma</th>
+      <th>Topic</th>
       <th>File</th>
       <th>Description</th>
     </tr>
@@ -172,18 +172,18 @@ Each theme is located in a **Markdown (`.md`)** file inside the themes folder. I
     </tr>
     <tr>
       <td><strong>08</strong></td>
-      <td><a href="Temas/Copilot-08-Personalización.md">Copilot-08-Personalization</a></td>
-<td>Custom instructions, repository context, agents, CLI, and advanced work</td>
+      <td><a href="Temas/Copilot-08-Personalización.md">Copilot-08-Customization</a></td>
+      <td>Custom instructions, repository context, agents, CLI and advanced work.</td>
     </tr>
     <tr>
       <td><strong>09</strong></td>
       <td><a href="Temas/Copilot-09-Automatización.md">Copilot-09-Automation</a></td>
-      <td>APIs, Docker, Infrastructure as Code, GitHub Actions and CI/CD assisted by Copilot.</td>
+      <td>APIs, Docker, infrastructure as code, GitHub Actions and Copilot-assisted CI/CD.</td>
     </tr>
     <tr>
       <td><strong>10</strong></td>
       <td><a href="Temas/Copilot-10-Microsoft.md">Copilot-10-Microsoft</a></td>
-      <td>Microsoft Copilot on Windows and Edge for search, summary, and content generation.</td>
+      <td>Microsoft Copilot on Windows and Edge for search, summaries and content generation.</td>
     </tr>
     <tr>
       <td><strong>11</strong></td>
@@ -193,11 +193,11 @@ Each theme is located in a **Markdown (`.md`)** file inside the themes folder. I
     <tr>
       <td><strong>12</strong></td>
       <td><a href="Temas/Copilot-12-Copilot-Studio.md">Copilot-12-Copilot-Studio</a></td>
-      <td>Conceptual creation of agents, sources of knowledge, limits and use cases.</td>
+      <td>Conceptual agent design, knowledge sources, limits and use cases.</td>
     </tr>
     <tr>
       <td><strong>13</strong></td>
-      <td><a href="Temas/Copilot-13-Buenas-Prácticas.md">Copilot-13-Good-Practices</a></td>
+      <td><a href="Temas/Copilot-13-Buenas-Prácticas.md">Copilot-13-Best-Practices</a></td>
       <td>Professional strategies to adopt Copilot in a safe, useful and sustainable way.</td>
     </tr>
   </tbody>
@@ -207,49 +207,49 @@ Each theme is located in a **Markdown (`.md`)** file inside the themes folder. I
 
 ## Solved exercises
 
-Each topic has its own exercise file. The solutions are included within the document and appear hidden under a **Show Solution** button, so you can try to solve each activity before consulting the answer.
+Each topic has its own exercise file. The solutions are included in the document and are hidden under a **Show solution** button, so you can try to solve each activity before looking at the answer.
 
-| Theme | Exercises |
+| Topic | Exercises |
 | ---- | ------------------------------------------------------------------------------------------- |
-| 01 | [exercises-01-Introduction](Ejercicios/Ejercicios-01-Introducción.md) |
-| 02 | [exercises-02-Ecosystem](Ejercicios/Ejercicios-02-Ecosistema.md) |
-| 03 | [exercises-03-Privacy](Ejercicios/Ejercicios-03-Privacidad.md) |
-| 04 | [exercises-04-Installation](Ejercicios/Ejercicios-04-Instalación.md) |
-| 05 | [exercises-05-Prompting](Ejercicios/Ejercicios-05-Prompting.md) |
-| 06 | [exercises-06-Copilot-Chat](Ejercicios/Ejercicios-06-Copilot-Chat.md) |
-| 07 | [exercises-07-Developer-Tasks](Ejercicios/Ejercicios-07-Tareas-del-Desarrollador.md) |
-| 08 | [exercises-08-Personalization](Ejercicios/Ejercicios-08-Personalización.md) |
-| 09 | [exercises-09-Automation](Ejercicios/Ejercicios-09-Automatización.md) |
-| 10 | [exercises-10-Microsoft](Ejercicios/Ejercicios-10-Microsoft.md) |
-| 11 | [exercises-11-Microsoft-365](Ejercicios/Ejercicios-11-Microsoft-365.md) |
-| 12 | [exercises-12-Copilot-Studio](Ejercicios/Ejercicios-12-Copilot-Studio.md) |
-| 13 | [exercises-13-Good-Practices](Ejercicios/Ejercicios-13-Buenas-Prácticas.md) |
+| 01 | [Exercises-01-Introduction](Ejercicios/Ejercicios-01-Introducción.md) |
+| 02 | [Exercises-02-Ecosystem](Ejercicios/Ejercicios-02-Ecosistema.md) |
+| 03 | [Exercises-03-Privacy](Ejercicios/Ejercicios-03-Privacidad.md) |
+| 04 | [Exercises-04-Installation](Ejercicios/Ejercicios-04-Instalación.md) |
+| 05 | [Exercises-05-Prompting](Ejercicios/Ejercicios-05-Prompting.md) |
+| 06 | [Exercises-06-Copilot-Chat](Ejercicios/Ejercicios-06-Copilot-Chat.md) |
+| 07 | [Exercises-07-Developer-Tasks](Ejercicios/Ejercicios-07-Tareas-del-Desarrollador.md) |
+| 08 | [Exercises-08-Customization](Ejercicios/Ejercicios-08-Personalización.md) |
+| 09 | [Exercises-09-Automation](Ejercicios/Ejercicios-09-Automatización.md) |
+| 10 | [Exercises-10-Microsoft](Ejercicios/Ejercicios-10-Microsoft.md) |
+| 11 | [Exercises-11-Microsoft-365](Ejercicios/Ejercicios-11-Microsoft-365.md) |
+| 12 | [Exercises-12-Copilot-Studio](Ejercicios/Ejercicios-12-Copilot-Studio.md) |
+| 13 | [Exercises-13-Best-Practices](Ejercicios/Ejercicios-13-Buenas-Prácticas.md) |
 
 ---
 
 ## Prerequisites
 
-This course is designed for people who want to start integrating Copilot into their daily work. It is not necessary to be an expert in artificial intelligence, but it is advisable to have a minimum foundation in computing and development.
+This course is designed for people who want to start integrating Copilot into their daily work. You don't need to be an expert in artificial intelligence, but it's a good idea to have some basic knowledge of computing and development.
 
-To follow the course comfortably, it is recommended to have:
+To follow the course comfortably, it's recommended to have:
 
 - A GitHub account.
 - A code editor like **Visual Studio Code** or a JetBrains IDE.
 - Basic programming knowledge.
 - Basic knowledge of Git and GitHub.
-- An updated browser, preferably Microsoft Edge for Microsoft Copilot themes.
-- Access to the Copilot tools that will be used during training.
+- An up-to-date browser, preferably Microsoft Edge for the Microsoft Copilot topics.
+- Access to the Copilot tools that will be used during the course.
 
 ---
 
 ## How to use this course
 
-You can follow this repository sequentially or consult specific topics according to your needs.
+You can follow this repository in order or look up specific topics as you need them.
 
 1. Start with topics 1, 2 and 3 to understand the general context.
-2. Continue with topics 4, 5, and 6 to configure and use GitHub Copilot.
-3. Move on to topics 7, 8, and 9 to work on real development and automation tasks.
-4. Finish with topics 10, 11, 12 and 13 to learn about Microsoft Copilot, Microsoft 365, Copilot Studio and good professional practices.
+2. Continue with topics 4, 5 and 6 to configure and use GitHub Copilot.
+3. Move on to topics 7, 8 and 9 to work on real development and automation tasks.
+4. Finish with topics 10, 11, 12 and 13 to learn about Microsoft Copilot, Microsoft 365, Copilot Studio and professional best practices.
 5. After each topic, do the corresponding exercises.
 6. Always review the solutions after trying to solve the exercises on your own.
 
@@ -257,27 +257,27 @@ You can follow this repository sequentially or consult specific topics according
 
 ## Recommended methodology
 
-The best way to take advantage of this course is to work actively:
+The best way to get the most out of this course is to work actively:
 
 - Read each topic calmly.
-- Test the prompts in your own environment.
-- Compare the responses generated by Copilot.
+- Try the prompts in your own environment.
+- Compare the answers generated by Copilot.
 - Always review the code or content produced by the AI.
 - Modify the prompts to see how the result changes.
 - Use the exercises as guided practice.
-- Do not automatically accept any answer without first understanding it.
+- Don't automatically accept any answer without understanding it first.
 
 ---
 
-## Good practices during the course
+## Best practices during the course
 
 When working with Copilot, remember these ideas:
 
 - Copilot is a support tool, not a substitute for professional judgment.
 - The generated code must be reviewed, tested and maintained.
-- Do not enter sensitive data, passwords, tokens or confidential information.
-- Check important information from reliable sources.
-- Use clear, concrete and contextualized prompts.
+- Don't enter sensitive data, passwords, tokens or confidential information.
+- Check important information in reliable sources.
+- Use clear, specific prompts with context.
 - If you don't understand an answer, ask for an explanation before using it.
 - In professional environments, always respect the organization's internal policies.
 
@@ -285,11 +285,11 @@ When working with Copilot, remember these ideas:
 
 ## Related technologies and tools
 
-During the course the following tools and concepts may appear:
+The following tools and concepts may come up during the course:
 
 - GitHub Copilot.
 - GitHub Copilot Chat.
--Microsoft Copilot.
+- Microsoft Copilot.
 - Microsoft 365 Copilot.
 - Copilot Studio.
 - Visual Studio Code.
@@ -300,13 +300,14 @@ During the course the following tools and concepts may appear:
 - REST APIs.
 - Infrastructure as code.
 - Prompt engineering.
-- AI assisted code review.
+- AI-assisted code review.
 - Automation and agents.
 
 ---
 
 ## Final goal
-By the end of this course, you should be able to incorporate Copilot into your workflow with a professional mindset: knowing when to use it, how to ask it for help, how to review its responses, and how to leverage it without losing control over the quality, security, and consistency of your work.
+
+By the end of this course, you should be able to bring Copilot into your workflow with a professional mindset: knowing when to use it, how to ask it for help, how to review its answers and how to make the most of it without losing control over the quality, security and consistency of your work.
 
 ---
 
@@ -322,7 +323,7 @@ Course created by **Adrián Maza**.
   </h5>
   <h5>
     <a href="https://www.linkedin.com/in/adrian-maza-vazquez/" target="_blank">
-      LinkedIn / Adrian Maza
+      LinkedIn / Adrián Maza
     </a>
   </h5>
   <h5>
@@ -332,7 +333,7 @@ Course created by **Adrián Maza**.
   </h5>
   <h5>
     <a href="https://github.com/Amaza-ing" target="_blank">
-      GitHub/AMaza-ing
+      GitHub / AMaza-ing
     </a>
   </h5>
 </div>

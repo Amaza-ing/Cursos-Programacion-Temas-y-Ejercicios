@@ -2,20 +2,20 @@
 
 Below you will find **10 practical exercises** to understand and apply `React.memo` as a rendering optimization technique in React.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
-## **Exercise 1: Detect unnecessary renders**
+## **Exercise 1: Spot unnecessary renders**
 
 Create two components:
 
-- `Parent.jsx` with state `count`.
-- `Child.jsx` to only render text.
+- `Parent.jsx` with a `count` state.
+- `Child.jsx`, which only renders some text.
 
-Add an `console.log` to `Child` to check how many times it is rendered when changing `count`.
+Add a `console.log` to `Child` to check how many times it renders when `count` changes.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Child() {
@@ -30,9 +30,9 @@ function Child() {
 
 ## **Exercise 2: Use `React.memo`**
 
-Wrap the `Child` component with `React.memo` to avoid unnecessary rendering.
+Wrap the `Child` component with `React.memo` to avoid unnecessary renders.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 import { memo } from "react";
@@ -51,11 +51,11 @@ export default memo(Child);
 
 ## **Exercise 3: `React.memo` with props**
 
-Modify `Child` so that it receives an `name` prop and displays `Hello {name}`.
+Modify `Child` so that it receives a `name` prop and displays `Hello {name}`.
 
-Checks when it renders again.
+Check when it re-renders.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 function Child({ name }) {
@@ -72,9 +72,9 @@ export default memo(Child);
 
 ## **Exercise 4: Props that do not change**
 
-In `Parent`, always pass the same value from `name` to `Child` and observe the behavior.
+In `Parent`, always pass the same `name` value to `Child` and observe the behavior.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 <Child name="Sara" />
@@ -86,9 +86,9 @@ In `Parent`, always pass the same value from `name` to `Child` and observe the b
 
 ## **Exercise 5: Props that do change**
 
-Modify `Parent` to make `name` state dependent and watch `Child` re-render.
+Modify `Parent` so that `name` depends on state, and watch `Child` re-render.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 ```js
 const [name, setName] = useState("Sara");
@@ -98,11 +98,11 @@ const [name, setName] = useState("Sara");
 
 ---
 
-## **Exercise 6: Problem with objects like props**
+## **Exercise 6: The problem with objects as props**
 
-Pass `Child` an `options={{ theme: "dark" }}` prop and look at the renders.
+Pass `Child` an `options={{ theme: "dark" }}` prop and watch the renders.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Each render creates a new object, so `React.memo` does not prevent the render.
 
@@ -110,11 +110,11 @@ Each render creates a new object, so `React.memo` does not prevent the render.
 
 ---
 
-## **Exercise 7: Explain superficial comparison**
+## **Exercise 7: Explain shallow comparison**
 
-Explains why `React.memo` doesn't work well with inline created objects.
+Explain why `React.memo` doesn't work well with objects created inline.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Because it compares references, not the content of the object.
 
@@ -126,9 +126,9 @@ Because it compares references, not the content of the object.
 
 Give an example of a component where `React.memo` does not provide benefits.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
-Small components with cheap render and few updates.
+Small components that are cheap to render and rarely update.
 
 </details>
 
@@ -136,9 +136,9 @@ Small components with cheap render and few updates.
 
 ## **Exercise 9: `React.memo` and local state**
 
-Is a memoized component rendered if its own state changes?
+Does a memoized component re-render if its own state changes?
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Yes. `React.memo` only affects changes to props, not internal state.
 
@@ -146,11 +146,11 @@ Yes. `React.memo` only affects changes to props, not internal state.
 
 ---
 
-## **Exercise 10: React.memo as optimization**
+## **Exercise 10: React.memo as an optimization**
 
 Explain why you should not use `React.memo` indiscriminately.
 
-<details><summary>Show Solution</summary>
+<details><summary>Show solution</summary>
 
 Because it can add unnecessary complexity and does not always improve performance.
 

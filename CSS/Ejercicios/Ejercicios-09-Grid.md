@@ -1,4 +1,4 @@
-# **Exercises - Topic 9: Design with CSS Grid**
+# **Exercises - Topic 9: Layout with CSS Grid**
 
 ## **Instructions:**
 
@@ -48,9 +48,9 @@ Create a container with 3 columns of equal size and 2 rows.
 
 ---
 
-### **Exercise 2: Combine cells**
+### **Exercise 2: Merge cells**
 
-Create an `div` that occupies two columns in a 3x2 grid.
+Create a `div` that spans two columns in a 3x2 grid.
 
 <details><summary>Show solution</summary>
 
@@ -94,7 +94,7 @@ Create an `div` that occupies two columns in a 3x2 grid.
 
 ### **Exercise 3: Use `grid-template-areas`**
 
-Create a layout with defined areas for `header`, `sidebar`, `content`, and `footer`.
+Create a layout with defined areas for `header`, `sidebar`, `content` and `footer`.
 
 <details><summary>Show solution</summary>
 
@@ -150,7 +150,7 @@ Create a layout with defined areas for `header`, `sidebar`, `content`, and `foot
 
 ### **Exercise 4: Align elements on the grid**
 
-Create a grid where elements are centered both horizontally and vertically.
+Create a grid where the elements are centered both horizontally and vertically.
 
 <details><summary>Show solution</summary>
 
@@ -193,9 +193,9 @@ Create a grid where elements are centered both horizontally and vertically.
 
 ---
 
-### **Exercise 5: Create a responsive design with `auto-fit`**
+### **Exercise 5: Create a responsive layout with `auto-fit`**
 
-Use `auto-fit` to create a flexible grid that fits the size of the screen.
+Use `auto-fit` to create a flexible grid that adjusts to the size of the screen.
 
 <details><summary>Show solution</summary>
 

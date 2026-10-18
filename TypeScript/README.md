@@ -1,13 +1,13 @@
 # **Complete TypeScript Course from Scratch**
 
-Welcome to **Complete TypeScript Course**, a course designed for you to learn TypeScript from scratch and master one of the most used languages in web development.
+Welcome to the **Complete TypeScript Course**, a course designed for you to learn TypeScript from scratch and master one of the most widely used languages in web development.
 
 ---
 
-## 🎥 **Video Course**
+## 🎥 **Video course**
 
-Written theory and solved exercises will soon be added.
-For now you can see the complete course in the following video:
+The written theory and solved exercises will be added soon.
+For now, you can watch the complete course in the following video:
 
 📺 **Complete TypeScript Course**
 

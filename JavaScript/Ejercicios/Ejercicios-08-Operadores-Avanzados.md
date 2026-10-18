@@ -1,14 +1,14 @@
 # **Exercises - Topic 8: Advanced Operators in JavaScript**
 
-Below you will find 5 practical exercises on advanced operators in JavaScript.
+Below you'll find 5 practical exercises on advanced operators in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Using the Spread Operator (`...`) with Arrays**
 
-Create an `numbers` array with the `[5, 10, 15]` values and another `moreNumbers` array containing the `numbers` values plus `20` and `25`. Show the result in the console.
+Create a `numbers` array with the values `[5, 10, 15]` and another array, `moreNumbers`, containing the values of `numbers` plus `20` and `25`. Display the result in the console.
 
 <details><summary>Show solution</summary>
 
@@ -24,7 +24,7 @@ console.log(moreNumbers); // Salida: [5, 10, 15, 20, 25]
 
 ### **Exercise 2: Using the Rest Operator (`...`) in Functions**
 
-Create a function `multiplyAll` that accepts an `factor` number and a variable number of arguments. The function should return an array with each number multiplied by `factor`.
+Create a function `multiplyAll` that accepts a number `factor` and a variable number of arguments. The function should return an array with each number multiplied by `factor`.
 
 <details><summary>Show solution</summary>
 
@@ -42,7 +42,7 @@ console.log(multiplyAll(2, 3, 4, 5)); // Salida: [6, 8, 10]
 
 ### **Exercise 3: Using Optional Chaining (`?.`)**
 
-Given the following `person` object, access the `address.city` property safely using `?.`. If it does not exist, it shows "City not available".
+Given the following `person` object, access the `address.city` property safely using `?.`. If it doesn't exist, display "City not available".
 
 ```js
 const person = {
@@ -63,7 +63,7 @@ console.log(person.address?.city ?? "Ciudad no disponible"); // Salida: "Ciudad 
 
 ### **Exercise 4: Using Nullish Coalescing (`??`)**
 
-Declare an `discount` variable that can be `null` or `0`. Use `??` to assign a default value of `10` only if it is `null` or `undefined`, but keeping `0` if it is its value.
+Declare a `discount` variable that can be `null` or `0`. Use `??` to assign it a default value of `10` only if it's `null` or `undefined`, but keep the `0` if that's its value.
 
 <details><summary>Show solution</summary>
 
@@ -79,7 +79,7 @@ console.log(finalDiscount); // Salida: 0
 
 ### **Exercise 5: Using the Ternary Operator (`? :`)**
 
-Create a variable `temperature` and use a ternary operator to assign "Hot" if greater than 30, "Cold" if less than 15, and "Warm" otherwise.
+Create a variable `temperature` and use a ternary operator to assign "Hot" if it's greater than 30, "Cold" if it's less than 15, and "Mild" otherwise.
 
 <details><summary>Show solution</summary>
 

@@ -2,20 +2,20 @@
 
 ## 1. Introduction
 
-Until now you have worked with variables that hold **a single value**:
+So far you've worked with variables that hold **a single value**:
 
 - An `int` stores a number
-- An `double` stores a decimal
-- An `String` saves a text
-- An `boolean` stores `true` or `false`
+- A `double` stores a decimal
+- A `String` stores text
+- A `boolean` stores `true` or `false`
 
 But in programming it is very common to need **several values of the same type**:
 
-- A student's notes
-- The prices of a cart
-- The attempts of a game
+- A student's grades
+- The prices in a shopping cart
+- The attempts in a game
 - The days of the week
-- Multiplayer scores
+- The scores of several players
 
 You could create many variables:
 
@@ -27,7 +27,7 @@ int score3 = 8;
 
 But this doesn't scale. That's why **arrays** exist.
 
-An **array** is a structure that allows storing **several values ​​of the same type** within a single variable.
+An **array** is a structure that lets you store **several values of the same type** in a single variable.
 
 ---
 
@@ -35,16 +35,16 @@ An **array** is a structure that allows storing **several values ​​of the sa
 
 ---
 
-## 2. What is an array
+## 2. What an array is
 
 An array:
 
-- Saves a collection of items of the **same type**
-- It has a fixed size (decided when creating it)
-- Allows access to each element by its **index** (position)
+- Stores a collection of elements of the **same type**
+- Has a fixed size (decided when you create it)
+- Lets you access each element by its **index** (position)
 - Always starts at index **0**
 
-If you have an array of 5 elements, its indexes are:
+If you have an array of 5 elements, its indices are:
 
 ```
 0  1  2  3  4
@@ -52,7 +52,7 @@ If you have an array of 5 elements, its indexes are:
 
 ---
 
-## 3. Declare an array
+## 3. Declaring an array
 
 To declare an array, use `[]` after the type:
 
@@ -60,13 +60,13 @@ To declare an array, use `[]` after the type:
 int[] scores;
 ```
 
-This just declares the variable. There is still no array created (there is no memory reserved for the elements).
+This just declares the variable. No array has been created yet (no memory has been reserved for the elements).
 
 ---
 
-## 4. Create an array (reserve memory)
+## 4. Creating an array (reserving memory)
 
-To create an array, `new` is used and the size is indicated.
+To create an array, you use `new` and specify the size.
 
 ```java
 int[] scores = new int[5];
@@ -91,12 +91,12 @@ System.out.println(scores.length); // 5
 
 Important:
 
-- In arrays `length` is used (without parentheses)
-- In `String` `length()` is used (with parentheses)
+- Arrays use `length` (without parentheses)
+- `String` uses `length()` (with parentheses)
 
 ---
 
-## 6. Indexes: access an element
+## 6. Indices: accessing an element
 
 To access a position, use `[]` with the index.
 
@@ -110,11 +110,11 @@ System.out.println(scores[4]); // último elemento
 Remember:
 
 - First element → index 0
-- Last item → index `length - 1`
+- Last element → index `length - 1`
 
 ---
 
-## 7. Assign values to an array
+## 7. Assigning values to an array
 
 You can assign values to specific positions using the index.
 
@@ -132,7 +132,7 @@ System.out.println(scores[3]); // 20
 
 ---
 
-## 8. Initialize an array with values (quick way)
+## 8. Initializing an array with values (the quick way)
 
 Sometimes you already know the values when creating the array. In that case you can use a literal initialization:
 
@@ -142,9 +142,9 @@ int[] scores = {10, 15, 8, 20, 12};
 
 Here Java:
 
-- Create the array automatically
-- Assigns size 5
-- Put the values in order
+- Creates the array automatically
+- Gives it size 5
+- Puts the values in order
 
 ---
 
@@ -178,7 +178,7 @@ When you create an array with `new`, Java automatically initializes its elements
 - `double` → 0.0
 - `boolean` → false
 - `char` → '\u0000' (“empty” character)
-- `String` (and other items) → `null`
+- `String` (and other objects) → `null`
 
 Example:
 
@@ -204,7 +204,7 @@ scores[3] = 10; // error
 ```
 
 Why?
-- If size is 3, valid indices are 0, 1 and 2.
+- If the size is 3, the valid indices are 0, 1 and 2.
 - Index 3 is out of range.
 
 Rule of thumb:
@@ -213,18 +213,18 @@ Rule of thumb:
 
 ---
 
-### 11.2. Forget that it starts at 0
+### 11.2. Forgetting that it starts at 0
 
-If you have an array of 5:
+If you have an array of size 5:
 
 - First index: 0
 - Last index: 4
 
-This is key to avoid errors.
+This is key to avoiding errors.
 
 ---
 
-### 11.3. Confuse declaration with creation
+### 11.3. Confusing declaration with creation
 
 This declares an array, but does NOT create it:
 
@@ -232,9 +232,9 @@ This declares an array, but does NOT create it:
 int[] scores;
 ```
 
-If you try to use it like this, it will give a compile error because it is not initialized.
+If you try to use it like this, you'll get a compile error because it isn't initialized.
 
-The correct thing is to create it:
+The right thing to do is create it:
 
 ```java
 int[] scores = new int[5];
@@ -242,9 +242,9 @@ int[] scores = new int[5];
 
 ---
 
-## 12. Guided Examples (to understand actual usage)
+## 12. Guided examples (to understand how they're really used)
 
-### 12.1. Example: save and display data
+### 12.1. Example: storing and displaying data
 
 ```java
 public class Main {
@@ -260,7 +260,7 @@ public class Main {
 
 ---
 
-### 12.2. Example: update an array value
+### 12.2. Example: updating an array value
 
 ```java
 public class Main {
@@ -278,7 +278,7 @@ public class Main {
 
 ---
 
-### 12.3. Example: Use `length` to access the last item
+### 12.3. Example: using `length` to access the last element
 
 ```java
 public class Main {
@@ -297,7 +297,7 @@ public class Main {
 
 It is very common to pass arrays to methods to process them.
 
-### 13.1. Method that prints the first and last element
+### 13.1. A method that prints the first and last elements
 
 ```java
 public class Main {
@@ -316,14 +316,14 @@ public class Main {
 }
 ```
 
-Look at:
+Notice that:
 
 - The `int[] values` parameter indicates that the method receives an array of int.
-- Within the method, `values` is used the same as any array.
+- Inside the method, `values` is used like any other array.
 
 ---
 
-### 13.2. Method that modifies an array
+### 13.2. A method that modifies an array
 
 In Java, when you pass an array to a method, the method can modify its contents.
 
@@ -343,7 +343,7 @@ public class Main {
 }
 ```
 
-This occurs because the array is an object and the method receives a reference to the same array.
+This happens because the array is an object and the method receives a reference to the same array.
 
 ---
 
@@ -353,9 +353,9 @@ This occurs because the array is an object and the method receives a reference t
 
 ## 14. Arrays and loops (preview)
 
-In the next topic you will see the traversal of arrays with loops, but it is useful to already understand the basic idea.
+In the next topic you'll see how to loop through arrays, but it's useful to understand the basic idea now.
 
-To loop through an array of size `n`, you typically do:
+To loop through an array of size `n`, you typically go:
 
 - From index 0
 - Up to index `length - 1`
@@ -370,16 +370,16 @@ for (int i = 0; i < numbers.length; i++) {
 }
 ```
 
-You don't need to memorize it yet, but look at:
+You don't need to memorize it yet, but notice:
 
 - The loop starts at 0
-- Condition is `i < numbers.length` (not `<=`)
+- The condition is `i < numbers.length` (not `<=`)
 
 ---
 
 ## 15. Two-dimensional arrays (introduction)
 
-An array can also be “of arrays”, creating a structure in the form of a table.
+An array can also be an “array of arrays”, creating a table-like structure.
 
 Example of a 2x3 matrix (2 rows, 3 columns):
 
@@ -401,19 +401,19 @@ int[][] grid = {
 };
 ```
 
-In initial courses, the most important thing is to first master one-dimensional arrays.
+In beginner courses, the most important thing is to master one-dimensional arrays first.
 
 ---
 
-## 16. To take into account
+## 16. Things to keep in mind
 
 - An array stores multiple values of the same type.
 - The indices start at 0.
-- The size is fixed and is consulted with `length`.
+- The size is fixed and you check it with `length`.
 - They are created with `new` or with `{...}` literal initialization.
-- The most common errors are indexes out of range.
+- The most common mistakes are out-of-range indices.
 - Arrays are used a lot along with loops and methods.
 
 ---
 
-In the next topic you will learn to **loop through arrays**, and to read/modify their values efficiently.
+In the next topic you'll learn to **loop through arrays**, and to read/modify their values efficiently.

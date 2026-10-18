@@ -1,14 +1,14 @@
-# **Exercises - Topic 11: Asynchrony in JavaScript**
+# **Exercises - Topic 11: Asynchronous JavaScript**
 
-Below you will find 6 practical exercises on asynchrony in JavaScript.
+Below you'll find 6 practical exercises on asynchrony in JavaScript.
 
-Try to solve them before consulting the solution.
+Try to solve them before looking at the solution.
 
 ---
 
 ### **Exercise 1: Create and Consume a Promise**
 
-Create a promise called `checkWeather` that simulates a weather check after 2 seconds. If the weather is "sunny," resolve the promise with the message "Perfect day." If it's "rainy," reject it with the message "Bring an umbrella."
+Create a promise called `checkWeather` that simulates a weather check after 2 seconds. If the weather is "sunny", resolve the promise with the message "Perfect day". If it's "rainy", reject it with the message "Take an umbrella".
 
 <details><summary>Show solution</summary>
 
@@ -29,9 +29,9 @@ checkWeather
 
 ---
 
-### **Exercise 2: Manage a Promise with `async/await`**
+### **Exercise 2: Handle a Promise with `async/await`**
 
-Convert the code from the previous exercise's solver to use `async/await` instead of `.then()` and `.catch()`.
+Convert the code from the previous exercise's solution so that it uses `async/await` instead of `.then()` and `.catch()`.
 
 <details><summary>Show solution</summary>
 
@@ -54,7 +54,7 @@ getWeather();
 
 ### **Exercise 3: Use `Promise.all()` for multiple Promises**
 
-Create two promises: `fetchUserData` which resolves in 1 second and `fetchPosts` which resolves in 2 seconds. Use `Promise.all()` to run them in parallel and display the results together.
+Create two promises: `fetchUserData`, which resolves in 1 second, and `fetchPosts`, which resolves in 2 seconds. Use `Promise.all()` to run them in parallel and display the results together.
 
 <details><summary>Show solution</summary>
 
@@ -80,7 +80,7 @@ loadData();
 
 ### **Exercise 4: Handling Errors with `Promise.allSettled()`**
 
-Create three promises: one that resolves in 1 second, one that fails in 2 seconds, and one that resolves in 3 seconds. Use `Promise.allSettled()` to handle them without the failure stopping execution.
+Create three promises: one that resolves in 1 second, one that fails in 2 seconds, and one that resolves in 3 seconds. Use `Promise.allSettled()` to handle them without the failure stopping the execution.
 
 <details><summary>Show solution</summary>
 
